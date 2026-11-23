@@ -5186,3 +5186,87 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | active (đang hoạt động) |
 | Nhận định | Chuẩn tiếp cận W3C, thước đo cho axe-core, jsx-a11y. Bản TR hiện hành là Rec 12/12/2024. |
 | Nguồn | [www.w3.org/TR/WCAG22/](https://www.w3.org/TR/WCAG22/) |
+
+<a id="ch-web-interface-guidelines-vercel"></a>
+
+### Web Interface Guidelines (Vercel)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vercel-labs/web-interface-guidelines |
+| License | MIT |
+| Phiên bản đã đọc | `434b7f91364665f2f733b310ec54809bf8f37937` (commit 2026-10-05) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, command.md, install.sh; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Danh sách quy tắc UI (tương tác, focus, vùng chạm, zoom, URL là state…) kèm command.md cho agent review và install.sh. Tự mâu thuẫn nhẹ: README gợi ý `maximum-scale=1` ngay cạnh luật "Never disable browser zoom". install.sh tải command.md từ nhánh main, không ghim; repo không có .github. |
+| Nguồn | [README.md](https://github.com/vercel-labs/web-interface-guidelines/blob/434b7f91364665f2f733b310ec54809bf8f37937/README.md) · [LICENSE](https://github.com/vercel-labs/web-interface-guidelines/blob/434b7f91364665f2f733b310ec54809bf8f37937/LICENSE) |
+
+<a id="ch-web-quality-skills"></a>
+
+### Web Quality Skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/addyosmani/web-quality-skills |
+| License | MIT |
+| Phiên bản đã đọc | `afa8da942115f2961fdbfa80807ea0b232ff6c00` (commit 2026-08-24) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, skills/*/scripts/analyze.sh (đầu file); chưa chạy upstream |
+| Bảo trì | low-activity (commit cuối cách hơn 2 tháng) |
+| Nhận định | Bộ 6 Agent Skills đo-trước (audit, performance, Core Web Vitals, a11y, SEO, best practices), tự ghi là không chính thức; có analyze.sh chỉ đọc xuất JSON. Không có workflow CI; commit cuối 24/8/2026. |
+| Nguồn | [README.md](https://github.com/addyosmani/web-quality-skills/blob/afa8da942115f2961fdbfa80807ea0b232ff6c00/README.md) · [LICENSE](https://github.com/addyosmani/web-quality-skills/blob/afa8da942115f2961fdbfa80807ea0b232ff6c00/LICENSE) · [gemini-extension.json](https://github.com/addyosmani/web-quality-skills/blob/afa8da942115f2961fdbfa80807ea0b232ff6c00/gemini-extension.json) |
+
+<a id="ch-zag"></a>
+
+### Zag
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/chakra-ui/zag |
+| License | MIT |
+| Phiên bản đã đọc | `cb967cd6678242c7455d3a35d4e2b6209306eb03` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, packages/core/package.json; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Máy trạng thái component headless cho React/Vue/Solid/Svelte (thêm adapter Preact/vanilla); có AGENTS.md, CLAUDE.md, context7.json. Rất hoạt động (commit 22/11/2026), phiên bản core 1.49.0. |
+| Nguồn | [README.md](https://github.com/chakra-ui/zag/blob/cb967cd6678242c7455d3a35d4e2b6209306eb03/README.md) · [LICENSE](https://github.com/chakra-ui/zag/blob/cb967cd6678242c7455d3a35d4e2b6209306eb03/LICENSE) · [package.json](https://github.com/chakra-ui/zag/blob/cb967cd6678242c7455d3a35d4e2b6209306eb03/packages/core/package.json) |
+
+<a id="ch-zen-design-system-dizai-studio"></a>
+
+### Zen Design System (Dizai Studio)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Zen-Design-System/Zen-DS |
+| License | Commercial (Dizai Studio Commercial Licence Agreement v1.0, hiệu lực 2026-10-08; tự ghi bản nháp chưa qua luật sư) |
+| Phiên bản đã đọc | `f81c4ff08f0622c00c951e16a833158da6c7648c` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json, .github/workflows/ci.yml (đầu file); chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Design system thương mại (React 19 + token/icon sinh từ Figma), kèm MCP cục bộ, AGENTS.consumer.md, llms.txt. `@zen-ds/react` cấp phép theo seat qua registry riêng npm.dizai.studio; giấy phép còn là bản nháp. Phiên bản 0.3.0. |
+| Nguồn | [README.md](https://github.com/Zen-Design-System/Zen-DS/blob/f81c4ff08f0622c00c951e16a833158da6c7648c/README.md) · [LICENSE.md](https://github.com/Zen-Design-System/Zen-DS/blob/f81c4ff08f0622c00c951e16a833158da6c7648c/LICENSE.md) · [package.json](https://github.com/Zen-Design-System/Zen-DS/blob/f81c4ff08f0622c00c951e16a833158da6c7648c/package.json) · [ci.yml](https://github.com/Zen-Design-System/Zen-DS/blob/f81c4ff08f0622c00c951e16a833158da6c7648c/.github/workflows/ci.yml) |
+
+<a id="ch-zen-umami"></a>
+
+### Zen (Umami)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/umami-software/zen |
+| License | MIT |
+| Phiên bản đã đọc | `e200ca20c43a338c272f33cf61a781076c69f63e` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, SKILL.md, packages/react-zen/package.json; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Design system/React component của Umami: quy ước shadcn, primitive Base UI, Tailwind. Có SKILL.md hướng dẫn dùng @umami/react-zen cho agent; gói react-zen 0.255.0. |
+| Nguồn | [README.md](https://github.com/umami-software/zen/blob/e200ca20c43a338c272f33cf61a781076c69f63e/README.md) · [LICENSE](https://github.com/umami-software/zen/blob/e200ca20c43a338c272f33cf61a781076c69f63e/LICENSE) · [package.json](https://github.com/umami-software/zen/blob/e200ca20c43a338c272f33cf61a781076c69f63e/packages/react-zen/package.json) · [SKILL.md](https://github.com/umami-software/zen/blob/e200ca20c43a338c272f33cf61a781076c69f63e/SKILL.md) |
+
+<a id="ch-zendesk-garden"></a>
+
+### Zendesk Garden
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/zendeskgarden/react-components |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `60faa730776976016b86f1e3f90d00b0c0d43b22` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Design system React của Zendesk; nhánh hiện tại là v10 (10.0.0-next.4, release candidate) gộp mọi component vào một gói, v9 (các gói @zendeskgarden/react-*) vẫn là bản ổn định. API v10 còn có thể đổi. |
+| Nguồn | [README.md](https://github.com/zendeskgarden/react-components/blob/60faa730776976016b86f1e3f90d00b0c0d43b22/README.md) · [LICENSE.md](https://github.com/zendeskgarden/react-components/blob/60faa730776976016b86f1e3f90d00b0c0d43b22/LICENSE.md) · [package.json](https://github.com/zendeskgarden/react-components/blob/60faa730776976016b86f1e3f90d00b0c0d43b22/package.json) |

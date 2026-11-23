@@ -273,3 +273,401 @@ Thư viện giải thích đầu ra của mô hình học máy bằng giá trị
 Trình xem mô hình mạng nơ-ron, học sâu và học máy; hiển thị đồ thị mô hình trên trình duyệt hoặc ứng dụng desktop. Hỗ trợ ONNX, TensorFlow Lite, PyTorch, Core ML, OpenVINO, Keras, Safetensors và nhiều định dạng khác; có bản trình duyệt netron.app không cần cài; có bản macOS, Linux, Windows và gói Python. ★ 18/11/2026: 33.703 (GitHub search API), nhóm "Đồ họa, 3D & Sơ đồ" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
 
 **Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-arize-phoenix"></a>
+
+### Arize Phoenix
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Arize-ai/phoenix |
+| License | Elastic-2.0 (ELv2) |
+| Phiên bản đã đọc | `2a372100db49c3d91dfdc726651a5a3cee0c4e2e` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Nền tảng quan sát/eval AI mã nguồn mở của Arize (tracing OTel, dataset, experiment, playground, MCP server từ xa). License ELv2 là source-available, không phải OSI: có hạn chế cung cấp dưới dạng dịch vụ quản lý. |
+| Nguồn | [README.md](https://github.com/Arize-ai/phoenix/blob/2a372100db49c3d91dfdc726651a5a3cee0c4e2e/README.md) · [LICENSE](https://github.com/Arize-ai/phoenix/blob/2a372100db49c3d91dfdc726651a5a3cee0c4e2e/LICENSE) |
+
+<a id="ch-coze-loop"></a>
+
+### Coze Loop
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/coze-dev/coze-loop |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `36b9796878604bc87e0fadd047dc27e89dfe8c26` (commit 2026-11-10) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, .github/workflows/ai-cr-required.yaml; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Bản mở của Coze Loop (ByteDance): playground prompt, eval, observability; README hướng dẫn cấu hình model Volcengine Ark làm ví dụ. Workflow ai-cr-required đã bị tắt bằng cách đổi nhánh kích hoạt sang "disabled-temporarily". |
+| Nguồn | [README.md](https://github.com/coze-dev/coze-loop/blob/36b9796878604bc87e0fadd047dc27e89dfe8c26/README.md) · [LICENSE](https://github.com/coze-dev/coze-loop/blob/36b9796878604bc87e0fadd047dc27e89dfe8c26/LICENSE) · [ai-cr-required.yaml](https://github.com/coze-dev/coze-loop/blob/36b9796878604bc87e0fadd047dc27e89dfe8c26/.github/workflows/ai-cr-required.yaml) |
+
+<a id="ch-deepeval"></a>
+
+### DeepEval
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/confident-ai/deepeval |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `6a43e72c77a490b2eebe240c8fc22b1a2bd4e643` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Framework eval LLM kiểu pytest của Confident AI (metric, agent trajectory, RAG, voice). README có cài đặt quảng bá nền tảng thương mại Confident AI; repo rất hoạt động. |
+| Nguồn | [README.md](https://github.com/confident-ai/deepeval/blob/6a43e72c77a490b2eebe240c8fc22b1a2bd4e643/README.md) · [LICENSE.md](https://github.com/confident-ai/deepeval/blob/6a43e72c77a490b2eebe240c8fc22b1a2bd4e643/LICENSE.md) |
+
+<a id="ch-evidently"></a>
+
+### Evidently
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/evidentlyai/evidently |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `34771fe41c08ca074d96a52aaf4a45cd640cbaf5` (commit 2026-09-11) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, src/evidently/telemetry.py và ui/service/components/telemetry.py (grep dòng liên quan); chưa chạy upstream |
+| Bảo trì | low-activity (commit cuối cách hơn 2 tháng) |
+| Nhận định | Thư viện Python eval/test/monitor ML và LLM. Telemetry mặc định gửi HTTP (không TLS) tới 35.232.253.5:8000, có thể tắt bằng DO_NOT_TRACK; README không nhắc telemetry. Hoạt động chậm lại (commit cuối 11/9/2026). |
+| Nguồn | [README.md](https://github.com/evidentlyai/evidently/blob/34771fe41c08ca074d96a52aaf4a45cd640cbaf5/README.md) · [LICENSE](https://github.com/evidentlyai/evidently/blob/34771fe41c08ca074d96a52aaf4a45cd640cbaf5/LICENSE) · [telemetry.py](https://github.com/evidentlyai/evidently/blob/34771fe41c08ca074d96a52aaf4a45cd640cbaf5/src/evidently/telemetry.py) · [telemetry.py](https://github.com/evidentlyai/evidently/blob/34771fe41c08ca074d96a52aaf4a45cd640cbaf5/src/evidently/ui/service/components/telemetry.py) |
+
+<a id="ch-failproofai"></a>
+
+### FailproofAI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/FailproofAI/failproofai |
+| License | MIT + Commons Clause (không phải OSI) |
+| Phiên bản đã đọc | `33a050ba823190ede003c3c5468149d20b9939e2` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Hook cho 12 harness agent (Claude Code, Codex, Cursor…) với policy chặn tool call và theo dõi phiên. License MIT kèm Commons Clause (cấm bán lại sản phẩm), README tự ghi. Mã có posthog-key.ts và hook-telemetry.ts; README không nhắc telemetry theo tìm chuỗi. |
+| Nguồn | [README.md](https://github.com/FailproofAI/failproofai/blob/33a050ba823190ede003c3c5468149d20b9939e2/README.md) · [LICENSE](https://github.com/FailproofAI/failproofai/blob/33a050ba823190ede003c3c5468149d20b9939e2/LICENSE) · [package.json](https://github.com/FailproofAI/failproofai/blob/33a050ba823190ede003c3c5468149d20b9939e2/package.json) |
+
+<a id="ch-giskard-v3"></a>
+
+### Giskard (v3)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Giskard-AI/giskard-oss |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `e48ca61d34bd9d5e92f77fffc401e2c47c23bcfa` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Bản viết lại v3 cho test agent nhiều lượt và quét lỗ hổng; README ghi v2 không còn bảo trì tích cực. Có telemetry ẩn danh tùy chọn, tắt bằng DO_NOT_TRACK=1 hoặc GISKARD_TELEMETRY_DISABLED=1, README có nêu rõ. |
+| Nguồn | [README.md](https://github.com/Giskard-AI/giskard-oss/blob/e48ca61d34bd9d5e92f77fffc401e2c47c23bcfa/README.md) · [LICENSE](https://github.com/Giskard-AI/giskard-oss/blob/e48ca61d34bd9d5e92f77fffc401e2c47c23bcfa/LICENSE) |
+
+<a id="ch-harbor-terminal-bench"></a>
+
+### Harbor (Terminal-Bench)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/harbor-framework/harbor |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `b62d54bd36dc3e031d7daa85dd538d5653cba834` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Framework của nhóm Terminal-Bench để chạy/đánh giá agent và sinh rollout RL trên nhiều provider sandbox (Daytona, Modal…). README giới thiệu là runner cho Terminal-Bench; số phiên bản TB 4.0 chưa tái kiểm. |
+| Nguồn | [README.md](https://github.com/harbor-framework/harbor/blob/b62d54bd36dc3e031d7daa85dd538d5653cba834/README.md) · [LICENSE](https://github.com/harbor-framework/harbor/blob/b62d54bd36dc3e031d7daa85dd538d5653cba834/LICENSE) |
+
+<a id="ch-ifixai"></a>
+
+### iFixAi
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ifixai-ai/iFixAi |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ba677410d21c1f382b1268e6ebde6136e6b54f44` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE (README tiếng Anh); chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Công cụ audit "operational alignment" cho agent qua mô phỏng nghiệp vụ, có chế độ demo không cần API key. README ghi Apache 2.0, khớp LICENSE. Các số sao/tải xuống lệch của kho cũ chưa tái kiểm ở lượt này. |
+| Nguồn | [README.md](https://github.com/ifixai-ai/iFixAi/blob/ba677410d21c1f382b1268e6ebde6136e6b54f44/README.md) · [LICENSE](https://github.com/ifixai-ai/iFixAi/blob/ba677410d21c1f382b1268e6ebde6136e6b54f44/LICENSE) |
+
+<a id="ch-inspect-evals"></a>
+
+### Inspect Evals
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/UKGovernmentBEIS/inspect_evals |
+| License | MIT |
+| Phiên bản đã đọc | `c2d3d5e1335c07fb8032bcfc7869e9437e635c4c` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, EVALUATION_CHECKLIST.md; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Thư viện eval xây trên Inspect AI. README ghi nay do Generality Labs (nonprofit, London) bảo trì và chỉ nhận PR từ người đóng góp được duyệt trước; EVALUATION_CHECKLIST yêu cầu VALIDITY_REPORT.md. |
+| Nguồn | [README.md](https://github.com/UKGovernmentBEIS/inspect_evals/blob/c2d3d5e1335c07fb8032bcfc7869e9437e635c4c/README.md) · [LICENSE](https://github.com/UKGovernmentBEIS/inspect_evals/blob/c2d3d5e1335c07fb8032bcfc7869e9437e635c4c/LICENSE) · [EVALUATION_CHECKLIST.md](https://github.com/UKGovernmentBEIS/inspect_evals/blob/c2d3d5e1335c07fb8032bcfc7869e9437e635c4c/EVALUATION_CHECKLIST.md) |
+
+<a id="ch-laminar"></a>
+
+### Laminar
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/lmnr-ai/lmnr |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `dc5f238c06f9f35caf07a2b4b17d5ce05fdef8bc` (commit 2026-11-10) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Nền tảng quan sát cho agent mã nguồn mở (tracing OTel, signals, eval, tự host qua docker compose). Cần xem thêm giấy phép từng thành phần khi dùng thương mại. |
+| Nguồn | [README.md](https://github.com/lmnr-ai/lmnr/blob/dc5f238c06f9f35caf07a2b4b17d5ce05fdef8bc/README.md) · [LICENSE.md](https://github.com/lmnr-ai/lmnr/blob/dc5f238c06f9f35caf07a2b4b17d5ce05fdef8bc/LICENSE.md) |
+
+<a id="ch-langfuse"></a>
+
+### Langfuse
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/langfuse/langfuse |
+| License | MIT (Expat) cho phần lõi; thư mục ee/ và các đường dẫn ee khác theo giấy phép riêng |
+| Phiên bản đã đọc | `72bc5404558ef42167e9dde90cd530bd0b5f489b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Nền tảng kỹ thuật AI mã nguồn mở (quan sát, eval, prompt); README ghi từ 1/2026 là một phần của ClickHouse. LICENSE tách rõ phần MIT với các thư mục ee/ có giấy phép riêng. |
+| Nguồn | [README.md](https://github.com/langfuse/langfuse/blob/72bc5404558ef42167e9dde90cd530bd0b5f489b/README.md) · [LICENSE](https://github.com/langfuse/langfuse/blob/72bc5404558ef42167e9dde90cd530bd0b5f489b/LICENSE) |
+
+<a id="ch-langwatch"></a>
+
+### LangWatch
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/langwatch/langwatch |
+| License | Apache-2.0; thư mục enterprise/ theo LangWatch Enterprise License; SDK MIT theo README |
+| Phiên bản đã đọc | `711539f587b3ba19606ffbe0425710842c181603` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, enterprise/LICENSE.md (đầu file); chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Nền tảng open-core cho trace/test/gateway LLM và theo dõi coding agent; tự host bằng `npx @langwatch/server` (Node.js 24+). Module enterprise/ cần giấy phép thương mại khi chạy production. |
+| Nguồn | [README.md](https://github.com/langwatch/langwatch/blob/711539f587b3ba19606ffbe0425710842c181603/README.md) · [LICENSE.md](https://github.com/langwatch/langwatch/blob/711539f587b3ba19606ffbe0425710842c181603/LICENSE.md) · [LICENSE.md](https://github.com/langwatch/langwatch/blob/711539f587b3ba19606ffbe0425710842c181603/enterprise/LICENSE.md) |
+
+<a id="ch-lighteval"></a>
+
+### Lighteval
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/huggingface/lighteval |
+| License | MIT |
+| Phiên bản đã đọc | `b97a6533bec22c4184b88526366fdf5d73d502c9` (commit 2026-10-29) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Bộ công cụ eval LLM của Hugging Face đa backend, lưu kết quả theo từng mẫu. Hoạt động vừa phải (commit cuối 29/10/2026). |
+| Nguồn | [README.md](https://github.com/huggingface/lighteval/blob/b97a6533bec22c4184b88526366fdf5d73d502c9/README.md) · [LICENSE](https://github.com/huggingface/lighteval/blob/b97a6533bec22c4184b88526366fdf5d73d502c9/LICENSE) |
+
+<a id="ch-lm-evaluation-harness"></a>
+
+### lm-evaluation-harness
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/EleutherAI/lm-evaluation-harness |
+| License | MIT |
+| Phiên bản đã đọc | `d6de81643928d653435c431bae19945d41d32520` (commit 2026-09-14) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md; chưa chạy upstream |
+| Bảo trì | low-activity (commit cuối cách hơn 2 tháng) |
+| Nhận định | Harness eval few-shot LLM của EleutherAI; README tin mới ghi plugin entry point `lm_eval.*` (9/2026), CLI có subcommand. Cài lõi không còn kèm transformers/torch. Commit cuối 14/9/2026. |
+| Nguồn | [README.md](https://github.com/EleutherAI/lm-evaluation-harness/blob/d6de81643928d653435c431bae19945d41d32520/README.md) · [LICENSE.md](https://github.com/EleutherAI/lm-evaluation-harness/blob/d6de81643928d653435c431bae19945d41d32520/LICENSE.md) |
+
+<a id="ch-mlflow"></a>
+
+### MLflow
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mlflow/mlflow |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `4de30f357566f823f6026ff21c5a222fff2e6df6` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.txt; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Nền tảng AI engineering mã nguồn mở (tracing, eval, prompt registry, AI Gateway), tuyên bố 60 triệu lượt tải/tháng **(chưa xác minh)**. Rất hoạt động. |
+| Nguồn | [README.md](https://github.com/mlflow/mlflow/blob/4de30f357566f823f6026ff21c5a222fff2e6df6/README.md) · [LICENSE.txt](https://github.com/mlflow/mlflow/blob/4de30f357566f823f6026ff21c5a222fff2e6df6/LICENSE.txt) |
+
+<a id="ch-opencompass"></a>
+
+### OpenCompass
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/open-compass/opencompass |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `443bc2b3a4191943c2b5f1ca990d8078df785973` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Nền tảng đánh giá LLM của Shanghai AI Lab kèm CompassHub/CompassRank. Commit cuối 18/11/2026. |
+| Nguồn | [README.md](https://github.com/open-compass/opencompass/blob/443bc2b3a4191943c2b5f1ca990d8078df785973/README.md) · [LICENSE](https://github.com/open-compass/opencompass/blob/443bc2b3a4191943c2b5f1ca990d8078df785973/LICENSE) |
+
+<a id="ch-openinference"></a>
+
+### OpenInference
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Arize-ai/openinference |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `1d6cf21550b91f8d136db94d4bf81a50fbdc5c16` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, python/openinference-instrumentation/.../config.py (grep dòng liên quan); chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Đặc tả OpenInference trên OpenTelemetry cho trace agent cùng bộ instrument đa framework (thư mục python/instrumentation hiện có 38 mục). Mặc định HIDE_INPUTS/HIDE_OUTPUTS là False nên nội dung vào/ra được ghi lại. |
+| Nguồn | [README.md](https://github.com/Arize-ai/openinference/blob/1d6cf21550b91f8d136db94d4bf81a50fbdc5c16/README.md) · [LICENSE](https://github.com/Arize-ai/openinference/blob/1d6cf21550b91f8d136db94d4bf81a50fbdc5c16/LICENSE) · [config.py](https://github.com/Arize-ai/openinference/blob/1d6cf21550b91f8d136db94d4bf81a50fbdc5c16/python/openinference-instrumentation/src/openinference/instrumentation/config.py) |
+
+<a id="ch-openlit"></a>
+
+### OpenLIT
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/openlit/openlit |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `463a1c1b3cd72a94fab4155efe0f28d90d87fe95` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, `sdk/python/.../__init__`.py và docker-compose.yml (grep dòng liên quan); chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Nền tảng OTel-native cho trace/eval/guardrail/GPU của agent. SDK Python mặc định capture_message_content=True; docker-compose đặt TELEMETRY_ENABLED "true"; client Next có posthog-js. |
+| Nguồn | [README.md](https://github.com/openlit/openlit/blob/463a1c1b3cd72a94fab4155efe0f28d90d87fe95/README.md) · [LICENSE](https://github.com/openlit/openlit/blob/463a1c1b3cd72a94fab4155efe0f28d90d87fe95/LICENSE) · `[__init__.py](https://github.com/openlit/openlit/blob/463a1c1b3cd72a94fab4155efe0f28d90d87fe95/sdk/python/src/openlit/__init__`.py) · [docker-compose.yml](https://github.com/openlit/openlit/blob/463a1c1b3cd72a94fab4155efe0f28d90d87fe95/docker-compose.yml) |
+
+<a id="ch-openllmetry"></a>
+
+### OpenLLMetry
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/traceloop/openllmetry |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `282cbd0909ec7433ab4629950271eddce2628170` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Bộ instrument OTel cho nhà cung cấp LLM và vector DB cùng Traceloop SDK, do Traceloop duy trì. README nói semantic conventions đã thành một phần của OpenTelemetry; việc ServiceNow mua Traceloop chưa tái kiểm. |
+| Nguồn | [README.md](https://github.com/traceloop/openllmetry/blob/282cbd0909ec7433ab4629950271eddce2628170/README.md) · [LICENSE](https://github.com/traceloop/openllmetry/blob/282cbd0909ec7433ab4629950271eddce2628170/LICENSE) |
+
+<a id="ch-openpipe-art"></a>
+
+### OpenPipe ART
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/OpenPipe/ART |
+| License | Apache-2.0 (đính chính: catalog cũ ghi None) |
+| Phiên bản đã đọc | `55b423c3004afeec3362fd35717b47356dfdd9fa` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Thư viện RL (GRPO) huấn luyện agent nhiều bước; README quảng bá dịch vụ W&B Training (Serverless RL) với số liệu lợi ích tự tuyên bố **(chưa xác minh)**. Đính chính: catalog cũ ghi license là None, thực tế repo có LICENSE Apache-2.0. |
+| Nguồn | [README.md](https://github.com/OpenPipe/ART/blob/55b423c3004afeec3362fd35717b47356dfdd9fa/README.md) · [LICENSE](https://github.com/OpenPipe/ART/blob/55b423c3004afeec3362fd35717b47356dfdd9fa/LICENSE) |
+
+<a id="ch-opentelemetry-genai-semantic-conventions"></a>
+
+### OpenTelemetry GenAI Semantic Conventions
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/open-telemetry/semantic-conventions-genai |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ae8214a8f3a98786071736855093b74621174dc4` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, docs/gen-ai/gen-ai-spans.md (grep dòng trạng thái); chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Semantic conventions GenAI (span, metric, event, MCP, provider cụ thể) tách ra repo riêng, quản lý bằng Weaver. Thuộc tính trong tài liệu span đang ở trạng thái Development; thư mục reference chứa scenarios cho kiểm tra tuân thủ. |
+| Nguồn | [README.md](https://github.com/open-telemetry/semantic-conventions-genai/blob/ae8214a8f3a98786071736855093b74621174dc4/README.md) · [LICENSE](https://github.com/open-telemetry/semantic-conventions-genai/blob/ae8214a8f3a98786071736855093b74621174dc4/LICENSE) · [gen-ai-spans.md](https://github.com/open-telemetry/semantic-conventions-genai/blob/ae8214a8f3a98786071736855093b74621174dc4/docs/gen-ai/gen-ai-spans.md) |
+
+<a id="ch-opentelemetry-weaver"></a>
+
+### OpenTelemetry Weaver
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/open-telemetry/weaver |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `df0746e9858d7c3aa45a8baf782f39928ad00ece` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Công cụ khai báo/kiểm tra/phát triển semantic conventions và live-check OTLP. README liệt kê GitHub Action weaver-live-check-start/stop, có thể fail theo ngưỡng severity. Chưa kiểm số phiên bản 0.x. |
+| Nguồn | [README.md](https://github.com/open-telemetry/weaver/blob/df0746e9858d7c3aa45a8baf782f39928ad00ece/README.md) · [LICENSE](https://github.com/open-telemetry/weaver/blob/df0746e9858d7c3aa45a8baf782f39928ad00ece/LICENSE) |
+
+<a id="ch-opik"></a>
+
+### Opik
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/comet-ml/opik |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `32de5e5414ed3ff2e2bea45c3da0bd1f3bbc9b96` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-23; CI rộng (nhiều workflow, đã liệt kê thư mục) |
+| Nhận định | Nền tảng quan sát/đánh giá LLM (trace, dataset, experiment, LLM-judge, prompt, guardrails); repo gồm backend, frontend, SDK Python/TS. Việc "không quản lý user" khi tự host là nhận định cũ, **(chưa xác minh)** trong lần đọc này. |
+| Nguồn | [README.md](https://github.com/comet-ml/opik/blob/32de5e5414ed3ff2e2bea45c3da0bd1f3bbc9b96/README.md) · [LICENSE](https://github.com/comet-ml/opik/blob/32de5e5414ed3ff2e2bea45c3da0bd1f3bbc9b96/LICENSE) |
+
+<a id="ch-overmind"></a>
+
+### Overmind
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/overmind-core/overmind |
+| License | AGPL-3.0 (platform) / MIT (SDK, thư mục overmind/) |
+| Phiên bản đã đọc | `899e0453fe718aa3ad50d369edf40d9a5398b987` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, overmind/LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-23 |
+| Nhận định | Nền tảng biến trace production thành dataset, eval và fine-tune model chuyên biệt (chạy trên Modal), có CLI/SDK và REST API. Tự host giữ dữ liệu trong mạng nhưng phụ thuộc OpenRouter/Modal; AGPL-3.0 cho phần platform cần cân nhắc nếu nhúng. |
+| Nguồn | [README.md](https://github.com/overmind-core/overmind/blob/899e0453fe718aa3ad50d369edf40d9a5398b987/README.md) · [LICENSE](https://github.com/overmind-core/overmind/blob/899e0453fe718aa3ad50d369edf40d9a5398b987/LICENSE) · [overmind/LICENSE](https://github.com/overmind-core/overmind/blob/899e0453fe718aa3ad50d369edf40d9a5398b987/overmind/LICENSE) · [pyproject.toml](https://github.com/overmind-core/overmind/blob/899e0453fe718aa3ad50d369edf40d9a5398b987/pyproject.toml) |
+
+<a id="ch-pydantic-logfire-sdk"></a>
+
+### Pydantic Logfire (SDK)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/pydantic/logfire |
+| License | MIT (SDK; server đóng mã) |
+| Phiên bản đã đọc | `d89a30f7ead97b495a8df902a82e4af75ff61627` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, logfire-sdk/LICENSE, logfire-sdk/logfire/_internal/scrubbing.py, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-23 |
+| Nhận định | SDK Python bọc OpenTelemetry cho observability; mặc định che dữ liệu nhạy cảm theo regex trong scrubbing.py. Dùng đầy đủ cần backend Pydantic Logfire đóng mã (hoặc collector OTel khác tự dựng). |
+| Nguồn | [README.md](https://github.com/pydantic/logfire/blob/d89a30f7ead97b495a8df902a82e4af75ff61627/README.md) · [LICENSE](https://github.com/pydantic/logfire/blob/d89a30f7ead97b495a8df902a82e4af75ff61627/LICENSE) · [logfire-sdk/LICENSE](https://github.com/pydantic/logfire/blob/d89a30f7ead97b495a8df902a82e4af75ff61627/logfire-sdk/LICENSE) · [logfire-sdk/logfire/_internal/scrubbing.py](https://github.com/pydantic/logfire/blob/d89a30f7ead97b495a8df902a82e4af75ff61627/logfire-sdk/logfire/_internal/scrubbing.py) · [pyproject.toml](https://github.com/pydantic/logfire/blob/d89a30f7ead97b495a8df902a82e4af75ff61627/pyproject.toml) |
+
+<a id="ch-ragas"></a>
+
+### Ragas
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vibrantlabsai/ragas |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `8c63f10d500c44efbf24fdb9e2920de2104c321c` (commit 2026-11-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-13, trái với ghi chú cũ "không commit từ 23/2/2026" |
+| Nhận định | Khung đánh giá ứng dụng RAG/LLM bằng metric (LLM-judge, sinh test set). Repo đã chuyển chủ sang vibrantlabsai nhưng vẫn có commit gần đây; pyproject khai license trỏ file LICENSE. |
+| Nguồn | [README.md](https://github.com/vibrantlabsai/ragas/blob/8c63f10d500c44efbf24fdb9e2920de2104c321c/README.md) · [LICENSE](https://github.com/vibrantlabsai/ragas/blob/8c63f10d500c44efbf24fdb9e2920de2104c321c/LICENSE) · [pyproject.toml](https://github.com/vibrantlabsai/ragas/blob/8c63f10d500c44efbf24fdb9e2920de2104c321c/pyproject.toml) |
+
+<a id="ch-rewardbench"></a>
+
+### RewardBench
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/allenai/reward-bench |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `59f6ff7005a9f9484727ca27f5383420875e5dbf` (commit 2026-10-14) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-10-14 |
+| Nhận định | Bộ đánh giá reward model (V1, V2) cùng mã chạy cả reward model phân loại lẫn LLM-as-judge qua vLLM/API. Hữu ích để chọn model judge; chạy đầy đủ cần GPU/API (chưa xác minh chi phí). |
+| Nguồn | [README.md](https://github.com/allenai/reward-bench/blob/59f6ff7005a9f9484727ca27f5383420875e5dbf/README.md) · [LICENSE](https://github.com/allenai/reward-bench/blob/59f6ff7005a9f9484727ca27f5383420875e5dbf/LICENSE) · [pyproject.toml](https://github.com/allenai/reward-bench/blob/59f6ff7005a9f9484727ca27f5383420875e5dbf/pyproject.toml) |
+
+<a id="ch-tau2-bench"></a>
+
+### tau2-bench
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/sierra-research/tau2-bench |
+| License | MIT |
+| Phiên bản đã đọc | `768f3d8fe8528b4f32a5096f9ed008ae50f48ead` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-20 |
+| Nhận định | Benchmark tool-agent-user cho hội thoại chăm sóc khách hàng, có mô phỏng người dùng bằng LLM nên cần khóa API model. Yêu cầu Python 3.12-3.13; phiên bản/tên (τ², τ³, 2.0) đã đổi nhiều, cần ghi đúng phiên bản khi trích. |
+| Nguồn | [README.md](https://github.com/sierra-research/tau2-bench/blob/768f3d8fe8528b4f32a5096f9ed008ae50f48ead/README.md) · [LICENSE](https://github.com/sierra-research/tau2-bench/blob/768f3d8fe8528b4f32a5096f9ed008ae50f48ead/LICENSE) · [pyproject.toml](https://github.com/sierra-research/tau2-bench/blob/768f3d8fe8528b4f32a5096f9ed008ae50f48ead/pyproject.toml) |

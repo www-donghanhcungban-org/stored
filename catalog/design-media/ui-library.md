@@ -65,9 +65,9 @@
 | [Arco Design (React)](../../06-ui-ux-design/README.md#ch-arco-design-react) | `arco-design/arco-design` | MIT | 5.775 | đọc tài liệu 2026-11-23 | 06 | ByteDance; |
 | [Primer React](../../06-ui-ux-design/README.md#ch-primer-react) | `primer/react` | MIT | 3.942 | đọc tài liệu 2026-11-23 | 06 | GitHub; |
 | [GOV.UK Frontend](../../06-ui-ux-design/README.md#ch-gov-uk-frontend) | `alphagov/govuk-frontend` | MIT | 1.483 | đọc tài liệu 2026-11-23 | 06 | Design system chính phủ Anh, chuẩn a11y; |
-| [Zendesk Garden](../../06-ui-ux-design/README.md) | `zendeskgarden/react-components` | Apache-2.0 | 1.110 | chưa chuẩn hóa | 06 | Design system Zendesk; |
-| [Zen (Umami)](../../06-ui-ux-design/README.md) | `umami-software/zen` | MIT | 59 | chưa chuẩn hóa | 06 | Design system của Umami: quy ước shadcn, primitive Base UI, Tailwind v4; |
-| [Zen Design System (Dizai Studio)](../../06-ui-ux-design/README.md) | `Zen-Design-System/Zen-DS` | Commercial | 0 | chưa chuẩn hóa | 06 | Design system thương mại (Việt Nam), React 19 + Figma (2.179 biến, 1.598 icon); |
+| [Zendesk Garden](../../06-ui-ux-design/README.md#ch-zendesk-garden) | `zendeskgarden/react-components` | Apache-2.0 | 1.110 | đọc tài liệu 2026-11-23 | 06 | Design system Zendesk; |
+| [Zen (Umami)](../../06-ui-ux-design/README.md#ch-zen-umami) | `umami-software/zen` | MIT | 59 | đọc tài liệu 2026-11-23 | 06 | Design system của Umami: quy ước shadcn, primitive Base UI, Tailwind v4; |
+| [Zen Design System (Dizai Studio)](../../06-ui-ux-design/README.md#ch-zen-design-system-dizai-studio) | `Zen-Design-System/Zen-DS` | Commercial (Dizai Studio Commercial Licence Agreement v1.0, | 0 | đọc tài liệu 2026-11-23 | 06 | Design system thương mại (Việt Nam), React 19 + Figma (2.179 biến, 1.598 icon); |
 
 ## Primitive headless & accessibility (`headless-primitive`, 7)
 
@@ -79,7 +79,7 @@
 | [Base UI](../../06-ui-ux-design/README.md#ch-base-ui) | `mui/base-ui` | MIT | 11.476 | đọc tài liệu 2026-11-23 | 06 | ★ 19/10/2026 (shields); |
 | [Reka UI](../../06-ui-ux-design/README.md#ch-reka-ui) | `unovue/reka-ui` | MIT | 6.969 | đọc tài liệu 2026-11-23 | 06 | Headless Vue (trước là Radix Vue), 2.11.0; |
 | [Ark UI](../../06-ui-ux-design/README.md#ch-ark-ui) | `chakra-ui/ark` | MIT | 5.486 | đọc tài liệu 2026-11-23 | 06 | Headless của đội Chakra; |
-| [Zag](../../06-ui-ux-design/README.md) | `chakra-ui/zag` | MIT | 5.246 | chưa chuẩn hóa | 06 | 51 máy trạng thái component cho 6 framework, nền của Ark UI/Chakra v3/Skeleton v5; |
+| [Zag](../../06-ui-ux-design/README.md#ch-zag) | `chakra-ui/zag` | MIT | 5.291 | đọc tài liệu 2026-11-23 | 06 | 51 máy trạng thái component cho 6 framework, nền của Ark UI/Chakra v3/Skeleton v5; |
 
 ## Component có animation (`animated-components`, 9)
 

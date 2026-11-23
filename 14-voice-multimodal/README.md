@@ -697,3 +697,247 @@ Phần này có **1 hồ sơ** từ bảng xlsx người dùng gửi ngày 2026-
 **Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`88960dc00ebb`](https://github.com/heygen-com/liveavatar-agent-skills/commit/88960dc00ebb35c128b15345a97c5aebcd89a676) (2026-09-10). Đọc README, LICENSE, package.json, `liveavatar-feedback/SKILL.md` toàn bộ, đầu `liveavatar-demo/SKILL.md` và `liveavatar-integrate/SKILL.md`; không có `.github/` nên không có CI để đọc. Chưa cài, chưa gọi API, chưa kiểm 4 repo demo.
 
 **Nguồn:** [README.md](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/README.md) · [LICENSE](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/LICENSE) · [package.json](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/package.json) · [skills/liveavatar-feedback/SKILL.md](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/skills/liveavatar-feedback/SKILL.md) · [skills/liveavatar-demo/SKILL.md](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/skills/liveavatar-demo/SKILL.md) · [skills/liveavatar-integrate/SKILL.md](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/skills/liveavatar-integrate/SKILL.md) · [metadata GitHub](https://api.github.com/repos/heygen-com/liveavatar-agent-skills) (không đọc được, 403).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-ace-step-1-5"></a>
+
+### ACE-Step 1.5
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ace-step/ACE-Step-1.5 |
+| License | MIT (mã); trọng số chưa kiểm |
+| Phiên bản đã đọc | `ca1e85fe9430179831e6bc6be790c332190a3866` (commit 2026-08-29) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-08-29) |
+| Nhận định | Mô hình sinh nhạc mã nguồn mở có CLI, API server, Gradio UI và Docker (kể cả Jetson, XPU, ROCm). Giấy phép trọng số trên Hugging Face **(chưa xác minh)** vì chưa đọc model card. |
+| Nguồn | [README.md](https://github.com/ace-step/ACE-Step-1.5/blob/ca1e85fe9430179831e6bc6be790c332190a3866/README.md) · [LICENSE](https://github.com/ace-step/ACE-Step-1.5/blob/ca1e85fe9430179831e6bc6be790c332190a3866/LICENSE) · [pyproject.toml](https://github.com/ace-step/ACE-Step-1.5/blob/ca1e85fe9430179831e6bc6be790c332190a3866/pyproject.toml) |
+
+<a id="ch-audio8-tts"></a>
+
+### Audio8 TTS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Edge0-AI/Audio8_TTS |
+| License | Apache-2.0 (mã và hai bản 0.6B); 0.1B dùng Audio8 Community License v1.0 |
+| Phiên bản đã đọc | `aef426db7229b93c8cb9a00c7c054b2b234e2979` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, NOTICE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-16) |
+| Nhận định | TTS gọn cho voice cloning zero-shot, kèm ONNX INT8 cho CPU và llama.cpp/GGUF. Chất lượng từng ngôn ngữ khác nhau theo chính README; không có ONNX cho Realistic Air; số liệu chất lượng là của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/Edge0-AI/Audio8_TTS/blob/aef426db7229b93c8cb9a00c7c054b2b234e2979/README.md) · [LICENSE](https://github.com/Edge0-AI/Audio8_TTS/blob/aef426db7229b93c8cb9a00c7c054b2b234e2979/LICENSE) · [NOTICE](https://github.com/Edge0-AI/Audio8_TTS/blob/aef426db7229b93c8cb9a00c7c054b2b234e2979/NOTICE) · [pyproject.toml](https://github.com/Edge0-AI/Audio8_TTS/blob/aef426db7229b93c8cb9a00c7c054b2b234e2979/pyproject.toml) |
+
+<a id="ch-audioseal"></a>
+
+### AudioSeal
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/facebookresearch/audioseal |
+| License | MIT |
+| Phiên bản đã đọc | `1496f7662d6aa625602bb0dcd1b4997b63b47609` (commit 2026-11-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-03) |
+| Nhận định | Watermark âm thanh định vị theo đoạn gồm generator và detector, có mã huấn luyện. Khả năng chống tấn công gỡ watermark là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/facebookresearch/audioseal/blob/1496f7662d6aa625602bb0dcd1b4997b63b47609/README.md) · [LICENSE](https://github.com/facebookresearch/audioseal/blob/1496f7662d6aa625602bb0dcd1b4997b63b47609/LICENSE) · [pyproject.toml](https://github.com/facebookresearch/audioseal/blob/1496f7662d6aa625602bb0dcd1b4997b63b47609/pyproject.toml) |
+
+<a id="ch-eva-servicenow"></a>
+
+### EVA (ServiceNow)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ServiceNow/eva |
+| License | MIT |
+| Phiên bản đã đọc | `5a79590f3fc68f5c27a844729ca5160c54e3526b` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, THIRD_PARTY_NOTICES; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-18) |
+| Nhận định | Khung đánh giá voice agent hội thoại nhiều lượt theo hai trục Accuracy và Experience, kiến trúc bot-to-bot, kèm bộ nhiễu/accent/kết nối kém (accent cần ElevenLabs caller). Kết quả 12 hệ thống là số của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/ServiceNow/eva/blob/5a79590f3fc68f5c27a844729ca5160c54e3526b/README.md) · [LICENSE](https://github.com/ServiceNow/eva/blob/5a79590f3fc68f5c27a844729ca5160c54e3526b/LICENSE) · [pyproject.toml](https://github.com/ServiceNow/eva/blob/5a79590f3fc68f5c27a844729ca5160c54e3526b/pyproject.toml) · [THIRD_PARTY_NOTICES](https://github.com/ServiceNow/eva/blob/5a79590f3fc68f5c27a844729ca5160c54e3526b/THIRD_PARTY_NOTICES) |
+
+<a id="ch-fish-audio-s2-pro"></a>
+
+### Fish Audio S2 Pro
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/fishaudio/fish-speech |
+| License | Fish Audio Community License v1.0 (mã và Drama 3; trọng số S2-Pro vẫn Research License) — khác catalog cũ "Fish Audio Research License" |
+| Phiên bản đã đọc | `0f8a12e8a651062fdee9c33a894bdccd3a8513f1` (commit 2026-10-30) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-10-30) |
+| Nhận định | Mã và model TTS Fish Audio; README khuyên dùng SGLang-Omni/vLLM-Omni để suy luận hiệu quả. Không phải mã nguồn mở theo OSI; mọi dùng thương mại phải đọc điều kiện doanh thu và cấm dịch vụ hosted. Hồ sơ cũ ghi S2 Pro là trọng tâm, nay đã lỗi thời. |
+| Nguồn | [README.md](https://github.com/fishaudio/fish-speech/blob/0f8a12e8a651062fdee9c33a894bdccd3a8513f1/README.md) · [LICENSE](https://github.com/fishaudio/fish-speech/blob/0f8a12e8a651062fdee9c33a894bdccd3a8513f1/LICENSE) · [pyproject.toml](https://github.com/fishaudio/fish-speech/blob/0f8a12e8a651062fdee9c33a894bdccd3a8513f1/pyproject.toml) |
+
+<a id="ch-flux-2"></a>
+
+### FLUX.2
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/black-forest-labs/flux2 |
+| License | Apache-2.0 (mã); trọng số tùy bản (4B Apache-2.0; 9B/dev FLUX Non-Commercial) |
+| Phiên bản đã đọc | `50fe5162777813d869182b139e83b10743caef15` (commit 2026-03-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, pyproject.toml, model_licenses/LICENSE-FLUX-NON-COMMERICAL; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-03-12) |
+| Nhận định | Mã suy luận tối thiểu cho tạo/sửa ảnh của FLUX.2 (family klein và dev). Chỉ bản 4B dùng thương mại được theo README; 9B/dev cấm thương mại và sản xuất. Commit cuối 2026-03-12 nên coi là ít hoạt động. |
+| Nguồn | [README.md](https://github.com/black-forest-labs/flux2/blob/50fe5162777813d869182b139e83b10743caef15/README.md) · [LICENSE.md](https://github.com/black-forest-labs/flux2/blob/50fe5162777813d869182b139e83b10743caef15/LICENSE.md) · [pyproject.toml](https://github.com/black-forest-labs/flux2/blob/50fe5162777813d869182b139e83b10743caef15/pyproject.toml) · [LICENSE-FLUX-NON-COMMERICAL](https://github.com/black-forest-labs/flux2/blob/50fe5162777813d869182b139e83b10743caef15/model_licenses/LICENSE-FLUX-NON-COMMERICAL) |
+
+<a id="ch-fooocus"></a>
+
+### Fooocus
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/lllyasviel/Fooocus |
+| License | GPL-3.0 |
+| Phiên bản đã đọc | `ae05379cc97bc4361ec8b4ec90193dab21be763f` (commit 2025-09-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc readme.md, LICENSE, fooocus_version.py; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2025-09-02) |
+| Nhận định | Phần mềm tạo ảnh offline dựa trên SDXL với Gradio UI. GPL-3.0 là copyleft nên cần cân nhắc khi nhúng; chỉ sửa lỗi nên không phù hợp để theo kịp model mới (README tự giới thiệu WebUI Forge, ComfyUI). |
+| Nguồn | [readme.md](https://github.com/lllyasviel/Fooocus/blob/ae05379cc97bc4361ec8b4ec90193dab21be763f/readme.md) · [LICENSE](https://github.com/lllyasviel/Fooocus/blob/ae05379cc97bc4361ec8b4ec90193dab21be763f/LICENSE) · [fooocus_version.py](https://github.com/lllyasviel/Fooocus/blob/ae05379cc97bc4361ec8b4ec90193dab21be763f/fooocus_version.py) |
+
+<a id="ch-gpt-sovits"></a>
+
+### GPT-SoVITS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/RVC-Boss/GPT-SoVITS |
+| License | MIT |
+| Phiên bản đã đọc | `6d51ffceafbf240145619af4c92408a6e54b7924` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-12) |
+| Nhận định | WebUI TTS/voice conversion few-shot (1 phút dữ liệu) kèm công cụ tách giọng, cắt dữ liệu, ASR tiếng Trung. Chưa kiểm giấy phép các model tiền huấn luyện đi kèm **(chưa xác minh)**; công nghệ nhân bản giọng cần cơ chế đồng ý và gắn nhãn. |
+| Nguồn | [README.md](https://github.com/RVC-Boss/GPT-SoVITS/blob/6d51ffceafbf240145619af4c92408a6e54b7924/README.md) · [LICENSE](https://github.com/RVC-Boss/GPT-SoVITS/blob/6d51ffceafbf240145619af4c92408a6e54b7924/LICENSE) |
+
+<a id="ch-handy"></a>
+
+### Handy
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/cjpais/Handy |
+| License | MIT |
+| Phiên bản đã đọc | `939c9573a346859016de1f9d87369a9765af1671` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-21) |
+| Nhận định | Ứng dụng desktop Tauri chuyển giọng thành văn bản hoàn toàn offline (Whisper) và dán vào ô đang chọn. Tuyên bố riêng tư/không gửi dữ liệu là của tác giả **(chưa xác minh)**; chưa đọc mã mạng. |
+| Nguồn | [README.md](https://github.com/cjpais/Handy/blob/939c9573a346859016de1f9d87369a9765af1671/README.md) · [LICENSE](https://github.com/cjpais/Handy/blob/939c9573a346859016de1f9d87369a9765af1671/LICENSE) · [package.json](https://github.com/cjpais/Handy/blob/939c9573a346859016de1f9d87369a9765af1671/package.json) |
+
+<a id="ch-jiwer"></a>
+
+### JiWER
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/jitsi/jiwer |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `2227002889f20f3fb19d523eeb322732cb67b431` (commit 2026-04-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-04-16) |
+| Nhận định | Thư viện Python nhỏ tính WER, MER, WIL, WIP, CER qua RapidFuzz. Kết quả phụ thuộc bước chuẩn hóa văn bản do người dùng định nghĩa; phù hợp cổng CI vì nhẹ. |
+| Nguồn | [README.md](https://github.com/jitsi/jiwer/blob/2227002889f20f3fb19d523eeb322732cb67b431/README.md) · [LICENSE](https://github.com/jitsi/jiwer/blob/2227002889f20f3fb19d523eeb322732cb67b431/LICENSE) · [pyproject.toml](https://github.com/jitsi/jiwer/blob/2227002889f20f3fb19d523eeb322732cb67b431/pyproject.toml) |
+
+<a id="ch-kokoro-tts"></a>
+
+### Kokoro TTS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/hexgrad/kokoro |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `dfb907a02bba8152ca444717ca5d78747ccb4bec` (commit 2025-08-06) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2025-08-06) |
+| Nhận định | Thư viện suy luận cho model TTS Kokoro-82M (open-weight, README nói trọng số Apache). Giấy phép trọng số trên Hugging Face **(chưa xác minh)**; repo đứng yên, không có CI. |
+| Nguồn | [README.md](https://github.com/hexgrad/kokoro/blob/dfb907a02bba8152ca444717ca5d78747ccb4bec/README.md) · [LICENSE](https://github.com/hexgrad/kokoro/blob/dfb907a02bba8152ca444717ca5d78747ccb4bec/LICENSE) · [pyproject.toml](https://github.com/hexgrad/kokoro/blob/dfb907a02bba8152ca444717ca5d78747ccb4bec/pyproject.toml) |
+
+<a id="ch-livekit-agents"></a>
+
+### LiveKit Agents
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/livekit/agents |
+| License | Apache-2.0 (mã); model turn detection: LiveKit Model License |
+| Phiên bản đã đọc | `8b202a2abc49db9339b2e4ae3639293e58aeabfc` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, MODEL_LICENSE, NOTICE; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-23) |
+| Nhận định | Framework Python dựng agent thời gian thực (STT-LLM-TTS/Realtime API, WebRTC, telephony, MCP, test framework). Model turn detection bị ràng buộc dùng với framework này; nhiều workflow (tests, evals, release-gate) chỉ biết tên. |
+| Nguồn | [README.md](https://github.com/livekit/agents/blob/8b202a2abc49db9339b2e4ae3639293e58aeabfc/README.md) · [LICENSE](https://github.com/livekit/agents/blob/8b202a2abc49db9339b2e4ae3639293e58aeabfc/LICENSE) · [MODEL_LICENSE](https://github.com/livekit/agents/blob/8b202a2abc49db9339b2e4ae3639293e58aeabfc/MODEL_LICENSE) · [NOTICE](https://github.com/livekit/agents/blob/8b202a2abc49db9339b2e4ae3639293e58aeabfc/NOTICE) |
+
+<a id="ch-llava-next"></a>
+
+### LLaVA-NeXT
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/LLaVA-VL/LLaVA-NeXT |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `bce12e479bc4dfee2b9c50c88137b01ff51bd483` (commit 2026-06-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-06-15) |
+| Nhận định | Mã LLaVA-NeXT/Video/Critic cho mô hình đa phương thức. Pipeline huấn luyện đã chuyển sang repo khác; dữ liệu và checkpoint chịu license gốc riêng theo README nên phải kiểm từng checkpoint. |
+| Nguồn | [README.md](https://github.com/LLaVA-VL/LLaVA-NeXT/blob/bce12e479bc4dfee2b9c50c88137b01ff51bd483/README.md) · [LICENSE](https://github.com/LLaVA-VL/LLaVA-NeXT/blob/bce12e479bc4dfee2b9c50c88137b01ff51bd483/LICENSE) · [pyproject.toml](https://github.com/LLaVA-VL/LLaVA-NeXT/blob/bce12e479bc4dfee2b9c50c88137b01ff51bd483/pyproject.toml) |
+
+<a id="ch-open-asr-leaderboard"></a>
+
+### Open ASR Leaderboard
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/huggingface/open_asr_leaderboard |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `c4696193a333f7948cb113dc93bb54f661bd9a0b` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-20) |
+| Nhận định | Khung đo ASR trung lập (short-form, long-form, multilingual) với bộ dữ liệu công khai trên Hugging Face. Tập riêng tư không công khai nên không tự tái lập được phần đó; kết quả bảng xếp hạng **(chưa xác minh)** ở đây. |
+| Nguồn | [README.md](https://github.com/huggingface/open_asr_leaderboard/blob/c4696193a333f7948cb113dc93bb54f661bd9a0b/README.md) · [LICENSE](https://github.com/huggingface/open_asr_leaderboard/blob/c4696193a333f7948cb113dc93bb54f661bd9a0b/LICENSE) |
+
+<a id="ch-picovoice-speech-to-text-benchmark"></a>
+
+### Picovoice Speech-to-Text Benchmark
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Picovoice/speech-to-text-benchmark |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `272be8f2244c10dfb2994f192bd6390982b17a5d` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-16) |
+| Nhận định | Khung nhỏ đo WER, độ trễ, bộ nhớ trên LibriSpeech, TED-LIUM, Common Voice, MLS... Dùng khung đo được, nhưng bảng kết quả trong repo là số của nhà bán **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/Picovoice/speech-to-text-benchmark/blob/272be8f2244c10dfb2994f192bd6390982b17a5d/README.md) · [LICENSE](https://github.com/Picovoice/speech-to-text-benchmark/blob/272be8f2244c10dfb2994f192bd6390982b17a5d/LICENSE) |
+
+<a id="ch-pipecat"></a>
+
+### Pipecat
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/pipecat-ai/pipecat |
+| License | BSD-2-Clause |
+| Phiên bản đã đọc | `218a7f83635639c6a36ed45747a6644fdc1eeeff` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-22) |
+| Nhận định | Framework Python dựng agent thoại và đa phương thức với pipeline plugin (hơn 70 mục trong services), có thư mục evals. Rủi ro ở cấp tích hợp: mỗi provider có license/điều khoản riêng. |
+| Nguồn | [README.md](https://github.com/pipecat-ai/pipecat/blob/218a7f83635639c6a36ed45747a6644fdc1eeeff/README.md) · [LICENSE](https://github.com/pipecat-ai/pipecat/blob/218a7f83635639c6a36ed45747a6644fdc1eeeff/LICENSE) · [pyproject.toml](https://github.com/pipecat-ai/pipecat/blob/218a7f83635639c6a36ed45747a6644fdc1eeeff/pyproject.toml) |
+
+<a id="ch-qwen3-vl"></a>
+
+### Qwen3-VL
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/QwenLM/Qwen3-VL |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `96588727e44c78b25ba03ea03b8e12f7e64fd0da` (commit 2026-01-30) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-01-30) |
+| Nhận định | Repo mã, cookbook, evaluation, finetune cho Qwen3-VL (agent GUI, 2D/3D grounding, video dài). License từng checkpoint trên Hugging Face chưa đọc **(chưa xác minh)**; theo dõi model card thay vì repo. |
+| Nguồn | [README.md](https://github.com/QwenLM/Qwen3-VL/blob/96588727e44c78b25ba03ea03b8e12f7e64fd0da/README.md) · [LICENSE](https://github.com/QwenLM/Qwen3-VL/blob/96588727e44c78b25ba03ea03b8e12f7e64fd0da/LICENSE) |

@@ -9,13 +9,13 @@
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [React](../../13-dev-stack-devops/README.md#anhkysuai-2026-11-23-identity-react) | `react/react` | MIT | 252.940 | đọc tài liệu 2026-11-23 | 13 | 11/10/2026; |
-| [Next.js](../../13-dev-stack-devops/README.md) | `vercel/next.js` | MIT | 143.315 | chưa chuẩn hóa | 13 | ; |
-| [Angular](../../13-dev-stack-devops/README.md) | `angular/angular` | MIT | 101.089 | chưa chuẩn hóa | 13 | ; |
-| [Svelte](../../13-dev-stack-devops/README.md) | `sveltejs/svelte` | MIT | 88.511 | chưa chuẩn hóa | 13 | ; |
-| [Astro](../../13-dev-stack-devops/README.md) | `withastro/astro` | MIT | 63.628 | chưa chuẩn hóa | 13 | ; |
-| [Nuxt](../../13-dev-stack-devops/README.md) | `nuxt/nuxt` | MIT | 61.005 | chưa chuẩn hóa | 13 | ; |
+| [Next.js](../../13-dev-stack-devops/README.md#ch-next-js) | `vercel/next.js` | MIT | 143.315 | đọc tài liệu 2026-11-23 | 13 | ; |
+| [Angular](../../13-dev-stack-devops/README.md#ch-angular) | `angular/angular` | MIT | 101.089 | đọc tài liệu 2026-11-23 | 13 | ; |
+| [Svelte](../../13-dev-stack-devops/README.md#ch-svelte) | `sveltejs/svelte` | MIT | 88.511 | đọc tài liệu 2026-11-23 | 13 | ; |
+| [Astro](../../13-dev-stack-devops/README.md#ch-astro) | `withastro/astro` | MIT | 63.628 | đọc tài liệu 2026-11-23 | 13 | ; |
+| [Nuxt](../../13-dev-stack-devops/README.md#ch-nuxt) | `nuxt/nuxt` | MIT | 61.005 | đọc tài liệu 2026-11-23 | 13 | ; |
 | [Gatsby](../../06-ui-ux-design/README.md#anhkysuai-gatsbyjs-gatsby) | `gatsbyjs/gatsby` | MIT | 55.916 | đọc tài liệu 2026-11-23 | 06 | Framework React cho website nội dung, kết hợp nạp dữ liệu và nhiều chế độ render. |
-| [Vue](../../13-dev-stack-devops/README.md) | `vuejs/core` | MIT | 54.880 | chưa chuẩn hóa | 13 | ; |
+| [Vue](../../13-dev-stack-devops/README.md#ch-vue) | `vuejs/core` | MIT | 54.880 | đọc tài liệu 2026-11-23 | 13 | ; |
 | [htmx](../../06-ui-ux-design/README.md#anhkysuai-bigskysoftware-htmx) | `bigskysoftware/htmx` | 0BSD | 49.655 | đọc tài liệu 2026-11-23 | 06 | Bổ sung tương tác HTTP và cập nhật từng phần giao diện thông qua thuộc tính HTML. |
 | [Meteor](../../13-dev-stack-devops/README.md#anhkysuai-meteor-meteor) | `meteor/meteor` | MIT | 44.791 | đọc tài liệu 2026-11-23 | 13 | Môi trường JavaScript tích hợp công cụ phát triển và core package cho ứng dụng nhiều nền tảng. |
 | [Dioxus](../../13-dev-stack-devops/README.md#anhkysuai-dioxuslabs-dioxus) | `DioxusLabs/dioxus` | MIT OR Apache-2.0 | 39.883 | đọc tài liệu 2026-11-23 | 13 | Framework Rust xây UI web, desktop và mobile bằng một mô hình component. |
@@ -36,7 +36,7 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [Vite](../../13-dev-stack-devops/README.md) | `vitejs/vite` | MIT | 83.642 | chưa chuẩn hóa | 13 | ; |
+| [Vite](../../13-dev-stack-devops/README.md#ch-vite) | `vitejs/vite` | MIT | 83.642 | đọc tài liệu 2026-11-23 | 13 | ; |
 | [webpack](../../13-dev-stack-devops/README.md#anhkysuai-webpack-webpack) | `webpack/webpack` | MIT | 66.023 | đọc tài liệu 2026-11-23 | 13 | Bundler JavaScript và tài nguyên web với hệ loader, plugin và chia chunk. |
 | [Babel](../../13-dev-stack-devops/README.md#anhkysuai-babel-babel) | `babel/babel` | MIT | 44.078 | đọc tài liệu 2026-11-23 | 13 | Biên dịch cú pháp JavaScript mới sang mục tiêu thực thi được lựa chọn. |
 | [Parcel](../../13-dev-stack-devops/README.md#anhkysuai-parcel-bundler-parcel) | `parcel-bundler/parcel` | MIT | 44.034 | đọc tài liệu 2026-11-23 | 13 | Build tool web tích hợp xử lý mã, CSS, hình ảnh, font và dev server. |
@@ -51,7 +51,7 @@
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [Zustand](../../06-ui-ux-design/README.md#anhkysuai-pmndrs-zustand) | `pmndrs/zustand` | MIT | 58.986 | đọc tài liệu 2026-11-23 | 06 | Quản lý trạng thái React bằng store và hook với API nhỏ. |
-| [TanStack Query](../../13-dev-stack-devops/README.md) | `TanStack/query` | MIT | 50.506 | chưa chuẩn hóa | 13 | Server state/cache; |
+| [TanStack Query](../../13-dev-stack-devops/README.md#ch-tanstack-query) | `TanStack/query` | MIT | 50.506 | đọc tài liệu 2026-11-23 | 13 | Server state/cache; |
 | [SWR](../../06-ui-ux-design/README.md#anhkysuai-vercel-swr) | `vercel/swr` | MIT | 32.495 | đọc tài liệu 2026-11-23 | 06 | React hooks quản lý lấy dữ liệu và cache theo stale-while-revalidate. |
 | [MobX](../../06-ui-ux-design/README.md#anhkysuai-mobxjs-mobx) | `mobxjs/mobx` | MIT | 28.217 | đọc tài liệu 2026-11-23 | 06 | Quản lý state qua observable và dependency tracking tự động. |
 | [React Redux](../../13-dev-stack-devops/README.md#anhkysuai-reduxjs-react-redux) | `reduxjs/react-redux` | MIT | 23.422 | đọc tài liệu 2026-11-23 | 13 | Binding chính thức kết nối Redux store với ứng dụng React. |
@@ -62,7 +62,7 @@
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [bootstrap](../../06-ui-ux-design/README.md#chuyen-bootstrap) | `twbs/bootstrap` | MIT License | 175.080 | đọc tài liệu 2026-11-18 | 06 | Framework front-end CSS/JS để dựng giao diện web responsive nhanh. |
-| [Tailwind CSS](../../13-dev-stack-devops/README.md) | `tailwindlabs/tailwindcss` | MIT | 98.125 | chưa chuẩn hóa | 13 | Utility-first CSS, v4.3.3 (13/10/2026); |
+| [Tailwind CSS](../../13-dev-stack-devops/README.md#ch-tailwind-css) | `tailwindlabs/tailwindcss` | MIT | 98.125 | đọc tài liệu 2026-11-23 | 13 | Utility-first CSS, v4.3.3 (13/10/2026); |
 | [PostCSS](../../13-dev-stack-devops/README.md#anhkysuai-postcss-postcss) | `postcss/postcss` | MIT | 28.980 | đọc tài liệu 2026-11-23 | 13 | Phân tích và biến đổi CSS qua JavaScript plugin. |
 | [Autoprefixer](../../13-dev-stack-devops/README.md#anhkysuai-postcss-autoprefixer) | `postcss/autoprefixer` | MIT | 22.197 | đọc tài liệu 2026-11-23 | 13 | Plugin PostCSS tự thêm vendor prefix theo dữ liệu Can I Use để duy trì CSS theo nhóm trình duyệt mục tiêu. |
 | [Panda CSS](../../06-ui-ux-design/README.md#ch-panda-css) | `chakra-ui/panda` | MIT | 6.259 | đọc tài liệu 2026-11-23 | 06 | CSS-in-JS không runtime, v2 lõi Rust/Oxc; |
