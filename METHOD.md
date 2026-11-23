@@ -26,6 +26,7 @@ Các mức mô tả việc đã làm trong **phạm vi hồ sơ**, không phải
 - Đọc đường gọi và điều kiện kích hoạt: có hàm chặn chưa đủ nếu callsite không gọi; default trong constructor có thể bị CLI/config ghi đè. Thiếu kết quả trong tìm kiếm không chứng minh toàn repo không có cơ chế.
 - Phân biệt HEAD nhánh mặc định, ngày commit và `pushed_at`; push có thể thuộc nhánh/tag khác. Archive=false không chứng minh dự án được bảo trì tích cực.
 - License tách code, weights, dữ liệu, assets và enterprise subdirectory. `NOASSERTION`, `null`, không có LICENSE và license hạn chế là các trạng thái khác nhau; `open_source` không thay việc đọc điều kiện ở hồ sơ.
+- **Không lọc chỉ bằng `open_source`:** schema hiện yêu cầu boolean nên không biểu diễn được trạng thái chưa rõ. Nếu `license` rỗng hoặc ghi chưa rõ, `open_source: true` không đủ chứng minh quyền sử dụng hoặc phân phối. Cần đọc nguồn ghim và điều kiện áp dụng cho đúng phần tài sản; không tự đổi một trường chưa rõ thành khẳng định là đóng hay mở.
 - Nguồn ngoài dùng để kiểm chéo: đặc tả, paper, changelog và tài liệu chính thức. Claim marketing, benchmark do nhà bán tự công bố hoặc docs nội bộ của repo khác phải được nhận diện đúng nguồn.
 - Kết luận quan trọng được người/agent khác cố bác bỏ bằng nguồn gốc. Khi sai một phần, sửa cả README lẫn catalog; giữ giới hạn thay vì làm câu văn mạnh hơn bằng suy đoán.
 
@@ -52,6 +53,20 @@ Kho giữ mô tả, kết quả và link artifact; implementation benchmark/demo
 Trước tích hợp, kiểm lại claim biến động cao: license, ownership, endpoint/telemetry, security advisory, model/provider dependency và trạng thái hỗ trợ. Có thể lọc JSON theo thiếu metadata hoặc ngày cũ để lập lượt rà; không coi việc thêm một lịch tự động là đã hoàn thành xác minh.
 
 Catalog có [JSON Schema](data/projects.schema.json); [cổng kiểm](scripts/check_catalog.py) kiểm dữ liệu cơ bản, CSV từng ô và sự tồn tại của neo nội bộ. Cổng offline không xác minh nội dung trang nguồn hoặc chứng minh ngữ nghĩa claim đúng.
+
+### Các hồ sơ cần đối chiếu giấy phép khi lọc nguồn mở
+
+Ảnh chụp catalog ngày 23/11/2026 có 14 hồ sơ mang `open_source: true` nhưng `license` rỗng hoặc
+chưa rõ: `awesome-ai-tools-for-ui`, `deployment-checklist`, `mcp-project-planner`,
+`owasp-asvs-wstg-checklist`, `babyagi`, `remotion-dev-skills`, `system-design-notes`,
+`ai-red-teaming-guide`, `andrej-karpathy-skills`, `vercel-agent-skills`,
+`marketing-apis-that-drive-roi`, `social-growth-apis-for-creators`, `s-remote`, `bird-mini-dev`.
+
+Đây là kết quả đối chiếu **trường catalog**, không phải kết luận pháp lý. Nguồn và ghi chú trong
+từng hồ sơ phân biệt trường hợp README hoặc manifest có tuyên bố license với trường hợp chưa thấy
+giấy phép; dataset, mã và tài sản khác nhau có thể có điều kiện khác nhau. `system-design-notes`
+chưa truy cập được để đối chiếu commit. Trước khi dùng lại bất kỳ hồ sơ nào, đọc điều khoản nguồn
+và kiểm phiên bản hiện hành. Ảnh chụp này không thay thế bước kiểm nguồn trực tiếp.
 
 ## 6. Phạm vi đợt nghiên cứu xưởng phần mềm 2026-11-04
 
