@@ -1,7 +1,7 @@
 {
   "meta": {
-    "snapshot_date": "2026-11-23",
-    "note": "Ngày snapshot là ngày tập hợp catalog, không phải ngày kiểm mọi hồ sơ. last_verified_at/verified_ref/verification_level/sources chỉ cập nhật cho phạm vi thực sự đã đọc. stars là snapshot có ngày/nguồn trong từng hồ sơ và không đại diện chất lượng. Đợt Anh Kỹ Sư AI 2026-11-23 bao phủ 1.295 link, thêm 691 hồ sơ, đối chiếu 4 repo đổi tên; 600 repo đã có giữ phạm vi cũ. Xem METHOD.md, SOURCES.md và data/collections/anhkysuai-kho.json.",
+    "snapshot_date": "2026-11-24",
+    "note": "Ngày snapshot là ngày tập hợp catalog, không phải ngày kiểm mọi hồ sơ. last_verified_at/verified_ref/verification_level/sources chỉ cập nhật cho phạm vi thực sự đã đọc. stars là snapshot có ngày/nguồn trong từng hồ sơ và không đại diện chất lượng. Đợt Anh Kỹ Sư AI 2026-11-23 bao phủ 1.295 link, thêm 691 hồ sơ, đối chiếu 4 repo đổi tên; 600 repo đã có giữ phạm vi cũ. Xem METHOD.md, SOURCES.md và data/collections/anhkysuai-kho.json. Ngày 2026-11-24 loại bốn hồ sơ chưa đọc lại được khỏi catalog; xem ghi chú đầu các chuyên mục 02, 12, 23.",
     "categories": [
       "coding-agent",
       "coding-tool-commercial",
@@ -74,7 +74,7 @@
       "project-management",
       "simulation"
     ],
-    "count": 2295,
+    "count": 2291,
     "schema_version": 2
   },
   "projects": [
@@ -503,18 +503,6 @@
         "https://github.com/microsoft/autogen/tree/8390985108cb1e3881f5f7297765758d8ad2540c/.github/workflows"
       ],
       "profile_anchor": "02-agent-frameworks/README.md#ch-autogen"
-    },
-    {
-      "name": "Microsoft Agent Framework",
-      "repo": "microsoft/agent-framework",
-      "category": "agent-framework",
-      "license": "MIT",
-      "stars": null,
-      "open_source": true,
-      "notes": "AutoGen + Semantic Kernel; ngày 2026-11-23 không đọc lại được (git clone https://github.com/microsoft/agent-framework thất bại: proxy phiên trả 403 'GitHub access to this repository i), giữ chưa chuẩn hóa Rà lại 2026-11-23: Tài liệu Microsoft Learn xác nhận kế thừa AutoGen và Semantic Kernel; chưa truy cập được repo tại commit xác định nên chưa xác minh mã, LICENSE hoặc cấp docs-read cho repo. Nguồn: https://learn.microsoft.com/en-us/agent-framework/overview/ (23/11/2026).",
-      "section": "02",
-      "id": "microsoft-agent-framework",
-      "profile_path": "02-agent-frameworks/README.md"
     },
     {
       "name": "CrewAI",
@@ -5563,18 +5551,6 @@
       "profile_anchor": "23-own-repos-lessons/README.md#ch-sales-hunter"
     },
     {
-      "name": "design-os-3d-blender",
-      "repo": "seeker19110/design-os-3d-blender",
-      "category": "own-repo",
-      "license": "MIT",
-      "stars": null,
-      "open_source": true,
-      "notes": "Agent điều khiển Blender (mirror jangtrinh): sentinel AGENT_OK/FAIL, verify ladder, gate hash-bound, robot arm 38 STL, 93 test headless; research image→3D; ngày 2026-11-23 không đọc lại được (git clone seeker19110/design-os-3d-blender: fatal could not read Username for https://github.com (terminal prompts disab), giữ chưa chuẩn hóa Rà lại 2026-11-23: Chưa truy cập được repo seeker19110/design-os-3d-blender qua GitHub kết nối; chưa xác minh danh tính repo hay commit. Upstream jangtrinh/design-os-3d-blender có trang công khai, chưa chứng minh hai repo trùng commit.",
-      "section": "23",
-      "id": "design-os-3d-blender",
-      "profile_path": "23-own-repos-lessons/README.md"
-    },
-    {
       "name": "Claude-Red (fork)",
       "repo": "www-donghanhcungban-org/Claude-Red",
       "category": "security",
@@ -5596,19 +5572,6 @@
         "https://github.com/www-donghanhcungban-org/Claude-Red/blob/852d41286a9d124003149b21538154a3e134ae66/.github/workflows/codeql.yml"
       ],
       "profile_anchor": "23-own-repos-lessons/README.md#ch-claude-red-fork"
-    },
-    {
-      "name": "system-design-notes",
-      "repo": "seeker19110/system-design-notes",
-      "category": "learning",
-      "license": "– (chưa rõ)",
-      "stars": null,
-      "open_source": true,
-      "notes": "Ghi chú System Design Interview (Alex Xu) 28 chương + ~25 link paper gốc; upstream/license chưa rõ; ngày 2026-11-23 không đọc lại được (git clone seeker19110/system-design-notes: fatal could not read Username for https://github.com (terminal prompts disabl), giữ chưa chuẩn hóa Rà lại 2026-11-23: Chưa truy cập được repo seeker19110/system-design-notes qua GitHub kết nối; chưa xác minh quyền, nội dung hoặc giấy phép. Không suy ra repo đã bị xóa.",
-      "section": "23",
-      "id": "system-design-notes",
-      "profile_path": "23-own-repos-lessons/README.md",
-      "subcategory": "system-design"
     },
     {
       "name": "Hermes Agent",
@@ -11804,19 +11767,6 @@
         "https://github.com/s4ntrx/Cybersecurity-Threats-Guide/blob/b3767e0707fa91ecb32c3a7994f81e792e656e51/LICENSE"
       ],
       "profile_anchor": "12-ai-security-guardrails/README.md#ch-cybersecurity-threats-guide"
-    },
-    {
-      "name": "ARTEX",
-      "repo": "Autumn-27/ARTEX",
-      "category": "security",
-      "license": "AGPL-3.0",
-      "stars": null,
-      "open_source": false,
-      "notes": "Agent pentest tự chủ (Go+Next.js); CrowdStrike gán loạt xâm nhập ngân hàng Hàn Quốc 9/2026 cho operator dùng ARTEX, tác giả gỡ và chuyển closed-source 8/10/2026 (repo gốc nay 404); ảnh người dùng gửi là mirror Hinln/ARTEX (716★/1,1k fork). Dual-use có lạm dụng thật — chỉ giữ hồ sơ cảnh báo, không tích hợp; ★ null (gốc đã gỡ), đọc 15/10/2026; ngày 2026-11-23 không đọc lại được (git clone https://github.com/Autumn-27/ARTEX thất bại: 'could not read Username' (GitHub trả như repo không công khai/kh), giữ chưa chuẩn hóa Rà lại 2026-11-23: Repo gốc Autumn-27/ARTEX trả 404 khi truy cập; không suy ra nguyên nhân hoặc trạng thái pháp lý. Hồ sơ lịch sử và cảnh báo dual-use được giữ; chưa đọc lại được commit gốc.",
-      "section": "12",
-      "id": "artex",
-      "profile_path": "12-ai-security-guardrails/README.md",
-      "subcategory": "offensive-redteam"
     },
     {
       "name": "autoskills",

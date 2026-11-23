@@ -2,7 +2,7 @@
 
 # learning — Học tập, tài liệu & tri thức
 
-[← Mục lục catalog](../README.md) · 142 hồ sơ.
+[← Mục lục catalog](../README.md) · 141 hồ sơ.
 
 ## Khóa học LLM/GenAI & deep learning (`llm-genai-course`, 35)
 
@@ -133,7 +133,7 @@
 | [ai-engineering-interview-questions](../../08-awesome-lists-learning/README.md#ch-ai-engineering-interview-questions) | `amitshekhariitbhu/ai-engineering-interview-questions` | Apache-2.0 | 3.737 | đọc tài liệu 2026-11-23 | 08 | Danh sách câu hỏi AI engineering (RAG, agent, MCP, LLMOps, eval, safety), chủ yếu link ra ngoài; |
 | [LLM Interview Questions and Answers Hub](../../08-awesome-lists-learning/README.md#ch-llm-interview-questions-and-answers-hub) | `KalyanKS-NLP/LLM-Interview-Questions-and-Answers-Hub` | Apache-2.0 | 1.113 | đọc tài liệu 2026-11-23 | 08 | 115 câu hỏi phỏng vấn LLM có câu trả lời viết sẵn; |
 
-## Thiết kế hệ thống & kiến trúc (`system-design`, 7)
+## Thiết kế hệ thống & kiến trúc (`system-design`, 6)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -143,7 +143,6 @@
 | [system-design](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-karanpratapsingh-system-design) | `karanpratapsingh/system-design` | CC BY-NC-ND 4.0 | 46.996 | đọc tài liệu 2026-11-23 | 08 | Tài liệu thiết kế hệ thống, bao quát mạng, lưu trữ, phân phối và các bài toán phỏng vấn. |
 | [system-design-academy](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-systemdesign42-system-design-academy) | `systemdesign42/system-design-academy` | CC-BY-NC-ND-4.0 | 29.830 | đọc tài liệu 2026-11-23 | 08 | Chỉ mục bài học và case study về thiết kế hệ thống, được chia theo công ty và công nghệ. |
 | [ddia](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-vonng-ddia) | `Vonng/ddia` | CC-BY-4.0 (tuyên bố repo); quyền nguyên tác cần đối chiếu | 23.989 | đọc tài liệu 2026-11-23 | 08 | Bản dịch tiếng Trung của Designing Data-Intensive Applications, gồm nội dung cho các ấn bản. |
-| [system-design-notes](../../23-own-repos-lessons/README.md) | `seeker19110/system-design-notes` | – (chưa rõ) | — | chưa chuẩn hóa | 23 | Ghi chú System Design Interview (Alex Xu) 28 chương + ~25 link paper gốc; |
 
 ## Dự án mẫu & cookbook (`project-cookbook`, 13)
 

@@ -1,5 +1,7 @@
 # 02 · Agent Frameworks & LLM Orchestration
 
+**Cập nhật 24/11/2026:** `microsoft/agent-framework` đã được loại khỏi catalog vì chưa kiểm được repo tại commit xác định. Tài liệu Microsoft Learn vẫn được giữ như nguồn tham khảo; các nhận định cũ không chứng minh trạng thái repo hiện tại.
+
 > Thư viện để xây agent/multi-agent và ứng dụng LLM. Số sao ước lượng 8–10/2026.
 
 ## 1. Bảng tổng hợp

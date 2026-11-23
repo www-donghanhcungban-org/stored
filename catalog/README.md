@@ -2,17 +2,17 @@
 
 # Catalog theo nhóm, danh mục và danh mục con
 
-Sinh từ `data/projects.json` (2295 hồ sơ) theo `data/taxonomy.json`. Mỗi dòng dẫn về hồ sơ gốc trong README chuyên mục; số sao và mức bằng chứng chỉ đúng tại ngày ghi trong hồ sơ. Sắp xếp theo ★ giảm dần; ★ để trống là chưa có số tin cậy.
+Sinh từ `data/projects.json` (2291 hồ sơ) theo `data/taxonomy.json`. Mỗi dòng dẫn về hồ sơ gốc trong README chuyên mục; số sao và mức bằng chứng chỉ đúng tại ngày ghi trong hồ sơ. Sắp xếp theo ★ giảm dần; ★ để trống là chưa có số tin cậy.
 
 Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính năng đã chắt lọc kèm cách áp dụng) và [GUIDES.md](../GUIDES.md).
 
-## AI agent, skill & điều phối (456)
+## AI agent, skill & điều phối (455)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
 | [coding-agent](ai-agents/coding-agent.md) | 26 | — |
 | [coding-tool-commercial](ai-agents/coding-tool-commercial.md) | 6 | — |
-| [agent-framework](ai-agents/agent-framework.md) | 47 | — |
+| [agent-framework](ai-agents/agent-framework.md) | 46 | — |
 | [agent-workspace](ai-agents/agent-workspace.md) | 33 | — |
 | [personal-agent](ai-agents/personal-agent.md) | 23 | — |
 | [autonomous-agent-history](ai-agents/autonomous-agent-history.md) | 3 | — |
@@ -43,12 +43,12 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [scheduling](automation/scheduling.md) | 5 | — |
 | [project-management](automation/project-management.md) | 9 | — |
 
-## Đánh giá, an toàn & chất lượng (239)
+## Đánh giá, an toàn & chất lượng (238)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
 | [eval-observability](trust/eval-observability.md) | 68 | Eval LLM/agent (23), Tracing & observability LLM (13), Benchmark (15), Giám sát hệ thống (17) |
-| [security](trust/security.md) | 63 | Quét lỗ hổng ứng dụng (5), Guardrail & an toàn agent (13), Secret & chuỗi cung ứng (17), Pentest & red team (17), Danh tính & truy cập (7), Quyền riêng tư (4) |
+| [security](trust/security.md) | 62 | Quét lỗ hổng ứng dụng (5), Guardrail & an toàn agent (13), Secret & chuỗi cung ứng (17), Pentest & red team (16), Danh tính & truy cập (7), Quyền riêng tư (4) |
 | [policy-as-code](trust/policy-as-code.md) | 4 | — |
 | [quality-gate](trust/quality-gate.md) | 75 | Test unit/integration (15), E2E & trình duyệt (3), Visual regression & accessibility (7), Phân tích tĩnh & lint (19), Eval skill/agent (6), Hợp đồng API & schema (8), Hiệu năng & tải (10), Cổng phát hành & review (7) |
 | [checklist](trust/checklist.md) | 29 | — |
@@ -97,15 +97,15 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [product-analytics](software/product-analytics.md) | 6 | — |
 | [product-research](software/product-research.md) | 4 | — |
 
-## Học tập, tài liệu & tri thức (342)
+## Học tập, tài liệu & tri thức (340)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
-| [learning](knowledge/learning.md) | 142 | Khóa học LLM/GenAI & deep learning (35), Khóa học/hướng dẫn agent & Claude Code (15), Nền tảng khoa học máy tính (14), Học ngôn ngữ lập trình (20), Phỏng vấn & thuật toán (20), Thiết kế hệ thống & kiến trúc (7), Dự án mẫu & cookbook (13), Tham chiếu thiết kế UI/UX (3), Học bảo mật (2), Lộ trình, sách & tài liệu tổng hợp (13) |
+| [learning](knowledge/learning.md) | 141 | Khóa học LLM/GenAI & deep learning (35), Khóa học/hướng dẫn agent & Claude Code (15), Nền tảng khoa học máy tính (14), Học ngôn ngữ lập trình (20), Phỏng vấn & thuật toán (20), Thiết kế hệ thống & kiến trúc (6), Dự án mẫu & cookbook (13), Tham chiếu thiết kế UI/UX (3), Học bảo mật (2), Lộ trình, sách & tài liệu tổng hợp (13) |
 | [awesome-list](knowledge/awesome-list.md) | 84 | Skill, plugin & agent (15), MCP server (3), Thiết kế & UI (12), Hệ sinh thái ngôn ngữ/framework (13), Dữ liệu & ML (10), DevOps & sysadmin (5), Bảo mật (4), Marketing & tăng trưởng (4), Tài nguyên chung & xếp hạng (18) |
 | [docs](knowledge/docs.md) | 82 | Site tài liệu (17), Kiểm tài liệu (lint, link, chính tả) (6), Tài liệu cho agent (llms.txt, context) (5), Sơ đồ & hình vẽ (5), Slide & trình chiếu (7), Ghi chú & knowledge base (14), Office, bảng tính & PDF (8), Soạn thảo & xuất bản (Markdown, Typst) (11), Ứng dụng năng suất (9) |
 | [vietnam](knowledge/vietnam.md) | 18 | — |
-| [own-repo](knowledge/own-repo.md) | 16 | — |
+| [own-repo](knowledge/own-repo.md) | 15 | — |
 
 ## Kỹ thuật công trình & không gian (37)
 

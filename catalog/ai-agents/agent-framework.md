@@ -2,7 +2,7 @@
 
 # agent-framework — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 47 hồ sơ.
+[← Mục lục catalog](../README.md) · 46 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -52,4 +52,3 @@
 | [agency-swarm](../../02-agent-frameworks/README.md#ch-agency-swarm) | `VRSEN/agency-swarm` | MIT | 4.641 | đọc tài liệu 2026-11-23 | 02 | Agency = agent có vai trò + luồng giao tiếp định sẵn. |
 | [OpenOPC](../../02-agent-frameworks/README.md#ch-openopc) | `HKUDS/OpenOPC` | MIT | 2.100 | đọc tài liệu 2026-11-23 | 02 | One-person company: tự dựng org chart, uỷ việc cho Claude Code/Codex/Cursor; |
 | [OpenCompany (ex-MachinaOS)](../../02-agent-frameworks/README.md#ch-opencompany-ex-machinaos) | `zeenie-ai/OpenCompany` | MIT | 1.108 | đọc tài liệu 2026-11-23 | 02 | App desktop/self-host 'nhân viên AI' = lead + specialist trên canvas React Flow; |
-| [Microsoft Agent Framework](../../02-agent-frameworks/README.md) | `microsoft/agent-framework` | MIT | — | chưa chuẩn hóa | 02 | AutoGen + Semantic Kernel; |
