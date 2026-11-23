@@ -2,7 +2,7 @@
 
 # security — Đánh giá, an toàn & chất lượng
 
-[← Mục lục catalog](../README.md) · 63 hồ sơ.
+[← Mục lục catalog](../README.md) · 62 hồ sơ.
 
 ## Quét lỗ hổng ứng dụng (`appsec-scanner`, 5)
 
@@ -54,7 +54,7 @@
 | [OWASP Dependency-Track](../../31-software-supply-chain-security/README.md#factory-2026-11-04-owasp-dependency-track) | `DependencyTrack/dependency-track` | Apache-2.0 | — | đọc mã 2026-11-04 | 31 | Quản trị rủi ro component theo SBOM, phân tích bất đồng bộ; |
 | [trufflehog](../../12-ai-security-guardrails/README.md#ch-trufflehog) | `trufflesecurity/trufflehog` | AGPL-3.0 | — | đọc tài liệu 2026-11-23 | 12 | secret scan. |
 
-## Pentest & red team (`offensive-redteam`, 17)
+## Pentest & red team (`offensive-redteam`, 16)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -73,7 +73,6 @@
 | [PyRIT](../../12-ai-security-guardrails/README.md#ch-pyrit) | `microsoft/PyRIT` | MIT | 4.718 | đọc tài liệu 2026-11-23 | 12 | Red-team AI tạo sinh; |
 | [DeepTeam](../../17-prompt-engineering/README.md#ch-deepteam) | `confident-ai/deepteam` | Apache-2.0 | 3.120 | đọc tài liệu 2026-11-23 | 17 | Red-team LLM/agent 50+ lỗ hổng; |
 | [MITRE ATLAS Data](../../12-ai-security-guardrails/README.md#ch-mitre-atlas-data) | `mitre-atlas/atlas-data` | Apache-2.0 | 203 | đọc tài liệu 2026-11-23 | 12 | Dữ liệu ATLAS YAML phát hành hằng tháng (2026.10: 16 tactic, 129 technique, 77 case study); |
-| [ARTEX](../../12-ai-security-guardrails/README.md) | `Autumn-27/ARTEX` | AGPL-3.0 | — | chưa chuẩn hóa | 12 | Agent pentest tự chủ (Go+Next.js); |
 | [Claude-Red (fork)](../../23-own-repos-lessons/README.md#ch-claude-red-fork) | `www-donghanhcungban-org/Claude-Red` | MIT | — | đọc tài liệu 2026-11-23 | 23 | Fork SnailSploit/claude-red v0.3.0: 78 SKILL.md red-team dual-use, manifest claude-skills.json; |
 
 ## Danh tính & truy cập (`identity-access`, 7)

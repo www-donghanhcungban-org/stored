@@ -2,7 +2,7 @@
 
 # own-repo — Học tập, tài liệu & tri thức
 
-[← Mục lục catalog](../README.md) · 16 hồ sơ.
+[← Mục lục catalog](../README.md) · 15 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -15,7 +15,6 @@
 | [X-Studio](../../23-own-repos-lessons/README.md#ch-x-studio) | `www-donghanhcungban-org/X-Studio` | Apache-2.0 | 0 | đọc tài liệu 2026-11-23 | 23 | Fork X-Agents cho xưởng video: 14 agent/24 skill, FFmpeg + edge-tts + Playwright, render cache SHA-256, MotionSpec, qc.py; |
 | [Xgold](../../23-own-repos-lessons/README.md#ch-xgold) | `www-donghanhcungban-org/Xgold` | MIT | 0 | đọc tài liệu 2026-11-23 | 23 | App giá vàng/bạc (Next 16, Supabase): 15 ADR, Playwright CI 4 worker, Lighthouse CI, 3-tier orchestration. |
 | [case-study-ft41](../../23-own-repos-lessons/README.md#ch-case-study-ft41) | `www-donghanhcungban-org/case-study-ft41` | MIT | — | đọc tài liệu 2026-11-23 | 23 | Next.js 16 áp khung: CI/DevSecOps đầy đủ, Dependabot gom nhóm + WIP cap, model-rates.json; |
-| [design-os-3d-blender](../../23-own-repos-lessons/README.md) | `seeker19110/design-os-3d-blender` | MIT | — | chưa chuẩn hóa | 23 | Agent điều khiển Blender (mirror jangtrinh): sentinel AGENT_OK/FAIL, verify ladder, gate hash-bound, robot arm 38 STL, 93 test headless; |
 | [Hermes-Agents](../../23-own-repos-lessons/README.md#ch-hermes-agents) | `donghanhcungban/hermes-agents` | MIT | — | đọc tài liệu 2026-11-23 | 23 | Gói mở rộng Hermes Agent: provider Antigravity/claude -p/Codex CLI, engineering-workbench, grill-tab, 112 SKILL.md (vendor có provenance + tự viết: evidence-driven-deliv… |
 | [Plugin-4-Hermes](../../23-own-repos-lessons/README.md#ch-plugin-4-hermes) | `seeker19110/Plugin-4-Hermes` | MIT | — | đọc tài liệu 2026-11-23 | 23 | Plugin model-provider cho Hermes Agent qua OAuth Google Antigravity; |
 | [projects-template](../../23-own-repos-lessons/README.md#ch-projects-template) | `seeker19110/projects-template` | MIT | — | đọc tài liệu 2026-11-23 | 23 | Khung drop-in cho Claude Code/Codex/Gemini/Cursor: hook lifecycle có test, ba cổng máy cho /auto-complete (PR #287), 3-tier orchestration 2 trục, adopt-from-outside 3 cộ… |
