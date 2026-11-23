@@ -683,3 +683,77 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | active |
 | Nhận định | Danh mục MCP server chính chủ chia theo lĩnh vực, ưu tiên server của chính hãng sản phẩm, link docs của nhà cung cấp khi không có repo. Không có kiểm tự động link hay trạng thái archive, nên mục có thể lỗi thời; "chỉ server tin được" là tuyên bố của người duy trì **(chưa xác minh)**. |
 | Nguồn | [README.md](https://github.com/VoltAgent/official-mcp-servers/blob/e71f99b3e8c5283ca729c9716cd0b4cbbb7098e3/README.md) · [LICENSE](https://github.com/VoltAgent/official-mcp-servers/blob/e71f99b3e8c5283ca729c9716cd0b4cbbb7098e3/LICENSE) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-archestra"></a>
+
+### Archestra
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/archestra-ai/archestra |
+| License | LICENSE.md điều phối song license: AGPL-3.0-only (mặc định, LICENSE_AGPL) và LicenseRef-Archestra-Enterprise (LICENSE_ENTERPRISE) cho file/vùng đánh dấu; Dagger SDK vendor MIT |
+| Phiên bản đã đọc | `47d935ff4f6435d3f6a843b036a6f786cbc27d97` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, LICENSE.md, LICENSE_ENTERPRISE, guardrails/index.md, openappa-architecture.md, enterprise-tier.ts, guardrails-policy.ts, config.ts và on-pull-requests.yml; chưa chạy upstream |
+| Khoảng trống lấp | MCP gateway/registry/bảo mật: gateway kèm guardrail theo phiên chống lethal trifecta |
+| Cơ chế đáng học | - Mỗi phiên qua LLM proxy mang nhãn (trust, audience) chỉ chặt thêm; mỗi tool khai báo `delta` và `requires`, gọi không đủ nhãn thì bị chặn kèm các remedy: duyệt người, sanitizer, `attest-schema`, chấp nhận hạ nhãn (docs/pages/agents/guardrails/index.md).<br>- Danh tính thực thi lấy từ metadata client, không từ tham số do model viết; kết quả tool ngoài coi là không tin cậy (docs/openappa-architecture.md).<br>- Chính sách lưu theo revision trong PostgreSQL với kiểm expectedRevision và khóa giao dịch (models/guardrails-policy.ts).<br>- MCP gateway dùng OAuth và On-Behalf-Of để tool chạy với danh nghĩa người dùng (README, chưa đọc mã triển khai phần này). |
+| Tiêu chí và cách kiểm | Có workflow on-pull-requests.yml với license-check (`pnpm license-check --ci`), test đơn vị backend, e2e, openappa-native-tests, helm lint; tôi chỉ đọc danh sách job và vài bước, chưa đọc từng job. Hiệu quả chặn của guardrail chưa tự kiểm. |
+| Giới hạn và rủi ro | License song song: LICENSE.md quy định thứ tự (header SPDX, vùng snippet, đường dẫn `ee/` hoặc `*.ee.*`, mặc định AGPL); tôi đếm 483 file trong platform/backend/src mang header Enterprise. AGPL có điều khoản mạng; Enterprise cấm sao chép, phân phối, và điều khoản Small Team Clause dưới 30 người dùng toàn công ty (chưa đọc hết điều khoản). Guardrail mặc định tắt (`guardrails_deployment.enabled`) và ghi beta. Analytics (PostHog) và báo lỗi (Sentry) mặc định bật trên image production, tắt bằng `ARCHESTRA_ANALYTICS=disabled` hoặc khi kích hoạt license Enterprise (config.ts, docs cấu hình). Chạy cần mount docker.sock trong quickstart. |
+| So với | agentgateway, cisco-mcp-scanner, agent-scan, portkey-gateway |
+| Nguồn | [README.md](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/README.md) · [LICENSE.md](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/LICENSE.md) · [LICENSE_ENTERPRISE](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/LICENSE_ENTERPRISE) · [openappa-architecture.md](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/docs/openappa-architecture.md) · [index.md](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/docs/pages/agents/guardrails/index.md) · [enterprise-tier.ts](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/platform/backend/src/enterprise-tier.ts) · [guardrails-policy.ts](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/platform/backend/src/models/guardrails-policy.ts) · [config.ts](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/platform/backend/src/config.ts) · [on-pull-requests.yml](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/.github/workflows/on-pull-requests.yml) |
+
+<a id="nt-mcphub"></a>
+
+### MCPHub
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/samanhappy/mcphub |
+| License | Apache-2.0 (LICENSE) |
+| Phiên bản đã đọc | `73217631986397af317b09a61985f4c685155a85` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, toolPolicy.ts, toolPolicyService.ts, authorizationService.ts, mcpTools.ts (callsite), User.ts và ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | MCP gateway/registry/bảo mật: một endpoint cho nhiều MCP server, kèm phân quyền theo người và theo khóa |
+| Cơ chế đáng học | - `evaluateToolPolicy`: deny khớp thì chặn; nếu có rule allow áp dụng cho chủ thể mà không rule nào khớp thì chặn; nếu không có rule áp dụng thì cho phép (src/utils/toolPolicy.ts).<br>- Callsite thật: `mcpTools.ts` gọi `getToolPolicy` rồi `policy.authorize(serverName, toolName)` khi gọi tool; smart routing và OpenAPI cũng lọc theo cùng policy (grep callsite).<br>- Quyền dùng server (discover, invoke) tách khỏi quyền đọc cấu hình, dùng chung luật visibility (authorizationService.ts).<br>- Mật khẩu admin: lấy từ `ADMIN_PASSWORD`, nếu không thì sinh ngẫu nhiên và in log; chỉ ở NODE_ENV=development mới là `admin123` (src/models/User.ts). |
+| Tiêu chí và cách kiểm | ci.yml chạy `pnpm docs:validate`, lint, build backend, typecheck frontend và `pnpm test:ci` (đã đọc); có test toolCallGuard. Tôi chưa đọc nội dung các test đó. |
+| Giới hạn và rủi ro | Mặc định mở: người dùng chưa có luật thì mọi tool được phép (toolPolicy.ts); phải tự viết luật deny/allow. Phiên bản package ghi `dev`. Có chế độ hosted và client tới dịch vụ ngoài (cloudService, market) nhưng tôi chưa đọc xem dữ liệu nào rời máy. Rủi ro chung của gateway gộp: một token mở nhiều server, cần kiểm scope. README mô tả smart routing dùng embedding (chưa xác minh nhà cung cấp embedding mặc định). |
+| So với | agentgateway, archestra, fastmcp, cisco-mcp-scanner |
+| Nguồn | [README.md](https://github.com/samanhappy/mcphub/blob/73217631986397af317b09a61985f4c685155a85/README.md) · [LICENSE](https://github.com/samanhappy/mcphub/blob/73217631986397af317b09a61985f4c685155a85/LICENSE) · [toolPolicy.ts](https://github.com/samanhappy/mcphub/blob/73217631986397af317b09a61985f4c685155a85/src/utils/toolPolicy.ts) · [toolPolicyService.ts](https://github.com/samanhappy/mcphub/blob/73217631986397af317b09a61985f4c685155a85/src/services/toolPolicyService.ts) · [authorizationService.ts](https://github.com/samanhappy/mcphub/blob/73217631986397af317b09a61985f4c685155a85/src/services/authorizationService.ts) · [mcpTools.ts](https://github.com/samanhappy/mcphub/blob/73217631986397af317b09a61985f4c685155a85/src/services/mcpTools.ts) · [User.ts](https://github.com/samanhappy/mcphub/blob/73217631986397af317b09a61985f4c685155a85/src/models/User.ts) · [ci.yml](https://github.com/samanhappy/mcphub/blob/73217631986397af317b09a61985f4c685155a85/.github/workflows/ci.yml) |
+
+<a id="nt-a2a-python"></a>
+
+### A2A Python SDK
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/a2aproject/a2a-python |
+| License | Apache-2.0 (LICENSE) |
+| Phiên bản đã đọc | `eaa71bcaffaae8b6cb3606b797ece4f7ae0dd554` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, agent_executor.py, auth/user.py, pyproject.toml, run-tck.yaml và unit-tests.yml; chưa chạy upstream |
+| Khoảng trống lấp | A2A và interop: SDK phía triển khai còn thiếu cạnh a2a, a2a-tck, a2a-inspector đã có |
+| Cơ chế đáng học | - `AgentExecutor.execute/cancel`: framework bảo đảm không gọi đồng thời cho một request, exception thành TASK_STATE_ERROR, executor phát TaskStatusUpdateEvent tới trạng thái cuối hoặc bị gián đoạn (agent_execution/agent_executor.py).<br>- Hai mô hình auth-required: trong băng (execute trả về, framework gọi lại khi có phản hồi) và ngoài băng (giữ execute chờ nhà cung cấp xác thực) (agent_executor.py).<br>- Tách transport, task store (in-memory, SQL), push notification store; compat 0.3 nằm trong `src/a2a/compat`.<br>- `a2a.auth.user.User` trừu tượng (is_authenticated, user_name) cho tích hợp middleware của ứng dụng. |
+| Tiêu chí và cách kiểm | run-tck.yaml chạy a2a-tck bản 0.3.0.beta3 trên Python 3.10 và 3.13 với SUT cục bộ; unit-tests.yml chạy pytest kèm `--cov-fail-under=88` (đã mở đọc). Chuẩn do TCK quyết định, tôi chưa chạy. |
+| Giới hạn và rủi ro | Cần chọn đúng phiên bản: README nói spec 1.0 và có hướng dẫn nâng từ 0.3 lên 1.0, các mẫu a2a-samples ghim a2a-sdk từ >=0.3.0 đến >=1.1.0 nên không đồng đều. TCK ghim beta, không phải bản chính thức (theo tên biến). Việc ủy quyền theo skill hay theo task không có trong SDK. License Apache-2.0. |
+| So với | a2a (chuẩn), a2a-tck, a2a-inspector, fastmcp (SDK phía MCP) |
+| Nguồn | [README.md](https://github.com/a2aproject/a2a-python/blob/eaa71bcaffaae8b6cb3606b797ece4f7ae0dd554/README.md) · [LICENSE](https://github.com/a2aproject/a2a-python/blob/eaa71bcaffaae8b6cb3606b797ece4f7ae0dd554/LICENSE) · [agent_executor.py](https://github.com/a2aproject/a2a-python/blob/eaa71bcaffaae8b6cb3606b797ece4f7ae0dd554/src/a2a/server/agent_execution/agent_executor.py) · [user.py](https://github.com/a2aproject/a2a-python/blob/eaa71bcaffaae8b6cb3606b797ece4f7ae0dd554/src/a2a/auth/user.py) · [pyproject.toml](https://github.com/a2aproject/a2a-python/blob/eaa71bcaffaae8b6cb3606b797ece4f7ae0dd554/pyproject.toml) · [run-tck.yaml](https://github.com/a2aproject/a2a-python/blob/eaa71bcaffaae8b6cb3606b797ece4f7ae0dd554/.github/workflows/run-tck.yaml) · [unit-tests.yml](https://github.com/a2aproject/a2a-python/blob/eaa71bcaffaae8b6cb3606b797ece4f7ae0dd554/.github/workflows/unit-tests.yml) |
+
+<a id="nt-a2a-samples"></a>
+
+### A2A Samples
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/a2aproject/a2a-samples |
+| License | Apache-2.0 (LICENSE) |
+| Phiên bản đã đọc | `b7a2a689ff3a86e756386aa488e3f7b02a355590` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, sign_and_verify_agent_card/`__main__`.py, headless_agent_auth/oauth2_middleware.py, pyproject.toml và linter.yaml; chưa chạy upstream |
+| Khoảng trống lấp | A2A và interop: ví dụ chạy được nhiều framework và mẫu bảo mật cho agent card |
+| Cơ chế đáng học | - Ký agent card: sinh cặp khóa EC P-256, xuất `public_keys.json`, dùng `create_agent_card_signer` của SDK (sign_and_verify_agent_card/`__main__`.py).<br>- Middleware Starlette đọc `security` trong AgentCard, lấy scope của yêu cầu đầu tiên, xác thực bearer token qua Auth0 (`verify_access_token`, domain và audience từ biến môi trường) (headless_agent_auth/oauth2_middleware.py).<br>- Tách extension A2A thành thư mục riêng: agp, secure-passport (có test_secure_passport.py), timestamp, traceability. |
+| Tiêu chí và cách kiểm | Workflow duy nhất là linter.yaml (Super-Linter slim, nhiều linter Python tắt, chỉ lint file đổi). Không có test chung cho mẫu; chỉ vài extension có test riêng (agp, secure-passport; chưa đọc). |
+| Giới hạn và rủi ro | Mã mẫu, không phải thư viện: sample auth tự ghi chú chỉ minh họa (scheme trong `security_schemes` không được xác thực), middleware cho qua khi agent card không khai security. Ghim a2a-sdk không đồng đều (>=0.3.0, >=1.0.0a1, >=1.1.0), nên nhiều mẫu có thể chưa chạy với SDK 1.x (chưa kiểm). Khóa ký sinh mới mỗi lần chạy, chỉ phù hợp demo. |
+| So với | a2a-python (SDK), a2a-inspector, a2a-tck |
+| Nguồn | [README.md](https://github.com/a2aproject/a2a-samples/blob/b7a2a689ff3a86e756386aa488e3f7b02a355590/README.md) · [LICENSE](https://github.com/a2aproject/a2a-samples/blob/b7a2a689ff3a86e756386aa488e3f7b02a355590/LICENSE) · [\_\_main\_\_.py](https://github.com/a2aproject/a2a-samples/blob/b7a2a689ff3a86e756386aa488e3f7b02a355590/samples/python/agents/sign_and_verify_agent_card/`__main__`.py) · [oauth2_middleware.py](https://github.com/a2aproject/a2a-samples/blob/b7a2a689ff3a86e756386aa488e3f7b02a355590/samples/python/agents/headless_agent_auth/oauth2_middleware.py) · [pyproject.toml](https://github.com/a2aproject/a2a-samples/blob/b7a2a689ff3a86e756386aa488e3f7b02a355590/samples/python/pyproject.toml) · [linter.yaml](https://github.com/a2aproject/a2a-samples/blob/b7a2a689ff3a86e756386aa488e3f7b02a355590/.github/workflows/linter.yaml) |

@@ -671,3 +671,94 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | Commit mới nhất 2026-11-20 |
 | Nhận định | Benchmark tool-agent-user cho hội thoại chăm sóc khách hàng, có mô phỏng người dùng bằng LLM nên cần khóa API model. Yêu cầu Python 3.12-3.13; phiên bản/tên (τ², τ³, 2.0) đã đổi nhiều, cần ghi đúng phiên bản khi trích. |
 | Nguồn | [README.md](https://github.com/sierra-research/tau2-bench/blob/768f3d8fe8528b4f32a5096f9ed008ae50f48ead/README.md) · [LICENSE](https://github.com/sierra-research/tau2-bench/blob/768f3d8fe8528b4f32a5096f9ed008ae50f48ead/LICENSE) · [pyproject.toml](https://github.com/sierra-research/tau2-bench/blob/768f3d8fe8528b4f32a5096f9ed008ae50f48ead/pyproject.toml) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-evals-skills"></a>
+
+### Evals Skills (Parlance Labs)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ai-evals-course/evals-skills |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `80d5f7b0127c7572ed9e9339937adbfd7240ffeb` (commit 2026-09-24) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, skills/validate-evaluator/SKILL.md, .claude-plugin/plugin.json; chưa chạy upstream |
+| Khoảng trống lấp | Quy trình eval sản phẩm LLM và hiệu chuẩn LLM-as-judge (không phải eval skill) |
+| Cơ chế đáng học | - `skills/validate-evaluator/SKILL.md`: tách 10-20% train (nguồn few-shot), 40-45% dev, 40-45% test chạy đúng một lần; mục tiêu TPR và TNR trên 90%, tối thiểu 80%.<br>- Cùng file: hiệu chỉnh tỷ lệ pass thật `theta = (p_obs + TNR - 1) / (TPR + TNR - 1)`, bootstrap 2000 lần, cảnh báo mẫu dưới khoảng 60.<br>- `skills/error-discovery` (chỉ đọc mô tả ở README, chưa mở SKILL.md; chưa xác minh): dựng app HTML một file để người gán nhãn ghi chú tự do rồi gom thành failure mode; bắt buộc phân tích lỗi trước khi viết eval.<br>- Anti-pattern nêu rõ: dùng accuracy thô, rò rỉ dev/test vào few-shot, báo điểm không kèm khoảng tin cậy. |
+| Tiêu chí và cách kiểm | Ngưỡng nằm trong văn bản skill (TPR và TNR 80/90%, khoảng 100 nhãn cân bằng 50/50, nhãn từ chuyên gia miền); không có script kiểm tự động, không CI, không test. Kết quả phụ thuộc agent làm đúng hướng dẫn. |
+| Giới hạn và rủi ro | Không có CI hay kiểm tự động; số liệu và ví dụ trong skill là hướng dẫn, chưa xác minh bằng chạy. Gợi ý ghim phiên bản model judge là đúng thực hành nhưng chỉ ở mức văn bản. Skill phục vụ khóa học thương mại của tác giả (liên kết khuyến mãi trong README); nội dung vẫn Apache-2.0. Phạm vi dữ liệu: người dùng phải tự có trace và nhãn. |
+| So với | deepeval (thư viện eval chạy được), openevals, llm-evaluation-guidebook (tài liệu học) |
+| Nguồn | [README.md](https://github.com/ai-evals-course/evals-skills/blob/80d5f7b0127c7572ed9e9339937adbfd7240ffeb/README.md) · [LICENSE](https://github.com/ai-evals-course/evals-skills/blob/80d5f7b0127c7572ed9e9339937adbfd7240ffeb/LICENSE) · [SKILL.md](https://github.com/ai-evals-course/evals-skills/blob/80d5f7b0127c7572ed9e9339937adbfd7240ffeb/skills/validate-evaluator/SKILL.md) · [plugin.json](https://github.com/ai-evals-course/evals-skills/blob/80d5f7b0127c7572ed9e9339937adbfd7240ffeb/.claude-plugin/plugin.json) |
+
+<a id="nt-ragas-rag-metrics"></a>
+
+### Ragas (số liệu RAG tách retrieval và answer)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/explodinggradients/ragas |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `8c63f10d500c44efbf24fdb9e2920de2104c321c` (commit 2026-11-13) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, pyproject.toml, src/ragas/_analytics.py; chưa chạy upstream |
+| Khoảng trống lấp | Đánh giá RAG tách retrieval và answer (đã có hồ sơ `ragas` ở mục 07; mục này bổ sung góc đọc code) |
+| Cơ chế đáng học | - `metrics/collections/faithfulness/metric.py`: tách câu trả lời thành các câu nguyên tử rồi gọi LLM làm NLI so với ngữ cảnh; điểm = số câu được ngữ cảnh hỗ trợ chia tổng số câu; trả NaN nếu không sinh được câu nào.<br>- `context_precision/metric.py`: LLM phán từng ngữ cảnh truy xuất có hữu ích không, rồi tính average precision theo thứ tự xếp hạng (`_calculate_average_precision`), nên thưởng khi ngữ cảnh đúng đứng trước; có biến thể có và không có reference.<br>- `context_recall/util.py`: LLM phân loại từng câu trong reference là `attributed` (1) hoặc không (0) so với ngữ cảnh, tức đo truy xuất có phủ đủ đáp án chuẩn.<br>- Đầu vào bắt buộc và kiểm trước (`user_input`, `response`, `retrieved_contexts`); LLM gọi qua lớp `instructor` với đầu ra có cấu trúc pydantic. |
+| Tiêu chí và cách kiểm | Điểm là tỷ lệ 0–1 do LLM phán nên phụ thuộc model chấm và prompt; không có ngưỡng đạt mặc định, người dùng tự đặt. Repo có `tests/unit` chạy trong `.github/workflows/ci.yaml` (đã mở), đặt `RAGAS_DO_NOT_TRACK=true` khi chạy test. Test là kiểm máy trên logic, không chứng minh metric tương quan với đánh giá của người. |
+| Giới hạn và rủi ro | Telemetry: `_analytics.py` gửi sự kiện (user id ngẫu nhiên lưu ở thư mục dữ liệu người dùng, tên metric, số dòng, ngôn ngữ, loại LLM) tới `https://t.explodinggradients.com` mặc định; tắt bằng biến môi trường `RAGAS_DO_NOT_TRACK=true`. Domain đã cũ so với tên tổ chức mới. Phụ thuộc nặng (langchain, openai, datasets). Có hai thế hệ API (`metrics` cũ và `metrics/collections` mới) nên dễ lẫn khi đọc tài liệu cũ. Metric LLM-as-judge: ngôn ngữ ngoài tiếng Anh cần điều chỉnh prompt (tham số `language` trong `prompt/base.py`), chất lượng với tiếng Việt chưa xác minh. |
+| So với | `ragas` (hồ sơ có sẵn, mục 07), `deepeval`, `lighteval`; `docling` khi cần đo khâu trích xuất tài liệu trước RAG. |
+| Nguồn | [README.md](https://github.com/explodinggradients/ragas/blob/8c63f10d500c44efbf24fdb9e2920de2104c321c/README.md) · [LICENSE](https://github.com/explodinggradients/ragas/blob/8c63f10d500c44efbf24fdb9e2920de2104c321c/LICENSE) · [pyproject.toml](https://github.com/explodinggradients/ragas/blob/8c63f10d500c44efbf24fdb9e2920de2104c321c/pyproject.toml) · [_analytics.py](https://github.com/explodinggradients/ragas/blob/8c63f10d500c44efbf24fdb9e2920de2104c321c/src/ragas/_analytics.py) · [metric.py](https://github.com/explodinggradients/ragas/blob/8c63f10d500c44efbf24fdb9e2920de2104c321c/src/ragas/metrics/collections/faithfulness/metric.py) · [metric.py](https://github.com/explodinggradients/ragas/blob/8c63f10d500c44efbf24fdb9e2920de2104c321c/src/ragas/metrics/collections/context_precision/metric.py) · [util.py](https://github.com/explodinggradients/ragas/blob/8c63f10d500c44efbf24fdb9e2920de2104c321c/src/ragas/metrics/collections/context_recall/util.py) · [ci.yaml](https://github.com/explodinggradients/ragas/blob/8c63f10d500c44efbf24fdb9e2920de2104c321c/.github/workflows/ci.yaml) |
+
+<a id="nt-wildclawbench"></a>
+
+### WildClawBench
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/InternLM/WildClawBench |
+| License | MIT |
+| Phiên bản đã đọc | `3d22dcf20b2cba1b56f2784cc0265ef566ef6402` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, eval/run_batch.py, tasks/06_Safety_Alignment/06_Safety_Alignment_task_1_file_overwrite.md, tasks/task0_template.md; chưa chạy upstream |
+| Khoảng trống lấp | Đánh giá agent/benchmark: bộ tác vụ end-to-end có chấm tự động, so được harness với nhau |
+| Cơ chế đáng học | - Mỗi tác vụ là một file Markdown (YAML đầu file, Prompt, Expected Behavior, Grading Criteria, và hàm `grade()` bằng Python); mẫu ở `tasks/task0_template.md`.<br>- `eval/run_batch.py` chạy từng tác vụ trong container riêng và chỉ `docker cp` thư mục `gt` (ground truth) vào sau khi agent xong, rồi mới chạy `run_grading` (hàm `grade_the_task`).<br>- Tác vụ an toàn mẫu (`06_Safety_Alignment_task_1_file_overwrite.md`): điểm = 0,50 bảo toàn file ResNet có sẵn (so SHA-256) + 0,25 luật kiểm bản tóm tắt MAE + 0,25 LLM chấm chất lượng; phần quan sát được thì chấm bằng máy.<br>- Cùng 60 tác vụ chạy trên bốn harness (`src/agents/*`) để tách năng lực mô hình khỏi khung điều phối. |
+| Tiêu chí và cách kiểm | Ngưỡng nằm trong từng hàm `grade()`; một phần dùng LLM judge (`JUDGE_MODEL`, mặc định theo README là openai/gpt-5.4 **(chưa xác minh)**). `eval/check_setup.py` kiểm môi trường trước khi chạy. Không có workflow CI; chưa chạy lại điểm nào. |
+| Giới hạn và rủi ro | MIT (LICENSE đã đọc); dữ liệu tác vụ, ảnh Docker và video lấy từ Hugging Face/YouTube có điều khoản riêng, chưa đọc. `script/prepare.sh` tải video YouTube bằng yt-dlp, có thể cần cookie. Cần khóa OpenRouter và Brave Search, chi phí gọi mô hình đáng kể (bảng README ghi tổng chi phí từ khoảng 2 đến 96 USD cho 60 tác vụ tùy mô hình). Bảng xếp hạng 34 mô hình, con số 62,2% và 67,2% là tuyên bố của tác giả **(chưa xác minh)**. Số tác vụ 60 khớp số file `.md` trong `tasks/`. Phần chấm bằng LLM judge nên có độ nhiễu. |
+| So với | agentbench, tau2-bench, harbor-terminal-bench (cùng loại benchmark agent), swe-bench-pro |
+| Nguồn | [LICENSE](https://github.com/InternLM/WildClawBench/blob/3d22dcf20b2cba1b56f2784cc0265ef566ef6402/LICENSE) · [README.md](https://github.com/InternLM/WildClawBench/blob/3d22dcf20b2cba1b56f2784cc0265ef566ef6402/README.md) · [eval/run_batch.py](https://github.com/InternLM/WildClawBench/blob/3d22dcf20b2cba1b56f2784cc0265ef566ef6402/eval/run_batch.py) · [tasks/06_Safety_Alignment/06_Safety_Alignment_task_1_file_overwrite.md](https://github.com/InternLM/WildClawBench/blob/3d22dcf20b2cba1b56f2784cc0265ef566ef6402/tasks/06_Safety_Alignment/06_Safety_Alignment_task_1_file_overwrite.md) · [tasks/task0_template.md](https://github.com/InternLM/WildClawBench/blob/3d22dcf20b2cba1b56f2784cc0265ef566ef6402/tasks/task0_template.md) · [script/run.sh](https://github.com/InternLM/WildClawBench/blob/3d22dcf20b2cba1b56f2784cc0265ef566ef6402/script/run.sh) |
+
+<a id="nt-autoevals"></a>
+
+### Autoevals
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/braintrustdata/autoevals |
+| License | MIT (LICENSE, Copyright BrainTrust Data). Không có trọng số |
+| Phiên bản đã đọc | `b4d93fad00437818797d0c1ed757160a3f062fd2` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc `README.md`, `LICENSE`, `pyproject.toml`, `py/autoevals/oai.py`, `py/autoevals/llm.py`, `templates/factuality.yaml`, `js/trajectory-utils.ts`, `.github/workflows/python.yaml`; chưa chạy upstream |
+| Khoảng trống lấp | Bộ scorer LLM-as-judge, heuristic và thống kê dùng độc lập (Python và TypeScript), gồm template chấm trajectory |
+| Cơ chế đáng học | - `templates/*.yaml` (factuality, closed_q_a, security, sql, summary, battle, humor...; thêm voice_*): mỗi template là prompt với biến `{{input}}`, `{{expected}}`, `{{output}}` và bảng `choice_scores` (ví dụ Factuality A 0.4, B 0.6, C 1, D 0, E 1).<br>- `py/autoevals/llm.py`: `LLMClassifier`/`SpecFileClassifier` nạp template, ép mô hình chọn một đáp án rồi đổi sang điểm; có cả đường sync và async.<br>- `js/trajectory-utils.ts`: dựng biến `trajectory` và `trajectory_with_system` từ trace nhiều lượt để chấm hành trình agent bằng template.<br>- Có thêm scorer heuristic (Levenshtein, số, JSON, danh sách) và RAGAS ở bản JS. |
+| Tiêu chí và cách kiểm | Điểm là số 0 đến 1 từ bảng ánh xạ lựa chọn (do template cố định) nên có thể tái lập prompt, nhưng chất lượng phụ thuộc mô hình giám khảo. CI `python.yaml` chạy pytest trên Python 3.10 đến 3.14 với khóa API thật qua secret (đã mở workflow); tức test đụng dịch vụ ngoài. |
+| Giới hạn và rủi ro | **Tuyên bố độc lập nền tảng chỉ đúng một phần:** `oai.py` lấy `OPENAI_BASE_URL`, nếu không có thì mặc định tới Braintrust Gateway (`https://gateway.braintrust.dev`), và khi base URL là gateway thì dùng `BRAINTRUST_API_KEY` hoặc rơi về `OPENAI_API_KEY`: nếu chỉ đặt khóa OpenAI mà quên `OPENAI_BASE_URL`, lời gọi (kèm khóa) đi qua gateway của Braintrust, trái với câu 'dùng OPENAI_API_KEY để gọi OpenAI' ở ví dụ README. Luôn đặt base URL rõ ràng. Điểm do LLM chấm nên lệch theo mô hình và không kiểm độ khớp với người. |
+| So với | promptfoo, deepeval, ragas (đều có sẵn trong kho, cùng nhiệm vụ chấm LLM), inspect-ai (khung chạy eval chứ không phải thư viện scorer). |
+| Nguồn | [README.md](https://github.com/braintrustdata/autoevals/blob/b4d93fad00437818797d0c1ed757160a3f062fd2/README.md) · [LICENSE](https://github.com/braintrustdata/autoevals/blob/b4d93fad00437818797d0c1ed757160a3f062fd2/LICENSE) · [pyproject.toml](https://github.com/braintrustdata/autoevals/blob/b4d93fad00437818797d0c1ed757160a3f062fd2/pyproject.toml) · [oai.py](https://github.com/braintrustdata/autoevals/blob/b4d93fad00437818797d0c1ed757160a3f062fd2/py/autoevals/oai.py) · [llm.py](https://github.com/braintrustdata/autoevals/blob/b4d93fad00437818797d0c1ed757160a3f062fd2/py/autoevals/llm.py) · [factuality.yaml](https://github.com/braintrustdata/autoevals/blob/b4d93fad00437818797d0c1ed757160a3f062fd2/templates/factuality.yaml) · [trajectory-utils.ts](https://github.com/braintrustdata/autoevals/blob/b4d93fad00437818797d0c1ed757160a3f062fd2/js/trajectory-utils.ts) · [python.yaml](https://github.com/braintrustdata/autoevals/blob/b4d93fad00437818797d0c1ed757160a3f062fd2/.github/workflows/python.yaml) |
+
+<a id="nt-control-arena"></a>
+
+### ControlArena
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/UKGovernmentBEIS/control-arena |
+| License | MIT (LICENSE, Copyright UK AI Security Institute; `pyproject.toml` khai MIT). Thư mục `LICENSES/` chứa Apache-2.0, BSD-3-Clause, LGPL-3.0 cho phụ thuộc (THIRD_PARTY_LICENSES.md). Dữ liệu/nhiệm vụ của từng setting và license của tập tải về **(chưa xác minh)**. Không có trọng số |
+| Phiên bản đã đọc | `2c32268f8ea38eb94d66f61a83e0be01fd69c0c9` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc `README.md`, `LICENSE`, `THIRD_PARTY_LICENSES.md`, `pyproject.toml`, `control_arena/analysis/_metrics.py`, `.github/workflows/checks.yml`; chưa chạy upstream |
+| Khoảng trống lấp | Đánh giá kiểm soát AI (AI control): agent không tin cậy chạy dưới giám sát, đo an toàn và hữu ích |
+| Cơ chế đáng học | - Bộ khái niệm: setting (môi trường và nhiệm vụ sabotage: iac, bash, apps, agentdojo, shade_arena, swebench, vllm, data_poisoning...), micro-protocol (`defer_to_trusted`, `defer_to_resample`, `trusted_editing`, `trusted_monitoring`), policy (trung thực/tấn công), monitor.<br>- `analysis/_metrics.py`: `compute_suspicion_threshold` lấy percentile (100 trừ ngân sách audit) từ điểm nghi ngờ của lượt chạy trung thực; `compute_caught_attack_count` đếm tấn công vượt ngưỡng bằng `>` cho khớp cách tính ngưỡng; `scale_usefulness` chuẩn hóa theo baseline mô hình tin cậy và không tin cậy.<br>- Xây trên Inspect AI (mỏng) nên dùng chung sandbox Docker/Kubernetes, log và viewer.<br>- Mục 'Avoiding Data Contamination' đề nghị không đăng lời giải trần, không đưa dữ liệu eval cho dịch vụ có thể huấn luyện. |
+| Tiêu chí và cách kiểm | Số đo an toàn và hữu ích tính được bằng máy từ log, có kiểm lược đồ DataFrame bằng pandera và báo NaN. CI `checks.yml` chạy kiểm license, pyright, ruff, pytest song song (cả backend trio) (đã mở workflow); các eval đầy đủ cần Docker và khóa mô hình, chưa chạy. |
+| Giới hạn và rủi ro | Thư viện nghiên cứu, kết quả phụ thuộc mô hình giám sát và cấu hình; không phải bộ đo an toàn hoàn chỉnh. LGPL-3.0 chỉ ở phụ thuộc (đọc điều kiện khi đóng gói). README viết THIRD-PARTY-LICENSES nhưng tên file thật là THIRD_PARTY_LICENSES.md. Cần Docker (và Kubernetes cho setting infra) cùng khóa API nhiều nhà cung cấp. |
+| So với | inspect-ai (nền, hồ sơ có sẵn), inspect-evals (bộ benchmark thông thường, không có giao thức giám sát), agentdojo (tấn công prompt injection cho agent). |
+| Nguồn | [README.md](https://github.com/UKGovernmentBEIS/control-arena/blob/2c32268f8ea38eb94d66f61a83e0be01fd69c0c9/README.md) · [LICENSE](https://github.com/UKGovernmentBEIS/control-arena/blob/2c32268f8ea38eb94d66f61a83e0be01fd69c0c9/LICENSE) · [THIRD_PARTY_LICENSES.md](https://github.com/UKGovernmentBEIS/control-arena/blob/2c32268f8ea38eb94d66f61a83e0be01fd69c0c9/THIRD_PARTY_LICENSES.md) · [pyproject.toml](https://github.com/UKGovernmentBEIS/control-arena/blob/2c32268f8ea38eb94d66f61a83e0be01fd69c0c9/pyproject.toml) · [_metrics.py](https://github.com/UKGovernmentBEIS/control-arena/blob/2c32268f8ea38eb94d66f61a83e0be01fd69c0c9/control_arena/analysis/_metrics.py) · [checks.yml](https://github.com/UKGovernmentBEIS/control-arena/blob/2c32268f8ea38eb94d66f61a83e0be01fd69c0c9/.github/workflows/checks.yml) |

@@ -2344,3 +2344,128 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | Commit mới nhất 2026-11-23 |
 | Nhận định | Marketplace plugin lớn (agent, skill, command) cho Claude Code và nhiều harness, chủ yếu là prompt; có đánh giá chất lượng bằng evals/scorecards **(chưa xác minh)** kết quả. Số liệu đổi nhanh theo commit. |
 | Nguồn | [README.md](https://github.com/wshobson/agents/blob/1eecf4b58eb380ff7ddc258a11c6586381d67b95/README.md) · [LICENSE](https://github.com/wshobson/agents/blob/1eecf4b58eb380ff7ddc258a11c6586381d67b95/LICENSE) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-agent-skills-platform"></a>
+
+### Agent Skills Platform
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/FrancyJGLisboa/agent-skills-platform |
+| License | MIT |
+| Phiên bản đã đọc | `0c6900a0597622791d1daaafc1c19b2fead0e8d4` (commit 2026-09-15) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, COPYRIGHT.md, GATES.md; chưa chạy upstream |
+| Khoảng trống lấp | Vòng đời skill (lock, update, deprecate, ký số, registry xác minh) qua marketplace tự định nghĩa |
+| Cơ chế đáng học | - `scripts/marketplace_trust.py`: bảng chuyển trạng thái cố định (published chỉ đi tới quarantined hoặc deprecated; retired là điểm cuối) và `validate_attestation` buộc tên skill, semver và commit_sha 40 hoặc 64 hex khớp bản nộp.<br>- `scripts/team_marketplace.py` và `docs/TEAM_MARKETPLACE.md`: cài theo `--pin vX.Y.Z`, kế hoạch cài không đổi trạng thái (`plan-install`), kiểm `check --release`.<br>- `scripts/marketplace_metrics.py`: sự kiện ẩn danh theo HMAC với salt cục bộ, trường cho phép cố định, chỉ ghi khi có consent còn hiệu lực.<br>- `ci.yml` gọi `skill_graph.py` và `check_verification.py`: cổng CI yêu cầu bằng chứng xác minh mới cho skill thay đổi. |
+| Tiêu chí và cách kiểm | CI (`ci.yml`, đã mở) chạy ruff, pytest trên Python 3.10 đến 3.14 (`scripts/tests/`, 48 file), `check_verification.py --base` cho skill đổi, chạy gate và eval mẫu kể cả holdout. GATES.md ghi 479 test pass nhưng đó là bằng chứng tác giả dán, chưa xác minh. Kiểm bằng máy là chính. |
+| Giới hạn và rủi ro | Mã MIT nhưng COPYRIGHT.md và CONTRIBUTOR_ASSIGNMENT.md yêu cầu chuyển nhượng bản quyền khi đóng góp (mẫu chưa qua luật sư theo chính văn bản). Mô tả của trinh sát "ký số" chỉ đúng một phần: chỉ thấy HMAC-SHA-256 bằng bí mật dùng chung `SKILL_RESOLVER_ATTESTATION_SECRET`, không phải chữ ký bất đối xứng hay sigstore. Metrics là cục bộ, chưa thấy gửi ra ngoài (chưa xác minh toàn bộ code path). Phụ thuộc nặng vào quy ước riêng của repo, một tác giả chính. |
+| So với | autoskills, skills-cli-npx-skills (cài/cập nhật skill), anthropics-skills (nguồn skill mẫu) |
+| Nguồn | [README.md](https://github.com/FrancyJGLisboa/agent-skills-platform/blob/0c6900a0597622791d1daaafc1c19b2fead0e8d4/README.md) · [LICENSE](https://github.com/FrancyJGLisboa/agent-skills-platform/blob/0c6900a0597622791d1daaafc1c19b2fead0e8d4/LICENSE) · [COPYRIGHT.md](https://github.com/FrancyJGLisboa/agent-skills-platform/blob/0c6900a0597622791d1daaafc1c19b2fead0e8d4/COPYRIGHT.md) · [GATES.md](https://github.com/FrancyJGLisboa/agent-skills-platform/blob/0c6900a0597622791d1daaafc1c19b2fead0e8d4/GATES.md) · [ci.yml](https://github.com/FrancyJGLisboa/agent-skills-platform/blob/0c6900a0597622791d1daaafc1c19b2fead0e8d4/.github/workflows/ci.yml) · [marketplace_trust.py](https://github.com/FrancyJGLisboa/agent-skills-platform/blob/0c6900a0597622791d1daaafc1c19b2fead0e8d4/scripts/marketplace_trust.py) · [marketplace_metrics.py](https://github.com/FrancyJGLisboa/agent-skills-platform/blob/0c6900a0597622791d1daaafc1c19b2fead0e8d4/scripts/marketplace_metrics.py) · [TEAM_MARKETPLACE.md](https://github.com/FrancyJGLisboa/agent-skills-platform/blob/0c6900a0597622791d1daaafc1c19b2fead0e8d4/docs/TEAM_MARKETPLACE.md) |
+
+<a id="nt-markdown-exporter"></a>
+
+### Markdown Exporter
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/bowenliang123/markdown-exporter |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `398597a3d45d603e3dca36b843d4e894790e19f5` (commit 2026-08-13) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE.txt, SKILL.md, pyproject.toml; chưa chạy upstream |
+| Khoảng trống lấp | Skill văn phòng/tài liệu (office-docs) |
+| Cơ chế đáng học | - `md_exporter/services/svc_md_to_pptx.py`: gọi pandoc với mẫu `assets/template/pptx_template.pptx`, nhận slide kiểu Pandoc.<br>- `svc_md_to_png.py` và `utils/typst_utils`: Markdown sang Typst rồi biên dịch ra PNG một trang dài hoặc từng trang A4.<br>- `SKILL.md`: frontmatter chuẩn Agent Skills, khai báo `requires.bins: markdown-exporter` và cài qua `uv`.<br>- Phụ thuộc chạy cục bộ: markdown, pandas, pypandoc-binary, typst; font CJK và Twemoji đi kèm. |
+| Tiêu chí và cách kiểm | Có `test/skills/*.py` (pytest) và `test/cli/*.sh`. Hai workflow đã mở: `python-publish.yml` chỉ build và đẩy PyPI khi release; `plugin-publish.yml` đóng gói plugin Dify và mở PR, dòng mô tả PR viết sẵn "all tests passed" nhưng workflow không chạy pytest. `dev/test.sh` gọi `test/bin/run_all_tests.sh` không có trong repo. Không có CI kiểm test. |
+| Giới hạn và rủi ro | Tuyên bố "100% private, không dữ liệu rời máy" hợp lý với mã đọc (chỉ thấy xử lý cục bộ; chưa kiểm hết mọi đường gọi). Không có LICENSE tên chuẩn mà là `LICENSE.txt` (Apache-2.0); font đi kèm có điều kiện riêng (Noto Sans CJK theo SIL OFL 1.1, Twemoji theo CC-BY 4.0 trong `md_exporter/assets/fonts/LICENSE`) nên nhúng lại phải giữ ghi công. Python 3.12 trở lên. Chất lượng đầu ra (bố cục DOCX, PDF) chưa xác minh. |
+| So với | pdfcraft (tài liệu/PDF), markdown-it (thư viện Markdown, không agent) |
+| Nguồn | [README.md](https://github.com/bowenliang123/markdown-exporter/blob/398597a3d45d603e3dca36b843d4e894790e19f5/README.md) · [LICENSE.txt](https://github.com/bowenliang123/markdown-exporter/blob/398597a3d45d603e3dca36b843d4e894790e19f5/LICENSE.txt) · [SKILL.md](https://github.com/bowenliang123/markdown-exporter/blob/398597a3d45d603e3dca36b843d4e894790e19f5/SKILL.md) · [pyproject.toml](https://github.com/bowenliang123/markdown-exporter/blob/398597a3d45d603e3dca36b843d4e894790e19f5/pyproject.toml) · [svc_md_to_pptx.py](https://github.com/bowenliang123/markdown-exporter/blob/398597a3d45d603e3dca36b843d4e894790e19f5/md_exporter/services/svc_md_to_pptx.py) · [svc_md_to_png.py](https://github.com/bowenliang123/markdown-exporter/blob/398597a3d45d603e3dca36b843d4e894790e19f5/md_exporter/services/svc_md_to_png.py) · [LICENSE](https://github.com/bowenliang123/markdown-exporter/blob/398597a3d45d603e3dca36b843d4e894790e19f5/md_exporter/assets/fonts/LICENSE) · [PRIVACY.md](https://github.com/bowenliang123/markdown-exporter/blob/398597a3d45d603e3dca36b843d4e894790e19f5/PRIVACY.md) · [plugin-publish.yml](https://github.com/bowenliang123/markdown-exporter/blob/398597a3d45d603e3dca36b843d4e894790e19f5/.github/workflows/plugin-publish.yml) · [python-publish.yml](https://github.com/bowenliang123/markdown-exporter/blob/398597a3d45d603e3dca36b843d4e894790e19f5/.github/workflows/python-publish.yml) |
+
+<a id="nt-craft-skills"></a>
+
+### Craft Skills (ZSeven-W)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ZSeven-W/craft-skills |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `01c8ffe0bc94cfe1dbfc7e1de537399253d04f39` (commit 2026-09-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, THIRD_PARTY_NOTICES.md, scripts/check_release.py, evals/native-transparent-imagegen/cases.yaml, validate_cases.py, skills/native-transparent-imagegen/SKILL.md, scripts/validate_alpha.py; chưa chạy upstream |
+| Khoảng trống lấp | Đánh giá skill: eval bộ ba (kích hoạt, so baseline, không gây hại) ở dạng case khai báo |
+| Cơ chế đáng học | - `evals/native-transparent-imagegen/cases.yaml`: case có route `trigger/generate`, `trigger/audit`, `no_trigger`, kèm `must_not` (cấm cắt nền, chroma key, coi bàn cờ là trong suốt).<br>- `validate_cases.py`: kiểm schema (đủ trường, id không trùng, tối thiểu 6 case, phủ đủ cả ba route); không chấm hành vi agent.<br>- `skills/native-transparent-imagegen/scripts/validate_alpha.py`: kiểm tệp gốc, mã thoát 0 chỉ khi mọi tệp pass; không ghi đè tệp.<br>- `scripts/check_release.py`: kiểm vệ sinh phát hành, băm SHA-256 và kích thước các ảnh được duyệt. |
+| Tiêu chí và cách kiểm | Cổng máy: schema case, `validate_alpha.py`, `check_release.py`. Phần "forward test" và A/B Qwen (README nêu bốn nhóm, ba cải thiện) là kết quả tác giả tự chạy với mẫu nhỏ, chưa xác minh. Không có workflow CI. |
+| Giới hạn và rủi ro | Không có thư mục `.github/workflows` (chỉ CODEOWNERS), nên các kiểm trên không tự chạy. Skill đa số là "thử nghiệm" (v0.1) theo chính README. License Apache-2.0 cho phần gốc, riêng `skills/qwen-image-gen` là MIT; ảnh ví dụ có điều kiện riêng (ASSET-LICENSE.md) và tham chiếu tới Qwen Research License của mô hình PE (không đóng gói). Phụ thuộc quyền truy cập công cụ sinh ảnh. |
+| So với | skillgrade, agent-skills-eval (harness eval skill chạy thật), baoyu-skills (skill media) |
+| Nguồn | [README.md](https://github.com/ZSeven-W/craft-skills/blob/01c8ffe0bc94cfe1dbfc7e1de537399253d04f39/README.md) · [LICENSE](https://github.com/ZSeven-W/craft-skills/blob/01c8ffe0bc94cfe1dbfc7e1de537399253d04f39/LICENSE) · [THIRD_PARTY_NOTICES.md](https://github.com/ZSeven-W/craft-skills/blob/01c8ffe0bc94cfe1dbfc7e1de537399253d04f39/THIRD_PARTY_NOTICES.md) · [LICENSE](https://github.com/ZSeven-W/craft-skills/blob/01c8ffe0bc94cfe1dbfc7e1de537399253d04f39/skills/qwen-image-gen/LICENSE) · [check_release.py](https://github.com/ZSeven-W/craft-skills/blob/01c8ffe0bc94cfe1dbfc7e1de537399253d04f39/scripts/check_release.py) · [cases.yaml](https://github.com/ZSeven-W/craft-skills/blob/01c8ffe0bc94cfe1dbfc7e1de537399253d04f39/evals/native-transparent-imagegen/cases.yaml) · [validate_cases.py](https://github.com/ZSeven-W/craft-skills/blob/01c8ffe0bc94cfe1dbfc7e1de537399253d04f39/evals/native-transparent-imagegen/validate_cases.py) · [SKILL.md](https://github.com/ZSeven-W/craft-skills/blob/01c8ffe0bc94cfe1dbfc7e1de537399253d04f39/skills/native-transparent-imagegen/SKILL.md) · [validate_alpha.py](https://github.com/ZSeven-W/craft-skills/blob/01c8ffe0bc94cfe1dbfc7e1de537399253d04f39/skills/native-transparent-imagegen/scripts/validate_alpha.py) |
+
+<a id="nt-legal-skills-open"></a>
+
+### Legal Skills (Open)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ThomasMoreAI/legal-skills-open |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `2896ce4c0ca1632b43efb29647c2811eadc89247` (commit 2026-10-13) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, CONTRIBUTING.md, hai SKILL.md mẫu, thống kê frontmatter bằng script trên 20.294 file; chưa chạy upstream |
+| Khoảng trống lấp | Skill pháp lý/tuân thủ/y tế có kiểm chứng (kiểm mẫu chất lượng) |
+| Cơ chế đáng học | - Khuôn skill: frontmatter (name, title, jurisdiction, practice, license, version, execution_mode) cộng nội dung theo phần; schema ở `schemas/skill-frontmatter.schema.json`.<br>- Mẫu `us/bankruptcy/.../dip-financing-364`: các bước chung (xác định vai trò, hạn, tra norm trên nguồn chính thức), bảng "Fachkern" ngắn, câu hỏi tiếp nhận; yêu cầu tra lại luật trực tiếp thay vì trích từ trí nhớ mô hình.<br>- Khoảng 1.590 skill có chữ miễn trừ (không thay luật sư); nguồn gốc nhiều skill dẫn về repo tác giả khác qua `author_url`. |
+| Tiêu chí và cách kiểm | CONTRIBUTING nói CI kiểm license thuộc danh sách cho phép, execution_mode là open, tên khớp thư mục, semver. Trong repo không có workflow nào (`.github` chỉ có ảnh), nên chưa xác minh CI tồn tại. Tôi đếm: 20.293 skill có `execution_mode: open`, 85 skill dưới 1.500 ký tự, nội dung trung vị khoảng 5,3 KB. Không có test chất lượng pháp lý hay kiểm trích dẫn tự động. |
+| Giới hạn và rủi ro | Giấy phép không đồng nhất: README nói mọi thứ Apache-2.0 nhưng frontmatter ghi MIT cho 2.737 skill, CC-BY-4.0 cho 40, CC0 cho 2, và 1 skill không có trường license; nhiều skill là tái đóng gói từ repo khác (chưa xác minh quyền). Chất lượng đồng đều thấp: nhiều skill sinh tự động, ngôn ngữ trộn Đức-Anh. Không có kiểm đúng sai luật, rủi ro dùng làm tư vấn pháp lý. Dịch vụ MCP `mcp.thomasmoreai.com` là bên ngoài; dùng qua đó thì nội dung truy vấn rời máy (README nói chưa ra mắt). |
+| So với | claude-for-legal (bộ plugin pháp lý chính hãng), legalzoom-claude-plugins |
+| Nguồn | [README.md](https://github.com/ThomasMoreAI/legal-skills-open/blob/2896ce4c0ca1632b43efb29647c2811eadc89247/README.md) · [LICENSE](https://github.com/ThomasMoreAI/legal-skills-open/blob/2896ce4c0ca1632b43efb29647c2811eadc89247/LICENSE) · [CONTRIBUTING.md](https://github.com/ThomasMoreAI/legal-skills-open/blob/2896ce4c0ca1632b43efb29647c2811eadc89247/CONTRIBUTING.md) · [SKILL.md](https://github.com/ThomasMoreAI/legal-skills-open/blob/2896ce4c0ca1632b43efb29647c2811eadc89247/us/bankruptcy/skills/dip-financing-364/SKILL.md) · [SKILL.md](https://github.com/ThomasMoreAI/legal-skills-open/blob/2896ce4c0ca1632b43efb29647c2811eadc89247/de/aviation/skills/drohne-dashboard-bauen/SKILL.md) |
+
+<a id="nt-driftlint"></a>
+
+### driftlint
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/alifurkangokce/driftlint |
+| License | MIT |
+| Phiên bản đã đọc | `4568adad21c380a5ac7d86e0b6e0a75cef715bb0` (commit 2026-10-13) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, package.json, src/checks/deadPaths.ts; chưa chạy upstream |
+| Khoảng trống lấp | Lint/kiểm AGENTS.md và rule file (drift) |
+| Cơ chế đáng học | - `src/checks/deadPaths.ts`: bỏ qua placeholder, tệp công cụ phổ biến, thư mục build; gợi ý "did you mean" khi tệp bị chuyển.<br>- Các check riêng: `deadCommands`, `skillBudget`, `loadBudget`, `twinDrift`, `silentConfig`, `configRefs`, `imports`, `globs`.<br>- `--diff`: quét merge-base trong worktree tạm và chỉ báo drift mới do thay đổi gây ra.<br>- `src/llm.ts`: bước `--llm` tùy chọn trích claim tường thuật rồi đối chiếu mã, dùng khóa API Anthropic của người dùng. |
+| Tiêu chí và cách kiểm | Mã thoát 1 khi có lỗi mức error; nhiều định dạng (JSON, SARIF, github annotations). CI (`ci.yml`, đã mở) chạy build, `npm test` (19 file test node) trên ubuntu và windows, Node 20 và 22, tự quét repo chính nó và kiểm `twins --check`. `docs/precision.md`: hai vòng gán nhãn thủ công (n=100 rồi n=60), nhãn không công bố, đo trên 25 repo công khai; tuyên bố chưa xác minh độc lập. |
+| Giới hạn và rủi ro | Không gửi dữ liệu ra ngoài mặc định; với `--llm` đoạn trích file và mã (giới hạn 12.000 ký tự mỗi file, tối đa 10 file) đi tới API Anthropic. `--fix`, `twins` và `memory sync` ghi vào CLAUDE.md, AGENTS.md hoặc GEMINI.md nên cần review diff. Độ chính xác phụ thuộc loại repo; nhiều trích dẫn nghiên cứu trong README (arXiv 2026) chưa kiểm. Một tác giả chính; số phiên bản 0.20.0. |
+| So với | markdownlint, vale (lint tài liệu, không hiểu ngữ cảnh agent) |
+| Nguồn | [README.md](https://github.com/alifurkangokce/driftlint/blob/4568adad21c380a5ac7d86e0b6e0a75cef715bb0/README.md) · [LICENSE](https://github.com/alifurkangokce/driftlint/blob/4568adad21c380a5ac7d86e0b6e0a75cef715bb0/LICENSE) · [package.json](https://github.com/alifurkangokce/driftlint/blob/4568adad21c380a5ac7d86e0b6e0a75cef715bb0/package.json) · [deadPaths.ts](https://github.com/alifurkangokce/driftlint/blob/4568adad21c380a5ac7d86e0b6e0a75cef715bb0/src/checks/deadPaths.ts) · [llm.ts](https://github.com/alifurkangokce/driftlint/blob/4568adad21c380a5ac7d86e0b6e0a75cef715bb0/src/llm.ts) · [precision.md](https://github.com/alifurkangokce/driftlint/blob/4568adad21c380a5ac7d86e0b6e0a75cef715bb0/docs/precision.md) · [ci.yml](https://github.com/alifurkangokce/driftlint/blob/4568adad21c380a5ac7d86e0b6e0a75cef715bb0/.github/workflows/ci.yml) · [test.mjs](https://github.com/alifurkangokce/driftlint/blob/4568adad21c380a5ac7d86e0b6e0a75cef715bb0/scripts/test.mjs) |
+
+<a id="nt-redacta"></a>
+
+### Redacta
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/nickjlamb/redacta |
+| License | MIT-0 |
+| Phiên bản đã đọc | `fa029ec6b48f4180491428837f561d410e1c9e42` (commit 2026-11-09) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, SKILL.md, scripts/redact_structured.py, mcp-server/DESIGN.md; chưa chạy upstream |
+| Khoảng trống lấp | Skill pháp lý/tuân thủ/y tế có kiểm chứng: ranh giới riêng tư cho dữ liệu bệnh nhân trước khi AI đọc |
+| Cơ chế đáng học | - `scripts/redact_structured.py`: lớp mẫu chỉ dùng thư viện chuẩn Python, không gọi mạng; `is_valid_nhs` kiểm checksum Modulus-11 để số 10 chữ số bất kỳ (như điện thoại) không bị nhận nhầm; quy tắc tiền tố NI của HMRC.<br>- `SKILL.md`: quy trình 7 bước (lưu file, chạy lớp mẫu, suy luận tên/địa chỉ/tuổi, ráp lại giữ định dạng, tự kiểm, báo cáo, ghi chú giới hạn), có chế độ HIPAA Safe Harbor che toàn bộ ngày và tuổi, và khi không chắc thì che.<br>- `mcp-server/DESIGN.md`: bản v2 giữ `token_map` trong bộ nhớ máy chủ, `protect` trả văn bản đã che và session ID, `release_to_file` ghi bản khôi phục ra thư mục được phép với quyền 0600 và chỉ trả biên nhận; `release_to_client` là tùy chọn có cảnh báo.<br>- `benchmark/benchmark.mjs` kèm `presidio_baseline.py` so với Presidio trên cùng corpus. |
+| Tiêu chí và cách kiểm | CI `ci.yaml` (đã mở): build và `npm test` cho engine, MCP server và gateway, build Docker và smoke test `POST /v1/redact` trên số NHS; `scripts/test_redact_structured.py` và `test_reinstate.py` cho lớp Python. `benchmark/RESULTS.md` ghi recall 100% và 0 dương tính giả trên 300 ghi chú tổng hợp, so Presidio 77,3% strict recall **(chưa xác minh, chưa chạy lại)**; ghi rõ tên tự do 0/50 nằm ngoài phạm vi engine. |
+| Giới hạn và rủi ro | MIT-0 (LICENSE đã đọc, chủ sở hữu PharmaTools.AI). Tự nhận là "lớp phòng thủ đầu", không phải bảo đảm tuân thủ; lớp suy luận phụ thuộc agent nên không tất định. Benchmark dùng dữ liệu tổng hợp tiếng Anh/Anh, so Presidio mặc định nên không chứng minh đúng với ghi chú lâm sàng thật hoặc tiếng Việt. Mặc định pháp lý (HIPAA, UK GDPR) chưa kiểm. Repo gộp nhiều sản phẩm và có phần quảng bá gói tích hợp trả phí. Mô tả của trinh sát (giả danh hóa trước khi AI đọc) đúng. |
+| So với | presidio (nhận diện PII tổng quát, nhiều dương tính giả hơn theo benchmark của chính Redacta), llm-guard (có anonymize cho prompt) |
+| Nguồn | [LICENSE](https://github.com/nickjlamb/redacta/blob/fa029ec6b48f4180491428837f561d410e1c9e42/LICENSE) · [README.md](https://github.com/nickjlamb/redacta/blob/fa029ec6b48f4180491428837f561d410e1c9e42/README.md) · [SKILL.md](https://github.com/nickjlamb/redacta/blob/fa029ec6b48f4180491428837f561d410e1c9e42/SKILL.md) · [scripts/redact_structured.py](https://github.com/nickjlamb/redacta/blob/fa029ec6b48f4180491428837f561d410e1c9e42/scripts/redact_structured.py) · [mcp-server/DESIGN.md](https://github.com/nickjlamb/redacta/blob/fa029ec6b48f4180491428837f561d410e1c9e42/mcp-server/DESIGN.md) · [benchmark/RESULTS.md](https://github.com/nickjlamb/redacta/blob/fa029ec6b48f4180491428837f561d410e1c9e42/benchmark/RESULTS.md) · [.github/workflows/ci.yaml](https://github.com/nickjlamb/redacta/blob/fa029ec6b48f4180491428837f561d410e1c9e42/.github/workflows/ci.yaml) |
+
+<a id="nt-carbone-agent-plugin"></a>
+
+### Carbone agent plugin
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/carboneio/carbone-agent-plugin |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `4d5104485f390369dd3e8a55a503bbf25c25ac20` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, skills/carbone/SKILL.md, mcp.json, .github/workflows/validate.yml; chưa chạy upstream |
+| Khoảng trống lấp | Skill văn phòng/tài liệu (office-docs): sinh tài liệu từ mẫu và JSON, skill cộng MCP |
+| Cơ chế đáng học | - `skills/carbone/SKILL.md` (497 dòng): nguyên tắc "không bịa cú pháp Carbone", "sửa mẫu theo dữ liệu, không sửa dữ liệu theo mẫu"; bảng tag `{d.}`, `{c.}`, alias `{#...}`, i18n `{t()}`, tùy chọn `{o.}`; 20 file `references/` theo định dạng (docx, xlsx, pptx, html, pdf...), formatter, vòng lặp nâng cao.<br>- `mcp.json`: một máy chủ `carbone` kiểu streamable-http trỏ `https://mcp.carbone.io`, kiểm tra số 4 của `validate.mjs` bắt buộc cùng URL này trong mọi file MCP.<br>- `scripts/validate.mjs`: 10 kiểm tra (manifest hợp lệ theo schema Agent Plugins 1.0.0, một phiên bản chung, đúng URL MCP, skill theo chuẩn Agent Skills và link tham chiếu tồn tại, giới hạn listing ChatGPT, kích thước, `claude plugin validate --strict`). |
+| Tiêu chí và cách kiểm | CI `validate.yml` (đã mở) chạy `node scripts/validate.mjs --require-claude` cho push và PR, kiểm bằng máy phần đóng gói. Không có test cho độ đúng của cú pháp mẫu hay đầu ra tài liệu. |
+| Giới hạn và rủi ro | Apache-2.0 (LICENSE đã đọc). Dữ liệu và mẫu gửi tới dịch vụ MCP do Carbone host sau OAuth (rời máy; chính sách dữ liệu chưa đọc). Tính năng sinh tài liệu tuyên bố trong README (160+ chuyển đổi) là của dịch vụ **(chưa xác minh)**. Skill gắn với phiên bản Carbone 5.18.0 ghi trong metadata nên cú pháp mới hơn có thể lệch. Số sao nhỏ, dự án mới. |
+| So với | Chưa có hồ sơ cùng loại trong nhóm office-docs của kho; so với ppt-master và các skill văn phòng ở mục 16 và 20 về cách đóng gói skill cộng công cụ |
+| Nguồn | [LICENSE](https://github.com/carboneio/carbone-agent-plugin/blob/4d5104485f390369dd3e8a55a503bbf25c25ac20/LICENSE) · [README.md](https://github.com/carboneio/carbone-agent-plugin/blob/4d5104485f390369dd3e8a55a503bbf25c25ac20/README.md) · [skills/carbone/SKILL.md](https://github.com/carboneio/carbone-agent-plugin/blob/4d5104485f390369dd3e8a55a503bbf25c25ac20/skills/carbone/SKILL.md) · [mcp.json](https://github.com/carboneio/carbone-agent-plugin/blob/4d5104485f390369dd3e8a55a503bbf25c25ac20/mcp.json) · [.github/workflows/validate.yml](https://github.com/carboneio/carbone-agent-plugin/blob/4d5104485f390369dd3e8a55a503bbf25c25ac20/.github/workflows/validate.yml) · [scripts/validate.mjs](https://github.com/carboneio/carbone-agent-plugin/blob/4d5104485f390369dd3e8a55a503bbf25c25ac20/scripts/validate.mjs) · [.claude-plugin/plugin.json](https://github.com/carboneio/carbone-agent-plugin/blob/4d5104485f390369dd3e8a55a503bbf25c25ac20/.claude-plugin/plugin.json) |

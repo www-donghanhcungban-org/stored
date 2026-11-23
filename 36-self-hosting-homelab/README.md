@@ -531,3 +531,26 @@ Repo daemon client đồng bộ của Seafile, hệ thống lưu trữ đám mâ
 **Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`016be6317eb963777ae1879b9f59a76cca9e83e9`](https://github.com/arendst/Tasmota/commit/016be6317eb963777ae1879b9f59a76cca9e83e9), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
 
 **Nguồn:** [README.md](https://github.com/arendst/Tasmota/blob/016be6317eb963777ae1879b9f59a76cca9e83e9/README.md) · [LICENSE.txt](https://github.com/arendst/Tasmota/blob/016be6317eb963777ae1879b9f59a76cca9e83e9/LICENSE.txt) · [.github/workflows/Tasmota_build_devel.yml](https://github.com/arendst/Tasmota/blob/016be6317eb963777ae1879b9f59a76cca9e83e9/.github/workflows/Tasmota_build_devel.yml) · [metadata GitHub](https://api.github.com/repos/arendst/Tasmota).
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-external-secrets"></a>
+
+### External Secrets Operator
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/external-secrets/external-secrets |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `9f8b5837188cf1e394b8e1f2dc0e9d63afe2aa68` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, AGENTS.md, apis/externalsecrets/v1/externalsecret_types.go, apis/externalsecrets/v1/generic_store.go, .github/workflows/zizmor.yml; chưa chạy upstream |
+| Khoảng trống lấp | Bí mật và quyền cho workload: giữ bí mật ngoài repo và prompt, kéo từ kho ngoài vào cụm lúc chạy |
+| Cơ chế đáng học | - CRD trong `apis/externalsecrets/v1`: `ExternalSecret` khai refreshInterval, creationPolicy, deletionPolicy; `ClusterSecretStore` dùng chung toàn cụm (`generic_store.go`).<br>- Mỗi provider là module Go riêng trong `providers/v1/*` (42 thư mục); `generators/v1` có password, uuid, sshkey, sts, vault, webhook, github...<br>- Có webhook xác thực CRD và certcontroller quản chứng chỉ webhook (AGENTS.md). |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: AGENTS.md yêu cầu `make test && make check-diff` trước PR; workflow zizmor.yml (đã đọc) quét lỗi bảo mật của chính các workflow Actions, dùng harden-runner và pin SHA; có e2e theo nhà cung cấp, scorecard, dependency-review (chỉ thấy tên). |
+| Giới hạn và rủi ro | Apache-2.0. Repo nhiều module go.mod, nặng. Tin cậy phụ thuộc cấu hình ClusterSecretStore (phạm vi namespace) và quyền của operator, đọc bí mật từ kho ngoài bằng thông tin xác thực của chính nó. Không thấy telemetry trong phần đã đọc. |
+| So với | OpenBao (kho bí mật gốc, ESO chỉ là cầu nối), Infisical, SOPS |
+| Nguồn | [README.md](https://github.com/external-secrets/external-secrets/blob/9f8b5837188cf1e394b8e1f2dc0e9d63afe2aa68/README.md) · [LICENSE](https://github.com/external-secrets/external-secrets/blob/9f8b5837188cf1e394b8e1f2dc0e9d63afe2aa68/LICENSE) · [AGENTS.md](https://github.com/external-secrets/external-secrets/blob/9f8b5837188cf1e394b8e1f2dc0e9d63afe2aa68/AGENTS.md) · [externalsecret_types.go](https://github.com/external-secrets/external-secrets/blob/9f8b5837188cf1e394b8e1f2dc0e9d63afe2aa68/apis/externalsecrets/v1/externalsecret_types.go) · [generic_store.go](https://github.com/external-secrets/external-secrets/blob/9f8b5837188cf1e394b8e1f2dc0e9d63afe2aa68/apis/externalsecrets/v1/generic_store.go) · [zizmor.yml](https://github.com/external-secrets/external-secrets/blob/9f8b5837188cf1e394b8e1f2dc0e9d63afe2aa68/.github/workflows/zizmor.yml) |

@@ -2,7 +2,7 @@
 
 # cad-bim — Kỹ thuật công trình & không gian
 
-[← Mục lục catalog](../README.md) · 19 hồ sơ.
+[← Mục lục catalog](../README.md) · 22 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -17,11 +17,14 @@
 | [chili3d](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-xiangechen-chili3d) | `xiangechen/chili3d` | AGPL-3.0 (app); LGPL-3.0 (cpp); Pro riêng | 5.016 | đọc tài liệu 2026-11-23 | 27 | Ứng dụng CAD 3D trong trình duyệt dùng OpenCascade/WASM, hỗ trợ tham số, direct modeling và AI. |
 | [Trimesh](../../27-3d-cad-bim-engineering/README.md#trimesh) | `mikedh/trimesh` | MIT | 3.716 | đọc mã 2026-11-02 | 27 | Đọc mã/đặc tả 2/11/2026, 6c158cce2265; |
 | [IfcOpenShell](../../27-3d-cad-bim-engineering/README.md#ifcopenshell) | `IfcOpenShell/IfcOpenShell` | LGPL-3.0-or-later (core); GPL-3.0-or-later (Bonsai) | 2.917 | đọc mã 2026-11-02 | 27 | Đọc mã/đặc tả 2/11/2026, 28bae192780e; |
+| [pythonocc-core](../../27-3d-cad-bim-engineering/README.md#nt-pythonocc-core) | `tpaviot/pythonocc-core` | LGPL-3.0 | 2.001 | đọc mã 2026-11-23 | 27 | Binding Python (SWIG) cho OpenCascade 8.0.1: gần hết lớp OCCT, nhập xuất STEP, IGES, STL, glTF, tiện ích topology và tính thể tích. |
 | [autocad-mcp](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-puran-water-autocad-mcp) | `puran-water/autocad-mcp` | MIT | 683 | đọc tài liệu 2026-11-23 | 27 | MCP tích hợp AutoCAD LT hoặc xử lý DXF headless để đọc và sửa bản vẽ qua công cụ. |
 | [MCP servers for Revit (Sparx fork)](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-mcp-servers-for-revit-mcp-servers-for-revit) | `mcp-servers-for-revit/mcp-servers-for-revit` | MIT | 464 | đọc tài liệu 2026-11-23 | 27 | Fork MCP cho Autodesk Revit gồm server TypeScript, add-in C# và bộ lệnh Revit API. |
+| [buildingSMART Certification datasets](../../27-3d-cad-bim-engineering/README.md#nt-buildingsmart-certification-datasets) | `buildingSMART/Certification-datasets` | CC-BY-4.0 (file LICENSE ghi Creative Commons Attribution 4.0, bản quyền buildingSMART International); GitHub báo NOASSERTION vì LICENSE chỉ trỏ tới giấy phép | 373 | đọc tài liệu 2026-11-23 | 27 | Bộ 10 mô hình IFC Simple-Scene cho mỗi phiên bản IFC 2x3, 4.0.2.1, 4.3.2.0 (35 file .ifc trong repo) cùng danh sách tiêu chí nhập tối thiểu mà buildingSMART dùng chứng n… |
 | [constructcraft](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-francisreboucas-constructcraft) | `francisreboucas/constructcraft` | GPL-3.0-or-later (app); cc_skp MIT; tài sản riêng | 287 | đọc tài liệu 2026-11-23 | 27 | Ứng dụng BIM bằng Rust, sinh mặt bằng, mặt cắt, lịch và sheet từ một mô hình tham số. |
 | [sketchcraft](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-jasonsutter87-sketchcraft) | `jasonsutter87/sketchcraft` | MIT | 136 | đọc tài liệu 2026-11-23 | 27 | Ứng dụng dựng hình push/pull 3D bằng Rust, có desktop, CLI và MCP. |
 | [CanvasAnvil](../../27-3d-cad-bim-engineering/README.md#5b-kiểm-bài-giới-thiệu-canvasanvil-codingfeng101canvasanvil-bản-vẽ-cải-tạo-nội-thất-chuyên-nghiệp-từ-một-câu-phần-lớn-là-ảnh-do-model-sinh-ảnh-vẽ-bài-người-dùng-gửi-đọc-mã-3112026) | `codingfeng101/canvasanvil` | MIT | 113 | đọc mã 2026-11-03 | 27 | Web app 4 workspace (sơ đồ, nội thất 'CAD', PPT, ảnh) trên API tương thích OpenAI của người dùng; |
+| [buildingSMART Validation Service](../../27-3d-cad-bim-engineering/README.md#nt-buildingsmart-validate) | `buildingSMART/validate` | MIT | 74 | đọc mã 2026-11-23 | 27 | Dịch vụ web (Django, Celery, Docker Compose) của buildingSMART để kiểm file IFC qua các tác vụ: cú pháp, schema, header, chữ ký số, ClamAV, quy tắc Gherkin và bSDD. |
 | [AutoCAD MCP Anh Kỹ Sư AI (fork)](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-anhkysuai-byte-autocad-mcp-anhkysuai) | `anhkysuai-byte/autocad-mcp-anhkysuai` | MIT | 1 | đọc tài liệu 2026-11-23 | 27 | Fork của tích hợp MCP AutoCAD LT/DXF trong hệ sinh thái Anh Kỹ Sư AI. |
 | [Dhcb-Tools](../../23-own-repos-lessons/README.md#ch-dhcb-tools) | `www-donghanhcungban-org/Dhcb-Tools` | Apache-2.0 | 0 | đọc tài liệu 2026-11-23 | 23 | Add-in Revit 2022–2027 + AutoCAD (68 lệnh), HTTP bridge loopback có token, MCP server + .mcpb, AI offline Ollama qwen3, kiểm IDS 1.0/BCF 2.1; |
 | [CadQuery](../../27-3d-cad-bim-engineering/README.md#cadquery) | `CadQuery/cadquery` | Apache-2.0 | — | đọc mã 2026-11-04 | 27 | CAD tham số Python/B-rep; |

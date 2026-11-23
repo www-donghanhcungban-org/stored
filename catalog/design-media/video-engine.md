@@ -2,7 +2,7 @@
 
 # video-engine — Thiết kế, giao diện & media
 
-[← Mục lục catalog](../README.md) · 26 hồ sơ.
+[← Mục lục catalog](../README.md) · 31 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -29,6 +29,11 @@
 | [moviepy](../../08-awesome-lists-learning/README.md#6c57-dựng-video--slide-tự-động) | `Zulko/moviepy` | MIT | 15.163 | đọc tài liệu 2026-11-18 | 08 | Thư viện Python biên tập video: cắt, nối, chèn tiêu đề, ghép nhiều lớp (non-linear editing), xử lý và tạo hiệu ứng tuỳ biến. |
 | [OpenFilm](../../22-motion-design-animation/README.md#ch-openfilm) | `openfilm/openfilm` | MIT | 9.099 | đọc tài liệu 2026-11-23 | 22 | film.html + frame(t) cho coding agent, Studio sửa tay mọi lớp, xuất Premiere/Resolve; |
 | [Mediabunny](../../22-motion-design-animation/README.md#9i-kiểm-bài-đăng-điền-form-nhận-4-thứ-agent-team-skill-motion-xưởng-repo-18-công-cụ-skill-sfx-585-âm-bài-người-dùng-gửi-2112026) | `Vanilagy/mediabunny` | MPL-2.0 | 7.420 | đọc tài liệu 2026-11-02 | 22 | Toolkit media TypeScript thuần đọc/ghi/chuyển đổi video-audio trong trình duyệt và Node (WebCodecs); |
+| [SmartSub](../../19-agentic-video-media/README.md#nt-smartsub) | `buxuku/SmartSub` | MIT | 6.139 | đọc mã 2026-11-23 | 19 | Ứng dụng desktop Electron/Next.js gói cả chuỗi tải video, nhận dạng giọng nói (whisper.cpp, faster-whisper, FunASR...), dịch phụ đề, hiệu đính, lồng tiếng TTS và ghi phụ… |
+| [YouDub Desktop](../../19-agentic-video-media/README.md#nt-youdub-desktop) | `liuzhao1225/YouDub-Desktop` | Apache-2.0 | 5.886 | đọc mã 2026-11-23 | 19 | Workspace bản địa hóa video: tải video, nhận dạng (Whisper large-v3-turbo), tách nền (Demucs), dịch bằng LLM do người dùng cấu hình, nhân bản giọng từng câu (VoxCPM2), c… |
 | [html-video](../../22-motion-design-animation/README.md#ch-html-video) | `nexu-io/html-video` | Apache-2.0 | 4.904 | đọc tài liệu 2026-11-23 | 22 | Studio + CLI HTML → MP4 của nhóm Open Design, 23 template, adapter HyperFrames/Remotion, 14 agent; |
 | [Revideo](../../22-motion-design-animation/README.md#ch-revideo) | `redotvideo/revideo` | MIT | 4.200 | đọc tài liệu 2026-11-23 | 22 | Fork Motion Canvas, render headless/API; |
 | [ManimGX](../../22-motion-design-animation/README.md#ch-manimgx) | `academa-labs/manimgx` | MIT (mã nguồn); wheel gộp thành phần bên thứ ba, bản native | 2.865 | đọc tài liệu 2026-11-23 | 22 | API Manim CE trên lõi Rust/wgpu, chạy cả trình duyệt; |
+| [FreeCut](../../19-agentic-video-media/README.md#nt-freecut) | `walterlow/freecut` | MIT | 2.353 | đọc mã 2026-11-23 | 19 | Trình dựng video nhiều track chạy hoàn toàn trong trình duyệt (WebGPU, WebCodecs qua mediabunny, OPFS, File System Access), kèm dịch vụ render headless để agent/CI dựng… |
+| [FFMetrics](../../19-agentic-video-media/README.md#nt-ffmetrics) | `fifonik/FFMetrics` | — | 1.051 | đọc tài liệu 2026-11-23 | 19 | GUI Windows (.NET Framework 4.8) bọc ffmpeg để tính và vẽ đồ thị PSNR, SSIM, VMAF, XPSNR theo khung cho tối đa 24 file so với bản gốc, có tùy chọn dòng lệnh để chạy tự đ… |
+| [libebur128](../../19-agentic-video-media/README.md#nt-libebur128) | `jiixyj/libebur128` | MIT | 498 | đọc mã 2026-11-23 | 19 | Thư viện C (MIT) cài đặt EBU R128 / ITU-R BS.1770: loudness momentary, short-term, integrated, loudness range, sample peak và true peak, có API đọc theo thời gian thực. |

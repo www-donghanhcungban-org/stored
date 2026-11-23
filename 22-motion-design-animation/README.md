@@ -1546,3 +1546,43 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 Tài liệu Android Compose chính thức mô tả hai scheme standard và expressive, mỗi scheme có spec spatial/effects ở fast/default/slow. Đây là bằng chứng API Compose, không xác nhận giá trị token web hay mọi nền tảng; trang m3.material.io vẫn không đọc được nội dung qua công cụ.
 
 Nguồn: [https://developer.android.com/reference/kotlin/androidx/compose/material3/MotionScheme](https://developer.android.com/reference/kotlin/androidx/compose/material3/MotionScheme).
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-gaussian-splat-lite"></a>
+
+### Gaussian-Splat-Lite
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/WilliamLiu-1997/Gaussian-Splat-Lite |
+| License | Apache-2.0 (kèm mã dẫn xuất MIT từ SparkJS và PlayCanvas) |
+| Phiên bản đã đọc | `7152a7ffa98e58a886df355045cd7d5f83163e9f` (commit 2026-11-24) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, GaussianSplatRenderer.js, test/utils.test.js, docs/StochasticRendering.md, package.json, ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Dựng 3D / WebGPU (3DGS cho Three.js) |
+| Cơ chế đáng học | - `src/rendering/GaussianSplatRenderer.js`: lớp trung tâm dùng `SplatWorker`, `SortCenterCache`, `SplatAccumulator`, chọn backend WebGPU hoặc WebGL qua `backend.js`; từ chối camera không hỗ trợ trừ ArrayCamera của WebXR.<br>- `docs/StochasticRendering.md`: bật `splatRenderer.stochastic`, vẽ không blend có depth test rồi khử nhiễu bằng `NeuralDenoiseNode` (WebGPU) hoặc pass cho WebGL.<br>- `package.json`/CI: `release:check` build WASM, kiểm WebP, dựng site và kiểm gói npm. |
+| Tiêu chí và cách kiểm | CI `ci.yml`: `npm audit --audit-level=high`, `npm run release:check`, `cargo test --workspace --locked`, `cargo clippy -D warnings`, `cargo fmt --check`, nối decoder C với Rust WASM. `test/utils.test.js` chỉ kiểm chuyển đổi half-float; không thấy test ảnh hoặc benchmark hiệu năng. Kiểm bằng máy cho phần giải mã/Rust, không cho phần render. |
+| Giới hạn và rủi ro | Apache-2.0; NOTICE và THIRD_PARTY_LICENSES.md nêu mã dẫn xuất từ SparkJS (MIT, World Labs) và PlayCanvas/SuperSplat (MIT), cần giữ thông báo khi nhúng. Bộ khử nhiễu neural đánh dấu thử nghiệm. Phụ thuộc Three.js bản rất mới và WebGPU. Commit mới nhất ghi 2026-11-24 theo git (có thể lệch múi giờ so với ngày kiểm). Tuyên bố hiệu năng cao **(chưa xác minh)**, chưa chạy benchmark. |
+| So với | three.js, react-three-fiber, 3D Gaussian Splatting gốc (graphdeco-gaussian-splatting) |
+| Nguồn | [README.md](https://github.com/WilliamLiu-1997/Gaussian-Splat-Lite/blob/7152a7ffa98e58a886df355045cd7d5f83163e9f/README.md) · [LICENSE](https://github.com/WilliamLiu-1997/Gaussian-Splat-Lite/blob/7152a7ffa98e58a886df355045cd7d5f83163e9f/LICENSE) · [NOTICE](https://github.com/WilliamLiu-1997/Gaussian-Splat-Lite/blob/7152a7ffa98e58a886df355045cd7d5f83163e9f/NOTICE) · [THIRD_PARTY_LICENSES.md](https://github.com/WilliamLiu-1997/Gaussian-Splat-Lite/blob/7152a7ffa98e58a886df355045cd7d5f83163e9f/THIRD_PARTY_LICENSES.md) · [package.json](https://github.com/WilliamLiu-1997/Gaussian-Splat-Lite/blob/7152a7ffa98e58a886df355045cd7d5f83163e9f/package.json) · [GaussianSplatRenderer.js](https://github.com/WilliamLiu-1997/Gaussian-Splat-Lite/blob/7152a7ffa98e58a886df355045cd7d5f83163e9f/src/rendering/GaussianSplatRenderer.js) · [utils.test.js](https://github.com/WilliamLiu-1997/Gaussian-Splat-Lite/blob/7152a7ffa98e58a886df355045cd7d5f83163e9f/test/utils.test.js) · [StochasticRendering.md](https://github.com/WilliamLiu-1997/Gaussian-Splat-Lite/blob/7152a7ffa98e58a886df355045cd7d5f83163e9f/docs/StochasticRendering.md) · [ci.yml](https://github.com/WilliamLiu-1997/Gaussian-Splat-Lite/blob/7152a7ffa98e58a886df355045cd7d5f83163e9f/.github/workflows/ci.yml) |
+
+<a id="nt-scena"></a>
+
+### scena
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/johannesPettersson80/scena |
+| License | MIT OR Apache-2.0 (hai file LICENSE-MIT và LICENSE-APACHE) |
+| Phiên bản đã đọc | `58434c812d33a1a20dd4c85529d0d21daaac172e` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE-MIT, LICENSE-APACHE, Cargo.toml, README.md, .github/workflows/ci.yml, src/reference_image.rs, tests/q01_waterbottle_cpu_reference.rs; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm thử render và hồi quy hình (headless, so ảnh tham chiếu) |
+| Cơ chế đáng học | - Thư viện Rust cho scene graph, tải glTF/GLB, camera, ánh sáng, vật liệu, picking, render headless CPU và GPU (WebGPU/WebGL2); có CLI `scena photo render model.glb`.<br>- `src/reference_image.rs`: `ReferenceImage` RGBA8 với `regress` và `regress_with_tolerance` (ngưỡng `max_abs_diff` và `max_mismatched_pixels`), báo cáo số điểm ảnh lệch.<br>- `tests/q01_waterbottle_cpu_reference.rs`: so render CPU 256x256 tất định với ảnh tham chiếu có SHA-256, dung sai RGB Chebyshev 4, tỷ lệ trong dung sai tối thiểu 0.995, RMSE tối đa 2.0, và thử các ảnh sai có chủ đích; thừa nhận ảnh tham chiếu do chính scena sinh nên chỉ chứng minh tính tất định, nên neo thêm ảnh Blender Cycles làm tham chiếu độc lập. |
+| Tiêu chí và cách kiểm | `ci.yml` job Linux chạy fmt, clippy `-D warnings`, `cargo test`, các test release/platform, kiểm gói cài đặt cho agent và `xtask claim-audit` trên Vulkan phần mềm (lavapipe). Kiểm bằng máy ở upstream; mình chưa chạy. Có workflow riêng cho GPU phần cứng (chưa mở). |
+| Giới hạn và rủi ro | License kép MIT hoặc Apache-2.0 đủ file, trinh sát ghi NOASSERTION là sai. Dự án trẻ (một nhà phát triển, phiên bản 1.12.0 trong Cargo.toml), nên tuyên bố về độ chính xác render cần kiểm riêng. Trinh sát nhắc "hình/âm": mình không thấy phần kiểm thử âm thanh trong các file đã đọc (chưa xác minh toàn repo). Kết quả pixel phụ thuộc driver phần mềm. |
+| So với | three-js, react-three-fiber, pixelmatch |
+| Nguồn | [LICENSE-MIT](https://github.com/johannesPettersson80/scena/blob/58434c812d33a1a20dd4c85529d0d21daaac172e/LICENSE-MIT) · [LICENSE-APACHE](https://github.com/johannesPettersson80/scena/blob/58434c812d33a1a20dd4c85529d0d21daaac172e/LICENSE-APACHE) · [Cargo.toml](https://github.com/johannesPettersson80/scena/blob/58434c812d33a1a20dd4c85529d0d21daaac172e/Cargo.toml) · [README.md](https://github.com/johannesPettersson80/scena/blob/58434c812d33a1a20dd4c85529d0d21daaac172e/README.md) · [ci.yml](https://github.com/johannesPettersson80/scena/blob/58434c812d33a1a20dd4c85529d0d21daaac172e/.github/workflows/ci.yml) · [reference_image.rs](https://github.com/johannesPettersson80/scena/blob/58434c812d33a1a20dd4c85529d0d21daaac172e/src/reference_image.rs) · [q01_waterbottle_cpu_reference.rs](https://github.com/johannesPettersson80/scena/blob/58434c812d33a1a20dd4c85529d0d21daaac172e/tests/q01_waterbottle_cpu_reference.rs) |

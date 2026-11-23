@@ -2,7 +2,7 @@
 
 # sandbox — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 21 hồ sơ.
+[← Mục lục catalog](../README.md) · 24 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -21,9 +21,12 @@
 | [microsandbox](../../11-browser-computer-use-sandbox/README.md#ch-microsandbox) | `superradcompany/microsandbox` | Apache-2.0 | 9.182 | đọc tài liệu 2026-11-23 | 11 | MicroVM cục bộ dựa trên libkrun, secret không vào VM; |
 | [Monty](../../11-browser-computer-use-sandbox/README.md#ch-monty) | `pydantic/monty` | MIT | 8.996 | đọc tài liệu 2026-11-23 | 11 | Trình thông dịch tập con Python 3.14 viết bằng Rust cho code do LLM sinh, không có FS/mạng/env; |
 | [sandbox-runtime](../../11-browser-computer-use-sandbox/README.md#ch-sandbox-runtime) | `anthropics/sandbox-runtime` | Apache-2.0 | 7.238 | đọc tài liệu 2026-11-23 | 11 | Sandbox OS cho Claude Code: Seatbelt/bubblewrap, mạng chặn mặc định; |
+| [agentOS (Rivet)](../../11-browser-computer-use-sandbox/README.md#nt-rivet-agentos) | `rivet-dev/agentos` | Apache-2.0 | 4.918 | đọc mã 2026-11-23 | 11 | Không phải microVM: agentOS là runtime "VM" nhẹ gồm kernel ảo kiểu POSIX viết bằng Rust, chạy mã khách trong V8 isolate, WASM hoặc Pyodide, mọi thao tác file/process/mạn… |
 | [nono](../../12-ai-security-guardrails/README.md#ch-nono) | `nolabs-ai/nono` | Apache-2.0 | 4.785 | đọc tài liệu 2026-11-23 | 12 | Sandbox tiến trình cho agent bằng Landlock/Seatbelt không cần root, proxy tiêm credential, attestation skill bằng Sigstore, audit + rollback; |
 | [Agent Sandbox (Kubernetes SIG Apps)](../../11-browser-computer-use-sandbox/README.md#ch-agent-sandbox-kubernetes-sig-apps) | `kubernetes-sigs/agent-sandbox` | Apache-2.0 | 4.692 | đọc tài liệu 2026-11-23 | 11 | CRD Sandbox/Template/Claim/WarmPool, cách ly giao cho gVisor/Kata qua RuntimeClass; |
+| [ArcBox](../../11-browser-computer-use-sandbox/README.md#nt-arcbox) | `arcboxlabs/arcbox` | Apache-2.0 OR MIT (hai file LICENSE-APACHE và LICENSE-MIT) | 4.232 | đọc mã 2026-11-23 | 11 | Không chỉ sandbox: ArcBox là runtime container/VM cho macOS viết bằng Rust (thay Docker Desktop/OrbStack) với một tầng sandbox microVM cho agent. |
 | [nsjail](../../11-browser-computer-use-sandbox/README.md#ch-nsjail) | `google/nsjail` | Apache-2.0 | 4.202 | đọc tài liệu 2026-11-23 | 11 | Jail tiến trình Linux: namespace, cgroup v1/v2, rlimit, seccomp-bpf (Kafel), config protobuf, mẫu chromium/firefox; |
+| [SPACE (Perplexity)](../../11-browser-computer-use-sandbox/README.md#nt-perplexity-space) | `perplexityai/SPACE` | Apache-2.0 | 2.153 | đọc mã 2026-11-23 | 11 | Nền tảng sandbox (viết bằng Rust, API HTTP) chạy mã trong microVM Firecracker; |
 | [Modal](../../11-browser-computer-use-sandbox/README.md#ch-modal) | `modal-labs/modal-client` | Apache-2.0 (SDK) | 539 | đọc tài liệu 2026-11-23 | 11 | gVisor; |
 | [Bubblewrap](../../11-browser-computer-use-sandbox/README.md#factory-2026-11-04-bubblewrap) | `containers/bubblewrap` | LGPL (LICENSE: 2.1; bubblewrap.c: 2.0-or-later) | — | đọc mã 2026-11-04 | 11 | Công cụ dựng sandbox namespace; |
 | [Docker Sandboxes](../../12-ai-security-guardrails/README.md#4e-kiểm-infographic-5-vị-trí-cần-đặt-guardrails-trong-ai-agent-ảnh-người-dùng-gửi-2026-11-02) |  | — | — | đọc tài liệu 2026-11-02 | 11 | Sản phẩm Docker (CLI sbx): microVM mỗi sandbox có daemon riêng, credential proxy giữ khoá API ngoài VM, egress qua proxy host có policy, MCP gateway; |

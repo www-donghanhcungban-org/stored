@@ -2,7 +2,7 @@
 
 # speech — Mô hình, dữ liệu & tài liệu
 
-[← Mục lục catalog](../README.md) · 49 hồ sơ.
+[← Mục lục catalog](../README.md) · 51 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -37,6 +37,7 @@
 | [LiveKit Agents](../../14-voice-multimodal/README.md#ch-livekit-agents) | `livekit/agents` | Apache-2.0 (mã); model turn-detection theo LiveKit Model Lic | 15.026 | đọc tài liệu 2026-11-23 | 14 | ; |
 | [ACE-Step 1.5](../../14-voice-multimodal/README.md#ch-ace-step-1-5) | `ace-step/ACE-Step-1.5` | MIT | 14.249 | đọc tài liệu 2026-11-23 | 14 | Model sinh nhạc từ văn bản, chạy local < 4 GB VRAM (bản XL 4B ≥ 12 GB), LoRA từ vài bài; |
 | [FluidVoice](../../14-voice-multimodal/README.md#anhkysuai-2026-11-23-fluidvoice) | `altic-dev/FluidVoice` | GPL-3.0 cho app macOS; runtime Fluid Intelligence nguồn đóng | 13.212 | đọc tài liệu 2026-11-23 | 14 | Ứng dụng macOS nhập văn bản bằng giọng nói và lưu nội dung cuộc họp. |
+| [SpeechBrain](../../14-voice-multimodal/README.md#nt-speechbrain-toolkit) | `speechbrain/speechbrain` | Apache-2.0 (mã); license từng model pretrained trên Hugging Face khác nhau (chưa xác minh) | 11.950 | đọc mã 2026-11-23 | 14 | Bộ công cụ PyTorch cho ASR, TTS, nhận dạng người nói, tách nguồn, với hơn 200 recipe huấn luyện dạng cặp `train.py` và `hparams/\*.yaml`. |
 | [TEN Framework](../../14-voice-multimodal/README.md#ch-ten-framework) | `TEN-framework/ten-framework` | Apache-2.0 + điều kiện bổ sung của Agora | 11.242 | đọc tài liệu 2026-11-23 | 14 | ; |
 | [Silero VAD](../../14-voice-multimodal/README.md#5e-voice-reliability) | `snakers4/silero-vad` | MIT | 10.581 | đọc mã 2026-11-02 | 14 | VAD streaming; |
 | [Kokoro TTS](../../14-voice-multimodal/README.md#ch-kokoro-tts) | `hexgrad/kokoro` | Apache-2.0 | 9.818 | đọc tài liệu 2026-11-23 | 14 | 82M; |
@@ -44,6 +45,7 @@
 | [Podcastfy](../../19-agentic-video-media/README.md#ch-podcastfy) | `souzatharsis/podcastfy` | Apache-2.0 | 6.850 | đọc tài liệu 2026-11-23 | 19 | Tài liệu → podcast hội thoại đa ngôn ngữ; |
 | [aiortc](../../14-voice-multimodal/README.md#5e-voice-reliability) | `aiortc/aiortc` | BSD-3-Clause | 5.124 | đọc mã 2026-11-02 | 14 | WebRTC asyncio thấp tầng, cần signaling và lifecycle ở lớp ứng dụng; |
 | [VieNeu-TTS](../../18-vietnam-community/README.md#ch-vieneu-tts) | `pnnbao97/VieNeu-TTS` | Apache-2.0 | 3.550 | đọc tài liệu 2026-11-23 | 18 | TTS tiếng Việt clone giọng, chạy CPU; |
+| [Kyutai Delayed Streams Modeling (STT/TTS)](../../14-voice-multimodal/README.md#nt-kyutai-delayed-streams) | `kyutai-labs/delayed-streams-modeling` | Mã MIT (phần Python, web client) và Apache-2.0 (phần Rust); trọng số STT CC-BY 4.0; trọng số TTS chưa nêu trong README (chưa xác minh) | 3.055 | đọc mã 2026-11-23 | 14 | Repo hướng dẫn chạy Kyutai STT và TTS streaming theo kỹ thuật Delayed Streams Modeling, có ba cách triển khai: PyTorch (nghiên cứu), máy chủ Rust `moshi-server` qua webs… |
 | [Audio8 TTS](../../14-voice-multimodal/README.md#ch-audio8-tts) | `Edge0-AI/Audio8_TTS` | Apache-2.0 (mã và hai bản 0.6B); 0.1B dùng Audio8 Community | 2.116 | đọc tài liệu 2026-11-23 | 14 | DualAR (theo Fish S2 Pro) 0.6B, clone zero-shot 11 ngôn ngữ (không có vi), ONNX INT4 CPU ~1 GiB, SGLang Omni; |
 | [viXTTS](../../18-vietnam-community/README.md#ch-vixtts) | `thinhlpg/vixtts-demo` | MPL-2.0 (mã demo; weights CPML theo catalog, chưa kiểm) | 517 | đọc tài liệu 2026-11-23 | 18 | XTTS-v2 tiếng Việt, không còn bảo trì; |
 | [V-TTS](../../18-vietnam-community/README.md#ch-v-tts) | `tronghieuit/v-tts` | CC-BY-NC-4.0 | 409 | đọc tài liệu 2026-11-23 | 18 | TTS tiếng Việt 74,8M tham số, 5 giọng, clone giọng zero-shot, app .exe không ký; |

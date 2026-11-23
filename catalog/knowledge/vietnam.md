@@ -2,17 +2,20 @@
 
 # vietnam — Học tập, tài liệu & tri thức
 
-[← Mục lục catalog](../README.md) · 18 hồ sơ.
+[← Mục lục catalog](../README.md) · 21 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [Vietnamese Provinces Database](../../18-vietnam-community/README.md#ch-vietnamese-provinces-database) | `thanglequoc/vietnamese-provinces-database` | MIT | 1.869 | đọc tài liệu 2026-11-23 | 18 | 34 tỉnh, 3.321 xã/phường sau sáp nhập (v5.2.0 theo 388/NQ-UBTVQH16); |
 | [underthesea](../../18-vietnam-community/README.md#ch-underthesea) | `undertheseanlp/underthesea` | Apache-2.0 | 1.819 | đọc tài liệu 2026-11-23 | 18 | v9.5.0 5/2026; |
+| [OpenKey](../../18-vietnam-community/README.md#nt-openkey) | `tuyenvm/OpenKey` | GPL-3.0 | 982 | đọc mã 2026-11-23 | 18 | Bộ gõ tiếng Việt mã nguồn mở cho macOS và Windows, engine C++ dùng chung, có chuyển mã và gõ tắt; |
 | [Local AI OCR](../../18-vietnam-community/README.md#ch-local-ai-ocr) | `th1nhhdk/local_ai_ocr` | Apache-2.0 | 893 | đọc tài liệu 2026-11-23 | 18 | App PySide6 chạy DeepSeek-OCR-2 cục bộ, ảnh/PDF → Markdown/Word; |
 | [PhoBERT](../../18-vietnam-community/README.md#ch-phobert) | `VinAIResearch/PhoBERT` | MIT (base/large); AGPL-3.0 (base-v2) | 811 | đọc tài liệu 2026-11-23 | 18 | Encoder RoBERTa tiếng Việt; |
 | [PhoGPT](../../18-vietnam-community/README.md#ch-phogpt) | `VinAIResearch/PhoGPT` | BSD-3-Clause (repo) | 794 | đọc tài liệu 2026-11-23 | 18 | VinAI. |
 | [VnCoreNLP](../../18-vietnam-community/README.md#ch-vncorenlp) | `vncorenlp/VnCoreNLP` | GPL-3.0-or-later | 679 | đọc tài liệu 2026-11-23 | 18 | . |
+| [hostsVN](../../18-vietnam-community/README.md#nt-hostsvn) | `bigdargon/hostsVN` | MIT | 615 | đọc mã 2026-11-23 | 18 | Danh sách chặn (khoảng 18,6 nghìn miền theo header) cho web Việt, xuất sẵn cho nhiều ứng dụng. |
 | [Elasticsearch Vietnamese Analysis](../../18-vietnam-community/README.md#ch-elasticsearch-vietnamese-analysis) | `duydo/elasticsearch-analysis-vietnamese` | Apache-2.0 | 565 | đọc tài liệu 2026-11-23 | 18 | Plugin vi_analyzer cho Elasticsearch 9.x dùng bộ tách từ C++ của Cốc Cốc; |
+| [XKey](../../18-vietnam-community/README.md#nt-xkey) | `xmannv/xkey` | MIT | 554 | đọc mã 2026-11-23 | 18 | Bộ gõ tiếng Việt macOS (MIT) viết Swift, hai chế độ CGEvent/IMKit, bộ hồi quy Telex 8.046 ca với sàn tăng dần. |
 | [awsome-vietnamese-nlp](../../18-vietnam-community/README.md#ch-awsome-vietnamese-nlp) | `vndee/awsome-vietnamese-nlp` | không có file LICENSE | 320 | đọc tài liệu 2026-11-23 | 18 | . |
 | [SeaLLMs](../../18-vietnam-community/README.md#ch-seallms) | `DAMO-NLP-SG/SeaLLMs` | không có file LICENSE (README dẫn SeaLLMs Terms of Use) | 176 | đọc tài liệu 2026-11-23 | 18 | LLM Đông Nam Á (Alibaba DAMO), ngừng từ 7/2024; |
 | [VMLU](../../18-vietnam-community/README.md#ch-vmlu) | `ZaloAI-Jaist/VMLU` | MIT (mã); phần license dữ liệu README ghi "TBU" | 84 | đọc tài liệu 2026-11-23 | 18 | Benchmark LLM tiếng Việt 10.880 câu/58 môn; |

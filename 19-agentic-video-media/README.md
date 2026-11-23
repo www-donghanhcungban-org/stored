@@ -1776,3 +1776,196 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | Commit 21/9/2026, package.json 0.5.0-beta.1; README ghi "Preview release". |
 | Nhận định | Workspace ảnh/video AI có Assistant, canvas và cấu hình OpenRouter; từ bản 0.5 viết lại so với bản "phim ngắn từ tiểu thuyết" cũ. ELv2 cấm cung cấp dịch vụ hosted/managed cho bên thứ ba, không dùng làm nền cho dịch vụ bán lại. |
 | Nguồn | [README.md](https://github.com/waooAI/waoowaoo/blob/dfec20e32298ed675050329e4a41477024148399/README.md) · [LICENSE](https://github.com/waooAI/waoowaoo/blob/dfec20e32298ed675050329e4a41477024148399/LICENSE) · [package.json](https://github.com/waooAI/waoowaoo/blob/dfec20e32298ed675050329e4a41477024148399/package.json) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-smartsub"></a>
+
+### SmartSub
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/buxuku/SmartSub |
+| License | MIT |
+| Phiên bản đã đọc | `a03d73c79a5a21513092996a9ad715ee68e57368` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README_EN.md, alignment.ts, automation/server.ts, catalog.ts, ci.yml, crash-diagnostics.yml; chưa chạy upstream |
+| Khoảng trống lấp | Phụ đề và dịch phụ đề tiếng Việt (và lồng tiếng) |
+| Cơ chế đáng học | - `main/helpers/dubbing/alignment.ts`: tính khe thời gian cho từng cue (mượn khoảng lặng chỉ khi được duyệt), ước lượng độ dài giọng đọc rồi quyết định tăng tốc hoặc cắt; ngưỡng quá dài 1.15 khai báo ở `types/dubbing.ts`.<br>- `main/automation/server.ts`: máy chủ HTTP cục bộ chỉ nhận Host 127.0.0.1, từ chối request có header Origin, token Bearer ngẫu nhiên 32 byte so sánh `timingSafeEqual`, giới hạn body 8 MB, kết quả qua `redact()`.<br>- `automation/catalog.ts`: danh mục thao tác định nghĩa bằng zod, dùng chung cho MCP và CLI (`smartsub`), có `requestId` chống trùng và `tasks.wait`. |
+| Tiêu chí và cách kiểm | CI `ci.yml` chạy kiểm khớp khóa i18n, typecheck, nhiều bộ test (pro-baseline, engines, GPU, stdio, addon, speech-review, translate-parser) trên ubuntu-22.04; có workflow riêng cho GPU Windows, đường dẫn không-ASCII, ffmpeg-compat (chỉ ghi tên, chưa mở hết). Kiểm bằng máy, nhưng chất lượng dịch/lồng tiếng không có ngưỡng tự động đã đọc. |
+| Giới hạn và rủi ro | MIT. Nhiều dịch vụ dịch/LLM/TTS đám mây: văn bản phụ đề rời máy khi dùng; README có mục tài trợ quảng cáo API trung gian. Crash reporter đặt `uploadToServer: false` (chỉ dòng trong crashReporting.ts, chưa mở cả file). Số liệu "111 công cụ", "20 dịch vụ dịch" là tuyên bố tác giả **(chưa xác minh)**. Phụ thuộc addon/native tải về runtime (CUDA, whisper addon): rủi ro chuỗi cung ứng cần kiểm riêng. Danh sách ngôn ngữ có "vi" (locale en/common.json) nhưng chất lượng ASR/TTS tiếng Việt **(chưa xác minh)**. |
+| So với | pyvideotrans, VideoLingo (cùng nhóm dịch/lồng tiếng), FunASR (động cơ nhận dạng) |
+| Nguồn | [README_EN.md](https://github.com/buxuku/SmartSub/blob/a03d73c79a5a21513092996a9ad715ee68e57368/README_EN.md) · [LICENSE](https://github.com/buxuku/SmartSub/blob/a03d73c79a5a21513092996a9ad715ee68e57368/LICENSE) · [package.json](https://github.com/buxuku/SmartSub/blob/a03d73c79a5a21513092996a9ad715ee68e57368/package.json) · [ci.yml](https://github.com/buxuku/SmartSub/blob/a03d73c79a5a21513092996a9ad715ee68e57368/.github/workflows/ci.yml) · [crash-diagnostics.yml](https://github.com/buxuku/SmartSub/blob/a03d73c79a5a21513092996a9ad715ee68e57368/.github/workflows/crash-diagnostics.yml) · [alignment.ts](https://github.com/buxuku/SmartSub/blob/a03d73c79a5a21513092996a9ad715ee68e57368/main/helpers/dubbing/alignment.ts) · [server.ts](https://github.com/buxuku/SmartSub/blob/a03d73c79a5a21513092996a9ad715ee68e57368/main/automation/server.ts) · [catalog.ts](https://github.com/buxuku/SmartSub/blob/a03d73c79a5a21513092996a9ad715ee68e57368/automation/catalog.ts) |
+
+<a id="nt-youdub-desktop"></a>
+
+### YouDub Desktop
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/liuzhao1225/YouDub-Desktop |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `b82cb0aebe7e89cc0dd0db215764657f06cb0d05` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.en.md, docs/workflows.md, dag.py, segments.py, tts.py, resources.json, ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Lồng tiếng và bản địa hóa video |
+| Cơ chế đáng học | - `backend/app/server/dag.py` (`TaskRunner`): lập lịch DAG, một khe GPU (`Semaphore(1)`), trạng thái chờ xác nhận của người, sổ đăng ký artifact và kế hoạch chạy lại.<br>- `docs/workflows.md`: tác vụ lưu bản chụp đồ thị và cấu hình; sửa kết quả tạo task phái sinh, xem trước phần tái dùng; không có song song/vòng lặp ở phiên bản này.<br>- `backend/app/v1/tts.py`: mỗi câu dịch lấy audio câu gốc làm tham chiếu giọng, ánh xạ một-một; kiểm ngôn ngữ nguồn/đích thuộc `LANGUAGES`.<br>- `backend/requirements/resources.json`: khai báo nhóm phụ thuộc và model theo nhà cung cấp, chỉ chuẩn bị tài nguyên cho workflow được chọn. |
+| Tiêu chí và cách kiểm | CI `ci.yml`: job backend cài ffmpeg, dựng venv và chạy pytest qua `scripts/test-backend.mjs` (thư mục backend/tests có test cho asr, tts, mix, export...); job web kiểm frontend; action ghim theo SHA. Kiểm bằng máy; chất lượng giọng/dịch không có ngưỡng tự động đã đọc. |
+| Giới hạn và rủi ro | Apache-2.0 cho mã; model (Whisper, Demucs, VoxCPM2, Qwen forced aligner) có license riêng, chưa kiểm từng cái **(chưa xác minh)**; thư mục submodule demucs trỏ repo facebookresearch/demucs, không được clone ở đây. `LANGUAGES = ("en","zh","ja")` trong segments.py: không có tiếng Việt. README và release trỏ tên cũ YouDub-webui (repo đã đổi tên). Nhân bản giọng người nói gốc cần cân nhắc quyền và deepfake. Cần GPU và tải nhiều model; README hướng dẫn mặc định dùng mirror npm Trung Quốc. |
+| So với | VideoLingo, pyvideotrans, FunASR (chỉ khâu nhận dạng) |
+| Nguồn | [README.en.md](https://github.com/liuzhao1225/YouDub-Desktop/blob/b82cb0aebe7e89cc0dd0db215764657f06cb0d05/README.en.md) · [LICENSE](https://github.com/liuzhao1225/YouDub-Desktop/blob/b82cb0aebe7e89cc0dd0db215764657f06cb0d05/LICENSE) · [THIRD_PARTY_NOTICES.md](https://github.com/liuzhao1225/YouDub-Desktop/blob/b82cb0aebe7e89cc0dd0db215764657f06cb0d05/THIRD_PARTY_NOTICES.md) · [workflows.md](https://github.com/liuzhao1225/YouDub-Desktop/blob/b82cb0aebe7e89cc0dd0db215764657f06cb0d05/docs/workflows.md) · [dag.py](https://github.com/liuzhao1225/YouDub-Desktop/blob/b82cb0aebe7e89cc0dd0db215764657f06cb0d05/backend/app/server/dag.py) · [segments.py](https://github.com/liuzhao1225/YouDub-Desktop/blob/b82cb0aebe7e89cc0dd0db215764657f06cb0d05/backend/app/v1/segments.py) · [tts.py](https://github.com/liuzhao1225/YouDub-Desktop/blob/b82cb0aebe7e89cc0dd0db215764657f06cb0d05/backend/app/v1/tts.py) · [resources.json](https://github.com/liuzhao1225/YouDub-Desktop/blob/b82cb0aebe7e89cc0dd0db215764657f06cb0d05/backend/requirements/resources.json) · [.gitmodules](https://github.com/liuzhao1225/YouDub-Desktop/blob/b82cb0aebe7e89cc0dd0db215764657f06cb0d05/.gitmodules) · [ci.yml](https://github.com/liuzhao1225/YouDub-Desktop/blob/b82cb0aebe7e89cc0dd0db215764657f06cb0d05/.github/workflows/ci.yml) |
+
+<a id="nt-freecut"></a>
+
+### FreeCut
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/walterlow/freecut |
+| License | MIT |
+| Phiên bản đã đọc | `5ceeeb388eef5423640b7db157706274bf1b8165` (commit 2026-10-29) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, package.json, ci.yml, frame-oracle.mjs, server.mjs; chưa chạy upstream |
+| Khoảng trống lấp | Trình dựng video trong trình duyệt (WebCodecs, tất định) |
+| Cơ chế đáng học | - `headless/frame-oracle.mjs`: dựng dự án fixture giàu hiệu ứng qua `POST /frame`, in `frame=N sha256=...` cho 5 khung; chạy hai lần phải ra cùng hash; `--ablate` bỏ từng thành phần để chứng minh thành phần đó có tác động lên hash.<br>- `headless/serve.mjs` / `server.mjs`: dịch vụ render cục bộ (mặc định 127.0.0.1:8787, hàng đợi có giới hạn, timeout render 30 phút) kèm kiểm tra bảo mật HTTP và test hợp đồng trong `headless/*.test.mjs`.<br>- `package.json`: xuất media bằng `mediabunny` 1.54.0 và các encoder AAC/AC3/MP3/ProRes; tách ranh giới feature bằng các script check trong CI. |
+| Tiêu chí và cách kiểm | CI `ci.yml`: kiểm ranh giới feature/layer, quét mã chết (fallow), `vp run check`, unit test có sàn coverage, build, rồi bộ test headless "portable" với ffmpeg. Kiểm bằng máy. Chính `frame-oracle.mjs` ghi rõ không phải golden của CI vì hash phụ thuộc GPU. |
+| Giới hạn và rủi ro | MIT. "Tất định" chỉ đúng trong cùng một máy/GPU khi chạy hai lần, theo ghi chú trong frame-oracle.mjs; không có bằng chứng bit-exact giữa GPU. Cần WebGPU/WebCodecs, ProRes/codec tùy trình duyệt. Mô hình AI cục bộ (Parakeet, Kokoro, MusicGen, VLM) tải về lúc chạy, license từng model chưa kiểm **(chưa xác minh)**. Phiên bản `0.0.0`, lịch sử tính năng dài nhưng chưa có bản phát hành ổn định đã đọc. Không thấy mã telemetry trong lần grep mã nguồn (chưa quét sâu). |
+| So với | Remotion, mediabunny, ffmpeg.wasm |
+| Nguồn | [README.md](https://github.com/walterlow/freecut/blob/5ceeeb388eef5423640b7db157706274bf1b8165/README.md) · [LICENSE](https://github.com/walterlow/freecut/blob/5ceeeb388eef5423640b7db157706274bf1b8165/LICENSE) · [package.json](https://github.com/walterlow/freecut/blob/5ceeeb388eef5423640b7db157706274bf1b8165/package.json) · [ci.yml](https://github.com/walterlow/freecut/blob/5ceeeb388eef5423640b7db157706274bf1b8165/.github/workflows/ci.yml) · [frame-oracle.mjs](https://github.com/walterlow/freecut/blob/5ceeeb388eef5423640b7db157706274bf1b8165/headless/frame-oracle.mjs) · [server.mjs](https://github.com/walterlow/freecut/blob/5ceeeb388eef5423640b7db157706274bf1b8165/headless/server.mjs) |
+
+<a id="nt-ffmetrics"></a>
+
+### FFMetrics
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/fifonik/FFMetrics |
+| License | Không có file LICENSE |
+| Phiên bản đã đọc | `6ec04ee493d178199de1f71c7f357814024898f7` (commit 2026-05-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, TODO.md (repo không có mã nguồn); chưa chạy upstream |
+| Khoảng trống lấp | Cổng chất lượng video tất định (VMAF/PSNR/SSIM; loudness và timecode không có) |
+| Cơ chế đáng học | - README liệt kê PSNR, SSIM, VMAF, XPSNR; chọn model VMAF tự động theo thông tin media tham chiếu, hỗ trợ model built-in, json hoặc pkl.<br>- Chạy không giao diện qua cờ: `-metric=...`, `-run`, `-exit`, `-auto-save-results-file`, `-log-frames`, `-project=<file.ffmproj>`; đây là cách dùng như bước trong pipeline Windows.<br>- Trích khung "xấu" ra PNG và lưu số liệu từng khung ra CSV để lọc ngưỡng ở bước khác. |
+| Tiêu chí và cách kiểm | Không có ngưỡng đạt/trượt, không test, không CI trong repo (không có thư mục .github). Mọi khẳng định là mô tả của tác giả **(chưa xác minh)**; chưa tải bản phát hành nhị phân. |
+| Giới hạn và rủi ro | Không có file LICENSE và không có mã nguồn: mặc định mọi quyền được bảo lưu, không nên coi là mã nguồn mở (trinh sát ghi license "-" là đúng). Chỉ Windows, cần ffmpeg ngoài (VMAF cần bản build có libvmaf). Lời hứa "không theo dõi, không quảng cáo" là tuyên bố tác giả **(chưa xác minh)**. Bảo trì: commit mới nhất 2026-05-13, chỉ README. |
+| So với | ffmpeg-quality-metrics (CLI/Python, cùng việc), VMAF của Netflix, ffmpeg |
+| Nguồn | [README.md](https://github.com/fifonik/FFMetrics/blob/6ec04ee493d178199de1f71c7f357814024898f7/README.md) · [TODO.md](https://github.com/fifonik/FFMetrics/blob/6ec04ee493d178199de1f71c7f357814024898f7/TODO.md) |
+
+<a id="nt-ai-video-editor"></a>
+
+### Timeline Studio (ai-video-editor)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/MartinDelophy/ai-video-editor |
+| License | MIT (chỉ phạm vi mã gốc; model và dữ liệu có license riêng) |
+| Phiên bản đã đọc | `087e2f78dbc0ef2c1843daa82236367cb274b9ff` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, MODEL_LICENSES.md, docs/webmcp.md, SKILL.md, package.json, ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Trình dựng video trong trình duyệt (WebCodecs, tất định); người và agent cùng sửa một timeline |
+| Cơ chế đáng học | - `docs/webmcp.md`: bảng công cụ `timeline_project_inspect`, `timeline_edit_preview` (cần `stateToken`, chưa đổi timeline), `timeline_edit_apply` (áp đúng `previewId` thành một giao dịch hoàn tác được), `timeline_export_prepare/start/inspect/cancel`.<br>- `skills/edit-timeline-studio/SKILL.md`: ưu tiên xử lý file `.timeline` cục bộ qua lớp lệnh có revision, bắt buộc `timeline_project_diff` trước `apply`, và cấm tuyên bố tất định nếu chỉ tự động hóa UI.<br>- `MODEL_LICENSES.md`: tách rõ license mã và trọng số model, ghi mirror/ghim revision/checksum không làm đổi license. |
+| Tiêu chí và cách kiểm | CI `ci.yml`: chặn commit trọng số model vào `public/models/`, giới hạn 20 MiB mỗi file, rồi eslint, typecheck (web và host) và build; không thấy bước unit test trong CI và `package.json` không có script `test` (đã grep). Chưa chạy gì. |
+| Giới hạn và rủi ro | MIT chỉ cho mã gốc; MODEL_LICENSES.md nói rõ trọng số face-swap (MobileFaceSwap, ArcFace, SCRFD) là research, không cấp quyền thương mại, nên không dùng tính năng đó cho sản phẩm thương mại khi chưa xác minh. Mô hình tải từ mirror Hugging Face/ModelScope lúc chạy. README quảng bá bản Anna (lưu cloud) và nhóm WeChat; bản local khác bản cloud về dữ liệu rời máy. Tính năng deep synthesis có cảnh báo sử dụng có trách nhiệm. Tuyên bố "deterministic offline export" **(chưa xác minh)** vì không đọc mã xuất. Tên sản phẩm là Timeline Studio, khác tên repo. |
+| So với | OpenTimelineIO (định dạng trao đổi), Remotion (dựng bằng mã), mediabunny |
+| Nguồn | [README.md](https://github.com/MartinDelophy/ai-video-editor/blob/087e2f78dbc0ef2c1843daa82236367cb274b9ff/README.md) · [LICENSE](https://github.com/MartinDelophy/ai-video-editor/blob/087e2f78dbc0ef2c1843daa82236367cb274b9ff/LICENSE) · [MODEL_LICENSES.md](https://github.com/MartinDelophy/ai-video-editor/blob/087e2f78dbc0ef2c1843daa82236367cb274b9ff/MODEL_LICENSES.md) · [webmcp.md](https://github.com/MartinDelophy/ai-video-editor/blob/087e2f78dbc0ef2c1843daa82236367cb274b9ff/docs/webmcp.md) · [SKILL.md](https://github.com/MartinDelophy/ai-video-editor/blob/087e2f78dbc0ef2c1843daa82236367cb274b9ff/skills/edit-timeline-studio/SKILL.md) · [package.json](https://github.com/MartinDelophy/ai-video-editor/blob/087e2f78dbc0ef2c1843daa82236367cb274b9ff/package.json) · [ci.yml](https://github.com/MartinDelophy/ai-video-editor/blob/087e2f78dbc0ef2c1843daa82236367cb274b9ff/.github/workflows/ci.yml) |
+
+<a id="nt-libebur128"></a>
+
+### libebur128
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/jiixyj/libebur128 |
+| License | MIT |
+| Phiên bản đã đọc | `1f3fc73c9526c462405613e4fedca5d0f9fad9fc` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc ebur128.h, ebur128.c, test ebu_files và true_peak, check_coverage_thresholds.py, build.yml, README.md; chưa chạy upstream |
+| Khoảng trống lấp | Cổng chất lượng video tất định (loudness) |
+| Cơ chế đáng học | - `ebur128/ebur128.c`: cổng tuyệt đối -70 LUFS dùng histogram 1000 ngăn, cổng tương đối -10 LU (`relative_gate = -10.0`), hiệu chỉnh 0.691 theo BS.1770.<br>- `ebur128/ebur128.h`: các chế độ đo (`ebur128_loudness_global`, `ebur128_loudness_range`, peak) và định nghĩa kênh theo BS.1770-4.<br>- Lõi tách `ebur128_loudness_global_multiple` để gộp nhiều luồng; v1.2.4 sửa lỗi ngưỡng tương đối bị tính từ state cuối cùng (README). |
+| Tiêu chí và cách kiểm | Test `ebur128-test.ebu_files.cpp`: dung sai integrated 0.1 LU, LRA 1.0 LU, true peak không vượt giá trị chuẩn quá 0.2 dB; test malloc-fail; `check_coverage_thresholds.py` mặc định yêu cầu 100% dòng, 85% nhánh, 100% hàm. CI `build.yml` chạy ubuntu x86 và ARM, macOS 15, Windows 2022 với sanitizer và coverage 32-bit. Kiểm bằng máy; cách lấy bộ file EBU của CMake chưa kiểm. |
+| Giới hạn và rủi ro | MIT, tác giả Jan Kokemüller. Chỉ là thư viện: muốn làm cổng loudness phải tự viết lớp đọc audio và ngưỡng (ví dụ -23 LUFS/-14 LUFS) bên ngoài. Công cụ dòng lệnh là repo khác (loudness-scanner). Bản 1.2.6; commit mới nhất 2026-11-19 là còn bảo trì. Tuyên bố tuân thủ chuẩn dựa trên test của tác giả, chưa chạy lại. |
+| So với | ffmpeg (bộ lọc ebur128 dùng cùng phép đo), ffmpeg-quality-metrics, VMAF |
+| Nguồn | [README.md](https://github.com/jiixyj/libebur128/blob/1f3fc73c9526c462405613e4fedca5d0f9fad9fc/README.md) · [COPYING](https://github.com/jiixyj/libebur128/blob/1f3fc73c9526c462405613e4fedca5d0f9fad9fc/COPYING) · [ebur128.h](https://github.com/jiixyj/libebur128/blob/1f3fc73c9526c462405613e4fedca5d0f9fad9fc/ebur128/ebur128.h) · [ebur128.c](https://github.com/jiixyj/libebur128/blob/1f3fc73c9526c462405613e4fedca5d0f9fad9fc/ebur128/ebur128.c) · [ebur128-test.ebu_files.cpp](https://github.com/jiixyj/libebur128/blob/1f3fc73c9526c462405613e4fedca5d0f9fad9fc/ebur128/ebur128-test.ebu_files.cpp) · [ebur128-test.true_peak.cpp](https://github.com/jiixyj/libebur128/blob/1f3fc73c9526c462405613e4fedca5d0f9fad9fc/ebur128/ebur128-test.true_peak.cpp) · [check_coverage_thresholds.py](https://github.com/jiixyj/libebur128/blob/1f3fc73c9526c462405613e4fedca5d0f9fad9fc/tools/check_coverage_thresholds.py) · [build.yml](https://github.com/jiixyj/libebur128/blob/1f3fc73c9526c462405613e4fedca5d0f9fad9fc/.github/workflows/build.yml) |
+
+<a id="nt-letsseal"></a>
+
+### Let's Seal (SEAL)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/letsseal/letsseal |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `daff1706f70ce81d040f1e9bb2a1f4d41c15f64b` (commit 2026-08-18) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, SPEC.md, CONFORMANCE.md, spec/verify.py, signing-service/c2pa_seal.py, requirements.txt, ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Provenance và C2PA cho media |
+| Cơ chế đáng học | - `signing-service/c2pa_seal.py`: ký manifest C2PA bằng callback signer với khóa tổ chức; dùng `c2pa.opened` trên ingredient `parentOf` vì c2pa 0.37 đòi `digitalSourceType` cho `c2pa.created`; seal cũ vẫn xác minh được (test_c2pa.py).<br>- `spec/verify.py`: trình xác minh tham chiếu dùng pyhanko và `openssl`, ghim root đã công bố (hoặc `--root`), tùy chọn `--check-revocation`; thời gian kiểm bằng `ots verify`.<br>- `SPEC.md` + `CONFORMANCE.md`: mỗi yêu cầu đánh số C-n truy về mục spec; thư mục `spec/vectors/` có ca hợp lệ, bị sửa, root lạ, thu hồi. |
+| Tiêu chí và cách kiểm | CI `ci.yml`: web (typecheck, test, build, kiểm migration), signing service (khóa requirements, dựng CA tạm, seal, validate, tamper-check). Có vector tuân thủ để bên thứ ba tự kiểm. Kiểm bằng máy; chưa chạy lại. |
+| Giới hạn và rủi ro | Apache-2.0. SPEC ghi rõ chưa có rà soát bên thứ ba hay cơ quan chuẩn; không phải chuẩn C2PA hay trust list của Adobe, nên trình đọc C2PA phổ thông có thể không nhận signer (suy luận từ SPEC, chưa thử). Niêm phong ảnh/video qua API cloud khiến byte media đến máy ký (c2pa_seal.py ghi rõ); chỉ CAdES tách rời là chỉ gửi digest. Phụ thuộc dịch vụ cloud letsseal.org, root CA tự vận hành, và neo Bitcoin cho thời gian; chứng minh danh tính pháp lý bị loại trừ. Dự án còn mới (CPS v1.0). |
+| So với | C2PA specifications, c2pa-rs (Content Credentials SDK), c2patool, cosign |
+| Nguồn | [README.md](https://github.com/letsseal/letsseal/blob/daff1706f70ce81d040f1e9bb2a1f4d41c15f64b/README.md) · [LICENSE](https://github.com/letsseal/letsseal/blob/daff1706f70ce81d040f1e9bb2a1f4d41c15f64b/LICENSE) · [NOTICE](https://github.com/letsseal/letsseal/blob/daff1706f70ce81d040f1e9bb2a1f4d41c15f64b/NOTICE) · [SPEC.md](https://github.com/letsseal/letsseal/blob/daff1706f70ce81d040f1e9bb2a1f4d41c15f64b/SPEC.md) · [CONFORMANCE.md](https://github.com/letsseal/letsseal/blob/daff1706f70ce81d040f1e9bb2a1f4d41c15f64b/CONFORMANCE.md) · [verify.py](https://github.com/letsseal/letsseal/blob/daff1706f70ce81d040f1e9bb2a1f4d41c15f64b/spec/verify.py) · [c2pa_seal.py](https://github.com/letsseal/letsseal/blob/daff1706f70ce81d040f1e9bb2a1f4d41c15f64b/signing-service/c2pa_seal.py) · [requirements.txt](https://github.com/letsseal/letsseal/blob/daff1706f70ce81d040f1e9bb2a1f4d41c15f64b/signing-service/requirements.txt) · [ci.yml](https://github.com/letsseal/letsseal/blob/daff1706f70ce81d040f1e9bb2a1f4d41c15f64b/.github/workflows/ci.yml) |
+
+<a id="nt-raven-otio-viewer"></a>
+
+### Raven (OTIO viewer)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/OpenTimelineIO/raven |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `e6dfe8bd4c159e380aa2480e4184527a2de7ec7d` (commit 2026-09-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, editing.h, pyproject.toml, build.yaml (README và header, chưa đọc timeline.cpp/app.cpp); chưa chạy upstream |
+| Khoảng trống lấp | Timeline trao đổi và timecode (OpenTimelineIO) |
+| Cơ chế đáng học | - README: mục tiêu thay `otioview`, build CMake trên macOS/Windows/Linux, WASM bằng Emscripten, gói Python `opentimelineio-raven` qua scikit-build-core.<br>- `editing.h`: các thao tác sửa `ReplaceObject`, `DeleteSelectedObject`, `AddMarkerAtPlayhead`, `AddTrack`, `FlattenTrackDown`, màu item.<br>- `app.cpp` (đã grep): timecode dùng `RationalTime::to_timecode` với `drop_frame_mode` và tùy chọn "Snap to Frames". |
+| Tiêu chí và cách kiểm | Không có test; workflow `build.yaml` chỉ build trên Linux/macOS/Windows rồi `ls` và `file raven`. Không có kiểm timecode tự động, nên không thay được cổng kiểm timeline. |
+| Giới hạn và rủi ro | Apache-2.0. Phiên bản 0.1.0, README tự ghi "experimental" và liệt kê thiếu: nhiều lựa chọn, copy/paste, undo/redo, adapter, tính năng của otiotool. Cần clone `--recursive` (OpenTimelineIO, imgui, glfw, minizip-ng...); ZIP không build được. Bản WASM thiếu hộp thoại mở/lưu file. File mẫu Netflix theo CC BY 4.0. Hiệu năng với timeline lớn (JSON inspector làm tăng thời gian nạp) theo README **(chưa xác minh)**. |
+| So với | OpenTimelineIO (thư viện lõi), Blender (editor có timeline riêng) |
+| Nguồn | [README.md](https://github.com/OpenTimelineIO/raven/blob/e6dfe8bd4c159e380aa2480e4184527a2de7ec7d/README.md) · [LICENSE.txt](https://github.com/OpenTimelineIO/raven/blob/e6dfe8bd4c159e380aa2480e4184527a2de7ec7d/LICENSE.txt) · [VERSION.txt](https://github.com/OpenTimelineIO/raven/blob/e6dfe8bd4c159e380aa2480e4184527a2de7ec7d/VERSION.txt) · [pyproject.toml](https://github.com/OpenTimelineIO/raven/blob/e6dfe8bd4c159e380aa2480e4184527a2de7ec7d/pyproject.toml) · [editing.h](https://github.com/OpenTimelineIO/raven/blob/e6dfe8bd4c159e380aa2480e4184527a2de7ec7d/editing.h) · [.gitmodules](https://github.com/OpenTimelineIO/raven/blob/e6dfe8bd4c159e380aa2480e4184527a2de7ec7d/.gitmodules) · [build.yaml](https://github.com/OpenTimelineIO/raven/blob/e6dfe8bd4c159e380aa2480e4184527a2de7ec7d/.github/workflows/build.yaml) |
+
+<a id="nt-montage-ai"></a>
+
+### Montage AI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/mfahsold/montage-ai |
+| License | PolyForm Noncommercial 1.0.0 |
+| Phiên bản đã đọc | `2e9dc03bfd0c320cf30f2762791bcccfd1d12b06` (commit 2026-03-10) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, NOTICE, pyproject.toml, README.md, src/montage_ai/export/otio_builder.py, src/montage_ai/text_editor.py, scripts/ci.sh, Jenkinsfile, tests/test_otio_export.py; chưa chạy upstream |
+| Khoảng trống lấp | Timeline trao đổi và timecode (xuất OpenTimelineIO, EDL, FCP XML, AAF) |
+| Cơ chế đáng học | - `export/otio_builder.py` dựng timeline OpenTimelineIO từ `EditingParameters` và danh sách clip rồi xuất qua adapter: `cmx_3600` (EDL), `otio_json`, `fcp_xml`, `aaf`; marker nhịp và ghi chú hiệu ứng nằm trong metadata `montage_ai` của clip.<br>- `text_editor.py`: cắt theo transcript (Word, Segment, EditRegion), loại từ đệm, khoảng lặng, đoạn độ tin cậy thấp bằng các hàm như `remove_filler_words`, `remove_silence`, `remove_low_confidence`.<br>- Kho có Jenkinsfile gọi `scripts/ci.sh` chạy pytest, không dùng GitHub Actions. |
+| Tiêu chí và cách kiểm | Có test cho OTIO (`tests/test_otio_export.py` kiểm tên timeline, số track, metadata clip). Mình chưa chạy; chưa thấy kiểm vòng tròn nhập lại OTIO vào NLE thật. fps mặc định cố định 30 trong `OTIOBuilder`, cần truyền đúng fps nguồn. |
+| Giới hạn và rủi ro | License là PolyForm Noncommercial 1.0.0 (cả LICENSE lẫn `pyproject.toml`): chỉ dùng phi thương mại, không sublicense, nên không phải mã nguồn mở theo OSI; trinh sát ghi NOASSERTION là sai so với LICENSE thực. Gốc kho có rất nhiều file báo cáo (SESSION_SUMMARY, DEPLOYMENT_READINESS...) do agent sinh ra nên độ tin cậy tài liệu thấp hơn mã (nhận xét chủ quan). Phụ thuộc FFmpeg (LGPL), OpenCV; yêu cầu 16 GB RAM khuyến nghị. |
+| So với | opentimelineio, video-use, auto-create-video |
+| Nguồn | [LICENSE](https://github.com/mfahsold/montage-ai/blob/2e9dc03bfd0c320cf30f2762791bcccfd1d12b06/LICENSE) · [NOTICE](https://github.com/mfahsold/montage-ai/blob/2e9dc03bfd0c320cf30f2762791bcccfd1d12b06/NOTICE) · [pyproject.toml](https://github.com/mfahsold/montage-ai/blob/2e9dc03bfd0c320cf30f2762791bcccfd1d12b06/pyproject.toml) · [README.md](https://github.com/mfahsold/montage-ai/blob/2e9dc03bfd0c320cf30f2762791bcccfd1d12b06/README.md) · [otio_builder.py](https://github.com/mfahsold/montage-ai/blob/2e9dc03bfd0c320cf30f2762791bcccfd1d12b06/src/montage_ai/export/otio_builder.py) · [text_editor.py](https://github.com/mfahsold/montage-ai/blob/2e9dc03bfd0c320cf30f2762791bcccfd1d12b06/src/montage_ai/text_editor.py) · [ci.sh](https://github.com/mfahsold/montage-ai/blob/2e9dc03bfd0c320cf30f2762791bcccfd1d12b06/scripts/ci.sh) · [Jenkinsfile](https://github.com/mfahsold/montage-ai/blob/2e9dc03bfd0c320cf30f2762791bcccfd1d12b06/Jenkinsfile) · [test_otio_export.py](https://github.com/mfahsold/montage-ai/blob/2e9dc03bfd0c320cf30f2762791bcccfd1d12b06/tests/test_otio_export.py) |
+
+<a id="nt-media-os"></a>
+
+### Media OS for Claude Code
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/damionrashford/media-os |
+| License | MIT |
+| Phiên bản đã đọc | `5014c1e8b23fd3e18d49926d9aa147d15a3aa08e` (commit 2026-05-17) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, .github/workflows/validate.yml, hooks/hooks.json, hooks/scripts/pre-ffmpeg-validate.py, bin/mosafe, skills/ffmpeg-streaming/SKILL.md, skills/ffmpeg-quality/SKILL.md, skills/ffmpeg-transcode/SKILL.md; chưa chạy upstream |
+| Khoảng trống lấp | Tham chiếu skill FFmpeg và media: HLS/DASH, HDR, kiểm chất lượng (VMAF) |
+| Cơ chế đáng học | - Plugin Claude Code gồm skill, mode định tuyến, agent chuyên biệt, hook vòng đời và ba CLI `moprobe`, `moqc`, `mosafe` (`hooks/hooks.json`, `bin/`); router nạp file mode trước khi tạo agent.<br>- Hook PreToolUse trên Bash (`hooks/scripts/pre-ffmpeg-validate.py`) quét chuỗi lệnh ffmpeg tìm lỗi kinh điển: input trùng output, `-y` ghi đè, MP4 thiếu `-movflags +faststart`, HLS thiếu `-sc_threshold 0`, TS sang MP4 thiếu `aac_adtstoasc`, CRF cùng bitrate; trả `ask` thay vì chặn cứng.<br>- Các SKILL.md (ví dụ `ffmpeg-streaming`, `ffmpeg-quality`) là công thức theo bước: bảng chọn giao thức, VMAF/PSNR/SSIM và quét CRF theo mục tiêu VMAF. |
+| Tiêu chí và cách kiểm | `validate.yml` chỉ kiểm cấu trúc: JSON hợp lệ, version khớp, frontmatter từng SKILL.md, không có README trong thư mục skill, không có đường dẫn /Users, CLI có quyền thực thi, số lượng khớp thực tế. Không thấy test chạy thử các script hay lệnh ffmpeg; chất lượng công thức là chưa xác minh. Validator hook dựa trên khớp chuỗi sau `shlex.split`, không phải parser ffmpeg. |
+| Giới hạn và rủi ro | MIT. Số liệu bị lệch: README ghi 96 skill tool và 13 workflow (109), nhưng thư mục `skills/` có 110 thư mục (97 không phải workflow); trinh sát ghi 96 là theo README. Chưa thấy skill riêng cho AVIF, AV1 chỉ xuất hiện trong bảng của `ffmpeg-transcode`; tuyên bố "AV1, AVIF" của trinh sát chưa được xác nhận. Hook SessionStart ghi cache cục bộ (`session-start-capabilities.py`); mình không thấy gọi mạng trong hook và bin (grep), nhưng skill hướng dẫn dùng nhiều công cụ ngoài (yt-dlp, mô hình AI). README cam kết lọc model theo license nhưng mình không kiểm. |
+| So với | ffmpeg-skill-kajisho5, ffmpeg-skill-n0an, ffmpeg-quality-metrics |
+| Nguồn | [LICENSE](https://github.com/damionrashford/media-os/blob/5014c1e8b23fd3e18d49926d9aa147d15a3aa08e/LICENSE) · [README.md](https://github.com/damionrashford/media-os/blob/5014c1e8b23fd3e18d49926d9aa147d15a3aa08e/README.md) · [validate.yml](https://github.com/damionrashford/media-os/blob/5014c1e8b23fd3e18d49926d9aa147d15a3aa08e/.github/workflows/validate.yml) · [hooks.json](https://github.com/damionrashford/media-os/blob/5014c1e8b23fd3e18d49926d9aa147d15a3aa08e/hooks/hooks.json) · [pre-ffmpeg-validate.py](https://github.com/damionrashford/media-os/blob/5014c1e8b23fd3e18d49926d9aa147d15a3aa08e/hooks/scripts/pre-ffmpeg-validate.py) · [mosafe](https://github.com/damionrashford/media-os/blob/5014c1e8b23fd3e18d49926d9aa147d15a3aa08e/bin/mosafe) · [SKILL.md](https://github.com/damionrashford/media-os/blob/5014c1e8b23fd3e18d49926d9aa147d15a3aa08e/skills/ffmpeg-streaming/SKILL.md) · [SKILL.md](https://github.com/damionrashford/media-os/blob/5014c1e8b23fd3e18d49926d9aa147d15a3aa08e/skills/ffmpeg-quality/SKILL.md) · [SKILL.md](https://github.com/damionrashford/media-os/blob/5014c1e8b23fd3e18d49926d9aa147d15a3aa08e/skills/ffmpeg-transcode/SKILL.md) |
+
+<a id="nt-c2pa-mcp"></a>
+
+### c2pa-mcp (Content Credentials MCP)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/contentauth/c2pa-mcp |
+| License | MIT OR Apache-2.0 (hai file LICENSE-MIT và LICENSE-APACHE) |
+| Phiên bản đã đọc | `ef521f06dc3900fcc5afdc8ad9fe846011c44f0d` (commit 2026-03-27) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE-MIT, LICENSE-APACHE, Cargo.toml, README.md, src/reader.rs, src/main.rs, src/mcp.rs, src/settings.json, .github/workflows/release.yml; chưa chạy upstream |
+| Khoảng trống lấp | Provenance và C2PA cho media (cầu nối agent với SDK c2pa-rs) |
+| Cơ chế đáng học | - Server MCP stdio nhỏ (khoảng 500 dòng Rust trong `src/`) với hai tool `read_credentials_file` và `read_credentials_url`, trả JSON `success`, `hasCredentials`, `manifestData` (`src/mcp.rs`).<br>- Khi khởi động tải bốn danh sách tin cậy (C2PA trust list, TSA, và hai danh sách ITL) từ raw.githubusercontent.com ghép thành PEM rồi nạp vào `c2pa::Context` (`src/main.rs`, `src/reader.rs`); nếu tải hỏng thì chạy tiếp mà không có trust anchor.<br>- Cấu hình `verify_after_reading` và `remote_manifest_fetch` đều bật trong `src/settings.json`. |
+| Tiêu chí và cách kiểm | Chỉ có một unit test (đọc file rỗng trả `has_credentials=false`); workflow duy nhất là `release.yml` (build ma trận khi gắn tag) và mình không thấy bước chạy test trong phần đã đọc. Không có kiểm chứng tự động chữ ký trên mẫu thật trong repo; mình chưa chạy. |
+| Giới hạn và rủi ro | Cả hai tool đọc đường dẫn hoặc URL do agent cung cấp: file đọc được bất kỳ đường dẫn nào (không allowlist), URL chỉ kiểm tiền tố http/https và timeout 60 giây, không giới hạn kích thước hay chặn địa chỉ nội bộ (rủi ro SSRF nếu agent bị tiêm lệnh); `remote_manifest_fetch` có thể kéo thêm manifest từ xa. Không có trust anchor khi tải danh sách lỗi: kết quả xác thực kém tin cậy hơn nhưng vẫn trả thành công. Cài bằng `curl \| sh` từ nhánh main. Dự án mới (v0.2.2), ít sao. |
+| So với | c2pa-rs-cai-rust-sdk, c2patool, c2pa-specifications |
+| Nguồn | [LICENSE-MIT](https://github.com/contentauth/c2pa-mcp/blob/ef521f06dc3900fcc5afdc8ad9fe846011c44f0d/LICENSE-MIT) · [LICENSE-APACHE](https://github.com/contentauth/c2pa-mcp/blob/ef521f06dc3900fcc5afdc8ad9fe846011c44f0d/LICENSE-APACHE) · [Cargo.toml](https://github.com/contentauth/c2pa-mcp/blob/ef521f06dc3900fcc5afdc8ad9fe846011c44f0d/Cargo.toml) · [README.md](https://github.com/contentauth/c2pa-mcp/blob/ef521f06dc3900fcc5afdc8ad9fe846011c44f0d/README.md) · [reader.rs](https://github.com/contentauth/c2pa-mcp/blob/ef521f06dc3900fcc5afdc8ad9fe846011c44f0d/src/reader.rs) · [main.rs](https://github.com/contentauth/c2pa-mcp/blob/ef521f06dc3900fcc5afdc8ad9fe846011c44f0d/src/main.rs) · [mcp.rs](https://github.com/contentauth/c2pa-mcp/blob/ef521f06dc3900fcc5afdc8ad9fe846011c44f0d/src/mcp.rs) · [settings.json](https://github.com/contentauth/c2pa-mcp/blob/ef521f06dc3900fcc5afdc8ad9fe846011c44f0d/src/settings.json) · [release.yml](https://github.com/contentauth/c2pa-mcp/blob/ef521f06dc3900fcc5afdc8ad9fe846011c44f0d/.github/workflows/release.yml) |

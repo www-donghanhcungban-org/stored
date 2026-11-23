@@ -2,7 +2,7 @@
 
 # document-intelligence — Mô hình, dữ liệu & tài liệu
 
-[← Mục lục catalog](../README.md) · 17 hồ sơ.
+[← Mục lục catalog](../README.md) · 21 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -23,3 +23,7 @@
 | [pdf-inspector](../../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính) | `firecrawl/pdf-inspector` | MIT | 20.052 | đọc tài liệu 2026-11-18 | 08 | Thư viện Rust phân loại PDF (dạng văn bản hay ảnh quét) và trích xuất văn bản có vị trí, chuyển thành Markdown sạch mà không cần OCR; |
 | [olmOCR](../../26-document-intelligence-ocr/README.md#olmocr) | `allenai/olmocr` | Apache-2.0 (code); weights kiểm riêng | 19.814 | đọc mã 2026-11-02 | 26 | Đọc mã/đặc tả 2/11/2026, f7cfe4c22098; |
 | [unstructured](../../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính) | `Unstructured-IO/unstructured` | Apache License 2.0 | 15.762 | đọc tài liệu 2026-11-18 | 08 | Thư viện Python mã nguồn mở để nạp và tiền xử lý tài liệu (PDF, HTML, Word, ảnh…) thành dữ liệu có cấu trúc cho quy trình LLM. |
+| [Chandra OCR 2](../../26-document-intelligence-ocr/README.md#nt-chandra-ocr) | `datalab-to/chandra` | Mã Apache-2.0; trọng số OpenRAIL-M sửa đổi (MODEL_LICENSE) | 12.744 | đọc mã 2026-11-23 | 26 | OCR tài liệu thành Markdown/HTML/JSON giữ layout, chạy qua Hugging Face cục bộ hoặc máy chủ vLLM. |
+| [PDF-Extract-Kit](../../26-document-intelligence-ocr/README.md#nt-pdf-extract-kit) | `opendatalab/PDF-Extract-Kit` | AGPL-3.0 | 10.081 | đọc mã 2026-11-23 | 26 | Hộp công cụ mô-đun cho PDF: phát hiện layout (DocLayout-YOLO), công thức (YOLOv8), nhận dạng công thức (UniMERNet), OCR (PaddleOCR) và bảng (StructEqTable). |
+| [Table Transformer (TATR)](../../26-document-intelligence-ocr/README.md#nt-table-transformer) | `microsoft/table-transformer` | MIT (mã gốc); detr/ Apache-2.0; trọng số: chưa xác minh | 2.946 | đọc mã 2026-11-23 | 26 | Mô hình DETR nhận diện bảng và cấu trúc bảng từ ảnh (PubTables-1M), kèm hậu xử lý ngưỡng/NMS và thước đo GriTS. |
+| [dots.ocr (dots.mocr)](../../26-document-intelligence-ocr/README.md#nt-dots-ocr) | `rednote-hilab/dots.ocr` | MIT (LICENSE) kèm thỏa thuận riêng dots.mocr LICENSE AGREEMENT | — | đọc mã 2026-11-23 | 26 | Parser tài liệu một mô hình VLM (nay đổi tên thành dots.mocr, README nói 3B tham số) xuất layout JSON kèm bbox, văn bản Markdown, bảng HTML, công thức LaTeX, và thêm đọc… |

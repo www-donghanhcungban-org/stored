@@ -1339,3 +1339,26 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 GitHub mô tả tính năng gợi ý mã, hỏi đáp về codebase, review và giao tác vụ agent. Phạm vi phụ thuộc gói, client và chính sách tổ chức. Chưa thử sản phẩm hoặc xác minh giá; số giá cũ không còn được dùng làm giá hiện hành.
 
 Nguồn: [https://docs.github.com/en/copilot/get-started/about-github-copilot](https://docs.github.com/en/copilot/get-started/about-github-copilot).
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-openagentscontrol"></a>
+
+### OpenAgents Control
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/darrenhinde/OpenAgentsControl |
+| License | MIT |
+| Phiên bản đã đọc | `1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590` (commit 2026-10-19) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, .opencode/agent/core/openagent.md, evals/framework/src/evaluators/approval-gate-evaluator.ts, .github/workflows/pr-checks.yml, evals/PRODUCTION_READINESS_ASSESSMENT.md; chưa chạy upstream |
+| Khoảng trống lấp | Human-in-the-loop và phê duyệt nhiều cấp cho agent coding (plan-first) |
+| Cơ chế đáng học | - openagent.md: quy tắc tuyệt đối approval_gate (xin duyệt trước bash/write/edit/task), stop_on_failure (không tự sửa), report_first (báo, đề xuất, xin duyệt, mới sửa), nạp context bắt buộc theo loại tác vụ<br>- Frontmatter permission: bash mặc định ask, rm -rf /* và sudo bị deny, edit chặn .env, .key, .secret, node_modules, .git: lớp cưỡng chế do host OpenCode thực hiện (chưa xác minh bằng chạy)<br>- evals/framework/src/evaluators có approval-gate, context-loading, stop-on-failure, report-first, cleanup-confirmation, delegation: đo hành vi từ timeline sự kiện phiên |
+| Tiêu chí và cách kiểm | CI pr-checks.yml kiểm định dạng tiêu đề PR theo conventional commits, build framework eval, validate:suites:all và test:ci (deterministic, Node 20). Evaluator ApprovalGate duyệt theo ngôn ngữ xin phép xuất hiện trước lệnh thực thi, ngoại lệ khi người dùng nói không cần hỏi; không chứng minh agent thật bị chặn. PRODUCTION_READINESS_ASSESSMENT.md là tự đánh giá của tác giả (chưa xác minh). |
+| Giới hạn và rủi ro | MIT. Đang chuyển hướng lớn nên cấu trúc có thể đổi. Tuyên bố 'luôn xin duyệt' dựa vào tuân thủ prompt của mô hình. Đã đọc README nhưng không có chứng cứ eval chạy với mô hình thật; số liệu trong báo cáo eval là của tác giả. Cài qua install.sh nên cần đọc script trước khi chạy. |
+| So với | LoopForge (tencent-loopforge, cổng duyệt do engine cưỡng chế), Superpowers (superpowers), Agent OS (agent-os) |
+| Nguồn | [README.md](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/README.md) · [LICENSE](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/LICENSE) · [openagent.md](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/.opencode/agent/core/openagent.md) · [approval-gate-evaluator.ts](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/evals/framework/src/evaluators/approval-gate-evaluator.ts) · [pr-checks.yml](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/.github/workflows/pr-checks.yml) · [PRODUCTION_READINESS_ASSESSMENT.md](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/evals/PRODUCTION_READINESS_ASSESSMENT.md) |

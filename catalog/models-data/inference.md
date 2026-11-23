@@ -2,7 +2,7 @@
 
 # inference — Mô hình, dữ liệu & tài liệu
 
-[← Mục lục catalog](../README.md) · 33 hồ sơ.
+[← Mục lục catalog](../README.md) · 36 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -17,6 +17,7 @@
 | [textgen](../../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện) | `oobabooga/textgen` | GNU Affero General Public License v3 | 47.739 | đọc tài liệu 2026-11-18 | 08 | TextGen: ứng dụng desktop và giao diện web chạy LLM cục bộ, hỗ trợ chat, thị giác, gọi công cụ, tìm kiếm web, kèm API. |
 | [jan](../../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện) | `janhq/jan` | Apache License 2.0 | 45.781 | đọc tài liệu 2026-11-18 | 08 | Jan: ứng dụng desktop mã nguồn mở thay thế ChatGPT, tải và chạy LLM cục bộ hoặc kết nối mô hình đám mây. |
 | [airllm](../../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện) | `lyogavin/airllm` | Apache License 2.0 | 42.585 | đọc tài liệu 2026-11-18 | 08 | Thư viện Python giảm bộ nhớ khi suy luận LLM bằng cách nạp mô hình theo từng lớp, cho phép chạy mô hình 70B trên GPU 4GB mà không cần lượng tử hoá; |
+| [bitnet.cpp (BitNet)](../../10-local-llm-rag-memory/README.md#nt-bitnet-cpp) | `microsoft/BitNet` | MIT (mã); trọng số theo từng model card trên Hugging Face (chưa xác minh) | 42.445 | đọc mã 2026-11-23 | 10 | Khung suy luận cho LLM 1-bit/1.58-bit (bitnet.cpp) trên CPU x86/ARM và có kernel GPU riêng, dựng trên một fork llama.cpp. |
 | [ChatGLM-6B](../../10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23-chatglm-6b) | `zai-org/ChatGLM-6B` | Apache-2.0 cho mã; ChatGLM-6B Model License | 40.843 | đọc tài liệu 2026-11-23 | 10 | Model đối thoại Trung–Anh khoảng 6,2B tham số cùng demo CLI/web/API. |
 | [FastChat](../../10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23-fastchat) | `lm-sys/FastChat` | Apache-2.0 cho mã; model/dataset có license riêng | 39.552 | đọc tài liệu 2026-11-23 | 10 | Nền tảng huấn luyện, phục vụ và đánh giá chatbot LLM. |
 | [llmfit](../../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện) | `AlexsJones/llmfit` | MIT License | 39.055 | đọc tài liệu 2026-11-18 | 08 | Công cụ dòng lệnh/TUI viết bằng Rust dò phần cứng máy (CPU, RAM, GPU, VRAM) và gợi ý những LLM mã nguồn mở chạy tốt trên máy đó theo các mức lượng tử hoá. |
@@ -36,6 +37,8 @@
 | [cactus](../../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện) | `cactus-compute/cactus` | Apache License 2.0 | 14.802 | đọc tài liệu 2026-11-18 | 08 | Gói Python chạy cục bộ mô hình văn bản, giọng nói và thị giác (Needle, Whistle, Mirage) cho gọi công cụ, trích xuất có cấu trúc, phiên âm, hiểu ảnh và tinh chỉnh mô hình. |
 | [OpenLLM](../../10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23-openllm) | `bentoml/OpenLLM` | Apache-2.0 cho mã; model có license riêng | 12.612 | đọc tài liệu 2026-11-23 | 10 | Đóng gói và phục vụ LLM bằng API tương thích OpenAI cùng UI chat. |
 | [LMCache](../../10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23-lmcache) | `LMCache/LMCache` | Apache-2.0 | 12.446 | đọc tài liệu 2026-11-23 | 10 | Lớp quản lý KV cache cho hệ suy luận LLM, hỗ trợ chia sẻ/tái sử dụng cache. |
+| [MLX LM](../../10-local-llm-rag-memory/README.md#nt-mlx-lm) | `ml-explore/mlx-lm` | MIT (mã); license từng model theo model card (chưa xác minh) | 7.744 | đọc mã 2026-11-23 | 10 | Gói Python chạy, lượng tử hóa và tinh chỉnh LLM trên Apple silicon bằng MLX: CLI `mlx_lm.generate/chat/convert/lora/fuse/server`. |
 | [KServe](../../10-local-llm-rag-memory/README.md#kserve) | `kserve/kserve` | Apache-2.0 | 6.182 | đọc mã 2026-11-02 | 10 | Control plane Kubernetes cho model serving; |
 | [ExecuTorch](../../10-local-llm-rag-memory/README.md#executorch) | `pytorch/executorch` | BSD-3-Clause | 5.147 | đọc mã 2026-11-02 | 10 | Export/lowering PyTorch sang runtime edge; |
 | [llm-d](../../10-local-llm-rag-memory/README.md#llm-d) | `llm-d/llm-d` | Apache-2.0 | 5.126 | đọc mã 2026-11-02 | 10 | Orchestration/routing phân tán phía trên vLLM/SGLang; |
+| [safetensors](../../10-local-llm-rag-memory/README.md#nt-safetensors) | `huggingface/safetensors` | Apache-2.0 | — | đọc mã 2026-11-23 | 10 | Định dạng lưu tensor đơn giản (8 byte độ dài header, JSON header, bộ đệm byte) để thay pickle: nạp không thực thi mã, ánh xạ bộ nhớ, tải lười. |

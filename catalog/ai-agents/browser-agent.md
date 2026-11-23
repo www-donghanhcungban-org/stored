@@ -2,7 +2,7 @@
 
 # browser-agent — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 41 hồ sơ.
+[← Mục lục catalog](../README.md) · 43 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -43,7 +43,9 @@
 | [Fara](../../11-browser-computer-use-sandbox/README.md#ch-fara) | `microsoft/fara` | MIT | 6.261 | đọc tài liệu 2026-11-23 | 11 | Mô hình CUA Fara1.5 (4B/9B/27B, Qwen3.5) + harness Playwright + WebTailBench; |
 | [Browserbase MCP (self-host, archived)](../../11-browser-computer-use-sandbox/README.md#ch-browserbase-mcp-self-host-archived) | `browserbase/mcp-server-browserbase` | Apache-2.0 | 3.397 | đọc tài liệu 2026-11-23 | 11 | ĐÃ ARCHIVE 20/7/2026 ('no longer maintained'); |
 | [OSWorld](../../11-browser-computer-use-sandbox/README.md#ch-osworld) | `xlang-ai/OSWorld` | Apache-2.0 | 3.277 | đọc tài liệu 2026-11-23 | 11 | Benchmark computer use trên VM: 368 task trong test_all.json, chấm bằng hàm kiểm trạng thái; |
+| [Open Computer Use (E2B)](../../11-browser-computer-use-sandbox/README.md#nt-e2b-open-computer-use) | `e2b-dev/open-computer-use` | Apache-2.0 | 2.414 | đọc mã 2026-11-23 | 11 | Demo Python (khoảng 900 dòng) cho computer-use trên desktop Ubuntu của E2B: vòng lặp chụp màn hình, mô hình vision mô tả, mô hình hành động gọi tool (click, gõ, shell),… |
 | [WebArena](../../11-browser-computer-use-sandbox/README.md#ch-webarena) | `web-arena-x/webarena` | Apache-2.0 | 1.647 | đọc tài liệu 2026-11-23 | 11 | Benchmark web agent: 812 task trên site tự host (Docker/AMI), chấm URL/DOM/chuỗi; |
 | [BrowserGym](../../11-browser-computer-use-sandbox/README.md#ch-browsergym) | `ServiceNow/BrowserGym` | Apache-2.0 (LICENSE chỉ có dòng bản quyền ServiceNow + đoạn | 1.446 | đọc tài liệu 2026-11-23 | 11 | API kiểu Gym chung cho MiniWoB, WebArena, WebArenaVerified, VisualWebArena, WorkArena, AssistantBench, WebLINX; |
+| [Surf (E2B)](../../11-browser-computer-use-sandbox/README.md#nt-e2b-surf) | `e2b-dev/surf` | Apache-2.0 | 881 | đọc mã 2026-11-23 | 11 | Ứng dụng Next.js demo: chat điều khiển desktop ảo E2B bằng OpenAI computer use (model đặt trong lib/config.ts là `gpt-5.4`), stream hành động qua SSE và hiển thị VNC. |
 | [browser-use-pi](../../11-browser-computer-use-sandbox/README.md#ch-browser-use-pi) | `browser-use/browser-use-pi` | MIT | 485 | đọc tài liệu 2026-11-23 | 11 | Runtime TypeScript kế nhiệm browser-use Python: Pi Mono + REPL V8 bền + CDP, agent tự viết JavaScript điều khiển Chrome; |
 | [Browsentic](../../11-browser-computer-use-sandbox/README.md#ch-browsentic) | `imshaikot/browsentic` | Apache-2.0 | 310 | đọc tài liệu 2026-11-23 | 11 | Extension + Bridge cục bộ: CLI agent sẵn có (Claude Code/Codex/Antigravity…) điều khiển trình duyệt thật đã đăng nhập, có MCP; |

@@ -177,3 +177,77 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | active (commit mới nhất 2026-11-22) |
 | Nhận định | Công cụ phân tích tĩnh cho CI/CD (GitHub Actions, Dependabot, pre-commit): template injection, lộ credential, quyền thừa, impostor commit; Rust v1.33.1, có fix tự động. |
 | Nguồn | [README](https://github.com/zizmorcore/zizmor/blob/0af0be985a4cae71ecfaa64ef574a94b35dc722a/README.md) · [LICENSE](https://github.com/zizmorcore/zizmor/blob/0af0be985a4cae71ecfaa64ef574a94b35dc722a/LICENSE) · [manifest](https://github.com/zizmorcore/zizmor/blob/0af0be985a4cae71ecfaa64ef574a94b35dc722a/Cargo.toml) · [workflow](https://github.com/zizmorcore/zizmor/blob/0af0be985a4cae71ecfaa64ef574a94b35dc722a/.github/workflows/ci.yml) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-microsoft-sbom-tool"></a>
+
+### SBOM Tool (Microsoft)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/microsoft/sbom-tool |
+| License | MIT |
+| Phiên bản đã đọc | `4d2b44739b4317ff2655b4076292ca2522d376bf` (commit 2026-09-21) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, docs/feature-overview.md, src/Microsoft.Sbom.Parsers.Spdx30SbomParser/Generator.cs, .github/workflows/codeql-analysis.yml, SECURITY.md; chưa chạy upstream |
+| Khoảng trống lấp | Chuỗi cung ứng AI: SBOM theo SPDX (thay cho CycloneDX khi bên nhận yêu cầu SPDX); chưa có AI-BOM hay VEX |
+| Cơ chế đáng học | - Phần files duyệt `BuildDropPath`, sinh SPDXID, băm SHA256 và SHA1 cho mỗi file (docs/feature-overview.md).<br>- Phần packages dùng Component Detection quét `BuildComponentPath` theo hệ sinh thái (Cargo, Ruby...), tra giấy phép qua ClearlyDefined.<br>- Parser tách riêng cho SPDX 2.2 và 3.0 (`Microsoft.Sbom.Parsers.Spdx30SbomParser/Generator.cs`), có API NuGet và công cụ dotnet. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: có nhiều dự án test xUnit theo từng module (thư mục `test/`), workflow codeql-analysis.yml (đã đọc, quét C# theo lịch hằng tuần). Pipeline build và release nằm trong `pipelines/` (chưa mở). Không có ngưỡng đạt/hỏng riêng cho nội dung SBOM. |
+| Giới hạn và rủi ro | MIT. README mục Telemetry: telemetry ghi ra file JSON cạnh đầu ra, không gửi cho Microsoft (tuyên bố tác giả, chưa xác minh). Tra giấy phép qua ClearlyDefined cần mạng (trong tài liệu). Không nhận đóng góp ngoài; ngôn ngữ .NET, bản trinh sát nêu đúng là thay thế SPDX. |
+| So với | Syft (syft, sinh SBOM đa định dạng gồm SPDX và CycloneDX), Trivy (cũng sinh SBOM) |
+| Nguồn | [README.md](https://github.com/microsoft/sbom-tool/blob/4d2b44739b4317ff2655b4076292ca2522d376bf/README.md) · [LICENSE](https://github.com/microsoft/sbom-tool/blob/4d2b44739b4317ff2655b4076292ca2522d376bf/LICENSE) · [feature-overview.md](https://github.com/microsoft/sbom-tool/blob/4d2b44739b4317ff2655b4076292ca2522d376bf/docs/feature-overview.md) · [Generator.cs](https://github.com/microsoft/sbom-tool/blob/4d2b44739b4317ff2655b4076292ca2522d376bf/src/Microsoft.Sbom.Parsers.Spdx30SbomParser/Generator.cs) · [codeql-analysis.yml](https://github.com/microsoft/sbom-tool/blob/4d2b44739b4317ff2655b4076292ca2522d376bf/.github/workflows/codeql-analysis.yml) · [SECURITY.md](https://github.com/microsoft/sbom-tool/blob/4d2b44739b4317ff2655b4076292ca2522d376bf/SECURITY.md) |
+
+<a id="nt-gh-actions-lock"></a>
+
+### gh-actions-lock
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/github/gh-actions-lock |
+| License | MIT (LICENSE, Copyright GitHub, Inc.). Không có trọng số |
+| Phiên bản đã đọc | `d8e1ae3518e8ae47f38c291c1ebe68c10fcee346` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc `README.md`, `LICENSE`, `.github/workflows/actions.lock`, `internal/resolve/ancestry.go`, `internal/config/cooldown.go`, `.github/workflows/verify-lockfile.yml`, `.github/workflows/test.yml`; chưa chạy upstream |
+| Khoảng trống lấp | Bảo mật chuỗi cung ứng CI/CD: khóa phụ thuộc trực tiếp và bắc cầu của GitHub Actions vào commit đã xác minh |
+| Cơ chế đáng học | - Tiện ích mở rộng `gh`; ghi `.github/workflows/actions.lock` (YAML: workflows liệt kê `uses`, `dependencies` ghi `ref`, `commit` sha1, `owner_id`, `repo_id` và danh sách `uses` bắc cầu), nên `uses:` vẫn có thể là tag.<br>- `internal/resolve/ancestry.go`: kiểm commit đã khóa có phải tổ tiên của commit sống bằng Compare API; không phải thì coi là có thể giả mạo lockfile; ba trạng thái confirmed, not-ancestor, unknown (lỗi tạm thời không bị coi là pass).<br>- Chế độ `--verify` (chỉ đọc, dùng trong CI) và `--verify-local` (ngoại tuyến, chỉ kiểm có phủ), `--relock` để đẩy ref trôi, `--fail-on-warning`.<br>- `internal/config/cooldown.go` đọc khối cooldown của Dependabot cho github-actions và cảnh báo các khóa semver không được hỗ trợ. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: `--verify` thoát khác 0 khi lockfile lệch hoặc pin không còn xác minh được; repo tự dùng `verify-lockfile.yml` (đã mở) và `test.yml` chạy `go vet` và `go test` (đã mở phần grep các lệnh). Kết quả cần mạng và token `gh`. |
+| Giới hạn và rủi ro | Giới hạn do tác giả liệt kê: không khóa reusable workflow ở repo khác (#179), không khóa image container, action cục bộ `./` phải xử lý riêng; không hỗ trợ GitHub Enterprise Server. README nhận lockfile đẩy ref trôi về commit cũ hơn không bị phát hiện. Cần `gh` đã đăng nhập; không đọc chi tiết cách runner của GitHub tự kiểm lại khi chạy job (chưa xác minh). |
+| So với | harden-runner (hồ sơ có sẵn, giám sát egress lúc chạy, không khóa phụ thuộc), zizmor (lint workflow, bắt unpinned-action), renovate (nâng pin). |
+| Nguồn | [README.md](https://github.com/github/gh-actions-lock/blob/d8e1ae3518e8ae47f38c291c1ebe68c10fcee346/README.md) · [LICENSE](https://github.com/github/gh-actions-lock/blob/d8e1ae3518e8ae47f38c291c1ebe68c10fcee346/LICENSE) · [actions.lock](https://github.com/github/gh-actions-lock/blob/d8e1ae3518e8ae47f38c291c1ebe68c10fcee346/.github/workflows/actions.lock) · [ancestry.go](https://github.com/github/gh-actions-lock/blob/d8e1ae3518e8ae47f38c291c1ebe68c10fcee346/internal/resolve/ancestry.go) · [cooldown.go](https://github.com/github/gh-actions-lock/blob/d8e1ae3518e8ae47f38c291c1ebe68c10fcee346/internal/config/cooldown.go) · [verify-lockfile.yml](https://github.com/github/gh-actions-lock/blob/d8e1ae3518e8ae47f38c291c1ebe68c10fcee346/.github/workflows/verify-lockfile.yml) · [test.yml](https://github.com/github/gh-actions-lock/blob/d8e1ae3518e8ae47f38c291c1ebe68c10fcee346/.github/workflows/test.yml) |
+
+<a id="nt-guarddog"></a>
+
+### GuardDog
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/DataDog/guarddog |
+| License | Apache-2.0 (LICENSE, `pyproject.toml`; NOTICE của Datadog; LICENSE-3rdparty.csv liệt kê phụ thuộc). Không có trọng số |
+| Phiên bản đã đọc | `5da9538eb05b8c2710db60541ec9732557687f8b` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc `README.md`, `LICENSE`, `pyproject.toml`, `guarddog/analyzer/risk_engine.py`, `guarddog/sandbox.py`, `guarddog/analyzer/sourcecode/threat-process-download-exec.yar`, `evals/README.md`, `.github/workflows/nightly-evals.yml`, `.github/workflows/checks.yml`; chưa chạy upstream |
+| Khoảng trống lấp | Phát hiện gói độc hại PyPI, npm, Go, Rust, RubyGems, GitHub Actions, VSCode extension trước khi cài (kiểm phụ thuộc agent kéo về) |
+| Cơ chế đáng học | - Quy tắc YARA trong `guarddog/analyzer/sourcecode/*.yar` chia hai loại: capability (mã có thể làm gì) và threat (dấu hiệu đáng ngờ), có meta severity, specificity, sophistication, `mitre_tactics`, `path_include`, `max_hits`.<br>- `risk_engine.py` ghép capability với threat cùng file thành rủi ro (khác file thì hạ mức), chấm 0 đến 10 theo bốn nhân tố (mức nghiêm trọng 30%, chuỗi tấn công 20%, độ đặc hiệu 30%, tinh vi 20%) và đối chiếu pha MITRE early/mid/late; có thêm luật metadata (typosquatting, email tác giả, repo không khớp).<br>- `sandbox.py`: giải nén và quét trong sandbox kernel qua `nono-py`, luôn chặn mạng, có giới hạn thời gian giải nén 300 giây.<br>- `evals/`: đo recall trên mẫu độc hại từ bộ dữ liệu của chính Datadog và dương tính giả trên top 1000 gói PyPI/npm, báo precision, recall, F1, MCC theo ngưỡng (mặc định 5.0). |
+| Tiêu chí và cách kiểm | Có kiểm bằng máy: workflow `checks.yml` chạy type-check, format, lint, test luật YARA, luật metadata và test lõi; `nightly-evals.yml` chạy eval hằng đêm trên runner lớn và đưa báo cáo lên artifact (đã mở hai workflow). Con số recall/precision cụ thể chưa đọc (chưa chạy). |
+| Giới hạn và rủi ro | **Mô tả của trinh sát lệch:** phát hiện bằng YARA (yara-python), không phải Semgrep; không có AI-BOM/SBOM/VEX. Phân tích tĩnh nên bị né bằng obfuscation; kết quả là heuristic, không chứng minh gói sạch. Tải gói từ registry (cần mạng) trước khi quét; mẫu độc hại do chính Datadog tuyển chọn nên recall có thể thiên lệch. Windows chỉ hỗ trợ qua Docker; `nono-py` yêu cầu nền tảng hỗ trợ. |
+| So với | safedep-vet (cùng hồ sơ lô này, quét lockfile kèm Threat Intel đám mây), osv-scanner (lỗ hổng đã biết, không bắt mã độc), openssf-scorecard, trivy, zizmor. |
+| Nguồn | [README.md](https://github.com/DataDog/guarddog/blob/5da9538eb05b8c2710db60541ec9732557687f8b/README.md) · [LICENSE](https://github.com/DataDog/guarddog/blob/5da9538eb05b8c2710db60541ec9732557687f8b/LICENSE) · [pyproject.toml](https://github.com/DataDog/guarddog/blob/5da9538eb05b8c2710db60541ec9732557687f8b/pyproject.toml) · [risk_engine.py](https://github.com/DataDog/guarddog/blob/5da9538eb05b8c2710db60541ec9732557687f8b/guarddog/analyzer/risk_engine.py) · [sandbox.py](https://github.com/DataDog/guarddog/blob/5da9538eb05b8c2710db60541ec9732557687f8b/guarddog/sandbox.py) · [threat-process-download-exec.yar](https://github.com/DataDog/guarddog/blob/5da9538eb05b8c2710db60541ec9732557687f8b/guarddog/analyzer/sourcecode/threat-process-download-exec.yar) · [README.md](https://github.com/DataDog/guarddog/blob/5da9538eb05b8c2710db60541ec9732557687f8b/evals/README.md) · [nightly-evals.yml](https://github.com/DataDog/guarddog/blob/5da9538eb05b8c2710db60541ec9732557687f8b/.github/workflows/nightly-evals.yml) · [checks.yml](https://github.com/DataDog/guarddog/blob/5da9538eb05b8c2710db60541ec9732557687f8b/.github/workflows/checks.yml) |
+
+<a id="nt-safedep-vet"></a>
+
+### SafeDep vet
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/safedep/vet |
+| License | Apache-2.0 (LICENSE). Không có trọng số. Dữ liệu Threat Intel là dịch vụ SafeDep, điều khoản dịch vụ **(chưa xác minh)** |
+| Phiên bản đã đọc | `49fdb4193637d35b0e0d238555e1f3d3aac8490f` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc `README.md`, `LICENSE`, `docs/controls.md`, `internal/analytics/analytics.go`, `internal/plugins/controls/agentconfig/suspicious.go`, `.github/workflows/false-positive.yml`, `.github/workflows/ci.yml`; chưa chạy upstream |
+| Khoảng trống lấp | Quét chuỗi cung ứng cho phụ thuộc, workflow CI và cấu hình agent AI (kể cả MCP server trong config) |
+| Cơ chế đáng học | - Mô hình control (`docs/controls.md`, `internal/plugins/controls/`): hơn 50 control theo họ agent-config, hidden-code, lockfile, malware, reputation, workflow, license, cooldown; mỗi finding có `control_id`, family, severity.<br>- Policy bằng CEL (`vet-policy.yml`): luật `when ... action: fail`, suppression có hạn; `--base-ref` chỉ báo phần PR thay đổi; `--fail-on high` cho mã thoát.<br>- `agentconfig/suspicious.go`: danh sách regex lệnh nguy hiểm trong config agent/editor (tải rồi pipe vào shell, base64 decode, `/dev/tcp`, đọc thư mục khóa); control riêng cho `mcp-server-added`, `agent-hook-command`.<br>- Control workflow `unpinned-action`, `impostor-commit`; tin lockfile của gh-actions-lock khi có (`trust_actions_lock`). |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: `ci.yml` chạy test; `false-positive.yml` quét dự án sạch ở commit cố định và fail khi có finding tấn công, chạy khi PR đổi detection, hàng tuần và thủ công, được ghi là chỉ mang tính tham khảo (đã mở đầu hai workflow). Tỷ lệ phát hiện chưa đọc. |
+| Giới hạn và rủi ro | Checkout là nhánh `v2` (alpha), v1 mới là bản phát hành ổn định ở `main`, chưa đọc. **Mô tả của trinh sát chưa khớp với v2:** tìm trong `docs/cmd` và mã không thấy lệnh MCP server cho agent coding (có thể ở v1, chưa xác minh); v2 quét config MCP thay vì phục vụ MCP. Telemetry PostHog bật mặc định (`analytics.go`, tắt bằng `VET_DISABLE_TELEMETRY`); README nói gửi định danh gói (hệ sinh thái, tên, phiên bản) tới SafeDep và không gửi mã nguồn; `vet endpoint audit` có thông tin đăng nhập thì gửi kiểm kê máy (công cụ AI, MCP, đường dẫn config, tên thư mục home) lên SafeDep Cloud. Phát hiện malware phụ thuộc dịch vụ của chính hãng. |
+| So với | guarddog (cùng lô, quét mã nguồn gói bằng YARA cục bộ), osv-scanner (chỉ lỗ hổng), zizmor (lint workflow sâu hơn), openssf-scorecard, gh-actions-lock (bổ sung: vet đọc lockfile của nó). |
+| Nguồn | [README.md](https://github.com/safedep/vet/blob/49fdb4193637d35b0e0d238555e1f3d3aac8490f/README.md) · [LICENSE](https://github.com/safedep/vet/blob/49fdb4193637d35b0e0d238555e1f3d3aac8490f/LICENSE) · [controls.md](https://github.com/safedep/vet/blob/49fdb4193637d35b0e0d238555e1f3d3aac8490f/docs/controls.md) · [analytics.go](https://github.com/safedep/vet/blob/49fdb4193637d35b0e0d238555e1f3d3aac8490f/internal/analytics/analytics.go) · [suspicious.go](https://github.com/safedep/vet/blob/49fdb4193637d35b0e0d238555e1f3d3aac8490f/internal/plugins/controls/agentconfig/suspicious.go) · [false-positive.yml](https://github.com/safedep/vet/blob/49fdb4193637d35b0e0d238555e1f3d3aac8490f/.github/workflows/false-positive.yml) · [ci.yml](https://github.com/safedep/vet/blob/49fdb4193637d35b0e0d238555e1f3d3aac8490f/.github/workflows/ci.yml) |

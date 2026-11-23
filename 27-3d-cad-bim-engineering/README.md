@@ -890,3 +890,213 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 ## Nguồn
 
 Các permalink trong từng hồ sơ cố định đúng phiên bản đã đọc; số sao/trạng thái archive là snapshot GitHub API ngày 2026-11-02. Không chạy mã, huấn luyện model hoặc tái lập kết quả của upstream.
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-opengeospatial-geoparquet"></a>
+
+### GeoParquet (đặc tả)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/opengeospatial/geoparquet |
+| License | Apache-2.0 (LICENSE đã mở) |
+| Phiên bản đã đọc | `7dafbdc3a694e36b2da5484f05a5ed3ef0521e65` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, CHANGELOG, format-specs/geoparquet.md, schema.json, test_json_schema.py, scripts.yml, lint.yml; chưa chạy upstream |
+| Khoảng trống lấp | Chuẩn cloud-native cho dữ liệu không gian (GeoParquet); nguồn chuẩn để viết skill kiểm file |
+| Cơ chế đáng học | - Metadata khóa `geo` trong Parquet với trường bắt buộc `version`, `primary_column`, `columns`; mỗi cột geometry có `encoding` (chỉ WKB), `geometry_types`, `crs`, `bbox`, `covering`, `epoch`, `orientation` (`format-specs/geoparquet.md`).<br>- Bản 2.0.0 chuyển sang kiểu logic GEOMETRY/GEOGRAPHY gốc của Parquet, CRS đi theo cột, thống kê hình học theo row group để lọc không gian (CHANGELOG).<br>- `format-specs/schema.json` là JSON Schema (hằng `version` là 2.0.0, `encoding` là WKB) dùng kiểm khóa metadata; `compatible-parquet.md` giải thích file Parquet ghi kiểu gốc nhưng thiếu metadata geo. |
+| Tiêu chí và cách kiểm | Có kiểm bằng máy cho phần metadata: `scripts/test_json_schema.py` dựng ca hợp lệ và không hợp lệ ngay lúc chạy rồi kiểm với schema (tải schema PROJJSON từ proj.org khi chạy), `test_example.py` kiểm ví dụ; workflow `scripts.yml` còn sinh lại ví dụ và đòi cây git sạch, `lint.yml` chạy pre-commit (đã mở cả hai). Ghi chú: không có bộ kiểm dữ liệu hình học ngay trong repo; README trỏ tới gpq và script validate của GDAL. |
+| Giới hạn và rủi ro | Bản 2.0.0 chưa được OGC phê duyệt chính thức (README) nên có thể còn đổi khi qua OGC. Thư mục `test_data` có 13 file mẫu, không phải corpus tuân thủ đầy đủ. Hệ sinh thái công cụ mới chuyển 2.0: gpq (đã đọc) mặc định ghi metadata 1.0.0. Tuyên bố hiệu năng và độ phổ biến trong README là của tác giả **(chưa xác minh)**. |
+| So với | GDAL (`osgeo-gdal`) là thư viện đọc/ghi và có script validate; hồ sơ này là đặc tả chứ không phải công cụ. gpq (cùng đợt) là validator Go. |
+| Nguồn | [README](https://github.com/opengeospatial/geoparquet/blob/7dafbdc3a694e36b2da5484f05a5ed3ef0521e65/README.md) · [LICENSE](https://github.com/opengeospatial/geoparquet/blob/7dafbdc3a694e36b2da5484f05a5ed3ef0521e65/LICENSE) · [CHANGELOG](https://github.com/opengeospatial/geoparquet/blob/7dafbdc3a694e36b2da5484f05a5ed3ef0521e65/CHANGELOG.md) · [geoparquet.md](https://github.com/opengeospatial/geoparquet/blob/7dafbdc3a694e36b2da5484f05a5ed3ef0521e65/format-specs/geoparquet.md) · [schema.json](https://github.com/opengeospatial/geoparquet/blob/7dafbdc3a694e36b2da5484f05a5ed3ef0521e65/format-specs/schema.json) · [test_json_schema](https://github.com/opengeospatial/geoparquet/blob/7dafbdc3a694e36b2da5484f05a5ed3ef0521e65/scripts/test_json_schema.py) · [scripts.yml](https://github.com/opengeospatial/geoparquet/blob/7dafbdc3a694e36b2da5484f05a5ed3ef0521e65/.github/workflows/scripts.yml) · [lint.yml](https://github.com/opengeospatial/geoparquet/blob/7dafbdc3a694e36b2da5484f05a5ed3ef0521e65/.github/workflows/lint.yml) |
+
+<a id="nt-buildingsmart-certification-datasets"></a>
+
+### buildingSMART Certification datasets
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/buildingSMART/Certification-datasets |
+| License | CC-BY-4.0 theo nội dung `LICENSE` (bản quyền buildingSMART International Ltd); GitHub ghi NOASSERTION vì file chỉ nêu giấy phép bằng văn xuôi. Cần ghi nguồn khi tái dùng; chưa có tuyên bố riêng về từng file IFC |
+| Phiên bản đã đọc | `5030f652e85d3e679b392fcb38bfa3328d6d9f79` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, import-certification.md, README thư mục IFC 4.3.2.0, Infra-Road.ifc (đầu file); chưa chạy upstream |
+| Khoảng trống lấp | Kiểm IFC bằng máy (corpus dữ liệu chứng nhận); thực tế là mẫu và tiêu chí nhập, chưa phải bộ kiểm máy |
+| Cơ chế đáng học | - Ba thư mục theo phiên bản (IFC 2x3 TC1, IFC 4 ADD2 TC1, IFC 4.3 ADD2), mỗi thư mục có Simple-Scene gồm 10 file Building-\* và Infra-\* (kiến trúc, kết cấu, HVAC, cầu, đường, ray...).<br>- Thư mục IFC 4 ADD2 TC1 thêm 5 file ISO Spec - ReferenceView_V1.2 (tessellation, tường có ô cửa).<br>- `import-certification.md` liệt kê tiêu chí nhập tối thiểu: mở đủ 10 mô hình, hình học, định vị và CRS, phân cấp Project-Site-Building-Storey, vật liệu, màu, thuộc tính và GUID, lượng, phân loại, assembly, group/system, space, mặt đường và vạch kẻ (chỉ IFC 4.3). |
+| Tiêu chí và cách kiểm | Điều kiện đạt: mọi tiêu chí phải Pass hoặc Partial Pass, một tiêu chí Fail là loại (theo `import-certification.md`). Kiểm hoàn toàn thủ công theo mô tả; repo không có test, script hay workflow; chưa chạy phần mềm nào với bộ này. Muốn dùng làm fixture kiểm tự động phải tự viết kiểm (ví dụ nạp bằng IfcOpenShell). |
+| Giới hạn và rủi ro | Giữ nguyên mô tả "Previous content ... moved" trong README: nội dung cộng đồng cũ đã chuyển sang repo Community-Sample-Test-Files, nên đừng kỳ vọng kho mẫu rộng. File IFC sinh bằng Sketchup IFC manager (header Infra-Road.ifc), nên chỉ phủ phạm vi ReferenceView. Chuẩn IFC là ISO 16739 và chuẩn trả phí; hồ sơ không nhận định ở cấp điều khoản. Danh sách tiêu chí nhập chỉ là bộ tối thiểu công bố, không phải toàn bộ quy trình chứng nhận. |
+| So với | IfcOpenShell (`ifcopenshell`) là thư viện đọc IFC có thể dùng nạp bộ này; buildingSMART IDS (`buildingsmart-ids`) là đặc tả kiểm yêu cầu thông tin; buildingSMART/validate (cùng đợt) là dịch vụ kiểm file. |
+| Nguồn | [README](https://github.com/buildingSMART/Certification-datasets/blob/5030f652e85d3e679b392fcb38bfa3328d6d9f79/README.md) · [LICENSE](https://github.com/buildingSMART/Certification-datasets/blob/5030f652e85d3e679b392fcb38bfa3328d6d9f79/LICENSE) · [import-certification](https://github.com/buildingSMART/Certification-datasets/blob/5030f652e85d3e679b392fcb38bfa3328d6d9f79/import-certification.md) · [README 4.3.2.0](https://github.com/buildingSMART/Certification-datasets/blob/5030f652e85d3e679b392fcb38bfa3328d6d9f79/IFC%204.3.2.0%20%28IFC%204.3%20ADD2%29/README.md) · [Infra-Road.ifc](https://github.com/buildingSMART/Certification-datasets/blob/5030f652e85d3e679b392fcb38bfa3328d6d9f79/IFC%204.3.2.0%20%28IFC%204.3%20ADD2%29/Simple-Scene/Infra-Road.ifc) |
+
+<a id="nt-planetlabs-gpq"></a>
+
+### gpq
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/planetlabs/gpq |
+| License | Apache-2.0 (LICENSE đã mở) |
+| Phiên bản đã đọc | `a5a6b208af6730539db96eb9a4083f0359836b28` (commit 2026-09-19) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc readme.md, LICENSE, go.mod, internal/validator/rules.go, internal/geoparquet/metadata.go, test.yml; chưa chạy upstream |
+| Khoảng trống lấp | Chuẩn cloud-native cho dữ liệu không gian: validator và bộ chuyển đổi GeoParquet dạng CLI nhẹ |
+| Cơ chế đáng học | - `internal/validator/rules.go` định nghĩa Rule (tiêu đề và hàm Validate), ví dụ `RequiredVersion`, `RequiredPrimaryColumn`, kiểm encoding và loại hình học; lỗi nghiêm trọng dùng `ErrFatal` để dừng.<br>- `gpq validate file.parquet` in báo cáo từng mục kiểm, có `--format json`; thoát mã 1 nếu có mục thất bại (readme.md). Kiểm cả dữ liệu hình học (encoding, hướng vòng, bbox) theo readme.<br>- `gpq convert` đi hai chiều với GeoJSON; có bản WASM chạy trên web (readme). |
+| Tiêu chí và cách kiểm | Có kiểm bằng máy: `validator_test.go` chạy bộ ca trong `internal/validator/testdata` (all-pass, bad-bbox-length, bad-crs, bad-encoding...); workflow `test.yml` chạy golangci-lint và `go test -v ./...` (đã mở workflow); chưa chạy. Mã thoát là cổng cho CI. |
+| Giới hạn và rủi ro | Chưa thấy hỗ trợ GeoParquet 2.0: hằng `Version = "1.0.0"` trong `metadata.go`, rules.go không có xử lý GEOMETRY/GEOGRAPHY (grep), và `RequiredVersion` chỉ kiểm chuỗi không rỗng nên file 2.0 có thể qua hoặc trượt tùy mục khác; cần thử với file 2.0 thật trước khi đưa vào CI. Kiểm CRS dùng schema PROJJSON qua httploader nên có phụ thuộc mạng. Commit cuối 2026-09-19, bảo trì chủ yếu là cập nhật phụ thuộc; không suy ra dự án ngừng. |
+| So với | Đặc tả GeoParquet (`opengeospatial-geoparquet`, cùng đợt) là chuẩn gốc; GDAL (`osgeo-gdal`) có script validate bằng Python cho cùng mục đích. |
+| Nguồn | [readme](https://github.com/planetlabs/gpq/blob/a5a6b208af6730539db96eb9a4083f0359836b28/readme.md) · [LICENSE](https://github.com/planetlabs/gpq/blob/a5a6b208af6730539db96eb9a4083f0359836b28/LICENSE) · [go.mod](https://github.com/planetlabs/gpq/blob/a5a6b208af6730539db96eb9a4083f0359836b28/go.mod) · [rules.go](https://github.com/planetlabs/gpq/blob/a5a6b208af6730539db96eb9a4083f0359836b28/internal/validator/rules.go) · [metadata.go](https://github.com/planetlabs/gpq/blob/a5a6b208af6730539db96eb9a4083f0359836b28/internal/geoparquet/metadata.go) · [test.yml](https://github.com/planetlabs/gpq/blob/a5a6b208af6730539db96eb9a4083f0359836b28/.github/workflows/test.yml) |
+
+<a id="nt-modelon-pyfmi"></a>
+
+### PyFMI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/modelon-community/PyFMI |
+| License | LGPL-3.0 (LICENSE đã mở); nhắc rằng FMU ví dụ lấy từ FMU SDK của Qtronic có giấy phép riêng theo README |
+| Phiên bản đã đọc | `678617a00b8adaa63718aea9c251caa9086b2652` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, LICENSE, CHANGELOG, `load_fmu` trong fmi.pyx, fmi3.pyx, build.yml; chưa chạy upstream |
+| Khoảng trống lấp | Đồng mô phỏng FMI và Modelica: nạp, chạy FMU từ Python |
+| Cơ chế đáng học | - `load_fmu` trong `fmi.pyx` tự nhận phiên bản FMI và loại (me, cs, se, auto) rồi trả lớp tương ứng; mô tả `allow_unzipped_fmu`, log, kiểm đối số.<br>- Lớp riêng cho từng phiên bản (`fmi1.pyx`, `fmi2.pyx`, `fmi3.pyx`); fmi3 có `FMUModelME3` và `FMUModelCS3`.<br>- `master.pyx` (khoảng 2000 dòng) triển khai thuật toán Master để ghép nhiều FMU; CHANGELOG nêu bước sự kiện, `dynamic_diagnostics`, `get_fmu_kind`. |
+| Tiêu chí và cách kiểm | Có test: thư mục `tests` (test_fmi2, test_fmi3, test_fmi3_sim, test_fmi_master, test_step_events...); workflow `build.yml` build image phát triển rồi chạy `make test` (đã mở workflow). Theo README, 95 trên 116 FMU Cross Check đạt với PyFMI 2.11.0 trên Ubuntu 20.04 và mọi Reference FMUs v0.0.27 đạt: số liệu của tác giả, chưa xác minh. |
+| Giới hạn và rủi ro | Rủi ro vận hành: FMU là thư viện native chạy cùng tiến trình nên cần coi FMU lạ là mã không tin cậy; FMU cần công cụ thực thi ngoài (ví dụ AMESim) không được hỗ trợ (README). LGPL cho phép dùng làm thư viện nhưng có nghĩa vụ khi liên kết tĩnh hoặc sửa. Không có SSP; cần OMSimulator hoặc công cụ khác nếu cần mô tả hệ thống SSP. |
+| So với | OMSimulator (cùng đợt) hỗ trợ SSP và FMI trong một môi trường; kho chưa có hồ sơ FMI cùng loại, các hồ sơ simulation hiện có (`bulletphysics-bullet3`, `jrouwe-joltphysics`) là vật lý thời gian thực, khác nhiệm vụ. |
+| Nguồn | [README](https://github.com/modelon-community/PyFMI/blob/678617a00b8adaa63718aea9c251caa9086b2652/README.md) · [LICENSE](https://github.com/modelon-community/PyFMI/blob/678617a00b8adaa63718aea9c251caa9086b2652/LICENSE) · [CHANGELOG](https://github.com/modelon-community/PyFMI/blob/678617a00b8adaa63718aea9c251caa9086b2652/CHANGELOG) · [fmi.pyx](https://github.com/modelon-community/PyFMI/blob/678617a00b8adaa63718aea9c251caa9086b2652/src/pyfmi/fmi.pyx) · [fmi3.pyx](https://github.com/modelon-community/PyFMI/blob/678617a00b8adaa63718aea9c251caa9086b2652/src/pyfmi/fmi3.pyx) · [build.yml](https://github.com/modelon-community/PyFMI/blob/678617a00b8adaa63718aea9c251caa9086b2652/.github/workflows/build.yml) |
+
+<a id="nt-openmodelica-omsimulator"></a>
+
+### OMSimulator
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/OpenModelica/OMSimulator |
+| License | OSMC-PL (`OSMC-License.txt`): chế độ AGPL-3.0 cho mọi bên; OSMC-Internal-EPL và OSMC-External-EPL chỉ cho thành viên OSMC cấp 1 và 2. Không có file LICENSE; `3rdParty/` mang giấy phép bên thứ ba chưa đọc |
+| Phiên bản đã đọc | `fd7aecbee9d3f546e484152c9a4c4aee0d483406` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, OSMC-License.txt, testsuite/README.md, Jenkinsfile, coverage.yml, tiêu đề ComponentFMU3CS.h; chưa chạy upstream |
+| Khoảng trống lấp | Đồng mô phỏng FMI và SSP (OpenModelica) |
+| Cơ chế đáng học | - `src/OMSimulatorLib` có lớp thành phần riêng cho FMU CS/ME và FMI 3 (`ComponentFMU3CS`, `ComponentFMU3ME`), DCP, bảng dữ liệu, CSV reader/writer, vòng lặp đại số (`AlgLoop`) và thư mục `ssd` cho mô tả hệ thống SSP.<br>- Dùng được như CLI, thư viện C, gói pip (`pip install OMSimulator`) hoặc GUI PySide6 không cần `omc` (README).<br>- Testsuite theo thư mục chủ đề, mỗi test mang header và khối `## Result:` ở cuối file; `omc-diff` so kết quả thực với kỳ vọng (`testsuite/README.md`). |
+| Tiêu chí và cách kiểm | Có kiểm bằng máy nhưng chạy trên bản đã cài: `ctest` với `-DOMS_ENABLE_TESTSUITE=ON` (testsuite/README); workflow `coverage.yml` build trong container docker.openmodelica.org và chạy testsuite với đo coverage, cho phép bước test thất bại rồi fail job cuối (đã mở); Jenkinsfile có stage kiểm và nhiều nền tảng (chỉ đọc phần đầu). README dẫn báo cáo MSL4 do OpenModelica công bố: chưa xác minh. |
+| Giới hạn và rủi ro | License hai tầng dễ hiểu nhầm: người dùng thương mại không phải thành viên chỉ có AGPL-3.0, nghĩa vụ chia sẻ mã khi phục vụ qua mạng nếu nhúng. Nhánh master là "unstable" theo README; bản ổn định ở maintenance/v2.1. Build phức tạp (CMake, 3rdParty, submodule). Phần lớn hạ tầng kiểm chạy ở Jenkins nên không thấy hết từ repo GitHub. |
+| So với | PyFMI (`modelon-pyfmi`, cùng đợt) chỉ làm FMU từ Python và không có SSP; OMSimulator thiên về hệ thống ghép SSP. Kho chưa có hồ sơ FMI/SSP khác để so. |
+| Nguồn | [README](https://github.com/OpenModelica/OMSimulator/blob/fd7aecbee9d3f546e484152c9a4c4aee0d483406/README.md) · [OSMC-License](https://github.com/OpenModelica/OMSimulator/blob/fd7aecbee9d3f546e484152c9a4c4aee0d483406/OSMC-License.txt) · [testsuite README](https://github.com/OpenModelica/OMSimulator/blob/fd7aecbee9d3f546e484152c9a4c4aee0d483406/testsuite/README.md) · [Jenkinsfile](https://github.com/OpenModelica/OMSimulator/blob/fd7aecbee9d3f546e484152c9a4c4aee0d483406/Jenkinsfile) · [coverage.yml](https://github.com/OpenModelica/OMSimulator/blob/fd7aecbee9d3f546e484152c9a4c4aee0d483406/.github/workflows/coverage.yml) · [ComponentFMU3CS.h](https://github.com/OpenModelica/OMSimulator/blob/fd7aecbee9d3f546e484152c9a4c4aee0d483406/src/OMSimulatorLib/ComponentFMU3CS.h) |
+
+<a id="nt-buildingsmart-validate"></a>
+
+### buildingSMART Validation Service
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/buildingSMART/validate |
+| License | MIT (LICENSE đã mở, bản quyền buildingSMART International 2026); submodule ifc-gherkin-rules, ifc-validation-data-model và kho chứng chỉ có license riêng, chưa đọc |
+| Phiên bản đã đọc | `5ceadbca687667601d687c2a5ff686ed263f2917` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, LICENSE, .gitmodules, check_gherkin.py, check_programs.py, validate_header.py, playwright.yml; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm IFC bằng máy: dịch vụ validate chính thức; không có kiểm IDS |
+| Cơ chế đáng học | - `tasks/check_programs.py` gọi từng bước như tiến trình con có timeout: `ifcopenshell.simple_spf --json` (cú pháp), `ifcopenshell.validate --json --rules --fields` (schema), kiểm header, magic số và ClamAV, chữ ký số, bSDD, tiền điều kiện, quy tắc chuẩn.<br>- `checks/check_gherkin.py` bọc `ifc_gherkin_rules.run` với `RuleType`, `max_outcomes`; chính các file quy tắc nằm trong submodule bên ngoài.<br>- `header_policy/validate_header.py` kiểm header theo schema pydantic và cấu hình YAML; có `check_signatures.py` và kho chứng chỉ nhà cung cấp (submodule) để xác thực chữ ký. |
+| Tiêu chí và cách kiểm | Có kiểm bằng máy: thư mục tests cho `ifc_validation` và `header_policy`, workflow `playwright.yml` chạy kiểm UI đầu cuối trong container Playwright với Postgres và Redis trên nhánh development (đã mở workflow); các workflow khác chỉ nhìn tên. Chưa chạy dịch vụ. |
+| Giới hạn và rủi ro | Phải triển khai nhiều thành phần (Django, Postgres, Redis, Celery, tùy chọn nhiều máy swarm) nên nặng hơn dùng thư viện trực tiếp. Quy tắc nghiệp vụ nằm ở submodule không được đọc nên không thể đánh giá độ phủ quy tắc. README liệt kê tài khoản mặc định root/root và SYSTEM/system cho môi trường dev: không dùng ngoài dev. bSDD đang tắt theo README. Chuẩn IFC (ISO 16739) trả phí nên không nhận định cấp điều khoản. |
+| So với | IfcOpenShell (`ifcopenshell`) là lõi validate mà dịch vụ này gọi; buildingSMART IDS (`buildingsmart-ids`) là đặc tả kiểm yêu cầu mà repo này chưa có; Certification datasets (cùng đợt) là bộ mẫu kiểm tay. |
+| Nguồn | [README](https://github.com/buildingSMART/validate/blob/5ceadbca687667601d687c2a5ff686ed263f2917/README.md) · [LICENSE](https://github.com/buildingSMART/validate/blob/5ceadbca687667601d687c2a5ff686ed263f2917/LICENSE) · [.gitmodules](https://github.com/buildingSMART/validate/blob/5ceadbca687667601d687c2a5ff686ed263f2917/.gitmodules) · [check_gherkin](https://github.com/buildingSMART/validate/blob/5ceadbca687667601d687c2a5ff686ed263f2917/backend/apps/ifc_validation/checks/check_gherkin.py) · [check_programs](https://github.com/buildingSMART/validate/blob/5ceadbca687667601d687c2a5ff686ed263f2917/backend/apps/ifc_validation/tasks/check_programs.py) · [validate_header](https://github.com/buildingSMART/validate/blob/5ceadbca687667601d687c2a5ff686ed263f2917/backend/apps/ifc_validation/checks/header_policy/validate_header.py) · [playwright.yml](https://github.com/buildingSMART/validate/blob/5ceadbca687667601d687c2a5ff686ed263f2917/.github/workflows/playwright.yml) |
+
+<a id="nt-pythonocc-core"></a>
+
+### pythonocc-core
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/tpaviot/pythonocc-core |
+| License | LGPL-3.0 |
+| Phiên bản đã đọc | `e685bfe954e76b643fc63e6fedd1a4b433751cc8` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, src/Extend/DataExchange.py, src/Extend/ShapeFactory.py, azure-pipelines.yml và conda-build.yml; chưa chạy upstream |
+| Khoảng trống lấp | Kernel B-rep và STEP AP242 từ Python; kiểm hình học là tự gọi OCCT, không có cổng kiểm sẵn |
+| Cơ chế đáng học | • write_step_file(shape, filename, application_protocol) chọn schema qua DESTEP_Parameters: AP203, AP214IS, AP242DIS; tệp AP242 chứa lưới tam giác chỉ xuất được khi chọn AP242DIS, kèm cảnh báo (DataExchange.py).<br>• read_step_file đọc bằng STEPControl_Reader, báo lỗi bằng AssertionError khi ReadFile, TransferRoots hoặc không có shape; gộp nhiều shape thành compound (DataExchange.py).<br>• measure_shape_volume và khối tâm dùng brepgprop và GProp_GProps; có thêm bounding box căn trục và có hướng (ShapeFactory.py).<br>• Lớp Extend là lớp Python mỏng có type stub (.pyi, py.typed) phủ lên binding OCCT thô. |
+| Tiêu chí và cách kiểm | CI là azure-pipelines.yml chạy conda-build.yml cho Ubuntu, macOS, Windows trên Python 3.10 trở lên và lịch build hằng đêm; thư mục test có test dataexchange, shapefactory, topology, brepgraph. Không có ngưỡng dung sai nào đóng gói sẵn. Chưa chạy. |
+| Giới hạn và rủi ro | LGPL-3.0 (liên kết động thì thường dễ, nhưng nhúng cần đọc kỹ điều kiện); OCCT có license riêng (chưa xác minh). Không có kiểm hợp lệ solid hay xác thực AP242 PMI sẵn; đọc STEP của bên thứ ba đi qua mã C++ nên coi tệp là đầu vào không tin cậy.  Không đo tốc độ hay độ chính xác. |
+| So với | cadquery trong kho (dựng hình bằng script trên OCP); ifcopenshell trong kho (IFC, cũng dựa trên OCCT); trimesh trong kho (lưới, không phải B-rep); freecad trong kho. |
+| Nguồn | [README.md](https://github.com/tpaviot/pythonocc-core/blob/e685bfe954e76b643fc63e6fedd1a4b433751cc8/README.md) · [LICENSE](https://github.com/tpaviot/pythonocc-core/blob/e685bfe954e76b643fc63e6fedd1a4b433751cc8/LICENSE) · [DataExchange.py](https://github.com/tpaviot/pythonocc-core/blob/e685bfe954e76b643fc63e6fedd1a4b433751cc8/src/Extend/DataExchange.py) · [ShapeFactory.py](https://github.com/tpaviot/pythonocc-core/blob/e685bfe954e76b643fc63e6fedd1a4b433751cc8/src/Extend/ShapeFactory.py) · [azure-pipelines.yml](https://github.com/tpaviot/pythonocc-core/blob/e685bfe954e76b643fc63e6fedd1a4b433751cc8/azure-pipelines.yml) · [conda-build.yml](https://github.com/tpaviot/pythonocc-core/blob/e685bfe954e76b643fc63e6fedd1a4b433751cc8/conda-build.yml) |
+
+<a id="nt-geoparquet-io"></a>
+
+### geoparquet-io (gpio)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/geoparquet/geoparquet-io |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `14bee5991cf9fdc79ac1e397dc7162ca6391426d` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, check_verdict.py, duckdb_utils.py, validate.py, stac_check.py và tests.yml; chưa chạy upstream |
+| Khoảng trống lấp | Cổng kiểm máy và tối ưu GeoParquet; STAC chỉ kiểm JSON, OGC API chưa thấy |
+| Cơ chế đáng học | • check_verdict.py: một mô-đun duy nhất quyết định mức nặng và mã thoát cho mọi lệnh check; mỗi vấn đề có nhãn mức riêng, kết quả xấu nhất thắng, check không chạy được là FAILURE; exit_code trả 1 khi FAILURE hoặc khi WARNING và có --strict.<br>• validate.py kiểm GeoParquet theo đặc tả 1.0, 1.1, 2.0 và kiểu địa lý gốc của Parquet; kết quả đi qua cùng mô hình verdict.<br>• stac_check.py kiểm tệp STAC Item hoặc Collection bằng pystac.validation và báo lỗi nếu truyền nhầm tệp dữ liệu (stac_check.py).<br>• duckdb_utils.py: đặt QUERY_FARM_TELEMETRY_OPT_OUT mặc định là 1 trước khi LOAD extension, nêu lý do là lỗi crash tiến trình do luồng telemetry (issue 779). |
+| Tiêu chí và cách kiểm | Cổng kiểm là mã tất định trên metadata và dữ liệu Parquet; tests.yml chạy pre-commit lint, kiểm bảo mật phụ thuộc, test, slow test hằng đêm, và đồng bộ tài liệu sinh tự động. Không chạy lại ở đây; ngưỡng cỡ row group trong check_parquet_structure.py chỉ đọc lướt. |
+| Giới hạn và rủi ro | Apache-2.0. Extension A5 phân phối từ kho Query.Farm với DuckDB 2.0 trở lên, gpio tin kho đó qua TLS; README nêu cần ghim python-duckdb dưới 1.6 khi cài bằng conda. Đọc và ghi S3, GCS, Azure, HTTPS cần quản lý khóa truy cập. Số sao trinh sát ghi (177) không được xác minh. Thư mục skills và plugins/gpio-fiboa chưa đọc. |
+| So với | osgeo-gdal trong kho (chuyển đổi đa định dạng); geopandas-geopandas trong kho (thư viện dataframe); duckdb trong kho (engine nền); stac-geoparquet (cùng đợt). |
+| Nguồn | [README.md](https://github.com/geoparquet/geoparquet-io/blob/14bee5991cf9fdc79ac1e397dc7162ca6391426d/README.md) · [LICENSE](https://github.com/geoparquet/geoparquet-io/blob/14bee5991cf9fdc79ac1e397dc7162ca6391426d/LICENSE) · [check_verdict.py](https://github.com/geoparquet/geoparquet-io/blob/14bee5991cf9fdc79ac1e397dc7162ca6391426d/geoparquet_io/core/check_verdict.py) · [duckdb_utils.py](https://github.com/geoparquet/geoparquet-io/blob/14bee5991cf9fdc79ac1e397dc7162ca6391426d/geoparquet_io/core/duckdb_utils.py) · [validate.py](https://github.com/geoparquet/geoparquet-io/blob/14bee5991cf9fdc79ac1e397dc7162ca6391426d/geoparquet_io/core/validate.py) · [stac_check.py](https://github.com/geoparquet/geoparquet-io/blob/14bee5991cf9fdc79ac1e397dc7162ca6391426d/geoparquet_io/core/stac_check.py) · [tests.yml](https://github.com/geoparquet/geoparquet-io/blob/14bee5991cf9fdc79ac1e397dc7162ca6391426d/.github/workflows/tests.yml) |
+
+<a id="nt-stac-geoparquet"></a>
+
+### stac-geoparquet
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/stac-utils/stac-geoparquet |
+| License | MIT |
+| Phiên bản đã đọc | `9431ee49353363fd6c27e011eb0448de201e01df` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, `_api.py`, `_to_parquet.py`, continuous-integration.yml, tests/test_arrow.py (tên hàm) và pyproject.toml; chưa chạy upstream |
+| Khoảng trống lấp | Chuẩn cloud-native cho catalog STAC: lưu hàng triệu item dưới dạng GeoParquet; không phải bộ kiểm hợp lệ |
+| Cơ chế đáng học | • from_batches trong `_api.py` lấy batch bằng next() để không giữ batch trước, ném ValueError nếu schema lệch, bỏ batch rỗng kèm cảnh báo, ghi log CPU và RSS mỗi batch.<br>• to_parquet trong `_to_parquet.py` nhận Table, RecordBatchReader hoặc luồng Arrow PyCapsule, không nạp hết vào bộ nhớ, ghi collections vào metadata footer và schema_version GeoParquet.<br>• Test khứ hồi round-trip, NDJSON, hai cột geometry, filesystem không cục bộ (tests/test_arrow.py).<br>• Dùng release-please để phát hành, có bản đặc tả riêng trong thư mục spec. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy là pytest trong CI và pre-commit; có test khứ hồi nhưng tên hàm là cái duy nhất đã đọc, nội dung test chưa mở hết. Không có ngưỡng chất lượng dữ liệu hay xác thực schema STAC. |
+| Giới hạn và rủi ro | MIT, bản quyền gốc 2022 Tom Augspurger. Kiểu dữ liệu chung phụ thuộc pyarrow, geopandas, pyproj nên cài nặng; pgstac và Delta Lake là phụ thuộc tùy chọn cần psycopg hoặc deltalake. Số sao trinh sát ghi (159) chưa xác minh. Không kiểm thử các trường hợp STAC extension phức tạp ở đây. |
+| So với | geoparquet-io (cùng đợt: tối ưu và kiểm tệp GeoParquet, có kiểm STAC JSON); osgeo-gdal trong kho; opendronemap-odm trong kho (nguồn ảnh drone, quan hệ chưa xác minh). |
+| Nguồn | [README.md](https://github.com/stac-utils/stac-geoparquet/blob/9431ee49353363fd6c27e011eb0448de201e01df/README.md) · [LICENSE](https://github.com/stac-utils/stac-geoparquet/blob/9431ee49353363fd6c27e011eb0448de201e01df/LICENSE) · [_api.py](https://github.com/stac-utils/stac-geoparquet/blob/9431ee49353363fd6c27e011eb0448de201e01df/stac_geoparquet/arrow/_api.py) · [_to_parquet.py](https://github.com/stac-utils/stac-geoparquet/blob/9431ee49353363fd6c27e011eb0448de201e01df/stac_geoparquet/arrow/_to_parquet.py) · [continuous-integration.yml](https://github.com/stac-utils/stac-geoparquet/blob/9431ee49353363fd6c27e011eb0448de201e01df/.github/workflows/continuous-integration.yml) · [test_arrow.py](https://github.com/stac-utils/stac-geoparquet/blob/9431ee49353363fd6c27e011eb0448de201e01df/tests/test_arrow.py) · [pyproject.toml](https://github.com/stac-utils/stac-geoparquet/blob/9431ee49353363fd6c27e011eb0448de201e01df/pyproject.toml) |
+
+<a id="nt-libcosim"></a>
+
+### libcosim (Open Simulation Platform)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/open-simulation-platform/libcosim |
+| License | MPL-2.0 |
+| Phiên bản đã đọc | `9b58267a040e32ed50aa95c2019b304f0fbbe796` (commit 2026-10-13) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, version.txt, docs/main_page.md, hai header thuật toán, ssp_parser.hpp, proxy_uri_sub_resolver.cpp, ci-cmake.yml và CHANGELOG.md; chưa chạy upstream |
+| Khoảng trống lấp | Đồng mô phỏng FMI: FMI 1.0 và 2.0 thật, SSP hạn chế, không phải Modelica hay FMI 3 |
+| Cơ chế đáng học | • algorithm: fixed_step_algorithm chạy mọi slave song song theo bội số của bước cơ sở; ecco_algorithm điều chỉnh bước theo bảo toàn năng lượng giữa các power bond với safety_factor, min và max step, abs_tolerance, rel_tolerance (hai header thuật toán).<br>• Tách mô tả hệ thống khỏi thực thi: system_structure đọc từ OSP-IS hoặc SSP, model_uri_resolver biến URI thành FMU, execution chạy (docs/main_page.md).<br>• proxyfmu: URI có host và cổng, chạy FMU ở tiến trình tách riêng hoặc từ xa (proxy_uri_sub_resolver.cpp), kèm test proxy.<br>• ssp_parser đọc DefaultExperiment gồm thời gian bắt đầu, dừng và thuật toán (ssp_parser.hpp). |
+| Tiêu chí và cách kiểm | tests/ có khoảng 40 file test C++ (thuật toán, FMU v1 v2, SSP, proxy, observer); CI ci-cmake.yml build Debian bookworm Debug và Release cả thư viện chung và tĩnh, kèm CI Conan. Chưa build, chưa chạy. Bản FMI Library trong CI là 3.0.4 (tên thư viện, không phải hỗ trợ FMI 3). |
+| Giới hạn và rủi ro | MPL-2.0 (copyleft theo từng file, dễ dùng làm thư viện liên kết). FMU nạp trong tiến trình, tương đương chạy mã không tin cậy; proxyfmu qua mạng cần kiểm kênh và xác thực (chưa đọc). SSP chỉ hạn chế; CHANGELOG dừng ở v0.11.2 (2026-05-18) trong khi version.txt là 0.11.3, nên ghi chú phát hành chậm hơn mã. Số sao trinh sát ghi (76) chưa xác minh. Gói Python, Java và C bọc ngoài không hỗ trợ đủ tính năng theo README. |
+| So với | MasterSim (cùng đợt: master đơn giản, có GUI Qt, BSD, chỉ FMI 1 và 2, không SSP); kho chưa có công cụ đồng mô phỏng FMI nào khác; bullet3 và JoltPhysics trong kho là engine vật lý, không cùng nhiệm vụ. |
+| Nguồn | [README.md](https://github.com/open-simulation-platform/libcosim/blob/9b58267a040e32ed50aa95c2019b304f0fbbe796/README.md) · [LICENSE](https://github.com/open-simulation-platform/libcosim/blob/9b58267a040e32ed50aa95c2019b304f0fbbe796/LICENSE) · [version.txt](https://github.com/open-simulation-platform/libcosim/blob/9b58267a040e32ed50aa95c2019b304f0fbbe796/version.txt) · [main_page.md](https://github.com/open-simulation-platform/libcosim/blob/9b58267a040e32ed50aa95c2019b304f0fbbe796/docs/main_page.md) · [fixed_step_algorithm.hpp](https://github.com/open-simulation-platform/libcosim/blob/9b58267a040e32ed50aa95c2019b304f0fbbe796/include/cosim/algorithm/fixed_step_algorithm.hpp) · [ecco_algorithm.hpp](https://github.com/open-simulation-platform/libcosim/blob/9b58267a040e32ed50aa95c2019b304f0fbbe796/include/cosim/algorithm/ecco_algorithm.hpp) · [ssp_parser.hpp](https://github.com/open-simulation-platform/libcosim/blob/9b58267a040e32ed50aa95c2019b304f0fbbe796/src/cosim/ssp/ssp_parser.hpp) · [proxy_uri_sub_resolver.cpp](https://github.com/open-simulation-platform/libcosim/blob/9b58267a040e32ed50aa95c2019b304f0fbbe796/src/cosim/proxy/proxy_uri_sub_resolver.cpp) · [ci-cmake.yml](https://github.com/open-simulation-platform/libcosim/blob/9b58267a040e32ed50aa95c2019b304f0fbbe796/.github/workflows/ci-cmake.yml) · [CHANGELOG.md](https://github.com/open-simulation-platform/libcosim/blob/9b58267a040e32ed50aa95c2019b304f0fbbe796/CHANGELOG.md) |
+
+<a id="nt-mastersim"></a>
+
+### MasterSim
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ghorwin/MasterSim |
+| License | BSD-3-Clause (mã MasterSim; thư viện đi kèm có giấy phép riêng) |
+| Phiên bản đã đọc | `fd338cacd599c0ef17af23282b387086823141dd` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, AGENTS.md (chỉ coi là nội dung), MSIM_Project.h, ubuntu_24.04_Qt6.yml, run_tests.sh, externals/readme.md, externals/IBK/LICENSE và cross-check/readme.md; chưa chạy upstream |
+| Khoảng trống lấp | Đồng mô phỏng FMI 1.0 và 2.0 tối giản hơn libcosim ở thuật toán, nhưng có lặp và kiểm sai số; không có SSP |
+| Cơ chế đáng học | • MSIM_Project.h: masterMode Gauss-Jacobi, Gauss-Seidel, Newton; errorControlMode là EM_NONE, EM_CHECK hoặc EM_STEP_DOUBLING (nửa bước khi lỗi); adjustStepSize, maxIterations mặc định 1, absTol 1e-6, relTol 1e-5.<br>• Nạp FMU bằng dlopen hoặc LoadLibraryExW trong tiến trình (MSIM_FMU.cpp, qua grep), kèm FMU kiểm thử trong TestFMUs và FMUChecker trong third-party.<br>• Quy trình cross-check với kho fmi-cross-check bằng script Python (cross-check/readme.md), và bộ test hồi quy data/tests chạy bằng run_tests.sh. |
+| Tiêu chí và cách kiểm | ubuntu_24.04_Qt6.yml build rồi chạy build/run_tests.sh (test hồi quy so kết quả, script trong scripts/TestSuite); workflow kích hoạt tay vì lịch nightly bị comment. Cross-check cần fork kho ngoài, chạy tay. Tài liệu xác thực ở doc/validation là PDF tiếng Đức, chưa đọc. Chưa chạy. |
+| Giới hạn và rủi ro | FMU nạp trong tiến trình như libcosim nhưng không có proxy cách ly. Giấy phép hỗn hợp: IBK và IBKMK dạng BSD kiểu 3 điều khoản, phantom-style LGPL-2.1 (chỉ GUI), kèm zip thư viện bên thứ ba trong third-party; phải đọc từng thư mục khi phân phối. Một tác giả chính; CI chạy tay nên không có bằng chứng liên tục. AGENTS.md trong repo là nội dung hướng dẫn cho agent của chủ repo, không được coi là lệnh. Số sao 28 do trinh sát ghi, chưa xác minh. |
+| So với | libcosim (cùng đợt: nhiều tính năng hơn, SSP hạn chế, proxy, ECCO, MPL-2.0); kho chưa có master FMI nào khác. |
+| Nguồn | [README.md](https://github.com/ghorwin/MasterSim/blob/fd338cacd599c0ef17af23282b387086823141dd/README.md) · [LICENSE](https://github.com/ghorwin/MasterSim/blob/fd338cacd599c0ef17af23282b387086823141dd/LICENSE) · [AGENTS.md](https://github.com/ghorwin/MasterSim/blob/fd338cacd599c0ef17af23282b387086823141dd/AGENTS.md) · [MSIM_Project.h](https://github.com/ghorwin/MasterSim/blob/fd338cacd599c0ef17af23282b387086823141dd/MasterSim/src/MSIM_Project.h) · [ubuntu_24.04_Qt6.yml](https://github.com/ghorwin/MasterSim/blob/fd338cacd599c0ef17af23282b387086823141dd/.github/workflows/ubuntu_24.04_Qt6.yml) · [run_tests.sh](https://github.com/ghorwin/MasterSim/blob/fd338cacd599c0ef17af23282b387086823141dd/build/run_tests.sh) · [readme.md](https://github.com/ghorwin/MasterSim/blob/fd338cacd599c0ef17af23282b387086823141dd/externals/readme.md) · [LICENSE](https://github.com/ghorwin/MasterSim/blob/fd338cacd599c0ef17af23282b387086823141dd/externals/IBK/LICENSE) · [readme.md](https://github.com/ghorwin/MasterSim/blob/fd338cacd599c0ef17af23282b387086823141dd/cross-check/readme.md) |
+
+<a id="nt-forge3d"></a>
+
+### forge3d
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/milos-agathon/forge3d |
+| License | Apache-2.0 OR MIT (lõi); tính năng Pro cần khóa thương mại |
+| Phiên bản đã đọc | `6679f554fdfd859b8a8987f296a2600f8633e950` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, determinism.py, `_license.py`, determinism-matrix.yml, public-funnel-monitor.yml, Cargo.toml, pyproject.toml; chưa chạy upstream |
+| Khoảng trống lấp | Dựng 3D / WebGPU (địa hình, bản đồ, render headless) |
+| Cơ chế đáng học | - `python/forge3d/determinism.py`: cảnh `terra_determinata_v1` sinh từ DEM 129x129 bằng phép float32 chính xác IEEE, IBL .hdr tạo byte-exact; chạy trong subprocess đặt `FORGE3D_DETERMINISTIC=1` và `WGPU_BACKENDS` trước khi import vì backend bị khóa ở lần tạo context GPU đầu.<br>- `.github/workflows/determinism-matrix.yml`: ma trận intel/amd/nvidia/apple/browser/wasm; nvidia là cổng bắt buộc trên runner tự host; các nhánh khác ghi rõ "informational" hoặc dấu ABSENT; chặn `+relaxed-simd`.<br>- `python/forge3d/_license.py`: kiểm khóa Pro ngoại tuyến bằng chữ ký Ed25519, có thời gian ân hạn 14 ngày. |
+| Tiêu chí và cách kiểm | Hash vàng nằm ở `tests/goldens/determinism/` (terra_determinata_v1.sha256 và các canary probe/raster); dung sai 0 byte; kiểm bằng máy trong CI nhưng nhiều nhánh GPU chỉ mang tính thông tin trên runner hosted. CI chính có nhiều làn (Fast Contract, ORBIS Wasm, Visual Golden Paths...) mới chỉ đọc tên bước trong ci.yml. |
+| Giới hạn và rủi ro | Open core: `MapPlate`, xuất vector và pipeline nhập tòa nhà là Pro, cần khóa thương mại (README); LICENSE là MIT còn LICENSE-APACHE riêng, Cargo.toml ghi `Apache-2.0 OR MIT`. `fetch_dem` tải dữ liệu độ cao từ mạng (README). Workflow `public-funnel-monitor.yml` chạy mỗi giờ để kiểm trang chủ/PyPI của chính dự án, không ảnh hưởng người dùng. AGENTS.md là nhật ký phản tư của agent, không phải hướng dẫn cho người dùng. Tính tất định chỉ chứng minh cho một cảnh tham chiếu, không cho mọi cảnh. Phiên bản 1.52.0. |
+| So với | CesiumJS, kepler.gl, GDAL (cùng nhóm địa không gian trong kho) |
+| Nguồn | [README.md](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/README.md) · [LICENSE](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/LICENSE) · [LICENSE-APACHE](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/LICENSE-APACHE) · [Cargo.toml](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/Cargo.toml) · [pyproject.toml](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/pyproject.toml) · [AGENTS.md](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/AGENTS.md) · [determinism.py](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/python/forge3d/determinism.py) · [_license.py](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/python/forge3d/_license.py) · [determinism-matrix.yml](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/.github/workflows/determinism-matrix.yml) · [public-funnel-monitor.yml](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/.github/workflows/public-funnel-monitor.yml) · [terra_determinata_v1.sha256](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/tests/goldens/determinism/terra_determinata_v1.sha256) |

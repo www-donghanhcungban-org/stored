@@ -2,7 +2,7 @@
 
 # plugin-marketplace — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 13 hồ sơ.
+[← Mục lục catalog](../README.md) · 14 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -17,5 +17,6 @@
 | [Social Media Research Skills](../../19-agentic-video-media/README.md#ch-social-media-research-skills) | `ScrapeCreators/social-media-research-skills` | MIT | 7.325 | đọc tài liệu 2026-11-23 | 19 | 13 skill nghiên cứu mạng xã hội (outlier post, comment mining, transcript, đối thủ, ad library) cho Claude Code/Codex; |
 | [autoskills](../../20-claude-plugins-ecosystem/README.md#skill-lifecycle-2026-11-02) | `midudev/autoskills` | CC-BY-NC-4.0 | 6.982 | đọc mã 2026-11-02 | 20 | Đọc sâu lifecycle: registry vendor và hash mỗi file, bundle hash; |
 | [claude-plugins-community](../../20-claude-plugins-ecosystem/README.md#ch-claude-plugins-community) | `anthropics/claude-plugins-community` | Apache-2.0 | 4.945 | đọc tài liệu 2026-11-23 | 20 | Mirror read-only marketplace cộng đồng; |
+| [Agent Skills Platform](../../20-claude-plugins-ecosystem/README.md#nt-agent-skills-platform) | `FrancyJGLisboa/agent-skills-platform` | MIT | 2.416 | đọc mã 2026-11-23 | 20 | Bộ công cụ biến một quy trình làm việc thành skill có eval, kiểm bảo mật và bản ghi chạy đại diện, rồi đưa qua marketplace nhóm có máy trạng thái vòng đời (draft, in-rev… |
 | [Best Agent Skills (Linkly AI)](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-linklyai-best-skills) | `linklyai/best-skills` | CC-BY-4.0 | 797 | đọc mã 2026-11-23 | 20 | Dataset Top 100 skill agent hằng ngày (9 danh sách CSV, lịch sử từ 2026-08-16), gộp skills.sh/ClawHub/Tencent SkillHub/GitHub/mạng xã hội, không cộng chéo nền tảng; |
 | [Claude Code plugin validate + plugin eval](../../20-claude-plugins-ecosystem/README.md#ch-claude-code-plugin-validate-plugin-eval) |  | tài liệu sản phẩm | — | đọc tài liệu 2026-11-23 | 20 | Cổng chính thức: claude plugin validate --strict (manifest, path, .mcp.json, tên giả danh) và claude plugin eval (grader, baseline không plugin, --threshold, --max-cost-… |

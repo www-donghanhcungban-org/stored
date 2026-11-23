@@ -2,7 +2,7 @@
 
 # desktop-utility — Ứng dụng người dùng cuối
 
-[← Mục lục catalog](../README.md) · 30 hồ sơ.
+[← Mục lục catalog](../README.md) · 34 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -19,6 +19,7 @@
 | [vorssaint-utils](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-vorssaint-vorssaint-utils) | `vorssaint/vorssaint-utils` | GPL-3.0 | 35.826 | đọc tài liệu 2026-11-23 | 35 | Bộ tiện ích thanh menu macOS cho âm thanh, cửa sổ, clipboard, tệp và theo dõi hệ thống. |
 | [czkawka](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-qarmin-czkawka) | `qarmin/czkawka` | MIT / GPL-3.0-only theo ứng dụng; CC BY-4.0 cho ảnh/âm thanh | 35.440 | đọc tài liệu 2026-11-23 | 35 | Bộ công cụ tìm tệp trùng, thư mục rỗng và ảnh tương tự với core Rust cùng nhiều frontend. |
 | [MonitorControl](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-monitorcontrol-monitorcontrol) | `MonitorControl/MonitorControl` | MIT | 34.803 | đọc tài liệu 2026-11-23 | 35 | Ứng dụng macOS điều chỉnh độ sáng, âm lượng và tương phản màn hình từ menu hoặc phím. |
+| [Flameshot](../../35-desktop-productivity-apps/README.md#nt-flameshot) | `flameshot-org/flameshot` | GPL-3.0 | 31.699 | đọc mã 2026-11-23 | 35 | Chụp và chú thích màn hình (GPL-3.0), có CLI và công cụ chú thích dạng plugin nội bộ. |
 | [koreader](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-koreader-koreader) | `koreader/koreader` | AGPL-3.0 | 31.280 | đọc tài liệu 2026-11-23 | 35 | Ứng dụng đọc tài liệu tối ưu thiết bị e-ink, hỗ trợ nhiều định dạng và nền tảng. |
 | [wttr.in](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-chubin-wttr.in) | `chubin/wttr.in` | Apache-2.0 | 30.812 | đọc tài liệu 2026-11-23 | 35 | Dịch vụ dự báo thời tiết hướng terminal, có nhiều dạng đầu ra như văn bản, hình và JSON. |
 | [ente](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-ente-ente) | `ente/ente` | AGPL-3.0 | 30.410 | đọc tài liệu 2026-11-23 | 35 | Nền tảng lưu trữ và ứng dụng có mã hóa đầu-cuối cho ảnh, xác thực và tài liệu. |
@@ -36,3 +37,6 @@
 | [Mos](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-caldis-mos) | `Caldis/Mos` | CC-BY-NC-4.0 | 21.981 | đọc tài liệu 2026-11-23 | 35 | Tiện ích macOS làm mượt cuộn chuột, đổi hướng theo trục và tùy chỉnh nút theo ứng dụng. |
 | [Obtainium](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-imranr98-obtainium) | `ImranR98/Obtainium` | GPL-3.0 | 21.828 | đọc tài liệu 2026-11-23 | 35 | Ứng dụng Android theo dõi, cài và cập nhật phần mềm trực tiếp từ trang phát hành gốc. |
 | [vlc](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-videolan-vlc) | `videolan/vlc` | GPL-2.0-or-later (player); LGPL-2.1-or-later (libVLC) | 20.558 | đọc tài liệu 2026-11-23 | 35 | VLC media player và engine libVLC cho phát, chuyển đổi và xử lý luồng đa phương tiện. |
+| [electron-builder](../../35-desktop-productivity-apps/README.md#nt-electron-builder) | `electron-userland/electron-builder` | MIT | 14.726 | đọc mã 2026-11-23 | 35 | Công cụ đóng gói và tự cập nhật app Electron cho macOS, Windows, Linux (MIT). |
+| [Sparkle](../../35-desktop-productivity-apps/README.md#nt-sparkle) | `sparkle-project/Sparkle` | MIT (kèm license bên thứ ba cho bsdiff, sais-lite, ed25519) | 9.964 | đọc mã 2026-11-23 | 35 | Khung cập nhật macOS có chữ ký EdDSA và dự phòng Developer ID, installer tách đặc quyền, delta và kênh beta. |
+| [BetterCapture](../../35-desktop-productivity-apps/README.md#nt-bettercapture) | `jsattler/BetterCapture` | MIT | 1.736 | đọc mã 2026-11-23 | 35 | Ghi màn hình macOS gốc, có CLI và hướng dẫn skill cho agent, socket chỉ cho cùng user. |

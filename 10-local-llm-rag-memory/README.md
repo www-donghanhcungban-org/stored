@@ -1447,3 +1447,77 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | active (commit cuối 2026-11-23) |
 | Nhận định | Vector DB; LICENSE nêu rõ: mã ngoài thư mục wl là BSD-3-Clause (LICENSE-BSD), mã trong wl là license doanh nghiệp độc quyền cần license key; catalog chỉ ghi BSD-3 nên cần bổ sung. |
 | Nguồn | [README.md](https://github.com/weaviate/weaviate/blob/5852883ddc1a420e0a3df38572bcc93dce5e6ee8/README.md) · [LICENSE](https://github.com/weaviate/weaviate/blob/5852883ddc1a420e0a3df38572bcc93dce5e6ee8/LICENSE) · [go.mod](https://github.com/weaviate/weaviate/blob/5852883ddc1a420e0a3df38572bcc93dce5e6ee8/go.mod) · [LICENSE-BSD](https://github.com/weaviate/weaviate/blob/5852883ddc1a420e0a3df38572bcc93dce5e6ee8/LICENSE-BSD) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-bitnet-cpp"></a>
+
+### bitnet.cpp (BitNet)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/microsoft/BitNet |
+| License | MIT (mã); trọng số theo từng model card trên Hugging Face (chưa xác minh) |
+| Phiên bản đã đọc | `0b341e582afbf9e1011f24744b554c96a3477eb5` (commit 2026-07-27) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, setup_env.py, src/README.md; chưa chạy upstream |
+| Khoảng trống lấp | Serving/quantization trên phần cứng nhỏ |
+| Cơ chế đáng học | - `setup_env.py`: bảng `SUPPORTED_HF_MODELS` (BitNet-b1.58-2B-4T, Falcon3/Falcon-E 1.58bit, Llama3-8B-1.58, embedding 0.6B/270M) và `SUPPORTED_QUANT_TYPES` (arm64: i2_s, tl1; x86_64: i2_s, tl2); tải model bằng `huggingface-cli download`, convert sang GGUF rồi gọi `llama-quantize ... I2_S`.<br>- `src/ggml-bitnet-mad.cpp` và `include/gemm-config.h`: kernel I2_S (2 bit mỗi trọng số, kích hoạt 8 bit) có nhánh AVX2/SSSE3, NEON, LoongArch; kích thước khối và mức song song cấu hình được (`ROW_BLOCK_SIZE`, `COL_BLOCK_SIZE`, `PARALLEL_SIZE`) theo `src/README.md`.<br>- `utils/codegen_tl1.py`, `utils/codegen_tl2.py`, `preset_kernels/`: sinh hoặc dùng sẵn header kernel LUT theo từng model; `utils/e2e_benchmark.py`, `test_perplexity.py`, `test_power.sh` để đo tốc độ, perplexity, năng lượng. |
+| Tiêu chí và cách kiểm | Không có CI trong repo (không có thư mục `.github/workflows`). Có script đo (`utils/e2e_benchmark.py`, `utils/test_perplexity.py`, `utils/test_gemm_kernel.sh`) chạy bằng tay, kiểm bằng máy nhưng không tự động. Tuyên bố tăng tốc 1.37x–5.07x trên ARM, 2.37x–6.17x trên x86 và giảm năng lượng 55.4–70.0% (ARM) và 71.9–82.2% (x86) chỉ là số của tác giả, chưa tái lập. |
+| Giới hạn và rủi ro | Lõi `3rdparty/llama.cpp` là submodule trỏ `isHuangXin/llama.cpp` (nhánh `release-bitnet-embedding-0.6b-270m`), thư mục rỗng trong clone nông nên phần tích hợp ggml chưa đọc. Chỉ chạy tốt với model được huấn luyện 1.58-bit sẵn; không nén được model thường. Hỗ trợ model là danh sách cố định trong `setup_env.py`. License MIT áp cho mã; license trọng số nằm ở model card Hugging Face, chưa xác minh. Build cần clang/cmake và có chỉ dẫn riêng cho Windows. |
+| So với | llama.cpp (`llama-cpp`), `mlc-llm`, `llamafile`, `cactus`, `executorch` đều đã có hồ sơ; bitnet.cpp khác ở chỗ cần model 1.58-bit sẵn, không phải GGUF Q4/Q8 thường. |
+| Nguồn | [README.md](https://github.com/microsoft/BitNet/blob/0b341e582afbf9e1011f24744b554c96a3477eb5/README.md) · [LICENSE](https://github.com/microsoft/BitNet/blob/0b341e582afbf9e1011f24744b554c96a3477eb5/LICENSE) · [setup_env.py](https://github.com/microsoft/BitNet/blob/0b341e582afbf9e1011f24744b554c96a3477eb5/setup_env.py) · [README.md](https://github.com/microsoft/BitNet/blob/0b341e582afbf9e1011f24744b554c96a3477eb5/src/README.md) · [ggml-bitnet-mad.cpp](https://github.com/microsoft/BitNet/blob/0b341e582afbf9e1011f24744b554c96a3477eb5/src/ggml-bitnet-mad.cpp) · [.gitmodules](https://github.com/microsoft/BitNet/blob/0b341e582afbf9e1011f24744b554c96a3477eb5/.gitmodules) · [e2e_benchmark.py](https://github.com/microsoft/BitNet/blob/0b341e582afbf9e1011f24744b554c96a3477eb5/utils/e2e_benchmark.py) |
+
+<a id="nt-mlx-lm"></a>
+
+### MLX LM
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ml-explore/mlx-lm |
+| License | MIT (mã); license từng model theo model card (chưa xác minh) |
+| Phiên bản đã đọc | `1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, pyproject.toml, mlx_lm/convert.py; chưa chạy upstream |
+| Khoảng trống lấp | Serving/quantization trên phần cứng nhỏ |
+| Cơ chế đáng học | - `mlx_lm/convert.py`: `mixed_quant_predicate_builder` với công thức `mixed_2_6`, `mixed_3_4`, `mixed_3_6`, `mixed_4_6`; lớp đầu và cuối, `v_proj`, `down_proj`, `lm_head` dùng nhiều bit hơn (6), phần còn lại ít bit, nhóm 64, tham khảo cách chọn của llama.cpp Q4_K_M.<br>- `mlx_lm/lora.py` và `LORA.md`: `fine_tune_type` là lora, dora hoặc full; mặc định `rank 8`, `scale 20.0`, `num_layers 16`; nếu `--model` là model đã lượng tử thì tự dùng QLoRA.<br>- `mlx_lm/models/` có hàng chục kiến trúc (kể cả `bitnet`), `fuse.py` gộp adapter, `upload.py` đẩy lên Hugging Face, `mx.distributed` cho suy luận và tinh chỉnh phân tán.<br>- `mlx_lm/SERVER.md`: máy chủ tương thích kiểu OpenAI, kèm cảnh báo không khuyến nghị production. |
+| Tiêu chí và cách kiểm | Workflow `pull_request.yml` (đã mở): lint bằng pre-commit và chạy `unittest discover tests` cùng `mlx.launch -n 2` trên runner `[self-hosted, macos]` (chỉ chạy khi repo là `ml-explore/mlx-lm`), tải `test_data.zip` từ release. Thư mục `tests/` có test cho generate, quantize/awq, server, tuner, tokenizer. Không có ngưỡng chất lượng sau lượng tử hóa; có `perplexity.py` và `evaluate.py` để tự đo. |
+| Giới hạn và rủi ro | Chỉ chạy được trên Apple silicon (`mlx` ràng buộc `platform_system == 'Darwin'`; có tag Linux nhưng chưa xác minh mức hỗ trợ). `SERVER.md` ghi rõ server chỉ có kiểm tra bảo mật cơ bản. Tùy chọn `--trust-remote-code` cho tokenizer tồn tại trong CLI (mặc định tắt). CLI tự tải model từ Hugging Face (mặc định `mlx-community/Llama-3.2-3B-Instruct-4bit`) nên có truy cập mạng và license model là của từng model. `AGENTS.md` trong repo là quy tắc cho contributor dùng agent, chỉ là nội dung để đọc. |
+| So với | `omlx`, `mlc-llm`, `llama-cpp`, `ollama`, `unsloth` (tinh chỉnh trên GPU NVIDIA). |
+| Nguồn | [README.md](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/README.md) · [LICENSE](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/LICENSE) · [pyproject.toml](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/pyproject.toml) · [convert.py](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/mlx_lm/convert.py) · [LORA.md](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/mlx_lm/LORA.md) · [SERVER.md](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/mlx_lm/SERVER.md) · [lora.py](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/mlx_lm/lora.py) · [generate.py](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/mlx_lm/generate.py) · [pull_request.yml](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/.github/workflows/pull_request.yml) · [AGENTS.md](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/AGENTS.md) |
+
+<a id="nt-safetensors"></a>
+
+### safetensors
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/huggingface/safetensors |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `11319d360db5170565db914601fbf375762bf8eb` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, safetensors/src/tensor.rs, attacks/README.md; chưa chạy upstream |
+| Khoảng trống lấp | Định dạng model an toàn (safetensors/GGUF/ONNX) |
+| Cơ chế đáng học | - README mô tả định dạng: 8 byte `N` little-endian, `N` byte header JSON UTF-8 bắt đầu bằng `{`, mỗi tensor có `dtype`, `shape`, `data_offsets`, khóa đặc biệt `__metadata__` chỉ chứa chuỗi; cấm khóa trùng; bộ đệm phải được lập chỉ mục toàn bộ, không có lỗ hổng nên không tạo được file polyglot.<br>- `safetensors/src/tensor.rs`: `MAX_HEADER_SIZE = 100_000_000` (lỗi `HeaderTooLarge`), `validate()` đòi `data_offsets` bắt đầu đúng chỗ tensor trước kết thúc, tính kích thước bằng `checked_mul` (lỗi `ValidationOverflow`), đòi `e - s` bằng đúng kích thước tính từ shape và dtype, lỗi `MetadataIncompleteBuffer` nếu file không được phủ hết.<br>- `attacks/`: kịch bản minh họa thực thi mã tùy ý qua torch, paddle, tensorflow (h5) và DoS qua numpy, torch; và các thử lạm dụng safetensors để đối chiếu.<br>- Thư mục `safetensors/fuzz/fuzz_targets/` có `fuzz_target_1.rs` và `bindings/python/tests/` có test so sánh torch, tf, flax, mlx, paddle (mới liệt kê tên, chưa mở nội dung). |
+| Tiêu chí và cách kiểm | Kiểm bằng máy trong repo: workflow `rust.yml` (build đa hệ điều hành), `trufflehog.yml` quét secret (`python.yml` có trong thư mục nhưng chưa mở), các test trong `tensor.rs` cho trường hợp HeaderTooLarge, InvalidOffset, MetadataIncompleteBuffer. Bảo đảm chỉ nằm ở tầng định dạng: số liệu tốc độ tải trong README (ví dụ BLOOM 10 phút xuống 45 giây) là của tác giả, chưa tái lập. |
+| Giới hạn và rủi ro | An toàn chỉ về thực thi mã khi nạp tensor; không bảo đảm trọng số sạch về nội dung, không chống NaN hoặc backdoor (README ghi giá trị tensor không được kiểm). Nhiều model vẫn chỉ có .bin pickle. Workflow `security-audit.yml` gửi diff mỗi lần push vào `main` tới Claude (`claude -p`) bằng secret của CI và thông báo Slack: dữ liệu diff rời máy nhưng chỉ ở CI của dự án, không ảnh hưởng người dùng thư viện. Quản trị đã chuyển sang LF Projects. Với GGUF và ONNX phải đọc repo khác. |
+| So với | `llama-cpp` (định dạng GGUF), `onnx`, `llmfit`; đối chiếu pickle `.pt` của PyTorch trong `attacks/`. |
+| Nguồn | [README.md](https://github.com/huggingface/safetensors/blob/11319d360db5170565db914601fbf375762bf8eb/README.md) · [LICENSE](https://github.com/huggingface/safetensors/blob/11319d360db5170565db914601fbf375762bf8eb/LICENSE) · [tensor.rs](https://github.com/huggingface/safetensors/blob/11319d360db5170565db914601fbf375762bf8eb/safetensors/src/tensor.rs) · [README.md](https://github.com/huggingface/safetensors/blob/11319d360db5170565db914601fbf375762bf8eb/attacks/README.md) · [security-audit.yml](https://github.com/huggingface/safetensors/blob/11319d360db5170565db914601fbf375762bf8eb/.github/workflows/security-audit.yml) · [trufflehog.yml](https://github.com/huggingface/safetensors/blob/11319d360db5170565db914601fbf375762bf8eb/.github/workflows/trufflehog.yml) · [rust.yml](https://github.com/huggingface/safetensors/blob/11319d360db5170565db914601fbf375762bf8eb/.github/workflows/rust.yml) · [TECHNICAL_CHARTER.md](https://github.com/huggingface/safetensors/blob/11319d360db5170565db914601fbf375762bf8eb/TECHNICAL_CHARTER.md) |
+
+<a id="nt-guidellm"></a>
+
+### GuideLLM
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/vllm-project/guidellm |
+| License | Apache-2.0 (LICENSE; `pyproject.toml` khai Apache-2.0). Không có trọng số mô hình đi kèm |
+| Phiên bản đã đọc | `f4084406776b9d2b20916e7bb3cd97f2bd5385dc` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc `README.md`, `LICENSE`, `pyproject.toml`, `src/guidellm/benchmark/profiles/sweep.py`, `src/guidellm/benchmark/profiles/goodput.py`, `src/guidellm/scheduler/constraints/saturation.py`, `.github/workflows/testing.yml`; chưa chạy upstream |
+| Khoảng trống lấp | Benchmark tải và hiệu năng suy luận cho endpoint tương thích OpenAI (TTFT, ITL, thông lượng) |
+| Cơ chế đáng học | - Hồ sơ tải (`benchmark/profiles/`): synchronous, throughput, concurrent, async (constant/poisson), `sweep`, `goodput`, `knee`, `replay`.<br>- `sweep.py`: chạy synchronous và throughput trước để biết biên, rồi nội suy các mức tốc độ async giữa hai biên.<br>- `goodput.py`: tìm mức đồng thời lớn nhất mà tỉ lệ yêu cầu đạt mọi mục tiêu SLO, dùng khoảng tin cậy Wilson; mỗi lần thử ghi `passed` và `resolved` (khoảng nằm hẳn một phía ngưỡng) nên không kết luận khi mẫu quá ít.<br>- `saturation.py`: ràng buộc dừng theo phát hiện quá tải bằng độ dốc thống kê, tối thiểu 30 giây trước khi kiểm. |
+| Tiêu chí và cách kiểm | Mục tiêu là SLO (TTFT, ITL, độ trễ đầu-cuối) và phân phối đầy đủ, không chỉ trung bình. CI `testing.yml` chạy unit, integration và e2e (e2e dùng MockServer trong repo, đã mở workflow); kiểm bằng máy cho logic công cụ, không kiểm độ đúng của số đo trên phần cứng thật. |
+| Giới hạn và rủi ro | Mô tả của trinh sát nhắc MLPerf nhưng repo không tuyên bố tương thích MLPerf (README không có). Dải Python 3.11 đến 3.15, chỉ Linux/macOS. Kết quả phụ thuộc server, tokenizer và dữ liệu sinh; chưa chạy nên số đo thuộc về tuyên bố của tác giả. Cần tải tokenizer/dataset từ Hugging Face khi dùng dữ liệu thật. |
+| So với | aiperf (hồ sơ có sẵn, cùng nhóm perf-load cho suy luận), locust, grafana-k6 (tải tổng quát, không biết token). |
+| Nguồn | [README.md](https://github.com/vllm-project/guidellm/blob/f4084406776b9d2b20916e7bb3cd97f2bd5385dc/README.md) · [LICENSE](https://github.com/vllm-project/guidellm/blob/f4084406776b9d2b20916e7bb3cd97f2bd5385dc/LICENSE) · [pyproject.toml](https://github.com/vllm-project/guidellm/blob/f4084406776b9d2b20916e7bb3cd97f2bd5385dc/pyproject.toml) · [sweep.py](https://github.com/vllm-project/guidellm/blob/f4084406776b9d2b20916e7bb3cd97f2bd5385dc/src/guidellm/benchmark/profiles/sweep.py) · [goodput.py](https://github.com/vllm-project/guidellm/blob/f4084406776b9d2b20916e7bb3cd97f2bd5385dc/src/guidellm/benchmark/profiles/goodput.py) · [saturation.py](https://github.com/vllm-project/guidellm/blob/f4084406776b9d2b20916e7bb3cd97f2bd5385dc/src/guidellm/scheduler/constraints/saturation.py) · [testing.yml](https://github.com/vllm-project/guidellm/blob/f4084406776b9d2b20916e7bb3cd97f2bd5385dc/.github/workflows/testing.yml) |

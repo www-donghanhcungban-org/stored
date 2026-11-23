@@ -2,7 +2,7 @@
 
 # low-code — Tự động hóa & quy trình
 
-[← Mục lục catalog](../README.md) · 27 hồ sơ.
+[← Mục lục catalog](../README.md) · 28 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -33,3 +33,4 @@
 | [Astron Agent](../../05-low-code-llm-platforms/README.md#ch-astron-agent) | `iflytek/astron-agent` | Apache-2.0 | 8.924 | đọc tài liệu 2026-11-23 | 05 | Nền tảng agentic workflow + RPA + MCP của iFlytek, Casdoor; |
 | [FlowGram](../../05-low-code-llm-platforms/README.md#platform-portability-2026-11-02) | `bytedance/flowgram.ai` | MIT | 8.549 | đọc mã 2026-11-02 | 05 | SDK canvas + runtime schema riêng nodes/edges/groups; |
 | [AI Agents A-Z (n8n templates)](../../05-low-code-llm-platforms/README.md#ch-ai-agents-a-z-n8n-templates) | `gyoridavid/ai_agents_az` | — | 3.949 | đọc tài liệu 2026-11-23 | 05 | David Gyori: ~55 workflow n8n của kênh YouTube (33 tập, phần lớn video faceless: Sora 2/Veo qua kie.ai, fal.ai, FLUX/Qwen trên Modal); |
+| [Workflow Builder (Synergy Codes)](../../05-low-code-llm-platforms/README.md#nt-workflowbuilder) | `synergycodes/workflowbuilder` | Apache-2.0 (LICENSE gốc và từng gói ui, sdk, temporal, mcp-server) | 449 | đọc mã 2026-11-23 | 05 | Stack mở Apache-2.0: editor React nhúng cộng thực thi bền trên Temporal với bước chờ người duyệt qua Workflow Update, verdict đầu tiên thắng, quyết định muộn bị từ chối… |

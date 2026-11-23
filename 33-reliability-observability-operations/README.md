@@ -379,3 +379,26 @@ Cơ sở dữ liệu chuỗi thời gian và giải pháp giám sát nhanh, ti�
 Hệ thống truy vết phân tán, thu thập và tra cứu dữ liệu thời gian để gỡ lỗi độ trễ trong kiến trúc dịch vụ, kèm giao diện web và sơ đồ phụ thuộc. Nhận dữ liệu qua HTTP, Kafka, gRPC, RabbitMQ, ActiveMQ, Pulsar; lưu trong bộ nhớ, Cassandra hoặc Elasticsearch; có bản slim, ảnh Docker và công thức Homebrew. Điều kiện: Máy chủ cần JRE 17+; ứng dụng phải được gắn thư viện instrumentation. ★ 18/11/2026: 17.475 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
 
 **Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-culiops-skills"></a>
+
+### CuliOps skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/culiops/culiops-skills |
+| License | MIT |
+| Phiên bản đã đọc | `40d9310d51a6b43d6d78bb0928193b705bd1910a` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, skills/sre-investigate/SKILL.md, .claude-plugin/plugin.json, CHANGELOG.md; chưa chạy upstream |
+| Khoảng trống lấp | Skill vận hành SRE/incident/runbook: điều tra sự cố chỉ đọc có nhãn bằng chứng và sổ truy vấn |
+| Cơ chế đáng học | - `skills/sre-investigate/SKILL.md` (400 dòng): Iron Law "quan sát, không tác động", mỗi nguyên nhân và mỗi mắt xích mang đúng một nhãn, nhãn không mạnh hơn mắt xích yếu nhất, "disprove first" (chạy truy vấn bác bỏ trước).<br>- Lệnh chạy theo đợt: in đầy đủ lệnh rồi chạy; AccessDenied/401/403 ghi thành khoảng trống kèm cách sửa, không đi vòng; thông tin thật chỉ trỏ bằng tên biến môi trường; mọi giờ theo UTC.<br>- Quy trình 7 pha, 0 đến 6 (truy cập và intake, phạm vi/tác động, tương quan thay đổi, giả thuyết, bằng chứng bằng worker riêng ở chế độ Deep, kết luận, ghi nhận); sổ `ledger.md` ghi ID truy vấn dạng `W<đợt>-Q<n>`.<br>- Văn bản trong log, ticket, PR là dữ liệu không tin cậy: không chạy lệnh hay mở URL nằm trong đó. |
+| Tiêu chí và cách kiểm | Chỉ có fixture mô phỏng: `tests/fixtures/sre-investigate/*` (9 tình huống như injection-in-logs, k8s-crashloop-configmap), mỗi ca có world giả và `DRY-RUN-NOTES.md` chấm tay theo các dòng MUST/MUST-NOT. Fixture injection-in-logs ghi 5 đạt, 3 trượt cho lượt baseline không có skill (đã mở). Không có CI, không có script chạy tự động, không đo độ đúng RCA trên sự cố thật. |
+| Giới hạn và rủi ro | MIT (LICENSE đã đọc). Cần AWS CLI, kubectl, helm, gh; skill khuyến nghị quyền chỉ đọc (ReadOnlyAccess, ClusterRole view) nhưng cảnh báo rồi vẫn chạy khi thấy credential có quyền ghi (Constraint 7), nên an toàn dựa vào cấu hình của người dùng. Truy vấn CloudWatch Logs Insights, X-Ray tính tiền theo lượng quét. Tích hợp "Culibox" chưa có (SKILL.md ghi chưa sẵn sàng). Bản 0.20.0, chỉ AWS và Kubernetes; GCP và Azure đã bị gỡ ở v0.11.0. Bản clone nông chỉ có một commit nên không đánh giá được lịch sử bảo trì. |
+| So với | google-sre-workbook (tri thức SRE dạng checklist, không phải skill chạy được), kubernetes và các skill vận hành khác ở mục 33 |
+| Nguồn | [LICENSE](https://github.com/culiops/culiops-skills/blob/40d9310d51a6b43d6d78bb0928193b705bd1910a/LICENSE) · [README.md](https://github.com/culiops/culiops-skills/blob/40d9310d51a6b43d6d78bb0928193b705bd1910a/README.md) · [skills/sre-investigate/SKILL.md](https://github.com/culiops/culiops-skills/blob/40d9310d51a6b43d6d78bb0928193b705bd1910a/skills/sre-investigate/SKILL.md) · [.claude-plugin/plugin.json](https://github.com/culiops/culiops-skills/blob/40d9310d51a6b43d6d78bb0928193b705bd1910a/.claude-plugin/plugin.json) · [CHANGELOG.md](https://github.com/culiops/culiops-skills/blob/40d9310d51a6b43d6d78bb0928193b705bd1910a/CHANGELOG.md) · [tests/fixtures/sre-investigate/injection-in-logs/DRY-RUN-NOTES.md](https://github.com/culiops/culiops-skills/blob/40d9310d51a6b43d6d78bb0928193b705bd1910a/tests/fixtures/sre-investigate/injection-in-logs/DRY-RUN-NOTES.md) |

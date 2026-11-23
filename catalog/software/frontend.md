@@ -2,7 +2,7 @@
 
 # frontend — Kỹ thuật phần mềm & vận hành
 
-[← Mục lục catalog](../README.md) · 82 hồ sơ.
+[← Mục lục catalog](../README.md) · 84 hồ sơ.
 
 ## Framework UI (`framework`, 23)
 
@@ -46,7 +46,7 @@
 | [Angular CLI](../../13-dev-stack-devops/README.md#anhkysuai-angular-angular-cli) | `angular/angular-cli` | MIT | 27.024 | đọc tài liệu 2026-11-23 | 13 | CLI tạo workspace, scaffold, build và nâng cấp ứng dụng Angular. |
 | [Mitosis](../../06-ui-ux-design/README.md#ch-mitosis) | `BuilderIO/mitosis` | MIT | 14.480 | đọc tài liệu 2026-11-23 | 06 | Viết một lần biên dịch ra ~20 framework; |
 
-## State & data fetching (`state-data`, 6)
+## State & data fetching (`state-data`, 7)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -56,6 +56,7 @@
 | [MobX](../../06-ui-ux-design/README.md#anhkysuai-mobxjs-mobx) | `mobxjs/mobx` | MIT | 28.217 | đọc tài liệu 2026-11-23 | 06 | Quản lý state qua observable và dependency tracking tự động. |
 | [React Redux](../../13-dev-stack-devops/README.md#anhkysuai-reduxjs-react-redux) | `reduxjs/react-redux` | MIT | 23.422 | đọc tài liệu 2026-11-23 | 13 | Binding chính thức kết nối Redux store với ứng dụng React. |
 | [Jotai](../../13-dev-stack-devops/README.md#anhkysuai-pmndrs-jotai) | `pmndrs/jotai` | MIT | 21.337 | đọc tài liệu 2026-11-23 | 13 | Quản lý state React bằng atom nhỏ có thể kết hợp thành trạng thái suy ra. |
+| [TinyBase](../../34-backend-data-identity-integration/README.md#nt-tinybase) | `tinyplex/tinybase` | MIT | 5.220 | đọc mã 2026-11-23 | 34 | Store reactive trong bộ nhớ cho ứng dụng local-first, có MergeableStore đồng bộ bằng HLC và hash theo cell. |
 
 ## CSS & styling (`styling-css`, 6)
 
@@ -97,7 +98,7 @@
 | [raylib](../../06-ui-ux-design/README.md#anhkysuai-raysan5-raylib) | `raysan5/raylib` | Zlib; dependency nhúng có license riêng | 35.770 | đọc tài liệu 2026-11-23 | 06 | Thư viện C99 cho game, đồ họa và công cụ tương tác. |
 | [libGDX](../../06-ui-ux-design/README.md#anhkysuai-libgdx-libgdx) | `libgdx/libgdx` | Apache-2.0; dependency/asset giữ license riêng | 25.551 | đọc tài liệu 2026-11-23 | 06 | Framework game Java 2D/3D dựa trên OpenGL/ES cho nhiều nền. |
 
-## Thư viện tiện ích (`utility-library`, 22)
+## Thư viện tiện ích (`utility-library`, 23)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -123,6 +124,7 @@
 | [plate](../../06-ui-ux-design/README.md#chuyen-plate) | `udecode/plate` | MIT | 16.712 | đọc tài liệu 2026-11-18 | 06 | Framework trình soạn thảo văn bản giàu định dạng (rich-text) cho React, kèm các mẫu khởi đầu và tài liệu tại platejs.org. |
 | [ts-pattern](../../13-dev-stack-devops/README.md#chuyen-ts-pattern) | `gvergnaud/ts-pattern` | MIT | 15.222 | đọc tài liệu 2026-11-18 | 13 | Thư viện pattern matching cho TypeScript với suy luận kiểu và kiểm tra đủ trường hợp. |
 | [Golden Layout](../../06-ui-ux-design/README.md#ch-golden-layout) | `golden-layout/golden-layout` | MIT | 6.722 | đọc tài liệu 2026-11-23 | 06 | Docking layout; |
+| [Loro](../../34-backend-data-identity-integration/README.md#nt-loro) | `loro-dev/loro` | MIT (lõi); skills/moonbit dưới Apache-2.0 | 6.317 | đọc mã 2026-11-23 | 34 | Thư viện CRDT (Rust, WASM, Swift) cho dữ liệu JSON, giữ đầy đủ lịch sử để checkout, fork và hoàn tác. |
 
 ## Template & starter (`starter-template`, 2)
 

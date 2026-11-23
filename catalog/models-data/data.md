@@ -2,9 +2,9 @@
 
 # data — Mô hình, dữ liệu & tài liệu
 
-[← Mục lục catalog](../README.md) · 109 hồ sơ.
+[← Mục lục catalog](../README.md) · 118 hồ sơ.
 
-## Cơ sở dữ liệu & lưu trữ (`database-engine`, 30)
+## Cơ sở dữ liệu & lưu trữ (`database-engine`, 33)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -38,8 +38,11 @@
 | [Vitess](../../34-backend-data-identity-integration/README.md#anhkysuai-vitessio-vitess) | `vitessio/vitess` | Apache-2.0 | 21.428 | đọc tài liệu 2026-11-23 | 34 | Lớp clustering/sharding để mở rộng hệ MySQL theo chiều ngang. |
 | [Apache ShardingSphere](../../34-backend-data-identity-integration/README.md#anhkysuai-apache-shardingsphere) | `apache/shardingsphere` | Apache-2.0; thông báo thành phần riêng | 20.836 | đọc tài liệu 2026-11-23 | 34 | Lớp Database Plus đặt trên database hiện có để thống nhất truy cập và khả năng phân tán. |
 | [doris](../../34-backend-data-identity-integration/README.md#chuyen-doris) | `apache/doris` | Apache-2.0 | 16.238 | đọc tài liệu 2026-11-18 | 34 | Cơ sở dữ liệu phân tích và tìm kiếm thời gian thực kiến trúc MPP thuộc Apache: phân tích SQL nhanh, tăng tốc truy vấn lakehouse và tìm kiếm hybrid trên dữ liệu có cấu tr… |
+| [Apache Iceberg](../../15-ai-for-data/README.md#nt-apache-iceberg) | `apache/iceberg` | Apache-2.0 | 9.452 | đọc mã 2026-11-23 | 15 | Chuẩn bảng mở cho kho dữ liệu lớn: spec định nghĩa snapshot/manifest và commit lạc quan bằng hoán đổi con trỏ metadata, bản Java là tham chiếu với retry mặc định 4 lần. |
+| [Project Nessie](../../24-ai-data-engineering/README.md#nt-projectnessie-nessie) | `projectnessie/nessie` | Apache-2.0 | 1.533 | đọc mã 2026-11-23 | 24 | Catalog giao dịch kiểu Git cho data lake: branch, tag, commit, merge, transplant trên metadata Iceberg (REST `/iceberg` và API Nessie v1/v2), nhiều backend version store… |
+| [Apache XTable (Incubating)](../../24-ai-data-engineering/README.md#nt-apache-xtable) | `apache/incubator-xtable` | Apache-2.0 (bundled jar của xtable-utilities kèm jol-core GPL-2.0 với Classpath Exception, và README nói bundled jar không mang LICENSE/NOTICE cho phần gói kèm) | 1.359 | đọc mã 2026-11-23 | 24 | Bộ chuyển đổi metadata giữa Hudi, Iceberg và Delta (nguồn thêm Paimon, Parquet thuần) mà không sao chép file dữ liệu: đọc sang mô hình nội bộ rồi ghi metadata đích; |
 
-## BI & dashboard (`analytics-bi`, 5)
+## BI & dashboard (`analytics-bi`, 6)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -48,8 +51,9 @@
 | [Redash](../../15-ai-for-data/README.md#anhkysuai-2026-11-23-redash) | `getredash/redash` | BSD-2-Clause; tài sản bản đồ có điều khoản riêng | 28.899 | đọc tài liệu 2026-11-23 | 15 | Truy vấn nguồn dữ liệu và chia sẻ biểu đồ, dashboard, lịch làm mới và cảnh báo. |
 | [DataEase](../../15-ai-for-data/README.md#anhkysuai-2026-11-23-dataease) | `dataease/dataease` | GPLv3 sửa đổi, kèm điều kiện thương hiệu/đóng góp | 24.729 | đọc tài liệu 2026-11-23 | 15 | Nền tảng BI với dashboard kéo thả và nhiều loại nguồn dữ liệu. |
 | [ThingsBoard](../../34-backend-data-identity-integration/README.md#anhkysuai-2026-11-23-thingsboard) | `thingsboard/thingsboard` | BUSL-1.1 cho 4.4+; một số phần Apache-2.0 | 22.714 | đọc tài liệu 2026-11-23 | 34 | Nền tảng IoT quản lý thiết bị, thu telemetry, rule chain, cảnh báo và dashboard. |
+| [Evidence (BI dạng mã)](../../15-ai-for-data/README.md#nt-evidence) | `evidence-dev/evidence` | MIT | 7.145 | đọc mã 2026-11-23 | 15 | BI dạng mã: Markdown cộng SQL thành báo cáo, metrics khai báo trong YAML và `evidence validate` có đầu ra JSON cho agent/CI. |
 
-## Dataframe, notebook & xử lý (`dataframe-compute`, 10)
+## Dataframe, notebook & xử lý (`dataframe-compute`, 12)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -61,8 +65,10 @@
 | [marimo](../../15-ai-for-data/README.md#ch-marimo) | `marimo-team/marimo` | Apache-2.0 | 23.707 | đọc tài liệu 2026-11-23 | 15 | ; |
 | [fx](../../13-dev-stack-devops/README.md#anhkysuai-antonmedv-fx) | `antonmedv/fx` | MIT | 20.723 | đọc tài liệu 2026-11-23 | 13 | Công cụ terminal để xem và xử lý JSON; |
 | [sqlglot](../../15-ai-for-data/README.md#ch-sqlglot) | `tobymao/sqlglot` | MIT | 9.811 | đọc tài liệu 2026-11-23 | 15 | Parser/transpiler SQL 30+ dialect; |
+| [Apache DataFusion](../../15-ai-for-data/README.md#nt-apache-datafusion) | `apache/datafusion` | Apache-2.0 | 9.649 | đọc mã 2026-11-23 | 15 | Engine truy vấn nhúng viết bằng Rust trên Apache Arrow: planner đầy đủ, thực thi cột/streaming/đa luồng, mở rộng được ở nguồn dữ liệu, hàm, toán tử và rule tối ưu; |
 | [Ibis](../../15-ai-for-data/README.md#ch-ibis) | `ibis-project/ibis` | Apache-2.0 | 6.707 | đọc tài liệu 2026-11-23 | 15 | ; |
 | [Jupyter AI](../../15-ai-for-data/README.md#ch-jupyter-ai) | `jupyterlab/jupyter-ai` | BSD-3-Clause | 4.450 | đọc tài liệu 2026-11-23 | 15 | . |
+| [Sail (LakeSail)](../../24-ai-data-engineering/README.md#nt-lakehq-sail) | `lakehq/sail` | Apache-2.0 | 3.507 | đọc mã 2026-11-23 | 24 | Engine Rust thay thế Spark qua giao thức Spark Connect: client PySpark chỉ đổi `remote("sc://host:50051")`; |
 
 ## Pipeline, ETL & CDC (`pipeline-orchestration`, 7)
 
@@ -76,7 +82,7 @@
 | [dlt (data load tool)](../../15-ai-for-data/README.md#5-data-ingestion-and-asset-orchestration) | `dlt-hub/dlt` | Apache-2.0 | 6.049 | đọc mã 2026-11-02 | 15 | Ingestion có cursor/state; |
 | [SQLMesh](../../15-ai-for-data/README.md#factory-2026-11-04-sqlmesh) | `TobikoData/sqlmesh` | Apache-2.0 | — | đọc mã 2026-11-04 | 15 | Plan/version/test/audit cho mô hình SQL; |
 
-## Lineage, metric & ontology (`semantic-lineage`, 12)
+## Lineage, metric & ontology (`semantic-lineage`, 14)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -85,9 +91,11 @@
 | [OpenMetadata](../../24-ai-data-engineering/README.md#chuyen-openmetadata) | `open-metadata/OpenMetadata` | Apache-2.0 | 15.805 | đọc tài liệu 2026-11-18 | 24 | Nền tảng danh mục dữ liệu và quản trị metadata mã nguồn mở, gom lineage, chất lượng dữ liệu, sở hữu, glossary, hợp đồng dữ liệu thành đồ thị tri thức làm ngữ cảnh cho ng… |
 | [DataHub](../../15-ai-for-data/README.md#ch-datahub) | `datahub-project/datahub` | Apache-2.0 | 13.016 | đọc tài liệu 2026-11-23 | 15 | Metadata/ngữ cảnh dữ liệu cho agent, MCP; |
 | [schema.org](../../24-ai-data-engineering/README.md#6c-business-ontology-cho-doanh-nghiệp-quy-trình-8-bước-core-mở-rộng-theo-ngành-kiến-trúc-5-lớp-và-công-cụ-mở-cho-từng-bước-3-infographic-người-dùng-gửi-8112026) | `schemaorg/schemaorg` | Apache-2.0 | 6.300 | đọc tài liệu 2026-11-08 | 24 | Từ vựng chung (Person, Organization, Product, Order, Invoice, Offer…) làm tên chuẩn cho Core Ontology; |
+| [Apache Gravitino](../../24-ai-data-engineering/README.md#nt-apache-gravitino) | `apache/gravitino` | Apache-2.0 (LICENSE gốc; kèm LICENSE.iceberg, LICENSE.lance, LICENSE.trino và LICENSE.bin cho phần phân phối/bundle) | 3.411 | đọc mã 2026-11-23 | 24 | Catalog metadata liên hợp (metalake, catalog, schema, bảng/fileset/topic/model) quản lý trực tiếp trên nguồn Hive, JDBC, Iceberg, Paimon, Kafka, fileset; |
 | [OpenLineage](../../15-ai-for-data/README.md#ch-openlineage) | `OpenLineage/OpenLineage` | Apache-2.0 | 2.778 | đọc tài liệu 2026-11-23 | 15 | Chuẩn mở lineage (LF AI & Data Graduate): run/job/dataset + facet, spec OpenAPI/JSON Schema, client Python/Java/Go, tích hợp Spark/Airflow/dbt/Flink; |
 | [MetricFlow](../../24-ai-data-engineering/README.md#6c-business-ontology-cho-doanh-nghiệp-quy-trình-8-bước-core-mở-rộng-theo-ngành-kiến-trúc-5-lớp-và-công-cụ-mở-cho-từng-bước-3-infographic-người-dùng-gửi-8112026) | `dbt-labs/metricflow` | Apache-2.0 | 1.866 | đọc tài liệu 2026-11-08 | 24 | Định nghĩa KPI/metric bằng code (dbt Semantic Layer) dùng chung cho BI, API, agent; |
 | [Protégé](../../24-ai-data-engineering/README.md#6c-business-ontology-cho-doanh-nghiệp-quy-trình-8-bước-core-mở-rộng-theo-ngành-kiến-trúc-5-lớp-và-công-cụ-mở-cho-từng-bước-3-infographic-người-dùng-gửi-8112026) | `protegeproject/protege` | BSD-2-Clause | 1.634 | đọc tài liệu 2026-11-08 | 24 | Trình soạn ontology OWL 2 mã mở của Stanford, kiến trúc plugin; |
+| [Open Data Contract Standard (ODCS)](../../24-ai-data-engineering/README.md#nt-bitol-odcs) | `bitol-io/open-data-contract-standard` | Apache-2.0 | 1.247 | đọc tài liệu 2026-11-23 | 24 | Chuẩn mô tả data contract bằng YAML (đang v3.2.0): fundamentals, schema, quality, SLA, server, team, roles, giá, tag, thuộc tính tùy biến, kèm JSON Schema draft 2019-09… |
 | [Ontop](../../24-ai-data-engineering/README.md#6c-business-ontology-cho-doanh-nghiệp-quy-trình-8-bước-core-mở-rộng-theo-ngành-kiến-trúc-5-lớp-và-công-cụ-mở-cho-từng-bước-3-infographic-người-dùng-gửi-8112026) | `ontop/ontop` | Apache-2.0 | 1.016 | đọc tài liệu 2026-11-08 | 24 | Knowledge graph ảo trên CSDL quan hệ: ánh xạ R2RML, dịch SPARQL sang SQL, dữ liệu giữ ở nguồn; |
 | [LinkML](../../24-ai-data-engineering/README.md#6c-business-ontology-cho-doanh-nghiệp-quy-trình-8-bước-core-mở-rộng-theo-ngành-kiến-trúc-5-lớp-và-công-cụ-mở-cho-từng-bước-3-infographic-người-dùng-gửi-8112026) | `linkml/linkml` | Apache-2.0 | 691 | đọc tài liệu 2026-11-08 | 24 | Ngôn ngữ mô hình dữ liệu liên kết hướng đối tượng viết bằng YAML, sinh JSON Schema, SQL DDL, Pydantic, OWL, SHACL; |
 | [pySHACL](../../24-ai-data-engineering/README.md#6c-business-ontology-cho-doanh-nghiệp-quy-trình-8-bước-core-mở-rộng-theo-ngành-kiến-trúc-5-lớp-và-công-cụ-mở-cho-từng-bước-3-infographic-người-dùng-gửi-8112026) | `RDFLib/pySHACL` | Apache-2.0 | 371 | đọc tài liệu 2026-11-08 | 24 | Bộ kiểm SHACL (W3C) thuần Python: biến Business Rules thành bài kiểm dữ liệu; |
@@ -136,7 +144,7 @@
 | [machine-learning-for-trading](../../08-awesome-lists-learning/README.md#6c524-tài-chính--crypto) | `stefan-jansen/machine-learning-for-trading` | MIT License | 21.870 | đọc tài liệu 2026-11-18 | 08 | Mã nguồn và notebook của sách Machine Learning for Trading bản 3: quy trình ML cho giao dịch từ nguồn dữ liệu, đặc trưng, mô hình, backtest tới giao dịch thật và MLOps. |
 | [hummingbot](../../15-ai-for-data/README.md#chuyen-hummingbot) | `hummingbot/hummingbot` | Apache License 2.0 | 21.248 | đọc tài liệu 2026-11-18 | 15 | Framework mã nguồn mở để thiết kế và chạy bot giao dịch tự động (market making, arbitrage…) trên nhiều sàn tập trung và phi tập trung. |
 
-## Thư viện ML & NLP (`ml-library`, 5)
+## Thư viện ML & NLP (`ml-library`, 6)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -145,6 +153,7 @@
 | [XGBoost](../../15-ai-for-data/README.md#anhkysuai-2026-11-23-xgboost) | `dmlc/xgboost` | Apache-2.0 | 29.015 | đọc tài liệu 2026-11-23 | 15 | Thư viện gradient boosting cho dữ liệu có cấu trúc, hỗ trợ huấn luyện và suy luận. |
 | [datasets](../../25-model-adaptation-post-training/README.md#chuyen-datasets) | `huggingface/datasets` | Apache License 2.0 | 22.154 | đọc tài liệu 2026-11-18 | 25 | Thư viện tải, chia sẻ và tiền xử lý tập dữ liệu (từ Hugging Face Hub hoặc file cục bộ) dựa trên Apache Arrow. |
 | [Prophet](../../15-ai-for-data/README.md#anhkysuai-meta-prophet) | `meta/prophet` | MIT | 20.496 | đọc tài liệu 2026-11-23 | 15 | Dự báo chuỗi thời gian bằng mô hình cộng với xu hướng, mùa vụ theo năm/tuần/ngày và ảnh hưởng ngày lễ. |
+| [Feast (feature store)](../../24-ai-data-engineering/README.md#nt-feast) | `feast-dev/feast` | Apache-2.0 | 7.364 | đọc mã 2026-11-23 | 24 | Feature store mã nguồn mở: khai báo entity/feature view bằng code, `feast apply` đăng ký, rồi lấy đặc trưng offline (point-in-time join cho training) và online (độ trễ t… |
 
 ## Thư viện trực quan hóa (`visualization`, 4)
 

@@ -947,3 +947,111 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | active (commit mới nhất 2026-11-22) |
 | Nhận định | GUI Homebrew viết SwiftUI (macOS 14+, Tuist). Mã xem được nhưng giấy phép tạm cấm bán lại, biên dịch ngoài mục đích cá nhân và dựng sản phẩm cạnh tranh; README nói không dùng AI viết mã. Không phải mã mở. |
 | Nguồn | [README](https://github.com/buresdv/Cork/blob/aee5584a348b629da9fd52386b89ad5fdd4998a1/README.md) · [LICENSE](https://github.com/buresdv/Cork/blob/aee5584a348b629da9fd52386b89ad5fdd4998a1/LICENSE.md) · [manifest](https://github.com/buresdv/Cork/blob/aee5584a348b629da9fd52386b89ad5fdd4998a1/Project.swift) · [workflow](https://github.com/buresdv/Cork/blob/aee5584a348b629da9fd52386b89ad5fdd4998a1/.github/workflows/tuist-test.yml) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-edgeever"></a>
+
+### EdgeEver
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/tianma-if/edgeever |
+| License | AGPL-3.0 |
+| Phiên bản đã đọc | `d5b93348c676c4d5a45918700746edb76ddef2d5` (commit 2026-11-24) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, AGENTS.md, package.json, apps/api/src/sync-routes.ts, apps/api/src/mcp-tools.ts, .github/workflows/test.yml; chưa chạy upstream |
+| Khoảng trống lấp | Quản lý tri thức cá nhân/nhóm có đồng bộ và xuất (thay Evernote/Obsidian) |
+| Cơ chế đáng học | • `apps/api/src/sync-routes.ts`: đồng bộ theo luồng thay đổi có `server_cursor`, kiểu thực thể notebook/memo, thao tác upsert/delete; chia lô truy vấn chi tiết 90 id để né giới hạn 100 tham số của Cloudflare D1.<br>• Mỗi ghi chú lưu ba dạng: `content_json` (TipTap, nguồn sự thật của editor), `content_markdown` (API, agent, xuất) và `content_text` (tìm kiếm) theo README.<br>• Xuất ZIP có thư mục `notes/` Markdown thuần cộng metadata để khôi phục lossless giữa các instance; nhập từ Evernote, Obsidian, Notion, SiYuan, flomo, Joplin (README, chưa chạy).<br>• MCP với nhiều tool có kiểu (memo, bảng, sơ đồ, poster, import) tại `apps/api/src/mcp-tools.ts`. |
+| Tiêu chí và cách kiểm | CI `test.yml` chạy lint, typecheck, build web và `bun run test` (test:bulk và integration); có 98 file migration và nhiều file `*.test.mjs` cạnh mã API. Kiểm bằng máy; không có phép đo hiệu năng đồng bộ nào được đọc, tuyên bố 'tức thì', '10.000+ ghi chú mượt' là của tác giả (chưa xác minh). |
+| Giới hạn và rủi ro | AGPL-3.0 (LICENSE là văn bản AGPL nguyên bản): dùng làm dịch vụ mạng buộc công bố mã nguồn sửa đổi; tên và logo có điều khoản thương hiệu riêng. Repo rất lớn (web, desktop, Android, iOS, extension) và thay đổi dồn dập; AGENTS.md nêu dự án nhận PR do agent hỗ trợ. Chưa thấy telemetry trong phần đã đọc (tuyên bố 'không theo dõi' của store listing extension chưa xác minh). Ngày commit 2026-11-24 theo múi giờ +08 (cùng ngày 23/11 theo UTC). Số sao 3524 (chưa xác minh). |
+| So với | Joplin, SiYuan, Memos, Trilium (cùng nhóm ghi chú tự host); Notesnook (E2E, GPL). |
+| Nguồn | [LICENSE](https://github.com/tianma-if/edgeever/blob/d5b93348c676c4d5a45918700746edb76ddef2d5/LICENSE) · [README.md](https://github.com/tianma-if/edgeever/blob/d5b93348c676c4d5a45918700746edb76ddef2d5/README.md) · [AGENTS.md](https://github.com/tianma-if/edgeever/blob/d5b93348c676c4d5a45918700746edb76ddef2d5/AGENTS.md) · [package.json](https://github.com/tianma-if/edgeever/blob/d5b93348c676c4d5a45918700746edb76ddef2d5/package.json) · [sync-routes.ts](https://github.com/tianma-if/edgeever/blob/d5b93348c676c4d5a45918700746edb76ddef2d5/apps/api/src/sync-routes.ts) · [mcp-tools.ts](https://github.com/tianma-if/edgeever/blob/d5b93348c676c4d5a45918700746edb76ddef2d5/apps/api/src/mcp-tools.ts) · [test.yml](https://github.com/tianma-if/edgeever/blob/d5b93348c676c4d5a45918700746edb76ddef2d5/.github/workflows/test.yml) |
+
+<a id="nt-bettercapture"></a>
+
+### BetterCapture
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/jsattler/BetterCapture |
+| License | MIT |
+| Phiên bản đã đọc | `740fdfd7f5d9b55782c0fd6c42778504bdaa2d60` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, AGENTS.md, BetterCapture/BetterCapture.entitlements, BetterCapture/Info.plist, BetterCapture/Control/ControlServer.swift, BetterCapture/Model/SandboxPreferencesMigration.swift, BetterCaptureCLI/SkillGuide.swift, docs/decisions/0001-keyboard-shortcuts-implementation.md, .github/workflows/pull-request.yml; chưa chạy upstream |
+| Khoảng trống lấp | Công cụ ghi/chụp màn hình (macOS) có điều khiển bằng CLI cho agent |
+| Cơ chế đáng học | • Dùng ScreenCaptureKit, ghi ProRes/HEVC/H.264 (README); logic tính kích thước và lọc nội dung có test riêng (`CaptureSizeCalculatorTests`, `ContentFilterRulesTests`).<br>• Lệnh `bettercapture` điều khiển ứng dụng qua socket Unix: `ControlServer.swift` lắng nghe tại thư mục tạm của user, `chmod 0600`, và chỉ thi hành khi bật cài đặt Allow Command-Line Control (`ControlCommandHandler`).<br>• CLI có `bettercapture skill show` in hướng dẫn dạng SKILL cho agent (`BetterCaptureCLI/SkillGuide.swift`) và mọi lệnh có `--json`.<br>• Cập nhật qua Sparkle; khóa công khai trong `Info.plist` đang là chuỗi giữ chỗ SPARKLE_PUBLIC_KEY (chắc được thay khi build phát hành, chưa xác minh). |
+| Tiêu chí và cách kiểm | CI `pull-request.yml` chạy SwiftLint, build và `xcodebuild test` trên macOS 26 với Xcode 26; 21 file test trong `BetterCaptureTests`. Không có test ghi hình thật trong CI (chưa thấy); có `docs/SMOKE_TESTING.md` (chưa đọc) có vẻ là quy trình thủ công. |
+| Giới hạn và rủi ro | MIT. README nói không theo dõi, không analytics, ghi hình lưu cục bộ (chưa xác minh bằng mạng). Ghi chú sai lệch: `docs/decisions/0001` còn nói ứng dụng sandbox hoàn toàn, nhưng `SandboxPreferencesMigration.swift` cho biết sandbox đã bị gỡ, file entitlements chỉ còn quyền camera và micro, và `project.pbxproj` không có ENABLE_APP_SANDBOX: ứng dụng chạy không sandbox, nên CLI/socket là bề mặt cần cân nhắc. Yêu cầu macOS 15.2+. Repo trẻ (copyright 2026), có nhà tài trợ Recall.ai. Số sao 1736 (chưa xác minh). |
+| So với | ScreenToGif và ShareX (Windows, ghi/chụp màn hình); VHS (ghi terminal thành GIF, kịch bản hóa). |
+| Nguồn | [LICENSE](https://github.com/jsattler/BetterCapture/blob/740fdfd7f5d9b55782c0fd6c42778504bdaa2d60/LICENSE) · [README.md](https://github.com/jsattler/BetterCapture/blob/740fdfd7f5d9b55782c0fd6c42778504bdaa2d60/README.md) · [AGENTS.md](https://github.com/jsattler/BetterCapture/blob/740fdfd7f5d9b55782c0fd6c42778504bdaa2d60/AGENTS.md) · [BetterCapture.entitlements](https://github.com/jsattler/BetterCapture/blob/740fdfd7f5d9b55782c0fd6c42778504bdaa2d60/BetterCapture/BetterCapture.entitlements) · [Info.plist](https://github.com/jsattler/BetterCapture/blob/740fdfd7f5d9b55782c0fd6c42778504bdaa2d60/BetterCapture/Info.plist) · [ControlServer.swift](https://github.com/jsattler/BetterCapture/blob/740fdfd7f5d9b55782c0fd6c42778504bdaa2d60/BetterCapture/Control/ControlServer.swift) · [SandboxPreferencesMigration.swift](https://github.com/jsattler/BetterCapture/blob/740fdfd7f5d9b55782c0fd6c42778504bdaa2d60/BetterCapture/Model/SandboxPreferencesMigration.swift) · [SkillGuide.swift](https://github.com/jsattler/BetterCapture/blob/740fdfd7f5d9b55782c0fd6c42778504bdaa2d60/BetterCaptureCLI/SkillGuide.swift) · [0001-keyboard-shortcuts-implementation.md](https://github.com/jsattler/BetterCapture/blob/740fdfd7f5d9b55782c0fd6c42778504bdaa2d60/docs/decisions/0001-keyboard-shortcuts-implementation.md) · [pull-request.yml](https://github.com/jsattler/BetterCapture/blob/740fdfd7f5d9b55782c0fd6c42778504bdaa2d60/.github/workflows/pull-request.yml) |
+
+<a id="nt-silverbullet"></a>
+
+### SilverBullet
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/silverbulletmd/silverbullet |
+| License | MIT |
+| Phiên bản đã đọc | `652492ca0c4a8cb32b79fb3bd6586a9da4cb4b98` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE.md, README.md, CHANGELOG.md, Cargo.toml, server-merge/src/diff3.rs, server-mcp/src/instructions.md, docs/Integrations/MCP.md, docs/Administration/Server/Zero Tracking.md, docs/Administration/Server/Security Profiles.md, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Quản lý tri thức cá nhân/nhóm có đồng bộ và xuất: ghi chú Markdown tự host, dữ liệu là file .md |
+| Cơ chế đáng học | • Một 'space' là thư mục các trang `.md`, được lập chỉ mục thành đối tượng truy vấn được (trang, task, tag, thuộc tính); mở rộng bằng Space Lua và Space Style ngay trong trang (`server-mcp/src/instructions.md`, `docs/`).<br>• `server-merge/src/diff3.rs`: gộp ba chiều theo dòng (base, hai bản sửa) trả về Clean hoặc Conflicted có đánh dấu xung đột, để đồng bộ nhiều thiết bị và sửa ngoài không mất dữ liệu; có test golden.<br>• MCP tại `/.mcp` đăng nhập OAuth, người dùng chọn các space cho phép; tool read, write, edit, search, lua, screenshot; skill là trang gắn tag `meta/skill` (`docs/Integrations/MCP.md`).<br>• Nhánh main hiện là bản 3.0: server Rust, runtime Chrome không đầu cho Lua phía server, tài khoản và nhiều space quản lý trong Dashboard. |
+| Tiêu chí và cách kiểm | CI `ci.yml` chạy build/kiểm TypeScript, `cargo test --workspace`, Playwright e2e và UI test trình duyệt, e2e cho bản release nhúng bundle, và kiểm binary Docker tĩnh/chạy được trên x86-64 không AVX. Kiểm bằng máy rộng; MCP đánh dấu `maturity/experimental` trong tài liệu. |
+| Giới hạn và rủi ro | MIT (LICENSE.md, Zef Hemel 2022). Không telemetry theo tài liệu 'Zero Tracking' (tuyên bố, chưa xác minh bằng mạng); chỉ có yêu cầu ra ngoài do người dùng cấu hình (thư viện, API, upgrade). Rủi ro chính: trang Lua do thành viên có quyền ghi viết sẽ chạy trong trình duyệt người khác, nên trang Security Profiles khuyên tắt shell và tách origin khi có người ghi không tin cậy; tool `lua` của MCP chạy mã trong space sống. CHANGELOG ghi nhiều thay đổi phá vỡ ở 3.0 (CONFIG chuyển sang `Library/Config`, bỏ single-space mode, chạy `space-lua` chỉ trong `Library/`). Trinh sát ghi số sao/license chưa xác minh: license MIT đã xác minh, số sao không lấy được. |
+| So với | Joplin (đồng bộ qua dịch vụ/WebDAV), Trilium, SiYuan (AGPL, khối), Logseq, Memos; Obsidian Skills (skill cho kho Obsidian). |
+| Nguồn | [LICENSE.md](https://github.com/silverbulletmd/silverbullet/blob/652492ca0c4a8cb32b79fb3bd6586a9da4cb4b98/LICENSE.md) · [README.md](https://github.com/silverbulletmd/silverbullet/blob/652492ca0c4a8cb32b79fb3bd6586a9da4cb4b98/README.md) · [CHANGELOG.md](https://github.com/silverbulletmd/silverbullet/blob/652492ca0c4a8cb32b79fb3bd6586a9da4cb4b98/CHANGELOG.md) · [Cargo.toml](https://github.com/silverbulletmd/silverbullet/blob/652492ca0c4a8cb32b79fb3bd6586a9da4cb4b98/Cargo.toml) · [diff3.rs](https://github.com/silverbulletmd/silverbullet/blob/652492ca0c4a8cb32b79fb3bd6586a9da4cb4b98/server-merge/src/diff3.rs) · [instructions.md](https://github.com/silverbulletmd/silverbullet/blob/652492ca0c4a8cb32b79fb3bd6586a9da4cb4b98/server-mcp/src/instructions.md) · [MCP.md](https://github.com/silverbulletmd/silverbullet/blob/652492ca0c4a8cb32b79fb3bd6586a9da4cb4b98/docs/Integrations/MCP.md) · [Zero Tracking.md](https://github.com/silverbulletmd/silverbullet/blob/652492ca0c4a8cb32b79fb3bd6586a9da4cb4b98/docs/Administration/Server/Zero Tracking.md) · [Security Profiles.md](https://github.com/silverbulletmd/silverbullet/blob/652492ca0c4a8cb32b79fb3bd6586a9da4cb4b98/docs/Administration/Server/Security Profiles.md) · [ci.yml](https://github.com/silverbulletmd/silverbullet/blob/652492ca0c4a8cb32b79fb3bd6586a9da4cb4b98/.github/workflows/ci.yml) |
+
+<a id="nt-sparkle"></a>
+
+### Sparkle
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/sparkle-project/Sparkle |
+| License | MIT (kèm license bên thứ ba cho bsdiff, sais-lite, ed25519) |
+| Phiên bản đã đọc | `e13374c6820d9139ec2fcb7fd7dab76ba33c4b21` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.markdown, CHANGELOG, Documentation/Security.md, Sparkle/SUUpdateValidator.m, Sparkle/SPUUpdater.m, Tests/SUUpdateValidatorTest.swift, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Ứng dụng desktop mã mở an toàn: khung tự cập nhật macOS có chữ ký |
+| Cơ chế đáng học | • `Sparkle/SUUpdateValidator.m`: kiểm chữ ký EdDSA của gói tải về trước khi giải nén; nếu thất bại và chính sách cho phép thì rơi về kiểm Apple Developer ID cùng team với app cũ; gói pkg bắt buộc có EdDSA hợp lệ; khóa EdDSA mới phải khớp để bản sau còn cập nhật được.<br>• Tách đặc quyền thành nhiều thành phần (User Driver, Updater, XPC Services, Progress Agent, Installer) theo `Documentation/Security.md`; installer tự giải nén, xác thực và cài trong cùng một tiến trình; tải xuống làm ở phía updater để không cần hộp thoại xác thực.<br>• Appcast RSS, bản delta (bsdiff), kênh beta, phát hành theo pha và đánh dấu cập nhật quan trọng (README); công cụ `generate_appcast`, `generate_keys`, `sign_update` trong repo. |
+| Tiêu chí và cách kiểm | CI `ci.yml` chạy unit test, UI test, `xcodebuild analyze` và build bản phân phối; thư mục `Tests/` có test cho validator, chữ ký feed, giải nén, installer, so sánh phiên bản và appcast. Kiểm bằng máy cho logic xác thực; chưa chạy. |
+| Giới hạn và rủi ro | MIT cho mã chính, nhưng `LICENSE` còn gộp điều khoản BSD-kiểu cho bsdiff/bspatch, sais-lite và ed25519 (đọc từ tiêu đề từng phần): cần kèm đủ thông báo khi phân phối. Mô tả trinh sát sai tên nhánh: nhánh mặc định là `2.x`, yêu cầu macOS 12+ (2.9.6 hỗ trợ 10.13+). Cho phép gửi hồ sơ hệ thống tới máy chủ appcast nếu người dùng đồng ý (`sendsSystemProfile` trong `SPUUpdater.m`); chỉ dùng được khi bạn tự phát hành bản ký và dựng máy chủ appcast HTTPS. Không chạy được ngoài macOS. Số sao không lấy được (chưa xác minh). |
+| So với | Obtainium (cập nhật ứng dụng từ trang phát hành, phía người dùng cuối thay vì khung nhúng trong ứng dụng); BetterCapture (ứng dụng macOS dùng chính Sparkle để cập nhật). |
+| Nguồn | [LICENSE](https://github.com/sparkle-project/Sparkle/blob/e13374c6820d9139ec2fcb7fd7dab76ba33c4b21/LICENSE) · [README.markdown](https://github.com/sparkle-project/Sparkle/blob/e13374c6820d9139ec2fcb7fd7dab76ba33c4b21/README.markdown) · [CHANGELOG](https://github.com/sparkle-project/Sparkle/blob/e13374c6820d9139ec2fcb7fd7dab76ba33c4b21/CHANGELOG) · [Security.md](https://github.com/sparkle-project/Sparkle/blob/e13374c6820d9139ec2fcb7fd7dab76ba33c4b21/Documentation/Security.md) · [SUUpdateValidator.m](https://github.com/sparkle-project/Sparkle/blob/e13374c6820d9139ec2fcb7fd7dab76ba33c4b21/Sparkle/SUUpdateValidator.m) · [SPUUpdater.m](https://github.com/sparkle-project/Sparkle/blob/e13374c6820d9139ec2fcb7fd7dab76ba33c4b21/Sparkle/SPUUpdater.m) · [SUUpdateValidatorTest.swift](https://github.com/sparkle-project/Sparkle/blob/e13374c6820d9139ec2fcb7fd7dab76ba33c4b21/Tests/SUUpdateValidatorTest.swift) · [ci.yml](https://github.com/sparkle-project/Sparkle/blob/e13374c6820d9139ec2fcb7fd7dab76ba33c4b21/.github/workflows/ci.yml) |
+
+<a id="nt-electron-builder"></a>
+
+### electron-builder
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/electron-userland/electron-builder |
+| License | MIT |
+| Phiên bản đã đọc | `d0d4046bd2a30f57150ecfa2ef615315dcb96619` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, LICENSE, CLAUDE.md, package.json, windowsExecutableCodeSignatureVerifier.ts, AppUpdater.ts, workflow test.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Ứng dụng desktop mã mở an toàn: đóng gói, ký và cập nhật có kiểm chữ ký/checksum cho app Electron |
+| Cơ chế đáng học | <br>- `electron-updater` kiểm sha512 của bản cập nhật theo manifest `latest*.yml`; manifest chỉ có sha2 (SHA-256) bị cảnh báo là sắp bị từ chối, nghĩa là hướng fail-closed (`AppUpdater.ts`).<br>- Trên Windows chỉ cài bản cập nhật khi `Get-AuthenticodeSignature` xác nhận khớp `publisherName` dạng DN; PowerShell lỗi, timeout hoặc ghi stderr đều bị từ chối, chữ ký từ security catalog bị từ chối mặc định (`windowsExecutableCodeSignatureVerifier.ts`, `NsisUpdater.ts`).<br>- Cập nhật vi phân theo blockmap, có kiểm `blockMapSha512` của blockmap tải về và sha512 của file sau khi ghép (`AppUpdater.ts`, `differentialDownloader/`).<br>- `CLAUDE.md` ghi quy tắc cho agent: không tự suy credential hay khóa ký từ môi trường (không dùng default profile, keychain hay provider chain ngầm), cấu hình thiếu thì ném lỗi. |
+| Tiêu chí và cách kiểm | Có bộ test vitest chia shard chạy trên workflow `test.yaml` (đã mở), cùng `oxlint`, typecheck và `lint-deps` trong `pretest`; `CLAUDE.md` yêu cầu agent chạy test của file mới trước khi báo xong. Kiểm bằng máy nhưng ngưỡng của bản cập nhật là sha512 và chữ ký, không phải điểm số. |
+| Giới hạn và rủi ro | License MIT (file LICENSE, bản quyền Loopline Systems 2015). Không thấy telemetry trong mã đã đọc; updater gọi tới provider do app cấu hình (GitHub, generic, Keygen...). Chữ ký macOS dựa vào Squirrel.Mac (chưa xác minh luồng kiểm chữ ký phía macOS). Tuyên bố trình sát về "sandbox" không có trong README: repo chỉ đóng gói và cập nhật, không sandbox app. Bản v27 đổi `publisherName` sang dạng DN nên app cũ có thể bị từ chối cập nhật nếu cấu hình chưa chuyển (xem MIGRATION.md, chưa đọc). Dự án đang commit đúng ngày kiểm. |
+| So với | Electron (hồ sơ `electron`, runtime); Tauri (`tauri`, có updater riêng ký bằng minisign); electron-react-boilerplate (mẫu bố cục, không có updater tương đương) |
+| Nguồn | [LICENSE](https://github.com/electron-userland/electron-builder/blob/d0d4046bd2a30f57150ecfa2ef615315dcb96619/LICENSE) · [README.md](https://github.com/electron-userland/electron-builder/blob/d0d4046bd2a30f57150ecfa2ef615315dcb96619/README.md) · [CLAUDE.md](https://github.com/electron-userland/electron-builder/blob/d0d4046bd2a30f57150ecfa2ef615315dcb96619/CLAUDE.md) · [package.json](https://github.com/electron-userland/electron-builder/blob/d0d4046bd2a30f57150ecfa2ef615315dcb96619/package.json) · [windowsExecutableCodeSignatureVerifier.ts](https://github.com/electron-userland/electron-builder/blob/d0d4046bd2a30f57150ecfa2ef615315dcb96619/packages/electron-updater/src/windowsExecutableCodeSignatureVerifier.ts) · [AppUpdater.ts](https://github.com/electron-userland/electron-builder/blob/d0d4046bd2a30f57150ecfa2ef615315dcb96619/packages/electron-updater/src/AppUpdater.ts) · [test.yaml](https://github.com/electron-userland/electron-builder/blob/d0d4046bd2a30f57150ecfa2ef615315dcb96619/.github/workflows/test.yaml) |
+
+<a id="nt-flameshot"></a>
+
+### Flameshot
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/flameshot-org/flameshot |
+| License | GPL-3.0 |
+| Phiên bản đã đọc | `dcc3bd3175495e04832c4aac0868f1dd15aba2ca` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, LICENSE, SECURITY.md, imguploadermanager.cpp, imguruploader.cpp, confighandler.cpp, flameshotdaemon.cpp, workflow build_cmake.yml, tests/action_options.sh; chưa chạy upstream |
+| Khoảng trống lấp | Công cụ chụp và chú thích ảnh màn hình đa nền tảng (Qt, C++) |
+| Cơ chế đáng học | <br>- Mỗi công cụ chú thích (arrow, pixelate, text, pin, imgupload...) là một thư mục lớp riêng dưới `src/tools/`, đăng ký qua `toolfactory.cpp`.<br>- Tải ảnh lên Imgur là đường duy nhất: `imguploadermanager.cpp` ghi cứng Imgur (có TODO cho kho lưu trữ khác); `imguruploader.cpp` gửi PNG tới `api.imgur.com` kèm Client-ID.<br>- Chế độ CLI (`flameshot gui`, `screen`, `full`) kèm tùy chọn đầu ra như `--raw`, `--path`, `--clipboard`, tiện ghép vào script. |
+| Tiêu chí và cách kiểm | CI `build_cmake.yml` (đã mở) dựng bằng CMake và chạy `ctest` trên Ubuntu 24.04; có workflow clang-format. `tests/action_options.sh` là kịch bản thủ công: tác giả ghi người chạy phải xem thông báo và cửa sổ pin bằng mắt, nên không kiểm tự động hoàn toàn. |
+| Giới hạn và rủi ro | License GPL-3.0 (copyleft, nhúng mã vào dự án đóng cần lưu ý). Mặc định `checkForUpdates` bật (`confighandler.cpp`) và daemon gọi một URL phiên bản (`FLAMESHOT_APP_VERSION_URL`, chưa kiểm giá trị). Mặc định `uploadClientSecret` là Client-ID Imgur dùng chung nằm trong mã; ảnh tải lên Imgur rời máy theo hành động của người dùng. Hỗ trợ Wayland ghi là thử nghiệm trong README. SECURITY.md yêu cầu báo cáo kèm tệp CVSS và PoC. |
+| So với | ShareX (`sharex-sharex`, chỉ Windows, nhiều đích tải lên hơn); ScreenToGif (`nickemanarin-screentogif`, ghi GIF thay vì ảnh tĩnh) |
+| Nguồn | [LICENSE](https://github.com/flameshot-org/flameshot/blob/dcc3bd3175495e04832c4aac0868f1dd15aba2ca/LICENSE) · [README.md](https://github.com/flameshot-org/flameshot/blob/dcc3bd3175495e04832c4aac0868f1dd15aba2ca/README.md) · [SECURITY.md](https://github.com/flameshot-org/flameshot/blob/dcc3bd3175495e04832c4aac0868f1dd15aba2ca/SECURITY.md) · [imguploadermanager.cpp](https://github.com/flameshot-org/flameshot/blob/dcc3bd3175495e04832c4aac0868f1dd15aba2ca/src/tools/imgupload/imguploadermanager.cpp) · [imguruploader.cpp](https://github.com/flameshot-org/flameshot/blob/dcc3bd3175495e04832c4aac0868f1dd15aba2ca/src/tools/imgupload/storages/imgur/imguruploader.cpp) · [confighandler.cpp](https://github.com/flameshot-org/flameshot/blob/dcc3bd3175495e04832c4aac0868f1dd15aba2ca/src/utils/confighandler.cpp) · [flameshotdaemon.cpp](https://github.com/flameshot-org/flameshot/blob/dcc3bd3175495e04832c4aac0868f1dd15aba2ca/src/core/flameshotdaemon.cpp) · [build_cmake.yml](https://github.com/flameshot-org/flameshot/blob/dcc3bd3175495e04832c4aac0868f1dd15aba2ca/.github/workflows/build_cmake.yml) · [action_options.sh](https://github.com/flameshot-org/flameshot/blob/dcc3bd3175495e04832c4aac0868f1dd15aba2ca/tests/action_options.sh) |

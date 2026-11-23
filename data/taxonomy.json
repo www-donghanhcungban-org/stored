@@ -264,7 +264,21 @@
       "categories": {
         "cad-bim": {},
         "geospatial": {},
-        "simulation": {}
+        "simulation": {},
+        "quality-mgmt": {
+          "subcategories": {
+            "qms-iso": "Hệ thống quản lý chất lượng ISO (đánh giá, CAPA, rủi ro)",
+            "spc-msa": "SPC, MSA và kiểm soát quá trình",
+            "welding-ndt": "Hàn, NDT và hồ sơ chứng nhận",
+            "calibration-traceability": "Hiệu chuẩn và truy xuất nguồn gốc"
+          }
+        },
+        "manufacturing": {
+          "subcategories": {
+            "mes-erp": "MES/ERP cho xưởng sản xuất",
+            "maintenance-cmms": "Bảo trì thiết bị (CMMS)"
+          }
+        }
       }
     },
     "end-user": {

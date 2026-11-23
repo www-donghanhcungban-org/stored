@@ -635,3 +635,26 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | Commit gần nhất 2025-07-09, khớp ghi chú HEAD 9/7/2025; có VISION/GOVERNANCE |
 | Nhận định | Bản hiện đại hóa của 12-factor đang trong quá trình soạn; nội dung nằm ở thư mục content, thay đổi chính ở nhánh `next` (chưa đọc nhánh đó). |
 | Nguồn | [README](https://github.com/twelve-factor/twelve-factor/blob/3ad5a5f36312cc8ad876abae1bd691acd790d4d1/README.md) · [LICENSE](https://github.com/twelve-factor/twelve-factor/blob/3ad5a5f36312cc8ad876abae1bd691acd790d4d1/LICENSE) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-open-policy-agent-opa"></a>
+
+### Open Policy Agent (OPA)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/open-policy-agent/opa |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `7b037a97dd9b465dedb1c565f778ea06ac5569ea` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, AGENTS.md, cmd/test.go, cmd/run.go, .github/workflows/pull-request.yaml, v1/tester/runner.go; chưa chạy upstream |
+| Khoảng trống lấp | Policy-as-code admission/runtime: lõi Rego, kho mới có conftest (bọc OPA cho file cấu hình) |
+| Cơ chế đáng học | - Hệ thống test luật ngay trong CLI: `cmd/test.go` có `--coverage`, `--threshold` (thoát khác 0 nếu độ phủ thấp hơn), `--timeout` (mặc định 5 giây), `--exit-zero-on-skipped`.<br>- `capabilities/` chứa JSON khả năng theo từng phiên bản (v0.17.0...), dùng để kiểm luật có dùng hàm ngoài phạm vi cho phép hay không.<br>- Kiến trúc chạy được dạng server, thư viện Go (`v1/sdk`), WASM (`wasm/`) và bundle (`bundle/`), tách việc quyết định khỏi việc thực thi.<br>- `v1/topdown` chứa hơn 130 file hàm dựng sẵn; `v1/tester/runner.go` là bộ chạy test Rego. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: ngưỡng độ phủ đặt tay qua `--threshold` (không có giá trị mặc định). Repo tự kiểm bằng pull-request.yaml (đã đọc) phát hiện loại file đổi rồi chạy lần lượt kiểm tra Go, WASM, docs, Rego, YAML, proto, cùng nightly và benchmark; CI còn có test tích hợp với Envoy và Regal. |
+| Giới hạn và rủi ro | Apache-2.0. `opa run` mặc định kiểm phiên bản bản mới qua GitHub (cờ `--skip-version-check`, cờ cũ `--disable-telemetry` đã deprecate), dữ liệu rời máy chỉ là kiểm phiên bản (theo mô tả cờ, trang privacy chưa mở). Bảo trì rất tích cực, repo lớn. Dùng làm lõi cho policy cho agent cần tự dựng input và luật, không có bộ luật agent sẵn. |
+| So với | conftest (opa-conftest, cùng lõi Rego cho file cấu hình), Syft (policy-as-code nhóm SBOM), Semgrep (luật quét mã, không phải ngôn ngữ chính sách tổng quát) |
+| Nguồn | [README.md](https://github.com/open-policy-agent/opa/blob/7b037a97dd9b465dedb1c565f778ea06ac5569ea/README.md) · [LICENSE](https://github.com/open-policy-agent/opa/blob/7b037a97dd9b465dedb1c565f778ea06ac5569ea/LICENSE) · [AGENTS.md](https://github.com/open-policy-agent/opa/blob/7b037a97dd9b465dedb1c565f778ea06ac5569ea/AGENTS.md) · [test.go](https://github.com/open-policy-agent/opa/blob/7b037a97dd9b465dedb1c565f778ea06ac5569ea/cmd/test.go) · [run.go](https://github.com/open-policy-agent/opa/blob/7b037a97dd9b465dedb1c565f778ea06ac5569ea/cmd/run.go) · [pull-request.yaml](https://github.com/open-policy-agent/opa/blob/7b037a97dd9b465dedb1c565f778ea06ac5569ea/.github/workflows/pull-request.yaml) · [runner.go](https://github.com/open-policy-agent/opa/blob/7b037a97dd9b465dedb1c565f778ea06ac5569ea/v1/tester/runner.go) |

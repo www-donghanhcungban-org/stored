@@ -226,3 +226,43 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 ## Nguồn
 
 Các permalink trong từng hồ sơ cố định đúng phiên bản đã đọc; số sao/trạng thái archive là snapshot GitHub API ngày 2026-11-02. Không chạy mã, huấn luyện model hoặc tái lập kết quả của upstream.
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-go-feature-flag"></a>
+
+### GO Feature Flag
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/thomaspoignant/go-feature-flag |
+| License | MIT |
+| Phiên bản đã đọc | `df297b611c6e816a8f4ae88d4c2eb100bd8f728a` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, modules/core/utils/hash.go, modules/core/flag/internal_flag.go, modules/core/flag/rule.go; chưa chạy upstream |
+| Khoảng trống lấp | Feature flag an toàn: chuẩn OpenFeature và cấu hình theo ngữ cảnh |
+| Cơ chế đáng học | - `modules/core/utils/hash.go`: `BuildHash` = FNV-1a(tên cờ + bucketing key) chia dư theo `maxPercentage`, nên cùng người dùng luôn rơi vào cùng nhóm và không cấp phát chuỗi.<br>- `modules/core/flag/internal_flag.go`: `selectVariation` duyệt các rule theo thứ tự, rule đầu khớp thắng, sau đó đến default rule; lỗi `errRuleNotApply` thì sang rule kế; kết quả có cờ `cacheable`.<br>- `rule.go`: progressive rollout và percentage dùng cùng hàm băm; `BucketingKey` tùy chỉnh được.<br>- Retriever, exporter và notifier là các gói thay thế được (`retriever/`, `exporter/`, `notifier/`). |
+| Tiêu chí và cách kiểm | CI `ci.yml` chạy build, lint, `make test`, coverage, benchmark, kiểm swagger sinh lại, `make vuln-check-relayproxy`, build WASM và `make provider-tests` (dựng 2 relay proxy rồi chạy test tích hợp provider các ngôn ngữ). Có fuzz test cho `InternalFlag`. Kiểm bằng máy; chưa chạy. |
+| Giới hạn và rủi ro | MIT (LICENSE; examples/demo cũng MIT). Dữ liệu rời máy chỉ khi cấu hình exporter/notifier (S3, Kafka, webhook, Slack); bật xuất dữ liệu đánh giá cần cân nhắc dữ liệu người dùng trong evaluation context. Relay proxy mặc định cần cấu hình API key để không mở. Một maintainer chính (chưa xác minh số liệu đóng góp). |
+| So với | Unleash (server có UI, mục 28), flagd (provider OpenFeature gọn), OpenFeature spec (chuẩn, hồ sơ đợt này) |
+| Nguồn | [LICENSE](https://github.com/thomaspoignant/go-feature-flag/blob/df297b611c6e816a8f4ae88d4c2eb100bd8f728a/LICENSE) · [README.md](https://github.com/thomaspoignant/go-feature-flag/blob/df297b611c6e816a8f4ae88d4c2eb100bd8f728a/README.md) · [hash.go](https://github.com/thomaspoignant/go-feature-flag/blob/df297b611c6e816a8f4ae88d4c2eb100bd8f728a/modules/core/utils/hash.go) · [internal_flag.go](https://github.com/thomaspoignant/go-feature-flag/blob/df297b611c6e816a8f4ae88d4c2eb100bd8f728a/modules/core/flag/internal_flag.go) · [rule.go](https://github.com/thomaspoignant/go-feature-flag/blob/df297b611c6e816a8f4ae88d4c2eb100bd8f728a/modules/core/flag/rule.go) · [integration_tests.sh](https://github.com/thomaspoignant/go-feature-flag/blob/df297b611c6e816a8f4ae88d4c2eb100bd8f728a/openfeature/provider_tests/integration_tests.sh) · [ci.yml](https://github.com/thomaspoignant/go-feature-flag/blob/df297b611c6e816a8f4ae88d4c2eb100bd8f728a/.github/workflows/ci.yml) |
+
+<a id="nt-openfeature-spec"></a>
+
+### OpenFeature Specification
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/open-feature/spec |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `b489ba9134ee081cecaf18a28b544ddabc1b25f7` (commit 2026-11-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, version.txt, specification/sections/02-providers.md, specification/assets/provider-tck/README.md; chưa chạy upstream |
+| Khoảng trống lấp | Feature flag an toàn: chuẩn OpenFeature và cấu hình theo ngữ cảnh |
+| Cơ chế đáng học | - Yêu cầu đánh số (ví dụ 2.1.1) trong `specification/sections/01..06-*.md`; `tools/specification_parser` sinh `specification.json` và CI kiểm JSON được sinh lại cùng lint từ khóa RFC 2119 (`pr-checks.yaml`).<br>- `specification/assets/provider-tck/`: 6 file gherkin (evaluation, errors, events, lifecycle, metadata, reason), `flags/canonical-flags.json`, `openapi/control-api.yaml` phải đi cùng nhau; flag mẫu thiết kế để bắt lỗi (giá trị falsy, `missing-flag` phải vắng, số nguyên 2^53-1).<br>- Cơ chế khả năng: thẻ như `@events`, `@stale`, `@targeting`; provider khai báo thẻ hỗ trợ, scenario chưa khai báo bị báo skipped kèm lý do, không bao giờ pass.<br>- Mô-đun Go `provider-tck` chỉ nhúng các artifact bằng `embed.FS`. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy ở hai tầng: spec (parser + lint + ToC trong CI) và provider (gherkin chạy bằng suite ở repo khác, ví dụ test provider của go-feature-flag). Repo này tự nó không có runner TCK, nên không tự kiểm provider nào. Chưa chạy. |
+| Giới hạn và rủi ro | Apache-2.0. Đây là đặc tả, không phải triển khai: SDK không tự đánh giá cờ (README). TCK ghi rõ là thử nghiệm, tập scenario là tập con đại diện, từ vựng có thể đổi, và việc không khai báo một thẻ không phải vi phạm đặc tả. Mô tả trinh sát đúng về 0.1.0 ngày 2026-10-16 nhưng làm TCK nghe như đã hoàn chỉnh. |
+| So với | flagd (triển khai tham chiếu, mục 28), Unleash, GO Feature Flag (provider OpenFeature, hồ sơ đợt này) |
+| Nguồn | [LICENSE](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/LICENSE) · [README.md](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/README.md) · [version.txt](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/version.txt) · [02-providers.md](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/specification/sections/02-providers.md) · [README.md](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/specification/assets/provider-tck/README.md) · [evaluation.feature](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/specification/assets/provider-tck/gherkin/evaluation.feature) · [CHANGELOG.md](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/specification/assets/provider-tck/CHANGELOG.md) · [pr-checks.yaml](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/.github/workflows/pr-checks.yaml) |

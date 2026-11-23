@@ -913,3 +913,77 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | Có commit ngày 2026-11-23 |
 | Nhận định | Nền tảng GenBI mã nguồn mở cho agent: sinh SQL có quản trị, định nghĩa nghiệp vụ lưu trong Git, 22+ nguồn dữ liệu (theo README, **chưa xác minh**). LICENSE là bản đa giấy phép theo đường dẫn; AGPL chưa áp dụng cho module nào hiện nay. |
 | Nguồn | [README.md](https://github.com/Canner/WrenAI/blob/48de0b6cbd02cbbe3753f29e37f4be24e8a9a7fd/README.md) · [LICENSE](https://github.com/Canner/WrenAI/blob/48de0b6cbd02cbbe3753f29e37f4be24e8a9a7fd/LICENSE) · [LICENSE-AGPL-3.0](https://github.com/Canner/WrenAI/blob/48de0b6cbd02cbbe3753f29e37f4be24e8a9a7fd/LICENSE-AGPL-3.0) · [LICENSE-APACHE-2.0](https://github.com/Canner/WrenAI/blob/48de0b6cbd02cbbe3753f29e37f4be24e8a9a7fd/LICENSE-APACHE-2.0) · [LICENSE-CC-BY-4.0](https://github.com/Canner/WrenAI/blob/48de0b6cbd02cbbe3753f29e37f4be24e8a9a7fd/LICENSE-CC-BY-4.0) · [cleanup-issues.yml](https://github.com/Canner/WrenAI/blob/48de0b6cbd02cbbe3753f29e37f4be24e8a9a7fd/.github/workflows/cleanup-issues.yml) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-apache-datafusion"></a>
+
+### Apache DataFusion
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/apache/datafusion |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `538ef6adb9abf602e702022372384adeffea6ecb` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE.txt, README.md, datafusion/physical-plan/src/execution_plan.rs, datafusion/physical-plan/src/spill/mod.rs, datafusion/physical-optimizer/src/optimizer.rs; chưa chạy upstream |
+| Khoảng trống lấp | Engine truy vấn nhúng/Rust và thay thế Spark |
+| Cơ chế đáng học | - Trait `ExecutionPlan` (`datafusion/physical-plan/src/execution_plan.rs`) là hợp đồng cho mọi toán tử vật lý, nên có thể chèn toán tử riêng.<br>- Chuỗi rule tối ưu vật lý tách riêng (`datafusion/physical-optimizer/src/`: filter_pushdown, limit_pushdown, join_selection, projection_pushdown, sanity_checker...) và có rule `sanity_checker` (chỉ thấy tên file, chưa mở nội dung).<br>- Spill ra đĩa khi hết bộ nhớ (`physical-plan/src/spill/`, `execution/src/memory_pool/`) với Arrow IPC có nén tùy chọn. |
+| Tiêu chí và cách kiểm | Test chính là sqllogictest (`datafusion/sqllogictest/test_files`, 241 mục, chạy `cargo test --test sqllogictests`), thêm chế độ chạy qua Postgres runner và chế độ round-trip Substrait; CI `rust.yml` (đọc các job chính) còn có clippy, rustfmt, MSRV, `cargo test doc` và coverage. Kiểm bằng máy; tôi chưa chạy. |
+| Giới hạn và rủi ro | Apache-2.0 (LICENSE.txt, NOTICE.txt). Không thấy telemetry trong phần đã đọc (chưa xác minh toàn repo). Là thư viện: tính đúng SQL/hiệu năng tùy bản và cấu hình; con số hiệu năng dẫn tới benchmark ClickHouse là tuyên bố ngoài (chưa xác minh). Repo có AGENTS.md/CLAUDE.md, chỉ là nội dung đọc. |
+| So với | DuckDB (engine nhúng C++), Polars (dataframe Rust), Apache Spark (engine phân tán JVM mà Sail thay thế) |
+| Nguồn | [LICENSE.txt](https://github.com/apache/datafusion/blob/538ef6adb9abf602e702022372384adeffea6ecb/LICENSE.txt) · [README.md](https://github.com/apache/datafusion/blob/538ef6adb9abf602e702022372384adeffea6ecb/README.md) · [execution_plan.rs](https://github.com/apache/datafusion/blob/538ef6adb9abf602e702022372384adeffea6ecb/datafusion/physical-plan/src/execution_plan.rs) · [mod.rs](https://github.com/apache/datafusion/blob/538ef6adb9abf602e702022372384adeffea6ecb/datafusion/physical-plan/src/spill/mod.rs) · [optimizer.rs](https://github.com/apache/datafusion/blob/538ef6adb9abf602e702022372384adeffea6ecb/datafusion/physical-optimizer/src/optimizer.rs) · [README.md](https://github.com/apache/datafusion/blob/538ef6adb9abf602e702022372384adeffea6ecb/datafusion/sqllogictest/README.md) · [rust.yml](https://github.com/apache/datafusion/blob/538ef6adb9abf602e702022372384adeffea6ecb/.github/workflows/rust.yml) |
+
+<a id="nt-datacontract-cli"></a>
+
+### Data Contract CLI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/datacontract/datacontract-cli |
+| License | MIT |
+| Phiên bản đã đọc | `2956eba8aff6d8cfd61a949e9bce9094571551a5` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, pyproject.toml, datacontract/engines/checks/sql_guard.py, datacontract/command_test.py, datacontract/command_ci.py, .github/workflows/ci.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Data contract (ODCS) và kiểm chứng dữ liệu theo hợp đồng |
+| Cơ chế đáng học | - Dựng trên Open Data Contract Standard: lệnh `lint`, `test`, `ci`, `breaking`, `changelog`, `export`, `import` (`datacontract/command_*.py`), nhiều engine kết nối (ibis, duckdb, spark, hana...) dưới `datacontract/engines/`.<br>- `sql_guard.py` giới hạn SQL tùy biến trong contract chỉ được đọc (dùng sqlglot, theo dialect của từng loại server): từ chối DDL, DML, COPY, ATTACH, INSTALL, SET, PRAGMA, CALL; lý do nêu rõ là contract không phải lúc nào cũng do người chạy nó viết.<br>- `datacontract ci` có `--fail-on` (warning, error, never) và xuất JUnit/JSON cho pipeline (`command_ci.py`); `test` lọc theo loại check và dimension chất lượng ODCS. |
+| Tiêu chí và cách kiểm | CI (`ci.yaml`) chạy ruff, định dạng, pytest song song trên nhiều OS/Python và job `slow` dùng testcontainers; có hàng trăm file test dưới `tests/`. Kiểm bằng máy ở upstream; mình chưa chạy. Kết quả test cần kết nối thật tới kho dữ liệu nên người dùng phải cấp thông tin truy cập qua biến môi trường. |
+| Giới hạn và rủi ro | MIT; extra `hana` tách khỏi `all` vì `hdbcli` có license độc quyền của SAP (ghi trong `pyproject.toml`). Không thấy telemetry trong mã (grep không khớp); chưa xác minh toàn bộ phụ thuộc. Cài `[all]` kéo rất nhiều driver. Lưu ý khi tin cậy: guard SQL là lớp bảo vệ trên contract do người khác viết, nhưng credentials vẫn là của người chạy. |
+| So với | soda-core, great-expectations-gx-core, openlineage |
+| Nguồn | [LICENSE](https://github.com/datacontract/datacontract-cli/blob/2956eba8aff6d8cfd61a949e9bce9094571551a5/LICENSE) · [README.md](https://github.com/datacontract/datacontract-cli/blob/2956eba8aff6d8cfd61a949e9bce9094571551a5/README.md) · [pyproject.toml](https://github.com/datacontract/datacontract-cli/blob/2956eba8aff6d8cfd61a949e9bce9094571551a5/pyproject.toml) · [sql_guard.py](https://github.com/datacontract/datacontract-cli/blob/2956eba8aff6d8cfd61a949e9bce9094571551a5/datacontract/engines/checks/sql_guard.py) · [command_test.py](https://github.com/datacontract/datacontract-cli/blob/2956eba8aff6d8cfd61a949e9bce9094571551a5/datacontract/command_test.py) · [command_ci.py](https://github.com/datacontract/datacontract-cli/blob/2956eba8aff6d8cfd61a949e9bce9094571551a5/datacontract/command_ci.py) · [ci.yaml](https://github.com/datacontract/datacontract-cli/blob/2956eba8aff6d8cfd61a949e9bce9094571551a5/.github/workflows/ci.yaml) |
+
+<a id="nt-apache-iceberg"></a>
+
+### Apache Iceberg
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/apache/iceberg |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `69a3d2b560ac8ad20eaf995625639a43a1be3254` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, format/spec.md, core/src/main/java/org/apache/iceberg/SnapshotProducer.java, .github/workflows/java-ci.yml, SECURITY-THREAT-MODEL.md; chưa chạy upstream |
+| Khoảng trống lấp | Định dạng bảng mở và catalog lakehouse (spec và bản tham chiếu Java) |
+| Cơ chế đáng học | - Đặc tả `format/spec.md` định nghĩa snapshot, manifest, manifest list, partition, sort, constraint và deletion vector; v1-v3 đã hoàn tất, v4 (root manifest, relative path) còn đang phát triển và chưa được thông qua chính thức.<br>- Commit lạc quan bằng hoán đổi nguyên tử con trỏ metadata (spec mục Optimistic Concurrency và Commit Conflict Resolution): append luôn áp lại được, replace/delete phải kiểm file còn tồn tại, đổi schema phải kiểm schema chưa đổi.<br>- Triển khai retry ở `core/.../SnapshotProducer.java` (`Tasks.foreach(...).retry(COMMIT_NUM_RETRIES)`, mặc định 4 lần, `onlyRetryOn(CommitFailedException)`), cộng nhiều module tích hợp (spark, flink, kafka-connect, hive-metastore, nessie, delta-lake, aws, gcp, azure). |
+| Tiêu chí và cách kiểm | Rất nhiều workflow CI (java, spark, flink, hive, kafka-connect, open-api, cve-scan, license-check, zizmor, binary-compat). Mình đã mở `java-ci.yml` (gradlew check, build, javadoc, kiểm runtime deps); chưa chạy gì. Số sao/license trinh sát để trống nay xác minh: Apache-2.0, có LICENSE và NOTICE. |
+| Giới hạn và rủi ro | Phạm vi rất lớn nên hồ sơ này chỉ phủ spec và đường commit, không phủ các engine tích hợp; mô tả nhanh ghi "Iceberg/Parquet/Delta" thì thư mục `delta-lake` chỉ là tiện ích chuyển đổi, không phải chuẩn Delta. Cơ chế commit trên file system được spec đánh dấu deprecated và không an toàn trên object store, chỉ catalog có check-and-put mới đảm bảo. Có `SECURITY-THREAT-MODEL.md` mô tả ranh giới tin cậy (mình chỉ đọc phần mở đầu). |
+| So với | duckdb, clickhouse-clickhouse, openlineage |
+| Nguồn | [LICENSE](https://github.com/apache/iceberg/blob/69a3d2b560ac8ad20eaf995625639a43a1be3254/LICENSE) · [README.md](https://github.com/apache/iceberg/blob/69a3d2b560ac8ad20eaf995625639a43a1be3254/README.md) · [spec.md](https://github.com/apache/iceberg/blob/69a3d2b560ac8ad20eaf995625639a43a1be3254/format/spec.md) · [SnapshotProducer.java](https://github.com/apache/iceberg/blob/69a3d2b560ac8ad20eaf995625639a43a1be3254/core/src/main/java/org/apache/iceberg/SnapshotProducer.java) · [java-ci.yml](https://github.com/apache/iceberg/blob/69a3d2b560ac8ad20eaf995625639a43a1be3254/.github/workflows/java-ci.yml) · [SECURITY-THREAT-MODEL.md](https://github.com/apache/iceberg/blob/69a3d2b560ac8ad20eaf995625639a43a1be3254/SECURITY-THREAT-MODEL.md) |
+
+<a id="nt-evidence"></a>
+
+### Evidence (BI dạng mã)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/evidence-dev/evidence |
+| License | MIT |
+| Phiên bản đã đọc | `b9ef1307328db7f47860a63d80947c0f9ba74063` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, AGENTS.md, copy.bara.sky, docs/core-concepts/metrics.mdx, cli/cli/telemetry.ts, docs/cli/index.mdx, cli/cli/validate.ts, .github/workflows/test.yml; chưa chạy upstream |
+| Khoảng trống lấp | BI as code và semantic layer khai báo (metrics YAML) |
+| Cơ chế đáng học | - Báo cáo là Markdown cộng SQL nội tuyến, render bằng CLI `evidence` (SvelteKit, build bằng Bun) và có thể xuất site tĩnh để tự host.<br>- Lớp metric khai báo: `metrics/*.yaml` gồm base table, dimensions và metrics (sql, filter, fmt) mà component tham chiếu bằng `metric="..."` (`docs/core-concepts/metrics.mdx`).<br>- `evidence validate` (`cli/cli/validate.ts`) xử lý mọi file markdown, báo lỗi theo dòng và id rule, tự chuyển sang JSON khi chạy trong pipe, CI hoặc do agent chạy. |
+| Tiêu chí và cách kiểm | `test.yml` chỉ chạy `pnpm install --frozen-lockfile` và `pnpm test` (unit test) trên Node 24; chưa thấy type-check hay e2e trong workflow đó. `validate` là cổng máy cho nội dung báo cáo; mình chưa chạy. |
+| Giới hạn và rủi ro | Repo hiện nay là bản mirror chỉ-đọc của repo nội bộ qua Copybara (`copy.bara.sky`, AGENTS.md): cấu trúc là `cli/`, `core/`, `docs/`, không còn monorepo `packages/` cũ, nên tài liệu cũ về Evidence có thể không khớp. Trinh sát ghi "chạy trong Git/CI": đúng ở mức file và validate, nhưng hướng chính được đẩy sang Evidence Studio (dịch vụ thương mại) và cài bằng `curl ... \| sh` từ evidence.studio. Telemetry mặc định bật: một sự kiện mỗi lệnh kèm machineId ngẫu nhiên lưu ở `~/.evd/machine-id`, heartbeat 24h cho `serve`; tắt bằng `evidence telemetry disable`, `EVIDENCE_TELEMETRY_DISABLED` hoặc `DO_NOT_TRACK`, và tự bỏ qua trên CI (docs/cli/index.mdx và `telemetry.ts`). |
+| So với | metabase, apache-superset, cube-core |
+| Nguồn | [LICENSE](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/LICENSE) · [README.md](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/README.md) · [AGENTS.md](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/AGENTS.md) · [copy.bara.sky](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/copy.bara.sky) · [metrics.mdx](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/docs/core-concepts/metrics.mdx) · [telemetry.ts](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/cli/cli/telemetry.ts) · [index.mdx](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/docs/cli/index.mdx) · [validate.ts](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/cli/cli/validate.ts) · [test.yml](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/.github/workflows/test.yml) |

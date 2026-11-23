@@ -2195,3 +2195,213 @@ Union: lớp hạ tầng zero-knowledge cho truyền thông điệp tổng quát
 **Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`2f2a2bd63a82`](https://github.com/thingsboard/thingsboard/commit/2f2a2bd63a82f4fa4dedd414015576df6156146e). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
 
 **Nguồn:** [README.md](https://github.com/thingsboard/thingsboard/blob/2f2a2bd63a82f4fa4dedd414015576df6156146e/README.md) · [LICENSE](https://github.com/thingsboard/thingsboard/blob/2f2a2bd63a82f4fa4dedd414015576df6156146e/LICENSE) · [metadata GitHub](https://api.github.com/repos/thingsboard/thingsboard).
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-stalwart"></a>
+
+### Stalwart Mail and Collaboration Server
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/stalwartlabs/stalwart |
+| License | AGPL-3.0-only OR LicenseRef-SEL (song song với Stalwart Enterprise License 2.0 trong LICENSES/); 227 file chỉ mang LicenseRef-SEL |
+| Phiên bản đã đọc | `b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSES/LicenseRef-SEL.txt, Cargo.toml, crates/main/src/main.rs, crates/dav/src/lib.rs, crates/main/Cargo.toml, .github/workflows/ci.yml, AGENTS.md; chưa chạy upstream |
+| Khoảng trống lấp | Tích hợp email/lịch/tài liệu (JMAP, CalDAV, CardDAV): máy chủ thật để thử client tích hợp |
+| Cơ chế đáng học | - crates/dav/src/lib.rs định nghĩa các method WebDAV/CalDAV (REPORT, MKCALENDAR, ACL...) ánh xạ sang sự kiện trace, mã tách thành module calendar, card, file, principal<br>- crates/calcard tách riêng parser/writer iCalendar, vCard, JSCalendar, JSContact khỏi tầng giao thức (icalendar/parser.rs, writer.rs)<br>- crates/dav/src/calendar có scheduling.rs, freebusy.rs, availability.rs: CalDAV scheduling (RFC 6638) nằm cùng máy chủ<br>- README nêu webhook cho tự động hóa theo sự kiện và OpenTelemetry/Prometheus cho quan sát (chưa xác minh bằng chạy) |
+| Tiêu chí và cách kiểm | CI (.github/workflows/ci.yml) chỉ chạy khi tag v*.*.* hoặc workflow_dispatch và tập trung dựng nhị phân/Docker đa kiến trúc ký cosign; workflow này không có bước test nên không chứng minh độ phủ kiểm thử. Kiểm bằng máy cho giao thức: chưa xác minh. |
+| Giới hạn và rủi ro | License kép AGPL hoặc SEL: dùng bản AGPL thì nghĩa vụ mạng của AGPL áp dụng; tính năng Enterprise cần khóa license gắn tên miền (SEL 1.5) và cấm bán lại (SEL 2.3). 227 file chỉ có SEL nên không dùng được theo AGPL. AGENTS.md cấm tác nhân mở issue/PR/báo cáo bảo mật tự sinh, cần tôn trọng nếu dùng agent trên repo. Đây là hệ thống sản xuất, không phải thư viện nhúng; rủi ro vận hành mail (DNS, deliverability) cao. |
+| So với | Radicale (CalDAV/CardDAV nhỏ, GPL), Cal.com (calcom-cal.diy, lịch đặt hẹn), Mail-0 Zero (mail-0-zero) |
+| Nguồn | [README.md](https://github.com/stalwartlabs/stalwart/blob/b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa/README.md) · [LicenseRef-SEL.txt](https://github.com/stalwartlabs/stalwart/blob/b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa/LICENSES/LicenseRef-SEL.txt) · [Cargo.toml](https://github.com/stalwartlabs/stalwart/blob/b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa/Cargo.toml) · [main.rs](https://github.com/stalwartlabs/stalwart/blob/b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa/crates/main/src/main.rs) · [lib.rs](https://github.com/stalwartlabs/stalwart/blob/b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa/crates/dav/src/lib.rs) · [Cargo.toml](https://github.com/stalwartlabs/stalwart/blob/b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa/crates/main/Cargo.toml) · [ci.yml](https://github.com/stalwartlabs/stalwart/blob/b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa/.github/workflows/ci.yml) · [AGENTS.md](https://github.com/stalwartlabs/stalwart/blob/b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa/AGENTS.md) |
+
+<a id="nt-glpi"></a>
+
+### GLPI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/glpi-project/glpi |
+| License | GPL-3.0 |
+| Phiên bản đã đọc | `74a89ac1764fa9347e777d63add81e07c635c6b0` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, THREAT_MODEL.md, apirest.md, src/CommonITILValidation.php, src/Telemetry.php, src/Glpi/Application/SystemConfigurator.php, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Quản lý ticket/helpdesk có API và quy trình phê duyệt |
+| Cơ chế đáng học | - src/CommonITILValidation.php: hằng trạng thái NONE/WAITING/ACCEPTED/REFUSED, quyền VALIDATE và canValidate/getTargetCriteriaForUser xác định ai được duyệt; lớp con ChangeValidation, TicketValidation, ITIL_ValidationStep cho phê duyệt nhiều bước<br>- API REST apirest.md: initSession bằng user token, session token, app token lọc theo IP; session mặc định chỉ đọc để gọi song song, ghi cần session_write=true<br>- THREAT_MODEL.md nêu rõ ranh giới tin cậy và bằng chứng cần cho báo cáo bảo mật (quyền theo profile và entity) |
+| Tiêu chí và cách kiểm | CI ci.yml chạy lint trên PHP 8.3 và 8.6, và Playwright theo shard (chỉ đọc phần đầu và job playwright); chạy định kỳ hằng đêm. Có phpstan, php-cs-fixer, rector, phpunit trong thư mục gốc (chỉ thấy file cấu hình). Kiểm bằng máy có. |
+| Giới hạn và rủi ro | GPL-3.0: nhúng hay sửa rồi phân phối phải mở mã. src/Telemetry.php thu phiên bản, CSDL, web server, PHP, OS và số liệu sử dụng; cronTelemetry POST JSON tới GLPI_TELEMETRY_URI (mặc định https://telemetry.glpi-project.org, đặt trong SystemConfigurator.php); chưa xác minh tác vụ cron mặc định bật hay tắt. Cần PHP và CSDL, giao diện nặng, plugin ngoài chất lượng khác nhau. AGENTS.md có trong repo. |
+| So với | Zammad (zammad, helpdesk Ruby, AGPL), OpenProject (opf-openproject), Plane (makeplane-plane) |
+| Nguồn | [README.md](https://github.com/glpi-project/glpi/blob/74a89ac1764fa9347e777d63add81e07c635c6b0/README.md) · [LICENSE](https://github.com/glpi-project/glpi/blob/74a89ac1764fa9347e777d63add81e07c635c6b0/LICENSE) · [THREAT_MODEL.md](https://github.com/glpi-project/glpi/blob/74a89ac1764fa9347e777d63add81e07c635c6b0/THREAT_MODEL.md) · [apirest.md](https://github.com/glpi-project/glpi/blob/74a89ac1764fa9347e777d63add81e07c635c6b0/apirest.md) · [CommonITILValidation.php](https://github.com/glpi-project/glpi/blob/74a89ac1764fa9347e777d63add81e07c635c6b0/src/CommonITILValidation.php) · [Telemetry.php](https://github.com/glpi-project/glpi/blob/74a89ac1764fa9347e777d63add81e07c635c6b0/src/Telemetry.php) · [SystemConfigurator.php](https://github.com/glpi-project/glpi/blob/74a89ac1764fa9347e777d63add81e07c635c6b0/src/Glpi/Application/SystemConfigurator.php) · [ci.yml](https://github.com/glpi-project/glpi/blob/74a89ac1764fa9347e777d63add81e07c635c6b0/.github/workflows/ci.yml) |
+
+<a id="nt-zammad"></a>
+
+### Zammad
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/zammad/zammad |
+| License | AGPL-3.0 |
+| Phiên bản đã đọc | `0d1ac50043412d104fe6c3a715e5730e7e0dd4b4` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, AGENTS.md, app/models/trigger.rb, app/models/ticket/escalation.rb, app/models/ai/mcp_confirmation.rb, .github/workflows/ci.yaml, .github/workflows/ci/test.sh; chưa chạy upstream |
+| Khoảng trống lấp | Quản lý ticket/helpdesk có REST/GraphQL API (kho thiếu ticketing) |
+| Cơ chế đáng học | - app/models/trigger.rb: trigger có activator action hoặc time, execution_condition_mode selective hoặc always; trigger theo thời gian dùng Ticket::DailyEventLock để không chạy lặp trong ngày<br>- app/models/ticket/escalation.rb: after_commit gọi escalation_calculation trên bản sao ticket, có callback_loop chặn đệ quy và bỏ qua khi import_mode<br>- app/models/ai/mcp_confirmation.rb: bản ghi xác nhận MCP có request_id, action_digest, expires_at; chỉ dọn bản đã hết hạn nên một phê duyệt không dùng lại được tới khi hết hạn (đọc theo chú thích mã) |
+| Tiêu chí và cách kiểm | CI ci.yaml chạy trên PR và cron thứ Sáu: container zammad-ci với PostgreSQL 18 và Redis, chạy lint.sh (nội dung chưa mở), markdownlint, kiểm assets, pnpm test và rspec bỏ qua nhóm system/searchindex/integration (test.sh). Kiểm bằng máy có. |
+| Giới hạn và rủi ro | AGPL-3.0: dịch vụ mạng sửa đổi phải công bố mã. Nhắc: Zammad Foundation sở hữu mã nhưng công ty Zammad GmbH bán dịch vụ đám mây. Hai frontend song song nên bề mặt bảo trì lớn. Cần Ruby, Node, PostgreSQL, Redis và thường Elasticsearch để tìm kiếm. Tính năng AI gửi nội dung ticket cho nhà cung cấp mô hình đã cấu hình (chưa xác minh bằng chạy). AGENTS.md hướng dẫn tác nhân nhưng không đổi license. |
+| So với | GLPI (glpi, ITSM PHP, GPL), OpenProject (opf-openproject), Planka (plankanban-planka) |
+| Nguồn | [README.md](https://github.com/zammad/zammad/blob/0d1ac50043412d104fe6c3a715e5730e7e0dd4b4/README.md) · [LICENSE](https://github.com/zammad/zammad/blob/0d1ac50043412d104fe6c3a715e5730e7e0dd4b4/LICENSE) · [AGENTS.md](https://github.com/zammad/zammad/blob/0d1ac50043412d104fe6c3a715e5730e7e0dd4b4/AGENTS.md) · [trigger.rb](https://github.com/zammad/zammad/blob/0d1ac50043412d104fe6c3a715e5730e7e0dd4b4/app/models/trigger.rb) · [escalation.rb](https://github.com/zammad/zammad/blob/0d1ac50043412d104fe6c3a715e5730e7e0dd4b4/app/models/ticket/escalation.rb) · [mcp_confirmation.rb](https://github.com/zammad/zammad/blob/0d1ac50043412d104fe6c3a715e5730e7e0dd4b4/app/models/ai/mcp_confirmation.rb) · [ci.yaml](https://github.com/zammad/zammad/blob/0d1ac50043412d104fe6c3a715e5730e7e0dd4b4/.github/workflows/ci.yaml) · [test.sh](https://github.com/zammad/zammad/blob/0d1ac50043412d104fe6c3a715e5730e7e0dd4b4/.github/workflows/ci/test.sh) |
+
+<a id="nt-radicale"></a>
+
+### Radicale
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Kozea/Radicale |
+| License | GPL-3.0 |
+| Phiên bản đã đọc | `c23d6759c70bfa5554b2baeaa01df83ea51bafc7` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, COPYING.md, pyproject.toml, radicale/rights/owner_write.py, radicale/item/`__init__`.py, caldav_compat_tests/README.md, caldav_compat_tests/test_compatibility.py, .github/workflows/test.yml; chưa chạy upstream |
+| Khoảng trống lấp | Máy chủ CalDAV/CardDAV đơn giản làm môi trường thử tích hợp lịch, và bộ kiểm tương thích client/server |
+| Cơ chế đáng học | - caldav_compat_tests/test_compatibility.py: chạy caldav-server-tester với server Radicale khởi động như tiến trình con, so kết quả với EXPECTED_DEVIATIONS (ví dụ scheduling: unsupported, principal-search: unsupported); phiên bản thư viện client ghim chính xác trong extra caldav_test<br>- radicale/rights/owner_write.py: người dùng đã xác thực đọc được tất cả nhưng chỉ ghi vào thư mục có tên trùng tên mình<br>- radicale/item/`__init__`.py: bọc vobject.readComponents (có allowQP) và phân loại VCALENDAR, VCARD, VLIST; item/filter.py giới hạn số lần liệt kê RRULE vô hạn |
+| Tiêu chí và cách kiểm | CI test.yml có job lint rồi chạy tox (ví dụ Python 3.15 trên Ubuntu 26, có biến thể loglevel; chỉ đọc phần đầu file); thư mục radicale/tests, integ_tests và caldav_compat_tests tồn tại, chưa xác minh job nào chạy từng thư mục. Kiểm bằng máy có. |
+| Giới hạn và rủi ro | GPL-3.0: sửa và phân phối phải mở mã. Lưu file trong hệ thống tệp đơn giản nên không hợp quy mô lớn hay đa nút; không có scheduling iTIP. Với RFC 5545 đầy đủ (VTIMEZONE, RRULE phức tạp) cần kiểm riêng. Mặc định mở cổng cục bộ, cấu hình xác thực và TLS là việc của người vận hành. |
+| So với | Stalwart (stalwart, đủ bộ mail và scheduling), Cal.com (calcom-cal.diy) |
+| Nguồn | [README.md](https://github.com/Kozea/Radicale/blob/c23d6759c70bfa5554b2baeaa01df83ea51bafc7/README.md) · [COPYING.md](https://github.com/Kozea/Radicale/blob/c23d6759c70bfa5554b2baeaa01df83ea51bafc7/COPYING.md) · [pyproject.toml](https://github.com/Kozea/Radicale/blob/c23d6759c70bfa5554b2baeaa01df83ea51bafc7/pyproject.toml) · [owner_write.py](https://github.com/Kozea/Radicale/blob/c23d6759c70bfa5554b2baeaa01df83ea51bafc7/radicale/rights/owner_write.py) · [\_\_init\_\_.py](https://github.com/Kozea/Radicale/blob/c23d6759c70bfa5554b2baeaa01df83ea51bafc7/radicale/item/`__init__`.py) · [README.md](https://github.com/Kozea/Radicale/blob/c23d6759c70bfa5554b2baeaa01df83ea51bafc7/caldav_compat_tests/README.md) · [test_compatibility.py](https://github.com/Kozea/Radicale/blob/c23d6759c70bfa5554b2baeaa01df83ea51bafc7/caldav_compat_tests/test_compatibility.py) · [test.yml](https://github.com/Kozea/Radicale/blob/c23d6759c70bfa5554b2baeaa01df83ea51bafc7/.github/workflows/test.yml) |
+
+<a id="nt-oca-dms"></a>
+
+### OCA dms (Odoo 19)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/OCA/dms |
+| License | LGPL-3.0 (module dms; LICENSE gốc repo là AGPL-3.0) |
+| Phiên bản đã đọc | `b41bc8a454b5e6bed53f9b94286dba0cf3d28d7c` (commit 2026-11-11) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, test.yml, dms/`__manifest__`.py, storage.py, access_groups.py và dms_file.py; chưa chạy upstream |
+| Khoảng trống lấp | Quản lý tài liệu trong Odoo làm nền cho kiểm soát tài liệu; không có phiên bản hay phê duyệt |
+| Cơ chế đáng học | • dms.storage chọn nơi lưu database, file hoặc attachment, có thao tác di chuyển thủ công khi đổi kiểu (storage.py).<br>• dms.access.group: nhóm cha con, quyền create, write, unlink và biến thể inclusive thừa hưởng, gán cho nhóm Odoo hoặc người dùng cụ thể, gắn vào thư mục (access_groups.py).<br>• Khóa tệp: lock và unlock ghi locked_by, tính is_lock_editor để chỉ người khóa được sửa (dms_file.py).<br>• Chia sẻ qua cổng bằng access_token, so sánh bằng consteq (dms_file.py). |
+| Tiêu chí và cách kiểm | CI test.yml chạy trên container Odoo 19 và OCB 19, kiểm license bằng manifestoo; thư mục tests có test truy cập, thư mục, tệp, storage, portal và benchmark. Chưa mở các file test, chưa chạy. |
+| Giới hạn và rủi ro | Không có version chain, trạng thái dự thảo hay đã duyệt, hạn rà soát, hay nhật ký phân phối bản kiểm soát: muốn ISO 9001 7.5 (chưa xác minh điều khoản) phải tự xây. License: LICENSE gốc của repo là AGPL-3.0 nhưng manifest module ghi LGPL-3.0 (nhiều mã gốc MuK IT). Phụ thuộc Odoo 19 và các module mail, portal, onboarding. Chia sẻ công khai bằng token cần kiểm cấu hình trước khi mở ra mạng. |
+| So với | odoo-odoo trong kho (nền); paperless-ngx trong kho (lưu trữ tài liệu độc lập, không phải Odoo); nextcloud-server trong kho (chia sẻ tệp). |
+| Nguồn | [README.md](https://github.com/OCA/dms/blob/b41bc8a454b5e6bed53f9b94286dba0cf3d28d7c/README.md) · [LICENSE](https://github.com/OCA/dms/blob/b41bc8a454b5e6bed53f9b94286dba0cf3d28d7c/LICENSE) · [test.yml](https://github.com/OCA/dms/blob/b41bc8a454b5e6bed53f9b94286dba0cf3d28d7c/.github/workflows/test.yml) · [\_\_manifest\_\_.py](https://github.com/OCA/dms/blob/b41bc8a454b5e6bed53f9b94286dba0cf3d28d7c/dms/`__manifest__`.py) · [storage.py](https://github.com/OCA/dms/blob/b41bc8a454b5e6bed53f9b94286dba0cf3d28d7c/dms/models/storage.py) · [access_groups.py](https://github.com/OCA/dms/blob/b41bc8a454b5e6bed53f9b94286dba0cf3d28d7c/dms/models/access_groups.py) · [dms_file.py](https://github.com/OCA/dms/blob/b41bc8a454b5e6bed53f9b94286dba0cf3d28d7c/dms/models/dms_file.py) |
+
+<a id="nt-loro"></a>
+
+### Loro
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/loro-dev/loro |
+| License | MIT (lõi); skills/moonbit dưới Apache-2.0 |
+| Phiên bản đã đọc | `16fe805f935600cd6e4f106f212e9315b878ba95` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README, Cargo.toml, crates/loro/src/lib.rs, rust.yml, docs/shallow-snapshot-concurrency.md, skills/loro/SKILL.md và fit-and-architecture.md; chưa chạy upstream |
+| Khoảng trống lấp | Local-first / CRDT (CRDT lõi có lịch sử phiên bản) |
+| Cơ chế đáng học | - `LoroDoc` (crates/loro/src/lib.rs) gộp CRDT JSON với lịch sử đầy đủ: `checkout(frontiers)`, `fork_at`, `revert_to` cho time travel; `export(ExportMode)` cho cập nhật theo version vector, snapshot hoặc shallow snapshot.<br>- Shallow snapshot giống git shallow clone; `docs/shallow-snapshot-concurrency.md` nêu bảo đảm cụ thể: cập nhật sau gốc shallow áp dụng bình thường, cập nhật trước gốc là no-op, cập nhật dựa trên phiên bản trước gốc bị từ chối chứ không treo, có test dẫn chiếu.<br>- Có `export_pending_updates` để lưu các cập nhật chờ phụ thuộc nhân quả, kèm chỉ dẫn lưu snapshot và sidecar như một checkpoint (doc comment trong lib.rs).<br>- Repo kèm skill `skills/loro` cho agent (SKILL.md và các chương tham chiếu) nêu rõ khi nào Loro không phù hợp: bất biến tài chính, khoá độc quyền, phân quyền tại thời điểm ghi. |
+| Tiêu chí và cách kiểm | Có crate `fuzz` (crdt_fuzzer, one_doc_fuzzer, mem_kv_fuzzer) và nhiều test hồi quy trong `crates/fuzz/tests`; workflow rust.yml (đã mở) chạy `check` 32-bit, kiểm loro-js và `deno task test-all` với test Rust trên macOS. Chưa xác minh kết quả thực tế vì chưa chạy. Có `deny.toml` và thư mục `supply-chain` cho kiểm chuỗi cung ứng (chỉ thấy tồn tại, chưa đọc nội dung). |
+| Giới hạn và rủi ro | Mô tả trinh sát đúng về MIT nhưng thiếu: repo có thư mục con skills/moonbit dưới Apache-2.0 (LICENSE riêng) và nhiều crate có LICENSE riêng. CRDT không bảo đảm bất biến toàn cục. Phiên bản crate 1.19.0, thay đổi nhanh. Tuyên bố hiệu năng của tác giả (chưa xác minh). Chuỗi thấy `telemetry` chỉ trong doc comment về origin của import, không phải thu thập dữ liệu. |
+| So với | pubkey-rxdb (RxDB, không phải CRDT lõi), tinybase (cùng lô) |
+| Nguồn | [LICENSE](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/LICENSE) · [README.md](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/README.md) · [Cargo.toml](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/Cargo.toml) · [crates/loro/Cargo.toml](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/crates/loro/Cargo.toml) · [crates/loro/src/lib.rs](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/crates/loro/src/lib.rs) · [.github/workflows/rust.yml](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/.github/workflows/rust.yml) · [docs/shallow-snapshot-concurrency.md](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/docs/shallow-snapshot-concurrency.md) · [skills/loro/SKILL.md](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/skills/loro/SKILL.md) · [skills/loro/references/fit-and-architecture.md](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/skills/loro/references/fit-and-architecture.md) · [skills/moonbit/LICENSE](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/skills/moonbit/LICENSE) |
+
+<a id="nt-authlib"></a>
+
+### Authlib
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/authlib/authlib |
+| License | BSD-3-Clause hoặc giấy phép thương mại (COMMERCIAL-LICENSE) |
+| Phiên bản đã đọc | `c451e6d1238678231ee21e31964cc8ce34474a37` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, COMMERCIAL-LICENSE, README, pyproject.toml, AGENTS.md, python.yml, rfc7636/challenge.py (và liệt kê rfc6749/grants); chưa chạy upstream |
+| Khoảng trống lấp | Xác thực hiện đại (OAuth 2.x/OIDC phía Python); không có passkey |
+| Cơ chế đáng học | - Mỗi RFC một module (`authlib/oauth2/rfcNNNN/`): 6749, 6750, 7009, 7523, 7591/7592, 7636, 7662, 8414, 8628, 8693, 9068, 9101, 9207, 9470, 9728, cộng `authlib/oidc/core`; module RFC cắm vào lõi bằng hook hoặc kế thừa, không sửa `rfc6749/` (AGENTS.md).<br>- Dùng được cho cả client và authorization server/resource server, kèm tích hợp Flask, Django, requests, httpx, Starlette (thư mục `authlib/integrations`).<br>- `CodeChallenge` (rfc7636/challenge.py) so khớp S256 bằng `hmac.compare_digest`, nhưng mặc định method là `plain` và hỗ trợ cả plain; PKCE bắt buộc hay không phụ thuộc `is_code_challenge_required`, mặc định không bắt buộc (`required` là tham số đã bị đánh dấu deprecate).<br>- JOSE chuyển sang `joserfc`; `authlib.jose` đã deprecated (AGENTS.md, pyproject). |
+| Tiêu chí và cách kiểm | Test bằng pytest trong `tests/` (oauth2, oauth1, flask, django, jose, clients); python.yml (đã mở) chạy ma trận Python 3.11 đến 3.15 và pypy3.11, kèm lint ruff, codespell, zizmor theo AGENTS.md. Không có bộ test conformance OpenID chính thức trong repo (chưa thấy chứng nhận OpenID). |
+| Giới hạn và rủi ro | Hai giấy phép: BSD-3-Clause cho mọi dự án, còn COMMERCIAL-LICENSE là điều khoản mua riêng để hỗ trợ thương mại, không phải điều kiện bắt buộc dùng BSD. Mô tả trinh sát về "passkey/WebAuthn, OAuth 2.1" không đúng với mã đã đọc: không có module WebAuthn, và tìm trong authlib/ và docs/ không thấy OAuth 2.1; thư viện là OAuth 2.0/OIDC cộng nhiều RFC mở rộng. Bản 1.10.0b1 (beta). AGENTS.md cấm agent tự động mở issue/PR khi chưa có người duyệt: tôn trọng khi đóng góp. Dùng cho server cần tự bật PKCE bắt buộc và tắt plain. |
+| So với | node-oidc-provider (cùng lô), keycloak, authelia-authelia, goauthentik-authentik |
+| Nguồn | [LICENSE](https://github.com/authlib/authlib/blob/c451e6d1238678231ee21e31964cc8ce34474a37/LICENSE) · [COMMERCIAL-LICENSE](https://github.com/authlib/authlib/blob/c451e6d1238678231ee21e31964cc8ce34474a37/COMMERCIAL-LICENSE) · [README.md](https://github.com/authlib/authlib/blob/c451e6d1238678231ee21e31964cc8ce34474a37/README.md) · [pyproject.toml](https://github.com/authlib/authlib/blob/c451e6d1238678231ee21e31964cc8ce34474a37/pyproject.toml) · [AGENTS.md](https://github.com/authlib/authlib/blob/c451e6d1238678231ee21e31964cc8ce34474a37/AGENTS.md) · [.github/workflows/python.yml](https://github.com/authlib/authlib/blob/c451e6d1238678231ee21e31964cc8ce34474a37/.github/workflows/python.yml) · [authlib/oauth2/rfc7636/challenge.py](https://github.com/authlib/authlib/blob/c451e6d1238678231ee21e31964cc8ce34474a37/authlib/oauth2/rfc7636/challenge.py) · [authlib/oauth2/rfc6749/grants/authorization_code.py](https://github.com/authlib/authlib/blob/c451e6d1238678231ee21e31964cc8ce34474a37/authlib/oauth2/rfc6749/grants/authorization_code.py) |
+
+<a id="nt-faststream"></a>
+
+### FastStream
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ag2ai/faststream |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `d78fc4298629666fa4171bb37feeb5397445afd4` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README, pyproject.toml, pr_tests.yaml, asyncapi/factory.py, v3_0_0/generate.py, kafka/testing.py (đầu file); chưa chạy upstream |
+| Khoảng trống lấp | Kiến trúc event-driven (Kafka, RabbitMQ, NATS, Redis) có tài liệu AsyncAPI sinh từ mã |
+| Cơ chế đáng học | - Khai báo subscriber/publisher bằng decorator trên Pydantic; framework sinh tài liệu AsyncAPI 2.6.0 hoặc 3.0.0 từ chính các khai báo đó (`specification/asyncapi/factory.py`, `v3_0_0/generate.py`), nên hợp đồng sự kiện không lệch khỏi mã.<br>- Một API thống nhất cho nhiều broker (thư mục kafka, confluent, rabbit, nats, redis, mqtt), kèm CLI chạy ứng dụng và phục vụ ASGI.<br>- `TestKafkaBroker` và các bản tương tự cho phép test mà không cần broker thật; test `tests/asyncapi/` đối chiếu schema sinh ra theo từng broker.<br>- Middleware OpenTelemetry và Prometheus tích hợp sẵn (`faststream/opentelemetry`, `faststream/prometheus`). |
+| Tiêu chí và cách kiểm | pr_tests.yaml (đã mở) chạy pytest trên Python 3.10 đến 3.15 với `-m "(slow and not connected) or not connected"`, có job riêng kafka smoke và kafka thật với dịch vụ trong CI, bật `covdefaults`; có workflow benchmark CodSpeed. Tất cả kiểm bằng máy, chưa chạy lại. |
+| Giới hạn và rủi ro | Repo nay là ag2ai/faststream (chuyển từ tổ chức cũ), license Apache-2.0 đúng như trinh sát. Phiên bản 0.7.9: chưa 1.0, API còn có thể đổi. Tài liệu AsyncAPI chỉ mô tả phía ứng dụng FastStream, không thay một đặc tả viết tay. Kiểm AsyncAPI sinh ra bằng test snapshot của chính dự án, không bằng validator ngoài trong phần đã đọc. Không thấy telemetry trong phần đã mở. |
+| So với | nats-io-nats-server (là broker, không phải framework), asyncapi-spec (cùng lô) |
+| Nguồn | [LICENSE](https://github.com/ag2ai/faststream/blob/d78fc4298629666fa4171bb37feeb5397445afd4/LICENSE) · [README.md](https://github.com/ag2ai/faststream/blob/d78fc4298629666fa4171bb37feeb5397445afd4/README.md) · [pyproject.toml](https://github.com/ag2ai/faststream/blob/d78fc4298629666fa4171bb37feeb5397445afd4/pyproject.toml) · [.github/workflows/pr_tests.yaml](https://github.com/ag2ai/faststream/blob/d78fc4298629666fa4171bb37feeb5397445afd4/.github/workflows/pr_tests.yaml) · [faststream/specification/asyncapi/factory.py](https://github.com/ag2ai/faststream/blob/d78fc4298629666fa4171bb37feeb5397445afd4/faststream/specification/asyncapi/factory.py) · [faststream/specification/asyncapi/v3_0_0/generate.py](https://github.com/ag2ai/faststream/blob/d78fc4298629666fa4171bb37feeb5397445afd4/faststream/specification/asyncapi/v3_0_0/generate.py) · [faststream/kafka/testing.py](https://github.com/ag2ai/faststream/blob/d78fc4298629666fa4171bb37feeb5397445afd4/faststream/kafka/testing.py) |
+
+<a id="nt-tinybase"></a>
+
+### TinyBase
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/tinyplex/tinybase |
+| License | MIT |
+| Phiên bản đã đọc | `540cd40789a2745a6244ef42d29d83b144d5e6ae` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, readme.md, package.json, ci.yml, src/common/hlc.ts, src/mergeable-store/index.ts (đầu file), convergence.fuzz.test.ts (đầu file), synchronizer-ws-server/index.ts (đoạn authorize); chưa chạy upstream |
+| Khoảng trống lấp | Local-first / CRDT (store reactive có đồng bộ) |
+| Cơ chế đáng học | - `MergeableStore` (src/mergeable-store/index.ts) gắn mỗi cell và value một dấu thời gian HLC (`src/common/hlc.ts`) cùng hash theo bảng, hàng, cell; hai peer so hash để chỉ trao đổi phần khác nhau. Gộp theo kiểu last-writer-wins từng cell.<br>- HLC có `MAX_CLOCK_SKEW_SECONDS = 300` và `isHlc` từ chối dấu thời gian vượt ngưỡng, chống đồng hồ lệch.<br>- Nhiều synchronizer cắm được: BroadcastChannel, WebSocket client và server (kèm Durable Object, bản simple), local; WsServer có `authorize`, `canWriteCell`, `canWriteValue` để chặn ghi (dòng 156 đến 177 của synchronizer-ws-server/index.ts), có test riêng cho authorization.<br>- Cùng một store có truy vấn, index, metric, relationship và checkpoint (undo), cộng persister cho IndexedDB, SQLite, PostgreSQL, Yjs, Automerge. |
+| Tiêu chí và cách kiểm | `convergence.fuzz.test.ts` (đã mở phần đầu) dùng nhiều seed: các peer sửa ngẫu nhiên qua mạng giả lập có đảo thứ tự và rớt gói, khi mạng yên mọi peer phải có cùng nội dung, stamp và hash. ci.yml chạy compile, lint, spell, tsc và `testUnitFast` trên Node 24. README tuyên bố 100% test coverage (chưa xác minh). |
+| Giới hạn và rủi ro | Mô hình dữ liệu là bảng và key-value với LWW từng cell, không phải CRDT văn bản hay danh sách có thứ tự như Loro; không dùng cho chỉnh sửa văn bản đồng thời. Server tự host cần tự lo xác thực và authorize. Phiên bản 10.1.0. MIT đúng như trinh sát. Không thấy telemetry trong phần đã mở. readme.md chủ yếu là HTML sinh ra, ít thông tin kỹ thuật. |
+| So với | loro (cùng lô), pubkey-rxdb |
+| Nguồn | [LICENSE](https://github.com/tinyplex/tinybase/blob/540cd40789a2745a6244ef42d29d83b144d5e6ae/LICENSE) · [readme.md](https://github.com/tinyplex/tinybase/blob/540cd40789a2745a6244ef42d29d83b144d5e6ae/readme.md) · [package.json](https://github.com/tinyplex/tinybase/blob/540cd40789a2745a6244ef42d29d83b144d5e6ae/package.json) · [.github/workflows/ci.yml](https://github.com/tinyplex/tinybase/blob/540cd40789a2745a6244ef42d29d83b144d5e6ae/.github/workflows/ci.yml) · [src/common/hlc.ts](https://github.com/tinyplex/tinybase/blob/540cd40789a2745a6244ef42d29d83b144d5e6ae/src/common/hlc.ts) · [src/mergeable-store/index.ts](https://github.com/tinyplex/tinybase/blob/540cd40789a2745a6244ef42d29d83b144d5e6ae/src/mergeable-store/index.ts) · [test/unit/synchronizers/convergence.fuzz.test.ts](https://github.com/tinyplex/tinybase/blob/540cd40789a2745a6244ef42d29d83b144d5e6ae/test/unit/synchronizers/convergence.fuzz.test.ts) · [src/synchronizers/synchronizer-ws-server/index.ts](https://github.com/tinyplex/tinybase/blob/540cd40789a2745a6244ef42d29d83b144d5e6ae/src/synchronizers/synchronizer-ws-server/index.ts) |
+
+<a id="nt-node-oidc-provider"></a>
+
+### node-oidc-provider
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/panva/node-oidc-provider |
+| License | MIT |
+| Phiên bản đã đọc | `d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE.md, README, package.json, conformance.yml, test.yml, lib/helpers/pkce.js, certification/oidc/index.js (đầu file), certification/README.md; chưa chạy upstream |
+| Khoảng trống lấp | Xác thực hiện đại (OIDC/OAuth 2.x, FAPI) |
+| Cơ chế đáng học | - Authorization server Node triển khai OIDC Core cùng PAR (RFC 9126), DPoP (RFC 9449), JAR, JARM, RAR, mTLS, CIBA, Device Flow, FAPI 1.0 và 2.0; các tính năng thử nghiệm (CIMD, OpenID4VCI, attestation) tách riêng và đổi phiên bản theo bản MINOR (README).<br>- `lib/helpers/pkce.js` chỉ chấp nhận method S256 (method khác bị ném lỗi), kiểm định dạng `code_verifier` và so sánh bằng `constantEquals`.<br>- Cấu hình theo từng tính năng bật hoặc tắt trong `lib/helpers/defaults.js`; không phải tính năng nào cũng bật mặc định (README).<br>- Thư mục `certification/` chứa cấu hình chạy chính server này làm đối tượng của bộ kiểm OpenID Conformance Suite (oidc, fapi, vci). |
+| Tiêu chí và cách kiểm | conformance.yml (đã mở) chạy các plan của OpenID Conformance Suite (basic, hybrid, implicit, dynamic với nhiều response_type, FAPI...) khi đổi `lib/` hoặc `certification/`, và theo lịch hàng tuần. test.yml chạy audit npm, lint, kiểm tài liệu cấu hình sinh ra và test bằng `node ./test/run`. Tác giả tuyên bố đạt chứng nhận OpenID cho các profile Basic, Implicit, Hybrid, Config, Form Post, 3rd Party-Init, logout, FAPI 1.0, FAPI CIBA, FAPI 2.0 (tuyên bố trong README, chưa xác minh với trang chứng nhận). |
+| Giới hạn và rủi ro | Chỉ là thư viện để dựng authorization server: phần đăng nhập, lưu trữ (adapter), tài khoản và giao diện người dùng đều phải tự viết; thư mục `example/` chỉ để tham khảo. Cần Node 22 trở lên (test.yml đặt min 22). Một tác giả chính. Không thấy telemetry trong lib. License MIT đúng như trinh sát; nhiều file thông báo bên thứ ba (THIRD-PARTY-NOTICES.md, chưa đọc). |
+| So với | authlib (cùng lô), keycloak, hydra, authelia-authelia |
+| Nguồn | [LICENSE.md](https://github.com/panva/node-oidc-provider/blob/d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49/LICENSE.md) · [README.md](https://github.com/panva/node-oidc-provider/blob/d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49/README.md) · [package.json](https://github.com/panva/node-oidc-provider/blob/d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49/package.json) · [.github/workflows/conformance.yml](https://github.com/panva/node-oidc-provider/blob/d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49/.github/workflows/conformance.yml) · [.github/workflows/test.yml](https://github.com/panva/node-oidc-provider/blob/d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49/.github/workflows/test.yml) · [lib/helpers/pkce.js](https://github.com/panva/node-oidc-provider/blob/d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49/lib/helpers/pkce.js) · [certification/oidc/index.js](https://github.com/panva/node-oidc-provider/blob/d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49/certification/oidc/index.js) · [certification/README.md](https://github.com/panva/node-oidc-provider/blob/d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49/certification/README.md) |
+
+<a id="nt-openbao-openbao"></a>
+
+### OpenBao
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/openbao/openbao |
+| License | MPL-2.0 |
+| Phiên bản đã đọc | `a238d70d33f18716daecf08ce6b52f789e7d20f4` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, AGENTS.md, internal/builtin/logical/database/path_creds_create.go, .github/workflows/test-go.yml, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Bí mật và quyền cho agent/workload: cấp thông tin xác thực ngắn hạn có thu hồi, thay vì để khóa dài hạn trong repo hay prompt |
+| Cơ chế đáng học | - Secrets engine trong `internal/builtin/logical`: database, kubernetes, kv, pki, ssh, totp, transit, rabbitmq; auth trong `internal/builtin/credential`: approle, cert, jwt, kubernetes, token, userpass.<br>- `logical/database/path_creds_create.go`: tạo user DB động, tính TTL bằng `CalculateTTL` từ `DefaultTTL`/`MaxTTL` của role, ghi `revocation_statements` vào secret để thu hồi khi hết lease.<br>- Audit device ghi nhật ký có băm giá trị nhạy cảm (`internal/audit`).<br>- Có agent/proxy trong `internal/command/agent` để workload lấy token tự động. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: test-go.yml (đã đọc) chạy test Go chia nhiều runner, có binary test; ci.yml đã mở. Changelog theo từng PR (hơn 500 mục) và CodeQL, Scorecard có workflow (chỉ thấy tên). |
+| Giới hạn và rủi ro | MPL-2.0 (copyleft theo file, LICENSE ghi Copyright 2015 HashiCorp). Chỉ thấy lựa chọn telemetry là cấu hình metrics của listener (`UnauthenticatedMetricsAccess`), chưa thấy dữ liệu gửi ra ngoài. Vận hành phức tạp, thay thế Vault cần kiểm tương thích. Chính sách AGENTS.md cấm đóng góp AI và yêu cầu dấu hiệu riêng trong PR, cần lưu ý nếu muốn đóng góp ngược. |
+| So với | Infisical (infisical, secret manager nhẹ hơn), SOPS (getsops-sops, mã hóa file thay vì dịch vụ), Vaultwarden (quản lý mật khẩu, khác phạm vi) |
+| Nguồn | [README.md](https://github.com/openbao/openbao/blob/a238d70d33f18716daecf08ce6b52f789e7d20f4/README.md) · [LICENSE](https://github.com/openbao/openbao/blob/a238d70d33f18716daecf08ce6b52f789e7d20f4/LICENSE) · [AGENTS.md](https://github.com/openbao/openbao/blob/a238d70d33f18716daecf08ce6b52f789e7d20f4/AGENTS.md) · [path_creds_create.go](https://github.com/openbao/openbao/blob/a238d70d33f18716daecf08ce6b52f789e7d20f4/internal/builtin/logical/database/path_creds_create.go) · [test-go.yml](https://github.com/openbao/openbao/blob/a238d70d33f18716daecf08ce6b52f789e7d20f4/.github/workflows/test-go.yml) · [ci.yml](https://github.com/openbao/openbao/blob/a238d70d33f18716daecf08ce6b52f789e7d20f4/.github/workflows/ci.yml) |
+
+<a id="nt-thunderid"></a>
+
+### ThunderID
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/thunder-id/thunderid |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, backend/internal/agent/delegation.go, backend/internal/agent/constants.go, backend/internal/system/mcp/auth/token_verifier.go; chưa chạy upstream |
+| Khoảng trống lấp | Agent định danh/ủy quyền: danh tính và grant OAuth riêng cho agent, MCP được bảo vệ bằng token |
+| Cơ chế đáng học | - `backend/internal/agent/delegation.go`: `resolveGrantTypes` luôn cấp client_credentials cho agent (trừ public client); agent `delegated` phải có ít nhất một grant trong danh sách ủy quyền (authorization_code, CIBA, device_code, token_exchange, jwt_bearer), nếu không thì báo lỗi `ErrorMissingDelegationGrantType`; nếu chỉ có client_credentials thì tự thêm authorization_code + refresh_token, bật PKCE.<br>- Agent loại personal assistant bị giới hạn chỉ grant cá nhân và không bao giờ có client_credentials, nên không tự hành động bằng quyền riêng (`resolvePersonalAssistantGrantTypes`).<br>- `backend/internal/system/mcp/auth/token_verifier.go`: máy chủ MCP của ThunderID xác thực bearer bằng cùng `BearerAuthenticator` và logic thu hồi token của REST API, đưa SecurityContext vào `TokenInfo.Extra`.<br>- Tài liệu use-case hướng dẫn gắn scope theo công cụ MCP (ví dụ `booking:*`), người dùng thiếu role thì chỉ gọi được công cụ duyệt. |
+| Tiêu chí và cách kiểm | CI có workflow `oidc-conformance-test.yml` (đã mở) chạy hằng ngày bộ conformance của OpenID Foundation, profile basic gồm 35 module có trình duyệt theo `plan-config.json`; kiểm bằng máy nhưng là kết quả của upstream, chưa chạy lại. Có test Go cho agent và MCP (`*_test.go`); không đo độ phủ ở đây. |
+| Giới hạn và rủi ro | Apache-2.0 (LICENSE đã đọc). Telemetry: có bộ OpenTelemetry nhưng chỉ bật khi cấu hình `enabled` (provider.go, chỉ grep, chưa đọc kỹ). Cần vận hành CSDL, khóa và control plane riêng. Tuyên bố hậu lượng tử, VC/DID, OpenID4VCI/VP chỉ là tuyên bố trong README **(chưa xác minh)**. Repo lớn (khoảng 290 MB clone), nhiều gói, nên mang cơ chế sang dự án khác cần chọn đúng module. |
+| So với | keycloak, casdoor, hydra, goauthentik-authentik (IAM tổng quát, chưa coi agent là danh tính hạng nhất); spire (danh tính workload) |
+| Nguồn | [LICENSE](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/LICENSE) · [README.md](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/README.md) · [backend/internal/agent/delegation.go](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/backend/internal/agent/delegation.go) · [backend/internal/agent/constants.go](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/backend/internal/agent/constants.go) · [backend/internal/system/mcp/auth/token_verifier.go](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/backend/internal/system/mcp/auth/token_verifier.go) · [backend/internal/system/mcp/tool/model.go](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/backend/internal/system/mcp/tool/model.go) · [.github/workflows/oidc-conformance-test.yml](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/.github/workflows/oidc-conformance-test.yml) · [tests/oidc-conformance/plan-config.json](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/tests/oidc-conformance/plan-config.json) · [docs/content/use-cases/ai-agents/mcp-authorization/try-it-out/connect-via-inspector.mdx](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/docs/content/use-cases/ai-agents/mcp-authorization/try-it-out/connect-via-inspector.mdx) |

@@ -1465,3 +1465,111 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | Commit 2026-11-22; liệt kê hơn 70 workflow (có cả file .archived), chưa mở nội dung |
 | Nhận định | Nền tảng script/flow/app/agent mã trước (20+ ngôn ngữ), tự host bằng Docker/K8s. Điểm cần chú ý là license hỗn hợp: dùng nội bộ ổn, nhưng phân phối lại hay bọc thành dịch vụ phải tuân AGPLv3 hoặc mua license; không được đưa mã enterprise vào fork. |
 | Nguồn | [README.md](https://github.com/windmill-labs/windmill/blob/28985a122cc303200bb36c5c67037f5f2157299c/README.md) · [LICENSE](https://github.com/windmill-labs/windmill/blob/28985a122cc303200bb36c5c67037f5f2157299c/LICENSE) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-activiti"></a>
+
+### Activiti
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Activiti/Activiti |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `56cde07c17ca072be2ff6d5c31a02c23543e6937` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE.txt, pom.xml, ParallelGatewayActivityBehavior.java, .github/workflows/main_pull.yml; chưa chạy upstream |
+| Khoảng trống lấp | BPMN engine mã mở (kho chưa có engine BPMN) |
+| Cơ chế đáng học | - ParallelGatewayActivityBehavior.execute: vô hiệu hóa execution hiện tại, tìm execution không hoạt động tại cùng activity, so số đến (incomingFlows) với số đã join rồi mới lên kế hoạch takeOutgoingSequenceFlows (join rồi fork)<br>- Mô hình hành vi hướng đối tượng: lớp behavior riêng cho từng phần tử BPMN trong activiti-engine/impl/bpmn/behavior<br>- Phân lớp module: bpmn-model, bpmn-converter, bpmn-layout, process-validation tách khỏi engine và spring-boot-starter |
+| Tiêu chí và cách kiểm | Có khoảng 700 file Java mang tên Test trong repo (đếm theo tên, chưa chạy). Workflow main_pull.yml chạy pre-commit, kiểm action ghim SHA, build Maven và phân tích Sonar; fork PR không có OIDC nên bỏ qua mirror Cloudsmith. Không có ngưỡng kiểm cụ thể đọc được ở mức này. |
+| Giới hạn và rủi ro | Apache-2.0 sạch. Nhánh mặc định đang là bản 9.1.0-SNAPSHOT; README nói nội dung nhánh phát triển bản chính tiếp theo đã chuyển vào master và bản 6.x ở nhánh riêng, nên cần chọn đúng nhánh/phiên bản. Chỉ BPMN, không DMN/CMMN. Cần Java và Maven; build trong CI phụ thuộc hạ tầng Cloudsmith/Sonar của chủ dự án. |
+| So với | Flowable (flowable-engine, cùng gốc, thêm DMN/CMMN), Temporal (temporal, durable execution mã thay vì BPMN), Kestra (kestra) |
+| Nguồn | [README.md](https://github.com/Activiti/Activiti/blob/56cde07c17ca072be2ff6d5c31a02c23543e6937/README.md) · [LICENSE.txt](https://github.com/Activiti/Activiti/blob/56cde07c17ca072be2ff6d5c31a02c23543e6937/LICENSE.txt) · [pom.xml](https://github.com/Activiti/Activiti/blob/56cde07c17ca072be2ff6d5c31a02c23543e6937/pom.xml) · [ParallelGatewayActivityBehavior.java](https://github.com/Activiti/Activiti/blob/56cde07c17ca072be2ff6d5c31a02c23543e6937/activiti-core/activiti-engine/src/main/java/org/activiti/engine/impl/bpmn/behavior/ParallelGatewayActivityBehavior.java) · [main_pull.yml](https://github.com/Activiti/Activiti/blob/56cde07c17ca072be2ff6d5c31a02c23543e6937/.github/workflows/main_pull.yml) |
+
+<a id="nt-flowable-engine"></a>
+
+### Flowable Engine
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/flowable/flowable-engine |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `2af890cdccdaf9b53d07eb92ab8ffb79918c82c5` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, pom.xml, HitPolicyUnique.java, RuleEngineExecutorImpl.java, DefaultFlowableEngineAgenda.java, .github/workflows/main.yml; chưa chạy upstream |
+| Khoảng trống lấp | BPMN/DMN/CMMN engine mã mở (kho chưa có engine BPMN) |
+| Cơ chế đáng học | - Hit policy DMN là các lớp riêng (hitpolicy/HitPolicyUnique.java và các lớp Collect, First, Any, Priority...) được RuleEngineExecutorImpl nhận qua map hitPolicyBehaviors<br>- Thực thi qua agenda: thực thi theo agenda gắn với CommandContext (DefaultFlowableEngineAgenda kế thừa AbstractAgenda), có bản Debug riêng (DebugFlowableEngineAgenda); chỉ đọc phần đầu lớp<br>- Gom engine theo miền: bpmn, cmmn, dmn, event-registry, form, idm, job-service dưới modules/ với BOM chung |
+| Tiêu chí và cách kiểm | CI main.yml chạy ma trận JDK 17, 21, 25 với ./mvnw verify và đăng kết quả surefire; có workflow riêng cho MySQL, Postgres, Oracle, SQL Server, DB2, MariaDB, Windows và graal-native (chỉ liệt kê tên, chỉ mở main.yml). Kiểm bằng máy có, chạy trên nhiều CSDL. |
+| Giới hạn và rủi ro | Apache-2.0. Repo có nhiều module thương mại ở nơi khác (Flowable Work/Engage) nên cần phân biệt bản mã mở; README nhắc Flowable Design miễn phí nhưng cần tài khoản. Cần JDK 17+ (bản 6.x vẫn hỗ trợ Java 8 ở nhánh riêng). Phạm vi lớn nên chi phí tích hợp và vận hành cao hơn Activiti. |
+| So với | Activiti (activiti, cùng tổ tiên, chỉ BPMN), Temporal (temporal), Camunda không có hồ sơ; Kestra (kestra) khác hướng YAML |
+| Nguồn | [README.md](https://github.com/flowable/flowable-engine/blob/2af890cdccdaf9b53d07eb92ab8ffb79918c82c5/README.md) · [LICENSE](https://github.com/flowable/flowable-engine/blob/2af890cdccdaf9b53d07eb92ab8ffb79918c82c5/LICENSE) · [pom.xml](https://github.com/flowable/flowable-engine/blob/2af890cdccdaf9b53d07eb92ab8ffb79918c82c5/pom.xml) · [HitPolicyUnique.java](https://github.com/flowable/flowable-engine/blob/2af890cdccdaf9b53d07eb92ab8ffb79918c82c5/modules/flowable-dmn-engine/src/main/java/org/flowable/dmn/engine/impl/hitpolicy/HitPolicyUnique.java) · [RuleEngineExecutorImpl.java](https://github.com/flowable/flowable-engine/blob/2af890cdccdaf9b53d07eb92ab8ffb79918c82c5/modules/flowable-dmn-engine/src/main/java/org/flowable/dmn/engine/impl/RuleEngineExecutorImpl.java) · [DefaultFlowableEngineAgenda.java](https://github.com/flowable/flowable-engine/blob/2af890cdccdaf9b53d07eb92ab8ffb79918c82c5/modules/flowable-engine/src/main/java/org/flowable/engine/impl/agenda/DefaultFlowableEngineAgenda.java) · [main.yml](https://github.com/flowable/flowable-engine/blob/2af890cdccdaf9b53d07eb92ab8ffb79918c82c5/.github/workflows/main.yml) |
+
+<a id="nt-tencent-loopforge"></a>
+
+### LoopForge
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Tencent/LoopForge |
+| License | MIT (Tencent) kèm thành phần bên thứ ba trong LICENSE, ví dụ superpowers (MIT) |
+| Phiên bản đã đọc | `4ff0e73c84987966baa109d578c93b855ab8a26f` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, THIRD_PARTY_NOTICES.md, docs/open-source-scope.md, internal/engine/gate_submit.go, internal/domain/workflow.go, .github/workflows/platform.yml, go.mod; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm thử/kiểm soát workflow giao hàng bởi agent coding: cổng xác minh, phê duyệt, chạy lại từ nút bất kỳ |
+| Cơ chế đáng học | - internal/engine/gate_submit.go: readGateResultFrom đọc JSON kết quả cổng, chỉ nhận decision pass, rework, fail, human; reason bắt buộc, human thì cần actionRequired; giới hạn 4000 ký tự và 50 findings<br>- applyGateResult ánh xạ quyết định sang đường lỗi của engine: rework không có rejectTo bị hạ thành fail; nếu agent không gọi tool thì engine nhắc thử lại (appendSubmitGateInstruction)<br>- internal/domain/workflow.go: VerificationGate có Mode command, manual hoặc mr, Stage after_execution hoặc before_publish, OnFailure loop, reject, fail hoặc human, ExecutionScope bắt buộc cho cổng lệnh<br>- docs/open-source-scope.md nêu minh bạch phần nào là mã upstream, phần nào đã thay (đăng nhập cục bộ, không allowlist nhân viên) |
+| Tiêu chí và cách kiểm | CI platform.yml chạy test install, go test toàn bộ kèm coverage (kiểm bằng scripts/test-coverage-go.py), go vet, govulncheck, check-public.py, quét secret, npm audit mức high và nhóm test trình duyệt thật. Kiểm bằng máy phong phú; ngưỡng coverage nằm trong script (chưa đọc giá trị). |
+| Giới hạn và rủi ro | Chạy agent ngoài trong Docker sandbox với quyền ghi repo và mở PR nên cần cấp credential Git cẩn thận; chi phí token do người dùng chịu. Phụ thuộc nhiều CLI bên thứ ba cài từ npm. Mã gốc từng có tích hợp tracker/xác thực nội bộ (TAPD) còn lại dạng tương thích tùy chọn. Cổng quyết định do agent tự đề xuất nên vẫn cần cổng người thật cho việc quan trọng. Chưa xác minh telemetry rời máy (README/docs/deployment.md không thấy mục telemetry). |
+| So với | OpenAgentsControl (openagentscontrol, cổng duyệt dạng prompt), Symphony (symphony), Archon (archon), Conductor OSS (conductor-oss) |
+| Nguồn | [README.md](https://github.com/Tencent/LoopForge/blob/4ff0e73c84987966baa109d578c93b855ab8a26f/README.md) · [LICENSE](https://github.com/Tencent/LoopForge/blob/4ff0e73c84987966baa109d578c93b855ab8a26f/LICENSE) · [THIRD_PARTY_NOTICES.md](https://github.com/Tencent/LoopForge/blob/4ff0e73c84987966baa109d578c93b855ab8a26f/THIRD_PARTY_NOTICES.md) · [open-source-scope.md](https://github.com/Tencent/LoopForge/blob/4ff0e73c84987966baa109d578c93b855ab8a26f/docs/open-source-scope.md) · [gate_submit.go](https://github.com/Tencent/LoopForge/blob/4ff0e73c84987966baa109d578c93b855ab8a26f/internal/engine/gate_submit.go) · [workflow.go](https://github.com/Tencent/LoopForge/blob/4ff0e73c84987966baa109d578c93b855ab8a26f/internal/domain/workflow.go) · [platform.yml](https://github.com/Tencent/LoopForge/blob/4ff0e73c84987966baa109d578c93b855ab8a26f/.github/workflows/platform.yml) · [go.mod](https://github.com/Tencent/LoopForge/blob/4ff0e73c84987966baa109d578c93b855ab8a26f/go.mod) |
+
+<a id="nt-openrpa"></a>
+
+### OpenRPA
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/open-rpa/openrpa |
+| License | MPL-2.0 |
+| Phiên bản đã đọc | `6458b2777c7c07acb3f84fea2b4cb82cf5fd4fe2` (commit 2026-11-09) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, SECURITY.md, OpenRPA/OpenRPA.csproj, OpenRPA/WorkflowInstance.cs, OpenRPA/WorkitemQueue.cs, OpenRPA/Tracing.cs, OTEL_DIAGNOSTICS.json; chưa chạy upstream |
+| Khoảng trống lấp | RPA mã mở: ghi, chạy workflow giao diện desktop kèm hàng đợi work item |
+| Cơ chế đáng học | - OpenRPA/WorkflowInstance.cs: WorkflowInstance lưu Bookmarks, Variables, console log, correlationId, queuename; _Instances tĩnh theo dõi các thể hiện đang có<br>- OpenRPA/WorkitemQueue.cs: hàng đợi work item với workflowid, robotqueue, amqpqueue, maxretries, retrydelay, initialdelay, success_wiqid<br>- Kiến trúc plugin: OpenRPA.Interfaces/IRecordPlugin.cs và các dự án OpenRPA.* theo công nghệ đích (SAP, Java, Image, Office...)<br>- OpenRPA.Net định nghĩa thông điệp giao thức tới OpenFlow (InsertOneMessage, CreateWorkflowInstanceMessage...) |
+| Tiêu chí và cách kiểm | Không có CI hoạt động: thư mục .github chỉ có oldworkflows (codeql-analysis.yml, stale.yaml; GitHub không chạy thư mục này) và không thấy dự án test trong cấp 1. Kiểm bằng máy: không tìm thấy. |
+| Giới hạn và rủi ro | MPL-2.0 (copyleft theo file). Chỉ Windows, net462, phụ thuộc DLL đóng gói sẵn (Microsoft.Expression.Interactions.dll, System.Windows.Interactivity.dll trong repo). Tracing.cs dùng OpenTelemetry (có exporter OTLP trong csproj); chưa xác minh địa chỉ gửi mặc định. Ghi/phát lại giao diện dễ gãy khi UI đổi. Hỗ trợ thương mại qua openiap.io. |
+| So với | n8n (n8n, tích hợp API chứ không điều khiển GUI), Node-RED (node-red), RobotGo (robotgo, thư viện điều khiển GUI) |
+| Nguồn | [README.md](https://github.com/open-rpa/openrpa/blob/6458b2777c7c07acb3f84fea2b4cb82cf5fd4fe2/README.md) · [LICENSE](https://github.com/open-rpa/openrpa/blob/6458b2777c7c07acb3f84fea2b4cb82cf5fd4fe2/LICENSE) · [SECURITY.md](https://github.com/open-rpa/openrpa/blob/6458b2777c7c07acb3f84fea2b4cb82cf5fd4fe2/SECURITY.md) · [OpenRPA.csproj](https://github.com/open-rpa/openrpa/blob/6458b2777c7c07acb3f84fea2b4cb82cf5fd4fe2/OpenRPA/OpenRPA.csproj) · [WorkflowInstance.cs](https://github.com/open-rpa/openrpa/blob/6458b2777c7c07acb3f84fea2b4cb82cf5fd4fe2/OpenRPA/WorkflowInstance.cs) · [WorkitemQueue.cs](https://github.com/open-rpa/openrpa/blob/6458b2777c7c07acb3f84fea2b4cb82cf5fd4fe2/OpenRPA/WorkitemQueue.cs) · [Tracing.cs](https://github.com/open-rpa/openrpa/blob/6458b2777c7c07acb3f84fea2b4cb82cf5fd4fe2/OpenRPA/Tracing.cs) · [OTEL_DIAGNOSTICS.json](https://github.com/open-rpa/openrpa/blob/6458b2777c7c07acb3f84fea2b4cb82cf5fd4fe2/OTEL_DIAGNOSTICS.json) |
+
+<a id="nt-gorules-zen"></a>
+
+### GoRules ZEN Engine
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/gorules/zen |
+| License | MIT |
+| Phiên bản đã đọc | `62cd15985841c5e92cf3a7fda5feda3ba6f31421` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, Cargo.toml, core/engine/Cargo.toml, core/engine/src/config.rs, core/types/src/decision/mod.rs, .github/workflows/rust.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Rules engine / decision engine nhúng đa ngôn ngữ (decision table JDM) |
+| Cơ chế đáng học | - core/types/src/decision/mod.rs: DecisionTableContent có rules, inputs, outputs, hit_policy với enum DecisionTableHitPolicy chỉ First hoặc Collect<br>- core/engine/src/analysis/table/ (gaps.rs, cover.rs, witness.rs, verify.rs): phân tích bảng quyết định tìm thiếu phủ và ví dụ phản chứng, README gọi là kiểm exhaustiveness (chưa chạy)<br>- core/engine/src/config.rs: ZEN_CONFIG gồm function_timeout_millis=5000, http_auth, nodes_in_context; nút function dùng rquickjs và có http_handler cho gọi HTTP<br>- Một lõi Rust dùng chung, binding trong bindings/ (nodejs, python, c, uniffi) |
+| Tiêu chí và cách kiểm | CI rust.yaml chạy cargo test --workspace (có và không --all-features) trên ubuntu, macos, windows và cargo fmt --check; có workflow riêng node, python, go, miri, benchmark (chỉ liệt kê tên). Có thư mục test-data với nhiều file JDM mẫu. Kiểm bằng máy có. |
+| Giới hạn và rủi ro | MIT cho lõi; trình soạn thảo trực quan (Editor/JDM Editor) và dịch vụ GoRules BRMS là sản phẩm khác, không nằm trong repo này (editor.gorules.io là dịch vụ ngoài). Nút function chạy mã JS do người viết quyết định nên cần coi là mã không tin cậy khi nhận quyết định từ bên ngoài, và nút HTTP gọi ra ngoài. Phiên bản 2.x vừa ra, cần theo dõi thay đổi phá vỡ từ 0.x (README cảnh báo arbitrary_precision). |
+| So với | Cedar (cedar, chính sách phân quyền), OPA/Conftest (opa-conftest), Flowable DMN (flowable-engine, hit policy đầy đủ hơn) |
+| Nguồn | [README.md](https://github.com/gorules/zen/blob/62cd15985841c5e92cf3a7fda5feda3ba6f31421/README.md) · [LICENSE](https://github.com/gorules/zen/blob/62cd15985841c5e92cf3a7fda5feda3ba6f31421/LICENSE) · [Cargo.toml](https://github.com/gorules/zen/blob/62cd15985841c5e92cf3a7fda5feda3ba6f31421/Cargo.toml) · [Cargo.toml](https://github.com/gorules/zen/blob/62cd15985841c5e92cf3a7fda5feda3ba6f31421/core/engine/Cargo.toml) · [config.rs](https://github.com/gorules/zen/blob/62cd15985841c5e92cf3a7fda5feda3ba6f31421/core/engine/src/config.rs) · [mod.rs](https://github.com/gorules/zen/blob/62cd15985841c5e92cf3a7fda5feda3ba6f31421/core/types/src/decision/mod.rs) · [rust.yaml](https://github.com/gorules/zen/blob/62cd15985841c5e92cf3a7fda5feda3ba6f31421/.github/workflows/rust.yaml) |
+
+<a id="nt-rpaframework"></a>
+
+### RPA Framework (Robocorp)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/robocorp/rpaframework |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `8cf9b90d15f4b6cbf2da3f5b0bdffaa488d43e15` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.rst, CLAUDE.md, .github/workflows/main.yaml, packages/main/pyproject.toml, packages/main/src/RPA/Robocorp/WorkItems.py, packages/main/tests/python/test_robocorp_workitems.py; chưa chạy upstream |
+| Khoảng trống lấp | RPA mã mở (thư viện Python và Robot Framework) |
+| Cơ chế đáng học | - Monorepo 12 gói (`packages/main`, `core`, `windows`, `pdf`, `aws`, `google`, `openai`...), mỗi gói có LICENSE Apache-2.0 riêng và `pyproject.toml` khai báo cùng license; thư viện keyword cho Excel, Browser (Selenium), Desktop, Email, SAP, Salesforce... dưới `packages/main/src/RPA/`.<br>- Mô hình work item trong `RPA/Robocorp/WorkItems.py`: lớp trừu tượng `BaseAdapter` (reserve_input, release_input, create_output), enum `State` (DONE, FAILED) và `Error` (BUSINESS không retry, APPLICATION có thể retry); có `FileAdapter` chạy cục bộ và `RobocorpAdapter` nói chuyện với Control Room. Đây là mẫu tách hàng đợi việc khỏi kịch bản robot, đáng mang sang hệ khác.<br>- Phân loại lỗi nghiệp vụ và lỗi ứng dụng khi nhả item (`release_input_work_item` với FAILED) cho phép điều phối quyết định retry hay không. |
+| Tiêu chí và cách kiểm | Có test pytest cho work item (`packages/main/tests/python/test_robocorp_workitems.py`, dùng adapter giả và `mock`) và workflow `main.yaml` chạy ma trận windows, ubuntu, macos với Python 3.11, 3.12 (thêm ubuntu-py314 nằm trong khai báo include nhưng không thuộc danh sách name nên có thể không chạy, chưa xác minh). Kiểm bằng máy ở CI của upstream; mình chưa chạy. |
+| Giới hạn và rủi ro | Nhiều keyword cần dịch vụ ngoài hoặc Windows/GUI (Desktop, Windows, SAP) nên không tái lập được trong container; `RobocorpAdapter` gắn với Control Room thương mại của Robocorp, bản tự host phải dùng `FileAdapter` hoặc viết adapter. README ghi tài trợ bởi Robocorp và tối ưu cho công cụ của họ. Nhận xét bảo trì chỉ dựa trên ngày commit gần nhất (2026-11-20, release 34.1.0); mô tả của trinh sát (license Apache-2.0) đúng. |
+| So với | n8n, activepieces, huginn, temporal |
+| Nguồn | [LICENSE](https://github.com/robocorp/rpaframework/blob/8cf9b90d15f4b6cbf2da3f5b0bdffaa488d43e15/LICENSE) · [README.rst](https://github.com/robocorp/rpaframework/blob/8cf9b90d15f4b6cbf2da3f5b0bdffaa488d43e15/README.rst) · [CLAUDE.md](https://github.com/robocorp/rpaframework/blob/8cf9b90d15f4b6cbf2da3f5b0bdffaa488d43e15/CLAUDE.md) · [main.yaml](https://github.com/robocorp/rpaframework/blob/8cf9b90d15f4b6cbf2da3f5b0bdffaa488d43e15/.github/workflows/main.yaml) · [pyproject.toml](https://github.com/robocorp/rpaframework/blob/8cf9b90d15f4b6cbf2da3f5b0bdffaa488d43e15/packages/main/pyproject.toml) · [WorkItems.py](https://github.com/robocorp/rpaframework/blob/8cf9b90d15f4b6cbf2da3f5b0bdffaa488d43e15/packages/main/src/RPA/Robocorp/WorkItems.py) · [test_robocorp_workitems.py](https://github.com/robocorp/rpaframework/blob/8cf9b90d15f4b6cbf2da3f5b0bdffaa488d43e15/packages/main/tests/python/test_robocorp_workitems.py) |

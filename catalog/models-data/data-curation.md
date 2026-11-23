@@ -2,7 +2,7 @@
 
 # data-curation — Mô hình, dữ liệu & tài liệu
 
-[← Mục lục catalog](../README.md) · 12 hồ sơ.
+[← Mục lục catalog](../README.md) · 15 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -18,3 +18,6 @@
 | [Argilla](../../24-ai-data-engineering/README.md#argilla) | `argilla-io/argilla` | Apache-2.0 | 5.191 | đọc mã 2026-11-02 | 24 | Human feedback/dataset collaboration; |
 | [Distilabel](../../24-ai-data-engineering/README.md#distilabel) | `argilla-io/distilabel` | Apache-2.0 | 3.447 | đọc mã 2026-11-02 | 24 | Synthetic data + AI feedback pipeline/cache; |
 | [DataTrove](../../24-ai-data-engineering/README.md#datatrove) | `huggingface/datatrove` | Apache-2.0 | 3.414 | đọc mã 2026-11-02 | 24 | Pipeline text filter/dedup; |
+| [datasketch](../../24-ai-data-engineering/README.md#nt-datasketch) | `ekzhu/datasketch` | MIT | 2.980 | đọc mã 2026-11-23 | 24 | Thư viện cấu trúc dữ liệu xác suất: MinHash, Weighted MinHash, HyperLogLog, cùng chỉ mục MinHash LSH, LSH Forest, LSH Ensemble, LSHBloom, HNSW, có backend Redis và Cassa… |
+| [NVIDIA NeMo Curator](../../24-ai-data-engineering/README.md#nt-nemo-curator) | `NVIDIA-NeMo/Curator` | Apache-2.0 | 1.868 | đọc mã 2026-11-23 | 24 | Thư viện curation đa phương thức chạy trên Ray, mạnh ở khử trùng lặp exact/fuzzy/semantic bằng GPU. |
+| [Bespoke Curator](../../24-ai-data-engineering/README.md#nt-bespoke-curator) | `bespokelabsai/curator` | Apache-2.0 | 1.766 | đọc mã 2026-11-23 | 24 | Thư viện Python sinh dữ liệu tổng hợp bằng LLM, cache theo vân tay và hỗ trợ API batch giảm chi phí. |

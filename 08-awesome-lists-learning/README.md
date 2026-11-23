@@ -3853,3 +3853,60 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | low-activity: Commit cuối 2026-03-19 |
 | Nhận định | Tài liệu học thiết kế hệ thống kèm đề mẫu và lời giải trong solutions/, bản dịch ngôn ngữ khác trong repo. Nền tảng tốt nhưng nội dung cập nhật chậm; chưa đối chiếu với thực tế công nghệ hiện tại. |
 | Nguồn | [LICENSE.txt](https://github.com/donnemartin/system-design-primer/blob/ae9bbd7b02d90b9866215de185217d33f39ab733/LICENSE.txt) · [README.md](https://github.com/donnemartin/system-design-primer/blob/ae9bbd7b02d90b9866215de185217d33f39ab733/README.md) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-awesome-lint"></a>
+
+### awesome-lint
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/sindresorhus/awesome-lint |
+| License | MIT |
+| Phiên bản đã đọc | `4f870abda373cfa18c67822c39ee29c451ae8a70` (commit 2026-07-06) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc readme.md, license, package.json, cli.js, rules/git-repo-age.js, rules/github.js, lib/github-api.js, workflow main.yml; chưa chạy upstream |
+| Khoảng trống lấp | Cổng kiểm bằng máy cho awesome-list được duy trì thật sự (lint cấu trúc Markdown và siêu dữ liệu repo) |
+| Cơ chế đáng học | <br>- Bộ quy tắc remark-lint riêng cho awesome-list trong `rules/` (badge, list-item, heading, toc, double-link, license, contributing...), cộng quy tắc Markdown chung trong `config.js`.<br>- Quy tắc kiểm repo qua GitHub API: `git-repo-age.js` đòi repo tối thiểu 30 ngày tuổi; `github.js` đòi có mô tả, topic `awesome` và `awesome-list`, license được GitHub nhận diện.<br>- Chú thích điều khiển `disable`, `enable`, `ignore` trong chính README để miễn trừ có chủ đích.<br>- CLI nhận URL hoặc đường dẫn; với URL thì `git clone --depth 1` rồi lint (`index.js`). |
+| Tiêu chí và cách kiểm | Mã thoát lỗi khi có vi phạm do CLI báo; test bằng `node --test` kèm snapshot cho từng rule trong `test/rules`, và `xo` lint, chạy trên Node 20 và 24 qua `main.yml` (đã mở). Quy tắc dùng API đọc `github_token` nếu có; lỗi API thì rule bỏ qua im lặng (`github-api.js` trả undefined), nên cổng này có thể pass khi không lấy được dữ liệu repo. |
+| Giới hạn và rủi ro | License MIT (file `license`). Mô tả của trinh sát có phần sai: repo không kiểm link chết (không có phụ thuộc hay rule kiểm URL còn sống trong `package.json`, `config.js`), chỉ kiểm cú pháp và siêu dữ liệu repo; kiểm link nên ghép với lychee. Gọi GitHub API không xác thực nếu thiếu token nên dễ chạm giới hạn tốc độ. Chuẩn "awesome" là quy ước của danh sách awesome.re, không phải chuẩn bắt buộc của mọi danh sách. |
+| So với | lychee (`lychee`, kiểm link chết); markdownlint (`markdownlint`, lint Markdown chung, không có rule awesome); mức quản trị danh sách so với awesome-claude-code (`awesome-claude-code`, một danh sách cần kiểm) |
+| Nguồn | [license](https://github.com/sindresorhus/awesome-lint/blob/4f870abda373cfa18c67822c39ee29c451ae8a70/license) · [readme.md](https://github.com/sindresorhus/awesome-lint/blob/4f870abda373cfa18c67822c39ee29c451ae8a70/readme.md) · [package.json](https://github.com/sindresorhus/awesome-lint/blob/4f870abda373cfa18c67822c39ee29c451ae8a70/package.json) · [cli.js](https://github.com/sindresorhus/awesome-lint/blob/4f870abda373cfa18c67822c39ee29c451ae8a70/cli.js) · [git-repo-age.js](https://github.com/sindresorhus/awesome-lint/blob/4f870abda373cfa18c67822c39ee29c451ae8a70/rules/git-repo-age.js) · [github.js](https://github.com/sindresorhus/awesome-lint/blob/4f870abda373cfa18c67822c39ee29c451ae8a70/rules/github.js) · [github-api.js](https://github.com/sindresorhus/awesome-lint/blob/4f870abda373cfa18c67822c39ee29c451ae8a70/lib/github-api.js) · [main.yml](https://github.com/sindresorhus/awesome-lint/blob/4f870abda373cfa18c67822c39ee29c451ae8a70/.github/workflows/main.yml) |
+
+<a id="nt-juice-shop"></a>
+
+### OWASP Juice Shop
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/juice-shop/juice-shop |
+| License | MIT |
+| Phiên bản đã đọc | `c9f99228d9d56afb5f5ca7925376292f7fa44b13` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, LICENSE, AGENTS.md, challenges.yml, routes/login.ts, config/default.yml, rsn/rsn.ts, workflow ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Học bảo mật: ứng dụng web cố ý có lỗ hổng bao phủ OWASP Top 10 dùng cho đào tạo, CTF và thử công cụ quét |
+| Cơ chế đáng học | <br>- Sổ thử thách khai báo dạng dữ liệu trong `data/static/challenges.yml` (118 mục, mỗi mục có category, độ khó, gợi ý, `mitigationUrl`, khóa); mã lỗi gắn nhãn `vuln-code-snippet` ngay trong route (ví dụ nối chuỗi vào câu SQL ở `routes/login.ts`).<br>- Chế độ an toàn `safetyMode` (enabled, disabled, auto) và `disabledEnv` theo từng thử thách để tắt mục nguy hiểm khi chạy Docker hay Heroku (`config/default.yml`).<br>- Công cụ `rsn` so snapshot mã thử thách với `cache.json` để CI báo khi mã vô tình lệch khỏi bài tập (`rsn/rsn.ts`).<br>- `AGENTS.md` nêu thứ tự ưu tiên chỉ dẫn cho agent và cảnh báo không sửa lỗi cố ý. |
+| Tiêu chí và cách kiểm | CI `ci.yml` (đã mở) chạy lint, `npm run rsn`, test đơn vị giao diện và máy chủ, test tích hợp API; thư mục `test/` có api, server, cypress, smoke. Kiểm bằng máy; chưa chạy trong hồ sơ này. |
+| Giới hạn và rủi ro | License MIT (README ghi rõ). Ứng dụng cố ý dễ bị tấn công: chỉ chạy cô lập, không phơi ra Internet; một số thử thách (XSS API, SSRF, đọc tệp) cần tắt trong Docker. Một số thử thách cần nhà cung cấp AI/LLM bên ngoài (README). Có số liệu Prometheus (`routes/metrics.ts`) nhưng chưa thấy telemetry gửi ra ngoài trong mã đã đọc. Hồ sơ chỉ đọc mã, tuyệt đối không chạy upstream. Các "lỗi" trong repo là cố ý nên không được lấy làm mẫu mã. |
+| So với | OWASP Web Security Testing Guide (`owasp-web-security-testing-guide`, phương pháp luận, không có app thực hành); WebGoat (cùng lô, bài học tương tác Java); AI Red Teaming Guide (`ai-red-teaming-guide`, tài liệu) |
+| Nguồn | [LICENSE](https://github.com/juice-shop/juice-shop/blob/c9f99228d9d56afb5f5ca7925376292f7fa44b13/LICENSE) · [README.md](https://github.com/juice-shop/juice-shop/blob/c9f99228d9d56afb5f5ca7925376292f7fa44b13/README.md) · [AGENTS.md](https://github.com/juice-shop/juice-shop/blob/c9f99228d9d56afb5f5ca7925376292f7fa44b13/AGENTS.md) · [challenges.yml](https://github.com/juice-shop/juice-shop/blob/c9f99228d9d56afb5f5ca7925376292f7fa44b13/data/static/challenges.yml) · [login.ts](https://github.com/juice-shop/juice-shop/blob/c9f99228d9d56afb5f5ca7925376292f7fa44b13/routes/login.ts) · [default.yml](https://github.com/juice-shop/juice-shop/blob/c9f99228d9d56afb5f5ca7925376292f7fa44b13/config/default.yml) · [rsn.ts](https://github.com/juice-shop/juice-shop/blob/c9f99228d9d56afb5f5ca7925376292f7fa44b13/rsn/rsn.ts) · [ci.yml](https://github.com/juice-shop/juice-shop/blob/c9f99228d9d56afb5f5ca7925376292f7fa44b13/.github/workflows/ci.yml) |
+
+<a id="nt-webgoat"></a>
+
+### OWASP WebGoat
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/WebGoat/WebGoat |
+| License | GPL-2.0-or-later |
+| Phiên bản đã đọc | `4e98f1cbbf896fdd06edcc9930515ebe0ade7c69` (commit 2026-11-09) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, LICENSE.txt, AGENTS.md, WEBGOAT_IN_THE_AGE_OF_AI.md, SqlInjectionLesson5a.java, workflow build.yml, workflow lesson-vulnerability-triage.yml; chưa chạy upstream |
+| Khoảng trống lấp | Học bảo mật: bài học tương tác Java/Spring Boot về lỗ hổng ứng dụng, kèm WebWolf làm máy chủ của kẻ tấn công |
+| Cơ chế đáng học | <br>- Kiến trúc bài học: mỗi bài kế thừa `Lesson`, mỗi bài tập là `AssignmentEndpoint` trả `AttackResult` (success hoặc failed kèm phản hồi); `CourseConfiguration` gắn bài tập theo package (theo AGENTS.md).<br>- Bài tập mẫu `SqlInjectionLesson5a.java` nối chuỗi vào câu SQL và coi đạt khi truy vấn trả từ 6 dòng, đồng thời giải thích cho người học.<br>- WebWolf là ứng dụng thứ hai (cổng 9090) đóng vai máy chủ bắt request của kẻ tấn công.<br>- `AGENTS.md` chặn agent tự vá lỗ hổng bài học; `lesson-vulnerability-triage.yml` tự gắn nhãn issue hoặc PR báo "lỗ hổng" của bài học cố ý. |
+| Tiêu chí và cách kiểm | CI `build.yml` (đã mở) chạy pre-commit và `mvn verify`; kiểm kiểu và quy tắc qua Spotless, Checkstyle, PMD (theo AGENTS.md, chưa xác minh trong pom); có test đơn vị theo từng bài trong `src/test`. Kiểm bằng máy, chưa chạy trong hồ sơ này. |
+| Giới hạn và rủi ro | License GPL-2.0-or-later (đọc từ header `LICENSE.txt` và SPDX trong mã; chưa đối chiếu từng thư mục con, tài sản nhúng và phụ thuộc). Ứng dụng cố ý dễ bị tấn công; README cảnh báo máy chạy sẽ cực kỳ dễ bị tấn công, mặc định gắn localhost. Có keystore mẫu `goatkeystore.pkcs12` trong repo (khóa cho bài học, không dùng thật). Yêu cầu Java 25 và Spring Boot 4.1 theo AGENTS.md. Mô tả "Java" của trinh sát đúng. Mã lỗi cố ý, không dùng làm mẫu. |
+| So với | OWASP Juice Shop (cùng lô, thử thách kiểu CTF, Node/Angular); OWASP WSTG (`owasp-web-security-testing-guide`, phương pháp kiểm thử); cybersecurity-threats-guide (`cybersecurity-threats-guide`, tài liệu tổng quan) |
+| Nguồn | [LICENSE.txt](https://github.com/WebGoat/WebGoat/blob/4e98f1cbbf896fdd06edcc9930515ebe0ade7c69/LICENSE.txt) · [README.md](https://github.com/WebGoat/WebGoat/blob/4e98f1cbbf896fdd06edcc9930515ebe0ade7c69/README.md) · [AGENTS.md](https://github.com/WebGoat/WebGoat/blob/4e98f1cbbf896fdd06edcc9930515ebe0ade7c69/AGENTS.md) · [WEBGOAT_IN_THE_AGE_OF_AI.md](https://github.com/WebGoat/WebGoat/blob/4e98f1cbbf896fdd06edcc9930515ebe0ade7c69/WEBGOAT_IN_THE_AGE_OF_AI.md) · [SqlInjectionLesson5a.java](https://github.com/WebGoat/WebGoat/blob/4e98f1cbbf896fdd06edcc9930515ebe0ade7c69/src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson5a.java) · [build.yml](https://github.com/WebGoat/WebGoat/blob/4e98f1cbbf896fdd06edcc9930515ebe0ade7c69/.github/workflows/build.yml) · [lesson-vulnerability-triage.yml](https://github.com/WebGoat/WebGoat/blob/4e98f1cbbf896fdd06edcc9930515ebe0ade7c69/.github/workflows/lesson-vulnerability-triage.yml) |

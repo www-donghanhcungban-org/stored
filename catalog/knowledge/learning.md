@@ -2,7 +2,7 @@
 
 # learning — Học tập, tài liệu & tri thức
 
-[← Mục lục catalog](../README.md) · 141 hồ sơ.
+[← Mục lục catalog](../README.md) · 143 hồ sơ.
 
 ## Khóa học LLM/GenAI & deep learning (`llm-genai-course`, 35)
 
@@ -170,10 +170,12 @@
 | [Material 3 canonical layouts](../../06-ui-ux-design/README.md#ch-material-3-canonical-layouts) |  | — | — | đọc tài liệu 2026-11-23 | 06 | Hướng dẫn chính thức: list-detail, supporting pane, feed; |
 | [Mobbin](../../06-ui-ux-design/README.md#ch-mobbin) |  | proprietary | — | đọc tài liệu 2026-11-23 | 06 | Thư viện ảnh chụp màn hình app thật, không có mã; |
 
-## Học bảo mật (`security-learning`, 2)
+## Học bảo mật (`security-learning`, 4)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
+| [OWASP Juice Shop](../../08-awesome-lists-learning/README.md#nt-juice-shop) | `juice-shop/juice-shop` | MIT | 14.525 | đọc mã 2026-11-23 | 08 | Ứng dụng web cố ý có lỗ hổng (MIT), 118 thử thách ghi trong YAML, có hint, mitigation và kiểm drift bằng `rsn`. |
+| [OWASP WebGoat](../../08-awesome-lists-learning/README.md#nt-webgoat) | `WebGoat/WebGoat` | GPL-2.0-or-later | 9.496 | đọc mã 2026-11-23 | 08 | Ứng dụng học bảo mật dạng bài học có chấm đạt (GPL-2.0-or-later), kèm WebWolf. |
 | [AI-Red-Teaming-Guide](../../12-ai-security-guardrails/README.md#ch-ai-red-teaming-guide) | `requie/AI-Red-Teaming-Guide` | — | 1.065 | đọc tài liệu 2026-11-23 | 12 | Guide red-team AI một người viết (README ~3.580 dòng + ES/ZH/FR, 8 template); |
 | [Cybersecurity Threats Guide](../../12-ai-security-guardrails/README.md#ch-cybersecurity-threats-guide) | `s4ntrx/Cybersecurity-Threats-Guide` | MIT | 223 | đọc tài liệu 2026-11-23 | 12 | Tài liệu + 56 script Python phát hiện/phòng ngừa (6 chuyên mục), một tác giả, chưa ai duyệt; |
 

@@ -1400,3 +1400,230 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | Ít hoạt động (commit HEAD 2026-08-25) |
 | Nhận định | Plugin Claude Code giúp viết và triage báo cáo bug bounty chỉ từ dữ kiện người dùng cung cấp. Hook an toàn ở mức đọc file; GPL-3.0 cần lưu ý nếu chỉnh sửa rồi phân phối. |
 | Nguồn | [README](https://github.com/yeswehack/claude-kit/blob/3928c3475bae5211835d05190d17fa1c445dd6f7/README.md) · [LICENSE](https://github.com/yeswehack/claude-kit/blob/3928c3475bae5211835d05190d17fa1c445dd6f7/LICENSE) · [hooks/hooks.json](https://github.com/yeswehack/claude-kit/blob/3928c3475bae5211835d05190d17fa1c445dd6f7/hooks/hooks.json) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-cerbos"></a>
+
+### Cerbos
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/cerbos/cerbos |
+| License | Apache-2.0 (LICENSE, NOTICE.txt) |
+| Phiên bản đã đọc | `5424d0a363ca433518ce3859b2b1e27e662bd05c` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, evaluation.adoc, agent_skills.adoc, telemetry.go, engine.go và pr-test.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Agent định danh/ủy quyền: PDP ngoài tiến trình, quyết định theo principal, action, resource |
+| Cơ chế đáng học | - Deny mặc định; khi cùng một role vừa có rule ALLOW vừa DENY thì DENY thắng, còn nhiều role thì một role cho phép là đủ (evaluation.adoc).<br>- Chính sách theo scope phân cấp a.b.c rồi lên a.b, a, không scope (evaluation.adoc); điều kiện CEL trên thuộc tính principal và resource.<br>- PlanResources trả về query plan để lọc danh sách resource thay vì kiểm từng cái (README, engine.go `Plan`).<br>- Có skill cho agent (`npx skills add cerbos/skills`) với yêu cầu viết test chính sách và chạy `cerbos compile` trước khi báo xong (agent_skills.adoc; nội dung skill nằm repo khác, chưa đọc). |
+| Tiêu chí và cách kiểm | `cerbos compile` kiểm cú pháp và chạy bộ test chính sách bằng máy; private/verify có test; workflow pr-test.yaml chạy generate, lint, test theo thay đổi (đã mở đọc phần đầu, chưa đọc hết các job). |
+| Giới hạn và rủi ro | Telemetry ẩn danh gửi qua RudderStack, mặc định bật, tắt bằng `CERBOS_NO_TELEMETRY` hoặc `DO_NOT_TRACK` hoặc cấu hình `disabled` (telemetry.go). Một phần giá trị (Cerbos Hub) là dịch vụ thương mại ngoài repo. Là PDP chung, không nhìn nội dung prompt hay chuỗi tool call; ngữ cảnh agent phải do bên gọi đóng gói. Apache-2.0 (NOTICE.txt liệt kê phụ thuộc). |
+| So với | openfga, spicedb (ReBAC), cedar (ngôn ngữ chính sách AWS), opa-conftest |
+| Nguồn | [README.md](https://github.com/cerbos/cerbos/blob/5424d0a363ca433518ce3859b2b1e27e662bd05c/README.md) · [LICENSE](https://github.com/cerbos/cerbos/blob/5424d0a363ca433518ce3859b2b1e27e662bd05c/LICENSE) · [index.adoc](https://github.com/cerbos/cerbos/blob/5424d0a363ca433518ce3859b2b1e27e662bd05c/docs/modules/ROOT/pages/index.adoc) · [evaluation.adoc](https://github.com/cerbos/cerbos/blob/5424d0a363ca433518ce3859b2b1e27e662bd05c/docs/modules/policies/pages/evaluation.adoc) · [agent_skills.adoc](https://github.com/cerbos/cerbos/blob/5424d0a363ca433518ce3859b2b1e27e662bd05c/docs/modules/policies/pages/agent_skills.adoc) · [telemetry.go](https://github.com/cerbos/cerbos/blob/5424d0a363ca433518ce3859b2b1e27e662bd05c/internal/telemetry/telemetry.go) · [engine.go](https://github.com/cerbos/cerbos/blob/5424d0a363ca433518ce3859b2b1e27e662bd05c/internal/engine/engine.go) · [pr-test.yaml](https://github.com/cerbos/cerbos/blob/5424d0a363ca433518ce3859b2b1e27e662bd05c/.github/workflows/pr-test.yaml) |
+
+<a id="nt-agentic-radar"></a>
+
+### Agentic Radar
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/splx-ai/agentic-radar |
+| License | Apache-2.0 (LICENSE) |
+| Phiên bản đã đọc | `4bad7ffe9a9f96bed6a7f625ef516a632068f2ae` (commit 2026-11-13) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, mapper.py, vulnerabilities.json, analyze.py, openai_agents_launcher.py và hai workflow; chưa chạy upstream |
+| Khoảng trống lấp | Agent observability: quan sát tĩnh luồng agent và tool trước khi chạy, bổ sung cho trace lúc chạy |
+| Cơ chế đáng học | - Mỗi framework có Analyzer trả `GraphDefinition` (agentic_radar/analysis/analyze.py; thư mục analysis theo framework).<br>- `map_vulnerabilities` khớp node/tool với bảng JSON theo `name` hoặc `category`, ví dụ tool web_search gắn Indirect Prompt Injection (mapper/mapper.py, vulnerabilities.json).<br>- `agentic-radar test`: launcher vá `Agent.__init__` và `Runner.run` của OpenAI Agents để thu agent và chạy bộ đầu vào đối kháng (prompt injection, PII, nội dung độc hại) (test/launchers/openai_agents_launcher.py).<br>- `--harden-prompts` viết lại system prompt phát hiện được bằng LLM (README, chưa đọc mã). |
+| Tiêu chí và cách kiểm | ci.yaml chạy pytest với phụ thuộc cơ bản và đủ extras, kèm `ruff check` và `mypy agentic_radar` trên Python 3.9 và 3.x; framework_unit_tests.yml chạy pytest và ghi báo cáo (đã đọc phần đầu). Không có ngưỡng độ chính xác phát hiện công bố. |
+| Giới hạn và rủi ro | Bảng lỗ hổng là tra cứu tĩnh theo loại tool nên báo nhiều dương tính theo loại, không phải bằng chứng khai thác. `test` chỉ hỗ trợ OpenAI Agents, thực thi script entrypoint của người dùng (rủi ro nếu mã lạ) và gửi nội dung tới OpenAI hoặc Azure OpenAI. `--harden-prompts` gửi system prompt tới LLM. Chưa thấy telemetry trong mã đã xem (không grep toàn bộ n8n JSON ngoài một khớp posthog là dữ liệu node). Phiên bản 0.14.2, Apache-2.0. |
+| So với | agent-scan, cisco-mcp-scanner, skill-scanner-cisco, garak, pyrit |
+| Nguồn | [README.md](https://github.com/splx-ai/agentic-radar/blob/4bad7ffe9a9f96bed6a7f625ef516a632068f2ae/README.md) · [LICENSE](https://github.com/splx-ai/agentic-radar/blob/4bad7ffe9a9f96bed6a7f625ef516a632068f2ae/LICENSE) · [mapper.py](https://github.com/splx-ai/agentic-radar/blob/4bad7ffe9a9f96bed6a7f625ef516a632068f2ae/agentic_radar/mapper/mapper.py) · [vulnerabilities.json](https://github.com/splx-ai/agentic-radar/blob/4bad7ffe9a9f96bed6a7f625ef516a632068f2ae/agentic_radar/mapper/vulnerabilities.json) · [analyze.py](https://github.com/splx-ai/agentic-radar/blob/4bad7ffe9a9f96bed6a7f625ef516a632068f2ae/agentic_radar/analysis/analyze.py) · [openai_agents_launcher.py](https://github.com/splx-ai/agentic-radar/blob/4bad7ffe9a9f96bed6a7f625ef516a632068f2ae/agentic_radar/test/launchers/openai_agents_launcher.py) · [ci.yaml](https://github.com/splx-ai/agentic-radar/blob/4bad7ffe9a9f96bed6a7f625ef516a632068f2ae/.github/workflows/ci.yaml) · [framework_unit_tests.yml](https://github.com/splx-ai/agentic-radar/blob/4bad7ffe9a9f96bed6a7f625ef516a632068f2ae/.github/workflows/framework_unit_tests.yml) |
+
+<a id="nt-skillshield"></a>
+
+### SkillShield
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/obielin/skillshield |
+| License | MIT (khai ở pyproject.toml; file LICENSE chỉ có một dòng, thiếu văn bản cấp phép) |
+| Phiên bản đã đọc | `75fff4a6d9d6481e5572c0a813d18f429e86234b` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, pyproject.toml, src/skillshield/rules.py; chưa chạy upstream |
+| Khoảng trống lấp | Phát hiện skill độc hại, quét chuỗi cung ứng skill |
+| Cơ chế đáng học | - `src/skillshield/rules.py`: các rule SG-001 đến SG-015 (prompt injection nhiều ngôn ngữ, exfil, base64, tam giác chết SG-011 gộp injection, truy cập file và mạng) cùng SG-10x cho tool MCP.<br>- `.skillshield-ignore`: chấp nhận phát hiện đã duyệt theo fingerprint; rule chỉ chấp nhận tới mức HIGH, CRITICAL phải theo fingerprint.<br>- `scan <github url>`: tải zip, giới hạn 50 MB, 500 MB, 10.000 file, chặn zip-slip, không tạo symlink.<br>- `tests/test_redteam.py`: bảng KNOWN_GAPS buộc test đỏ khi một khoảng trống được vá mà chưa gỡ khỏi danh sách. |
+| Tiêu chí và cách kiểm | Mã thoát 0 sạch, 1 có CRITICAL hoặc HIGH, 2 lỗi đọc hoặc tải. CI (`ci.yml`, đã mở) chạy pytest trên Python 3.10 đến 3.12, ruff và black, test script claims bằng node. `docs/threat-coverage.md` ghi 9 trên 31 mẫu độc được phủ, 22 còn hở (zero-width, homoglyph, curl pipe shell, memory poisoning, persistence...). Kiểm hoàn toàn bằng mẫu regex. |
+| Giới hạn và rủi ro | License: file LICENSE chỉ ghi "MIT License — Copyright (c) 2026 Linda Oraegbunam" mà không có đoạn cấp quyền, trong khi `pyproject.toml` khai MIT; cần tác giả bổ sung văn bản trước khi nhúng hoặc phân phối lại. Là "tuyến phòng thủ đầu tiên" theo README, dễ bị lách bằng diễn đạt lại; có thể báo nhầm tài liệu trích dẫn tấn công. Quét URL cần mạng, quét cục bộ thì offline. Dự án còn mới, một tác giả chính; commit gần nhất 2026-11-21. |
+| So với | skillspector (NVIDIA), skill-scanner-cisco (Cisco AI Defense), awesome-ai-security-skills (danh sách) |
+| Nguồn | [README.md](https://github.com/obielin/skillshield/blob/75fff4a6d9d6481e5572c0a813d18f429e86234b/README.md) · [LICENSE](https://github.com/obielin/skillshield/blob/75fff4a6d9d6481e5572c0a813d18f429e86234b/LICENSE) · [pyproject.toml](https://github.com/obielin/skillshield/blob/75fff4a6d9d6481e5572c0a813d18f429e86234b/pyproject.toml) · [rules.py](https://github.com/obielin/skillshield/blob/75fff4a6d9d6481e5572c0a813d18f429e86234b/src/skillshield/rules.py) · [ci.yml](https://github.com/obielin/skillshield/blob/75fff4a6d9d6481e5572c0a813d18f429e86234b/.github/workflows/ci.yml) · [test_redteam.py](https://github.com/obielin/skillshield/blob/75fff4a6d9d6481e5572c0a813d18f429e86234b/tests/test_redteam.py) · [threat-coverage.md](https://github.com/obielin/skillshield/blob/75fff4a6d9d6481e5572c0a813d18f429e86234b/docs/threat-coverage.md) |
+
+<a id="nt-secpriv-skill"></a>
+
+### SecPriv
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/facebookresearch/secpriv-skill |
+| License | MIT |
+| Phiên bản đã đọc | `70e1269a988cb401ac838164b3db9434ffa9f4ea` (commit 2026-10-06) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, SKILL.md, experiment/eval_plan.md; chưa chạy upstream |
+| Khoảng trống lấp | Code review agent có đo precision/recall |
+| Cơ chế đáng học | - `SKILL.md`: định dạng đầu ra JSON cố định (surface, category, severity, confidence, cwe hoặc regulatory_basis, exploitation_path), cấm xuất finding dưới 0,8.<br>- Phase 4: bảy luật loại trừ chung (có đường khai thác, framework tự bảo vệ, phạm vi test, nguồn tin cậy, đủ biến đổi như băm có muối, cùng mục đích, bằng chứng không thể loại).<br>- `experiment/runner/evaluate.py`: ghép finding với ground truth theo category và lệch dòng tối đa 10, chuẩn hóa nhãn qua `aliases.json`.<br>- `experiment/eval_plan.md`: giả thuyết và quy tắc bác bỏ cho 7 câu hỏi nghiên cứu. |
+| Tiêu chí và cách kiểm | Tự báo (chưa xác minh): SecPriv-Sonnet P 0,66, R 0,98, F1 0,79, TN 30/35; hai skill tách F1 0,49; không skill F1 0,08. Bench có 30 ca âm gần đúng, trong đó 10 ca giữ lại. Không có CI. Thư mục `experiment/results/` không có trong repo nên không tái tính được; `evaluate.py` còn trỏ tới `secreview_eval` và `privreview_eval` nằm ngoài repo. |
+| Giới hạn và rủi ro | Bench tổng hợp ngắn (128 file Python/HTML), không phải mã sản xuất; kết quả không suy ra cho repo thật nhiều file (skill xem từng file một, bỏ sót luồng dữ liệu chéo file). Phụ thuộc mô hình tính phí (khoảng 0,024 USD mỗi ca trên Sonnet theo README) và độ trễ 74 giây mỗi ca. Một ca âm vẫn sai ổn định (decorator tự viết). Bản quyền Meta, MIT, cần ký CLA khi đóng góp. Mã nguồn gửi tới nhà cung cấp LLM khi dùng. |
+| So với | claude-code-security-review, trail-of-bits-skills, open-code-review-ocr |
+| Nguồn | [README.md](https://github.com/facebookresearch/secpriv-skill/blob/70e1269a988cb401ac838164b3db9434ffa9f4ea/README.md) · [LICENSE](https://github.com/facebookresearch/secpriv-skill/blob/70e1269a988cb401ac838164b3db9434ffa9f4ea/LICENSE) · [SKILL.md](https://github.com/facebookresearch/secpriv-skill/blob/70e1269a988cb401ac838164b3db9434ffa9f4ea/SKILL.md) · [eval_plan.md](https://github.com/facebookresearch/secpriv-skill/blob/70e1269a988cb401ac838164b3db9434ffa9f4ea/experiment/eval_plan.md) · [evaluate.py](https://github.com/facebookresearch/secpriv-skill/blob/70e1269a988cb401ac838164b3db9434ffa9f4ea/experiment/runner/evaluate.py) |
+
+<a id="nt-google-differential-privacy"></a>
+
+### Google Differential Privacy
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/google/differential-privacy |
+| License | Apache-2.0 (LICENSE gốc; third_party/cephes dùng giấy phép BSD 3 điều khoản riêng) |
+| Phiên bản đã đọc | `32f113c783cf6fdd02bc42f12f960ef382e6e29b` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, cc/testing/README.md, cc/algorithms/numerical-mechanisms.h, cc/algorithms/rand.h; chưa chạy upstream |
+| Khoảng trống lấp | Privacy-preserving analytics (differential privacy) |
+| Cơ chế đáng học | - `cc/algorithms/numerical-mechanisms.h`: NumericalMechanism, LaplaceMechanism, Gaussian; builder đặt epsilon/delta/sensitivity, có Serialize proto.<br>- `cc/algorithms/rand.h`: `SecureURBG` nguồn ngẫu nhiên an toàn mật mã cho lấy mẫu nhiễu.<br>- `cc/testing/` stochastic tester: sinh tập dữ liệu bằng chuỗi Halton, xét mọi tập kề trong powerset, dựng histogram đầu ra và kiểm vị từ DP; dùng mechanism có seed để test không chập chờn.<br>- Tách `python/dp_accounting` (theo dõi ngân sách) và `python/dp_auditorium` (kiểm định bảo đảm DP, thử nghiệm). |
+| Tiêu chí và cách kiểm | Có test đơn vị theo từng thuật toán (`cc/algorithms/*_test.cc`, gồm `algorithm-stochastic-dp_test.cc`); CI `bazel.yml` build và test C++/Java/PipelineDP4j, bỏ test nhãn long/eternal; Go và Maven có workflow riêng (chỉ mở bazel.yml). README tester nói rõ: phương pháp bán quyết định, chỉ bác bỏ được, không chứng minh DP. |
+| Giới hạn và rủi ro | Apache-2.0, riêng cephes là BSD. README nói khối dựng, Privacy on Beam, PipelineDP4j, PipelineDP phù hợp nghiên cứu/thử nghiệm/production còn công cụ khác là thử nghiệm (chưa xác minh bảo đảm production). Mô hình tấn công có commit gần đây làm rõ tính không kết hợp của số thực: rò rỉ do số dấu phẩy động là rủi ro thật. Dùng sai tham số (ε quá lớn, không cắt contribution) làm mất bảo đảm, thư viện không tự phát hiện hết. |
+| So với | Microsoft Presidio (ẩn danh PII, không phải DP, mục 12); kho chưa có thư viện DP nào khác |
+| Nguồn | [LICENSE](https://github.com/google/differential-privacy/blob/32f113c783cf6fdd02bc42f12f960ef382e6e29b/LICENSE) · [README.md](https://github.com/google/differential-privacy/blob/32f113c783cf6fdd02bc42f12f960ef382e6e29b/README.md) · [README.md](https://github.com/google/differential-privacy/blob/32f113c783cf6fdd02bc42f12f960ef382e6e29b/cc/testing/README.md) · [numerical-mechanisms.h](https://github.com/google/differential-privacy/blob/32f113c783cf6fdd02bc42f12f960ef382e6e29b/cc/algorithms/numerical-mechanisms.h) · [rand.h](https://github.com/google/differential-privacy/blob/32f113c783cf6fdd02bc42f12f960ef382e6e29b/cc/algorithms/rand.h) · [LICENSE](https://github.com/google/differential-privacy/blob/32f113c783cf6fdd02bc42f12f960ef382e6e29b/third_party/cephes/LICENSE) · [bazel.yml](https://github.com/google/differential-privacy/blob/32f113c783cf6fdd02bc42f12f960ef382e6e29b/.github/workflows/bazel.yml) |
+
+<a id="nt-zaproxy"></a>
+
+### ZAP (Zed Attack Proxy)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/zaproxy/zaproxy |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `42d1450e6cedc921dae6b4b7103cbe40f8cd98df` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, docker/zap-baseline.py, docs/scanners.md, .github/workflows/ci.yml, .github/workflows/test-packaged-scans.yml, SECURITY.md; chưa chạy upstream |
+| Khoảng trống lấp | DAST (quét ứng dụng web đang chạy), mảng SAST/DAST/IaC scan của kho mới có SAST và quét hạ tầng |
+| Cơ chế đáng học | - Script `docker/zap-baseline.py`: spider mặc định 1 phút, chờ quét thụ động xong, thoát với mã 0 (ổn), 1 (có FAIL), 2 (chỉ WARN), 3 (lỗi khác).<br>- Mỗi luật có ID đăng ký trong `docs/scanners.md`; file cấu hình `-c`/`-u` đổi mức từng luật, `-g` sinh mẫu cấu hình.<br>- Có cờ `--auto` (mặc định) dùng automation framework và `--plan-only` chỉ sinh plan, nên plan YAML có thể review rồi chạy lại. |
+| Tiêu chí và cách kiểm | Ngưỡng nằm ở cấu hình từng luật (WARN thành FAIL làm CI đỏ), kiểm bằng máy. Repo tự kiểm: ci.yml build + `./gradlew check` trên Java 17/21 và test GUI bằng xvfb; test-packaged-scans.yml chạy tox cho script Docker trên Python 3.11/3.12/3.15. Đã đọc hai workflow này. |
+| Giới hạn và rủi ro | Apache-2.0, không có LICENSE phụ đã kiểm cho thư mục con. Quét chủ động là tấn công thật, cần cô lập và được phép. Telemetry HUD bị tắt trong Constant.java (`hud.enableTelemetry` đặt null); các kênh gọi mạng khác của add-on chưa xác minh. Cần Java hoặc image Docker lớn, tốn tài nguyên. |
+| So với | Semgrep (SAST, không phải DAST), Trivy (quét image/IaC), Garak (red team mô hình) |
+| Nguồn | [README.md](https://github.com/zaproxy/zaproxy/blob/42d1450e6cedc921dae6b4b7103cbe40f8cd98df/README.md) · [LICENSE](https://github.com/zaproxy/zaproxy/blob/42d1450e6cedc921dae6b4b7103cbe40f8cd98df/LICENSE) · [zap-baseline.py](https://github.com/zaproxy/zaproxy/blob/42d1450e6cedc921dae6b4b7103cbe40f8cd98df/docker/zap-baseline.py) · [scanners.md](https://github.com/zaproxy/zaproxy/blob/42d1450e6cedc921dae6b4b7103cbe40f8cd98df/docs/scanners.md) · [ci.yml](https://github.com/zaproxy/zaproxy/blob/42d1450e6cedc921dae6b4b7103cbe40f8cd98df/.github/workflows/ci.yml) · [test-packaged-scans.yml](https://github.com/zaproxy/zaproxy/blob/42d1450e6cedc921dae6b4b7103cbe40f8cd98df/.github/workflows/test-packaged-scans.yml) · [SECURITY.md](https://github.com/zaproxy/zaproxy/blob/42d1450e6cedc921dae6b4b7103cbe40f8cd98df/SECURITY.md) |
+
+<a id="nt-github-codeql"></a>
+
+### CodeQL (thư viện và truy vấn)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/github/codeql |
+| License | MIT (repo truy vấn); CodeQL CLI giấy phép riêng |
+| Phiên bản đã đọc | `e54be546741e764e42f1fe396b0a4816e28c327f` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, python/ql/src/Security/CWE-089/SqlInjection.ql, .github/workflows/go-tests.yml, AGENTS.md; chưa chạy upstream |
+| Khoảng trống lấp | SAST: engine truy vấn dataflow cho nhiều ngôn ngữ (cpp, csharp, go, java, javascript, python, ruby, rust, swift, actions) |
+| Cơ chế đáng học | - Truy vấn đặt theo CWE, ví dụ `python/ql/src/Security/CWE-089/SqlInjection.ql`: `@kind path-problem`, `@security-severity 8.8`, `@precision high`, `@id py/sql-injection`.<br>- Truy vấn chỉ ghép nguồn và đích từ thư viện dataflow (`SqlInjectionQuery`), phần mô hình hóa nằm ở thư viện, truy vấn mỏng.<br>- Có thư mục `actions/` để quét workflow GitHub Actions và thư mục `shared/` dùng chung giữa ngôn ngữ. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: mỗi truy vấn có test kết quả mong đợi theo ngôn ngữ; workflow đã mở là go-tests.yml chạy test Go trên runner lớn khi đổi mã Go hoặc `shared/`. Các workflow khác (hàng chục file) chỉ thấy tên, chưa mở. |
+| Giới hạn và rủi ro | Xác nhận lời trinh sát: LICENSE của repo là MIT, nhưng README ghi CodeQL CLI và engine ở kho codeql-cli-binaries với giấy phép riêng; dùng phân tích mã nguồn đóng cần giấy phép thương mại (đọc README, chưa mở LICENSE.md của kho CLI nên điều khoản chi tiết chưa xác minh). Muốn dùng phải tải CLI nhị phân từ bên ngoài. Không có thông tin telemetry trong repo này. |
+| So với | Semgrep (SAST luật dạng mẫu mã, giấy phép mở hoàn toàn), Trivy, Gitleaks (quét bí mật) |
+| Nguồn | [README.md](https://github.com/github/codeql/blob/e54be546741e764e42f1fe396b0a4816e28c327f/README.md) · [LICENSE](https://github.com/github/codeql/blob/e54be546741e764e42f1fe396b0a4816e28c327f/LICENSE) · [SqlInjection.ql](https://github.com/github/codeql/blob/e54be546741e764e42f1fe396b0a4816e28c327f/python/ql/src/Security/CWE-089/SqlInjection.ql) · [go-tests.yml](https://github.com/github/codeql/blob/e54be546741e764e42f1fe396b0a4816e28c327f/.github/workflows/go-tests.yml) · [AGENTS.md](https://github.com/github/codeql/blob/e54be546741e764e42f1fe396b0a4816e28c327f/AGENTS.md) |
+
+<a id="nt-falcosecurity-falco"></a>
+
+### Falco
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/falcosecurity/falco |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `74ccf76b7b2d85ff42c97da6bd6a716b0d1d17b9` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, falco.yaml, unit_tests/engine/test_alt_rule_loader.cpp, test/container-trust/README.md, .github/workflows/ci.yml, .github/workflows/insecure-api.yaml, .gitmodules; chưa chạy upstream |
+| Khoảng trống lấp | Policy-as-code runtime: giám sát hành vi lúc chạy (container, sandbox, host) bằng luật khai báo |
+| Cơ chế đáng học | - Luật YAML có `list`, `macro`, `rule` với `condition: evt.type=execve and proc.name in (shell_binaries)`, `output`, `priority`, `source`, `tags` (thấy trong `unit_tests/engine/test_alt_rule_loader.cpp`).<br>- `falco.yaml` chọn engine: kmod, modern_ebpf, hoặc nodriver; có `rules_files`, cấu hình gộp nhiều file theo chiến lược append/override, và `http_output` gửi cảnh báo tới webhook.<br>- Plugin mở rộng nguồn sự kiện ngoài syscall (K8s audit, cloud).<br>- Thư mục `test/container-trust` kiểm chuỗi CA trong image bằng OpenSSL ở chế độ không mạng. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: ci.yml (đã đọc) build gói x86_64 (có sanitizer) và arm64 rồi chạy test gói; insecure-api.yaml chạy Semgrep với luật `semgrep/` (cấm gets, sprintf, strcpy...) trên diff PR; unit test engine bằng C++; e2e có evtgen_suite. Không có ngưỡng phát hiện công bố. |
+| Giới hạn và rủi ro | Apache-2.0. Cần driver kernel (kmod hoặc eBPF) và quyền root/privileged, rủi ro vận hành và tương thích kernel. Bộ luật ở submodule chưa đọc nên không đánh giá được chất lượng luật. `http_output.enabled` mặc định false trong falco.yaml. Falco phát hiện, không chặn. |
+| So với | Trivy (quét tĩnh image/IaC, không runtime), Semgrep (luật tĩnh), OPA (quyết định admission, không quan sát syscall) |
+| Nguồn | [README.md](https://github.com/falcosecurity/falco/blob/74ccf76b7b2d85ff42c97da6bd6a716b0d1d17b9/README.md) · [LICENSE](https://github.com/falcosecurity/falco/blob/74ccf76b7b2d85ff42c97da6bd6a716b0d1d17b9/LICENSE) · [falco.yaml](https://github.com/falcosecurity/falco/blob/74ccf76b7b2d85ff42c97da6bd6a716b0d1d17b9/falco.yaml) · [test_alt_rule_loader.cpp](https://github.com/falcosecurity/falco/blob/74ccf76b7b2d85ff42c97da6bd6a716b0d1d17b9/unit_tests/engine/test_alt_rule_loader.cpp) · [README.md](https://github.com/falcosecurity/falco/blob/74ccf76b7b2d85ff42c97da6bd6a716b0d1d17b9/test/container-trust/README.md) · [ci.yml](https://github.com/falcosecurity/falco/blob/74ccf76b7b2d85ff42c97da6bd6a716b0d1d17b9/.github/workflows/ci.yml) · [insecure-api.yaml](https://github.com/falcosecurity/falco/blob/74ccf76b7b2d85ff42c97da6bd6a716b0d1d17b9/.github/workflows/insecure-api.yaml) · [.gitmodules](https://github.com/falcosecurity/falco/blob/74ccf76b7b2d85ff42c97da6bd6a716b0d1d17b9/.gitmodules) |
+
+<a id="nt-agentshield"></a>
+
+### AgentShield
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/affaan-m/agentshield |
+| License | MIT |
+| Phiên bản đã đọc | `b0891303bdcd6037376a94263d45cfd2ff3dfb98` (commit 2026-09-10) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, package.json, src/rules/hooks.ts, src/corpus/index.ts, src/llm/client.ts, false-positive-audit.md, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Quét bảo mật skill/MCP/agent config: kiểm cấu hình hook, quyền, MCP cục bộ trước khi nhận |
+| Cơ chế đáng học | - Luật tách theo nhóm trong `src/rules/` (hooks, mcp, permissions, agents, secrets, skills...); `hooks.ts` dùng danh sách regex cho nội suy biến `${file}`, `sh -c`, `curl`/`wget`, `nc`, `sendmail`, gắn mức critical/high/medium.<br>- `src/corpus/index.ts`: `evaluateCorpusGate` mặc định `minDetectionRate = 1`, báo cả hạng mục bị sót; lệnh `npm run corpus:gate` dùng trong CI.<br>- Hệ số `runtimeConfidence` (template-example, docs-example, plugin-cache, hook-code) giảm điểm cho cấu hình mẫu; ghi lại trong false-positive-audit.md.<br>- Tùy chọn `--fix`, rule pack ngoài, ánh xạ SOC 2. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: ci.yml (đã đọc) chạy typecheck, build, corpus gate, test trên Node 20/22 và Windows. Lưu ý corpus là cấu hình do chính tác giả viết nên tỉ lệ phát hiện 100% là kiểm hồi quy, không phải độ chính xác thực tế. Huy hiệu tests/coverage trong README là ảnh tĩnh. |
+| Giới hạn và rủi ro | MIT, tác giả cá nhân (repo chỉ có một commit trong bản clone nông nên không đánh giá được lịch sử). README mâu thuẫn số luật: phần chi tiết ghi 17/40/49/41 luật nhưng bảng tóm tắt ghi 10/34/23/25, tổng 102; đếm thô trong mã cho số khác nữa (tuyên bố quá mức chưa thống nhất). `--opus` gửi nội dung cấu hình tới Anthropic hoặc OrcaRouter (api.orcarouter.ai) cần khóa API, dữ liệu rời máy; README có quảng cáo nhà tài trợ tính toán. Mô tả của trinh sát (đọc mã trước khi nhận) là hợp lý. Nên chạy trên bản sao và không cấp khóa thật. |
+| So với | NeMo Guardrails (nemo-guardrails, guardrail lúc chạy), Garak (red team mô hình), Gitleaks (quét bí mật tổng quát) |
+| Nguồn | [README.md](https://github.com/affaan-m/agentshield/blob/b0891303bdcd6037376a94263d45cfd2ff3dfb98/README.md) · [LICENSE](https://github.com/affaan-m/agentshield/blob/b0891303bdcd6037376a94263d45cfd2ff3dfb98/LICENSE) · [package.json](https://github.com/affaan-m/agentshield/blob/b0891303bdcd6037376a94263d45cfd2ff3dfb98/package.json) · [hooks.ts](https://github.com/affaan-m/agentshield/blob/b0891303bdcd6037376a94263d45cfd2ff3dfb98/src/rules/hooks.ts) · [index.ts](https://github.com/affaan-m/agentshield/blob/b0891303bdcd6037376a94263d45cfd2ff3dfb98/src/corpus/index.ts) · [client.ts](https://github.com/affaan-m/agentshield/blob/b0891303bdcd6037376a94263d45cfd2ff3dfb98/src/llm/client.ts) · [false-positive-audit.md](https://github.com/affaan-m/agentshield/blob/b0891303bdcd6037376a94263d45cfd2ff3dfb98/false-positive-audit.md) · [ci.yml](https://github.com/affaan-m/agentshield/blob/b0891303bdcd6037376a94263d45cfd2ff3dfb98/.github/workflows/ci.yml) |
+
+<a id="nt-owasp-agent-memory-guard"></a>
+
+### OWASP Agent Memory Guard
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/OWASP/www-project-agent-memory-guard |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `dcfd3f3d0f0df1e6e4c95fde355aba81e4ef9c24` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE.md, README.md, pyproject.toml, src/agent_memory_guard/guard.py, src/agent_memory_guard/detectors/injection.py; chưa chạy upstream |
+| Khoảng trống lấp | Agent memory có kiểm soát: lớp chặn chống đầu độc bộ nhớ agent giữa agent và kho nhớ |
+| Cơ chế đáng học | - `guard.py` (`MemoryGuard`): bọc `MemoryStore`, mọi thao tác chạy qua bộ detector (injection, rò rỉ dữ liệu nhạy cảm, khóa được bảo vệ, bất thường kích thước và tần suất, lây chéo tác vụ, chỉ thị thường trực không tin cậy, tự củng cố), có snapshot khi chặn, rollback và quarantine.<br>- `detectors/injection.py`: `PromptInjectionDetector` dùng danh sách mẫu regex không phân biệt hoa thường (ignore previous instructions, thẻ system, reveal prompt...).<br>- `policies/policy.py`: `Policy.strict()` ánh xạ detector sang hành động (chặn injection, che secret, chặn khóa `identity.*`/`system.*`/`agent.goal`, cách ly bất thường); `Policy.tiered()` đổi hành động theo namespace khóa (`credentials.*` chặn, `facts.*` cách ly).<br>- Có handle theo từng agent (`as_agent`) để kiểm quyền đọc/ghi từng khóa trước khi detector chạy. |
+| Tiêu chí và cách kiểm | CI `ci.yml` (đã mở): ruff, mypy (không chặn), pytest với coverage trên Python 3.9 đến 3.14, thêm lượt chạy `AMG_TEST_MODE=allow-all` và `trace`. README ghi benchmark 55 ca: recall 92,5%, precision 100%, trung vị 62 µs, chạy bằng `python benchmarks/security_benchmark.py` **(chưa xác minh, chưa chạy lại)**; tải bằng máy, nhưng corpus do chính tác giả viết và số đo ghi cho bản 0.2.2, trong khi pyproject hiện là 0.4.0. |
+| Giới hạn và rủi ro | Apache-2.0 (file là `LICENSE.md`, không phải `LICENSE`). Mặc định của `MemoryGuard()` là permissive, không chặn gì nếu không truyền `Policy.strict()`. Detector regex không bắt được tấn công diễn đạt lại hoặc đa ngôn ngữ; README tự nhận nhóm rò rỉ dữ liệu 83% và bất thường kích thước 80%. Repo kèm nhiều file analytics/clone-count commit hằng ngày và workflow `track-referrers.yml` gọi API GitHub bằng secret của repo, không liên quan tới dữ liệu người dùng thư viện; thư viện nói không gọi mạng **(chưa xác minh toàn bộ)**. Mô tả "OWASP project" là dự án Lab, không phải chuẩn OWASP đã duyệt như Top 10. |
+| So với | agentmemory và ai-memory-akitaonrails (kho nhớ cho agent, không có lớp chặn), llm-guard và nemo-guardrails (lọc vào/ra của LLM), dcg-destructive-command-guard |
+| Nguồn | [LICENSE.md](https://github.com/OWASP/www-project-agent-memory-guard/blob/dcfd3f3d0f0df1e6e4c95fde355aba81e4ef9c24/LICENSE.md) · [README.md](https://github.com/OWASP/www-project-agent-memory-guard/blob/dcfd3f3d0f0df1e6e4c95fde355aba81e4ef9c24/README.md) · [pyproject.toml](https://github.com/OWASP/www-project-agent-memory-guard/blob/dcfd3f3d0f0df1e6e4c95fde355aba81e4ef9c24/pyproject.toml) · [src/agent_memory_guard/guard.py](https://github.com/OWASP/www-project-agent-memory-guard/blob/dcfd3f3d0f0df1e6e4c95fde355aba81e4ef9c24/src/agent_memory_guard/guard.py) · [src/agent_memory_guard/detectors/injection.py](https://github.com/OWASP/www-project-agent-memory-guard/blob/dcfd3f3d0f0df1e6e4c95fde355aba81e4ef9c24/src/agent_memory_guard/detectors/injection.py) · [src/agent_memory_guard/policies/policy.py](https://github.com/OWASP/www-project-agent-memory-guard/blob/dcfd3f3d0f0df1e6e4c95fde355aba81e4ef9c24/src/agent_memory_guard/policies/policy.py) · [.github/workflows/ci.yml](https://github.com/OWASP/www-project-agent-memory-guard/blob/dcfd3f3d0f0df1e6e4c95fde355aba81e4ef9c24/.github/workflows/ci.yml) |
+
+<a id="nt-agent-guard-elliottwaves"></a>
+
+### agent-guard (elliottwaves-20)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/elliottwaves-20/agent-guard |
+| License | MIT |
+| Phiên bản đã đọc | `648835d2cf22dc518cf479242abfbfe0353a3544` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, SKILL.md, scripts/scan_skill.py, scripts/run_all_tests.py; chưa chạy upstream |
+| Khoảng trống lấp | Phát hiện skill độc hại / quét chuỗi cung ứng skill: cổng quét trước khi cài cho skill, MCP và CLI |
+| Cơ chế đáng học | - `README.md` và `scripts/_url_resolver.py`: tải `archive/<sha>.zip` của một commit cụ thể để quét, `git clone` chỉ sau khi đạt; commit đã quét là commit được cài, không có khoảng trống quét/cài.<br>- `scripts/scan_skill.py`: bọc SkillSpector, ép UTF-8, đọc báo cáo JSON gồm sổ ghi thực thi và độ phủ, rồi `combine_verdicts`; skill chỉ được đọc, không chạy.<br>- Mã thoát: 0 SAFE, 1 BLOCK/REVIEW, 2 không có verdict (lỗi scanner, LLM hay cấu hình, `--no-dynamic`, hash chưa từng thấy); SAFE cần một phân tích AI thật sự đã chạy.<br>- Phân phối sau verdict qua CLI `skills` ghim phiên bản, kiểm digest registry, chạy với `ignore_scripts` và không truyền biến token. |
+| Tiêu chí và cách kiểm | `scripts/run_all_tests.py` mở mọi cổng test và coi test bị bỏ qua là thất bại; có 37 file trong `tests/`, không có thư mục `.github`, tức không có CI công khai (đã xác nhận bằng liệt kê). Chưa chạy bộ test; phần LLM live tốn ngân sách riêng. |
+| Giới hạn và rủi ro | MIT (LICENSE đã đọc). Dữ liệu rời máy: nội dung skill đi qua nhà cung cấp LLM đã cấu hình; hash binary gửi VirusTotal; phân tích động chạy gói trong sandbox. Mục "Detection limits" của README tự nhận SAFE nghĩa là "chưa thấy dấu hiệu xấu", không phải chứng minh an toàn; quét tĩnh không thấy tải trọng tải về lúc chạy. Số sao rất thấp (khoảng 5), một tác giả, chạm tới nhiều công cụ ghim theo commit nên cần theo dõi cập nhật. Mô tả của trinh sát (một công cụ quét nhiều loại) đúng, nhưng chi tiết là lớp điều phối, không tự viết bộ phát hiện. |
+| So với | skill-scanner-cisco, cisco-mcp-scanner, agent-scan (quét skill/MCP), sandbox-runtime (cách ly khi chạy) |
+| Nguồn | [LICENSE](https://github.com/elliottwaves-20/agent-guard/blob/648835d2cf22dc518cf479242abfbfe0353a3544/LICENSE) · [README.md](https://github.com/elliottwaves-20/agent-guard/blob/648835d2cf22dc518cf479242abfbfe0353a3544/README.md) · [SKILL.md](https://github.com/elliottwaves-20/agent-guard/blob/648835d2cf22dc518cf479242abfbfe0353a3544/SKILL.md) · [scripts/scan_skill.py](https://github.com/elliottwaves-20/agent-guard/blob/648835d2cf22dc518cf479242abfbfe0353a3544/scripts/scan_skill.py) · [scripts/run_all_tests.py](https://github.com/elliottwaves-20/agent-guard/blob/648835d2cf22dc518cf479242abfbfe0353a3544/scripts/run_all_tests.py) · [scripts/_url_resolver.py](https://github.com/elliottwaves-20/agent-guard/blob/648835d2cf22dc518cf479242abfbfe0353a3544/scripts/_url_resolver.py) · [CHANGELOG.md](https://github.com/elliottwaves-20/agent-guard/blob/648835d2cf22dc518cf479242abfbfe0353a3544/CHANGELOG.md) |
+
+<a id="nt-cordum"></a>
+
+### Cordum (agent control plane)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/cordum-io/cordum |
+| License | BUSL-1.1 (Business Source License 1.1; Change License Apache-2.0 từ 2029-01-01) |
+| Phiên bản đã đọc | `ddf16899c6126f3e1e2230eec485a755c4515d59` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, NOTICE, README.md, core/controlplane/safetykernel/kernel.go, core/telemetry/privacy.go, core/telemetry/collector.go, core/audit/chain.go, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Audit trail, tuân thủ và action firewall cho agent (chính sách cộng duyệt người trước hành động) |
+| Cơ chế đáng học | - Safety kernel (`core/controlplane/safetykernel/kernel.go`) đánh giá chính sách trước khi cho chạy job, trả một trong DENY, REQUIRE_HUMAN, THROTTLE, ALLOW_WITH_CONSTRAINTS, ALLOW; chuỗi quyết định lạ bị ép thành DENY (fail-closed), và rule DENY của bất biến toàn cục không bị ghi đè.<br>- Chuỗi audit băm có chữ ký HMAC trên Redis Stream theo tenant (`core/audit/chain.go`, khóa qua biến môi trường), cộng exporter SIEM (syslog, datadog, cloudwatch, webhook) trong `core/audit/`.<br>- Cordum Edge: hook cho tool call của Claude Code (`cordumctl edge claude`), hàng đợi phê duyệt với nhiều trường hợp từ chối an toàn (`core/edge/approval_store_redis.go`; mình chỉ thấy qua grep chú thích, chưa đọc hết). |
+| Tiêu chí và cách kiểm | Rất nhiều test Go cạnh mã (kernel, audit chain, tier precedence) và `ci.yml` chia hai tầng: merge CI (test, lint, build, quét bảo mật) và nightly (benchmark, e2e); mình chỉ đọc đầu workflow, chưa chạy. README ghi stack chạy bằng Docker Compose cần Redis, NATS, TLS tự sinh. |
+| Giới hạn và rủi ro | License là BUSL-1.1 với Additional Use Grant cấm dùng để cung cấp Competitive Offering, nên không phải mã nguồn mở theo OSI (README tự gọi là source-available): trinh sát ghi license trống là đúng ở chỗ GitHub trả NOASSERTION, nhưng LICENSE rõ ràng. Telemetry: chế độ mặc định `local_only` vẫn gửi hai ping HTTPS một lần (cài đặt, dùng lần đầu) tới telemetry.cordum.io trừ khi đặt `CORDUM_TELEMETRY_MODE=off` (`core/telemetry/privacy.go`). Mật khẩu dev mặc định `ChangeMe123!` trong quickstart. Là control plane cho các hành động mà nó trung gian: hành động đi vòng qua gateway thì không được bảo vệ. |
+| So với | dcg-destructive-command-guard, nemo-guardrails, agentgateway |
+| Nguồn | [LICENSE](https://github.com/cordum-io/cordum/blob/ddf16899c6126f3e1e2230eec485a755c4515d59/LICENSE) · [NOTICE](https://github.com/cordum-io/cordum/blob/ddf16899c6126f3e1e2230eec485a755c4515d59/NOTICE) · [README.md](https://github.com/cordum-io/cordum/blob/ddf16899c6126f3e1e2230eec485a755c4515d59/README.md) · [kernel.go](https://github.com/cordum-io/cordum/blob/ddf16899c6126f3e1e2230eec485a755c4515d59/core/controlplane/safetykernel/kernel.go) · [privacy.go](https://github.com/cordum-io/cordum/blob/ddf16899c6126f3e1e2230eec485a755c4515d59/core/telemetry/privacy.go) · [collector.go](https://github.com/cordum-io/cordum/blob/ddf16899c6126f3e1e2230eec485a755c4515d59/core/telemetry/collector.go) · [chain.go](https://github.com/cordum-io/cordum/blob/ddf16899c6126f3e1e2230eec485a755c4515d59/core/audit/chain.go) · [ci.yml](https://github.com/cordum-io/cordum/blob/ddf16899c6126f3e1e2230eec485a755c4515d59/.github/workflows/ci.yml) |
+
+<a id="nt-opendp"></a>
+
+### OpenDP
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/opendp/opendp |
+| License | MIT |
+| Phiên bản đã đọc | `a010591f55b1713c926f8e355091471634480307` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, rust/Cargo.toml, rust/src/core/mod.rs, rust/src/measurements/noisy_max/mod.rs, docs/source/api/user-guide/limitations.rst, .github/workflows/smoke-test.yml; chưa chạy upstream |
+| Khoảng trống lấp | Phân tích bảo toàn quyền riêng tư (differential privacy) |
+| Cơ chế đáng học | - Lõi Rust với khung `Measurement` (`rust/src/core/mod.rs`): mỗi measurement gồm input_domain, input_metric, output_measure, function và `privacy_map` ánh xạ khoảng cách đầu vào sang tham số riêng tư; bindings Python và R.<br>- Cổng tính năng theo mức tin cậy trong `rust/Cargo.toml`: `contrib` (chưa hoàn tất kiểm chứng chứng minh), `honest-but-curious`, `idealized-numerics`; gom thành `untrusted`. Cơ chế mới phải qua quy trình vetting mới bỏ cờ `contrib`.<br>- Mỗi cơ chế đi kèm tài liệu LaTeX và pseudocode trong cây mã (ví dụ `measurements/noise/`, `transformations/count/make_count.tex`) và trích dẫn paper (noisy max dẫn Permute-and-Flip). |
+| Tiêu chí và cách kiểm | CI `smoke-test.yml`: pre-commit, `cargo fmt --check`, build các tổ hợp feature, `cargo test` (kể cả `--all-features`) và pytest cho các binding. Kiểm bằng máy cộng chứng minh viết tay; mình không thẩm định chứng minh. |
+| Giới hạn và rủi ro | README và Limitations nói thẳng: chưa hoàn tất vetting nên nhiều thành phần cần cờ `contrib`; mô hình số lý tưởng có lỗ hổng đã biết với dấu phẩy động; chưa chống side-channel. Vì vậy mô tả của trinh sát "có chứng minh" chỉ đúng một phần: chứng minh có ở dạng tài liệu nhưng không đồng nghĩa mọi thành phần đã được kiểm chứng. Theo README, `contrib` là cờ cần bật tường minh (trinh sát/README chưa đủ để kết luận mặc định thế nào cho từng binding, chưa xác minh). Build Rust với polars kéo phụ thuộc git của polars. |
+| So với | presidio, videoseal |
+| Nguồn | [LICENSE](https://github.com/opendp/opendp/blob/a010591f55b1713c926f8e355091471634480307/LICENSE) · [README.md](https://github.com/opendp/opendp/blob/a010591f55b1713c926f8e355091471634480307/README.md) · [Cargo.toml](https://github.com/opendp/opendp/blob/a010591f55b1713c926f8e355091471634480307/rust/Cargo.toml) · [mod.rs](https://github.com/opendp/opendp/blob/a010591f55b1713c926f8e355091471634480307/rust/src/core/mod.rs) · [mod.rs](https://github.com/opendp/opendp/blob/a010591f55b1713c926f8e355091471634480307/rust/src/measurements/noisy_max/mod.rs) · [limitations.rst](https://github.com/opendp/opendp/blob/a010591f55b1713c926f8e355091471634480307/docs/source/api/user-guide/limitations.rst) · [smoke-test.yml](https://github.com/opendp/opendp/blob/a010591f55b1713c926f8e355091471634480307/.github/workflows/smoke-test.yml) |
