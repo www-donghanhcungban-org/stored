@@ -23,4 +23,4 @@
 | [Apache APISIX](../../04-protocols-standards/README.md#anhkysuai-2026-11-23-apache-apisix) | `apache/apisix` | Apache-2.0; kèm notices thành phần thứ ba | 17.361 | đọc tài liệu 2026-11-23 | 04 | API gateway động cho định tuyến, kiểm soát lưu lượng và các API mô hình AI. |
 | [Portkey Gateway](../../10-local-llm-rag-memory/README.md#ch-portkey-gateway) | `Portkey-AI/gateway` | MIT | 13.433 | đọc tài liệu 2026-11-23 | 10 | Gateway nhanh, fallback/retry/load-balance. |
 | [Helicone](../../10-local-llm-rag-memory/README.md#ch-helicone) | `Helicone/helicone` | Apache-2.0 | 6.293 | đọc tài liệu 2026-11-23 | 10 | Proxy + observability. |
-| [ai-gateway (seeker19110)](../../23-own-repos-lessons/README.md) | `seeker19110/ai-gateway` | MIT | — | chưa chuẩn hóa | 23 | Gateway LLM Node 3 dep: pool đa tài khoản, cooldown theo lỗi, OpenAI-compatible, MCP Streamable HTTP /mcp, Prometheus; |
+| [ai-gateway (seeker19110)](../../23-own-repos-lessons/README.md#ch-ai-gateway-seeker19110) | `seeker19110/x-shop` | MIT | — | đọc tài liệu 2026-11-23 | 23 | Gateway LLM Node 3 dep: pool đa tài khoản, cooldown theo lỗi, OpenAI-compatible, MCP Streamable HTTP /mcp, Prometheus; |

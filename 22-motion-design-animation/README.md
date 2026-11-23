@@ -916,3 +916,625 @@ Engine game 2D và 3D đa nền tảng với giao diện biên tập thống nh�
 Phần mềm làm game không cần code, mã nguồn mở, tạo game 2D, 3D và nhiều người chơi cho mobile, desktop và web bằng hệ thống sự kiện và behavior. Engine GDJS viết bằng TypeScript, render bằng PixiJS và Three.js (WebGL); editor newIDE dùng React và Electron, Core gắn sang JavaScript qua WebAssembly; vật lý Box2D và Jolt Physics chạy WebAssembly trong Extensions. Điều kiện: Không được dùng tên/logo GDevelop (tài sản riêng của Florian Rival); dịch vụ online và hỗ trợ thương mại có trả phí. ★ 18/11/2026: 29.018 (GitHub search API), nhóm "Ứng dụng đa nền tảng & Game" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
 
 **Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c528-ứng-dụng-đa-nền-tảng--game) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-after-effects-mcp"></a>
+
+### after-effects-mcp
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Dakkshin/after-effects-mcp |
+| License | MIT |
+| Phiên bản đã đọc | `88d5fbf08b7ae9f015ee98e5f8c4904095cf8202` (commit 2026-04-01) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-04-01 (khoảng 8 tháng trước); không có workflow CI |
+| Nhận định | MCP server điều khiển After Effects qua cầu ExtendScript, gồm tạo composition, text/shape/solid/camera layer, mask, blend mode. Cần cài bridge vào AE và có `postinstall` chạy build nên chỉ cài khi đã đọc mã; hoạt động thưa từ tháng 4/2026. |
+| Nguồn | [README.md](https://github.com/Dakkshin/after-effects-mcp/blob/88d5fbf08b7ae9f015ee98e5f8c4904095cf8202/README.md) · [LICENSE](https://github.com/Dakkshin/after-effects-mcp/blob/88d5fbf08b7ae9f015ee98e5f8c4904095cf8202/LICENSE) · [package.json](https://github.com/Dakkshin/after-effects-mcp/blob/88d5fbf08b7ae9f015ee98e5f8c4904095cf8202/package.json) |
+
+<a id="ch-animate"></a>
+
+### animate
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/cth9191/animate |
+| License | MIT |
+| Phiên bản đã đọc | `7e5eb56feb2dd573f890e1b7b34748af43d58263` (commit 2026-10-05) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-10-05 (khoảng 7 tuần trước); không có workflow CI |
+| Nhận định | Skill làm video hoạt hình thủ tục trong một canvas, tất định theo từng khung, có quy trình duyệt ba bước trước khi dựng và kiểm đo (cắt đúng beat, độ lớn âm). Cần Node 18+, Playwright/Chromium, ffmpeg; giọng đọc dùng connector ElevenLabs và faster-whisper cục bộ **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/cth9191/animate/blob/7e5eb56feb2dd573f890e1b7b34748af43d58263/README.md) · [LICENSE](https://github.com/cth9191/animate/blob/7e5eb56feb2dd573f890e1b7b34748af43d58263/LICENSE) |
+
+<a id="ch-anime-js"></a>
+
+### anime.js
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/juliangarnier/anime |
+| License | MIT |
+| Phiên bản đã đọc | `01b81be1df6843ccfe0a71c0699a746bf740dd77` (commit 2026-08-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-08-09 (khoảng 3,5 tháng trước); không có workflow (.github chỉ có FUNDING và ISSUE_TEMPLATE) |
+| Nhận định | Engine animation JS nhẹ làm việc với CSS, SVG, thuộc tính DOM và object JS; V4 là ESM, có build ESM/UMD/CJS và test trình duyệt/Node. Phù hợp làm nền cho motion web; repo dự án cá nhân có tài trợ nên nhịp commit không đều. |
+| Nguồn | [README.md](https://github.com/juliangarnier/anime/blob/01b81be1df6843ccfe0a71c0699a746bf740dd77/README.md) · [LICENSE.md](https://github.com/juliangarnier/anime/blob/01b81be1df6843ccfe0a71c0699a746bf740dd77/LICENSE.md) · [package.json](https://github.com/juliangarnier/anime/blob/01b81be1df6843ccfe0a71c0699a746bf740dd77/package.json) |
+
+<a id="ch-anthropics-skills"></a>
+
+### anthropics/skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anthropics/skills |
+| License | Apache-2.0 theo từng skill (LICENSE.txt trong thư mục skill); không có LICENSE ở gốc; doc-coauthoring không có file license (khác catalog cũ: Apache-2.0 (một phần source-available)) |
+| Phiên bản đã đọc | `e4bb5d960d87126ff3b3a8af1a104b7db67560ba` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, THIRD_PARTY_NOTICES.md, skills/docx/LICENSE.txt, skills/xlsx/LICENSE.txt, skills/docx/SKILL.md; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-16 |
+| Nhận định | Repo skill chính thức của Anthropic: mỗi skill một thư mục có SKILL.md, đa số kèm LICENSE.txt Apache-2.0; có thêm `spec` và `template`. README nhấn mạnh chỉ để minh họa/giáo dục, hành vi trong Claude có thể khác. Danh sách skill hiện gồm cả academy-guide, discernment-nudge ngoài các skill cũ. |
+| Nguồn | [README.md](https://github.com/anthropics/skills/blob/e4bb5d960d87126ff3b3a8af1a104b7db67560ba/README.md) · [THIRD_PARTY_NOTICES.md](https://github.com/anthropics/skills/blob/e4bb5d960d87126ff3b3a8af1a104b7db67560ba/THIRD_PARTY_NOTICES.md) · [LICENSE.txt](https://github.com/anthropics/skills/blob/e4bb5d960d87126ff3b3a8af1a104b7db67560ba/skills/docx/LICENSE.txt) · [LICENSE.txt](https://github.com/anthropics/skills/blob/e4bb5d960d87126ff3b3a8af1a104b7db67560ba/skills/xlsx/LICENSE.txt) · [SKILL.md](https://github.com/anthropics/skills/blob/e4bb5d960d87126ff3b3a8af1a104b7db67560ba/skills/docx/SKILL.md) |
+
+<a id="ch-apple-hig-motion"></a>
+
+### Apple HIG: Motion
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://developer.apple.com/design/human-interface-guidelines/motion |
+| License | Apple (tài liệu độc quyền) |
+| Phiên bản đã đọc | Không áp dụng (trang web, đọc 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang chính thức; chưa chạy upstream |
+| Bảo trì | Trang HIG chính thức, bản Markdown đọc được; không có ngày cập nhật trong nội dung |
+| Nhận định | Nguyên lý motion của Apple: có chủ đích, tùy chọn, hủy được, tránh motion ở tương tác thường xuyên; phần visionOS dặn tránh chuyển động ở rìa thị giác và dao động ~0,2 Hz. Tài liệu độc quyền của Apple, chỉ tham khảo, không sao chép. |
+| Nguồn | [https://developer.apple.com/design/human-interface-guidelines/motion](https://developer.apple.com/design/human-interface-guidelines/motion) · [https://developer.apple.com/design/human-interface-guidelines/motion.md](https://developer.apple.com/design/human-interface-guidelines/motion.md) |
+
+<a id="ch-awesome-opus5-5-videos"></a>
+
+### awesome-opus5-5-videos
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/yihui-dev/awesome-opus5-5-videos |
+| License | MIT |
+| Phiên bản đã đọc | `92aee2f586ac0715cb3cbcb6384834f98a33383d` (commit 2026-10-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-10-13, trùng HEAD 92aee2f catalog đã ghi (không có commit mới sau đó); không có workflow CI |
+| Nhận định | Awesome-list và dataset prompt cho video "viết bằng mã" (HTML/Canvas/SVG/Three.js) do Opus 5.5 sinh, mỗi mục link bài gốc của tác giả. Giá trị chính là kho prompt tham khảo; README là kênh dẫn về skillry.dev, và tác quyền video/prompt thuộc từng tác giả (không phủ bởi MIT của repo). |
+| Nguồn | [README.md](https://github.com/yihui-dev/awesome-opus5-5-videos/blob/92aee2f586ac0715cb3cbcb6384834f98a33383d/README.md) · [LICENSE](https://github.com/yihui-dev/awesome-opus5-5-videos/blob/92aee2f586ac0715cb3cbcb6384834f98a33383d/LICENSE) |
+
+<a id="ch-barty-bart-motion-graphics"></a>
+
+### Barty-Bart/motion-graphics
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Barty-Bart/motion-graphics |
+| License | MIT (font Geist: SIL OFL; icon Lucide: ISC; SFX: CC0 1.0) |
+| Phiên bản đã đọc | `3d83d987d658601d8a1269eb691622bdcd427335` (commit 2026-10-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-10-13 (khoảng 6 tuần trước); không có workflow CI |
+| Nhận định | Bộ skill dựng video cho Claude Code, mỗi skill một việc (B-roll motion theo transcript, tách đối tượng cục bộ, ba kiểu explainer, hiệu ứng âm thanh đo theo beat). Cài bằng `npx skills add` hoặc chép thư mục; README có quảng bá khóa học trả phí của tác giả. |
+| Nguồn | [README.md](https://github.com/Barty-Bart/motion-graphics/blob/3d83d987d658601d8a1269eb691622bdcd427335/README.md) · [LICENSE](https://github.com/Barty-Bart/motion-graphics/blob/3d83d987d658601d8a1269eb691622bdcd427335/LICENSE) |
+
+<a id="ch-brag"></a>
+
+### /brag
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/latent-spaces/brag |
+| License | MIT |
+| Phiên bản đã đọc | `06379432a9243c951dfcc051153be18d2d261044` (commit 2026-11-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-15; có CI (đã mở ci.yml) |
+| Nhận định | Skill/plugin biến dự án thành video giới thiệu khoảng 20 giây (nhạc, motion, nội dung chia sẻ), bản đầy đủ dùng HyperFrames, bản slim không dùng. Có dịch vụ trả phí liên quan là letsbrag.app nhưng README nói skill vẫn miễn phí mã mở. |
+| Nguồn | [README.md](https://github.com/latent-spaces/brag/blob/06379432a9243c951dfcc051153be18d2d261044/README.md) · [LICENSE](https://github.com/latent-spaces/brag/blob/06379432a9243c951dfcc051153be18d2d261044/LICENSE) · [ci.yml](https://github.com/latent-spaces/brag/blob/06379432a9243c951dfcc051153be18d2d261044/.github/workflows/ci.yml) |
+
+<a id="ch-claude-motion"></a>
+
+### claude-motion
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/whaleyxbt/claude-motion |
+| License | MIT |
+| Phiên bản đã đọc | `6f80380b91858dad66524a5b34e027dad656d538` (commit 2026-11-08) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-08; không có workflow CI |
+| Nhận định | Toolkit Remotion + web sims: quy tắc motion có số, vòng review khung hình, sound engine tự sinh, timeline JSON chung cho cảnh/âm thanh/kiểm tra. Hoạt động với Claude Code, Cursor và agent đọc AGENTS.md; cần Playwright/Chromium và ffmpeg. |
+| Nguồn | [README.md](https://github.com/whaleyxbt/claude-motion/blob/6f80380b91858dad66524a5b34e027dad656d538/README.md) · [LICENSE](https://github.com/whaleyxbt/claude-motion/blob/6f80380b91858dad66524a5b34e027dad656d538/LICENSE) · [package.json](https://github.com/whaleyxbt/claude-motion/blob/6f80380b91858dad66524a5b34e027dad656d538/package.json) |
+
+<a id="ch-claude-motion-design"></a>
+
+### claude-motion-design
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/howseen-ai/claude-motion-design |
+| License | MIT (khác catalog cũ: None) |
+| Phiên bản đã đọc | `3d90d349ef3fdde9b7e89de4df4a2159c9e8697f` (commit 2026-10-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-10-02 (khoảng 7 tuần trước); không có workflow CI |
+| Nhận định | Skill Claude Code làm video motion bằng mã thuần: mỗi khung tính từ thời gian, render từng khung, nhạc/SFX căn theo peak đo được, kèm ví dụ đầy đủ. Ví dụ tải nhạc/font/logo từ ngoài (không phân phối lại) nên cần kiểm license từng asset trước khi tái dùng. |
+| Nguồn | [README.md](https://github.com/howseen-ai/claude-motion-design/blob/3d90d349ef3fdde9b7e89de4df4a2159c9e8697f/README.md) · [LICENSE](https://github.com/howseen-ai/claude-motion-design/blob/3d90d349ef3fdde9b7e89de4df4a2159c9e8697f/LICENSE) |
+
+<a id="ch-claude-remotion-skill"></a>
+
+### claude-remotion-skill
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/haidrrrry/claude-remotion-skill |
+| License | MIT |
+| Phiên bản đã đọc | `1dcbe5e3fc6cf970bd10d3cc05f0a8a5d19d0383` (commit 2026-08-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-08-12 (khoảng 3,5 tháng trước); không có workflow CI |
+| Nhận định | Skill Remotion với bộ quy tắc motion cứng (spring, bezier, stagger, grain, Ken Burns) và bước kiểm khung hình bắt buộc. Nội dung quảng bá nhiều; giá trị thực nằm ở các rule trong thư mục skill, chưa đọc kỹ. |
+| Nguồn | [README.md](https://github.com/haidrrrry/claude-remotion-skill/blob/1dcbe5e3fc6cf970bd10d3cc05f0a8a5d19d0383/README.md) · [LICENSE](https://github.com/haidrrrry/claude-remotion-skill/blob/1dcbe5e3fc6cf970bd10d3cc05f0a8a5d19d0383/LICENSE) |
+
+<a id="ch-effectcraft"></a>
+
+### EffectCraft
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/storytold/effectcraft |
+| License | MIT OR Apache-2.0 |
+| Phiên bản đã đọc | `47391863accb86a7556bac0b61b70711bda3209c` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE-MIT, LICENSE-APACHE, Cargo.toml, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-23; CI qua workflow dùng chung craft-common-actions (đã mở ci.yml), liệt kê thêm 8 workflow khác |
+| Nhận định | Compositor kiểu After Effects viết bằng Rust, chạy native và trình duyệt, điều khiển được qua CLI/kênh JSON/MCP **(chưa xác minh: chưa đọc mã)**. README tự nhận còn non trẻ, thay đổi nhanh; cần cargo toolchain lớn để chạy, không nên build thử khi chưa rà. |
+| Nguồn | [README.md](https://github.com/storytold/effectcraft/blob/47391863accb86a7556bac0b61b70711bda3209c/README.md) · [LICENSE-MIT](https://github.com/storytold/effectcraft/blob/47391863accb86a7556bac0b61b70711bda3209c/LICENSE-MIT) · [LICENSE-APACHE](https://github.com/storytold/effectcraft/blob/47391863accb86a7556bac0b61b70711bda3209c/LICENSE-APACHE) · [Cargo.toml](https://github.com/storytold/effectcraft/blob/47391863accb86a7556bac0b61b70711bda3209c/Cargo.toml) · [ci.yml](https://github.com/storytold/effectcraft/blob/47391863accb86a7556bac0b61b70711bda3209c/.github/workflows/ci.yml) |
+
+<a id="ch-elevenlabs-skills"></a>
+
+### ElevenLabs skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/elevenlabs/skills |
+| License | MIT |
+| Phiên bản đã đọc | `97478d1b23b9a6795f85bf8b6e33a4677fa1f869` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-18; không có thư mục .github nên không CI |
+| Nhận định | Bộ agent skill chính thức cho API ElevenLabs (giọng, nhạc, SFX, dubbing, agent thoại), cài bằng `npx skills add elevenlabs/skills`. Mọi skill cần khóa API trả phí; skill onboarding ghi khóa vào file env của dự án nên cần soát trước khi cho chạy. |
+| Nguồn | [README.md](https://github.com/elevenlabs/skills/blob/97478d1b23b9a6795f85bf8b6e33a4677fa1f869/README.md) · [LICENSE](https://github.com/elevenlabs/skills/blob/97478d1b23b9a6795f85bf8b6e33a4677fa1f869/LICENSE) |
+
+<a id="ch-html-video"></a>
+
+### html-video
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/nexu-io/html-video |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ae9a8cd3a7ec07daaf36d91e5f8ae020f971b631` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-17 (merge PR #96); không có thư mục .github nên không CI |
+| Nhận định | Meta-layer HTML sang MP4: chọn template, agent điền nội dung, render qua Chromium headless + ffmpeg, adapter cho 14 agent. Mới có engine Hyperframes; các engine khác chỉ là kế hoạch. Chưa đọc mã adapter nên chuyện ưu tiên runtime AMR trả phí trong catalog cũ chưa kiểm lại. |
+| Nguồn | [README.md](https://github.com/nexu-io/html-video/blob/ae9a8cd3a7ec07daaf36d91e5f8ae020f971b631/README.md) · [LICENSE](https://github.com/nexu-io/html-video/blob/ae9a8cd3a7ec07daaf36d91e5f8ae020f971b631/LICENSE) · [package.json](https://github.com/nexu-io/html-video/blob/ae9a8cd3a7ec07daaf36d91e5f8ae020f971b631/package.json) |
+
+<a id="ch-hyperframes-student-kit"></a>
+
+### hyperframes-student-kit
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/nateherkai/herk-edit-kit |
+| License | MIT (khác catalog cũ: None) |
+| Phiên bản đã đọc | `10511e5af86fc47756ea89803b397422e2d89284` (commit 2026-10-14) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/check.yml; chưa chạy upstream |
+| Bảo trì | Commit 2026-10-14; CI chạy check, test, demo, lint trên 3 hệ điều hành (đã mở check.yml) |
+| Nhận định | Bộ 15 skill dựng video cho Codex/Claude Code trên HyperFrames: cắt khoảng lặng/lỗi theo transcript, 406 card motion nháp, hai template cảnh. Repo đã đổi tên thành nateherkai/herk-edit-kit, nên hồ sơ này nên gộp/trỏ sang id mới. |
+| Nguồn | [README.md](https://github.com/nateherkai/herk-edit-kit/blob/10511e5af86fc47756ea89803b397422e2d89284/README.md) · [LICENSE](https://github.com/nateherkai/herk-edit-kit/blob/10511e5af86fc47756ea89803b397422e2d89284/LICENSE) · [package.json](https://github.com/nateherkai/herk-edit-kit/blob/10511e5af86fc47756ea89803b397422e2d89284/package.json) · [check.yml](https://github.com/nateherkai/herk-edit-kit/blob/10511e5af86fc47756ea89803b397422e2d89284/.github/workflows/check.yml) |
+
+<a id="ch-img2threejs"></a>
+
+### img2threejs
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/img2threejs/img2threejs |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `0c0c49bc168e648dbaf9c8c080474de0b3a941b6` (commit 2026-11-05) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-05; có CI (đã mở ci.yml: unittest Python 3.10 + CLI Node 18/22), liệt kê thêm 7 workflow khác |
+| Nhận định | Skill dựng lại vật thể trong ảnh tham chiếu thành mô hình Three.js thủ tục (không mesh/ảnh tải về), có cổng chất lượng và token tiết kiệm **(chưa xác minh: số test, cổng tất định chỉ là tuyên bố README, chưa đọc mã forge/)**. CI dùng workflow tái dùng ghim SHA từ repo ci-workflows. |
+| Nguồn | [README.md](https://github.com/img2threejs/img2threejs/blob/0c0c49bc168e648dbaf9c8c080474de0b3a941b6/README.md) · [LICENSE](https://github.com/img2threejs/img2threejs/blob/0c0c49bc168e648dbaf9c8c080474de0b3a941b6/LICENSE) · [ci.yml](https://github.com/img2threejs/img2threejs/blob/0c0c49bc168e648dbaf9c8c080474de0b3a941b6/.github/workflows/ci.yml) |
+
+<a id="ch-lottie-specification"></a>
+
+### Lottie Specification
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/lottie/lottie-spec |
+| License | Community Specification License 1.0 (spec); mã ví dụ MIT |
+| Phiên bản đã đọc | `4b55957472f8718e34e9c1298f0e8f021b6c597f` (commit 2026-05-29) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, License.md; chưa chạy upstream |
+| Bảo trì | Commit 2026-05-29 (khoảng 6 tháng trước); liệt kê 6 workflow (lint, pages, release, test schema/animation), chưa mở nội dung |
+| Nhận định | Repo đặc tả định dạng Lottie (JSON Schema, tài liệu mkdocs, bộ test valid/invalid) do Lottie Animation Community phát triển. Dùng làm chuẩn tham chiếu khi sinh/kiểm Lottie; mốc phiên bản 1.0/1.1 chưa đọc lại trong docs nên chỉ giữ theo catalog cũ. |
+| Nguồn | [README.md](https://github.com/lottie/lottie-spec/blob/4b55957472f8718e34e9c1298f0e8f021b6c597f/README.md) · [License.md](https://github.com/lottie/lottie-spec/blob/4b55957472f8718e34e9c1298f0e8f021b6c597f/License.md) |
+
+<a id="ch-lottie-web"></a>
+
+### lottie-web
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/airbnb/lottie-web |
+| License | MIT |
+| Phiên bản đã đọc | `bede03d25d232826e0c9dca1733d542d8a7754fb` (commit 2024-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2024-11-19 (khoảng 2 năm trước), chỉ có workflow testAnimations.yml, chưa mở nội dung |
+| Nhận định | Thư viện web render animation After Effects xuất JSON (Bodymovin) bằng SVG/canvas/HTML. Phổ biến nhưng nhịp bảo trì rất thưa (nhánh mặc định đã đứng khoảng hai năm), cần cân nhắc khi chọn runtime Lottie mới. |
+| Nguồn | [README.md](https://github.com/airbnb/lottie-web/blob/bede03d25d232826e0c9dca1733d542d8a7754fb/README.md) · [LICENSE.md](https://github.com/airbnb/lottie-web/blob/bede03d25d232826e0c9dca1733d542d8a7754fb/LICENSE.md) |
+
+<a id="ch-magic-mcp-21st-dev"></a>
+
+### Magic MCP (21st.dev)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/21st-dev/magic-mcp |
+| License | ISC |
+| Phiên bản đã đọc | `6b5299e8a83ceffa73d4fc4e148905bb3eeeeb55` (commit 2026-09-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/npm-publish.yml; chưa chạy upstream |
+| Bảo trì | Commit 2026-09-09; README tự nói Magic MCP đã thay bằng 21st MCP, gói chỉ còn là proxy tương thích (đã mở npm-publish.yml) |
+| Nhận định | Không còn là MCP độc lập: chỉ là proxy tương thích chuyển mọi thông điệp sang dịch vụ 21st MCP cần khóa API riêng; cài mới nên dùng 21st CLI. Phụ thuộc dịch vụ ngoài và khóa mới nên khó dùng offline. |
+| Nguồn | [README.md](https://github.com/21st-dev/magic-mcp/blob/6b5299e8a83ceffa73d4fc4e148905bb3eeeeb55/README.md) · [LICENSE](https://github.com/21st-dev/magic-mcp/blob/6b5299e8a83ceffa73d4fc4e148905bb3eeeeb55/LICENSE) · [package.json](https://github.com/21st-dev/magic-mcp/blob/6b5299e8a83ceffa73d4fc4e148905bb3eeeeb55/package.json) · [npm-publish.yml](https://github.com/21st-dev/magic-mcp/blob/6b5299e8a83ceffa73d4fc4e148905bb3eeeeb55/.github/workflows/npm-publish.yml) |
+
+<a id="ch-magic-ui"></a>
+
+### Magic UI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/magicuidesign/magicui |
+| License | MIT |
+| Phiên bản đã đọc | `b0b2e4974b1b68cd5278277c6837a27736e20c3a` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-17) |
+| Nhận định | Thư viện component animated copy-paste cho React/Tailwind (shadcn registry); README chỉ trỏ sang tài liệu magicui.design, nên chi tiết từng component (chưa xác minh) nằm ngoài repo. |
+| Nguồn | [README.md](https://github.com/magicuidesign/magicui/blob/b0b2e4974b1b68cd5278277c6837a27736e20c3a/README.md) · [LICENSE.md](https://github.com/magicuidesign/magicui/blob/b0b2e4974b1b68cd5278277c6837a27736e20c3a/LICENSE.md) · [package.json](https://github.com/magicuidesign/magicui/blob/b0b2e4974b1b68cd5278277c6837a27736e20c3a/package.json) |
+
+<a id="ch-manim-community"></a>
+
+### Manim (Community)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ManimCommunity/manim |
+| License | MIT |
+| Phiên bản đã đọc | `9df3795a4fe365970bebc1a1399fb1bc99a8d52b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, LICENSE.community, pyproject.toml; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Engine animation toán học bản cộng đồng, fork từ 3b1b/manim; pyproject v0.22.1, Python >=3.11, hai file MIT (3Blue1Brown 2018 và Manim Community 2024). |
+| Nguồn | [README.md](https://github.com/ManimCommunity/manim/blob/9df3795a4fe365970bebc1a1399fb1bc99a8d52b/README.md) · [LICENSE](https://github.com/ManimCommunity/manim/blob/9df3795a4fe365970bebc1a1399fb1bc99a8d52b/LICENSE) · [LICENSE.community](https://github.com/ManimCommunity/manim/blob/9df3795a4fe365970bebc1a1399fb1bc99a8d52b/LICENSE.community) · [pyproject.toml](https://github.com/ManimCommunity/manim/blob/9df3795a4fe365970bebc1a1399fb1bc99a8d52b/pyproject.toml) |
+
+<a id="ch-manim-skill"></a>
+
+### manim_skill
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/adithya-s-k/manim_skill |
+| License | MIT |
+| Phiên bản đã đọc | `cef045011722d285692e3381d12d4d637da56e18` (commit 2026-01-24) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | low-activity (commit cuối 2026-01-24) |
+| Nhận định | Bộ skill agent gồm manim-composer, manimce-best-practices, manimgl-best-practices; cài bằng `npx skills add`; không có CI. |
+| Nguồn | [README.md](https://github.com/adithya-s-k/manim_skill/blob/cef045011722d285692e3381d12d4d637da56e18/README.md) · [LICENSE](https://github.com/adithya-s-k/manim_skill/blob/cef045011722d285692e3381d12d4d637da56e18/LICENSE) |
+
+<a id="ch-manim-web"></a>
+
+### manim-web
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/maloyan/manim-web |
+| License | MIT |
+| Phiên bản đã đọc | `b3cfee2bbd42b955a3cc8aeb54921f1a9c4693ab` (commit 2026-11-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-15) |
+| Nhận định | Port TypeScript của Manim chạy phía client trong trình duyệt, thêm module phân tử/hóa/sinh/bản đồ; npm v0.42.0, có CI. |
+| Nguồn | [README.md](https://github.com/maloyan/manim-web/blob/b3cfee2bbd42b955a3cc8aeb54921f1a9c4693ab/README.md) · [LICENSE](https://github.com/maloyan/manim-web/blob/b3cfee2bbd42b955a3cc8aeb54921f1a9c4693ab/LICENSE) · [package.json](https://github.com/maloyan/manim-web/blob/b3cfee2bbd42b955a3cc8aeb54921f1a9c4693ab/package.json) |
+
+<a id="ch-manimgl"></a>
+
+### ManimGL
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/3b1b/manim |
+| License | MIT |
+| Phiên bản đã đọc | `fafa083a4fb274bba9cabde0b6e2f50ba6da0622` (commit 2026-09-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, setup.cfg; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-09-09) |
+| Nhận định | Bản Manim gốc của 3Blue1Brown, gói PyPI `manimgl` v1.7.2 (OpenGL), Python >=3.10; commit cuối 2026-09-09. Số commit có trailer Claude trong ghi chú cũ không kiểm được với clone nông. |
+| Nguồn | [README.md](https://github.com/3b1b/manim/blob/fafa083a4fb274bba9cabde0b6e2f50ba6da0622/README.md) · [LICENSE.md](https://github.com/3b1b/manim/blob/fafa083a4fb274bba9cabde0b6e2f50ba6da0622/LICENSE.md) · [setup.cfg](https://github.com/3b1b/manim/blob/fafa083a4fb274bba9cabde0b6e2f50ba6da0622/setup.cfg) |
+
+<a id="ch-manimgx"></a>
+
+### ManimGX
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/academa-labs/manimgx |
+| License | MIT (mã nguồn); wheel gộp thành phần bên thứ ba, bản native wheel GPL-3.0-or-later tổng thể do x264 |
+| Phiên bản đã đọc | `1fb4dd7327bf5ed7d0c40d022c05cb816455ae1d` (commit 2026-10-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, LICENSE-THIRD-PARTY, pyproject.toml; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-10-23) |
+| Nhận định | API tương thích Manim CE trên lõi Rust/wgpu, chạy cả trình duyệt; v0.1.1, Python >=3.13. Biểu thức license trong pyproject rất dài (MIT, GPL, LGPL, Apache, MPL...). |
+| Nguồn | [README.md](https://github.com/academa-labs/manimgx/blob/1fb4dd7327bf5ed7d0c40d022c05cb816455ae1d/README.md) · [LICENSE](https://github.com/academa-labs/manimgx/blob/1fb4dd7327bf5ed7d0c40d022c05cb816455ae1d/LICENSE) · [LICENSE-THIRD-PARTY](https://github.com/academa-labs/manimgx/blob/1fb4dd7327bf5ed7d0c40d022c05cb816455ae1d/LICENSE-THIRD-PARTY) · [pyproject.toml](https://github.com/academa-labs/manimgx/blob/1fb4dd7327bf5ed7d0c40d022c05cb816455ae1d/pyproject.toml) |
+
+<a id="ch-math-to-manim"></a>
+
+### Math-To-Manim
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/HarleyCoops/Math-To-Manim |
+| License | MIT |
+| Phiên bản đã đọc | `0457f8c0f2e060aca6c8a15f3742f479495bed03` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-22) |
+| Nhận định | Chuyển văn bản/ảnh thành scene Manim bằng LLM; pyproject v2.0.0; README đang nổi bật một phim showcase kèm bài báo và file Lean (kết quả toán thuộc Lee Crossley, README nói rõ không phải chứng minh RH). |
+| Nguồn | [README.md](https://github.com/HarleyCoops/Math-To-Manim/blob/0457f8c0f2e060aca6c8a15f3742f479495bed03/README.md) · [LICENSE](https://github.com/HarleyCoops/Math-To-Manim/blob/0457f8c0f2e060aca6c8a15f3742f479495bed03/LICENSE) · [pyproject.toml](https://github.com/HarleyCoops/Math-To-Manim/blob/0457f8c0f2e060aca6c8a15f3742f479495bed03/pyproject.toml) |
+
+<a id="ch-motion-canvas"></a>
+
+### Motion Canvas
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/motion-canvas/motion-canvas |
+| License | MIT |
+| Phiên bản đã đọc | `7b91435c301d530351dcf5ebb91dd139c002e405` (commit 2026-07-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, lerna.json; chưa chạy upstream |
+| Bảo trì | low-activity (commit cuối 2026-07-02) |
+| Nhận định | Thư viện TypeScript dùng generator để lập trình animation vector kèm editor xem trước live, đồng bộ voice-over; lerna v3.17.2. |
+| Nguồn | [README.md](https://github.com/motion-canvas/motion-canvas/blob/7b91435c301d530351dcf5ebb91dd139c002e405/README.md) · [LICENSE](https://github.com/motion-canvas/motion-canvas/blob/7b91435c301d530351dcf5ebb91dd139c002e405/LICENSE) · [lerna.json](https://github.com/motion-canvas/motion-canvas/blob/7b91435c301d530351dcf5ebb91dd139c002e405/lerna.json) |
+
+<a id="ch-motion-dev-animations-skill"></a>
+
+### motion-dev-animations-skill
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/199-biotechnologies/motion-dev-animations-skill |
+| License | MIT |
+| Phiên bản đã đọc | `3feedfb4dba8adae40fc9a5f9a23e3dda2121205` (commit 2026-03-30) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | low-activity (commit cuối 2026-03-30) |
+| Nhận định | Skill Claude Code tạo animation Motion.dev; badge README ghi Motion.dev v11 và SKILL.md đề ngày 2025-11, tức nhắm bản cũ; không CI. |
+| Nguồn | [README.md](https://github.com/199-biotechnologies/motion-dev-animations-skill/blob/3feedfb4dba8adae40fc9a5f9a23e3dda2121205/README.md) · [LICENSE](https://github.com/199-biotechnologies/motion-dev-animations-skill/blob/3feedfb4dba8adae40fc9a5f9a23e3dda2121205/LICENSE) |
+
+<a id="ch-motion-ex-framer-motion"></a>
+
+### Motion (ex Framer Motion)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/motiondivision/motion |
+| License | MIT |
+| Phiên bản đã đọc | `133051adce0f0b0bfb661f9f517dc2250ba3a288` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, lerna.json; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Thư viện animation JS/React/Vue (Motion, trước là Framer Motion); lerna v14.14.0 (ghi chú cũ nêu v14.1.0, đã lỗi thời); README nêu `npx motion-ai` và MCP server mcp.motion.dev, Motion+ trả phí. |
+| Nguồn | [README.md](https://github.com/motiondivision/motion/blob/133051adce0f0b0bfb661f9f517dc2250ba3a288/README.md) · [LICENSE.md](https://github.com/motiondivision/motion/blob/133051adce0f0b0bfb661f9f517dc2250ba3a288/LICENSE.md) · [lerna.json](https://github.com/motiondivision/motion/blob/133051adce0f0b0bfb661f9f517dc2250ba3a288/lerna.json) |
+
+<a id="ch-motion-graphics-skills"></a>
+
+### motion-graphics-skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/charlie947/motion-graphics-skills |
+| License | MIT |
+| Phiên bản đã đọc | `229022ebca76972e119e36ada23a1648d51665ab` (commit 2026-10-11) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-10-11) |
+| Nhận định | Gói 15 skill motion graphics cho Claude Code (animated-chart, apple-launch-film, reel-export...), không có CI. |
+| Nguồn | [README.md](https://github.com/charlie947/motion-graphics-skills/blob/229022ebca76972e119e36ada23a1648d51665ab/README.md) · [LICENSE](https://github.com/charlie947/motion-graphics-skills/blob/229022ebca76972e119e36ada23a1648d51665ab/LICENSE) |
+
+<a id="ch-motion-primitives"></a>
+
+### Motion Primitives
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ibelick/motion-primitives |
+| License | MIT |
+| Phiên bản đã đọc | `120f64f6ca60348e251f929e9c81f11ccbe45eda` (commit 2026-09-28) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENCE.md, package.json; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-09-28) |
+| Nhận định | Bộ component animation xây trên Motion và Tailwind; README tự nhận beta; package.json phụ thuộc motion ^11.12.0 (cũ hơn Motion hiện hành). |
+| Nguồn | [README.md](https://github.com/ibelick/motion-primitives/blob/120f64f6ca60348e251f929e9c81f11ccbe45eda/README.md) · [LICENCE.md](https://github.com/ibelick/motion-primitives/blob/120f64f6ca60348e251f929e9c81f11ccbe45eda/LICENCE.md) · [package.json](https://github.com/ibelick/motion-primitives/blob/120f64f6ca60348e251f929e9c81f11ccbe45eda/package.json) |
+
+<a id="ch-motionmaxxing"></a>
+
+### motionmaxxing
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Tejashmakwana/motionmaxxing |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `8c8ec0f2a6f6c9a0da15cd24f7b1298ab298368c` (commit 2026-10-06) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, NOTICE; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-10-06) |
+| Nhận định | Skill director/critic cho motion graphics; library/moments.jsonl có 717 dòng (ghi chú cũ 716, gần khớp); repo clone nông chỉ thấy 1 commit. |
+| Nguồn | [README.md](https://github.com/Tejashmakwana/motionmaxxing/blob/8c8ec0f2a6f6c9a0da15cd24f7b1298ab298368c/README.md) · [LICENSE](https://github.com/Tejashmakwana/motionmaxxing/blob/8c8ec0f2a6f6c9a0da15cd24f7b1298ab298368c/LICENSE) · [NOTICE](https://github.com/Tejashmakwana/motionmaxxing/blob/8c8ec0f2a6f6c9a0da15cd24f7b1298ab298368c/NOTICE) |
+
+<a id="ch-openfilm"></a>
+
+### OpenFilm
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/openfilm/openfilm |
+| License | MIT |
+| Phiên bản đã đọc | `327ef4c86ceab07122a145c0d6d984045af7c295` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Agent video mã nguồn mở; SECURITY.md xác nhận Studio chỉ lắng nghe 127.0.0.1 và dùng key sinh lúc khởi động; có nhiều README bản dịch và 5 workflow (agents, ci, desktop, release, test-os). |
+| Nguồn | [README.md](https://github.com/openfilm/openfilm/blob/327ef4c86ceab07122a145c0d6d984045af7c295/README.md) · [LICENSE](https://github.com/openfilm/openfilm/blob/327ef4c86ceab07122a145c0d6d984045af7c295/LICENSE) · [package.json](https://github.com/openfilm/openfilm/blob/327ef4c86ceab07122a145c0d6d984045af7c295/package.json) |
+
+<a id="ch-product-launch-motion"></a>
+
+### product-launch-motion
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/AbubakrChan/product-launch-motion |
+| License | MIT |
+| Phiên bản đã đọc | `edbfb105382f21507bad895d8b5f6e0faa67487c` (commit 2026-10-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, NOTICE; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-10-21) |
+| Nhận định | Một skill tạo video launch từ URL (HyperFrames/Remotion theo ghi chú cũ); NOTICE nói MIT chỉ phủ mã/tài liệu tác giả, không phủ phim mẫu của Cheerful và logo thương hiệu; README có quảng cáo dịch vụ launchvideos.app. |
+| Nguồn | [README.md](https://github.com/AbubakrChan/product-launch-motion/blob/edbfb105382f21507bad895d8b5f6e0faa67487c/README.md) · [LICENSE](https://github.com/AbubakrChan/product-launch-motion/blob/edbfb105382f21507bad895d8b5f6e0faa67487c/LICENSE) · [NOTICE](https://github.com/AbubakrChan/product-launch-motion/blob/edbfb105382f21507bad895d8b5f6e0faa67487c/NOTICE) |
+
+<a id="ch-ranim"></a>
+
+### ranim
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/AzurIce/ranim |
+| License | MIT |
+| Phiên bản đã đọc | `8d5d54981bf148377b2c3334b1889cce2caa4d50` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Cargo.toml; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-17) |
+| Nhận định | Engine animation Rust/wgpu với API Rust; workspace v0.2.1 (Cargo.toml). |
+| Nguồn | [README.md](https://github.com/AzurIce/ranim/blob/8d5d54981bf148377b2c3334b1889cce2caa4d50/README.md) · [LICENSE](https://github.com/AzurIce/ranim/blob/8d5d54981bf148377b2c3334b1889cce2caa4d50/LICENSE) · [Cargo.toml](https://github.com/AzurIce/ranim/blob/8d5d54981bf148377b2c3334b1889cce2caa4d50/Cargo.toml) |
+
+<a id="ch-react-bits"></a>
+
+### React Bits
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/DavidHDev/react-bits |
+| License | MIT + Commons Clause |
+| Phiên bản đã đọc | `424f86f38cc9581653c6d3c4e241a5fff2b91b16` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | 215+ component React có animation; LICENSE.md mở rộng Commons Clause cho cả công cụ (Background Studio, Texture Lab...) và thư viện âm thanh: dùng thương mại trong sản phẩm được, cấm bán/chia sẻ lại component, kể cả bản port. |
+| Nguồn | [README.md](https://github.com/DavidHDev/react-bits/blob/424f86f38cc9581653c6d3c4e241a5fff2b91b16/README.md) · [LICENSE.md](https://github.com/DavidHDev/react-bits/blob/424f86f38cc9581653c6d3c4e241a5fff2b91b16/LICENSE.md) · [package.json](https://github.com/DavidHDev/react-bits/blob/424f86f38cc9581653c6d3c4e241a5fff2b91b16/package.json) |
+
+<a id="ch-react-three-fiber"></a>
+
+### react-three-fiber
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/pmndrs/react-three-fiber |
+| License | MIT |
+| Phiên bản đã đọc | `d74622ea8ed717f7212d7e19d65ff3e325508389` (commit 2026-10-14) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc readme.md, LICENSE, packages/fiber/package.json; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-10-14) |
+| Nhận định | Renderer React cho three.js; @react-three/fiber v9.8.1; workflow docs và test. |
+| Nguồn | [readme.md](https://github.com/pmndrs/react-three-fiber/blob/d74622ea8ed717f7212d7e19d65ff3e325508389/readme.md) · [LICENSE](https://github.com/pmndrs/react-three-fiber/blob/d74622ea8ed717f7212d7e19d65ff3e325508389/LICENSE) · [package.json](https://github.com/pmndrs/react-three-fiber/blob/d74622ea8ed717f7212d7e19d65ff3e325508389/packages/fiber/package.json) |
+
+<a id="ch-revideo"></a>
+
+### Revideo
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/redotvideo/revideo |
+| License | MIT |
+| Phiên bản đã đọc | `b5de67a009a55aa2768a1e178b0446b2479a0b4e` (commit 2026-07-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, lerna.json; chưa chạy upstream |
+| Bảo trì | low-activity (commit cuối 2026-07-15) |
+| Nhận định | Engine render video bằng TypeScript, API render headless; lerna v0.11.0; LICENSE vẫn ghi bản quyền motion-canvas 2022 (đúng với quan hệ fork); commit cuối 2026-07-15. |
+| Nguồn | [README.md](https://github.com/redotvideo/revideo/blob/b5de67a009a55aa2768a1e178b0446b2479a0b4e/README.md) · [LICENSE](https://github.com/redotvideo/revideo/blob/b5de67a009a55aa2768a1e178b0446b2479a0b4e/LICENSE) · [lerna.json](https://github.com/redotvideo/revideo/blob/b5de67a009a55aa2768a1e178b0446b2479a0b4e/lerna.json) |
+
+<a id="ch-srt-whiteboard-animation"></a>
+
+### srt-whiteboard-animation
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/geeklee/srt-whiteboard-animation |
+| License | MIT |
+| Phiên bản đã đọc | `696a7243c0e6ffb6827676e539c2ca5ebae2bf6b` (commit 2026-07-28) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | low-activity (commit cuối 2026-07-28) |
+| Nhận định | Skill chuyển phụ đề SRT thành video vẽ bảng trắng (README tiếng Trung), thuật toán lưới vẽ mà whiteboard-animation-vi vendor lại; commit cuối 2026-07-28. |
+| Nguồn | [README.md](https://github.com/geeklee/srt-whiteboard-animation/blob/696a7243c0e6ffb6827676e539c2ca5ebae2bf6b/README.md) · [LICENSE](https://github.com/geeklee/srt-whiteboard-animation/blob/696a7243c0e6ffb6827676e539c2ca5ebae2bf6b/LICENSE) |
+
+<a id="ch-tone-js"></a>
+
+### Tone.js
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Tonejs/Tone.js |
+| License | MIT |
+| Phiên bản đã đọc | `b48d2990b92e8c1068ea912a43dd5fd3ac6f64c3` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-20) |
+| Nhận định | Framework Web Audio cho nhạc tương tác; npm v15.5.73. |
+| Nguồn | [README.md](https://github.com/Tonejs/Tone.js/blob/b48d2990b92e8c1068ea912a43dd5fd3ac6f64c3/README.md) · [LICENSE.md](https://github.com/Tonejs/Tone.js/blob/b48d2990b92e8c1068ea912a43dd5fd3ac6f64c3/LICENSE.md) · [package.json](https://github.com/Tonejs/Tone.js/blob/b48d2990b92e8c1068ea912a43dd5fd3ac6f64c3/package.json) |
+
+<a id="ch-video-shotcraft"></a>
+
+### video-shotcraft
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Vincentwei1021/video-shotcraft |
+| License | Apache-2.0 (Remotion dùng license riêng) |
+| Phiên bản đã đọc | `59f3e9b9e936ff2bce0e18446226d770a3f2f61f` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-21) |
+| Nhận định | Skill video launch dùng Remotion; README tự ghi license Remotion riêng (miễn phí cho cá nhân/công ty nhỏ) và không liên kết với các thương hiệu nhắc tới; có 4 workflow (contact-sheet-tests, deploy-pages, pr-checks, showcase-publish). |
+| Nguồn | [README.md](https://github.com/Vincentwei1021/video-shotcraft/blob/59f3e9b9e936ff2bce0e18446226d770a3f2f61f/README.md) · [LICENSE](https://github.com/Vincentwei1021/video-shotcraft/blob/59f3e9b9e936ff2bce0e18446226d770a3f2f61f/LICENSE) · [package.json](https://github.com/Vincentwei1021/video-shotcraft/blob/59f3e9b9e936ff2bce0e18446226d770a3f2f61f/package.json) |
+
+<a id="ch-wavesurfer-js"></a>
+
+### wavesurfer.js
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/katspaugh/wavesurfer.js |
+| License | BSD-3-Clause |
+| Phiên bản đã đọc | `eef9057e391698370e1a58788646432a562d63a5` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-12) |
+| Nhận định | Thư viện waveform audio; npm v8.1.0; có AI_OVERVIEW.md và AGENTS.md. |
+| Nguồn | [README.md](https://github.com/katspaugh/wavesurfer.js/blob/eef9057e391698370e1a58788646432a562d63a5/README.md) · [LICENSE](https://github.com/katspaugh/wavesurfer.js/blob/eef9057e391698370e1a58788646432a562d63a5/LICENSE) · [package.json](https://github.com/katspaugh/wavesurfer.js/blob/eef9057e391698370e1a58788646432a562d63a5/package.json) |
+
+<a id="ch-wcag-motion-prefers-reduced-motion"></a>
+
+### WCAG motion + prefers-reduced-motion
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://www.w3.org/TR/mediaqueries-5/ |
+| License | W3C Document License (trang ghi quy tắc giấy phép tài liệu cho phép) |
+| Phiên bản đã đọc | W3C Working Draft 19/02/2026 (không có SHA) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang Media Queries Level 5; chưa mở WCAG 2.2 |
+| Bảo trì | unknown (bản nháp đang phát triển) |
+| Nhận định | Xác nhận media feature `prefers-reduced-motion` ở §12.1 của Media Queries 5 (bản nháp, chưa là khuyến nghị). Nội dung 3 tiêu chí WCAG **(chưa xác minh)** trong lần kiểm này. |
+| Nguồn | [Media Queries 5](https://www.w3.org/TR/mediaqueries-5/) |
+
+<a id="ch-whiteboard-animation-vi"></a>
+
+### whiteboard-animation-vi
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/letuandat131/whiteboard-animation-vi |
+| License | CC0-1.0 (chỉ phủ mã gốc) |
+| Phiên bản đã đọc | `7c750e629819fc53d8de76cd8c13b2d78e7b4f41` (commit 2026-11-14) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, THIRD_PARTY_NOTICES.md; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-14) |
+| Nhận định | Ảnh tĩnh thành video vẽ bảng trắng với app Gradio cục bộ; README ghim revision model ISNet, CC0 không phủ ảnh tay, artwork demo, model weights; ISNet vendor là Apache-2.0. |
+| Nguồn | [README.md](https://github.com/letuandat131/whiteboard-animation-vi/blob/7c750e629819fc53d8de76cd8c13b2d78e7b4f41/README.md) · [LICENSE](https://github.com/letuandat131/whiteboard-animation-vi/blob/7c750e629819fc53d8de76cd8c13b2d78e7b4f41/LICENSE) · [THIRD_PARTY_NOTICES.md](https://github.com/letuandat131/whiteboard-animation-vi/blob/7c750e629819fc53d8de76cd8c13b2d78e7b4f41/THIRD_PARTY_NOTICES.md) |

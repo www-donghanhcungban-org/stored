@@ -501,3 +501,415 @@ Framework Python để xây ứng dụng web dữ liệu và học máy, gắn t
 **Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
 
 **Nguồn tại cùng SHA:** [README.md](https://github.com/meta/prophet/blob/5cf15c0f6e5d5259d9dd8d511fb4e15a45884cdc/README.md) · [LICENSE](https://github.com/meta/prophet/blob/5cf15c0f6e5d5259d9dd8d511fb4e15a45884cdc/LICENSE) · [.github/workflows/build-and-test.yml](https://github.com/meta/prophet/blob/5cf15c0f6e5d5259d9dd8d511fb4e15a45884cdc/.github/workflows/build-and-test.yml).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-apache-superset"></a>
+
+### Apache Superset
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/apache/superset |
+| License | Apache-2.0 (khớp catalog) |
+| Phiên bản đã đọc | `174aa908fbef0cc5e2e913b3c5fbf63166298cc9` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.txt, pyproject.toml, setup.py (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-23; rất nhiều workflow CI (chỉ xem tên). |
+| Nhận định | Nền tảng BI và khám phá dữ liệu mã nguồn mở của ASF (dashboard, SQL Lab, nhiều connector). Repo có sẵn AGENTS.md, CLAUDE.md, GEMINI.md cho trợ lý lập trình. |
+| Nguồn | [README](https://github.com/apache/superset/blob/174aa908fbef0cc5e2e913b3c5fbf63166298cc9/README.md) · [LICENSE](https://github.com/apache/superset/blob/174aa908fbef0cc5e2e913b3c5fbf63166298cc9/LICENSE.txt) · [pyproject.toml](https://github.com/apache/superset/blob/174aa908fbef0cc5e2e913b3c5fbf63166298cc9/pyproject.toml) · [setup.py](https://github.com/apache/superset/blob/174aa908fbef0cc5e2e913b3c5fbf63166298cc9/setup.py) |
+
+<a id="ch-bird-mini-dev"></a>
+
+### BIRD Mini-Dev
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/bird-bench/mini_dev |
+| License | Không có file LICENSE; README chỉ có badge CC BY-SA 4.0 (khớp catalog) |
+| Phiên bản đã đọc | `1c49a375e76c471e218564da3f4617513d33e371` (commit 2026-10-28) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-10-28; không có CI. |
+| Nhận định | Bộ dữ liệu và mã đánh giá BIRD Mini-Dev cho text-to-SQL (SQLite, MySQL, PostgreSQL; metric EX, R-VES, Soft F1) kèm live_sql_bench_sqlite. Không có file LICENSE nên điều khoản mã chưa rõ; chỉ badge README nêu CC BY-SA 4.0 (dữ liệu share-alike). |
+| Nguồn | [README](https://github.com/bird-bench/mini_dev/blob/1c49a375e76c471e218564da3f4617513d33e371/README.md) |
+
+<a id="ch-chat2db"></a>
+
+### Chat2DB
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/OtterMind/Chat2DB |
+| License | Apache-2.0 sửa đổi từ v5.3.0 (source-available, khớp catalog); bản trước 5.3.0 vẫn Apache-2.0 |
+| Phiên bản đã đọc | `96428d5a6598fc3a78f7fb47553f47ce4e71b02a` (commit 2026-11-11) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-11; có CI (chỉ xem tên workflow). |
+| Nhận định | Client CSDL và SQL workspace có AI (desktop, web, Docker, CLI, MCP). LICENSE từ v5.3.0 cho dùng cá nhân, tổ chức nội bộ, nghiên cứu/phi lợi nhuận; cấm cung cấp dịch vụ/sản phẩm ngoài, nhúng, white-label hoặc OEM nếu chưa có giấy phép thương mại. Không phải OSS đúng nghĩa. |
+| Nguồn | [README](https://github.com/OtterMind/Chat2DB/blob/96428d5a6598fc3a78f7fb47553f47ce4e71b02a/README.md) · [LICENSE](https://github.com/OtterMind/Chat2DB/blob/96428d5a6598fc3a78f7fb47553f47ce4e71b02a/LICENSE) |
+
+<a id="ch-cube-core"></a>
+
+### Cube Core
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/cube-js/cube |
+| License | Apache-2.0 mặc định, MIT cho một số gói (khớp catalog) |
+| Phiên bản đã đọc | `b27ad6dd1e0b34f6e0ce4ace71ac5d0a8453a1b8` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, DEPRECATION.md (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-23; nhiều workflow CI (chỉ xem tên). |
+| Nhận định | Lớp ngữ nghĩa (semantic layer) mã nguồn mở cho phân tích và API dữ liệu; LICENSE gốc nói mặc định Apache-2.0 trừ khi header hoặc LICENSE của gói chỉ định MIT (client là MIT, backend Apache-2.0 theo README). Có DEPRECATION.md liệt kê tính năng sắp gỡ. |
+| Nguồn | [README](https://github.com/cube-js/cube/blob/b27ad6dd1e0b34f6e0ce4ace71ac5d0a8453a1b8/README.md) · [LICENSE](https://github.com/cube-js/cube/blob/b27ad6dd1e0b34f6e0ce4ace71ac5d0a8453a1b8/LICENSE) · [package.json](https://github.com/cube-js/cube/blob/b27ad6dd1e0b34f6e0ce4ace71ac5d0a8453a1b8/package.json) · [DEPRECATION.md](https://github.com/cube-js/cube/blob/b27ad6dd1e0b34f6e0ce4ace71ac5d0a8453a1b8/DEPRECATION.md) |
+
+<a id="ch-data-formulator"></a>
+
+### Data Formulator
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/data-formulator |
+| License | MIT (khớp catalog) |
+| Phiên bản đã đọc | `5477f0e236426dc8f74a498ec400414fba7fbc0f` (commit 2026-08-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, package.json (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-08-15 (khoảng 100 ngày trước thời điểm kiểm); pyproject 0.8.0b1 (beta). |
+| Nhận định | Công cụ Microsoft khám phá và trực quan hóa dữ liệu bằng agent AI (cài qua uvx/pip, có demo online). Cần CLA khi đóng góp. Bản hiện tại đánh dấu beta. |
+| Nguồn | [README](https://github.com/microsoft/data-formulator/blob/5477f0e236426dc8f74a498ec400414fba7fbc0f/README.md) · [LICENSE](https://github.com/microsoft/data-formulator/blob/5477f0e236426dc8f74a498ec400414fba7fbc0f/LICENSE) · [pyproject.toml](https://github.com/microsoft/data-formulator/blob/5477f0e236426dc8f74a498ec400414fba7fbc0f/pyproject.toml) · [package.json](https://github.com/microsoft/data-formulator/blob/5477f0e236426dc8f74a498ec400414fba7fbc0f/package.json) |
+
+<a id="ch-datahub"></a>
+
+### DataHub
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/datahub-project/datahub |
+| License | Apache-2.0 (khớp catalog) |
+| Phiên bản đã đọc | `c45a1233fe1e9f7e91905d55156bfa0676f52d2e` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, NOTICE (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-23; rất nhiều workflow CI (chỉ xem tên). |
+| Nhận định | Nền tảng metadata/data catalog (lineage cấp cột, governance, hơn 150 tích hợp theo README: tuyên bố tác giả), có module datahub-agent-context cho agent. README tách bản tự host (Apache 2.0) khỏi bản cloud thương mại. |
+| Nguồn | [README](https://github.com/datahub-project/datahub/blob/c45a1233fe1e9f7e91905d55156bfa0676f52d2e/README.md) · [LICENSE](https://github.com/datahub-project/datahub/blob/c45a1233fe1e9f7e91905d55156bfa0676f52d2e/LICENSE) · [NOTICE](https://github.com/datahub-project/datahub/blob/c45a1233fe1e9f7e91905d55156bfa0676f52d2e/NOTICE) |
+
+<a id="ch-db-gpt"></a>
+
+### DB-GPT
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/eosphoros-ai/DB-GPT |
+| License | MIT (khớp catalog) |
+| Phiên bản đã đọc | `c7a8def445d5c76b01eb0651c085eb9c7133892e` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-22; có CI. README.md đọc đầu trang; README.hi.md không dùng. |
+| Nhận định | Framework ứng dụng dữ liệu AI-native (AWEL, agent, text-to-SQL, nhiều ngôn ngữ README), pyproject dbgpt-mono 0.8.3. Có DISCKAIMER.md và SKILL_MIGRATION_GUIDE.md; repo dùng nhiều thành phần nên cần kiểm phụ thuộc trước khi dùng. |
+| Nguồn | [README](https://github.com/eosphoros-ai/DB-GPT/blob/c7a8def445d5c76b01eb0651c085eb9c7133892e/README.md) · [LICENSE](https://github.com/eosphoros-ai/DB-GPT/blob/c7a8def445d5c76b01eb0651c085eb9c7133892e/LICENSE) · [pyproject.toml](https://github.com/eosphoros-ai/DB-GPT/blob/c7a8def445d5c76b01eb0651c085eb9c7133892e/pyproject.toml) |
+
+<a id="ch-dbhub"></a>
+
+### DBHub
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/bytebase/dbhub |
+| License | MIT (khớp catalog) |
+| Phiên bản đã đọc | `b45ab6d1119d2a18454565c949647649cbeaafe2` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-21; có CI (chỉ xem tên). |
+| Nhận định | MCP server cho CSDL (Postgres, MySQL...) của Bytebase, gói npm dbhub 2.1.0. README tự giới thiệu là bản thay thế còn bảo trì cho server-postgres chính thức đã archive; nhắc dùng Bytebase nếu cần guardrail doanh nghiệp. |
+| Nguồn | [README](https://github.com/bytebase/dbhub/blob/b45ab6d1119d2a18454565c949647649cbeaafe2/README.md) · [LICENSE](https://github.com/bytebase/dbhub/blob/b45ab6d1119d2a18454565c949647649cbeaafe2/LICENSE) · [package.json](https://github.com/bytebase/dbhub/blob/b45ab6d1119d2a18454565c949647649cbeaafe2/package.json) |
+
+<a id="ch-dbt-v2-rust"></a>
+
+### dbt (v2, Rust)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/dbt-labs/dbt |
+| License | Apache-2.0 (khớp catalog; bản phân phối dbt thương mại dùng license riêng) |
+| Phiên bản đã đọc | `15a0ed70a69eaeeba0388b2fedf91d41a136f0e9` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Cargo.toml, pyproject.toml (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-23; nhiều workflow CI (chỉ xem tên). |
+| Nhận định | Nhánh main là dbt v2.0 viết lại bằng Rust (Cargo workspace, crates/dbt-*); v1 Python chuyển sang nhánh 1.latest. Mã trong repo Apache-2.0; README nói bản "dbt" phân phối có tùy biến theo giấy phép sản phẩm của dbt Labs. |
+| Nguồn | [README](https://github.com/dbt-labs/dbt/blob/15a0ed70a69eaeeba0388b2fedf91d41a136f0e9/README.md) · [LICENSE](https://github.com/dbt-labs/dbt/blob/15a0ed70a69eaeeba0388b2fedf91d41a136f0e9/LICENSE) · [Cargo.toml](https://github.com/dbt-labs/dbt/blob/15a0ed70a69eaeeba0388b2fedf91d41a136f0e9/Cargo.toml) · [pyproject.toml](https://github.com/dbt-labs/dbt/blob/15a0ed70a69eaeeba0388b2fedf91d41a136f0e9/pyproject.toml) |
+
+<a id="ch-dbx"></a>
+
+### DBX
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/t8y2/dbx |
+| License | Apache-2.0 (khớp catalog) |
+| Phiên bản đã đọc | `b1a48f113ef64de788dbf84f296bc770630d60d1` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, NOTICE (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-23; nhiều workflow CI (chỉ xem tên). |
+| Nhận định | Client CSDL đa nền tảng (README nêu 100+ CSDL, bản 25 MB, trợ lý AI, MCP: tuyên bố tác giả) viết bằng Rust/Tauri, version 0.6.72. NOTICE ghi mã debugger PL/SQL dùng lại từ đóng góp bên thứ ba. |
+| Nguồn | [README](https://github.com/t8y2/dbx/blob/b1a48f113ef64de788dbf84f296bc770630d60d1/README.md) · [LICENSE](https://github.com/t8y2/dbx/blob/b1a48f113ef64de788dbf84f296bc770630d60d1/LICENSE) · [package.json](https://github.com/t8y2/dbx/blob/b1a48f113ef64de788dbf84f296bc770630d60d1/package.json) · [NOTICE](https://github.com/t8y2/dbx/blob/b1a48f113ef64de788dbf84f296bc770630d60d1/NOTICE) |
+
+<a id="ch-deepanalyze"></a>
+
+### DeepAnalyze
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ruc-datalab/DeepAnalyze |
+| License | MIT cho code (khớp catalog); README không nêu license weights nên chưa xác minh |
+| Phiên bản đã đọc | `afc697a11675c59683b9f6596c3ab3b3d661182a` (commit 2026-11-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-02; không có thư mục .github (CI). |
+| Nhận định | Mô hình 8B và agent tự làm pipeline khoa học dữ liệu (chuẩn bị, phân tích, mô hình, báo cáo), có WebUI và API. Mã MIT; license trọng số trên Hugging Face và dữ liệu huấn luyện chưa đối chiếu **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/ruc-datalab/DeepAnalyze/blob/afc697a11675c59683b9f6596c3ab3b3d661182a/README.md) · [LICENSE](https://github.com/ruc-datalab/DeepAnalyze/blob/afc697a11675c59683b9f6596c3ab3b3d661182a/LICENSE) |
+
+<a id="ch-duckdb"></a>
+
+### DuckDB
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/duckdb/duckdb |
+| License | MIT (khớp catalog) |
+| Phiên bản đã đọc | `61a915cee25238738a95eef16cdf109e6ae76982` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-23; nhiều workflow CI (chỉ xem tên). |
+| Nhận định | CSDL phân tích nhúng in-process (C++), nền tảng cho nhiều công cụ dữ liệu khác trong catalog. Copyright thuộc Stichting DuckDB Foundation; repo có AI_POLICY.md về đóng góp do AI. |
+| Nguồn | [README](https://github.com/duckdb/duckdb/blob/61a915cee25238738a95eef16cdf109e6ae76982/README.md) · [LICENSE](https://github.com/duckdb/duckdb/blob/61a915cee25238738a95eef16cdf109e6ae76982/LICENSE) |
+
+<a id="ch-great-expectations-gx-core"></a>
+
+### Great Expectations (GX Core)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/fivetran/great_expectations |
+| License | Apache-2.0 (khớp catalog) |
+| Phiên bản đã đọc | `e08d1a800c8b759c84b820e420f5699392c53a98` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, setup.py (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-17. Catalog dùng fivetran/great_expectations; git ls-remote của great-expectations/great_expectations trả cùng SHA, README còn badge theo tên cũ. |
+| Nhận định | GX Core: thư viện kiểm chất lượng dữ liệu (Expectation, Checkpoint), hỗ trợ Python 3.10 đến 3.14. Repo vẫn có thể truy cập theo cả hai tên (cùng HEAD); README chưa cập nhật badge sang tổ chức mới. |
+| Nguồn | [README](https://github.com/fivetran/great_expectations/blob/e08d1a800c8b759c84b820e420f5699392c53a98/README.md) · [LICENSE](https://github.com/fivetran/great_expectations/blob/e08d1a800c8b759c84b820e420f5699392c53a98/LICENSE) · [setup.py](https://github.com/fivetran/great_expectations/blob/e08d1a800c8b759c84b820e420f5699392c53a98/setup.py) |
+
+<a id="ch-ibis"></a>
+
+### Ibis
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ibis-project/ibis |
+| License | Apache-2.0 (khớp catalog) |
+| Phiên bản đã đọc | `6d40f963fee940063e09956c7e60d073f4302259` (commit 2026-11-05) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.txt, pyproject.toml (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-05; có nhiều workflow CI (chỉ xem tên). |
+| Nhận định | API DataFrame Python độc lập backend, biên dịch sang SQL cho nhiều engine (DuckDB, BigQuery...). Gói PyPI ibis-framework 12.0.0. |
+| Nguồn | [README](https://github.com/ibis-project/ibis/blob/6d40f963fee940063e09956c7e60d073f4302259/README.md) · [LICENSE](https://github.com/ibis-project/ibis/blob/6d40f963fee940063e09956c7e60d073f4302259/LICENSE.txt) · [pyproject.toml](https://github.com/ibis-project/ibis/blob/6d40f963fee940063e09956c7e60d073f4302259/pyproject.toml) |
+
+<a id="ch-jupyter-ai"></a>
+
+### Jupyter AI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/jupyterlab/jupyter-ai |
+| License | BSD-3-Clause (khớp catalog) |
+| Phiên bản đã đọc | `3739489155e5afb86b6fbfc539c571d948edf636` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-21. |
+| Nhận định | Tiện ích JupyterLab nối các agent AI (Claude, Codex, Copilot, Gemini...) qua Agent Client Protocol vào notebook, kèm Jupyter MCP server và hệ thống quyền. README hiện tại mô tả hướng agent, khác thiết kế magic cũ. |
+| Nguồn | [README](https://github.com/jupyterlab/jupyter-ai/blob/3739489155e5afb86b6fbfc539c571d948edf636/README.md) · [LICENSE](https://github.com/jupyterlab/jupyter-ai/blob/3739489155e5afb86b6fbfc539c571d948edf636/LICENSE) · [pyproject.toml](https://github.com/jupyterlab/jupyter-ai/blob/3739489155e5afb86b6fbfc539c571d948edf636/pyproject.toml) |
+
+<a id="ch-marimo"></a>
+
+### marimo
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/marimo-team/marimo |
+| License | Apache-2.0 (khớp catalog) |
+| Phiên bản đã đọc | `6d3c29020d313f108fd60ac734705e57ad216b3f` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-23; có workflow CI (chỉ xem tên). |
+| Nhận định | Notebook Python phản ứng (reactive), lưu dạng file .py thân thiện git, chạy được như script hoặc app. Phiên bản 0.25.2 theo pyproject. |
+| Nguồn | [README](https://github.com/marimo-team/marimo/blob/6d3c29020d313f108fd60ac734705e57ad216b3f/README.md) · [LICENSE](https://github.com/marimo-team/marimo/blob/6d3c29020d313f108fd60ac734705e57ad216b3f/LICENSE) · [pyproject.toml](https://github.com/marimo-team/marimo/blob/6d3c29020d313f108fd60ac734705e57ad216b3f/pyproject.toml) |
+
+<a id="ch-metabase"></a>
+
+### Metabase
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/metabase/metabase |
+| License | AGPL-3.0 cho phần ngoài /enterprise, Metabase Commercial License cho /enterprise, license riêng cho embed (khớp ý catalog "AGPL + thương mại") |
+| Phiên bản đã đọc | `525909ae2146eab25de6e8cafce72604569ed2d6` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.txt, LICENSE-AGPL.txt, LICENSE-MCL.txt, LICENSE-EMBEDDING.txt, package.json (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-23; rất nhiều workflow CI (chỉ xem tên). |
+| Nhận định | Công cụ BI tự phục vụ. Giấy phép nhiều phần: AGPL cho phần lõi, thư mục enterprise và tính năng Enterprise theo license thương mại, app-embed.js có thỏa thuận riêng nên không thể coi toàn repo là AGPL. |
+| Nguồn | [README](https://github.com/metabase/metabase/blob/525909ae2146eab25de6e8cafce72604569ed2d6/README.md) · [LICENSE](https://github.com/metabase/metabase/blob/525909ae2146eab25de6e8cafce72604569ed2d6/LICENSE.txt) · [LICENSE-AGPL.txt](https://github.com/metabase/metabase/blob/525909ae2146eab25de6e8cafce72604569ed2d6/LICENSE-AGPL.txt) · [LICENSE-MCL.txt](https://github.com/metabase/metabase/blob/525909ae2146eab25de6e8cafce72604569ed2d6/LICENSE-MCL.txt) · [LICENSE-EMBEDDING.txt](https://github.com/metabase/metabase/blob/525909ae2146eab25de6e8cafce72604569ed2d6/LICENSE-EMBEDDING.txt) · [package.json](https://github.com/metabase/metabase/blob/525909ae2146eab25de6e8cafce72604569ed2d6/package.json) |
+
+<a id="ch-mindsdb"></a>
+
+### MindsDB
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mindsdb/minds |
+| License | MIT (KHÁC catalog ghi Elastic-2.0) |
+| Phiên bản đã đọc | `3f7d3c690295c52b64f512333c59465d20bce0b9` (commit 2026-10-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-10-23; README mới cho thấy repo đã thành MindsHub. |
+| Nhận định | Repo mindsdb/mindsdb nay hiển thị nội dung MindsHub (agent workspace dạng Electron/web, superproject pin submodule frontend và backend), README tự tham chiếu mindsdb/minds; git ls-remote của hai tên trả cùng HEAD nên đây là đổi tên/đổi định hướng. Không còn là "AI trong database, federated query" như catalog. |
+| Nguồn | [README](https://github.com/mindsdb/minds/blob/3f7d3c690295c52b64f512333c59465d20bce0b9/README.md) · [LICENSE](https://github.com/mindsdb/minds/blob/3f7d3c690295c52b64f512333c59465d20bce0b9/LICENSE) |
+
+<a id="ch-open-interpreter"></a>
+
+### Open Interpreter
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/openinterpreter/open-interpreter |
+| License | Apache-2.0 (khác catalog cũ: AGPL-3.0) |
+| Phiên bản đã đọc | `a786d8474b0d7289320c16f00e852679fae7866e` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/Dockerfile.bazel, FORK_BRANDING.md; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-23 |
+| Nhận định | Coding agent chạy ở terminal, viết lại bằng Rust (codex-rs), tối ưu cho mô hình giá rẻ; FORK_BRANDING.md nói rõ kế thừa tên crate/giao thức từ OpenAI Codex. Lưu ý lớn: kho hiện nay không còn là bản Python AGPL cũ. |
+| Nguồn | [README.md](https://github.com/openinterpreter/open-interpreter/blob/a786d8474b0d7289320c16f00e852679fae7866e/README.md) · [LICENSE](https://github.com/openinterpreter/open-interpreter/blob/a786d8474b0d7289320c16f00e852679fae7866e/LICENSE) · [package.json](https://github.com/openinterpreter/open-interpreter/blob/a786d8474b0d7289320c16f00e852679fae7866e/package.json) · [Dockerfile.bazel](https://github.com/openinterpreter/open-interpreter/blob/a786d8474b0d7289320c16f00e852679fae7866e/.github/workflows/Dockerfile.bazel) · [FORK_BRANDING.md](https://github.com/openinterpreter/open-interpreter/blob/a786d8474b0d7289320c16f00e852679fae7866e/FORK_BRANDING.md) |
+
+<a id="ch-openlineage"></a>
+
+### OpenLineage
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/OpenLineage/OpenLineage |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `eeb493c36e7e65cf33843a80df1029c5f2fd5c1e` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, LICENSE.insert.txt, pyproject.toml, .github/workflows/codeql.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-22; CI CircleCI + GitHub Actions |
+| Nhận định | Chuẩn mở về metadata/lineage: mô hình run/job/dataset mở rộng bằng facet, thuộc LF AI & Data (Graduate theo README). Có AGENTS.md và CLAUDE.md trong kho. |
+| Nguồn | [README.md](https://github.com/OpenLineage/OpenLineage/blob/eeb493c36e7e65cf33843a80df1029c5f2fd5c1e/README.md) · [LICENSE](https://github.com/OpenLineage/OpenLineage/blob/eeb493c36e7e65cf33843a80df1029c5f2fd5c1e/LICENSE) · [LICENSE.insert.txt](https://github.com/OpenLineage/OpenLineage/blob/eeb493c36e7e65cf33843a80df1029c5f2fd5c1e/LICENSE.insert.txt) · [pyproject.toml](https://github.com/OpenLineage/OpenLineage/blob/eeb493c36e7e65cf33843a80df1029c5f2fd5c1e/pyproject.toml) · [codeql.yml](https://github.com/OpenLineage/OpenLineage/blob/eeb493c36e7e65cf33843a80df1029c5f2fd5c1e/.github/workflows/codeql.yml) |
+
+<a id="ch-pandasai"></a>
+
+### PandasAI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/sinaptik-ai/pandas-ai |
+| License | MIT (trừ pandasai/ee/ theo license riêng) |
+| Phiên bản đã đọc | `bbbb771d31062d81f6fa19bafb40620d5cbe48f4` (commit 2025-10-28) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, .github/workflows/cd.yml; chưa chạy upstream |
+| Bảo trì | Commit cuối 2025-10-28, hơn 1 năm không đổi |
+| Nhận định | Thư viện Python hỏi đáp dữ liệu bằng ngôn ngữ tự nhiên (pyproject v3.0.0, Python >=3.8,<3.12). LICENSE nêu rõ thư mục ee/ dưới giấy phép khác, phần còn lại MIT. Chưa xác minh claim telemetry (chưa đọc mã). |
+| Nguồn | [README.md](https://github.com/sinaptik-ai/pandas-ai/blob/bbbb771d31062d81f6fa19bafb40620d5cbe48f4/README.md) · [LICENSE](https://github.com/sinaptik-ai/pandas-ai/blob/bbbb771d31062d81f6fa19bafb40620d5cbe48f4/LICENSE) · [pyproject.toml](https://github.com/sinaptik-ai/pandas-ai/blob/bbbb771d31062d81f6fa19bafb40620d5cbe48f4/pyproject.toml) · [cd.yml](https://github.com/sinaptik-ai/pandas-ai/blob/bbbb771d31062d81f6fa19bafb40620d5cbe48f4/.github/workflows/cd.yml) |
+
+<a id="ch-polars"></a>
+
+### Polars
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/pola-rs/polars |
+| License | MIT |
+| Phiên bản đã đọc | `a76f708b788547a3f5c21c6c21b31af2d0855ba7` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Cargo.toml, .github/workflows/benchmark-remote.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-23; nhiều workflow CI |
+| Nhận định | Thư viện DataFrame lõi Rust (workspace crates/*), có binding Python/Node/R; README trỏ tới skill và MCP cho agent. Có AI_POLICY.md. |
+| Nguồn | [README.md](https://github.com/pola-rs/polars/blob/a76f708b788547a3f5c21c6c21b31af2d0855ba7/README.md) · [LICENSE](https://github.com/pola-rs/polars/blob/a76f708b788547a3f5c21c6c21b31af2d0855ba7/LICENSE) · [Cargo.toml](https://github.com/pola-rs/polars/blob/a76f708b788547a3f5c21c6c21b31af2d0855ba7/Cargo.toml) · [benchmark-remote.yml](https://github.com/pola-rs/polars/blob/a76f708b788547a3f5c21c6c21b31af2d0855ba7/.github/workflows/benchmark-remote.yml) |
+
+<a id="ch-soda-core"></a>
+
+### Soda Core
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/sodadata/soda-core |
+| License | Elastic-2.0 (ELv2; pyproject khai "Proprietary") |
+| Phiên bản đã đọc | `484c2d9fbcfe2107eaa00995e54c2fae887fcb4c` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, .github/workflows/claude-de-review.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-21; version 4.31.1rc0 |
+| Nhận định | Engine data contract/data quality: hợp đồng YAML, CLI + Python API, nhiều data source. LICENSE là Elastic License 2.0 (không OSI) dù README gọi "open source"; pyproject workspace ghi license "Proprietary" nên metadata không nhất quán. |
+| Nguồn | [README.md](https://github.com/sodadata/soda-core/blob/484c2d9fbcfe2107eaa00995e54c2fae887fcb4c/README.md) · [LICENSE](https://github.com/sodadata/soda-core/blob/484c2d9fbcfe2107eaa00995e54c2fae887fcb4c/LICENSE) · [pyproject.toml](https://github.com/sodadata/soda-core/blob/484c2d9fbcfe2107eaa00995e54c2fae887fcb4c/pyproject.toml) · [claude-de-review.yml](https://github.com/sodadata/soda-core/blob/484c2d9fbcfe2107eaa00995e54c2fae887fcb4c/.github/workflows/claude-de-review.yml) |
+
+<a id="ch-spider-2-0"></a>
+
+### Spider 2.0
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/xlang-ai/Spider2 |
+| License | MIT |
+| Phiên bản đã đọc | `cafb867313aab4e674652054198f383cf4018943` (commit 2026-08-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-08-12; README tự báo tài khoản Snowflake bị tạm ngưng |
+| Nhận định | Benchmark text-to-SQL doanh nghiệp (spider2-lite, spider2-snow, spider2-dbt, thư mục methods cho baseline). Bản Snow phụ thuộc tài khoản Snowflake của nhóm; News 2026-08-12 xin lỗi vì tài khoản bị tạm ngưng. |
+| Nguồn | [README.md](https://github.com/xlang-ai/Spider2/blob/cafb867313aab4e674652054198f383cf4018943/README.md) · [LICENSE](https://github.com/xlang-ai/Spider2/blob/cafb867313aab4e674652054198f383cf4018943/LICENSE) |
+
+<a id="ch-sqlbot"></a>
+
+### SQLBot
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/dataease/SQLBot |
+| License | GPL-3.0 sửa đổi (thêm điều kiện: giữ LOGO/bản quyền ở frontend; người đóng góp đồng ý cho dùng thương mại và đổi điều khoản) (khác catalog cũ: FIT2CLOUD Open Source License) |
+| Phiên bản đã đọc | `dd12090a70859103fcdf07cdad2052dcb23328bc` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, .github/workflows/build_and_push.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-23 |
+| Nhận định | Hệ thống ChatBI text-to-SQL dựa LLM + RAG của DataEase (README tiếng Trung), có cách ly workspace, phân quyền dữ liệu, nhúng web và MCP. Giấy phép là GPLv3 sửa đổi với điều kiện bổ sung, cần đọc kỹ trước khi dùng thương mại. |
+| Nguồn | [README.md](https://github.com/dataease/SQLBot/blob/dd12090a70859103fcdf07cdad2052dcb23328bc/README.md) · [LICENSE](https://github.com/dataease/SQLBot/blob/dd12090a70859103fcdf07cdad2052dcb23328bc/LICENSE) · [build_and_push.yml](https://github.com/dataease/SQLBot/blob/dd12090a70859103fcdf07cdad2052dcb23328bc/.github/workflows/build_and_push.yml) |
+
+<a id="ch-sqlfluff"></a>
+
+### SQLFluff
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/sqlfluff/sqlfluff |
+| License | MIT |
+| Phiên bản đã đọc | `1aa1dd056a4a693b1d373250aa4b70ef6ef27ab1` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, pyproject.toml, .github/workflows/add-issue-labels.yaml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-23; pyproject v4.5.0 |
+| Nhận định | Linter SQL tự sửa lỗi, nhiều dialect, hỗ trợ templater Jinja/dbt. Có AGENTS.md và AI_POLICY.md. Chi tiết lõi Rust sqlfluffrs và workflow AgentScan chưa đọc. |
+| Nguồn | [README.md](https://github.com/sqlfluff/sqlfluff/blob/1aa1dd056a4a693b1d373250aa4b70ef6ef27ab1/README.md) · [LICENSE.md](https://github.com/sqlfluff/sqlfluff/blob/1aa1dd056a4a693b1d373250aa4b70ef6ef27ab1/LICENSE.md) · [pyproject.toml](https://github.com/sqlfluff/sqlfluff/blob/1aa1dd056a4a693b1d373250aa4b70ef6ef27ab1/pyproject.toml) · [add-issue-labels.yaml](https://github.com/sqlfluff/sqlfluff/blob/1aa1dd056a4a693b1d373250aa4b70ef6ef27ab1/.github/workflows/add-issue-labels.yaml) |
+
+<a id="ch-sqlglot"></a>
+
+### sqlglot
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/tobymao/sqlglot |
+| License | MIT |
+| Phiên bản đã đọc | `d3a2eafd171021d269e06b5f7a370451d6e9f04c` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, .github/workflows/benchmark-sqlglot.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-23 |
+| Nhận định | Parser/transpiler/optimizer SQL thuần Python không phụ thuộc, hơn 30 dialect. README nay ghi chỉ nhận PR từ maintainer vì quá nhiều PR do LLM sinh; góp ý qua issue. |
+| Nguồn | [README.md](https://github.com/tobymao/sqlglot/blob/d3a2eafd171021d269e06b5f7a370451d6e9f04c/README.md) · [LICENSE](https://github.com/tobymao/sqlglot/blob/d3a2eafd171021d269e06b5f7a370451d6e9f04c/LICENSE) · [pyproject.toml](https://github.com/tobymao/sqlglot/blob/d3a2eafd171021d269e06b5f7a370451d6e9f04c/pyproject.toml) · [benchmark-sqlglot.yml](https://github.com/tobymao/sqlglot/blob/d3a2eafd171021d269e06b5f7a370451d6e9f04c/.github/workflows/benchmark-sqlglot.yml) |
+
+<a id="ch-vanna"></a>
+
+### Vanna
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vanna-ai/vanna |
+| License | MIT |
+| Phiên bản đã đọc | `365d0617c1a4567ffee1b19b40c27feb4206bfcf` (commit 2026-02-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, .github/workflows/python-publish.yaml; chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-02-02; catalog ghi archive qua API, clone không xác nhận được |
+| Nhận định | Text-to-SQL Vanna 2.0 (pyproject v2.0.2): hỏi đáp SQL có phân quyền theo người dùng, component web, FastAPI; có hướng dẫn migrate từ 0.x (LegacyVannaAdapter). Trạng thái archived theo API GitHub **(chưa xác minh)** từ clone. |
+| Nguồn | [README.md](https://github.com/vanna-ai/vanna/blob/365d0617c1a4567ffee1b19b40c27feb4206bfcf/README.md) · [LICENSE](https://github.com/vanna-ai/vanna/blob/365d0617c1a4567ffee1b19b40c27feb4206bfcf/LICENSE) · [pyproject.toml](https://github.com/vanna-ai/vanna/blob/365d0617c1a4567ffee1b19b40c27feb4206bfcf/pyproject.toml) · [python-publish.yaml](https://github.com/vanna-ai/vanna/blob/365d0617c1a4567ffee1b19b40c27feb4206bfcf/.github/workflows/python-publish.yaml) |
+
+<a id="ch-wrenai"></a>
+
+### WrenAI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Canner/WrenAI |
+| License | Apache-2.0 (core/sdk/skills/examples và root); docs CC-BY-4.0; AGPL-3.0 chỉ là văn bản dự phòng cho module tương lai |
+| Phiên bản đã đọc | `48de0b6cbd02cbbe3753f29e37f4be24e8a9a7fd` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, LICENSE-AGPL-3.0, LICENSE-APACHE-2.0, LICENSE-CC-BY-4.0, .github/workflows/cleanup-issues.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-23 |
+| Nhận định | Nền tảng GenBI mã nguồn mở cho agent: sinh SQL có quản trị, định nghĩa nghiệp vụ lưu trong Git, 22+ nguồn dữ liệu (theo README, **chưa xác minh**). LICENSE là bản đa giấy phép theo đường dẫn; AGPL chưa áp dụng cho module nào hiện nay. |
+| Nguồn | [README.md](https://github.com/Canner/WrenAI/blob/48de0b6cbd02cbbe3753f29e37f4be24e8a9a7fd/README.md) · [LICENSE](https://github.com/Canner/WrenAI/blob/48de0b6cbd02cbbe3753f29e37f4be24e8a9a7fd/LICENSE) · [LICENSE-AGPL-3.0](https://github.com/Canner/WrenAI/blob/48de0b6cbd02cbbe3753f29e37f4be24e8a9a7fd/LICENSE-AGPL-3.0) · [LICENSE-APACHE-2.0](https://github.com/Canner/WrenAI/blob/48de0b6cbd02cbbe3753f29e37f4be24e8a9a7fd/LICENSE-APACHE-2.0) · [LICENSE-CC-BY-4.0](https://github.com/Canner/WrenAI/blob/48de0b6cbd02cbbe3753f29e37f4be24e8a9a7fd/LICENSE-CC-BY-4.0) · [cleanup-issues.yml](https://github.com/Canner/WrenAI/blob/48de0b6cbd02cbbe3753f29e37f4be24e8a9a7fd/.github/workflows/cleanup-issues.yml) |

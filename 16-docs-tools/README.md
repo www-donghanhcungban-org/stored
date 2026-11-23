@@ -1028,3 +1028,401 @@ Office SDK để nhúng bảng tính và tài liệu soạn thảo vào ứng d�
 Framework trình chiếu HTML mã nguồn mở, tạo slide chạy trên trình duyệt. Hỗ trợ slide lồng dọc, Markdown, Auto-Animate, xuất PDF, ghi chú người nói; phiên bản 6.0.2 trong package.json; có trình chỉnh sửa trực quan Slides.com cùng tác giả. Điều kiện: Khoá học video reveal.js là trả phí; Slides.com là dịch vụ riêng. ★ 18/11/2026: 72.597 (GitHub search API), nhóm "Đồ họa, 3D & Sơ đồ" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
 
 **Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-code2prompt"></a>
+
+### code2prompt
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mufeedvh/code2prompt |
+| License | MIT |
+| Phiên bản đã đọc | `d762d9bbd0b837b8217329e12b36f1df9bfdbf5f` (commit 2026-11-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Cargo.toml, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-03 |
+| Nhận định | CLI Rust gói codebase thành một prompt LLM, có crate core và binding Python, kèm skills/ và llms-install.md. Chưa đọc mã nên chưa kiểm claim không quét secret. |
+| Nguồn | [README.md](https://github.com/mufeedvh/code2prompt/blob/d762d9bbd0b837b8217329e12b36f1df9bfdbf5f/README.md) · [LICENSE](https://github.com/mufeedvh/code2prompt/blob/d762d9bbd0b837b8217329e12b36f1df9bfdbf5f/LICENSE) · [Cargo.toml](https://github.com/mufeedvh/code2prompt/blob/d762d9bbd0b837b8217329e12b36f1df9bfdbf5f/Cargo.toml) · [ci.yml](https://github.com/mufeedvh/code2prompt/blob/d762d9bbd0b837b8217329e12b36f1df9bfdbf5f/.github/workflows/ci.yml) |
+
+<a id="ch-codebase-memory-mcp"></a>
+
+### codebase-memory-mcp
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/DeusData/codebase-memory-mcp |
+| License | MIT |
+| Phiên bản đã đọc | `1111d9a9e1380a0429ef2250f63223706af6289a` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, .github/workflows/_build.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-19; nhiều workflow CI (build, security, soak...) |
+| Nhận định | MCP server viết bằng C, dựng đồ thị tri thức code + tài liệu + hạ tầng, xử lý cục bộ; README nay có CBM Lens (beta) để xem đồ thị trên trình duyệt. Workflow _build.yml có tùy chọn attest provenance; claim sha256/SBOM/cosign chưa kiểm sâu. |
+| Nguồn | [README.md](https://github.com/DeusData/codebase-memory-mcp/blob/1111d9a9e1380a0429ef2250f63223706af6289a/README.md) · [LICENSE](https://github.com/DeusData/codebase-memory-mcp/blob/1111d9a9e1380a0429ef2250f63223706af6289a/LICENSE) · [_build.yml](https://github.com/DeusData/codebase-memory-mcp/blob/1111d9a9e1380a0429ef2250f63223706af6289a/.github/workflows/_build.yml) |
+
+<a id="ch-codeflow"></a>
+
+### CodeFlow
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/braedonsaunders/codeflow |
+| License | MIT |
+| Phiên bản đã đọc | `b70af01cfd1a1cec4b02075b124fdd1ec8cc33be` (commit 2026-10-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/codeql.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-10-20 |
+| Nhận định | Công cụ trực quan hóa kiến trúc codebase chạy trong trình duyệt (index.html), có CLI mỏng mở cùng UI và thư mục card/; README nói không thu thập dữ liệu **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/braedonsaunders/codeflow/blob/b70af01cfd1a1cec4b02075b124fdd1ec8cc33be/README.md) · [LICENSE](https://github.com/braedonsaunders/codeflow/blob/b70af01cfd1a1cec4b02075b124fdd1ec8cc33be/LICENSE) · [package.json](https://github.com/braedonsaunders/codeflow/blob/b70af01cfd1a1cec4b02075b124fdd1ec8cc33be/package.json) · [codeql.yml](https://github.com/braedonsaunders/codeflow/blob/b70af01cfd1a1cec4b02075b124fdd1ec8cc33be/.github/workflows/codeql.yml) |
+
+<a id="ch-codegraph"></a>
+
+### codegraph
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/colbymchenry/codegraph |
+| License | MIT |
+| Phiên bản đã đọc | `66d42a563e8d9c85c9eb95c61b7f33641d456a37` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/deploy-site.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-23; package v1.6.4 |
+| Nhận định | Đồ thị tri thức code cục bộ cho agent (npm @colbymchenry/codegraph v1.6.4, kernel Rust theo README), có TELEMETRY.md riêng. Chưa kiểm claim provenance/installer. |
+| Nguồn | [README.md](https://github.com/colbymchenry/codegraph/blob/66d42a563e8d9c85c9eb95c61b7f33641d456a37/README.md) · [LICENSE](https://github.com/colbymchenry/codegraph/blob/66d42a563e8d9c85c9eb95c61b7f33641d456a37/LICENSE) · [package.json](https://github.com/colbymchenry/codegraph/blob/66d42a563e8d9c85c9eb95c61b7f33641d456a37/package.json) · [deploy-site.yml](https://github.com/colbymchenry/codegraph/blob/66d42a563e8d9c85c9eb95c61b7f33641d456a37/.github/workflows/deploy-site.yml) |
+
+<a id="ch-cspell"></a>
+
+### CSpell
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/streetsidesoftware/cspell |
+| License | MIT |
+| Phiên bản đã đọc | `2121f74a016be60493b6bd757d24162105734589` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/autofix.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-23 |
+| Nhận định | Monorepo trình kiểm chính tả cho code (CLI cspell, cspell-tools), tài liệu ở cspell.org. Từ điển vi_VN nằm ở kho cspell-dicts, không kiểm trong kho này. |
+| Nguồn | [README.md](https://github.com/streetsidesoftware/cspell/blob/2121f74a016be60493b6bd757d24162105734589/README.md) · [LICENSE](https://github.com/streetsidesoftware/cspell/blob/2121f74a016be60493b6bd757d24162105734589/LICENSE) · [package.json](https://github.com/streetsidesoftware/cspell/blob/2121f74a016be60493b6bd757d24162105734589/package.json) · [autofix.yml](https://github.com/streetsidesoftware/cspell/blob/2121f74a016be60493b6bd757d24162105734589/.github/workflows/autofix.yml) |
+
+<a id="ch-deepwiki-open"></a>
+
+### DeepWiki-Open
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/AsyncFuncAI/deepwiki-open |
+| License | MIT |
+| Phiên bản đã đọc | `f216676fa37042c04eba3ccef56098d011670913` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.es.md, LICENSE, package.json, .github/workflows/docker-build-push.yml (README bản dịch); chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-22 |
+| Nhận định | Wiki AI tự host: phân tích repo GitHub/GitLab/Bitbucket, sinh tài liệu và sơ đồ Mermaid, hỏi đáp RAG, nhiều nhà cung cấp mô hình kể cả Ollama. README có liên kết bản tiếng Việt. |
+| Nguồn | [README.es.md](https://github.com/AsyncFuncAI/deepwiki-open/blob/f216676fa37042c04eba3ccef56098d011670913/README.es.md) · [LICENSE](https://github.com/AsyncFuncAI/deepwiki-open/blob/f216676fa37042c04eba3ccef56098d011670913/LICENSE) · [package.json](https://github.com/AsyncFuncAI/deepwiki-open/blob/f216676fa37042c04eba3ccef56098d011670913/package.json) · [docker-build-push.yml](https://github.com/AsyncFuncAI/deepwiki-open/blob/f216676fa37042c04eba3ccef56098d011670913/.github/workflows/docker-build-push.yml) |
+
+<a id="ch-diataxis"></a>
+
+### Diátaxis
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/evildmp/diataxis-documentation-framework |
+| License | CC-BY-SA-4.0 |
+| Phiên bản đã đọc | `957c09ca40b4a1edc23874f713e01937d50d54d5` (commit 2026-08-06) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.rst, LICENSE.rst; chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-08-06 |
+| Nhận định | Khung tài liệu Diátaxis bốn loại (tutorial, how-to, reference, explanation), nguồn Sphinx/reStructuredText. Giấy phép là LICENSE.rst (CC BY-SA 4.0) nên GitHub báo NOASSERTION. |
+| Nguồn | [README.rst](https://github.com/evildmp/diataxis-documentation-framework/blob/957c09ca40b4a1edc23874f713e01937d50d54d5/README.rst) · [LICENSE.rst](https://github.com/evildmp/diataxis-documentation-framework/blob/957c09ca40b4a1edc23874f713e01937d50d54d5/LICENSE.rst) |
+
+<a id="ch-docsify"></a>
+
+### Docsify
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/docsifyjs/docsify |
+| License | MIT |
+| Phiên bản đã đọc | `0e0cd50b326042d37b1f613eb654434c5db0e2df` (commit 2026-11-14) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/crowdin.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-14; package v5.1.0 |
+| Nhận định | Trình tạo site tài liệu render Markdown phía client, không cần bước build. package.json hiện v5.1.0. |
+| Nguồn | [README.md](https://github.com/docsifyjs/docsify/blob/0e0cd50b326042d37b1f613eb654434c5db0e2df/README.md) · [LICENSE](https://github.com/docsifyjs/docsify/blob/0e0cd50b326042d37b1f613eb654434c5db0e2df/LICENSE) · [package.json](https://github.com/docsifyjs/docsify/blob/0e0cd50b326042d37b1f613eb654434c5db0e2df/package.json) · [crowdin.yml](https://github.com/docsifyjs/docsify/blob/0e0cd50b326042d37b1f613eb654434c5db0e2df/.github/workflows/crowdin.yml) |
+
+<a id="ch-docusaurus"></a>
+
+### Docusaurus
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/meta/docusaurus |
+| License | MIT (docs: CC-BY-4.0 trong LICENSE-docs) |
+| Phiên bản đã đọc | `809ffffd5c8436e7458b9a2c494ce3fe7f8ef0bc` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, LICENSE-docs, package.json, .github/workflows/argos.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-19 |
+| Nhận định | Framework dựng site tài liệu/dự án mã nguồn mở (monorepo pnpm). Remote clone là meta/docusaurus đúng như catalog; LICENSE-docs dùng CC BY 4.0 cho nội dung tài liệu. |
+| Nguồn | [README.md](https://github.com/meta/docusaurus/blob/809ffffd5c8436e7458b9a2c494ce3fe7f8ef0bc/README.md) · [LICENSE](https://github.com/meta/docusaurus/blob/809ffffd5c8436e7458b9a2c494ce3fe7f8ef0bc/LICENSE) · [LICENSE-docs](https://github.com/meta/docusaurus/blob/809ffffd5c8436e7458b9a2c494ce3fe7f8ef0bc/LICENSE-docs) · [package.json](https://github.com/meta/docusaurus/blob/809ffffd5c8436e7458b9a2c494ce3fe7f8ef0bc/package.json) · [argos.yml](https://github.com/meta/docusaurus/blob/809ffffd5c8436e7458b9a2c494ce3fe7f8ef0bc/.github/workflows/argos.yml) |
+
+<a id="ch-fumadocs"></a>
+
+### Fumadocs
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/fuma-nama/fumadocs |
+| License | MIT |
+| Phiên bản đã đọc | `4489892ad308096e267703f79aeb85006824f57b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/lint.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-23 |
+| Nhận định | Framework site tài liệu cho Next.js, Astro và các framework React/Vite, monorepo turbo/pnpm; README nói chỉ ESM. |
+| Nguồn | [README.md](https://github.com/fuma-nama/fumadocs/blob/4489892ad308096e267703f79aeb85006824f57b/README.md) · [LICENSE](https://github.com/fuma-nama/fumadocs/blob/4489892ad308096e267703f79aeb85006824f57b/LICENSE) · [package.json](https://github.com/fuma-nama/fumadocs/blob/4489892ad308096e267703f79aeb85006824f57b/package.json) · [lint.yml](https://github.com/fuma-nama/fumadocs/blob/4489892ad308096e267703f79aeb85006824f57b/.github/workflows/lint.yml) |
+
+<a id="ch-gitbook-renderer-ma-mo"></a>
+
+### GitBook (renderer mã mở)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/GitbookIO/gitbook |
+| License | GPL-3.0 |
+| Phiên bản đã đọc | `21b96e17a7c85a1dcb6bde11c6428931f1be897d` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yaml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-23 |
+| Nhận định | Mã nguồn renderer site GitBook (Next.js, Bun, Node >=22.3); README có mục "Legacy GitBook (deprecated)". Giấy phép GPL-3.0 copyleft. Các route llms.txt/MCP chưa kiểm trong file đã đọc. |
+| Nguồn | [README.md](https://github.com/GitbookIO/gitbook/blob/21b96e17a7c85a1dcb6bde11c6428931f1be897d/README.md) · [LICENSE](https://github.com/GitbookIO/gitbook/blob/21b96e17a7c85a1dcb6bde11c6428931f1be897d/LICENSE) · [package.json](https://github.com/GitbookIO/gitbook/blob/21b96e17a7c85a1dcb6bde11c6428931f1be897d/package.json) · [ci.yaml](https://github.com/GitbookIO/gitbook/blob/21b96e17a7c85a1dcb6bde11c6428931f1be897d/.github/workflows/ci.yaml) |
+
+<a id="ch-gitingest"></a>
+
+### Gitingest
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/coderamp-labs/gitingest |
+| License | MIT |
+| Phiên bản đã đọc | `4e259a02fe72115bee538271622f1234a81c8e1a` (commit 2025-08-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Commit cuối 2025-08-16, hơn 1 năm không đổi |
+| Nhận định | CLI/web chuyển repo Git thành văn bản dạng prompt cho LLM (pyproject v0.3.1, Python >=3.8), có extension trình duyệt. Chủ kho nay là coderamp-labs. |
+| Nguồn | [README.md](https://github.com/coderamp-labs/gitingest/blob/4e259a02fe72115bee538271622f1234a81c8e1a/README.md) · [LICENSE](https://github.com/coderamp-labs/gitingest/blob/4e259a02fe72115bee538271622f1234a81c8e1a/LICENSE) · [pyproject.toml](https://github.com/coderamp-labs/gitingest/blob/4e259a02fe72115bee538271622f1234a81c8e1a/pyproject.toml) · [ci.yml](https://github.com/coderamp-labs/gitingest/blob/4e259a02fe72115bee538271622f1234a81c8e1a/.github/workflows/ci.yml) |
+
+<a id="ch-graphify"></a>
+
+### Graphify
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Graphify-Labs/graphify |
+| License | Apache-2.0 (kèm LICENSE-MIT riêng) |
+| Phiên bản đã đọc | `5ce8fceff41d1b636f872b6206b917ec2af7ac54` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, LICENSE-MIT, pyproject.toml, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-23; package v0.9.118 |
+| Nhận định | Skill/CLI biến codebase thành đồ thị tri thức truy vấn được; README nói mã được phân tích bằng tree-sitter, không dùng LLM **(chưa xác minh)**. pyproject khai Apache-2.0 với license-files gồm cả LICENSE-MIT. |
+| Nguồn | [README.md](https://github.com/Graphify-Labs/graphify/blob/5ce8fceff41d1b636f872b6206b917ec2af7ac54/README.md) · [LICENSE](https://github.com/Graphify-Labs/graphify/blob/5ce8fceff41d1b636f872b6206b917ec2af7ac54/LICENSE) · [LICENSE-MIT](https://github.com/Graphify-Labs/graphify/blob/5ce8fceff41d1b636f872b6206b917ec2af7ac54/LICENSE-MIT) · [pyproject.toml](https://github.com/Graphify-Labs/graphify/blob/5ce8fceff41d1b636f872b6206b917ec2af7ac54/pyproject.toml) · [ci.yml](https://github.com/Graphify-Labs/graphify/blob/5ce8fceff41d1b636f872b6206b917ec2af7ac54/.github/workflows/ci.yml) |
+
+<a id="ch-llms-txt"></a>
+
+### llms.txt
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/AnswerDotAI/llms-txt |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `3700a0a624a4a004c6a246789b37f389940b1b58` (commit 2026-09-25) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, .github/workflows/deploy.yaml; chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-09-25 |
+| Nhận định | Kho đề xuất chuẩn /llms.txt của Jeremy Howard; README nay là bản v2 (cập nhật 2026-08-10) khuyến nghị thêm bản Markdown cho từng trang. Có thư viện llms_txt và nbs. |
+| Nguồn | [README.md](https://github.com/AnswerDotAI/llms-txt/blob/3700a0a624a4a004c6a246789b37f389940b1b58/README.md) · [LICENSE](https://github.com/AnswerDotAI/llms-txt/blob/3700a0a624a4a004c6a246789b37f389940b1b58/LICENSE) · [pyproject.toml](https://github.com/AnswerDotAI/llms-txt/blob/3700a0a624a4a004c6a246789b37f389940b1b58/pyproject.toml) · [deploy.yaml](https://github.com/AnswerDotAI/llms-txt/blob/3700a0a624a4a004c6a246789b37f389940b1b58/.github/workflows/deploy.yaml) |
+
+<a id="ch-lychee"></a>
+
+### lychee
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/lycheeverse/lychee |
+| License | MIT OR Apache-2.0 |
+| Phiên bản đã đọc | `f10ac2774dac100dfdbf014647487520a8ffe08d` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE-APACHE, LICENSE-MIT, pyproject.toml, .github/workflows/auto-merge.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-12 |
+| Nhận định | Trình kiểm link Rust bất đồng bộ, dùng được như CLI, thư viện hoặc GitHub Action. Kho có đủ LICENSE-APACHE và LICENSE-MIT nên GitHub chỉ báo một giấy phép là chưa đủ. |
+| Nguồn | [README.md](https://github.com/lycheeverse/lychee/blob/f10ac2774dac100dfdbf014647487520a8ffe08d/README.md) · [LICENSE-APACHE](https://github.com/lycheeverse/lychee/blob/f10ac2774dac100dfdbf014647487520a8ffe08d/LICENSE-APACHE) · [LICENSE-MIT](https://github.com/lycheeverse/lychee/blob/f10ac2774dac100dfdbf014647487520a8ffe08d/LICENSE-MIT) · [pyproject.toml](https://github.com/lycheeverse/lychee/blob/f10ac2774dac100dfdbf014647487520a8ffe08d/pyproject.toml) · [auto-merge.yml](https://github.com/lycheeverse/lychee/blob/f10ac2774dac100dfdbf014647487520a8ffe08d/.github/workflows/auto-merge.yml) |
+
+<a id="ch-markdownlint"></a>
+
+### markdownlint
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/DavidAnson/markdownlint |
+| License | MIT |
+| Phiên bản đã đọc | `92992da11c2da77f8c4261378563098f3dc77f80` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/checkers.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-17 |
+| Nhận định | Thư viện lint Markdown cho Node.js (dựa micromark, theo CommonMark và GFM), là engine của markdownlint-cli2. Số luật chưa đếm lại. |
+| Nguồn | [README.md](https://github.com/DavidAnson/markdownlint/blob/92992da11c2da77f8c4261378563098f3dc77f80/README.md) · [LICENSE](https://github.com/DavidAnson/markdownlint/blob/92992da11c2da77f8c4261378563098f3dc77f80/LICENSE) · [package.json](https://github.com/DavidAnson/markdownlint/blob/92992da11c2da77f8c4261378563098f3dc77f80/package.json) · [checkers.yml](https://github.com/DavidAnson/markdownlint/blob/92992da11c2da77f8c4261378563098f3dc77f80/.github/workflows/checkers.yml) |
+
+<a id="ch-material-for-mkdocs"></a>
+
+### Material for MkDocs
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/squidfunk/mkdocs-material |
+| License | MIT |
+| Phiên bản đã đọc | `bcc3f28764178139b4cee96b9fb0c2ccd9bf2bd2` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/build.yml; chưa chạy upstream |
+| Bảo trì | README thông báo Zensical là bản kế nhiệm; vẫn có commit ngày 2026-11-19 |
+| Nhận định | Theme/framework tài liệu trên MkDocs (package v9.8.2). README tự giới thiệu Zensical là bản kế nhiệm do cùng nhóm duy trì (MIT) và hướng dẫn migrate. |
+| Nguồn | [README.md](https://github.com/squidfunk/mkdocs-material/blob/bcc3f28764178139b4cee96b9fb0c2ccd9bf2bd2/README.md) · [LICENSE](https://github.com/squidfunk/mkdocs-material/blob/bcc3f28764178139b4cee96b9fb0c2ccd9bf2bd2/LICENSE) · [package.json](https://github.com/squidfunk/mkdocs-material/blob/bcc3f28764178139b4cee96b9fb0c2ccd9bf2bd2/package.json) · [build.yml](https://github.com/squidfunk/mkdocs-material/blob/bcc3f28764178139b4cee96b9fb0c2ccd9bf2bd2/.github/workflows/build.yml) |
+
+<a id="ch-mdbook"></a>
+
+### mdBook
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/rust-lang/mdBook |
+| License | MPL-2.0 |
+| Phiên bản đã đọc | `b47cab11d67480f7dc206239f23edc19d4d9eea6` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, Cargo.toml, package.json; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 22/11/2026. |
+| Nhận định | Công cụ Rust dựng sách online từ Markdown, tài liệu dùng chính nó làm ví dụ. Giấy phép MPL-2.0 (copyleft theo file), cần lưu ý khi sửa rồi phân phối lại. |
+| Nguồn | [LICENSE](https://github.com/rust-lang/mdBook/blob/b47cab11d67480f7dc206239f23edc19d4d9eea6/LICENSE) · [README.md](https://github.com/rust-lang/mdBook/blob/b47cab11d67480f7dc206239f23edc19d4d9eea6/README.md) · [Cargo.toml](https://github.com/rust-lang/mdBook/blob/b47cab11d67480f7dc206239f23edc19d4d9eea6/Cargo.toml) · [package.json](https://github.com/rust-lang/mdBook/blob/b47cab11d67480f7dc206239f23edc19d4d9eea6/package.json) |
+
+<a id="ch-mermaid"></a>
+
+### Mermaid
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mermaid-js/mermaid |
+| License | MIT |
+| Phiên bản đã đọc | `6374e521f43fde5cfc60d65410c1aa033af29aaf` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, package.json; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 23/11/2026. |
+| Nhận định | Sinh sơ đồ từ văn bản kiểu Markdown, monorepo pnpm với nhiều workflow CI (e2e, codeql, link-checker). Các con số như 37 thư mục sơ đồ, 97/99 action ghim SHA là số cũ của catalog, chưa kiểm lại lần này **(chưa xác minh)**. |
+| Nguồn | [LICENSE](https://github.com/mermaid-js/mermaid/blob/6374e521f43fde5cfc60d65410c1aa033af29aaf/LICENSE) · [README.md](https://github.com/mermaid-js/mermaid/blob/6374e521f43fde5cfc60d65410c1aa033af29aaf/README.md) · [package.json](https://github.com/mermaid-js/mermaid/blob/6374e521f43fde5cfc60d65410c1aa033af29aaf/package.json) |
+
+<a id="ch-openwiki"></a>
+
+### OpenWiki
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/langchain-ai/openwiki |
+| License | MIT |
+| Phiên bản đã đọc | `dcb803e9634e3d5d7361404aa4f7ee92a3e8e5ad` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, package.json; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 17/11/2026; không kiểm được lịch sử vì clone depth 1. |
+| Nhận định | CLI/MCP biến codebase thành wiki Markdown liên kết, theo dõi bằng chứng nguồn để cập nhật phần thay đổi. Nhận định cũ về telemetry mặc định bật và chỉ còn bump dependency chưa kiểm lại **(chưa xác minh)**. |
+| Nguồn | [LICENSE](https://github.com/langchain-ai/openwiki/blob/dcb803e9634e3d5d7361404aa4f7ee92a3e8e5ad/LICENSE) · [README.md](https://github.com/langchain-ai/openwiki/blob/dcb803e9634e3d5d7361404aa4f7ee92a3e8e5ad/README.md) · [package.json](https://github.com/langchain-ai/openwiki/blob/dcb803e9634e3d5d7361404aa4f7ee92a3e8e5ad/package.json) |
+
+<a id="ch-repomix"></a>
+
+### Repomix
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/yamadashy/repomix |
+| License | MIT |
+| Phiên bản đã đọc | `7bde93e34dee399488f0fa0a1f5b2c56deb9e510` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, package.json, autofix.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 23/11/2026. |
+| Nhận định | Đóng gói cả repo thành một file thân thiện AI, kèm Secretlint và chế độ MCP. Tính năng `--sandbox` nêu trong catalog chưa kiểm trong mã **(chưa xác minh)**. |
+| Nguồn | [LICENSE](https://github.com/yamadashy/repomix/blob/7bde93e34dee399488f0fa0a1f5b2c56deb9e510/LICENSE) · [README.md](https://github.com/yamadashy/repomix/blob/7bde93e34dee399488f0fa0a1f5b2c56deb9e510/README.md) · [package.json](https://github.com/yamadashy/repomix/blob/7bde93e34dee399488f0fa0a1f5b2c56deb9e510/package.json) · [autofix.yml](https://github.com/yamadashy/repomix/blob/7bde93e34dee399488f0fa0a1f5b2c56deb9e510/.github/workflows/autofix.yml) |
+
+<a id="ch-repowise"></a>
+
+### Repowise
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/repowise-dev/repowise |
+| License | AGPL-3.0 |
+| Phiên bản đã đọc | `8d7ccc068e7020d55e9f007ba1099cc77b5e9c66` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, pyproject.toml, package.json, ci.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 23/11/2026; v0.62.0. |
+| Nhận định | Index mã + git + test cho agent qua MCP và dashboard; README tuyên bố graph/risk/health không gọi LLM **(chưa xác minh)**. AGPL-3.0 hạn chế dùng nhúng thương mại; cài đặt bằng cách dán URL cho agent là rủi ro prompt injection chuỗi cung ứng. |
+| Nguồn | [LICENSE](https://github.com/repowise-dev/repowise/blob/8d7ccc068e7020d55e9f007ba1099cc77b5e9c66/LICENSE) · [README.md](https://github.com/repowise-dev/repowise/blob/8d7ccc068e7020d55e9f007ba1099cc77b5e9c66/README.md) · [pyproject.toml](https://github.com/repowise-dev/repowise/blob/8d7ccc068e7020d55e9f007ba1099cc77b5e9c66/pyproject.toml) · [package.json](https://github.com/repowise-dev/repowise/blob/8d7ccc068e7020d55e9f007ba1099cc77b5e9c66/package.json) · [ci.yml](https://github.com/repowise-dev/repowise/blob/8d7ccc068e7020d55e9f007ba1099cc77b5e9c66/.github/workflows/ci.yml) |
+
+<a id="ch-scalar"></a>
+
+### Scalar
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/scalar/scalar |
+| License | MIT |
+| Phiên bản đã đọc | `bd8beab3377aff142f82d97f81ef692d4ccaf525` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, package.json, actions.lock; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 23/11/2026. |
+| Nhận định | API reference tương tác từ OpenAPI/Swagger kèm API client offline-first. Nhận định về PostHog plugin tuỳ chọn và agent chat/proxy dùng dịch vụ Scalar chưa kiểm trong mã **(chưa xác minh)**. |
+| Nguồn | [LICENSE](https://github.com/scalar/scalar/blob/bd8beab3377aff142f82d97f81ef692d4ccaf525/LICENSE) · [README.md](https://github.com/scalar/scalar/blob/bd8beab3377aff142f82d97f81ef692d4ccaf525/README.md) · [package.json](https://github.com/scalar/scalar/blob/bd8beab3377aff142f82d97f81ef692d4ccaf525/package.json) · [actions.lock](https://github.com/scalar/scalar/blob/bd8beab3377aff142f82d97f81ef692d4ccaf525/.github/workflows/actions.lock) |
+
+<a id="ch-sphinx"></a>
+
+### Sphinx
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/sphinx-doc/sphinx |
+| License | BSD-2-Clause |
+| Phiên bản đã đọc | `035a07c32c3241fd3356f4d827800c1f88525272` (commit 2026-10-29) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE.rst, README.rst, pyproject.toml, package.json, builddoc.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 29/10/2026. |
+| Nhận định | Trình sinh tài liệu Python/reStructuredText chuẩn, nhiều extension; phiên bản đang phát triển 9.3.0. Nhận định "chưa release 2026" không kiểm được từ clone **(chưa xác minh)**. |
+| Nguồn | [LICENSE.rst](https://github.com/sphinx-doc/sphinx/blob/035a07c32c3241fd3356f4d827800c1f88525272/LICENSE.rst) · [README.rst](https://github.com/sphinx-doc/sphinx/blob/035a07c32c3241fd3356f4d827800c1f88525272/README.rst) · [pyproject.toml](https://github.com/sphinx-doc/sphinx/blob/035a07c32c3241fd3356f4d827800c1f88525272/pyproject.toml) · [package.json](https://github.com/sphinx-doc/sphinx/blob/035a07c32c3241fd3356f4d827800c1f88525272/package.json) · [builddoc.yml](https://github.com/sphinx-doc/sphinx/blob/035a07c32c3241fd3356f4d827800c1f88525272/.github/workflows/builddoc.yml) |
+
+<a id="ch-starlight"></a>
+
+### Starlight
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/withastro/starlight |
+| License | MIT |
+| Phiên bản đã đọc | `06a97f8e0f3a3145a7cefe0c861d073cc2cd73af` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, package.json, benchmarks.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 23/11/2026. |
+| Nhận định | Framework website tài liệu trên Astro, README ngắn trỏ sang docs. Mục `notes` cũ để trống; hồ sơ nên bổ sung mô tả này. |
+| Nguồn | [LICENSE](https://github.com/withastro/starlight/blob/06a97f8e0f3a3145a7cefe0c861d073cc2cd73af/LICENSE) · [README.md](https://github.com/withastro/starlight/blob/06a97f8e0f3a3145a7cefe0c861d073cc2cd73af/README.md) · [package.json](https://github.com/withastro/starlight/blob/06a97f8e0f3a3145a7cefe0c861d073cc2cd73af/package.json) · [benchmarks.yml](https://github.com/withastro/starlight/blob/06a97f8e0f3a3145a7cefe0c861d073cc2cd73af/.github/workflows/benchmarks.yml) |
+
+<a id="ch-typos"></a>
+
+### typos
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/crate-ci/typos |
+| License | MIT OR Apache-2.0 |
+| Phiên bản đã đọc | `e7647d64ee8a549495fb66a978c44f5286858859` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE-APACHE, LICENSE-MIT, README.md, Cargo.toml, audit.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 16/11/2026. |
+| Nhận định | Công cụ Rust kiểm lỗi chính tả trong mã nguồn, ít false positive, có GitHub Action và pre-commit. Có AI_POLICY.md riêng về đóng góp bằng AI. |
+| Nguồn | [LICENSE-APACHE](https://github.com/crate-ci/typos/blob/e7647d64ee8a549495fb66a978c44f5286858859/LICENSE-APACHE) · [LICENSE-MIT](https://github.com/crate-ci/typos/blob/e7647d64ee8a549495fb66a978c44f5286858859/LICENSE-MIT) · [README.md](https://github.com/crate-ci/typos/blob/e7647d64ee8a549495fb66a978c44f5286858859/README.md) · [Cargo.toml](https://github.com/crate-ci/typos/blob/e7647d64ee8a549495fb66a978c44f5286858859/Cargo.toml) · [audit.yml](https://github.com/crate-ci/typos/blob/e7647d64ee8a549495fb66a978c44f5286858859/.github/workflows/audit.yml) |
+
+<a id="ch-vitepress"></a>
+
+### VitePress
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vuejs/vitepress |
+| License | MIT |
+| Phiên bản đã đọc | `40b2e090772ac11eac358d25ec92ee435fc2adbd` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, package.json, cr-comment.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 12/11/2026. |
+| Nhận định | SSG dựa trên Vite + Vue, kế nhiệm VuePress; bản v2 vẫn alpha nên API có thể đổi. |
+| Nguồn | [LICENSE](https://github.com/vuejs/vitepress/blob/40b2e090772ac11eac358d25ec92ee435fc2adbd/LICENSE) · [README.md](https://github.com/vuejs/vitepress/blob/40b2e090772ac11eac358d25ec92ee435fc2adbd/README.md) · [package.json](https://github.com/vuejs/vitepress/blob/40b2e090772ac11eac358d25ec92ee435fc2adbd/package.json) · [cr-comment.yml](https://github.com/vuejs/vitepress/blob/40b2e090772ac11eac358d25ec92ee435fc2adbd/.github/workflows/cr-comment.yml) |
+
+<a id="ch-zensical"></a>
+
+### Zensical
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/zensical/zensical |
+| License | MIT |
+| Phiên bản đã đọc | `2a9ade108aaec94fac6dd57ce329f9f3bf96654d` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE.md, README.md, pyproject.toml, Cargo.toml, build.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 22/11/2026; Cargo version 0.29.0. |
+| Nhận định | SSG của nhóm Material for MkDocs, lõi Rust với wrapper Python. Đã qua mốc 0.0.x trong catalog (hiện 0.29.0 theo Cargo.toml) nhưng vẫn là phiên bản 0.x. |
+| Nguồn | [LICENSE.md](https://github.com/zensical/zensical/blob/2a9ade108aaec94fac6dd57ce329f9f3bf96654d/LICENSE.md) · [README.md](https://github.com/zensical/zensical/blob/2a9ade108aaec94fac6dd57ce329f9f3bf96654d/README.md) · [pyproject.toml](https://github.com/zensical/zensical/blob/2a9ade108aaec94fac6dd57ce329f9f3bf96654d/pyproject.toml) · [Cargo.toml](https://github.com/zensical/zensical/blob/2a9ade108aaec94fac6dd57ce329f9f3bf96654d/Cargo.toml) · [build.yml](https://github.com/zensical/zensical/blob/2a9ade108aaec94fac6dd57ce329f9f3bf96654d/.github/workflows/build.yml) |

@@ -9,7 +9,7 @@
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [awesome-llm-apps](../../08-awesome-lists-learning/README.md#ch-awesome-llm-apps) | `Shubhamsaboo/awesome-llm-apps` | Apache-2.0 | 145.497 | đọc tài liệu 2026-11-23 | 08 | ; |
-| [awesome-claude-skills (Composio)](../../20-claude-plugins-ecosystem/README.md) | `ComposioHQ/awesome-claude-skills` | — | 78.444 | chưa chuẩn hóa | 20 | Danh sách ~184 skill + thư mục skill chép kèm; |
+| [awesome-claude-skills (Composio)](../../20-claude-plugins-ecosystem/README.md#ch-awesome-claude-skills-composio) | `ComposioHQ/awesome-claude-skills` | — | 80.137 | đọc tài liệu 2026-11-23 | 20 | Danh sách ~184 skill + thư mục skill chép kèm; |
 | [awesome-claude-code](../../08-awesome-lists-learning/README.md#ch-awesome-claude-code) | `hesreallyhim/awesome-claude-code` | CC-BY-NC-ND-4.0 | 58.657 | đọc tài liệu 2026-11-23 | 08 | 37k–55k tùy nguồn; |
 | [Awesome OpenClaw Skills](../../08-awesome-lists-learning/README.md#ch-awesome-openclaw-skills) | `VoltAgent/awesome-openclaw-skills` | MIT | 53.951 | đọc tài liệu 2026-11-23 | 08 | 5.213 skill OpenClaw từ ClawHub, 30 nhóm, công bố đã loại 7.215 (373 độc hại); |
 | [Agentic Awesome Skills](../../08-awesome-lists-learning/README.md#ch-agentic-awesome-skills) | `sickn33/agentic-awesome-skills` | MIT (code) + CC BY 4.0 (nội dung, LICENSE-CONTENT) | 50.193 | đọc tài liệu 2026-11-23 | 08 | 2.886 SKILL.md + MCP AAS Core; |
@@ -130,5 +130,5 @@
 | [awesome-ai-engineering](../../08-awesome-lists-learning/README.md#6c56-danh-sách-awesome--tổng-hợp) | `dipakkr/awesome-ai-engineering` | MIT | 22.589 | đọc tài liệu 2026-11-18 | 08 | Danh sách tài nguyên cho sinh viên và người đi làm: học ngôn ngữ lập trình, AI/ML, LLM, Web3, bảo mật, cloud/DevOps, hackathon, học bổng, thực tập. |
 | [awesome-readme](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-matiassingers-awesome-readme) | `matiassingers/awesome-readme` | CC0-1.0 (tuyên bố trong README) | 21.760 | đọc tài liệu 2026-11-23 | 08 | Danh sách README tiêu biểu cùng bài viết, ví dụ kiến trúc và công cụ tạo hình minh họa. |
 | [awesome-neovim](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-rockerboo-awesome-neovim) | `rockerBOO/awesome-neovim` | CC0-1.0 | 21.607 | đọc tài liệu 2026-11-23 | 08 | Danh mục plugin tập trung vào các khả năng riêng của Neovim. |
+| [awesome-opus5-5-videos](../../22-motion-design-animation/README.md#ch-awesome-opus5-5-videos) | `yihui-dev/awesome-opus5-5-videos` | MIT | 16.281 | đọc tài liệu 2026-11-23 | 22 | Awesome-list + dataset prompt video Opus 5.5; |
 | [Github-Ranking](../../08-awesome-lists-learning/README.md#ch-github-ranking) | `EvanLi/Github-Ranking` | MIT | 13.148 | đọc tài liệu 2026-11-23 | 08 | Cập nhật hằng ngày. |
-| [awesome-opus5-5-videos](../../22-motion-design-animation/README.md) | `yihui-dev/awesome-opus5-5-videos` | MIT | 12.904 | chưa chuẩn hóa | 22 | Awesome-list + dataset prompt video Opus 5.5; |

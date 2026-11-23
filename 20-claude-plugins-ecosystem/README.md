@@ -1148,7 +1148,7 @@ Ngoài bảy bước còn `/constraints` (constraint-driven-development) và `/w
 | Repo | github.com/anthropics/skills · **186k★, 22k fork** · shields "not specified" vì license **theo từng skill** · **426 issue / ~1k PR mở** |
 | Lịch sử | **chỉ 61 commit** từ 15/10/2025, 17 tác giả (Lance Martin 17, Keith Lazuka 13); 1 commit từ 12/10 (mcp-builder dạy MCP TypeScript SDK v2); phần lớn commit gần đây cập nhật skill `claude-api` (model mới, Managed Agents) |
 | 19 skill | Sáng tạo/thiết kế: `algorithmic-art`, `canvas-design`, `frontend-design` (mục 06), `theme-factory`, `brand-guidelines`, `slack-gif-creator`; kỹ thuật: `claude-api`, `mcp-builder`, `skill-creator`, `web-artifacts-builder`, `webapp-testing`; doanh nghiệp: `internal-comms`, `doc-coauthoring`, `academy-guide`, `discernment-nudge`; **tài liệu: `docx`, `pdf`, `pptx`, `xlsx`** |
-| License | **15 skill Apache-2.0**; **4 skill tài liệu (docx/pdf/pptx/xlsx) "© Anthropic, All rights reserved"** — source-available, chỉ dùng theo điều khoản trong file, không phải mã nguồn mở; `doc-coauthoring` **không có file license** |
+| License | **15 skill Apache-2.0**; **4 skill tài liệu (docx/pdf/pptx/xlsx) "© Anthropic, All rights reserved"** — source-available, chỉ dùng theo điều khoản trong file, không phải mã nguồn mở; `doc-coauthoring` **không có file license**  **Đính chính 23/11/2026:** đọc lại tại commit `e4bb5d9` (16/11/2026), `skills/docx`, `pdf`, `pptx`, `xlsx` đều có `LICENSE.txt` Apache-2.0 và SKILL.md ghi "Complete terms in LICENSE.txt"; repo không có LICENSE ở gốc; `doc-coauthoring` vẫn không có file license. Câu "All rights reserved" ở trên là kết quả đọc 31/10/2026, nay lỗi thời. |
 | Khác | `spec/agent-skills-spec.md` (spec Agent Skills; chuẩn mở tại agentskills.io, mục 04) và `template/SKILL.md`; cài trong Claude Code bằng `/plugin marketplace add anthropics/skills` |
 
 **Đánh giá:** đây là **mẫu tham chiếu**, README tự ghi "for demonstration and educational purposes only", hành vi trong sản phẩm Claude có thể khác. 186k★ trên 61 commit và ~1k PR không được xử lý — repo nhận đóng góp rất hạn chế. Giá trị nhất: `skill-creator` (tạo + eval skill), `mcp-builder`, `claude-api`, spec. **Không vendor 4 skill tài liệu vào sản phẩm** vì license độc quyền; với dự án mở chỉ lấy skill Apache-2.0.
@@ -1890,3 +1890,457 @@ Công cụ CLI Python (kèm máy chủ MCP) biến trang tài liệu, repo GitHu
 Thư viện 98 Agent Skill giúp agent AI tự làm nghiên cứu AI trọn vòng đời: từ ý tưởng, khảo sát tài liệu, huấn luyện/tinh chỉnh/đánh giá/triển khai mô hình đến viết bài báo, có skill autoresearch điều phối. 98 tệp SKILL.md chia 23 nhóm (kiến trúc mô hình, fine-tuning, huấn luyện phân tán, suy luận, RAG, an toàn, viết bài ML…); có trình cài tương tác qua npm (@orchestra-research/ai-research-skills); có CITATION.cff và CONTRIBUTING.md. ★ 18/11/2026: 14.630 (GitHub search API), nhóm "Skill, Prompt & Mẫu cho AI" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
 
 **Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c518-skill-prompt--mẫu-cho-ai) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-agent-skills-eval"></a>
+
+### agent-skills-eval
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/darkrishabh/agent-skills-eval |
+| License | MIT |
+| Phiên bản đã đọc | `9724511694ca0a2e8342816118412a3909186a95` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit 16/11/2026; package.json 0.1.1. |
+| Nhận định | Test runner cho Agent Skills (chuẩn agentskills.io): chạy cùng prompt có/không skill rồi cho model judge chấm. Phiên bản 0.1.x còn sớm; độ tin cậy của judge **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/darkrishabh/agent-skills-eval/blob/9724511694ca0a2e8342816118412a3909186a95/README.md) · [LICENSE](https://github.com/darkrishabh/agent-skills-eval/blob/9724511694ca0a2e8342816118412a3909186a95/LICENSE) · [package.json](https://github.com/darkrishabh/agent-skills-eval/blob/9724511694ca0a2e8342816118412a3909186a95/package.json) |
+
+<a id="ch-andrej-karpathy-skills"></a>
+
+### andrej-karpathy-skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/multica-ai/andrej-karpathy-skills |
+| License | Không có file LICENSE (README/plugin.json khai MIT) |
+| Phiên bản đã đọc | `2c606141936f1eeef17fa3043a72095b4765b9c2` (commit 2026-04-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, .claude-plugin/plugin.json; chưa chạy upstream |
+| Bảo trì | Commit cuối 20/4/2026 (~7 tháng), đứng yên. |
+| Nhận định | Một CLAUDE.md/skill ngắn gồm 4 nguyên tắc coding (Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution) lấy cảm hứng từ bài đăng của Karpathy, không phải do ông viết. README còn dẫn sang dự án Multica của tác giả. Không có test/benchmark. |
+| Nguồn | [README.md](https://github.com/multica-ai/andrej-karpathy-skills/blob/2c606141936f1eeef17fa3043a72095b4765b9c2/README.md) · [plugin.json](https://github.com/multica-ai/andrej-karpathy-skills/blob/2c606141936f1eeef17fa3043a72095b4765b9c2/.claude-plugin/plugin.json) |
+
+<a id="ch-awesome-claude-code-subagents"></a>
+
+### awesome-claude-code-subagents
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/VoltAgent/awesome-claude-code-subagents |
+| License | MIT |
+| Phiên bản đã đọc | `ed74d115b7fb7026a22a4f816a8e3250f425e3b4` (commit 2026-11-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2/11/2026; README ghi 161+ subagent, 10 nhóm. |
+| Nhận định | Bộ sưu tập subagent Claude Code theo 10 nhóm, có `install-agents.sh` và `.claude-plugin`. Có mục sponsor trong README nên chú ý động cơ thương mại; chất lượng từng agent chưa kiểm. |
+| Nguồn | [README.md](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/ed74d115b7fb7026a22a4f816a8e3250f425e3b4/README.md) · [LICENSE](https://github.com/VoltAgent/awesome-claude-code-subagents/blob/ed74d115b7fb7026a22a4f816a8e3250f425e3b4/LICENSE) |
+
+<a id="ch-awesome-claude-skills-composio"></a>
+
+### awesome-claude-skills (Composio)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ComposioHQ/awesome-claude-skills |
+| License | Không có file LICENSE (README khai Apache-2.0) |
+| Phiên bản đã đọc | `be2a406907dbc61b73e6827ded415c96139d13a2` (commit 2026-07-24) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md; chưa chạy upstream |
+| Bảo trì | Commit cuối 24/7/2026 (~4 tháng). |
+| Nhận định | Danh sách tuyển chọn skill/plugin kèm nhiều thư mục skill chép sẵn; README tự nhận "1000+" mục **(chưa xác minh)**. Giấy phép chỉ là tuyên bố trong README, không có văn bản kèm, và README có nội dung quảng bá Composio. |
+| Nguồn | [README.md](https://github.com/ComposioHQ/awesome-claude-skills/blob/be2a406907dbc61b73e6827ded415c96139d13a2/README.md) |
+
+<a id="ch-caveman"></a>
+
+### Caveman
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/JuliusBrussee/caveman |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `b89752f6bca5a26bfde8b019813554241800ca99` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, LICENSING.md, LICENSE-MIT, package.json; chưa chạy upstream |
+| Bảo trì | Commit 23/11/2026 (cùng ngày kiểm); package.json 4.2.0. |
+| Nhận định | Công cụ giảm token cho agent (skill giọng ngắn, nay kèm installer/runtime nhiều thành phần), có bản desktop "Caveman Code" quảng bá trong README. Số liệu benchmark/trích dẫn trong README là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/JuliusBrussee/caveman/blob/b89752f6bca5a26bfde8b019813554241800ca99/README.md) · [LICENSE](https://github.com/JuliusBrussee/caveman/blob/b89752f6bca5a26bfde8b019813554241800ca99/LICENSE) · [LICENSING.md](https://github.com/JuliusBrussee/caveman/blob/b89752f6bca5a26bfde8b019813554241800ca99/LICENSING.md) · [LICENSE-MIT](https://github.com/JuliusBrussee/caveman/blob/b89752f6bca5a26bfde8b019813554241800ca99/LICENSE-MIT) · [package.json](https://github.com/JuliusBrussee/caveman/blob/b89752f6bca5a26bfde8b019813554241800ca99/package.json) |
+
+<a id="ch-claude-code-plugin-validate-plugin-eval"></a>
+
+### Claude Code plugin validate + plugin eval
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://code.claude.com/docs/en/plugin-evals |
+| License | tài liệu sản phẩm (không có repo) |
+| Phiên bản đã đọc | trang docs đọc 2026-11-23 (không có SHA) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang docs; chưa chạy upstream |
+| Bảo trì | chưa rõ (tài liệu sản phẩm đang được cập nhật, không có lịch sử commit công khai để đánh giá) |
+| Nhận định | Trang docs chính thức của Claude Code về `claude plugin eval` (đọc 2026-11-23, HTTP 200): yêu cầu Claude Code v2.1.269+ và Git 2.31+, mỗi case chạy mặc định 3 lần trong phiên cô lập chỉ nạp plugin, có grader và baseline không plugin, tốn hạn mức/API của người dùng; trang có mục lỗi "early access/currently unavailable" nên lệnh có thể bị tắt phía máy chủ. |
+| Nguồn | [Docs plugin-evals](https://code.claude.com/docs/en/plugin-evals) |
+
+<a id="ch-claude-code-templates"></a>
+
+### claude-code-templates
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/davila7/claude-code-templates |
+| License | MIT |
+| Phiên bản đã đọc | `c1bc5c1df4ff0bffb9a04d8f7790543681232423` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit 23/11/2026; package.json 1.33.1. |
+| Nhận định | Catalog thành phần Claude Code cài bằng một lệnh CLI. Repo lớn, nhiều thành phần cộng đồng, nên rà từng thành phần trước khi cài; telemetry/tracking của CLI ghi trong catalog cũ chưa mở lại lần này **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/davila7/claude-code-templates/blob/c1bc5c1df4ff0bffb9a04d8f7790543681232423/README.md) · [LICENSE](https://github.com/davila7/claude-code-templates/blob/c1bc5c1df4ff0bffb9a04d8f7790543681232423/LICENSE) · [package.json](https://github.com/davila7/claude-code-templates/blob/c1bc5c1df4ff0bffb9a04d8f7790543681232423/package.json) |
+
+<a id="ch-claude-hud"></a>
+
+### Claude HUD
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/jarrodwatts/claude-hud |
+| License | MIT |
+| Phiên bản đã đọc | `5fc08cbb610a7439993e40124637cbe193d60ea3` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit 23/11/2026; package.json 0.15.5. |
+| Nhận định | Plugin statusline cho Claude Code hiển thị mức dùng context, hạn mức, tool và agent đang chạy; cài qua marketplace. Mã chạy trên máy người dùng; chưa đọc mã nên các khẳng định "không gọi mạng" trong catalog cũ **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/jarrodwatts/claude-hud/blob/5fc08cbb610a7439993e40124637cbe193d60ea3/README.md) · [LICENSE](https://github.com/jarrodwatts/claude-hud/blob/5fc08cbb610a7439993e40124637cbe193d60ea3/LICENSE) · [package.json](https://github.com/jarrodwatts/claude-hud/blob/5fc08cbb610a7439993e40124637cbe193d60ea3/package.json) |
+
+<a id="ch-claude-plugins-community"></a>
+
+### claude-plugins-community
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anthropics/claude-plugins-community |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `24479d5a1fb7a1c4f068a6d3b74d0c0fbc1acfda` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, .claude-plugin/marketplace.json; chưa chạy upstream |
+| Bảo trì | Commit 23/11/2026, đồng bộ hằng đêm từ pipeline nội bộ của Anthropic. |
+| Nhận định | Mirror chỉ-đọc danh mục plugin cộng đồng của Anthropic (`.claude-plugin/marketplace.json`) đồng bộ từ quy trình duyệt nội bộ. Bốn workflow trong `.github/workflows` (bump SHA, đóng PR ngoài, quét owner, validate) chưa mở. Không nhận đóng góp qua PR. |
+| Nguồn | [README.md](https://github.com/anthropics/claude-plugins-community/blob/24479d5a1fb7a1c4f068a6d3b74d0c0fbc1acfda/README.md) · [LICENSE](https://github.com/anthropics/claude-plugins-community/blob/24479d5a1fb7a1c4f068a6d3b74d0c0fbc1acfda/LICENSE) · [marketplace.json](https://github.com/anthropics/claude-plugins-community/blob/24479d5a1fb7a1c4f068a6d3b74d0c0fbc1acfda/.claude-plugin/marketplace.json) |
+
+<a id="ch-claude-skills-alireza-rezvani"></a>
+
+### claude-skills (Alireza Rezvani)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/alirezarezvani/claude-skills |
+| License | MIT |
+| Phiên bản đã đọc | `ea7b5ab8da93bbba8880152d9ccb8c9979f12252` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, .claude-plugin/marketplace.json; chưa chạy upstream |
+| Bảo trì | Commit 23/11/2026. |
+| Nhận định | Bộ skill/plugin đa phòng ban cho Claude Code và 12 agent khác, tuyên bố có kiểm tra mỗi skill có được nạp hay không (VERIFIED.md, chưa mở). Số lượng nhiều nên chất lượng không đồng đều **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/alirezarezvani/claude-skills/blob/ea7b5ab8da93bbba8880152d9ccb8c9979f12252/README.md) · [LICENSE](https://github.com/alirezarezvani/claude-skills/blob/ea7b5ab8da93bbba8880152d9ccb8c9979f12252/LICENSE) · [pyproject.toml](https://github.com/alirezarezvani/claude-skills/blob/ea7b5ab8da93bbba8880152d9ccb8c9979f12252/pyproject.toml) · [marketplace.json](https://github.com/alirezarezvani/claude-skills/blob/ea7b5ab8da93bbba8880152d9ccb8c9979f12252/.claude-plugin/marketplace.json) |
+
+<a id="ch-coder-eval"></a>
+
+### Coder Eval
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/UiPath/coder_eval |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `803f2d346a8df37042ad2d64f310be020f3c335b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit 23/11/2026; pyproject 0.12.18, Python >=3.13. |
+| Nhận định | Framework đánh giá/A-B agent lập trình và skill theo task YAML tự viết, có kiểm skill_triggered; không phải bảng xếp hạng cố định. Do UiPath phát triển; chạy thật cần khóa API và sandbox, chưa chạy lần này. |
+| Nguồn | [README.md](https://github.com/UiPath/coder_eval/blob/803f2d346a8df37042ad2d64f310be020f3c335b/README.md) · [LICENSE](https://github.com/UiPath/coder_eval/blob/803f2d346a8df37042ad2d64f310be020f3c335b/LICENSE) · [pyproject.toml](https://github.com/UiPath/coder_eval/blob/803f2d346a8df37042ad2d64f310be020f3c335b/pyproject.toml) |
+
+<a id="ch-codex-plugin-for-claude-code"></a>
+
+### Codex plugin for Claude Code
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/openai/codex-plugin-cc |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `db52e28f4d9ded852ab3942cea316258ae4ef346` (commit 2026-07-07) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit cuối 7/7/2026 (~4,5 tháng); package.json 1.0.6. |
+| Nhận định | Plugin chính chủ OpenAI để gọi Codex từ trong Claude Code (review, giao việc, quản lý job nền). Tiêu hạn mức Codex của người dùng; hành vi rescue/Stop hook trong catalog cũ chưa đọc mã nên **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/openai/codex-plugin-cc/blob/db52e28f4d9ded852ab3942cea316258ae4ef346/README.md) · [LICENSE](https://github.com/openai/codex-plugin-cc/blob/db52e28f4d9ded852ab3942cea316258ae4ef346/LICENSE) · [package.json](https://github.com/openai/codex-plugin-cc/blob/db52e28f4d9ded852ab3942cea316258ae4ef346/package.json) |
+
+<a id="ch-compound-engineering-plugin"></a>
+
+### compound-engineering-plugin
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/EveryInc/compound-engineering-plugin |
+| License | Catalog cũ ghi "–", thực tế MIT (khác catalog cũ) |
+| Phiên bản đã đọc | `58d1a83d9207c96c9fb4934589b8b5967849dfdb` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit 20/11/2026; package.json 3.38.2. |
+| Nhận định | Plugin quy trình brainstorm, plan, build, review rồi ghi lại bài học để thay đổi sau đọc lại; chạy trên nhiều agent host. Do Every duy trì; hiệu quả thực tế **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/EveryInc/compound-engineering-plugin/blob/58d1a83d9207c96c9fb4934589b8b5967849dfdb/README.md) · [LICENSE](https://github.com/EveryInc/compound-engineering-plugin/blob/58d1a83d9207c96c9fb4934589b8b5967849dfdb/LICENSE) · [package.json](https://github.com/EveryInc/compound-engineering-plugin/blob/58d1a83d9207c96c9fb4934589b8b5967849dfdb/package.json) |
+
+<a id="ch-crapper-dryer-mutator-uncle-bob"></a>
+
+### crapper / dryer / mutator (Uncle Bob)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/unclebob/crapper |
+| License | 0BSD |
+| Phiên bản đã đọc | `c757ec79a6c15dc815238bbd9c2f4601eb54d3cc` (commit 2026-11-10) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit 10/11/2026; pyproject 0.1.0. |
+| Nhận định | Công cụ tính CRAP (độ phức tạp chu trình và coverage) đa ngôn ngữ; dryer/mutator ở repo khác. Chạy bằng script tự tạo `.venv` và cài gói nên cần đọc kỹ trước khi chạy; bản 0.1.0 còn mới. |
+| Nguồn | [README.md](https://github.com/unclebob/crapper/blob/c757ec79a6c15dc815238bbd9c2f4601eb54d3cc/README.md) · [LICENSE](https://github.com/unclebob/crapper/blob/c757ec79a6c15dc815238bbd9c2f4601eb54d3cc/LICENSE) · [pyproject.toml](https://github.com/unclebob/crapper/blob/c757ec79a6c15dc815238bbd9c2f4601eb54d3cc/pyproject.toml) |
+
+<a id="ch-everything-claude-code-ecc"></a>
+
+### Everything Claude Code (ECC)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/affaan-m/ECC |
+| License | MIT |
+| Phiên bản đã đọc | `4adeee6732a12d1540f49a4d50a38ce8c97f9a53` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit 19/11/2026; package.json 2.2.3 (gói `ecc-universal`). |
+| Nhận định | Bộ harness rất lớn (agent, skill, hook, rule, MCP) cho nhiều công cụ agent. Phạm vi rộng nên nên cài profile nhỏ; các số liệu cụ thể trong catalog cũ (số agent/skill/hook) chưa đếm lại **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/affaan-m/ECC/blob/4adeee6732a12d1540f49a4d50a38ce8c97f9a53/README.md) · [LICENSE](https://github.com/affaan-m/ECC/blob/4adeee6732a12d1540f49a4d50a38ce8c97f9a53/LICENSE) · [package.json](https://github.com/affaan-m/ECC/blob/4adeee6732a12d1540f49a4d50a38ce8c97f9a53/package.json) |
+
+<a id="ch-gsd-core"></a>
+
+### gsd-core
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/open-gsd/gsd-core |
+| License | MIT |
+| Phiên bản đã đọc | `bcbfd96918c04617294fe7ef6d916a069a05820d` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit 23/11/2026; package.json 1.23.0 (catalog cũ v1.19.0). |
+| Nhận định | Khung context engineering và spec-driven development chạy qua subagent ngữ cảnh sạch cho nhiều coding agent. Là kế nhiệm của repo cũ theo catalog; quan hệ kế nhiệm **(chưa xác minh)** ở lần đọc này. |
+| Nguồn | [README.md](https://github.com/open-gsd/gsd-core/blob/bcbfd96918c04617294fe7ef6d916a069a05820d/README.md) · [LICENSE](https://github.com/open-gsd/gsd-core/blob/bcbfd96918c04617294fe7ef6d916a069a05820d/LICENSE) · [package.json](https://github.com/open-gsd/gsd-core/blob/bcbfd96918c04617294fe7ef6d916a069a05820d/package.json) |
+
+<a id="ch-knowledge-work-plugins"></a>
+
+### knowledge-work-plugins
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anthropics/knowledge-work-plugins |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `2baf6d1eded3cd7aeff0b5c5918601a5799189b4` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, .claude-plugin/marketplace.json; chưa chạy upstream |
+| Bảo trì | Commit 23/11/2026. |
+| Nhận định | Plugin theo vai trò (productivity, sales, finance, legal, engineering, design...) cho Cowork và Claude Code, chủ yếu skill markdown và connector. README và marketplace.json lệch số lượng nên dùng marketplace.json làm số đếm. |
+| Nguồn | [README.md](https://github.com/anthropics/knowledge-work-plugins/blob/2baf6d1eded3cd7aeff0b5c5918601a5799189b4/README.md) · [LICENSE](https://github.com/anthropics/knowledge-work-plugins/blob/2baf6d1eded3cd7aeff0b5c5918601a5799189b4/LICENSE) · [marketplace.json](https://github.com/anthropics/knowledge-work-plugins/blob/2baf6d1eded3cd7aeff0b5c5918601a5799189b4/.claude-plugin/marketplace.json) |
+
+<a id="ch-nvidia-skillevaluator"></a>
+
+### NVIDIA SkillEvaluator
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/NVIDIA/SkillEvaluator |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `7aaf2956c306c44843aaf3df50b6ddd0838085d9` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit 23/11/2026; có GOVERNANCE.md, SECURITY.md, SUPPORT.md. |
+| Nhận định | Công cụ kiểm skill (chất lượng, bảo mật) và đo tác động skill lên kết quả task, kèm mẫu CI. Do NVIDIA phát hành với tài liệu quản trị rõ ràng; kết quả đo thực tế chưa chạy. |
+| Nguồn | [README.md](https://github.com/NVIDIA/SkillEvaluator/blob/7aaf2956c306c44843aaf3df50b6ddd0838085d9/README.md) · [LICENSE](https://github.com/NVIDIA/SkillEvaluator/blob/7aaf2956c306c44843aaf3df50b6ddd0838085d9/LICENSE) · [pyproject.toml](https://github.com/NVIDIA/SkillEvaluator/blob/7aaf2956c306c44843aaf3df50b6ddd0838085d9/pyproject.toml) |
+
+<a id="ch-oh-my-hermes"></a>
+
+### oh-my-hermes
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/rlaope/oh-my-hermes |
+| License | Catalog cũ ghi "–", thực tế MIT (khác catalog cũ) |
+| Phiên bản đã đọc | `77f1f131a36f81f77fe194acacc706d313734641` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit 23/11/2026; pyproject 5.0.0. |
+| Nhận định | Lớp vận hành quy trình skill cho Hermes Agent (mỗi "lane" một model theo loại việc). Cài bằng `curl \| sh` nên nên đọc script trước khi chạy; lời README về không vá Hermes **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/rlaope/oh-my-hermes/blob/77f1f131a36f81f77fe194acacc706d313734641/README.md) · [LICENSE](https://github.com/rlaope/oh-my-hermes/blob/77f1f131a36f81f77fe194acacc706d313734641/LICENSE) · [pyproject.toml](https://github.com/rlaope/oh-my-hermes/blob/77f1f131a36f81f77fe194acacc706d313734641/pyproject.toml) |
+
+<a id="ch-ponytail"></a>
+
+### Ponytail
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/DietrichGebert/ponytail |
+| License | MIT |
+| Phiên bản đã đọc | `ebd8654c2c627f721eb8f9c0d1bd4090a29f9e10` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit 22/11/2026; package.json 5.3.3. |
+| Nhận định | Prompt/skill "lazy senior dev" bắt agent ưu tiên giải pháp ít code nhất, có adapter cho nhiều agent. Số liệu giảm LOC/chi phí trong README là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/DietrichGebert/ponytail/blob/ebd8654c2c627f721eb8f9c0d1bd4090a29f9e10/README.md) · [LICENSE](https://github.com/DietrichGebert/ponytail/blob/ebd8654c2c627f721eb8f9c0d1bd4090a29f9e10/LICENSE) · [package.json](https://github.com/DietrichGebert/ponytail/blob/ebd8654c2c627f721eb8f9c0d1bd4090a29f9e10/package.json) |
+
+<a id="ch-skill-recorder-microsoft"></a>
+
+### Skill Recorder (Microsoft)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/skill-recorder |
+| License | MIT |
+| Phiên bản đã đọc | `f4f9e2b6ac58f71da8e2bbd9fde34e65390a7ae8` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/portable.yml; chưa chạy upstream |
+| Bảo trì | Còn hoạt động: commit mới nhất đúng ngày kiểm, v0.9.4 |
+| Nhận định | Công cụ Electron ghi phiên làm việc rồi dùng Copilot CLI dựng intent và bước thành SKILL.md hoặc Automation. Đáng tham khảo cách tách bước phân tích khỏi thu thập; rủi ro là dữ liệu màn hình, URL, clipboard đi qua nhà cung cấp AI **(chưa xác minh)** mức lọc PII ở bước gửi timeline; bản portable không ký số. |
+| Nguồn | [README.md](https://github.com/microsoft/skill-recorder/blob/f4f9e2b6ac58f71da8e2bbd9fde34e65390a7ae8/README.md) · [LICENSE](https://github.com/microsoft/skill-recorder/blob/f4f9e2b6ac58f71da8e2bbd9fde34e65390a7ae8/LICENSE) · [package.json](https://github.com/microsoft/skill-recorder/blob/f4f9e2b6ac58f71da8e2bbd9fde34e65390a7ae8/package.json) · [.github/workflows/portable.yml](https://github.com/microsoft/skill-recorder/blob/f4f9e2b6ac58f71da8e2bbd9fde34e65390a7ae8/.github/workflows/portable.yml) |
+
+<a id="ch-skillgrade"></a>
+
+### skillgrade
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mgechev/skillgrade |
+| License | MIT |
+| Phiên bản đã đọc | `ab2afd7c13e56c4bf9db173d68752a931cc8a400` (commit 2026-10-11) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-10-11, v0.5.0 |
+| Nhận định | Harness đánh giá skill/agent bằng eval.yaml, chạy nhiều agent (Gemini CLI, Claude Code, Codex...) với grader tất định, LLM hoặc người; có cổng CI theo ngưỡng pass rate. Giới hạn: cần Docker và khóa API cho grader LLM; chưa chạy thử. |
+| Nguồn | [README.md](https://github.com/mgechev/skillgrade/blob/ab2afd7c13e56c4bf9db173d68752a931cc8a400/README.md) · [LICENSE](https://github.com/mgechev/skillgrade/blob/ab2afd7c13e56c4bf9db173d68752a931cc8a400/LICENSE) · [package.json](https://github.com/mgechev/skillgrade/blob/ab2afd7c13e56c4bf9db173d68752a931cc8a400/package.json) |
+
+<a id="ch-social-media-skills-blacktwist"></a>
+
+### social-media-skills (BlackTwist)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/blacktwist/social-media-skills |
+| License | MIT |
+| Phiên bản đã đọc | `4f85b07069983b3b0b9bbe6519fed7017edcce81` (commit 2026-05-01) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-05-01, không thấy commit sau đó |
+| Nhận định | 14 skill nội dung mạng xã hội (chiến lược, lịch, viết bài/thread/carousel/caption, phân tích hiệu quả) cài qua skills CLI. Giá trị chủ yếu là prompt mẫu; không thấy hook hay cổng máy; ít hoạt động từ 5/2026. |
+| Nguồn | [README.md](https://github.com/blacktwist/social-media-skills/blob/4f85b07069983b3b0b9bbe6519fed7017edcce81/README.md) · [LICENSE](https://github.com/blacktwist/social-media-skills/blob/4f85b07069983b3b0b9bbe6519fed7017edcce81/LICENSE) |
+
+<a id="ch-social-media-skills-skills-woopsocial"></a>
+
+### social-media-skills/skills (WoopSocial)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/social-media-skills/skills |
+| License | MIT |
+| Phiên bản đã đọc | `f28cef2b7067ec64e79c9d85421c022c06659e03` (commit 2026-10-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-10-15; có workflow validate/release/scorecard |
+| Nhận định | Bộ 106 skill marketing mạng xã hội có evals riêng; điểm đáng tham khảo là cấu trúc SKILL + references + evals và kiểm tên skill tham chiếu. Rủi ro: phần lớn skill dẫn về dịch vụ WoopSocial (phễu thương mại), mức hiệu quả của evals **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/social-media-skills/skills/blob/f28cef2b7067ec64e79c9d85421c022c06659e03/README.md) · [LICENSE](https://github.com/social-media-skills/skills/blob/f28cef2b7067ec64e79c9d85421c022c06659e03/LICENSE) |
+
+<a id="ch-superclaude-framework"></a>
+
+### SuperClaude Framework
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/SuperClaude-Org/SuperClaude_Framework |
+| License | MIT |
+| Phiên bản đã đọc | `fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2` (commit 2026-09-27) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, package.json; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-09-27; v4.3.0 |
+| Nhận định | Framework lệnh /sc:* cho Claude Code (30 command, 20 agent, 7 mode) gói qua PyPI/npm. Điểm tham khảo là catalog command/mode; rủi ro: không có commit từ 27/9/2026, lợi ích "2-3x nhanh, 30-50% ít token" là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2/README.md) · [LICENSE](https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2/LICENSE) · [pyproject.toml](https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2/pyproject.toml) · [package.json](https://github.com/SuperClaude-Org/SuperClaude_Framework/blob/fe68862c8ed9e2afb8120c2d9e27d0c3a7ce73a2/package.json) |
+
+<a id="ch-superpowers"></a>
+
+### superpowers
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/obra/superpowers |
+| License | MIT |
+| Phiên bản đã đọc | `22f0b463e7a5e579904dd6211a520321035526f7` (commit 2026-11-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-03; package v7.0.2 |
+| Nhận định | Phương pháp phát triển phần mềm dạng skill (brainstorm, plan, TDD, review, worktree...) cho nhiều harness (Claude Code, Codex, Cursor, Gemini, OpenCode...). Rủi ro: không CI trong repo, có telemetry logo ở visual companion cần tắt theo README. |
+| Nguồn | [README.md](https://github.com/obra/superpowers/blob/22f0b463e7a5e579904dd6211a520321035526f7/README.md) · [LICENSE](https://github.com/obra/superpowers/blob/22f0b463e7a5e579904dd6211a520321035526f7/LICENSE) · [package.json](https://github.com/obra/superpowers/blob/22f0b463e7a5e579904dd6211a520321035526f7/package.json) |
+
+<a id="ch-text-to-cad"></a>
+
+### text-to-cad
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/earthtojake/text-to-cad |
+| License | MIT |
+| Phiên bản đã đọc | `1dba9d3d0bf77b6e74673aa1743a1f0173a13892` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, pyproject.toml, docs/install.md; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-22; có CI test và cài đặt |
+| Nhận định | Bộ công cụ và skill thiết kế CAD bằng AI (CLI cad, MCP, web viewer, DFM/FEA). Đáng tham khảo kiến trúc plugin + MCP; lưu ý telemetry bật mặc định (opt-out) và quickstart `curl \| sh`; số lượng skill thực đọc là 8. |
+| Nguồn | [README.md](https://github.com/earthtojake/text-to-cad/blob/1dba9d3d0bf77b6e74673aa1743a1f0173a13892/README.md) · [LICENSE](https://github.com/earthtojake/text-to-cad/blob/1dba9d3d0bf77b6e74673aa1743a1f0173a13892/LICENSE) · [package.json](https://github.com/earthtojake/text-to-cad/blob/1dba9d3d0bf77b6e74673aa1743a1f0173a13892/package.json) · [pyproject.toml](https://github.com/earthtojake/text-to-cad/blob/1dba9d3d0bf77b6e74673aa1743a1f0173a13892/pyproject.toml) · [docs/install.md](https://github.com/earthtojake/text-to-cad/blob/1dba9d3d0bf77b6e74673aa1743a1f0173a13892/docs/install.md) |
+
+<a id="ch-the-agency-agency-agents"></a>
+
+### The Agency (agency-agents)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/msitarzewski/agency-agents |
+| License | MIT |
+| Phiên bản đã đọc | `8ae6164602c95ca78828b148b9052460ee426885` (commit 2026-11-08) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-08; nhiều workflow lint/test installer |
+| Nhận định | Kho persona subagent Markdown theo phòng ban kèm installer cho nhiều công cụ. Giá trị là mẫu persona; rủi ro: cài toàn bộ làm nặng ngữ cảnh và quyền công cụ thừa hưởng **(chưa xác minh)** từ README/catalog cũ. |
+| Nguồn | [README.md](https://github.com/msitarzewski/agency-agents/blob/8ae6164602c95ca78828b148b9052460ee426885/README.md) · [LICENSE](https://github.com/msitarzewski/agency-agents/blob/8ae6164602c95ca78828b148b9052460ee426885/LICENSE) |
+
+<a id="ch-ub-mode"></a>
+
+### ub-mode
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/unclebob/ub-mode |
+| License | MIT. Có file LICENSE MIT; khác catalog cũ (None). |
+| Phiên bản đã đọc | `3da62bf3fcfd2034de41f30d920d2739e566171f` (commit 2026-11-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, SKILL.md; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-02; repo nhỏ (README, SKILL.md, LICENSE) |
+| Nhận định | Skill kỷ luật kỹ thuật của Uncle Bob, rút gọn từ pstack/poteto-mode, 3 giai đoạn; sức nặng nằm ở công cụ đi kèm (crapper, dryer, mutator) ở repo khác chưa đọc. Giới hạn: dòng push thẳng main line không hợp quy trình PR. |
+| Nguồn | [README.md](https://github.com/unclebob/ub-mode/blob/3da62bf3fcfd2034de41f30d920d2739e566171f/README.md) · [LICENSE](https://github.com/unclebob/ub-mode/blob/3da62bf3fcfd2034de41f30d920d2739e566171f/LICENSE) · [SKILL.md](https://github.com/unclebob/ub-mode/blob/3da62bf3fcfd2034de41f30d920d2739e566171f/SKILL.md) |
+
+<a id="ch-vercel-agent-skills"></a>
+
+### Vercel Agent Skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vercel-labs/agent-skills |
+| License | Không có file LICENSE. Không có file LICENSE; README ghi "MIT". |
+| Phiên bản đã đọc | `5a37a6329fbad3666c3207392a6a7c0110e92efb` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, package.json; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-20 |
+| Nhận định | Bộ skill chính chủ Vercel (React/Next, web design, deploy, tối ưu dự án Vercel). Rủi ro: license chỉ là một dòng README, không có văn bản LICENSE; một số skill tải chỉ dẫn từ nhánh main **(chưa xác minh)** trong lượt này. |
+| Nguồn | [README.md](https://github.com/vercel-labs/agent-skills/blob/5a37a6329fbad3666c3207392a6a7c0110e92efb/README.md) · [package.json](https://github.com/vercel-labs/agent-skills/blob/5a37a6329fbad3666c3207392a6a7c0110e92efb/package.json) |
+
+<a id="ch-waza"></a>
+
+### Waza
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/tw93/Waza |
+| License | MIT |
+| Phiên bản đã đọc | `b944ba7b815f0c6fec21049e42e7d16efb2da565` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, SCOPE.md; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-18; v3.42.0 |
+| Nhận định | Tám skill kỹ thuật của Tw93 giữ nhỏ bằng SCOPE.md và .out-of-scope; có test và CI. Đáng tham khảo kỷ luật phạm vi; các tuyên bố về routing drift, shellcheck ghim SHA, /read proxy chưa đọc mã xác minh **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/tw93/Waza/blob/b944ba7b815f0c6fec21049e42e7d16efb2da565/README.md) · [LICENSE](https://github.com/tw93/Waza/blob/b944ba7b815f0c6fec21049e42e7d16efb2da565/LICENSE) · [package.json](https://github.com/tw93/Waza/blob/b944ba7b815f0c6fec21049e42e7d16efb2da565/package.json) · [SCOPE.md](https://github.com/tw93/Waza/blob/b944ba7b815f0c6fec21049e42e7d16efb2da565/SCOPE.md) |
+
+<a id="ch-wshobson-agents"></a>
+
+### wshobson/agents
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/wshobson/agents |
+| License | MIT |
+| Phiên bản đã đọc | `1eecf4b58eb380ff7ddc258a11c6586381d67b95` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-23 |
+| Nhận định | Marketplace plugin lớn (agent, skill, command) cho Claude Code và nhiều harness, chủ yếu là prompt; có đánh giá chất lượng bằng evals/scorecards **(chưa xác minh)** kết quả. Số liệu đổi nhanh theo commit. |
+| Nguồn | [README.md](https://github.com/wshobson/agents/blob/1eecf4b58eb380ff7ddc258a11c6586381d67b95/README.md) · [LICENSE](https://github.com/wshobson/agents/blob/1eecf4b58eb380ff7ddc258a11c6586381d67b95/LICENSE) |

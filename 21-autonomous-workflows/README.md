@@ -1109,3 +1109,359 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 - Failure modes & guardrail: atlan.com/know/ai-agent/what-is-an-agent-loop, openempower.com, medium.com/@Quaxel (12 guardrails), blogs.oracle.com, arXiv 2606.03115 (SPOQ), blog.traversaal.ai (spend circuit breaker), watchtoweragents.com, sqmagazine.co.uk (METR), withtai.com, arXiv 2509.08646, arXiv 2603.05344
 - Harness (thứ cấp): preprints.org/manuscript/202603.1756, gist 0xK8oX, pub.towardsai.net, ai-eval.org, ai-heroes.co, theaiautomators.com, victorinollc.com, agentsdesign.dev, arXiv 2607.14159 (MemoHarness)
 - Self-healing CI (demo cộng đồng): github.com/Adityaraj1005/self-healing-ci-agent và các PR "self-heal CI" tìm thấy qua search
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-absurd"></a>
+
+### Absurd
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/earendil-works/absurd |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `eb362734b02e51a167a3cb0b5b306424f74406b2` (commit 2026-11-08) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, CHANGELOG.md; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-08 |
+| Nhận định | Durable execution tối giản trên Postgres với SDK TS/Python/Go; step là checkpoint, không hứa exactly-once cho phần ngoài step. Giới hạn: dự án trẻ, đang ở 0.5.x. |
+| Nguồn | [README.md](https://github.com/earendil-works/absurd/blob/eb362734b02e51a167a3cb0b5b306424f74406b2/README.md) · [LICENSE](https://github.com/earendil-works/absurd/blob/eb362734b02e51a167a3cb0b5b306424f74406b2/LICENSE) · [CHANGELOG.md](https://github.com/earendil-works/absurd/blob/eb362734b02e51a167a3cb0b5b306424f74406b2/CHANGELOG.md) |
+
+<a id="ch-activepieces"></a>
+
+### Activepieces
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/activepieces/activepieces |
+| License | MIT (Expat) trừ packages/ee và server ee: license riêng. MIT Expat cho phần ngoài ee; thư mục ee dùng license riêng (khác catalog ghi MIT thuần). |
+| Phiên bản đã đọc | `29e8275ba8367640a800e31e261d1adc127cbac0` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-23; v0.94.0 |
+| Nhận định | Nền tảng tự động hóa no-code hướng agent, piece (tích hợp) tự thành MCP server. Lưu ý license hỗn hợp: lõi MIT, phần enterprise dưới license riêng; số piece theo README là 280+. |
+| Nguồn | [README.md](https://github.com/activepieces/activepieces/blob/29e8275ba8367640a800e31e261d1adc127cbac0/README.md) · [LICENSE](https://github.com/activepieces/activepieces/blob/29e8275ba8367640a800e31e261d1adc127cbac0/LICENSE) · [package.json](https://github.com/activepieces/activepieces/blob/29e8275ba8367640a800e31e261d1adc127cbac0/package.json) |
+
+<a id="ch-agentgpt"></a>
+
+### AgentGPT
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/reworkd/AgentGPT |
+| License | GPL-3.0 |
+| Phiên bản đã đọc | `18b073ab05b2902e1d052c3d2799786d8623b5e5` (commit 2025-04-28) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2025-04-28; README không có thông báo ngừng |
+| Nhận định | Agent tự trị chạy trên trình duyệt (Next.js + backend), GPL-3.0 nên ràng buộc copyleft khi tích hợp. Chủ yếu giá trị lịch sử; ít hoạt động từ 4/2025. |
+| Nguồn | [README.md](https://github.com/reworkd/AgentGPT/blob/18b073ab05b2902e1d052c3d2799786d8623b5e5/README.md) · [LICENSE](https://github.com/reworkd/AgentGPT/blob/18b073ab05b2902e1d052c3d2799786d8623b5e5/LICENSE) |
+
+<a id="ch-anthropic-ai-native-sdlc-playbook"></a>
+
+### Anthropic AI-native SDLC playbook
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://claude.com/blog/the-ai-native-sdlc-playbook |
+| License | Không áp dụng (tài liệu/bài viết chính thức) |
+| Phiên bản đã đọc | Không có SHA; trang web đọc ngày 2026-11-23 |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang web trên; chưa chạy upstream |
+| Bảo trì | Bài đăng ngày 2026-08-21; không có phiên bản kiểm soát |
+| Nhận định | Hướng dẫn của Anthropic về SDLC native-AI: mỗi giai đoạn commit một artifact, giám sát bằng ngưỡng sigma tất định. Đây là tuyên bố/khuyến nghị của tác giả; mục tiêu "hours, not weeks" chưa có số đo **(chưa xác minh)**. |
+| Nguồn | [Trang chính thức](https://claude.com/blog/the-ai-native-sdlc-playbook) |
+
+<a id="ch-aris-auto-research-in-sleep"></a>
+
+### ARIS (Auto Research in Sleep)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep |
+| License | MIT |
+| Phiên bản đã đọc | `4ba94ae2a1c1fbbb14858750dd8764cabf6c28bd` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, skills/auto-review-loop/SKILL.md; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-19 |
+| Nhận định | Bộ skill vòng nghiên cứu ML tự động qua đêm với reviewer độc lập và giới hạn vòng. Đáng tham khảo cơ chế dừng theo MAX_ROUNDS; điều kiện reviewer khác model chấm >=6 và threat_scan fail-closed chưa đọc mã **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/4ba94ae2a1c1fbbb14858750dd8764cabf6c28bd/README.md) · [LICENSE](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/4ba94ae2a1c1fbbb14858750dd8764cabf6c28bd/LICENSE) · [skills/auto-review-loop/SKILL.md](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep/blob/4ba94ae2a1c1fbbb14858750dd8764cabf6c28bd/skills/auto-review-loop/SKILL.md) |
+
+<a id="ch-autogpt"></a>
+
+### AutoGPT
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Significant-Gravitas/AutoGPT |
+| License | MIT (ngoài autogpt_platform) + Polyform Shield 1.0.0 (trong autogpt_platform) |
+| Phiên bản đã đọc | `dd0b5f73266ea5f3dfab37ebccd93049af58e106` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-20 |
+| Nhận định | Từ dự án agent tự trị 2023 thành nền tảng builder/hosted; Polyform Shield cấm dùng cạnh tranh nên cần đọc kỹ khi tích hợp phần platform. Phần classic là MIT. |
+| Nguồn | [README.md](https://github.com/Significant-Gravitas/AutoGPT/blob/dd0b5f73266ea5f3dfab37ebccd93049af58e106/README.md) · [LICENSE](https://github.com/Significant-Gravitas/AutoGPT/blob/dd0b5f73266ea5f3dfab37ebccd93049af58e106/LICENSE) |
+
+<a id="ch-babyagi"></a>
+
+### BabyAGI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/yoheinakajima/babyagi |
+| License | Không có file LICENSE. Không có file LICENSE; catalog cũ ghi MIT. |
+| Phiên bản đã đọc | `fa8930ebe72a82e5ad57b356e7cbec96290e5bb2` (commit 2026-01-30) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-01-30; bản gốc 2023 đã chuyển sang babyagi_archive |
+| Nhận định | Repo hiện không còn là vòng task gốc 2023 mà là framework "self-building functions" (Flask, v0.0.8); bản gốc nằm ở babyagi_archive. Không có file LICENSE nên quyền dùng không rõ. |
+| Nguồn | [README.md](https://github.com/yoheinakajima/babyagi/blob/fa8930ebe72a82e5ad57b356e7cbec96290e5bb2/README.md) · [pyproject.toml](https://github.com/yoheinakajima/babyagi/blob/fa8930ebe72a82e5ad57b356e7cbec96290e5bb2/pyproject.toml) |
+
+<a id="ch-claude-code-loop-scheduled-tasks"></a>
+
+### Claude Code /loop & scheduled tasks
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://code.claude.com/docs/en/scheduled-tasks |
+| License | Không áp dụng (tài liệu/bài viết chính thức) |
+| Phiên bản đã đọc | Không có SHA; trang web đọc ngày 2026-11-23 |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang web trên; chưa chạy upstream |
+| Bảo trì | Tài liệu chính thức đang cập nhật; không có SHA |
+| Nhận định | Tài liệu chính thức về /loop và cron trong session Claude Code: task chỉ sống trong session, jitter, hết hạn 7 ngày, tối đa 50 task. Nội dung theo tài liệu tại thời điểm đọc, có thể đổi. |
+| Nguồn | [Trang chính thức](https://code.claude.com/docs/en/scheduled-tasks) |
+
+<a id="ch-claude-code-routines"></a>
+
+### Claude Code Routines
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://code.claude.com/docs/en/routines |
+| License | Không áp dụng (tài liệu/bài viết chính thức) |
+| Phiên bản đã đọc | Không có SHA; trang web đọc ngày 2026-11-23 |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang web trên; chưa chạy upstream |
+| Bảo trì | Research preview; tài liệu chính thức, không có SHA |
+| Nhận định | Tính năng Claude Code chạy tác vụ theo lịch/API/sự kiện GitHub trên đám mây (trước gọi là routines, nay là scheduled tasks), đang research preview nên hành vi và API có thể đổi. Chi tiết quyền chạy theo chế độ permission/auto của phiên **(chưa xác minh)** từng trường hợp. |
+| Nguồn | [Trang chính thức](https://code.claude.com/docs/en/routines) |
+
+<a id="ch-cloudevents"></a>
+
+### CloudEvents
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/cloudevents/spec |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `5391e18c64aafafddcf7ba078e40e07d48352fb1` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, cloudevents/spec.md; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-19 |
+| Nhận định | Đặc tả sự kiện CNCF (thuộc tính specversion/id/source...), kèm binding HTTP/AMQP/Kafka/MQTT/NATS và format; HEAD đang là bản nháp 1.0.3 nên khi trích dẫn nên ghim tag 1.0.2. Mức graduated của CNCF chưa kiểm **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/cloudevents/spec/blob/5391e18c64aafafddcf7ba078e40e07d48352fb1/README.md) · [LICENSE](https://github.com/cloudevents/spec/blob/5391e18c64aafafddcf7ba078e40e07d48352fb1/LICENSE) · [cloudevents/spec.md](https://github.com/cloudevents/spec/blob/5391e18c64aafafddcf7ba078e40e07d48352fb1/cloudevents/spec.md) |
+
+<a id="ch-conductor-oss"></a>
+
+### Conductor OSS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/conductor-oss/conductor |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `1e424cbe422f2f0cc4989974af8f1d6dbc5a9086` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-22 |
+| Nhận định | Engine orchestration workflow gốc Netflix, nay có task LLM và MCP để dựng agent think-act. Điểm tham khảo: mô hình workflow JSON khai báo; yêu cầu hạ tầng nặng (nhiều backend) **(chưa xác minh)** phiên bản Java. |
+| Nguồn | [README.md](https://github.com/conductor-oss/conductor/blob/1e424cbe422f2f0cc4989974af8f1d6dbc5a9086/README.md) · [LICENSE](https://github.com/conductor-oss/conductor/blob/1e424cbe422f2f0cc4989974af8f1d6dbc5a9086/LICENSE) |
+
+<a id="ch-dbos"></a>
+
+### DBOS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/dbos-inc/dbos-transact-py |
+| License | MIT |
+| Phiên bản đã đọc | `28192bd87ee81891546803fb583ea6a22c08d1ce` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-20 |
+| Nhận định | Thư viện Python durable workflow dựa trên Postgres: annotate hàm để checkpoint, queue, notification, schedule. Có chaos-tests trong repo; bản TS cần hồ sơ riêng. |
+| Nguồn | [README.md](https://github.com/dbos-inc/dbos-transact-py/blob/28192bd87ee81891546803fb583ea6a22c08d1ce/README.md) · [LICENSE](https://github.com/dbos-inc/dbos-transact-py/blob/28192bd87ee81891546803fb583ea6a22c08d1ce/LICENSE) · [pyproject.toml](https://github.com/dbos-inc/dbos-transact-py/blob/28192bd87ee81891546803fb583ea6a22c08d1ce/pyproject.toml) |
+
+<a id="ch-gh-aw-github-agentic-workflows"></a>
+
+### gh-aw (GitHub Agentic Workflows)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/github/gh-aw |
+| License | MIT |
+| Phiên bản đã đọc | `dbcd971016eec3608d791920b992065bf3ce2fbd` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, go.mod; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-23 |
+| Nhận định | Biên dịch workflow Markdown + frontmatter thành GitHub Actions (.lock.yml) chạy agent trong sandbox, ghi qua safe outputs. Điểm tham khảo mô hình quyền tối thiểu; chi tiết cách thực thi sandbox chưa đọc mã **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/github/gh-aw/blob/dbcd971016eec3608d791920b992065bf3ce2fbd/README.md) · [LICENSE](https://github.com/github/gh-aw/blob/dbcd971016eec3608d791920b992065bf3ce2fbd/LICENSE) · [go.mod](https://github.com/github/gh-aw/blob/dbcd971016eec3608d791920b992065bf3ce2fbd/go.mod) |
+
+<a id="ch-hatchet"></a>
+
+### Hatchet
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/hatchet-dev/hatchet |
+| License | MIT |
+| Phiên bản đã đọc | `b1b57a27e708d26f5837569e5c27f8d92f0b573c` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, go.mod, CHANGELOG.md; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-23 |
+| Nhận định | Engine orchestration Go/Postgres cho task nền, DAG, durable task, cron, webhook, OTel; SDK Go/Python/TypeScript/Ruby. Phát triển nhanh, tài liệu bảo mật trong changelog đáng đọc. |
+| Nguồn | [README.md](https://github.com/hatchet-dev/hatchet/blob/b1b57a27e708d26f5837569e5c27f8d92f0b573c/README.md) · [LICENSE](https://github.com/hatchet-dev/hatchet/blob/b1b57a27e708d26f5837569e5c27f8d92f0b573c/LICENSE) · [go.mod](https://github.com/hatchet-dev/hatchet/blob/b1b57a27e708d26f5837569e5c27f8d92f0b573c/go.mod) · [CHANGELOG.md](https://github.com/hatchet-dev/hatchet/blob/b1b57a27e708d26f5837569e5c27f8d92f0b573c/CHANGELOG.md) |
+
+<a id="ch-huginn"></a>
+
+### Huginn
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/huginn/huginn |
+| License | MIT |
+| Phiên bản đã đọc | `4d4fa3f49383bfd621b6b7abc05e1c70fa0c0001` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, CHANGES.md, package.json; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-22; CHANGES.md cập nhật 2026-11 |
+| Nhận định | Hệ thống agent tự host bằng Ruby (tiền LLM) đọc web, theo dõi sự kiện, hành động; vẫn có bản vá bảo mật gần đây nhưng do một người duy trì trong thời gian rảnh. |
+| Nguồn | [README.md](https://github.com/huginn/huginn/blob/4d4fa3f49383bfd621b6b7abc05e1c70fa0c0001/README.md) · [LICENSE](https://github.com/huginn/huginn/blob/4d4fa3f49383bfd621b6b7abc05e1c70fa0c0001/LICENSE) · [CHANGES.md](https://github.com/huginn/huginn/blob/4d4fa3f49383bfd621b6b7abc05e1c70fa0c0001/CHANGES.md) · [package.json](https://github.com/huginn/huginn/blob/4d4fa3f49383bfd621b6b7abc05e1c70fa0c0001/package.json) |
+
+<a id="ch-inngest"></a>
+
+### Inngest
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/inngest/inngest |
+| License | SSPL-1.0 với Apache-2.0 Future License (DOSP) cho server/CLI; SDK Apache-2.0. SSPL-1.0 + Apache-2.0 Future License; khác catalog ghi Apache-2.0. |
+| Phiên bản đã đọc | `af438614ab1f67f6b3858f2200f683b1c48b2a86` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, go.mod; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-20 |
+| Nhận định | Durable function qua HTTP endpoint, server Go. Khác biệt chính cho tích hợp: server/CLI theo SSPL (hạn chế dịch vụ cạnh tranh) và chỉ thành Apache sau thời gian trì hoãn; SDK thì Apache-2.0. |
+| Nguồn | [README.md](https://github.com/inngest/inngest/blob/af438614ab1f67f6b3858f2200f683b1c48b2a86/README.md) · [LICENSE.md](https://github.com/inngest/inngest/blob/af438614ab1f67f6b3858f2200f683b1c48b2a86/LICENSE.md) · [go.mod](https://github.com/inngest/inngest/blob/af438614ab1f67f6b3858f2200f683b1c48b2a86/go.mod) |
+
+<a id="ch-kestra"></a>
+
+### Kestra
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/kestra-io/kestra |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `958e9f04d307c346d89df046d55629d2ae0abd4b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, gradle.properties; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-23; gradle.properties ghi 2.1.0-SNAPSHOT; liệt kê 24 workflow, chưa mở nội dung |
+| Nhận định | Nền tảng orchestration hướng sự kiện/lịch, flow khai báo YAML, AI Agents và RAG là task type, có MCP server **(chưa xác minh: tuyên bố của README, chưa đọc mã)**. Repo có thư mục `plugins`, `ee-compile-check` trong workflow nên có phần Enterprise tách riêng, LICENSE gốc vẫn là Apache-2.0. |
+| Nguồn | [README.md](https://github.com/kestra-io/kestra/blob/958e9f04d307c346d89df046d55629d2ae0abd4b/README.md) · [LICENSE](https://github.com/kestra-io/kestra/blob/958e9f04d307c346d89df046d55629d2ae0abd4b/LICENSE) · [gradle.properties](https://github.com/kestra-io/kestra/blob/958e9f04d307c346d89df046d55629d2ae0abd4b/gradle.properties) |
+
+<a id="ch-open-instinct"></a>
+
+### open-instinct
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mariagorskikh/open-instinct |
+| License | MIT |
+| Phiên bản đã đọc | `2e5e71b72622d1262e212da7deb0e785bd95facd` (commit 2026-10-29) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, docs/PERMISSIONS.md, docs/SECURITY.md, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Commit 2026-10-29; CI chạy build, typecheck, test, smoke và kiểm lộ secret (đã mở ci.yml) |
+| Nhận định | Agent cá nhân qua iMessage/điện thoại (Inkbox), microVM Maritime, thẻ Stripe Link dùng một lần, tier quyền (owner/staff/partner/friend/stranger...) kiểm trước khi chạy tool **(chưa xác minh: README tự khai, chưa đọc mã thực thi)**. SECURITY.md nêu threat model; rủi ro cao vì agent giữ khóa tài khoản, thanh toán và liên lạc. |
+| Nguồn | [README.md](https://github.com/mariagorskikh/open-instinct/blob/2e5e71b72622d1262e212da7deb0e785bd95facd/README.md) · [LICENSE](https://github.com/mariagorskikh/open-instinct/blob/2e5e71b72622d1262e212da7deb0e785bd95facd/LICENSE) · [PERMISSIONS.md](https://github.com/mariagorskikh/open-instinct/blob/2e5e71b72622d1262e212da7deb0e785bd95facd/docs/PERMISSIONS.md) · [SECURITY.md](https://github.com/mariagorskikh/open-instinct/blob/2e5e71b72622d1262e212da7deb0e785bd95facd/docs/SECURITY.md) · [ci.yml](https://github.com/mariagorskikh/open-instinct/blob/2e5e71b72622d1262e212da7deb0e785bd95facd/.github/workflows/ci.yml) |
+
+<a id="ch-pi-earendil-works"></a>
+
+### Pi (earendil-works)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/earendil-works/pi |
+| License | MIT (khác catalog cũ: None) |
+| Phiên bản đã đọc | `6215bf0511f2142baa8c5b9637e07c9be953796c` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-23; package.json ghi version 0.0.3 ở gốc monorepo; liệt kê 15 workflow, chưa mở nội dung |
+| Nhận định | Harness agent tối giản, mở rộng bằng extension/skill/prompt template, dùng được tương tác, print/JSON, RPC hoặc SDK TypeScript; monorepo nhiều gói (LLM API đa nhà cung cấp, agent core, coding-agent CLI, durable runtime). Cần Node 22.19+; README dặn cài npm với `--ignore-scripts`. Bỏ qua chính sách auto-close khi tính chuyện đóng góp. |
+| Nguồn | [README.md](https://github.com/earendil-works/pi/blob/6215bf0511f2142baa8c5b9637e07c9be953796c/README.md) · [LICENSE](https://github.com/earendil-works/pi/blob/6215bf0511f2142baa8c5b9637e07c9be953796c/LICENSE) · [package.json](https://github.com/earendil-works/pi/blob/6215bf0511f2142baa8c5b9637e07c9be953796c/package.json) |
+
+<a id="ch-restate"></a>
+
+### Restate
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/restatedev/restate |
+| License | BUSL-1.1 |
+| Phiên bản đã đọc | `ac7349729ed9436f17933346dc5f267484589eb0` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Cargo.toml; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-23; Cargo.toml ghi 1.8.2-dev; liệt kê workflow, chưa mở nội dung |
+| Nhận định | Server durable execution một binary (Rust) kèm SDK TypeScript/Java/Kotlin/Python/Go/Rust cho workflow-as-code, agent bền, điều phối microservice. Giới hạn quan trọng là license không phải OSI: tự dùng nội bộ/production được, bán lại như managed service cho bên thứ ba thì không. |
+| Nguồn | [README.md](https://github.com/restatedev/restate/blob/ac7349729ed9436f17933346dc5f267484589eb0/README.md) · [LICENSE](https://github.com/restatedev/restate/blob/ac7349729ed9436f17933346dc5f267484589eb0/LICENSE) · [Cargo.toml](https://github.com/restatedev/restate/blob/ac7349729ed9436f17933346dc5f267484589eb0/Cargo.toml) |
+
+<a id="ch-temporal"></a>
+
+### Temporal
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/temporalio/temporal |
+| License | MIT |
+| Phiên bản đã đọc | `cd668989792406a24b72672dbbfd1e98a66e3853` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, go.mod; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-22; go.mod yêu cầu Go 1.27.4; liệt kê nhiều workflow, chưa mở nội dung |
+| Nhận định | Server durable execution trưởng thành: workflow chạy bền, tự retry, worker dài hạn; mã Go, có thư mục `chasm`, `nexusworkflowref`. Điểm tham khảo là mô hình workflow/activity; chưa đọc mã Signals/Updates/Versioning nên các tính năng này chỉ dựa trên catalog cũ. |
+| Nguồn | [README.md](https://github.com/temporalio/temporal/blob/cd668989792406a24b72672dbbfd1e98a66e3853/README.md) · [LICENSE](https://github.com/temporalio/temporal/blob/cd668989792406a24b72672dbbfd1e98a66e3853/LICENSE) · [go.mod](https://github.com/temporalio/temporal/blob/cd668989792406a24b72672dbbfd1e98a66e3853/go.mod) |
+
+<a id="ch-temporal-ai-integrations"></a>
+
+### Temporal AI integrations
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/temporalio/ai-integrations |
+| License | MIT |
+| Phiên bản đã đọc | `7607956c80b945891e3aa96eff9fde3dcdb9f326` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, python/openai_agents/README.md, python/openai_agents/pyproject.toml, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-20; CI một entry point cho mọi ngôn ngữ, chạy nightly (đã mở ci.yml) |
+| Nhận định | Monorepo plugin đưa các framework agent (OpenAI Agents, LangGraph, Strands, Google ADK, Claude Agent SDK...) vào durable execution của Temporal, mỗi plugin có gói, test và nhịp phát hành riêng. Trạng thái GA/Preview/Pre-release khác nhau theo plugin, cần xem từng gói trước khi dùng production. |
+| Nguồn | [README.md](https://github.com/temporalio/ai-integrations/blob/7607956c80b945891e3aa96eff9fde3dcdb9f326/README.md) · [LICENSE](https://github.com/temporalio/ai-integrations/blob/7607956c80b945891e3aa96eff9fde3dcdb9f326/LICENSE) · [README.md](https://github.com/temporalio/ai-integrations/blob/7607956c80b945891e3aa96eff9fde3dcdb9f326/python/openai_agents/README.md) · [pyproject.toml](https://github.com/temporalio/ai-integrations/blob/7607956c80b945891e3aa96eff9fde3dcdb9f326/python/openai_agents/pyproject.toml) · [ci.yml](https://github.com/temporalio/ai-integrations/blob/7607956c80b945891e3aa96eff9fde3dcdb9f326/.github/workflows/ci.yml) |
+
+<a id="ch-trigger-dev"></a>
+
+### Trigger.dev
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/triggerdotdev/trigger.dev |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `24b09257d144d6d49ff84485c929f123030aa8e5` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-23; liệt kê hơn 40 workflow, chưa mở nội dung |
+| Nhận định | Nền tảng task TypeScript chạy dài không timeout, retry, queue, idempotency, human-in-the-loop (pause chờ duyệt), có MCP server và agent skills **(chưa xác minh: tuyên bố README, chưa đọc mã)**. Repo lớn (apps, packages, hosting/docker); mục tự host chưa đọc kỹ. |
+| Nguồn | [README.md](https://github.com/triggerdotdev/trigger.dev/blob/24b09257d144d6d49ff84485c929f123030aa8e5/README.md) · [LICENSE](https://github.com/triggerdotdev/trigger.dev/blob/24b09257d144d6d49ff84485c929f123030aa8e5/LICENSE) |
+
+<a id="ch-vercel-workflow"></a>
+
+### Vercel Workflow
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://vercel.com/docs/workflows |
+| License | Không có file license (dịch vụ/tài liệu của nhà cung cấp) |
+| Phiên bản đã đọc | Không áp dụng (trang web, đọc 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang chính thức; chưa chạy upstream |
+| Bảo trì | Trang tài liệu chính thức đọc 2026-11-23; không có SHA |
+| Nhận định | Dịch vụ durable function được quản lý của Vercel (Functions chạy mã, Queues điều phối, lưu trạng thái/log sự kiện, quan sát tích hợp); viết bằng async JS/TS/Python, không YAML. Là dịch vụ trả phí gắn Vercel, chỉ phần Workflow SDK được nói là mã mở **(chưa xác minh license SDK)**. |
+| Nguồn | [https://vercel.com/docs/workflows](https://vercel.com/docs/workflows) |
+
+<a id="ch-windmill"></a>
+
+### Windmill
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/windmill-labs/windmill |
+| License | AGPL-3.0 cho phần lõi; Apache-2.0 cho client/OpenAPI; phần enterprise độc quyền (khác catalog cũ: AGPL-3.0) |
+| Phiên bản đã đọc | `28985a122cc303200bb36c5c67037f5f2157299c` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-22; liệt kê hơn 70 workflow (có cả file .archived), chưa mở nội dung |
+| Nhận định | Nền tảng script/flow/app/agent mã trước (20+ ngôn ngữ), tự host bằng Docker/K8s. Điểm cần chú ý là license hỗn hợp: dùng nội bộ ổn, nhưng phân phối lại hay bọc thành dịch vụ phải tuân AGPLv3 hoặc mua license; không được đưa mã enterprise vào fork. |
+| Nguồn | [README.md](https://github.com/windmill-labs/windmill/blob/28985a122cc303200bb36c5c67037f5f2157299c/README.md) · [LICENSE](https://github.com/windmill-labs/windmill/blob/28985a122cc303200bb36c5c67037f5f2157299c/LICENSE) |

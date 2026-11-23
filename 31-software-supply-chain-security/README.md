@@ -157,3 +157,23 @@ Phân tích tĩnh bảo mật GitHub Actions, 41 audit, SARIF, offline/online; b
 Nền tảng hạ tầng bảo mật mã nguồn mở để quản lý bí mật, chứng chỉ, khoá, truy cập đặc quyền và truy cập của AI agent; có quét lộ bí mật. Hỗ trợ xoay vòng bí mật và bí mật động cho PostgreSQL, MySQL, AWS IAM; có Kubernetes Operator, CLI và SDK cho nhiều ngôn ngữ (Node, Python, Go, Java, .NET, Rust...); tự host được bằng Docker Compose. Điều kiện: Tính năng trong thư mục ee/ cần giấy phép doanh nghiệp Infisical; chạy cục bộ cần Git và Docker; có bản Infisical Cloud trả phí/miễn phí tuỳ gói. ★ 18/11/2026: 30.570 (GitHub search API), nhóm "Bảo mật & Hack" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
 
 **Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c53-bảo-mật--hack) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-zizmor"></a>
+
+### zizmor
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/zizmorcore/zizmor |
+| License | MIT |
+| Phiên bản đã đọc | `0af0be985a4cae71ecfaa64ef574a94b35dc722a` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Cargo.toml, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-22) |
+| Nhận định | Công cụ phân tích tĩnh cho CI/CD (GitHub Actions, Dependabot, pre-commit): template injection, lộ credential, quyền thừa, impostor commit; Rust v1.33.1, có fix tự động. |
+| Nguồn | [README](https://github.com/zizmorcore/zizmor/blob/0af0be985a4cae71ecfaa64ef574a94b35dc722a/README.md) · [LICENSE](https://github.com/zizmorcore/zizmor/blob/0af0be985a4cae71ecfaa64ef574a94b35dc722a/LICENSE) · [manifest](https://github.com/zizmorcore/zizmor/blob/0af0be985a4cae71ecfaa64ef574a94b35dc722a/Cargo.toml) · [workflow](https://github.com/zizmorcore/zizmor/blob/0af0be985a4cae71ecfaa64ef574a94b35dc722a/.github/workflows/ci.yml) |

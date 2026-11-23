@@ -941,3 +941,143 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | Ít hoạt động (commit cuối 2026-01-30) |
 | Nhận định | Repo mã, cookbook, evaluation, finetune cho Qwen3-VL (agent GUI, 2D/3D grounding, video dài). License từng checkpoint trên Hugging Face chưa đọc **(chưa xác minh)**; theo dõi model card thay vì repo. |
 | Nguồn | [README.md](https://github.com/QwenLM/Qwen3-VL/blob/96588727e44c78b25ba03ea03b8e12f7e64fd0da/README.md) · [LICENSE](https://github.com/QwenLM/Qwen3-VL/blob/96588727e44c78b25ba03ea03b8e12f7e64fd0da/LICENSE) |
+
+<a id="ch-stable-diffusion-webui"></a>
+
+### Stable Diffusion WebUI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/AUTOMATIC1111/stable-diffusion-webui |
+| License | AGPL-3.0 (khớp catalog) |
+| Phiên bản đã đọc | `82a973c04367123ae98bd9abdf80d9eda9b910e2` (commit 2024-07-27) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.txt, package.json (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối trên nhánh mặc định 2024-07-27; README không tự tuyên bố ngừng. Chỉ kiểm nhánh mặc định. |
+| Nhận định | Giao diện web Gradio cho Stable Diffusion (txt2img, img2img, inpaint, textual inversion, extras). Nhánh mặc định không có commit nào từ 2024-07-27, khớp nhận định "dừng phát triển" của catalog; hệ sinh thái extension vẫn là lý do tham khảo. |
+| Nguồn | [README](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/82a973c04367123ae98bd9abdf80d9eda9b910e2/README.md) · [LICENSE](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/82a973c04367123ae98bd9abdf80d9eda9b910e2/LICENSE.txt) · [package.json](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/82a973c04367123ae98bd9abdf80d9eda9b910e2/package.json) |
+
+<a id="ch-ten-framework"></a>
+
+### TEN Framework
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/TEN-framework/ten-framework |
+| License | Apache-2.0 kèm điều kiện bổ sung của Agora (KHÁC catalog ghi Apache-2.0 thuần) |
+| Phiên bản đã đọc | `60020b9d97940fbdb137635cc81c946ae910d127` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-23; có nhiều workflow CI (chỉ xem tên file). |
+| Nhận định | Framework dựng agent hội thoại giọng nói thời gian thực nhiều module, có nhiều ví dụ trong ai_agents. Giấy phép là Apache-2.0 kèm điều kiện: cấm host trên thiết bị đầu cuối người dùng và cấm triển khai cạnh tranh với dịch vụ của Agora; không nên coi là Apache thuần. |
+| Nguồn | [README](https://github.com/TEN-framework/ten-framework/blob/60020b9d97940fbdb137635cc81c946ae910d127/README.md) · [LICENSE](https://github.com/TEN-framework/ten-framework/blob/60020b9d97940fbdb137635cc81c946ae910d127/LICENSE) · [package.json](https://github.com/TEN-framework/ten-framework/blob/60020b9d97940fbdb137635cc81c946ae910d127/package.json) |
+
+<a id="ch-ultraeval-audio"></a>
+
+### UltraEval-Audio
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/OpenBMB/UltraEval-Audio |
+| License | Apache-2.0 (khớp catalog) |
+| Phiên bản đã đọc | `6e842c974ffc4d154eb910435872577735726320` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-19, mới hơn mốc 28/10/2026 trong catalog. |
+| Nhận định | Khung đánh giá audio foundation model: README nêu 34 benchmark, 10 ngôn ngữ, 12 nhóm tác vụ, có thư mục replication với lệnh tái lập (các con số là tuyên bố của tác giả, chưa xác minh). Runtime cô lập qua IPC để tránh xung đột phụ thuộc. |
+| Nguồn | [README](https://github.com/OpenBMB/UltraEval-Audio/blob/6e842c974ffc4d154eb910435872577735726320/README.md) · [LICENSE](https://github.com/OpenBMB/UltraEval-Audio/blob/6e842c974ffc4d154eb910435872577735726320/LICENSE) · [pyproject.toml](https://github.com/OpenBMB/UltraEval-Audio/blob/6e842c974ffc4d154eb910435872577735726320/pyproject.toml) |
+
+<a id="ch-utmosv2"></a>
+
+### UTMOSv2
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/sarulab-speech/UTMOSv2 |
+| License | MIT (khớp catalog) |
+| Phiên bản đã đọc | `cc2700db57bb83ee13dc31ebe1b868c254e15d09` (commit 2026-04-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-04-02 (khoảng 7,5 tháng trước thời điểm kiểm). |
+| Nhận định | Triển khai chính thức hệ T05 dự đoán MOS độ tự nhiên giọng tổng hợp (VoiceMOS 2024 Track 1, SLT 2024); thành tích hạng 1/2 là tuyên bố của tác giả **(chưa xác minh)**. Có test, CI lint/mypy; độ chính xác với tiếng Việt chưa được nêu trong README. |
+| Nguồn | [README](https://github.com/sarulab-speech/UTMOSv2/blob/cc2700db57bb83ee13dc31ebe1b868c254e15d09/README.md) · [LICENSE](https://github.com/sarulab-speech/UTMOSv2/blob/cc2700db57bb83ee13dc31ebe1b868c254e15d09/LICENSE) · [pyproject.toml](https://github.com/sarulab-speech/UTMOSv2/blob/cc2700db57bb83ee13dc31ebe1b868c254e15d09/pyproject.toml) |
+
+<a id="ch-vibevoice"></a>
+
+### VibeVoice
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/VibeVoice |
+| License | MIT (khớp catalog) |
+| Phiên bản đã đọc | `16fb2cb1217c9934a886e1948ffb06120caa2df5` (commit 2026-10-08) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-10-08; không có thư mục .github. |
+| Nhận định | Họ mô hình giọng của Microsoft: ASR 7B, ASR streaming (tin tức 2026-09-03), có thư mục finetuning-asr và vllm_plugin. README ghi 2025-09-05 đã gỡ mã VibeVoice-TTS vì bị dùng sai mục đích; không có .github nên không có CI, khớp catalog. |
+| Nguồn | [README](https://github.com/microsoft/VibeVoice/blob/16fb2cb1217c9934a886e1948ffb06120caa2df5/README.md) · [LICENSE](https://github.com/microsoft/VibeVoice/blob/16fb2cb1217c9934a886e1948ffb06120caa2df5/LICENSE) · [pyproject.toml](https://github.com/microsoft/VibeVoice/blob/16fb2cb1217c9934a886e1948ffb06120caa2df5/pyproject.toml) |
+
+<a id="ch-voicebox"></a>
+
+### Voicebox
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/jamiepine/voicebox |
+| License | MIT (khớp catalog) |
+| Phiên bản đã đọc | `8af7efe62fab8d33e2a5dfbedabaa45f68a5184f` (commit 2026-10-07) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-10-07; package.json 0.6.0 (catalog nhắc tag v0.5.0, chưa kiểm tag). Có CI (ci.yml, release.yml; chỉ xem tên). |
+| Nhận định | Voice studio chạy cục bộ: nhân bản giọng, TTS nhiều engine, dictation, tích hợp agent; README nói do luồng Capy điều phối bảo trì. README xác nhận chưa có binary dựng sẵn cho Linux (build từ nguồn). Có RESPONSIBLE_USE.md. |
+| Nguồn | [README](https://github.com/jamiepine/voicebox/blob/8af7efe62fab8d33e2a5dfbedabaa45f68a5184f/README.md) · [LICENSE](https://github.com/jamiepine/voicebox/blob/8af7efe62fab8d33e2a5dfbedabaa45f68a5184f/LICENSE) · [package.json](https://github.com/jamiepine/voicebox/blob/8af7efe62fab8d33e2a5dfbedabaa45f68a5184f/package.json) |
+
+<a id="ch-voicestudio"></a>
+
+### VoiceStudio
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/debpalash/VoiceStudio |
+| License | AGPL-3.0-only, có bản license thương mại và CLA (khớp catalog) |
+| Phiên bản đã đọc | `1214e264d9e4facef560e1583370edbc7a6beff7` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, pyproject.toml, LICENSE-NOTICE.md (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-23; có nhiều workflow CI (chỉ xem tên). |
+| Nhận định | Studio giọng chạy cục bộ (nhân bản, dubbing, dictation, transcribe). AGPL cho mã ứng dụng, cho phép dùng thương mại theo AGPL; bản license thương mại và tính năng Pro bán riêng. Trọng số mặc định OmniVoice là CC-BY-NC (không thương mại) theo README: phải kiểm license từng model. |
+| Nguồn | [README](https://github.com/debpalash/VoiceStudio/blob/1214e264d9e4facef560e1583370edbc7a6beff7/README.md) · [LICENSE](https://github.com/debpalash/VoiceStudio/blob/1214e264d9e4facef560e1583370edbc7a6beff7/LICENSE) · [package.json](https://github.com/debpalash/VoiceStudio/blob/1214e264d9e4facef560e1583370edbc7a6beff7/package.json) · [pyproject.toml](https://github.com/debpalash/VoiceStudio/blob/1214e264d9e4facef560e1583370edbc7a6beff7/pyproject.toml) · [LICENSE-NOTICE.md](https://github.com/debpalash/VoiceStudio/blob/1214e264d9e4facef560e1583370edbc7a6beff7/LICENSE-NOTICE.md) |
+
+<a id="ch-voxcpm"></a>
+
+### VoxCPM
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/OpenBMB/VoxCPM |
+| License | Apache-2.0 (khớp catalog; README nói cả weights) |
+| Phiên bản đã đọc | `300e4260b509066151d623dc9c0aa922cf82232b` (commit 2026-11-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-09. |
+| Nhận định | TTS không tokenizer (VoxCPM2): đa ngôn ngữ, thiết kế giọng, nhân bản giọng, có WebUI và LoRA fine-tune. README khẳng định weights và code đều Apache-2.0 (phần weights chỉ là tuyên bố trong README, chưa đối chiếu trang model). |
+| Nguồn | [README](https://github.com/OpenBMB/VoxCPM/blob/300e4260b509066151d623dc9c0aa922cf82232b/README.md) · [LICENSE](https://github.com/OpenBMB/VoxCPM/blob/300e4260b509066151d623dc9c0aa922cf82232b/LICENSE) · [pyproject.toml](https://github.com/OpenBMB/VoxCPM/blob/300e4260b509066151d623dc9c0aa922cf82232b/pyproject.toml) |
+
+<a id="ch-whisper"></a>
+
+### Whisper
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/openai/whisper |
+| License | MIT (khớp catalog) |
+| Phiên bản đã đọc | `86098128c0b4f24f0e2aa2994de830614b474227` (commit 2026-08-31) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-08-31. |
+| Nhận định | Mô hình nhận dạng giọng nói đa tác vụ của OpenAI (ASR, dịch, nhận diện ngôn ngữ), gói PyPI openai-whisper. Mã và weights phát hành MIT theo README/LICENSE; nhịp commit thưa, repo chủ yếu ổn định. |
+| Nguồn | [README](https://github.com/openai/whisper/blob/86098128c0b4f24f0e2aa2994de830614b474227/README.md) · [LICENSE](https://github.com/openai/whisper/blob/86098128c0b4f24f0e2aa2994de830614b474227/LICENSE) · [pyproject.toml](https://github.com/openai/whisper/blob/86098128c0b4f24f0e2aa2994de830614b474227/pyproject.toml) |
+
+<a id="ch-whisper-cpp"></a>
+
+### whisper.cpp
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ggml-org/whisper.cpp |
+| License | MIT (khớp catalog) |
+| Phiên bản đã đọc | `96ec4d9823e9d0211944172da35f9f29134af990` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-23; nhiều workflow CI (chỉ xem tên file). |
+| Nhận định | Suy luận Whisper bằng C/C++ thuần, không phụ thuộc, tối ưu Apple Silicon, có binding nhiều ngôn ngữ và nhiều backend phần cứng (xem thư mục ggml, bindings). |
+| Nguồn | [README](https://github.com/ggml-org/whisper.cpp/blob/96ec4d9823e9d0211944172da35f9f29134af990/README.md) · [LICENSE](https://github.com/ggml-org/whisper.cpp/blob/96ec4d9823e9d0211944172da35f9f29134af990/LICENSE) |

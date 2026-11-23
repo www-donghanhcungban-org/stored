@@ -1280,3 +1280,499 @@ Phần này có **12 hồ sơ** từ bảng xlsx người dùng gửi ngày 2026
 **Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`593316aa0f8c`](https://github.com/browser-act/skills/commit/593316aa0f8ccd88bdf745c92b24a50641701973) (commit ngày 2026-11-04). Đã đọc README repo, `solutions/video-platforms/youtube-api-skill/SKILL.md` và toàn bộ `scripts/youtube_api.py`, đầu `browser-act/SKILL.md` (metadata quyền, cài đặt), `docs/installation.md`, workflow `sync-browser-act.yml`, LICENSE tại commit này. Chỉ phạm vi skill YouTube này; chưa đọc 100+ skill còn lại, chưa gọi API BrowserAct, chưa chạy script; template phía dịch vụ không truy cập được.
 
 **Nguồn:** [solutions/video-platforms/youtube-api-skill/SKILL.md](https://github.com/browser-act/skills/blob/593316aa0f8ccd88bdf745c92b24a50641701973/solutions/video-platforms/youtube-api-skill/SKILL.md) · [solutions/video-platforms/youtube-api-skill/scripts/youtube_api.py](https://github.com/browser-act/skills/blob/593316aa0f8ccd88bdf745c92b24a50641701973/solutions/video-platforms/youtube-api-skill/scripts/youtube_api.py) · [browser-act/SKILL.md](https://github.com/browser-act/skills/blob/593316aa0f8ccd88bdf745c92b24a50641701973/browser-act/SKILL.md) · [README.md](https://github.com/browser-act/skills/blob/593316aa0f8ccd88bdf745c92b24a50641701973/README.md) · [.github/workflows/sync-browser-act.yml](https://github.com/browser-act/skills/blob/593316aa0f8ccd88bdf745c92b24a50641701973/.github/workflows/sync-browser-act.yml) · [LICENSE](https://github.com/browser-act/skills/blob/593316aa0f8ccd88bdf745c92b24a50641701973/LICENSE) · metadata GitHub: chưa xác minh (API trả 403 trong phiên).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-ai-youtube-shorts-generator"></a>
+
+### AI YouTube Shorts Generator
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Anil-matcha/AI-Youtube-Shorts-Generator |
+| License | MIT |
+| Phiên bản đã đọc | `8c9ac3103a137e53669aeebfc2af8dbdd810c35a` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, requirements.txt; chưa chạy upstream |
+| Bảo trì | commit 21/11/2026; không có workflow CI; chỉ thấy requirements.txt tối thiểu (requests, python-dotenv) |
+| Nhận định | CLI đổi video YouTube dài thành các Shorts 9:16: LLM chọn đoạn nổi bật, Whisper phiên âm, cắt khung dọc. Mã tách module `shorts_generator/` (downloader, transcriber, highlights, clipper, muapi). Giới hạn: mặc định phụ thuộc dịch vụ MuAPI trả phí; tuyên bố "miễn phí, không giới hạn" của README chỉ đúng khi tự chịu chi phí API **(chưa xác minh)**; không có test/CI. |
+| Nguồn | [README.md](https://github.com/Anil-matcha/AI-Youtube-Shorts-Generator/blob/8c9ac3103a137e53669aeebfc2af8dbdd810c35a/README.md) · [LICENSE](https://github.com/Anil-matcha/AI-Youtube-Shorts-Generator/blob/8c9ac3103a137e53669aeebfc2af8dbdd810c35a/LICENSE) · [requirements.txt](https://github.com/Anil-matcha/AI-Youtube-Shorts-Generator/blob/8c9ac3103a137e53669aeebfc2af8dbdd810c35a/requirements.txt) |
+
+<a id="ch-auto-compare-video"></a>
+
+### auto-compare-video
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Cuongyd196/auto-compare-video |
+| License | MIT |
+| Phiên bản đã đọc | `50b1f34a7b1fdf309695ca4391bb8fd805d05b24` (commit 2026-09-24) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.EN.md (bản dịch tiếng Anh của README.md tiếng Việt; phần License cũng đối chiếu README.md), LICENSE; chưa chạy upstream |
+| Bảo trì | commit 24/9/2026; không có workflow CI; không có package.json ở gốc (mỗi video là một thư mục con) |
+| Nhận định | Mẫu video ngắn "A vs B" với bố cục cố định 3 phần (hai thẻ minh họa, phụ đề chạy, robot MC 2D), dựng bằng HyperFrames, hướng dẫn qua skill cho Claude Code. Điểm tham khảo: DESIGN.md chuẩn hóa bố cục để agent chỉ thay nội dung. Giới hạn: không có bước kiểm chứng nội dung hay CI; lỗi lệch tiếng ở video mẫu trong ghi chú cũ là quan sát riêng của kho **(chưa tái kiểm ở lần này)**. |
+| Nguồn | [README.EN.md](https://github.com/Cuongyd196/auto-compare-video/blob/50b1f34a7b1fdf309695ca4391bb8fd805d05b24/README.EN.md) · [LICENSE](https://github.com/Cuongyd196/auto-compare-video/blob/50b1f34a7b1fdf309695ca4391bb8fd805d05b24/LICENSE) |
+
+<a id="ch-auto-create-video"></a>
+
+### Auto-Create-Video
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/hoquanghai/Auto-Create-Video |
+| License | MIT |
+| Phiên bản đã đọc | `8c2e04337ca7fb574692c5830dafde35ac2017cd` (commit 2026-05-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, package.json, test.yml, typecheck.yml; chưa chạy upstream |
+| Bảo trì | commit cuối 2/5/2026 (~6,5 tháng); có CI test.yml (npm ci, vitest) và typecheck.yml (tsc --noEmit) |
+| Nhận định | Pipeline TypeScript biến bài báo công nghệ tiếng Việt (URL/txt) thành video 9:16 bằng Claude Code skill + HyperFrames + GSAP, TTS LucyLab/ElevenLabs. Có vitest và typecheck chạy trên CI. Giới hạn: phụ thuộc khóa TTS trả phí, đã đứng yên từ đầu tháng 5; tuyên bố "60 giây, chi phí ~0,1 USD" của README **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/hoquanghai/Auto-Create-Video/blob/8c2e04337ca7fb574692c5830dafde35ac2017cd/README.md) · [LICENSE](https://github.com/hoquanghai/Auto-Create-Video/blob/8c2e04337ca7fb574692c5830dafde35ac2017cd/LICENSE) · [package.json](https://github.com/hoquanghai/Auto-Create-Video/blob/8c2e04337ca7fb574692c5830dafde35ac2017cd/package.json) · [test.yml](https://github.com/hoquanghai/Auto-Create-Video/blob/8c2e04337ca7fb574692c5830dafde35ac2017cd/.github/workflows/test.yml) · [typecheck.yml](https://github.com/hoquanghai/Auto-Create-Video/blob/8c2e04337ca7fb574692c5830dafde35ac2017cd/.github/workflows/typecheck.yml) |
+
+<a id="ch-auto-video-gen-cuongit"></a>
+
+### auto-video-gen (CuongIT)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Cuongyd196/auto-video-gen |
+| License | MIT |
+| Phiên bản đã đọc | `86cda98a59b1126bd5e95b6839e87ee67b9fd396` (commit 2026-09-28) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.en.md (bản dịch tiếng Anh của README.md tiếng Việt; phần License đối chiếu README.md), LICENSE; chưa chạy upstream |
+| Bảo trì | commit 28/9/2026; không có workflow CI |
+| Nhận định | Biến bài viết tiếng Việt hoặc URL repo GitHub thành video 9:16 (HyperFrames + GSAP + TTS), cùng cây thư mục và pipeline với Auto-Create-Video của hoquanghai, thêm Vbee và theme. Giới hạn: không có workflow CI; cần xem kỹ quyền dùng ảnh/og:image của báo khi đăng. |
+| Nguồn | [README.en.md](https://github.com/Cuongyd196/auto-video-gen/blob/86cda98a59b1126bd5e95b6839e87ee67b9fd396/README.en.md) · [LICENSE](https://github.com/Cuongyd196/auto-video-gen/blob/86cda98a59b1126bd5e95b6839e87ee67b9fd396/LICENSE) |
+
+<a id="ch-awesome-claude-video-skills"></a>
+
+### awesome-claude-video-skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/zhuyansen/awesome-claude-video-skills |
+| License | CC0-1.0 (khác catalog cũ) |
+| Phiên bản đã đọc | `93fc8b8485a845d55b6d36c6c40f74f960642130` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE; chưa chạy upstream |
+| Bảo trì | commit 22/11/2026 ("Daily update"), danh sách tự cập nhật hằng ngày |
+| Nhận định | Danh sách tuyển chọn ~540 repo/skill giúp agent làm video (HyperFrames, Remotion, motion graphics...), kèm điểm an toàn do Agent Skills Hub chấm và mục "đã chạy thử 16 repo". Hữu ích để dò nhanh hệ sinh thái; xếp hạng và điểm an toàn là của nhà duy trì **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/zhuyansen/awesome-claude-video-skills/blob/93fc8b8485a845d55b6d36c6c40f74f960642130/README.md) · [LICENSE](https://github.com/zhuyansen/awesome-claude-video-skills/blob/93fc8b8485a845d55b6d36c6c40f74f960642130/LICENSE) |
+
+<a id="ch-c2pa-specifications"></a>
+
+### C2PA Specifications
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/c2pa-org/specifications |
+| License | CC-BY-4.0 |
+| Phiên bản đã đọc | `05dbf10bbd362c0f5ec1d2108f6745dfe9cb8669` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, publish.yml; chưa chạy upstream |
+| Bảo trì | commit 16/11/2026; workflow publish.yml đẩy site lên GitHub Pages |
+| Nhận định | Kho nguồn site đặc tả C2PA (xác thực nguồn gốc nội dung) dựng bằng Antora, có danh sách thuật toán soft-binding. README chủ yếu hướng dẫn build site; nội dung đặc tả nằm trong `docs/` và trên site spec.c2pa.org, chưa đọc nội dung đặc tả trong lần này. |
+| Nguồn | [README.md](https://github.com/c2pa-org/specifications/blob/05dbf10bbd362c0f5ec1d2108f6745dfe9cb8669/README.md) · [LICENSE](https://github.com/c2pa-org/specifications/blob/05dbf10bbd362c0f5ec1d2108f6745dfe9cb8669/LICENSE) · [publish.yml](https://github.com/c2pa-org/specifications/blob/05dbf10bbd362c0f5ec1d2108f6745dfe9cb8669/.github/workflows/publish.yml) |
+
+<a id="ch-cit-voice-studio"></a>
+
+### CIT Voice Studio
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Cuongyd196/cit-voice-studio |
+| License | Apache-2.0 (khác catalog cũ) |
+| Phiên bản đã đọc | `6fc8d14985b157a629392faa83c8db418d2af5ab` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README (tiếng Việt, phần giới thiệu và license), LICENSE; chưa chạy upstream |
+| Bảo trì | commit 12/11/2026; có ci.yml, build-linux.yml, build-macos.yml (chưa mở) |
+| Nhận định | Ứng dụng TTS tiếng Việt chạy cục bộ (25 giọng, nhân bản giọng, lồng tiếng theo .srt, API cục bộ cổng 8001, bản desktop). Mã mở Apache-2.0 nhưng mô hình đi kèm có license riêng (OpenRAIL-M) cần kiểm khi dùng thương mại; chất lượng "ngang mô hình lớn hơn nhiều lần" là lời nhà cung cấp **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/Cuongyd196/cit-voice-studio/blob/6fc8d14985b157a629392faa83c8db418d2af5ab/README.md) · [LICENSE](https://github.com/Cuongyd196/cit-voice-studio/blob/6fc8d14985b157a629392faa83c8db418d2af5ab/LICENSE) |
+
+<a id="ch-claude-video-watch"></a>
+
+### claude-video (/watch)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/bradautomates/claude-video |
+| License | MIT |
+| Phiên bản đã đọc | `03ceb42f7fa2c4439aca01752118044baabffb8f` (commit 2026-09-25) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, tests.yml, release.yml; chưa chạy upstream |
+| Bảo trì | commit 25/9/2026 (release 0.3.2); có tests.yml (ma trận Ubuntu/macOS/Windows) và release.yml |
+| Nhận định | Skill/plugin "/watch": biến URL hoặc file video thành khung hình có mốc thời gian + transcript (ưu tiên phụ đề gốc, tùy chọn WhisperX cục bộ hoặc Groq/OpenAI). Có test đa hệ điều hành và quy trình release; dùng Groq/OpenAI thì dữ liệu rời máy. |
+| Nguồn | [README.md](https://github.com/bradautomates/claude-video/blob/03ceb42f7fa2c4439aca01752118044baabffb8f/README.md) · [LICENSE](https://github.com/bradautomates/claude-video/blob/03ceb42f7fa2c4439aca01752118044baabffb8f/LICENSE) · [tests.yml](https://github.com/bradautomates/claude-video/blob/03ceb42f7fa2c4439aca01752118044baabffb8f/.github/workflows/tests.yml) · [release.yml](https://github.com/bradautomates/claude-video/blob/03ceb42f7fa2c4439aca01752118044baabffb8f/.github/workflows/release.yml) |
+
+<a id="ch-cogvideox"></a>
+
+### CogVideoX
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/zai-org/CogVideo |
+| License | Apache-2.0 (code); mô hình CogVideoX-5B theo CogVideoX LICENSE riêng (khác catalog cũ) |
+| Phiên bản đã đọc | `7a1af7154511e0ce4e4be8d62faa8c5e5a3532d2` (commit 2025-11-04) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, MODEL_LICENSE; chưa chạy upstream |
+| Bảo trì | commit cuối 4/11/2025 ("update readme", ~1 năm); mục tin README dừng ở đầu 2025; không có CI |
+| Nhận định | Mã suy luận/tinh chỉnh (diffusers, SAT, LoRA) cho họ mô hình sinh video CogVideoX, kèm CLI demo và DDIM inversion. Giới hạn: license mô hình khác code, repo đứng yên khoảng một năm và README chỉ sang CogKit; cần GPU lớn. |
+| Nguồn | [README.md](https://github.com/zai-org/CogVideo/blob/7a1af7154511e0ce4e4be8d62faa8c5e5a3532d2/README.md) · [LICENSE](https://github.com/zai-org/CogVideo/blob/7a1af7154511e0ce4e4be8d62faa8c5e5a3532d2/LICENSE) · [MODEL_LICENSE](https://github.com/zai-org/CogVideo/blob/7a1af7154511e0ce4e4be8d62faa8c5e5a3532d2/MODEL_LICENSE) |
+
+<a id="ch-crucix"></a>
+
+### Crucix
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/calesthio/Crucix |
+| License | AGPL-3.0 (khác catalog cũ) |
+| Phiên bản đã đọc | `3db7068817e0c815df353fa0f19657c85142789d` (commit 2026-05-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | commit cuối 19/5/2026 (~6 tháng); có docker-publish.yml; package.json v2.0.0 |
+| Nhận định | Ứng dụng Node tự chạy gom 27 nguồn dữ liệu mở (cháy vệ tinh, chuyến bay, bức xạ, thị trường, xung đột...) mỗi 15 phút lên bảng điều khiển kiểu "Jarvis", có thể nối LLM để cảnh báo qua Telegram/Discord. Rủi ro: AGPL-3.0 buộc mở mã khi cung cấp qua mạng; "không telemetry" là tuyên bố của tác giả **(chưa xác minh)**; không liên quan trực tiếp tới dựng video. |
+| Nguồn | [README.md](https://github.com/calesthio/Crucix/blob/3db7068817e0c815df353fa0f19657c85142789d/README.md) · [LICENSE](https://github.com/calesthio/Crucix/blob/3db7068817e0c815df353fa0f19657c85142789d/LICENSE) · [package.json](https://github.com/calesthio/Crucix/blob/3db7068817e0c815df353fa0f19657c85142789d/package.json) |
+
+<a id="ch-ebu-r-128-itu-r-bs-1770"></a>
+
+### EBU R 128 / ITU-R BS.1770
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://tech.ebu.ch/publications/r128 (trang 403 với curl; đã đọc PDF https://tech.ebu.ch/docs/r/r128.pdf) |
+| License | Không có file license; tài liệu khuyến nghị của EBU (EBU Recommendation) |
+| Phiên bản đã đọc | EBU R 128-2023 (v5, tháng 11/2023); không áp dụng SHA |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc r128.pdf; chưa chạy upstream |
+| Bảo trì | Chưa rõ (bản sửa đổi gần nhất đọc được là 11/2023) |
+| Nhận định | Khuyến nghị chuẩn hóa loudness theo chương trình ở -23,0 LUFS (dung sai ±0,5 LU, ±1,0 LU cho chương trình trực tiếp) và true peak không quá -1 dBTP, đo bằng máy đo theo ITU-R BS.1770 và EBU Tech 3341. Đây là mục tiêu cho phát sóng, các nền tảng streaming dùng mục tiêu khác. |
+| Nguồn | [R 128 PDF](https://tech.ebu.ch/docs/r/r128.pdf) |
+
+<a id="ch-ffmpeg-quality-metrics"></a>
+
+### ffmpeg-quality-metrics
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/slhck/ffmpeg-quality-metrics |
+| License | MIT |
+| Phiên bản đã đọc | `e4aafcb575fb9feeb36c960ef38e997278d6c817` (commit 2026-10-25) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE.md, pyproject.toml; chưa chạy upstream |
+| Bảo trì | commit 25/10/2026; có python-package.yml, docker-push.yml, auto-update-ffmpeg.yml (chưa mở); pyproject v3.13.0 |
+| Nhận định | Công cụ Python gọi FFmpeg tính PSNR, SSIM, VIF, MSAD, VMAF theo từng khung và thống kê toàn video, có GUI xem kết quả trên trình duyệt. Dùng tốt làm bước đo chất lượng sau khi sinh/nén video; chạy cần FFmpeg bản mới. |
+| Nguồn | [README.md](https://github.com/slhck/ffmpeg-quality-metrics/blob/e4aafcb575fb9feeb36c960ef38e997278d6c817/README.md) · [LICENSE.md](https://github.com/slhck/ffmpeg-quality-metrics/blob/e4aafcb575fb9feeb36c960ef38e997278d6c817/LICENSE.md) · [pyproject.toml](https://github.com/slhck/ffmpeg-quality-metrics/blob/e4aafcb575fb9feeb36c960ef38e997278d6c817/pyproject.toml) |
+
+<a id="ch-generative-media-skills"></a>
+
+### generative-media-skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/calesthio/generative-media-skills |
+| License | MIT (khác catalog cũ) |
+| Phiên bản đã đọc | `8c85352d5d75d4dcbe58480bd138e37b9742bab1` (commit 2026-07-14) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE; chưa chạy upstream |
+| Bảo trì | commit 14/7/2026 (~4 tháng); không có workflow CI; có thư mục tests/ |
+| Nhận định | Bộ 150+ skill chia 25 nhóm cho agent làm ảnh, video, âm thanh, giọng, nhạc, 3D, avatar, kèm kiểm tra kỹ thuật; có file hướng dẫn riêng cho nhiều host (CLAUDE.md, GEMINI.md, OPENCLAW.md...). Số lượng và mức "research-backed" là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/calesthio/generative-media-skills/blob/8c85352d5d75d4dcbe58480bd138e37b9742bab1/README.md) · [LICENSE](https://github.com/calesthio/generative-media-skills/blob/8c85352d5d75d4dcbe58480bd138e37b9742bab1/LICENSE) |
+
+<a id="ch-hunyuanvideo"></a>
+
+### HunyuanVideo
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Tencent-Hunyuan/HunyuanVideo |
+| License | Tencent Hunyuan Community License (không áp dụng tại EU, UK, Hàn Quốc) |
+| Phiên bản đã đọc | `4eda9cb44c3be82a6b9c4261897cb6bd3cfb084e` (commit 2026-10-08) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE.txt, Notice; chưa chạy upstream |
+| Bảo trì | commit 8/10/2026 chỉ chỉnh tài liệu cài đặt; mục tin README dừng ở 11/2025 và hướng sang HunyuanVideo-1.5; không có CI |
+| Nhận định | Mã mô hình, trọng số và suy luận của HunyuanVideo gốc (PyTorch, gradio_server.py, sample_video.py). Giới hạn: license cộng đồng có hạn chế lãnh thổ, repo gần như chỉ còn sửa tài liệu và đã có bản kế nhiệm 1.5; cần GPU rất lớn. |
+| Nguồn | [README.md](https://github.com/Tencent-Hunyuan/HunyuanVideo/blob/4eda9cb44c3be82a6b9c4261897cb6bd3cfb084e/README.md) · [LICENSE.txt](https://github.com/Tencent-Hunyuan/HunyuanVideo/blob/4eda9cb44c3be82a6b9c4261897cb6bd3cfb084e/LICENSE.txt) · [Notice](https://github.com/Tencent-Hunyuan/HunyuanVideo/blob/4eda9cb44c3be82a6b9c4261897cb6bd3cfb084e/Notice) |
+
+<a id="ch-hypit"></a>
+
+### Hypit
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/hypit-ai/hypit |
+| License | Hypit Open Source License (Apache-2.0 sửa đổi, cấm SaaS/bán lại) |
+| Phiên bản đã đọc | `9a6f688c39829857d50dc596fa1218565585a9da` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | commit 16/11/2026, nhiều workflow (ci.yml, publish-npm.yml...; chưa mở); package.json v0.3.3 |
+| Nhận định | Hệ thống cho agent dựng video bằng ngôn ngữ SVML (mốc theo từ thay vì theo giây), cài qua `npx skills add`, có thể nhân bản video mẫu thành workflow hoặc dựng từ mô tả. Không phải Apache-2.0 thuần nên cần đọc kỹ điều kiện thương mại; README không bàn về đồng ý/deepfake khi clone video. |
+| Nguồn | [README.md](https://github.com/hypit-ai/hypit/blob/9a6f688c39829857d50dc596fa1218565585a9da/README.md) · [LICENSE](https://github.com/hypit-ai/hypit/blob/9a6f688c39829857d50dc596fa1218565585a9da/LICENSE) · [package.json](https://github.com/hypit-ai/hypit/blob/9a6f688c39829857d50dc596fa1218565585a9da/package.json) |
+
+<a id="ch-localminidrama"></a>
+
+### LocalMiniDrama
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/xuanyustudio/LocalMiniDrama |
+| License | MIT |
+| Phiên bản đã đọc | `2335879a40f4349003217c957798401f2cb7910b` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, release.yml; chưa chạy upstream |
+| Bảo trì | commit 22/11/2026; release.yml build bộ cài (chưa đọc hết); CHANGELOG, README nêu v1.2.9 |
+| Nhận định | Ứng dụng desktop/web làm phim ngắn AI: kịch bản, nhân vật, cảnh, storyboard đến ghép video, hỗ trợ nhiều nhà cung cấp (Tongyi, Volcengine, Kling, Gemini, Vidu...), có chế độ canvas. README tiếng Trung; "dữ liệu không lên mây" áp dụng cho dữ liệu app, còn API model bên thứ ba vẫn nhận nội dung gửi đi. |
+| Nguồn | [README.md](https://github.com/xuanyustudio/LocalMiniDrama/blob/2335879a40f4349003217c957798401f2cb7910b/README.md) · [LICENSE](https://github.com/xuanyustudio/LocalMiniDrama/blob/2335879a40f4349003217c957798401f2cb7910b/LICENSE) · [release.yml](https://github.com/xuanyustudio/LocalMiniDrama/blob/2335879a40f4349003217c957798401f2cb7910b/.github/workflows/release.yml) |
+
+<a id="ch-moneyprinterturbo"></a>
+
+### MoneyPrinterTurbo
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/harry0703/MoneyPrinterTurbo |
+| License | MIT |
+| Phiên bản đã đọc | `3482168e8958a73c48656634c750a5ce459224df` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README (tiếng Trung), LICENSE, pyproject.toml, ci.yml, security.yml; chưa chạy upstream |
+| Bảo trì | commit 23/11/2026 (release v1.3.11); CI thật ci.yml (pytest trên Python 3.11/3.13, Redis), security.yml (Trivy), docker-ghcr.yml |
+| Nhận định | Pipeline Python (WebUI, API, CLI) tạo video ngắn từ chủ đề: viết kịch bản bằng LLM, lấy footage, TTS, phụ đề, nhạc rồi xuất MP4. Điểm đáng tham khảo: có test và CI bảo mật. Rủi ro: phụ thuộc nhiều dịch vụ bên thứ ba và khóa API; README quảng cáo tài trợ. |
+| Nguồn | [README.md](https://github.com/harry0703/MoneyPrinterTurbo/blob/3482168e8958a73c48656634c750a5ce459224df/README.md) · [LICENSE](https://github.com/harry0703/MoneyPrinterTurbo/blob/3482168e8958a73c48656634c750a5ce459224df/LICENSE) · [pyproject.toml](https://github.com/harry0703/MoneyPrinterTurbo/blob/3482168e8958a73c48656634c750a5ce459224df/pyproject.toml) · [ci.yml](https://github.com/harry0703/MoneyPrinterTurbo/blob/3482168e8958a73c48656634c750a5ce459224df/.github/workflows/ci.yml) · [security.yml](https://github.com/harry0703/MoneyPrinterTurbo/blob/3482168e8958a73c48656634c750a5ce459224df/.github/workflows/security.yml) |
+
+<a id="ch-open-sora"></a>
+
+### Open-Sora
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/hpcaitech/Open-Sora |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `7ad6a96a135feb81f755c84fb391818718f6beb2` (commit 2026-04-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, close_issue.yaml; chưa chạy upstream |
+| Bảo trì | commit cuối 9/4/2026 (~7,5 tháng, sửa README); workflow chỉ đóng issue cũ và github_page |
+| Nhận định | Mã và checkpoint mô hình sinh video Open-Sora (1.3 và 2.0 11B), có cấu hình huấn luyện/suy luận và gradio demo. Giới hạn: repo đứng yên nhiều tháng, cần GPU lớn; kết quả so sánh VBench trong README là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/hpcaitech/Open-Sora/blob/7ad6a96a135feb81f755c84fb391818718f6beb2/README.md) · [LICENSE](https://github.com/hpcaitech/Open-Sora/blob/7ad6a96a135feb81f755c84fb391818718f6beb2/LICENSE) · [close_issue.yaml](https://github.com/hpcaitech/Open-Sora/blob/7ad6a96a135feb81f755c84fb391818718f6beb2/.github/workflows/close_issue.yaml) |
+
+<a id="ch-opencreator-ten-cu-krillinai"></a>
+
+### OpenCreator (tên cũ KrillinAI)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/krillinai/OpenCreator |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `55a9db9c0643ab18717e0f2259b03c32867d33c1` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE; chưa chạy upstream |
+| Bảo trì | commit 23/11/2026 (chuẩn bị v3.3.4); có ci.yml, desktop-release.yml |
+| Nhận định | Không gian làm việc cục bộ cho sáng tạo và lập trình dùng Codex CLI làm động cơ agent, gồm Runtime, giao diện trực quan và bản Desktop; có công cụ dịch/tải video, sinh ảnh/video, giọng đọc, viết bài. Phụ thuộc Codex CLI; khẩu hiệu "hệ sản xuất video agentic mã mở đầu tiên" là tuyên bố tiếp thị **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/krillinai/OpenCreator/blob/55a9db9c0643ab18717e0f2259b03c32867d33c1/README.md) · [LICENSE](https://github.com/krillinai/OpenCreator/blob/55a9db9c0643ab18717e0f2259b03c32867d33c1/LICENSE) |
+
+<a id="ch-palmier-pro"></a>
+
+### Palmier Pro
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/palmier-io/palmier-pro |
+| License | GPL-3.0 (mã nguồn đã công bố đến v0.7.6); bản nhị phân sau đó độc quyền (BINARY_LICENSE.md) |
+| Phiên bản đã đọc | `7a140c15ca628a8aa67bb5aaae7c6994474f73b9` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, BINARY_LICENSE.md; chưa chạy upstream |
+| Bảo trì | commit 20/11/2026 (xuất bản appcast v1.0.0-beta.4); repo nay chủ yếu lưu mã lịch sử và phát hành bản nhị phân |
+| Nhận định | Trình dựng video native cho macOS (Swift, Apple Silicon, macOS 26) có sinh AI và MCP để agent thao tác timeline. Điểm cần lưu ý: GPL-3.0 chỉ phủ phần mã lịch sử, phần mềm đang phát hành là đóng nên không thể audit hay fork bản mới. |
+| Nguồn | [README.md](https://github.com/palmier-io/palmier-pro/blob/7a140c15ca628a8aa67bb5aaae7c6994474f73b9/README.md) · [LICENSE](https://github.com/palmier-io/palmier-pro/blob/7a140c15ca628a8aa67bb5aaae7c6994474f73b9/LICENSE) · [BINARY_LICENSE.md](https://github.com/palmier-io/palmier-pro/blob/7a140c15ca628a8aa67bb5aaae7c6994474f73b9/BINARY_LICENSE.md) |
+
+<a id="ch-pixelle-video"></a>
+
+### Pixelle-Video
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ATH-MaaS/Pixelle-Video |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `848b054e4fae40dabc62ec58e960b573e83793ac` (commit 2026-06-14) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README (tiếng Trung), LICENSE, NOTICE, docs.yml; chưa chạy upstream |
+| Bảo trì | commit cuối 14/6/2026 (~5 tháng); chỉ có docs.yml (deploy mkdocs), không CI test |
+| Nhận định | Pipeline Python/Streamlit/FastAPI nhập chủ đề rồi sinh kịch bản, ảnh/video AI (ComfyUI, RunningHub hoặc API trực tiếp), TTS, BGM và ghép MP4, có digital human và dịch chuyển động. Giới hạn: không test, đứng yên từ giữa tháng 6, dữ liệu có thể gửi tới RunningHub/API bên thứ ba. |
+| Nguồn | [README.md](https://github.com/ATH-MaaS/Pixelle-Video/blob/848b054e4fae40dabc62ec58e960b573e83793ac/README.md) · [LICENSE](https://github.com/ATH-MaaS/Pixelle-Video/blob/848b054e4fae40dabc62ec58e960b573e83793ac/LICENSE) · [NOTICE](https://github.com/ATH-MaaS/Pixelle-Video/blob/848b054e4fae40dabc62ec58e960b573e83793ac/NOTICE) · [docs.yml](https://github.com/ATH-MaaS/Pixelle-Video/blob/848b054e4fae40dabc62ec58e960b573e83793ac/.github/workflows/docs.yml) |
+
+<a id="ch-podcastfy"></a>
+
+### Podcastfy
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/souzatharsis/podcastfy |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `053b54a0917e35edb2808049499292361ccaae7b` (commit 2026-05-04) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | commit cuối 4/5/2026 (~6,5 tháng); có python-app.yml, docker-publish.yml, draft-pdf.yml (chưa mở); pyproject v0.4.3 |
+| Nhận định | Gói Python sinh đoạn hội thoại âm thanh (kiểu podcast) từ web, PDF, ảnh, YouTube hoặc chủ đề, có CLI, API và Docker. Phụ thuộc LLM/TTS bên thứ ba; mã ít cập nhật từ giữa năm. |
+| Nguồn | [README.md](https://github.com/souzatharsis/podcastfy/blob/053b54a0917e35edb2808049499292361ccaae7b/README.md) · [LICENSE](https://github.com/souzatharsis/podcastfy/blob/053b54a0917e35edb2808049499292361ccaae7b/LICENSE) · [pyproject.toml](https://github.com/souzatharsis/podcastfy/blob/053b54a0917e35edb2808049499292361ccaae7b/pyproject.toml) |
+
+<a id="ch-remotion-cuongit-template"></a>
+
+### remotion-cuongit-template
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Cuongyd196/remotion-cuongit-template |
+| License | MIT (khác catalog cũ) |
+| Phiên bản đã đọc | `206b4b73ba6b04fab802ad8a2ee1381461bd0892` (commit 2026-11-07) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README (tiếng Việt), LICENSE; chưa chạy upstream |
+| Bảo trì | commit 7/11/2026; không có workflow CI |
+| Nhận định | Mẫu Remotion kèm bốn skill cho agent tạo video dọc 9:16 về công nghệ (giải thích chủ đề, giới thiệu repo GitHub, so sánh, từ nội dung có sẵn). Mã MIT nhưng Remotion và các tài nguyên giọng/âm thanh có điều khoản riêng; không có CI. |
+| Nguồn | [README.md](https://github.com/Cuongyd196/remotion-cuongit-template/blob/206b4b73ba6b04fab802ad8a2ee1381461bd0892/README.md) · [LICENSE](https://github.com/Cuongyd196/remotion-cuongit-template/blob/206b4b73ba6b04fab802ad8a2ee1381461bd0892/LICENSE) |
+
+<a id="ch-short-video-factory"></a>
+
+### Short Video Factory
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/YILS-LIN/short-video-factory |
+| License | AGPL-3.0 |
+| Phiên bản đã đọc | `4e58116fd98cac2526e134237b57db8f01aed79f` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README (tiếng Trung), LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | commit 20/11/2026 (release v1.4.1); có build.yml (chưa mở) |
+| Nhận định | Ứng dụng Electron desktop tạo video ngắn: LLM (API tương thích OpenAI) viết lời, TTS (EdgeTTS), tự cắt ghép, phụ đề, xử lý hàng loạt. Rủi ro: AGPL-3.0 buộc mở mã khi nhúng thành dịch vụ; README tuyên bố chạy "hoàn toàn cục bộ" nhưng LLM/TTS gọi dịch vụ ngoài **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/YILS-LIN/short-video-factory/blob/4e58116fd98cac2526e134237b57db8f01aed79f/README.md) · [LICENSE](https://github.com/YILS-LIN/short-video-factory/blob/4e58116fd98cac2526e134237b57db8f01aed79f/LICENSE) · [package.json](https://github.com/YILS-LIN/short-video-factory/blob/4e58116fd98cac2526e134237b57db8f01aed79f/package.json) |
+
+<a id="ch-social-media-agent-langchain"></a>
+
+### Social Media Agent (LangChain)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/langchain-ai/social-media-agent |
+| License | MIT |
+| Phiên bản đã đọc | `bc27973c9c11f5c4929d78f26cb9ed200ab017f2` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE; chưa chạy upstream |
+| Bảo trì | commit 17/11/2026; có ci.yml, unit-tests.yml, integration-tests.yml (chưa mở) |
+| Nhận định | Agent LangGraph (TypeScript) soạn và đăng bài mạng xã hội: nạp nội dung từ URL, tạo bài, người dùng duyệt trước khi đăng; có chế độ quickstart và chế độ đầy đủ (Slack, ảnh). Cần nhiều khóa API (LLM, LangSmith, Firecrawl, đăng nhập mạng xã hội). |
+| Nguồn | [README.md](https://github.com/langchain-ai/social-media-agent/blob/bc27973c9c11f5c4929d78f26cb9ed200ab017f2/README.md) · [LICENSE](https://github.com/langchain-ai/social-media-agent/blob/bc27973c9c11f5c4929d78f26cb9ed200ab017f2/LICENSE) |
+
+<a id="ch-social-media-research-skills"></a>
+
+### Social Media Research Skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ScrapeCreators/social-media-research-skills |
+| License | MIT |
+| Phiên bản đã đọc | `64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2` (commit 2026-08-26) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE; chưa chạy upstream |
+| Bảo trì | commit 26/8/2026 (~3 tháng, gộp PR thêm LICENSE MIT); không có CI |
+| Nhận định | Bộ skill cho agent nghiên cứu mạng xã hội (bài nổi bật, bình luận, transcript, phân tích đối thủ, thư viện quảng cáo) trên nhiều nền tảng, cài bằng `npx skills add`. Cần khóa SCRAPECREATORS_API_KEY của dịch vụ trả phí; mã skill MIT nhưng dữ liệu đi qua một bên thứ ba thương mại. |
+| Nguồn | [README.md](https://github.com/ScrapeCreators/social-media-research-skills/blob/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/README.md) · [LICENSE](https://github.com/ScrapeCreators/social-media-research-skills/blob/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/LICENSE) |
+
+<a id="ch-toonflow"></a>
+
+### Toonflow
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/HBAI-Ltd/Toonflow-app |
+| License | MIT |
+| Phiên bản đã đọc | `eecf51547af47eb504822186bd3f2dee369125ff` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README (tiếng Trung), LICENSE; chưa chạy upstream |
+| Bảo trì | commit 20/11/2026; có release.yml, signPath.yml, debug.yml (chưa mở) |
+| Nhận định | Studio phim ngắn/hoạt hình AI mã mở: canvas vô hạn, tiền kỳ 3D (white-model), sinh video theo từng shot, bản desktop (Electrobun) và Docker. README tiếng Trung, có nhiều khối tài trợ; số lượt xem phim ngắn là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/HBAI-Ltd/Toonflow-app/blob/eecf51547af47eb504822186bd3f2dee369125ff/README.md) · [LICENSE](https://github.com/HBAI-Ltd/Toonflow-app/blob/eecf51547af47eb504822186bd3f2dee369125ff/LICENSE) |
+
+<a id="ch-topview-3d-builder"></a>
+
+### Topview 3D Builder
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/topviewai/topview-3d-builder |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `631c08c8fd352b4ff83df33aa9a74a4563f4674b` (commit 2026-10-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 17/10/2026, repo mới; hai workflow (ci.yml, release.yml) có trong cây nhưng chưa mở. |
+| Nhận định | Plugin/CLI để agent dựng cảnh 3D cục bộ làm tham chiếu trước khi sinh video; cấu trúc có `.mcp.json`, `.claude-plugin`, `.codex-plugin`, `.cursor-plugin`. README quảng bá "runs 100% local"; việc bước sinh video dẫn về Topview trả phí là ghi chú cũ của catalog, chưa kiểm lại **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/topviewai/topview-3d-builder/blob/631c08c8fd352b4ff83df33aa9a74a4563f4674b/README.md) · [LICENSE](https://github.com/topviewai/topview-3d-builder/blob/631c08c8fd352b4ff83df33aa9a74a4563f4674b/LICENSE) |
+
+<a id="ch-vbench"></a>
+
+### VBench
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Vchitect/VBench |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `fd18b3d055cb0fc6f066ca90fe2c3c8cbb698490` (commit 2026-08-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, setup.py; chưa chạy upstream |
+| Bảo trì | Commit cuối 21/8/2026 (~3 tháng trước ngày kiểm). |
+| Nhận định | Bộ benchmark đánh giá model sinh video theo nhiều chiều (T2V, I2V, video dài, VBench-2.0); đáng tham khảo làm khung chấm. Nặng: cần GPU/CUDA và nhiều checkpoint (theo setup.py/README). |
+| Nguồn | [README.md](https://github.com/Vchitect/VBench/blob/fd18b3d055cb0fc6f066ca90fe2c3c8cbb698490/README.md) · [LICENSE](https://github.com/Vchitect/VBench/blob/fd18b3d055cb0fc6f066ca90fe2c3c8cbb698490/LICENSE) · [setup.py](https://github.com/Vchitect/VBench/blob/fd18b3d055cb0fc6f066ca90fe2c3c8cbb698490/setup.py) |
+
+<a id="ch-video-use"></a>
+
+### video-use
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/browser-use/video-use |
+| License | MIT |
+| Phiên bản đã đọc | `43cfc566833548093455c9d4a46bd69913b7e552` (commit 2026-10-08) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit 8/10/2026; repo không có thư mục .github/workflows. |
+| Nhận định | Skill Claude Code dựng video từ footage thô qua transcript từng từ và ảnh timeline, xuất bằng ffmpeg. README tự nhận self-evaluate ở mỗi điểm cắt **(chưa xác minh)**. Phụ thuộc dịch vụ ElevenLabs trả phí và có định hướng sang bản cloud. |
+| Nguồn | [README.md](https://github.com/browser-use/video-use/blob/43cfc566833548093455c9d4a46bd69913b7e552/README.md) · [LICENSE](https://github.com/browser-use/video-use/blob/43cfc566833548093455c9d4a46bd69913b7e552/LICENSE) · [pyproject.toml](https://github.com/browser-use/video-use/blob/43cfc566833548093455c9d4a46bd69913b7e552/pyproject.toml) |
+
+<a id="ch-videoseal"></a>
+
+### VideoSeal
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/facebookresearch/videoseal |
+| License | MIT |
+| Phiên bản đã đọc | `f12875a9b5e711e0c6e2dc3a22aca18231ce4a1a` (commit 2026-11-10) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit 10/11/2026 (gần ngày kiểm). |
+| Nhận định | Bộ watermark ẩn cho ảnh/video của Meta (VideoSeal, PixelSeal, ChunkySeal) kèm WmForger để thử tấn công giả mạo. Đáng tham khảo cho nhúng/phát hiện nguồn gốc; độ bền thực tế **(chưa xác minh)**, chỉ là số liệu của tác giả. |
+| Nguồn | [README.md](https://github.com/facebookresearch/videoseal/blob/f12875a9b5e711e0c6e2dc3a22aca18231ce4a1a/README.md) · [LICENSE](https://github.com/facebookresearch/videoseal/blob/f12875a9b5e711e0c6e2dc3a22aca18231ce4a1a/LICENSE) · [pyproject.toml](https://github.com/facebookresearch/videoseal/blob/f12875a9b5e711e0c6e2dc3a22aca18231ce4a1a/pyproject.toml) |
+
+<a id="ch-vimax"></a>
+
+### ViMax
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/HKUDS/ViMax |
+| License | MIT |
+| Phiên bản đã đọc | `fd4b72e7731be6e5f88486206d25ea59849b0285` (commit 2026-09-30) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc readme.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit 30/9/2026; repo có thư mục tests, workflow chưa kiểm. |
+| Nhận định | Khung đa agent (biên kịch, storyboard, nhân vật, dựng) đi từ ý tưởng/kịch bản/tiểu thuyết đến video, có Web UI và TUI. Cần khóa API của nhà cung cấp mô hình ngoài; chất lượng đầu ra **(chưa xác minh)**. |
+| Nguồn | [readme.md](https://github.com/HKUDS/ViMax/blob/fd4b72e7731be6e5f88486206d25ea59849b0285/readme.md) · [LICENSE](https://github.com/HKUDS/ViMax/blob/fd4b72e7731be6e5f88486206d25ea59849b0285/LICENSE) · [pyproject.toml](https://github.com/HKUDS/ViMax/blob/fd4b72e7731be6e5f88486206d25ea59849b0285/pyproject.toml) |
+
+<a id="ch-vmaf"></a>
+
+### VMAF
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Netflix/vmaf |
+| License | BSD-2-Clause-Patent |
+| Phiên bản đã đọc | `cf677baaa039723876fff8c2677164f25102e684` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 16/11/2026; README ghi HDR model 26/10/2026 và VMAF v1 (6/2026). |
+| Nhận định | Chỉ số chất lượng video cảm nhận của Netflix, thư viện C `libvmaf` cùng wrapper Python để huấn luyện/kiểm model. Là chỉ số full-reference: cần bản gốc để so, nên hợp đo bản mã hóa so với master hơn là chấm video AI tự sinh. |
+| Nguồn | [README.md](https://github.com/Netflix/vmaf/blob/cf677baaa039723876fff8c2677164f25102e684/README.md) · [LICENSE](https://github.com/Netflix/vmaf/blob/cf677baaa039723876fff8c2677164f25102e684/LICENSE) |
+
+<a id="ch-wan2-2"></a>
+
+### Wan2.2
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Wan-Video/Wan2.2 |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `1ea34ff48f87168174e12956e200b1d908b1c5ff` (commit 2026-09-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE.txt, README.md, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit 21/9/2026 (~2 tháng); README nêu bản Wan2.2-Animate từ 19/9/2025, không có thư mục .github trong cây. |
+| Nhận định | Model video mở của Alibaba (T2V/I2V MoE, TI2V-5B, S2V, Animate) kèm mã suy luận `generate.py`. Cần GPU lớn; trọng số tải từ HF/ModelScope, repo không chứa trọng số. |
+| Nguồn | [LICENSE.txt](https://github.com/Wan-Video/Wan2.2/blob/1ea34ff48f87168174e12956e200b1d908b1c5ff/LICENSE.txt) · [README.md](https://github.com/Wan-Video/Wan2.2/blob/1ea34ff48f87168174e12956e200b1d908b1c5ff/README.md) · [pyproject.toml](https://github.com/Wan-Video/Wan2.2/blob/1ea34ff48f87168174e12956e200b1d908b1c5ff/pyproject.toml) |
+
+<a id="ch-waoowaoo-ten-cu-saturndec-waoowaoo"></a>
+
+### waoowaoo (tên cũ saturndec/waoowaoo)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/waooAI/waoowaoo |
+| License | Elastic-2.0 |
+| Phiên bản đã đọc | `dfec20e32298ed675050329e4a41477024148399` (commit 2026-09-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit 21/9/2026, package.json 0.5.0-beta.1; README ghi "Preview release". |
+| Nhận định | Workspace ảnh/video AI có Assistant, canvas và cấu hình OpenRouter; từ bản 0.5 viết lại so với bản "phim ngắn từ tiểu thuyết" cũ. ELv2 cấm cung cấp dịch vụ hosted/managed cho bên thứ ba, không dùng làm nền cho dịch vụ bán lại. |
+| Nguồn | [README.md](https://github.com/waooAI/waoowaoo/blob/dfec20e32298ed675050329e4a41477024148399/README.md) · [LICENSE](https://github.com/waooAI/waoowaoo/blob/dfec20e32298ed675050329e4a41477024148399/LICENSE) · [package.json](https://github.com/waooAI/waoowaoo/blob/dfec20e32298ed675050329e4a41477024148399/package.json) |

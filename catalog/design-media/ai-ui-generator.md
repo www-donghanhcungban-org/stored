@@ -9,7 +9,7 @@
 | [screenshot-to-code](../../08-awesome-lists-learning/README.md#6c523-trợ-lý-lập-trình-ai) | `abi/screenshot-to-code` | MIT | 81.279 | đọc tài liệu 2026-11-18 | 08 | Chuyển ảnh chụp màn hình, mockup, thiết kế Figma và video quay màn hình thành mã frontend bằng mô hình AI. |
 | [OpenUI (W&B)](../../06-ui-ux-design/README.md#ch-openui-w-b) | `wandb/openui` | Apache-2.0 | 22.772 | đọc tài liệu 2026-11-23 | 06 | App tự host mô tả → HTML/React/Svelte; |
 | [bolt.diy](../../06-ui-ux-design/README.md#ch-bolt-diy) | `stackblitz-labs/bolt.diy` | MIT | 20.000 | đọc tài liệu 2026-11-23 | 06 | Bản mở của Bolt.new; |
-| [Magic MCP (21st.dev)](../../22-motion-design-animation/README.md) | `21st-dev/magic-mcp` | ISC | 6.328 | chưa chuẩn hóa | 22 | Sinh UI từ thư viện component 21st; |
+| [Magic MCP (21st.dev)](../../22-motion-design-animation/README.md#ch-magic-mcp-21st-dev) | `21st-dev/magic-mcp` | ISC | 6.646 | đọc tài liệu 2026-11-23 | 22 | Sinh UI từ thư viện component 21st; |
 | [Google Stitch](../../06-ui-ux-design/README.md#ch-google-stitch) |  | proprietary | — | đọc tài liệu 2026-11-23 | 06 | . |
 | [Lovable](../../06-ui-ux-design/README.md) |  | proprietary | — | chưa chuẩn hóa | 06 | ; |
 | [MotionSites Studio](../../06-ui-ux-design/README.md#7zc-hai-mươi-trang-cảm-hứng-và-tài-nguyên-thiết-kế-gallery-từng-phần-giao-diện-chuyển-động-làm-web-bằng-ai-danh-sách-người-dùng-gửi-đọc-16112026) |  | — | — | đọc tài liệu 2026-11-16 | 06 | AI website builder của MotionSites: mô tả doanh nghiệp → AI chỉnh mẫu, tạo ảnh/video, dựng site; |

@@ -7,8 +7,8 @@
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [LangChain](../../02-agent-frameworks/README.md#ch-langchain) | `langchain-ai/langchain` | MIT | 149.991 | đọc tài liệu 2026-11-23 | 02 | ; |
+| [Pi (earendil-works)](../../21-autonomous-workflows/README.md#ch-pi-earendil-works) | `earendil-works/pi` | MIT | 123.491 | đọc tài liệu 2026-11-23 | 21 | Vòng agent/coding agent làm nền cho open-instinct (pi-ai, pi-agent-core, pi-coding-agent, pi-mcp); |
 | [TradingAgents](../../08-awesome-lists-learning/README.md#6c-kho-repo-của-phan-đông-giang-phandonggiangcomkho-repo-694-repo-32-nhóm-và-24-repo-aiagent-đọc-mã-bảng-người-dùng-dán-kiểm-18112026) | `TauricResearch/TradingAgents` | Apache-2.0 | 122.976 | đọc tài liệu 2026-11-18 | 08 | Framework nhiều agent trên LangGraph mô phỏng công ty giao dịch: analyst cơ bản, tâm lý, tin tức, kỹ thuật; |
-| [Pi (earendil-works)](../../21-autonomous-workflows/README.md) | `earendil-works/pi` | — | 119.183 | chưa chuẩn hóa | 21 | Vòng agent/coding agent làm nền cho open-instinct (pi-ai, pi-agent-core, pi-coding-agent, pi-mcp); |
 | [Paperclip](../../02-agent-frameworks/README.md#ch-paperclip) | `paperclipai/paperclip` | MIT | 116.201 | đọc tài liệu 2026-11-23 | 02 | Quản lý agent như nhân viên: org chart, budget, heartbeat; |
 | [DeerFlow](../../02-agent-frameworks/README.md#ch-deerflow) | `bytedance/deer-flow` | MIT | 85.663 | đọc tài liệu 2026-11-23 | 02 | Deep research/"SuperAgent harness" đa agent trên LangGraph; |
 | [ruflo (claude-flow)](../../02-agent-frameworks/README.md#ch-ruflo-claude-flow) | `ruvnet/ruflo` | MIT | 82.314 | đọc tài liệu 2026-11-23 | 02 | Swarm orchestration cho Claude Code; |
