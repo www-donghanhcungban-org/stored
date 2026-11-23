@@ -1912,21 +1912,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### JSON Crack
 
-**Repo:** [AykutSarac/jsoncrack.com](https://github.com/AykutSarac/jsoncrack.com) · **License:** Apache-2.0 · **★ 44,603 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Trình xem và chỉnh dữ liệu JSON dưới dạng đồ thị hoặc cây tương tác.
-
-**Giá trị và cơ chế:** README mô tả chuyển đổi JSON/YAML/CSV/XML, truy vấn jq/JSONPath và sinh schema; monorepo có các đích web và extension, thuận tiện khảo sát payload phức tạp.
-
-**Giới hạn:** Cam kết xử lý cục bộ mới được đọc trong tài liệu; chưa kiểm mạng hoặc dữ liệu rất lớn. Không xem việc vẽ đúng đồ thị là kiểm chứng ý nghĩa của dữ liệu.
-
-**Cách tham khảo/tích hợp:** Dùng bản tự host cho dữ liệu riêng, giảm payload trước khi mở và đối chiếu schema bằng công cụ độc lập.
-
-**Thay thế:** jsoneditor, [D2](../16-docs-tools/README.md#anhkysuai-2026-11-23-d2), [Mermaid](https://github.com/mermaid-js/mermaid).
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a46d0d0adb09`](https://github.com/AykutSarac/jsoncrack.com/commit/a46d0d0adb098e12e577a083e87ead7f61f90098). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
-
-**Nguồn:** [README.md](https://github.com/AykutSarac/jsoncrack.com/blob/a46d0d0adb098e12e577a083e87ead7f61f90098/README.md) · [LICENSE.md](https://github.com/AykutSarac/jsoncrack.com/blob/a46d0d0adb098e12e577a083e87ead7f61f90098/LICENSE.md) · [metadata GitHub](https://api.github.com/repos/AykutSarac/jsoncrack.com).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 13](../13-dev-stack-devops/README.md#anhkysuai-2026-11-23-jsoncrack); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-xyflow"></a>
 
@@ -2087,16 +2073,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Nerd Fonts
 
-- **Repo:** [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts).
-- **Mục đích:** Bộ font được vá thêm glyph và công cụ tạo font cho terminal, editor và prompt.
-- **Điểm đáng dùng:** LICENSE tách mã patcher MIT khỏi font OFL và các nguồn icon khác; manifest và workflow shellcheck cho thấy đây vừa là bộ tài sản vừa là công cụ xử lý.
-- **License:** MIT cho mã gốc; OFL-1.1 và giấy phép riêng cho font/glyph.
-- **Giới hạn:** Không thể suy MIT cho mọi font/icon; phải giữ license và tên font dự trữ theo từng nguồn. Đường dẫn nhánh master không được tác giả coi là ổn định.
-- **Tích hợp:** Chọn đúng font từ release hoặc gói hệ thống; khi phân phối asset phải kèm điều khoản của font cụ thể.
-- **Đối chiếu:** Font Awesome cho icon web; Material Symbols cho glyph UI; font monospace gốc khi không cần icon.
-- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
-- **Snapshot:** kiểm ngày 2026-11-23; commit `adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae` (2026-10-18T00:03:51+02:00); 65,280 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
-- **Bằng chứng:** [readme.md](https://github.com/ryanoasis/nerd-fonts/blob/adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae/readme.md) · [LICENSE](https://github.com/ryanoasis/nerd-fonts/blob/adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae/LICENSE) · [license-audit.md](https://github.com/ryanoasis/nerd-fonts/blob/adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae/license-audit.md) · [package.json](https://github.com/ryanoasis/nerd-fonts/blob/adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae/package.json) · [.github/workflows/shellcheck.yml](https://github.com/ryanoasis/nerd-fonts/blob/adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae/.github/workflows/shellcheck.yml) · [GitHub API](https://api.github.com/repos/ryanoasis/nerd-fonts).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 13](../13-dev-stack-devops/README.md#anhkysuai-ryanoasis-nerd-fonts); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-pmndrs-zustand"></a>
 
@@ -2657,16 +2634,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### iTerm2 Color Schemes
 
-- **Repo:** [mbadolato/iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes).
-- **Mục đích:** Bộ phối màu terminal và các bản chuyển định dạng cho nhiều editor/terminal.
-- **Điểm đáng dùng:** README có đầu ra JSONL dùng máy và CI bắt buộc mỗi scheme có mục license; công cụ tạo các bản port từ nguồn chung.
-- **License:** MIT cho công cụ; mỗi theme theo licenses.yml.
-- **Giới hạn:** Không áp MIT root cho tất cả theme: registry cho phép unknown/nonfree; tương phản màu và font thực tế cần kiểm tra.
-- **Tích hợp:** Chọn theme có quyền phân phối rõ, giữ attribution và thử độ đọc được trong light/dark trước khi đóng gói dev theme.
-- **Đối chiếu:** Catppuccin cho hệ theme; Dracula cho bộ màu; theme tích hợp terminal cho ít dependency.
-- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
-- **Snapshot:** kiểm ngày 2026-11-23; commit `c7fd7a806e240e423b16b0ff8549b2bc680990cc` (2026-11-22T19:16:43-07:00); 27,337 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
-- **Bằng chứng:** [README.md](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/c7fd7a806e240e423b16b0ff8549b2bc680990cc/README.md) · [LICENSE](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/c7fd7a806e240e423b16b0ff8549b2bc680990cc/LICENSE) · [.github/workflows/check-licenses.yml](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/c7fd7a806e240e423b16b0ff8549b2bc680990cc/.github/workflows/check-licenses.yml) · [GitHub API](https://api.github.com/repos/mbadolato/iTerm2-Color-Schemes).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 13](../13-dev-stack-devops/README.md#anhkysuai-mbadolato-iterm2-color-schemes); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-quasarframework-quasar"></a>
 
@@ -3034,3 +3002,109 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 **Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a9739fb3e5384a810e90d7376446f6d84ecc5029`](https://github.com/date-fns/date-fns/commit/a9739fb3e5384a810e90d7376446f6d84ecc5029), ngày commit 2026-10-24. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
 
 **Nguồn:** [README.md](https://github.com/date-fns/date-fns/blob/a9739fb3e5384a810e90d7376446f6d84ecc5029/README.md) · [pkgs/tz/LICENSE.md](https://github.com/date-fns/date-fns/blob/a9739fb3e5384a810e90d7376446f6d84ecc5029/pkgs/tz/LICENSE.md) · [package.json](https://github.com/date-fns/date-fns/blob/a9739fb3e5384a810e90d7376446f6d84ecc5029/package.json) · [.github/workflows/tz_tests.yaml](https://github.com/date-fns/date-fns/blob/a9739fb3e5384a810e90d7376446f6d84ecc5029/.github/workflows/tz_tests.yaml) · [metadata GitHub](https://api.github.com/repos/date-fns/date-fns).
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+10 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-handsontable"></a>
+
+### handsontable
+
+`handsontable/handsontable` · License: Giấy phép riêng của Handsoncode · ★ 22.084 · docs-read · 2026-11-18
+
+Thành phần lưới dữ liệu JavaScript giao diện giống bảng tính, dùng với JavaScript/TypeScript, React, Angular, Vue để nhập, sửa, kiểm hợp lệ và xử lý dữ liệu. README liệt kê khoảng 400 công thức dựng sẵn, ảo hoá hàng, lọc, sắp xếp, định dạng có điều kiện; hỗ trợ IME, đa ngôn ngữ, RTL và nhắm WCAG 2.2 AA; có wrapper React, Angular, Vue3 trong thư mục wrappers. Điều kiện: Cần khoá giấy phép (licenseKey); dùng thương mại phải mua giấy phép; bản dùng thử chỉ để đánh giá ngoài production, hết hạn thì lưới bị chặn; dự án phi thương mại phải xin giấy phép miễn phí; đóng góp cần ký CLA. ★ 18/11/2026: 22.084 (GitHub search API), nhóm "Framework Frontend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c510-framework-frontend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-react-pdf"></a>
+
+### react-pdf
+
+`diegomura/react-pdf` · License: MIT · ★ 16.858 · docs-read · 2026-11-18
+
+Trình render React để tạo file PDF trên trình duyệt và máy chủ bằng các thành phần Document, Page, View, Text. Render được trong DOM qua PDFViewer và ghi file trên Node qua ReactPDF.render; có StyleSheet kiểu flexbox; monorepo nhiều gói trong packages, phát hành gói @react-pdf/renderer. ★ 18/11/2026: 16.858 (GitHub search API), nhóm "Framework Frontend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c510-framework-frontend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-plate"></a>
+
+### plate
+
+`udecode/plate` · License: MIT · ★ 16.712 · docs-read · 2026-11-18
+
+Framework trình soạn thảo văn bản giàu định dạng (rich-text) cho React, kèm các mẫu khởi đầu và tài liệu tại platejs.org. Có mẫu playground có AI và mẫu tối giản; repo chứa gói platejs, plitejs (runtime lõi mô hình tài liệu, giao dịch) và cli; có tài liệu tiếng Trung trong tooling/cn. Điều kiện: Mẫu Notion-like (Potion) có backend nằm ở pro.platejs.org, chưa xác minh điều kiện sử dụng. ★ 18/11/2026: 16.712 (GitHub search API), nhóm "Framework Frontend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c510-framework-frontend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-bootstrap"></a>
+
+### bootstrap
+
+`twbs/bootstrap` · License: MIT License · ★ 175.080 · docs-read · 2026-11-18
+
+Framework front-end CSS/JS để dựng giao diện web responsive nhanh. Phát hành qua npm, yarn, Bun, Composer, NuGet; có test JS, coverage và OpenSSF Scorecard trong README; nhánh v5-dev duy trì Bootstrap 5. Điều kiện: Nhánh mặc định đang phát triển Bootstrap 6 (bản 6.0.0-alpha.1); bản ổn định Bootstrap 5 ở nhánh v5-dev. ★ 18/11/2026: 175.080 (GitHub search API), nhóm "Thư viện giao diện & CSS" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c522-thư-viện-giao-diện--css) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-font-awesome"></a>
+
+### Font-Awesome
+
+`FortAwesome/Font-Awesome` · License: Font Awesome Free License · ★ 77.044 · docs-read · 2026-11-18
+
+Bộ icon và toolkit Font Awesome bản Free (phiên bản 7), cung cấp SVG, webfont, CSS/SCSS và gói JS. Bản 7 hiện hành, bản 6 là LTS chỉ vá lỗi nghiêm trọng; có khoảng 2000 icon SVG nhóm solid cùng nhóm regular và brands; phát hành theo SemVer có ghi chú nâng cấp UPGRADING.md. Điều kiện: Bắt buộc ghi công theo CC BY/OFL/MIT (chú thích có sẵn trong file, không được gỡ); chỉ phần Free, bản Pro cần giấy phép trả phí. ★ 18/11/2026: 77.044 (GitHub search API), nhóm "Thư viện giao diện & CSS" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c522-thư-viện-giao-diện--css) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-carbon-app-carbon"></a>
+
+### carbon-app/carbon
+
+`carbon-app/carbon` · License: MIT · ★ 36.148 · docs-read · 2026-11-18
+
+Ứng dụng web (carbon.now.sh) tạo ảnh đẹp từ mã nguồn để chia sẻ, tuỳ chỉnh theme, font, nền. Xuất ảnh PNG và SVG, nhúng snippet qua carbon.now.sh/embed; nhập mã bằng kéo thả file hoặc ID GitHub gist; README có hơn 20 bản dịch. Điều kiện: Lưu snippet cần tạo tài khoản. ★ 18/11/2026: 36.148 (GitHub search API), nhóm "Thư viện giao diện & CSS" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c522-thư-viện-giao-diện--css) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-d3"></a>
+
+### d3
+
+`d3/d3` · License: ISC · ★ 113.955 · docs-read · 2026-11-18
+
+Thư viện JavaScript mã nguồn mở cấp thấp để trực quan hoá dữ liệu trên nền chuẩn web. Phiên bản 7.9.2 trong package.json; tài liệu tại d3js.org và thư viện ví dụ trên Observable; dùng được qua npm hoặc CDN ESM. ★ 18/11/2026: 113.955 (GitHub search API), nhóm "Đồ họa, 3D & Sơ đồ" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-drawdb"></a>
+
+### drawdb
+
+`drawdb-io/drawdb` · License: GNU AGPL v3 · ★ 40.335 · docs-read · 2026-11-18
+
+Trình soạn sơ đồ quan hệ thực thể (ERD) cơ sở dữ liệu chạy trên trình duyệt, sinh và nhập/xuất script SQL. Dùng không cần tạo tài khoản; xuất/nhập SQL và sinh migration; có Dockerfile và ảnh ghcr.io/drawdb-io/drawdb. Điều kiện: Tính năng chia sẻ cần tự dựng drawdb-server; AGPLv3 buộc công bố mã khi cung cấp bản sửa qua mạng. ★ 18/11/2026: 40.335 (GitHub search API), nhóm "Đồ họa, 3D & Sơ đồ" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-next-ai-draw-io"></a>
+
+### next-ai-draw-io
+
+`DayuanJiang/next-ai-draw-io` · License: Apache License 2.0 · ★ 37.029 · docs-read · 2026-11-18
+
+Ứng dụng vẽ và sửa sơ đồ draw.io bằng cách trò chuyện với AI; có bản web, desktop và MCP server cho agent. Hỗ trợ 25 nhà cung cấp mô hình kể cả preset tương thích OpenAI; mỗi thay đổi của AI là một phiên bản so sánh, khôi phục, hoàn tác được; xuất .drawio, .png, .svg. Điều kiện: Cần API key nhà cung cấp mô hình AI (mặc định AWS Bedrock); bản demo trực tuyến có giới hạn sử dụng. ★ 18/11/2026: 37.029 (GitHub search API), nhóm "Đồ họa, 3D & Sơ đồ" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-drawnix"></a>
+
+### drawnix
+
+`plait-board/drawnix` · License: MIT · ★ 15.080 · docs-read · 2026-11-18
+
+Bảng trắng mã nguồn mở tất cả trong một: sơ đồ tư duy, lưu đồ, vẽ tay trên canvas vô hạn, xây trên framework Plait. Chuyển cú pháp Mermaid thành lưu đồ và Markdown thành sơ đồ tư duy; xuất PNG, JPG, JSON và tự lưu vào bộ nhớ trình duyệt; có image Docker để tự host. ★ 18/11/2026: 15.080 (GitHub search API), nhóm "Đồ họa, 3D & Sơ đồ" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ) (bảng/đoạn chung, giữ nguyên tại chỗ).

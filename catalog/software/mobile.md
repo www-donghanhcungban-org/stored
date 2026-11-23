@@ -1,0 +1,34 @@
+<!-- File sinh tự động bởi scripts/build_catalog_views.py; sửa data/projects.json hoặc data/taxonomy.json rồi chạy lại. -->
+
+# mobile — Kỹ thuật phần mềm & vận hành
+
+[← Mục lục catalog](../README.md) · 26 hồ sơ.
+
+| Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
+|---|---|---|---|---|---|---|
+| [React Native](../../13-dev-stack-devops/README.md#anhkysuai-2026-11-23-identity-react-native) | `react/react-native` | MIT | 126.999 | đọc tài liệu 2026-11-23 | 13 | + Expo Đối chiếu 2026-11-23: facebook/react-native → react/react-native, cùng GitHub repository ID 29028775; |
+| [Tauri](../../13-dev-stack-devops/README.md) | `tauri-apps/tauri` | MIT OR Apache-2.0 | 112.380 | chưa chuẩn hóa | 13 | App desktop/mobile với frontend web + lõi Rust; |
+| [Expo](../../13-dev-stack-devops/README.md#anhkysuai-expo-expo) | `expo/expo` | MIT cho mã Expo; phụ thuộc có giấy phép riêng | 53.736 | đọc tài liệu 2026-11-23 | 13 | Nền tảng React Native cho ứng dụng Android, iOS và web. |
+| [Alamofire](../../13-dev-stack-devops/README.md#anhkysuai-alamofire-alamofire) | `Alamofire/Alamofire` | MIT | 42.397 | đọc tài liệu 2026-11-23 | 13 | Thư viện HTTP Swift cho ứng dụng trên nền tảng Apple. |
+| [uni-app](../../13-dev-stack-devops/README.md#anhkysuai-dcloudio-uni-app) | `dcloudio/uni-app` | Apache-2.0 cho mã repo; license.md dẫn điều khoản DCloud riêng cần kiểm tra | 41.699 | đọc tài liệu 2026-11-23 | 13 | Framework Vue phát triển web, ứng dụng và mini-program nhiều nền tảng. |
+| [Taro](../../13-dev-stack-devops/README.md#anhkysuai-nervjs-taro) | `NervJS/taro` | MIT | 37.768 | đọc tài liệu 2026-11-23 | 13 | Biên dịch ứng dụng React/Vue/Nerv sang nhiều nền mini-program, Web và React Native. |
+| [RxSwift](../../13-dev-stack-devops/README.md#anhkysuai-reactivex-rxswift) | `ReactiveX/RxSwift` | MIT | 24.626 | đọc tài liệu 2026-11-23 | 13 | Reactive Extensions cho Swift, kết hợp sự kiện UI, KVO và tác vụ async. |
+| [React Navigation](../../13-dev-stack-devops/README.md#anhkysuai-react-navigation-react-navigation) | `react-navigation/react-navigation` | MIT theo khai báo root và LICENSE package core; đối chiếu các package khác khi phân phối | 24.528 | đọc tài liệu 2026-11-23 | 13 | Routing và navigation cho ứng dụng React Native. |
+| [Kingfisher](../../13-dev-stack-devops/README.md#anhkysuai-onevcat-kingfisher) | `onevcat/Kingfisher` | MIT | 24.412 | đọc tài liệu 2026-11-23 | 13 | Tải, xử lý và cache ảnh từ mạng trong ứng dụng Swift. |
+| [Best-Flutter-UI-Templates](../../06-ui-ux-design/README.md) | `mitesh77/Best-Flutter-UI-Templates` | MIT | 22.852 | chưa chuẩn hóa | 06 | 5 app demo UI Flutter, không kiến trúc; |
+| [react-native-web](../../06-ui-ux-design/README.md) | `necolas/react-native-web` | MIT | 22.158 | chưa chuẩn hóa | 06 | Nghỉ 11 tháng rồi hồi sinh 9/2026 dưới người dẫn mới; |
+| [nowinandroid](../../13-dev-stack-devops/README.md#anhkysuai-2026-11-23-android-nowinandroid) | `android/nowinandroid` | Apache-2.0 | 22.120 | đọc tài liệu 2026-11-23 | 13 | Ứng dụng mẫu Android chính thức dùng Kotlin và Jetpack Compose, kèm tài liệu kiến trúc và modularization. |
+| [SnapKit](../../13-dev-stack-devops/README.md#anhkysuai-snapkit-snapkit) | `SnapKit/SnapKit` | MIT | 20.342 | đọc tài liệu 2026-11-23 | 13 | DSL Swift để viết ràng buộc Auto Layout cho giao diện iOS, macOS và tvOS. |
+| [flutter/samples](../../06-ui-ux-design/README.md) | `flutter/samples` | BSD-3-Clause | 19.281 | chưa chuẩn hóa | 06 | Mẫu chính thức Flutter: material_3_demo, cupertino_gallery, platform_design, compass_app; |
+| [artemis](../../08-awesome-lists-learning/README.md#6c523-trợ-lý-lập-trình-ai) | `google/artemis` | Apache-2.0 | 17.651 | đọc tài liệu 2026-11-18 | 08 | Agent đa phương thức điều khiển điện thoại Android thật bằng ngôn ngữ tự nhiên cho kiểm thử và tác vụ hằng ngày, kèm MCP server để IDE AI điều khiển thiết bị, lấy Logcat… |
+| [Maestro](../../11-browser-computer-use-sandbox/README.md) | `mobile-dev-inc/Maestro` | Apache-2.0 | 16.278 | chưa chuẩn hóa | 11 | E2E flow YAML cho mobile và web, tất định là chính; |
+| [Tamagui (Bento)](../../06-ui-ux-design/README.md) | `tamagui/tamagui` | MIT | 14.292 | chưa chuẩn hóa | 06 | UI RN + web; |
+| [UI Kitten](../../06-ui-ux-design/README.md) | `akveo/react-native-ui-kitten` | MIT | 10.662 | chưa chuẩn hóa | 06 | Hồi sinh 2026 (179/193 commit một người), 6.2.1, README nói chạy New Architecture RN 0.81 (chưa xác minh); |
+| [react-native-calendars](../../06-ui-ux-design/README.md) | `wix/react-native-calendars` | MIT | 10.328 | chưa chuẩn hóa | 06 | Chuẩn de facto, gần như đứng (3 commit/12 tháng); |
+| [React Native Reusables](../../06-ui-ux-design/README.md) | `founded-labs/react-native-reusables` | MIT | 8.713 | chưa chuẩn hóa | 06 | shadcn cho React Native: 32 component (NativeWind/Uniwind), 7 block auth có bản Clerk; |
+| [NativeWind](../../06-ui-ux-design/README.md) | `nativewind/nativewind` | MIT | 8.117 | chưa chuẩn hóa | 06 | Tailwind cho React Native, nền của RNR và gluestack; |
+| [Flutter Responsive Admin Panel](../../06-ui-ux-design/README.md) | `abuanwar072/Flutter-Responsive-Admin-Panel-or-Dashboard` | MIT | 7.123 | chưa chuẩn hóa | 06 | 1 layout dashboard responsive (side menu + dashboard), 17 file dart; |
+| [gluestack-ui](../../06-ui-ux-design/README.md) | `gluestack/gluestack-ui` | MIT | 5.340 | chưa chuẩn hóa | 06 | v3: 61 component RN + web trên NativeWind, 4 starter kit; |
+| [Taro UI](../../06-ui-ux-design/README.md) | `jd-opensource/taro-ui` | MIT | 4.732 | chưa chuẩn hóa | 06 | UI đa nền mini-program cho Taro 3; |
+| [Flutter](../../13-dev-stack-devops/README.md) | `flutter/flutter` | BSD-3 | — | chưa chuẩn hóa | 13 |  |
+| [Kotlin Multiplatform](../../13-dev-stack-devops/README.md) | `JetBrains/kotlin` | Apache-2.0 | — | chưa chuẩn hóa | 13 |  |

@@ -1,0 +1,38 @@
+<!-- File sinh tự động bởi scripts/build_catalog_views.py; sửa data/projects.json hoặc data/taxonomy.json rồi chạy lại. -->
+
+# prompt — AI agent, skill & điều phối
+
+[← Mục lục catalog](../README.md) · 30 hồ sơ.
+
+| Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
+|---|---|---|---|---|---|---|
+| [Prompt Engineering Guide](../../17-prompt-engineering/README.md) | `dair-ai/Prompt-Engineering-Guide` | MIT | 79.701 | chưa chuẩn hóa | 17 | 9/2026; |
+| [OpenAI Cookbook](../../17-prompt-engineering/README.md) | `openai/openai-cookbook` | MIT | 76.895 | chưa chuẩn hóa | 17 | Ví dụ chính thức OpenAI API; |
+| [System Prompts Leaks](../../17-prompt-engineering/README.md) | `asgeirtj/system_prompts_leaks` | CC0-1.0 (phần biên soạn) | 70.531 | chưa chuẩn hóa | 17 | 1.856 file system prompt rò rỉ (649 Anthropic), cập nhật trong ngày; |
+| [Humanizer](../../20-claude-plugins-ecosystem/README.md#3zb-kiểm-ảnh-8-plugin-8-kỹ-năng-8-mcp-bộ-cài-sẵn-cho-claude-ảnh-phandonggiang-người-dùng-gửi-đọc-mã-8112026) | `blader/humanizer` | MIT | 66.035 | đọc tài liệu 2026-11-08 | 20 | Skill viết lại văn bản AI cho tự nhiên mà giữ ý, dựa trên Wikipedia Signs of AI writing, 26 mẫu; |
+| [i-have-adhd](../../08-awesome-lists-learning/README.md#6c-kho-repo-của-phan-đông-giang-phandonggiangcomkho-repo-694-repo-32-nhóm-và-24-repo-aiagent-đọc-mã-bảng-người-dùng-dán-kiểm-18112026) | `ayghri/i-have-adhd` | MIT | 61.520 | đọc tài liệu 2026-11-18 | 08 | Skill bắt trợ lý lập trình trả lời gọn theo 10 luật: hành động kế tiếp lên đầu, bước đánh số, danh sách tối đa 5 mục, ước lượng thời gian cụ thể. |
+| [Claude Cookbooks](../../17-prompt-engineering/README.md) | `anthropics/claude-cookbooks` | MIT | 54.012 | chưa chuẩn hóa | 17 | Trước là anthropic-cookbook; |
+| [CL4R1T4S](../../17-prompt-engineering/README.md) | `elder-plinius/CL4R1T4S` | AGPL-3.0 (phần biên soạn) | 51.664 | chưa chuẩn hóa | 17 | 80 file prompt rò rỉ của 26 hãng/sản phẩm, một người duy trì, kêu gọi 'leak, extract'; |
+| [Fabric](../../17-prompt-engineering/README.md) | `danielmiessler/Fabric` | MIT | 44.516 | chưa chuẩn hóa | 17 | 265 pattern system.md + CLI Go, ~15 nhà cung cấp; |
+| [Prompt Optimizer](../../17-prompt-engineering/README.md) | `linshenkx/prompt-optimizer` | AGPL-3.0-only | 40.118 | chưa chuẩn hóa | 17 | Web/desktop/extension/Docker/MCP, v2.13.0; |
+| [Prompt Engineering Interactive Tutorial](../../17-prompt-engineering/README.md) | `anthropics/prompt-eng-interactive-tutorial` | không có LICENSE | 38.962 | chưa chuẩn hóa | 17 | 9 chương + 3 phụ lục notebook (1P và Bedrock); |
+| [DSPy](../../17-prompt-engineering/README.md#factory-prompt-release-2026-11-04) | `stanfordnlp/dspy` | MIT | 38.885 | đọc mã 2026-11-04 | 17 | v3.3.1; |
+| [Agency Agents 中文](../../17-prompt-engineering/README.md#anhkysuai-2026-11-23-agency-agents-zh) | `jnMetaCode/agency-agents-zh` | MIT | 22.271 | đọc tài liệu 2026-11-23 | 17 | Bộ mô tả vai trò agent bằng tiếng Trung, mở rộng từ Agency Agents cho nhiều quy trình và nền tảng. |
+| [Guidance](../../17-prompt-engineering/README.md) | `guidance-ai/guidance` | MIT | 21.812 | chưa chuẩn hóa | 17 | Sinh có ràng buộc; |
+| [SkillOpt](../../17-prompt-engineering/README.md) | `microsoft/SkillOpt` | MIT | 18.813 | chưa chuẩn hóa | 17 | Tối ưu tài liệu skill/prompt với cổng validation held-out, xuất best_skill.md; |
+| [Awesome GPT Image 2 Prompts — EvoLink](../../17-prompt-engineering/README.md#anhkysuai-2026-11-23-awesome-gpt-image-2-prompts-evolink) | `Evolink-AI/awesome-gpt-image-2-API-Prompts` | CC0-1.0 cho nội dung được cấp quyền; nguồn bên thứ ba cần đối chiếu | 17.430 | đọc tài liệu 2026-11-23 | 17 | Thư mục prompt và ví dụ tạo/chỉnh sửa ảnh được tuyển chọn theo tình huống thiết kế. |
+| [prompt-master](../../08-awesome-lists-learning/README.md#6c518-skill-prompt--mẫu-cho-ai) | `nidhinjs/prompt-master` | MIT | 16.111 | đọc tài liệu 2026-11-18 | 08 | Skill cho Claude viết prompt chính xác cho các công cụ AI khác (ChatGPT, Cursor, Claude Code, Midjourney, Stable Diffusion, Sora…): dò công cụ đích, trích ý định, hỏi tố… |
+| [Outlines](../../17-prompt-engineering/README.md) | `dottxt-ai/outlines` | Apache-2.0 | 15.988 | chưa chuẩn hóa | 17 | Ràng buộc lúc decode (JSON Schema/regex/grammar); |
+| [Instructor](../../17-prompt-engineering/README.md) | `567-labs/instructor` | MIT | 14.085 | chưa chuẩn hóa | 17 | Structured output kiểm bằng Pydantic, đa provider; |
+| [Awesome Nano Banana Pro Prompts](../../17-prompt-engineering/README.md#anhkysuai-2026-11-23-awesome-nano-banana-pro-prompts) | `YouMind-OpenLab/awesome-nano-banana-pro-prompts` | CC-BY-4.0; quyền tác giả bên thứ ba được lưu ý riêng | 13.854 | đọc tài liệu 2026-11-23 | 17 | Bộ prompt cộng đồng theo các tình huống avatar, infographic, quảng cáo và storyboard. |
+| [Claude Code System Prompts](../../17-prompt-engineering/README.md) | `Piebald-AI/claude-code-system-prompts` | MIT (phần biên soạn) | 13.050 | chưa chuẩn hóa | 17 | 1.057 file prompt/tool/agent/skill của Claude Code theo từng bản (v2.1.316), token đếm bằng API count_tokens; |
+| [BAML](../../17-prompt-engineering/README.md) | `BoundaryML/baml` | Apache-2.0 | 9.463 | chưa chuẩn hóa | 17 | DSL prompt function có kiểu, codegen đa ngôn ngữ; |
+| [GEPA](../../17-prompt-engineering/README.md#core-prompt-optimization) | `gepa-ai/gepa` | MIT | 7.245 | đọc mã 2026-11-02 | 17 | Tối ưu prompt bằng phản tư + Pareto (arXiv 2507.19457), optimizer dspy.GEPA; |
+| [ChainForge](../../17-prompt-engineering/README.md) | `ianarawjo/ChainForge` | MIT | 3.040 | chưa chuẩn hóa | 17 | Môi trường luồng so sánh prompt × model, node đánh giá, 188 flow từ OpenAI evals; |
+| [AnyJev](../../17-prompt-engineering/README.md) | `nokia-applied-research/AnyJev` | Apache-2.0 | 1.547 | chưa chuẩn hóa | 17 | Quyết định có kiểu (choice/yes-no/score) kèm xác suất từ LLM mở, không huấn luyện: L0 = trung bình log-prob qua các phép xoay thứ tự + chia prior nhãn (Zheng 2024, Zhou… |
+| [Prompty](../../17-prompt-engineering/README.md) | `microsoft/prompty` | MIT | 1.286 | chưa chuẩn hóa | 17 | Định dạng file .prompty có spec + conformance vectors cho runtime Python/TS/Rust/C#; |
+| [Dotprompt](../../17-prompt-engineering/README.md) | `google/dotprompt` | Apache-2.0 | 573 | chưa chuẩn hóa | 17 | Định dạng prompt thực thi được (Handlebars) của Genkit; |
+| [awesome-chatgpt-prompts](../../17-prompt-engineering/README.md) | `f/prompts.chat` | CC0 | — | chưa chuẩn hóa | 17 | ; |
+| [RCCOF Framework (Danh Nolan)](../../17-prompt-engineering/README.md#4e-kiểm-khung-rccof-của-danh-nolan-role-context-constraint-output-format-few-shot-đặc-tả-mở-có-doi-nhưng-không-có-dữ-liệu-đo-link-người-dùng-gửi-3112026) |  | CC-BY-4.0 | — | đọc tài liệu 2026-11-03 | 17 | Khung prompt 5 lớp Role-Context-Constraint-Output format-Few-shot cho nội dung marketing/AEO, Zenodo Report tự nộp 20/9/2026 (DOI 10.5281/zenodo.22856974, PDF 2 trang); |
+| [system-prompts-and-models-of-ai-tools](../../17-prompt-engineering/README.md) | `x1xhlol/system-prompts-and-models-of-ai-tools` | — | — | chưa chuẩn hóa | 17 | bộ sưu tập system prompt |
+| [TextGrad](../../17-prompt-engineering/README.md) | `zou-group/textgrad` | MIT | — | chưa chuẩn hóa | 17 |  |

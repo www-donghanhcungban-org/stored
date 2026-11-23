@@ -1,0 +1,27 @@
+<!-- File sinh tự động bởi scripts/build_catalog_views.py; sửa data/projects.json hoặc data/taxonomy.json rồi chạy lại. -->
+
+# cad-bim — Kỹ thuật công trình & không gian
+
+[← Mục lục catalog](../README.md) · 19 hồ sơ.
+
+| Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
+|---|---|---|---|---|---|---|
+| [FreeCAD](../../27-3d-cad-bim-engineering/README.md#freecad) | `FreeCAD/FreeCAD` | LGPL-2.1-or-later; thành phần riêng kiểm thêm | 35.047 | đọc mã 2026-11-02 | 27 | Đọc mã/đặc tả 2/11/2026, 66644dee63d3; |
+| [Babylon.js](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-babylonjs-babylon.js) | `BabylonJS/Babylon.js` | Apache-2.0 | 26.430 | đọc tài liệu 2026-11-23 | 27 | Engine JavaScript cho dựng hình và ứng dụng 3D trên web, có playground và gói mô-đun. |
+| [editor](../../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ) | `pascalorg/editor` | MIT | 25.591 | đọc tài liệu 2026-11-18 | 08 | Trình biên tập mô hình công trình 3D mã nguồn mở cho kiến trúc, xây dựng (AECO) chạy trên trình duyệt, có CLI cục bộ và máy chủ MCP cho AI agent. |
+| [solidcraft](../../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ) | `tangency-labs/solidcraft` | MIT hoặc Apache-2.0 | 16.970 | đọc tài liệu 2026-11-18 | 08 | Ứng dụng CAD 3D tham số mã nguồn mở viết bằng Rust thuần: phác thảo, ràng buộc, dựng khối theo dòng thời gian tính năng; |
+| [assimp](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-assimp-assimp) | `assimp/assimp` | BSD-3-Clause (mã chính); test/models-nonbsd có ngoại lệ | 13.337 | đọc tài liệu 2026-11-23 | 27 | Thư viện C/C++ nhập nhiều định dạng mô hình 3D vào cấu trúc thống nhất và xử lý mesh. |
+| [OpenSCAD](../../27-3d-cad-bim-engineering/README.md#openscad) | `openscad/openscad` | GPL-2.0-or-later + ngoại lệ liên kết CGAL | 10.572 | đọc mã 2026-11-02 | 27 | Đọc mã/đặc tả 2/11/2026, 8e8df3ddae29; |
+| [LibreCAD](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-librecad-librecad) | `LibreCAD/LibreCAD` | GPL-2.0 (toàn thể); thành phần/tài sản riêng | 6.631 | đọc tài liệu 2026-11-23 | 27 | Ứng dụng CAD 2D dựa trên Qt, hỗ trợ bản vẽ kỹ thuật và nhiều định dạng xuất/nhập. |
+| [CADAM](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-adam-cad-cadam) | `Adam-CAD/CADAM` | GPL-3.0 | 5.455 | đọc tài liệu 2026-11-23 | 27 | Ứng dụng web text/image-to-CAD tạo mô hình tham số OpenSCAD và xuất STL, SCAD, DXF. |
+| [chili3d](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-xiangechen-chili3d) | `xiangechen/chili3d` | AGPL-3.0 (app); LGPL-3.0 (cpp); Pro riêng | 5.016 | đọc tài liệu 2026-11-23 | 27 | Ứng dụng CAD 3D trong trình duyệt dùng OpenCascade/WASM, hỗ trợ tham số, direct modeling và AI. |
+| [Trimesh](../../27-3d-cad-bim-engineering/README.md#trimesh) | `mikedh/trimesh` | MIT | 3.716 | đọc mã 2026-11-02 | 27 | Đọc mã/đặc tả 2/11/2026, 6c158cce2265; |
+| [IfcOpenShell](../../27-3d-cad-bim-engineering/README.md#ifcopenshell) | `IfcOpenShell/IfcOpenShell` | LGPL-3.0-or-later (core); GPL-3.0-or-later (Bonsai) | 2.917 | đọc mã 2026-11-02 | 27 | Đọc mã/đặc tả 2/11/2026, 28bae192780e; |
+| [autocad-mcp](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-puran-water-autocad-mcp) | `puran-water/autocad-mcp` | MIT | 683 | đọc tài liệu 2026-11-23 | 27 | MCP tích hợp AutoCAD LT hoặc xử lý DXF headless để đọc và sửa bản vẽ qua công cụ. |
+| [MCP servers for Revit (Sparx fork)](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-mcp-servers-for-revit-mcp-servers-for-revit) | `mcp-servers-for-revit/mcp-servers-for-revit` | MIT | 464 | đọc tài liệu 2026-11-23 | 27 | Fork MCP cho Autodesk Revit gồm server TypeScript, add-in C# và bộ lệnh Revit API. |
+| [constructcraft](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-francisreboucas-constructcraft) | `francisreboucas/constructcraft` | GPL-3.0-or-later (app); cc_skp MIT; tài sản riêng | 287 | đọc tài liệu 2026-11-23 | 27 | Ứng dụng BIM bằng Rust, sinh mặt bằng, mặt cắt, lịch và sheet từ một mô hình tham số. |
+| [sketchcraft](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-jasonsutter87-sketchcraft) | `jasonsutter87/sketchcraft` | MIT | 136 | đọc tài liệu 2026-11-23 | 27 | Ứng dụng dựng hình push/pull 3D bằng Rust, có desktop, CLI và MCP. |
+| [CanvasAnvil](../../27-3d-cad-bim-engineering/README.md#5b-kiểm-bài-giới-thiệu-canvasanvil-codingfeng101canvasanvil-bản-vẽ-cải-tạo-nội-thất-chuyên-nghiệp-từ-một-câu-phần-lớn-là-ảnh-do-model-sinh-ảnh-vẽ-bài-người-dùng-gửi-đọc-mã-3112026) | `codingfeng101/canvasanvil` | MIT | 113 | đọc mã 2026-11-03 | 27 | Web app 4 workspace (sơ đồ, nội thất 'CAD', PPT, ảnh) trên API tương thích OpenAI của người dùng; |
+| [AutoCAD MCP Anh Kỹ Sư AI (fork)](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-anhkysuai-byte-autocad-mcp-anhkysuai) | `anhkysuai-byte/autocad-mcp-anhkysuai` | MIT | 1 | đọc tài liệu 2026-11-23 | 27 | Fork của tích hợp MCP AutoCAD LT/DXF trong hệ sinh thái Anh Kỹ Sư AI. |
+| [CadQuery](../../27-3d-cad-bim-engineering/README.md#cadquery) | `CadQuery/cadquery` | Apache-2.0 | — | đọc mã 2026-11-04 | 27 | CAD tham số Python/B-rep; |
+| [Dhcb-Tools](../../23-own-repos-lessons/README.md) | `www-donghanhcungban-org/Dhcb-Tools` | Apache-2.0 | — | chưa chuẩn hóa | 23 | Add-in Revit 2022–2027 + AutoCAD (68 lệnh), HTTP bridge loopback có token, MCP server + .mcpb, AI offline Ollama qwen3, kiểm IDS 1.0/BCF 2.1; |

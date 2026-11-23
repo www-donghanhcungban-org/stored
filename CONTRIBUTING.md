@@ -7,6 +7,7 @@
 - Đọc LICENSE thật, file triển khai/callsite và CI tại commit được ghi; phân biệt tuyên bố của tác giả với điều tự xác minh.
 - Nêu ít nhất 2–4 lựa chọn cùng loại hoặc dẫn bảng so sánh đã có. Ghi giới hạn, điều kiện license, dữ liệu rời máy và điểm chưa chạy khi liên quan.
 - Giữ ID/neo cũ ổn định; thêm mục con hoặc đính chính tại chỗ. Hồ sơ cũ thiếu metadata không được tự gán mức code-read.
+- Gán `category` và (khi category có danh mục con) `subcategory` theo `data/taxonomy.json`; sinh lại `catalog/` bằng `scripts/build_catalog_views.py`.
 - Cập nhật Markdown, JSON, CSV, nguồn và mục lục cùng một PR. Với thay đổi lớn, thêm tuyến đọc chéo; bàn giao bài học X-Templates theo hợp đồng hiện có.
 - Tóm tắt bằng lời của người đóng góp, không chép nguyên bài viết hoặc nội dung prompt có quyền không rõ. License upstream không tự cấp quyền cho asset/dataset/model của bên khác.
 - Nêu quan hệ với dự án được giới thiệu hoặc lợi ích liên quan nếu có; đính chính claim sai cần nguồn cho phiên bản cụ thể.
@@ -16,6 +17,7 @@ Kiểm trước PR:
 ```bash
 python3 -I scripts/check_catalog.py
 python3 -I scripts/test_check_catalog.py
+python3 -I scripts/build_catalog_views.py --check
 npx --yes markdownlint-cli2 '**/*.md'
 ```
 

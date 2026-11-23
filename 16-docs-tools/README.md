@@ -902,3 +902,129 @@ Phần này có **1 hồ sơ** từ bảng xlsx người dùng gửi ngày 2026-
 **Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`9f809554231f`](https://github.com/heyman333/agent-notion-template-docs/commit/9f809554231fc9782f1af3c1c9bf6ae4242df72d) (2026-10-26). Đọc README, LICENSE, SKILL.md, `hooks.json`, đầu `notion-doc-lint.py`, `lint.yml`, `notion-sync.yml`, `template.html` (chỗ script ngoài). Chưa đọc hết `lint.py` và scripts; chưa chạy.
 
 **Nguồn:** [README.md](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/README.md) · [LICENSE](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/LICENSE) · [SKILL.md](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/skills/notion-doc/SKILL.md) · [hooks.json](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/hooks/hooks.json) · [lint.yml](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/.github/workflows/lint.yml) · [notion-sync.yml](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/.github/workflows/notion-sync.yml) · [metadata GitHub](https://api.github.com/search/repositories?q=repo:heyman333/agent-notion-template-docs).
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+12 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-book-to-skill"></a>
+
+### book-to-skill
+
+`virgiliojr94/book-to-skill` · License: MIT · ★ 38.301 · docs-read · 2026-11-18
+
+Biến sách kỹ thuật hoặc thư mục tài liệu (PDF, EPUB, DOCX, MD, HTML…) thành agent skill có cấu trúc: SKILL.md, file theo chương, glossary, để agent nạp khi cần. Trích xuất tất định bằng Python, lùi về stdlib khi thiếu công cụ; mỗi chương một file nạp theo nhu cầu (README đo tốn ít token hơn 24–51 lần); xử lý cục bộ; đẩy lên GitHub mặc định tạo repo private. Điều kiện: Chỉ dùng tài liệu mình có quyền đọc. skill từ sách có bản quyền giữ private; chỉ cài từ repo chính thức (SECURITY-NOTICE.md cảnh báo bản re-upload). ★ 18/11/2026: 38.301 (GitHub search API), nhóm "Skill, Prompt & Mẫu cho AI" trong kho-repo của Phan Đông Giang, mục 08 §6c
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c-kho-repo-của-phan-đông-giang-phandonggiangcomkho-repo-694-repo-32-nhóm-và-24-repo-aiagent-đọc-mã-bảng-người-dùng-dán-kiểm-18112026) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-archify"></a>
+
+### archify
+
+`tt-a1i/archify` · License: Apache-2.0 · ★ 97.508 · docs-read · 2026-11-18
+
+Skill biến mô tả, câu hỏi hoặc repo thành một file HTML tương tác tự chứa: sơ đồ kiến trúc, workflow, ERD, timeline, waterfall hoặc trang giải thích. Mỗi chế độ có JSON IR có schema; validator kiểm schema, layout, HTML/SVG, khoảng cách nhãn trước khi giao, lỗi trả mã luật và cách sửa; node sơ đồ dẫn chứng file và dòng ghim theo commit; xuất PNG/PDF, theme sáng/tối, nhiều ngôn ngữ. Điều kiện: Node.js 18+; mã trước một commit mốc vẫn theo MIT (ghi trong NOTICE); kênh chính thức chỉ có archify.si và GitHub. ★ 18/11/2026: 97.508 (GitHub search API), nhóm "Đồ họa, 3D & Sơ đồ" trong kho-repo của Phan Đông Giang, mục 08 §6c
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c-kho-repo-của-phan-đông-giang-phandonggiangcomkho-repo-694-repo-32-nhóm-và-24-repo-aiagent-đọc-mã-bảng-người-dùng-dán-kiểm-18112026) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-ppt-master"></a>
+
+### ppt-master
+
+`hugohe3/ppt-master` · License: MIT · ★ 77.973 · docs-read · 2026-11-18
+
+Quy trình cho agent tạo file PowerPoint sửa được từ PDF, DOCX, trang web hoặc văn bản: phân tích, thiết kế từng trang, xuất PPTX cục bộ; chiết template từ mẫu, điền vào .pptx có sẵn, thêm chuyển cảnh và thuyết minh. Xuất shape native và slide master thật, chart/table có Edit Data; công thức thành OMML sửa được; chế độ sửa .pptx giữ nguyên các trang không đổi; tìm ảnh web và tự chèn credit. Điều kiện: Python 3.10–3.14; tốn nhiều token. nên dùng model ngữ cảnh dài; sinh ảnh cần khóa nhà cung cấp. ★ 18/11/2026: 77.973 (GitHub search API), nhóm "Dựng video & Slide tự động" trong kho-repo của Phan Đông Giang, mục 08 §6c
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c-kho-repo-của-phan-đông-giang-phandonggiangcomkho-repo-694-repo-32-nhóm-và-24-repo-aiagent-đọc-mã-bảng-người-dùng-dán-kiểm-18112026) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-slidev"></a>
+
+### slidev
+
+`slidevjs/slidev` · License: MIT · ★ 49.543 · docs-read · 2026-11-18
+
+Công cụ tạo slide thuyết trình cho lập trình viên từ Markdown, chạy trên Vite và Vue 3. Hỗ trợ code highlight, live coding (Shiki, Monaco), LaTeX (KaTeX), sơ đồ Mermaid, chế độ người trình bày, vẽ chú thích, ghi hình; xuất PDF, PNG, PPTX; monorepo nhiều gói (cli, parser, client, create-app, create-theme, extension VS Code). Điều kiện: Cần Node.js >= 22.12.0. ★ 18/11/2026: 49.543 (GitHub search API), nhóm "Dựng video & Slide tự động" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c57-dựng-video--slide-tự-động) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-banana-slides"></a>
+
+### banana-slides
+
+`Anionex/banana-slides` · License: AGPL-3.0 · ★ 16.025 · docs-read · 2026-11-18
+
+Ứng dụng tạo slide AI-native dựa trên mô hình sinh ảnh, tạo bài trình chiếu từ ý tưởng, dàn ý, tài liệu hoặc mẫu và sửa bằng ngôn ngữ tự nhiên. Ba điểm bắt đầu: ý tưởng, dàn ý, mô tả từng trang; phân tích tài liệu PDF, Docx, MD, Txt làm nguồn; xuất PPTX hoặc PDF và PPTX chỉnh sửa được (đang beta), có Docker Compose, bản desktop và CLI. Điều kiện: Cần khoá API mô hình văn bản và sinh ảnh (Google, OpenAI, Volcengine… hoặc OAuth OpenAI); xuất PPTX chỉnh sửa tốt hơn cần khoá Baidu AI Cloud; bản phát hành mới nhất là v0.9.0-rc.8; AGPL và dùng thương mại mã đóng cần xin phép. ★ 18/11/2026: 16.025 (GitHub search API), nhóm "Dựng video & Slide tự động" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c57-dựng-video--slide-tự-động) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-pandoc"></a>
+
+### pandoc
+
+`jgm/pandoc` · License: GPL-2.0-or-later · ★ 46.954 · docs-read · 2026-11-18
+
+Thư viện Haskell và công cụ dòng lệnh chuyển đổi tài liệu giữa rất nhiều định dạng markup (Markdown, HTML, LaTeX, docx, EPUB, JATS…). Hỗ trợ hàng chục định dạng đầu vào và đầu ra (README liệt kê từ asciidoc, docx, epub, ipynb tới jira, latex); có pandoc-lua-engine cho filter Lua, pandoc-server và bản wasm trong repo; phát hành qua Hackage, Homebrew, Chocolatey và bộ cài cho Windows/macOS/Linux. Điều kiện: Giấy phép GPL-2.0-or-later (copyleft) khi phân phối hoặc nhúng thư viện. ★ 18/11/2026: 46.954 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-quarkdown"></a>
+
+### quarkdown
+
+`iamgio/quarkdown` · License: GPL-3.0 · ★ 16.396 · docs-read · 2026-11-18
+
+Hệ thống dàn trang dựa trên Markdown mở rộng có hàm (Turing-complete), biên dịch một nguồn thành sách in, bài báo, cơ sở tri thức hoặc trình chiếu. Hỗ trợ đích HTML dạng liền mạch và dạng trang qua paged.js; định nghĩa hàm, biến và thư viện ngay trong Markdown kèm hệ quyền hạn chế truy cập tài nguyên; cài qua script, Homebrew hoặc Scoop. Điều kiện: Xuất PDF cần trình duyệt (script cài tự cài kèm); copyleft GPL-3.0. ★ 18/11/2026: 16.396 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-bentopdf"></a>
+
+### bentopdf
+
+`alam00000/bentopdf` · License: AGPL-3.0 · ★ 16.388 · docs-read · 2026-11-18
+
+Bộ công cụ PDF chạy hoàn toàn phía trình duyệt, tự host được: gộp, tách, sửa, chuyển đổi, bảo mật PDF mà không tải tệp lên máy chủ. Tài liệu nêu hơn 50 công cụ PDF theo nhóm (sắp xếp, sửa, chuyển đổi, bảo mật); có ảnh Docker ghcr.io và hướng dẫn tự host gồm Docker Compose, Podman, hosting tĩnh và triển khai air-gapped; xử lý trong trình duyệt bằng WASM, tệp không rời máy người dùng. Điều kiện: AGPL-3.0: dùng trong sản phẩm đóng nguồn phải mua giấy phép thương mại; các thư viện AGPL (PyMuPDF, Ghostscript, CPDF) tải từ CDN jsDelivr lúc chạy, môi trường offline phải tự cấu hình; Hyper Compress và Kura cấp phép riêng. ★ 18/11/2026: 16.388 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-officecli"></a>
+
+### OfficeCLI
+
+`iOfficeAI/OfficeCLI` · License: Apache-2.0 · ★ 33.400 · docs-read · 2026-11-18
+
+Công cụ dòng lệnh cho AI agent tạo, đọc, sửa tài liệu Word, Excel, PowerPoint mà không cần cài Office; có bộ dựng HTML/PNG để xem trước tài liệu. Một file nhị phân tự chứa, nhúng sẵn runtime .NET; lệnh watch xem trước trực tiếp trên trình duyệt; xuất JSON có cấu trúc cho từng phần tử tài liệu. Điều kiện: Lệnh officecli install tự cài skill vào các AI coding agent phát hiện được trên máy; build từ nguồn cần .NET 10 SDK. ★ 18/11/2026: 33.400 (GitHub search API), nhóm "Năng suất, Ghi chú & Việc làm" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c515-năng-suất-ghi-chú--việc-làm) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-awesome-cv"></a>
+
+### Awesome-CV
+
+`posquit0/Awesome-CV` · License: LaTeX Project Public License · ★ 28.975 · docs-read · 2026-11-18
+
+Mẫu LaTeX cho CV, résumé và thư xin việc, dễ tuỳ biến. Build bằng LuaLaTeX qua latexmk, có Dockerfile ghim digest làm môi trường chuẩn; có bộ test make test kiểm số trang, liên kết, font nhúng; có mẫu trên Overleaf. Điều kiện: Cần TeX Live đầy đủ (khuyến nghị 2026) với lualatex, latexmk, fontawesome6 và font Source Sans 3, Roboto; không hỗ trợ XeLaTeX và pdfLaTeX. ★ 18/11/2026: 28.975 (GitHub search API), nhóm "Năng suất, Ghi chú & Việc làm" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c515-năng-suất-ghi-chú--việc-làm) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-univer"></a>
+
+### univer
+
+`dream-num/univer` · License: Apache-2.0 · ★ 28.964 · docs-read · 2026-11-18
+
+Office SDK để nhúng bảng tính và tài liệu soạn thảo vào ứng dụng của bạn; repo chứa lõi Web SDK (mô hình nội dung, engine công thức và render, Facade API). Lõi Sheets và Docs mở theo Apache-2.0, dùng được trong ứng dụng thương mại; kiến trúc plugin với hệ lệnh hỗ trợ undo/redo; có Facade API cho ứng dụng và agent. Điều kiện: Plugin Web SDK thương mại, Server SDK (cộng tác thời gian thực, nhập/xuất file Office) và AI SDK thương mại được cấp phép riêng. ★ 18/11/2026: 28.964 (GitHub search API), nhóm "Năng suất, Ghi chú & Việc làm" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c515-năng-suất-ghi-chú--việc-làm) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-reveal-js"></a>
+
+### reveal.js
+
+`hakimel/reveal.js` · License: MIT · ★ 72.597 · docs-read · 2026-11-18
+
+Framework trình chiếu HTML mã nguồn mở, tạo slide chạy trên trình duyệt. Hỗ trợ slide lồng dọc, Markdown, Auto-Animate, xuất PDF, ghi chú người nói; phiên bản 6.0.2 trong package.json; có trình chỉnh sửa trực quan Slides.com cùng tác giả. Điều kiện: Khoá học video reveal.js là trả phí; Slides.com là dịch vụ riêng. ★ 18/11/2026: 72.597 (GitHub search API), nhóm "Đồ họa, 3D & Sơ đồ" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ) (bảng/đoạn chung, giữ nguyên tại chỗ).

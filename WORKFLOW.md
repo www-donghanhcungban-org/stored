@@ -41,6 +41,13 @@ Quy ước do người dùng đặt ra (2026-10-12): **mọi link gửi lên đ�
 - **Cảnh báo nguồn dựng**: số sao/tên dự án lấy từ bài tổng hợp hoặc docs nội bộ của repo khác phải ghi "(theo docs nội bộ, chưa xác minh)"; mục 19 từng ghi sai ~100× vì tin aggregator.
 - **Mirror/fork**: nếu repo là clone không sửa (ví dụ `reveser` = `morluto/rea`), cite upstream, không ghi là của chủ kho.
 
+## Phân loại 3 cấp và catalog con (từ 2026-11-23)
+
+- `data/taxonomy.json` chia 70 category vào 9 nhóm; 13 category lớn (devops, learning, backend, data, ui-library, awesome-list, frontend, docs, quality-gate, eval-observability, security, design-tool, harness-pack) có **danh mục con bắt buộc**: hồ sơ thuộc các category này phải có trường `subcategory` hợp lệ. Category đã gộp (`voice`→`speech`, `aec-bim`→`cad-bim`, `vlm`→`computer-vision`) ghi ở `merged_categories`, không dùng lại tên cũ.
+- Thêm danh mục con hoặc category mới: sửa `data/taxonomy.json` cùng PR với hồ sơ dùng nó; không tạo danh mục con cho nhóm dưới ~5 hồ sơ.
+- `catalog/` là bảng sinh tự động, **không sửa tay**: sau khi đổi `projects.json`/`taxonomy.json` chạy `python3 -I scripts/build_catalog_views.py`; CI kiểm bằng `--check`.
+- Đặt hồ sơ vào mục theo chủ đề thật, không theo nguồn nhập. Khi chuyển hồ sơ sang mục khác: chuyển nguyên khối `<a id>` và để lại tại chỗ cũ một đoạn ngắn giữ **cùng neo** dẫn sang chỗ mới; với hồ sơ chỉ là một dòng trong bảng chung, giữ bảng gốc và tạo khối tóm tắt có neo `chuyen-<id>` ở mục mới. Mục 08 chỉ giữ khóa học, lộ trình, sách và awesome list.
+
 ## Cập nhật định kỳ
 
 - Mỗi quý: rà lại số sao, trạng thái bảo trì (archive, đổi tên, mua lại), license của các dự án đầu bảng.

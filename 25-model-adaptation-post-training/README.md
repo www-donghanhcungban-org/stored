@@ -324,3 +324,19 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 **Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`5341568a65e9`](https://github.com/Lightning-AI/litgpt/commit/5341568a65e918a85cb284fac038de2157eebf3f). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
 
 **Nguồn:** [README.md](https://github.com/Lightning-AI/litgpt/blob/5341568a65e918a85cb284fac038de2157eebf3f/README.md) · [LICENSE.md](https://github.com/Lightning-AI/litgpt/blob/5341568a65e918a85cb284fac038de2157eebf3f/LICENSE.md) · [metadata GitHub](https://api.github.com/repos/Lightning-AI/litgpt).
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+1 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-datasets"></a>
+
+### datasets
+
+`huggingface/datasets` · License: Apache License 2.0 · ★ 22.154 · docs-read · 2026-11-18
+
+Thư viện tải, chia sẻ và tiền xử lý tập dữ liệu (từ Hugging Face Hub hoặc file cục bộ) dựa trên Apache Arrow. Tải dữ liệu một dòng với load_dataset() và hỗ trợ streaming; lưu trữ ánh xạ bộ nhớ zero-copy qua Apache Arrow kèm cache tự động; chuyển đổi qua lại NumPy, Pandas, Polars, PyTorch, TensorFlow, JAX, Spark. Điều kiện: Mỗi tập dữ liệu trên Hub có giấy phép riêng do chủ dữ liệu quy định; README khuyên ghim revision để tái lập. ★ 18/11/2026: 22.154 (GitHub search API), nhóm "Tài liệu, OCR & Thị giác máy tính" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính) (bảng/đoạn chung, giữ nguyên tại chỗ).

@@ -12,7 +12,7 @@
 
 **Dùng kho cho xưởng phát triển phần mềm:** đọc [FACTORY.md](FACTORY.md) để ghép các chuyên mục thành chín cổng từ nhu cầu → kiến trúc → lập trình → kiểm chứng → phát hành → vận hành. Đợt 2026-11-04 đào sâu 28 mục hiện có và bổ sung sáu mục 29–34 cho các lớp kỹ thuật sản phẩm còn thiếu; hồ sơ mới/đọc lại ghi phạm vi bằng chứng riêng.
 
-Kho hiện có **34 chuyên mục, 2.268 hồ sơ, 73 category**. Chọn tuyến đọc ở [GUIDES.md](GUIDES.md); xem [METHOD.md](METHOD.md) để hiểu mức bằng chứng và giới hạn kiểm. Catalog [JSON](data/projects.json) / [CSV](data/projects.csv) có [schema](data/projects.schema.json); cách đóng góp ở [CONTRIBUTING.md](CONTRIBUTING.md).
+Kho hiện có **37 chuyên mục, 2.296 hồ sơ, 70 category trong 9 nhóm**; 13 category lớn chia tiếp thành danh mục con. Xem bảng theo nhóm → danh mục → danh mục con ở [catalog/](catalog/README.md) (sinh tự động từ dữ liệu) và các skill/tính năng đã chắt lọc kèm cách áp dụng ở [PLAYBOOK.md](PLAYBOOK.md). Chọn tuyến đọc ở [GUIDES.md](GUIDES.md); xem [METHOD.md](METHOD.md) để hiểu mức bằng chứng và giới hạn kiểm. Catalog [JSON](data/projects.json) / [CSV](data/projects.csv) có [schema](data/projects.schema.json); cách đóng góp ở [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Chuỗi dữ liệu đến sản phẩm: **[dữ liệu AI](24-ai-data-engineering/README.md) → [model adaptation](25-model-adaptation-post-training/README.md) → [inference](10-local-llm-rag-memory/README.md) → [eval](07-eval-observability/README.md) → [hiệu quả sản phẩm](28-product-discovery-experimentation/README.md)**. Nhánh [OCR/tài liệu](26-document-intelligence-ocr/README.md) và [CAD/BIM](27-3d-cad-bim-engineering/README.md) nối trực tiếp các case study đã có ở mục 23.
 
@@ -56,6 +56,9 @@ Chuỗi dữ liệu đến sản phẩm: **[dữ liệu AI](24-ai-data-engineeri
 | 32 | [Platform & Delivery Engineering](32-platform-delivery-engineering/README.md) | Toolchain/devcontainers, OpenTofu, GitOps/Argo CD, IaC plan, promote artifact và rollback |
 | 33 | [Reliability, Observability & Operations](33-reliability-observability-operations/README.md) | OTel Collector, Sloth/Pyrra, SLO/error budget, alert/incident và diễn tập phục hồi |
 | 34 | [Backend, Data, Identity & Integration](34-backend-data-identity-integration/README.md) | Migration, SQL/code generation, SSO, phân quyền và tenant isolation; tích hợp có idempotency/đối soát |
+| 35 | [Desktop & năng suất cá nhân](35-desktop-productivity-apps/README.md) | Tiện ích macOS/Windows/Linux, quản lý file/media, đọc sách, ghi chú và knowledge base cá nhân (Joplin, Logseq, AFFiNE, AppFlowy…); lập 23/11/2026 khi chia lại catalog |
+| 36 | [Tự host & homelab](36-self-hosting-homelab/README.md) | PaaS/bảng điều khiển (Coolify, Dokploy, 1Panel…), ứng dụng tự host (ảnh, file, tài liệu, chữ ký số), Pi-hole/AdGuard, uptime; trách nhiệm sao lưu và cập nhật thuộc người vận hành |
+| 37 | [Ngôn ngữ & runtime](37-programming-languages-runtimes/README.md) | Repo gốc ngôn ngữ/runtime và trình quản lý phiên bản; chọn theo chính sách phát hành/LTS và tương thích ngược |
 | — | [FACTORY.md](FACTORY.md) | Bản đồ 34 mục, vai trò/cổng giao hàng, manifest bằng chứng, mức áp dụng, chi phí và vòng học của xưởng |
 | — | [data/projects.json](data/projects.json) · [data/projects.csv](data/projects.csv) | Catalog máy-đọc-được (tên, repo, loại, license, sao ước lượng, ghi chú) |
 | — | [X-TEMPLATES.md](X-TEMPLATES.md) · [data/xt-handoff.json](data/xt-handoff.json) | **Thư viện cho X-Templates**: hợp đồng đọc kho, tổng hợp chéo telemetry + cổng CI của công cụ agent, bàn giao bài học → ID yêu cầu (ba cột), đề xuất nâng cấp |

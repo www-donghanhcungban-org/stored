@@ -1,0 +1,87 @@
+<!-- File sinh tự động bởi scripts/build_catalog_views.py; sửa data/projects.json hoặc data/taxonomy.json rồi chạy lại. -->
+
+# harness-pack — AI agent, skill & điều phối
+
+[← Mục lục catalog](../README.md) · 52 hồ sơ.
+
+## Quy trình coding/TDD/review (`coding-workflow`, 15)
+
+| Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
+|---|---|---|---|---|---|---|
+| [mattpocock/skills](../../20-claude-plugins-ecosystem/README.md#3zc-kiểm-bài-5-repo-skill-đáng-lưu-matt-pocock-addy-osmani-cloudflare-obsidian-google-egm-bài-người-dùng-gửi-đọc-mã-16112026) | `mattpocock/skills` | MIT | 325.682 | đọc tài liệu 2026-11-16 | 20 | 38 SKILL.md nhỏ ghép được (grill-with-docs, to-spec, tdd, diagnosing-bugs, improve-codebase-architecture); |
+| [superpowers](../../20-claude-plugins-ecosystem/README.md) | `obra/superpowers` | MIT | 314.177 | chưa chuẩn hóa | 20 | Bộ skill quy trình brainstorm→plan→TDD→review; |
+| [Everything Claude Code (ECC)](../../20-claude-plugins-ecosystem/README.md) | `affaan-m/ECC` | MIT | 294.041 | chưa chuẩn hóa | 20 | Harness lớn nhất: 71 agent, 314 skill, 98 command, 27 hook/8 sự kiện (GateGuard, Prettier+tsc sau sửa, lưu phiên, continuous learning), AgentShield; |
+| [andrej-karpathy-skills](../../20-claude-plugins-ecosystem/README.md) | `multica-ai/andrej-karpathy-skills` | — | 234.029 | chưa chuẩn hóa | 20 | Một CLAUDE.md/SKILL.md ~65 dòng, 4 nguyên tắc (Think Before Coding, Simplicity First, Surgical Changes, Goal-Driven Execution) rút từ bài X của Karpathy về lỗi coding củ… |
+| [Ponytail](../../20-claude-plugins-ecosystem/README.md) | `DietrichGebert/ponytail` | MIT | 181.505 | chưa chuẩn hóa | 20 | Prompt 52 dòng "lazy senior dev": thang 6 bậc trước khi viết code, không cắt validation/bảo mật/a11y, logic phải có 1 test, comment shortcut:; |
+| [agent-skills (addyosmani)](../../20-claude-plugins-ecosystem/README.md#3zc-kiểm-bài-5-repo-skill-đáng-lưu-matt-pocock-addy-osmani-cloudflare-obsidian-google-egm-bài-người-dùng-gửi-đọc-mã-16112026) | `addyosmani/agent-skills` | MIT | 118.181 | đọc tài liệu 2026-11-16 | 20 | incremental-implementation, source-driven, doubt-driven development, context-engineering; |
+| [Vercel Agent Skills](../../20-claude-plugins-ecosystem/README.md) | `vercel-labs/agent-skills` | MIT (README; không có file LICENSE) | 33.309 | chưa chuẩn hóa | 20 | 9 skill chính chủ Vercel: react-best-practices (có build/validate CI), web-design-guidelines, writing-guidelines, react-native, view-transitions, deploy-to-vercel, verce… |
+| [claude-code-templates](../../20-claude-plugins-ecosystem/README.md) | `davila7/claude-code-templates` | MIT | 33.020 | chưa chuẩn hóa | 20 | CLI cài 100+ thành phần Claude Code; |
+| [compound-engineering-plugin](../../20-claude-plugins-ecosystem/README.md) | `EveryInc/compound-engineering-plugin` | – | 25.798 | chưa chuẩn hóa | 20 | Plugin research→plan→work→review→compound; |
+| [skills](../../20-claude-plugins-ecosystem/README.md#chuyen-skills) | `google/skills` | Apache-2.0 | 24.400 | đọc tài liệu 2026-11-18 | 20 | Bộ Agent Skills chính thức của Google, chủ yếu Google Cloud (GKE, Compute Engine, Cloud Storage, BigQuery, Gemini, IAM…) cùng Ads, Analytics, Identity; |
+| [SuperClaude Framework](../../20-claude-plugins-ecosystem/README.md) | `SuperClaude-Org/SuperClaude_Framework` | MIT | 23.919 | chưa chuẩn hóa | 20 | 30 command, 20 agent; |
+| [gsd-core](../../20-claude-plugins-ecosystem/README.md) | `open-gsd/gsd-core` | MIT | 11.091 | chưa chuẩn hóa | 20 | Kế nhiệm gsd-build/get-shit-done (archive 26/6/2026, 64,3k★); |
+| [Waza](../../20-claude-plugins-ecosystem/README.md) | `tw93/Waza` | MIT | 7.483 | chưa chuẩn hóa | 20 | 8 skill kỹ thuật khoá cứng bằng SCOPE.md + .out-of-scope; |
+| [ub-mode](../../20-claude-plugins-ecosystem/README.md) | `unclebob/ub-mode` | — | 5.786 | chưa chuẩn hóa | 20 | Skill của Robert C. |
+| [WordPress agent-skills](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-wordpress-agent-skills) | `WordPress/agent-skills` | GPL-2.0-or-later (GitHub: NOASSERTION) | 2.396 | đọc tài liệu 2026-11-23 | 20 | 20 skill WordPress (block, theme, plugin, REST, Interactivity, Abilities, WP-CLI, perf, PHPStan, Playground); |
+
+## Điều phối nhiều agent (`multi-agent-orchestration`, 9)
+
+| Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
+|---|---|---|---|---|---|---|
+| [The Agency (agency-agents)](../../20-claude-plugins-ecosystem/README.md) | `msitarzewski/agency-agents` | MIT | 165.687 | chưa chuẩn hóa | 20 | 283 persona subagent (Markdown) trong 18 phòng ban, installer cho 17 công cụ (Claude Code, Copilot, Cursor, Gemini…); |
+| [gstack](../../20-claude-plugins-ecosystem/README.md#3za-hồ-sơ-garrytangstack-đội-kỹ-sư-ảo-cho-claude-code-plan-design-review-chấm-thiết-kế-010-ảnh-thẻ-skill-người-dùng-gửi-đọc-mã-7112026) | `garrytan/gstack` | MIT | 140.677 | đọc mã 2026-11-07 | 20 | "Đội kỹ sư ảo" cho Claude Code của Garry Tan (YC): 71 SKILL.md theo sprint Think→Plan→Build→Review→Test→Ship→Reflect (/office-hours, /plan-ceo-review, /plan-design-revie… |
+| [wshobson/agents](../../20-claude-plugins-ecosystem/README.md) | `wshobson/agents` | MIT | 42.053 | chưa chuẩn hóa | 20 | 94 plugin, 202 agent, 184 skill; |
+| [oh-my-claudecode](../../03-agentic-patterns-loops/README.md) | `Yeachan-Heo/oh-my-claudecode` | MIT | 40.463 | chưa chuẩn hóa | 03 | Gói orchestration cho Claude Code: 19 agent, ~50 skill, ralph có cổng test theo baseline; |
+| [claude-skills (Alireza Rezvani)](../../20-claude-plugins-ecosystem/README.md) | `alirezarezvani/claude-skills` | MIT | 29.460 | chưa chuẩn hóa | 20 | 407 skill + 127 agent + 165 command đa phòng ban; |
+| [awesome-claude-code-subagents](../../20-claude-plugins-ecosystem/README.md) | `VoltAgent/awesome-claude-code-subagents` | MIT | 26.237 | chưa chuẩn hóa | 20 | 161+ subagent, 10 nhóm; |
+| [oh-my-hermes](../../20-claude-plugins-ecosystem/README.md) | `rlaope/oh-my-hermes` | – | 4.978 | chưa chuẩn hóa | 20 | Workflow pack cho Hermes/Agent Skills: ralplan, ultrawork, ultraqa, loop, adversarial-consensus, rules-distill; |
+| [AI Software Factory](../../03-agentic-patterns-loops/README.md#beyond-the-agent-5-lop-2026-11-11) | `coleam00/ai-software-factory` | — | 524 | đọc tài liệu 2026-11-11 | 03 | Lớp cài đặt software factory trên Archon: PRD → issue → vòng làm → hai reviewer không viết mã quyết định merge → người thử trên staging; |
+| [Startup Factory](../../03-agentic-patterns-loops/README.md#beyond-the-agent-5-lop-2026-11-11) | `alexrolls/startup-factory` | MIT | 23 | đọc tài liệu 2026-11-11 | 03 | Khung điều phối coding agent thành đội giao hàng: 9 vai (team lead, architect, sceptical architect, backend, frontend, QA, security, reviewer, integrator) qua Linear/Jir… |
+
+## Marketing, bán hàng & kinh doanh (`marketing-business`, 16)
+
+| Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
+|---|---|---|---|---|---|---|
+| [Marketing Skills](../../20-claude-plugins-ecosystem/README.md#3zb-kiểm-ảnh-8-plugin-8-kỹ-năng-8-mcp-bộ-cài-sẵn-cho-claude-ảnh-phandonggiang-người-dùng-gửi-đọc-mã-8112026) | `coreyhaines31/marketingskills` | MIT | 59.094 | đọc tài liệu 2026-11-08 | 20 | 53 skill marketing của Corey Haines (CRO, copywriting, SEO, analytics, growth); |
+| [pm-skills](../../20-claude-plugins-ecosystem/README.md#chuyen-pm-skills) | `phuryn/pm-skills` | MIT | 28.113 | đọc tài liệu 2026-11-18 | 20 | Marketplace plugin quản lý sản phẩm: 72 skill và 42 command chia 9 plugin (discovery, strategy, execution, go-to-market, growth, analytics…), mỗi skill mã hóa một khung… |
+| [Claude SEO](../../20-claude-plugins-ecosystem/README.md#3z-hồ-sơ-agricidanielclaude-seo-claude-seo-plugin-audit-seo-và-geo-cho-claude-code-26-skill--19-agent--1077-test-ảnh-readme-người-dùng-gửi-đọc-mã-5112026) | `AgriciDaniel/claude-seo` | MIT | 27.295 | đọc mã 2026-11-05 | 20 | Plugin SEO/GEO cho Claude Code (marketplace): 26 skill + 19 agent + ~30 script Python (GSC, GA4, CrUX, Bing, Common Crawl, drift baseline); |
+| [social-media-skills (Charlie Hills)](../../20-claude-plugins-ecosystem/README.md#3f5-đọc-lại-2112026-ảnh-readme-mới-bốn-commit-thêm-rồi-gỡ-claude-reel-editor-banner-giữ-số-cũ-ảnh-người-dùng-gửi) | `charlie947/social-media-skills` | MIT | 4.603 | đọc mã 2026-11-02 | 20 | 17 skill viết nội dung mạng xã hội (LinkedIn là chính), voice-builder làm nền, plugin Claude Code + Codex v1.1.0; |
+| [Stripe AI (plugin Claude)](../../20-claude-plugins-ecosystem/README.md#3zd-kiểm-danh-sách-7-plugin-thay-7-vị-trí-quickbooks-stripe-shopify-canva-hubspot-legalzoom-zapier-danh-sách-người-dùng-gửi-đọc-mã-20112026) | `stripe/ai` | MIT | 2.075 | đọc mã 2026-11-20 | 20 | Monorepo AI của Stripe; |
+| [OpenClaudia skills](../../20-claude-plugins-ecosystem/README.md#3f5-đọc-lại-2112026-ảnh-readme-mới-bốn-commit-thêm-rồi-gỡ-claude-reel-editor-banner-giữ-số-cũ-ảnh-người-dùng-gửi) | `OpenClaudia/openclaudia-skills` | MIT | 724 | đọc mã 2026-11-02 | 20 | 78 SKILL.md marketing cho coding agent (SEO, content, email, ads, social); |
+| [Shopify AI Toolkit](../../20-claude-plugins-ecosystem/README.md#3zd-kiểm-danh-sách-7-plugin-thay-7-vị-trí-quickbooks-stripe-shopify-canva-hubspot-legalzoom-zapier-danh-sách-người-dùng-gửi-đọc-mã-20112026) | `Shopify/Shopify-AI-Toolkit` | MIT | 652 | đọc mã 2026-11-20 | 20 | Công cụ cho lập trình viên Shopify (plugin shopify-plugin 2.1.2 ở SHA ghim, HEAD 2.4.0): 2 skill đang dùng (shopify gộp 20 chủ đề Admin/Storefront GraphQL, Liquid, Hydro… |
+| [social-media-skills (BlackTwist)](../../20-claude-plugins-ecosystem/README.md) | `blacktwist/social-media-skills` | MIT | 619 | chưa chuẩn hóa | 20 | 14 skill cài bằng npx skills add; |
+| [social-media-skills/skills (WoopSocial)](../../20-claude-plugins-ecosystem/README.md) | `social-media-skills/skills` | MIT | 236 | chưa chuẩn hóa | 20 | 106 skill có evals; |
+| [HubSpot Sales plugin](../../20-claude-plugins-ecosystem/README.md#3zd-kiểm-danh-sách-7-plugin-thay-7-vị-trí-quickbooks-stripe-shopify-canva-hubspot-legalzoom-zapier-danh-sách-người-dùng-gửi-đọc-mã-20112026) | `HubSpot/hubspot-mcp-plugins` | Apache-2.0 | 5 | đọc tài liệu 2026-11-20 | 20 | Plugin hubspot-sales 2.3.0 (cùng repo có HubSpot-Partner): MCP https://mcp.hubspot.com/anthropic; |
+| [QuickBooks plugin cho Claude](../../20-claude-plugins-ecosystem/README.md#3zd-kiểm-danh-sách-7-plugin-thay-7-vị-trí-quickbooks-stripe-shopify-canva-hubspot-legalzoom-zapier-danh-sách-người-dùng-gửi-đọc-mã-20112026) | `intuit/quickbooks-claude-plugin` | Apache-2.0 | 1 | đọc tài liệu 2026-11-20 | 20 | Plugin chính chủ Intuit (intuit-quickbooks 0.1.0) trong claude-plugins-official: 10 skill (business-health-check đọc P&L/dòng tiền/bảng cân đối/công nợ, chase-overdue-in… |
+| [AI Marketing Skills (Single Grain)](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-ericosiu-ai-marketing-skills) | `ericosiu/ai-marketing-skills` | MIT | — | đọc mã 2026-11-23 | 20 | 45 skill marketing/sales-ops của Single Grain, nhiều script Python (enrich, outbound sender, gong); |
+| [E-Commerce Skills (Nexscope)](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-nexscope-ecommerce-skills) | `nexscope-ai/ecommerce-skills` | MIT | — | đọc tài liệu 2026-11-23 | 20 | 162 SKILL.md thương mại điện tử (Amazon/Shopify/Etsy/TikTok Shop/Walmart), 42 script Python; |
+| [GTM Skills (LeadMagic)](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-leadmagic-gtm-skills) | `leadmagic/gtm-skills` | MIT | — | đọc mã 2026-11-23 | 20 | 211 skill GTM / 25 nhóm, mỗi skill kèm check-output.py; |
+| [Marketing Skills (kostja94)](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-kostja94-marketing-skills) | `kostja94/marketing-skills` | MIT | — | đọc tài liệu 2026-11-23 | 20 | Thư viện 177 SKILL.md marketing/SEO thuần Markdown (không script, không CI); |
+| [Sales Skills (Apparate)](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-louisblythe-sales-skills) | `louisblythe/sales-skills` | MIT | — | đọc mã 2026-11-23 | 20 | 122 skill sales B2B (fork điều chỉnh từ marketingskills); |
+
+## Media & sáng tạo (`media-creative`, 2)
+
+| Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
+|---|---|---|---|---|---|---|
+| [baoyu-skills](../../20-claude-plugins-ecosystem/README.md#chuyen-baoyu-skills) | `JimLiu/baoyu-skills` | MIT | 27.646 | đọc tài liệu 2026-11-18 | 20 | Bộ 21 Agent Skill cho Claude Code/Codex phục vụ sản xuất nội dung: sinh ảnh bìa, minh hoạ, infographic, slide, truyện tranh, dịch bài, chuyển URL/YouTube/X sang Markdown… |
+| [MiniMax skills](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-minimax-skills) | `MiniMax-AI/skills` | MIT (+ Apache-2.0 cho phần dẫn xuất từ Anthropic) | 13.903 | đọc tài liệu 2026-11-23 | 20 | 17 skill (dev đa nền tảng, Office, đa phương tiện qua API MiniMax); |
+
+## Chuyên ngành (`domain-specialist`, 7)
+
+| Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
+|---|---|---|---|---|---|---|
+| [academic-research-skills](../../20-claude-plugins-ecosystem/README.md#chuyen-academic-research-skills) | `Imbad0202/academic-research-skills` | CC-BY-NC-4.0 | 57.341 | đọc tài liệu 2026-11-18 | 20 | Bộ skill Claude Code cho nghiên cứu học thuật: pipeline 10 giai đoạn từ nghiên cứu tài liệu, viết, phản biện tới xuất bản, dừng xin xác nhận ở từng giai đoạn và có cổng… |
+| [Claude for Financial Services](../../20-claude-plugins-ecosystem/README.md#3zb-kiểm-ảnh-8-plugin-8-kỹ-năng-8-mcp-bộ-cài-sẵn-cho-claude-ảnh-phandonggiang-người-dùng-gửi-đọc-mã-8112026) | `anthropics/financial-services` | Apache-2.0 | 41.115 | đọc tài liệu 2026-11-08 | 20 | Plugin Cowork/Claude Code và template Managed Agents của Anthropic cho IB, equity research, PE, wealth: 10 agent (Pitch, Earnings Reviewer, Model Builder DCF/LBO trong E… |
+| [Claude Code Game Studios](../../20-claude-plugins-ecosystem/README.md#3x-kiểm-ảnh-donchitosclaude-code-game-studios-49-agent--74-skill--15-hook-làm-xưởng-game-trong-một-phiên-claude-code-ảnh-người-dùng-gửi-clone-2112026) | `Donchitos/Claude-Code-Game-Studios` | MIT | 33.171 | đọc mã 2026-11-02 | 20 | Template Claude Code cho xưởng game: 49 agent (cả 49 khai tools/model), 74 skill (About ghi 72 cũ) đều khai allowed-tools hẹp, 15 hook bash ở 8 sự kiện (validate commit/… |
+| [text-to-cad](../../20-claude-plugins-ecosystem/README.md) | `earthtojake/text-to-cad` | MIT | 24.519 | chưa chuẩn hóa | 20 | Plugin CAD: 12 skill + MCP cadgen (build123d/OCP), STEP/STL/3MF, DFM/DfAM; |
+| [AI-Research-SKILLs](../../20-claude-plugins-ecosystem/README.md#chuyen-ai-research-skills) | `Orchestra-Research/AI-Research-SKILLs` | MIT | 14.630 | đọc tài liệu 2026-11-18 | 20 | Thư viện 98 Agent Skill giúp agent AI tự làm nghiên cứu AI trọn vòng đời: từ ý tưởng, khảo sát tài liệu, huấn luyện/tinh chỉnh/đánh giá/triển khai mô hình đến viết bài b… |
+| [Claude for Legal](../../20-claude-plugins-ecosystem/README.md#3zb-kiểm-ảnh-8-plugin-8-kỹ-năng-8-mcp-bộ-cài-sẵn-cho-claude-ảnh-phandonggiang-người-dùng-gửi-đọc-mã-8112026) | `anthropics/claude-for-legal` | Apache-2.0 | 9.930 | đọc tài liệu 2026-11-08 | 20 | Plugin pháp lý của Anthropic theo mảng hành nghề (thương mại, privacy, sản phẩm, doanh nghiệp, lao động, tranh tụng, AI governance, IP, sinh viên luật); |
+| [LegalZoom plugin](../../20-claude-plugins-ecosystem/README.md#3zd-kiểm-danh-sách-7-plugin-thay-7-vị-trí-quickbooks-stripe-shopify-canva-hubspot-legalzoom-zapier-danh-sách-người-dùng-gửi-đọc-mã-20112026) | `legalzoom/claude-plugins` | PROPRIETARY | 1 | đọc tài liệu 2026-11-20 | 20 | Plugin legalzoom 1.0.0: /review-contract (AI chấm rủi ro điều khoản, không gọi MCP, cấm giả lập luật sư) và skill attorney-assist đặt lịch luật sư LegalZoom qua MCP http… |
+
+## Tạo/quản lý skill (`skill-meta`, 3)
+
+| Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
+|---|---|---|---|---|---|---|
+| [nuwa-skill](../../20-claude-plugins-ecosystem/README.md#chuyen-nuwa-skill) | `alchaincyf/nuwa-skill` | MIT | 38.518 | đọc tài liệu 2026-11-18 | 20 | Agent Skill "女娲" chưng cất cách nghĩ, mô hình tư duy và giọng nói của một nhân vật công khai (Munger, Naval, Musk…) thành skill riêng: chỉ cần nhập tên, skill tự nghiên… |
+| [khazix-skills](../../20-claude-plugins-ecosystem/README.md#chuyen-khazix-skills) | `KKKKhazix/khazix-skills` | MIT | 22.367 | đọc tài liệu 2026-11-18 | 20 | Bộ 6 Agent Skill tác giả dùng hằng ngày: leader (biến ý tưởng mơ hồ thành mục tiêu agent chạy được lâu), storage-analyzer (quét ổ đĩa và đề xuất dọn), aihot (lấy tin AI… |
+| [Skill_Seekers](../../20-claude-plugins-ecosystem/README.md#chuyen-skill-seekers) | `yusufkaraaslan/Skill_Seekers` | MIT | 15.333 | đọc tài liệu 2026-11-18 | 20 | Công cụ CLI Python (kèm máy chủ MCP) biến trang tài liệu, repo GitHub, PDF, video, notebook, wiki… (18 loại nguồn) thành tài sản tri thức có cấu trúc để đóng gói thành A… |

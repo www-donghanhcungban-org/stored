@@ -161,3 +161,19 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 **Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712`](https://github.com/GoogleCloudPlatform/microservices-demo/commit/c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712), ngày commit 2026-10-27. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
 
 **Nguồn:** [README.md](https://github.com/GoogleCloudPlatform/microservices-demo/blob/c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712/README.md) · [LICENSE](https://github.com/GoogleCloudPlatform/microservices-demo/blob/c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712/LICENSE) · [.github/workflows/ci-pr.yaml](https://github.com/GoogleCloudPlatform/microservices-demo/blob/c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712/.github/workflows/ci-pr.yaml) · [metadata GitHub](https://api.github.com/repos/GoogleCloudPlatform/microservices-demo).
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+1 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-spectral"></a>
+
+### Spectral
+
+`stoplightio/spectral` · License: Apache-2.0 · ★ 3.247
+
+Linter JSON/YAML, ruleset sẵn OpenAPI/AsyncAPI/Arazzo v1 (hỗ trợ Arazzo 1.1 chưa xác minh); CLI 6.17.0; ★ 2/11/2026 (GitHub search API), mục 05 §Nâng trần 2/11
+
+**Hồ sơ gốc:** [mục 05](../05-low-code-llm-platforms/README.md) (bảng/đoạn chung, giữ nguyên tại chỗ).

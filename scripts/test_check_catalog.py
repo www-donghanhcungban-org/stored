@@ -44,6 +44,31 @@ class CatalogIntegrityTests(unittest.TestCase):
     def test_valid_fixture(self):
         self.assertEqual(checker.validate(self.root), [])
 
+    def write_taxonomy(self, subs=None, categories=("tool",)):
+        cats = {c: ({"subcategories": subs} if subs else {}) for c in categories}
+        tax = dict(groups=dict(g=dict(label="Nhóm", categories=cats)), merged_categories={})
+        (self.root / "data/taxonomy.json").write_text(json.dumps(tax), encoding="utf-8")
+
+    def test_taxonomy_requires_registered_subcategory(self):
+        self.write_taxonomy({"cli": "CLI"})
+        self.assertTrue(any("subcategory thiếu" in e for e in checker.validate(self.root)))
+        self.project["subcategory"] = "gui"
+        self.write()
+        self.assertTrue(any("subcategory thiếu" in e for e in checker.validate(self.root)))
+        self.project["subcategory"] = "cli"
+        self.write()
+        self.assertEqual(checker.validate(self.root), [])
+
+    def test_taxonomy_must_cover_every_category_once(self):
+        self.write_taxonomy(categories=("tool", "ghost"))
+        self.assertTrue(any("taxonomy lệch" in e for e in checker.validate(self.root)))
+
+    def test_subcategory_rejected_where_category_has_none(self):
+        self.write_taxonomy()
+        self.project["subcategory"] = "cli"
+        self.write()
+        self.assertTrue(any("không có subcategory" in e for e in checker.validate(self.root)))
+
     def test_same_names_and_row_count_cannot_hide_changed_license(self):
         path = self.root / "data/projects.csv"
         path.write_text(path.read_text().replace(",MIT,", ",GPL-3.0,"), encoding="utf-8")

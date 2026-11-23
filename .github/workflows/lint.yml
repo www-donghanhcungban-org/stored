@@ -27,3 +27,5 @@ jobs:
         run: python3 -I scripts/check_catalog.py
       - name: Kiểm cổng phát hiện dữ liệu lệch và bằng chứng thiếu
         run: python3 -I scripts/test_check_catalog.py
+      - name: Kiểm catalog con trong catalog/ khớp dữ liệu
+        run: python3 -I scripts/build_catalog_views.py --check

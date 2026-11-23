@@ -805,19 +805,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Wiki.js
 
-**Repo:** [requarks/wiki](https://github.com/requarks/wiki) · **License:** AGPL-3.0 · **Kiểm:** 2026-11-23, `docs-read`, [`d05ff15437ed`](https://github.com/requarks/wiki/tree/d05ff15437ed3452f1132862ef928fa9a6bf0ecd) (commit 2026-11-23). **Sao:** 29,362 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/requarks/wiki).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Ứng dụng wiki tự host cho tài liệu và kiến thức của nhóm. |
-| Giá trị và cơ chế theo tài liệu | README tập trung liên kết yêu cầu, cài đặt, changelog và tài liệu; workflow build/publish cho thấy quy trình tạo artifact và draft release. |
-| Giới hạn | README gốc ít mô tả cơ chế quyền và storage; chưa đọc backend hay thử editor, search, import/export. Không suy mọi tính năng trên website đã có trong nhánh đã clone. |
-| Điều kiện tích hợp | Chọn release, kiểm tài liệu tương ứng và yêu cầu database; thử quyền đọc/sửa, sao lưu và xuất nội dung trước khi nhập kho tri thức. |
-| Lựa chọn đối chiếu | BookStack; [Outline](../08-awesome-lists-learning/README.md#6c515-năng-suất-ghi-chú--việc-làm); XWiki. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/requarks/wiki/blob/d05ff15437ed3452f1132862ef928fa9a6bf0ecd/README.md) · [LICENSE](https://github.com/requarks/wiki/blob/d05ff15437ed3452f1132862ef928fa9a6bf0ecd/LICENSE) · [.github/workflows/build.yml](https://github.com/requarks/wiki/blob/d05ff15437ed3452f1132862ef928fa9a6bf0ecd/.github/workflows/build.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-requarks-wiki); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-celery-celery"></a>
 

@@ -366,21 +366,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### ThingsBoard
 
-**Repo:** [thingsboard/thingsboard](https://github.com/thingsboard/thingsboard) · **License:** BUSL-1.1 cho 4.4+; một số phần Apache-2.0 · **★ 22,714 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Nền tảng IoT quản lý thiết bị, thu telemetry, rule chain, cảnh báo và dashboard.
-
-**Giá trị và cơ chế:** README và manifest thể hiện hệ backend/frontend đầy đủ cho luồng thiết bị–dữ liệu–hiển thị; hữu ích tham khảo kiến trúc sản phẩm IoT tự lưu trữ.
-
-**Giới hạn:** HEAD 4.4.1-SNAPSHOT chịu BUSL: miễn phí thương mại tối đa 100 thiết bị/một server, phi thương mại 1.000, kèm key và thương hiệu; đổi Apache sau bốn năm. Không dùng nhãn Apache của bản cũ cho HEAD. Chưa triển khai.
-
-**Cách tham khảo/tích hợp:** Đối chiếu số thiết bị và bản license, thử dữ liệu giả lập trước nối hệ thống vận hành.
-
-**Thay thế:** [Node-RED](../05-low-code-llm-platforms/README.md#factory-lowcode-runtime-boundaries-2026-11-04), mainflux, home-assistant.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`2f2a2bd63a82`](https://github.com/thingsboard/thingsboard/commit/2f2a2bd63a82f4fa4dedd414015576df6156146e). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
-
-**Nguồn:** [README.md](https://github.com/thingsboard/thingsboard/blob/2f2a2bd63a82f4fa4dedd414015576df6156146e/README.md) · [LICENSE](https://github.com/thingsboard/thingsboard/blob/2f2a2bd63a82f4fa4dedd414015576df6156146e/LICENSE) · [metadata GitHub](https://api.github.com/repos/thingsboard/thingsboard).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 34](../34-backend-data-identity-integration/README.md#anhkysuai-2026-11-23-thingsboard); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-bokeh"></a>
 
@@ -406,3 +392,112 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 - https://duckdb.org/2026/08/05/github-40k-stars · https://en.wikipedia.org/wiki/Polars_(software) · https://github.com/sinaptik-ai/pandas-ai · https://github.com/topics/sql?l=python · https://aitools.flocci.in/alternatives/pandasai · https://jupysql.readthedocs.io/en/latest/tutorials/duckdb-github.html
 - Bổ sung (12/10/2026): https://github.com/Canner/WrenAI · https://github.com/eosphoros-ai/DB-GPT · https://github.com/OtterMind/Chat2DB · https://github.com/dataease/SQLBot · https://github.com/apache/superset · https://github.com/apache/superset/tree/master/superset/mcp_service · https://github.com/metabase/metabase · https://www.metabase.com/docs/latest/ai/settings · https://github.com/tobymao/sqlglot · https://github.com/datahub-project/datahub · https://github.com/Kanaries/pygwalker · https://github.com/evidence-dev/evidence · https://github.com/getredash/redash · https://github.com/dataease/dataease · https://github.com/airbytehq/airbyte · https://github.com/great-expectations/great_expectations
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+9 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-daily-stock-analysis"></a>
+
+### daily_stock_analysis
+
+`ZhuLinsen/daily_stock_analysis` · License: MIT · ★ 73.114 · docs-read · 2026-11-18
+
+Hệ thống phân tích cổ phiếu theo danh mục theo dõi bằng mô hình ngôn ngữ lớn cho thị trường A, Hồng Kông, Mỹ, Nhật, Hàn, Đài Loan; tự động phân tích hằng ngày và đẩy báo cáo dạng bảng quyết định. Đẩy thông báo qua WeCom, Feishu, Telegram, Discord, Slack, email; chạy được qua GitHub Actions, Docker, dịch vụ FastAPI hoặc lịch cục bộ; có Web/desktop với backtest, danh mục và agent hỏi đáp với 15 chiến lược dựng sẵn. Điều kiện: Cần API key của ít nhất một nhà cung cấp LLM và ít nhất một kênh thông báo; README tuyên bố chỉ dùng cho học tập/nghiên cứu, không phải lời khuyên đầu tư, tác giả không chịu trách nhiệm thua lỗ. ★ 18/11/2026: 73.114 (GitHub search API), nhóm "Tài chính & Crypto" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c524-tài-chính--crypto) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-qlib"></a>
+
+### qlib
+
+`microsoft/qlib` · License: MIT · ★ 50.373 · docs-read · 2026-11-18
+
+Qlib: nền tảng đầu tư định lượng hướng AI mã nguồn mở của Microsoft, bao trọn từ khám phá ý tưởng, xử lý dữ liệu, huấn luyện mô hình đến backtest. Hỗ trợ học có giám sát, mô hình hóa động lực thị trường và học tăng cường; có bài báo arXiv 2009.11189 mô tả nền tảng; phát hành trên PyPI dạng gói pyqlib, chạy Linux, Windows, macOS. Điều kiện: Bộ dữ liệu chính thức tạm tắt do chính sách bảo mật dữ liệu, README trỏ tới nguồn cộng đồng; dữ liệu mẫu thu từ Yahoo Finance có thể không hoàn hảo; bản mã trên main có thay đổi phá tương thích chưa phát hành về nạp artefact (cần trusted=True). ★ 18/11/2026: 50.373 (GitHub search API), nhóm "Tài chính & Crypto" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c524-tài-chính--crypto) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-finceptterminal"></a>
+
+### FinceptTerminal
+
+`Fincept-Corporation/FinceptTerminal` · License: AGPL-3.0-or-later · ★ 33.938 · docs-read · 2026-11-18
+
+Fincept Terminal: ứng dụng desktop phân tích tài chính (C++20, Qt6, Python) với nghiên cứu cổ phiếu, danh mục, tin tức, trình soạn node và tự động hóa AI. Có bộ cài Windows, Linux (AppImage, deb, rpm) ở bản v4.5.2; giá lấy trực tiếp trên máy người dùng từ nguồn họ chọn (broker, sàn, Yahoo Finance); toolchain build được ghim phiên bản (CMake 3.27.7, Qt 6.8.3, Python 3.11.9). Điều kiện: AGPL-3.0: phân phối bản sửa hoặc chạy làm dịch vụ phải công bố mã; README khuyên doanh nghiệp dùng bản Enterprise trả phí; tính năng tài khoản Fincept và AI dùng máy chủ Fincept; dữ liệu cần API key/tài khoản nguồn riêng của người dùng. ★ 18/11/2026: 33.938 (GitHub search API), nhóm "Tài chính & Crypto" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c524-tài-chính--crypto) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-akshare"></a>
+
+### akshare
+
+`akfamily/akshare` · License: MIT · ★ 23.377 · docs-read · 2026-11-18
+
+AKShare: thư viện Python lấy dữ liệu tài chính (cổ phiếu, quỹ, phái sinh, tiền mã hóa, vĩ mô…) từ nhiều nguồn công khai qua giao diện hàm đơn giản. Phát hành trên PyPI, yêu cầu Python 64-bit 3.11.5 trở lên; dự án đi kèm AKTools cung cấp máy chủ MCP đã đăng ký trong MCP Registry chính thức (io.github.akfamily/aktools) và HTTP API; có tài liệu tiếng Trung đầy đủ. Điều kiện: README tuyên bố dữ liệu chỉ dùng cho nghiên cứu học thuật, nhà đầu tư phải tự lưu ý rủi ro dữ liệu; dữ liệu lấy từ website bên thứ ba. ★ 18/11/2026: 23.377 (GitHub search API), nhóm "Tài chính & Crypto" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c524-tài-chính--crypto) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-hummingbot"></a>
+
+### hummingbot
+
+`hummingbot/hummingbot` · License: Apache License 2.0 · ★ 21.248 · docs-read · 2026-11-18
+
+Framework mã nguồn mở để thiết kế và chạy bot giao dịch tự động (market making, arbitrage…) trên nhiều sàn tập trung và phi tập trung. CLI hbot điều khiển bot không tương tác với exit code ổn định; connector cho CEX CLOB, DEX CLOB và AMM DEX (qua Gateway); có chế độ paper trade trên dữ liệu Binance thật không cần API key. Điều kiện: Giao dịch thật cần API key sàn hoặc khoá ví và dùng tiền thật; cần Anaconda/Miniconda hoặc Docker. ★ 18/11/2026: 21.248 (GitHub search API), nhóm "Tài chính & Crypto" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c524-tài-chính--crypto) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-spacy"></a>
+
+### spaCy
+
+`explosion/spaCy` · License: MIT License · ★ 34.067 · docs-read · 2026-11-18
+
+Thư viện xử lý ngôn ngữ tự nhiên công nghiệp viết bằng Python và Cython, có pipeline huấn luyện sẵn. Hỗ trợ tách từ và huấn luyện cho hơn 70 ngôn ngữ; có mô hình cho gắn nhãn từ loại, phân tích cú pháp, NER, phân loại văn bản và hỗ trợ transformer như BERT; có hệ thống huấn luyện, đóng gói và tích hợp LLM. Điều kiện: Python >=3.7, <3.13 (chỉ 64 bit) theo README. ★ 18/11/2026: 34.067 (GitHub search API), nhóm "Tài liệu, OCR & Thị giác máy tính" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-dash"></a>
+
+### dash
+
+`plotly/dash` · License: MIT · ★ 24.494 · docs-read · 2026-11-18
+
+Framework Python để xây ứng dụng web dữ liệu và học máy, gắn thành phần giao diện (dropdown, slider, biểu đồ) trực tiếp với mã phân tích Python. Xây trên Plotly.js, React và Flask; khoảng 50 loại biểu đồ qua Plotly.js; được Plotly bảo trì, phát hành trên PyPI. Điều kiện: Bản mã nguồn mở chạy cục bộ; tính năng triển khai, xác thực, mở rộng nằm ở Dash Enterprise trả phí. ★ 18/11/2026: 24.494 (GitHub search API), nhóm "Đồ họa, 3D & Sơ đồ" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="anhkysuai-numpy-numpy"></a>
+
+### NumPy
+
+- **Repo:** [numpy/numpy](https://github.com/numpy/numpy).
+- **Mục đích:** Nền tảng mảng nhiều chiều và tính toán số cho Python.
+- **Điểm đáng dùng:** Broadcasting, đại số tuyến tính, FFT và tích hợp C/C++/Fortran giúp dựng xử lý dữ liệu; tài liệu test có pytest và Hypothesis tùy chọn.
+- **License:** BSD-3-Clause AND 0BSD AND MIT AND CC0-1.0.
+- **Giới hạn:** HEAD là 2.6.0.dev0 cần Python >=3.12; dtype, overflow và ABI native cần kiểm thử, không lấy workflow redirect artifact làm bằng chứng suite đã chạy.
+- **Tích hợp:** Khóa phiên bản cùng thư viện native, kiểm thử shape/dtype và kết quả số trên dữ liệu đại diện.
+- **Đối chiếu:** JAX cho autodiff/accelerator; [PyTorch](../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện) cho tensor; [Polars](../15-ai-for-data/README.md) cho bảng dữ liệu.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `d592eb072efbd8dcabb5d624ba3706e675ec3538` (2026-11-22T17:20:36-07:00); 33,458 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/numpy/numpy/blob/d592eb072efbd8dcabb5d624ba3706e675ec3538/README.md) · [LICENSE.txt](https://github.com/numpy/numpy/blob/d592eb072efbd8dcabb5d624ba3706e675ec3538/LICENSE.txt) · [pyproject.toml](https://github.com/numpy/numpy/blob/d592eb072efbd8dcabb5d624ba3706e675ec3538/pyproject.toml) · [.github/workflows/circleci.yml](https://github.com/numpy/numpy/blob/d592eb072efbd8dcabb5d624ba3706e675ec3538/.github/workflows/circleci.yml) · [GitHub API](https://api.github.com/repos/numpy/numpy).
+
+<a id="anhkysuai-meta-prophet"></a>
+
+### Prophet
+
+**Repo:** [meta/prophet](https://github.com/meta/prophet) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`5cf15c0f6e5d`](https://github.com/meta/prophet/tree/5cf15c0f6e5d5259d9dd8d511fb4e15a45884cdc) (commit 2026-10-22). **Sao:** 20,496 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/meta/prophet).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Dự báo chuỗi thời gian bằng mô hình cộng với xu hướng, mùa vụ theo năm/tuần/ngày và ảnh hưởng ngày lễ. |
+| Giá trị và cơ chế theo tài liệu | README mô tả trường hợp phù hợp là dữ liệu có mùa vụ mạnh và nhiều chu kỳ lịch sử; có gói Python/R, CI kiểm Python. Có thể làm baseline cho dự báo nhu cầu hoặc chỉ số hoạt động. |
+| Giới hạn | README 2026 xác nhận maintenance mode từ v1.4.0: sửa lỗi, dependency và đồng bộ R/Python, không có tính năng mới dự kiến. Tuyên bố chống outlier không thay kiểm định trên dữ liệu cụ thể. |
+| Điều kiện tích hợp | Backtest theo trục thời gian, so với seasonal naive, kiểm leakage và khoảng dự báo; chuẩn hóa lịch/ngày lễ, theo dõi sai số theo phân khúc trước dùng quyết định sản phẩm. |
+| Lựa chọn đối chiếu | StatsForecast; Statsmodels; Darts. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/meta/prophet/blob/5cf15c0f6e5d5259d9dd8d511fb4e15a45884cdc/README.md) · [LICENSE](https://github.com/meta/prophet/blob/5cf15c0f6e5d5259d9dd8d511fb4e15a45884cdc/LICENSE) · [.github/workflows/build-and-test.yml](https://github.com/meta/prophet/blob/5cf15c0f6e5d5259d9dd8d511fb4e15a45884cdc/.github/workflows/build-and-test.yml).

@@ -1,5 +1,7 @@
 # Chọn công cụ theo bài toán
 
+**Tra nhanh:** [PLAYBOOK.md](PLAYBOOK.md) gom 98 skill/tính năng đã chắt lọc kèm các bước áp dụng; [catalog/](catalog/README.md) liệt kê mọi hồ sơ theo nhóm → danh mục → danh mục con.
+
 Các tuyến đọc dưới đây ghép những hồ sơ đã có trong kho. Bắt đầu bằng ràng buộc, chọn 2–4 ứng viên để thử trên tác vụ thật, giữ baseline và kiểm lại ngày/license trong hồ sơ. Đây là bản đồ tham khảo, không phải cấu hình triển khai đã được kho chạy thử.
 
 Để xây **xưởng phát triển phần mềm**, đọc [FACTORY.md](FACTORY.md): bản đồ 34 mục, chín cổng giao hàng, trách nhiệm, bằng chứng phát hành và đường khởi đầu theo loại sản phẩm. Đợt 2026-11-04 bổ sung các tuyến sản phẩm thông thường bên dưới để ghép với các chuyên mục AI.
