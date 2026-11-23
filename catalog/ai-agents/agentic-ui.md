@@ -2,7 +2,7 @@
 
 # agentic-ui — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 19 hồ sơ.
+[← Mục lục catalog](../README.md) · 24 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -25,3 +25,8 @@
 | [OpenIntelligentUI (CopilotKit)](../../06-ui-ux-design/README.md#ch-openintelligentui-copilotkit) | `CopilotKit/OpenIntelligentUI` | MIT | 4.271 | đọc tài liệu 2026-11-23 | 06 | App mẫu Next.js + LangGraph trả lời bằng bảng A2UI hoặc widget HTML/JS trong iframe; |
 | [BoardUI](../../06-ui-ux-design/README.md#7za-kiểm-bài-8-kho-ui-sẵn-dùng-librariesdev-bencho-beui-arc-ui-boardui-kobra-affectui-watermelon-ui-bài-người-dùng-gửi-đọc-mã-8112026) | `BoardUI/boardui` | MIT | 1.085 | đọc tài liệu 2026-11-08 | 06 | Design system React cho dashboard và giao diện agent: 69 item free, React Aria + Tailwind v4, 400+ token, RTL, app mẫu chat/dashboard nhận key nhiều nhà cung cấp; |
 | [affectUI](../../06-ui-ux-design/README.md#7za-kiểm-bài-8-kho-ui-sẵn-dùng-librariesdev-bencho-beui-arc-ui-boardui-kobra-affectui-watermelon-ui-bài-người-dùng-gửi-đọc-mã-8112026) | `flohoeller/affectui` | MIT | 523 | đọc tài liệu 2026-11-08 | 06 | Component React 19 cho việc agent làm (Tool Call Card, Decision Inbox, Change Summary, Thinking Loader…) và phần còn lại của app; |
+| [AGenUI](../../06-ui-ux-design/README.md#ux-agenui) | `AGenUI/AGenUI` | Apache-2.0 (mã AGenUI); NOTICE liệt kê thành phần bên thứ ba LGPL v2.1 (iksemel, sax) | — | đọc mã 2026-11-23 | 06 | SDK native (lõi C++ + iOS, Android, HarmonyOS) hiện thực A2UI v0.9 của Google: nhận luồng JSON do model sinh và dựng bằng widget gốc của hệ điều hành với 22 component dự… |
+| [CopilotKit/generative-ui (hướng dẫn ba kiểu)](../../06-ui-ux-design/README.md#ux-copilotkit-generative-ui) | `CopilotKit/generative-ui` | — | — | đọc tài liệu 2026-11-23 | 06 | KHÔNG phải thư viện: repo chỉ có README, ảnh và một PDF hướng dẫn (11 file), nay đã gộp vào monorepo CopilotKit (`examples/showcases/generative-ui`). |
+| [json-render (Vercel Labs)](../../06-ui-ux-design/README.md#ux-json-render) | `vercel-labs/json-render` | Apache-2.0 | — | đọc mã 2026-11-23 | 06 | Thư viện (monorepo npm `@json-render/\*`) cho UI sinh động mức khai báo: bạn định nghĩa catalog component/action bằng Zod, model chỉ được xuất spec JSON phẳng (root + map… |
+| [pi-generative-ui](../../06-ui-ux-design/README.md#ux-pi-generative-ui) | `Michaelliv/pi-generative-ui` | — | — | đọc mã 2026-11-23 | 06 | Tiện ích mở rộng cho agent `pi` (cài `pi install npm:pi-generative-ui`): hai tool `visualize_read_me` (nạp hướng dẫn thiết kế theo module) và `show_widget` (model gửi mả… |
+| [shadcn-chatbot-kit (Blazity)](../../06-ui-ux-design/README.md#ux-shadcn-chatbot-kit) | `Blazity/shadcn-chatbot-kit` | MIT | — | đọc mã 2026-11-23 | 06 | Bộ component chat theo kiểu 'copy và sở hữu' tương thích shadcn CLI (Chat, MessageList, MessageInput, ChatMessage, MarkdownRenderer, PromptSuggestions, FilePreview, Inte… |

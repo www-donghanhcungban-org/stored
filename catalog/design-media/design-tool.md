@@ -2,7 +2,7 @@
 
 # design-tool — Thiết kế, giao diện & media
 
-[← Mục lục catalog](../README.md) · 56 hồ sơ.
+[← Mục lục catalog](../README.md) · 58 hồ sơ.
 
 ## Canvas & editor thiết kế (`canvas-editor`, 15)
 
@@ -57,7 +57,7 @@
 | [Refero Styles](../../06-ui-ux-design/README.md#7zc-hai-mươi-trang-cảm-hứng-và-tài-nguyên-thiết-kế-gallery-từng-phần-giao-diện-chuyển-động-làm-web-bằng-ai-danh-sách-người-dùng-gửi-đọc-16112026) |  | — | — | đọc tài liệu 2026-11-16 | 06 | 2.000+ design system đọc được bằng AI từ sản phẩm thật, kèm DESIGN.md cho Claude Code/Cursor/Codex/v0/Lovable; |
 | [Saaspo](../../06-ui-ux-design/README.md#7v-năm-trang-cảm-hứng-thiết-kế-postsdesign-saaspo-transitionsdev-icon-museum-font-in-logo-danh-sách-người-dùng-gửi-2112026) |  | — | — | đọc tài liệu 2026-11-02 | 06 | Gallery landing page và màn hình SaaS lọc theo section, cộng đồng gửi, newsletter; |
 
-## Token, màu & chữ (`tokens-color-type`, 7)
+## Token, màu & chữ (`tokens-color-type`, 8)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -68,8 +68,9 @@
 | [Style Dictionary](../../06-ui-ux-design/README.md#ch-style-dictionary) | `style-dictionary/style-dictionary` | Apache-2.0 | 4.891 | đọc tài liệu 2026-11-23 | 06 | Build token → CSS/iOS/Android/JS; |
 | [dembrandt](../../06-ui-ux-design/README.md#ch-dembrandt) | `dembrandt/dembrandt` | MIT | 4.073 | đọc mã 2026-11-23 | 06 | CLI/MCP/GitHub Action trích token từ website, DESIGN.md theo spec google-labs-code/design.md 0.4 (test chạy linter thật), Drift Gate chặn lệch token trong CI; |
 | [Font in Logo](../../06-ui-ux-design/README.md#7v-năm-trang-cảm-hứng-thiết-kế-postsdesign-saaspo-transitionsdev-icon-museum-font-in-logo-danh-sách-người-dùng-gửi-2112026) |  | — | — | đọc tài liệu 2026-11-02 | 06 | Tra font trong logo nổi tiếng với nhãn Verified / The Closest Font / Based On / Community Suggestion (chỉ Verified là đối chiếu nguồn); |
+| [Tinte](../../06-ui-ux-design/README.md#ux-tinte) | `Railly/tinte` | MIT | — | đọc mã 2026-11-23 | 06 | CLI biên dịch một `tinte.config.json` (bảng màu OKLCH, 6 vai trò chữ, giọng văn, Do/Don't) thành Agent Plugin gồm `SKILL.md` + `references/tokens.css`, rồi `tinte lint`… |
 
-## Minh họa & sơ đồ (`diagram-illustration`, 11)
+## Minh họa & sơ đồ (`diagram-illustration`, 12)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -84,3 +85,4 @@
 | [ImageMagick](../../06-ui-ux-design/README.md#anhkysuai-2026-11-23-imagemagick) | `ImageMagick/ImageMagick` | ImageMagick License | 17.919 | đọc tài liệu 2026-11-23 | 06 | Bộ CLI và API C tạo, chỉnh sửa, ghép và chuyển đổi ảnh bitmap. |
 | [Iconly](../../06-ui-ux-design/README.md#7zc-hai-mươi-trang-cảm-hứng-và-tài-nguyên-thiết-kế-gallery-từng-phần-giao-diện-chuyển-động-làm-web-bằng-ai-danh-sách-người-dùng-gửi-đọc-16112026) |  | — | — | đọc tài liệu 2026-11-16 | 06 | Sinh icon/asset bằng AI, thư viện 11.000+ icon 10 style, trang cho app và game; |
 | [Structurizr](../../29-software-architecture-api-contracts/README.md#structurizr-model-code-boundary) | `structurizr/structurizr` | Apache-2.0 | — | đọc mã 2026-11-04 | 29 | Mô hình C4/DSL trong monorepo; |
+| [Wireflow](../../06-ui-ux-design/README.md#ux-wireflow) | `vanila-io/wireflow` | MIT | — | đọc mã 2026-11-23 | 06 | Trình vẽ luồng người dùng chạy trong trình duyệt (Next.js 16 và @xyflow/react): kéo 125 mẫu màn hình wireframe (có nhóm Mobile và Flow) vào canvas, nối bằng mũi tên có n… |

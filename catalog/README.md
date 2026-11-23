@@ -2,11 +2,11 @@
 
 # Catalog theo nhóm, danh mục và danh mục con
 
-Sinh từ `data/projects.json` (2291 hồ sơ) theo `data/taxonomy.json`. Mỗi dòng dẫn về hồ sơ gốc trong README chuyên mục; số sao và mức bằng chứng chỉ đúng tại ngày ghi trong hồ sơ. Sắp xếp theo ★ giảm dần; ★ để trống là chưa có số tin cậy.
+Sinh từ `data/projects.json` (2330 hồ sơ) theo `data/taxonomy.json`. Mỗi dòng dẫn về hồ sơ gốc trong README chuyên mục; số sao và mức bằng chứng chỉ đúng tại ngày ghi trong hồ sơ. Sắp xếp theo ★ giảm dần; ★ để trống là chưa có số tin cậy.
 
 Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính năng đã chắt lọc kèm cách áp dụng) và [GUIDES.md](../GUIDES.md).
 
-## AI agent, skill & điều phối (455)
+## AI agent, skill & điều phối (460)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
@@ -28,7 +28,7 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [browser-agent](ai-agents/browser-agent.md) | 41 | — |
 | [sandbox](ai-agents/sandbox.md) | 21 | — |
 | [remote-access](ai-agents/remote-access.md) | 6 | — |
-| [agentic-ui](ai-agents/agentic-ui.md) | 19 | — |
+| [agentic-ui](ai-agents/agentic-ui.md) | 24 | — |
 | [codebase-knowledge](ai-agents/codebase-knowledge.md) | 18 | — |
 | [spec-driven](ai-agents/spec-driven.md) | 7 | — |
 | [code-review](ai-agents/code-review.md) | 5 | — |
@@ -43,14 +43,14 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [scheduling](automation/scheduling.md) | 5 | — |
 | [project-management](automation/project-management.md) | 9 | — |
 
-## Đánh giá, an toàn & chất lượng (238)
+## Đánh giá, an toàn & chất lượng (251)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
 | [eval-observability](trust/eval-observability.md) | 68 | Eval LLM/agent (23), Tracing & observability LLM (13), Benchmark (15), Giám sát hệ thống (17) |
 | [security](trust/security.md) | 62 | Quét lỗ hổng ứng dụng (5), Guardrail & an toàn agent (13), Secret & chuỗi cung ứng (17), Pentest & red team (16), Danh tính & truy cập (7), Quyền riêng tư (4) |
 | [policy-as-code](trust/policy-as-code.md) | 4 | — |
-| [quality-gate](trust/quality-gate.md) | 75 | Test unit/integration (15), E2E & trình duyệt (3), Visual regression & accessibility (7), Phân tích tĩnh & lint (19), Eval skill/agent (6), Hợp đồng API & schema (8), Hiệu năng & tải (10), Cổng phát hành & review (7) |
+| [quality-gate](trust/quality-gate.md) | 88 | Test unit/integration (15), E2E & trình duyệt (6), Visual regression & accessibility (15), Phân tích tĩnh & lint (21), Eval skill/agent (6), Hợp đồng API & schema (8), Hiệu năng & tải (10), Cổng phát hành & review (7) |
 | [checklist](trust/checklist.md) | 29 | — |
 
 ## Mô hình, dữ liệu & tài liệu (321)
@@ -68,13 +68,13 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [image-gen](models-data/image-gen.md) | 11 | — |
 | [speech](models-data/speech.md) | 49 | — |
 
-## Thiết kế, giao diện & media (355)
+## Thiết kế, giao diện & media (371)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
 | [ui-library](design-media/ui-library.md) | 106 | Component React (15), Component Vue/Svelte/Angular/khác (13), Design system chính thức của tổ chức (22), Primitive headless & accessibility (7), Component có animation (9), CSS framework (6), Biểu đồ & bản đồ (6), Editor & nhập liệu phong phú (8), Icon, font & tài sản (7), TUI & GUI native (10), Media player & upload (3) |
-| [design-tool](design-media/design-tool.md) | 56 | Canvas & editor thiết kế (15), Design-to-code & MCP thiết kế (10), Gallery cảm hứng (13), Token, màu & chữ (7), Minh họa & sơ đồ (11) |
-| [design-skill](design-media/design-skill.md) | 41 | — |
+| [design-tool](design-media/design-tool.md) | 58 | Canvas & editor thiết kế (15), Design-to-code & MCP thiết kế (10), Gallery cảm hứng (13), Token, màu & chữ (8), Minh họa & sơ đồ (12) |
+| [design-skill](design-media/design-skill.md) | 55 | — |
 | [layout-template](design-media/layout-template.md) | 20 | — |
 | [ai-ui-generator](design-media/ai-ui-generator.md) | 8 | — |
 | [animation-library](design-media/animation-library.md) | 24 | — |
@@ -82,7 +82,7 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [video-engine](design-media/video-engine.md) | 26 | — |
 | [agentic-video](design-media/agentic-video.md) | 41 | — |
 
-## Kỹ thuật phần mềm & vận hành (423)
+## Kỹ thuật phần mềm & vận hành (428)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
@@ -94,8 +94,8 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [reverse-engineering](software/reverse-engineering.md) | 7 | — |
 | [app-launcher](software/app-launcher.md) | 5 | — |
 | [feature-management](software/feature-management.md) | 2 | — |
-| [product-analytics](software/product-analytics.md) | 6 | — |
-| [product-research](software/product-research.md) | 4 | — |
+| [product-analytics](software/product-analytics.md) | 8 | — |
+| [product-research](software/product-research.md) | 7 | — |
 
 ## Học tập, tài liệu & tri thức (340)
 
