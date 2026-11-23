@@ -418,12 +418,12 @@ Chương này chắt lọc 24 kỹ năng/công cụ trong kho `stored` hữu íc
 - **Áp dụng vào dự án khác:**
   1. Dùng bốn skill như **tài liệu tham khảo** để thiết kế skill nội bộ (ví dụ "điền mẫu báo cáo tháng"): đọc cấu trúc SKILL.md, cách chia script và bước kiểm.
   2. Viết skill riêng theo `template/SKILL.md` và spec Agent Skills, gắn đúng mẫu báo cáo của đơn vị.
-  3. Nếu dùng trong Claude Code/Cowork cho việc nội bộ, cài theo phạm vi dự án và ghim commit; không vendor mã skill tài liệu vào repo sản phẩm.
+  3. Nếu dùng trong Claude Code/Cowork cho việc nội bộ, cài theo phạm vi dự án và ghim commit. Muốn chép (vendor) mã skill vào repo sản phẩm thì đọc lại `LICENSE.txt` của đúng thư mục skill tại commit đã ghim: ngày 23/11/2026 bốn skill tài liệu có Apache-2.0 nhưng repo không có LICENSE ở gốc.
   4. Lấy thêm `skill-creator` (Apache-2.0) để tạo và eval skill riêng.
-- **Phù hợp khi / Không nên khi:** Phù hợp khi cần khuôn mẫu chất lượng cho skill văn phòng và chạy trong môi trường Claude. Không nên khi định đóng gói lại hoặc phân phối mã skill trong sản phẩm (vướng license), hoặc cần hành vi ổn định cam kết lâu dài.
-- **Rủi ro & điều kiện:** 4 skill tài liệu ghi "© Anthropic, All rights reserved", là source-available, **không phải mã nguồn mở**; `doc-coauthoring` không có file license; 15 skill còn lại Apache-2.0. Repo chỉ 61 commit, khoảng 1k PR mở: nhận đóng góp hạn chế. Dữ liệu rời máy tùy host agent/model đang dùng.
+- **Phù hợp khi / Không nên khi:** Phù hợp khi cần khuôn mẫu chất lượng cho skill văn phòng và chạy trong môi trường Claude. Không nên khi cần hành vi ổn định cam kết lâu dài: README ghi "for demonstration and educational purposes only" và hành vi trong sản phẩm Claude có thể khác. Khi đóng gói lại mã skill, theo điều kiện Apache-2.0 trong từng thư mục (giữ thông báo, ghi thay đổi).
+- **Rủi ro & điều kiện:** **Đính chính 23/11/2026:** hồ sơ 31/10/2026 ghi bốn skill tài liệu "© Anthropic, All rights reserved"; đọc lại tại commit `e4bb5d9` (16/11/2026) thì `skills/docx`, `pdf`, `pptx`, `xlsx` đều có `LICENSE.txt` Apache-2.0 và SKILL.md ghi "Complete terms in LICENSE.txt". Repo không có LICENSE ở gốc (GitHub báo không license) và `doc-coauthoring` không có file license, nên đừng suy license của skill từ gốc repo. License có thể đổi tiếp: đọc lại tại commit ghim trước khi dùng. Repo chỉ 61 commit, khoảng 1k PR mở: nhận đóng góp hạn chế. Dữ liệu rời máy tùy host agent/model đang dùng.
 - **Thay thế:** 2.2 MiniMax skills (MIT, có `minimax-docx`/`minimax-xlsx`); 2.5 GenOffice; 2.3 SheetJS cho riêng bảng tính.
-- **Hồ sơ gốc:** [20 §3s.4](20-claude-plugins-ecosystem/README.md#3s4-anthropicsskills--skill-mẫu-và-spec-agent-skills-của-anthropic) · chưa chuẩn hóa (hồ sơ đọc README/LICENSE/cấu trúc, không chạy) · 2026-10-31
+- **Hồ sơ gốc:** [20 §3s.4](20-claude-plugins-ecosystem/README.md#3s4-anthropicsskills--skill-mẫu-và-spec-agent-skills-của-anthropic) · hồ sơ gốc đọc 2026-10-31 (chưa chuẩn hóa); license đọc lại 2026-11-23 tại `e4bb5d9`
 
 ### 2.2 MiniMax-AI/skills (minimax-docx, minimax-xlsx, minimax-pdf, pptx-generator) — Bộ skill Office license MIT, có cổng XSD cho docx
 
