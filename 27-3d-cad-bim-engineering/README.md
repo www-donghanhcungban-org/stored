@@ -199,6 +199,694 @@ Chuẩn trao đổi issue/viewpoint, có schema/testcases; default branch releas
 
 **Đã đổi so với đợt trước:** bổ sung CadQuery như một tuyến B-rep chạy trong pipeline, và kiểm đơn vị ở cả hai phía STEP thay vì chỉ ghi unit trong prompt. Không suy ảnh CanvasAnvil ở §5b thành artifact CAD đo được. **Nguồn §6:** [README.md](https://github.com/CadQuery/cadquery/blob/8178185a24a035c9af7f4679033be14267f6a6ef/README.md) · [LICENSE](https://github.com/CadQuery/cadquery/blob/8178185a24a035c9af7f4679033be14267f6a6ef/LICENSE) · [cadquery/occ_impl/shapes.py](https://github.com/CadQuery/cadquery/blob/8178185a24a035c9af7f4679033be14267f6a6ef/cadquery/occ_impl/shapes.py) · [exporter STEP](https://github.com/CadQuery/cadquery/blob/8178185a24a035c9af7f4679033be14267f6a6ef/cadquery/occ_impl/exporters/__init__.py) · [importer STEP](https://github.com/CadQuery/cadquery/blob/8178185a24a035c9af7f4679033be14267f6a6ef/cadquery/occ_impl/importers/__init__.py) · [.github/workflows/apptainer_build.yml](https://github.com/CadQuery/cadquery/blob/8178185a24a035c9af7f4679033be14267f6a6ef/.github/workflows/apptainer_build.yml).
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **34 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-graphdeco-gaussian-splatting"></a>
+
+### 3D Gaussian Splatting
+
+**Repo:** [graphdeco-inria/gaussian-splatting](https://github.com/graphdeco-inria/gaussian-splatting) · **License:** INRIA tùy chỉnh, nghiên cứu/đánh giá phi thương mại; thương mại cần chấp thuận · **★ 24,526 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tái dựng cảnh và tổng hợp góc nhìn mới bằng biểu diễn các Gaussian 3D.
+
+**Giá trị và cơ chế:** Mã tham chiếu của nghiên cứu mô tả tối ưu biểu diễn từ ảnh đã hiệu chuẩn và kết xuất theo góc nhìn; hữu ích để học pipeline novel-view synthesis.
+
+**Giới hạn:** LICENSE giới hạn nghiên cứu và đánh giá phi thương mại, có ngoại lệ MIT cho một file tiện ích. Chưa huấn luyện, đo chất lượng hoặc tái hiện tốc độ công bố.
+
+**Cách tham khảo/tích hợp:** Đọc phạm vi license trước khi tích hợp; dùng tập cảnh có quyền khai thác và lưu cấu hình, checkpoint khi so sánh.
+
+**Thay thế:** gsplat, Nerfstudio, Instant-NGP.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`54c035f7834b`](https://github.com/graphdeco-inria/gaussian-splatting/commit/54c035f7834b564019656c3e3fcc3646292f727d). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/graphdeco-inria/gaussian-splatting/blob/54c035f7834b564019656c3e3fcc3646292f727d/README.md) · [LICENSE.md](https://github.com/graphdeco-inria/gaussian-splatting/blob/54c035f7834b564019656c3e3fcc3646292f727d/LICENSE.md) · [metadata GitHub](https://api.github.com/repos/graphdeco-inria/gaussian-splatting).
+
+<a id="anhkysuai-2026-11-23-atsushisakai-pythonrobotics"></a>
+
+### PythonRobotics
+
+**Repo:** [AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics) · **License:** MIT · **★ 30,959 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Mã ví dụ và giáo trình thuật toán robotics bằng Python: định vị, bản đồ, SLAM và lập đường đi.
+
+**Giá trị:** Ví dụ nhỏ phục vụ hiểu ý tưởng thuật toán, thuận tiện so cách mô hình hóa và trực quan hóa.
+
+**Giới hạn:** Mô phỏng giáo dục chưa chứng minh an toàn hay độ ổn định khi điều khiển robot thực; chưa chạy hoặc tái lập phép đo.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [TianxingChen/Embodied-AI-Guide](https://github.com/TianxingChen/Embodied-AI-Guide) · [bulletphysics/bullet3](https://github.com/bulletphysics/bullet3). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`ef64608ceb0012f2a0b3d532fddc80243e807cfa`](https://github.com/AtsushiSakai/PythonRobotics/commit/ef64608ceb0012f2a0b3d532fddc80243e807cfa), ngày commit 2026-11-10. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/AtsushiSakai/PythonRobotics/blob/ef64608ceb0012f2a0b3d532fddc80243e807cfa/README.md) · [LICENSE](https://github.com/AtsushiSakai/PythonRobotics/blob/ef64608ceb0012f2a0b3d532fddc80243e807cfa/LICENSE) · [.github/workflows/Linux_CI.yml](https://github.com/AtsushiSakai/PythonRobotics/blob/ef64608ceb0012f2a0b3d532fddc80243e807cfa/.github/workflows/Linux_CI.yml) · [metadata GitHub](https://api.github.com/repos/AtsushiSakai/PythonRobotics).
+
+<a id="anhkysuai-2026-11-23-babylonjs-babylon.js"></a>
+
+### Babylon.js
+
+**Repo:** [BabylonJS/Babylon.js](https://github.com/BabylonJS/Babylon.js) · **License:** Apache-2.0 · **★ 26,430 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Engine JavaScript cho dựng hình và ứng dụng 3D trên web, có playground và gói mô-đun.
+
+**Giá trị:** Tài liệu và ví dụ phong phú hỗ trợ tạo cảnh tương tác; các gói ES6 cho phép chọn phần cần dùng.
+
+**Giới hạn:** README cảnh báo CDN công cộng chỉ dành học/thử nghiệm và yêu cầu tự phục vụ gói cho production; cần đo tải GPU, bộ nhớ và thiết bị đích trước triển khai.
+
+**Cách tham khảo/tích hợp:** Thử trên bản sao mô hình với đơn vị và dung sai đã biết, kiểm đầu ra/round-trip và quyền của từng thành phần trước đưa vào quy trình kỹ thuật.
+
+**Lựa chọn để đối chiếu:** [mrdoob/three.js](https://github.com/mrdoob/three.js) · [pixijs/pixijs](https://github.com/pixijs/pixijs). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`47f84cf6dc635e97bfef29408be1cea41279334a`](https://github.com/BabylonJS/Babylon.js/commit/47f84cf6dc635e97bfef29408be1cea41279334a), ngày commit 2026-11-21. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [readme.md](https://github.com/BabylonJS/Babylon.js/blob/47f84cf6dc635e97bfef29408be1cea41279334a/readme.md) · [license.md](https://github.com/BabylonJS/Babylon.js/blob/47f84cf6dc635e97bfef29408be1cea41279334a/license.md) · [package.json](https://github.com/BabylonJS/Babylon.js/blob/47f84cf6dc635e97bfef29408be1cea41279334a/package.json) · [.github/workflows/stale.yml](https://github.com/BabylonJS/Babylon.js/blob/47f84cf6dc635e97bfef29408be1cea41279334a/.github/workflows/stale.yml) · [metadata GitHub](https://api.github.com/repos/BabylonJS/Babylon.js).
+
+<a id="anhkysuai-2026-11-23-ssloy-tinyrenderer"></a>
+
+### TinyRenderer
+
+**Repo:** [ssloy/tinyrenderer](https://github.com/ssloy/tinyrenderer) · **License:** Zlib (mã; xem LICENSE.txt) · **★ 24,570 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Khóa học dựng hình bằng C++ với renderer phần mềm nhỏ và bài học rasterization, camera, shading.
+
+**Giá trị:** Phù hợp hiểu pipeline đồ họa qua từng bước thay vì dựa ngay vào engine lớn.
+
+**Giới hạn:** Đây là triển khai giáo dục; chưa đo tính đúng hoặc hiệu năng render. Giấy phép tệp mã có điều khoản kiểu zlib, còn bài viết và asset cần kiểm phạm vi riêng.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [BabylonJS/Babylon.js](https://github.com/BabylonJS/Babylon.js) · [google/filament](https://github.com/google/filament). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`97eb7a480e762285899a93c5d21e70a79e60782e`](https://github.com/ssloy/tinyrenderer/commit/97eb7a480e762285899a93c5d21e70a79e60782e), ngày commit 2026-07-29. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/ssloy/tinyrenderer/blob/97eb7a480e762285899a93c5d21e70a79e60782e/README.md) · [LICENSE.txt](https://github.com/ssloy/tinyrenderer/blob/97eb7a480e762285899a93c5d21e70a79e60782e/LICENSE.txt) · [CMakeLists.txt](https://github.com/ssloy/tinyrenderer/blob/97eb7a480e762285899a93c5d21e70a79e60782e/CMakeLists.txt) · [metadata GitHub](https://api.github.com/repos/ssloy/tinyrenderer).
+
+<a id="anhkysuai-2026-11-23-cesiumgs-cesium"></a>
+
+### cesium
+
+**Repo:** [CesiumGS/cesium](https://github.com/CesiumGS/cesium) · **License:** Apache-2.0 · **★ 15,979 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện JavaScript dựng quả địa cầu 3D và bản đồ 2D trong trình duyệt.
+
+**Giá trị:** Hỗ trợ dữ liệu động và các định dạng mở, phù hợp trực quan hóa không gian địa lý và 3D Tiles.
+
+**Giới hạn:** Apache-2.0 áp dụng engine; Cesium ion, dữ liệu địa hình/ảnh và nhà cung cấp bản đồ có điều khoản riêng. Cần đo tải dữ liệu/GPU và kiểm hệ tọa độ cho trường hợp đích.
+
+**Cách tham khảo/tích hợp:** Ghim phiên bản và nguồn dữ liệu, kiểm CRS, đơn vị và một tập mẫu có kết quả chuẩn trước tích hợp pipeline GIS.
+
+**Lựa chọn để đối chiếu:** [maplibre/maplibre-gl-js](https://github.com/maplibre/maplibre-gl-js) · [keplergl/kepler.gl](https://github.com/keplergl/kepler.gl). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`8b9674e1aa4c22f917bf841d33fe0325d089c98e`](https://github.com/CesiumGS/cesium/commit/8b9674e1aa4c22f917bf841d33fe0325d089c98e), ngày commit 2026-11-21. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/CesiumGS/cesium/blob/8b9674e1aa4c22f917bf841d33fe0325d089c98e/README.md) · [LICENSE.md](https://github.com/CesiumGS/cesium/blob/8b9674e1aa4c22f917bf841d33fe0325d089c98e/LICENSE.md) · [package.json](https://github.com/CesiumGS/cesium/blob/8b9674e1aa4c22f917bf841d33fe0325d089c98e/package.json) · [.github/workflows/cla.yml](https://github.com/CesiumGS/cesium/blob/8b9674e1aa4c22f917bf841d33fe0325d089c98e/.github/workflows/cla.yml) · [metadata GitHub](https://api.github.com/repos/CesiumGS/cesium).
+
+<a id="anhkysuai-2026-11-23-bulletphysics-bullet3"></a>
+
+### bullet3
+
+**Repo:** [bulletphysics/bullet3](https://github.com/bulletphysics/bullet3) · **License:** Zlib (chính); Extras và bên thứ ba có ngoại lệ · **★ 14,892 (GitHub API, 2026-11-23)**
+
+**Mục đích:** SDK C++ mô phỏng vật lý và phát hiện va chạm, có PyBullet cho Python.
+
+**Giá trị:** Bao quát game, robot và nghiên cứu học tăng cường; hữu ích thử mô hình động lực học hoặc va chạm.
+
+**Giới hạn:** LICENSE nêu ngoại lệ cho Extras và thư viện bên thứ ba; mô phỏng cần kiểm đơn vị, bước thời gian và sai số trước suy sang hệ vật lý thật. Issue tracker đang đóng theo README.
+
+**Cách tham khảo/tích hợp:** Tách simulator khỏi adapter phần cứng, chọn dữ liệu chuẩn để kiểm độ đúng và sai số trước sử dụng thực tế.
+
+**Lựa chọn để đối chiếu:** [jrouwe/JoltPhysics](https://github.com/jrouwe/JoltPhysics) · [google-deepmind/mujoco](https://github.com/google-deepmind/mujoco). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`d3afe76132fc76b0f9b2359cbaef47a3766e7fbb`](https://github.com/bulletphysics/bullet3/commit/d3afe76132fc76b0f9b2359cbaef47a3766e7fbb), ngày commit 2026-10-09. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/bulletphysics/bullet3/blob/d3afe76132fc76b0f9b2359cbaef47a3766e7fbb/README.md) · [LICENSE.txt](https://github.com/bulletphysics/bullet3/blob/d3afe76132fc76b0f9b2359cbaef47a3766e7fbb/LICENSE.txt) · [pyproject.toml](https://github.com/bulletphysics/bullet3/blob/d3afe76132fc76b0f9b2359cbaef47a3766e7fbb/pyproject.toml) · [CMakeLists.txt](https://github.com/bulletphysics/bullet3/blob/d3afe76132fc76b0f9b2359cbaef47a3766e7fbb/CMakeLists.txt) · [.github/workflows/cmake.yml](https://github.com/bulletphysics/bullet3/blob/d3afe76132fc76b0f9b2359cbaef47a3766e7fbb/.github/workflows/cmake.yml) · [metadata GitHub](https://api.github.com/repos/bulletphysics/bullet3).
+
+<a id="anhkysuai-2026-11-23-assimp-assimp"></a>
+
+### assimp
+
+**Repo:** [assimp/assimp](https://github.com/assimp/assimp) · **License:** BSD-3-Clause (mã chính); test/models-nonbsd có ngoại lệ · **★ 13,337 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện C/C++ nhập nhiều định dạng mô hình 3D vào cấu trúc thống nhất và xử lý mesh.
+
+**Giá trị:** Hữu ích cho pipeline asset cần chuẩn hóa dữ liệu, normals, triangulation hoặc loại bỏ đỉnh trùng.
+
+**Giới hạn:** Giấy phép BSD-3-Clause của phần chính không bao gồm mọi model kiểm thử trong models-nonbsd; cần kiểm độ bảo toàn vật liệu/animation với định dạng đích và dữ liệu không tin cậy.
+
+**Cách tham khảo/tích hợp:** Thử trên bản sao mô hình với đơn vị và dung sai đã biết, kiểm đầu ra/round-trip và quyền của từng thành phần trước đưa vào quy trình kỹ thuật.
+
+**Lựa chọn để đối chiếu:** [google/draco](https://github.com/google/draco) · [cnr-isti-vclab/meshlab](https://github.com/cnr-isti-vclab/meshlab). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`93fe5d82fb206e850a21809bf45800ae00b17fc7`](https://github.com/assimp/assimp/commit/93fe5d82fb206e850a21809bf45800ae00b17fc7), ngày commit 2026-11-20. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [Readme.md](https://github.com/assimp/assimp/blob/93fe5d82fb206e850a21809bf45800ae00b17fc7/Readme.md) · [LICENSE](https://github.com/assimp/assimp/blob/93fe5d82fb206e850a21809bf45800ae00b17fc7/LICENSE) · [CMakeLists.txt](https://github.com/assimp/assimp/blob/93fe5d82fb206e850a21809bf45800ae00b17fc7/CMakeLists.txt) · [.github/workflows/cifuzz.yml](https://github.com/assimp/assimp/blob/93fe5d82fb206e850a21809bf45800ae00b17fc7/.github/workflows/cifuzz.yml) · [metadata GitHub](https://api.github.com/repos/assimp/assimp).
+
+<a id="anhkysuai-2026-11-23-alicevision-meshroom"></a>
+
+### Meshroom
+
+**Repo:** [alicevision/Meshroom](https://github.com/alicevision/Meshroom) · **License:** MPL-2.0 (framework); plugin/phụ thuộc riêng · **★ 13,108 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Framework lập pipeline xử lý dữ liệu bằng đồ thị node, có plugin thị giác máy tính và tái dựng 3D.
+
+**Giá trị:** Tài liệu mô tả cache trung gian và chỉ làm mất hiệu lực các node phía sau khi tham số đổi, phù hợp quy trình xử lý ảnh nhiều bước.
+
+**Giới hạn:** MPL-2.0 của framework tách khỏi license plugin, model và phụ thuộc; yêu cầu GPU và độ chính xác tái dựng phải kiểm cho pipeline cụ thể, chưa được benchmark ở lượt này.
+
+**Cách tham khảo/tích hợp:** Ghim phiên bản và nguồn dữ liệu, kiểm CRS, đơn vị và một tập mẫu có kết quả chuẩn trước tích hợp pipeline GIS.
+
+**Lựa chọn để đối chiếu:** [OpenDroneMap/ODM](https://github.com/OpenDroneMap/ODM) · [openMVG/openMVG](https://github.com/openMVG/openMVG). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`890a9969ec0794f0c8b895f8af780a5beceb9f9f`](https://github.com/alicevision/Meshroom/commit/890a9969ec0794f0c8b895f8af780a5beceb9f9f), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/alicevision/Meshroom/blob/890a9969ec0794f0c8b895f8af780a5beceb9f9f/README.md) · [COPYING.md](https://github.com/alicevision/Meshroom/blob/890a9969ec0794f0c8b895f8af780a5beceb9f9f/COPYING.md) · [LICENSE-MPL2.md](https://github.com/alicevision/Meshroom/blob/890a9969ec0794f0c8b895f8af780a5beceb9f9f/LICENSE-MPL2.md) · [CMakeLists.txt](https://github.com/alicevision/Meshroom/blob/890a9969ec0794f0c8b895f8af780a5beceb9f9f/CMakeLists.txt) · [.github/workflows/run-tests.yml](https://github.com/alicevision/Meshroom/blob/890a9969ec0794f0c8b895f8af780a5beceb9f9f/.github/workflows/run-tests.yml) · [metadata GitHub](https://api.github.com/repos/alicevision/Meshroom).
+
+<a id="anhkysuai-2026-11-23-jrouwe-joltphysics"></a>
+
+### JoltPhysics
+
+**Repo:** [jrouwe/JoltPhysics](https://github.com/jrouwe/JoltPhysics) · **License:** MIT · **★ 12,381 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện C++ mô phỏng vật rắn và va chạm, thiết kế chú trọng đa luồng cho game/VR.
+
+**Giá trị:** Phần design considerations giải thích cách chia sẻ dữ liệu vật lý với các luồng khác, hữu ích khi nghiên cứu engine thời gian thực.
+
+**Giới hạn:** Khả năng CPU, cấu hình build và độ xác định cần kiểm trên nền tảng đích; thành tích game hoặc benchmark upstream chưa được tái lập ở lượt này.
+
+**Cách tham khảo/tích hợp:** Tách simulator khỏi adapter phần cứng, chọn dữ liệu chuẩn để kiểm độ đúng và sai số trước sử dụng thực tế.
+
+**Lựa chọn để đối chiếu:** [bulletphysics/bullet3](https://github.com/bulletphysics/bullet3) · [google-deepmind/mujoco](https://github.com/google-deepmind/mujoco). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`1a14e5e68d25c425a70fd1f04dcad21339176615`](https://github.com/jrouwe/JoltPhysics/commit/1a14e5e68d25c425a70fd1f04dcad21339176615), ngày commit 2026-11-21. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/jrouwe/JoltPhysics/blob/1a14e5e68d25c425a70fd1f04dcad21339176615/README.md) · [LICENSE](https://github.com/jrouwe/JoltPhysics/blob/1a14e5e68d25c425a70fd1f04dcad21339176615/LICENSE) · [.github/workflows/build.yml](https://github.com/jrouwe/JoltPhysics/blob/1a14e5e68d25c425a70fd1f04dcad21339176615/.github/workflows/build.yml) · [metadata GitHub](https://api.github.com/repos/jrouwe/JoltPhysics).
+
+<a id="anhkysuai-2026-11-23-keplergl-kepler.gl"></a>
+
+### kepler.gl
+
+**Repo:** [keplergl/kepler.gl](https://github.com/keplergl/kepler.gl) · **License:** MIT · **★ 12,105 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng và component React/Redux khám phá trực quan dữ liệu địa lý trên web.
+
+**Giá trị:** Kết hợp MapLibre và deck.gl, nhiều lớp dữ liệu và cấu hình UI giúp tạo dashboard không gian.
+
+**Giới hạn:** Manifest ở SHA đã đọc là 3.3.0-alpha.27; khả năng hàng triệu điểm là tuyên bố upstream cần đo lại. Basemap, dữ liệu và token nhà cung cấp có quyền riêng.
+
+**Cách tham khảo/tích hợp:** Ghim phiên bản và nguồn dữ liệu, kiểm CRS, đơn vị và một tập mẫu có kết quả chuẩn trước tích hợp pipeline GIS.
+
+**Lựa chọn để đối chiếu:** [CesiumGS/cesium](https://github.com/CesiumGS/cesium) · [opengeos/GeoLibre](https://github.com/opengeos/GeoLibre). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`229456eb089a2db71584c02ba39dce20bcc5b989`](https://github.com/keplergl/kepler.gl/commit/229456eb089a2db71584c02ba39dce20bcc5b989), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/keplergl/kepler.gl/blob/229456eb089a2db71584c02ba39dce20bcc5b989/README.md) · [LICENSE](https://github.com/keplergl/kepler.gl/blob/229456eb089a2db71584c02ba39dce20bcc5b989/LICENSE) · [package.json](https://github.com/keplergl/kepler.gl/blob/229456eb089a2db71584c02ba39dce20bcc5b989/package.json) · [.github/workflows/test.yml](https://github.com/keplergl/kepler.gl/blob/229456eb089a2db71584c02ba39dce20bcc5b989/.github/workflows/test.yml) · [metadata GitHub](https://api.github.com/repos/keplergl/kepler.gl).
+
+<a id="anhkysuai-2026-11-23-pointcloudlibrary-pcl"></a>
+
+### Point Cloud Library
+
+**Repo:** [PointCloudLibrary/pcl](https://github.com/PointCloudLibrary/pcl) · **License:** BSD-3-Clause · **★ 11,230 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện C++ xử lý point cloud cho ứng dụng hình học và nhận thức 3D.
+
+**Giá trị:** Nền tảng chuyên dụng để xây pipeline đám mây điểm; repo công bố tài liệu, CI và giấy phép BSD.
+
+**Giới hạn:** README cảnh báo website cũ từng bị xâm nhập; nên dùng nguồn tài liệu hiện tại. Cần kiểm mật độ điểm, đơn vị, nhiễu và chi phí bộ nhớ với dữ liệu thực.
+
+**Cách tham khảo/tích hợp:** Ghim phiên bản và nguồn dữ liệu, kiểm CRS, đơn vị và một tập mẫu có kết quả chuẩn trước tích hợp pipeline GIS.
+
+**Lựa chọn để đối chiếu:** [isl-org/Open3D](https://github.com/isl-org/Open3D) · [cnr-isti-vclab/meshlab](https://github.com/cnr-isti-vclab/meshlab). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`fd39f32af932d50e033dba17b29e6d5fa4f64255`](https://github.com/PointCloudLibrary/pcl/commit/fd39f32af932d50e033dba17b29e6d5fa4f64255), ngày commit 2026-11-14. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/PointCloudLibrary/pcl/blob/fd39f32af932d50e033dba17b29e6d5fa4f64255/README.md) · [LICENSE.txt](https://github.com/PointCloudLibrary/pcl/blob/fd39f32af932d50e033dba17b29e6d5fa4f64255/LICENSE.txt) · [CMakeLists.txt](https://github.com/PointCloudLibrary/pcl/blob/fd39f32af932d50e033dba17b29e6d5fa4f64255/CMakeLists.txt) · [.github/workflows/clang-tidy.yml](https://github.com/PointCloudLibrary/pcl/blob/fd39f32af932d50e033dba17b29e6d5fa4f64255/.github/workflows/clang-tidy.yml) · [metadata GitHub](https://api.github.com/repos/PointCloudLibrary/pcl).
+
+<a id="anhkysuai-2026-11-23-turfjs-turf"></a>
+
+### turf
+
+**Repo:** [Turfjs/turf](https://github.com/Turfjs/turf) · **License:** MIT · **★ 10,553 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Engine phân tích không gian dạng mô-đun bằng JavaScript/TypeScript, thao tác GeoJSON.
+
+**Giá trị:** Chạy được trong trình duyệt và Node.js, thuận tiện bổ sung phép đo, thao tác hình học và thống kê cho ứng dụng bản đồ.
+
+**Giới hạn:** Cần kiểm đơn vị, hệ tọa độ, trường hợp hình học không hợp lệ và độ chính xác của từng phép; không suy tính đúng từ việc có cấu hình test trong repo.
+
+**Cách tham khảo/tích hợp:** Ghim phiên bản và nguồn dữ liệu, kiểm CRS, đơn vị và một tập mẫu có kết quả chuẩn trước tích hợp pipeline GIS.
+
+**Lựa chọn để đối chiếu:** [geopandas/geopandas](https://github.com/geopandas/geopandas) · [OSGeo/gdal](https://github.com/OSGeo/gdal). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`938a6c6318b444636e086985c0d29cec19f5329b`](https://github.com/Turfjs/turf/commit/938a6c6318b444636e086985c0d29cec19f5329b), ngày commit 2026-11-17. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/Turfjs/turf/blob/938a6c6318b444636e086985c0d29cec19f5329b/README.md) · [LICENSE](https://github.com/Turfjs/turf/blob/938a6c6318b444636e086985c0d29cec19f5329b/LICENSE) · [package.json](https://github.com/Turfjs/turf/blob/938a6c6318b444636e086985c0d29cec19f5329b/package.json) · [.github/workflows/ci.yml](https://github.com/Turfjs/turf/blob/938a6c6318b444636e086985c0d29cec19f5329b/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/Turfjs/turf).
+
+<a id="anhkysuai-2026-11-23-satellite-image-deep-learning-techniques"></a>
+
+### techniques
+
+**Repo:** [satellite-image-deep-learning/techniques](https://github.com/satellite-image-deep-learning/techniques) · **License:** Apache-2.0 · **★ 10,312 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Chỉ mục kỹ thuật deep learning cho ảnh vệ tinh và ảnh hàng không, phân nhóm theo nhiệm vụ.
+
+**Giá trị:** Hữu ích tìm paper/model cho classification, segmentation và detection theo loại đối tượng hoặc hiện tượng.
+
+**Giới hạn:** Apache-2.0 của danh sách không bao gồm model, dataset hay paper liên kết; kết quả công bố cần kiểm điều kiện địa lý, cảm biến, phân bố dữ liệu và benchmark riêng.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [sshuair/awesome-gis](https://github.com/sshuair/awesome-gis) · [sacridini/Awesome-Geospatial](https://github.com/sacridini/Awesome-Geospatial). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`2ac02750505b174dc5cdab1b8eccf68cb803eb41`](https://github.com/satellite-image-deep-learning/techniques/commit/2ac02750505b174dc5cdab1b8eccf68cb803eb41), ngày commit 2026-11-21. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/satellite-image-deep-learning/techniques/blob/2ac02750505b174dc5cdab1b8eccf68cb803eb41/README.md) · [LICENSE](https://github.com/satellite-image-deep-learning/techniques/blob/2ac02750505b174dc5cdab1b8eccf68cb803eb41/LICENSE) · [.github/workflows/action.yml](https://github.com/satellite-image-deep-learning/techniques/blob/2ac02750505b174dc5cdab1b8eccf68cb803eb41/.github/workflows/action.yml) · [metadata GitHub](https://api.github.com/repos/satellite-image-deep-learning/techniques).
+
+<a id="anhkysuai-2026-11-23-opengeos-geolibre"></a>
+
+### GeoLibre
+
+**Repo:** [opengeos/GeoLibre](https://github.com/opengeos/GeoLibre) · **License:** MIT · **★ 8,778 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Nền tảng GIS dùng chung workspace trên web, desktop, mobile và notebook, có xử lý WebAssembly.
+
+**Giá trị:** Kết hợp bản đồ, DuckDB-WASM và công cụ địa lý trong giao diện chung, phù hợp khám phá dữ liệu tại máy.
+
+**Giới hạn:** Tuyên bố xử lý hoàn toàn local phải kiểm theo công cụ/lớp dữ liệu thực dùng; basemap hoặc endpoint ngoài có thể có quyền/luồng dữ liệu riêng. Chưa xác minh số lượng và hiệu năng công cụ quảng bá.
+
+**Cách tham khảo/tích hợp:** Ghim phiên bản và nguồn dữ liệu, kiểm CRS, đơn vị và một tập mẫu có kết quả chuẩn trước tích hợp pipeline GIS.
+
+**Lựa chọn để đối chiếu:** [keplergl/kepler.gl](https://github.com/keplergl/kepler.gl) · [geopandas/geopandas](https://github.com/geopandas/geopandas). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a7b8e10a19c43f71b134a97777aedcb4d8217246`](https://github.com/opengeos/GeoLibre/commit/a7b8e10a19c43f71b134a97777aedcb4d8217246), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/opengeos/GeoLibre/blob/a7b8e10a19c43f71b134a97777aedcb4d8217246/README.md) · [LICENSE](https://github.com/opengeos/GeoLibre/blob/a7b8e10a19c43f71b134a97777aedcb4d8217246/LICENSE) · [package.json](https://github.com/opengeos/GeoLibre/blob/a7b8e10a19c43f71b134a97777aedcb4d8217246/package.json) · [.github/workflows/ci.yml](https://github.com/opengeos/GeoLibre/blob/a7b8e10a19c43f71b134a97777aedcb4d8217246/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/opengeos/GeoLibre).
+
+<a id="anhkysuai-2026-11-23-google-draco"></a>
+
+### Draco
+
+**Repo:** [google/draco](https://github.com/google/draco) · **License:** Apache-2.0 · **★ 7,565 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện nén/giải nén mesh và point cloud 3D để giảm lưu trữ và truyền dữ liệu.
+
+**Giá trị:** Có C++ và decoder JavaScript/WASM, phù hợp pipeline asset web hoặc truyền mô hình.
+
+**Giới hạn:** README khuyên ghim URL decoder theo phiên bản vì cache của đường dẫn chung có thể gây lỗi khi phát hành; cần đo tỷ lệ nén, sai số lượng tử hóa và tương thích encoder/decoder.
+
+**Cách tham khảo/tích hợp:** Ghim phiên bản và nguồn dữ liệu, kiểm CRS, đơn vị và một tập mẫu có kết quả chuẩn trước tích hợp pipeline GIS.
+
+**Lựa chọn để đối chiếu:** [assimp/assimp](https://github.com/assimp/assimp) · [zeux/meshoptimizer](https://github.com/zeux/meshoptimizer). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`d6c1acf366a9c8745e6f1e96d94c2ddcad279e21`](https://github.com/google/draco/commit/d6c1acf366a9c8745e6f1e96d94c2ddcad279e21), ngày commit 2026-11-16. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/google/draco/blob/d6c1acf366a9c8745e6f1e96d94c2ddcad279e21/README.md) · [LICENSE](https://github.com/google/draco/blob/d6c1acf366a9c8745e6f1e96d94c2ddcad279e21/LICENSE) · [CMakeLists.txt](https://github.com/google/draco/blob/d6c1acf366a9c8745e6f1e96d94c2ddcad279e21/CMakeLists.txt) · [.github/workflows/ci.yml](https://github.com/google/draco/blob/d6c1acf366a9c8745e6f1e96d94c2ddcad279e21/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/google/draco).
+
+<a id="anhkysuai-2026-11-23-opendronemap-odm"></a>
+
+### ODM
+
+**Repo:** [OpenDroneMap/ODM](https://github.com/OpenDroneMap/ODM) · **License:** AGPL-3.0 · **★ 6,634 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ CLI xử lý ảnh drone thành point cloud, mô hình 3D, ảnh trực giao và mô hình độ cao.
+
+**Giá trị:** Có thể ghép vào pipeline xử lý ảnh tự động nhờ đầu ra hình học và địa lý đa dạng.
+
+**Giới hạn:** Cần dữ liệu chụp phù hợp, tài nguyên tính toán và kiểm độ chính xác tọa độ bằng mốc độc lập; AGPL và tài sản/ứng dụng desktop khác cần đối chiếu riêng.
+
+**Cách tham khảo/tích hợp:** Ghim phiên bản và nguồn dữ liệu, kiểm CRS, đơn vị và một tập mẫu có kết quả chuẩn trước tích hợp pipeline GIS.
+
+**Lựa chọn để đối chiếu:** [alicevision/Meshroom](https://github.com/alicevision/Meshroom) · [openMVG/openMVG](https://github.com/openMVG/openMVG). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`9078435bbdbfa37622e4e99e7856ed0a7a23e017`](https://github.com/OpenDroneMap/ODM/commit/9078435bbdbfa37622e4e99e7856ed0a7a23e017), ngày commit 2026-11-11. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/OpenDroneMap/ODM/blob/9078435bbdbfa37622e4e99e7856ed0a7a23e017/README.md) · [LICENSE](https://github.com/OpenDroneMap/ODM/blob/9078435bbdbfa37622e4e99e7856ed0a7a23e017/LICENSE) · [.github/workflows/native-builds.yaml](https://github.com/OpenDroneMap/ODM/blob/9078435bbdbfa37622e4e99e7856ed0a7a23e017/.github/workflows/native-builds.yaml) · [metadata GitHub](https://api.github.com/repos/OpenDroneMap/ODM).
+
+<a id="anhkysuai-2026-11-23-librecad-librecad"></a>
+
+### LibreCAD
+
+**Repo:** [LibreCAD/LibreCAD](https://github.com/LibreCAD/LibreCAD) · **License:** GPL-2.0 (toàn thể); thành phần/tài sản riêng · **★ 6,631 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng CAD 2D dựa trên Qt, hỗ trợ bản vẽ kỹ thuật và nhiều định dạng xuất/nhập.
+
+**Giá trị:** Có giá trị cho soạn và kiểm bản vẽ 2D; tài liệu phân tách nhánh phát triển, release và công cụ chuyển đổi.
+
+**Giới hạn:** Master là bản trước phát hành theo README; cần kiểm round-trip DXF/DWG, font và đơn vị. Toàn thể GPLv2, tài sản và thư viện đi kèm có các giấy phép riêng.
+
+**Cách tham khảo/tích hợp:** Thử trên bản sao mô hình với đơn vị và dung sai đã biết, kiểm đầu ra/round-trip và quyền của từng thành phần trước đưa vào quy trình kỹ thuật.
+
+**Lựa chọn để đối chiếu:** [qcad/qcad](https://github.com/qcad/qcad) · [FreeCAD/FreeCAD](https://github.com/FreeCAD/FreeCAD). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`954217a719f7fff1f54bdf4ee894a0e462e21934`](https://github.com/LibreCAD/LibreCAD/commit/954217a719f7fff1f54bdf4ee894a0e462e21934), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/LibreCAD/LibreCAD/blob/954217a719f7fff1f54bdf4ee894a0e462e21934/README.md) · [LICENSE](https://github.com/LibreCAD/LibreCAD/blob/954217a719f7fff1f54bdf4ee894a0e462e21934/LICENSE) · [CMakeLists.txt](https://github.com/LibreCAD/LibreCAD/blob/954217a719f7fff1f54bdf4ee894a0e462e21934/CMakeLists.txt) · [.github/workflows/build-all.yml](https://github.com/LibreCAD/LibreCAD/blob/954217a719f7fff1f54bdf4ee894a0e462e21934/.github/workflows/build-all.yml) · [metadata GitHub](https://api.github.com/repos/LibreCAD/LibreCAD).
+
+<a id="anhkysuai-2026-11-23-openmvg-openmvg"></a>
+
+### openMVG
+
+**Repo:** [openMVG/openMVG](https://github.com/openMVG/openMVG) · **License:** MPL-2.0 · **★ 6,606 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Framework C++ hình học đa góc nhìn và Structure from Motion để tái dựng 3D từ ảnh.
+
+**Giá trị:** Phân tách thư viện, binary và pipeline hỗ trợ nghiên cứu thuật toán camera, ghép đặc trưng và hình học nhiều ảnh.
+
+**Giới hạn:** MPL-2.0 của OpenMVG đi kèm danh mục phụ thuộc riêng; độ tin cậy phải kiểm với calibration, ảnh và ground truth của bài toán, không suy từ tuyên bố test-driven.
+
+**Cách tham khảo/tích hợp:** Ghim phiên bản và nguồn dữ liệu, kiểm CRS, đơn vị và một tập mẫu có kết quả chuẩn trước tích hợp pipeline GIS.
+
+**Lựa chọn để đối chiếu:** [alicevision/Meshroom](https://github.com/alicevision/Meshroom) · [colmap/colmap](https://github.com/colmap/colmap). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`e0162aef9a5ba6ec9f54c39ed49ea47a0e82e1db`](https://github.com/openMVG/openMVG/commit/e0162aef9a5ba6ec9f54c39ed49ea47a0e82e1db), ngày commit 2026-11-06. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/openMVG/openMVG/blob/e0162aef9a5ba6ec9f54c39ed49ea47a0e82e1db/README.md) · [COPYRIGHT.md](https://github.com/openMVG/openMVG/blob/e0162aef9a5ba6ec9f54c39ed49ea47a0e82e1db/COPYRIGHT.md) · [LICENSE](https://github.com/openMVG/openMVG/blob/e0162aef9a5ba6ec9f54c39ed49ea47a0e82e1db/LICENSE) · [.github/workflows/compile_and_run_test.yml](https://github.com/openMVG/openMVG/blob/e0162aef9a5ba6ec9f54c39ed49ea47a0e82e1db/.github/workflows/compile_and_run_test.yml) · [metadata GitHub](https://api.github.com/repos/openMVG/openMVG).
+
+<a id="anhkysuai-2026-11-23-osgeo-gdal"></a>
+
+### GDAL
+
+**Repo:** [OSGeo/gdal](https://github.com/OSGeo/gdal) · **License:** MIT (chính); thành phần/driver xem LICENSE.TXT · **★ 6,173 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện và công cụ chuyển đổi dữ liệu địa lý raster/vector theo nhiều định dạng.
+
+**Giá trị:** Là lớp tích hợp hữu ích giữa định dạng dữ liệu và pipeline GIS; tài liệu nêu cách build, image và chính sách bảo mật.
+
+**Giới hạn:** MIT là giấy phép chính, LICENSE.TXT tổng hợp nhiều thành phần; driver/build quyết định tính năng thực có. Cần kiểm CRS, nodata, độ chính xác và dữ liệu đầu vào không tin cậy.
+
+**Cách tham khảo/tích hợp:** Ghim phiên bản và nguồn dữ liệu, kiểm CRS, đơn vị và một tập mẫu có kết quả chuẩn trước tích hợp pipeline GIS.
+
+**Lựa chọn để đối chiếu:** [geopandas/geopandas](https://github.com/geopandas/geopandas) · [Turfjs/turf](https://github.com/Turfjs/turf). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`6d7a6388745ef760b68d3ea460d700f4be5479c4`](https://github.com/OSGeo/gdal/commit/6d7a6388745ef760b68d3ea460d700f4be5479c4), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/OSGeo/gdal/blob/6d7a6388745ef760b68d3ea460d700f4be5479c4/README.md) · [LICENSE.TXT](https://github.com/OSGeo/gdal/blob/6d7a6388745ef760b68d3ea460d700f4be5479c4/LICENSE.TXT) · [CMakeLists.txt](https://github.com/OSGeo/gdal/blob/6d7a6388745ef760b68d3ea460d700f4be5479c4/CMakeLists.txt) · [.github/workflows/cifuzz.yml](https://github.com/OSGeo/gdal/blob/6d7a6388745ef760b68d3ea460d700f4be5479c4/.github/workflows/cifuzz.yml) · [metadata GitHub](https://api.github.com/repos/OSGeo/gdal).
+
+<a id="anhkysuai-2026-11-23-cgal-cgal"></a>
+
+### CGAL
+
+**Repo:** [CGAL/cgal](https://github.com/CGAL/cgal) · **License:** GPL/LGPL theo package, hoặc thương mại; xem Installation/LICENSE · **★ 6,137 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện C++ thuật toán hình học tính toán, dạng header-only từ dòng 5.x.
+
+**Giá trị:** Cung cấp nền tảng cho bài toán hình học cần thuật toán chuyên dụng; repo tách cấu trúc phát triển khỏi tarball phát hành.
+
+**Giới hạn:** Giấy phép phải kiểm theo package trong Installation/LICENSE và header; CC0 ở một số tệp ngoài tarball không đại diện toàn bộ thư viện. Cần kiểm kernel số học, độ chính xác và chi phí biên dịch.
+
+**Cách tham khảo/tích hợp:** Ghim phiên bản và nguồn dữ liệu, kiểm CRS, đơn vị và một tập mẫu có kết quả chuẩn trước tích hợp pipeline GIS.
+
+**Lựa chọn để đối chiếu:** [PointCloudLibrary/pcl](https://github.com/PointCloudLibrary/pcl) · [libigl/libigl](https://github.com/libigl/libigl). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a25894af4d4510d24c259940a69622b7502eef86`](https://github.com/CGAL/cgal/commit/a25894af4d4510d24c259940a69622b7502eef86), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/CGAL/cgal/blob/a25894af4d4510d24c259940a69622b7502eef86/README.md) · [LICENSE.md](https://github.com/CGAL/cgal/blob/a25894af4d4510d24c259940a69622b7502eef86/LICENSE.md) · [copyright](https://github.com/CGAL/cgal/blob/a25894af4d4510d24c259940a69622b7502eef86/copyright) · [CMakeLists.txt](https://github.com/CGAL/cgal/blob/a25894af4d4510d24c259940a69622b7502eef86/CMakeLists.txt) · [.github/workflows/checks.yml](https://github.com/CGAL/cgal/blob/a25894af4d4510d24c259940a69622b7502eef86/.github/workflows/checks.yml) · [Installation/LICENSE](https://github.com/CGAL/cgal/blob/a25894af4d4510d24c259940a69622b7502eef86/Installation/LICENSE) · [metadata GitHub](https://api.github.com/repos/CGAL/cgal).
+
+<a id="anhkysuai-2026-11-23-cnr-isti-vclab-meshlab"></a>
+
+### meshlab
+
+**Repo:** [cnr-isti-vclab/meshlab](https://github.com/cnr-isti-vclab/meshlab) · **License:** GPL-3.0 · **★ 5,931 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng xử lý mesh tam giác 3D để chỉnh, làm sạch, kiểm tra, render và chuyển đổi.
+
+**Giá trị:** Giao diện tương tác giúp thử thuật toán xử lý dữ liệu quét 3D trước khi thiết kế pipeline tự động.
+
+**Giới hạn:** Cần giữ bản gốc và kiểm topology/đơn vị sau thao tác làm sạch; GPLv3 của ứng dụng không được suy từ BSL-1.0 chỉ xuất hiện ở tệp CMake.
+
+**Cách tham khảo/tích hợp:** Ghim phiên bản và nguồn dữ liệu, kiểm CRS, đơn vị và một tập mẫu có kết quả chuẩn trước tích hợp pipeline GIS.
+
+**Lựa chọn để đối chiếu:** [assimp/assimp](https://github.com/assimp/assimp) · [PointCloudLibrary/pcl](https://github.com/PointCloudLibrary/pcl). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`71e7b0b53cd98f520f84cb17b31bac6f1ef947cc`](https://github.com/cnr-isti-vclab/meshlab/commit/71e7b0b53cd98f520f84cb17b31bac6f1ef947cc), ngày commit 2026-07-24. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/cnr-isti-vclab/meshlab/blob/71e7b0b53cd98f520f84cb17b31bac6f1ef947cc/README.md) · [LICENSE.txt](https://github.com/cnr-isti-vclab/meshlab/blob/71e7b0b53cd98f520f84cb17b31bac6f1ef947cc/LICENSE.txt) · [CMakeLists.txt](https://github.com/cnr-isti-vclab/meshlab/blob/71e7b0b53cd98f520f84cb17b31bac6f1ef947cc/CMakeLists.txt) · [.github/workflows/BuildMeshLab.yml](https://github.com/cnr-isti-vclab/meshlab/blob/71e7b0b53cd98f520f84cb17b31bac6f1ef947cc/.github/workflows/BuildMeshLab.yml) · [metadata GitHub](https://api.github.com/repos/cnr-isti-vclab/meshlab).
+
+<a id="anhkysuai-2026-11-23-gboeing-osmnx"></a>
+
+### osmnx
+
+**Repo:** [gboeing/osmnx](https://github.com/gboeing/osmnx) · **License:** MIT · **★ 5,908 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Gói Python tải, mô hình hóa và phân tích mạng đường phố cùng dữ liệu OpenStreetMap.
+
+**Giá trị:** Hỗ trợ nghiên cứu mạng đi bộ, xe đạp, lái xe và tiện ích đô thị trong một quy trình Python.
+
+**Giới hạn:** MIT cấp quyền mã, dữ liệu OpenStreetMap có yêu cầu attribution riêng; cần kiểm độ đầy đủ, thời điểm dữ liệu và giả định routing/travel time trước sử dụng quyết định thực tế.
+
+**Cách tham khảo/tích hợp:** Ghim phiên bản và nguồn dữ liệu, kiểm CRS, đơn vị và một tập mẫu có kết quả chuẩn trước tích hợp pipeline GIS.
+
+**Lựa chọn để đối chiếu:** [geopandas/geopandas](https://github.com/geopandas/geopandas) · [Turfjs/turf](https://github.com/Turfjs/turf). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`af346c03401c3f6960ae84617061fa5108533183`](https://github.com/gboeing/osmnx/commit/af346c03401c3f6960ae84617061fa5108533183), ngày commit 2026-11-18. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/gboeing/osmnx/blob/af346c03401c3f6960ae84617061fa5108533183/README.md) · [LICENSE.txt](https://github.com/gboeing/osmnx/blob/af346c03401c3f6960ae84617061fa5108533183/LICENSE.txt) · [pyproject.toml](https://github.com/gboeing/osmnx/blob/af346c03401c3f6960ae84617061fa5108533183/pyproject.toml) · [.github/workflows/ci.yml](https://github.com/gboeing/osmnx/blob/af346c03401c3f6960ae84617061fa5108533183/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/gboeing/osmnx).
+
+<a id="anhkysuai-2026-11-23-sshuair-awesome-gis"></a>
+
+### awesome-gis
+
+**Repo:** [sshuair/awesome-gis](https://github.com/sshuair/awesome-gis) · **License:** MIT · **★ 5,640 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh mục tài nguyên GIS gồm công cụ, dữ liệu, sách, khóa học và cộng đồng.
+
+**Giá trị:** Phân nhóm desktop, web, remote sensing và deep learning giúp lập danh sách công cụ để khảo sát tiếp.
+
+**Giới hạn:** MIT của danh sách không bao gồm dữ liệu và dịch vụ được dẫn; từng công cụ cần kiểm phiên bản, giấy phép và khả năng đáp ứng bài toán địa lý cụ thể.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [sacridini/Awesome-Geospatial](https://github.com/sacridini/Awesome-Geospatial) · [satellite-image-deep-learning/techniques](https://github.com/satellite-image-deep-learning/techniques). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`0f21c1f6aa9fcefb044456827e9eb8363135f392`](https://github.com/sshuair/awesome-gis/commit/0f21c1f6aa9fcefb044456827e9eb8363135f392), ngày commit 2026-07-21. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/sshuair/awesome-gis/blob/0f21c1f6aa9fcefb044456827e9eb8363135f392/README.md) · [LICENSE](https://github.com/sshuair/awesome-gis/blob/0f21c1f6aa9fcefb044456827e9eb8363135f392/LICENSE) · [metadata GitHub](https://api.github.com/repos/sshuair/awesome-gis).
+
+<a id="anhkysuai-2026-11-23-adam-cad-cadam"></a>
+
+### CADAM
+
+**Repo:** [Adam-CAD/CADAM](https://github.com/Adam-CAD/CADAM) · **License:** GPL-3.0 · **★ 5,455 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng web text/image-to-CAD tạo mô hình tham số OpenSCAD và xuất STL, SCAD, DXF.
+
+**Giá trị:** Kết hợp sinh mẫu bằng AI với điều chỉnh kích thước, phù hợp thử ý tưởng mô hình sơ bộ.
+
+**Giới hạn:** Quickstart có Supabase và cấu hình server/API nên không suy toàn bộ xử lý AI nằm offline dù dựng hình dùng WASM; mẫu sinh cần kiểm hình học, đơn vị và khả năng chế tạo.
+
+**Cách tham khảo/tích hợp:** Thử trên bản sao mô hình với đơn vị và dung sai đã biết, kiểm đầu ra/round-trip và quyền của từng thành phần trước đưa vào quy trình kỹ thuật.
+
+**Lựa chọn để đối chiếu:** [xiangechen/chili3d](https://github.com/xiangechen/chili3d) · [FreeCAD/FreeCAD](https://github.com/FreeCAD/FreeCAD). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`e339e3ad85601bb1e23a5ff9c7f33b51ddf602f5`](https://github.com/Adam-CAD/CADAM/commit/e339e3ad85601bb1e23a5ff9c7f33b51ddf602f5), ngày commit 2026-10-14. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/Adam-CAD/CADAM/blob/e339e3ad85601bb1e23a5ff9c7f33b51ddf602f5/README.md) · [LICENSE](https://github.com/Adam-CAD/CADAM/blob/e339e3ad85601bb1e23a5ff9c7f33b51ddf602f5/LICENSE) · [package.json](https://github.com/Adam-CAD/CADAM/blob/e339e3ad85601bb1e23a5ff9c7f33b51ddf602f5/package.json) · [metadata GitHub](https://api.github.com/repos/Adam-CAD/CADAM).
+
+<a id="anhkysuai-2026-11-23-sacridini-awesome-geospatial"></a>
+
+### Awesome-Geospatial
+
+**Repo:** [sacridini/Awesome-Geospatial](https://github.com/sacridini/Awesome-Geospatial) · **License:** CC0-1.0 · **★ 5,387 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách công cụ phân tích địa lý, dữ liệu, thư viện và nền tảng theo nhóm ứng dụng.
+
+**Giá trị:** Bao quát cả GIS, lidar, radar, cơ sở dữ liệu và mô hình không gian, hữu ích tìm hướng khảo sát.
+
+**Giới hạn:** Danh sách có cả sản phẩm thương mại; CC0 không mở quyền của các sản phẩm/dataset liên kết. Cần kiểm nguồn gốc, bảo trì và khả năng tương tác từng lựa chọn.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [sshuair/awesome-gis](https://github.com/sshuair/awesome-gis) · [opengeos/GeoLibre](https://github.com/opengeos/GeoLibre). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`2a03232855b42ce405d41766e5a33a445b2d6f1a`](https://github.com/sacridini/Awesome-Geospatial/commit/2a03232855b42ce405d41766e5a33a445b2d6f1a), ngày commit 2026-11-18. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/sacridini/Awesome-Geospatial/blob/2a03232855b42ce405d41766e5a33a445b2d6f1a/README.md) · [LICENSE](https://github.com/sacridini/Awesome-Geospatial/blob/2a03232855b42ce405d41766e5a33a445b2d6f1a/LICENSE) · [metadata GitHub](https://api.github.com/repos/sacridini/Awesome-Geospatial).
+
+<a id="anhkysuai-2026-11-23-projectphysx-fluidx3d"></a>
+
+### FluidX3D
+
+**Repo:** [ProjectPhysX/FluidX3D](https://github.com/ProjectPhysX/FluidX3D) · **License:** Giấy phép phi thương mại tùy chỉnh; xem LICENSE.md · **★ 5,380 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Phần mềm CFD dùng lattice Boltzmann trên OpenCL cho CPU/GPU.
+
+**Giá trị:** Tài liệu trình bày mô hình, tính toán và hiển thị cùng benchmark, hữu ích nghiên cứu mô phỏng dòng chảy.
+
+**Giới hạn:** Giấy phép tùy chỉnh chỉ miễn phí cho phạm vi phi thương mại; tuyên bố nhanh nhất chưa được tái lập. Cần kiểm độ hội tụ, điều kiện biên và xác thực vật lý cho từng mô phỏng.
+
+**Cách tham khảo/tích hợp:** Tách simulator khỏi adapter phần cứng, chọn dữ liệu chuẩn để kiểm độ đúng và sai số trước sử dụng thực tế.
+
+**Lựa chọn để đối chiếu:** [OpenFOAM/OpenFOAM-dev](https://github.com/OpenFOAM/OpenFOAM-dev) · [bulletphysics/bullet3](https://github.com/bulletphysics/bullet3). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`cc40a3837ede8d996eb1092b8584c360237b0797`](https://github.com/ProjectPhysX/FluidX3D/commit/cc40a3837ede8d996eb1092b8584c360237b0797), ngày commit 2026-11-15. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/ProjectPhysX/FluidX3D/blob/cc40a3837ede8d996eb1092b8584c360237b0797/README.md) · [LICENSE.md](https://github.com/ProjectPhysX/FluidX3D/blob/cc40a3837ede8d996eb1092b8584c360237b0797/LICENSE.md) · [metadata GitHub](https://api.github.com/repos/ProjectPhysX/FluidX3D).
+
+<a id="anhkysuai-2026-11-23-geopandas-geopandas"></a>
+
+### geopandas
+
+**Repo:** [geopandas/geopandas](https://github.com/geopandas/geopandas) · **License:** BSD-3-Clause · **★ 5,308 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Mở rộng pandas với GeoSeries/GeoDataFrame và phép toán hình học qua Shapely.
+
+**Giá trị:** Cho phép kết hợp bảng dữ liệu với hình học và chuyển CRS trong cùng workflow phân tích Python.
+
+**Giới hạn:** README nêu phép toán hình học theo mặt phẳng Cartesian; cần chọn CRS và đơn vị phù hợp, kiểm lệch hệ tọa độ trước tính diện tích/khoảng cách.
+
+**Cách tham khảo/tích hợp:** Ghim phiên bản và nguồn dữ liệu, kiểm CRS, đơn vị và một tập mẫu có kết quả chuẩn trước tích hợp pipeline GIS.
+
+**Lựa chọn để đối chiếu:** [Turfjs/turf](https://github.com/Turfjs/turf) · [OSGeo/gdal](https://github.com/OSGeo/gdal). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`3e92048f628971d0ed24b512740fae82ed6376c5`](https://github.com/geopandas/geopandas/commit/3e92048f628971d0ed24b512740fae82ed6376c5), ngày commit 2026-11-19. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/geopandas/geopandas/blob/3e92048f628971d0ed24b512740fae82ed6376c5/README.md) · [LICENSE.txt](https://github.com/geopandas/geopandas/blob/3e92048f628971d0ed24b512740fae82ed6376c5/LICENSE.txt) · [pyproject.toml](https://github.com/geopandas/geopandas/blob/3e92048f628971d0ed24b512740fae82ed6376c5/pyproject.toml) · [.github/workflows/tests.yaml](https://github.com/geopandas/geopandas/blob/3e92048f628971d0ed24b512740fae82ed6376c5/.github/workflows/tests.yaml) · [metadata GitHub](https://api.github.com/repos/geopandas/geopandas).
+
+<a id="anhkysuai-2026-11-23-xiangechen-chili3d"></a>
+
+### chili3d
+
+**Repo:** [xiangechen/chili3d](https://github.com/xiangechen/chili3d) · **License:** AGPL-3.0 (app); LGPL-3.0 (cpp); Pro riêng · **★ 5,016 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng CAD 3D trong trình duyệt dùng OpenCascade/WASM, hỗ trợ tham số, direct modeling và AI.
+
+**Giá trị:** Chung document và undo stack cho thao tác tay/AI giúp giữ mô hình có thể chỉnh tiếp sau khi sinh.
+
+**Giới hạn:** AI gọi endpoint bằng khóa người dùng theo README, nên cần kiểm dữ liệu/khóa gửi đi; app AGPLv3, module cpp LGPLv3 và Pro có phạm vi thương mại riêng.
+
+**Cách tham khảo/tích hợp:** Thử trên bản sao mô hình với đơn vị và dung sai đã biết, kiểm đầu ra/round-trip và quyền của từng thành phần trước đưa vào quy trình kỹ thuật.
+
+**Lựa chọn để đối chiếu:** [Adam-CAD/CADAM](https://github.com/Adam-CAD/CADAM) · [jasonsutter87/sketchcraft](https://github.com/jasonsutter87/sketchcraft). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a7a176bab5706cb2376635ba7c070e37efbbd69e`](https://github.com/xiangechen/chili3d/commit/a7a176bab5706cb2376635ba7c070e37efbbd69e), ngày commit 2026-11-21. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/xiangechen/chili3d/blob/a7a176bab5706cb2376635ba7c070e37efbbd69e/README.md) · [LICENSE](https://github.com/xiangechen/chili3d/blob/a7a176bab5706cb2376635ba7c070e37efbbd69e/LICENSE) · [package.json](https://github.com/xiangechen/chili3d/blob/a7a176bab5706cb2376635ba7c070e37efbbd69e/package.json) · [.github/workflows/main.yml](https://github.com/xiangechen/chili3d/blob/a7a176bab5706cb2376635ba7c070e37efbbd69e/.github/workflows/main.yml) · [metadata GitHub](https://api.github.com/repos/xiangechen/chili3d).
+
+<a id="anhkysuai-2026-11-23-puran-water-autocad-mcp"></a>
+
+### autocad-mcp
+
+**Repo:** [puran-water/autocad-mcp](https://github.com/puran-water/autocad-mcp) · **License:** MIT · **★ 683 (GitHub API, 2026-11-23)**
+
+**Mục đích:** MCP tích hợp AutoCAD LT hoặc xử lý DXF headless để đọc và sửa bản vẽ qua công cụ.
+
+**Giá trị:** Tài liệu phân biệt backend, drawing được chỉ định và luồng revision, hữu ích nghiên cứu tự động hóa CAD có trạng thái.
+
+**Giới hạn:** AutoCAD và yêu cầu nền tảng cấp phép riêng; README nói lệnh thành công không đồng nghĩa thiết kế được duyệt, không hỗ trợ tự chuyển document. Cần thử trên bản sao và kiểm undo/revision.
+
+**Cách tham khảo/tích hợp:** Thử trên bản sao mô hình với đơn vị và dung sai đã biết, kiểm đầu ra/round-trip và quyền của từng thành phần trước đưa vào quy trình kỹ thuật.
+
+**Lựa chọn để đối chiếu:** [mcp-servers-for-revit/mcp-servers-for-revit](https://github.com/mcp-servers-for-revit/mcp-servers-for-revit) · [LibreCAD/LibreCAD](https://github.com/LibreCAD/LibreCAD). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`d8d537d295976f97e30d7eacdc71e6e440dd02b9`](https://github.com/puran-water/autocad-mcp/commit/d8d537d295976f97e30d7eacdc71e6e440dd02b9), ngày commit 2026-11-16. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/puran-water/autocad-mcp/blob/d8d537d295976f97e30d7eacdc71e6e440dd02b9/README.md) · [LICENSE](https://github.com/puran-water/autocad-mcp/blob/d8d537d295976f97e30d7eacdc71e6e440dd02b9/LICENSE) · [pyproject.toml](https://github.com/puran-water/autocad-mcp/blob/d8d537d295976f97e30d7eacdc71e6e440dd02b9/pyproject.toml) · [.github/workflows/ci.yml](https://github.com/puran-water/autocad-mcp/blob/d8d537d295976f97e30d7eacdc71e6e440dd02b9/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/puran-water/autocad-mcp).
+
+<a id="anhkysuai-2026-11-23-mcp-servers-for-revit-mcp-servers-for-revit"></a>
+
+### MCP servers for Revit (Sparx fork)
+
+**Repo:** [mcp-servers-for-revit/mcp-servers-for-revit](https://github.com/mcp-servers-for-revit/mcp-servers-for-revit) · **License:** MIT · **★ 464 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Fork MCP cho Autodesk Revit gồm server TypeScript, add-in C# và bộ lệnh Revit API.
+
+**Giá trị:** Kiến trúc ba phần giúp nối AI với thao tác đọc/tạo/sửa/xóa phần tử BIM; có tài liệu test theo phiên bản.
+
+**Giới hạn:** Yêu cầu Revit đã cài và có giấy phép; thao tác thay đổi mô hình cần giới hạn project, transaction và kiểm kết quả kỹ thuật. MIT của bridge không cấp quyền Revit.
+
+**Cách tham khảo/tích hợp:** Thử trên bản sao mô hình với đơn vị và dung sai đã biết, kiểm đầu ra/round-trip và quyền của từng thành phần trước đưa vào quy trình kỹ thuật.
+
+**Lựa chọn để đối chiếu:** [mcp-servers-for-revit/revit-mcp](https://github.com/mcp-servers-for-revit/revit-mcp) · [puran-water/autocad-mcp](https://github.com/puran-water/autocad-mcp). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`86cf7057785f2423fc0d0892c9a5d9c93deb1aa3`](https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/commit/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3), ngày commit 2026-04-05. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/README.md) · [LICENSE](https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/LICENSE) · [.github/workflows/release.yml](https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/.github/workflows/release.yml) · [metadata GitHub](https://api.github.com/repos/mcp-servers-for-revit/mcp-servers-for-revit).
+
+<a id="anhkysuai-2026-11-23-francisreboucas-constructcraft"></a>
+
+### constructcraft
+
+**Repo:** [francisreboucas/constructcraft](https://github.com/francisreboucas/constructcraft) · **License:** GPL-3.0-or-later (app); cc_skp MIT; tài sản riêng · **★ 287 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng BIM bằng Rust, sinh mặt bằng, mặt cắt, lịch và sheet từ một mô hình tham số.
+
+**Giá trị:** Có hướng automation qua CLI/MCP và mô hình dữ liệu chung, phù hợp tham khảo authoring BIM độc lập nhà cung cấp.
+
+**Giới hạn:** README còn mục MVP/roadmap; cần kiểm round-trip IFC/SketchUp và độ đúng bản vẽ trước dự án thật. GPLv3+ của app khác MIT cc_skp, font và icon đi kèm.
+
+**Cách tham khảo/tích hợp:** Thử trên bản sao mô hình với đơn vị và dung sai đã biết, kiểm đầu ra/round-trip và quyền của từng thành phần trước đưa vào quy trình kỹ thuật.
+
+**Lựa chọn để đối chiếu:** [FreeCAD/FreeCAD](https://github.com/FreeCAD/FreeCAD) · [jasonsutter87/sketchcraft](https://github.com/jasonsutter87/sketchcraft). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`8461032285ff5ba9597207dcb623517b438654a0`](https://github.com/francisreboucas/constructcraft/commit/8461032285ff5ba9597207dcb623517b438654a0), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/francisreboucas/constructcraft/blob/8461032285ff5ba9597207dcb623517b438654a0/README.md) · [LICENSE](https://github.com/francisreboucas/constructcraft/blob/8461032285ff5ba9597207dcb623517b438654a0/LICENSE) · [Cargo.toml](https://github.com/francisreboucas/constructcraft/blob/8461032285ff5ba9597207dcb623517b438654a0/Cargo.toml) · [.github/workflows/ci.yml](https://github.com/francisreboucas/constructcraft/blob/8461032285ff5ba9597207dcb623517b438654a0/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/francisreboucas/constructcraft).
+
+<a id="anhkysuai-2026-11-23-jasonsutter87-sketchcraft"></a>
+
+### sketchcraft
+
+**Repo:** [jasonsutter87/sketchcraft](https://github.com/jasonsutter87/sketchcraft) · **License:** MIT · **★ 136 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng dựng hình push/pull 3D bằng Rust, có desktop, CLI và MCP.
+
+**Giá trị:** Hỗ trợ hình học nhà/phòng/nội thất và scripting, phù hợp thử mô hình đơn giản với nhiều cách tương tác.
+
+**Giới hạn:** README ghi chưa ký bởi Apple/Microsoft; chưa kiểm file SketchUp round-trip, updater hoặc chất lượng hình học. Cần xác minh bản phát hành và thử trên dữ liệu mẫu trước sử dụng.
+
+**Cách tham khảo/tích hợp:** Thử trên bản sao mô hình với đơn vị và dung sai đã biết, kiểm đầu ra/round-trip và quyền của từng thành phần trước đưa vào quy trình kỹ thuật.
+
+**Lựa chọn để đối chiếu:** [xiangechen/chili3d](https://github.com/xiangechen/chili3d) · [francisreboucas/constructcraft](https://github.com/francisreboucas/constructcraft). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`90c46597783bfefa9befdfa8a884c34d63439a81`](https://github.com/jasonsutter87/sketchcraft/commit/90c46597783bfefa9befdfa8a884c34d63439a81), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/jasonsutter87/sketchcraft/blob/90c46597783bfefa9befdfa8a884c34d63439a81/README.md) · [LICENSE](https://github.com/jasonsutter87/sketchcraft/blob/90c46597783bfefa9befdfa8a884c34d63439a81/LICENSE) · [Cargo.toml](https://github.com/jasonsutter87/sketchcraft/blob/90c46597783bfefa9befdfa8a884c34d63439a81/Cargo.toml) · [.github/workflows/ci.yml](https://github.com/jasonsutter87/sketchcraft/blob/90c46597783bfefa9befdfa8a884c34d63439a81/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/jasonsutter87/sketchcraft).
+
+<a id="anhkysuai-2026-11-23-anhkysuai-byte-autocad-mcp-anhkysuai"></a>
+
+### AutoCAD MCP Anh Kỹ Sư AI (fork)
+
+**Repo:** [anhkysuai-byte/autocad-mcp-anhkysuai](https://github.com/anhkysuai-byte/autocad-mcp-anhkysuai) · **License:** MIT · **★ 1 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Fork của tích hợp MCP AutoCAD LT/DXF trong hệ sinh thái Anh Kỹ Sư AI.
+
+**Giá trị:** Được lưu để truy vết đúng link nguồn và quan hệ với upstream puran-water/autocad-mcp.
+
+**Giới hạn:** HEAD được clone trùng SHA với upstream trong đợt này; chưa thấy khác biệt chức năng để coi là giải pháp độc lập. Các giới hạn AutoCAD, document và duyệt kỹ thuật giữ nguyên.
+
+**Cách tham khảo/tích hợp:** Ưu tiên đối chiếu upstream khi cập nhật; giữ liên kết fork để theo dõi nếu có thay đổi riêng, không suy giá trị mới chỉ từ tên repo.
+
+**Lựa chọn để đối chiếu:** [puran-water/autocad-mcp](https://github.com/puran-water/autocad-mcp) · [LibreCAD/LibreCAD](https://github.com/LibreCAD/LibreCAD). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`d8d537d295976f97e30d7eacdc71e6e440dd02b9`](https://github.com/anhkysuai-byte/autocad-mcp-anhkysuai/commit/d8d537d295976f97e30d7eacdc71e6e440dd02b9), ngày commit 2026-11-16. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/anhkysuai-byte/autocad-mcp-anhkysuai/blob/d8d537d295976f97e30d7eacdc71e6e440dd02b9/README.md) · [LICENSE](https://github.com/anhkysuai-byte/autocad-mcp-anhkysuai/blob/d8d537d295976f97e30d7eacdc71e6e440dd02b9/LICENSE) · [pyproject.toml](https://github.com/anhkysuai-byte/autocad-mcp-anhkysuai/blob/d8d537d295976f97e30d7eacdc71e6e440dd02b9/pyproject.toml) · [.github/workflows/ci.yml](https://github.com/anhkysuai-byte/autocad-mcp-anhkysuai/blob/d8d537d295976f97e30d7eacdc71e6e440dd02b9/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/anhkysuai-byte/autocad-mcp-anhkysuai).
+
+<a id="anhkysuai-2026-11-23-ruvnet-ruview"></a>
+
+### RuView
+
+**Repo:** [ruvnet/RuView](https://github.com/ruvnet/RuView) · **License:** MIT · **★ 104,891 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Nền tảng thử nghiệm cảm nhận không gian bằng tín hiệu WiFi/radar, có tích hợp smart home và agent.
+
+**Giá trị:** Tài liệu phân biệt adapter phần cứng, simulator và trạng thái capability, hữu ích khảo sát pipeline tín hiệu tới ứng dụng.
+
+**Giới hạn:** Tuyên bố theo dõi nhịp thở/nhịp tim hoặc xuyên tường chưa được tái lập; một số provider còn beta, simulator hoặc gated. Không coi mô phỏng hay tín hiệu hiện diện là thiết bị đo sức khỏe đã xác thực.
+
+**Cách tham khảo/tích hợp:** Tách simulator khỏi adapter phần cứng, chọn dữ liệu chuẩn để kiểm độ đúng và sai số trước sử dụng thực tế.
+
+**Lựa chọn để đối chiếu:** [AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics) · [arendst/Tasmota](https://github.com/arendst/Tasmota). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`8139c7e6258a19da9c9861fa035705dd3f031b56`](https://github.com/ruvnet/RuView/commit/8139c7e6258a19da9c9861fa035705dd3f031b56), ngày commit 2026-11-21. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/ruvnet/RuView/blob/8139c7e6258a19da9c9861fa035705dd3f031b56/README.md) · [LICENSE](https://github.com/ruvnet/RuView/blob/8139c7e6258a19da9c9861fa035705dd3f031b56/LICENSE) · [pyproject.toml](https://github.com/ruvnet/RuView/blob/8139c7e6258a19da9c9861fa035705dd3f031b56/pyproject.toml) · [.github/workflows/ci.yml](https://github.com/ruvnet/RuView/blob/8139c7e6258a19da9c9861fa035705dd3f031b56/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/ruvnet/RuView).
+
 ## Nguồn
 
 Các permalink trong từng hồ sơ cố định đúng phiên bản đã đọc; số sao/trạng thái archive là snapshot GitHub API ngày 2026-11-02. Không chạy mã, huấn luyện model hoặc tái lập kết quả của upstream.

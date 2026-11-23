@@ -1,0 +1,162 @@
+{
+  "meta": {
+    "reviewed_at": "2026-11-23",
+    "count": 5,
+    "scope": "Đọc độc lập điều khoản và thông báo tại cùng SHA; xác minh thêm stable repository ID bằng GitHub API. Kiểm độ chính xác mô tả, không chạy upstream hoặc kết luận hiệu lực pháp lý của điều khoản.",
+    "summary": {
+      "upheld": 5,
+      "partial": 0,
+      "refuted": 0
+    }
+  },
+  "items": [
+    {
+      "repo": "hcengineering/platform",
+      "sha": "a1dd19d4f7699e8b8d9e0dbeb610c7884b6255bc",
+      "claim": "README nêu repo Huly đã đóng băng, không duy trì chủ động và Hosted Huly đã ngừng hoạt động.",
+      "verdict": "upheld",
+      "finding": "README tại SHA clone có hai thông báo nổi bật: repo frozen/no longer actively maintained và Hosted Huly has shut down. Đoạn tiếp theo nói nền tảng hosted không còn sẵn có, đồng thời cho phép tiếp tục tự host hoặc chọn nhà host khác và dẫn hướng dẫn backup/restore. Mô tả trong hồ sơ đã gắn phát biểu với README tại SHA nên chính xác.",
+      "qualification": "Không suy rộng thành mọi bản tự host đã dừng chạy, mọi nhà cung cấp thứ ba đã đóng cửa, repo bị GitHub archived, hoặc không còn bất kỳ bảo trì cộng đồng nào. Chưa độc lập thử truy cập dịch vụ; bằng chứng là thông báo chính thức trong mã nguồn.",
+      "files_read": [
+        {
+          "path": "README.md",
+          "scope": "Thông báo đầu file và phần Self-Hosting/Release Versions, đặc biệt dòng 8–18."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/hcengineering/platform/blob/a1dd19d4f7699e8b8d9e0dbeb610c7884b6255bc/README.md#L8-L18",
+          "supports": "Frozen, hosted shutdown, self-hosting và đường dẫn backup/restore."
+        }
+      ]
+    },
+    {
+      "repo": "plankanban/planka",
+      "sha": "2cf423824a09f84df7dc3acf0ded9a700292d882",
+      "claim": "PLANKA Community License 1.1 hạn chế cung cấp hosted cho bên thứ ba nhằm lợi ích thương mại; dùng nội bộ tổ chức vẫn được phép, Pro/Enterprise có license riêng.",
+      "verdict": "upheld",
+      "finding": "LICENSE.md v1.1 ghi rõ được dùng/sửa trong tổ chức mình. Phần Restricted Use cấm chia sẻ tài khoản cho bên thứ ba vì mục đích kinh doanh và vận hành hosted cho bên thứ ba vì bất kỳ lợi ích thương mại nào; định nghĩa bao gồm thanh toán, quảng cáo, kiếm tiền từ dữ liệu và lợi ích kinh doanh gián tiếp. Vì vậy không thể mô tả Community là giấy phép cho hosted SaaS thương mại không hạn chế.",
+      "qualification": "Không được viết thành cấm mọi sử dụng thương mại: dùng nội bộ tổ chức thuộc Permitted Use. Ngoài ra file có .pe. hoặc đánh dấu Pro/Enterprise bị loại khỏi Community; component bên thứ ba giữ license gốc; LICENSE còn nói nội dung nhánh khác nhánh chính không được cấp phép. Báo cáo chỉ diễn giải văn bản tại SHA, không đánh giá tính thi hành.",
+      "files_read": [
+        {
+          "path": "LICENSE.md",
+          "scope": "Toàn bộ 97 dòng; tập trung phạm vi file, Permitted Use, Restricted Use và notices."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/plankanban/planka/blob/2cf423824a09f84df7dc3acf0ded9a700292d882/LICENSE.md#L19-L27",
+          "supports": "Phạm vi nhánh chính, loại trừ Pro/Enterprise và thành phần bên thứ ba."
+        },
+        {
+          "url": "https://github.com/plankanban/planka/blob/2cf423824a09f84df7dc3acf0ded9a700292d882/LICENSE.md#L45-L53",
+          "supports": "Cho dùng nội bộ, cấm hosted vì lợi ích thương mại và yêu cầu commercial license cho các trường hợp khác."
+        }
+      ]
+    },
+    {
+      "repo": "datalab-to/surya",
+      "sha": "253888005c21865f0ded5d50872727f2a3b307f1",
+      "claim": "Mã Surya là Apache-2.0; MODEL_LICENSE sửa đổi ràng buộc doanh thu/vốn, hoạt động cạnh tranh và cả output.",
+      "verdict": "upheld",
+      "finding": "LICENSE của mã bắt đầu bằng Apache License 2.0. MODEL_LICENSE là AI PUBS OPEN RAIL-M LICENSE (MODIFIED). Attachment A cấm sử dụng khi bản thân/người sử dụng lao động/tổ chức liên quan có gross revenue năm trước trên 5.000.000 USD hoặc tổng equity/debt funding từ mọi nguồn trên 5.000.000 USD, với ngoại lệ personal use hoặc research cho hai điều này. Điều cạnh tranh cấm tổ chức có sản phẩm/dịch vụ cạnh tranh với bất kỳ sản phẩm/dịch vụ nào của licensor/affiliate; điều này không ghi cùng ngoại lệ nghiên cứu. Điều 7 yêu cầu attribution gắn với output; điều 8 áp license này cho cả output và tác phẩm phái sinh/thay đổi/cải tiến của output.",
+      "qualification": "Mốc là trên 5 triệu, không phải từ 5 triệu trở lên; doanh thu tính năm trước, vốn là tổng vốn huy động. Ngoại lệ personal/research chỉ xuất hiện ở hai ngưỡng tài chính. Việc dưới ngưỡng không tự động xóa hạn chế cạnh tranh hay output. Điều 6 nói licensor nhìn chung không nhận quyền output nhưng dẫn ngoại lệ trong license, nên không thể dùng riêng câu này để bỏ qua điều 7–8. Đây là quan sát nội dung license của model tại SHA, chưa xác minh điều khoản từng checkpoint tải từ nơi khác hoặc giải thích pháp lý về tính thi hành.",
+      "files_read": [
+        {
+          "path": "MODEL_LICENSE",
+          "scope": "Toàn bộ 59 dòng, gồm định nghĩa model/derivative/output, điều 4–8 và Attachment A."
+        },
+        {
+          "path": "LICENSE",
+          "scope": "Tiêu đề và phần định nghĩa đầu file để xác nhận Apache-2.0 cho mã."
+        },
+        {
+          "path": "README.md",
+          "scope": "Badges và Commercial usage, dòng 68–70."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/datalab-to/surya/blob/253888005c21865f0ded5d50872727f2a3b307f1/LICENSE#L1-L5",
+          "supports": "Apache-2.0 của mã."
+        },
+        {
+          "url": "https://github.com/datalab-to/surya/blob/253888005c21865f0ded5d50872727f2a3b307f1/README.md#L68-L70",
+          "supports": "Upstream phân biệt license mã và model weights."
+        },
+        {
+          "url": "https://github.com/datalab-to/surya/blob/253888005c21865f0ded5d50872727f2a3b307f1/MODEL_LICENSE#L36-L39",
+          "supports": "Use restrictions, trách nhiệm output, attribution và share-alike cả output."
+        },
+        {
+          "url": "https://github.com/datalab-to/surya/blob/253888005c21865f0ded5d50872727f2a3b307f1/MODEL_LICENSE#L49-L59",
+          "supports": "Ngưỡng doanh thu/vốn và điều cấm cạnh tranh, cùng ngoại lệ được ghi riêng."
+        }
+      ]
+    },
+    {
+      "repo": "OpenMontageInc/OpenMontage",
+      "sha": "2e003e65fa99a0f329478a2c1cdcf26bc481933a",
+      "claim": "OpenMontageInc/OpenMontage là cùng thực thể repo cũ calesthio/OpenMontage đã có hồ sơ, không cần thêm một hồ sơ fork riêng.",
+      "verdict": "upheld",
+      "finding": "Đã gọi GitHub get_repo độc lập cho cả calesthio/OpenMontage và OpenMontageInc/OpenMontage. Cả hai trả cùng stable repository ID 1195360525 và canonical repository_full_name OpenMontageInc/OpenMontage. Metadata chính thức của tên hiện tại cũng có id 1195360525, fork false và parent null. README clone vẫn hướng dẫn git clone URL cũ. Stable ID trùng xác nhận alias/đổi chủ repo, mạnh hơn việc chỉ có HEAD giống nhau.",
+      "qualification": "Từ chủ sở hữu cũ sang organization mới có thể gọi chuyển chủ/đổi đường dẫn; bằng chứng này không cho ngày chuyển hoặc quy trình hành chính. README còn URL cũ và HEAD trùng nếu đứng riêng sẽ không đủ loại trừ mirror/fork; kết luận ở đây dựa vào cùng repository ID/canonical API.",
+      "files_read": [
+        {
+          "path": "README.md",
+          "scope": "Đoạn clone dòng 185–187 và các tham chiếu calesthio/OpenMontage."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/OpenMontageInc/OpenMontage/blob/2e003e65fa99a0f329478a2c1cdcf26bc481933a/README.md#L185-L187",
+          "supports": "Tài liệu tại SHA hiện tại còn URL clone cũ."
+        },
+        {
+          "url": "https://api.github.com/repos/calesthio/OpenMontage",
+          "supports": "Tên cũ trả stable repository ID 1195360525 và canonical OpenMontageInc/OpenMontage; đọc 2026-11-23, nguồn metadata sống."
+        },
+        {
+          "url": "https://api.github.com/repos/OpenMontageInc/OpenMontage",
+          "supports": "Tên hiện tại trả cùng stable repository ID; official metadata fork false, parent null; đọc 2026-11-23."
+        }
+      ]
+    },
+    {
+      "repo": "jaywcjlove/awesome-mac",
+      "sha": "23ca709562e808a98ad5fc503214c1e2f864e5a4",
+      "claim": "Thông báo giấy phép của Awesome Mac không thống nhất giữa LICENSE, README và package.json; chưa nên kết luận một license duy nhất cho mọi nội dung.",
+      "verdict": "upheld",
+      "finding": "Root LICENSE chứa CC0 1.0 Universal; mục License của README.md dẫn Creative Commons Attribution 4.0 International (CC-BY-4.0); package.json khai báo CC-BY-SA-4.0. Ba tệp tại cùng SHA khai báo ba điều kiện khác nhau. Manifest còn xuất nhiều file dist/awesome-mac.*.json nhưng chưa có tuyên bố trong ba tệp đã đọc phân định rõ các license theo phạm vi.",
+      "qualification": "Chưa đủ bằng chứng xác định đây là lỗi metadata cũ, giấy phép phân tầng có chủ ý hay quyền lựa chọn nhiều giấy phép. Không tự chọn CC0 theo GitHub autodetection, cũng không viết thành OR ba license. Việc chưa xác nhận license thống nhất không tự chứng minh nội dung là độc quyền; open_source false trong schema hiện tại cần hiểu cùng ghi chú chưa kết luận. Mỗi ứng dụng được liệt kê giữ giấy phép riêng.",
+      "files_read": [
+        {
+          "path": "LICENSE",
+          "scope": "Toàn bộ 116 dòng CC0 1.0 Universal."
+        },
+        {
+          "path": "README.md",
+          "scope": "Mục License dòng 2127–2131."
+        },
+        {
+          "path": "package.json",
+          "scope": "Toàn bộ 75 dòng, gồm exports/files/license."
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/jaywcjlove/awesome-mac/blob/23ca709562e808a98ad5fc503214c1e2f864e5a4/LICENSE#L1-L3",
+          "supports": "CC0 1.0 Universal trong root LICENSE."
+        },
+        {
+          "url": "https://github.com/jaywcjlove/awesome-mac/blob/23ca709562e808a98ad5fc503214c1e2f864e5a4/README.md#L2127-L2131",
+          "supports": "README công bố CC-BY-4.0."
+        },
+        {
+          "url": "https://github.com/jaywcjlove/awesome-mac/blob/23ca709562e808a98ad5fc503214c1e2f864e5a4/package.json#L56-L64",
+          "supports": "Manifest xuất dữ liệu JSON và công bố CC-BY-SA-4.0."
+        }
+      ]
+    }
+  ]
+}

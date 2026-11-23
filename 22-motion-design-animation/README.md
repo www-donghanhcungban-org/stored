@@ -730,6 +730,112 @@ Kết quả: 11 mục đã có hồ sơ, 7 mục thêm mới bên dưới, 2 m�
 - **Chuyển động và video:** GSAP cho timeline web, Remotion dựng video bằng React, Manim cho hoạt hoạ toán, Lottie cho animation vector nhẹ.
 - **Âm thanh và xuất bản:** Openverse tìm nhạc và hiệu ứng âm có giấy phép mở, librosa bắt beat để cắt cảnh theo nhạc, WhisperX làm phụ đề khớp từng từ, FFmpeg encode bản cuối.
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **5 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-aseprite"></a>
+
+### Aseprite
+
+**Repo:** [aseprite/aseprite](https://github.com/aseprite/aseprite) · **License:** Aseprite EULA; một số thành phần MIT và giấy phép khác · **★ 41,105 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng vẽ pixel art và tạo animation sprite theo layer, frame.
+
+**Giá trị và cơ chế:** README có onion skinning, palette và xuất sprite sheet; phù hợp nghiên cứu quy trình asset cho game, gồm nhiều tiện ích chuyên dụng hơn trình sửa ảnh chung.
+
+**Giới hạn:** EULA hạn chế phân phối và chỉ cho biên dịch/sửa nguồn cho mục đích cá nhân hoặc đóng góp. LICENSE MIT trong tests không phải giấy phép của ứng dụng; chưa thử xuất animation.
+
+**Cách tham khảo/tích hợp:** Dùng bản có quyền sử dụng phù hợp; kiểm riêng quyền asset và không mặc định có thể nhúng mã ứng dụng vào sản phẩm.
+
+**Thay thế:** libresprite, pixelorama, krita.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`e593180ee7cb`](https://github.com/aseprite/aseprite/commit/e593180ee7cb0349f40c4e057f357830ebb0fa10). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/aseprite/aseprite/blob/e593180ee7cb0349f40c4e057f357830ebb0fa10/README.md) · [tests/LICENSE.txt](https://github.com/aseprite/aseprite/blob/e593180ee7cb0349f40c4e057f357830ebb0fa10/tests/LICENSE.txt) · [EULA.txt](https://github.com/aseprite/aseprite/blob/e593180ee7cb0349f40c4e057f357830ebb0fa10/EULA.txt) · [docs/LICENSES.md](https://github.com/aseprite/aseprite/blob/e593180ee7cb0349f40c4e057f357830ebb0fa10/docs/LICENSES.md) · [metadata GitHub](https://api.github.com/repos/aseprite/aseprite).
+
+<a id="anhkysuai-2026-11-23-wavefunctioncollapse"></a>
+
+### WaveFunctionCollapse
+
+**Repo:** [mxgmn/WaveFunctionCollapse](https://github.com/mxgmn/WaveFunctionCollapse) · **License:** MIT cho mã; samples/tiles không được bao phủ · **★ 25,550 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Sinh họa tiết hoặc bản đồ theo ràng buộc cục bộ từ mẫu đầu vào.
+
+**Giá trị và cơ chế:** README giải thích quan sát ô entropy thấp rồi lan truyền ràng buộc; có giá trị học procedural generation và kết hợp quy tắc tile trong thiết kế game.
+
+**Giới hạn:** Thuật toán có thể gặp mâu thuẫn, không bảo đảm sinh mọi cấu hình. LICENSE loại samples/tiles khỏi quyền MIT. Chưa chạy kiểm phân bố hoặc tốc độ; đây không phải mô hình ngôn ngữ.
+
+**Cách tham khảo/tích hợp:** Tạo tile và luật do mình sở hữu, thử seed cố định và cơ chế khởi động lại khi ràng buộc bất khả thi.
+
+**Thay thế:** debroglie, tessera, [Graphite](../06-ui-ux-design/README.md#anhkysuai-2026-11-23-graphite).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`de7d22e705e8`](https://github.com/mxgmn/WaveFunctionCollapse/commit/de7d22e705e816b62b4d613199d0463820fcaef3). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/mxgmn/WaveFunctionCollapse/blob/de7d22e705e816b62b4d613199d0463820fcaef3/README.md) · [LICENSE](https://github.com/mxgmn/WaveFunctionCollapse/blob/de7d22e705e816b62b4d613199d0463820fcaef3/LICENSE) · [metadata GitHub](https://api.github.com/repos/mxgmn/WaveFunctionCollapse).
+
+<a id="anhkysuai-2026-11-23-p5.js"></a>
+
+### p5.js
+
+**Repo:** [processing/p5.js](https://github.com/processing/p5.js) · **License:** LGPL-2.1 · **★ 24,414 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện JavaScript cho creative coding, hình ảnh và tương tác trong trình duyệt.
+
+**Giá trị và cơ chế:** README hướng đến vòng setup/draw và cách học bằng sketch; phù hợp minh họa thuật toán, tác phẩm tương tác và prototype trực quan.
+
+**Giới hạn:** Không thay game engine hay công cụ thiết kế hoàn chỉnh. Chưa đo tốc độ canvas, kiểm hỗ trợ thiết bị hay accessibility của sketch; tài sản và addon có quyền riêng.
+
+**Cách tham khảo/tích hợp:** Tách trạng thái sketch khỏi DOM ứng dụng, giới hạn số đối tượng mỗi frame và kiểm trên thiết bị mục tiêu.
+
+**Thay thế:** paper-js, [three.js](../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026), pixi-js.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`be49f97f86b2`](https://github.com/processing/p5.js/commit/be49f97f86b290a01542eb1436045e5029e0bd11). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/processing/p5.js/blob/be49f97f86b290a01542eb1436045e5029e0bd11/README.md) · [license.txt](https://github.com/processing/p5.js/blob/be49f97f86b290a01542eb1436045e5029e0bd11/license.txt) · [metadata GitHub](https://api.github.com/repos/processing/p5.js).
+
+<a id="anhkysuai-jlmakes-scrollreveal"></a>
+
+### ScrollReveal
+
+**Repo:** [jlmakes/scrollreveal](https://github.com/jlmakes/scrollreveal) · **License:** GPL-3.0 theo README/package.json hoặc giấy phép thương mại · **Kiểm:** 2026-11-23, `docs-read`, [`411043d3fd1d`](https://github.com/jlmakes/scrollreveal/tree/411043d3fd1d13d21a824f9c3e24e3f180197bd5) (commit 2026-11-10). **Sao:** 22,472 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/jlmakes/scrollreveal).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Thư viện tạo hiệu ứng khi phần tử cuộn vào vùng nhìn thấy, phù hợp trang giới thiệu và nội dung kể chuyện. |
+| Giá trị và cơ chế theo tài liệu | README minh họa singleton ScrollReveal và phương thức reveal; manifest 4.0.9 có bundle Rollup và kiểm thử Karma. API nhỏ giúp bổ sung chuyển động vào trang hiện có. |
+| Giới hạn | Không thấy LICENSE riêng ở gốc; README nêu GPL cho dự án tương thích và yêu cầu giấy phép thương mại để giữ mã độc quyền. Chưa kiểm tương thích trình duyệt, reduced-motion hay hiệu năng cuộn. |
+| Điều kiện tích hợp | Chốt điều khoản phù hợp mô hình phân phối, khóa phiên bản CDN/npm; bảo đảm nội dung vẫn đọc được khi JavaScript lỗi và tắt hoặc giảm hiệu ứng theo tùy chọn người dùng. |
+| Lựa chọn đối chiếu | AOS; Motion; Intersection Observer API. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/jlmakes/scrollreveal/blob/411043d3fd1d13d21a824f9c3e24e3f180197bd5/README.md) · [package.json](https://github.com/jlmakes/scrollreveal/blob/411043d3fd1d13d21a824f9c3e24e3f180197bd5/package.json).
+
+<a id="anhkysuai-2026-11-23-pixijs-pixijs"></a>
+
+### pixijs
+
+**Repo:** [pixijs/pixijs](https://github.com/pixijs/pixijs) · **License:** MIT · **★ 48,883 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện dựng đồ họa 2D tương tác trên web, có renderer WebGL và WebGPU.
+
+**Giá trị:** Phù hợp canvas, nội dung tương tác và công cụ thiết kế 2D cần lớp hiển thị độc lập với UI framework.
+
+**Giới hạn:** Các tuyên bố nhanh nhất trong README là quảng bá của upstream; chưa đo hiệu năng, tương thích GPU hay chi phí bộ nhớ.
+
+**Cách tham khảo/tích hợp:** Đối chiếu phạm vi và giấy phép, thử một ca nhỏ có kết quả mong đợi trước khi nhúng vào dự án.
+
+**Lựa chọn để đối chiếu:** [phaserjs/phaser](https://github.com/phaserjs/phaser) · [BabylonJS/Babylon.js](https://github.com/BabylonJS/Babylon.js). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`16011d73d81678fa8c48f256ad36de7db7f90ce9`](https://github.com/pixijs/pixijs/commit/16011d73d81678fa8c48f256ad36de7db7f90ce9), ngày commit 2026-11-20. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/pixijs/pixijs/blob/16011d73d81678fa8c48f256ad36de7db7f90ce9/README.md) · [LICENSE](https://github.com/pixijs/pixijs/blob/16011d73d81678fa8c48f256ad36de7db7f90ce9/LICENSE) · [package.json](https://github.com/pixijs/pixijs/blob/16011d73d81678fa8c48f256ad36de7db7f90ce9/package.json) · [.github/workflows/push.yml](https://github.com/pixijs/pixijs/blob/16011d73d81678fa8c48f256ad36de7db7f90ce9/.github/workflows/push.yml) · [metadata GitHub](https://api.github.com/repos/pixijs/pixijs).
+
 ## 10. Nguồn
 
 - Nhóm A/B: github.com/AbubakrChan/product-launch-motion (README, SKILL.md, scripts/, evals/, commits, issues), github.com/AbubakrChan, github.com/charlie947/motion-graphics-skills (README, commits), github.com/charlie947, charliehills.substack.com/p/opus-55-motion-graphics, skillsllm.com/skill/motion-graphics-skills, github.com/howseen-ai/claude-motion-design (README, commits, issues), github.com/howseen-ai, trendshift.io/repositories/265851, skillsdirectory.com/skills/howseen-ai-motion-design, github.com/ProSkillsMD/proskills/issues/7473, github.com/nateherkai/hyperframes-student-kit (README, .claude/skills, cut-mistakes/SKILL.md, cut-silences/SKILL.md, issues), github.com/nateherkai, opsmavix.com/blog/hyperframes-student-kit, skillsllm.com/skill/hyperframes-student-kit, aident.ai/blog/edit-videos-claude-code-hyperframes, github.com/Barty-Bart/motion-graphics (README, skills/motion-broll/SKILL.md, skills/object-separation/SKILL.md, issues), github.com/Barty-Bart, aitoolsreview.co.uk (2 video), autoae.online/blog/claude-motion-graphics-skills, mindstudio.ai/blog/ai-video-editing-claude-code-hyperframes

@@ -774,6 +774,34 @@ Memory "kiểu OpenClaw":
 
 **Nguồn §3o:** ảnh README người dùng gửi 4/11/2026 · clone https://github.com/JetBrains/thinkrail HEAD `c10f8808cee693e4abffeeb1844a132ed0a91cc5`: https://github.com/JetBrains/thinkrail/blob/c10f8808cee693e4abffeeb1844a132ed0a91cc5/README.md (Analytics & privacy, MCP servers) · https://github.com/JetBrains/thinkrail/blob/c10f8808cee693e4abffeeb1844a132ed0a91cc5/packages/server/src/analytics/SPEC.md · https://github.com/JetBrains/thinkrail/blob/c10f8808cee693e4abffeeb1844a132ed0a91cc5/packages/server/src/analytics/mute.ts · https://github.com/JetBrains/thinkrail/blob/c10f8808cee693e4abffeeb1844a132ed0a91cc5/packages/server/src/analytics/service.ts · https://github.com/JetBrains/thinkrail/blob/c10f8808cee693e4abffeeb1844a132ed0a91cc5/apps/web/src/panels/useAnalyticsConsent.ts · https://github.com/JetBrains/thinkrail/blob/c10f8808cee693e4abffeeb1844a132ed0a91cc5/apps/cli/SPEC.md · https://github.com/JetBrains/thinkrail/blob/c10f8808cee693e4abffeeb1844a132ed0a91cc5/install.sh · https://github.com/JetBrains/thinkrail/blob/c10f8808cee693e4abffeeb1844a132ed0a91cc5/LICENSE; `git shortlog`, `git tag` · GitHub search API `thinkrail` 4/11/2026.
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **1 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-continue"></a>
+
+### Continue
+
+**Repo:** [continuedev/continue](https://github.com/continuedev/continue) · **License:** Apache-2.0 · **★ 36,540 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Trợ lý lập trình cho VS Code, CLI và JetBrains, kết nối nhiều nhà cung cấp mô hình.
+
+**Giá trị và cơ chế:** README bản cuối mô tả chuyển trọng tâm sang CLI cùng tiện ích IDE; hữu ích để tham khảo cấu trúc trợ lý lập trình và lớp cấu hình nhà cung cấp.
+
+**Giới hạn:** README thông báo kho đã ngừng phát triển chủ động và chuyển read-only; không nên suy từ số sao rằng còn được bảo trì. Tuyên bố bỏ telemetry chưa được đối chiếu mã.
+
+**Cách tham khảo/tích hợp:** Ghim bản phát hành, tự chịu trách nhiệm cập nhật phụ thuộc nếu fork; thử trên dự án nhỏ trước.
+
+**Thay thế:** [Aider](../01-ai-coding-agents/README.md#core-coding-contracts), [OpenCode](https://github.com/anomalyco/opencode), [Cline](https://github.com/cline/cline).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`5522c6f44ca0`](https://github.com/continuedev/continue/commit/5522c6f44ca0ac3528b37244818fbfa39b5af470). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/continuedev/continue/blob/5522c6f44ca0ac3528b37244818fbfa39b5af470/README.md) · [LICENSE](https://github.com/continuedev/continue/blob/5522c6f44ca0ac3528b37244818fbfa39b5af470/LICENSE) · [metadata GitHub](https://api.github.com/repos/continuedev/continue).
+
 ## 4. Nguồn
 
 - https://pinggy.io/blog/best_open_source_cli_coding_agents/

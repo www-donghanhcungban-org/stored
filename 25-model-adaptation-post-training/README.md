@@ -236,3 +236,91 @@ Không có trần VRAM phổ quát cho “model 7B/8B”. Trọng số, activati
 Nguồn GitHub trong từng hồ sơ ghim full commit SHA đã clone; số sao và `archived` đọc bằng GitHub REST ngày 2/11/2026. Commit date là ngày của `HEAD` đã đọc, khác `pushed_at` (có thể là nhánh khác). README/CI là bằng chứng về thiết kế và định nghĩa kiểm, không phải kết quả thực thi tại kho này. Nguồn ngoài repo gồm các paper gốc ở §4; không dùng bài SEO để quyết định tính tương thích hay license.
 
 Khi cập nhật: đọc lại license từng component, release/changelog, trainer/schema/template và đường save/load; giữ bằng chứng cấu hình cụ thể nếu báo tốc độ/VRAM; đối chiếu model card và rerun eval ở dự án tích hợp. Chỉ bổ sung con số benchmark khi có hardware, dataset/split, config, revision và giới hạn của phép đo.
+
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **4 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-minimind"></a>
+
+### MiniMind
+
+**Repo:** [jingyaogong/minimind](https://github.com/jingyaogong/minimind) · **License:** Apache-2.0 · **★ 69,135 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tài liệu và mã huấn luyện mô hình ngôn ngữ nhỏ từ đầu bằng PyTorch.
+
+**Giá trị và cơ chế:** README trình bày chuỗi pretrain, SFT, LoRA, DPO và các biến thể học tăng cường; hữu ích để hiểu từng giai đoạn thay vì chỉ gọi framework mức cao.
+
+**Giới hạn:** Con số hai giờ và chi phí ba nhân dân tệ chỉ là phép chạy SFT một epoch trên RTX 3090 theo tác giả, không phải chi phí huấn luyện toàn bộ. Quyền dữ liệu và weights phải kiểm riêng.
+
+**Cách tham khảo/tích hợp:** Dùng làm bài học có cấu hình và seed cố định, tách dataset khỏi mã Apache-2.0.
+
+**Thay thế:** nanogpt, [LitGPT](../25-model-adaptation-post-training/README.md#anhkysuai-2026-11-23-litgpt), llama-factory.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`858008eb98da`](https://github.com/jingyaogong/minimind/commit/858008eb98da4428f78053a1cc4d3a3bd5973629). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/jingyaogong/minimind/blob/858008eb98da4428f78053a1cc4d3a3bd5973629/README.md) · [LICENSE](https://github.com/jingyaogong/minimind/blob/858008eb98da4428f78053a1cc4d3a3bd5973629/LICENSE) · [metadata GitHub](https://api.github.com/repos/jingyaogong/minimind).
+
+<a id="anhkysuai-2026-11-23-jax"></a>
+
+### JAX
+
+**Repo:** [jax-ml/jax](https://github.com/jax-ml/jax) · **License:** Apache-2.0 · **★ 36,675 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tính toán mảng và biến đổi chương trình Python hướng tới accelerator.
+
+**Giá trị và cơ chế:** README giải thích tổ hợp grad và jit với XLA; hữu ích khi cần tự động vi phân và tối ưu hàm tính toán trong nghiên cứu mô hình.
+
+**Giới hạn:** Tài liệu nêu rõ có sharp edges và đây là dự án nghiên cứu. Chưa biên dịch workload, đo thời gian compile hoặc kiểm độ chính xác số trên GPU/TPU.
+
+**Cách tham khảo/tích hợp:** Giữ hàm tính toán thuần, xác định dtype và seed; so kết quả với baseline trước khi tối ưu thiết bị.
+
+**Thay thế:** [pytorch](../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện), [tensorflow](../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện), numpy.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`937af6e0b5a5`](https://github.com/jax-ml/jax/commit/937af6e0b5a507f28fd002ce693610627a7e2c2f). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/jax-ml/jax/blob/937af6e0b5a507f28fd002ce693610627a7e2c2f/README.md) · [LICENSE](https://github.com/jax-ml/jax/blob/937af6e0b5a507f28fd002ce693610627a7e2c2f/LICENSE) · [metadata GitHub](https://api.github.com/repos/jax-ml/jax).
+
+<a id="anhkysuai-2026-11-23-hanlp"></a>
+
+### HanLP
+
+**Repo:** [hankcs/HanLP](https://github.com/hankcs/HanLP) · **License:** Apache-2.0 cho mã; models theo CC-BY-NC-SA-4.0 hoặc nghiên cứu/giảng dạy · **★ 36,542 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Toolkit NLP đa ngôn ngữ với các tác vụ phân tích và mô hình tiền huấn luyện.
+
+**Giá trị và cơ chế:** README mô tả cả pipeline đơn tác vụ và đa tác vụ trên PyTorch/TensorFlow; thích hợp tham khảo xử lý ngôn ngữ với annotation có cấu trúc.
+
+**Giới hạn:** Mã Apache-2.0 không làm weights được dùng tự do: README nêu models đa ngôn ngữ mặc định phi thương mại, models tiếng Trung chỉ nghiên cứu/giảng dạy. Chưa đo tiếng Việt hoặc kiểm checkpoint cụ thể.
+
+**Cách tham khảo/tích hợp:** Chọn model theo ngôn ngữ/tác vụ và kiểm license checkpoint trước khi dùng thương mại.
+
+**Thay thế:** [spaCy](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính), stanza, [transformers](../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`959a6966f6e7`](https://github.com/hankcs/HanLP/commit/959a6966f6e7e26d2e89c4112ca9bafbe32eb743). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/hankcs/HanLP/blob/959a6966f6e7e26d2e89c4112ca9bafbe32eb743/README.md) · [LICENSE](https://github.com/hankcs/HanLP/blob/959a6966f6e7e26d2e89c4112ca9bafbe32eb743/LICENSE) · [metadata GitHub](https://api.github.com/repos/hankcs/HanLP).
+
+<a id="anhkysuai-2026-11-23-litgpt"></a>
+
+### LitGPT
+
+**Repo:** [Lightning-AI/litgpt](https://github.com/Lightning-AI/litgpt) · **License:** Apache-2.0 cho mã; weights theo model · **★ 13,761 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Các triển khai LLM và recipe pretrain, fine-tune, chuyển đổi và phục vụ model.
+
+**Giá trị và cơ chế:** README trình bày LoRA/QLoRA, adapter, phân tán FSDP cùng cấu hình trực tiếp; phù hợp người muốn hiểu mã huấn luyện và kiểm soát recipe.
+
+**Giới hạn:** Không tải model hay chạy GPU trong đánh giá. Một số weights yêu cầu token/quyền riêng; số hiệu năng và quy mô hàng nghìn thiết bị chưa kiểm. CI CPU có thể bỏ test cần secret trên fork.
+
+**Cách tham khảo/tích hợp:** Bắt đầu model nhỏ và dataset có quyền, lưu cấu hình/seed/checkpoint, xác minh format export trước dùng serving.
+
+**Thay thế:** llama-factory, [Axolotl](../25-model-adaptation-post-training/README.md#axolotl), [MiniMind](../25-model-adaptation-post-training/README.md#anhkysuai-2026-11-23-minimind).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`5341568a65e9`](https://github.com/Lightning-AI/litgpt/commit/5341568a65e918a85cb284fac038de2157eebf3f). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/Lightning-AI/litgpt/blob/5341568a65e918a85cb284fac038de2157eebf3f/README.md) · [LICENSE.md](https://github.com/Lightning-AI/litgpt/blob/5341568a65e918a85cb284fac038de2157eebf3f/LICENSE.md) · [metadata GitHub](https://api.github.com/repos/Lightning-AI/litgpt).

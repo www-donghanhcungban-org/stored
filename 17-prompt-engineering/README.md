@@ -313,6 +313,74 @@ Loader so dependency versions với metadata đã lưu và **cảnh báo** khi l
 
 **Nguồn §4f:** permalink implementation/LICENSE/CI DSPy trên; đối chiếu cơ chế optimizer, spec và eval ở §4c–§4d. Không tuyên bố tái lập chất lượng/chi phí hay chạy model upstream trong đợt đọc này.
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **3 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-awesome-gpt-image-2-prompts-evolink"></a>
+
+### Awesome GPT Image 2 Prompts — EvoLink
+
+**Repo:** [Evolink-AI/awesome-gpt-image-2-API-Prompts](https://github.com/Evolink-AI/awesome-gpt-image-2-API-Prompts) · **License:** CC0-1.0 cho nội dung được cấp quyền; nguồn bên thứ ba cần đối chiếu · **★ 17,430 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư mục prompt và ví dụ tạo/chỉnh sửa ảnh được tuyển chọn theo tình huống thiết kế.
+
+**Giá trị và cơ chế:** README tổ chức prompt đầy đủ, nguồn và tác giả để người đọc điều chỉnh yêu cầu bố cục, phong cách và đầu ra; hữu ích làm bộ tham chiếu kỹ thuật viết prompt.
+
+**Giới hạn:** Đã đọc phần giới thiệu và mẫu chọn lọc, không rà hết README hơn một triệu ký tự. Không xác nhận chất lượng mọi ví dụ hay quyền của ảnh gốc. API/skill automation là repo riêng.
+
+**Cách tham khảo/tích hợp:** Lấy cấu trúc yêu cầu và viết lại bằng tài sản có quyền; lưu kết quả thử theo model/phiên bản.
+
+**Thay thế:** [Awesome Nano Banana Pro Prompts](../17-prompt-engineering/README.md#anhkysuai-2026-11-23-awesome-nano-banana-pro-prompts), awesome-gpt4o-images, [Promptfoo](../07-eval-observability/README.md#core-eval-validity).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`e2a269ad1a05`](https://github.com/Evolink-AI/awesome-gpt-image-2-API-Prompts/commit/e2a269ad1a055a0b4f6c1e170341c6c1aba30faa). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/Evolink-AI/awesome-gpt-image-2-API-Prompts/blob/e2a269ad1a055a0b4f6c1e170341c6c1aba30faa/README.md) · [LICENSE](https://github.com/Evolink-AI/awesome-gpt-image-2-API-Prompts/blob/e2a269ad1a055a0b4f6c1e170341c6c1aba30faa/LICENSE) · [metadata GitHub](https://api.github.com/repos/Evolink-AI/awesome-gpt-image-2-API-Prompts).
+
+<a id="anhkysuai-2026-11-23-awesome-nano-banana-pro-prompts"></a>
+
+### Awesome Nano Banana Pro Prompts
+
+**Repo:** [YouMind-OpenLab/awesome-nano-banana-pro-prompts](https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts) · **License:** CC-BY-4.0; quyền tác giả bên thứ ba được lưu ý riêng · **★ 13,854 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ prompt cộng đồng theo các tình huống avatar, infographic, quảng cáo và storyboard.
+
+**Giá trị và cơ chế:** README tổ chức mẫu có tham chiếu và gallery riêng; phù hợp học cách mô tả bố cục, chữ và điều kiện hình ảnh cho công cụ tạo ảnh.
+
+**Giới hạn:** Chỉ đọc cấu trúc và mẫu chọn lọc, chưa thử toàn bộ prompt. Tuyên bố license của bộ sưu tập không tự chứng minh quyền mọi ảnh/mẫu cộng đồng; README có thông báo bản quyền và cơ chế gỡ.
+
+**Cách tham khảo/tích hợp:** Dùng làm nguồn ý tưởng, viết lại prompt với tài sản có quyền và giữ attribution khi tái sử dụng nội dung.
+
+**Thay thế:** [Awesome GPT Image 2 Prompts — EvoLink](../17-prompt-engineering/README.md#anhkysuai-2026-11-23-awesome-gpt-image-2-prompts-evolink), awesome-gpt4o-images, [Promptfoo](../07-eval-observability/README.md#core-eval-validity).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`445f95a70ec7`](https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts/commit/445f95a70ec77ab56a93e76055054bd257fad467). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts/blob/445f95a70ec77ab56a93e76055054bd257fad467/README.md) · [LICENSE](https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts/blob/445f95a70ec77ab56a93e76055054bd257fad467/LICENSE) · [metadata GitHub](https://api.github.com/repos/YouMind-OpenLab/awesome-nano-banana-pro-prompts).
+
+<a id="anhkysuai-2026-11-23-agency-agents-zh"></a>
+
+### Agency Agents 中文
+
+**Repo:** [jnMetaCode/agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) · **License:** MIT · **★ 22,271 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ mô tả vai trò agent bằng tiếng Trung, mở rộng từ Agency Agents cho nhiều quy trình và nền tảng.
+
+**Giá trị và cơ chế:** README trình bày bản dịch cộng đồng cùng vai trò bổ sung, gợi ý đầu vào, cách phối hợp và đầu ra theo chuyên môn; license ghi công tác giả gốc và người chuyển ngữ.
+
+**Giới hạn:** Đây là tập hướng dẫn/prompt, chưa chứng minh năng lực chuyên gia hoặc độ tin cậy. Các sản phẩm desktop và memory được quảng bá là repo riêng; chưa đọc toàn bộ vai trò.
+
+**Cách tham khảo/tích hợp:** Chọn vài vai trò đúng việc, sửa tiêu chí đầu ra và kiểm kết quả trên tác vụ mẫu trước khi đưa vào workflow.
+
+**Thay thế:** [Agency Agents 中文](../17-prompt-engineering/README.md#anhkysuai-2026-11-23-agency-agents-zh), awesome-claude-skills, [anthropics/skills](https://github.com/anthropics/skills).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`6b22c1e651ed`](https://github.com/jnMetaCode/agency-agents-zh/commit/6b22c1e651eded6d1b6bf553d3f0903c1b18e99f). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/jnMetaCode/agency-agents-zh/blob/6b22c1e651eded6d1b6bf553d3f0903c1b18e99f/README.md) · [LICENSE](https://github.com/jnMetaCode/agency-agents-zh/blob/6b22c1e651eded6d1b6bf553d3f0903c1b18e99f/LICENSE) · [metadata GitHub](https://api.github.com/repos/jnMetaCode/agency-agents-zh).
+
 ## 5. Nguồn
 
 - https://github.com/dair-ai/Prompt-Engineering-Guide · https://www.star-history.com/dair-ai/prompt-engineering-guide/ · https://dev.to/web_dev-usman/10-github-repos-every-serious-prompt-writer-should-be-using-21jk

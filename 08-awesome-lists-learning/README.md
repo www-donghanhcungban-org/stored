@@ -1400,6 +1400,1854 @@ Nhóm có 32 repo. Bốn repo đã đọc ở §6c.2 (autoresearch, Agno, Compos
 
 **Nguồn §6c:** bảng người dùng dán từ https://phandonggiang.com/kho-repo ngày 18/11/2026 · GitHub search API cho từng repo 18/11/2026 · clone nông 24 repo, đọc README, LICENSE và cây thư mục (HEAD ghi trong `data/projects.json`).
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **92 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-google-research"></a>
+
+### Google Research code collection
+
+**Repo:** [google-research/google-research](https://github.com/google-research/google-research) · **License:** Apache-2.0 cho mã; CC-BY-4.0 cho dữ liệu theo README · **★ 39,263 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Monorepo tập hợp mã nghiên cứu được Google Research công bố.
+
+**Giá trị và cơ chế:** README xác định phạm vi giấy phép tách mã và dữ liệu, khuyến nghị lấy riêng thư mục quan tâm; là nguồn bài học thực nghiệm đa chủ đề.
+
+**Giới hạn:** Không phải sản phẩm Google được hỗ trợ theo README. Đợt này chỉ đọc tài liệu root và cây thư mục, không kiểm từng nghiên cứu hoặc quyền checkpoint bên ngoài.
+
+**Cách tham khảo/tích hợp:** Chọn đúng thư mục bài báo, ghim SHA và kiểm license/phụ thuộc tại phạm vi đó trước khi tái lập.
+
+**Thay thế:** papers-with-code, [transformers](../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện), [pytorch](../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`87e25a5ba04d`](https://github.com/google-research/google-research/commit/87e25a5ba04d2c4cf0108f0cec96d648fe2b945a). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/google-research/google-research/blob/87e25a5ba04d2c4cf0108f0cec96d648fe2b945a/README.md) · [LICENSE](https://github.com/google-research/google-research/blob/87e25a5ba04d2c4cf0108f0cec96d648fe2b945a/LICENSE) · [metadata GitHub](https://api.github.com/repos/google-research/google-research).
+
+<a id="anhkysuai-2026-11-23-learnopencv-examples"></a>
+
+### LearnOpenCV Examples
+
+**Repo:** [spmallick/learnopencv](https://github.com/spmallick/learnopencv) · **License:** Không có license chung được xác minh; từng ví dụ có điều khoản riêng · **★ 23,258 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tìm bài học và mã ví dụ về thị giác máy tính, OpenCV và học sâu.
+
+**Giá trị và cơ chế:** README là chỉ mục theo bài viết dẫn tới nhiều thư mục ví dụ; thuận tiện tìm một bài toán và xem tài nguyên đi kèm.
+
+**Giới hạn:** Chỉ đọc tài liệu và license mẫu, chưa đánh giá toàn bộ ví dụ. LICENSE BSD-3-Clause trong Mask-RCNN không chứng minh quyền dùng toàn kho; môi trường và độ mới khác nhau theo bài.
+
+**Cách tham khảo/tích hợp:** Chọn một ví dụ cụ thể rồi kiểm riêng mã, dependency, dữ liệu và license trước khi tái sử dụng.
+
+**Thay thế:** [opencv](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính), google-research, DeepLearningExamples.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`c2c1b0d61a1c`](https://github.com/spmallick/learnopencv/commit/c2c1b0d61a1c9e18f9b2e2f0d50f40b257006fca). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/spmallick/learnopencv/blob/c2c1b0d61a1c9e18f9b2e2f0d50f40b257006fca/README.md) · [Mask-RCNN/LICENSE](https://github.com/spmallick/learnopencv/blob/c2c1b0d61a1c9e18f9b2e2f0d50f40b257006fca/Mask-RCNN/LICENSE) · [metadata GitHub](https://api.github.com/repos/spmallick/learnopencv).
+
+<a id="anhkysuai-2026-11-23-gemini-fullstack-langgraph-quickstart"></a>
+
+### Gemini Fullstack LangGraph Quickstart
+
+**Repo:** [google-gemini/gemini-fullstack-langgraph-quickstart](https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart) · **License:** Apache-2.0 · **★ 18,371 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Mẫu ứng dụng nghiên cứu web với React, LangGraph và Gemini.
+
+**Giá trị và cơ chế:** Đã đọc graph: tạo truy vấn, tìm kiếm có grounding, chèn citation, phản chiếu khoảng trống kiến thức rồi lặp hoặc tổng hợp; giới hạn số vòng nằm trong configuration.
+
+**Giới hạn:** Không thấy CI trong tree nên giữ docs-read dù đã đọc các node chính. Chưa gọi API hoặc kiểm nguồn trích dẫn; model mặc định tại snapshot có thể cần đổi khi triển khai.
+
+**Cách tham khảo/tích hợp:** Dùng làm bài học graph và vòng phản hồi, cấu hình khóa/model cùng giới hạn chi phí, rồi đánh giá câu trả lời với tập câu hỏi có đáp án.
+
+**Thay thế:** [gpt-researcher](../08-awesome-lists-learning/README.md#6c4-nhóm-ai-agent--mcp-so-sánh-chọn-16-repo-đọc-mã-18112026), Open Deep Research, [LangGraph](../02-agent-frameworks/README.md#core-framework-semantics).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`e34e569de465`](https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart/commit/e34e569de465340e42f36cd3cab4fac0c3ce7036). Đọc các node web research/reflection/finalize, điều kiện dừng và configuration; không thấy CI trong tree nên giữ docs-read, chưa gọi dịch vụ model. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart/blob/e34e569de465340e42f36cd3cab4fac0c3ce7036/README.md) · [LICENSE](https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart/blob/e34e569de465340e42f36cd3cab4fac0c3ce7036/LICENSE) · [backend/src/agent/graph.py](https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart/blob/e34e569de465340e42f36cd3cab4fac0c3ce7036/backend/src/agent/graph.py) · [backend/src/agent/configuration.py](https://github.com/google-gemini/gemini-fullstack-langgraph-quickstart/blob/e34e569de465340e42f36cd3cab4fac0c3ce7036/backend/src/agent/configuration.py) · [metadata GitHub](https://api.github.com/repos/google-gemini/gemini-fullstack-langgraph-quickstart).
+
+<a id="anhkysuai-2026-11-23-awesome-claude-skills-travisvn"></a>
+
+### Awesome Claude Skills (travisvn)
+
+**Repo:** [travisvn/awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) · **License:** Chưa tìm thấy LICENSE tại snapshot · **★ 15,915 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Chỉ mục tài nguyên và bộ kỹ năng cộng đồng dành cho Claude và các quy trình liên quan.
+
+**Giá trị và cơ chế:** README gom liên kết, mô tả cách dùng skills và tài nguyên tham khảo; thuận tiện khám phá một kỹ năng trước khi đọc nguồn gốc.
+
+**Giới hạn:** Tree tại SHA chỉ có tài liệu và không có LICENSE. Danh sách không xác nhận tính an toàn, quyền tái sử dụng hay chất lượng từng kỹ năng; chưa cài hoặc chạy mục nào.
+
+**Cách tham khảo/tích hợp:** Dùng như điểm tìm kiếm, theo từng liên kết để kiểm license, quyền công cụ và nội dung trước khi đưa vào môi trường làm việc.
+
+**Thay thế:** [awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills), [anthropics/skills](https://github.com/anthropics/skills), [Agency Agents 中文](../17-prompt-engineering/README.md#anhkysuai-2026-11-23-agency-agents-zh).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`1da55aa810f2`](https://github.com/travisvn/awesome-claude-skills/commit/1da55aa810f206d3fe2005e7e3989b15a275d942). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/travisvn/awesome-claude-skills/blob/1da55aa810f206d3fe2005e7e3989b15a275d942/README.md) · [metadata GitHub](https://api.github.com/repos/travisvn/awesome-claude-skills).
+
+<a id="anhkysuai-2026-11-23-asabeneh-30-days-of-python"></a>
+
+### 30-Days-Of-Python
+
+**Repo:** [Asabeneh/30-Days-Of-Python](https://github.com/Asabeneh/30-Days-Of-Python) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 79,356 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Lộ trình Python theo ngày, có giải thích cú pháp và bài tập tăng dần.
+
+**Giá trị:** Phù hợp người mới cần một chuỗi bài thực hành liên tục; cấu trúc theo ngày và các bản dịch giúp chia nhỏ việc học.
+
+**Giới hạn:** Không thấy giấy phép chung ở gốc cây đã đọc; mốc 30 ngày và tuyên bố chứng chỉ không chứng minh năng lực sau khóa. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Dẫn link bài gốc, chọn bài chuyển giao riêng để kiểm kiến thức; chưa nên đóng gói lại nội dung khi quyền tái sử dụng chưa rõ.
+
+**Lựa chọn để đối chiếu:** [exercism/python](https://github.com/exercism/python) · [TheAlgorithms/Python](https://github.com/TheAlgorithms/Python). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`50c11a80a6e3924a7be58c89f409697e12cb4d70`](https://github.com/Asabeneh/30-Days-Of-Python/commit/50c11a80a6e3924a7be58c89f409697e12cb4d70), ngày commit 2026-09-30. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [readme.md](https://github.com/Asabeneh/30-Days-Of-Python/blob/50c11a80a6e3924a7be58c89f409697e12cb4d70/readme.md) · [metadata GitHub](https://api.github.com/repos/Asabeneh/30-Days-Of-Python).
+
+<a id="anhkysuai-2026-11-23-byoungd-up"></a>
+
+### up
+
+**Repo:** [byoungd/up](https://github.com/byoungd/up) · **License:** CC BY-NC 4.0 (nội dung); MIT (mã) · **★ 70,840 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Sách mở song ngữ về tự học, dự án, nghề nghiệp và ứng dụng AI vào quá trình học.
+
+**Giá trị:** Kết hợp chương đọc với worksheet và chu kỳ nhìn lại kết quả, phù hợp thiết kế lộ trình theo vấn đề thực tế.
+
+**Giới hạn:** Nội dung CC BY-NC 4.0, mã cấu hình/site MIT; không được gắn MIT cho toàn bộ sách. Đây là trải nghiệm và hướng dẫn của tác giả, chưa phải hiệu quả học tập đã tái lập.
+
+**Cách tham khảo/tích hợp:** Dẫn nguồn và chọn worksheet phù hợp; tách quyền sử dụng văn bản khỏi quyền của mã site.
+
+**Lựa chọn để đối chiếu:** [charlax/professional-programming](https://github.com/charlax/professional-programming) · [MichaelCade/90DaysOfDevOps](https://github.com/MichaelCade/90DaysOfDevOps). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`9f83b2503638b3c7ff6e3bb52f3992038b4b4978`](https://github.com/byoungd/up/commit/9f83b2503638b3c7ff6e3bb52f3992038b4b4978), ngày commit 2026-11-14. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/byoungd/up/blob/9f83b2503638b3c7ff6e3bb52f3992038b4b4978/README.md) · [LICENSE-CODE.md](https://github.com/byoungd/up/blob/9f83b2503638b3c7ff6e3bb52f3992038b4b4978/LICENSE-CODE.md) · [LICENSE-CONTENT.md](https://github.com/byoungd/up/blob/9f83b2503638b3c7ff6e3bb52f3992038b4b4978/LICENSE-CONTENT.md) · [LICENSE.md](https://github.com/byoungd/up/blob/9f83b2503638b3c7ff6e3bb52f3992038b4b4978/LICENSE.md) · [package.json](https://github.com/byoungd/up/blob/9f83b2503638b3c7ff6e3bb52f3992038b4b4978/package.json) · [.github/workflows/ci.yml](https://github.com/byoungd/up/blob/9f83b2503638b3c7ff6e3bb52f3992038b4b4978/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/byoungd/up).
+
+<a id="anhkysuai-2026-11-23-thealgorithms-java"></a>
+
+### Java
+
+**Repo:** [TheAlgorithms/Java](https://github.com/TheAlgorithms/Java) · **License:** MIT · **★ 67,311 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tập hợp các thuật toán và cấu trúc dữ liệu triển khai bằng Java phục vụ học tập.
+
+**Giá trị:** Thuận tiện đọc nhiều cách giải trong cùng hệ ngôn ngữ và đối chiếu với bài tập; repo có cấu hình Maven và workflow build.
+
+**Giới hạn:** README nói rõ các bản triển khai dùng cho học và có thể kém hiệu quả hơn thư viện chuẩn; CI trong repo chưa được chạy lại trong đợt này.
+
+**Cách tham khảo/tích hợp:** Dùng làm ví dụ để giải thích, viết test biên và so độ phức tạp; ưu tiên thư viện chuẩn khi xây sản phẩm.
+
+**Lựa chọn để đối chiếu:** [TheAlgorithms/Python](https://github.com/TheAlgorithms/Python) · [TheAlgorithms/C-Plus-Plus](https://github.com/TheAlgorithms/C-Plus-Plus). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f4d6708297f86629a9e415070935b903ea8b1858`](https://github.com/TheAlgorithms/Java/commit/f4d6708297f86629a9e415070935b903ea8b1858), ngày commit 2026-11-20. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/TheAlgorithms/Java/blob/f4d6708297f86629a9e415070935b903ea8b1858/README.md) · [LICENSE](https://github.com/TheAlgorithms/Java/blob/f4d6708297f86629a9e415070935b903ea8b1858/LICENSE) · [pom.xml](https://github.com/TheAlgorithms/Java/blob/f4d6708297f86629a9e415070935b903ea8b1858/pom.xml) · [.github/workflows/build.yml](https://github.com/TheAlgorithms/Java/blob/f4d6708297f86629a9e415070935b903ea8b1858/.github/workflows/build.yml) · [metadata GitHub](https://api.github.com/repos/TheAlgorithms/Java).
+
+<a id="anhkysuai-2026-11-23-leonardomso-33-js-concepts"></a>
+
+### 33-js-concepts
+
+**Repo:** [leonardomso/33-js-concepts](https://github.com/leonardomso/33-js-concepts) · **License:** MIT · **★ 66,535 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tài liệu các khái niệm JavaScript, từ kiểu dữ liệu và hàm đến bất đồng bộ, DOM và chủ đề mở rộng.
+
+**Giá trị:** Phù hợp rà lỗ hổng kiến thức ngôn ngữ trước khi học framework; mỗi chủ đề dẫn giải thích và ví dụ.
+
+**Giới hạn:** Tên 33 khái niệm không phản ánh toàn bộ phần mở rộng hiện có; danh sách tài nguyên không thay bài kiểm khả năng tự giải vấn đề.
+
+**Cách tham khảo/tích hợp:** Chọn chủ đề yếu và viết ví dụ/test riêng; dùng như tài liệu học, không như bộ khung ứng dụng.
+
+**Lựa chọn để đối chiếu:** [javascript-tutorial/en.javascript.info](https://github.com/javascript-tutorial/en.javascript.info) · [Asabeneh/30-Days-Of-JavaScript](https://github.com/Asabeneh/30-Days-Of-JavaScript). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`16d0d95c02b19df6a8c841f1a0012d7b7367a340`](https://github.com/leonardomso/33-js-concepts/commit/16d0d95c02b19df6a8c841f1a0012d7b7367a340), ngày commit 2026-06-06. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/leonardomso/33-js-concepts/blob/16d0d95c02b19df6a8c841f1a0012d7b7367a340/README.md) · [LICENSE](https://github.com/leonardomso/33-js-concepts/blob/16d0d95c02b19df6a8c841f1a0012d7b7367a340/LICENSE) · [package.json](https://github.com/leonardomso/33-js-concepts/blob/16d0d95c02b19df6a8c841f1a0012d7b7367a340/package.json) · [.github/workflows/tests.yml](https://github.com/leonardomso/33-js-concepts/blob/16d0d95c02b19df6a8c841f1a0012d7b7367a340/.github/workflows/tests.yml) · [metadata GitHub](https://api.github.com/repos/leonardomso/33-js-concepts).
+
+<a id="anhkysuai-2026-11-23-rust-lang-rustlings"></a>
+
+### rustlings
+
+**Repo:** [rust-lang/rustlings](https://github.com/rust-lang/rustlings) · **License:** MIT · **★ 64,770 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ bài tập nhỏ để luyện đọc và viết Rust, được giới thiệu dùng cùng Rust Book.
+
+**Giá trị:** Chia việc học thành các bài sửa lỗi và hoàn thiện mã; repo có Cargo manifest và workflow Rust để đối chiếu cách tổ chức bài tập.
+
+**Giới hạn:** Hoàn thành bài nhỏ chưa chứng minh khả năng thiết kế hệ thống hay vận hành ứng dụng Rust; chưa chạy bộ bài trong đợt này.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo năng lực đầu vào và bổ sung bài chuyển giao mới sau mỗi nhóm chủ đề.
+
+**Lựa chọn để đối chiếu:** [google/comprehensive-rust](https://github.com/google/comprehensive-rust) · [exercism/python](https://github.com/exercism/python). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f7b9b3c5882a1a43275130b95142d94f847526f5`](https://github.com/rust-lang/rustlings/commit/f7b9b3c5882a1a43275130b95142d94f847526f5), ngày commit 2026-10-26. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/rust-lang/rustlings/blob/f7b9b3c5882a1a43275130b95142d94f847526f5/README.md) · [LICENSE](https://github.com/rust-lang/rustlings/blob/f7b9b3c5882a1a43275130b95142d94f847526f5/LICENSE) · [Cargo.toml](https://github.com/rust-lang/rustlings/blob/f7b9b3c5882a1a43275130b95142d94f847526f5/Cargo.toml) · [.github/workflows/rust.yml](https://github.com/rust-lang/rustlings/blob/f7b9b3c5882a1a43275130b95142d94f847526f5/.github/workflows/rust.yml) · [metadata GitHub](https://api.github.com/repos/rust-lang/rustlings).
+
+<a id="anhkysuai-2026-11-23-tldr-pages-tldr"></a>
+
+### tldr
+
+**Repo:** [tldr-pages/tldr](https://github.com/tldr-pages/tldr) · **License:** CC-BY-4.0 (nội dung); MIT (scripts) · **★ 64,283 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Kho ví dụ ngắn cho các lệnh dòng lệnh, dùng qua nhiều client độc lập.
+
+**Giá trị:** Tổ chức theo lệnh và tình huống sử dụng giúp tra nhanh hơn tài liệu tham số đầy đủ; phù hợp tham khảo cách viết trợ giúp CLI.
+
+**Giới hạn:** Ví dụ lệnh có thể thay đổi hoặc tác động dữ liệu; giấy phép nội dung khác mã tiện ích của kho và không thay quyền của các lệnh được giới thiệu.
+
+**Cách tham khảo/tích hợp:** Tra ví dụ rồi đối chiếu man page của phiên bản thực tế; chỉ chạy sau khi hiểu tham số và phạm vi dữ liệu.
+
+**Lựa chọn để đối chiếu:** [LeCoupa/awesome-cheatsheets](https://github.com/LeCoupa/awesome-cheatsheets) · [cheat/cheat](https://github.com/cheat/cheat). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`801e81e66c3ad6e879cfe40a214dc973e24ad983`](https://github.com/tldr-pages/tldr/commit/801e81e66c3ad6e879cfe40a214dc973e24ad983), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/tldr-pages/tldr/blob/801e81e66c3ad6e879cfe40a214dc973e24ad983/README.md) · [LICENSE.md](https://github.com/tldr-pages/tldr/blob/801e81e66c3ad6e879cfe40a214dc973e24ad983/LICENSE.md) · [package.json](https://github.com/tldr-pages/tldr/blob/801e81e66c3ad6e879cfe40a214dc973e24ad983/package.json) · [.github/workflows/ci.yml](https://github.com/tldr-pages/tldr/blob/801e81e66c3ad6e879cfe40a214dc973e24ad983/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/tldr-pages/tldr).
+
+<a id="anhkysuai-2026-11-23-youngyangyang04-leetcode-master"></a>
+
+### leetcode-master
+
+**Repo:** [youngyangyang04/leetcode-master](https://github.com/youngyangyang04/leetcode-master) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 62,844 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Lộ trình bài thuật toán bằng tiếng Trung với giải thích, hình minh họa và nhiều bản triển khai ngôn ngữ.
+
+**Giá trị:** Có thứ tự luyện bài và liên kết chủ đề, hữu ích để chọn bài theo kỹ thuật giải thay vì làm ngẫu nhiên.
+
+**Giới hạn:** Cây gốc chưa cho thấy giấy phép chung; có liên kết sách và dịch vụ học. Nội dung lời giải không phải thước đo độc lập năng lực phỏng vấn. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Dẫn bài gốc, tự viết lời giải trước khi đọc đáp án và kiểm bài biến thể; không sao chép nội dung dài khi chưa rõ quyền.
+
+**Lựa chọn để đối chiếu:** [azl397985856/leetcode](https://github.com/azl397985856/leetcode) · [halfrost/LeetCode-Go](https://github.com/halfrost/LeetCode-Go). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`6fe1571732d41e8f425f8e702992adf7ffae95a0`](https://github.com/youngyangyang04/leetcode-master/commit/6fe1571732d41e8f425f8e702992adf7ffae95a0), ngày commit 2026-10-24. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/youngyangyang04/leetcode-master/blob/6fe1571732d41e8f425f8e702992adf7ffae95a0/README.md) · [metadata GitHub](https://api.github.com/repos/youngyangyang04/leetcode-master).
+
+<a id="anhkysuai-2026-11-23-solido-awesome-flutter"></a>
+
+### awesome-flutter
+
+**Repo:** [Solido/awesome-flutter](https://github.com/Solido/awesome-flutter) · **License:** CC0-1.0 (tuyên bố trong README) · **★ 62,009 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách tuyển chọn thư viện, công cụ và bài học cho Flutter.
+
+**Giá trị:** Phân loại thành phần UI, đồ họa và các mức bài học, hữu ích để tạo danh sách ứng viên theo tác vụ.
+
+**Giới hạn:** Có nội dung tài trợ; việc được liệt kê không xác nhận tương thích hay bảo trì. Giấy phép danh sách không đại diện các package được dẫn.
+
+**Cách tham khảo/tích hợp:** Mở repo gốc của từng package, kiểm phiên bản Flutter và license trước khi chọn.
+
+**Lựa chọn để đối chiếu:** [jondot/awesome-react-native](https://github.com/jondot/awesome-react-native) · [wasabeef/awesome-android-ui](https://github.com/wasabeef/awesome-android-ui). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`7d43415ee0f9e446ec20795daebf4b8f3926f1d3`](https://github.com/Solido/awesome-flutter/commit/7d43415ee0f9e446ec20795daebf4b8f3926f1d3), ngày commit 2026-09-03. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/Solido/awesome-flutter/blob/7d43415ee0f9e446ec20795daebf4b8f3926f1d3/README.md) · [metadata GitHub](https://api.github.com/repos/Solido/awesome-flutter).
+
+<a id="anhkysuai-2026-11-23-rust-unofficial-awesome-rust"></a>
+
+### awesome-rust
+
+**Repo:** [rust-unofficial/awesome-rust](https://github.com/rust-unofficial/awesome-rust) · **License:** CC0-1.0 · **★ 60,746 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách ứng dụng, crate và tài nguyên học tập của hệ sinh thái Rust.
+
+**Giá trị:** Phân theo bài toán từ hệ thống, dữ liệu đến đồ họa, giúp phát hiện ứng viên thay vì chỉ tìm theo tên crate.
+
+**Giới hạn:** Danh sách CC0 không cấp lại giấy phép của từng crate; nhãn tuyển chọn không bảo đảm API hay khả năng bảo trì.
+
+**Cách tham khảo/tích hợp:** Dùng như chỉ mục rồi đọc tài liệu và CI của crate đích ở phiên bản định tích hợp.
+
+**Lựa chọn để đối chiếu:** [akullpp/awesome-java](https://github.com/akullpp/awesome-java) · [ziadoz/awesome-php](https://github.com/ziadoz/awesome-php). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`c45fd68e40b99cd29a679941ac09046006240cdc`](https://github.com/rust-unofficial/awesome-rust/commit/c45fd68e40b99cd29a679941ac09046006240cdc), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/rust-unofficial/awesome-rust/blob/c45fd68e40b99cd29a679941ac09046006240cdc/README.md) · [LICENSE.txt](https://github.com/rust-unofficial/awesome-rust/blob/c45fd68e40b99cd29a679941ac09046006240cdc/LICENSE.txt) · [Cargo.toml](https://github.com/rust-unofficial/awesome-rust/blob/c45fd68e40b99cd29a679941ac09046006240cdc/Cargo.toml) · [.github/workflows/lint.yml](https://github.com/rust-unofficial/awesome-rust/blob/c45fd68e40b99cd29a679941ac09046006240cdc/.github/workflows/lint.yml) · [metadata GitHub](https://api.github.com/repos/rust-unofficial/awesome-rust).
+
+<a id="anhkysuai-2026-11-23-wasabeef-awesome-android-ui"></a>
+
+### awesome-android-ui
+
+**Repo:** [wasabeef/awesome-android-ui](https://github.com/wasabeef/awesome-android-ui) · **License:** MIT · **★ 58,634 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách thư viện UI/UX Android kèm ví dụ hình ảnh và nhãn giấy phép.
+
+**Giá trị:** Tra cứu bằng loại thành phần giúp chọn ứng viên UI nhanh; phần hình ảnh hỗ trợ so hành vi mong muốn.
+
+**Giới hạn:** Ảnh demo và nhãn license trong danh sách là dữ kiện thứ cấp; cần kiểm tương thích Android/Compose và điều kiện của từng thư viện.
+
+**Cách tham khảo/tích hợp:** Chọn vài thành phần rồi kiểm trên thiết bị, accessibility và vòng đời màn hình của ứng dụng đích.
+
+**Lựa chọn để đối chiếu:** [Solido/awesome-flutter](https://github.com/Solido/awesome-flutter) · [vsouza/awesome-ios](https://github.com/vsouza/awesome-ios). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`312f9be3c50b3ea33ff3ba7eb9aa1c21b52de8b2`](https://github.com/wasabeef/awesome-android-ui/commit/312f9be3c50b3ea33ff3ba7eb9aa1c21b52de8b2), ngày commit 2026-06-05. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/wasabeef/awesome-android-ui/blob/312f9be3c50b3ea33ff3ba7eb9aa1c21b52de8b2/README.md) · [LICENSE](https://github.com/wasabeef/awesome-android-ui/blob/312f9be3c50b3ea33ff3ba7eb9aa1c21b52de8b2/LICENSE) · [metadata GitHub](https://api.github.com/repos/wasabeef/awesome-android-ui).
+
+<a id="anhkysuai-2026-11-23-firstcontributions-first-contributions"></a>
+
+### first-contributions
+
+**Repo:** [firstcontributions/first-contributions](https://github.com/firstcontributions/first-contributions) · **License:** MIT · **★ 56,976 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bài thực hành hướng dẫn người mới đi qua fork, clone, tạo nhánh, commit và pull request.
+
+**Giá trị:** Tách quy trình đóng góp thành những thao tác nhỏ, có tài liệu bằng nhiều ngôn ngữ và hướng dẫn GUI.
+
+**Giới hạn:** PR đổi một tên trong danh sách chỉ luyện thao tác Git; không thay bài tập đọc code, viết test hay xử lý review kỹ thuật.
+
+**Cách tham khảo/tích hợp:** Dùng để làm quen workflow, sau đó chuyển sang một lỗi nhỏ có test và tiêu chí nghiệm thu.
+
+**Lựa chọn để đối chiếu:** [github/opensource.guide](https://github.com/github/opensource.guide) · [charlax/professional-programming](https://github.com/charlax/professional-programming). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`85f68cdb811f0c9b7cb7113e8393c73acfb522af`](https://github.com/firstcontributions/first-contributions/commit/85f68cdb811f0c9b7cb7113e8393c73acfb522af), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/firstcontributions/first-contributions/blob/85f68cdb811f0c9b7cb7113e8393c73acfb522af/README.md) · [LICENSE](https://github.com/firstcontributions/first-contributions/blob/85f68cdb811f0c9b7cb7113e8393c73acfb522af/LICENSE) · [.github/workflows/auto-pr-merge.yml](https://github.com/firstcontributions/first-contributions/blob/85f68cdb811f0c9b7cb7113e8393c73acfb522af/.github/workflows/auto-pr-merge.yml) · [metadata GitHub](https://api.github.com/repos/firstcontributions/first-contributions).
+
+<a id="anhkysuai-2026-11-23-azl397985856-leetcode"></a>
+
+### leetcode
+
+**Repo:** [azl397985856/leetcode](https://github.com/azl397985856/leetcode) · **License:** CC-BY-NC-ND-4.0 · **★ 55,703 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Kho lời giải và ghi chép thuật toán LeetCode, có lộ trình và phân nhóm kiến thức.
+
+**Giá trị:** Hữu ích để đối chiếu nhiều kỹ thuật giải và giải thích sau khi tự làm bài.
+
+**Giới hạn:** README nói đây là kho lưu trữ lời giải giai đoạn 2020–2021 và tác giả đã chuyển trọng tâm; commit mới không đồng nghĩa toàn bộ bài đã được rà lại.
+
+**Cách tham khảo/tích hợp:** Kiểm đề bài và runtime hiện tại, bổ sung test biến thể; đọc giấy phép Creative Commons cụ thể trước khi tái phân phối.
+
+**Lựa chọn để đối chiếu:** [youngyangyang04/leetcode-master](https://github.com/youngyangyang04/leetcode-master) · [TheAlgorithms/Java](https://github.com/TheAlgorithms/Java). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`b2365578d556be14ec9786c82b21134b1a3b7655`](https://github.com/azl397985856/leetcode/commit/b2365578d556be14ec9786c82b21134b1a3b7655), ngày commit 2026-11-15. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/azl397985856/leetcode/blob/b2365578d556be14ec9786c82b21134b1a3b7655/README.md) · [LICENSE.txt](https://github.com/azl397985856/leetcode/blob/b2365578d556be14ec9786c82b21134b1a3b7655/LICENSE.txt) · [package.json](https://github.com/azl397985856/leetcode/blob/b2365578d556be14ec9786c82b21134b1a3b7655/package.json) · [.github/workflows/ci.yml](https://github.com/azl397985856/leetcode/blob/b2365578d556be14ec9786c82b21134b1a3b7655/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/azl397985856/leetcode).
+
+<a id="anhkysuai-2026-11-23-vsouza-awesome-ios"></a>
+
+### awesome-ios
+
+**Repo:** [vsouza/awesome-ios](https://github.com/vsouza/awesome-ios) · **License:** MIT · **★ 54,087 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách tài nguyên và thư viện iOS, Objective-C và Swift theo loại chức năng.
+
+**Giá trị:** Có các nhóm kiến trúc, kiểm chất lượng, dữ liệu và giao diện, phù hợp tìm công cụ cho một yêu cầu cụ thể.
+
+**Giới hạn:** Repo danh sách dùng MIT nhưng các dự án liên kết giữ license riêng; danh sách rộng chứa nhiều thế hệ API.
+
+**Cách tham khảo/tích hợp:** Đối chiếu phiên bản iOS/Swift, trạng thái upstream và license của từng thư viện trước khi thử.
+
+**Lựa chọn để đối chiếu:** [dkhamsing/open-source-ios-apps](https://github.com/dkhamsing/open-source-ios-apps) · [matteocrippa/awesome-swift](https://github.com/matteocrippa/awesome-swift). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`630ca87d5f93373c8098d42c8dc780e79eb44d12`](https://github.com/vsouza/awesome-ios/commit/630ca87d5f93373c8098d42c8dc780e79eb44d12), ngày commit 2026-08-27. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/vsouza/awesome-ios/blob/630ca87d5f93373c8098d42c8dc780e79eb44d12/README.md) · [LICENSE](https://github.com/vsouza/awesome-ios/blob/630ca87d5f93373c8098d42c8dc780e79eb44d12/LICENSE) · [.github/workflows/quality-check.yml](https://github.com/vsouza/awesome-ios/blob/630ca87d5f93373c8098d42c8dc780e79eb44d12/.github/workflows/quality-check.yml) · [metadata GitHub](https://api.github.com/repos/vsouza/awesome-ios).
+
+<a id="anhkysuai-2026-11-23-dkhamsing-open-source-ios-apps"></a>
+
+### open-source-ios-apps
+
+**Repo:** [dkhamsing/open-source-ios-apps](https://github.com/dkhamsing/open-source-ios-apps) · **License:** CC0-1.0 · **★ 53,439 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách ứng dụng nguồn mở cho các nền tảng Apple, sinh README từ dữ liệu cấu trúc.
+
+**Giá trị:** contents.json là nguồn dữ liệu chính theo README, thuận tiện tham khảo cách tách catalog máy đọc được khỏi trang trình bày.
+
+**Giới hạn:** CC0 của danh sách không áp cho mã và tài sản của ứng dụng được dẫn; có mục lưu trữ và ứng dụng cũ.
+
+**Cách tham khảo/tích hợp:** Dùng catalog để tìm ứng dụng mẫu rồi đánh giá license, SDK và khả năng build tại repo gốc.
+
+**Lựa chọn để đối chiếu:** [serhii-londar/open-source-mac-os-apps](https://github.com/serhii-londar/open-source-mac-os-apps) · [vsouza/awesome-ios](https://github.com/vsouza/awesome-ios). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`061610415072c3f3d04a4b0f90519766640b390f`](https://github.com/dkhamsing/open-source-ios-apps/commit/061610415072c3f3d04a4b0f90519766640b390f), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/dkhamsing/open-source-ios-apps/blob/061610415072c3f3d04a4b0f90519766640b390f/README.md) · [LICENSE](https://github.com/dkhamsing/open-source-ios-apps/blob/061610415072c3f3d04a4b0f90519766640b390f/LICENSE) · [.github/workflows/ruby.yml](https://github.com/dkhamsing/open-source-ios-apps/blob/061610415072c3f3d04a4b0f90519766640b390f/.github/workflows/ruby.yml) · [metadata GitHub](https://api.github.com/repos/dkhamsing/open-source-ios-apps).
+
+<a id="anhkysuai-2026-11-23-charlax-professional-programming"></a>
+
+### professional-programming
+
+**Repo:** [charlax/professional-programming](https://github.com/charlax/professional-programming) · **License:** MIT · **★ 51,693 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ tài nguyên đọc cho kỹ sư phần mềm về thiết kế, lập trình, vận hành và cách làm việc.
+
+**Giá trị:** Danh sách theo chủ đề và có phần nguyên tắc chọn tài liệu, phù hợp xây tuyến đọc theo vai trò.
+
+**Giới hạn:** Tác giả nói danh sách không toàn diện và không đồng tình với mọi nhận định trong tài liệu liên kết; việc đọc không chứng minh năng lực thực hành.
+
+**Cách tham khảo/tích hợp:** Chọn ít tài liệu quanh một vấn đề, ghi quyết định áp dụng và kiểm qua một nhiệm vụ thực tế.
+
+**Lựa chọn để đối chiếu:** [karanpratapsingh/system-design](https://github.com/karanpratapsingh/system-design) · [MichaelCade/90DaysOfDevOps](https://github.com/MichaelCade/90DaysOfDevOps). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`30da020f25210357175593977f044110e1150baf`](https://github.com/charlax/professional-programming/commit/30da020f25210357175593977f044110e1150baf), ngày commit 2026-11-20. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/charlax/professional-programming/blob/30da020f25210357175593977f044110e1150baf/README.md) · [LICENSE](https://github.com/charlax/professional-programming/blob/30da020f25210357175593977f044110e1150baf/LICENSE) · [metadata GitHub](https://api.github.com/repos/charlax/professional-programming).
+
+<a id="anhkysuai-2026-11-23-serhii-londar-open-source-mac-os-apps"></a>
+
+### open-source-mac-os-apps
+
+**Repo:** [serhii-londar/open-source-mac-os-apps](https://github.com/serhii-londar/open-source-mac-os-apps) · **License:** CC0-1.0 · **★ 51,516 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách ứng dụng macOS theo nhóm công việc, có dữ liệu JSON đi cùng README.
+
+**Giá trị:** Bao gồm ứng dụng native và đa nền tảng, hữu ích tìm sản phẩm tham chiếu và mô hình UX desktop.
+
+**Giới hạn:** CC0 chỉ áp dụng cho danh sách; mức hỗ trợ phiên bản macOS, ký ứng dụng và license của mỗi sản phẩm phải kiểm riêng.
+
+**Cách tham khảo/tích hợp:** Lọc ứng viên từ applications.json rồi kiểm nguồn phát hành và yêu cầu hệ điều hành của từng app.
+
+**Lựa chọn để đối chiếu:** [jaywcjlove/awesome-mac](https://github.com/jaywcjlove/awesome-mac) · [dkhamsing/open-source-ios-apps](https://github.com/dkhamsing/open-source-ios-apps). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`4b5a56315b886ac8fff3f997665913b393f4edca`](https://github.com/serhii-londar/open-source-mac-os-apps/commit/4b5a56315b886ac8fff3f997665913b393f4edca), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/serhii-londar/open-source-mac-os-apps/blob/4b5a56315b886ac8fff3f997665913b393f4edca/README.md) · [LICENSE](https://github.com/serhii-londar/open-source-mac-os-apps/blob/4b5a56315b886ac8fff3f997665913b393f4edca/LICENSE) · [.github/workflows/pr.yml](https://github.com/serhii-londar/open-source-mac-os-apps/blob/4b5a56315b886ac8fff3f997665913b393f4edca/.github/workflows/pr.yml) · [metadata GitHub](https://api.github.com/repos/serhii-londar/open-source-mac-os-apps).
+
+<a id="anhkysuai-2026-11-23-akullpp-awesome-java"></a>
+
+### awesome-java
+
+**Repo:** [akullpp/awesome-java](https://github.com/akullpp/awesome-java) · **License:** CC BY-SA 4.0 (nội dung); MIT (mã) · **★ 49,614 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách thư viện, framework và công cụ Java theo bài toán.
+
+**Giá trị:** Có nhóm so tương thích API, kiểm thử, CLI và hạ tầng; dữ liệu giúp tìm ứng viên theo vai trò trong stack.
+
+**Giới hạn:** Nội dung danh sách CC BY-SA 4.0 nhưng mã cập nhật README dùng MIT; số sao và trạng thái trong danh sách không thay kiểm upstream.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [rust-unofficial/awesome-rust](https://github.com/rust-unofficial/awesome-rust) · [ziadoz/awesome-php](https://github.com/ziadoz/awesome-php). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`46bce2a6da3f11dc35bcc68dbf9473b2dc4f8ee0`](https://github.com/akullpp/awesome-java/commit/46bce2a6da3f11dc35bcc68dbf9473b2dc4f8ee0), ngày commit 2026-09-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/akullpp/awesome-java/blob/46bce2a6da3f11dc35bcc68dbf9473b2dc4f8ee0/README.md) · [LICENSE](https://github.com/akullpp/awesome-java/blob/46bce2a6da3f11dc35bcc68dbf9473b2dc4f8ee0/LICENSE) · [LICENSE-CODE](https://github.com/akullpp/awesome-java/blob/46bce2a6da3f11dc35bcc68dbf9473b2dc4f8ee0/LICENSE-CODE) · [.github/workflows/update-readme.yml](https://github.com/akullpp/awesome-java/blob/46bce2a6da3f11dc35bcc68dbf9473b2dc4f8ee0/.github/workflows/update-readme.yml) · [metadata GitHub](https://api.github.com/repos/akullpp/awesome-java).
+
+<a id="anhkysuai-2026-11-23-type-challenges-type-challenges"></a>
+
+### type-challenges
+
+**Repo:** [type-challenges/type-challenges](https://github.com/type-challenges/type-challenges) · **License:** MIT · **★ 48,571 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ thử thách hệ kiểu TypeScript có mức độ và cách chơi trực tuyến hoặc cục bộ.
+
+**Giá trị:** Dùng để luyện conditional/mapped types và kiểm tiện ích kiểu nhỏ trước khi viết API công khai.
+
+**Giới hạn:** Giải được câu đố kiểu không chứng minh thiết kế API dễ sử dụng; dạng kiểm và kết quả còn phụ thuộc phiên bản TypeScript.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [sindresorhus/type-fest](https://github.com/sindresorhus/type-fest) · [leonardomso/33-js-concepts](https://github.com/leonardomso/33-js-concepts). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`91220864b0cbb84106c3b97e8d116316db2856e7`](https://github.com/type-challenges/type-challenges/commit/91220864b0cbb84106c3b97e8d116316db2856e7), ngày commit 2026-10-26. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/type-challenges/type-challenges/blob/91220864b0cbb84106c3b97e8d116316db2856e7/README.md) · [LICENSE](https://github.com/type-challenges/type-challenges/blob/91220864b0cbb84106c3b97e8d116316db2856e7/LICENSE) · [package.json](https://github.com/type-challenges/type-challenges/blob/91220864b0cbb84106c3b97e8d116316db2856e7/package.json) · [.github/workflows/issue-pr.yaml](https://github.com/type-challenges/type-challenges/blob/91220864b0cbb84106c3b97e8d116316db2856e7/.github/workflows/issue-pr.yaml) · [metadata GitHub](https://api.github.com/repos/type-challenges/type-challenges).
+
+<a id="anhkysuai-2026-11-23-asabeneh-30-days-of-javascript"></a>
+
+### 30-Days-Of-JavaScript
+
+**Repo:** [Asabeneh/30-Days-Of-JavaScript](https://github.com/Asabeneh/30-Days-Of-JavaScript) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 47,012 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Chuỗi bài học JavaScript theo ngày, kèm ví dụ trình duyệt, Node.js và bài tập.
+
+**Giá trị:** Thích hợp cho người mới muốn đi tuần tự từ kiểu dữ liệu và cú pháp đến thao tác web.
+
+**Giới hạn:** Không thấy giấy phép chung trong gốc repo đã đọc; chứng chỉ được dẫn sang dịch vụ khác, không phải bằng chứng đánh giá độc lập của kho. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [javascript-tutorial/en.javascript.info](https://github.com/javascript-tutorial/en.javascript.info) · [leonardomso/33-js-concepts](https://github.com/leonardomso/33-js-concepts). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`b143737586aa17d7afc2e31d0b257c40512913d7`](https://github.com/Asabeneh/30-Days-Of-JavaScript/commit/b143737586aa17d7afc2e31d0b257c40512913d7), ngày commit 2026-08-27. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [readMe.md](https://github.com/Asabeneh/30-Days-Of-JavaScript/blob/b143737586aa17d7afc2e31d0b257c40512913d7/readMe.md) · [metadata GitHub](https://api.github.com/repos/Asabeneh/30-Days-Of-JavaScript).
+
+<a id="anhkysuai-2026-11-23-karanpratapsingh-system-design"></a>
+
+### system-design
+
+**Repo:** [karanpratapsingh/system-design](https://github.com/karanpratapsingh/system-design) · **License:** CC BY-NC-ND 4.0 · **★ 46,996 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tài liệu thiết kế hệ thống, bao quát mạng, lưu trữ, phân phối và các bài toán phỏng vấn.
+
+**Giá trị:** Tập hợp khái niệm cùng sơ đồ để thống nhất từ vựng trước khi thảo luận trade-off kiến trúc.
+
+**Giới hạn:** Giấy phép CC BY-NC-ND 4.0 hạn chế thương mại và bản phái sinh; bài đọc không thay thử tải hay kiểm failure mode của hệ thực tế.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer) · [ashishps1/awesome-system-design-resources](https://github.com/ashishps1/awesome-system-design-resources). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`6dcea405d41401bfbe4031b6b80f7a2d87b712ba`](https://github.com/karanpratapsingh/system-design/commit/6dcea405d41401bfbe4031b6b80f7a2d87b712ba), ngày commit 2026-10-18. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/karanpratapsingh/system-design/blob/6dcea405d41401bfbe4031b6b80f7a2d87b712ba/README.md) · [LICENSE](https://github.com/karanpratapsingh/system-design/blob/6dcea405d41401bfbe4031b6b80f7a2d87b712ba/LICENSE) · [metadata GitHub](https://api.github.com/repos/karanpratapsingh/system-design).
+
+<a id="anhkysuai-2026-11-23-docker-awesome-compose"></a>
+
+### awesome-compose
+
+**Repo:** [docker/awesome-compose](https://github.com/docker/awesome-compose) · **License:** CC0-1.0 · **★ 46,752 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Các mẫu Docker Compose để ghép dịch vụ trong môi trường phát triển cục bộ.
+
+**Giá trị:** Cho ví dụ cụ thể về kết nối ứng dụng, reverse proxy và cơ sở dữ liệu, hữu ích làm điểm xuất phát cho môi trường dev.
+
+**Giới hạn:** README nói rõ mẫu không được triển khai nguyên trạng lên production; chưa đánh giá hardening, backup hoặc khả năng phục hồi.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [GoogleCloudPlatform/microservices-demo](https://github.com/GoogleCloudPlatform/microservices-demo) · [veggiemonk/awesome-docker](https://github.com/veggiemonk/awesome-docker). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`503c0dcef31b07fb77b2d4c5556bfafdf86f4f1a`](https://github.com/docker/awesome-compose/commit/503c0dcef31b07fb77b2d4c5556bfafdf86f4f1a), ngày commit 2026-11-19. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/docker/awesome-compose/blob/503c0dcef31b07fb77b2d4c5556bfafdf86f4f1a/README.md) · [LICENSE](https://github.com/docker/awesome-compose/blob/503c0dcef31b07fb77b2d4c5556bfafdf86f4f1a/LICENSE) · [.github/workflows/codeql-analysis.yml](https://github.com/docker/awesome-compose/blob/503c0dcef31b07fb77b2d4c5556bfafdf86f4f1a/.github/workflows/codeql-analysis.yml) · [metadata GitHub](https://api.github.com/repos/docker/awesome-compose).
+
+<a id="anhkysuai-2026-11-23-lecoupa-awesome-cheatsheets"></a>
+
+### awesome-cheatsheets
+
+**Repo:** [LeCoupa/awesome-cheatsheets](https://github.com/LeCoupa/awesome-cheatsheets) · **License:** MIT · **★ 46,697 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Các bảng tra nhanh cho ngôn ngữ, framework, cơ sở dữ liệu và công cụ phát triển.
+
+**Giá trị:** Mỗi chủ đề gói trong ít file, thuận tiện kiểm kiến thức và nhớ lại cú pháp khi đổi stack.
+
+**Giới hạn:** Độ ngắn gọn làm mất ngữ cảnh và ngoại lệ; ví dụ cần đối chiếu phiên bản tài liệu chính thức trước khi dùng trong sản phẩm.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [tldr-pages/tldr](https://github.com/tldr-pages/tldr) · [gto76/python-cheatsheet](https://github.com/gto76/python-cheatsheet). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`774445f64658289826909165d4ef446f4cf59f13`](https://github.com/LeCoupa/awesome-cheatsheets/commit/774445f64658289826909165d4ef446f4cf59f13), ngày commit 2026-10-17. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/LeCoupa/awesome-cheatsheets/blob/774445f64658289826909165d4ef446f4cf59f13/README.md) · [LICENSE](https://github.com/LeCoupa/awesome-cheatsheets/blob/774445f64658289826909165d4ef446f4cf59f13/LICENSE) · [metadata GitHub](https://api.github.com/repos/LeCoupa/awesome-cheatsheets).
+
+<a id="anhkysuai-2026-11-23-dataexpert-io-data-engineer-handbook"></a>
+
+### data-engineer-handbook
+
+**Repo:** [DataExpert-io/data-engineer-handbook](https://github.com/DataExpert-io/data-engineer-handbook) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 45,248 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Chỉ mục sách, khóa học, cộng đồng, bài viết và tài nguyên data engineering.
+
+**Giá trị:** Hữu ích chọn tuyến học hoặc nguồn đọc theo vai trò trong pipeline dữ liệu.
+
+**Giới hạn:** README có quảng bá khóa và mốc thời gian của từng đợt học; không thấy giấy phép chung, không coi toàn bộ tài liệu liên kết là được phép tái phân phối. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [DataTalksClub/data-engineering-zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp) · [charlax/professional-programming](https://github.com/charlax/professional-programming). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`103edb0c056380ac8c0ab0bffdf149a4f1f0f128`](https://github.com/DataExpert-io/data-engineer-handbook/commit/103edb0c056380ac8c0ab0bffdf149a4f1f0f128), ngày commit 2026-08-03. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/DataExpert-io/data-engineer-handbook/blob/103edb0c056380ac8c0ab0bffdf149a4f1f0f128/README.md) · [metadata GitHub](https://api.github.com/repos/DataExpert-io/data-engineer-handbook).
+
+<a id="anhkysuai-2026-11-23-yangshun-front-end-interview-handbook"></a>
+
+### front-end-interview-handbook
+
+**Repo:** [yangshun/front-end-interview-handbook](https://github.com/yangshun/front-end-interview-handbook) · **License:** MIT · **★ 44,001 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tài liệu chuẩn bị phỏng vấn frontend về HTML, CSS, JavaScript và cách luyện tập.
+
+**Giá trị:** Tập trung đặc thù frontend thay vì chỉ thuật toán; phù hợp xây bài chẩn đoán kiến thức theo vai trò.
+
+**Giới hạn:** Có liên kết dịch vụ GreatFrontEnd của tác giả; quyền và tính năng nền tảng luyện tập riêng không suy từ MIT của repo.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [leonardomso/33-js-concepts](https://github.com/leonardomso/33-js-concepts) · [javascript-tutorial/en.javascript.info](https://github.com/javascript-tutorial/en.javascript.info). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`75ee62afc63bb9b48be160b0710bfcba6ab01a75`](https://github.com/yangshun/front-end-interview-handbook/commit/75ee62afc63bb9b48be160b0710bfcba6ab01a75), ngày commit 2026-10-05. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/yangshun/front-end-interview-handbook/blob/75ee62afc63bb9b48be160b0710bfcba6ab01a75/README.md) · [LICENSE](https://github.com/yangshun/front-end-interview-handbook/blob/75ee62afc63bb9b48be160b0710bfcba6ab01a75/LICENSE) · [package.json](https://github.com/yangshun/front-end-interview-handbook/blob/75ee62afc63bb9b48be160b0710bfcba6ab01a75/package.json) · [metadata GitHub](https://api.github.com/repos/yangshun/front-end-interview-handbook).
+
+<a id="anhkysuai-2026-11-23-ashishps1-awesome-system-design-resources"></a>
+
+### awesome-system-design-resources
+
+**Repo:** [ashishps1/awesome-system-design-resources](https://github.com/ashishps1/awesome-system-design-resources) · **License:** GPL-3.0 · **★ 43,550 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tài nguyên thiết kế hệ thống từ mạng/API/CSDL đến phân tán và bài phỏng vấn.
+
+**Giá trị:** Các nhóm khái niệm và mức độ bài tập giúp lập danh sách đọc theo khoảng trống kiến thức.
+
+**Giới hạn:** Là nguồn tuyển chọn có liên kết khóa/newsletter; không xác nhận độ đúng hoặc mức cập nhật của mọi nguồn ngoài.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [karanpratapsingh/system-design](https://github.com/karanpratapsingh/system-design) · [donnemartin/system-design-primer](https://github.com/donnemartin/system-design-primer). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`58bf0b48badf1e6d62d1e3d024e9578ff809c95f`](https://github.com/ashishps1/awesome-system-design-resources/commit/58bf0b48badf1e6d62d1e3d024e9578ff809c95f), ngày commit 2026-11-01. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/ashishps1/awesome-system-design-resources/blob/58bf0b48badf1e6d62d1e3d024e9578ff809c95f/README.md) · [LICENSE](https://github.com/ashishps1/awesome-system-design-resources/blob/58bf0b48badf1e6d62d1e3d024e9578ff809c95f/LICENSE) · [metadata GitHub](https://api.github.com/repos/ashishps1/awesome-system-design-resources).
+
+<a id="anhkysuai-2026-11-23-faif-python-patterns"></a>
+
+### python-patterns
+
+**Repo:** [faif/python-patterns](https://github.com/faif/python-patterns) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 43,118 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ví dụ design pattern và idiom Python, kèm thảo luận anti-pattern.
+
+**Giá trị:** README nhấn mạnh lý do chọn mẫu và trade-off, hữu ích tránh áp dụng pattern chỉ theo hình thức.
+
+**Giới hạn:** Không thấy giấy phép chung trong gốc repo đã đọc; ví dụ học tập chưa được kiểm như thư viện sản phẩm. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [TheAlgorithms/Python](https://github.com/TheAlgorithms/Python) · [realpython/python-guide](https://github.com/realpython/python-guide). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`0712925f8a4b3129e6e54f8ab3580c6f996aa359`](https://github.com/faif/python-patterns/commit/0712925f8a4b3129e6e54f8ab3580c6f996aa359), ngày commit 2026-11-06. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/faif/python-patterns/blob/0712925f8a4b3129e6e54f8ab3580c6f996aa359/README.md) · [pyproject.toml](https://github.com/faif/python-patterns/blob/0712925f8a4b3129e6e54f8ab3580c6f996aa359/pyproject.toml) · [.github/workflows/lint_python.yml](https://github.com/faif/python-patterns/blob/0712925f8a4b3129e6e54f8ab3580c6f996aa359/.github/workflows/lint_python.yml) · [metadata GitHub](https://api.github.com/repos/faif/python-patterns).
+
+<a id="anhkysuai-2026-11-23-patrickjs-awesome-cursorrules"></a>
+
+### awesome-cursorrules
+
+**Repo:** [PatrickJS/awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) · **License:** CC0-1.0 · **★ 41,184 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Các mẫu Cursor Project Rules theo framework và quy trình, hiện dùng định dạng .mdc.
+
+**Giá trị:** Cho ví dụ cách mô tả ràng buộc và kiến trúc cục bộ theo loại file/tác vụ.
+
+**Giới hạn:** Quy tắc trong prompt không là cổng thực thi; các tuyên bố ngăn hallucination phải được kiểm bằng test/check thực tế.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [obra/superpowers](https://github.com/obra/superpowers) · [mattpocock/skills](https://github.com/mattpocock/skills). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`b044f956f021b6e8877f16781bcfc466a6a120e9`](https://github.com/PatrickJS/awesome-cursorrules/commit/b044f956f021b6e8877f16781bcfc466a6a120e9), ngày commit 2026-05-30. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/PatrickJS/awesome-cursorrules/blob/b044f956f021b6e8877f16781bcfc466a6a120e9/README.md) · [LICENSE](https://github.com/PatrickJS/awesome-cursorrules/blob/b044f956f021b6e8877f16781bcfc466a6a120e9/LICENSE) · [package.json](https://github.com/PatrickJS/awesome-cursorrules/blob/b044f956f021b6e8877f16781bcfc466a6a120e9/package.json) · [.github/workflows/main.yml](https://github.com/PatrickJS/awesome-cursorrules/blob/b044f956f021b6e8877f16781bcfc466a6a120e9/.github/workflows/main.yml) · [metadata GitHub](https://api.github.com/repos/PatrickJS/awesome-cursorrules).
+
+<a id="anhkysuai-2026-11-23-gto76-python-cheatsheet"></a>
+
+### python-cheatsheet
+
+**Repo:** [gto76/python-cheatsheet](https://github.com/gto76/python-cheatsheet) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 38,997 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bảng tra Python về collections, cú pháp, dữ liệu, module và ví dụ sử dụng.
+
+**Giá trị:** Hữu ích tra nhanh một nhóm thao tác và gợi ý ví dụ thử nhỏ khi lập trình.
+
+**Giới hạn:** Không thấy giấy phép chung cho nội dung; license của font trong web không cấp quyền cho toàn repo. Ví dụ dài cần kiểm theo runtime. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [LeCoupa/awesome-cheatsheets](https://github.com/LeCoupa/awesome-cheatsheets) · [realpython/python-guide](https://github.com/realpython/python-guide). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f2ace2d90ea2f153d7f47edc368586ce8f15d8d7`](https://github.com/gto76/python-cheatsheet/commit/f2ace2d90ea2f153d7f47edc368586ce8f15d8d7), ngày commit 2026-07-27. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/gto76/python-cheatsheet/blob/f2ace2d90ea2f153d7f47edc368586ce8f15d8d7/README.md) · [web/OnlineWebFonts_COM_cb7eb796ae7de7195a34c485cacebad1/License.txt](https://github.com/gto76/python-cheatsheet/blob/f2ace2d90ea2f153d7f47edc368586ce8f15d8d7/web/OnlineWebFonts_COM_cb7eb796ae7de7195a34c485cacebad1/License.txt) · [metadata GitHub](https://api.github.com/repos/gto76/python-cheatsheet).
+
+<a id="anhkysuai-2026-11-23-huihut-interview"></a>
+
+### interview
+
+**Repo:** [huihut/interview](https://github.com/huihut/interview) · **License:** CC BY-NC-SA 4.0 · **★ 38,329 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ghi chép tiếng Trung ôn C/C++, cấu trúc dữ liệu, hệ điều hành, mạng và liên kết chương trình.
+
+**Giá trị:** Gom kiến thức nền theo chủ đề, hữu ích xây bài chẩn đoán cho vị trí C/C++.
+
+**Giới hạn:** Nội dung CC BY-NC-SA 4.0 và có trích dẫn từ nhiều nguồn; không suy quyền thương mại hoặc chất lượng đáp án từ số sao.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [TheAlgorithms/C-Plus-Plus](https://github.com/TheAlgorithms/C-Plus-Plus) · [charlax/professional-programming](https://github.com/charlax/professional-programming). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`7a7166804a0ffc8f156e906bf4c1a94bb9f6a94b`](https://github.com/huihut/interview/commit/7a7166804a0ffc8f156e906bf4c1a94bb9f6a94b), ngày commit 2026-09-17. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/huihut/interview/blob/7a7166804a0ffc8f156e906bf4c1a94bb9f6a94b/README.md) · [LICENSE](https://github.com/huihut/interview/blob/7a7166804a0ffc8f156e906bf4c1a94bb9f6a94b/LICENSE) · [metadata GitHub](https://api.github.com/repos/huihut/interview).
+
+<a id="anhkysuai-2026-11-23-fengdu78-coursera-ml-andrewng-notes"></a>
+
+### Coursera-ML-AndrewNg-Notes
+
+**Repo:** [fengdu78/Coursera-ML-AndrewNg-Notes](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 38,151 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bản ghi chú và bản dịch tiếng Trung cho khóa machine learning của Andrew Ng.
+
+**Giá trị:** Có bản Markdown/Word để đọc lại khái niệm và công thức của khóa học.
+
+**Giới hạn:** Không thấy license chung; tài liệu khóa học gốc và phần dịch có thể giữ quyền riêng. Nội dung lịch sử không thay tài liệu framework hiện tại. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [microsoft/Data-Science-For-Beginners](https://github.com/microsoft/Data-Science-For-Beginners) · [d2l-ai/d2l-zh](https://github.com/d2l-ai/d2l-zh). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f41f2ab2a7f1fa7b5d659f315732b1afaf157948`](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes/commit/f41f2ab2a7f1fa7b5d659f315732b1afaf157948), ngày commit 2026-10-05. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes/blob/f41f2ab2a7f1fa7b5d659f315732b1afaf157948/README.md) · [metadata GitHub](https://api.github.com/repos/fengdu78/Coursera-ML-AndrewNg-Notes).
+
+<a id="anhkysuai-2026-11-23-microsoft-data-science-for-beginners"></a>
+
+### Data-Science-For-Beginners
+
+**Repo:** [microsoft/Data-Science-For-Beginners](https://github.com/microsoft/Data-Science-For-Beginners) · **License:** MIT · **★ 38,120 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Giáo trình nhập môn data science gồm bài học, quiz trước/sau, hướng dẫn và bài tập.
+
+**Giá trị:** Phân tách tài liệu cho người học và giáo viên, phù hợp dựng khóa thực hành theo dự án.
+
+**Giới hạn:** Con số thời lượng và hiệu quả sư phạm là mô tả của tác giả; chưa chạy bài tập hoặc đánh giá đầu ra học viên.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [DataTalksClub/data-engineering-zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp) · [d2l-ai/d2l-zh](https://github.com/d2l-ai/d2l-zh). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`4d2ac427ad6f022e73a75c4f46a28bbb7978ec3f`](https://github.com/microsoft/Data-Science-For-Beginners/commit/4d2ac427ad6f022e73a75c4f46a28bbb7978ec3f), ngày commit 2026-07-17. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/microsoft/Data-Science-For-Beginners/blob/4d2ac427ad6f022e73a75c4f46a28bbb7978ec3f/README.md) · [LICENSE](https://github.com/microsoft/Data-Science-For-Beginners/blob/4d2ac427ad6f022e73a75c4f46a28bbb7978ec3f/LICENSE) · [package.json](https://github.com/microsoft/Data-Science-For-Beginners/blob/4d2ac427ad6f022e73a75c4f46a28bbb7978ec3f/package.json) · [metadata GitHub](https://api.github.com/repos/microsoft/Data-Science-For-Beginners).
+
+<a id="anhkysuai-2026-11-23-pkuanonym-rekcarc-tsc-uht"></a>
+
+### REKCARC-TSC-UHT
+
+**Repo:** [PKUanonym/REKCARC-TSC-UHT](https://github.com/PKUanonym/REKCARC-TSC-UHT) · **License:** CC BY-SA 4.0 (LICENSE); README liên kết CC BY-NC-SA 4.0, tài liệu bên thứ ba giữ quyền riêng · **★ 38,116 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Kho hướng dẫn môn học và tài liệu tham khảo ngành khoa học máy tính của Đại học Thanh Hoa.
+
+**Giá trị:** Giúp nhận diện nội dung từng môn và kinh nghiệm học trong một chương trình cụ thể.
+
+**Giới hạn:** LICENSE là CC BY-SA 4.0 nhưng link trong README lại trỏ BY-NC-SA; quyền tài liệu bên thứ ba được giữ riêng. Không coi toàn bộ kho có cùng quyền tái phân phối.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [Developer-Y/cs-video-courses](https://github.com/Developer-Y/cs-video-courses) · [jwasham/coding-interview-university](https://github.com/jwasham/coding-interview-university). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`ee2403d24dbe85fb33444133bb9ab98be5ea2f67`](https://github.com/PKUanonym/REKCARC-TSC-UHT/commit/ee2403d24dbe85fb33444133bb9ab98be5ea2f67), ngày commit 2026-11-15. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/PKUanonym/REKCARC-TSC-UHT/blob/ee2403d24dbe85fb33444133bb9ab98be5ea2f67/README.md) · [LICENSE](https://github.com/PKUanonym/REKCARC-TSC-UHT/blob/ee2403d24dbe85fb33444133bb9ab98be5ea2f67/LICENSE) · [metadata GitHub](https://api.github.com/repos/PKUanonym/REKCARC-TSC-UHT).
+
+<a id="anhkysuai-2026-11-23-denysdovhan-wtfjs"></a>
+
+### wtfjs
+
+**Repo:** [denysdovhan/wtfjs](https://github.com/denysdovhan/wtfjs) · **License:** WTFPL · **★ 37,691 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Các ví dụ JavaScript dễ gây bất ngờ về ép kiểu, so sánh và hành vi ngôn ngữ, kèm giải thích.
+
+**Giá trị:** Tạo corpus nhỏ để luyện dự đoán kết quả và tìm các góc cạnh cần test.
+
+**Giới hạn:** Các câu đố có chủ ý bất thường; không dùng chúng như phong cách viết ứng dụng hoặc bằng chứng mọi runtime giống nhau.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [leonardomso/33-js-concepts](https://github.com/leonardomso/33-js-concepts) · [javascript-tutorial/en.javascript.info](https://github.com/javascript-tutorial/en.javascript.info). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a2c83226a15890004758971264211f116fff367a`](https://github.com/denysdovhan/wtfjs/commit/a2c83226a15890004758971264211f116fff367a), ngày commit 2026-10-05. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/denysdovhan/wtfjs/blob/a2c83226a15890004758971264211f116fff367a/README.md) · [LICENSE](https://github.com/denysdovhan/wtfjs/blob/a2c83226a15890004758971264211f116fff367a/LICENSE) · [package.json](https://github.com/denysdovhan/wtfjs/blob/a2c83226a15890004758971264211f116fff367a/package.json) · [.github/workflows/release.yml](https://github.com/denysdovhan/wtfjs/blob/a2c83226a15890004758971264211f116fff367a/.github/workflows/release.yml) · [metadata GitHub](https://api.github.com/repos/denysdovhan/wtfjs).
+
+<a id="anhkysuai-2026-11-23-veggiemonk-awesome-docker"></a>
+
+### awesome-docker
+
+**Repo:** [veggiemonk/awesome-docker](https://github.com/veggiemonk/awesome-docker) · **License:** Apache-2.0 · **★ 37,288 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách công cụ và tài nguyên Docker theo hạ tầng, bảo mật, build và vận hành.
+
+**Giá trị:** Có phân biệt mục thương mại và nguồn mở; hữu ích tìm nhóm công cụ quanh container.
+
+**Giới hạn:** License của danh sách không đại diện image hay dịch vụ được dẫn; nhãn hoạt động không thay kiểm hỗ trợ phiên bản và nguồn image.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [docker/awesome-compose](https://github.com/docker/awesome-compose) · [awesome-foss/awesome-sysadmin](https://github.com/awesome-foss/awesome-sysadmin). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`00e5cbc02d897e5a577840597ed51b33feb5677d`](https://github.com/veggiemonk/awesome-docker/commit/00e5cbc02d897e5a577840597ed51b33feb5677d), ngày commit 2026-11-12. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/veggiemonk/awesome-docker/blob/00e5cbc02d897e5a577840597ed51b33feb5677d/README.md) · [LICENSE](https://github.com/veggiemonk/awesome-docker/blob/00e5cbc02d897e5a577840597ed51b33feb5677d/LICENSE) · [go.mod](https://github.com/veggiemonk/awesome-docker/blob/00e5cbc02d897e5a577840597ed51b33feb5677d/go.mod) · [.github/workflows/broken_links.yml](https://github.com/veggiemonk/awesome-docker/blob/00e5cbc02d897e5a577840597ed51b33feb5677d/.github/workflows/broken_links.yml) · [metadata GitHub](https://api.github.com/repos/veggiemonk/awesome-docker).
+
+<a id="anhkysuai-2026-11-23-awesome-foss-awesome-sysadmin"></a>
+
+### awesome-sysadmin
+
+**Repo:** [awesome-foss/awesome-sysadmin](https://github.com/awesome-foss/awesome-sysadmin) · **License:** CC BY-SA 4.0 · **★ 35,799 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách phần mềm và tài nguyên quản trị hệ thống từ backup đến định danh, triển khai và giám sát.
+
+**Giá trị:** Có bản HTML được khuyến nghị và kho dữ liệu riêng, thuận tiện làm chỉ mục công cụ theo nhiệm vụ.
+
+**Giới hạn:** README gọi bản Markdown là legacy; cần theo nguồn dữ liệu hiện hành. CC BY-SA của danh sách không cấp quyền cho từng sản phẩm.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [veggiemonk/awesome-docker](https://github.com/veggiemonk/awesome-docker) · [awesome-selfhosted/awesome-selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`ed63cb4d7d63dc8ea84bbd6a1770683d3d3e4f64`](https://github.com/awesome-foss/awesome-sysadmin/commit/ed63cb4d7d63dc8ea84bbd6a1770683d3d3e4f64), ngày commit 2026-10-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/awesome-foss/awesome-sysadmin/blob/ed63cb4d7d63dc8ea84bbd6a1770683d3d3e4f64/README.md) · [LICENSE.txt](https://github.com/awesome-foss/awesome-sysadmin/blob/ed63cb4d7d63dc8ea84bbd6a1770683d3d3e4f64/LICENSE.txt) · [metadata GitHub](https://api.github.com/repos/awesome-foss/awesome-sysadmin).
+
+<a id="anhkysuai-2026-11-23-jondot-awesome-react-native"></a>
+
+### awesome-react-native
+
+**Repo:** [jondot/awesome-react-native](https://github.com/jondot/awesome-react-native) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 35,709 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách thư viện và tài liệu React Native, có nhóm UI, công cụ phát triển và AI.
+
+**Giá trị:** Tổ chức theo chức năng ứng dụng, hữu ích dựng shortlist cho một màn hình hoặc khả năng native cần thêm.
+
+**Giới hạn:** Tuyên bố mọi mục hợp React Native hiện đại chưa được kiểm độc lập; không thấy license chung trong gốc repo đã đọc. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [Solido/awesome-flutter](https://github.com/Solido/awesome-flutter) · [wasabeef/awesome-android-ui](https://github.com/wasabeef/awesome-android-ui). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`673360681d1026269753de05593f2e6dd826afc2`](https://github.com/jondot/awesome-react-native/commit/673360681d1026269753de05593f2e6dd826afc2), ngày commit 2026-08-26. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/jondot/awesome-react-native/blob/673360681d1026269753de05593f2e6dd826afc2/README.md) · [metadata GitHub](https://api.github.com/repos/jondot/awesome-react-native).
+
+<a id="anhkysuai-2026-11-23-liquidslr-leetcode-company-wise-problems"></a>
+
+### leetcode-company-wise-problems
+
+**Repo:** [liquidslr/leetcode-company-wise-problems](https://github.com/liquidslr/leetcode-company-wise-problems) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 35,703 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách câu hỏi LeetCode dạng CSV theo công ty và khoảng thời gian.
+
+**Giá trị:** Dữ liệu có cấu trúc giúp lọc bài theo chủ đề hoặc nhóm luyện tập thay vì đọc danh sách dài.
+
+**Giới hạn:** Metadata mô tả mốc tháng10/2025 còn README ghi tháng6/2025; commit mới không xác nhận độ mới dữ liệu. Không thấy license chung và không xác minh nguồn nhãn công ty. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [youngyangyang04/leetcode-master](https://github.com/youngyangyang04/leetcode-master) · [halfrost/LeetCode-Go](https://github.com/halfrost/LeetCode-Go). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`2b71796266751b4736a7ef180efb6847879166ee`](https://github.com/liquidslr/leetcode-company-wise-problems/commit/2b71796266751b4736a7ef180efb6847879166ee), ngày commit 2026-10-20. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [Readme.md](https://github.com/liquidslr/leetcode-company-wise-problems/blob/2b71796266751b4736a7ef180efb6847879166ee/Readme.md) · [metadata GitHub](https://api.github.com/repos/liquidslr/leetcode-company-wise-problems).
+
+<a id="anhkysuai-2026-11-23-thealgorithms-c-plus-plus"></a>
+
+### C-Plus-Plus
+
+**Repo:** [TheAlgorithms/C-Plus-Plus](https://github.com/TheAlgorithms/C-Plus-Plus) · **License:** MIT (mã); CC BY-SA 4.0 (tài liệu) · **★ 34,902 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Các thuật toán C++ về toán, khoa học máy tính và lĩnh vực liên quan để học và giảng dạy.
+
+**Giá trị:** Có nhiều cách triển khai cùng mục tiêu và cấu hình CMake, thuận tiện so chiến lược và viết test biên.
+
+**Giới hạn:** Mã MIT nhưng README ghi tài liệu CC BY-SA4.0; ví dụ giáo dục không phải thư viện đã kiểm cho yêu cầu sản phẩm.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [TheAlgorithms/Java](https://github.com/TheAlgorithms/Java) · [TheAlgorithms/Python](https://github.com/TheAlgorithms/Python). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`fdcc29b0ac2848e9d1a8d926e171cc5b39f97759`](https://github.com/TheAlgorithms/C-Plus-Plus/commit/fdcc29b0ac2848e9d1a8d926e171cc5b39f97759), ngày commit 2026-10-03. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/TheAlgorithms/C-Plus-Plus/blob/fdcc29b0ac2848e9d1a8d926e171cc5b39f97759/README.md) · [LICENSE](https://github.com/TheAlgorithms/C-Plus-Plus/blob/fdcc29b0ac2848e9d1a8d926e171cc5b39f97759/LICENSE) · [CMakeLists.txt](https://github.com/TheAlgorithms/C-Plus-Plus/blob/fdcc29b0ac2848e9d1a8d926e171cc5b39f97759/CMakeLists.txt) · [.github/workflows/stale.yml](https://github.com/TheAlgorithms/C-Plus-Plus/blob/fdcc29b0ac2848e9d1a8d926e171cc5b39f97759/.github/workflows/stale.yml) · [metadata GitHub](https://api.github.com/repos/TheAlgorithms/C-Plus-Plus).
+
+<a id="anhkysuai-2026-11-23-halfrost-leetcode-go"></a>
+
+### LeetCode-Go
+
+**Repo:** [halfrost/LeetCode-Go](https://github.com/halfrost/LeetCode-Go) · **License:** MIT (mã Go); nội dung sách Creative Commons chưa xác định đầy đủ biến thể · **★ 33,803 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Lời giải LeetCode bằng Go và nội dung sách giải thuật đi kèm.
+
+**Giá trị:** Cho ví dụ idiom Go theo nhiều nhóm bài và có workflow test để đọc cách tổ chức kiểm thử.
+
+**Giới hạn:** Tuyên bố coverage/hiệu năng chưa tái lập; mã MIT còn sách và hình có giấy phép Creative Commons chưa nêu biến thể rõ trong đoạn README.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [TheAlgorithms/Java](https://github.com/TheAlgorithms/Java) · [youngyangyang04/leetcode-master](https://github.com/youngyangyang04/leetcode-master). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`1dde49c8ab37a08f21a4fb249d7bd90af4a9c58e`](https://github.com/halfrost/LeetCode-Go/commit/1dde49c8ab37a08f21a4fb249d7bd90af4a9c58e), ngày commit 2026-07-08. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/halfrost/LeetCode-Go/blob/1dde49c8ab37a08f21a4fb249d7bd90af4a9c58e/README.md) · [LICENSE](https://github.com/halfrost/LeetCode-Go/blob/1dde49c8ab37a08f21a4fb249d7bd90af4a9c58e/LICENSE) · [go.mod](https://github.com/halfrost/LeetCode-Go/blob/1dde49c8ab37a08f21a4fb249d7bd90af4a9c58e/go.mod) · [.github/workflows/test.yml](https://github.com/halfrost/LeetCode-Go/blob/1dde49c8ab37a08f21a4fb249d7bd90af4a9c58e/.github/workflows/test.yml) · [metadata GitHub](https://api.github.com/repos/halfrost/LeetCode-Go).
+
+<a id="anhkysuai-2026-11-23-google-comprehensive-rust"></a>
+
+### comprehensive-rust
+
+**Repo:** [google/comprehensive-rust](https://github.com/google/comprehensive-rust) · **License:** Apache-2.0 (mã); CC BY-4.0 (tài liệu) · **★ 33,558 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Giáo trình Rust của nhóm Android tại Google, gồm kiến thức nền và các nhánh chuyên sâu.
+
+**Giá trị:** Có tài liệu cho giảng dạy nhiều ngày cùng cấu hình build khóa học, thuận tiện xây lộ trình theo nền tảng người học.
+
+**Giới hạn:** Mã Apache-2.0, văn bản và hình CC BY4.0; thời lượng khóa không chứng minh người học làm được hệ production.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [rust-lang/rustlings](https://github.com/rust-lang/rustlings) · [sunface/rust-course](https://github.com/sunface/rust-course). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`baf25efd192d7c68ef0552aa6803c8aba0f77c4f`](https://github.com/google/comprehensive-rust/commit/baf25efd192d7c68ef0552aa6803c8aba0f77c4f), ngày commit 2026-11-17. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/google/comprehensive-rust/blob/baf25efd192d7c68ef0552aa6803c8aba0f77c4f/README.md) · [LICENSE](https://github.com/google/comprehensive-rust/blob/baf25efd192d7c68ef0552aa6803c8aba0f77c4f/LICENSE) · [LICENSE-CC-BY](https://github.com/google/comprehensive-rust/blob/baf25efd192d7c68ef0552aa6803c8aba0f77c4f/LICENSE-CC-BY) · [Cargo.toml](https://github.com/google/comprehensive-rust/blob/baf25efd192d7c68ef0552aa6803c8aba0f77c4f/Cargo.toml) · [.github/workflows/build.yml](https://github.com/google/comprehensive-rust/blob/baf25efd192d7c68ef0552aa6803c8aba0f77c4f/.github/workflows/build.yml) · [metadata GitHub](https://api.github.com/repos/google/comprehensive-rust).
+
+<a id="anhkysuai-2026-11-23-ziadoz-awesome-php"></a>
+
+### awesome-php
+
+**Repo:** [ziadoz/awesome-php](https://github.com/ziadoz/awesome-php) · **License:** WTFPL · **★ 32,815 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách thư viện, framework, công cụ và tài liệu PHP theo nhiệm vụ.
+
+**Giá trị:** Bao quát Composer, backend, CMS và nhiều thành phần nhỏ, phù hợp tìm ứng viên ngoài framework đang dùng.
+
+**Giới hạn:** Có cả công cụ thương mại; WTFPL của danh sách không đại diện giấy phép của thư viện hay IDE liên kết.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [akullpp/awesome-java](https://github.com/akullpp/awesome-java) · [rust-unofficial/awesome-rust](https://github.com/rust-unofficial/awesome-rust). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`2a84423c910d7329ac36be2613a889368df0d5ad`](https://github.com/ziadoz/awesome-php/commit/2a84423c910d7329ac36be2613a889368df0d5ad), ngày commit 2026-10-30. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/ziadoz/awesome-php/blob/2a84423c910d7329ac36be2613a889368df0d5ad/README.md) · [LICENSE.md](https://github.com/ziadoz/awesome-php/blob/2a84423c910d7329ac36be2613a889368df0d5ad/LICENSE.md) · [.github/workflows/ci.yml](https://github.com/ziadoz/awesome-php/blob/2a84423c910d7329ac36be2613a889368df0d5ad/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/ziadoz/awesome-php).
+
+<a id="anhkysuai-2026-11-23-abhisheknaiidu-awesome-github-profile-readme"></a>
+
+### awesome-github-profile-readme
+
+**Repo:** [abhisheknaiidu/awesome-github-profile-readme](https://github.com/abhisheknaiidu/awesome-github-profile-readme) · **License:** CC0-1.0 · **★ 31,667 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ mẫu và tài nguyên làm README hồ sơ GitHub, chia theo phong cách trình bày.
+
+**Giá trị:** Hữu ích tìm bố cục giới thiệu dự án và tham khảo cách sinh nội dung động.
+
+**Giới hạn:** Ảnh, font, badge và dịch vụ ngoài có quyền/độ sẵn sàng riêng; mẫu đẹp không xác nhận chất lượng kỹ thuật hoặc uy tín hồ sơ.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [matiassingers/awesome-readme](https://github.com/matiassingers/awesome-readme) · [alexpate/awesome-design-systems](https://github.com/alexpate/awesome-design-systems). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a2f2de46099a6d503d9240d8f90b4f504755b27f`](https://github.com/abhisheknaiidu/awesome-github-profile-readme/commit/a2f2de46099a6d503d9240d8f90b4f504755b27f), ngày commit 2026-09-12. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/abhisheknaiidu/awesome-github-profile-readme/blob/a2f2de46099a6d503d9240d8f90b4f504755b27f/README.md) · [LICENSE](https://github.com/abhisheknaiidu/awesome-github-profile-readme/blob/a2f2de46099a6d503d9240d8f90b4f504755b27f/LICENSE) · [.github/workflows/prettier.yml](https://github.com/abhisheknaiidu/awesome-github-profile-readme/blob/a2f2de46099a6d503d9240d8f90b4f504755b27f/.github/workflows/prettier.yml) · [metadata GitHub](https://api.github.com/repos/abhisheknaiidu/awesome-github-profile-readme).
+
+<a id="anhkysuai-2026-11-23-sunface-rust-course"></a>
+
+### rust-course
+
+**Repo:** [sunface/rust-course](https://github.com/sunface/rust-course) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 31,146 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Sách Rust tiếng Trung với giải thích, ví dụ và hướng dẫn học.
+
+**Giá trị:** Một nguồn đọc có chiều sâu bằng tiếng Trung để đối chiếu các khái niệm Rust.
+
+**Giới hạn:** README chủ động chọn No License và cấm tự đóng gói bản sửa đổi để phân phối; MIT của rustlings-zh trong assets không cấp quyền cho toàn sách. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [google/comprehensive-rust](https://github.com/google/comprehensive-rust) · [rust-lang/rustlings](https://github.com/rust-lang/rustlings). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`8ff5c256b228c21131cb313f14427c0859cf6b4b`](https://github.com/sunface/rust-course/commit/8ff5c256b228c21131cb313f14427c0859cf6b4b), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/sunface/rust-course/blob/8ff5c256b228c21131cb313f14427c0859cf6b4b/README.md) · [assets/rustlings-zh/LICENSE](https://github.com/sunface/rust-course/blob/8ff5c256b228c21131cb313f14427c0859cf6b4b/assets/rustlings-zh/LICENSE) · [.github/workflows/ci.yml](https://github.com/sunface/rust-course/blob/8ff5c256b228c21131cb313f14427c0859cf6b4b/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/sunface/rust-course).
+
+<a id="anhkysuai-2026-11-23-michaelcade-90daysofdevops"></a>
+
+### 90DaysOfDevOps
+
+**Repo:** [MichaelCade/90DaysOfDevOps](https://github.com/MichaelCade/90DaysOfDevOps) · **License:** CC BY-NC-SA 4.0 · **★ 30,930 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Nhật ký học và tuyến tài nguyên DevOps/DevSecOps theo các đợt thực hành.
+
+**Giá trị:** Kết nối nguyên tắc, quy trình và công cụ thay vì chỉ liệt kê lệnh riêng lẻ.
+
+**Giới hạn:** Nội dung CC BY-NC-SA4.0; các phiên bản công cụ qua nhiều năm cần kiểm lại và mốc90ngày không là cam kết kết quả.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [milanm/DevOps-Roadmap](https://github.com/milanm/DevOps-Roadmap) · [yeasy/docker_practice](https://github.com/yeasy/docker_practice). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`2941b895eaac2056ec9431a21f3d09a60a3752f8`](https://github.com/MichaelCade/90DaysOfDevOps/commit/2941b895eaac2056ec9431a21f3d09a60a3752f8), ngày commit 2026-06-24. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/MichaelCade/90DaysOfDevOps/blob/2941b895eaac2056ec9431a21f3d09a60a3752f8/README.md) · [LICENSE.md](https://github.com/MichaelCade/90DaysOfDevOps/blob/2941b895eaac2056ec9431a21f3d09a60a3752f8/LICENSE.md) · [.github/workflows/send-tweet.yml](https://github.com/MichaelCade/90DaysOfDevOps/blob/2941b895eaac2056ec9431a21f3d09a60a3752f8/.github/workflows/send-tweet.yml) · [metadata GitHub](https://api.github.com/repos/MichaelCade/90DaysOfDevOps).
+
+<a id="anhkysuai-2026-11-23-wilsonfreitas-awesome-quant"></a>
+
+### awesome-quant
+
+**Repo:** [wilsonfreitas/awesome-quant](https://github.com/wilsonfreitas/awesome-quant) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 30,838 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách công cụ nghiên cứu định lượng, dữ liệu thị trường, backtest và quản lý rủi ro.
+
+**Giá trị:** Có nhóm theo nhiệm vụ và hướng dẫn chọn backtesting, hữu ích định vị công cụ trước khi đọc repo gốc.
+
+**Giới hạn:** Không thấy license chung; kết quả backtest hay tính hợp lệ dữ liệu không được suy từ việc xuất hiện trong danh sách. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [pandas-dev/pandas](https://github.com/pandas-dev/pandas) · [microsoft/qlib](https://github.com/microsoft/qlib). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`c285428fce3da53b9a3b0c5ef3594310046a2b52`](https://github.com/wilsonfreitas/awesome-quant/commit/c285428fce3da53b9a3b0c5ef3594310046a2b52), ngày commit 2026-11-14. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/wilsonfreitas/awesome-quant/blob/c285428fce3da53b9a3b0c5ef3594310046a2b52/README.md) · [pyproject.toml](https://github.com/wilsonfreitas/awesome-quant/blob/c285428fce3da53b9a3b0c5ef3594310046a2b52/pyproject.toml) · [.github/workflows/build.yml](https://github.com/wilsonfreitas/awesome-quant/blob/c285428fce3da53b9a3b0c5ef3594310046a2b52/.github/workflows/build.yml) · [metadata GitHub](https://api.github.com/repos/wilsonfreitas/awesome-quant).
+
+<a id="anhkysuai-2026-11-23-allthingssmitty-css-protips"></a>
+
+### css-protips
+
+**Repo:** [AllThingsSmitty/css-protips](https://github.com/AllThingsSmitty/css-protips) · **License:** CC0-1.0 · **★ 30,305 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tuyển tập mẹo CSS ngắn kèm ví dụ và giải thích cách dùng.
+
+**Giá trị:** Hữu ích khi rà soát stylesheet: reset, bố cục, focus và selector được đặt thành các mục nhỏ dễ tra.
+
+**Giới hạn:** Snippet minh họa chưa chứng minh tương thích với mọi trình duyệt hoặc hệ thống thiết kế; cần thử trên DOM và tập trình duyệt thực tế.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [joshbuchea/HEAD](https://github.com/joshbuchea/HEAD) · [30-seconds/30-seconds-of-code](https://github.com/30-seconds/30-seconds-of-code). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f84d588897b99ad517ffd60c80ca7f8ca42e3c5a`](https://github.com/AllThingsSmitty/css-protips/commit/f84d588897b99ad517ffd60c80ca7f8ca42e3c5a), ngày commit 2026-09-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/AllThingsSmitty/css-protips/blob/f84d588897b99ad517ffd60c80ca7f8ca42e3c5a/README.md) · [LICENSE](https://github.com/AllThingsSmitty/css-protips/blob/f84d588897b99ad517ffd60c80ca7f8ca42e3c5a/LICENSE) · [metadata GitHub](https://api.github.com/repos/AllThingsSmitty/css-protips).
+
+<a id="anhkysuai-2026-11-23-joshbuchea-head"></a>
+
+### HEAD
+
+**Repo:** [joshbuchea/HEAD](https://github.com/joshbuchea/HEAD) · **License:** CC0-1.0 (tuyên bố trong README) · **★ 30,276 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Cẩm nang các phần tử và metadata trong HTML head, từ cấu hình tối thiểu đến mạng xã hội và nền tảng.
+
+**Giá trị:** Danh mục có thứ tự khuyến nghị và mục deprecated riêng, phù hợp làm checklist khi tạo trang web.
+
+**Giới hạn:** Không nên chép toàn bộ thẻ: nhiều mục chỉ dành cho nền tảng cụ thể và metadata thừa dễ mâu thuẫn; cần kiểm yêu cầu hiện hành của nơi xuất bản.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [AllThingsSmitty/css-protips](https://github.com/AllThingsSmitty/css-protips) · [yangshun/front-end-interview-handbook](https://github.com/yangshun/front-end-interview-handbook). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`de1304eeb62feb6bec90c28fc78fe29d2500d606`](https://github.com/joshbuchea/HEAD/commit/de1304eeb62feb6bec90c28fc78fe29d2500d606), ngày commit 2026-05-01. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/joshbuchea/HEAD/blob/de1304eeb62feb6bec90c28fc78fe29d2500d606/README.md) · [.github/workflows/sync-readme.yml](https://github.com/joshbuchea/HEAD/blob/de1304eeb62feb6bec90c28fc78fe29d2500d606/.github/workflows/sync-readme.yml) · [metadata GitHub](https://api.github.com/repos/joshbuchea/HEAD).
+
+<a id="anhkysuai-2026-11-23-realpython-python-guide"></a>
+
+### python-guide
+
+**Repo:** [realpython/python-guide](https://github.com/realpython/python-guide) · **License:** CC-BY-NC-SA-3.0 · **★ 29,926 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Hitchhiker’s Guide to Python: hướng dẫn thực hành cài đặt, môi trường, thư viện, kiểm thử và triển khai.
+
+**Giá trị:** Phù hợp đọc theo vấn đề khi chuyển từ học cú pháp sang tổ chức dự án Python.
+
+**Giới hạn:** README tự nhận work in progress và còn nhắc công cụ lịch sử; cần đối chiếu phiên bản Python/thư viện. Nội dung mang CC BY-NC-SA 3.0, có giới hạn phi thương mại.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [Asabeneh/30-Days-Of-Python](https://github.com/Asabeneh/30-Days-Of-Python) · [gto76/python-cheatsheet](https://github.com/gto76/python-cheatsheet). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a4d4fa63489b4fcce30c34a9a4aba7599969afe1`](https://github.com/realpython/python-guide/commit/a4d4fa63489b4fcce30c34a9a4aba7599969afe1), ngày commit 2026-07-27. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [Readme.rst](https://github.com/realpython/python-guide/blob/a4d4fa63489b4fcce30c34a9a4aba7599969afe1/Readme.rst) · [LICENSE](https://github.com/realpython/python-guide/blob/a4d4fa63489b4fcce30c34a9a4aba7599969afe1/LICENSE) · [metadata GitHub](https://api.github.com/repos/realpython/python-guide).
+
+<a id="anhkysuai-2026-11-23-systemdesign42-system-design-academy"></a>
+
+### system-design-academy
+
+**Repo:** [systemdesign42/system-design-academy](https://github.com/systemdesign42/system-design-academy) · **License:** CC-BY-NC-ND-4.0 · **★ 29,830 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Chỉ mục bài học và case study về thiết kế hệ thống, được chia theo công ty và công nghệ.
+
+**Giá trị:** Có thể dùng để tìm tình huống thực tế rồi đọc nguồn gốc, thay vì học kiến trúc chỉ qua sơ đồ chung.
+
+**Giới hạn:** Nội dung và nguồn liên kết không đồng nghĩa kiến trúc đang vận hành; LICENSE ghi CC BY-NC-ND 4.0, hạn chế thương mại và bản phái sinh.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [karanpratapsingh/system-design](https://github.com/karanpratapsingh/system-design) · [ashishps1/awesome-system-design-resources](https://github.com/ashishps1/awesome-system-design-resources). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`bc306d27408b23e33f996af9ce0d4cb17afe38ad`](https://github.com/systemdesign42/system-design-academy/commit/bc306d27408b23e33f996af9ce0d4cb17afe38ad), ngày commit 2026-11-20. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/systemdesign42/system-design-academy/blob/bc306d27408b23e33f996af9ce0d4cb17afe38ad/README.md) · [LICENSE.md](https://github.com/systemdesign42/system-design-academy/blob/bc306d27408b23e33f996af9ce0d4cb17afe38ad/LICENSE.md) · [metadata GitHub](https://api.github.com/repos/systemdesign42/system-design-academy).
+
+<a id="anhkysuai-2026-11-23-viatsko-awesome-vscode"></a>
+
+### awesome-vscode
+
+**Repo:** [viatsko/awesome-vscode](https://github.com/viatsko/awesome-vscode) · **License:** CC0-1.0 · **★ 29,263 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách extension, cấu hình và tài nguyên cho Visual Studio Code theo ngôn ngữ và tác vụ.
+
+**Giá trị:** Phân nhóm lint, IntelliSense, migration và theme giúp rút ngắn bước tìm công cụ phù hợp.
+
+**Giới hạn:** CC0 áp dụng cho danh sách; từng extension có quyền truy cập, nhà phát hành và giấy phép riêng. Link-check CI không chứng minh extension an toàn hoặc còn tương thích.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [microsoft/vscode](https://github.com/microsoft/vscode) · [PatrickJS/awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`9c3bf848287d3967a744e7c057ea49ec9e89b396`](https://github.com/viatsko/awesome-vscode/commit/9c3bf848287d3967a744e7c057ea49ec9e89b396), ngày commit 2026-06-21. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/viatsko/awesome-vscode/blob/9c3bf848287d3967a744e7c057ea49ec9e89b396/README.md) · [LICENSE](https://github.com/viatsko/awesome-vscode/blob/9c3bf848287d3967a744e7c057ea49ec9e89b396/LICENSE) · [package.json](https://github.com/viatsko/awesome-vscode/blob/9c3bf848287d3967a744e7c057ea49ec9e89b396/package.json) · [.github/workflows/links.yml](https://github.com/viatsko/awesome-vscode/blob/9c3bf848287d3967a744e7c057ea49ec9e89b396/.github/workflows/links.yml) · [metadata GitHub](https://api.github.com/repos/viatsko/awesome-vscode).
+
+<a id="anhkysuai-2026-11-23-ashishps1-awesome-low-level-design"></a>
+
+### awesome-low-level-design
+
+**Repo:** [ashishps1/awesome-low-level-design](https://github.com/ashishps1/awesome-low-level-design) · **License:** GPL-3.0 · **★ 28,222 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tài nguyên học thiết kế hướng đối tượng, UML, concurrency và luyện phỏng vấn low-level design.
+
+**Giá trị:** Trình tự từ OOP đến quan hệ lớp và nguyên tắc thiết kế giúp tạo lộ trình học có cấu trúc.
+
+**Giới hạn:** Nhiều bài học nằm trên website ngoài; giấy phép GPL của repo không cấp quyền cho toàn bộ nguồn liên kết, và học thuộc pattern chưa chứng minh thiết kế phù hợp thực tế.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [faif/python-patterns](https://github.com/faif/python-patterns) · [huihut/interview](https://github.com/huihut/interview). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`31595db8c21a8f7785b2ef45d90f16fd8053abad`](https://github.com/ashishps1/awesome-low-level-design/commit/31595db8c21a8f7785b2ef45d90f16fd8053abad), ngày commit 2026-08-19. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/ashishps1/awesome-low-level-design/blob/31595db8c21a8f7785b2ef45d90f16fd8053abad/README.md) · [LICENSE](https://github.com/ashishps1/awesome-low-level-design/blob/31595db8c21a8f7785b2ef45d90f16fd8053abad/LICENSE) · [metadata GitHub](https://api.github.com/repos/ashishps1/awesome-low-level-design).
+
+<a id="anhkysuai-2026-11-23-kdeldycke-awesome-falsehood"></a>
+
+### awesome-falsehood
+
+**Repo:** [kdeldycke/awesome-falsehood](https://github.com/kdeldycke/awesome-falsehood) · **License:** CC0-1.0 · **★ 27,887 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách các giả định sai thường gặp khi lập trình về tên, email, thời gian, địa lý và dữ liệu đời thực.
+
+**Giá trị:** Hữu ích để mở rộng trường hợp biên khi thiết kế schema, validation và bộ kiểm thử.
+
+**Giới hạn:** Các bài liên kết là ví dụ phản chứng theo bối cảnh; không nên chuyển chúng thành một bộ regex hoặc quy tắc chung mà chưa đọc nguồn cụ thể.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [charlax/professional-programming](https://github.com/charlax/professional-programming) · [jwasham/coding-interview-university](https://github.com/jwasham/coding-interview-university). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`0b1aaba9cf2ce879b2188a93ea8ee46604a62304`](https://github.com/kdeldycke/awesome-falsehood/commit/0b1aaba9cf2ce879b2188a93ea8ee46604a62304), ngày commit 2026-10-08. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [readme.md](https://github.com/kdeldycke/awesome-falsehood/blob/0b1aaba9cf2ce879b2188a93ea8ee46604a62304/readme.md) · [license](https://github.com/kdeldycke/awesome-falsehood/blob/0b1aaba9cf2ce879b2188a93ea8ee46604a62304/license) · [pyproject.toml](https://github.com/kdeldycke/awesome-falsehood/blob/0b1aaba9cf2ce879b2188a93ea8ee46604a62304/pyproject.toml) · [.github/workflows/docs.yaml](https://github.com/kdeldycke/awesome-falsehood/blob/0b1aaba9cf2ce879b2188a93ea8ee46604a62304/.github/workflows/docs.yaml) · [metadata GitHub](https://api.github.com/repos/kdeldycke/awesome-falsehood).
+
+<a id="anhkysuai-2026-11-23-oi-wiki-oi-wiki"></a>
+
+### OI-wiki
+
+**Repo:** [OI-wiki/OI-wiki](https://github.com/OI-wiki/OI-wiki) · **License:** CC-BY-SA-4.0 + SATA (nội dung ngoài mã); mã cần kiểm riêng · **★ 27,219 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Wiki tiếng Trung về thuật toán và lập trình thi đấu, có tài liệu, ví dụ và quy trình xây site.
+
+**Giá trị:** Phạm vi kiến thức rộng, liên kết giữa chủ đề giúp học từ cơ bản đến bài toán thi đấu.
+
+**Giới hạn:** README thừa nhận có trang chưa hoàn thiện; nội dung ngoài mã áp dụng CC BY-SA 4.0 kèm SATA, còn package build ghi UNLICENSED. Cần phân biệt quyền của văn bản, ví dụ mã và nguồn trích dẫn khi tái sử dụng.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [TheAlgorithms/C-Plus-Plus](https://github.com/TheAlgorithms/C-Plus-Plus) · [TheAlgorithms/Java](https://github.com/TheAlgorithms/Java). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f80d6d6f780ced1c216c71ad96cabaea9308a62c`](https://github.com/OI-wiki/OI-wiki/commit/f80d6d6f780ced1c216c71ad96cabaea9308a62c), ngày commit 2026-11-19. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/OI-wiki/OI-wiki/blob/f80d6d6f780ced1c216c71ad96cabaea9308a62c/README.md) · [package.json](https://github.com/OI-wiki/OI-wiki/blob/f80d6d6f780ced1c216c71ad96cabaea9308a62c/package.json) · [pyproject.toml](https://github.com/OI-wiki/OI-wiki/blob/f80d6d6f780ced1c216c71ad96cabaea9308a62c/pyproject.toml) · [.github/workflows/test.yml](https://github.com/OI-wiki/OI-wiki/blob/f80d6d6f780ced1c216c71ad96cabaea9308a62c/.github/workflows/test.yml) · [metadata GitHub](https://api.github.com/repos/OI-wiki/OI-wiki).
+
+<a id="anhkysuai-2026-11-23-alexpate-awesome-design-systems"></a>
+
+### Awesome Design Systems (alexpate)
+
+**Repo:** [alexpate/awesome-design-systems](https://github.com/alexpate/awesome-design-systems) · **License:** Unlicense · **★ 26,418 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh mục design system với chỉ báo component, giọng điệu, bộ thiết kế và mã nguồn.
+
+**Giá trị:** Các cột so sánh giúp tìm ví dụ phù hợp cho quy tắc giao diện và tài liệu thiết kế.
+
+**Giới hạn:** Unlicense của danh sách không bao gồm logo, Figma kit hoặc component của thương hiệu được dẫn; dấu có mã nguồn chưa chứng minh được phép dùng lại.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [viatsko/awesome-vscode](https://github.com/viatsko/awesome-vscode) · [joshbuchea/HEAD](https://github.com/joshbuchea/HEAD). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`5f21c294018a460d9d51118ca21c463a37838209`](https://github.com/alexpate/awesome-design-systems/commit/5f21c294018a460d9d51118ca21c463a37838209), ngày commit 2026-11-13. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/alexpate/awesome-design-systems/blob/5f21c294018a460d9d51118ca21c463a37838209/README.md) · [LICENSE](https://github.com/alexpate/awesome-design-systems/blob/5f21c294018a460d9d51118ca21c463a37838209/LICENSE) · [metadata GitHub](https://api.github.com/repos/alexpate/awesome-design-systems).
+
+<a id="anhkysuai-2026-11-23-matteocrippa-awesome-swift"></a>
+
+### awesome-swift
+
+**Repo:** [matteocrippa/awesome-swift](https://github.com/matteocrippa/awesome-swift) · **License:** CC0-1.0 · **★ 26,398 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Chỉ mục thư viện và tài nguyên Swift theo chức năng, có dữ liệu cấu trúc contents.json.
+
+**Giá trị:** Cấu trúc dữ liệu nguồn và quy trình kiểm link/schema thuận lợi cho tìm kiếm hoặc cập nhật danh sách.
+
+**Giới hạn:** Số dự án và ngày trong README là metadata của danh sách; từng thư viện cần kiểm nền tảng, phiên bản Swift và giấy phép riêng.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [vsouza/awesome-ios](https://github.com/vsouza/awesome-ios) · [dkhamsing/open-source-ios-apps](https://github.com/dkhamsing/open-source-ios-apps). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`c18cbf89da283178c038b39f7eb402e0b144b9ec`](https://github.com/matteocrippa/awesome-swift/commit/c18cbf89da283178c038b39f7eb402e0b144b9ec), ngày commit 2026-11-11. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/matteocrippa/awesome-swift/blob/c18cbf89da283178c038b39f7eb402e0b144b9ec/README.md) · [LICENSE](https://github.com/matteocrippa/awesome-swift/blob/c18cbf89da283178c038b39f7eb402e0b144b9ec/LICENSE) · [.github/workflows/pr.yml](https://github.com/matteocrippa/awesome-swift/blob/c18cbf89da283178c038b39f7eb402e0b144b9ec/.github/workflows/pr.yml) · [metadata GitHub](https://api.github.com/repos/matteocrippa/awesome-swift).
+
+<a id="anhkysuai-2026-11-23-yeasy-docker_practice"></a>
+
+### docker_practice
+
+**Repo:** [yeasy/docker_practice](https://github.com/yeasy/docker_practice) · **License:** CC-BY-NC-SA-4.0 · **★ 26,387 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Sách tiếng Trung về Docker, từ khái niệm container đến mạng, lưu trữ, bảo mật và vận hành.
+
+**Giá trị:** Có lộ trình chương, ví dụ thực hành và bộ kiểm tra tài liệu/canonical examples trong cấu hình CI.
+
+**Giới hạn:** Nội dung CC BY-NC-SA 4.0; lệnh mẫu cần đối chiếu phiên bản Docker và môi trường đích. CI chỉ được đọc cấu hình, chưa chạy trong lượt nghiên cứu.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [docker/awesome-compose](https://github.com/docker/awesome-compose) · [MichaelCade/90DaysOfDevOps](https://github.com/MichaelCade/90DaysOfDevOps). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`7f8424a7c5cf000860ad88ed861030c773d9d93a`](https://github.com/yeasy/docker_practice/commit/7f8424a7c5cf000860ad88ed861030c773d9d93a), ngày commit 2026-11-11. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/yeasy/docker_practice/blob/7f8424a7c5cf000860ad88ed861030c773d9d93a/README.md) · [package.json](https://github.com/yeasy/docker_practice/blob/7f8424a7c5cf000860ad88ed861030c773d9d93a/package.json) · [.github/workflows/ci.yaml](https://github.com/yeasy/docker_practice/blob/7f8424a7c5cf000860ad88ed861030c773d9d93a/.github/workflows/ci.yaml) · [metadata GitHub](https://api.github.com/repos/yeasy/docker_practice).
+
+<a id="anhkysuai-2026-11-23-keon-algorithms"></a>
+
+### algorithms
+
+**Repo:** [keon/algorithms](https://github.com/keon/algorithms) · **License:** MIT · **★ 25,611 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Các triển khai Python ngắn cho thuật toán và cấu trúc dữ liệu, kèm ví dụ sử dụng.
+
+**Giá trị:** Cách chia mỗi thuật toán thành tệp riêng cùng chú thích độ phức tạp thuận tiện cho học và đối chiếu cách giải.
+
+**Giới hạn:** Mục tiêu là ví dụ giáo dục; chưa kiểm độ đúng, hiệu năng hoặc API của gói PyPI tại lượt này. Manifest yêu cầu Python từ 3.10.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [TheAlgorithms/Python](https://github.com/TheAlgorithms/Python) · [norvig/pytudes](https://github.com/norvig/pytudes). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`bd1d152f9ec7331c69be662831610b003b10fc7a`](https://github.com/keon/algorithms/commit/bd1d152f9ec7331c69be662831610b003b10fc7a), ngày commit 2026-09-24. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/keon/algorithms/blob/bd1d152f9ec7331c69be662831610b003b10fc7a/README.md) · [LICENSE](https://github.com/keon/algorithms/blob/bd1d152f9ec7331c69be662831610b003b10fc7a/LICENSE) · [pyproject.toml](https://github.com/keon/algorithms/blob/bd1d152f9ec7331c69be662831610b003b10fc7a/pyproject.toml) · [.github/workflows/publish.yml](https://github.com/keon/algorithms/blob/bd1d152f9ec7331c69be662831610b003b10fc7a/.github/workflows/publish.yml) · [metadata GitHub](https://api.github.com/repos/keon/algorithms).
+
+<a id="anhkysuai-2026-11-23-javascript-tutorial-en.javascript.info"></a>
+
+### en.javascript.info
+
+**Repo:** [javascript-tutorial/en.javascript.info](https://github.com/javascript-tutorial/en.javascript.info) · **License:** Giấy phép nội dung dựa trên CC-BY-NC-4.0; xem LICENSE.md · **★ 25,536 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Nguồn nội dung tiếng Anh của Modern JavaScript Tutorial, chia bài học và bài tập theo thư mục.
+
+**Giá trị:** Cấu trúc bài và bài tập hỗ trợ học JavaScript có trình tự, đồng thời có quy trình đóng góp và bản dịch.
+
+**Giới hạn:** LICENSE cho đọc miễn phí nhưng yêu cầu liên hệ khi dùng theo cách khác và dựa trên CC BY-NC; không coi đây là giấy phép phần mềm tự do cho toàn bộ sách.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [Asabeneh/30-Days-Of-JavaScript](https://github.com/Asabeneh/30-Days-Of-JavaScript) · [leonardomso/33-js-concepts](https://github.com/leonardomso/33-js-concepts). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`20208769e528337949e946f526534d61d38bac47`](https://github.com/javascript-tutorial/en.javascript.info/commit/20208769e528337949e946f526534d61d38bac47), ngày commit 2026-07-25. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/javascript-tutorial/en.javascript.info/blob/20208769e528337949e946f526534d61d38bac47/README.md) · [LICENSE.md](https://github.com/javascript-tutorial/en.javascript.info/blob/20208769e528337949e946f526534d61d38bac47/LICENSE.md) · [metadata GitHub](https://api.github.com/repos/javascript-tutorial/en.javascript.info).
+
+<a id="anhkysuai-2026-11-23-awesome-dsh-plugin-awesome-dsh-plugin"></a>
+
+### awesome-dsh-plugin
+
+**Repo:** [awesome-dsh-plugin/awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) · **License:** CC0-1.0 · **★ 25,478 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách plugin cộng đồng cho DeepSeek Harness, có dữ liệu plugin và kiểm tra manifest.
+
+**Giá trị:** Phân nhóm UI, model, công cụ và workflow giúp tìm phần mở rộng theo nhu cầu; cấu trúc dữ liệu có thể tham khảo cho kho plugin.
+
+**Giới hạn:** CC0 chỉ cấp quyền với danh sách; plugin có thể chạy công cụ hoặc thay agent loop nên phải đọc riêng mã, quyền và phiên bản DSH hỗ trợ.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [PatrickJS/awesome-cursorrules](https://github.com/PatrickJS/awesome-cursorrules) · [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`1cfebf33f8f7f3a363507fd1609cbb6cb6bc6c37`](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/commit/1cfebf33f8f7f3a363507fd1609cbb6cb6bc6c37), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/1cfebf33f8f7f3a363507fd1609cbb6cb6bc6c37/README.md) · [LICENSE](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/1cfebf33f8f7f3a363507fd1609cbb6cb6bc6c37/LICENSE) · [package.json](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/1cfebf33f8f7f3a363507fd1609cbb6cb6bc6c37/package.json) · [.github/workflows/pr-check.yml](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/1cfebf33f8f7f3a363507fd1609cbb6cb6bc6c37/.github/workflows/pr-check.yml) · [metadata GitHub](https://api.github.com/repos/awesome-dsh-plugin/awesome-dsh-plugin).
+
+<a id="anhkysuai-2026-11-23-norvig-pytudes"></a>
+
+### pytudes
+
+**Repo:** [norvig/pytudes](https://github.com/norvig/pytudes) · **License:** MIT · **★ 24,430 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Các bài luyện Python của Peter Norvig, thường dưới dạng notebook hoặc chương trình ngắn.
+
+**Giá trị:** Tập trung rèn cách suy nghĩ và diễn đạt lời giải; phù hợp người đã có nền tảng muốn đọc cách phân tích vấn đề.
+
+**Giới hạn:** README phân biệt học nghề lập trình với hướng dẫn cài ứng dụng; nhiều ví dụ không nhằm production, môi trường notebook và dữ liệu cần kiểm từng bài.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [keon/algorithms](https://github.com/keon/algorithms) · [quii/learn-go-with-tests](https://github.com/quii/learn-go-with-tests). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`3b4c5dd5fcec2dd48d34b8e4c03cea245ff039d7`](https://github.com/norvig/pytudes/commit/3b4c5dd5fcec2dd48d34b8e4c03cea245ff039d7), ngày commit 2026-11-20. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/norvig/pytudes/blob/3b4c5dd5fcec2dd48d34b8e4c03cea245ff039d7/README.md) · [LICENSE](https://github.com/norvig/pytudes/blob/3b4c5dd5fcec2dd48d34b8e4c03cea245ff039d7/LICENSE) · [.github/workflows/on-file-change.yml](https://github.com/norvig/pytudes/blob/3b4c5dd5fcec2dd48d34b8e4c03cea245ff039d7/.github/workflows/on-file-change.yml) · [metadata GitHub](https://api.github.com/repos/norvig/pytudes).
+
+<a id="anhkysuai-2026-11-23-vonng-ddia"></a>
+
+### ddia
+
+**Repo:** [Vonng/ddia](https://github.com/Vonng/ddia) · **License:** CC-BY-4.0 (tuyên bố repo); quyền nguyên tác cần đối chiếu · **★ 23,989 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bản dịch tiếng Trung của Designing Data-Intensive Applications, gồm nội dung cho các ấn bản.
+
+**Giá trị:** Nguồn đọc bổ trợ về lưu trữ và hệ phân tán, có cấu trúc chương và lịch sử hiệu đính cộng đồng.
+
+**Giới hạn:** LICENSE repo ghi CC BY 4.0 nhưng tuyên bố pháp lý trong README giới hạn bản dịch cho học/nghiên cứu, không phát hành công khai hay thương mại và dành quyền khác cho tác giả/nhà xuất bản; cần giải quyết mâu thuẫn này trước tái sử dụng.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [karanpratapsingh/system-design](https://github.com/karanpratapsingh/system-design) · [systemdesign42/system-design-academy](https://github.com/systemdesign42/system-design-academy). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`bd8ef56e032f57184080d1418d8d9ae8dc3d483c`](https://github.com/Vonng/ddia/commit/bd8ef56e032f57184080d1418d8d9ae8dc3d483c), ngày commit 2026-11-07. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/Vonng/ddia/blob/bd8ef56e032f57184080d1418d8d9ae8dc3d483c/README.md) · [LICENSE](https://github.com/Vonng/ddia/blob/bd8ef56e032f57184080d1418d8d9ae8dc3d483c/LICENSE) · [go.mod](https://github.com/Vonng/ddia/blob/bd8ef56e032f57184080d1418d8d9ae8dc3d483c/go.mod) · [.github/workflows/repository-cards.yml](https://github.com/Vonng/ddia/blob/bd8ef56e032f57184080d1418d8d9ae8dc3d483c/.github/workflows/repository-cards.yml) · [metadata GitHub](https://api.github.com/repos/Vonng/ddia).
+
+<a id="anhkysuai-2026-11-23-quii-learn-go-with-tests"></a>
+
+### learn-go-with-tests
+
+**Repo:** [quii/learn-go-with-tests](https://github.com/quii/learn-go-with-tests) · **License:** MIT · **★ 23,972 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Giáo trình Go học qua test-driven development, từ ngôn ngữ cơ bản tới xây ứng dụng.
+
+**Giá trị:** Bài học gắn khái niệm với vòng viết test và cải tiến thiết kế, có nhiều định dạng đọc và bản dịch.
+
+**Giới hạn:** Cần thực hành bài chuyển giao để kiểm hiểu biết; cấu hình build sách không chứng minh mọi ví dụ đúng trên mọi phiên bản Go, và bản dịch có thể lệch tiến độ.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [golang/tour](https://github.com/golang/tour) · [google/comprehensive-rust](https://github.com/google/comprehensive-rust). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`592e9f747e9e851af40eb0a5cb0ac4fe86ef18a6`](https://github.com/quii/learn-go-with-tests/commit/592e9f747e9e851af40eb0a5cb0ac4fe86ef18a6), ngày commit 2026-10-26. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/quii/learn-go-with-tests/blob/592e9f747e9e851af40eb0a5cb0ac4fe86ef18a6/README.md) · [LICENSE.md](https://github.com/quii/learn-go-with-tests/blob/592e9f747e9e851af40eb0a5cb0ac4fe86ef18a6/LICENSE.md) · [go.mod](https://github.com/quii/learn-go-with-tests/blob/592e9f747e9e851af40eb0a5cb0ac4fe86ef18a6/go.mod) · [.github/workflows/go.yml](https://github.com/quii/learn-go-with-tests/blob/592e9f747e9e851af40eb0a5cb0ac4fe86ef18a6/.github/workflows/go.yml) · [metadata GitHub](https://api.github.com/repos/quii/learn-go-with-tests).
+
+<a id="anhkysuai-2026-11-23-anderspitman-awesome-tunneling"></a>
+
+### awesome-tunneling
+
+**Repo:** [anderspitman/awesome-tunneling](https://github.com/anderspitman/awesome-tunneling) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 22,073 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách công cụ tunneling và overlay network, chú trọng khả năng tự host.
+
+**Giá trị:** Phân nhóm nguồn mở, thương mại và mạng overlay giúp tìm lựa chọn theo cách triển khai.
+
+**Giới hạn:** Tiêu chí sao GitHub hoặc khách hàng trong README không phải kiểm toán bảo mật; thiếu giấy phép chung ở gốc đã đọc và từng công cụ cần kiểm xác thực, mã hóa, quyền nhà cung cấp. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [fatedier/frp](https://github.com/fatedier/frp) · [tailscale/tailscale](https://github.com/tailscale/tailscale). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f28b57dca0824ed33d4129c8ef1b9c080051a177`](https://github.com/anderspitman/awesome-tunneling/commit/f28b57dca0824ed33d4129c8ef1b9c080051a177), ngày commit 2026-11-17. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/anderspitman/awesome-tunneling/blob/f28b57dca0824ed33d4129c8ef1b9c080051a177/README.md) · [metadata GitHub](https://api.github.com/repos/anderspitman/awesome-tunneling).
+
+<a id="anhkysuai-2026-11-23-matiassingers-awesome-readme"></a>
+
+### awesome-readme
+
+**Repo:** [matiassingers/awesome-readme](https://github.com/matiassingers/awesome-readme) · **License:** CC0-1.0 (tuyên bố trong README) · **★ 21,760 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách README tiêu biểu cùng bài viết, ví dụ kiến trúc và công cụ tạo hình minh họa.
+
+**Giá trị:** Giúp chọn bố cục trình bày vấn đề, cài đặt, ảnh và kiến trúc khi viết tài liệu dự án.
+
+**Giới hạn:** Chất lượng trình bày không chứng minh chất lượng phần mềm; CC0 của danh sách không bao gồm tài sản và văn bản ở các repo được dẫn.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [github/opensource.guide](https://github.com/github/opensource.guide) · [abhisheknaiidu/awesome-github-profile-readme](https://github.com/abhisheknaiidu/awesome-github-profile-readme). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f0742eb55c9f038c3444a84ab9a3b4fe785ab425`](https://github.com/matiassingers/awesome-readme/commit/f0742eb55c9f038c3444a84ab9a3b4fe785ab425), ngày commit 2026-11-10. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [readme.md](https://github.com/matiassingers/awesome-readme/blob/f0742eb55c9f038c3444a84ab9a3b4fe785ab425/readme.md) · [metadata GitHub](https://api.github.com/repos/matiassingers/awesome-readme).
+
+<a id="anhkysuai-2026-11-23-git-tips-tips"></a>
+
+### tips
+
+**Repo:** [git-tips/tips](https://github.com/git-tips/tips) · **License:** MIT · **★ 21,725 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tập hợp mẹo và lệnh Git để tra cứu theo thao tác.
+
+**Giá trị:** Nhiều ví dụ ngắn thuận tiện học staging, lịch sử và xử lý nhánh; có tài liệu tương tác và bản dịch.
+
+**Giới hạn:** README ghi bộ lệnh từng được thử với Git 2.7.4; lệnh xóa, reset hoặc sửa lịch sử cần hiểu trạng thái repo và kiểm trên bản sao trước dùng.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [firstcontributions/first-contributions](https://github.com/firstcontributions/first-contributions) · [tldr-pages/tldr](https://github.com/tldr-pages/tldr). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`727551c5dab24c7b1d63814222a06f9d01546bc4`](https://github.com/git-tips/tips/commit/727551c5dab24c7b1d63814222a06f9d01546bc4), ngày commit 2026-08-10. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/git-tips/tips/blob/727551c5dab24c7b1d63814222a06f9d01546bc4/README.md) · [LICENSE](https://github.com/git-tips/tips/blob/727551c5dab24c7b1d63814222a06f9d01546bc4/LICENSE) · [package.json](https://github.com/git-tips/tips/blob/727551c5dab24c7b1d63814222a06f9d01546bc4/package.json) · [.github/workflows/deploy-docs.yml](https://github.com/git-tips/tips/blob/727551c5dab24c7b1d63814222a06f9d01546bc4/.github/workflows/deploy-docs.yml) · [metadata GitHub](https://api.github.com/repos/git-tips/tips).
+
+<a id="anhkysuai-2026-11-23-rockerboo-awesome-neovim"></a>
+
+### awesome-neovim
+
+**Repo:** [rockerBOO/awesome-neovim](https://github.com/rockerBOO/awesome-neovim) · **License:** CC0-1.0 · **★ 21,607 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh mục plugin tập trung vào các khả năng riêng của Neovim.
+
+**Giá trị:** Phân nhóm LSP, completion, UI, tìm kiếm và AI giúp tìm phần mở rộng theo công việc.
+
+**Giới hạn:** README chủ động không bao quát plugin chỉ tương thích Vim; cần kiểm phiên bản Neovim, dependencies và quyền từng plugin, không coi việc có trong danh sách là đã kiểm toán.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [neovim/neovim](https://github.com/neovim/neovim) · [viatsko/awesome-vscode](https://github.com/viatsko/awesome-vscode). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`0c160033536aa472374b1aac9c4ba83217f5158c`](https://github.com/rockerBOO/awesome-neovim/commit/0c160033536aa472374b1aac9c4ba83217f5158c), ngày commit 2026-11-20. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/rockerBOO/awesome-neovim/blob/0c160033536aa472374b1aac9c4ba83217f5158c/README.md) · [LICENSE](https://github.com/rockerBOO/awesome-neovim/blob/0c160033536aa472374b1aac9c4ba83217f5158c/LICENSE) · [.github/workflows/pr-compliance-check.yml](https://github.com/rockerBOO/awesome-neovim/blob/0c160033536aa472374b1aac9c4ba83217f5158c/.github/workflows/pr-compliance-check.yml) · [metadata GitHub](https://api.github.com/repos/rockerBOO/awesome-neovim).
+
+<a id="anhkysuai-2026-11-23-milanm-devops-roadmap"></a>
+
+### DevOps-Roadmap
+
+**Repo:** [milanm/DevOps-Roadmap](https://github.com/milanm/DevOps-Roadmap) · **License:** Apache-2.0 · **★ 21,026 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Lộ trình DevOps 2026 với tài nguyên học Git, Linux, mạng, container, IaC và vận hành.
+
+**Giá trị:** Sắp xếp chủ đề theo tiến trình giúp xác định phần còn thiếu trong nền tảng kỹ thuật.
+
+**Giới hạn:** README nói rõ mục đích là hiểu bối cảnh và lựa chọn công cụ theo nhu cầu; danh sách không bảo đảm hoàn thành trong một thời hạn hoặc thay kinh nghiệm vận hành.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [MichaelCade/90DaysOfDevOps](https://github.com/MichaelCade/90DaysOfDevOps) · [veggiemonk/awesome-docker](https://github.com/veggiemonk/awesome-docker). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`ae79066e63a11827ed02b5bf0cff0f4b00a650e5`](https://github.com/milanm/DevOps-Roadmap/commit/ae79066e63a11827ed02b5bf0cff0f4b00a650e5), ngày commit 2026-11-02. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/milanm/DevOps-Roadmap/blob/ae79066e63a11827ed02b5bf0cff0f4b00a650e5/README.md) · [LICENSE](https://github.com/milanm/DevOps-Roadmap/blob/ae79066e63a11827ed02b5bf0cff0f4b00a650e5/LICENSE) · [metadata GitHub](https://api.github.com/repos/milanm/DevOps-Roadmap).
+
+<a id="anhkysuai-2026-11-23-pluja-awesome-privacy"></a>
+
+### awesome-privacy
+
+**Repo:** [pluja/awesome-privacy](https://github.com/pluja/awesome-privacy) · **License:** CC0-1.0 · **★ 20,352 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh mục dịch vụ và phần mềm ưu tiên quyền riêng tư theo loại nhu cầu.
+
+**Giá trị:** README phân biệt privacy, security và anonymity, hữu ích làm bước tìm lựa chọn thay thế.
+
+**Giới hạn:** Tuyên bố của danh sách chưa thay kiểm chính sách, mô hình đe dọa hoặc kiểm toán độc lập; mỗi dịch vụ cần đánh giá hiện trạng và giấy phép riêng.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [privacyguides/privacyguides.org](https://github.com/privacyguides/privacyguides.org) · [awesome-foss/awesome-sysadmin](https://github.com/awesome-foss/awesome-sysadmin). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`887accc6c2f782409aa26848961dc4618c59618c`](https://github.com/pluja/awesome-privacy/commit/887accc6c2f782409aa26848961dc4618c59618c), ngày commit 2026-11-14. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/pluja/awesome-privacy/blob/887accc6c2f782409aa26848961dc4618c59618c/README.md) · [LICENSE](https://github.com/pluja/awesome-privacy/blob/887accc6c2f782409aa26848961dc4618c59618c/LICENSE) · [package.json](https://github.com/pluja/awesome-privacy/blob/887accc6c2f782409aa26848961dc4618c59618c/package.json) · [.github/workflows/pr-check.yml](https://github.com/pluja/awesome-privacy/blob/887accc6c2f782409aa26848961dc4618c59618c/.github/workflows/pr-check.yml) · [metadata GitHub](https://api.github.com/repos/pluja/awesome-privacy).
+
+<a id="anhkysuai-2026-11-23-tianxingchen-embodied-ai-guide"></a>
+
+### Embodied-AI-Guide
+
+**Repo:** [TianxingChen/Embodied-AI-Guide](https://github.com/TianxingChen/Embodied-AI-Guide) · **License:** Non-Commercial Use License (tùy chỉnh) · **★ 17,035 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Kho kiến thức tiếng Trung về embodied AI, thuật toán, điều khiển, hạ tầng và phần cứng.
+
+**Giá trị:** Lộ trình theo nền tảng người học kết hợp dự án thực hành và chỉ mục tài liệu giúp định hướng nghiên cứu robot.
+
+**Giới hạn:** Giấy phép phi thương mại riêng cấm cả sử dụng nội bộ tổ chức vì lợi nhuận nếu chưa được phép; không gắn nhãn nguồn mở chỉ vì repo công khai.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics) · [datawhalechina/every-embodied](https://github.com/datawhalechina/every-embodied). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`236f5fb35ca7058a0ff842046a6b11cfd521b7b5`](https://github.com/TianxingChen/Embodied-AI-Guide/commit/236f5fb35ca7058a0ff842046a6b11cfd521b7b5), ngày commit 2026-11-18. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/TianxingChen/Embodied-AI-Guide/blob/236f5fb35ca7058a0ff842046a6b11cfd521b7b5/README.md) · [LICENSE](https://github.com/TianxingChen/Embodied-AI-Guide/blob/236f5fb35ca7058a0ff842046a6b11cfd521b7b5/LICENSE) · [metadata GitHub](https://api.github.com/repos/TianxingChen/Embodied-AI-Guide).
+
+<a id="anhkysuai-2026-11-23-github-opensource.guide"></a>
+
+### opensource.guide
+
+**Repo:** [github/opensource.guide](https://github.com/github/opensource.guide) · **License:** CC-BY-4.0 · **★ 15,815 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Hướng dẫn xây dựng, đóng góp và duy trì cộng đồng dự án nguồn mở.
+
+**Giá trị:** Tổng hợp thực hành cộng đồng và ví dụ, có thể dùng làm nền cho CONTRIBUTING, quản trị và hỗ trợ maintainer.
+
+**Giới hạn:** Nội dung CC BY 4.0, phần mềm và trích dẫn bên thứ ba có notices riêng; hướng dẫn cần điều chỉnh theo quy mô, quyền quyết định và bối cảnh pháp lý của dự án.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [firstcontributions/first-contributions](https://github.com/firstcontributions/first-contributions) · [matiassingers/awesome-readme](https://github.com/matiassingers/awesome-readme). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`e7ac98e94600c5eea834f9a026c000d26b28df24`](https://github.com/github/opensource.guide/commit/e7ac98e94600c5eea834f9a026c000d26b28df24), ngày commit 2026-09-30. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/github/opensource.guide/blob/e7ac98e94600c5eea834f9a026c000d26b28df24/README.md) · [LICENSE](https://github.com/github/opensource.guide/blob/e7ac98e94600c5eea834f9a026c000d26b28df24/LICENSE) · [package.json](https://github.com/github/opensource.guide/blob/e7ac98e94600c5eea834f9a026c000d26b28df24/package.json) · [.github/workflows/tests.yml](https://github.com/github/opensource.guide/blob/e7ac98e94600c5eea834f9a026c000d26b28df24/.github/workflows/tests.yml) · [metadata GitHub](https://api.github.com/repos/github/opensource.guide).
+
+<a id="anhkysuai-2026-11-23-rougier-numpy-100"></a>
+
+### numpy-100
+
+**Repo:** [rougier/numpy-100](https://github.com/rougier/numpy-100) · **License:** MIT · **★ 14,704 (GitHub API, 2026-11-23)**
+
+**Mục đích:** 100 bài tập NumPy có lời giải, sinh bản Markdown và notebook từ một nguồn dữ liệu.
+
+**Giá trị:** Phù hợp luyện thao tác mảng và tạo bài thực hành ngắn cho lớp học hoặc tự đánh giá.
+
+**Giới hạn:** Lời giải cần thử với phiên bản NumPy đang dùng và giải thích được hành vi số học; đọc đáp án không thay làm bài độc lập. Cần sửa nguồn thay vì tệp sinh.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [microsoft/Data-Science-For-Beginners](https://github.com/microsoft/Data-Science-For-Beginners) · [norvig/pytudes](https://github.com/norvig/pytudes). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`cf3b5a29749410758ccaab876302ed861bb94323`](https://github.com/rougier/numpy-100/commit/cf3b5a29749410758ccaab876302ed861bb94323), ngày commit 2026-10-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/rougier/numpy-100/blob/cf3b5a29749410758ccaab876302ed861bb94323/README.md) · [LICENSE.txt](https://github.com/rougier/numpy-100/blob/cf3b5a29749410758ccaab876302ed861bb94323/LICENSE.txt) · [.github/workflows/generate_solutions_files.yml](https://github.com/rougier/numpy-100/blob/cf3b5a29749410758ccaab876302ed861bb94323/.github/workflows/generate_solutions_files.yml) · [metadata GitHub](https://api.github.com/repos/rougier/numpy-100).
+
+<a id="anhkysuai-2026-11-23-996icu-996.icu"></a>
+
+### 996.ICU
+
+**Repo:** [996icu/996.ICU](https://github.com/996icu/996.ICU) · **License:** Anti-996 License 1.0 (Draft) · **★ 277,255 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Kho tư liệu và chiến dịch cộng đồng về điều kiện lao động lập trình viên, kèm bản nháp Anti-996 License.
+
+**Giá trị:** Có giá trị tham khảo lịch sử cộng đồng và cách dùng repo để tập hợp thông tin/xây đề xuất giấy phép.
+
+**Giới hạn:** Đây không phải thư viện triển khai; Anti-996 có điều kiện về lao động nên không đồng nhất với MIT. Tuyên bố và danh sách cộng đồng cần đối chiếu nguồn, không dùng như kết luận pháp lý.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [github/opensource.guide](https://github.com/github/opensource.guide) · [charlax/professional-programming](https://github.com/charlax/professional-programming). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f5e35f48d769bf92ed885888bfe911d3e5b5a63d`](https://github.com/996icu/996.ICU/commit/f5e35f48d769bf92ed885888bfe911d3e5b5a63d), ngày commit 2025-08-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/996icu/996.ICU/blob/f5e35f48d769bf92ed885888bfe911d3e5b5a63d/README.md) · [LICENSE](https://github.com/996icu/996.ICU/blob/f5e35f48d769bf92ed885888bfe911d3e5b5a63d/LICENSE) · [LICENSE_CN](https://github.com/996icu/996.ICU/blob/f5e35f48d769bf92ed885888bfe911d3e5b5a63d/LICENSE_CN) · [metadata GitHub](https://api.github.com/repos/996icu/996.ICU).
+
+<a id="anhkysuai-2026-11-23-trimstray-the-book-of-secret-knowledge"></a>
+
+### the-book-of-secret-knowledge
+
+**Repo:** [trimstray/the-book-of-secret-knowledge](https://github.com/trimstray/the-book-of-secret-knowledge) · **License:** MIT · **★ 260,664 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tuyển tập công cụ, tài liệu, cheatsheet và lệnh cho quản trị hệ thống, mạng và DevOps.
+
+**Giá trị:** Phạm vi rộng thuận tiện tìm gợi ý xử lý vấn đề và công cụ để khảo sát tiếp.
+
+**Giới hạn:** HEAD đã đọc từ 2024; nhiều lệnh có tác động hệ thống và link có thể lỗi thời. Cần hiểu đầu vào/quyền và thử độc lập, MIT của danh sách không cấp quyền mọi công cụ được dẫn.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [tldr-pages/tldr](https://github.com/tldr-pages/tldr) · [awesome-foss/awesome-sysadmin](https://github.com/awesome-foss/awesome-sysadmin). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`7d37069a361d3fd9f214480755f7969744e866fa`](https://github.com/trimstray/the-book-of-secret-knowledge/commit/7d37069a361d3fd9f214480755f7969744e866fa), ngày commit 2024-11-19. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/trimstray/the-book-of-secret-knowledge/blob/7d37069a361d3fd9f214480755f7969744e866fa/README.md) · [LICENSE.md](https://github.com/trimstray/the-book-of-secret-knowledge/blob/7d37069a361d3fd9f214480755f7969744e866fa/LICENSE.md) · [metadata GitHub](https://api.github.com/repos/trimstray/the-book-of-secret-knowledge).
+
+<a id="anhkysuai-2026-11-23-digitalplatdev-freedomain"></a>
+
+### FreeDomain
+
+**Repo:** [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain) · **License:** AGPL-3.0 · **★ 209,028 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thông tin công khai và tài liệu học DNS/đăng ký tên miền của DigitalPlat FreeDomain.
+
+**Giá trị:** Có lộ trình từ đăng ký tới cấu hình nameserver và triển khai, hữu ích cho học DNS thực hành.
+
+**Giới hạn:** README chỉ rõ mã ứng dụng nằm tại DigitalPlatDev/Domain-OSS; repo này không chứng minh độ bền hoặc điều khoản miễn phí của dịch vụ tên miền, cần kiểm nhà cung cấp trước phụ thuộc lâu dài.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [DigitalPlatDev/Domain-OSS](https://github.com/DigitalPlatDev/Domain-OSS) · [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`9c7c54110705760267b07b6e6a6d406d1172a1bf`](https://github.com/DigitalPlatDev/FreeDomain/commit/9c7c54110705760267b07b6e6a6d406d1172a1bf), ngày commit 2026-08-12. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/DigitalPlatDev/FreeDomain/blob/9c7c54110705760267b07b6e6a6d406d1172a1bf/README.md) · [LICENSE](https://github.com/DigitalPlatDev/FreeDomain/blob/9c7c54110705760267b07b6e6a6d406d1172a1bf/LICENSE) · [metadata GitHub](https://api.github.com/repos/DigitalPlatDev/FreeDomain).
+
+<a id="anhkysuai-2026-11-23-521xueweihan-hellogithub"></a>
+
+### HelloGitHub
+
+**Repo:** [521xueweihan/HelloGitHub](https://github.com/521xueweihan/HelloGitHub) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 190,692 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tạp chí/danh mục tiếng Trung giới thiệu các dự án GitHub dễ tiếp cận theo kỳ.
+
+**Giá trị:** Nguồn phát hiện dự án và ý tưởng thực hành cho người mới, có đường dẫn đọc chi tiết và đóng góp.
+
+**Giới hạn:** Chưa thấy giấy phép chung ở gốc đã đọc; bài giới thiệu không thay kiểm mã, bảo trì và license repo gốc. Nên dẫn nguồn thay vì sao lại nguyên phần mô tả. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [firstcontributions/first-contributions](https://github.com/firstcontributions/first-contributions) · [MunGell/awesome-for-beginners](https://github.com/MunGell/awesome-for-beginners). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`d65699c2892f3ad7516398a3fbd3855913f9d17d`](https://github.com/521xueweihan/HelloGitHub/commit/d65699c2892f3ad7516398a3fbd3855913f9d17d), ngày commit 2026-11-01. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/521xueweihan/HelloGitHub/blob/d65699c2892f3ad7516398a3fbd3855913f9d17d/README.md) · [metadata GitHub](https://api.github.com/repos/521xueweihan/HelloGitHub).
+
+<a id="anhkysuai-2026-11-23-cyc2018-cs-notes"></a>
+
+### CS-Notes
+
+**Repo:** [CyC2018/CS-Notes](https://github.com/CyC2018/CS-Notes) · **License:** CC-BY-NC-SA-4.0 (nội dung); thành phần website riêng · **★ 186,565 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ghi chú tiếng Trung về khoa học máy tính, Java, thuật toán và lộ trình chuẩn bị phỏng vấn.
+
+**Giá trị:** Tuyến học phân theo nền tảng và mục tiêu giúp liên kết kiến thức hệ điều hành, mạng, dữ liệu và thiết kế hệ thống.
+
+**Giới hạn:** Nội dung README mang CC BY-NC-SA 4.0, khác MIT của thư viện tô màu Prism bên trong; kiến thức/phỏng vấn cần đối chiếu phiên bản và thực hành độc lập.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [huihut/interview](https://github.com/huihut/interview) · [charlax/professional-programming](https://github.com/charlax/professional-programming). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`cb9f180fb26da7b7100fde250a5dd137455b3a02`](https://github.com/CyC2018/CS-Notes/commit/cb9f180fb26da7b7100fde250a5dd137455b3a02), ngày commit 2026-11-10. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/CyC2018/CS-Notes/blob/cb9f180fb26da7b7100fde250a5dd137455b3a02/README.md) · [docs/_style/prism-master/LICENSE](https://github.com/CyC2018/CS-Notes/blob/cb9f180fb26da7b7100fde250a5dd137455b3a02/docs/_style/prism-master/LICENSE) · [.github/workflows/website.yml](https://github.com/CyC2018/CS-Notes/blob/cb9f180fb26da7b7100fde250a5dd137455b3a02/.github/workflows/website.yml) · [metadata GitHub](https://api.github.com/repos/CyC2018/CS-Notes).
+
+<a id="anhkysuai-2026-11-23-ripienaar-free-for-dev"></a>
+
+### free-for-dev
+
+**Repo:** [ripienaar/free-for-dev](https://github.com/ripienaar/free-for-dev) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 143,415 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách SaaS/PaaS/IaaS có gói miễn phí hữu ích cho lập trình và hạ tầng.
+
+**Giá trị:** Phân nhóm dịch vụ giúp lập danh sách lựa chọn ban đầu và tìm công cụ cho thử nghiệm.
+
+**Giới hạn:** Giới hạn miễn phí, điều khoản và yêu cầu thẻ có thể đổi; chưa kiểm riêng từng nhà cung cấp. Không thấy license chung ở gốc đã đọc và free tier không đồng nghĩa nguồn mở. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain) · [awesome-foss/awesome-sysadmin](https://github.com/awesome-foss/awesome-sysadmin). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`9c424e150a269cd3079f3b3d72a51e34f7526d0c`](https://github.com/ripienaar/free-for-dev/commit/9c424e150a269cd3079f3b3d72a51e34f7526d0c), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/ripienaar/free-for-dev/blob/9c424e150a269cd3079f3b3d72a51e34f7526d0c/README.md) · [metadata GitHub](https://api.github.com/repos/ripienaar/free-for-dev).
+
+<a id="anhkysuai-2026-11-23-jaywcjlove-awesome-mac"></a>
+
+### awesome-mac
+
+**Repo:** [jaywcjlove/awesome-mac](https://github.com/jaywcjlove/awesome-mac) · **License:** Mâu thuẫn CC0 / CC-BY-4.0 / CC-BY-SA-4.0; chưa kết luận · **★ 119,172 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh mục phần mềm macOS theo tác vụ, phân biệt nguồn mở, freeware và App Store.
+
+**Giá trị:** Có thể dùng để tìm công cụ rồi kiểm repo gốc theo nhu cầu nền tảng.
+
+**Giới hạn:** Giấy phép mâu thuẫn: LICENSE là CC0, README CC BY 4.0, package.json CC BY-SA 4.0; cần làm rõ phạm vi trước tái phân phối. Quyền mỗi ứng dụng được liệt kê là riêng.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [serhii-londar/open-source-mac-os-apps](https://github.com/serhii-londar/open-source-mac-os-apps) · [vsouza/awesome-ios](https://github.com/vsouza/awesome-ios). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`23ca709562e808a98ad5fc503214c1e2f864e5a4`](https://github.com/jaywcjlove/awesome-mac/commit/23ca709562e808a98ad5fc503214c1e2f864e5a4), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/jaywcjlove/awesome-mac/blob/23ca709562e808a98ad5fc503214c1e2f864e5a4/README.md) · [LICENSE](https://github.com/jaywcjlove/awesome-mac/blob/23ca709562e808a98ad5fc503214c1e2f864e5a4/LICENSE) · [package.json](https://github.com/jaywcjlove/awesome-mac/blob/23ca709562e808a98ad5fc503214c1e2f864e5a4/package.json) · [.github/workflows/ci.yml](https://github.com/jaywcjlove/awesome-mac/blob/23ca709562e808a98ad5fc503214c1e2f864e5a4/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/jaywcjlove/awesome-mac).
+
+<a id="anhkysuai-2026-11-23-papers-we-love-papers-we-love"></a>
+
+### papers-we-love
+
+**Repo:** [papers-we-love/papers-we-love](https://github.com/papers-we-love/papers-we-love) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 111,762 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Chỉ mục paper khoa học máy tính và cộng đồng đọc, thảo luận nghiên cứu.
+
+**Giá trị:** Tập hợp chủ đề và gợi ý cách đọc paper, phù hợp xây nhóm đọc hoặc lần lại nền tảng của một kỹ thuật.
+
+**Giới hạn:** README nói không thể lưu mọi paper vì bản quyền; từng tài liệu có quyền riêng, danh sách không cấp quyền tái xuất bản toàn bộ PDF hoặc xác nhận kết quả đã tái lập. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [floodsung/Deep-Learning-Papers-Reading-Roadmap](https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap) · [satellite-image-deep-learning/techniques](https://github.com/satellite-image-deep-learning/techniques). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`0b33c953aae0c90e6d15c4ed41b01e76358f3c28`](https://github.com/papers-we-love/papers-we-love/commit/0b33c953aae0c90e6d15c4ed41b01e76358f3c28), ngày commit 2026-10-28. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/papers-we-love/papers-we-love/blob/0b33c953aae0c90e6d15c4ed41b01e76358f3c28/README.md) · [.github/workflows/lychee.yml](https://github.com/papers-we-love/papers-we-love/blob/0b33c953aae0c90e6d15c4ed41b01e76358f3c28/.github/workflows/lychee.yml) · [metadata GitHub](https://api.github.com/repos/papers-we-love/papers-we-love).
+
+<a id="anhkysuai-2026-11-23-mungell-awesome-for-beginners"></a>
+
+### awesome-for-beginners
+
+**Repo:** [MunGell/awesome-for-beginners](https://github.com/MunGell/awesome-for-beginners) · **License:** CC0-1.0 (tuyên bố trong README) · **★ 91,702 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách dự án có cơ hội đóng góp đầu tiên, chia theo ngôn ngữ và nhãn issue.
+
+**Giá trị:** Giúp người mới tìm nơi thực hành pull request có phạm vi phù hợp.
+
+**Giới hạn:** Nhãn good-first-issue không bảo đảm issue còn mở hoặc phù hợp kỹ năng; cần đọc CONTRIBUTING và trao đổi ở repo đích. CC0 chỉ áp dụng danh sách.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [firstcontributions/first-contributions](https://github.com/firstcontributions/first-contributions) · [github/opensource.guide](https://github.com/github/opensource.guide). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f7bf7d43cb26d555e51a4c6c83af563a08795605`](https://github.com/MunGell/awesome-for-beginners/commit/f7bf7d43cb26d555e51a4c6c83af563a08795605), ngày commit 2026-10-01. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/MunGell/awesome-for-beginners/blob/f7bf7d43cb26d555e51a4c6c83af563a08795605/README.md) · [.github/workflows/build.yml](https://github.com/MunGell/awesome-for-beginners/blob/f7bf7d43cb26d555e51a4c6c83af563a08795605/.github/workflows/build.yml) · [metadata GitHub](https://api.github.com/repos/MunGell/awesome-for-beginners).
+
+<a id="anhkysuai-2026-11-23-developer-y-cs-video-courses"></a>
+
+### cs-video-courses
+
+**Repo:** [Developer-Y/cs-video-courses](https://github.com/Developer-Y/cs-video-courses) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 84,915 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh sách khóa học khoa học máy tính có video bài giảng ở cấp đại học.
+
+**Giá trị:** Phân nhóm nền tảng, hệ thống, AI, mạng và toán giúp tìm chuỗi bài học có chiều sâu.
+
+**Giới hạn:** Repo chỉ dẫn tài nguyên, không cấp quyền video/tài liệu của trường; yêu cầu kiến thức đầu vào, khả năng truy cập và độ mới cần kiểm từng khóa. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [ossu/computer-science](https://github.com/ossu/computer-science) · [papers-we-love/papers-we-love](https://github.com/papers-we-love/papers-we-love). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`dcaeff11aab30d18e74d19e5f9c61b962575eafe`](https://github.com/Developer-Y/cs-video-courses/commit/dcaeff11aab30d18e74d19e5f9c61b962575eafe), ngày commit 2026-11-21. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/Developer-Y/cs-video-courses/blob/dcaeff11aab30d18e74d19e5f9c61b962575eafe/README.md) · [metadata GitHub](https://api.github.com/repos/Developer-Y/cs-video-courses).
+
+<a id="anhkysuai-2026-11-23-d2l-ai-d2l-zh"></a>
+
+### d2l-zh
+
+**Repo:** [d2l-ai/d2l-zh](https://github.com/d2l-ai/d2l-zh) · **License:** Apache-2.0 · **★ 82,676 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bản tiếng Trung Dive into Deep Learning kết hợp lý thuyết, công thức và notebook thực hành.
+
+**Giá trị:** Tuyến chương nối toán, code và thử nghiệm; INFO.md giải thích cách dựng tài liệu có hoặc không thực thi notebook.
+
+**Giới hạn:** HEAD bản tiếng Trung đã đọc từ 2023; cần kiểm tương thích framework và đồng bộ với ấn bản khác. LICENSE gốc Apache-2.0 chưa thay việc kiểm quyền nội dung sách/ảnh khi tái xuất bản.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [GokuMohandas/Made-With-ML](https://github.com/GokuMohandas/Made-With-ML) · [microsoft/Data-Science-For-Beginners](https://github.com/microsoft/Data-Science-For-Beginners). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`e6b18ccea71451a55fcd861d7b96fddf2587b09a`](https://github.com/d2l-ai/d2l-zh/commit/e6b18ccea71451a55fcd861d7b96fddf2587b09a), ngày commit 2023-08-17. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/README.md) · [LICENSE](https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/LICENSE) · [.github/workflows/ci.yml](https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/.github/workflows/ci.yml) · [index.md](https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/index.md) · [INFO.md](https://github.com/d2l-ai/d2l-zh/blob/e6b18ccea71451a55fcd861d7b96fddf2587b09a/INFO.md) · [metadata GitHub](https://api.github.com/repos/d2l-ai/d2l-zh).
+
+<a id="anhkysuai-2026-11-23-enaqx-awesome-react"></a>
+
+### awesome-react
+
+**Repo:** [enaqx/awesome-react](https://github.com/enaqx/awesome-react) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 75,386 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Danh mục tài nguyên React/React Native, tutorial, thư viện và kiến trúc ứng dụng.
+
+**Giá trị:** Hữu ích tìm đường dẫn theo chủ đề trước khi đọc tài liệu chính thức hoặc mã repo liên quan.
+
+**Giới hạn:** README nhấn mạnh tài nguyên miễn phí nhưng chưa thấy giấy phép chung; danh sách có tính lịch sử, cần kiểm phiên bản React và tình trạng bảo trì từng thư viện. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Dùng làm chỉ mục tìm ứng viên, dẫn về nguồn gốc rồi kiểm phiên bản, giấy phép và mức bảo trì của từng lựa chọn trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [jondot/awesome-react-native](https://github.com/jondot/awesome-react-native) · [yangshun/front-end-interview-handbook](https://github.com/yangshun/front-end-interview-handbook). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`e6fd973eefe57d288a60e6d21bb9d8f343addfe9`](https://github.com/enaqx/awesome-react/commit/e6fd973eefe57d288a60e6d21bb9d8f343addfe9), ngày commit 2026-09-04. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/enaqx/awesome-react/blob/e6fd973eefe57d288a60e6d21bb9d8f343addfe9/README.md) · [metadata GitHub](https://api.github.com/repos/enaqx/awesome-react).
+
+<a id="anhkysuai-2026-11-23-avik-jain-100-days-of-ml-code"></a>
+
+### 100-Days-Of-ML-Code
+
+**Repo:** [Avik-Jain/100-Days-Of-ML-Code](https://github.com/Avik-Jain/100-Days-Of-ML-Code) · **License:** MIT · **★ 52,078 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Chuỗi bài thực hành machine learning theo ngày, từ tiền xử lý tới các thuật toán cơ bản.
+
+**Giá trị:** Có minh họa và liên kết code/dataset, phù hợp dùng như bộ bài tập nền tảng.
+
+**Giới hạn:** Commit được clone từ năm 2020; cần cập nhật API thư viện, cách chia dữ liệu và kiểm quyền dataset. Mốc 100 ngày không bảo đảm kết quả học tập.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [GokuMohandas/Made-With-ML](https://github.com/GokuMohandas/Made-With-ML) · [d2l-ai/d2l-zh](https://github.com/d2l-ai/d2l-zh). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`5d67810c1498082e7bb262cf6397d7861dfd9891`](https://github.com/Avik-Jain/100-Days-Of-ML-Code/commit/5d67810c1498082e7bb262cf6397d7861dfd9891), ngày commit 2020-07-15. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/Avik-Jain/100-Days-Of-ML-Code/blob/5d67810c1498082e7bb262cf6397d7861dfd9891/README.md) · [LICENSE](https://github.com/Avik-Jain/100-Days-Of-ML-Code/blob/5d67810c1498082e7bb262cf6397d7861dfd9891/LICENSE) · [metadata GitHub](https://api.github.com/repos/Avik-Jain/100-Days-Of-ML-Code).
+
+<a id="anhkysuai-2026-11-23-gokumohandas-made-with-ml"></a>
+
+### Made-With-ML
+
+**Repo:** [GokuMohandas/Made-With-ML](https://github.com/GokuMohandas/Made-With-ML) · **License:** MIT · **★ 50,134 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Khóa học kết hợp ML và kỹ nghệ phần mềm từ thiết kế đến triển khai, đánh giá và vận hành.
+
+**Giá trị:** Liên kết experiment tracking, testing, serving và rollback trong cùng quy trình phát triển ứng dụng ML.
+
+**Giới hạn:** Một số luồng production dùng Anyscale/AWS và credentials; cần kiểm chi phí, phiên bản và quyền trước chạy. Tuyên bố production-grade chưa được xác minh bằng triển khai ở lượt này.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [DataTalksClub/data-engineering-zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp) · [d2l-ai/d2l-zh](https://github.com/d2l-ai/d2l-zh). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`3361aeb8ddfc2affdba9f545c978c38c85cee764`](https://github.com/GokuMohandas/Made-With-ML/commit/3361aeb8ddfc2affdba9f545c978c38c85cee764), ngày commit 2026-03-04. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/README.md) · [LICENSE](https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/LICENSE) · [pyproject.toml](https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/pyproject.toml) · [.github/workflows/serve.yaml](https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/.github/workflows/serve.yaml) · [metadata GitHub](https://api.github.com/repos/GokuMohandas/Made-With-ML).
+
+<a id="anhkysuai-2026-11-23-floodsung-deep-learning-papers-reading-roadmap"></a>
+
+### Deep-Learning-Papers-Reading-Roadmap
+
+**Repo:** [floodsung/Deep-Learning-Papers-Reading-Roadmap](https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 39,608 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Lộ trình đọc paper deep learning từ nền tảng tới các nhánh kiến trúc và ứng dụng.
+
+**Giá trị:** Có giá trị tham khảo lịch sử phát triển và thứ tự đọc các công trình nền tảng.
+
+**Giới hạn:** HEAD đã đọc từ 2022 nên cụm state-of-the-art trong README không phản ánh đầy đủ hiện tại; không thấy giấy phép chung và paper giữ bản quyền riêng. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [papers-we-love/papers-we-love](https://github.com/papers-we-love/papers-we-love) · [satellite-image-deep-learning/techniques](https://github.com/satellite-image-deep-learning/techniques). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a994642f82f071926fcb472bcf6cd63e4abba7ab`](https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap/commit/a994642f82f071926fcb472bcf6cd63e4abba7ab), ngày commit 2022-02-07. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap/blob/a994642f82f071926fcb472bcf6cd63e4abba7ab/README.md) · [metadata GitHub](https://api.github.com/repos/floodsung/Deep-Learning-Papers-Reading-Roadmap).
+
+<a id="anhkysuai-2026-11-23-accumulatemore-cv"></a>
+
+### CV
+
+**Repo:** [AccumulateMore/CV](https://github.com/AccumulateMore/CV) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 24,337 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ ghi chú tiếng Trung từ các khóa deep learning, PyTorch, NLP và agent.
+
+**Giá trị:** Tổ chức theo số bài và nguồn video, thuận tiện đối chiếu lại nội dung khi tự học.
+
+**Giới hạn:** Không thấy giấy phép chung ở gốc; ghi chú/video/dataset có thể có quyền khác nhau. README còn placeholder cho khóa tương lai nên không coi toàn bộ mục đã hoàn tất. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [d2l-ai/d2l-zh](https://github.com/d2l-ai/d2l-zh) · [microsoft/Data-Science-For-Beginners](https://github.com/microsoft/Data-Science-For-Beginners). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`e05116c8336e8dd4da56118970ae45a3e358e0d3`](https://github.com/AccumulateMore/CV/commit/e05116c8336e8dd4da56118970ae45a3e358e0d3), ngày commit 2026-09-20. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/AccumulateMore/CV/blob/e05116c8336e8dd4da56118970ae45a3e358e0d3/README.md) · [metadata GitHub](https://api.github.com/repos/AccumulateMore/CV).
+
+<a id="anhkysuai-2026-11-23-datawhalechina-easy-vibe"></a>
+
+### easy-vibe
+
+**Repo:** [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe) · **License:** CC-BY-NC-SA-4.0 · **★ 20,502 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Khóa nhập môn xây sản phẩm với AI, có lộ trình từ prototype đến frontend/backend và workflow agent.
+
+**Giá trị:** Tuyến học theo mục tiêu và demo tương tác giúp người mới chia một ý tưởng thành các bước thực hành.
+
+**Giới hạn:** Nội dung CC BY-NC-SA 4.0; công cụ/dịch vụ AI liên kết có chi phí và điều khoản riêng. Dựng được demo chưa chứng minh bảo mật, kiểm thử và vận hành production.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [firstcontributions/first-contributions](https://github.com/firstcontributions/first-contributions) · [github/opensource.guide](https://github.com/github/opensource.guide). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f2239c67052b6ad9ae3e72bc6b7a76f3c903cf64`](https://github.com/datawhalechina/easy-vibe/commit/f2239c67052b6ad9ae3e72bc6b7a76f3c903cf64), ngày commit 2026-10-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/datawhalechina/easy-vibe/blob/f2239c67052b6ad9ae3e72bc6b7a76f3c903cf64/README.md) · [package.json](https://github.com/datawhalechina/easy-vibe/blob/f2239c67052b6ad9ae3e72bc6b7a76f3c903cf64/package.json) · [.github/workflows/deploy.yml](https://github.com/datawhalechina/easy-vibe/blob/f2239c67052b6ad9ae3e72bc6b7a76f3c903cf64/.github/workflows/deploy.yml) · [metadata GitHub](https://api.github.com/repos/datawhalechina/easy-vibe).
+
 ## Nguồn
 
 - https://gitstarclub.com/rankings · https://www.countly.net/most-starred-github-repositories-june-2026 · https://www.stackscan.com/blog/github-statistics · https://github.com/EvanLi/Github-Ranking · https://www.firecrawl.dev/blog/best-github-repos

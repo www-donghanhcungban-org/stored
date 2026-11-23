@@ -337,3 +337,261 @@ Mỗi hồ sơ dẫn README/LICENSE/CI/source ghim full SHA đã clone. Stars v�
 **Đối chiếu ngoài repo:** [báo cáo FineWeb của Hugging Face](https://huggingfacefw-blogpost-fineweb-v1.static.hf.space/index.html) nêu rõ việc đánh giá recipe downstream thay vì chỉ dùng điểm “data sạch”; [Secure Label Studio](https://labelstud.io/guide/security) mô tả tắt analytics và giới hạn truy cập. Tài liệu Label Studio đang nói SSRF tắt mặc định trong khi source tại SHA hồ sơ ghi true: cần kiểm phiên bản triển khai, đặt cấu hình rõ thay vì suy từ docs. [Thông báo license của lakeFS ngày 22/9/2026](https://lakefs.io/blog/lakefs-business-source-license/) xác nhận thay đổi từ v1.87.0 và DVC giữ Apache-2.0; điều khoản license ghim trong hồ sơ là nguồn quyết định.
 
 Khi cập nhật: kiểm lại namespace, license từng component, maintainer note và HEAD/release hỗ trợ; so schema export và default analytics; xem dependency/model tải từ đâu; giữ paper/spec ở phiên bản đã đọc. Nếu không có phép đo downstream, ghi rõ công cụ giúp làm bước nào và chưa chứng minh tác động gì.
+
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **13 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-scrapy"></a>
+
+### Scrapy
+
+**Repo:** [scrapy/scrapy](https://github.com/scrapy/scrapy) · **License:** BSD-3-Clause · **★ 65,548 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Framework Python thu thập dữ liệu có cấu trúc từ website.
+
+**Giá trị và cơ chế:** README và manifest xác nhận kiến trúc crawler sử dụng Twisted cùng các thành phần parser; CI có cổng tĩnh trước tác vụ kiểm lớn, hữu ích cho pipeline thu thập có thể bảo trì.
+
+**Giới hạn:** Đã đọc tài liệu, phụ thuộc và cấu hình CI, chưa chạy spider. Không nên mặc định website cần JavaScript sẽ hoạt động chỉ với HTTP crawler.
+
+**Cách tham khảo/tích hợp:** Đặt giới hạn tốc độ, lưu URL/ngày lấy và viết fixture cho selector trước khi thu thập diện rộng.
+
+**Thay thế:** [Crawlee](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-crawlee), [Crawl4AI](https://github.com/unclecode/crawl4ai), [Colly](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-colly).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`00acf3f31a32`](https://github.com/scrapy/scrapy/commit/00acf3f31a322871a47aead5fec610d900263103). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.rst](https://github.com/scrapy/scrapy/blob/00acf3f31a322871a47aead5fec610d900263103/README.rst) · [LICENSE](https://github.com/scrapy/scrapy/blob/00acf3f31a322871a47aead5fec610d900263103/LICENSE) · [metadata GitHub](https://api.github.com/repos/scrapy/scrapy).
+
+<a id="anhkysuai-2026-11-23-cheerio"></a>
+
+### Cheerio
+
+**Repo:** [cheeriojs/cheerio](https://github.com/cheeriojs/cheerio) · **License:** MIT · **★ 30,553 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Phân tích và thao tác HTML/XML trong Node.js bằng API gần jQuery.
+
+**Giá trị và cơ chế:** README trình bày kết hợp parse5 hoặc htmlparser2 với selector và sửa cây tài liệu; phù hợp trích xuất dữ liệu từ HTML đã tải.
+
+**Giới hạn:** Không chạy JavaScript trang hay tái tạo bố cục trình duyệt. Chưa thử tập HTML lỗi thực tế hoặc đo RAM; kết quả phụ thuộc parser và chế độ XML.
+
+**Cách tham khảo/tích hợp:** Tách bước tải URL khỏi parse, lưu fixture HTML và kiểm selector khi cấu trúc nguồn thay đổi.
+
+**Thay thế:** [jsoup](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-jsoup), beautifulsoup, [Crawlee](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-crawlee).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`ad5347d1b344`](https://github.com/cheeriojs/cheerio/commit/ad5347d1b344ba60db6b0edd7fc8e5fe2ed42d6b). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [Readme.md](https://github.com/cheeriojs/cheerio/blob/ad5347d1b344ba60db6b0edd7fc8e5fe2ed42d6b/Readme.md) · [LICENSE](https://github.com/cheeriojs/cheerio/blob/ad5347d1b344ba60db6b0edd7fc8e5fe2ed42d6b/LICENSE) · [metadata GitHub](https://api.github.com/repos/cheeriojs/cheerio).
+
+<a id="anhkysuai-2026-11-23-crawlee"></a>
+
+### Crawlee
+
+**Repo:** [apify/crawlee](https://github.com/apify/crawlee) · **License:** Apache-2.0 · **★ 26,523 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Framework Node.js cho crawling và scraping bằng HTTP hoặc trình duyệt.
+
+**Giá trị và cơ chế:** README tổ chức crawler, hàng đợi, lưu kết quả và adapter trình duyệt; hữu ích xây pipeline thu thập có điều phối thay vì script tải từng URL.
+
+**Giới hạn:** Node tối thiểu và Playwright là phụ thuộc cần xét theo bản ghim; chưa chạy trình duyệt hay kiểm khả năng qua từng website. Tuyên bố chống chặn không là bảo đảm truy cập.
+
+**Cách tham khảo/tích hợp:** Chọn HTTP khi HTML đủ dữ liệu, browser khi cần render; giới hạn concurrency và lưu fixture để kiểm extraction.
+
+**Thay thế:** [Scrapy](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-scrapy), [Colly](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-colly), [Crawl4AI](https://github.com/unclecode/crawl4ai).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`4d7f4e41d497`](https://github.com/apify/crawlee/commit/4d7f4e41d4976513e401f68da0e6d0e389204b9c). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/apify/crawlee/blob/4d7f4e41d4976513e401f68da0e6d0e389204b9c/README.md) · [LICENSE.md](https://github.com/apify/crawlee/blob/4d7f4e41d4976513e401f68da0e6d0e389204b9c/LICENSE.md) · [metadata GitHub](https://api.github.com/repos/apify/crawlee).
+
+<a id="anhkysuai-2026-11-23-colly"></a>
+
+### Colly
+
+**Repo:** [gocolly/colly](https://github.com/gocolly/colly) · **License:** Apache-2.0 · **★ 25,607 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện Go thu thập dữ liệu web theo callback và selector.
+
+**Giá trị và cơ chế:** README mô tả quản lý cookie/session, đồng bộ/bất đồng bộ, giới hạn delay và concurrency theo domain; dễ nhúng vào dịch vụ Go.
+
+**Giới hạn:** Không phải browser renderer. Chưa xác minh hành vi retry hoặc giới hạn trên website thực; cần thiết kế chống lặp URL, lưu tiến độ và xử lý thay đổi HTML.
+
+**Cách tham khảo/tích hợp:** Dùng callback rõ ràng cho fetch–parse–persist và kiểm extractor bằng HTML fixture; đặt ngân sách tốc độ theo nguồn.
+
+**Thay thế:** [Scrapy](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-scrapy), [Crawlee](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-crawlee), [Cheerio](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-cheerio).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`d42a1f44c086`](https://github.com/gocolly/colly/commit/d42a1f44c086ea74c375361a0199247cdfebe31b). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/gocolly/colly/blob/d42a1f44c086ea74c375361a0199247cdfebe31b/README.md) · [LICENSE.txt](https://github.com/gocolly/colly/blob/d42a1f44c086ea74c375361a0199247cdfebe31b/LICENSE.txt) · [metadata GitHub](https://api.github.com/repos/gocolly/colly).
+
+<a id="anhkysuai-2026-11-23-newspaper3k"></a>
+
+### Newspaper3k
+
+**Repo:** [codelucas/newspaper](https://github.com/codelucas/newspaper) · **License:** MIT; mã kế thừa có GOOSE-LICENSE riêng · **★ 15,191 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện Python trích bài báo, metadata và nội dung chính từ trang web.
+
+**Giá trị và cơ chế:** README trình bày luồng Article.download → parse và các trường tác giả/ngày/nội dung; hữu ích pipeline tổng hợp tin với API gọn.
+
+**Giới hạn:** Chưa thử độ chính xác ngày đăng hoặc loại boilerplate; ví dụ README không chứng minh phù hợp mọi website. Nhánh Python2 được đánh dấu bỏ; mã kế thừa cần giữ license tương ứng.
+
+**Cách tham khảo/tích hợp:** Lưu HTML và kết quả để kiểm lại, phân biệt thời gian nguồn với thời gian crawl, bổ sung extractor riêng khi trang thay đổi.
+
+**Thay thế:** trafilatura, readability, [Scrapy](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-scrapy).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`745dfe3abe9e`](https://github.com/codelucas/newspaper/commit/745dfe3abe9ef5608461d335163c93c9e6c172fa). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.rst](https://github.com/codelucas/newspaper/blob/745dfe3abe9ef5608461d335163c93c9e6c172fa/README.rst) · [LICENSE](https://github.com/codelucas/newspaper/blob/745dfe3abe9ef5608461d335163c93c9e6c172fa/LICENSE) · [metadata GitHub](https://api.github.com/repos/codelucas/newspaper).
+
+<a id="anhkysuai-2026-11-23-cocoindex"></a>
+
+### CocoIndex
+
+**Repo:** [cocoindex-io/cocoindex](https://github.com/cocoindex-io/cocoindex) · **License:** Apache-2.0 · **★ 11,929 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Framework khai báo biến đổi dữ liệu và cập nhật chỉ mục khi nguồn thay đổi.
+
+**Giá trị và cơ chế:** Đọc memo_fingerprint thấy canonicalize kiểu dữ liệu/custom hook rồi tạo fingerprint qua lõi Rust; fingerprint_call ghép hàm, đối số và version. Cơ chế hỗ trợ tái dùng tính toán khi đầu vào không đổi.
+
+**Giới hạn:** Chỉ kiểm phần khóa memo Python, chưa chứng minh engine incremental hoặc connector đầu-cuối. Khóa thiếu phụ thuộc ngữ nghĩa có thể gây cache cũ; chưa đo tính đúng đồng bộ.
+
+**Cách tham khảo/tích hợp:** Khai báo phụ thuộc và version model rõ, thử thay file/xóa dữ liệu rồi đối chiếu chỉ mục đích.
+
+**Thay thế:** [dlt (data load tool)](../15-ai-for-data/README.md#5-data-ingestion-and-asset-orchestration), [unstructured](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính), [LlamaIndex](https://github.com/run-llama/llama_index).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`90c98f4a637e`](https://github.com/cocoindex-io/cocoindex/commit/90c98f4a637ed4cde1c59f63b9a6add0b2bc8602). Canonicalization/fingerprint_call Python và tài liệu khóa memo, CI; chưa kiểm engine incremental Rust đầu-cuối. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/cocoindex-io/cocoindex/blob/90c98f4a637ed4cde1c59f63b9a6add0b2bc8602/README.md) · [LICENSE](https://github.com/cocoindex-io/cocoindex/blob/90c98f4a637ed4cde1c59f63b9a6add0b2bc8602/LICENSE) · [python/cocoindex/_internal/memo_fingerprint.py](https://github.com/cocoindex-io/cocoindex/blob/90c98f4a637ed4cde1c59f63b9a6add0b2bc8602/python/cocoindex/_internal/memo_fingerprint.py) · [docs/src/content/docs/advanced_topics/memoization_keys.mdx](https://github.com/cocoindex-io/cocoindex/blob/90c98f4a637ed4cde1c59f63b9a6add0b2bc8602/docs/src/content/docs/advanced_topics/memoization_keys.mdx) · [metadata GitHub](https://api.github.com/repos/cocoindex-io/cocoindex).
+
+<a id="anhkysuai-2026-11-23-jsoup"></a>
+
+### jsoup
+
+**Repo:** [jhy/jsoup](https://github.com/jhy/jsoup) · **License:** MIT · **★ 11,419 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện Java tải, parse, trích xuất và chỉnh sửa HTML/XML.
+
+**Giá trị và cơ chế:** README trình bày DOM, CSS/XPath selector và làm sạch HTML theo safelist; phù hợp pipeline Java xử lý HTML không chuẩn mà không cần trình duyệt.
+
+**Giới hạn:** Chưa chạy corpus parser hoặc kiểm cấu hình sanitizer; không thực thi JavaScript của trang. Safelist phải phù hợp mục đích, không suy mọi đầu ra luôn an toàn với mọi ngữ cảnh nhúng.
+
+**Cách tham khảo/tích hợp:** Tách fetch khỏi parse và lưu fixture trang, kiểm selector/safelist trước đưa nội dung vào giao diện.
+
+**Thay thế:** [Cheerio](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-cheerio), beautifulsoup, htmlunit.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`d90d57521d93`](https://github.com/jhy/jsoup/commit/d90d57521d931db7bf7ee464a4c0a1a9293db088). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/jhy/jsoup/blob/d90d57521d931db7bf7ee464a4c0a1a9293db088/README.md) · [LICENSE](https://github.com/jhy/jsoup/blob/d90d57521d931db7bf7ee464a4c0a1a9293db088/LICENSE) · [metadata GitHub](https://api.github.com/repos/jhy/jsoup).
+
+<a id="anhkysuai-pathwaycom-pathway"></a>
+
+### Pathway Live Data Framework
+
+**Repo:** [pathwaycom/pathway](https://github.com/pathwaycom/pathway) · **License:** BUSL-1.1; Additional Use Grant · **Kiểm:** 2026-11-23, `docs-read`, [`8206d9a0e492`](https://github.com/pathwaycom/pathway/tree/8206d9a0e49223c5771acefe5088cbe3814d5292) (commit 2026-11-23). **Sao:** 61,964 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/pathwaycom/pathway).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Khung Python ETL cho dữ liệu batch/streaming, phân tích trực tiếp và pipeline RAG. |
+| Giá trị và cơ chế theo tài liệu | README mô tả API Python chạy trên engine Rust với tính toán tăng dần; manifest và CI cho thấy wheel được build từ cùng commit trước pytest. |
+| Giới hạn | LICENSE là BSL với Additional Use Grant, không phải giấy phép OSI. Mức hiệu năng, tính đúng khi replay và giới hạn bộ nhớ chưa được tái lập. |
+| Điều kiện tích hợp | Đánh giá connector và sự kiện cập nhật/xóa bằng corpus nhỏ; kiểm đầy đủ điều khoản production của đúng phiên bản trước khi triển khai. |
+| Lựa chọn đối chiếu | Apache Flink; Spark Structured Streaming; Bytewax. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/pathwaycom/pathway/blob/8206d9a0e49223c5771acefe5088cbe3814d5292/README.md) · [LICENSE.txt](https://github.com/pathwaycom/pathway/blob/8206d9a0e49223c5771acefe5088cbe3814d5292/LICENSE.txt) · [pyproject.toml](https://github.com/pathwaycom/pathway/blob/8206d9a0e49223c5771acefe5088cbe3814d5292/pyproject.toml) · [Cargo.toml](https://github.com/pathwaycom/pathway/blob/8206d9a0e49223c5771acefe5088cbe3814d5292/Cargo.toml) · [.github/workflows/pytest.yml](https://github.com/pathwaycom/pathway/blob/8206d9a0e49223c5771acefe5088cbe3814d5292/.github/workflows/pytest.yml).
+
+<a id="anhkysuai-apache-spark"></a>
+
+### Apache Spark
+
+**Repo:** [apache/spark](https://github.com/apache/spark) · **License:** Apache-2.0; thông báo giấy phép bên thứ ba · **Kiểm:** 2026-11-23, `docs-read`, [`659273a41595`](https://github.com/apache/spark/tree/659273a41595e2ed86976c0be6d0a6e6b9923ef7) (commit 2026-11-23). **Sao:** 44,610 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/apache/spark).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Engine phân tích phân tán cho SQL, DataFrame, machine learning và xử lý luồng. |
+| Giá trị và cơ chế theo tài liệu | README chỉ rõ Scala/Java/Python cùng SQL, MLlib, GraphX và Structured Streaming; Maven và CI thể hiện nền tảng đa ngôn ngữ. |
+| Giới hạn | README đánh dấu R đã deprecated. Khả năng mở rộng và tính đúng của job streaming chưa được tái lập; LICENSE chứa cả thông báo thành phần và dữ liệu bên thứ ba. |
+| Điều kiện tích hợp | Dùng release tương thích Java/Python và connector, đo với tập dữ liệu đại diện; kiểm checkpoint, partition, skew và phục hồi job trước production. |
+| Lựa chọn đối chiếu | Apache Flink; Dask; DuckDB. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/apache/spark/blob/659273a41595e2ed86976c0be6d0a6e6b9923ef7/README.md) · [LICENSE](https://github.com/apache/spark/blob/659273a41595e2ed86976c0be6d0a6e6b9923ef7/LICENSE) · [LICENSE-binary](https://github.com/apache/spark/blob/659273a41595e2ed86976c0be6d0a6e6b9923ef7/LICENSE-binary) · [pyproject.toml](https://github.com/apache/spark/blob/659273a41595e2ed86976c0be6d0a6e6b9923ef7/pyproject.toml) · [pom.xml](https://github.com/apache/spark/blob/659273a41595e2ed86976c0be6d0a6e6b9923ef7/pom.xml) · [.github/workflows/build_uds.yml](https://github.com/apache/spark/blob/659273a41595e2ed86976c0be6d0a6e6b9923ef7/.github/workflows/build_uds.yml).
+
+<a id="anhkysuai-airbytehq-airbyte"></a>
+
+### Airbyte
+
+**Repo:** [airbytehq/airbyte](https://github.com/airbytehq/airbyte) · **License:** Elastic-2.0; kiểm giấy phép connector theo thư mục · **Kiểm:** 2026-11-23, `docs-read`, [`f5cbf0fd54a3`](https://github.com/airbytehq/airbyte/tree/f5cbf0fd54a3f79b179c8752fb3731ec713114cc) (commit 2026-11-17). **Sao:** 22,434 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/airbytehq/airbyte).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Nền tảng chuyển/đồng bộ dữ liệu từ API, database và tệp đến kho dữ liệu hoặc ứng dụng AI. |
+| Giá trị và cơ chế theo tài liệu | README phân biệt Core/Cloud, connector catalog và MCP quản lý pipeline; Gradle cùng CI docs cho thấy repo nhiều thành phần. |
+| Giới hạn | License gốc hiện là ELv2, không suy mọi connector nguồn mở theo nhãn marketing. Số connector không bảo đảm chất lượng từng nguồn; chưa kiểm incremental sync, CDC, schema drift hay agent tools. |
+| Điều kiện tích hợp | Thử một cặp nguồn/đích với dữ liệu mẫu, kiểm cursor/delete/retry và quyền tối thiểu; ghim connector, review license và chi phí trước lịch sync thật. |
+| Lựa chọn đối chiếu | Meltano; dlt; [Debezium](../15-ai-for-data/README.md#5-data-ingestion-and-asset-orchestration). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/airbytehq/airbyte/blob/f5cbf0fd54a3f79b179c8752fb3731ec713114cc/README.md) · [LICENSE](https://github.com/airbytehq/airbyte/blob/f5cbf0fd54a3f79b179c8752fb3731ec713114cc/LICENSE) · [LICENSE_SHORT](https://github.com/airbytehq/airbyte/blob/f5cbf0fd54a3f79b179c8752fb3731ec713114cc/LICENSE_SHORT) · [build.gradle](https://github.com/airbytehq/airbyte/blob/f5cbf0fd54a3f79b179c8752fb3731ec713114cc/build.gradle) · [.github/workflows/docs-build.yml](https://github.com/airbytehq/airbyte/blob/f5cbf0fd54a3f79b179c8752fb3731ec713114cc/.github/workflows/docs-build.yml).
+
+<a id="anhkysuai-antonmedv-fx"></a>
+
+### fx
+
+**Repo:** [antonmedv/fx](https://github.com/antonmedv/fx) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`0cd57fae925d`](https://github.com/antonmedv/fx/tree/0cd57fae925d65f2f488b227d9c141316859e893) (commit 2026-11-20). **Sao:** 20,723 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/antonmedv/fx).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Công cụ terminal để xem và xử lý JSON; repo gồm ứng dụng Go và bản JavaScript không tương tác cho pipeline. |
+| Giá trị và cơ chế theo tài liệu | README npm mô tả ghép hàm JavaScript, xử lý luồng từng object, slurp, raw input và edit-in-place. go.mod có Bubble Tea/Goja, CI kiểm Go trên nhiều kiến trúc cùng bản npm. |
+| Giới hạn | README gốc rất ngắn; tính năng npm không được suy đồng nhất hoàn toàn với giao diện Go. Biểu thức và .fxrc.js là mã thực thi, save ghi đè dữ liệu; chưa thử bộ xử lý. |
+| Điều kiện tích hợp | Khóa bản và chọn đúng binary/package, dùng biểu thức tin cậy, thử trên bản sao JSON và ghi ra tệp mới trước khi dùng save. Giới hạn slurp với dữ liệu lớn. |
+| Lựa chọn đối chiếu | jq; Jless; VisiData. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/README.md) · [LICENSE](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/LICENSE) · [go.mod](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/go.mod) · [.github/workflows/test.yml](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/.github/workflows/test.yml) · [npm/README.md](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/npm/README.md).
+
+<a id="anhkysuai-meta-prophet"></a>
+
+### Prophet
+
+**Repo:** [meta/prophet](https://github.com/meta/prophet) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`5cf15c0f6e5d`](https://github.com/meta/prophet/tree/5cf15c0f6e5d5259d9dd8d511fb4e15a45884cdc) (commit 2026-10-22). **Sao:** 20,496 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/meta/prophet).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Dự báo chuỗi thời gian bằng mô hình cộng với xu hướng, mùa vụ theo năm/tuần/ngày và ảnh hưởng ngày lễ. |
+| Giá trị và cơ chế theo tài liệu | README mô tả trường hợp phù hợp là dữ liệu có mùa vụ mạnh và nhiều chu kỳ lịch sử; có gói Python/R, CI kiểm Python. Có thể làm baseline cho dự báo nhu cầu hoặc chỉ số hoạt động. |
+| Giới hạn | README 2026 xác nhận maintenance mode từ v1.4.0: sửa lỗi, dependency và đồng bộ R/Python, không có tính năng mới dự kiến. Tuyên bố chống outlier không thay kiểm định trên dữ liệu cụ thể. |
+| Điều kiện tích hợp | Backtest theo trục thời gian, so với seasonal naive, kiểm leakage và khoảng dự báo; chuẩn hóa lịch/ngày lễ, theo dõi sai số theo phân khúc trước dùng quyết định sản phẩm. |
+| Lựa chọn đối chiếu | StatsForecast; Statsmodels; Darts. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/meta/prophet/blob/5cf15c0f6e5d5259d9dd8d511fb4e15a45884cdc/README.md) · [LICENSE](https://github.com/meta/prophet/blob/5cf15c0f6e5d5259d9dd8d511fb4e15a45884cdc/LICENSE) · [.github/workflows/build-and-test.yml](https://github.com/meta/prophet/blob/5cf15c0f6e5d5259d9dd8d511fb4e15a45884cdc/.github/workflows/build-and-test.yml).
+
+<a id="anhkysuai-2026-11-23-datatalksclub-data-engineering-zoomcamp"></a>
+
+### data-engineering-zoomcamp
+
+**Repo:** [DataTalksClub/data-engineering-zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 47,025 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Khóa data engineering theo mô-đun, từ container và điều phối đến warehouse, batch, streaming và dự án cuối.
+
+**Giá trị:** Có bài thực hành và dự án đầu-cuối, thuận tiện xây lộ trình học hạ tầng dữ liệu theo sản phẩm cụ thể.
+
+**Giới hạn:** Không thấy giấy phép chung ở gốc; LICENSE MIT trong ví dụ PyFlink chỉ áp cho phạm vi đó. Chi phí dịch vụ cloud và khả năng hoàn tất khóa chưa được kiểm. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [DataExpert-io/data-engineer-handbook](https://github.com/DataExpert-io/data-engineer-handbook) · [GokuMohandas/Made-With-ML](https://github.com/GokuMohandas/Made-With-ML). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`813d2774083186d0c9705c920deaf3e6e1693335`](https://github.com/DataTalksClub/data-engineering-zoomcamp/commit/813d2774083186d0c9705c920deaf3e6e1693335), ngày commit 2026-11-16. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/813d2774083186d0c9705c920deaf3e6e1693335/README.md) · [07-streaming/extras/extras/pyflink/LICENSE](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/813d2774083186d0c9705c920deaf3e6e1693335/07-streaming/extras/extras/pyflink/LICENSE) · [metadata GitHub](https://api.github.com/repos/DataTalksClub/data-engineering-zoomcamp).

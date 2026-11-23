@@ -234,6 +234,174 @@ npx skills add K-Dense-AI/scientific-agent-skills
 
 **Nguồn §7:** bài đăng người dùng gửi 16/11/2026 · clone `--filter=blob:none` HEAD `ec59a29a03d5c40f73ab40878df04860bc00e876`: https://github.com/K-Dense-AI/scientific-agent-skills/blob/ec59a29a03d5c40f73ab40878df04860bc00e876/README.md · https://github.com/K-Dense-AI/scientific-agent-skills/blob/ec59a29a03d5c40f73ab40878df04860bc00e876/LICENSE.md · https://github.com/K-Dense-AI/scientific-agent-skills/blob/ec59a29a03d5c40f73ab40878df04860bc00e876/skills/database-lookup/SKILL.md · https://github.com/K-Dense-AI/scientific-agent-skills/blob/ec59a29a03d5c40f73ab40878df04860bc00e876/skills/statistical-power/SKILL.md · https://github.com/K-Dense-AI/scientific-agent-skills/blob/ec59a29a03d5c40f73ab40878df04860bc00e876/skills/uncertainty-and-units/SKILL.md · https://github.com/K-Dense-AI/scientific-agent-skills/blob/ec59a29a03d5c40f73ab40878df04860bc00e876/skills/optimize-for-gpu/SKILL.md · GitHub search API 16/11/2026.
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **8 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-scikit-learn"></a>
+
+### scikit-learn
+
+**Repo:** [scikit-learn/scikit-learn](https://github.com/scikit-learn/scikit-learn) · **License:** BSD-3-Clause · **★ 68,299 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ công cụ Python cho học máy và khai phá dữ liệu.
+
+**Giá trị và cơ chế:** Manifest xác nhận nền NumPy, SciPy, joblib và threadpoolctl; phù hợp làm baseline truyền thống để so sánh trước khi tăng độ phức tạp của giải pháp AI.
+
+**Giới hạn:** Bản mã đang đọc yêu cầu Python 3.12 trở lên. Chưa huấn luyện mô hình hoặc đo bộ nhớ; workflow CUDA có điều kiện chạy, không chứng minh mọi thuật toán hỗ trợ GPU.
+
+**Cách tham khảo/tích hợp:** Ghim môi trường và lưu quy trình tiền xử lý cùng mô hình; đánh giá trên tập kiểm tách biệt.
+
+**Thay thế:** [XGBoost](../15-ai-for-data/README.md#anhkysuai-2026-11-23-xgboost), lightgbm, [pytorch](../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`135c488ae340`](https://github.com/scikit-learn/scikit-learn/commit/135c488ae340a248178d7ed89282e3273aedd9fc). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.rst](https://github.com/scikit-learn/scikit-learn/blob/135c488ae340a248178d7ed89282e3273aedd9fc/README.rst) · [COPYING](https://github.com/scikit-learn/scikit-learn/blob/135c488ae340a248178d7ed89282e3273aedd9fc/COPYING) · [metadata GitHub](https://api.github.com/repos/scikit-learn/scikit-learn).
+
+<a id="anhkysuai-2026-11-23-pandas"></a>
+
+### pandas
+
+**Repo:** [pandas-dev/pandas](https://github.com/pandas-dev/pandas) · **License:** BSD-3-Clause · **★ 50,607 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện Python xử lý bảng, chuỗi thời gian và dữ liệu phân tích.
+
+**Giá trị và cơ chế:** Manifest phân tách hệ build Meson/Cython và phụ thuộc NumPy; là nền trực tiếp để kiểm dữ liệu, tạo baseline và chuẩn bị đầu vào cho công cụ AI.
+
+**Giới hạn:** Đã đọc tài liệu và manifest, chưa thử khối lượng dữ liệu hoặc tương thích phiên bản. Các bảng lớn có thể đòi hỏi chiến lược chia dữ liệu; hiệu quả phải đo trên workload thực tế.
+
+**Cách tham khảo/tích hợp:** Chốt dtype, quy tắc null và timezone; lưu phép biến đổi tất định thay vì chỉ lưu bảng kết quả.
+
+**Thay thế:** [Polars](https://github.com/pola-rs/polars), [DuckDB](https://github.com/duckdb/duckdb), dask.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`717bcd3eda55`](https://github.com/pandas-dev/pandas/commit/717bcd3eda554a0b2e826889f9e30efbd88f00cd). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/pandas-dev/pandas/blob/717bcd3eda554a0b2e826889f9e30efbd88f00cd/README.md) · [LICENSE](https://github.com/pandas-dev/pandas/blob/717bcd3eda554a0b2e826889f9e30efbd88f00cd/LICENSE) · [metadata GitHub](https://api.github.com/repos/pandas-dev/pandas).
+
+<a id="anhkysuai-2026-11-23-xgboost"></a>
+
+### XGBoost
+
+**Repo:** [dmlc/xgboost](https://github.com/dmlc/xgboost) · **License:** Apache-2.0 · **★ 29,015 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện gradient boosting cho dữ liệu có cấu trúc, hỗ trợ huấn luyện và suy luận.
+
+**Giá trị và cơ chế:** README cùng CMake cho thấy lõi native và giao diện nhiều ngôn ngữ; là mẫu tham khảo tốt cho mô hình cây trong pipeline dữ liệu bảng.
+
+**Giới hạn:** Chưa huấn luyện dữ liệu mẫu hoặc tái hiện số đo hiệu suất; lợi ích GPU/phân tán phụ thuộc bản dựng, dữ liệu và tham số. License dataset tách khỏi thư viện.
+
+**Cách tham khảo/tích hợp:** Đánh giá bằng chia tập theo thời gian hoặc nhóm phù hợp, lưu cấu hình và phiên bản model cùng schema đầu vào.
+
+**Thay thế:** lightgbm, catboost, [scikit-learn](../15-ai-for-data/README.md#anhkysuai-2026-11-23-scikit-learn).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`e0e4564aea60`](https://github.com/dmlc/xgboost/commit/e0e4564aea606e688b6db58d6a9235ac19748dcb). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/dmlc/xgboost/blob/e0e4564aea606e688b6db58d6a9235ac19748dcb/README.md) · [LICENSE](https://github.com/dmlc/xgboost/blob/e0e4564aea606e688b6db58d6a9235ac19748dcb/LICENSE) · [metadata GitHub](https://api.github.com/repos/dmlc/xgboost).
+
+<a id="anhkysuai-2026-11-23-redash"></a>
+
+### Redash
+
+**Repo:** [getredash/redash](https://github.com/getredash/redash) · **License:** BSD-2-Clause; tài sản bản đồ có điều khoản riêng · **★ 28,899 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Truy vấn nguồn dữ liệu và chia sẻ biểu đồ, dashboard, lịch làm mới và cảnh báo.
+
+**Giá trị và cơ chế:** README mô tả SQL editor, schema browser và API; phù hợp nhóm muốn cộng tác trực tiếp trên truy vấn thay vì xây dashboard từ đầu.
+
+**Giới hạn:** Chưa kiểm quyền từng datasource hoặc thực thi truy vấn; cấu hình tài khoản DB và chia sẻ dashboard quyết định phạm vi dữ liệu. LICENSE.borders bổ sung attribution cho tài sản bản đồ.
+
+**Cách tham khảo/tích hợp:** Dùng tài khoản nguồn chỉ đọc, kiểm giới hạn truy vấn và thời gian làm mới với dashboard nhỏ.
+
+**Thay thế:** [Metabase](https://github.com/metabase/metabase), [Apache Superset](https://github.com/apache/superset), [DataEase](../15-ai-for-data/README.md#anhkysuai-2026-11-23-dataease).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f561a53dc55e`](https://github.com/getredash/redash/commit/f561a53dc55eeb3f20615be951560dc78bb23f4c). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/getredash/redash/blob/f561a53dc55eeb3f20615be951560dc78bb23f4c/README.md) · [LICENSE](https://github.com/getredash/redash/blob/f561a53dc55eeb3f20615be951560dc78bb23f4c/LICENSE) · [LICENSE.borders](https://github.com/getredash/redash/blob/f561a53dc55eeb3f20615be951560dc78bb23f4c/LICENSE.borders) · [metadata GitHub](https://api.github.com/repos/getredash/redash).
+
+<a id="anhkysuai-2026-11-23-dataease"></a>
+
+### DataEase
+
+**Repo:** [dataease/dataease](https://github.com/dataease/dataease) · **License:** GPLv3 sửa đổi, kèm điều kiện thương hiệu/đóng góp · **★ 24,729 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Nền tảng BI với dashboard kéo thả và nhiều loại nguồn dữ liệu.
+
+**Giá trị và cơ chế:** README mô tả Vue/Spring, nguồn SQL/NoSQL/API và tích hợp xử lý dữ liệu; hữu ích tham khảo trải nghiệm self-service BI.
+
+**Giới hạn:** LICENSE thêm điều khoản không bỏ/sửa logo, copyright trên console/app và cho nhà sản xuất đổi điều khoản đóng góp; không gọi GPLv3 thuần. xpack có phạm vi riêng; chưa kiểm truy vấn hay phân quyền.
+
+**Cách tham khảo/tích hợp:** Đối chiếu điều khoản với cách nhúng dashboard, dùng nguồn thử chỉ đọc và đo chi phí refresh trước triển khai.
+
+**Thay thế:** [Metabase](https://github.com/metabase/metabase), [Apache Superset](https://github.com/apache/superset), [Redash](../15-ai-for-data/README.md#anhkysuai-2026-11-23-redash).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`28fb59c38b78`](https://github.com/dataease/dataease/commit/28fb59c38b786fc4b7810f866977b8a0f1288202). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/dataease/dataease/blob/28fb59c38b786fc4b7810f866977b8a0f1288202/README.md) · [LICENSE](https://github.com/dataease/dataease/blob/28fb59c38b786fc4b7810f866977b8a0f1288202/LICENSE) · [metadata GitHub](https://api.github.com/repos/dataease/dataease).
+
+<a id="anhkysuai-2026-11-23-matplotlib"></a>
+
+### Matplotlib
+
+**Repo:** [matplotlib/matplotlib](https://github.com/matplotlib/matplotlib) · **License:** Matplotlib License (permissive; gồm điều khoản lịch sử) · **★ 23,498 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện Python tạo đồ thị tĩnh, tương tác và hoạt hình.
+
+**Giá trị và cơ chế:** README và pyproject thể hiện hệ backend xuất nhiều định dạng; phù hợp figure nghiên cứu, báo cáo và pipeline hình ảnh tái tạo được.
+
+**Giới hạn:** Chưa render figure hay kiểm font tiếng Việt. LICENSE yêu cầu giữ thông báo và mô tả thay đổi khi phân phối bản phái sinh; không quy toàn bộ thành MIT. Backend và phiên bản ảnh hưởng đầu ra.
+
+**Cách tham khảo/tích hợp:** Ghim môi trường, font và style; xuất vector cho bài viết, kiểm nhãn/trục và kích thước bằng ảnh thật.
+
+**Thay thế:** plotly, [Bokeh](../15-ai-for-data/README.md#anhkysuai-2026-11-23-bokeh), altair.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a275fb423622`](https://github.com/matplotlib/matplotlib/commit/a275fb42362221dfa3aff9a130beb351166d7def). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/matplotlib/matplotlib/blob/a275fb42362221dfa3aff9a130beb351166d7def/README.md) · [LICENSE/LICENSE](https://github.com/matplotlib/matplotlib/blob/a275fb42362221dfa3aff9a130beb351166d7def/LICENSE/LICENSE) · [metadata GitHub](https://api.github.com/repos/matplotlib/matplotlib).
+
+<a id="anhkysuai-2026-11-23-thingsboard"></a>
+
+### ThingsBoard
+
+**Repo:** [thingsboard/thingsboard](https://github.com/thingsboard/thingsboard) · **License:** BUSL-1.1 cho 4.4+; một số phần Apache-2.0 · **★ 22,714 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Nền tảng IoT quản lý thiết bị, thu telemetry, rule chain, cảnh báo và dashboard.
+
+**Giá trị và cơ chế:** README và manifest thể hiện hệ backend/frontend đầy đủ cho luồng thiết bị–dữ liệu–hiển thị; hữu ích tham khảo kiến trúc sản phẩm IoT tự lưu trữ.
+
+**Giới hạn:** HEAD 4.4.1-SNAPSHOT chịu BUSL: miễn phí thương mại tối đa 100 thiết bị/một server, phi thương mại 1.000, kèm key và thương hiệu; đổi Apache sau bốn năm. Không dùng nhãn Apache của bản cũ cho HEAD. Chưa triển khai.
+
+**Cách tham khảo/tích hợp:** Đối chiếu số thiết bị và bản license, thử dữ liệu giả lập trước nối hệ thống vận hành.
+
+**Thay thế:** [Node-RED](../05-low-code-llm-platforms/README.md#factory-lowcode-runtime-boundaries-2026-11-04), mainflux, home-assistant.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`2f2a2bd63a82`](https://github.com/thingsboard/thingsboard/commit/2f2a2bd63a82f4fa4dedd414015576df6156146e). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/thingsboard/thingsboard/blob/2f2a2bd63a82f4fa4dedd414015576df6156146e/README.md) · [LICENSE](https://github.com/thingsboard/thingsboard/blob/2f2a2bd63a82f4fa4dedd414015576df6156146e/LICENSE) · [metadata GitHub](https://api.github.com/repos/thingsboard/thingsboard).
+
+<a id="anhkysuai-2026-11-23-bokeh"></a>
+
+### Bokeh
+
+**Repo:** [bokeh/bokeh](https://github.com/bokeh/bokeh) · **License:** BSD-3-Clause · **★ 20,485 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tạo đồ thị và ứng dụng dữ liệu tương tác trong browser từ Python.
+
+**Giá trị và cơ chế:** README và pyproject cho thấy thư viện Python cùng BokehJS, tích hợp template và server Tornado; phù hợp dashboard nghiên cứu hoặc dữ liệu cập nhật.
+
+**Giới hạn:** Chưa đo dữ liệu lớn/streaming; phiên bản HEAD đòi Python mới, cần xét môi trường hiện có. Trang tĩnh và ứng dụng dùng Python server có yêu cầu triển khai khác nhau.
+
+**Cách tham khảo/tích hợp:** Bắt đầu bằng biểu đồ độc lập, chỉ dùng server khi cần callback Python và kiểm kích thước dữ liệu gửi browser.
+
+**Thay thế:** plotly, [Matplotlib](../15-ai-for-data/README.md#anhkysuai-2026-11-23-matplotlib), [Streamlit](../06-ui-ux-design/README.md#anhkysuai-2026-11-23-streamlit).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`56c5170b30b5`](https://github.com/bokeh/bokeh/commit/56c5170b30b562f5f155df04b3a790d1f3cbf949). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/bokeh/bokeh/blob/56c5170b30b562f5f155df04b3a790d1f3cbf949/README.md) · [LICENSE.txt](https://github.com/bokeh/bokeh/blob/56c5170b30b562f5f155df04b3a790d1f3cbf949/LICENSE.txt) · [metadata GitHub](https://api.github.com/repos/bokeh/bokeh).
+
 ## Nguồn
 
 - https://duckdb.org/2026/08/05/github-40k-stars · https://en.wikipedia.org/wiki/Polars_(software) · https://github.com/sinaptik-ai/pandas-ai · https://github.com/topics/sql?l=python · https://aitools.flocci.in/alternatives/pandasai · https://jupysql.readthedocs.io/en/latest/tutorials/duckdb-github.html

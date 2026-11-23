@@ -97,3 +97,191 @@ Chaos/fault injection bắt đầu từ một giả thuyết và phạm vi nhỏ
 ## 5. Nguồn và giới hạn khảo sát
 
 Nguồn ghim SHA trong §3 là source/LICENSE/CI chính thức đã đọc; so sánh Restic/Velero dẫn hồ sơ có bằng chứng ở mục 09, không tạo thực thể trùng. Không dùng sao làm điểm chất lượng. API GitHub trực tiếp bị proxy từ chối ở lượt đọc này, nên không bổ sung số sao hay kết luận archived/bảo trì từ việc clone thành công. Benchmark, hiệu quả alert và khả năng chịu tải ngoài phạm vi chưa được xác minh.
+
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **10 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-getsentry-sentry"></a>
+
+### Sentry
+
+**Repo:** [getsentry/sentry](https://github.com/getsentry/sentry) · **License:** FSL-1.1-Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`17d485c4264e`](https://github.com/getsentry/sentry/tree/17d485c4264efceab71313e4176022a525e1da59) (commit 2026-11-23). **Sao:** 45,868 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/getsentry/sentry).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Nền tảng thu thập lỗi và ngữ cảnh debug của ứng dụng. |
+| Giá trị và cơ chế theo tài liệu | README gắn SDK với việc phát hiện, truy vết và sửa vấn đề; monorepo Python/TypeScript và workflow lint cho thấy nhiều thành phần vận hành. |
+| Giới hạn | LICENSE hiện tại là FSL, không phải Apache-2.0 hiện hành cho mọi mã. Khả năng giảm thời gian xử lý lỗi và chi phí self-host chưa đo; dữ liệu sự kiện có thể chứa thông tin nhạy cảm. |
+| Điều kiện tích hợp | Kiểm giới hạn sử dụng FSL, bắt đầu một dịch vụ với sampling và lọc dữ liệu; đánh giá lưu trữ, cảnh báo, retention trước khi mở rộng. |
+| Lựa chọn đối chiếu | GlitchTip; OpenTelemetry + Grafana; Bugsink. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/getsentry/sentry/blob/17d485c4264efceab71313e4176022a525e1da59/README.md) · [LICENSE.md](https://github.com/getsentry/sentry/blob/17d485c4264efceab71313e4176022a525e1da59/LICENSE.md) · [package.json](https://github.com/getsentry/sentry/blob/17d485c4264efceab71313e4176022a525e1da59/package.json) · [pyproject.toml](https://github.com/getsentry/sentry/blob/17d485c4264efceab71313e4176022a525e1da59/pyproject.toml) · [.github/workflows/decision-model-lint.yml](https://github.com/getsentry/sentry/blob/17d485c4264efceab71313e4176022a525e1da59/.github/workflows/decision-model-lint.yml).
+
+<a id="anhkysuai-glanceapp-glance"></a>
+
+### Glance
+
+**Repo:** [glanceapp/glance](https://github.com/glanceapp/glance) · **License:** AGPL-3.0 · **Kiểm:** 2026-11-23, `docs-read`, [`53aec7f392ca`](https://github.com/glanceapp/glance/tree/53aec7f392ca72143870dcb45526ec7c80a68f32) (commit 2026-11-07). **Sao:** 38,351 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/glanceapp/glance).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Dashboard tự host gom feed, lịch, thời tiết, thông tin máy chủ và widget tùy chỉnh. |
+| Giá trị và cơ chế theo tài liệu | README cung cấp cấu hình YAML theo trang/cột/widget; Go binary và workflow GoReleaser là cách đóng gói dễ kiểm soát cho dashboard cá nhân. |
+| Giới hạn | Các con số kích thước, thời gian tải và bộ nhớ trong README chưa được tái lập. Widget phụ thuộc API bên ngoài; nội dung màn hình có thể lộ thông tin nội bộ. |
+| Điều kiện tích hợp | Bắt đầu ít widget, ghim cấu hình và hạn chế truy cập bảng điều khiển; kiểm cache, lỗi upstream và quyền của nguồn dữ liệu. |
+| Lựa chọn đối chiếu | [Homepage](../33-reliability-observability-operations/README.md#anhkysuai-gethomepage-homepage); [Dashy](../08-awesome-lists-learning/README.md#6c526-tự-host--nhà-thông-minh); Heimdall. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/glanceapp/glance/blob/53aec7f392ca72143870dcb45526ec7c80a68f32/README.md) · [LICENSE](https://github.com/glanceapp/glance/blob/53aec7f392ca72143870dcb45526ec7c80a68f32/LICENSE) · [go.mod](https://github.com/glanceapp/glance/blob/53aec7f392ca72143870dcb45526ec7c80a68f32/go.mod) · [.github/workflows/release.yaml](https://github.com/glanceapp/glance/blob/53aec7f392ca72143870dcb45526ec7c80a68f32/.github/workflows/release.yaml).
+
+<a id="anhkysuai-alibaba-arthas"></a>
+
+### Arthas
+
+**Repo:** [alibaba/arthas](https://github.com/alibaba/arthas) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`1712334ef34f`](https://github.com/alibaba/arthas/tree/1712334ef34f70c3dc72f3241818c3729770639b) (commit 2026-11-23). **Sao:** 37,630 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/alibaba/arthas).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Công cụ chẩn đoán Java đang chạy để tìm vấn đề mà không cần sửa mã ứng dụng. |
+| Giá trị và cơ chế theo tài liệu | README giải thích tình huống lỗi khó tái hiện; CI Maven có các bước verify trên nhiều môi trường, hỗ trợ dùng như công cụ điều tra JVM. |
+| Giới hạn | Khẳng định không dừng JVM không bảo đảm mọi lệnh không gây overhead. Quyền attach và quan sát có thể tiếp cận dữ liệu nhạy cảm; chưa gắn vào tiến trình thực. |
+| Điều kiện tích hợp | Thử trước trên JVM staging, giới hạn người dùng và thời gian phiên chẩn đoán; chọn lệnh có phạm vi nhỏ và theo dõi tác động tài nguyên. |
+| Lựa chọn đối chiếu | Java Flight Recorder; async-profiler; VisualVM. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/alibaba/arthas/blob/1712334ef34f70c3dc72f3241818c3729770639b/README.md) · [LICENSE](https://github.com/alibaba/arthas/blob/1712334ef34f70c3dc72f3241818c3729770639b/LICENSE) · [pom.xml](https://github.com/alibaba/arthas/blob/1712334ef34f70c3dc72f3241818c3729770639b/pom.xml) · [.github/workflows/test.yaml](https://github.com/alibaba/arthas/blob/1712334ef34f70c3dc72f3241818c3729770639b/.github/workflows/test.yaml).
+
+<a id="anhkysuai-derailed-k9s"></a>
+
+### K9s
+
+**Repo:** [derailed/k9s](https://github.com/derailed/k9s) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`c732946a6da3`](https://github.com/derailed/k9s/tree/c732946a6da348ad1b4fdabd6b9bd0f8cd2d3804) (commit 2026-11-21). **Sao:** 35,035 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/derailed/k9s).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Giao diện terminal để quan sát và thao tác tài nguyên Kubernetes. |
+| Giá trị và cơ chế theo tài liệu | README mô tả theo dõi thay đổi liên tục, điều hướng pods/logs/deployments; Go manifest và workflow make test cung cấp cơ sở đọc công cụ vận hành. |
+| Giới hạn | UI nhanh cũng làm thao tác nhầm context nguy hiểm hơn. Quyền thực tế phụ thuộc kubeconfig/RBAC; chưa kết nối cluster hay kiểm các plugin/lệnh mở rộng. |
+| Điều kiện tích hợp | Dùng tài khoản chỉ đọc khi quan sát, hiển thị rõ context/namespace và thử trên cluster dev; kiểm plugin trước khi cho phép chạy lệnh có quyền cao. |
+| Lựa chọn đối chiếu | kubectl; Headlamp; Lens. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/derailed/k9s/blob/c732946a6da348ad1b4fdabd6b9bd0f8cd2d3804/README.md) · [COPYING](https://github.com/derailed/k9s/blob/c732946a6da348ad1b4fdabd6b9bd0f8cd2d3804/COPYING) · [LICENSE](https://github.com/derailed/k9s/blob/c732946a6da348ad1b4fdabd6b9bd0f8cd2d3804/LICENSE) · [go.mod](https://github.com/derailed/k9s/blob/c732946a6da348ad1b4fdabd6b9bd0f8cd2d3804/go.mod) · [.github/workflows/test.yml](https://github.com/derailed/k9s/blob/c732946a6da348ad1b4fdabd6b9bd0f8cd2d3804/.github/workflows/test.yml).
+
+<a id="anhkysuai-nicolargo-glances"></a>
+
+### Glances
+
+**Repo:** [nicolargo/glances](https://github.com/nicolargo/glances) · **License:** LGPL-3.0 · **Kiểm:** 2026-11-23, `docs-read`, [`f94244c60881`](https://github.com/nicolargo/glances/tree/f94244c6088133f18c4dc0e445b44cda840a4500) (commit 2026-11-23). **Sao:** 34,005 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/nicolargo/glances).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Công cụ Python quan sát hệ thống bằng terminal, WebUI và REST API. |
+| Giá trị và cơ chế theo tài liệu | README mô tả kiến trúc plugin/export và API v5; CI tách quality, test, web UI, build và kiểm bảo mật thành workflow riêng. |
+| Giới hạn | README nói API không có mật khẩu mặc định dù bind localhost; mở toàn interface cần thêm kiểm soát. Client/server v5 phải cùng dòng; chưa đo overhead hay kiểm sensor mọi hệ điều hành. |
+| Điều kiện tích hợp | Bắt đầu local, chọn plugin cần thiết và đặt xác thực trước khi truy cập từ xa; hạn chế lộ chỉ số tiến trình và kiểm exporter/retention. |
+| Lựa chọn đối chiếu | [Beszel](../33-reliability-observability-operations/README.md#anhkysuai-henrygd-beszel); [Netdata](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích); btop. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.rst](https://github.com/nicolargo/glances/blob/f94244c6088133f18c4dc0e445b44cda840a4500/README.rst) · [COPYING](https://github.com/nicolargo/glances/blob/f94244c6088133f18c4dc0e445b44cda840a4500/COPYING) · [pyproject.toml](https://github.com/nicolargo/glances/blob/f94244c6088133f18c4dc0e445b44cda840a4500/pyproject.toml) · [.github/workflows/ci.yml](https://github.com/nicolargo/glances/blob/f94244c6088133f18c4dc0e445b44cda840a4500/.github/workflows/ci.yml).
+
+<a id="anhkysuai-gethomepage-homepage"></a>
+
+### Homepage
+
+**Repo:** [gethomepage/homepage](https://github.com/gethomepage/homepage) · **License:** GPL-3.0 · **Kiểm:** 2026-11-23, `docs-read`, [`a1e3a5fd26d6`](https://github.com/gethomepage/homepage/tree/a1e3a5fd26d6f55aaccdf1be000913eddba666fc) (commit 2026-11-19). **Sao:** 33,788 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/gethomepage/homepage).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Dashboard ứng dụng tự host với bookmarks, widget và phát hiện dịch vụ từ Docker label. |
+| Giá trị và cơ chế theo tài liệu | README mô tả backend proxy API để giữ khóa khỏi frontend; manifest Next.js và CI Vitest shard cho thấy cách tổ chức giao diện và kiểm. |
+| Giới hạn | Proxy không tự chứng minh an toàn cho mọi endpoint hay quyền Docker socket. Các tích hợp phụ thuộc API riêng; chưa kiểm truy cập trái phép hoặc chất lượng widget. |
+| Điều kiện tích hợp | Chỉ kết nối dịch vụ cần thiết, kiểm quyền socket/API và giới hạn truy cập dashboard; lưu cấu hình YAML có kiểm soát và tránh public dữ liệu vận hành. |
+| Lựa chọn đối chiếu | [Glance](../33-reliability-observability-operations/README.md#anhkysuai-glanceapp-glance); [Dashy](../08-awesome-lists-learning/README.md#6c526-tự-host--nhà-thông-minh); Heimdall. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/gethomepage/homepage/blob/a1e3a5fd26d6f55aaccdf1be000913eddba666fc/README.md) · [LICENSE](https://github.com/gethomepage/homepage/blob/a1e3a5fd26d6f55aaccdf1be000913eddba666fc/LICENSE) · [package.json](https://github.com/gethomepage/homepage/blob/a1e3a5fd26d6f55aaccdf1be000913eddba666fc/package.json) · [pyproject.toml](https://github.com/gethomepage/homepage/blob/a1e3a5fd26d6f55aaccdf1be000913eddba666fc/pyproject.toml) · [.github/workflows/test.yml](https://github.com/gethomepage/homepage/blob/a1e3a5fd26d6f55aaccdf1be000913eddba666fc/.github/workflows/test.yml).
+
+<a id="anhkysuai-locustio-locust"></a>
+
+### Locust
+
+**Repo:** [locustio/locust](https://github.com/locustio/locust) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`85d6d65da7d1`](https://github.com/locustio/locust/tree/85d6d65da7d12f07fc1001192e52c4ede286528f) (commit 2026-11-16). **Sao:** 28,307 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/locustio/locust).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Công cụ viết kịch bản kiểm tải bằng Python cho HTTP và giao thức mở rộng. |
+| Giá trị và cơ chế theo tài liệu | README mô tả greenlet theo người dùng, CLI/WebUI và xuất throughput/latency/errors; Python/Node manifests cùng CI thể hiện engine và frontend. |
+| Giới hạn | Kết quả phụ thuộc mô hình hành vi, máy tạo tải và dữ liệu kiểm. Chưa chạy tải hoặc xác minh giới hạn throughput; vòng lặp benchmark không tự mô phỏng người dùng thật. |
+| Điều kiện tích hợp | Viết hành trình có thời gian chờ và kiểm response, chạy trong môi trường được phép; tách bottleneck load generator và theo dõi percentile/error trước khi kết luận sức tải. |
+| Lựa chọn đối chiếu | k6; JMeter; Gatling. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/README.md) · [LICENSE](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/LICENSE) · [package.json](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/package.json) · [pyproject.toml](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/pyproject.toml) · [.github/workflows/tests.yml](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/.github/workflows/tests.yml).
+
+<a id="anhkysuai-henrygd-beszel"></a>
+
+### Beszel
+
+**Repo:** [henrygd/beszel](https://github.com/henrygd/beszel) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`6702f013f8ce`](https://github.com/henrygd/beszel/tree/6702f013f8ceed0c48d95c1988a58b6d970b5022) (commit 2026-11-20). **Sao:** 27,564 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/henrygd/beszel).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Hệ thống giám sát máy chủ với lịch sử, Docker stats và cảnh báo. |
+| Giá trị và cơ chế theo tài liệu | README phân tách hub dựa PocketBase với agent, mô tả OAuth/OIDC, nhiều người dùng và backup; workflow govulncheck bổ sung cổng kiểm dependency. |
+| Giới hạn | Nhẹ và dễ cài là mục tiêu upstream, chưa đo overhead. Quyền agent, socket Docker và chia sẻ hệ thống cần kiểm; có scan không thay kiểm an toàn toàn triển khai. |
+| Điều kiện tích hợp | Gắn thử một agent, giới hạn truy cập hub và bật xác thực; kiểm alert, retention và restore backup trước khi dùng theo dõi đội máy chủ. |
+| Lựa chọn đối chiếu | [Glances](../33-reliability-observability-operations/README.md#anhkysuai-nicolargo-glances); [Netdata](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích); Prometheus + Grafana. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [readme.md](https://github.com/henrygd/beszel/blob/6702f013f8ceed0c48d95c1988a58b6d970b5022/readme.md) · [LICENSE](https://github.com/henrygd/beszel/blob/6702f013f8ceed0c48d95c1988a58b6d970b5022/LICENSE) · [go.mod](https://github.com/henrygd/beszel/blob/6702f013f8ceed0c48d95c1988a58b6d970b5022/go.mod) · [.github/workflows/vulncheck.yml](https://github.com/henrygd/beszel/blob/6702f013f8ceed0c48d95c1988a58b6d970b5022/.github/workflows/vulncheck.yml).
+
+<a id="anhkysuai-alibaba-sentinel"></a>
+
+### Sentinel
+
+**Repo:** [alibaba/Sentinel](https://github.com/alibaba/Sentinel) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`a3f40ba8e900`](https://github.com/alibaba/Sentinel/tree/a3f40ba8e900c8489bd520274739f17235a7721c) (commit 2026-05-27). **Sao:** 23,141 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/alibaba/Sentinel).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Component kiểm soát lưu lượng, giới hạn đồng thời, circuit breaking và bảo vệ quá tải. |
+| Giá trị và cơ chế theo tài liệu | README mô tả adapter Spring Cloud/gRPC/Dubbo/Quarkus; Maven CI kiểm cả có/không Spring 6, hỗ trợ đọc lớp resilience của dịch vụ Java. |
+| Giới hạn | Kinh nghiệm upstream ở hệ lớn không chứng minh ngưỡng phù hợp ứng dụng mới. Rule sai có thể từ chối người dùng hợp lệ; chưa thử overload, fail-open/fail-closed hay cluster rule. |
+| Điều kiện tích hợp | Bắt đầu bằng quan sát và rule bảo thủ, thử burst/timeout/cascade failure; quản lý quyền đổi rule, rollback và version adapter theo runtime. |
+| Lựa chọn đối chiếu | Resilience4j; Envoy; Bucket4j. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/alibaba/Sentinel/blob/a3f40ba8e900c8489bd520274739f17235a7721c/README.md) · [LICENSE](https://github.com/alibaba/Sentinel/blob/a3f40ba8e900c8489bd520274739f17235a7721c/LICENSE) · [pom.xml](https://github.com/alibaba/Sentinel/blob/a3f40ba8e900c8489bd520274739f17235a7721c/pom.xml) · [.github/workflows/ci.yml](https://github.com/alibaba/Sentinel/blob/a3f40ba8e900c8489bd520274739f17235a7721c/.github/workflows/ci.yml).
+
+<a id="anhkysuai-allinurl-goaccess"></a>
+
+### GoAccess
+
+**Repo:** [allinurl/goaccess](https://github.com/allinurl/goaccess) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`33995aa31c8d`](https://github.com/allinurl/goaccess/tree/33995aa31c8d3cbd9490309fa363dcc4239ee9a8) (commit 2026-11-20). **Sao:** 21,150 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/allinurl/goaccess).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Công cụ phân tích access log web, hiển thị terminal hoặc dashboard HTML thời gian thực. |
+| Giá trị và cơ chế theo tài liệu | README mô tả chọn log format, response time và xác thực WebSocket/JWT; CI C build/test trên nhiều cấu hình hỗ trợ đọc chuỗi đóng gói. |
+| Giới hạn | Chỉ thấy những gì có trong log, không thay tracing hay analytics client. Các mốc cập nhật thời gian thực chưa đo; log có thể chứa IP, URL/token nhạy cảm. |
+| Điều kiện tích hợp | Dùng log mẫu đúng format/timezone, kiểm proxy IP và bộ lọc; bảo vệ HTML/WebSocket, đặt retention và che trường nhạy cảm trước khi chia sẻ báo cáo. |
+| Lựa chọn đối chiếu | Grafana Loki; Matomo; AWStats. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/allinurl/goaccess/blob/33995aa31c8d3cbd9490309fa363dcc4239ee9a8/README.md) · [COPYING](https://github.com/allinurl/goaccess/blob/33995aa31c8d3cbd9490309fa363dcc4239ee9a8/COPYING) · [.github/workflows/build-test.yml](https://github.com/allinurl/goaccess/blob/33995aa31c8d3cbd9490309fa363dcc4239ee9a8/.github/workflows/build-test.yml).

@@ -606,6 +606,274 @@ ai-memory setup
 
 **Nguồn §6h:** ảnh README người dùng gửi 8/11/2026 · clone https://github.com/akitaonrails/ai-memory HEAD `fec76f18c15835bb2dc5c2be3081ce4db0c1270e`: https://github.com/akitaonrails/ai-memory/blob/fec76f18c15835bb2dc5c2be3081ce4db0c1270e/README.md · https://github.com/akitaonrails/ai-memory/blob/fec76f18c15835bb2dc5c2be3081ce4db0c1270e/DATA_HANDLING.md · https://github.com/akitaonrails/ai-memory/blob/fec76f18c15835bb2dc5c2be3081ce4db0c1270e/evals/README.md · https://github.com/akitaonrails/ai-memory/blob/fec76f18c15835bb2dc5c2be3081ce4db0c1270e/LICENSE · GitHub search API 8/11/2026.
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **13 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-privategpt"></a>
+
+### PrivateGPT
+
+**Repo:** [zylon-ai/private-gpt](https://github.com/zylon-ai/private-gpt) · **License:** Apache-2.0 · **★ 57,643 (GitHub API, 2026-11-23)**
+
+**Mục đích:** API phục vụ tài liệu, truy xuất và hội thoại trên backend mô hình tương thích OpenAI.
+
+**Giá trị và cơ chế:** Đã đọc dependency authenticated gắn tại router /v1/artifacts: cơ chế so sánh secret thực sự được gọi khi auth bật. API và máy chạy mô hình được tách thành hai lớp.
+
+**Giới hạn:** settings.yaml đặt auth.enabled=false, endpoint mặc định OpenAI và trust_remote_code=true. Tên PrivateGPT không tự bảo đảm cấu hình chạy ngoại tuyến; chưa vận hành ingestion hay thử quyền nhiều tenant.
+
+**Cách tham khảo/tích hợp:** Bật xác thực, chọn endpoint nội bộ và kiểm từng quyền tải/chạy model trước triển khai.
+
+**Thay thế:** [Dify](https://github.com/langgenius/dify), [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm), [LlamaIndex](https://github.com/run-llama/llama_index).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`2373cc7b9120`](https://github.com/zylon-ai/private-gpt/commit/2373cc7b912019c9b8fdb8907b2c256799b2adcb). Auth dependency, router ingest, cấu hình mặc định và workflow tests; không kiểm toàn pipeline RAG. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/zylon-ai/private-gpt/blob/2373cc7b912019c9b8fdb8907b2c256799b2adcb/README.md) · [LICENSE](https://github.com/zylon-ai/private-gpt/blob/2373cc7b912019c9b8fdb8907b2c256799b2adcb/LICENSE) · [.github/workflows/tests.yml](https://github.com/zylon-ai/private-gpt/blob/2373cc7b912019c9b8fdb8907b2c256799b2adcb/.github/workflows/tests.yml) · [private_gpt/server/utils/auth.py](https://github.com/zylon-ai/private-gpt/blob/2373cc7b912019c9b8fdb8907b2c256799b2adcb/private_gpt/server/utils/auth.py) · [private_gpt/server/ingest/ingest_router.py](https://github.com/zylon-ai/private-gpt/blob/2373cc7b912019c9b8fdb8907b2c256799b2adcb/private_gpt/server/ingest/ingest_router.py) · [settings.yaml](https://github.com/zylon-ai/private-gpt/blob/2373cc7b912019c9b8fdb8907b2c256799b2adcb/settings.yaml) · [metadata GitHub](https://api.github.com/repos/zylon-ai/private-gpt).
+
+<a id="anhkysuai-2026-11-23-freellmapi"></a>
+
+### FreeLLMAPI
+
+**Repo:** [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) · **License:** MIT · **★ 56,915 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Gateway gom API của các nhà cung cấp mô hình sau endpoint tương thích OpenAI.
+
+**Giá trị và cơ chế:** README mô tả định tuyến, fallback và theo dõi hạn mức theo khóa; monorepo có server, client và CLI, hữu ích để nghiên cứu cách thống nhất nhiều endpoint.
+
+**Giới hạn:** Số token miễn phí và số nhà cung cấp chỉ là tuyên bố của README; hạn mức phụ thuộc từng bên. Feed miễn phí có độ trễ so với gói trả phí; chưa kiểm mã mã hóa khóa hay cách tính quota.
+
+**Cách tham khảo/tích hợp:** Chỉ dùng khóa được phép, kiểm chính sách nhà cung cấp và thử failover với ngân sách giới hạn.
+
+**Thay thế:** [LiteLLM](https://github.com/BerriAI/litellm), [one-api](https://github.com/songquanpeng/one-api), [Apache APISIX](../04-protocols-standards/README.md#anhkysuai-2026-11-23-apache-apisix).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`ef97f50501e6`](https://github.com/tashfeenahmed/freellmapi/commit/ef97f50501e6dd959b41275b453e56113fa225a0). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/tashfeenahmed/freellmapi/blob/ef97f50501e6dd959b41275b453e56113fa225a0/README.md) · [LICENSE](https://github.com/tashfeenahmed/freellmapi/blob/ef97f50501e6dd959b41275b453e56113fa225a0/LICENSE) · [metadata GitHub](https://api.github.com/repos/tashfeenahmed/freellmapi).
+
+<a id="anhkysuai-2026-11-23-supermemory"></a>
+
+### Supermemory
+
+**Repo:** [supermemoryai/supermemory](https://github.com/supermemoryai/supermemory) · **License:** MIT cho mã công khai; server local/Enterprise có giấy phép riêng · **★ 31,690 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ tích hợp bộ nhớ dài hạn cho ứng dụng AI qua API, SDK và MCP.
+
+**Giá trị và cơ chế:** memory-client gọi profile/search theo namespace song song, khử trùng lặp rồi dựng đoạn prompt; công cụ MCP save-memory bắt buộc namespace trước gọi createMemory. Đây là cơ chế client đã đọc, không phải engine đồ thị.
+
+**Giới hạn:** Tài liệu xác nhận server local không có mã trong repo, bản lite giới hạn 10.000 tài liệu; ingest web qua Firecrawl. MIT không bao phủ engine nguồn đóng. Chưa đo chất lượng nhớ.
+
+**Cách tham khảo/tích hợp:** Tham khảo lớp ghép bộ nhớ, phân namespace và xác định endpoint/lưu lượng dữ liệu trước triển khai.
+
+**Thay thế:** [Mem0](https://github.com/mem0ai/mem0), [Letta](https://github.com/letta-ai/letta), zep.
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`fa2af930dd78`](https://github.com/supermemoryai/supermemory/commit/fa2af930dd78ba5504d7f35875d57f62084fdb5a). Client profile/search và công cụ MCP lưu memory; server/engine không có nguồn công khai ở repo này. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/supermemoryai/supermemory/blob/fa2af930dd78ba5504d7f35875d57f62084fdb5a/README.md) · [LICENSE](https://github.com/supermemoryai/supermemory/blob/fa2af930dd78ba5504d7f35875d57f62084fdb5a/LICENSE) · [packages/tools/src/shared/memory-client.ts](https://github.com/supermemoryai/supermemory/blob/fa2af930dd78ba5504d7f35875d57f62084fdb5a/packages/tools/src/shared/memory-client.ts) · [apps/mcp/src/server/tools/save-memory.ts](https://github.com/supermemoryai/supermemory/blob/fa2af930dd78ba5504d7f35875d57f62084fdb5a/apps/mcp/src/server/tools/save-memory.ts) · [apps/docs/self-hosting/local-vs-enterprise.mdx](https://github.com/supermemoryai/supermemory/blob/fa2af930dd78ba5504d7f35875d57f62084fdb5a/apps/docs/self-hosting/local-vs-enterprise.mdx) · [metadata GitHub](https://api.github.com/repos/supermemoryai/supermemory).
+
+<a id="anhkysuai-2026-11-23-modular-max-mojo"></a>
+
+### Modular: MAX và Mojo
+
+**Repo:** [modular/modular](https://github.com/modular/modular) · **License:** Apache-2.0 WITH LLVM-exception theo thành phần; MAX License · **★ 30,189 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Hệ công cụ Mojo và MAX để xây dựng kernel, biên dịch và phục vụ suy luận AI.
+
+**Giá trị và cơ chế:** README và cấu trúc workspace cho thấy cách nối ngôn ngữ hiệu năng cao với graph/runtime suy luận; hữu ích tham khảo triển khai đa phần cứng.
+
+**Giới hạn:** LICENSE gốc chia phạm vi: Mojo/thành phần riêng theo Apache với ngoại lệ LLVM, MAX có điều kiện phân phối, thương hiệu và cấm dùng AI tạo phần mềm thay thế MAX. Không gắn nhãn toàn bộ Apache. Chưa build hoặc benchmark.
+
+**Cách tham khảo/tích hợp:** Xác định đúng thư mục và license trước tái sử dụng; thử workload mục tiêu với bản phát hành ghim.
+
+**Thay thế:** [vLLM](https://github.com/vllm-project/vllm), triton, [llama.cpp](https://github.com/ggml-org/llama.cpp).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`4224c14a822b`](https://github.com/modular/modular/commit/4224c14a822b5fd5438b23a40d4ab0b822d1cc17). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/modular/modular/blob/4224c14a822b5fd5438b23a40d4ab0b822d1cc17/README.md) · [LICENSE](https://github.com/modular/modular/blob/4224c14a822b5fd5438b23a40d4ab0b822d1cc17/LICENSE) · [Licenses/MAX_LICENSE](https://github.com/modular/modular/blob/4224c14a822b5fd5438b23a40d4ab0b822d1cc17/Licenses/MAX_LICENSE) · [metadata GitHub](https://api.github.com/repos/modular/modular).
+
+<a id="anhkysuai-2026-11-23-semantica"></a>
+
+### Semantica
+
+**Repo:** [semantica-agi/semantica](https://github.com/semantica-agi/semantica) · **License:** MIT · **★ 14,742 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Hạ tầng knowledge/context graph, provenance và suy luận cho ứng dụng AI.
+
+**Giá trị và cơ chế:** Đọc ReteEngine thấy alpha node so arity rồi regex có biến, beta join từ chối binding xung đột và lan truyền token tới terminal. Có cơ chế cụ thể cho rule matching bên cạnh các tuyên bố graph lớn hơn.
+
+**Giới hạn:** Chỉ đọc nhánh Rete, chưa kiểm các connector hoặc provenance đầu-cuối. README vẫn cảnh báo matcher đơn giản; không coi các nhãn regulated/trustworthy là chứng nhận.
+
+**Cách tham khảo/tích hợp:** Bắt đầu bằng bộ fact/rule nhỏ có kết quả chuẩn, kiểm suy luận và xuất dấu vết trước nối dữ liệu nghiệp vụ.
+
+**Thay thế:** [Graphiti (Zep)](https://github.com/getzep/graphiti), [cognee](https://github.com/topoteretes/cognee), [LlamaIndex](https://github.com/run-llama/llama_index).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`63eabcc2d78d`](https://github.com/semantica-agi/semantica/commit/63eabcc2d78dac933bc143307155d2ed118dbc73). Alpha/beta matching và propagation trong ReteEngine, cùng CI reasoning; không rà toàn bộ graph/connector. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/semantica-agi/semantica/blob/63eabcc2d78dac933bc143307155d2ed118dbc73/README.md) · [LICENSE](https://github.com/semantica-agi/semantica/blob/63eabcc2d78dac933bc143307155d2ed118dbc73/LICENSE) · [semantica/reasoning/rete_engine.py](https://github.com/semantica-agi/semantica/blob/63eabcc2d78dac933bc143307155d2ed118dbc73/semantica/reasoning/rete_engine.py) · [metadata GitHub](https://api.github.com/repos/semantica-agi/semantica).
+
+<a id="anhkysuai-2026-11-23-leann"></a>
+
+### LEANN
+
+**Repo:** [StarTrail-org/LEANN](https://github.com/StarTrail-org/LEANN) · **License:** MIT · **★ 13,811 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Chỉ mục tìm kiếm vector nhằm giảm dung lượng lưu embedding cho RAG cá nhân.
+
+**Giá trị và cơ chế:** Đọc wrapper HNSW thấy mặc định compact/recompute, chuyển graph sang CSR và bỏ embedding; tìm kiếm chỉ mục đã prune yêu cầu recompute và cổng ZMQ. Đây là bằng chứng cơ chế adapter, chưa đọc hết thuật toán C++.
+
+**Giới hạn:** Tiết kiệm 97% và không giảm độ chính xác là số upstream chưa tái hiện. Đổi dung lượng lấy tính toán/network với embedding server; CI đọc chưa chứng minh mọi tổ hợp model.
+
+**Cách tham khảo/tích hợp:** Đo recall, độ trễ và dung lượng trên corpus riêng, ghim model trước chọn chế độ compact.
+
+**Thay thế:** faiss, [Qdrant](https://github.com/qdrant/qdrant), [LanceDB](https://github.com/lancedb/lancedb).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`dd64641ce7d1`](https://github.com/StarTrail-org/LEANN/commit/dd64641ce7d148ef57d453abdd3eff25638b071f). Wrapper HNSW build/search, CSR/pruned flags, yêu cầu recompute/ZMQ và workflow build; chưa đọc hết backend C++. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/StarTrail-org/LEANN/blob/dd64641ce7d148ef57d453abdd3eff25638b071f/README.md) · [LICENSE](https://github.com/StarTrail-org/LEANN/blob/dd64641ce7d148ef57d453abdd3eff25638b071f/LICENSE) · [packages/leann-backend-hnsw/leann_backend_hnsw/hnsw_backend.py](https://github.com/StarTrail-org/LEANN/blob/dd64641ce7d148ef57d453abdd3eff25638b071f/packages/leann-backend-hnsw/leann_backend_hnsw/hnsw_backend.py) · [.github/workflows/build-reusable.yml](https://github.com/StarTrail-org/LEANN/blob/dd64641ce7d148ef57d453abdd3eff25638b071f/.github/workflows/build-reusable.yml) · [metadata GitHub](https://api.github.com/repos/StarTrail-org/LEANN).
+
+<a id="anhkysuai-2026-11-23-openllm"></a>
+
+### OpenLLM
+
+**Repo:** [bentoml/OpenLLM](https://github.com/bentoml/OpenLLM) · **License:** Apache-2.0 cho mã; model có license riêng · **★ 12,612 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Đóng gói và phục vụ LLM bằng API tương thích OpenAI cùng UI chat.
+
+**Giá trị và cơ chế:** README mô tả lệnh serve, kho cấu hình model và đường triển khai Docker/Kubernetes qua hệ BentoML; thuận tiện chuẩn hóa serving cho nhóm ứng dụng.
+
+**Giới hạn:** Repo không chứa weights; model gated cần quyền riêng. API key cho client là tùy chọn theo tài liệu, cần cấu hình khi mở mạng. Chưa đo throughput, VRAM hay tính tương thích mọi model.
+
+**Cách tham khảo/tích hợp:** Ghim model repository và backend, thử streaming/healthcheck rồi đặt auth và giới hạn tài nguyên trước triển khai.
+
+**Thay thế:** [vLLM](https://github.com/vllm-project/vllm), [Ollama](https://github.com/ollama/ollama), [llama.cpp](https://github.com/ggml-org/llama.cpp).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`200b37fbf6f7`](https://github.com/bentoml/OpenLLM/commit/200b37fbf6f75b174e0737b937b886af460495e9). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/bentoml/OpenLLM/blob/200b37fbf6f75b174e0737b937b886af460495e9/README.md) · [LICENSE](https://github.com/bentoml/OpenLLM/blob/200b37fbf6f75b174e0737b937b886af460495e9/LICENSE) · [metadata GitHub](https://api.github.com/repos/bentoml/OpenLLM).
+
+<a id="anhkysuai-2026-11-23-lmcache"></a>
+
+### LMCache
+
+**Repo:** [LMCache/LMCache](https://github.com/LMCache/LMCache) · **License:** Apache-2.0 · **★ 12,446 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Lớp quản lý KV cache cho hệ suy luận LLM, hỗ trợ chia sẻ/tái sử dụng cache.
+
+**Giá trị và cơ chế:** README mô tả kiến trúc multiprocess, offload và chỉ số cache hit theo request/token; hữu ích tham khảo cách giảm phần prefill lặp trong workload agent nhiều lượt.
+
+**Giới hạn:** Đánh giá mới đọc tài liệu, manifest và CI, chưa đọc engine hay chạy GPU. Hiệu quả phụ thuộc mức lặp prefix, băng thông và tương thích phiên bản serving; số tăng tốc upstream chưa tái hiện.
+
+**Cách tham khảo/tích hợp:** Đo workload có prefix lặp, kiểm hit rate và latency với cấu hình cache tắt/bật trước mở rộng.
+
+**Thay thế:** [vLLM](https://github.com/vllm-project/vllm), [SGLang](https://github.com/sgl-project/sglang), dynamo.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`ae31b644ff6b`](https://github.com/LMCache/LMCache/commit/ae31b644ff6b702d6daaa96c35bcc2f9f4b2a1d1). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/LMCache/LMCache/blob/ae31b644ff6b702d6daaa96c35bcc2f9f4b2a1d1/README.md) · [LICENSE](https://github.com/LMCache/LMCache/blob/ae31b644ff6b702d6daaa96c35bcc2f9f4b2a1d1/LICENSE) · [metadata GitHub](https://api.github.com/repos/LMCache/LMCache).
+
+<a id="anhkysuai-2026-11-23-deepseek-v3"></a>
+
+### DeepSeek-V3
+
+**Repo:** [deepseek-ai/DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3) · **License:** MIT cho mã; DeepSeek License Agreement cho model · **★ 104,893 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Kho công bố mô hình ngôn ngữ MoE DeepSeek-V3 và hướng dẫn suy luận.
+
+**Giá trị và cơ chế:** README giải thích 671B tham số tổng/37B hoạt động, MLA, cân bằng expert không auxiliary loss và multi-token prediction; hữu ích tham khảo thiết kế model lớn và cách bố trí weights.
+
+**Giới hạn:** Chỉ đọc tài liệu, license và cấu trúc mã tham chiếu; chưa tải weights hay tái hiện benchmark. Model có hạn chế mục đích sử dụng riêng; MIT không bao phủ toàn bộ model. Workflow đã đọc chỉ đóng issue cũ.
+
+**Cách tham khảo/tích hợp:** Chọn checkpoint và runtime hỗ trợ, tính ngân sách bộ nhớ và kiểm điều khoản model trước thử serving.
+
+**Thay thế:** qwen, [DeepSeek-R1](../10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23-deepseek-r1), llama.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`9b4e9788e4a3`](https://github.com/deepseek-ai/DeepSeek-V3/commit/9b4e9788e4a3a731f7567338ed15d3ec549ce03b). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/deepseek-ai/DeepSeek-V3/blob/9b4e9788e4a3a731f7567338ed15d3ec549ce03b/README.md) · [LICENSE-CODE](https://github.com/deepseek-ai/DeepSeek-V3/blob/9b4e9788e4a3a731f7567338ed15d3ec549ce03b/LICENSE-CODE) · [LICENSE-MODEL](https://github.com/deepseek-ai/DeepSeek-V3/blob/9b4e9788e4a3a731f7567338ed15d3ec549ce03b/LICENSE-MODEL) · [metadata GitHub](https://api.github.com/repos/deepseek-ai/DeepSeek-V3).
+
+<a id="anhkysuai-2026-11-23-deepseek-r1"></a>
+
+### DeepSeek-R1
+
+**Repo:** [deepseek-ai/DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1) · **License:** MIT cho R1; model distilled còn điều khoản model gốc · **★ 92,062 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Kho tài liệu và liên kết weights cho họ mô hình suy luận R1/R1-Zero và bản distilled.
+
+**Giá trị và cơ chế:** README đối chiếu RL không SFT ban đầu với hướng thêm cold-start, mô tả hạn chế lặp/ngôn ngữ và công bố các checkpoint; hữu ích làm nguồn gốc khi lựa chọn model reasoning.
+
+**Giới hạn:** Tree chủ yếu README, paper và license, không phải toàn mã huấn luyện. Chưa đọc paper hay chạy benchmark. Distill-Llama còn license Llama, không quy mọi checkpoint thành MIT thuần.
+
+**Cách tham khảo/tích hợp:** Ghim model revision, kiểm độ đúng và token reasoning trên tác vụ riêng; lưu điều khoản checkpoint được chọn.
+
+**Thay thế:** [DeepSeek-V3](../10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23-deepseek-v3), qwen, olmo.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`0cf78561f1d5`](https://github.com/deepseek-ai/DeepSeek-R1/commit/0cf78561f1d51c84a21b2190626b21116d5c68bb). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/deepseek-ai/DeepSeek-R1/blob/0cf78561f1d51c84a21b2190626b21116d5c68bb/README.md) · [LICENSE](https://github.com/deepseek-ai/DeepSeek-R1/blob/0cf78561f1d51c84a21b2190626b21116d5c68bb/LICENSE) · [metadata GitHub](https://api.github.com/repos/deepseek-ai/DeepSeek-R1).
+
+<a id="anhkysuai-2026-11-23-gpt4all"></a>
+
+### GPT4All
+
+**Repo:** [nomic-ai/gpt4all](https://github.com/nomic-ai/gpt4all) · **License:** MIT cho mã; weights theo từng model · **★ 77,328 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng desktop và Python client chạy LLM trên máy cá nhân.
+
+**Giá trị và cơ chế:** README mô tả client bọc các triển khai llama.cpp, lựa chọn CPU và platform desktop; phù hợp tham khảo trải nghiệm tải model và chat local.
+
+**Giới hạn:** Chưa chạy ứng dụng hoặc kiểm telemetry/lưu lượng, nên riêng tư là phạm vi cấu hình cần xác nhận. Weights có giấy phép riêng; HEAD lấy được ở 2025 không chứng minh trạng thái mọi bản phát hành hiện tại.
+
+**Cách tham khảo/tích hợp:** Chọn model nhỏ phù hợp RAM, ghim revision và kiểm chất lượng với tài liệu/tác vụ thật trước chuẩn hóa ứng dụng.
+
+**Thay thế:** [Ollama](https://github.com/ollama/ollama), [jan](../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện), [llama.cpp](https://github.com/ggml-org/llama.cpp).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`b666d16db5ae`](https://github.com/nomic-ai/gpt4all/commit/b666d16db5aeab8b91aaf7963adcee9c643734d7). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/nomic-ai/gpt4all/blob/b666d16db5aeab8b91aaf7963adcee9c643734d7/README.md) · [LICENSE.txt](https://github.com/nomic-ai/gpt4all/blob/b666d16db5aeab8b91aaf7963adcee9c643734d7/LICENSE.txt) · [metadata GitHub](https://api.github.com/repos/nomic-ai/gpt4all).
+
+<a id="anhkysuai-2026-11-23-chatglm-6b"></a>
+
+### ChatGLM-6B
+
+**Repo:** [zai-org/ChatGLM-6B](https://github.com/zai-org/ChatGLM-6B) · **License:** Apache-2.0 cho mã; ChatGLM-6B Model License · **★ 40,843 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Model đối thoại Trung–Anh khoảng 6,2B tham số cùng demo CLI/web/API.
+
+**Giá trị và cơ chế:** README mô tả quantization để chạy trên GPU cá nhân và pipeline chat; hữu ích làm nguồn tham chiếu cho thế hệ model song ngữ này.
+
+**Giới hạn:** Model license có hạn chế mục đích và quyền chuyển giao/cấp lại; README nêu đăng ký dùng thương mại. Đây là ChatGLM-6B đời đầu, không gán tính năng GLM-4 quảng bá trong README cho nó. Chưa tải weights hay đo VRAM.
+
+**Cách tham khảo/tích hợp:** Ghim checkpoint/tokenizer và kiểm nhu cầu Trung–Anh; đối chiếu license riêng trước xây dịch vụ.
+
+**Thay thế:** qwen, [DeepSeek-R1](../10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23-deepseek-r1), [GPT4All](../10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23-gpt4all).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`401bf3a8a7dd`](https://github.com/zai-org/ChatGLM-6B/commit/401bf3a8a7dd8a26fba189551dccfc61a7079b4e). Đọc README, Apache-2.0 cho mã và MODEL_LICENSE riêng; chưa kiểm implementation hoặc chạy weights. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/zai-org/ChatGLM-6B/blob/401bf3a8a7dd8a26fba189551dccfc61a7079b4e/README.md) · [LICENSE](https://github.com/zai-org/ChatGLM-6B/blob/401bf3a8a7dd8a26fba189551dccfc61a7079b4e/LICENSE) · [MODEL_LICENSE](https://github.com/zai-org/ChatGLM-6B/blob/401bf3a8a7dd8a26fba189551dccfc61a7079b4e/MODEL_LICENSE) · [metadata GitHub](https://api.github.com/repos/zai-org/ChatGLM-6B).
+
+<a id="anhkysuai-2026-11-23-fastchat"></a>
+
+### FastChat
+
+**Repo:** [lm-sys/FastChat](https://github.com/lm-sys/FastChat) · **License:** Apache-2.0 cho mã; model/dataset có license riêng · **★ 39,552 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Nền tảng huấn luyện, phục vụ và đánh giá chatbot LLM.
+
+**Giá trị và cơ chế:** README mô tả multi-model serving, web UI, API tương thích OpenAI và MT-Bench; hữu ích tham khảo cách tách model worker khỏi bề mặt ứng dụng và đánh giá.
+
+**Giới hạn:** Không xem số lượt/vote Arena trong README là số liệu hiện tại. Vicuna dựa Llama có license riêng; chưa chạy API hoặc tái hiện đánh giá. Workflow đã đọc chủ yếu lint, không xác nhận serving hoạt động.
+
+**Cách tham khảo/tích hợp:** Ghim backend/model, kiểm chat template và tool/API tương thích trước dùng làm serving; giữ eval set độc lập.
+
+**Thay thế:** [vLLM](https://github.com/vllm-project/vllm), openllm, [SGLang](https://github.com/sgl-project/sglang).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`587d5cfa1609`](https://github.com/lm-sys/FastChat/commit/587d5cfa1609a43d192cedb8441cac3c17db105d). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/lm-sys/FastChat/blob/587d5cfa1609a43d192cedb8441cac3c17db105d/README.md) · [LICENSE](https://github.com/lm-sys/FastChat/blob/587d5cfa1609a43d192cedb8441cac3c17db105d/LICENSE) · [metadata GitHub](https://api.github.com/repos/lm-sys/FastChat).
+
 ## 7. Nguồn
 
 - https://dev.to/sreeraj-sreenivasan/the-complete-guide-to-local-llm-inference-tools-in-july-2026-llamacpp-ollama-vllm-sglang-and-4mh1 · https://blog.starmorph.com/blog/local-llm-inference-tools-guide · https://openalternative.co/blog/best-local-llm-tools · https://www.storagereview.com/best/local-llm-tools · https://deepresearch.ninja/2026/06/Open-Source-LLM-Inference-Projects-A-Comprehensive-Comparative-Analysis/ · https://www.digitalapplied.com/blog/run-local-llms-ollama-vs-lm-studio-vs-vllm-2026-guide

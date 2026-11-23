@@ -139,6 +139,90 @@ Hướng dẫn gốc [GOV.UK: lập kế hoạch nghiên cứu](https://www.gov.
 
 **Đã đổi so với đợt trước:** bổ sung lớp provider/daemon và kiểm assignment, tách nó khỏi exposure/experiment engine; đưa outcome economics vào nghiệm thu phần mềm. **Nguồn §5:** [README.md](https://github.com/open-feature/flagd/blob/902555686f8bb1a89fe40c4b532e78c4e098110d/README.md) · [LICENSE](https://github.com/open-feature/flagd/blob/902555686f8bb1a89fe40c4b532e78c4e098110d/LICENSE) · [core/pkg/evaluator/fractional.go](https://github.com/open-feature/flagd/blob/902555686f8bb1a89fe40c4b532e78c4e098110d/core/pkg/evaluator/fractional.go) · [core/pkg/evaluator/json.go](https://github.com/open-feature/flagd/blob/902555686f8bb1a89fe40c4b532e78c4e098110d/core/pkg/evaluator/json.go) · [.github/workflows/build.yaml](https://github.com/open-feature/flagd/blob/902555686f8bb1a89fe40c4b532e78c4e098110d/.github/workflows/build.yaml); phương pháp nghiên cứu/SRM tiếp tục dùng nguồn gốc đã dẫn ở §3.
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **4 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-umami"></a>
+
+### Umami
+
+**Repo:** [umami-software/umami](https://github.com/umami-software/umami) · **License:** MIT · **★ 40,308 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Nền tảng web/product analytics có thể tự host.
+
+**Giá trị và cơ chế:** Tài liệu cài đặt dùng Node.js, PostgreSQL và APP_SECRET; build tạo schema và tài khoản ban đầu, phù hợp tham khảo kiến trúc analytics nằm trong hạ tầng sản phẩm.
+
+**Giới hạn:** Chưa kiểm payload tracker, recorder hoặc chính sách lưu dữ liệu. README yêu cầu đổi mật khẩu tài khoản ban đầu; CI đặt SKIP_DB_CHECK nên build pass không tự chứng minh kết nối dữ liệu thực tế.
+
+**Cách tham khảo/tích hợp:** Thiết lập secret riêng, giới hạn quyền DB và xác định rõ sự kiện nào được thu thập trước khi gắn tracker.
+
+**Thay thế:** plausible, [PostHog](../28-product-discovery-experimentation/README.md#posthog), matomo.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`aad2c4cedd5c`](https://github.com/umami-software/umami/commit/aad2c4cedd5c0b3bc4d361843830a0bb47cf79c4). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/umami-software/umami/blob/aad2c4cedd5c0b3bc4d361843830a0bb47cf79c4/README.md) · [LICENSE](https://github.com/umami-software/umami/blob/aad2c4cedd5c0b3bc4d361843830a0bb47cf79c4/LICENSE) · [metadata GitHub](https://api.github.com/repos/umami-software/umami).
+
+<a id="anhkysuai-2026-11-23-plausible-analytics"></a>
+
+### Plausible Analytics
+
+**Repo:** [plausible/analytics](https://github.com/plausible/analytics) · **License:** AGPL-3.0 · **★ 29,915 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Phân tích truy cập website với dashboard và bản Community tự lưu trữ.
+
+**Giá trị và cơ chế:** README nhấn mạnh tracker tối giản, sự kiện và báo cáo dễ vận hành; đáng tham khảo thiết kế analytics tập trung chỉ số thiết yếu.
+
+**Giới hạn:** Mô tả không cookie và tuân thủ riêng tư là tuyên bố upstream, chưa kiểm tra lưu lượng hay cơ sở pháp lý. Cloud và Community có phạm vi tính năng riêng; cần vận hành kho dữ liệu.
+
+**Cách tham khảo/tích hợp:** Xác định sự kiện cần đo, kiểm dữ liệu thực gửi đi và lưu lượng trước thay hệ analytics hiện có.
+
+**Thay thế:** [Umami](../28-product-discovery-experimentation/README.md#anhkysuai-2026-11-23-umami), [PostHog](../28-product-discovery-experimentation/README.md#posthog), matomo.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`418da46de5e0`](https://github.com/plausible/analytics/commit/418da46de5e09c6b1113772d1f15d375527130b3). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/plausible/analytics/blob/418da46de5e09c6b1113772d1f15d375527130b3/README.md) · [LICENSE.md](https://github.com/plausible/analytics/blob/418da46de5e09c6b1113772d1f15d375527130b3/LICENSE.md) · [metadata GitHub](https://api.github.com/repos/plausible/analytics).
+
+<a id="anhkysuai-makeplane-plane"></a>
+
+### Plane
+
+**Repo:** [makeplane/plane](https://github.com/makeplane/plane) · **License:** AGPL-3.0-only · **Kiểm:** 2026-11-23, `docs-read`, [`57a876da1d83`](https://github.com/makeplane/plane/tree/57a876da1d83ce3309543464325a44e90b2f5c96) (commit 2026-11-23). **Sao:** 63,008 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/makeplane/plane).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Công cụ quản lý công việc, chu kỳ phát triển, module, trang ghi chú và lộ trình sản phẩm. |
+| Giá trị và cơ chế theo tài liệu | README trình bày cách nối work item, cycles và views; monorepo có cổng lint/typecheck và workflow build Community Edition. |
+| Giới hạn | Tính năng phân tích và AI trong trang là tuyên bố tài liệu, chưa chạy kiểm. Tự host còn cần quản lý dữ liệu, tệp tải lên và nâng cấp; AGPL áp dụng cho mã trong phạm vi đã đọc. |
+| Điều kiện tích hợp | Dùng môi trường thử theo Docker hoặc Kubernetes được tài liệu chỉ dẫn; kiểm migration, phân quyền và xuất dữ liệu trước khi đưa công việc thật vào. |
+| Lựa chọn đối chiếu | OpenProject; Taiga; Huly. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/makeplane/plane/blob/57a876da1d83ce3309543464325a44e90b2f5c96/README.md) · [COPYRIGHT.txt](https://github.com/makeplane/plane/blob/57a876da1d83ce3309543464325a44e90b2f5c96/COPYRIGHT.txt) · [COPYRIGHT_CHECK.md](https://github.com/makeplane/plane/blob/57a876da1d83ce3309543464325a44e90b2f5c96/COPYRIGHT_CHECK.md) · [LICENSE.txt](https://github.com/makeplane/plane/blob/57a876da1d83ce3309543464325a44e90b2f5c96/LICENSE.txt) · [package.json](https://github.com/makeplane/plane/blob/57a876da1d83ce3309543464325a44e90b2f5c96/package.json) · [.github/workflows/build-branch.yml](https://github.com/makeplane/plane/blob/57a876da1d83ce3309543464325a44e90b2f5c96/.github/workflows/build-branch.yml).
+
+<a id="anhkysuai-dubinc-dub.link"></a>
+
+### Dub Links
+
+**Repo:** [dubinc/dub.link](https://github.com/dubinc/dub.link) · **License:** AGPL-3.0; thư mục ee theo giấy phép riêng · **Kiểm:** 2026-11-23, `docs-read`, [`6b463b4bdd9e`](https://github.com/dubinc/dub.link/tree/6b463b4bdd9ed2fd9aa416f67b5b77d317b1471e) (commit 2026-10-26). **Sao:** 25,217 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/dubinc/dub.link).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Nền tảng link ngắn, attribution và theo dõi chuyển đổi. |
+| Giá trị và cơ chế theo tài liệu | README liệt kê Next.js/Prisma, Redis/analytics/database và nhiều dịch vụ ngoài; CI có public API tests, hữu ích để xem cấu trúc tích hợp tăng trưởng sản phẩm. |
+| Giới hạn | LICENSE tách hai nhánh thư mục ee; không gắn AGPL cho toàn monorepo. Số click trong mô tả không được đo lại; self-host còn phụ thuộc cấu hình dịch vụ/credentials. |
+| Điều kiện tích hợp | Thử domain/link và event conversion trên dữ liệu giả, kiểm privacy/retention và chống lạm dụng redirect; đối chiếu CE/EE và chi phí backend trước triển khai. |
+| Lựa chọn đối chiếu | Shlink; YOURLS; Kutt. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/dubinc/dub.link/blob/6b463b4bdd9ed2fd9aa416f67b5b77d317b1471e/README.md) · [LICENSE.md](https://github.com/dubinc/dub.link/blob/6b463b4bdd9ed2fd9aa416f67b5b77d317b1471e/LICENSE.md) · [package.json](https://github.com/dubinc/dub.link/blob/6b463b4bdd9ed2fd9aa416f67b5b77d317b1471e/package.json) · [.github/workflows/e2e.yaml](https://github.com/dubinc/dub.link/blob/6b463b4bdd9ed2fd9aa416f67b5b77d317b1471e/.github/workflows/e2e.yaml).
+
 ## Nguồn
 
 Các permalink trong từng hồ sơ cố định đúng phiên bản đã đọc; số sao/trạng thái archive là snapshot GitHub API ngày 2026-11-02. Không chạy mã, huấn luyện model hoặc tái lập kết quả của upstream.

@@ -362,6 +362,154 @@
 
 **Nguồn phạm vi:** [LICENSE](https://github.com/openai/openai-agents-python/blob/23e9996ac146109bdcd9b871e3564f70dc13aae1/LICENSE) · [CI tests](https://github.com/openai/openai-agents-python/blob/23e9996ac146109bdcd9b871e3564f70dc13aae1/.github/workflows/tests.yml). SDK MIT không cấp quyền sử dụng model hay bỏ nghĩa vụ dữ liệu của dịch vụ tích hợp.
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **7 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-zeroclaw"></a>
+
+### ZeroClaw
+
+**Repo:** [zeroclaw-labs/zeroclaw](https://github.com/zeroclaw-labs/zeroclaw) · **License:** MIT OR Apache-2.0 · **★ 33,583 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Agent cá nhân bằng Rust với nhiều kênh nhắn tin, mô hình và công cụ hệ thống.
+
+**Giá trị và cơ chế:** Đã đọc đường chạy shell: kiểm chính sách/đường dẫn trước tạo tiến trình, xác nhận loại shell, bọc sandbox rồi thiết lập môi trường. Autonomy mặc định là Supervised; chính sách yêu cầu cờ approved cho lệnh rủi ro theo cấu hình.
+
+**Giới hạn:** Đây là kiểm tra một luồng shell; chưa kiểm chứng nguồn quyết định approved, mọi adapter hay cách ly toàn hệ thống. Constructor shell có NoopSandbox nếu không được thay.
+
+**Cách tham khảo/tích hợp:** Tham khảo phân lớp policy–runtime–tool, thử cấu hình sandbox và chấp thuận trên workspace dùng thử.
+
+**Thay thế:** [OpenClaw](https://github.com/openclaw/openclaw), [nanobot](https://github.com/HKUDS/nanobot), picoclaw.
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`b503bc5758fa`](https://github.com/zeroclaw-labs/zeroclaw/commit/b503bc5758fa0ae45fee68b6b674d6277e5f8a7b). Hàm kiểm chính sách shell và callsite trước spawn, autonomy mặc định, các mục liên quan trong CI; không kiểm mọi sandbox/adapter. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/zeroclaw-labs/zeroclaw/blob/b503bc5758fa0ae45fee68b6b674d6277e5f8a7b/README.md) · [LICENSE-APACHE](https://github.com/zeroclaw-labs/zeroclaw/blob/b503bc5758fa0ae45fee68b6b674d6277e5f8a7b/LICENSE-APACHE) · [LICENSE-MIT](https://github.com/zeroclaw-labs/zeroclaw/blob/b503bc5758fa0ae45fee68b6b674d6277e5f8a7b/LICENSE-MIT) · [crates/zeroclaw-runtime/src/security/policy.rs](https://github.com/zeroclaw-labs/zeroclaw/blob/b503bc5758fa0ae45fee68b6b674d6277e5f8a7b/crates/zeroclaw-runtime/src/security/policy.rs) · [crates/zeroclaw-runtime/src/tools/shell.rs](https://github.com/zeroclaw-labs/zeroclaw/blob/b503bc5758fa0ae45fee68b6b674d6277e5f8a7b/crates/zeroclaw-runtime/src/tools/shell.rs) · [crates/zeroclaw-config/src/autonomy.rs](https://github.com/zeroclaw-labs/zeroclaw/blob/b503bc5758fa0ae45fee68b6b674d6277e5f8a7b/crates/zeroclaw-config/src/autonomy.rs) · [crates/zeroclaw-config/src/policy.rs](https://github.com/zeroclaw-labs/zeroclaw/blob/b503bc5758fa0ae45fee68b6b674d6277e5f8a7b/crates/zeroclaw-config/src/policy.rs) · [metadata GitHub](https://api.github.com/repos/zeroclaw-labs/zeroclaw).
+
+<a id="anhkysuai-2026-11-23-qm"></a>
+
+### QM
+
+**Repo:** [yc-software/qm](https://github.com/yc-software/qm) · **License:** MIT · **★ 15,762 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Agent cho nhóm dùng qua Slack/web với workspace, lịch chạy và bộ nhớ theo người/phòng.
+
+**Giá trị và cơ chế:** Đã đọc classifier: mode observe ghi nhận bất đồng bộ và cho đi tiếp; enforce chờ kết quả, phân biệt dữ liệu chưa được screen. SECURITY.md giải thích principal/scope và giới hạn operator.
+
+**Giới hạn:** Đây là phần classifier, chưa chứng minh cách ly toàn nền tảng. Upstream tự ghi experimental, command policy có thể vượt qua và browser runner không đi qua một số cổng core; screening mặc định tắt theo README.
+
+**Cách tham khảo/tích hợp:** Tham khảo mô hình scope, thử trong một tổ chức nội bộ và kiểm tuyến gọi tool/bộ nhớ theo quyền.
+
+**Thay thế:** [OpenClaw](https://github.com/openclaw/openclaw), [Letta](https://github.com/letta-ai/letta), [Octop](../02-agent-frameworks/README.md#anhkysuai-2026-11-23-octop).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`6f84bffaf85b`](https://github.com/yc-software/qm/commit/6f84bffaf85bbed72425e3888430a8d1611c0eda). createSecurityClassifier, mode observe/enforce và security model; chưa kiểm toàn tuyến effect/authorization. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/yc-software/qm/blob/6f84bffaf85bbed72425e3888430a8d1611c0eda/README.md) · [LICENSE](https://github.com/yc-software/qm/blob/6f84bffaf85bbed72425e3888430a8d1611c0eda/LICENSE) · [SECURITY.md](https://github.com/yc-software/qm/blob/6f84bffaf85bbed72425e3888430a8d1611c0eda/SECURITY.md) · [src/core/orchestrator/security-screen.ts](https://github.com/yc-software/qm/blob/6f84bffaf85bbed72425e3888430a8d1611c0eda/src/core/orchestrator/security-screen.ts) · [metadata GitHub](https://api.github.com/repos/yc-software/qm).
+
+<a id="anhkysuai-2026-11-23-genericagent"></a>
+
+### GenericAgent
+
+**Repo:** [lsdefine/GenericAgent](https://github.com/lsdefine/GenericAgent) · **License:** MIT · **★ 14,440 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Framework agent tối giản thao tác terminal, file và trình duyệt trên máy cá nhân.
+
+**Giá trị và cơ chế:** Đã đọc vòng lặp: gọi model, parse tool_calls, dispatch sang do_<tool>, thu kết quả và dừng theo StepOutcome/max_turns. Bash/PowerShell được ánh xạ về code_run, hooks bao quanh mỗi bước.
+
+**Giới hạn:** Chỉ kiểm loop/dispatch, chưa kiểm mọi tool, ghi nhớ hay cơ chế tự sinh skill. Không thấy workflow GitHub CI trong tree đã lấy. Tuyên bố tự xây repo và tự tiến hóa là lời tác giả.
+
+**Cách tham khảo/tích hợp:** Tham khảo vòng điều phối, chạy về sau trong môi trường tách biệt với tool allowlist và dữ liệu thử.
+
+**Thay thế:** [smolagents](https://github.com/huggingface/smolagents), [nanobot](https://github.com/HKUDS/nanobot), [Open Interpreter](https://github.com/openinterpreter/open-interpreter).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a0521ab4f92b`](https://github.com/lsdefine/GenericAgent/commit/a0521ab4f92b4f3b57d5b1f070ff4296c9062e03). Vòng agent_runner_loop, dispatch và cấu trúc agentmain; tree không có GitHub Actions workflow, chưa kiểm toàn bộ tools. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/lsdefine/GenericAgent/blob/a0521ab4f92b4f3b57d5b1f070ff4296c9062e03/README.md) · [LICENSE](https://github.com/lsdefine/GenericAgent/blob/a0521ab4f92b4f3b57d5b1f070ff4296c9062e03/LICENSE) · [agent_loop.py](https://github.com/lsdefine/GenericAgent/blob/a0521ab4f92b4f3b57d5b1f070ff4296c9062e03/agent_loop.py) · [agentmain.py](https://github.com/lsdefine/GenericAgent/blob/a0521ab4f92b4f3b57d5b1f070ff4296c9062e03/agentmain.py) · [metadata GitHub](https://api.github.com/repos/lsdefine/GenericAgent).
+
+<a id="anhkysuai-2026-11-23-octop"></a>
+
+### Octop
+
+**Repo:** [TencentCloud/Octop](https://github.com/TencentCloud/Octop) · **License:** MIT · **★ 12,410 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Trợ lý AI tự lưu trữ đa người dùng/agent, kết nối web, IM, MCP và ACP.
+
+**Giá trị và cơ chế:** Đã đọc middleware: tuyến /api ngoài allowlist gọi authenticate_request, cache người dùng trên request; khi chưa có user, setup-lockdown trả 503 cho API ngoài setup/health. Đây là lớp vào API đã xem.
+
+**Giới hạn:** Chưa chứng minh cách ly tool, WebSocket hay toàn allowlist; backend model/connector vẫn có thể gửi dữ liệu ngoài máy. AgentTeams và manifest hiện là beta, không coi nhãn self-hosted thành bảo đảm riêng tư.
+
+**Cách tham khảo/tích hợp:** Thử setup, phân quyền và kênh IM trên tổ chức dùng thử trước nối tài khoản nghiệp vụ.
+
+**Thay thế:** [OpenClaw](https://github.com/openclaw/openclaw), [QM](../02-agent-frameworks/README.md#anhkysuai-2026-11-23-qm), [Letta](https://github.com/letta-ai/letta).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`30f4aecd2e14`](https://github.com/TencentCloud/Octop/commit/30f4aecd2e14e7eeee639b8c6c33c9f404463df8). Middleware JWT và setup-lockdown, cùng CI; chưa kiểm mọi route và tenant boundary. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/TencentCloud/Octop/blob/30f4aecd2e14e7eeee639b8c6c33c9f404463df8/README.md) · [LICENSE](https://github.com/TencentCloud/Octop/blob/30f4aecd2e14e7eeee639b8c6c33c9f404463df8/LICENSE) · [src/octop/api/middleware/jwt_auth.py](https://github.com/TencentCloud/Octop/blob/30f4aecd2e14e7eeee639b8c6c33c9f404463df8/src/octop/api/middleware/jwt_auth.py) · [src/octop/api/middleware/setup_lockdown.py](https://github.com/TencentCloud/Octop/blob/30f4aecd2e14e7eeee639b8c6c33c9f404463df8/src/octop/api/middleware/setup_lockdown.py) · [metadata GitHub](https://api.github.com/repos/TencentCloud/Octop).
+
+<a id="anhkysuai-2026-11-23-agenticseek"></a>
+
+### AgenticSeek
+
+**Repo:** [Fosowl/agenticSeek](https://github.com/Fosowl/agenticSeek) · **License:** GPL-3.0 · **★ 27,691 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Trợ lý tự vận hành kết hợp tìm kiếm, duyệt web và công cụ lập trình với lựa chọn model cục bộ hoặc nhà cung cấp ngoài.
+
+**Giá trị và cơ chế:** Đã đọc router: kết hợp classifier và BART zero-shot, ước lượng độ phức tạp rồi chọn planner hoặc agent chuyên biệt; browser agent khai báo công cụ tìm kiếm riêng.
+
+**Giới hạn:** README gọi safe_mode là lọc best-effort, không phải sandbox. Docker vẫn đọc/ghi WORK_DIR và có mạng; chưa kiểm toàn bộ tác vụ. Tree không có CI liên quan nên giữ docs-read.
+
+**Cách tham khảo/tích hợp:** Thử trong môi trường riêng, giới hạn thư mục và tài khoản; xác minh cấu hình provider trước khi đưa dữ liệu thực vào.
+
+**Thay thế:** OpenManus, [OpenClaw](https://github.com/openclaw/openclaw), GenericAgent.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`8f705be8ca62`](https://github.com/Fosowl/agenticSeek/commit/8f705be8ca625e9549389f188b1e37f700d3ed34). Đọc routing/classifier, phần khởi tạo browser agent và các đoạn security trong README; không thấy GitHub Actions workflow nên giữ docs-read, chưa kiểm toàn bộ thực thi công cụ. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/Fosowl/agenticSeek/blob/8f705be8ca625e9549389f188b1e37f700d3ed34/README.md) · [LICENSE](https://github.com/Fosowl/agenticSeek/blob/8f705be8ca625e9549389f188b1e37f700d3ed34/LICENSE) · [sources/router.py](https://github.com/Fosowl/agenticSeek/blob/8f705be8ca625e9549389f188b1e37f700d3ed34/sources/router.py) · [sources/agents/browser_agent.py](https://github.com/Fosowl/agenticSeek/blob/8f705be8ca625e9549389f188b1e37f700d3ed34/sources/agents/browser_agent.py) · [SECURITY.md](https://github.com/Fosowl/agenticSeek/blob/8f705be8ca625e9549389f188b1e37f700d3ed34/SECURITY.md) · [metadata GitHub](https://api.github.com/repos/Fosowl/agenticSeek).
+
+<a id="anhkysuai-2026-11-23-rasa-open-source"></a>
+
+### Rasa Open Source
+
+**Repo:** [RasaHQ/rasa](https://github.com/RasaHQ/rasa) · **License:** Apache-2.0 · **★ 21,401 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Xây dựng trợ lý hội thoại với NLU, quản lý hội thoại và các kết nối kênh giao tiếp.
+
+**Giá trị và cơ chế:** Manifest và README của nhánh nguồn này mô tả Rasa 3.x; phù hợp học pipeline intent/entity và điều phối phản hồi có cấu hình.
+
+**Giới hạn:** README ghi dự án ở chế độ maintenance. Hello Rasa/CALM được dẫn sang sản phẩm mới, không nên gán mọi tính năng mới cho repo này; chưa kiểm runtime hoặc migration.
+
+**Cách tham khảo/tích hợp:** Đối chiếu yêu cầu hỗ trợ và dependency, thử một flow hội thoại hoàn chỉnh rồi quyết định tiếp tục Rasa 3.x hay chuyển nền tảng.
+
+**Thay thế:** [botpress](../08-awesome-lists-learning/README.md#6c516-nền-tảng-ai-rag--workflow), [LangGraph](../02-agent-frameworks/README.md#core-framework-semantics), Dialogflow.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`60a3cff9c081`](https://github.com/RasaHQ/rasa/commit/60a3cff9c08183760355b07bd60f5223d8916d6b). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/RasaHQ/rasa/blob/60a3cff9c08183760355b07bd60f5223d8916d6b/README.md) · [LICENSE.txt](https://github.com/RasaHQ/rasa/blob/60a3cff9c08183760355b07bd60f5223d8916d6b/LICENSE.txt) · [metadata GitHub](https://api.github.com/repos/RasaHQ/rasa).
+
+<a id="anhkysuai-2026-11-23-leon"></a>
+
+### Leon
+
+**Repo:** [leon-ai/leon](https://github.com/leon-ai/leon) · **License:** MIT · **★ 17,706 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Trợ lý cá nhân tự host với hệ thống kỹ năng, giao tiếp và lựa chọn model.
+
+**Giá trị và cơ chế:** README và manifest cho thấy hướng Leon 2.0 alpha, mô tả server, giao diện web và các thành phần phục vụ thực thi kỹ năng.
+
+**Giới hạn:** Nhánh develop là bản đang xây dựng, chưa phải bản 2.0 phát hành; một số tài liệu công khai còn thuộc phiên bản trước. Chưa kiểm implementation hoặc độ ổn định.
+
+**Cách tham khảo/tích hợp:** Ghim commit và đối chiếu tài liệu cùng phiên bản, thử kỹ năng ít quyền trong môi trường riêng trước khi kết nối dữ liệu cá nhân.
+
+**Thay thế:** [OpenClaw](https://github.com/openclaw/openclaw), Octop, GenericAgent.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`cddd7020b327`](https://github.com/leon-ai/leon/commit/cddd7020b32709148d5810d88f8b2096302e9fe9). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/leon-ai/leon/blob/cddd7020b32709148d5810d88f8b2096302e9fe9/README.md) · [LICENSE.md](https://github.com/leon-ai/leon/blob/cddd7020b32709148d5810d88f8b2096302e9fe9/LICENSE.md) · [metadata GitHub](https://api.github.com/repos/leon-ai/leon).
+
 ## 5. Nguồn
 
 - https://www.firecrawl.dev/blog/best-open-source-agent-frameworks
