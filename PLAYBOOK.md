@@ -10,6 +10,7 @@ Chọn theo bài toán bằng bảng "Nhu cầu → item" ở đầu mỗi chư�
 | [2. Tài liệu, dữ liệu, văn phòng & tự động hóa](#2-tài-liệu-dữ-liệu-văn-phòng--tự-động-hóa) | Tài liệu, dữ liệu, văn phòng & tự động hóa | 24 |
 | [3. Thiết kế, giao diện, motion & media](#3-thiết-kế-giao-diện-motion--media) | Thiết kế, giao diện, motion & media | 25 |
 | [4. Xưởng phần mềm: chất lượng, phát hành & vận hành](#4-xưởng-phần-mềm-chất-lượng-phát-hành--vận-hành) | Xưởng phần mềm: chất lượng, phát hành & vận hành | 25 |
+| [5. Đề xuất: skill và tính năng UI/UX](#5-đề-xuất-skill-và-tính-năng-uiux-tốt-nhất-có-thể) | Đặc tả 9 skill, bản đồ 12 giai đoạn, giao thức đánh giá skill (đề xuất, chưa xây) | 9 |
 
 **Nguyên tắc chung khi mang sang dự án khác**
 
@@ -1593,3 +1594,163 @@ Thêm theo thứ tự; mỗi cổng phải có **một fixture cố tình sai l�
 8. **Vận hành tối thiểu trước khi có người dùng thật** — một SLO cho hành trình chính (4.21, có thể bắt đầu bằng rule viết tay) và một lần restore thật vào môi trường trống có ghi RPO/RTO đo được (4.22). *Fixture:* alert burn-rate thử phải tới đúng kênh và được ack.
 
 Các item còn lại (Hypothesis, Schemathesis, k6, Playwright, Doorstop, Dependency-Track, SOPS, OpenTofu, Argo CD, OTel Collector, Keycloak, flagd/GrowthBook) thêm khi rủi ro hoặc quy mô sản phẩm đòi hỏi, theo mức "Thử nghiệm → Production đội nhỏ → Rủi ro cao" ở [FACTORY.md §4](FACTORY.md#4-ba-mức-áp-dụng-tránh-dựng-nền-quá-lớn).
+
+## 5. Đề xuất: skill và tính năng UI/UX "tốt nhất có thể"
+
+> **Cách đọc chương này.** Đây là **đặc tả đề xuất**, không phải kết quả đã chạy. Kho chưa cài hay chạy skill nào ở đây. Mỗi ý được gắn một trong hai nhãn: **[Bằng chứng]** (có hồ sơ trong kho, bài nghiên cứu hoặc trang chính thức đã đọc, kèm nguồn) và **[Đề xuất]** (suy luận của người viết từ bằng chứng, chưa được kiểm chứng; con số trong đề xuất chỉ là điểm xuất phát để đo lại). Không có skill UI/UX nào "hoàn hảo": mục tiêu thực tế là một skill **kiểm chứng được**, nghĩa là biết nó đúng bao nhiêu, sai kiểu gì và khi nào phải để người quyết định.
+
+Cơ sở: 329 hồ sơ UI/UX của mục 06 (trong đó 39 hồ sơ mới của đợt 23/11/2026 ở [phần bổ sung](06-ui-ux-design/README.md#ux-2026-11-23)), bảy bài nghiên cứu về đánh giá UX bằng LLM (**chỉ đọc được tóm tắt trên arXiv, chưa đọc toàn văn**), và các hướng dẫn đọc trực tiếp từ trang chính thức (Microsoft HAX, Smashing Magazine, Microsoft Design, hướng dẫn viết skill của Anthropic, W3C WCAG). Trang Google PAIR Guidebook trả nội dung gần như rỗng nên **chưa được đọc**.
+
+### 5.1 Mười nguyên tắc rút ra từ bằng chứng
+
+| # | Nguyên tắc | Bằng chứng | Hệ quả khi thiết kế |
+|---|---|---|---|
+| 1 | **Tách điểm tất định khỏi điểm do model chấm** | [UI Craft](06-ui-ux-design/README.md#ux-ui-craft) tách UICraftScore (mã tính, dùng làm cổng CI) khỏi UsabilityScore (do model chấm, gắn nhãn "judged", cấm làm cổng). [Shadscan](06-ui-ux-design/README.md#ux-shadscan) cho luật độ tin thấp chỉ là advisory, không trừ điểm | Chỉ phần máy tính được mới được chặn merge; phần do model chấm chỉ gợi ý |
+| 2 | **Chỉ nhận phát hiện có bằng chứng tái lập** | [HappyHands](06-ui-ux-design/README.md#ux-happyhands) có "finding admission": lỗi chỉ được nhận khi có quan sát tái lập và trích dẫn skill kiểm bằng máy. UXBench (arXiv 2606.16262, tóm tắt) dùng "coverage gate" buộc thu bằng chứng tương tác trước khi báo cáo | Mỗi phát hiện đi kèm ảnh chụp, DOM hoặc cây accessibility, viewport và bước tái hiện |
+| 3 | **Tách "máy kiểm được", "cần người xem" và "không khẳng định"** | [a11y-specialist-skills (masuP9)](06-ui-ux-design/README.md#ux-a11y-specialist-skills) gán Pass/Fail/NT/NA cho từng tiêu chí WCAG kèm bằng chứng, tiêu chí chưa kiểm giữ NT | Không bao giờ ghi "đạt" cho điều chưa kiểm; "không khẳng định" là kết quả hợp lệ |
+| 4 | **Phát hiện lỗi khác với xếp hạng mức nghiêm trọng** | Nghiên cứu GPT-4o trên 30 website (arXiv 2512.04262, tóm tắt): phát hiện vấn đề có Cohen's kappa trung bình 0,50 và khớp chính xác 84%, nhưng mức nghiêm trọng có weighted kappa 0,63, khớp chính xác chỉ 56% và Krippendorff's alpha gần 0 | Đo độ nhất quán qua nhiều lần chạy; không dùng mức nghiêm trọng do model gán làm cổng |
+| 5 | **Người dùng giả lập chỉ để thử thiết kế nghiên cứu** | [UXAgent](06-ui-ux-design/README.md#ux-uxagent): 16 nhà nghiên cứu UX đánh giá, đa số không đồng ý LLM thay được người (điểm trung bình −0,57); tác giả coi dữ liệu mô phỏng chỉ là bổ sung. [TinyTroupe](06-ui-ux-design/README.md#ux-tinytroupe): FAQ của Microsoft ghi chưa được chứng minh khớp hành vi người thật | Gắn nhãn "mô phỏng" trên mọi đầu ra; không dùng cho quyết định hệ trọng |
+| 6 | **Đo chất lượng bằng hiệu quả sửa, không bằng việc báo cáo nghe hay** | UXBench (tóm tắt): chất lượng phê bình được đo bằng "repair-lift", tức một agent sửa cố định có cải thiện giao diện theo phê bình đó không, kèm kiểm định người mù | Bộ eval có bước "sửa theo phê bình rồi đo lại" |
+| 7 | **Giữ hệ thiết kế làm hợp đồng** | [oh-my-design (OmD)](06-ui-ux-design/README.md#ux-oh-my-design): DESIGN.md ở gốc dự án, mỗi token phải có quyết định (id D-...) đứng sau mới qua cổng. [Tinte](06-ui-ux-design/README.md#ux-tinte), [Style Dictionary](06-ui-ux-design/README.md#ch-style-dictionary) và [DTCG](06-ui-ux-design/README.md#ch-design-tokens-community-group-dtcg) cho tầng token | Skill đọc hợp đồng trước khi sinh, và kiểm lệch sau khi sinh |
+| 8 | **Viết skill đúng cách** | Hướng dẫn của Anthropic (đọc trực tiếp): thân SKILL.md dưới 500 dòng, tham chiếu sâu một cấp, `description` ≤ 1.024 ký tự viết ngôi thứ ba và nêu cả "làm gì" lẫn "khi nào dùng", "Create evaluations BEFORE writing extensive documentation", đo baseline khi không có skill, thử với Haiku, Sonnet và Opus | Mỗi skill dưới đây bắt đầu từ bộ eval và mô tả kích hoạt, rồi mới viết thân |
+| 9 | **Mặc định an toàn** | Đã thấy trong hồ sơ: [Material Design 3 UI Skill (skydashnet)](06-ui-ux-design/README.md#ux-material-design-3-ui-skill) khuyên `curl \| bash` từ nhánh main không ghim; [a11y-specialist-skills (masuP9)](06-ui-ux-design/README.md#ux-a11y-specialist-skills) chạy `npx -y` gói không ghim; [squirrelscan](06-ui-ux-design/README.md#ux-squirrelscan) bật telemetry PostHog mặc định; [Happo (client)](06-ui-ux-design/README.md#ux-happo) tải DOM và CSS lên dịch vụ ngoài | Ghim phiên bản, không telemetry mặc định, không tải ảnh chụp lên dịch vụ ngoài khi chưa được phép |
+| 10 | **Chống "giao diện kiểu AI làm" cần đo, không chỉ cấm** | Khảo sát 92 người (arXiv 2605.15124, tóm tắt): prototype GenAI được đánh giá tích cực ở khía cạnh usability nhưng trung tính hoặc tiêu cực ở khía cạnh hedonic (độc đáo, đổi mới). Các skill như [Taste Skill](06-ui-ux-design/README.md#ch-taste-skill), [Hallmark](06-ui-ux-design/README.md#ch-hallmark) và [ux-skill (uxskill)](06-ui-ux-design/README.md#ux-ux-skill) chủ yếu là luật cấm kiểu ban list | Nghiên cứu mới có một khảo sát nhỏ trên prototype; chưa có thí nghiệm cho thấy luật cấm làm tăng hedonic: đo thật trước khi tin |
+
+### 5.2 Bản đồ năng lực: mười hai giai đoạn của một quy trình UX
+
+**[Đề xuất]** cho từng giai đoạn: skill nên làm gì, mượn cơ chế nào đã có hồ sơ, cổng máy kiểm được, và chỗ chưa làm được.
+
+| Giai đoạn | Skill/tính năng đề xuất | Cơ chế mượn (có hồ sơ) | Cổng máy kiểm được | Giới hạn thật |
+|---|---|---|---|---|
+| 1. Khám phá và nghiên cứu | Tổng hợp phỏng vấn thật thành chủ đề, mỗi chủ đề trỏ về trích dẫn gốc | [Cookiy User Research Skill](06-ui-ux-design/README.md#ux-cookiy-user-research-skill), skill `user-persona` trong [designer-skills](06-ui-ux-design/README.md#ch-designer-skills) | Mỗi kết luận có ít nhất một trích dẫn trỏ đúng đoạn transcript | Không có skill nào trong kho có eval chất lượng tổng hợp; người dùng giả lập chỉ để thử thiết kế nghiên cứu |
+| 2. Kiến trúc thông tin và luồng | Sinh sơ đồ luồng từ mô tả, kiểm đường cụt và bước thừa | [Wireflow](06-ui-ux-design/README.md#ux-wireflow) (công cụ vẽ), [Retentioneering](06-ui-ux-design/README.md#ux-retentioneering) (đường đi người dùng thật) | Đồ thị không có nút cụt, mọi trạng thái lỗi có lối ra | Kho chưa có công cụ mã mở nào kiểm luồng tự động |
+| 3. Hệ thiết kế và token | Đọc hợp đồng thiết kế trước khi sinh, kiểm lệch sau khi sinh | [oh-my-design (OmD)](06-ui-ux-design/README.md#ux-oh-my-design), [Tinte](06-ui-ux-design/README.md#ux-tinte), [design.how](06-ui-ux-design/README.md#ux-design-how), [Style Dictionary](06-ui-ux-design/README.md#ch-style-dictionary) | Token dùng trong mã đều có trong hợp đồng; so token build với nguồn | Một số repo chứa tài sản thương hiệu của công ty khác: kiểm license trước |
+| 4. Sinh giao diện | Sinh theo brief và hợp đồng, không theo mặc định thống kê | [frontend-design (Anthropic)](06-ui-ux-design/README.md#ch-frontend-design-anthropic), [UI UX Pro Max](06-ui-ux-design/README.md#ch-ui-ux-pro-max), [UI Craft](06-ui-ux-design/README.md#ux-ui-craft) | Lint token, kiểm bố cục tràn ở 320 và 1440 px ([Shadscan](06-ui-ux-design/README.md#ux-shadscan)) | Kết quả mới được kiểm ở mức tĩnh |
+| 5. Nội dung UX | Kiểm microcopy theo hướng dẫn nội dung, ghép hành động với kết quả | Smashing 4/2026: "Checking your calendar to find open times" thay vì "Checking availability" | Độ dài, chuẩn Unicode NFC cho tiếng Việt, từ cấm theo glossary | **Khoảng trống thật**: kho không có skill kiểm nội dung UX nào được xác minh |
+| 6. Accessibility | Kiểm WCAG 2.2 A/AA theo Pass/Fail/NT/NA | [a11y-specialist-skills (masuP9)](06-ui-ux-design/README.md#ux-a11y-specialist-skills), [accessibility-agents](06-ui-ux-design/README.md#ux-accessibility-agents-community-access), [axe-core](06-ui-ux-design/README.md#ch-axe-core) | Quy tắc axe với tag `wcag22aa` bật rõ; mục tiêu vùng chạm 24 px (2.5.8) | Trình đọc màn hình, bàn phím và ngữ cảnh vẫn cần người; xem 5.3 mục 2 |
+| 7. Responsive và nền tảng | Chụp nhiều viewport và trạng thái; áp bộ luật theo nền tảng | [OneRedOak design review](06-ui-ux-design/README.md#ux-oneredoak-design-review) (1440, 768, 375 px), [Platform Design Skills (ehmo)](06-ui-ux-design/README.md#ux-platform-design-skills) | Không tràn ngang, không che tiêu điểm (2.4.11) | Bộ luật nền tảng không tách máy/người và có lỗi số tiêu chí |
+| 8. Chuyển động | Kiểm giảm chuyển động và chớp nháy | Mục 22 của kho; WCAG 2.3.x | `prefers-reduced-motion` có hiệu lực, không quá ba lần chớp mỗi giây | Chưa có công cụ mã mở nào trong kho đo chớp nháy trên video |
+| 9. UX cho agent và AI | Đặc tả màn hình theo mẫu Intent Preview, Autonomy Dial, Audit và Undo | Smashing 2/2026 (sáu mẫu), HAX (18 hướng dẫn) | Mỗi hành động không hoàn tác được có bước xem trước | Các chỉ số trong bài (ví dụ Acceptance Ratio trên 85%) là con số tác giả nêu làm ví dụ |
+| 10. UI sinh động | Chọn mức kiểm soát và áp cổng bảo mật tương ứng | [json-render (Vercel Labs)](06-ui-ux-design/README.md#ux-json-render) (khai báo), [shadcn-chatbot-kit (Blazity)](06-ui-ux-design/README.md#ux-shadcn-chatbot-kit) (cố định), [pi-generative-ui](06-ui-ux-design/README.md#ux-pi-generative-ui) (mở) | Spec qua schema, hành động nằm trong danh mục, CSP chặt | Mức mở chưa có repo nào có sandbox |
+| 11. Review và hồi quy | Review có bằng chứng; so ảnh với baseline đã duyệt | [HappyHands](06-ui-ux-design/README.md#ux-happyhands), [pixelmatch](06-ui-ux-design/README.md#ch-pixelmatch), [Argos](06-ui-ux-design/README.md#ch-argos), [Storybook](06-ui-ux-design/README.md#ch-storybook) | Baseline được người duyệt; sai lệch vượt ngưỡng thì dừng | Không repo nào xử lý kết quả không nhất quán giữa các lần chạy |
+| 12. Đo sau phát hành | Đo tỷ lệ hoàn thành tác vụ, cảnh báo hồi quy | [PostHog](28-product-discovery-experimentation/README.md#posthog), [OpenReplay](28-product-discovery-experimentation/README.md#openreplay), [rrweb](06-ui-ux-design/README.md#ux-rrweb) | Ngưỡng cảnh báo theo tác vụ | Che dữ liệu nhạy cảm là phần cần cấu hình: rrweb mặc định chỉ che ô mật khẩu |
+
+### 5.3 Chín skill đề xuất
+
+Tên theo gợi ý của Anthropic (dạng gerund, chữ thường, gạch ngang, tối đa 64 ký tự). Mô tả kích hoạt viết ngôi thứ ba, nêu cả việc skill làm và thời điểm dùng. **Tất cả là đề xuất, chưa có bản nào được xây hay đo.**
+
+#### 1. `reviewing-ui-with-evidence`
+
+- **Mô tả kích hoạt:** "Reviews a running web UI for visual, layout and usability defects using screenshots at fixed viewports, and reports only findings that have reproducible evidence. Use when asked to review, critique or audit a page or a pull request that changes the UI."
+- **Quy trình:** (1) mở môi trường chạy thật; (2) chụp 375, 768 và 1440 px cùng các trạng thái (rỗng, lỗi, đang tải); (3) **coverage gate**: chưa đủ ảnh và tương tác thì chưa được báo cáo; (4) mỗi phát hiện kèm ảnh, bước tái hiện và vùng DOM; (5) **admission**: phát hiện không có quan sát tái lập bị loại; (6) tách phần tất định (tràn, tương phản, token) khỏi phần do model chấm.
+- **Cơ chế mượn:** [OneRedOak design review](06-ui-ux-design/README.md#ux-oneredoak-design-review) (ba viewport cố định, báo cáo nêu vấn đề không kê đơn), [HappyHands](06-ui-ux-design/README.md#ux-happyhands) (admission policy), [UI Craft](06-ui-ux-design/README.md#ux-ui-craft) (điểm tất định và điểm judged), [Shadscan](06-ui-ux-design/README.md#ux-shadscan) (độ tin cậy của luật).
+- **Cổng máy:** điểm tất định dùng làm gate CI; điểm judged chỉ hiển thị.
+- **Cách đo:** xem 5.4.
+- **Giới hạn thật:** nghiên cứu về đánh giá heuristic bằng LLM cho thấy mô hình mạnh ở lỗi bố cục nhưng yếu ở quy ước thiết kế, nhận diện một số thành phần giao diện và lỗi xuyên nhiều màn hình (arXiv 2507.02306, tóm tắt: phát hiện 73% và 77% so với 57% và 63% của năm người đánh giá trên hai ứng dụng). Số mẫu rất nhỏ.
+
+#### 2. `auditing-wcag-22`
+
+- **Mô tả kích hoạt:** "Audits a web page against WCAG 2.2 Level A and AA, assigning Pass, Fail, Not Tested or Not Applicable per success criterion with evidence. Use when asked for an accessibility audit or conformance check."
+- **Quy trình:** chạy axe với tag `wcag2a`, `wcag2aa`, `wcag21a`, `wcag21aa` **và `wcag22aa`** (đặt tường minh); kiểm bàn phím và tiêu điểm; kiểm vùng chạm; ghi rõ tiêu chí cần người xem; **mọi thứ chưa kiểm ghi NT, không ghi Pass**.
+- **Cơ chế mượn:** [a11y-specialist-skills (masuP9)](06-ui-ux-design/README.md#ux-a11y-specialist-skills) (sáu bước, Pass/Fail/NT/NA, kho tri thức theo tiêu chí), [axe-core](06-ui-ux-design/README.md#ch-axe-core), [Guidepup](06-ui-ux-design/README.md#ux-guidepup) (tự động hóa trình đọc màn hình, chưa đọc kỹ phần cài đặt).
+- **Bẫy đã thấy trong hồ sơ:** [Pa11y](06-ui-ux-design/README.md#ux-pa11y) và [Pa11y CI](06-ui-ux-design/README.md#ux-pa11y-ci) thực tế chạy WCAG 2.1 vì runner axe chỉ bật tag 2.0 và 2.1 (suy từ mã, chưa chạy); [AIPex](06-ui-ux-design/README.md#ux-aipex-wcag22-a11y-audit) tự nhận "WCAG 2.2" nhưng cả tám tiêu chí đều có từ 2.0 và độ tương phản do LLM nhìn ảnh; [Platform Design Skills (ehmo)](06-ui-ux-design/README.md#ux-platform-design-skills) gán sai số tiêu chí của 2.2.
+- **Chuẩn:** WCAG 2.2 là W3C Recommendation ngày 12/12/2024. Chín tiêu chí mới: 2.4.11 Focus Not Obscured (Minimum) AA, 2.4.12 Focus Not Obscured (Enhanced) AAA, 2.4.13 Focus Appearance AAA, 2.5.7 Dragging Movements AA, 2.5.8 Target Size (Minimum) AA, 3.2.6 Consistent Help A, 3.3.7 Redundant Entry A, 3.3.8 Accessible Authentication (Minimum) AA, 3.3.9 Accessible Authentication (Enhanced) AAA; 4.1.1 Parsing đã bị bỏ. **Ba trong chín tiêu chí mới là AAA**, nên bản kiểm A/AA chỉ có sáu. WCAG 3 vẫn là bản nháp ("an incomplete draft that will change") và chưa có thuật toán tương phản được xác nhận: **không dùng làm tiêu chí tuân thủ**.
+- **Giới hạn thật:** máy chỉ kiểm được một phần; phần còn lại phải để NT hoặc chuyển cho người.
+
+#### 3. `writing-ux-copy`
+
+- **Mô tả kích hoạt:** "Writes and reviews interface text such as buttons, errors, empty states and progress messages against a glossary and tone guide. Use when drafting or checking microcopy."
+- **Quy trình:** áp glossary; ghép hành động với kết quả; mọi chuỗi tiếng Việt chuẩn hóa NFC; thông báo lỗi nêu nguyên nhân và bước tiếp theo.
+- **Bằng chứng:** **yếu**. Kho chưa có skill nào kiểm nội dung UX được xác minh; tìm web chỉ thấy các hướng dẫn nội dung công khai (PatternFly, Apollo, Wikimedia Codex) và một danh sách kiểm của Mintlify chưa rõ license. Đây là **khoảng trống thật**, nên đề xuất này cần bộ eval riêng trước khi tin.
+- **Cổng máy kiểm được:** độ dài, NFC, từ cấm trong glossary, thiếu bước tiếp theo trong thông báo lỗi.
+- **Giới hạn thật:** giọng điệu và độ rõ ràng là phán đoán, chỉ nên advisory.
+
+#### 4. `designing-agent-interactions`
+
+- **Mô tả kích hoạt:** "Specifies the screens and states for an AI agent feature, including previews, autonomy settings, explanations, audit logs and undo. Use when designing or reviewing UX for agentic or AI-assisted features."
+- **Quy trình:** (1) vẽ quy trình, đánh dấu điểm AI chọn theo xác suất (Decision Node Audit) rồi gắn mỗi điểm với một khoảnh khắc minh bạch; (2) xếp mỗi hành động vào ma trận tác động và khả năng hoàn tác (thấp và hoàn tác được: tự chạy kèm ghi log; cao và không hoàn tác được: Intent Preview kèm quyền rõ ràng); (3) duyệt theo 18 hướng dẫn HAX; (4) thử "Wait, Why?": người dùng nói to khi agent làm việc, đánh dấu lúc họ hỏi "nó bị kẹt à?".
+- **Bằng chứng:** Smashing Magazine (11/2/2026) mô tả sáu mẫu Intent Preview, Autonomy Dial, Explainable Rationale, Confidence Signal, Action Audit và Undo, Escalation Pathway; bài 7/4/2026 mô tả ma trận tác động và khung transparency moments; Microsoft Design (trang ghi 11/4/2025) nêu "transparency, control, and consistency are foundational elements of all agents"; HAX gồm G1 đến G18 (ví dụ G9 Support efficient correction, G11 Make clear why the system did what it did, G17 Provide global controls).
+- **Cổng máy kiểm được:** mỗi hành động được gán loại không hoàn tác có bước Intent Preview; mỗi hành động chạy nền có nhật ký.
+- **Giới hạn thật:** các chỉ số mục tiêu trong bài Smashing là ví dụ "representative benchmarks" của tác giả, không phải chuẩn; Google PAIR chưa đọc được; HAX chưa có nhóm theo bốn thời điểm vì trang không gán từng hướng dẫn vào thời điểm.
+
+#### 5. `synthesizing-user-research`
+
+- **Mô tả kích hoạt:** "Synthesizes real interview transcripts, survey responses and analytics into themes, each linked to source quotes. Use when analyzing user research data."
+- **Quy trình:** chủ đề chỉ được nêu khi có ít nhất hai trích dẫn từ hai người khác nhau; mỗi chủ đề kèm số người và đoạn trích; nhãn "mô phỏng" bắt buộc nếu có dữ liệu giả lập.
+- **Cơ chế mượn:** [Cookiy User Research Skill](06-ui-ux-design/README.md#ux-cookiy-user-research-skill), [Retentioneering](06-ui-ux-design/README.md#ux-retentioneering), UXCascade (arXiv 2601.15777, tóm tắt: nhìn mẫu theo persona và kết quả, liên kết lý luận với từng vấn đề, rồi đề xuất chỉnh sửa).
+- **Giới hạn thật:** [Cookiy User Research Skill](06-ui-ux-design/README.md#ux-cookiy-user-research-skill) mời mua nền tảng trả phí và hướng dẫn mở egress "All domains": không dùng dữ liệu thật của khách hàng qua skill này khi chưa xem xét. Người dùng giả lập ([UXAgent](06-ui-ux-design/README.md#ux-uxagent), [TinyTroupe](06-ui-ux-design/README.md#ux-tinytroupe)) chỉ dùng để thử thiết kế nghiên cứu.
+
+#### 6. `maintaining-design-contract`
+
+- **Mô tả kích hoạt:** "Keeps a project's DESIGN.md and design tokens consistent with the code, detecting drift before and after UI generation. Use when generating or changing UI in a project that has a design system."
+- **Quy trình:** đọc hợp đồng trước khi sinh; mọi giá trị màu, khoảng cách và chữ trong mã phải truy được về token; token không có quyết định đứng sau thì trượt cổng; build token từ nguồn DTCG.
+- **Cơ chế mượn:** [oh-my-design (OmD)](06-ui-ux-design/README.md#ux-oh-my-design), [Tinte](06-ui-ux-design/README.md#ux-tinte), [Style Dictionary](06-ui-ux-design/README.md#ch-style-dictionary), [DTCG](06-ui-ux-design/README.md#ch-design-tokens-community-group-dtcg), [Shadscan](06-ui-ux-design/README.md#ux-shadscan).
+- **Giới hạn thật:** [oh-my-design (OmD)](06-ui-ux-design/README.md#ux-oh-my-design) tự nhận bộ đánh giá UI-Resolve là bản nháp nội bộ và chỉ 455 trên 622 file DESIGN.md đạt mức verified; lint màu của [Tinte](06-ui-ux-design/README.md#ux-tinte) chỉ bắt theo dòng bằng regex.
+
+#### 7. `guarding-generative-ui`
+
+- **Mô tả kích hoạt:** "Chooses and enforces the control level for model-generated interfaces: fixed components, declarative specs, or open-ended generation. Use when an agent will render UI at runtime."
+- **Ba mức theo bằng chứng:** (a) cố định: model chỉ chọn component có sẵn ([shadcn-chatbot-kit (Blazity)](06-ui-ux-design/README.md#ux-shadcn-chatbot-kit)); (b) khai báo: model xuất spec JSON dùng đúng danh mục, qua schema ([json-render (Vercel Labs)](06-ui-ux-design/README.md#ux-json-render) với `validateSpec`, [AGenUI](06-ui-ux-design/README.md#ux-agenui)); (c) mở: model sinh HTML/JS tùy ý ([pi-generative-ui](06-ui-ux-design/README.md#ux-pi-generative-ui)).
+- **Cổng bắt buộc:** danh mục component và hành động được phép; kiểm schema đầu ra; CSP chặt (không `https:` cho mọi host); liên kết do model sinh phải qua danh sách cho phép; trình xác thực **không** tự GET tới URL do model sinh.
+- **Bài học từ hồ sơ:** [pi-generative-ui](06-ui-ux-design/README.md#ux-pi-generative-ui) không có CSP hay sandbox; [json-render (Vercel Labs)](06-ui-ux-design/README.md#ux-json-render) đặt CSP của MCP là `https:` và `Link.href` chỉ kiểm là chuỗi; trình xác thực của [AGenUI](06-ui-ux-design/README.md#ux-agenui) gửi GET tới mọi URL trong spec (SSRF phía máy dev). Đây là quan sát đọc mã, chưa chạy.
+- **Đề xuất:** không dùng mức (c) cho đầu ra của người dùng thật nếu chưa có sandbox. Taxonomy ba mức do LangChain và CopilotKit mô tả (nguồn từ nhà bán, ghi nhận để tham khảo).
+
+#### 8. `verifying-ui-regressions`
+
+- **Mô tả kích hoạt:** "Compares screenshots of key screens against human-approved baselines and runs static accessibility checks in CI. Use when setting up or running visual regression checks."
+- **Quy trình:** baseline do người duyệt; sai lệch vượt ngưỡng thì dừng; baseline mới chỉ được thêm bằng thao tác duyệt có tên người.
+- **Cơ chế mượn:** [pixelmatch](06-ui-ux-design/README.md#ch-pixelmatch), [Argos](06-ui-ux-design/README.md#ch-argos), [Storybook](06-ui-ux-design/README.md#ch-storybook), [Happo (client)](06-ui-ux-design/README.md#ux-happo) (không dùng nếu không chấp nhận tải DOM và CSS lên dịch vụ ngoài).
+- **Giới hạn thật:** không repo nào trong kho xử lý kết quả không nhất quán giữa các lần chạy của model chấm; phần so ảnh tất định thì không có vấn đề này.
+
+#### 9. `evaluating-ux-skills`
+
+Skill của skill: dựng và chạy bộ eval cho các skill 1 đến 8. Xem 5.4.
+
+### 5.4 Giao thức đánh giá một skill UI/UX
+
+**[Đề xuất]**, dựa trên: hướng dẫn của Anthropic (viết eval trước, ít nhất ba ca, đo baseline, thử ba cỡ model), phép đo độ nhất quán trong arXiv 2512.04262 (tóm tắt), và repair-lift trong UXBench (tóm tắt). Các ngưỡng bên dưới là **điểm xuất phát chưa có cơ sở thực nghiệm**: đo rồi hiệu chỉnh.
+
+1. **Bộ ca chuẩn có lỗi gieo sẵn.** Ít nhất 20 trang hoặc màn hình, mỗi trang gieo một số lỗi đã biết thuộc các lớp bố cục, accessibility, nội dung, tương tác, **và vài trang sạch** để đo báo động giả. Lỗi gieo sẵn có đáp án do người ghi trước.
+2. **Chỉ số.** Recall và precision trên lỗi gieo; tỷ lệ báo động giả trên trang sạch; chi phí và thời gian mỗi trang.
+3. **Độ nhất quán.** Chạy mỗi trang ít nhất ba lần; báo cáo Cohen's kappa của phát hiện và độ khớp của mức nghiêm trọng **riêng rẽ**. Nghiên cứu đã đọc cho thấy kappa phát hiện khoảng 0,50 và alpha của mức nghiêm trọng gần 0, nên mục tiêu ban đầu hợp lý là *đo được và công khai* trước, rồi mới đặt ngưỡng.
+4. **Hiệu quả sửa.** Một agent sửa cố định áp dụng phê bình; đo lỗi gieo còn lại. Phê bình không làm giảm lỗi thì không tính là hữu ích dù đọc hay.
+5. **Baseline.** Cùng bộ ca, cùng model, **không có skill**; skill chỉ đáng giữ nếu hơn baseline. Thử Haiku, Sonnet và Opus.
+6. **Kích hoạt.** Bộ câu hỏi nên và không nên kích hoạt skill (kể cả câu gần giống) để đo kích hoạt đúng.
+7. **Hiệu chỉnh bằng người.** Lấy mẫu một phần (ví dụ 10%) cho chuyên gia chấm; báo cáo chỗ bất đồng.
+8. **Riêng tư.** Ảnh chụp trang có dữ liệu khách hàng không được gửi tới API ngoài khi chưa được phép.
+
+### 5.5 Backlog tính năng, xếp theo giá trị trên công sức
+
+| Ưu tiên | Tính năng | Vì sao | Bằng chứng nền | Rủi ro |
+|---|---|---|---|---|
+| 1 | Gói bằng chứng cho mỗi phát hiện (ảnh, vùng DOM, cây accessibility, viewport, bước tái hiện) | Là điều kiện của admission policy và coverage gate | [HappyHands](06-ui-ux-design/README.md#ux-happyhands), UXBench (tóm tắt) | Ảnh có thể chứa dữ liệu nhạy cảm |
+| 2 | Bộ trạng thái Pass/Fail/NT/NA dùng chung cho mọi skill kiểm | Ngăn "đạt" cho điều chưa kiểm | [a11y-specialist-skills (masuP9)](06-ui-ux-design/README.md#ux-a11y-specialist-skills) | Người dùng có thể bỏ qua NT |
+| 3 | Kiểm vùng chạm tối thiểu 24 px (2.5.8) và tiêu điểm không bị che (2.4.11) | Hai tiêu chí mới của WCAG 2.2 mức AA mà máy đo được một phần | WCAG 2.2 (đọc trực tiếp) | Đo bằng hình học chưa đủ trong mọi bố cục |
+| 4 | Chuẩn hóa và kiểm Unicode NFC cho chuỗi tiếng Việt | Dấu tiếng Việt dạng tổ hợp nhìn giống nhau nhưng khác mã | Nhu cầu tiếng Việt của kho | Cần danh sách ngoại lệ |
+| 5 | Mẫu Intent Preview và Autonomy Dial dưới dạng component có kiểm thử | Biến hướng dẫn thành mã dùng lại được | Smashing 2/2026 | Con số mục tiêu do tác giả nêu |
+| 6 | Bộ ca chuẩn có lỗi gieo sẵn và chạy hồi quy cho mọi skill | Đo được thay vì tin | Hướng dẫn Anthropic, 5.4 | Tốn công dựng bộ ca |
+| 7 | Phát hiện lệch hợp đồng thiết kế (token trong mã so với DESIGN.md) | Chống trôi theo thời gian | [oh-my-design (OmD)](06-ui-ux-design/README.md#ux-oh-my-design), [Style Dictionary](06-ui-ux-design/README.md#ch-style-dictionary) | Chỉ phủ những gì có token |
+| 8 | Kiểm giảm chuyển động và chớp nháy (WCAG 2.3.x) | Kho thiếu công cụ cho mảng này | Mục 22 của kho | Cần đo trên video hoặc ảnh động |
+
+### 5.6 Những điều không nên làm (rút từ hồ sơ)
+
+- Ghi "WCAG 2.2" khi runner chỉ bật tag 2.1 ([Pa11y](06-ui-ux-design/README.md#ux-pa11y)); hoặc gán sai số tiêu chí ([Platform Design Skills (ehmo)](06-ui-ux-design/README.md#ux-platform-design-skills)).
+- Tuyên bố độ khớp với chuyên gia hay độ chính xác mà không có dữ liệu ([gnurio/refactoring-ui-plugin](06-ui-ux-design/README.md#ux-gnurio-refactoring-ui-plugin) ghi "expert_agreement 97%"; [oh-my-design (OmD)](06-ui-ux-design/README.md#ux-oh-my-design) tự nhận benchmark của mình là bản nháp).
+- Thang điểm tự mâu thuẫn (skill `ui-design-review` trong [mastepanoski/claude-skills](06-ui-ux-design/README.md#ux-mastepanoski-claude-skills) trộn thang 0 đến 10 với 0 đến 100).
+- Cài bằng `curl | bash` từ nhánh không ghim, hoặc `npx -y` gói không ghim.
+- Telemetry bật mặc định; tải DOM, CSS hoặc ảnh chụp lên dịch vụ ngoài mà không hỏi.
+- UI sinh động mức mở không có sandbox; trình xác thực tự truy cập URL do model sinh.
+- Dùng người dùng giả lập thay người, hoặc dùng mức nghiêm trọng do model gán làm cổng chặn.
+- Chép nguyên văn hướng dẫn của bên khác rồi gắn license khác ([pi-generative-ui](06-ui-ux-design/README.md#ux-pi-generative-ui) không có file LICENSE nhưng chép hướng dẫn của Anthropic).
+
+### 5.7 Nguồn và giới hạn
+
+**Nguồn ngoài đã đọc.** arXiv 2504.09407, 2507.02306, 2512.04262, 2605.15124, 2606.16262, 2601.15777, 2604.25420 (**chỉ trang tóm tắt, chưa đọc toàn văn**; mọi con số lấy từ tóm tắt). [Microsoft HAX Toolkit](https://www.microsoft.com/en-us/haxtoolkit/library/) (trang Library). [Smashing Magazine, 11/2/2026](https://www.smashingmagazine.com/2026/02/designing-agentic-ai-practical-ux-patterns/) và [7/4/2026](https://www.smashingmagazine.com/2026/04/identifying-necessary-transparency-moments-agentic-ai-part1/). [Microsoft Design, UX design for agents](https://microsoft.design/articles/ux-design-for-agents/). [Anthropic, Skill authoring best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices). [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/) và [WCAG 3](https://www.w3.org/WAI/WCAG3).
+
+**Giới hạn của chương.**
+
+- Không có đề xuất nào được xây hay chạy; con số trong 5.4 là điểm xuất phát.
+- Bảy bài nghiên cứu chỉ đọc tóm tắt; Google PAIR Guidebook chưa đọc; trang WCAG 3 và WCAG 2.2 chỉ đọc phần đầu nguyên văn, phần sau là tóm tắt của công cụ đọc.
+- Các hồ sơ dùng làm cơ sở phần lớn ở mức đọc tài liệu; chỉ một số ở mức đọc mã, và có hồ sơ chỉ đọc một phần mã.
+- Kết quả về người dùng giả lập và đánh giá heuristic bằng LLM dựa trên số mẫu nhỏ (hai ứng dụng, 16 và 8 chuyên gia, 30 website); chưa đủ để kết luận về mọi sản phẩm.
+- Quy định pháp lý về accessibility (Đạo luật Accessibility châu Âu, EN 301 549) chưa được đọc từ nguồn chính thức trong chương này: kiểm lại phiên bản chuẩn cần dùng trước khi dựa vào.

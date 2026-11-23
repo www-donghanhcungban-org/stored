@@ -2,7 +2,7 @@
   "meta": {
     "description": "Bài học từ catalog stored đã đối chiếu với ID yêu cầu của www-donghanhcungban-org/X-Templates. Xem X-TEMPLATES.md.",
     "xt_commit": "0b90230 (XT-H-001…018); a0f08cd (XT-H-019…051); ff23040 (XT-H-052…060); 1abbde2 (XT-H-061…093); 628e36caeb706001cf512787eba56bcfcb44f133 (XT-H-094…105); fb7b62c (XT-H-106); ccf980d (XT-H-107); 2049135 (XT-H-108); 2049135 (XT-H-109); 2049135 (XT-H-110); 5316026 (XT-H-111); 2049135 (XT-H-112); 23447d817d2bc8cf68093591177f85fd72a8a2f6 (XT-H-113…116); aeb195c2b6ae5074d70efe592d218e9c1147c05e (XT-H-117…125); efa521a64e2c2be2cdd596b7b8fd59bab8029cf0 (XT-H-126…131); 3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19 (XT-H-132…136); 3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19 (XT-H-137…139); fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb (XT-H-140…143); tái dùng đối chiếu trước (XT-H-144…147)",
-    "stored_range": "fa02a75..e3fdcb0 (XT-H-001…018); e3fdcb0..e8b3831 (XT-H-019…051); e8b3831..5f9e546 (XT-H-052…060); 5f9e546..b96e45c (XT-H-061…093); từ a1413e6 (XT-H-094…105, phạm vi PR mở rộng28mục); a1413e6.. (XT-H-106, kiểm infographic 12 §4e); d8b51bf.. (XT-H-107, đọc lại 20 §3f.5); 1857520.. (XT-H-108, kiểm bài đăng 22 §9i); 4983547.. (XT-H-109, 02 §4f + 20 §3x); 4983547.. (XT-H-110, 02 §4g); c77e1f9.. (XT-H-111, 18 §4e); 6d9e713.. (XT-H-112, 06 §7w); 79c8635.. (XT-H-113…116, xưởng34mục); 79c8635..4a45f00 (XT-H-117…125, đợt 5–8/11/2026); 82ab9b2..aad97cf (XT-H-126…131, đợt 11–16/11/2026); c607013..ff5f479 (XT-H-132…136, mốc 1150 hồ sơ); 5bb1381..16ff666 (XT-H-137…139, mốc 1550 hồ sơ); aaf3915.. (XT-H-140…143, 1.295 link Anh Kỹ Sư AI, mốc 2250 hồ sơ); 48ab93b.. (XT-H-144…147, bảng Top 100 GitHub AI Skills + chia lại catalog); 7d8754d.. (XT-H-148…155, đợt chuẩn hóa 838 hồ sơ cũ)",
+    "stored_range": "fa02a75..e3fdcb0 (XT-H-001…018); e3fdcb0..e8b3831 (XT-H-019…051); e8b3831..5f9e546 (XT-H-052…060); 5f9e546..b96e45c (XT-H-061…093); từ a1413e6 (XT-H-094…105, phạm vi PR mở rộng28mục); a1413e6.. (XT-H-106, kiểm infographic 12 §4e); d8b51bf.. (XT-H-107, đọc lại 20 §3f.5); 1857520.. (XT-H-108, kiểm bài đăng 22 §9i); 4983547.. (XT-H-109, 02 §4f + 20 §3x); 4983547.. (XT-H-110, 02 §4g); c77e1f9.. (XT-H-111, 18 §4e); 6d9e713.. (XT-H-112, 06 §7w); 79c8635.. (XT-H-113…116, xưởng34mục); 79c8635..4a45f00 (XT-H-117…125, đợt 5–8/11/2026); 82ab9b2..aad97cf (XT-H-126…131, đợt 11–16/11/2026); c607013..ff5f479 (XT-H-132…136, mốc 1150 hồ sơ); 5bb1381..16ff666 (XT-H-137…139, mốc 1550 hồ sơ); aaf3915.. (XT-H-140…143, 1.295 link Anh Kỹ Sư AI, mốc 2250 hồ sơ); 48ab93b.. (XT-H-144…147, bảng Top 100 GitHub AI Skills + chia lại catalog); 7d8754d.. (XT-H-148…155, đợt chuẩn hóa 838 hồ sơ cũ); ae33273.. (XT-H-156…158, đợt nâng trần UI/UX, mốc 2300 hồ sơ)",
     "columns": [
       "deeper",
       "shallower",
@@ -10,19 +10,30 @@
       "not_adding"
     ],
     "updated": "2026-11-23",
-    "count": 155,
+    "count": 158,
     "current_batch": {
-      "stored_base": "7d8754d",
-      "xt_commit": "không đọc lại; tái dùng fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb và 3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19",
+      "stored_base": "ae33273",
+      "xt_commit": "không đọc lại; tái dùng các đối chiếu trước",
       "ids": [
-        "XT-H-148",
-        "XT-H-155"
+        "XT-H-156",
+        "XT-H-158"
       ],
       "status": "documented-in-stored",
-      "catalog_count": 2291,
-      "suggest_milestone": 2250
+      "catalog_count": 2330,
+      "suggest_milestone": 2300
     },
     "previous_batches": [
+      {
+        "stored_base": "7d8754d",
+        "xt_commit": "không đọc lại; tái dùng fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb và 3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19",
+        "ids": [
+          "XT-H-148",
+          "XT-H-155"
+        ],
+        "status": "documented-in-stored",
+        "catalog_count": 2291,
+        "suggest_milestone": 2250
+      },
       {
         "stored_base": "48ab93b",
         "xt_commit": "không đọc lại; tái dùng fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb và 3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19",
@@ -105,7 +116,7 @@
         "proposal_pr": "https://github.com/seeker19110/X-Templates/pull/657"
       }
     ],
-    "suggest_milestone": 2250
+    "suggest_milestone": 2300
   },
   "items": [
     {
@@ -4367,6 +4378,90 @@
       "column": "deeper",
       "existing_coverage": "BASE-SEC-005 yêu cầu bí mật trong .env.example để trống và khởi động từ chối giá trị mẫu (XT-H-019); BASE-SEC-010 liên quan phơi cổng và bind (XT-H-020).",
       "delta": "Thêm hai ví dụ vào control hiện có, không cần ID mới: biến có tiền tố mà bundler đẩy xuống phía trình duyệt (VITE_*) không được chứa khóa dịch vụ; script cấu hình không được in giá trị biến bí mật ra log. Fixture: tìm biến VITE_* có tên chứa KEY, SECRET hoặc TOKEN trong tệp env và compose; kiểm log khởi động không chứa giá trị khóa.",
+      "xt_evidence": [],
+      "note": "Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị từ chối): ID, file và dòng lấy từ các đối chiếu đã ghi trước đó trong data/xt-handoff.json, chưa kiểm ở commit X-Templates hiện hành; đề xuất chỉ có hiệu lực sau khi đối chiếu lại."
+    },
+    {
+      "id": "XT-H-156",
+      "date": "2026-11-23",
+      "stored_ref": [
+        "06 · a11y-specialist-skills (23/11/2026)",
+        "06 · Pa11y (23/11/2026)",
+        "06 · Pa11y CI (23/11/2026)",
+        "06 · AIPex (skill WCAG 2.2) (23/11/2026)",
+        "06 · platform-design-skills (23/11/2026)"
+      ],
+      "profile_anchors": [
+        "06-ui-ux-design/README.md#ux-a11y-specialist-skills",
+        "06-ui-ux-design/README.md#ux-pa11y",
+        "06-ui-ux-design/README.md#ux-pa11y-ci",
+        "06-ui-ux-design/README.md#ux-aipex-wcag22-a11y-audit",
+        "06-ui-ux-design/README.md#ux-platform-design-skills"
+      ],
+      "lesson": "Cổng accessibility phải ghi phiên bản WCAG và bộ tag thực sự chạy, không chỉ nhãn: Pa11y và Pa11y CI chỉ bật tag axe 2.0 và 2.1 (suy từ mã, chưa chạy) dù được dùng như cổng kiểm; AIPex tự nhận \"WCAG 2.2\" nhưng cả tám tiêu chí đều có từ 2.0 và độ tương phản do LLM nhìn ảnh; platform-design-skills gán sai số tiêu chí của 2.2. Chỉ a11y-specialist-skills tách rõ Pass, Fail, Not Tested và Not Applicable. WCAG 2.2 (Recommendation 12/12/2024) có chín tiêu chí mới nhưng ba trong số đó là AAA; WCAG 3 vẫn là bản nháp.",
+      "xt_ids": [
+        "UX-A11Y-001",
+        "STD-A11Y-007"
+      ],
+      "column": "deeper",
+      "existing_coverage": "UX-A11Y-001 yêu cầu cổng máy (jsx-a11y, axe-core chặn lỗi serious/critical, visual regression) chạy trước skill \"gu\", và XT-H-077 đã ghi axe chỉ bắt khoảng 57% lỗi WCAG nên phần incomplete cần người duyệt. STD-A11Y-007 liên quan thuật toán tương phản (XT-H-079).",
+      "delta": "Thêm ba điểm vào control hiện có, không cần ID mới: (1) tài liệu cổng kiểm phải liệt kê tag axe đang bật và có `wcag22aa` khi tuyên bố 2.2; (2) kết quả phải có trạng thái Not Tested, và Not Tested không bao giờ được hiển thị là đạt; (3) tính riêng số tiêu chí mức A và AA khi nói \"đủ WCAG 2.2 AA\" (6 trong 9 tiêu chí mới). Fixture: cấu hình chạy axe thiếu `wcag22aa` mà báo cáo ghi \"2.2\" thì cổng đỏ.",
+      "xt_evidence": [],
+      "note": "Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị từ chối): ID, file và dòng lấy từ các đối chiếu đã ghi trước đó trong data/xt-handoff.json, chưa kiểm ở commit X-Templates hiện hành; đề xuất chỉ có hiệu lực sau khi đối chiếu lại."
+    },
+    {
+      "id": "XT-H-157",
+      "date": "2026-11-23",
+      "stored_ref": [
+        "06 · ui-craft (23/11/2026)",
+        "06 · happyhands (23/11/2026)",
+        "06 · shadscan (23/11/2026)",
+        "06 · UXAgent (23/11/2026)",
+        "06 · TinyTroupe (23/11/2026)"
+      ],
+      "profile_anchors": [
+        "06-ui-ux-design/README.md#ux-ui-craft",
+        "06-ui-ux-design/README.md#ux-happyhands",
+        "06-ui-ux-design/README.md#ux-shadscan",
+        "06-ui-ux-design/README.md#ux-uxagent",
+        "06-ui-ux-design/README.md#ux-tinytroupe"
+      ],
+      "lesson": "Kết quả do model chấm trong skill UX không được dùng làm cổng chặn, và độ nhất quán phải được đo: ui-craft tách điểm tất định (cổng CI) khỏi điểm do model chấm (nhãn judged, cấm làm cổng); shadscan cho luật độ tin thấp chỉ là advisory không trừ điểm; happyhands chỉ nhận lỗi có quan sát tái lập. Nghiên cứu đã đọc (chỉ tóm tắt arXiv 2512.04262) đo GPT-4o trên 30 website: phát hiện vấn đề có kappa trung bình 0,50, nhưng mức nghiêm trọng có khớp chính xác 56% và Krippendorff alpha gần 0. UXAgent và TinyTroupe tự ghi dữ liệu người dùng giả lập chưa thay được người.",
+      "xt_ids": [
+        "AI-EVAL-008",
+        "AI-EVAL-020"
+      ],
+      "column": "shallower",
+      "existing_coverage": "AI-EVAL-008 và AI-EVAL-020 đã được dùng cho cổng eval và benchmark agent (XT-H-073, 085, 089, 092). Chưa đọc lại để biết control nào đã yêu cầu tách điểm tất định khỏi điểm do model chấm hoặc đo độ nhất quán giữa các lần chạy.",
+      "proposal": {
+        "text": "SHOULD: Với kết quả đánh giá do model sinh (review UI, chấm chất lượng), tách trường tất định (do mã tính) khỏi trường judged; chỉ trường tất định được dùng làm cổng chặn. Chạy mỗi mục ít nhất ba lần trên bộ ca có lỗi gieo sẵn và công bố kappa của phát hiện và độ khớp của mức nghiêm trọng riêng rẽ; đo thêm \"repair-lift\" (agent sửa cố định có làm giảm lỗi gieo sau khi áp dụng phê bình không). Kiểm fixture: bộ ca gồm trang sạch để đo báo động giả; mức nghiêm trọng do model gán đổi giữa hai lần chạy thì không được làm đổi kết quả cổng."
+      },
+      "xt_evidence": [],
+      "note": "Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị từ chối): ID, file và dòng lấy từ các đối chiếu đã ghi trước đó trong data/xt-handoff.json, chưa kiểm ở commit X-Templates hiện hành; đề xuất chỉ có hiệu lực sau khi đối chiếu lại."
+    },
+    {
+      "id": "XT-H-158",
+      "date": "2026-11-23",
+      "stored_ref": [
+        "06 · json-render (23/11/2026)",
+        "06 · AGenUI (23/11/2026)",
+        "06 · pi-generative-ui (23/11/2026)"
+      ],
+      "profile_anchors": [
+        "06-ui-ux-design/README.md#ux-json-render",
+        "06-ui-ux-design/README.md#ux-agenui",
+        "06-ui-ux-design/README.md#ux-pi-generative-ui"
+      ],
+      "lesson": "UI do model sinh ra lúc chạy cần cổng bảo mật theo mức kiểm soát. Quan sát đọc mã: pi-generative-ui chạy HTML và JS do model sinh toàn quyền trong WebView, không có CSP hay sandbox; json-render có danh mục component và validateSpec nhưng đặt CSP của MCP là `https:` (mọi host) và `Link.href` chỉ kiểm là chuỗi; trình xác thực validate_a2ui.py của AGenUI gửi GET tới mọi URL trong spec do model sinh (SSRF phía máy dev). Cách phân ba mức (cố định, khai báo, mở) lấy từ tài liệu của nhà bán nên chỉ để tham khảo.",
+      "xt_ids": [
+        "UX-AI-004",
+        "FE-SEC-001"
+      ],
+      "column": "missing",
+      "existing_coverage": "UX-AI-004 và FE-SEC-001 được dùng trong XT-H-058 (máy chủ MCP cục bộ) và XT-H-035; chưa đọc lại để biết control nào đã bao phủ UI sinh động. Chưa thấy control nào yêu cầu cổng riêng cho giao diện do model sinh (chưa đối chiếu lại ở commit hiện hành).",
+      "proposal": {
+        "text": "SHOULD: Khi agent hiển thị giao diện do model sinh lúc chạy, khai báo mức kiểm soát (cố định, khai báo hoặc mở) và áp cổng tương ứng: mức khai báo cần danh mục component và hành động được phép, kiểm schema đầu ra, CSP không dùng `https:` cho mọi host, liên kết do model sinh qua danh sách cho phép; mức mở chỉ dùng trong sandbox có CSP chặt. Công cụ kiểm tra spec không được tự truy cập URL do model sinh. Kiểm fixture: spec chứa `href` tới `javascript:` hoặc host ngoài danh sách thì bị từ chối; trình xác thực chạy với URL nội bộ trong spec không phát sinh lời gọi mạng."
+      },
       "xt_evidence": [],
       "note": "Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị từ chối): ID, file và dòng lấy từ các đối chiếu đã ghi trước đó trong data/xt-handoff.json, chưa kiểm ở commit X-Templates hiện hành; đề xuất chỉ có hiệu lực sau khi đối chiếu lại."
     }
