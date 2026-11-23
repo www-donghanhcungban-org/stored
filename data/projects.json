@@ -72,7 +72,9 @@
       "desktop-utility",
       "geospatial",
       "project-management",
-      "simulation"
+      "simulation",
+      "quality-mgmt",
+      "manufacturing"
     ],
     "count": 2330,
     "schema_version": 2

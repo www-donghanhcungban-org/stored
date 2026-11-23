@@ -114,6 +114,8 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [cad-bim](engineering/cad-bim.md) | 19 | — |
 | [geospatial](engineering/geospatial.md) | 14 | — |
 | [simulation](engineering/simulation.md) | 4 | — |
+| [quality-mgmt](engineering/quality-mgmt.md) | 0 | Hệ thống quản lý chất lượng ISO (đánh giá, CAPA, rủi ro) (0), SPC, MSA và kiểm soát quá trình (0), Hàn, NDT và hồ sơ chứng nhận (0), Hiệu chuẩn và truy xuất nguồn gốc (0) |
+| [manufacturing](engineering/manufacturing.md) | 0 | MES/ERP cho xưởng sản xuất (0), Bảo trì thiết bị (CMMS) (0) |
 
 ## Ứng dụng người dùng cuối (30)
 
