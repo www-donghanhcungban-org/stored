@@ -597,3 +597,26 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | Đang hoạt động (commit cuối 2026-11-23) |
 | Nhận định | Nền tảng internal tool dựng bằng prompt/MCP. Bản mở AGPL nhưng phần EE là submodule riêng, quickstart dùng image EE theo catalog cũ. |
 | Nguồn | [README.md](https://github.com/ToolJet/ToolJet/blob/e921d9a9558cb065cfbb1db733fbc7e6a7fd5683/README.md) · [LICENSE](https://github.com/ToolJet/ToolJet/blob/e921d9a9558cb065cfbb1db733fbc7e6a7fd5683/LICENSE) · [.gitmodules](https://github.com/ToolJet/ToolJet/blob/e921d9a9558cb065cfbb1db733fbc7e6a7fd5683/.gitmodules) · [.github/workflows/ci.yml](https://github.com/ToolJet/ToolJet/blob/e921d9a9558cb065cfbb1db733fbc7e6a7fd5683/.github/workflows/ci.yml) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-workflowbuilder"></a>
+
+### Workflow Builder (Synergy Codes)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/synergycodes/workflowbuilder |
+| License | Apache-2.0 (LICENSE gốc và từng gói ui, sdk, temporal, mcp-server) |
+| Phiên bản đã đọc | `9b6e3b01066967b94346aa66db0cd4b75dc78d05` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, packages/temporal/src/workflow/durable-pause.decision-log.md, packages/temporal/src/workflow/verdict-validation.ts, apps/backend/README.md, .github/workflows/pr-check.yml; chưa chạy upstream |
+| Khoảng trống lấp | Human-in-the-loop và phê duyệt (trình dựng workflow nhúng cộng thực thi bền trên Temporal) |
+| Cơ chế đáng học | - Editor React (`packages/sdk`, `packages/ui`) xuất workflow JSON; backend và plugin Temporal chạy một workflow tổng quát cho mọi sơ đồ, mỗi node một Activity (`packages/temporal`).<br>- Bước chờ người: node trả `{ waiting: true }`, workflow đợi bằng Temporal Update `resolveNode` chứ không dùng signal, để quyết định đến muộn nhận câu trả lời đồng bộ thay vì mất im lặng (`durable-pause.decision-log.md`).<br>- `verdict-validation.ts` chỉ kiểm tính toàn vẹn của engine: verdict sai định dạng, node lạ, đã có verdict (first-write-wins) hoặc node không đang chờ đều bị từ chối trước khi vào lịch sử. |
+| Tiêu chí và cách kiểm | Có test determinism/replay cho execution-core và lịch sử replay ghim (decision log nêu thư mục `test/replay/`; mình chưa mở). `pr-check.yml` kiểm format, lint, test của các gói đã phát hành và cổng air-gap cho Dockerfile; mình chỉ đọc phần đầu, chưa chạy. |
+| Giới hạn và rủi ro | Backend không có xác thực thật: `AllowAllAuthPort` bắt buộc đặt `WB_AUTH_PORT=allow-all` mới chạy, không có cô lập tenant; README cảnh báo không mở ra mạng chung, và compose deploy ai-studio publish cổng 8080 trên mọi interface. Tuyên bố của README về "approve with corrections" chỉ đúng một nửa: apps/backend/README.md ghi các chỉnh sửa (`edits`) được lưu nhưng chưa được áp vào bước sau (follow-up decision-settled-values). Chưa thấy phê duyệt nhiều cấp có sẵn: node phê duyệt là từng bước riêng, ghép nhiều cấp là việc của người dùng; trinh sát ghi "nhiều cấp" là chưa xác minh. Cần Temporal và Postgres tự vận hành. |
+| So với | temporal, n8n, langgraph |
+| Nguồn | [LICENSE](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/LICENSE) · [README.md](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/README.md) · [durable-pause.decision-log.md](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/packages/temporal/src/workflow/durable-pause.decision-log.md) · [verdict-validation.ts](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/packages/temporal/src/workflow/verdict-validation.ts) · [README.md](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/apps/backend/README.md) · [pr-check.yml](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/.github/workflows/pr-check.yml) |

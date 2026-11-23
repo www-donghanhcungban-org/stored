@@ -11,6 +11,7 @@ Chọn theo bài toán bằng bảng "Nhu cầu → item" ở đầu mỗi chư�
 | [3. Thiết kế, giao diện, motion & media](#3-thiết-kế-giao-diện-motion--media) | Thiết kế, giao diện, motion & media | 25 |
 | [4. Xưởng phần mềm: chất lượng, phát hành & vận hành](#4-xưởng-phần-mềm-chất-lượng-phát-hành--vận-hành) | Xưởng phần mềm: chất lượng, phát hành & vận hành | 25 |
 | [5. Đề xuất: skill và tính năng UI/UX](#5-đề-xuất-skill-và-tính-năng-uiux-tốt-nhất-có-thể) | Đặc tả 9 skill, bản đồ 12 giai đoạn, giao thức đánh giá skill (đề xuất, chưa xây) | 9 |
+| [6. Đề xuất: skill và tính năng cho các nhóm còn lại](#6-đề-xuất-skill-và-tính-năng-cho-các-nhóm-còn-lại) | 87 ý tưởng cho mười nhóm (an toàn, agent, mô hình và tài liệu, dữ liệu, phần mềm, tự động hóa, media, tri thức, chất lượng công nghiệp), kèm khoảng trống và bài học đọc 150 repo | 87 |
 
 **Nguyên tắc chung khi mang sang dự án khác**
 
@@ -1754,3 +1755,341 @@ Skill của skill: dựng và chạy bộ eval cho các skill 1 đến 8. Xem 5.
 - Các hồ sơ dùng làm cơ sở phần lớn ở mức đọc tài liệu; chỉ một số ở mức đọc mã, và có hồ sơ chỉ đọc một phần mã.
 - Kết quả về người dùng giả lập và đánh giá heuristic bằng LLM dựa trên số mẫu nhỏ (hai ứng dụng, 16 và 8 chuyên gia, 30 website); chưa đủ để kết luận về mọi sản phẩm.
 - Quy định pháp lý về accessibility (Đạo luật Accessibility châu Âu, EN 301 549) chưa được đọc từ nguồn chính thức trong chương này: kiểm lại phiên bản chuẩn cần dùng trước khi dựa vào.
+
+## 6. Đề xuất: skill và tính năng cho các nhóm còn lại
+
+> **Cách đọc.** Đây là **đề xuất**, chưa có ý nào được xây hay chạy. Mỗi nhóm có: hiện trạng của kho, khoảng trống, và các ý tưởng skill/tính năng kèm đầu vào, đầu ra, cổng kiểm máy, cách đo, cơ sở và rủi ro. Cơ sở là hồ sơ trong kho (nhiều hồ sơ mới thuộc phần "Nâng trần" của các README chuyên mục) hoặc nguồn web đã đọc. Trạng thái của chuẩn nêu trong ý tưởng **chưa chắc còn đúng**: tra [STANDARDS.md](STANDARDS.md) để biết mức xác minh từng chuẩn. Chương dành cho UI/UX nằm ở [chương 5](#5-đề-xuất-skill-và-tính-năng-uiux-tốt-nhất-có-thể).
+
+### 6.1 Bài học chung của đợt đọc 150 repo mới
+
+1. **Mô tả của danh sách hay kết quả tìm kiếm thường sai so với mã thật.** Trong đợt này trinh sát ghi sai license, tính năng hoặc kiến trúc ở hàng chục repo (ví dụ nói Stalwart không có license, Activiti có DMN, authlib có WebAuthn, SPACE dùng gVisor); mọi quyết định chọn công cụ nên dựa trên hồ sơ đã đọc mã, không dựa trên mô tả.
+2. **Open-core và license kép rất phổ biến**: license gốc chỉ phủ một phần (Archestra có 483 file backend mang header Enterprise; Carbon giữ `packages/ee` thương mại; eventcatalog dùng BUSL-1.1 cho phần lõi; CodeQL chỉ MIT cho kho truy vấn). Đọc license từng thư mục.
+3. **Telemetry và dữ liệu rời máy mặc định bật** ở nhiều công cụ dev (Ragas, Curator, Cerbos, vet, Evidence, Archestra). Một số còn gửi khóa: `autoevals` mặc định gọi Braintrust Gateway khi chưa đặt `OPENAI_BASE_URL`.
+4. **Cổng "duyệt" và "bất biến" thường chỉ nằm trong tuyên bố**: cổng phê duyệt của OpenAgentsControl là quy tắc trong prompt; chỉnh sửa khi duyệt ở workflowbuilder chỉ được lưu chứ chưa áp vào bước sau; audit log của OpenMES chỉ bất biến ở lớp ứng dụng. Skill của anh/chị cần kiểm hành vi, không chỉ đọc cấu hình.
+5. **Mảng chất lượng công nghiệp mã mở còn rất mỏng**: không tìm được công cụ đạt chất lượng cho WPS/PQR, chứng chỉ thợ hàn, hiệu chuẩn thiết bị đo hay NDT.
+
+### 6.2 An toàn, đánh giá và chất lượng
+
+Nhóm có 238 hồ sơ, đậm ở eval LLM/agent (23), benchmark (15), tracing (13), ops-monitoring (17), static-analysis (19), offensive-redteam (16) và secrets-supply-chain (17). Điểm mạnh: lõi eval/observability GenAI (Inspect, Langfuse, OpenLLMetry, OTel GenAI semconv, agentevals) và bộ quét skill/MCP (Cisco, Snyk agent-scan, NVIDIA SkillSpector). Điểm yếu: policy-as-code chỉ 4 hồ sơ (OPA/conftest, Cedar, syft, Agent Governance Toolkit), appsec-scanner 5, e2e-browser 3, privacy 4; trong catalog/trust không có chaos, DAST, AI-BOM, Kyverno, checkov, CodeQL, EU AI Act, ISO 42001, và fuzz chỉ được nhắc thoáng. Thiên lệch: nhiều hồ sơ nhóm này là đồ web/JS phổ thông hoặc media (VMAF, WCAG motion, ASR) đặt nhầm làm 'quality/eval', trong khi thiếu lớp tuân thủ và kiểm chứng chuỗi cung ứng cho AI.
+
+**Khoảng trống của kho:**
+
+- **SAST/DAST/IaC scan**: Kho có Semgrep, Trivy nhưng không có CodeQL, ZAP (DAST), checkov/KICS (IaC); nhóm appsec-scanner chỉ 5 hồ sơ. *(gần nhất trong kho: Semgrep, Trivy, claude-code-security-review)*
+- **Chuỗi cung ứng AI: AI-BOM/SBOM/VEX**: Có syft, Grype, Dependency-Track, GUAC, model-signing nhưng thiếu công cụ AI-BOM, tạo CycloneDX đa ngôn ngữ, đo chất lượng SBOM, và VEX (OpenVEX); CycloneDX 1.7 là ECMA-424. *(gần nhất trong kho: syft, OWASP Dependency-Track, model-signing (Model Transparency), GUAC)*
+- **Fuzz, mutation, chaos/resilience**: Chỉ có StrykerJS và Hypothesis; không có fuzz (OSS-Fuzz, Atheris), mutation Python/Rust, chaos (Chaos Mesh, Litmus) hay fault injection (Toxiproxy). *(gần nhất trong kho: StrykerJS, Hypothesis)*
+- **Policy-as-code admission/runtime**: Chỉ OPA/conftest, Cedar; thiếu Kyverno, Gatekeeper, OPA lõi, Regal, nơi policy được thực thi lúc admission/runtime. *(gần nhất trong kho: OPA / conftest, Cedar, Agent Governance Toolkit)*
+- **Eval trajectory/regression cho agent & skill**: Có agentevals, skillgrade, SkillsBench nhưng thiếu snapshot/regression trajectory chạy trong CI và đánh giá an toàn kiểu control (AI control). *(gần nhất trong kho: agentevals, skillgrade, SkillsBench, Inspect AI)*
+- **Quét bảo mật skill/MCP/agent config**: Quét skill/MCP phát triển nhanh 2026; kho có 5-6 công cụ nhưng chưa có quét repo agent offline, quét cấu hình agent hoặc quét MCP đang chạy ở mức nhiều lớp. *(gần nhất trong kho: agent-scan, skill-scanner (Cisco), Cisco MCP Scanner, SkillSpector)*
+- **Bí mật & quyền cho agent/workload**: Có SOPS, infisical, Varlock, SPIRE nhưng thiếu secret store/operator nguồn mở thay thế Vault (OpenBao), đồng bộ bí mật K8s (External Secrets) và quản lý quyền cho agent. *(gần nhất trong kho: SOPS, infisical, Varlock, SPIRE)*
+- **Chuẩn tuân thủ máy đọc được (AI Act, CRA, 42001)**: Hồ sơ checklist gần nhất là NIST AI RMF 1.0 + AI 600-1 và OpenSSF OSPS Baseline; chưa có hồ sơ cho EU AI Act (đã đổi mốc bằng Digital Omnibus), CRA (báo cáo từ 11/9/2026), ISO 42001, OWASP Agentic Top 10 và MCP Top 10 dạng checklist có kiểm máy. *(gần nhất trong kho: NIST AI RMF 1.0 + AI 600-1 (Generative AI Profile), OpenSSF OSPS Baseline, OWASP MCP Top 10)*
+- **Benchmark prompt injection/tool poisoning cho agent, bản còn sống**: AgentDojo và Open-Prompt-Injection có, nhưng HarmBench (push cuối 2024-08), BIPIA (lưu trữ) đã cũ; MCPTox, MSB mới chỉ thấy ở bài báo, chưa xác nhận repo. *(gần nhất trong kho: AgentDojo, Open-Prompt-Injection, garak, PyRIT)*
+- **Giám sát vận hành và SLO có gắn eval**: ops-monitoring toàn công cụ giám sát hạ tầng (17); chưa có cầu nối từ trace GenAI sang SLO/gate chất lượng. *(gần nhất trong kho: OpenSLO, Sloth, Pyrra)*
+- **Privacy/quyền riêng tư cho LLM ở mức hệ thống**: privacy có 4 hồ sơ, trong đó 2 là watermark audio/video; chỉ Presidio là PII thật. *(gần nhất trong kho: Presidio)*
+- **Cổng chất lượng e2e/trình duyệt**: Chỉ Playwright, Selenium, Appium; thiếu công cụ e2e dành cho agent/AI và test ổn định (flaky). *(gần nhất trong kho: Playwright)*
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Skill chấm điểm SBOM/AI-BOM trước khi phát hành | Repo hoặc thư mục artifact, kèm mô hình/dataset kê khai → SBOM CycloneDX 1.7 và báo cáo điểm kèm danh sách trường thiếu | cyclonedx-cli validate theo JSON schema; sbomqs điểm tối thiểu; cdxgen sinh BOM | Tỷ lệ thành phần có version/hash/license; điểm sbomqs; so với danh sách phụ thuộc thật từ lockfile | CycloneDX 1.7; interlynk-io/sbomqs; cdxgen/cdxgen; hồ sơ syft, Dependency-Track trong kho | Trường AI trong CycloneDX còn mỏng; điểm sbomqs không chứng minh nội dung đúng |
+| Skill soạn và kiểm VEX từ kết quả quét | Báo cáo Trivy/Grype (JSON) và ghi chú khả năng bị khai thác → Tài liệu OpenVEX có trạng thái và justification | vexctl create/merge, kiểm lại bằng Trivy với --vex để số lỗi giảm đúng | Tỷ lệ báo động giả được giải thích; không có 'not_affected' thiếu justification | openvex/vexctl, openvex/spec; hồ sơ Trivy, Grype trong kho | Agent có thể gán 'not_affected' sai; cần người duyệt và bằng chứng reachability |
+| Gate regression trajectory cho skill/agent | Bộ kịch bản agent và baseline trajectory đã duyệt → Báo cáo diff: tool call đổi, thứ tự, chi phí; fail PR nếu hồi quy | eval-view check chạy trong GitHub Action; so khớp với agentevals trajectory_match | Tỷ lệ hồi quy bắt được trên tập lỗi chèn có chủ đích; tỷ lệ báo động giả khi chạy lặp 10 lần | hidai25/eval-view; [langchain-ai/agentevals](03-agentic-patterns-loops/README.md#factory-trajectory-oracles-2026-11-04) (hồ sơ agentevals); skillgrade | Agent không tất định làm baseline nhiễu; eval-view gửi telemetry mặc định cần tắt |
+| Skill quét supply chain của skill/MCP trước khi cài | Đường dẫn skill, plugin hoặc cấu hình MCP → Báo cáo rủi ro theo MCP Top 10 và Agentic ASI01-ASI10, kèm lệnh gỡ | snyk agent-scan, Cisco skill-scanner, repo-forensics chạy song song; kiểm đồng thuận kết quả | Phát hiện trên bộ mẫu độc có gán nhãn (precision/recall); tỷ lệ bất đồng giữa các công cụ | OWASP MCP Top 10 (beta); hồ sơ agent-scan, skill-scanner, Cisco MCP Scanner, SkillSpector | Mẫu độc tự dựng thiên lệch; công cụ có thể bỏ sót kỹ thuật mới |
+| Skill sinh test đột biến cho test do agent viết | Module và bộ test hiện có → Điểm đột biến và danh sách mutant sống kèm gợi ý test | mutmut (Python), cargo-mutants (Rust), StrykerJS (JS) trong CI với ngưỡng điểm | Điểm đột biến trước và sau khi agent bổ sung test; thời gian chạy | boxed/mutmut; sourcefrog/cargo-mutants; hồ sơ StrykerJS, Hypothesis | Chi phí chạy lớn; mutant tương đương gây nhiễu |
+| Skill dựng fuzz harness có kiểm biên dịch | Hàm phân tích cú pháp trong repo → Harness (Atheris hoặc OSS-Fuzz) cùng corpus ban đầu và lệnh chạy 5 phút | Harness phải build, chạy không crash trên corpus, và đạt coverage tối thiểu | Tỷ lệ harness biên dịch được ngay; coverage sau 5 phút; số lỗi tìm thấy trên hàm có lỗi gieo sẵn | [google/oss-fuzz](30-software-testing-quality/README.md#nt-google-oss-fuzz); google/atheris (push cuối 2026-06) | Harness sai ngữ nghĩa cho cảm giác an toàn giả; fuzz tốn tài nguyên CI |
+| Skill chuyển yêu cầu thành policy kiểm máy (Rego/Kyverno) | Quy tắc bằng lời (vd. cấm image chưa ký, cấm quyền root) → Policy kèm bộ test cho trường hợp đạt và không đạt | opa test, kyverno test, conftest verify; chạy trên tập manifest mẫu | Tỷ lệ policy qua test do con người viết; số vi phạm bắt được trên manifest xấu | [open-policy-agent/opa](09-engineering-checklists/README.md#nt-open-policy-agent-opa); kyverno/kyverno; hồ sơ OPA/conftest, Cedar | Policy quá lỏng không bị test bắt nếu thiếu ca xấu; Rego khó cho model sinh đúng |
+| Kiểm quá hạn tuân thủ theo mốc pháp lý | Danh sách hệ thống và vai trò (nhà sản xuất, nhà cung cấp GPAI, triển khai) → Lịch mốc EU AI Act và CRA áp dụng cho từng hệ thống, kèm nguồn | Mỗi mốc phải có URL và ngày trích dẫn; lint kiểm mọi ngày có nguồn chính thức | Tỷ lệ mốc có nguồn chính thức; đối chiếu thủ công với bản Công báo | Regulation (EU) 2026/1744 (bài bên thứ ba); ENISA SRP; CRA Điều 14 | Văn bản còn thay đổi (Omnibus vừa đổi mốc); không phải tư vấn pháp lý |
+| Cầu nối trace GenAI sang gate chất lượng | Trace OTLP của agent theo OTel GenAI semconv → Điểm eval theo span và báo cáo vi phạm convention | Weaver kiểm attribute theo registry; agentevals chấm trajectory từ trace | Tỷ lệ span hợp lệ; chênh lệch điểm giữa trace thật và kịch bản replay | [open-telemetry/semantic-conventions-genai](07-eval-observability/README.md#ch-opentelemetry-genai-semantic-conventions); Weaver; agentevals (hồ sơ trong kho) | Convention còn Development nên tên attribute đổi; mỗi SDK phát khác nhau |
+
+### 6.3 AI agent: lõi, giao thức và hạ tầng
+
+Nhóm có 318 hồ sơ, nặng về agent-framework (46), protocol (46) và browser-agent (41). Mảng sandbox (21) và llm-gateway (18) khá đủ, nhưng context-optimization (6) và remote-access (6) mỏng. Protocol lẫn nhiều thứ không thuộc agent (C2PA, Lottie, buildingSMART). Thiếu rõ ở bảo mật/định danh của MCP và quản trị memory.
+
+**Khoảng trống của kho:**
+
+- **Agent định danh/ủy quyền**: Chưa thấy hồ sơ về OAuth/workload identity cho agent; chuẩn RFC 9728, 8693, SPIFFE chưa có hồ sơ chuẩn rõ ràng trong nhóm (chưa kiểm hết kho).
+- **MCP gateway/registry/bảo mật**: Có agentgateway, MCP Registry nhưng thiếu gateway có kiểm soát truy cập. *(gần nhất trong kho: agentgateway, MCP Registry)*
+- **Sandbox: WASM và microVM cho agent**: Có Firecracker, gVisor, Wasmer nhưng ít runtime agent-native. *(gần nhất trong kho: Firecracker, gVisor, Wasmer)*
+- **Agent memory có kiểm soát**: Nhiều hệ memory nhưng không thấy hồ sơ về xóa/hết hạn/quyền. *(gần nhất trong kho: Mem0, Letta)*
+- **Durable/resumable agent runtime**: Nhóm này không có; durable-execution nằm category khác, chưa đối chiếu.
+- **A2A SDK và mẫu**: Có A2A, TCK, Inspector nhưng thiếu SDK/mẫu chính thức. *(gần nhất trong kho: A2A, A2A TCK, A2A Inspector)*
+- **Đánh giá agent mới**: Benchmark có OSWorld, WebArena, nhưng thiếu benchmark 2026 kiểu WildClawBench. *(gần nhất trong kho: OSWorld, WebArena)*
+- **Computer-use an toàn**: Có Cua, UI-TARS nhưng ít hồ sơ sandbox hóa desktop. *(gần nhất trong kho: Cua, UI-TARS-desktop)*
+- **Agent observability theo OTel GenAI**: Chuẩn còn Development; cần hồ sơ chuẩn riêng.
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Agent spec drift checker | URL spec (MCP, A2A, Agent Skills) và danh sách hồ sơ kho → Báo cáo hồ sơ nào ghi phiên bản cũ | Script so version trong hồ sơ với tag/release công khai | Tỷ lệ phát hiện đúng trên tập mẫu có gán nhãn | MCP 2026-07-28, A2A 1.0.0 | Trang thay đổi cấu trúc; ngày không đồng nhất |
+| MCP server audit skill | Repo MCP server → Báo cáo tool description, scope OAuth, đầu vào nguy hiểm | Chạy snyk/agent-scan và mcp-scanner, kiểm RFC 9728 metadata, MCP Conformance | Fixture server có lỗi cài sẵn; đo recall/precision | Hồ sơ MCP Conformance, [snyk/agent-scan](12-ai-security-guardrails/README.md#ch-agent-scan) | Scanner dương tính giả |
+| Sandbox profile verifier | Cấu hình sandbox (gVisor, Firecracker, nsjail) → Bảng egress, mount, syscall được phép | Chạy bộ thử thoát ly trong sandbox, so với profile khai báo | Số hành vi vượt profile phát hiện được | Hồ sơ gVisor, Firecracker, nono | Không phủ hết đường thoát |
+| Skill linter theo Agent Skills spec | Thư mục skill → Danh sách vi phạm | skills-ref validate | Tỷ lệ skill hợp lệ trong kho mẫu | agentskills.io/specification | allowed-tools còn thử nghiệm |
+| Agent memory lifecycle test | Backend memory (Mem0, Letta...) → Kết quả thử xóa, hết hạn, cô lập theo người dùng | Bộ test ghi-xóa-truy vấn lại; đối chiếu OWASP agent-memory-guard | Tỷ lệ bản ghi còn sót sau xóa | Hồ sơ Mem0, Letta, OWASP memory guard | Backend nhúng khó quan sát |
+| Agent token flow checker | Cấu hình OAuth của MCP server/gateway → Báo cáo thiếu PKCE, resource indicator, audience | Gọi well-known metadata và kiểm schema, RFC 9728/8693 | Fixture đúng/sai | RFC 9728, MCP auth | Server không công bố metadata |
+| OTel GenAI trace validator | File trace OTLP của agent → Danh sách span thiếu thuộc tính gen_ai | So với registry convention ghim phiên bản | Tỷ lệ span hợp lệ | OTel GenAI conventions | Convention còn Development, đổi nhanh |
+| Agent benchmark card | Tên benchmark → Thẻ chuẩn hóa: tác vụ, harness, ngày, nguy cơ rò rỉ | Schema JSON bắt buộc trường có nguồn | Tỷ lệ trường có URL nguồn | Hồ sơ OSWorld, WebArena, WildClawBench | Số liệu leaderboard đổi |
+
+### 6.4 AI agent: skill, plugin và prompt
+
+Nhóm có 134 hồ sơ, lệch mạnh về harness-pack (52, trong đó 16 marketing-business, 15 coding-workflow) và prompt (30); chỉ 2 hồ sơ media-creative, 3 skill-meta, 5 code-review (đều là sản phẩm/công cụ, chưa có benchmark đo precision/recall), 7 spec-driven (ngoài Spec Kit/BMAD/OpenSpec/Kiro/Agent OS chỉ còn Doorstop, Trellis). Điểm mạnh: phủ tốt framework coding-workflow, skill marketing, plugin Claude Code chính thức và các hệ commercial. Điểm yếu: gần như không có skill vận hành (SRE/incident), skill pháp lý/y tế bản địa có kiểm chứng, skill dữ liệu/BI, và tầng 'quản trị skill' (eval, quét độc, ký/lock, lint AGENTS.md). NVIDIA/SkillSpector, agnix, agentskills/agentskills đã có trong kho nên không đề xuất lại. Lưu ý: số liệu dựa trên data/projects.json, chưa đọc hết README chuyên mục.
+
+**Khoảng trống của kho:**
+
+- **Đánh giá skill (eval bộ ba: kích hoạt, so baseline, không gây hại)**: Kho chỉ nhắc claude plugin eval/SkillsBench trong PLAYBOOK; thiếu công cụ chạy A/B có/không skill và đo kích hoạt nhầm, trong khi đây là cách duy nhất chứng minh skill có ích. *(gần nhất trong kho: Claude Code plugin validate + plugin eval, SkillOpt)*
+- **Phát hiện skill độc hại / quét chuỗi cung ứng skill**: Chỉ có SkillSpector; thiếu bộ quét thứ hai để đối chiếu, và thiếu khung rủi ro (OWASP AST10) làm chuẩn tham chiếu. *(gần nhất trong kho: NVIDIA/SkillSpector)*
+- **Vòng đời skill (lock, update, deprecate, ký số, registry xác minh)**: Có skills CLI và autoskills (license NC) nhưng không có hồ sơ về registry xác minh, chữ ký, thu hồi (deprecate) skill. *(gần nhất trong kho: skills CLI (npx skills), autoskills)*
+- **Spec-driven development ngoài Spec Kit/Kiro**: Spec-driven mới 7 hồ sơ; thiếu các biến thể có cổng kiểm máy (spec verify, reverse-spec từ code cũ, constitution theo phân đoạn). *(gần nhất trong kho: GitHub Spec Kit, OpenSpec, Doorstop)*
+- **Code review agent có đo precision/recall**: 5 hồ sơ code-review đều là sản phẩm; chưa có dataset/benchmark seeded-bug để đo precision/recall, và chưa có đầu ra SARIF. *(gần nhất trong kho: CodeRabbit, Greptile, Qodo Merge, open-code-review (ocr))*
+- **Skill pháp lý/tuân thủ/y tế có kiểm chứng**: Claude for Legal/Financial Services có, nhưng thiếu skill theo luật địa phương (VN, EU, Đức), tuân thủ CRA, y tế (FHIR/HIPAA, che PII lâm sàng) kèm cách kiểm chứng. *(gần nhất trong kho: Claude for Legal, Claude for Financial Services, LegalZoom plugin)*
+- **Skill vận hành SRE/incident/runbook**: Hầu như 0 hồ sơ skill vận hành; SRE là mảng dễ kiểm bằng runbook drill và replay sự cố.
+- **Skill văn phòng/tài liệu (office-docs)**: office-docs là subcategory trống trong harness-pack (0 hồ sơ); chỉ có anthropics/skills làm gốc. *(gần nhất trong kho: anthropics/skills)*
+- **Skill media-creative (video/audio)**: Chỉ 2 hồ sơ media-creative (baoyu-skills, MiniMax skills); thiếu skill dựng video/âm thanh tất định dùng ffmpeg/Remotion. *(gần nhất trong kho: baoyu-skills, MiniMax skills)*
+- **Lint/kiểm AGENTS.md và rule file (drift)**: agnix có trong kho nhưng chưa có công cụ phát hiện drift (tuyên bố trong AGENTS.md/CLAUDE.md không còn khớp mã) và mẫu kiểm CI. *(gần nhất trong kho: agnix)*
+- **Skill dữ liệu/BI cho agent**: Truy vấn GitHub theo dbt/SQL/BI không ra repo nổi bật còn hoạt động; coi là khoảng trống chưa lấp được bằng ứng viên.
+- **Chuẩn spec prompt (PromptL/Prompty/Dotprompt)**: Có Prompty và Dotprompt nhưng chưa có so sánh chéo và test conformance chung. *(gần nhất trong kho: Prompty, Dotprompt)*
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Harness eval bộ ba cho skill | Thư mục skill + tập prompt nhãn (nên kích hoạt / không nên / ca có nguy cơ gây hại) → Báo cáo: tỉ lệ kích hoạt đúng/nhầm, điểm có-skill vs không-skill, danh sách ca gây hại | Điểm kích hoạt >= ngưỡng; delta so baseline > 0 với khoảng tin cậy; 0 ca vi phạm danh sách cấm | Chạy mỗi ca N lần, so cặp có/không skill; theo dõi phương sai | [addyosmani/agent-skills](20-claude-plugins-ecosystem/README.md#3zc-kiểm-bài-5-repo-skill-đáng-lưu-matt-pocock-addy-osmani-cloudflare-obsidian-google-egm-bài-người-dùng-gửi-đọc-mã-16112026) (routing eval), edonadei/caliper, claude plugin eval | Chi phí token; giám khảo LLM lệch; bộ ca quá nhỏ |
+| Cổng cài skill (quét + ghim) | URL/commit của skill → Quyết định cho phép/chặn + file lock ghi hash | Quét tĩnh (SkillSpector và 1 bộ quét khác) không có phát hiện mức cao; hash khớp lock | Đo trên tập skill độc hại đã gán nhãn: recall, tỉ lệ báo nhầm | [NVIDIA/SkillSpector](12-ai-security-guardrails/README.md#ch-skillspector), OWASP AST10, V3r7ig0/skillvet | Bypass bằng che mã; tập mẫu nhỏ |
+| Benchmark reviewer có SARIF | PR có lỗi gài sẵn → File SARIF 2.1.0 + bảng precision/recall theo mức nghiêm trọng | SARIF qua schema; so khớp vị trí lỗi gài | Precision, recall, F1; chi phí mỗi PR | KyleSau/reviewbench, decadance-dance/rbench, SARIF 2.1.0 | Nhiễm dữ liệu huấn luyện; lỗi gài giả tạo |
+| Dò drift AGENTS.md | AGENTS.md/CLAUDE.md + mã nguồn → Danh sách tuyên bố lỗi thời (đường dẫn, script, lệnh không còn) | Mỗi đường dẫn/lệnh được trích đều tồn tại hoặc chạy được; CI đỏ nếu không | Tỉ lệ phát hiện trên repo có drift gài sẵn | [alifurkangokce/driftlint](20-claude-plugins-ecosystem/README.md#nt-driftlint), giacomo/agents-lint, agnix | Tuyên bố phi cấu trúc khó kiểm |
+| Diễn tập runbook tất định | Runbook Markdown + kịch bản sự cố ghi sẵn → Bản chấm: bước nào thiếu, lệnh nào sai | Chạy lệnh trong sandbox có dữ liệu giả; so kết quả mong đợi | Thời gian khôi phục mô phỏng; số bước bị bỏ | ruinosus/dress-rehearsal, [culiops/culiops-skills](33-reliability-observability-operations/README.md#nt-culiops-skills) | Lệnh phá hủy: chỉ chạy trong sandbox |
+| Skill rà luật VN có trích điều khoản | Mã web/app + danh mục yêu cầu luật VN → Danh sách phát hiện kèm điều khoản dẫn và mức chắc chắn | Mỗi phát hiện phải trỏ tới điều khoản đã có trong tập luật tham chiếu cục bộ; không trích được thì loại | Đối chiếu bởi luật sư trên mẫu; tỉ lệ trích sai | Tiro-dev-NT/vn-legal-skills, Claude for Legal | Luật đổi; không phải tư vấn pháp lý |
+| Trình chuyển rule đa công cụ | Một AGENTS.md + thư mục skill → .cursor/rules/*.mdc, CLAUDE.md, plugin.json được sinh tự động | claude plugin validate; frontmatter .mdc có description/globs/alwaysApply; diff sinh lại phải rỗng | Tỉ lệ file sinh qua validate | Cursor rules docs, code.claude.com marketplace docs, agents.md | Windsurf chưa đọc được spec; mất ngữ nghĩa khi chuyển |
+| Spec-driven có cổng kiểm máy | Spec hành vi (Gherkin/Markdown có mục tiêu) → Báo cáo phủ spec: yêu cầu nào có test, mã nào không có yêu cầu | Mỗi yêu cầu ID có ít nhất một test chạy qua | Tỉ lệ yêu cầu có test; số lần lệch spec/mã sau mỗi vòng | specd-sdd/SpecD, Doorstop, GitHub Spec Kit | Test sinh tự động vô nghĩa |
+
+### 6.5 Mô hình, RAG và tài liệu thông minh
+
+Nhóm có 212 hồ sơ, nhiều nhất ở speech (49), model-training (34) và inference (33). Mạnh ở runtime phổ biến, công cụ OCR/chuyển PDF và TTS/ASR tiếng Việt cộng đồng. Yếu ở đánh giá (RAG, ASR, OCR), chuẩn/định dạng, provenance và chống rò rỉ dữ liệu, gần như không có benchmark tải hay kiểm license theo trọng số. Thiên lệch về thư viện và demo nổi tiếng hơn là công cụ kiểm chứng.
+
+**Khoảng trống của kho:**
+
+- **Đánh giá RAG tách retrieval và answer**: Kho có nhiều framework RAG nhưng không có công cụ chấm. *(gần nhất trong kho: microsoft/graphrag, infiniflow/ragflow)*
+- **RAG tiếng Việt và đa ngôn ngữ**: Chưa có benchmark hay công cụ đánh giá retrieval tiếng Việt. *(gần nhất trong kho: FlagOpen/FlagEmbedding)*
+- **Serving/quantization trên phần cứng nhỏ**: Có runtime nhưng thiếu công cụ lượng tử hóa riêng. *(gần nhất trong kho: ggml-org/llama.cpp, mlc-ai/mlc-llm)*
+- **Benchmark tải và hiệu năng suy luận (MLPerf, guidellm)**: Chưa có benchmark tải và hiệu năng chuẩn hóa. *(gần nhất trong kho: vllm-project/vllm)*
+- **OCR/layout cho tiếng Việt và tài liệu kỹ thuật**: Chỉ vài OCR; ít cho tiếng Việt và bản vẽ. *(gần nhất trong kho: PaddlePaddle/PaddleOCR, tesseract-ocr/tesseract)*
+- **Trích xuất bảng và biểu mẫu**: Xử lý bảng nằm lẫn trong công cụ PDF, không có công cụ chuyên bảng. *(gần nhất trong kho: opendatalab/MinerU, datalab-to/marker)*
+- **Fine-tuning hiệu quả và dữ liệu tổng hợp**: Có peft/unsloth nhưng thiếu sinh dữ liệu tổng hợp có kiểm chứng. *(gần nhất trong kho: huggingface/peft, argilla-io/distilabel)*
+- **Chống rò rỉ dữ liệu huấn luyện và khử trùng lặp**: Chưa có khử trùng lặp và phát hiện nhiễm benchmark. *(gần nhất trong kho: huggingface/datatrove, datajuicer/data-juicer)*
+- **Watermark/provenance ảnh và văn bản**: Không có hồ sơ về C2PA hay watermark.
+- **ASR/TTS tiếng Việt**: Có nhiều TTS/ASR tiếng Việt nhưng chưa có benchmark so sánh. *(gần nhất trong kho: VinAIResearch/PhoWhisper, pnnbao97/VieNeu-TTS)*
+- **Model card, dataset card và license theo trọng số**: Chưa theo dõi license mã khác license trọng số.
+- **Định dạng model an toàn (safetensors/GGUF/ONNX)**: Có onnx nhưng thiếu safetensors và GGUF. *(gần nhất trong kho: onnx/onnx)*
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Cổng chấm RAG hai tầng (retrieval riêng, answer riêng) | Bộ câu hỏi vàng có tài liệu đúng, pipeline RAG cần chấm → Báo cáo recall@k, MRR, faithfulness, answer relevancy, tách riêng | Script thoát khác 0 khi metric dưới ngưỡng ghim trong YAML | Đối chiếu judge LLM với nhãn người trên 50-100 mẫu, báo kappa | [explodinggradients/ragas](07-eval-observability/README.md#nt-ragas-rag-metrics), stanford-futuredata/ARES, [beir-cellar/beir](10-local-llm-rag-memory/README.md#ch-beir) | Judge thiên lệch; bộ vàng nhỏ |
+| Bộ benchmark RAG tiếng Việt có chuẩn hóa NFC | Corpus tiếng Việt, mô hình embedding/reranker ứng viên → Bảng so recall@k theo miền và bản chuẩn hóa | Test: mọi văn bản qua NFC, so đầu ra trước/sau chuẩn hóa | Chạy lại ViRE và MTEB, so sai khác | [longstnguyen/ViRE](18-vietnam-community/README.md#5c-vietnamese-domain-evaluation), [embeddings-benchmark/mteb](10-local-llm-rag-memory/README.md#ch-mteb), UAX #15 | Dữ liệu CC BY-NC cấm dùng thương mại |
+| Kiểm license theo trọng số và model card | Danh sách repo mô hình và model card → Bảng license mã, license trọng số, license dữ liệu, cờ xung đột | Validator YAML model card, báo lỗi khi license=other thiếu license_link | Đối chiếu thủ công 20 mô hình, đo tỷ lệ phát hiện | [datalab-to/chandra](26-document-intelligence-ocr/README.md#nt-chandra-ocr) (mã Apache, trọng số OpenRAIL-M sửa đổi), [rednote-hilab/dots.ocr](26-document-intelligence-ocr/README.md#nt-dots-ocr), trang Model Cards | License nằm ở file riêng khó phân tích |
+| Đo lượng tử hóa trên phần cứng nhỏ | Mô hình gốc, các bản AWQ/GPTQ/GGUF/BitNet, máy mục tiêu → Bảng perplexity, tok/s, bộ nhớ đỉnh theo bản lượng tử | Ngưỡng suy giảm chất lượng tối đa và bộ nhớ tối đa, CI thất bại nếu vượt | Lặp 3 lần, báo trung vị và độ lệch | vllm-project/llm-compressor, [microsoft/BitNet](10-local-llm-rag-memory/README.md#nt-bitnet-cpp), [ml-explore/mlx-lm](10-local-llm-rag-memory/README.md#nt-mlx-lm), [vllm-project/guidellm](10-local-llm-rag-memory/README.md#nt-guidellm) | Kết quả phụ thuộc phần cứng, không tái lập giữa máy |
+| Hợp đồng API OpenAI-compatible cho server suy luận | URL server và model id → Báo cáo tuân thủ endpoint, tham số, streaming, lỗi | Bộ test contract với schema JSON | Chạy trên 5 server, đếm sai lệch | [vllm-project/vllm](10-local-llm-rag-memory/README.md#ch-vllm), llama.cpp, trang OpenAI API reference (chưa đọc) | Đặc tả gốc thay đổi, từng server hiểu khác nhau |
+| Kiểm rò rỉ train/test bằng khử trùng lặp | Tập huấn luyện và tập đánh giá văn bản → Danh sách cặp trùng chính xác và gần đúng, tỷ lệ nhiễm | Cổng chặn khi tỷ lệ trùng MinHash vượt ngưỡng | Cấy mẫu trùng đã biết, đo recall phát hiện | [ekzhu/datasketch](24-ai-data-engineering/README.md#nt-datasketch), google-research/deduplicate-text-datasets, swj0419/detect-pretrain-code | Trùng ngữ nghĩa (dịch, diễn đạt lại) lọt qua |
+| Cổng OCR tài liệu tiếng Việt và kỹ thuật | Ảnh/PDF quét, bản vàng có tọa độ → CER/WER sau NFC, F-score bảng, ALTO XML hợp lệ | Kiểm XSD ALTO 4.4 và ngưỡng CER | So VietOCR, PaddleOCR, dots.ocr trên cùng 100 trang | pbcquoc/vietocr, [rednote-hilab/dots.ocr](26-document-intelligence-ocr/README.md#nt-dots-ocr), trang ALTO của LoC | Thiếu bản vàng tiếng Việt công khai; bản vẽ kỹ thuật khác văn bản |
+| Xác thực PDF đầu ra bằng veraPDF | PDF sinh từ pipeline tài liệu → Báo cáo đạt/trượt PDF/A và PDF/UA kèm lỗi | veraPDF thoát khác 0 khi trượt | Chạy trên 30 PDF mẫu đã biết đạt/trượt, đo khớp | veraPDF/veraPDF-library | Hồ sơ PDF/UA-2 có thể chưa được công cụ hỗ trợ đầy đủ (chưa xác minh) |
+| Ký và kiểm provenance ảnh sinh ra | Ảnh từ pipeline image-gen → Ảnh có manifest C2PA đã ký và báo cáo xác minh | c2pa-rs xác minh chữ ký và chuỗi nguồn gốc | Thử cắt/nén ảnh, đo tỷ lệ manifest còn sống | [contentauth/c2pa-rs](19-agentic-video-media/README.md#factory-media-release-2026-11-04), spec C2PA | Metadata dễ bị mạng xã hội xóa |
+
+### 6.6 Dữ liệu và phân tích sản phẩm
+
+Nhóm có 174 hồ sơ: workflow-automation 36 (nhiều ứng dụng chat/mail/CMS lẫn vào), data 30 database-engine, 14 text-to-sql-agent, 12 semantic-lineage, product-analytics 6, product-research 4, feature-management 2. Mạnh ở DB engine, text-to-SQL (kèm Spider 2.0/BIRD), lineage (OpenLineage, DataHub, OpenMetadata) và chất lượng dữ liệu (GX, Soda, SQLFluff nằm ở quality-gate). Yếu ở bảng mở, data contract, BI as code, thí nghiệm A/B thống kê, feature flag chuẩn, privacy analytics và CDC streaming; phân loại workflow-automation còn lẫn mục không phải automation. Cần cập nhật quan điểm pháp lý VN theo Luật 91/2025.
+
+**Khoảng trống của kho:**
+
+- **Định dạng bảng mở (Iceberg/Delta/Hudi/Parquet) và catalog lakehouse**: Kho chỉ có DuckDB, lakeFS, Spark; không có hồ sơ cho đặc tả hay triển khai bảng mở *(gần nhất trong kho: DuckDB)*
+- **Data contract chuẩn (ODCS) và kiểm hợp đồng**: Chỉ có GX Core và Soda Core; chưa có ODCS hay CLI kiểm hợp đồng *(gần nhất trong kho: Soda Core)*
+- **Catalog/metadata đa engine và cấp quyền**: Có DataHub, OpenMetadata nhưng chưa có catalog REST cho bảng mở *(gần nhất trong kho: OpenMetadata)*
+- **BI as code và semantic layer khai báo**: Có Superset, Metabase; thiếu công cụ BI nằm trong Git/CI *(gần nhất trong kho: Cube Core)*
+- **Thí nghiệm A/B: thống kê tuần tự, SRM, CUPED**: GrowthBook là hồ sơ duy nhất; không có thư viện thống kê tuần tự *(gần nhất trong kho: GrowthBook)*
+- **Feature flag an toàn và OpenFeature**: Chỉ Unleash và flagd; thiếu spec/TCK, quản lý cấu hình theo ngữ cảnh *(gần nhất trong kho: flagd)*
+- **Privacy-preserving analytics**: Có Plausible, Umami thân thiện riêng tư nhưng không có thư viện differential privacy *(gần nhất trong kho: Plausible Analytics)*
+- **Engine truy vấn Rust nhúng (DataFusion) và thay thế Spark**: Không có DataFusion hay Sail; chỉ DuckDB, Polars, Spark *(gần nhất trong kho: Polars)*
+- **Quan sát chất lượng dữ liệu, drift, so sánh dữ liệu**: Có Evidently (eval-observability) nhưng không có công cụ dbt-level hay data diff *(gần nhất trong kho: Great Expectations (GX Core))*
+- **CDC, streaming SQL và ELT nhẹ**: Có Debezium, Airbyte, dlt, Pathway; thiếu streaming database và ELT nhẹ *(gần nhất trong kho: Debezium)*
+- **Feature store cho ML**: Không có Feast hay tương đương
+- **Cập nhật pháp lý dữ liệu cá nhân Việt Nam**: Brief nêu Nghị định 13/2023, nhưng theo tin PwC/EY Luật 91/2025/QH15 và NĐ 356/2025 có hiệu lực 1/1/2026
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Bộ kiểm hợp đồng dữ liệu ODCS 3.2 cho repo dbt/SQL | Thư mục model + file ODCS YAML cho từng bảng đầu ra → Báo cáo pass/fail: schema khớp, quy tắc chất lượng, SLA, trường thừa | JSON Schema ODCS 3.2 + datacontract-cli lint/test trên DuckDB mẫu | Tỷ lệ hợp đồng hợp lệ trên bộ 20 lỗi cố ý chèn; tỷ lệ lỗi bắt được | Great Expectations (GX Core), Soda Core trong kho; datacontract-cli và ODCS v3.2.0 | ODCS thay đổi nhanh, có thể lệch version; test dùng dữ liệu nhỏ không đại diện |
+| Kiểm tương thích bảng mở Iceberg/Delta/Parquet | Bảng mẫu tạo bằng một engine, danh sách engine đọc → Ma trận đọc/ghi theo format-version và kiểu dữ liệu | Đọc lại bằng DuckDB, DataFusion, PyIceberg; so checksum dòng | Số ô ma trận khớp trên số ô thử; số kiểu dữ liệu lệch | DuckDB, Polars trong kho; Iceberg spec (trạng thái v3 và v4 chưa xác minh) | Tính năng v3 chưa đồng đều giữa reader; môi trường CI nặng |
+| Máy kiểm text-to-SQL có kiểm chứng kết quả | Câu hỏi, schema, truy vấn tham chiếu → Điểm thực thi đúng, lỗi theo loại, truy vấn nguy hiểm bị chặn | sqlglot parse + chạy trên DuckDB read-only + so tập kết quả | Execution accuracy trên subset Spider 2.0/BIRD mini-dev; tỉ lệ chặn DML | Spider 2.0, BIRD Mini-Dev, sqlglot, Vanna trong kho | Truy vấn đúng nhưng khác thứ tự/NULL; benchmark rò rỉ vào prompt |
+| Máy phân tích thí nghiệm A/B có SRM và sequential testing | Bảng gán nhóm và chỉ số → Báo cáo SRM, CUPED, khoảng tin cậy luôn hợp lệ | Mô phỏng A/A: tỉ lệ dương tính giả khi nhìn dữ liệu nhiều lần; test SRM chi bình phương | False positive rate đo được so mức alpha trên ít nhất 10.000 mô phỏng | GrowthBook trong kho; confseq và bài Always Valid Inference (arXiv 1512.04922) | Giả định phân phối sai; người dùng dừng sớm thủ công |
+| Cổng an toàn feature flag | Danh sách flag, owner, ngày hết hạn, đường mã dùng flag → Báo cáo flag mồ côi, hết hạn, thiếu giá trị mặc định an toàn | Quét mã theo SDK OpenFeature, đối chiếu với file flag, chạy provider TCK | Số flag mồ côi tìm thấy trên repo có chủ đích; kết quả TCK | Unleash, flagd trong kho; OpenFeature spec, provider TCK 0.1.0 | Flag cấu hình động che khỏi quét tĩnh |
+| Phát hiện dữ liệu cá nhân trong bảng sự kiện theo luật Việt Nam | Schema và mẫu cột sự kiện → Danh sách cột nghi cá nhân, gợi ý ẩn danh/hạn lưu | Regex số CCCD/điện thoại, kiểm giá trị mẫu, báo cáo định dạng JSON | Precision/recall trên bộ dữ liệu giả có nhãn | Luật 91/2025/QH15 và NĐ 356/2025 theo tin PwC/EY; Plausible, Umami trong kho | Không phải tư vấn pháp lý; dữ liệu tiếng Việt thiếu dấu gây nhầm; điều khoản chưa đối chiếu văn bản gốc |
+| Kiểm lineage OpenLineage từ pipeline mẫu | Event OpenLineage từ dbt/Airflow chạy thử → Báo cáo event thiếu parent run hoặc facet chất lượng | Validate JSON Schema, kiểm đồ thị đầu vào/đầu ra không đứt | Tỷ lệ job có lineage đầy đủ | OpenLineage, DataHub, OpenMetadata, dbt trong kho | Phiên bản facet lệch giữa client và backend |
+| Máy đối chiếu metric giữa semantic layer và SQL gốc | Định nghĩa metric (MetricFlow/Cube) và truy vấn tham chiếu → Chênh lệch giá trị theo chiều thời gian | Chạy cả hai trên DuckDB, so kết quả theo dung sai | Số metric khớp trên tổng; lỗi theo loại (join, múi giờ) | MetricFlow, Cube Core trong kho; Evidence/Lightdash như đích BI as code | Dung sai che sai số; múi giờ và làm tròn |
+| Kiểm CDC end-to-end bằng sự kiện mẫu | Postgres mẫu với kịch bản insert/update/delete/đổi schema → So sánh nguồn và đích, độ trễ, xử lý đổi schema | Đối chiếu hash dòng và số bản ghi sau chạy; kiểm thứ tự | Số bản ghi lệch và độ trễ p95 | Debezium, Airbyte, dlt trong kho; go-pq-cdc, RisingWave là ứng viên | Kiểm thử cần container; tính không xác định về thời gian |
+
+### 6.7 Kỹ thuật phần mềm và vận hành
+
+Nhóm (khoảng 330 hồ sơ ở 7 category) phủ rộng framework, ngôn ngữ runtime, container và terminal. Điểm yếu là các mảng kỹ thuật tiêu chuẩn: devops/supply-chain-ci-security chỉ 1 hồ sơ (Harden-Runner), frontend/starter-template 2 hồ sơ, localization 7 hồ sơ (chủ yếu công cụ dịch), backend/auth-identity 5 hồ sơ không có thư viện giao thức OAuth/OIDC/WebAuthn. Thiên lệch về công cụ nổi tiếng nhiều sao, ít công cụ conformance, mobile gần như không có kiểm thử thiết bị/hiệu năng. Nhiều repo hiển nhiên (backstage, cosign, zizmor, oasdiff, appium...) đã có ở các nhóm khác của kho nên không đề xuất lại.
+
+**Khoảng trống của kho:**
+
+- **Bảo mật chuỗi cung ứng CI/CD**: Chỉ 1 hồ sơ trong danh mục con; nhiều công cụ pin/lock/runtime sensor mới *(gần nhất trong kho: Harden-Runner)*
+- **Starter/template có cổng chất lượng**: 2 hồ sơ, không có tiêu chí kiểm template chạy được *(gần nhất trong kho: open-saas, React Starter Kit)*
+- **Xác thực hiện đại (passkey, OAuth 2.1, OIDC)**: Chỉ framework/IdP tích hợp, thiếu thư viện giao thức và conformance *(gần nhất trong kho: Better Auth, Authelia, Authentik)*
+- **API design và kiểm hợp đồng (OpenAPI/AsyncAPI)**: Thiếu AsyncAPI, linter đa đặc tả, mock từ hợp đồng *(gần nhất trong kho: OpenAPI Generator, Spectral)*
+- **Kiểm thử mobile trên thiết bị, kích thước, hiệu năng**: Chỉ có Maestro; thiếu đo hiệu năng và thiết bị cho agent *(gần nhất trong kho: Maestro)*
+- **Kiểm thử tải**: Chỉ k6 và Locust (ở nhóm khác) *(gần nhất trong kho: k6, Locust)*
+- **Local-first / CRDT**: Chỉ RxDB, thiếu CRDT lõi và sync engine *(gần nhất trong kho: RxDB)*
+- **Kiến trúc event-driven và webhook**: Chưa có chuẩn webhook, catalog sự kiện, framework sinh AsyncAPI *(gần nhất trong kho: NATS Server)*
+- **i18n/l10n nâng cao (ICU, CLDR, lint chuỗi)**: Công cụ lint/kiểm plural và CLDR còn thiếu ứng viên mạnh *(gần nhất trong kho: FormatJS, Lingui, i18next)*
+- **Platform engineering/IDP và IaC có policy**: Tìm GitHub không ra ứng viên mới ngoài hồ sơ sẵn (Backstage, Conftest đã có); chưa kiểm sâu *(gần nhất trong kho: Backstage, Pulumi, OpenTofu)*
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Cổng breaking-change cho OpenAPI/AsyncAPI | Hai phiên bản spec (git base/head) → Báo cáo breaking/non-breaking, gợi ý bump SemVer | oasdiff + vacuum/Spectral lint; fail PR khi breaking mà không bump major | Chạy trên tập cặp spec thật có nhãn breaking: precision/recall | Spectral, oasdiff (đã có trong kho); vacuum, [asyncapi/spec](29-software-architecture-api-contracts/README.md#nt-asyncapi-spec) | Quy tắc breaking khác nhau giữa tool; spec dùng $ref ngoài |
+| Kiểm cứng hóa workflow GitHub Actions | Thư mục .github/workflows → Diff sửa: pin SHA, permissions tối thiểu, bỏ pull_request_target nguy hiểm | zizmor + actionlint trả mã 0; Scorecard điểm Pinned-Dependencies/Token-Permissions | Số cảnh báo trước/sau trên 20 repo mẫu | zizmor, actionlint, scorecard, Harden-Runner (kho); gh-actions-lock, secure-repo | Pin làm workflow gãy; cần kiểm chạy lại |
+| Skill thêm passkey vào ứng dụng web | Repo web với auth hiện có → Patch đăng ký/đăng nhập passkey, kèm đường khôi phục | Test với virtual authenticator của trình duyệt (Playwright/CDP), kiểm rpId/origin | Tỷ lệ luồng đăng ký+đăng nhập pass trên ba stack mẫu | W3C WebAuthn L3; webauthn4j, webauthn-ruby, Better Auth (kho) | Phụ thuộc cấu hình domain; khôi phục tài khoản dễ sai |
+| Kiểm OAuth/OIDC client theo thực hành OAuth 2.1 | Mã client hoặc cấu hình IdP → Danh sách vi phạm: thiếu PKCE, implicit, redirect_uri rộng, không kiểm state/nonce | Quy tắc tĩnh + chạy thử với node-oidc-provider/Keycloak cục bộ | Phát hiện trên bộ mã lỗi có chủ đích (tự dựng) so với nhãn | IETF draft OAuth 2.1; OIDC Core; node-oidc-provider, Keycloak (kho) | Draft OAuth 2.1 còn đổi |
+| Cổng chất lượng cho starter/template | Repo template → Báo cáo: build, test, lint, audit, Docker, CI, bản sao dự án mới chạy được | Script tạo dự án từ template rồi chạy install/build/test, kèm Scorecard | Tỷ lệ template qua cổng; thời gian từ clone tới chạy | open-saas, React Starter Kit, Full Stack FastAPI Template (kho) | Template cần bí mật/dịch vụ ngoài |
+| Kiểm ICU MessageFormat và đầy đủ bản dịch | File chuỗi (JSON/PO/XLIFF) nhiều locale → Lỗi cú pháp, thiếu biến, thiếu dạng số nhiều theo CLDR | Parser ICU/FormatJS, quy tắc plural CLDR cho từng locale | Lỗi bắt được trên bộ chuỗi gieo lỗi | FormatJS, Lingui, i18next, Weblate (kho); CLDR 49 | Khác biệt dialect MessageFormat 1 và MF2 |
+| Đo hiệu năng và kích thước app mobile trong CI | APK/IPA hoặc app RN/Flutter → Điểm hiệu năng, kích thước, so với baseline | Flashlight, Maestro flow; fail khi vượt ngưỡng | Độ lặp (phương sai) qua 10 lần chạy trên cùng thiết bị | Maestro, Flutter, React Native (kho); flashlight, patrol | Nhiễu do thiết bị; cần thiết bị thật |
+| Kiểm tải có ngưỡng SLO | OpenAPI spec và SLO → Kịch bản tải sinh sẵn và báo cáo pass/fail | k6/Gatling chạy trong CI, ngưỡng p95/lỗi | Kịch bản chạy được không sửa tay trên API mẫu | k6, Locust (kho); gatling, artillery | Môi trường staging không đại diện |
+
+### 6.8 Tự động hóa và quy trình
+
+Nhóm có 92 hồ sơ: workflow-automation 36, low-code 27, durable-execution 15, project-management 9, scheduling 5. Mạnh ở n8n/Temporal/Airflow/Kestra và nền tảng low-code LLM; yếu ở chuẩn hóa (BPMN, DMN, Arazzo), tích hợp Microsoft 365, audit, RPA và ticketing. Thiên lệch về sản phẩm self-host lớn và low-code LLM, ít thư viện nhỏ hay công cụ kiểm thử. Phần scheduling gồm nhiều ứng dụng (cal.diy, postiz) hơn là scheduler.
+
+**Khoảng trống của kho:**
+
+- **Engine BPMN/DMN mã mở**: Kho không có engine BPMN hay DMN; chỉ Conductor/Temporal-kiểu code-first. *(gần nhất trong kho: conductor-oss/conductor, open-workflow-specification/specification)*
+- **Human-in-the-loop và phê duyệt nhiều cấp**: Rất ít hồ sơ nói rõ cổng duyệt, SLA, leo thang, thay thế người duyệt. *(gần nhất trong kho: Claude Code Routines)*
+- **Durable execution cho agent chạy lâu (replay, kiểm thử xác định)**: Có Temporal/Restate/DBOS nhưng không có công cụ kiểm tính xác định hay test replay. *(gần nhất trong kho: temporalio/temporal, dbos-inc/dbos-transact-py)*
+- **Audit trail và tuân thủ**: Không hồ sơ nào về log chống sửa, giữ lại, ánh xạ NIST 800-92.
+- **Tích hợp email/lịch/tài liệu (Gmail, Graph, JMAP, CalDAV)**: Chỉ có googleworkspace/cli, Mail-0/Zero, cal.diy; thiếu Microsoft 365 và quản lý scope. *(gần nhất trong kho: googleworkspace/cli, Mail-0/Zero)*
+- **Rules/decision engine**: Không có DMN hay rules engine.
+- **RPA mã mở**: Không có Robot Framework, OpenRPA. *(gần nhất trong kho: microsoft/skill-recorder)*
+- **Đặc tả workflow API (Arazzo/Serverless Workflow)**: Chỉ có Open Workflow Specification; thiếu Arazzo và công cụ lint. *(gần nhất trong kho: open-workflow-specification/specification)*
+- **Scheduler có idempotency và retry (queue Postgres)**: Chỉ 5 hồ sơ scheduling, phần lớn là sản phẩm; thiếu queue nhẹ như pg-boss. *(gần nhất trong kho: celery/celery, hatchet-dev/hatchet)*
+- **Quản lý ticket/helpdesk có API**: Project-management thiên Kanban/Gantt, thiếu ITSM/helpdesk. *(gần nhất trong kho: opf/openproject, go-vikunja/vikunja)*
+- **Kiểm thử workflow**: Chỉ có skill/mẫu n8n, không công cụ test workflow. *(gần nhất trong kho: czlonkowski/n8n-skills)*
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Linter BPMN/DMN cho agent | File .bpmn/.dmn do LLM sinh → Báo cáo lỗi + bản sửa | XSD, bpmnlint, DMN TCK subset | Tỉ lệ file hợp lệ/chạy được trên 50 mô tả quy trình | OMG BPMN; paed01/bpmn-engine; SpiffWorkflow | Schema chuẩn vs mở rộng engine (Camunda/Flowable) |
+| Skill thiết kế approval flow nhiều cấp | Mô tả chính sách duyệt → BPMN/JSON flow có timeout, leo thang, thay thế | Mô phỏng 100% đường đi, không bước mồ côi | Bao phủ nhánh, số lỗi kịch bản | Flowable; [cordum-io/cordum](12-ai-security-guardrails/README.md#nt-cordum) | Chính sách sai lệch nghiệp vụ |
+| Kiểm replay/xác định cho workflow bền | Mã workflow Temporal/Restate → Báo cáo không xác định (time, random, I/O) | Chạy lại lịch sử, so sánh lệnh | Tỉ lệ phát hiện lỗi cài sẵn | [temporalio/temporal](21-autonomous-workflows/README.md#ch-temporal); [restatedev/restate](21-autonomous-workflows/README.md#ch-restate) | Phụ thuộc SDK |
+| Rà scope OAuth tối thiểu Gmail/Graph | Manifest, mã gọi API → Danh sách scope thừa và đề xuất thay | Bảng scope Google chính thức; lint tĩnh | Precision/recall trên bộ mẫu có nhãn | developers.google.com Gmail scopes | Tài liệu scope đổi, Graph chưa xác minh |
+| Bộ kiểm idempotency cho webhook/job | OpenAPI endpoint POST → Test gửi lặp, khóa trùng khác payload | Mong đợi 422/nhất quán theo draft | Tỉ lệ endpoint qua đủ ca | draft-ietf-httpapi-idempotency-key-header-09 | Draft hết hạn, thay đổi |
+| Cổng audit-log theo NIST 800-92 | Cấu hình log của workflow → Báo cáo thiếu trường/giữ lại/toàn vẹn | Danh mục kiểm có mã, kiểm hash chain | Số lỗi bắt được trên mẫu cài sẵn | NIST SP 800-92 | Chuẩn 2006, cũ |
+| Lint Arazzo cho chuỗi API của agent | Tệp Arazzo + OpenAPI → Báo lỗi tham chiếu step/output | vacuum/speakeasy validate, mock chạy | Tỉ lệ workflow chạy được qua mock | [OAI/Arazzo-Specification](05-low-code-llm-platforms/README.md#ch-arazzo-specification); vacuum | Arazzo 1.1 còn mới |
+| Kiểm tương thích lịch iCalendar/CalDAV | Sự kiện do agent tạo → Báo cáo RRULE/TZ sai | Round-trip parse với Radicale/Stalwart | Tỉ lệ round-trip nguyên vẹn | RFC 5545; Radicale | Khác biệt giữa server |
+
+### 6.9 Video, motion và media
+
+Nhóm có 135 hồ sơ, nặng về agentic-video và motion-design (nhiều skill Claude về Remotion/HyperFrames/GSAP/Manim) cùng thư viện nền (FFmpeg, three.js, Lottie, Remotion). Điểm mạnh: phủ rộng engine dựng, mô hình sinh video/ảnh, vài mảnh hạ tầng (OpenTimelineIO, PySceneDetect, Mediabunny, c2pa-rs, netflix/vmaf, whisper/faster-whisper đã có ở category khác). Điểm yếu: thiên lệch về sinh nội dung và hiệu ứng; gần như chưa có lớp kiểm chất lượng (loudness R128, VMAF, flash/WCAG 2.3), pipeline timeline có timecode, quản lý license tài sản, tạo ảnh có kiểm soát/brand, và kiểm thử render. Bộ phụ đề/dịch/lồng tiếng chủ yếu là công cụ GUI (pyvideotrans, VideoLingo), ít thứ chuyên cho tiếng Việt. Nhiều hồ sơ Việt Nam là repo nhỏ, cần kiểm chứng riêng.
+
+**Khoảng trống của kho:**
+
+- **Cổng chất lượng video tất định (loudness, VMAF, timecode)**: Kho có FFmpeg và netflix/vmaf nhưng chưa có hồ sơ nào dùng chúng làm cổng pass/fail (EBU R128, VMAF, độ lệch timecode) trong pipeline sinh video bằng agent. *(gần nhất trong kho: FFmpeg, kajisho5/ffmpeg-skill)*
+- **Timeline trao đổi và timecode (OpenTimelineIO)**: Chỉ có OpenTimelineIO lõi; thiếu adapter, viewer, ví dụ và công cụ kiểm timeline cho trao đổi với NLE. *(gần nhất trong kho: OpenTimelineIO)*
+- **Phụ đề và dịch phụ đề tiếng Việt**: Có công cụ dịch/ghi phụ đề đa ngôn ngữ nhưng chưa có thứ kiểm định dạng SRT/WebVTT, quy tắc tách dòng, tốc độ đọc và chất lượng dịch tiếng Việt. *(gần nhất trong kho: VideoLingo, pyvideotrans)*
+- **Lồng tiếng và bản địa hóa video**: Lồng tiếng nằm rải rác trong pyvideotrans/VideoLingo; thiếu hồ sơ chuyên về đồng bộ thời lượng, clone giọng có đồng thuận và đánh giá tự nhiên. *(gần nhất trong kho: pyvideotrans, elevenlabs/skills)*
+- **Provenance và C2PA cho media**: c2pa-rs và c2patool đã có nhưng chưa có lớp tích hợp vào agent (MCP, ký khi xuất) hay chuẩn bằng chứng nguồn gốc cho video sinh ra. *(gần nhất trong kho: contentauth/c2pa-rs, contentauth/c2patool)*
+- **Animation có accessibility (prefers-reduced-motion, WCAG 2.3)**: Kho có nhiều thư viện animation nhưng không hồ sơ nào kiểm prefers-reduced-motion, pause/stop/hide hay ngưỡng nhấp nháy (WCAG 2.2.2, 2.3.1, 2.3.3). *(gần nhất trong kho: motiondivision/motion, greensock/gsap-skills)*
+- **Trình dựng video trong trình duyệt (WebCodecs, tất định)**: Mediabunny, OpenCut, ffmpeg.wasm đã có; ít editor/engine WebCodecs có đầu ra tất định để agent điều khiển. *(gần nhất trong kho: Vanilagy/mediabunny, OpenCut-app/OpenCut)*
+- **Dựng 3D / WebGPU**: three.js và r3f có, nhưng thiếu WebGPU/wgpu, Gaussian splatting và render headless để dựng 3D trong pipeline video. *(gần nhất trong kho: mrdoob/three.js, pmndrs/react-three-fiber)*
+- **Quản lý tài sản và license (font, nhạc, ảnh, model)**: Không có hồ sơ nào quản lý license/nguồn gốc font, nhạc, ảnh, model dùng trong video; rủi ro pháp lý khi tự động hóa.
+- **Tạo ảnh có kiểm soát và nhất quán thương hiệu**: Có ComfyUI, diffusers, FLUX.2 nhưng thiếu quy trình kiểm soát (pose/depth/style reference), nhất quán nhân vật/thương hiệu và kiểm tra tự động đầu ra. *(gần nhất trong kho: Comfy-Org/ComfyUI, huggingface/diffusers)*
+- **Kiểm thử render và hồi quy hình/âm**: Thiếu khung kiểm thử render: so khung hình, golden frame, kiểm âm thanh, kiểm tất định giữa lần chạy. *(gần nhất trong kho: remotion-dev/remotion)*
+- **Xuất định dạng hiện đại (AV1, AVIF, HLS/DASH) và kiểm chuẩn màu**: Thiếu công cụ chọn encoder theo VMAF (AV1/AVIF), kiểm không gian màu BT.709/BT.2020 và đóng gói HLS/DASH. *(gần nhất trong kho: FFmpeg)*
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Cổng xuất video: loudness, VMAF, màu và timecode | File video đã dựng cùng bản tham chiếu và ngân sách chất lượng → Báo cáo JSON pass/fail kèm số đo | ffmpeg ebur128 hoặc libebur128 (-23 LUFS ±0,5, true peak), VMAF so bản tham chiếu, ffprobe cờ màu BT.709, kiểm lệch timecode | Tỷ lệ video lỗi bị chặn trên tập mẫu có lỗi cài sẵn | EBU R128, BS.1770-5, [netflix/vmaf](19-agentic-video-media/README.md#ch-vmaf), [jiixyj/libebur128](19-agentic-video-media/README.md#nt-libebur128) | Ngưỡng VMAF phụ thuộc nội dung; cần hiệu chỉnh theo từng loại |
+| Kiểm và sửa phụ đề SRT/WebVTT tiếng Việt | File phụ đề và video → File sạch cộng báo cáo lỗi | Parser WebVTT/SRT, giới hạn ký tự mỗi dòng, tốc độ đọc, chồng thời gian | Số lỗi định dạng còn lại bằng 0; chất lượng dịch chấm bằng mẫu người đánh giá | WebVTT, VideoLingo, SmartSub | Chất lượng dịch cần người duyệt; tách từ tiếng Việt dễ sai |
+| Audit chuyển động WCAG cho animation web | Mã nguồn hoặc trang chạy được → Danh sách vi phạm kèm vá | Playwright bật emulate reduced-motion để so animation, quét thuộc tính thời lượng, đếm nhấp nháy theo khung hình | Tỷ lệ bắt đúng trên tập ví dụ lỗi/sạch | WCAG 2.2, motionspec, motion-reduction-auditor | Tự động không thay thế kiểm tay; flash khó đo trên canvas/WebGL |
+| Chuyển timeline sang OTIO với round-trip | Dự án dựng (AAF, FCP XML, EDL) → File OTIO kèm báo cáo sai lệch | Chạy adapter rồi xuất ngược, so sánh số khung hình và timecode | Số clip lệch bằng 0 trên bộ mẫu otio-oc-examples | OpenTimelineIO, otio-aaf-adapter | Adapter mất metadata riêng của từng NLE |
+| Ký và xác minh provenance C2PA khi xuất | Video sinh ra và chứng chỉ ký → Video có manifest C2PA kèm báo cáo xác minh | c2pa-rs/c2patool validate trong CI; kiểm manifest còn sau khi chuyển mã | Tỷ lệ file giữ manifest sau các bước xử lý | C2PA 2.5, c2pa-rs, c2pa-mcp | Chuyển mã bằng FFmpeg có thể làm mất manifest; quản lý khóa ký |
+| Sổ đăng ký tài sản và license cho video | Danh sách font, nhạc, ảnh, model dùng trong dự án → Sổ SPDX/CSV kèm cảnh báo license | Quét manifest dự án, khớp SPDX, chặn khi thiếu giấy phép hoặc cấm thương mại | Số tài sản không rõ nguồn bằng 0 trước khi phát hành | Chưa có hồ sơ cơ sở trong kho (khoảng trống) | Metadata nguồn tự khai không đáng tin hoàn toàn |
+| Kiểm thử render tất định (golden frame) | Mẫu Remotion/Revideo/HTML video và khung hình chuẩn → Báo cáo so khung hình và băm âm thanh | Render hai lần so băm, so SSIM khung chọn, kiểm số khung và độ dài | Tỷ lệ chạy lặp giống nhau, ngưỡng SSIM | Remotion, dojo-video-engine, Mediabunny | Khác biệt do GPU/font giữa máy |
+| Chọn encoder AV1/AVIF theo VMAF mục tiêu | Video nguồn và mục tiêu VMAF → Cài đặt mã hóa và dung lượng | Tìm nhị phân CRF để đạt VMAF mục tiêu, kiểm decode bằng dav1d, ffprobe cờ màu | Dung lượng tiết kiệm ở cùng VMAF | AV1 spec, CrypticSignal/video-quality-metrics, FFmpeg | Thời gian mã hóa lâu; thiết bị cũ không giải mã AV1 |
+| Kiểm đầu ra tạo ảnh theo brand | Ảnh sinh ra, bảng màu và font thương hiệu → Điểm tuân thủ brand kèm ảnh hỏng | Đo khoảng cách màu so palette, đo tương đồng CLIP với ảnh tham chiếu, kiểm tỷ lệ khung | Tỷ lệ ảnh qua cổng so đánh giá tay | ComfyUI, diffusers, FLUX.2 | Chỉ số tự động chưa phản ánh thẩm mỹ |
+
+### 6.10 Tri thức, tài liệu và ứng dụng người dùng cuối
+
+Nhóm có 370 hồ sơ: docs 82 (site tài liệu 17, ghi chú 14), learning 141 (LLM/GenAI 35, security-learning chỉ 2), awesome-list 84, vietnam 18, desktop-utility 30, own-repo 15. Mạnh ở công cụ docs/site/ghi chú và khóa học LLM; yếu ở học bảo mật, bộ gõ/ASR tiếng Việt, DMS tuân thủ, kiểm tài liệu cho agent. Lệch về hồ sơ công cụ nổi tiếng nhiều sao, ít tiêu chí an toàn/tuân thủ. Số liệu đếm từ data/projects.json.
+
+**Khoảng trống của kho:**
+
+- **Tài liệu cho agent và docs-as-code đầy đủ**: Kho có llms-txt, context7, vale, lychee nhưng mới 5 hồ sơ docs-for-agents; thiếu kiểm llms.txt v2, lint OpenAPI, kiểm văn phong tiếng Việt *(gần nhất trong kho: AnswerDotAI/llms-txt, upstash/context7, vale-cli/vale, lycheeverse/lychee)*
+- **Quản lý tri thức có đồng bộ và xuất**: Nhiều app ghi chú nhưng thiếu so sánh sync/mã hóa/xuất và kiểm round-trip *(gần nhất trong kho: laurent22/joplin, logseq/logseq, siyuan-note/siyuan)*
+- **Học bảo mật**: Danh mục security-learning chỉ 2 hồ sơ, thiếu lab thực hành chuẩn (OWASP Juice Shop, WebGoat...) *(gần nhất trong kho: requie/AI-Red-Teaming-Guide, s4ntrx/Cybersecurity-Threats-Guide)*
+- **Tiếng Việt: bộ gõ, ASR/TTS**: Có NLP/LLM (PhoBERT, underthesea) nhưng chưa có bộ gõ OpenKey/xkey; ASR/TTS bổ sung ngoài VieNeu-TTS *(gần nhất trong kho: VinAIResearch/PhoBERT, pnnbao97/VieNeu-TTS)*
+- **Tiếng Việt: dữ liệu và cộng đồng**: Dữ liệu hành chính, benchmark có; thiếu ngữ liệu tin tức, danh sách cộng đồng cập nhật *(gần nhất trong kho: thanglequoc/vietnamese-provinces-database, ZaloAI-Jaist/VMLU)*
+- **DMS/OCR/e-signature tuân thủ**: Có paperless-ngx, docuseal, documenso; thiếu DMS có workflow (Mayan, Papermerge, OpenKM) và kiểm PDF/A *(gần nhất trong kho: paperless-ngx/paperless-ngx, docusealco/docuseal, documenso/documenso)*
+- **Desktop mở an toàn**: 30 hồ sơ desktop-utility chủ yếu tiện ích; thiếu tiêu chí tự cập nhật có ký và sandbox *(gần nhất trong kho: tw93/Mole, ShareX/ShareX)*
+- **Ghi/chụp màn hình**: Kho có ScreenToGif, ShareX, vhs; thiếu công cụ ghi màn hình hiện đại đa nền tảng *(gần nhất trong kho: NickeManarin/ScreenToGif, charmbracelet/vhs)*
+- **Awesome-list duy trì thật sự**: Có nhiều awesome-list nhưng chưa có công cụ lint/kiểm sức khoẻ list *(gần nhất trong kho: sindresorhus/awesome, public-apis/public-apis)*
+- **Tuân thủ pháp lý Việt Nam cho tri thức/dữ liệu**: Cần tham chiếu Luật BVDLCN 2025 và Luật GDĐT 2023, không có hồ sơ nào
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| llms-txt-auditor | Thư mục docs hoặc URL site docs → Báo cáo JSON: llms.txt hợp lệ theo v2, link chết, trang thiếu bản .md, thiếu rel=alternate | Parser theo cấu trúc v2 (H1 bắt buộc, H2 file list), lychee kiểm link, kiểm Link header | Tỷ lệ trang có markdown tương ứng; số link chết; so với bộ 20 site mẫu có đáp án gán tay | [AnswerDotAI/llms-txt](16-docs-tools/README.md#ch-llms-txt), [upstash/context7](16-docs-tools/README.md#docs-version-trust-2026-11-02), https://llmstxt.org/ | v2 vẫn là proposal, đổi thường; không chứng minh agent dùng thật |
+| diataxis-classifier-lint | Cây file Markdown → Nhãn loại tài liệu cho từng trang, danh sách trang lẫn loại | Lint front matter + kiểm quy tắc cấu trúc (tutorial có bước đánh số, reference không có văn kể chuyện) | F1 so với tập 100 trang gán tay từ 3 dự án mẫu | [evildmp/diataxis-documentation-framework](16-docs-tools/README.md#ch-diataxis), [vale-cli/vale](16-docs-tools/README.md#factory-docs-executable-2026-11-04) | Ranh giới loại mờ, kết quả mô hình không ổn định |
+| vi-docs-style-pack | Tài liệu tiếng Việt Markdown → Báo cáo lỗi: NFC, dấu hỏi/ngã hàng loạt, thuật ngữ không nhất quán, câu quá dài | Vale style + cspell từ điển + script kiểm NFC | Precision/recall trên mẫu có lỗi chèn sẵn; số cảnh báo giả/1000 dòng | [vale-cli/vale](16-docs-tools/README.md#factory-docs-executable-2026-11-04), [streetsidesoftware/cspell](16-docs-tools/README.md#ch-cspell), Unicode NFC | Từ điển tiếng Việt không đầy đủ, nhiều cảnh báo giả |
+| vi-nfc-normalizer-check | Kho văn bản/CSV/JSON tiếng Việt → Danh sách file có chuỗi không NFC, ký tự TCVN3/VNI lẫn vào, bản đã chuẩn hóa | unicodedata.normalize so sánh + NormalizationTest | Không có chuỗi nào khác sau chuẩn hóa lần hai (idempotent); đếm trên dataset thật | [undertheseanlp/underthesea](18-vietnam-community/README.md#ch-underthesea), Unicode UAX #15 (chưa đọc) | Chuẩn hóa có thể đổi định danh/khóa so sánh |
+| pkm-export-roundtrip | Vault ghi chú (Obsidian/Joplin/Logseq) → Báo cáo mất mát khi xuất rồi nhập: link, đính kèm, thẻ, metadata | So băng hash nội dung và đồ thị link trước/sau | Tỉ lệ liên kết/đính kèm giữ nguyên trên vault mẫu 3 công cụ | [laurent22/joplin](35-desktop-productivity-apps/README.md#chuyen-joplin), [logseq/logseq](35-desktop-productivity-apps/README.md#chuyen-logseq), [obsidianmd/obsidian-skills](20-claude-plugins-ecosystem/README.md#3zc-kiểm-bài-5-repo-skill-đáng-lưu-matt-pocock-addy-osmani-cloudflare-obsidian-google-egm-bài-người-dùng-gửi-đọc-mã-16112026) | Mỗi công cụ có định dạng riêng; vault thật chứa dữ liệu riêng tư |
+| dms-compliance-checklist | Cấu hình DMS (ví dụ paperless-ngx) và mẫu hồ sơ → Checklist: lưu trữ PDF/A, nhật ký truy cập, thời hạn lưu, mã hóa, phân quyền | veraPDF cho PDF/A, script đọc cấu hình, kiểm sao lưu khôi phục | Số kiểm tra qua/tổng; khôi phục thành công trên bản sao | [paperless-ngx/paperless-ngx](36-self-hosting-homelab/README.md#chuyen-paperless-ngx), [docusealco/docuseal](36-self-hosting-homelab/README.md#chuyen-docuseal), https://www.pdfa.org/verapdf-now-supports-pdf-a-4/ | Quy định pháp lý Việt Nam chưa xác minh điều khoản; không phải tư vấn pháp lý |
+| e-signature-evidence-pack | Tài liệu đã ký (PDF) cùng chứng thư → Gói bằng chứng: băm tài liệu, chuỗi chứng thư, dấu thời gian, loại chữ ký | Công cụ kiểm chữ ký PDF (PAdES) và so băm | Kiểm đúng/sai trên bộ PDF ký hợp lệ và bị sửa | [documenso/documenso](36-self-hosting-homelab/README.md#chuyen-documenso), [docusealco/docuseal](36-self-hosting-homelab/README.md#chuyen-docuseal), Luật GDĐT 2023 | Phân loại pháp lý chữ ký theo Luật 20/2023 chưa xác minh điều khoản |
+| desktop-update-signing-audit | Repo ứng dụng desktop (Tauri/Electron/Sparkle) → Báo cáo: cập nhật có ký không, khóa nằm ở đâu, kênh HTTPS, quyền sandbox | Đọc config updater, kiểm có khóa công khai nhúng, kiểm CI không lộ khóa riêng (gitleaks) | Phát hiện đúng trên 10 repo mẫu gán tay | [tauri-apps/tauri](13-dev-stack-devops/README.md#ch-tauri), [sparkle-project/Sparkle](35-desktop-productivity-apps/README.md#nt-sparkle) (chưa đọc nội dung) | Mỗi framework cấu hình khác nhau; false negative với mã tuỳ biến |
+| awesome-list-health | URL awesome-list → Điểm sức khoẻ: lint, link chết, số mục lỗi thời, ngày commit cuối | awesome-lint + lychee + GitHub API đọc pushed_at các mục | Tương quan với đánh giá thủ công 30 list | [sindresorhus/awesome](08-awesome-lists-learning/README.md#6c56-danh-sách-awesome--tổng-hợp), [lycheeverse/lychee](16-docs-tools/README.md#ch-lychee), [sindresorhus/awesome-lint](08-awesome-lists-learning/README.md#nt-awesome-lint) | Rate limit GitHub; list lớn kiểm chậm |
+| vi-oss-resource-radar | Truy vấn GitHub về tiếng Việt (NLP/ASR/TTS/bộ gõ) → Danh sách repo kèm license, ngày push, loại tài nguyên, cờ license không rõ | Script gh search + dedupe với projects.json + đọc LICENSE | Tỷ lệ ứng viên được duyệt đưa vào kho; tỷ lệ license không rõ | [VinAIResearch/PhoBERT](18-vietnam-community/README.md#ch-phobert), [undertheseanlp/underthesea](18-vietnam-community/README.md#ch-underthesea), dangvansam/viet-asr | API rate limit; dữ liệu huấn luyện có thể vướng bản quyền |
+
+### 6.11 Kỹ thuật công trình và chất lượng công nghiệp
+
+Kho có 37 hồ sơ cho 3 category: cad-bim 19, geospatial 14, simulation 4 (không có subcategory). Điểm mạnh: nền tảng BIM/CAD (IfcOpenShell, FreeCAD, CadQuery, OpenSCAD) và GIS/ảnh 3D (GDAL, geopandas, ODM, PCL) kèm README 27 đọc kỹ với ngưỡng kiểm máy (IDS/BCF). Điểm yếu: simulation chỉ 4 hồ sơ, toàn vật lý game/CFD GPU, không có FMI/FMU, mô hình hóa hệ thống hay FEM/CAE; geospatial thiếu lớp chuẩn đám mây (GeoParquet, STAC, OGC API); cad-bim nghiêng về agent/MCP cho AutoCAD/Revit và thiếu kernel B-rep/STEP. Mảng (B) gần như trống: grep tên/ghi chú không thấy hồ sơ nào về QMS ISO, hàn, SPC, hiệu chuẩn, truy xuất, MES (chỉ có frappe/erpnext, odoo/odoo, paperless-ngx ở nhóm khác, chưa phân loại cho nhà máy chế tạo). Thiên lệch: dự án nặng agent/AI, ít công cụ vận hành công nghiệp.
+
+**Khoảng trống của kho:**
+
+- **QMS ISO 9001/14001/45001 mã mở (đánh giá nội bộ, CAPA, rủi ro, mục tiêu)**: Nhà máy chai khí cần hồ sơ chứng nhận; kho không có công cụ nào, chỉ có ERP tổng quát. *(gần nhất trong kho: frappe/erpnext (module Quality), odoo/odoo)*
+- **Quy trình hàn WPS/PQR và chứng chỉ thợ hàn có cảnh báo hết hạn**: Lõi của chế tạo bình áp lực (ISO 15614-1, ASME IX); không tìm được repo mã mở đạt chất lượng, nên là khoảng trống thật cần tự xây.
+- **NDT/kiểm tra (RT, UT) và hồ sơ kết quả**: ISO 17636/17640 đòi báo cáo có truy vết; không có công cụ nào trong kho.
+- **SPC (kiểm soát quá trình thống kê) và Cp/Cpk**: Kiểm soát độ dày thành, thử áp, khối lượng chai; kho không có.
+- **Truy xuất serial/lô (chai, tấm thép, mối hàn)**: Mỗi chai cần truy xuất từ cuộn thép đến kiểm định; chỉ MES nhẹ mới giải được.
+- **Quản lý hiệu chuẩn thiết bị đo (ISO/IEC 17025 tinh thần)**: Tìm GitHub chỉ ra repo 0-sao, bài tập sinh viên; không có công cụ đạt chất lượng.
+- **Quản lý bản vẽ/tài liệu có phiên bản và phê duyệt**: Kiểm soát tài liệu theo ISO 9001 cần revision/approval; kho có DMS chung (paperless-ngx) nhưng không có luồng phát hành bản vẽ. *(gần nhất trong kho: paperless-ngx/paperless-ngx)*
+- **MES/ERP mã mở nhẹ cho xưởng vừa và nhỏ**: Chưa có MES; OpenMES, Carbon là ứng viên mới. *(gần nhất trong kho: frappe/erpnext, odoo/odoo)*
+- **Chuẩn cloud-native cho dữ liệu không gian (GeoParquet, STAC, OGC API)**: Kho có GDAL/geopandas nhưng không có đặc tả/thư viện định dạng đám mây. *(gần nhất trong kho: OSGeo/gdal, geopandas/geopandas)*
+- **Đồng mô phỏng FMI/SSP và Modelica**: simulation chỉ 4 hồ sơ, không có FMU/co-sim. *(gần nhất trong kho: bulletphysics/bullet3, ProjectPhysX/FluidX3D)*
+- **Kernel B-rep / STEP AP242 / kiểm định hình học CAD**: Có CadQuery, FreeCAD nhưng không có kernel/validator STEP độc lập. *(gần nhất trong kho: CadQuery/cadquery, FreeCAD/FreeCAD)*
+- **Kiểm IFC bằng máy (IDS validator, bộ dữ liệu chứng nhận)**: buildingSMART/IDS đã có nhưng validator và dataset chứng nhận chưa có. *(gần nhất trong kho: buildingSMART/IDS, IfcOpenShell/IfcOpenShell)*
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Sổ WPS/PQR/WPQ có cảnh báo hết hạn (schema + validator) | CSV/JSON WPS, PQR, danh sách thợ hàn, ngày chứng chỉ → Báo cáo hết hạn trong 30/60/90 ngày, mối hàn thiếu WPS phù hợp | JSON Schema + test ngày/tham chiếu chéo; CI chạy trên fixture | Tỷ lệ bắt đúng trên bộ ca tổng hợp có nhãn (recall, false positive) | Khoảng trống 'WPS/PQR'; ISO 15614-1, ASME IX (chưa xác minh điều khoản) | Cần chuyên gia hàn duyệt biến số; không thay thế chuẩn mua **Từ hồ sơ đã đọc:** Không tìm được công cụ mã mở đạt chất lượng cho WPS/PQR và chứng chỉ thợ hàn: đây là khoảng trống cần tự xây hoặc mua; chuẩn ISO 15614-1 và ASME IX bán có phí nên mọi điều khoản chưa được xác minh. |
+| Kiểm tài liệu QMS: ma trận điều khoản và bằng chứng | Thư mục thủ tục/biểu mẫu + danh mục điều khoản ISO 9001 tự nhập → Ma trận phủ, mục thiếu bằng chứng | Script kiểm link tới file, ngày soát xét, người duyệt | Số mục lỗi tìm được trên bộ mẫu bị gài lỗi | OpenQMS, odoo-qms-iso9001 | Danh mục điều khoản cấp điều khoản chưa xác minh, phải do người dùng cung cấp **Từ hồ sơ đã đọc:** odoo-qms-iso9001 chỉ là khung dữ liệu (không test, commit cuối 2021); OpenQMS nhắm IATF 16949 và ISO 9001 §9.3 chỉ là tuyên bố trong README; OCA/dms không có phiên bản hay duyệt. |
+| CAPA/8D checker | Hồ sơ CAPA (JSON) → Danh sách thiếu: nguyên nhân gốc, hành động khắc phục, kiểm chứng hiệu quả, quá hạn | Schema + quy tắc trạng thái | Hồ sơ sai gài sẵn bị bắt (%) | OpenQMS (8D D1-D8) | Chất lượng nguyên nhân gốc không kiểm được bằng máy **Từ hồ sơ đã đọc:** OpenQMS có 8D từ D1 đến D8 với test; chưa kiểm tích hợp với hồ sơ điều tra thực tế. |
+| SPC Cp/Cpk và quy tắc ngoài kiểm soát | CSV đo (độ dày thành, thử áp, khối lượng) → Biểu đồ, Cp/Cpk, cờ vi phạm quy tắc | So kết quả với thư viện tham chiếu (pyshewhart) trên dữ liệu cố định | Sai số số học so với tham chiếu | pyshewhart, OpenQMS | Cỡ mẫu nhỏ, giả định chuẩn **Từ hồ sơ đã đọc:** pyshewhart không có Cp/Cpk và luật Western Electric "8 điểm liên tiếp" không bao giờ kích hoạt do điều kiện `len(ooti) > m` (đọc mã, chưa chạy); OpenQMS có SPC thật và 157 file test chạy trong CI nhưng nhắm IATF 16949. |
+| Truy xuất chai: serial -> lô thép -> mối hàn -> kiểm định | Bảng serial, lô, WPS, NDT, thử áp → Cây truy xuất và danh sách chai thiếu mắt xích | Test đồ thị: không mồ côi, không trùng serial | Truy vấn ngược một lô thu hồi giả định đúng và đủ | OpenMes, Carbon | Dữ liệu nhập tay thiếu; cần mã vạch **Từ hồ sơ đã đọc:** OpenMES có truy vết lô và serial nhưng tuyên bố audit log "do PostgreSQL cưỡng chế" không có trigger hay REVOKE trong migration; Carbon là open-core (`packages/ee` cần giấy phép thương mại). |
+| Cảnh báo hiệu chuẩn thiết bị đo | Danh mục thiết bị, ngày hiệu chuẩn, chu kỳ, độ không đảm bảo → Lịch đến hạn, thiết bị quá hạn đã dùng trong lô nào | Test ngày + liên kết lô đo | Bắt được 100% ca quá hạn trên fixture | Khoảng trống hiệu chuẩn; [OCA/maintenance](38-industrial-quality-manufacturing/README.md#nt-oca-maintenance) | Yêu cầu điều khoản 17025 chưa xác minh **Từ hồ sơ đã đọc:** OpenQMS có sổ hiệu chuẩn và cổng chặn thiết bị quá hạn trong GR&R nhưng không có độ không đảm bảo đo hay ISO/IEC 17025; OCA/maintenance chỉ nhắc chứ không chặn thiết bị. |
+| Cổng IFC: IDS + validate trong CI | File IFC + IDS → Báo cáo pass/fail theo yêu cầu | IfcTester, buildingSMART validate | Tỷ lệ phát hiện lỗi trên Certification-datasets | IfcOpenShell, [buildingSMART/validate](27-3d-cad-bim-engineering/README.md#nt-buildingsmart-validate) | Dataset license NOASSERTION |
+| Kiểm GeoParquet/STAC trước khi phát hành | Tệp GeoParquet, catalog STAC → Báo cáo tuân thủ metadata, CRS, bbox | geoparquet-io, gpq, pystac validate | Số lỗi bắt được trên bộ tệp cố ý hỏng | geoparquet, stac-geoparquet | Đặc tả 2.0 còn rc |
+| Kiểm FMU/SSP trước khi ghép | FMU và SSP → Báo cáo validate, chạy thử, so khớp với kết quả tham chiếu | FMPy/PyFMI validate + chạy | Sai lệch số so với kết quả tham chiếu | FMI 3.0.2, libcosim | Cần FMU nhị phân đúng nền tảng |
+
+### 6.12 Giới hạn của chương
+
+- Không có ý tưởng nào được xây hay chạy; "cổng kiểm máy" và "cách đo" là thiết kế đề xuất.
+- Danh sách khoảng trống và ý tưởng do các trinh sát tạo từ tìm kiếm web và GitHub; chỉ các repo được liệt kê trong hồ sơ mới đã được đọc mã hoặc tài liệu tại một commit cố định.
+- Trạng thái chuẩn và luật (đặc biệt ISO, TCVN, luật Việt Nam) có nhiều dòng chỉ từ nguồn thứ cấp hoặc không đọc được: xem mức xác minh trong [STANDARDS.md](STANDARDS.md).
+- Số sao và ngày commit của một số ứng viên chưa đo được vì hạn mức API; xem từng hồ sơ.

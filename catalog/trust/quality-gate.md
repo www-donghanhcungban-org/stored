@@ -2,9 +2,9 @@
 
 # quality-gate — Đánh giá, an toàn & chất lượng
 
-[← Mục lục catalog](../README.md) · 88 hồ sơ.
+[← Mục lục catalog](../README.md) · 97 hồ sơ.
 
-## Test unit/integration (`unit-integration`, 15)
+## Test unit/integration (`unit-integration`, 17)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -15,6 +15,8 @@
 | [Catch2](../../30-software-testing-quality/README.md#anhkysuai-catchorg-catch2) | `catchorg/Catch2` | BSL-1.0 | 21.590 | đọc tài liệu 2026-11-23 | 30 | Framework unit test C++ với assertion tự nhiên, section chia sẻ setup, macro BDD và microbenchmark cơ bản. |
 | [AVA](../../30-software-testing-quality/README.md#anhkysuai-avajs-ava) | `avajs/ava` | MIT | 20.825 | đọc tài liệu 2026-11-23 | 30 | Test runner Node.js với cú pháp ngắn, assertion chi tiết và chạy đồng thời các test độc lập. |
 | [keploy](../../30-software-testing-quality/README.md#chuyen-keploy) | `keploy/keploy` | Apache License 2.0 | 19.881 | đọc tài liệu 2026-11-18 | 30 | Công cụ kiểm thử API và tích hợp, ghi lại lưu lượng thật (API, truy vấn DB, sự kiện streaming) bằng eBPF rồi phát lại thành test và mock. |
+| [OSS-Fuzz](../../30-software-testing-quality/README.md#nt-google-oss-fuzz) | `google/oss-fuzz` | Apache-2.0 | 12.982 | đọc mã 2026-11-23 | 30 | Dịch vụ fuzz liên tục do Google vận hành cho dự án mã nguồn mở được nhận, cũng là kho định dạng chuẩn: mỗi dự án có Dockerfile, build.sh và project.yaml (engine, sanitiz… |
+| [Toxiproxy](../../30-software-testing-quality/README.md#nt-shopify-toxiproxy) | `Shopify/toxiproxy` | MIT | 12.543 | đọc mã 2026-11-23 | 30 | Proxy TCP viết bằng Go để mô phỏng lỗi mạng trong test tích hợp: tạo proxy qua API HTTP hoặc client rồi gắn các toxic (latency, bandwidth, timeout, reset_peer, slicer, l… |
 | [Great Expectations (GX Core)](../../15-ai-for-data/README.md#ch-great-expectations-gx-core) | `fivetran/great_expectations` | Apache-2.0 | 11.945 | đọc tài liệu 2026-11-23 | 15 | Unit test cho dữ liệu (Expectation + Checkpoint), v1.24.1; |
 | [StrykerJS](../../13-dev-stack-devops/README.md#ch-strykerjs) | `stryker-mutator/stryker-js` | Apache-2.0 | 3.306 | đọc tài liệu 2026-11-23 | 13 | Mutation testing JS/TS; |
 | [Soda Core](../../15-ai-for-data/README.md#ch-soda-core) | `sodadata/soda-core` | Elastic-2.0 (ELv2; pyproject khai "Proprietary") | 2.463 | đọc tài liệu 2026-11-23 | 15 | Data contract YAML, 50+ check, CLI/Python trên Postgres/Snowflake/BigQuery/DuckDB…; |
@@ -55,7 +57,7 @@
 | [Accessibility Agents (Community-Access)](../../06-ui-ux-design/README.md#ux-accessibility-agents-community-access) | `Community-Access/accessibility-agents` | MIT | 456 | đọc mã 2026-11-23 | 06 | Gói 113 skill WCAG 2.2 AA (6 router + chuyên gia + kb-\*) chạy trên nhiều client, kèm hook chặn sửa file UI cho đến khi `accessibility-lead` hoàn tất và MCP server 39 too… |
 | [a11y-specialist-skills (masuP9)](../../06-ui-ux-design/README.md#ux-a11y-specialist-skills) | `masup9/a11y-specialist-skills` | MIT | 61 | đọc mã 2026-11-23 | 06 | Sáu skill WCAG 2.2 A/AA cho Claude Code và Codex, nổi bật là `auditing-wcag`: quy trình 6 bước gán Pass/Fail/NT/NA cho từng tiêu chí kèm bằng chứng, chạy CLI `@a11y-skil… |
 
-## Phân tích tĩnh & lint (`static-analysis`, 21)
+## Phân tích tĩnh & lint (`static-analysis`, 22)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -79,6 +81,7 @@
 | [Shadscan](../../06-ui-ux-design/README.md#ux-shadscan) | `TheOrcDev/shadscan` | MIT (Copyright 2026 TheOrcDev) | 562 | đọc mã 2026-11-23 | 06 | CLI audit tĩnh tất định cho app React/shadcn: 62 luật, 6 hạng mục, điểm 0-100 và chia báo cáo thành Fixes/Decisions/Advisories/Not applicable, kèm lệnh --check-ui đo trà… |
 | [squirrelscan](../../06-ui-ux-design/README.md#ux-squirrelscan) | `squirrelscan/squirrelscan` | MIT (Copyright 2026 squirrelscan; tên và logo theo TRADEMARKS.md) | 334 | đọc mã 2026-11-23 | 06 | CLI/Bun audit website 350+ luật trong 22 nhóm (SEO, a11y 63 luật, mobile, content, performance, security, agent experience...), điểm 0-100 theo trọng số luật và xuất báo… |
 | [crapper / dryer / mutator (Uncle Bob)](../../20-claude-plugins-ecosystem/README.md#ch-crapper-dryer-mutator-uncle-bob) | `unclebob/crapper` | 0BSD | 243 | đọc tài liệu 2026-11-23 | 20 | Bộ cổng chất lượng Python của Robert C. |
+| [driftlint](../../20-claude-plugins-ecosystem/README.md#nt-driftlint) | `alifurkangokce/driftlint` | MIT | 61 | đọc mã 2026-11-23 | 20 | CLI Node/TypeScript (không phụ thuộc runtime) tìm điều CLAUDE.md, AGENTS.md, skill, rule Cursor khẳng định mà mã không còn ủng hộ: đường dẫn chết, lệnh npm/make đã xóa,… |
 | [dependency-cruiser](../../29-software-architecture-api-contracts/README.md#dependency-cruiser-architecture-gates) | `sverweij/dependency-cruiser` | MIT | — | đọc mã 2026-11-04 | 29 | Kiểm graph/rule dependency JS/TS; |
 
 ## Eval skill/agent (`ai-skill-eval`, 6)
@@ -92,7 +95,7 @@
 | [agnix](../../20-claude-plugins-ecosystem/README.md#factory-skill-admission-2026-11-04) | `agent-sh/agnix` | MIT OR Apache-2.0 | 465 | đọc mã 2026-11-04 | 20 | Linter 757 luật cho CLAUDE.md, SKILL.md, hooks, MCP, plugin của nhiều harness; |
 | [Coder Eval](../../20-claude-plugins-ecosystem/README.md#ch-coder-eval) | `UiPath/coder_eval` | Apache-2.0 | 159 | đọc tài liệu 2026-11-23 | 20 | Eval coding agent trong sandbox, kiểm skill_triggered theo harness, A/B, GitHub Action; |
 
-## Hợp đồng API & schema (`api-contract`, 8)
+## Hợp đồng API & schema (`api-contract`, 11)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -101,11 +104,14 @@
 | [Insomnia](../../30-software-testing-quality/README.md#anhkysuai-kong-insomnia) | `Kong/insomnia` | Apache-2.0 cho mã repo; tính năng dịch vụ theo gói riêng | 40.183 | đọc tài liệu 2026-11-23 | 30 | API client và bộ công cụ thiết kế, chạy thử REST, GraphQL, gRPC và WebSocket. |
 | [Pydantic](../../30-software-testing-quality/README.md#anhkysuai-pydantic-pydantic) | `pydantic/pydantic` | MIT | 29.634 | đọc tài liệu 2026-11-23 | 30 | Validation dữ liệu Python qua type hint và model. |
 | [Spectral](../../29-software-architecture-api-contracts/README.md#ch-spectral) | `stoplightio/spectral` | Apache-2.0 | 3.263 | đọc tài liệu 2026-11-23 | 29 | Linter JSON/YAML, ruleset sẵn OpenAPI/AsyncAPI/Arazzo v1 (hỗ trợ Arazzo 1.1 chưa xác minh); |
+| [Microcks](../../29-software-architecture-api-contracts/README.md#nt-microcks) | `microcks/microcks` | Apache-2.0 | 2.093 | đọc mã 2026-11-23 | 29 | Nền tảng mock và test hợp đồng đa giao thức từ cùng một tài sản đặc tả. |
+| [vacuum (OpenAPI, AsyncAPI, Arazzo linter)](../../29-software-architecture-api-contracts/README.md#nt-vacuum) | `daveshanley/vacuum` | MIT | 1.149 | đọc mã 2026-11-23 | 29 | Linter Go rất nhanh cho OpenAPI, AsyncAPI, JSON Schema và Arazzo; |
+| [Data Contract CLI](../../15-ai-for-data/README.md#nt-datacontract-cli) | `datacontract/datacontract-cli` | MIT | 1.116 | đọc mã 2026-11-23 | 15 | CLI Python MIT lint và test dữ liệu thật theo Open Data Contract Standard, có `ci --fail-on` và xuất JUnit. |
 | [OpenTelemetry Weaver](../../07-eval-observability/README.md#ch-opentelemetry-weaver) | `open-telemetry/weaver` | Apache-2.0 | 537 | đọc tài liệu 2026-11-23 | 07 | registry check/live-check OTLP so với semconv, GitHub Action fail theo severity; |
 | [oasdiff](../../29-software-architecture-api-contracts/README.md#oasdiff-compatibility-gates) | `oasdiff/oasdiff` | Apache-2.0 | — | đọc mã 2026-11-04 | 29 | Breaking diff OpenAPI base/revision; |
 | [Schemathesis](../../30-software-testing-quality/README.md#schemathesis-factory) | `schemathesis/schemathesis` | MIT | — | đọc mã 2026-11-04 | 30 | Schema-based OpenAPI/GraphQL/gRPC testing và stateful sequences; |
 
-## Hiệu năng & tải (`perf-load`, 10)
+## Hiệu năng & tải (`perf-load`, 13)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -113,10 +119,13 @@
 | [LeakCanary](../../30-software-testing-quality/README.md#anhkysuai-square-leakcanary) | `square/leakcanary` | Apache-2.0 | 30.009 | đọc tài liệu 2026-11-23 | 30 | Phát hiện rò rỉ bộ nhớ trong ứng dụng Android. |
 | [Hyperfine](../../30-software-testing-quality/README.md#anhkysuai-sharkdp-hyperfine) | `sharkdp/hyperfine` | MIT OR Apache-2.0 | 29.338 | đọc tài liệu 2026-11-23 | 30 | Benchmark lệnh qua nhiều lần chạy và xuất thống kê. |
 | [Locust](../../30-software-testing-quality/README.md#anhkysuai-locustio-locust) | `locustio/locust` | MIT | 28.307 | đọc tài liệu 2026-11-23 | 30 | Công cụ viết kịch bản kiểm tải bằng Python cho HTTP và giao thức mở rộng. |
+| [Vegeta](../../30-software-testing-quality/README.md#nt-vegeta) | `tsenart/vegeta` | MIT | 25.256 | đọc mã 2026-11-23 | 30 | Công cụ tải HTTP bằng Go, điều khiển theo tốc độ cố định, dùng được như dòng lệnh hoặc thư viện. |
 | [React Scan](../../30-software-testing-quality/README.md#anhkysuai-aidenybai-react-scan) | `aidenybai/react-scan` | MIT | 21.882 | đọc tài liệu 2026-11-23 | 30 | Công cụ hiển thị component và điểm nóng hiệu năng khi quan sát ứng dụng React đang chạy. |
+| [oha](../../30-software-testing-quality/README.md#nt-oha) | `hatoo/oha` | MIT | 10.722 | đọc mã 2026-11-23 | 30 | Bộ sinh tải HTTP Rust có TUI, đọc nhanh, ghi kết quả vào SQLite. |
 | [web-vitals](../../30-software-testing-quality/README.md#ch-web-vitals) | `GoogleChrome/web-vitals` | Apache-2.0 | 8.700 | đọc tài liệu 2026-11-23 | 30 | Thư viện chính thức đo LCP/INP/CLS ở người dùng thật, build attribution chỉ ra nguyên nhân; |
 | [Lighthouse CI](../../13-dev-stack-devops/README.md#ch-lighthouse-ci) | `GoogleChrome/lighthouse-ci` | Apache-2.0 | 7.122 | đọc tài liệu 2026-11-23 | 13 | Commit cuối 26/6/2025 (đứng yên); |
 | [Web Quality Skills](../../06-ui-ux-design/README.md#ch-web-quality-skills) | `addyosmani/web-quality-skills` | MIT | 3.122 | đọc tài liệu 2026-11-23 | 06 | 6 Agent Skills đo-trước (audit, performance, Core Web Vitals, a11y WCAG 2.2, SEO, best practices); |
+| [GuideLLM](../../10-local-llm-rag-memory/README.md#nt-guidellm) | `vllm-project/guidellm` | Apache-2.0 | 1.804 | đọc mã 2026-11-23 | 10 | Công cụ benchmark tải cho endpoint LLM, ra phân phối TTFT/ITL và tìm mức tải an toàn theo SLO. |
 | [AIPerf](../../10-local-llm-rag-memory/README.md#aiperf) | `ai-dynamo/aiperf` | Apache-2.0 | 842 | đọc mã 2026-11-02 | 10 | Load generator đo TTFT/ITL/throughput; |
 | [Grafana k6](../../30-software-testing-quality/README.md#k6-factory) | `grafana/k6` | AGPL-3.0 | — | đọc mã 2026-11-04 | 30 | Load test runtime Go/JS; |
 

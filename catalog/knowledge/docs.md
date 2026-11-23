@@ -2,7 +2,7 @@
 
 # docs — Học tập, tài liệu & tri thức
 
-[← Mục lục catalog](../README.md) · 82 hồ sơ.
+[← Mục lục catalog](../README.md) · 88 hồ sơ.
 
 ## Site tài liệu (`docs-site`, 17)
 
@@ -26,7 +26,7 @@
 | [Sphinx](../../16-docs-tools/README.md#ch-sphinx) | `sphinx-doc/sphinx` | BSD-2-Clause | 8.104 | đọc tài liệu 2026-11-23 | 16 | Docs Python; |
 | [Zensical](../../16-docs-tools/README.md#ch-zensical) | `zensical/zensical` | MIT | 6.249 | đọc tài liệu 2026-11-23 | 16 | Kế nhiệm Material for MkDocs; |
 
-## Kiểm tài liệu (lint, link, chính tả) (`docs-quality`, 6)
+## Kiểm tài liệu (lint, link, chính tả) (`docs-quality`, 7)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -35,9 +35,10 @@
 | [typos](../../16-docs-tools/README.md#ch-typos) | `crate-ci/typos` | MIT OR Apache-2.0 | 4.232 | đọc tài liệu 2026-11-23 | 16 | Bắt lỗi gõ ít false positive, chạy được trên PR; |
 | [lychee](../../16-docs-tools/README.md#ch-lychee) | `lycheeverse/lychee` | MIT OR Apache-2.0 | 4.156 | đọc tài liệu 2026-11-23 | 16 | Kiểm link Rust bất đồng bộ, cache, kiểm anchor, lychee-action; |
 | [CSpell](../../16-docs-tools/README.md#ch-cspell) | `streetsidesoftware/cspell` | MIT | 1.709 | đọc tài liệu 2026-11-23 | 16 | Spell check cho code và docs; |
+| [seiso](../../16-docs-tools/README.md#nt-seiso) | `scarletkc/seiso` | MIT | 196 | đọc mã 2026-11-23 | 16 | Linter cho quy ước tài liệu mà agent đọc lại làm ngữ cảnh: kind, một nơi sở hữu cho mỗi dữ kiện, con trỏ cụ thể, có exit code 0/1/2 dùng làm cổng CI. |
 | [Sybil](../../16-docs-tools/README.md#factory-docs-executable-2026-11-04) | `simplistix/sybil` | MIT | — | đọc mã 2026-11-04 | 16 | Đọc mã 4/11/2026: parser ví dụ reST/Markdown/MyST đưa vào pytest; |
 
-## Tài liệu cho agent (llms.txt, context) (`docs-for-agents`, 5)
+## Tài liệu cho agent (llms.txt, context) (`docs-for-agents`, 6)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -45,6 +46,7 @@
 | [Obsidian Skills](../../20-claude-plugins-ecosystem/README.md#3zc-kiểm-bài-5-repo-skill-đáng-lưu-matt-pocock-addy-osmani-cloudflare-obsidian-google-egm-bài-người-dùng-gửi-đọc-mã-16112026) | `obsidianmd/obsidian-skills` | MIT | 52.915 | đọc mã 2026-11-16 | 20 | Skill chính thức của Obsidian (Steph Ango/kepano): obsidian-markdown, obsidian-bases, json-canvas, obsidian-cli, obsidian-headless, defuddle, knap theo chuẩn Agent Skill… |
 | [book-to-skill](../../16-docs-tools/README.md#chuyen-book-to-skill) | `virgiliojr94/book-to-skill` | MIT | 38.301 | đọc tài liệu 2026-11-18 | 16 | Biến sách kỹ thuật hoặc thư mục tài liệu (PDF, EPUB, DOCX, MD, HTML…) thành agent skill có cấu trúc: SKILL.md, file theo chương, glossary, để agent nạp khi cần. |
 | [llms.txt](../../16-docs-tools/README.md#ch-llms-txt) | `AnswerDotAI/llms-txt` | Apache-2.0 | 2.701 | đọc tài liệu 2026-11-23 | 16 | đề xuất 9/2024. |
+| [docs.page](../../16-docs-tools/README.md#nt-docs-page) | `invertase/docs.page` | Apache-2.0 | 686 | đọc mã 2026-11-23 | 16 | Lấp khoảng trống docs cho agent: llms.txt và MCP sinh sẵn cho mọi site, kèm CLI check cho CI. |
 | [agent-notion-template-docs (notion-doc)](../../16-docs-tools/README.md#xlsx-2026-11-23-agent-notion-template-docs) | `heyman333/agent-notion-template-docs` | MIT | 106 | đọc tài liệu 2026-11-23 | 16 | Skill notion-doc: tài liệu HTML kiểu Notion từ một template chuẩn + lint + hook PostToolUse fail-open + workflow tuần so token với trang Notion công khai của bên thứ ba; |
 
 ## Sơ đồ & hình vẽ (`diagram`, 5)
@@ -69,7 +71,7 @@
 | [Presenton](../../16-docs-tools/README.md#anhkysuai-2026-11-23-presenton) | `presenton/presenton` | Apache-2.0 | 12.025 | đọc tài liệu 2026-11-23 | 16 | Sinh, chỉnh sửa và xuất thuyết trình bằng AI qua web, desktop hoặc API. |
 | [Slides](../../16-docs-tools/README.md#anhkysuai-2026-11-23-slides) | `maaslalani/slides` | MIT | 11.712 | đọc tài liệu 2026-11-23 | 16 | Thuyết trình Markdown ngay trong terminal với phím điều hướng và code block. |
 
-## Ghi chú & knowledge base (`notes-knowledge-base`, 14)
+## Ghi chú & knowledge base (`notes-knowledge-base`, 16)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -87,6 +89,8 @@
 | [docs](../../36-self-hosting-homelab/README.md#chuyen-docs) | `suitenumerique/docs` | MIT | 16.995 | đọc tài liệu 2026-11-18 | 36 | Trình soạn thảo cộng tác thời gian thực mã nguồn mở (La Suite Docs của chính phủ Pháp), thay thế Notion/Google Docs, hỗ trợ tự host. |
 | [xournalpp](../../35-desktop-productivity-apps/README.md#chuyen-xournalpp) | `xournalpp/xournalpp` | GPL-2.0 | 15.687 | đọc tài liệu 2026-11-18 | 35 | Phần mềm ghi chú viết tay viết bằng C++, hỗ trợ bút cảm ứng lực và chú thích lên PDF. |
 | [notesnook](../../35-desktop-productivity-apps/README.md#chuyen-notesnook) | `streetwriters/notesnook` | GPL-3.0 | 14.952 | đọc tài liệu 2026-11-18 | 35 | Ứng dụng ghi chú mã hoá đầu-cuối, thay thế Evernote, có bản web, desktop và di động. |
+| [SilverBullet](../../35-desktop-productivity-apps/README.md#nt-silverbullet) | `silverbulletmd/silverbullet` | MIT | 6.585 | đọc mã 2026-11-23 | 35 | Wiki Markdown có tập lệnh Lua, dữ liệu là file thường (xuất dễ), gộp diff3 và MCP có OAuth và chọn space. |
+| [EdgeEver](../../35-desktop-productivity-apps/README.md#nt-edgeever) | `tianma-if/edgeever` | AGPL-3.0 | 3.524 | đọc mã 2026-11-23 | 35 | Ghi chú ba panel kiểu Evernote, đồng bộ theo cursor, xuất Markdown thuần và MCP; |
 
 ## Office, bảng tính & PDF (`office-pdf`, 8)
 
@@ -117,7 +121,7 @@
 | [quarkdown](../../16-docs-tools/README.md#chuyen-quarkdown) | `iamgio/quarkdown` | GPL-3.0 | 16.396 | đọc tài liệu 2026-11-18 | 16 | Hệ thống dàn trang dựa trên Markdown mở rộng có hàm (Turing-complete), biên dịch một nguồn thành sách in, bài báo, cơ sở tri thức hoặc trình chiếu. |
 | [Diátaxis](../../16-docs-tools/README.md#ch-diataxis) | `evildmp/diataxis-documentation-framework` | CC-BY-SA-4.0 | 1.285 | đọc tài liệu 2026-11-23 | 16 | Khung tài liệu 4 loại (tutorial, how-to, reference, explanation); |
 
-## Ứng dụng năng suất (`productivity-app`, 9)
+## Ứng dụng năng suất (`productivity-app`, 11)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -130,3 +134,5 @@
 | [omnivore](../../36-self-hosting-homelab/README.md#chuyen-omnivore) | `omnivore-app/omnivore` | AGPL-3.0 | 16.420 | đọc tài liệu 2026-11-18 | 36 | Ứng dụng đọc-để-sau (read-it-later) mã nguồn mở, lưu bài viết, PDF, newsletter để đọc, tô sáng và ghi chú; |
 | [TREK](../../36-self-hosting-homelab/README.md#chuyen-trek) | `liketrek/TREK` | AGPL-3.0 | 15.737 | đọc tài liệu 2026-11-18 | 36 | Ứng dụng lập kế hoạch du lịch tự host: lên lịch trình cộng tác thời gian thực trên bản đồ, tour đi bộ/đạp xe, đặt chỗ, chia chi phí, nhật ký và trợ lý AI. |
 | [Horizon](../../35-desktop-productivity-apps/README.md#chuyen-horizon) | `Thysrael/Horizon` | MIT | 14.539 | đọc tài liệu 2026-11-18 | 35 | Radar tin tức dùng AI: gom tin từ RSS, Hacker News, Reddit, Telegram, X, GitHub…, chấm điểm, lọc trùng và tạo bản tin hằng ngày tiếng Anh và tiếng Trung. |
+| [Paperless-AI](../../26-document-intelligence-ocr/README.md#nt-paperless-ai) | `clusterzx/paperless-ai` | MIT | 6.159 | đọc mã 2026-11-23 | 26 | Lớp AI gắn metadata và hỏi đáp có trích nguồn cho Paperless-ngx hoặc kho tích hợp; |
+| [Papermerge (kho cũ)](../../26-document-intelligence-ocr/README.md#nt-papermerge) | `ciur/papermerge` | Apache-2.0 | 2.930 | đọc mã 2026-11-23 | 26 | Kho cũ đã lưu trữ: chỉ còn vỏ Django, cấu hình và test; |

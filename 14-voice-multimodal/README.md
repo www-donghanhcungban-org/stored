@@ -1081,3 +1081,43 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | Commit cuối 2026-11-23; nhiều workflow CI (chỉ xem tên file). |
 | Nhận định | Suy luận Whisper bằng C/C++ thuần, không phụ thuộc, tối ưu Apple Silicon, có binding nhiều ngôn ngữ và nhiều backend phần cứng (xem thư mục ggml, bindings). |
 | Nguồn | [README](https://github.com/ggml-org/whisper.cpp/blob/96ec4d9823e9d0211944172da35f9f29134af990/README.md) · [LICENSE](https://github.com/ggml-org/whisper.cpp/blob/96ec4d9823e9d0211944172da35f9f29134af990/LICENSE) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-speechbrain-toolkit"></a>
+
+### SpeechBrain
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/speechbrain/speechbrain |
+| License | Apache-2.0 (mã); license từng model pretrained trên Hugging Face khác nhau (chưa xác minh) |
+| Phiên bản đã đọc | `c0241278f93ef02cd5191f03caf4e5f8e1292bf6` (commit 2026-10-14) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, speechbrain/inference/interfaces.py, recipes/CommonVoice/common_voice_prepare.py; chưa chạy upstream |
+| Khoảng trống lấp | ASR/TTS tiếng Việt (chỉ là nền huấn luyện, không có recipe tiếng Việt sẵn) |
+| Cơ chế đáng học | - Tách dữ liệu, mô hình, siêu tham số: mỗi recipe là `train.py` cộng `hparams/train.yaml` (HyperPyYAML), lớp `Brain` trong `speechbrain/core.py` có `compute_objectives`, `fit`, `evaluate` làm khung huấn luyện chung.<br>- `recipes/CommonVoice/common_voice_prepare.py`: `prepare_common_voice(language=...)` và `language_specific_preprocess` chuẩn hóa văn bản riêng cho en, fr, it, rw, de, ar; ja và zh-CN đếm theo ký tự khi lọc câu quá ngắn; không có nhánh riêng cho `vi` (tiếng Việt chỉ đi qua phần lọc chung, cần tự thêm chuẩn hóa dấu).<br>- `recipes/CommonVoice/ASR/transformer/hparams/train_hf_whisper.yaml`: tinh chỉnh Whisper (`openai/whisper-medium`) với `language` chọn theo mã CommonVoice, cho thấy đường fine-tune Whisper ngôn ngữ mới.<br>- `PERFORMANCE.md` và `.github/workflows/pythonapp.yml`: bảng kết quả theo recipe kèm link checkpoint; CI chạy `tests/consistency`, `tests/unittests`, doctest và `tests/integration`. |
+| Tiêu chí và cách kiểm | CI (`pythonapp.yml`, đã mở) chạy Python 3.11 và 3.14 trên CPU: consistency, unit, doctest, integration; không huấn luyện đủ recipe nên số trong `PERFORMANCE.md` là kết quả do tác giả báo (chưa xác minh). `tests/consistency` kiểm tính nhất quán yaml/recipe/docstring bằng máy. |
+| Giới hạn và rủi ro | `speechbrain/inference/interfaces.py` `foreign_class` tải `custom.py` từ nguồn model rồi import: docstring tự cảnh báo có thể chạy mã tùy ý, chỉ dùng với nguồn tin cậy. Không có recipe hay hparams tiếng Việt; ASR tiếng Việt còn phải kiểm dữ liệu và license (license dữ liệu CommonVoice và các tập khác phải kiểm riêng, repo không cấp). License model pretrained tách khỏi mã Apache-2.0. Dự án lớn, nhiều phụ thuộc và nặng cho việc chỉ cần suy luận. |
+| So với | `whisper`, `faster-whisper`, `funasr`, `sherpa-onnx`, `speech` (NVIDIA-NeMo/Speech): SpeechBrain mạnh ở huấn luyện từ đầu và nghiên cứu; Whisper và FunASR mạnh hơn khi cần dùng ngay. Tiếng Việt đã có `phowhisper`, `gipformer`. |
+| Nguồn | [README.md](https://github.com/speechbrain/speechbrain/blob/c0241278f93ef02cd5191f03caf4e5f8e1292bf6/README.md) · [LICENSE](https://github.com/speechbrain/speechbrain/blob/c0241278f93ef02cd5191f03caf4e5f8e1292bf6/LICENSE) · [interfaces.py](https://github.com/speechbrain/speechbrain/blob/c0241278f93ef02cd5191f03caf4e5f8e1292bf6/speechbrain/inference/interfaces.py) · [common_voice_prepare.py](https://github.com/speechbrain/speechbrain/blob/c0241278f93ef02cd5191f03caf4e5f8e1292bf6/recipes/CommonVoice/common_voice_prepare.py) · [train_hf_whisper.yaml](https://github.com/speechbrain/speechbrain/blob/c0241278f93ef02cd5191f03caf4e5f8e1292bf6/recipes/CommonVoice/ASR/transformer/hparams/train_hf_whisper.yaml) · [pythonapp.yml](https://github.com/speechbrain/speechbrain/blob/c0241278f93ef02cd5191f03caf4e5f8e1292bf6/.github/workflows/pythonapp.yml) · [README.md](https://github.com/speechbrain/speechbrain/blob/c0241278f93ef02cd5191f03caf4e5f8e1292bf6/tests/README.md) · [PERFORMANCE.md](https://github.com/speechbrain/speechbrain/blob/c0241278f93ef02cd5191f03caf4e5f8e1292bf6/PERFORMANCE.md) |
+
+<a id="nt-kyutai-delayed-streams"></a>
+
+### Kyutai Delayed Streams Modeling (STT/TTS)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/kyutai-labs/delayed-streams-modeling |
+| License | Mã MIT (Python, web client) và Apache-2.0 (Rust); trọng số STT CC-BY 4.0; trọng số TTS không nêu trong repo |
+| Phiên bản đã đọc | `4c4f65e147df056adf3346290d64c7b9649b18c9` (commit 2026-01-26) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE-MIT, LICENSE-APACHE, FAQ.md; chưa chạy upstream |
+| Khoảng trống lấp | ASR/TTS tiếng Việt (kết quả: không hỗ trợ tiếng Việt) |
+| Cơ chế đáng học | - `configs/config-stt-en_fr-hf.toml`: khai báo mô-đun `BatchedAsr` với `batch_size = 64`, `asr_delay_in_tokens = 6`, transformer causal 16 lớp `d_model 2048`, tải trọng số `hf://kyutai/stt-1b-en_fr-candle/...safetensors`; độ trễ cố định theo token là cốt lõi của DSM.<br>- `configs/config-tts.toml`: `batch_size = 8`, `cfg_coef = 2.0` vì model `tts-1.6b-en_fr` được chưng cất CFG (chỉ dùng hệ số đã huấn luyện), giọng lấy từ `hf-snapshot://kyutai/tts-voices/**/*.safetensors`.<br>- `scripts/`: `stt_from_file_pytorch.py` (mốc thời gian từng từ), `stt_evaluate_on_dataset.py` (đo trên dataset HF), `stt_from_mic_rust_server.py`, `tts_mlx_streaming.py`.<br>- README nêu số: H100 xử lý 400 luồng thời gian thực, L40S phục vụ 64 kết nối ở RTF 3x (chưa xác minh). |
+| Tiêu chí và cách kiểm | CI duy nhất là `precommit.yml` (đã mở): chạy pre-commit, không chạy suy luận hay test. Có script đánh giá trên dataset nhưng chạy bằng tay. Số liệu thông lượng chỉ là tuyên bố của tác giả. |
+| Giới hạn và rủi ro | Cả hai file config đặt `authorized_ids = ["public_token"]`, một token công khai ví dụ: triển khai thật phải đổi. Trọng số STT theo CC-BY 4.0 (cần ghi công); README không nêu license trọng số TTS và voice embedding, cần đọc model card (chưa xác minh). Ngôn ngữ chỉ en và fr. Phần lõi nằm ở repo khác (`moshi`, `moshi-server`) nên không kiểm được ở đây. Commit cuối 2026-01-26, nhịp cập nhật chậm. |
+| So với | `whisper`, `faster-whisper`, `whisper-cpp`, `pipecat`, `livekit-agents`; tiếng Việt dùng `phowhisper`, `gipformer`. |
+| Nguồn | [README.md](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/README.md) · [LICENSE-MIT](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/LICENSE-MIT) · [LICENSE-APACHE](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/LICENSE-APACHE) · [FAQ.md](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/FAQ.md) · [config-tts.toml](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/configs/config-tts.toml) · [config-stt-en_fr-hf.toml](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/configs/config-stt-en_fr-hf.toml) · [Cargo.toml](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/stt-rs/Cargo.toml) · [precommit.yml](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/.github/workflows/precommit.yml) |

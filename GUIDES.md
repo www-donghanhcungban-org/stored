@@ -1,10 +1,10 @@
 # Chọn công cụ theo bài toán
 
-**Tra nhanh:** [PLAYBOOK.md](PLAYBOOK.md) gom 98 skill/tính năng đã chắt lọc kèm các bước áp dụng; [catalog/](catalog/README.md) liệt kê mọi hồ sơ theo nhóm → danh mục → danh mục con.
+**Tra nhanh:** [PLAYBOOK.md](PLAYBOOK.md) gom 98 skill/tính năng đã chắt lọc kèm các bước áp dụng cùng đề xuất mới cho UI/UX và mười nhóm khác; [STANDARDS.md](STANDARDS.md) ghi trạng thái chuẩn và quy định kèm mức xác minh; [catalog/](catalog/README.md) liệt kê mọi hồ sơ theo nhóm → danh mục → danh mục con.
 
 Các tuyến đọc dưới đây ghép những hồ sơ đã có trong kho. Bắt đầu bằng ràng buộc, chọn 2–4 ứng viên để thử trên tác vụ thật, giữ baseline và kiểm lại ngày/license trong hồ sơ. Đây là bản đồ tham khảo, không phải cấu hình triển khai đã được kho chạy thử.
 
-Để xây **xưởng phát triển phần mềm**, đọc [FACTORY.md](FACTORY.md): bản đồ 37 mục, chín cổng giao hàng, trách nhiệm, bằng chứng phát hành và đường khởi đầu theo loại sản phẩm. Đợt 2026-11-04 bổ sung các tuyến sản phẩm thông thường bên dưới để ghép với các chuyên mục AI.
+Để xây **xưởng phát triển phần mềm**, đọc [FACTORY.md](FACTORY.md): bản đồ 38 mục, chín cổng giao hàng, trách nhiệm, bằng chứng phát hành và đường khởi đầu theo loại sản phẩm. Đợt 2026-11-04 bổ sung các tuyến sản phẩm thông thường bên dưới để ghép với các chuyên mục AI.
 
 | Bài toán | Tuyến đọc | Quyết định và bằng chứng cần có |
 |---|---|---|
@@ -24,6 +24,7 @@ Các tuyến đọc dưới đây ghép những hồ sơ đã có trong kho. B�
 | Dựng dịch vụ nội bộ tự host (wiki, file, git, giám sát) | [36](36-self-hosting-homelab/README.md) → [33](33-reliability-observability-operations/README.md) → [12](12-ai-security-guardrails/README.md) | Ai trực, sao lưu và thử khôi phục, cập nhật bảo mật, chứng chỉ, chỉ phơi cổng cần thiết; open-core có thư mục ee/ theo license riêng. |
 | Chọn app desktop/ghi chú cho nhóm | [35](35-desktop-productivity-apps/README.md) → [16](16-docs-tools/README.md) → [12](12-ai-security-guardrails/README.md) | Quyền hệ thống app yêu cầu, bản phát hành có ký số, định dạng dữ liệu xuất được và nơi đồng bộ. |
 | Chọn runtime/ngôn ngữ cho dự án mới | [37](37-programming-languages-runtimes/README.md) → [13](13-dev-stack-devops/README.md) → [32](32-platform-delivery-engineering/README.md) | Chính sách LTS, ghim phiên bản trong toolchain, lịch nâng cấp và kiểm tương thích. |
+| Nhà máy chế tạo thiết bị áp lực: hệ thống chất lượng, hiệu chuẩn, truy xuất | [38](38-industrial-quality-manufacturing/README.md) → [09](09-engineering-checklists/README.md) → [33](33-reliability-observability-operations/README.md) | Chuẩn áp dụng đọc từ trang chính thức ([STANDARDS.md](STANDARDS.md) ghi chuẩn nào chưa xác minh được), ngưỡng lấy từ chuẩn/hợp đồng, hiệu chuẩn chặn thiết bị quá hạn, truy xuất serial đến lô vật liệu và mối hàn. |
 
 ## Tuyến đọc cho xưởng phát triển phần mềm
 

@@ -2,9 +2,9 @@
 
 # eval-observability — Đánh giá, an toàn & chất lượng
 
-[← Mục lục catalog](../README.md) · 68 hồ sơ.
+[← Mục lục catalog](../README.md) · 73 hồ sơ.
 
-## Eval LLM/agent (`llm-eval`, 23)
+## Eval LLM/agent (`llm-eval`, 26)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -22,6 +22,8 @@
 | [Giskard (v3)](../../07-eval-observability/README.md#ch-giskard-v3) | `Giskard-AI/giskard-oss` | Apache-2.0 | 5.972 | đọc tài liệu 2026-11-23 | 07 | Thư viện test + quét lỗ hổng agent nhiều lượt, v3 viết lại thành 5 gói, v2 ngừng bảo trì; |
 | [Inspect AI](../../07-eval-observability/README.md#core-eval-validity) | `UKGovernmentBEIS/inspect_ai` | MIT | 3.153 | đọc mã 2026-11-02 | 07 | UK AISI; |
 | [Lighteval](../../07-eval-observability/README.md#ch-lighteval) | `huggingface/lighteval` | MIT | 2.589 | đọc tài liệu 2026-11-23 | 07 | Hugging Face; |
+| [Evals Skills (Parlance Labs)](../../07-eval-observability/README.md#nt-evals-skills) | `ai-evals-course/evals-skills` | Apache-2.0 | 1.838 | đọc mã 2026-11-23 | 07 | Chín skill hướng dẫn agent dựng eval theo sản phẩm LLM (phân tích lỗi trên trace, dữ liệu tổng hợp, judge prompt, hiệu chuẩn judge, đánh giá RAG). |
+| [Autoevals](../../07-eval-observability/README.md#nt-autoevals) | `braintrustdata/autoevals` | MIT | 1.087 | đọc mã 2026-11-23 | 07 | Thư viện scorer LLM-as-judge dựa trên template YAML với bảng điểm cố định, kèm scorer heuristic và biến trajectory. |
 | [JiWER](../../14-voice-multimodal/README.md#ch-jiwer) | `jitsi/jiwer` | Apache-2.0 | 942 | đọc tài liệu 2026-11-23 | 14 | Tính WER/MER/WIL/WIP/CER cho STT bằng RapidFuzz, v4.0.0; |
 | [agentevals](../../03-agentic-patterns-loops/README.md#factory-trajectory-oracles-2026-11-04) | `langchain-ai/agentevals` | MIT | 757 | đọc mã 2026-11-04 | 03 | Chấm trajectory: match strict/unordered/subset/superset + tool_args exact/ignore, LLM-judge, graph LangGraph; |
 | [Inspect Evals](../../07-eval-observability/README.md#ch-inspect-evals) | `UKGovernmentBEIS/inspect_evals` | MIT | 756 | đọc tài liệu 2026-11-23 | 07 | >200 task Inspect; |
@@ -31,6 +33,7 @@
 | [UltraEval-Audio](../../14-voice-multimodal/README.md#ch-ultraeval-audio) | `OpenBMB/UltraEval-Audio` | Apache-2.0 | 333 | đọc tài liệu 2026-11-23 | 14 | Khung eval audio foundation model: 34 benchmark, 10 ngôn ngữ, hiểu + sinh giọng, lệnh tái lập kết quả (ACL 2026 demo); |
 | [EVA (ServiceNow)](../../14-voice-multimodal/README.md#ch-eva-servicenow) | `ServiceNow/eva` | MIT | 235 | đọc tài liệu 2026-11-23 | 14 | Eval voice agent nhiều lượt bot-to-bot: EVA-A (đúng việc) + EVA-X (trải nghiệm); |
 | [OpenEvals](../../07-eval-observability/README.md#openevals-factory) | `langchain-ai/openevals` | MIT | — | đọc mã 2026-11-04 | 07 | Scorer exact/JSON và LLM judge Python/JS; |
+| [Ragas (số liệu RAG tách retrieval và answer)](../../07-eval-observability/README.md#nt-ragas-rag-metrics) | `explodinggradients/ragas` | Apache-2.0 | — | đọc mã 2026-11-23 | 07 | Bộ metric chấm ứng dụng RAG/LLM, tách rõ phía truy xuất (context precision, context recall) và phía trả lời (faithfulness, answer relevancy). |
 
 ## Tracing & observability LLM (`tracing`, 13)
 
@@ -50,7 +53,7 @@
 | [Overmind](../../07-eval-observability/README.md#ch-overmind) | `overmind-core/overmind` | AGPL-3.0 (platform) / MIT (SDK, thư mục overmind/) | 780 | đọc tài liệu 2026-11-23 | 07 | Trace → dataset → eval → fine-tune LoRA (Modal); |
 | [OpenTelemetry GenAI Semantic Conventions](../../07-eval-observability/README.md#ch-opentelemetry-genai-semantic-conventions) | `open-telemetry/semantic-conventions-genai` | Apache-2.0 | 560 | đọc tài liệu 2026-11-23 | 07 | Chuẩn gen_ai.\* đã tách khỏi open-telemetry/semantic-conventions; |
 
-## Benchmark (`benchmark`, 15)
+## Benchmark (`benchmark`, 17)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -66,8 +69,10 @@
 | [RewardBench](../../07-eval-observability/README.md#ch-rewardbench) | `allenai/reward-bench` | Apache-2.0 | 749 | đọc tài liệu 2026-11-23 | 07 | RewardBench 2 (arXiv 2506.01937) chấm reward model và judge sinh văn bản; |
 | [Picovoice Speech-to-Text Benchmark](../../14-voice-multimodal/README.md#ch-picovoice-speech-to-text-benchmark) | `Picovoice/speech-to-text-benchmark` | Apache-2.0 | 698 | đọc tài liệu 2026-11-23 | 14 | Khung đo WER + độ trễ trên LibriSpeech, TED-LIUM, Common Voice, MLS, VoxPopuli, FLEURS…; |
 | [SWE-bench Pro](../../01-ai-coding-agents/README.md#ch-swe-bench-pro) | `scaleapi/SWE-bench_Pro-os` | MIT | 570 | đọc tài liệu 2026-11-23 | 01 | V2 642 task định dạng Harbor, HARD-51, locked protocol (agent không mạng trừ endpoint model, verifier chấm `model.patch` ở image sạch (vẫn có mạng)), GATE.md oracle 642/… |
+| [WildClawBench](../../07-eval-observability/README.md#nt-wildclawbench) | `InternLM/WildClawBench` | MIT | 535 | đọc mã 2026-11-23 | 07 | Benchmark 60 tác vụ thủ công (6 nhóm, tiếng Anh và Trung) cho agent làm việc thật, chạy mỗi tác vụ trong một container Docker và áp cùng bộ chấm cho bốn harness (OpenCla… |
 | [Multi-SWE-bench](../../01-ai-coding-agents/README.md#ch-multi-swe-bench) | `multi-swe-bench/multi-swe-bench` | Apache-2.0 | 364 | đọc tài liệu 2026-11-23 | 01 | ByteDance Seed, issue đa ngôn ngữ (Java/TS/Go/Rust/C++), bản mini/flash; |
 | [Open ASR Leaderboard](../../14-voice-multimodal/README.md#ch-open-asr-leaderboard) | `huggingface/open_asr_leaderboard` | Apache-2.0 | 278 | đọc tài liệu 2026-11-23 | 14 | Mã leaderboard ASR của Hugging Face: short/long-form, multilingual (FLEURS/MCV/MLS), chạy HF Jobs cùng phần cứng, có tập riêng tư; |
+| [ControlArena](../../07-eval-observability/README.md#nt-control-arena) | `UKGovernmentBEIS/control-arena` | MIT (mã); phụ thuộc Apache-2.0, BSD-3-Clause và LGPL-3.0 | 271 | đọc mã 2026-11-23 | 07 | Thư viện nghiên cứu AI control trên Inspect: nhiều setting sabotage, micro-protocol giám sát và phân tích an toàn/hữu ích. |
 | [SWE-bench-Live](../../01-ai-coding-agents/README.md#ch-swe-bench-live) | `microsoft/SWE-bench-Live` | MIT | 264 | đọc tài liệu 2026-11-23 | 01 | Tập tự cập nhật chống nhiễm: Python +50 task/tháng, MultiLang 1.077 task, Windows; |
 
 ## Giám sát hệ thống (`ops-monitoring`, 17)

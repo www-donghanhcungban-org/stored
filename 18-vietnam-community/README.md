@@ -665,3 +665,60 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | commit 17/9/2026 (~2 tháng), có CI ci.yml (ruff, pytest ma trận Python 3.9/3.11/3.12) và publish-pypi.yml; pyproject ghi Beta, v0.1.5 |
 | Nhận định | TTS tiếng Việt zero-shot chạy ONNX trên CPU (numpy + onnxruntime, không torch), có streaming, nhân bản giọng từ vài giây âm thanh, có cả bản C++/WASM và demo trình duyệt. Có test và CI thật. Các con số "ít lỗi từ hơn 4 lần", RTF 0,5, 70 ms là tuyên bố của tác giả **(chưa xác minh)**; weights khoảng 900 MB tải từ Hugging Face. |
 | Nguồn | [README.md](https://github.com/zeroweight-ai/ZeroTTS/blob/319c3e07c8575c1e38617f07c773ec76a780a1f1/README.md) · [LICENSE](https://github.com/zeroweight-ai/ZeroTTS/blob/319c3e07c8575c1e38617f07c773ec76a780a1f1/LICENSE) · [NOTICE](https://github.com/zeroweight-ai/ZeroTTS/blob/319c3e07c8575c1e38617f07c773ec76a780a1f1/NOTICE) · [pyproject.toml](https://github.com/zeroweight-ai/ZeroTTS/blob/319c3e07c8575c1e38617f07c773ec76a780a1f1/pyproject.toml) · [ci.yml](https://github.com/zeroweight-ai/ZeroTTS/blob/319c3e07c8575c1e38617f07c773ec76a780a1f1/.github/workflows/ci.yml) · [publish-pypi.yml](https://github.com/zeroweight-ai/ZeroTTS/blob/319c3e07c8575c1e38617f07c773ec76a780a1f1/.github/workflows/publish-pypi.yml) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-openkey"></a>
+
+### OpenKey
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/tuyenvm/OpenKey |
+| License | GPL-3.0 |
+| Phiên bản đã đọc | `89c2fd3bf258562f2349f89b49d81e2f140c3fc3` (commit 2026-06-15) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, CHANGELOG.md, version.json, Sources/README.md, Sources/OpenKey/linux/README.md, Sources/OpenKey/engine/Engine.cpp, Sources/OpenKey/macOS/ModernKey/OpenKeyManager.m, Sources/OpenKey/macOS/OpenKey.entitlements, .github/workflows/msbuild.yml; chưa chạy upstream |
+| Khoảng trống lấp | Tài nguyên tiếng Việt: bộ gõ (macOS và Windows) |
+| Cơ chế đáng học | • Engine C++ dùng chung giữa các nền tảng (`Sources/OpenKey/engine/`: Engine.cpp 1558 dòng, Vietnamese.cpp bảng ký tự, Macro.cpp gõ tắt, ConvertTool.cpp chuyển mã VNI/TCVN3/Unicode).<br>• Kỹ thuật gửi Backspace thay vì gạch chân tạm; `checkSpelling` trong Engine.cpp kiểm phụ âm đầu, nguyên âm ghép, phụ âm cuối theo bảng, có tùy chọn Quick Telex và cho phép f z w j.<br>• Smart switch key nhớ chế độ gõ và bảng mã theo từng ứng dụng (`SmartSwitchKey.cpp`).<br>• Kiểm phiên bản bằng cách tải `version.json` từ raw.githubusercontent.com rồi hiện thông báo (macOS: `OpenKeyManager.m`). |
+| Tiêu chí và cách kiểm | Không thấy test tự động nào cho engine; workflow `msbuild.yml` chỉ build Windows x86/x64, tải artifact và tạo attestation nguồn gốc build, không chạy kiểm thử. Độ đúng của bộ gõ dựa vào thử tay và changelog. |
+| Giới hạn và rủi ro | GPL-3.0 (copyleft: sản phẩm dẫn xuất phải công bố mã). Mô tả trinh sát sai một phần: Linux chưa có mã, chỉ có README 'Coming soon' ở thư mục `linux/` và `Sources/README.md` nói đang xây dựng; mã có cho macOS và Windows. Changelog ghi đến 1.2 RC5 (2019) nên không phản ánh bản 2.0.x; commit mới nhất 2026-06-15. Bộ gõ nhận mọi phím gõ nên cần tin cậy nguồn build; macOS cần quyền Accessibility (chưa xác minh trong entitlements rỗng). Kiểm tra cập nhật gọi ra GitHub raw. Số sao 982 (chưa xác minh). |
+| So với | Kho hiện chưa có bộ gõ khác; hồ sơ gần nhất trong mảng tiếng Việt là Vietnamese Provinces Database (dữ liệu hành chính) và Local AI OCR (OCR tiếng Việt). |
+| Nguồn | [LICENSE](https://github.com/tuyenvm/OpenKey/blob/89c2fd3bf258562f2349f89b49d81e2f140c3fc3/LICENSE) · [README.md](https://github.com/tuyenvm/OpenKey/blob/89c2fd3bf258562f2349f89b49d81e2f140c3fc3/README.md) · [CHANGELOG.md](https://github.com/tuyenvm/OpenKey/blob/89c2fd3bf258562f2349f89b49d81e2f140c3fc3/CHANGELOG.md) · [version.json](https://github.com/tuyenvm/OpenKey/blob/89c2fd3bf258562f2349f89b49d81e2f140c3fc3/version.json) · [README.md](https://github.com/tuyenvm/OpenKey/blob/89c2fd3bf258562f2349f89b49d81e2f140c3fc3/Sources/README.md) · [README.md](https://github.com/tuyenvm/OpenKey/blob/89c2fd3bf258562f2349f89b49d81e2f140c3fc3/Sources/OpenKey/linux/README.md) · [Engine.cpp](https://github.com/tuyenvm/OpenKey/blob/89c2fd3bf258562f2349f89b49d81e2f140c3fc3/Sources/OpenKey/engine/Engine.cpp) · [OpenKeyManager.m](https://github.com/tuyenvm/OpenKey/blob/89c2fd3bf258562f2349f89b49d81e2f140c3fc3/Sources/OpenKey/macOS/ModernKey/OpenKeyManager.m) · [OpenKey.entitlements](https://github.com/tuyenvm/OpenKey/blob/89c2fd3bf258562f2349f89b49d81e2f140c3fc3/Sources/OpenKey/macOS/OpenKey.entitlements) · [msbuild.yml](https://github.com/tuyenvm/OpenKey/blob/89c2fd3bf258562f2349f89b49d81e2f140c3fc3/.github/workflows/msbuild.yml) |
+
+<a id="nt-hostsvn"></a>
+
+### hostsVN
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/bigdargon/hostsVN |
+| License | MIT |
+| Phiên bản đã đọc | `cf81902c19468dde6be6a293b17df16165baa427` (commit 2026-11-11) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, makefile.sh, hosts, json/hostsVN.json; chưa chạy upstream |
+| Khoảng trống lấp | Tài nguyên tiếng Việt: danh sách chặn quảng cáo và theo dõi cho web Việt |
+| Cơ chế đáng học | • Một nguồn (`source/*.txt`) sinh nhiều định dạng đầu ra trong `option/`: hosts, domain-only, dnsmasq, dnscrypt, Surge, Shadowrocket, Loon, Quantumult X, Clash, sing-box (`makefile.sh`).<br>• `makefile.sh` kiểm trùng lặp trước khi xuất: có tên miền hoặc luật trùng thì dừng với exit 1; phần header ghi số miền bị chặn và phiên bản theo thời gian.<br>• Tách `hosts-VN` (chỉ miền Việt Nam) khỏi bản đầy đủ, và thư mục `extensions/` có danh sách riêng cho adult, gambling, threat, ip. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy duy nhất là đoạn kiểm trùng trong `makefile.sh` chạy tay; repo không có workflow CI (thư mục `.github` chỉ có FUNDING và ISSUE_TEMPLATE). Không thấy kiểm miền chết hay kiểm vỡ trang. |
+| Giới hạn và rủi ro | MIT. Chặn theo tên miền nên có nguy cơ chặn nhầm; danh sách có cả các điểm cuối analytics của Apple (ví dụ securemetrics.apple.com) nên có thể ảnh hưởng tính năng hệ điều hành. Nguồn từng mục và quy trình rà soát không được ghi trong phần đã đọc; cập nhật phụ thuộc một người duy trì (header ghi 'Last modified 11 Nov 2026'). Hosts chỉ chặn theo miền, không chặn quảng cáo cùng miền với nội dung. Số sao 615 (chưa xác minh). |
+| So với | Chưa có danh sách chặn quảng cáo nào trong kho; gần nhất theo mảng cộng đồng Việt là Vietnamese Provinces Database. |
+| Nguồn | [LICENSE](https://github.com/bigdargon/hostsVN/blob/cf81902c19468dde6be6a293b17df16165baa427/LICENSE) · [README.md](https://github.com/bigdargon/hostsVN/blob/cf81902c19468dde6be6a293b17df16165baa427/README.md) · [makefile.sh](https://github.com/bigdargon/hostsVN/blob/cf81902c19468dde6be6a293b17df16165baa427/makefile.sh) · [hosts](https://github.com/bigdargon/hostsVN/blob/cf81902c19468dde6be6a293b17df16165baa427/hosts) · [hostsVN.json](https://github.com/bigdargon/hostsVN/blob/cf81902c19468dde6be6a293b17df16165baa427/json/hostsVN.json) |
+
+<a id="nt-xkey"></a>
+
+### XKey
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/xmannv/xkey |
+| License | MIT |
+| Phiên bản đã đọc | `9b5c9ab1264a5fe387b4b90d12738f899172ecca` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, LICENSE, TapEnvironment.swift, GoogleTranslateProvider.swift, Info.plist, CorpusRegressionTests.swift, workflow ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Tài nguyên tiếng Việt: bộ gõ Telex/VNI cho macOS (Swift), có hai chế độ CGEvent và Input Method Kit |
+| Cơ chế đáng học | <br>- Engine gõ tách thành `VNEngine*.swift` (từ điển, macro, smart switch, kiểm chính tả, phát hiện từ tiếng Anh) dưới `XKey/Core/Engine/`.<br>- `Shared/TapEnvironment.swift`: lớp event tap dùng chung cho XKey.app và XKeyIM; cố ý không có giá trị mặc định để host quên cấu hình thì không biên dịch được, kèm trần timeout cho AX.<br>- Bộ hồi quy Telex 8.046 dòng CSV (`XKeyTests/Resources`) với "sàn" theo nhóm hành vi (transform, keep_as_typed, restore_raw, cancel_keep_composed); sàn chỉ được nâng, ghi là mức đo của chính repo.<br>- Dịch nhanh bằng phím tắt qua Google, Tencent, Volcano có fallback giữa nhà cung cấp. |
+| Tiêu chí và cách kiểm | CI `ci.yml` (đã mở) trên macOS dựng XKeyIM và chạy bộ test XKeyTests, bỏ test tích hợp dịch trực tiếp. `CorpusRegressionTests` đòi số ca đạt không thấp hơn sàn, ví dụ restore_raw 3776. Chú thích trong file test nêu 9.093 ca nhưng CSV hiện 8.046 dòng, tức chú thích lệch; sàn thấp là khoảng cách ngữ nghĩa với engine sinh corpus, không phải điểm chất lượng tuyệt đối. |
+| Giới hạn và rủi ro | License MIT (file LICENSE, bản quyền ghi "XKey"). README tuyên bố chạy cục bộ, không thu thập dữ liệu (chưa xác minh toàn bộ): mã đã đọc cho thấy tính năng dịch gửi văn bản tới `translate.googleapis.com` (API miễn phí không chính thức) và hai nhà cung cấp khác, entitlement `network.client` bật; tự cập nhật qua Sparkle (`SUFeedURL` trỏ GitHub Pages, có `SUPublicEDKey`). Cần quyền Accessibility và theo dõi bàn phím, nên bộ gõ thấy mọi phím gõ; chế độ IMK ghi là thử nghiệm. Commit duy nhất trong clone nông, không đánh giá được lịch sử bảo trì; số sao 554 của trinh sát chưa xác minh. Chỉ macOS 12+. |
+| So với | Chưa có hồ sơ bộ gõ tiếng Việt nào trong kho; so gần nhất: Ice (`jordanbaird-ice`, tiện ích macOS cần quyền Accessibility), elasticsearch-vietnamese-analysis (`elasticsearch-vietnamese-analysis`, xử lý tiếng Việt phía tìm kiếm), awsome-vietnamese-nlp (`awsome-vietnamese-nlp`, danh mục) |
+| Nguồn | [LICENSE](https://github.com/xmannv/xkey/blob/9b5c9ab1264a5fe387b4b90d12738f899172ecca/LICENSE) · [README.md](https://github.com/xmannv/xkey/blob/9b5c9ab1264a5fe387b4b90d12738f899172ecca/README.md) · [TapEnvironment.swift](https://github.com/xmannv/xkey/blob/9b5c9ab1264a5fe387b4b90d12738f899172ecca/Shared/TapEnvironment.swift) · [GoogleTranslateProvider.swift](https://github.com/xmannv/xkey/blob/9b5c9ab1264a5fe387b4b90d12738f899172ecca/XKey/Core/Translation/GoogleTranslateProvider.swift) · [Info.plist](https://github.com/xmannv/xkey/blob/9b5c9ab1264a5fe387b4b90d12738f899172ecca/XKey/Info.plist) · [CorpusRegressionTests.swift](https://github.com/xmannv/xkey/blob/9b5c9ab1264a5fe387b4b90d12738f899172ecca/XKeyTests/CorpusRegressionTests.swift) · [ci.yml](https://github.com/xmannv/xkey/blob/9b5c9ab1264a5fe387b4b90d12738f899172ecca/.github/workflows/ci.yml) |

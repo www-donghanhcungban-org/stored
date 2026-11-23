@@ -2,7 +2,7 @@
 
 # animation-library — Thiết kế, giao diện & media
 
-[← Mục lục catalog](../README.md) · 24 hồ sơ.
+[← Mục lục catalog](../README.md) · 26 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -29,4 +29,6 @@
 | [dotLottie-web](../../22-motion-design-animation/README.md#9h-motion-runtime-verification) | `LottieFiles/dotlottie-web` | MIT | 936 | đọc mã 2026-11-02 | 22 | Lottie/dotLottie WASM runtime; |
 | [ranim](../../22-motion-design-animation/README.md#ch-ranim) | `AzurIce/ranim` | MIT | 662 | đọc tài liệu 2026-11-23 | 22 | Engine animation Rust/wgpu, API Rust; |
 | [manim-web](../../22-motion-design-animation/README.md#ch-manim-web) | `maloyan/manim-web` | MIT | 522 | đọc tài liệu 2026-11-23 | 22 | Port Manim sang TypeScript; |
+| [Gaussian-Splat-Lite](../../22-motion-design-animation/README.md#nt-gaussian-splat-lite) | `WilliamLiu-1997/Gaussian-Splat-Lite` | Apache-2.0 (kèm mã dẫn xuất MIT từ SparkJS và PlayCanvas) | 412 | đọc mã 2026-11-23 | 22 | Bộ render 3D Gaussian Splatting cho Three.js (>=0.187) chạy WebGPU hoặc WebGL2, đọc PLY, SPZ, SOG, RAD, stream theo LOD cho RAD/SOG/LCC2, có chế độ render ngẫu nhiên và… |
 | [Bencho](../../06-ui-ux-design/README.md#7za-kiểm-bài-8-kho-ui-sẵn-dùng-librariesdev-bencho-beui-arc-ui-boardui-kobra-affectui-watermelon-ui-bài-người-dùng-gửi-đọc-mã-8112026) | `cabralorenzo/bencho` | MIT | 91 | đọc tài liệu 2026-11-08 | 06 | 47 block tương tác React xếp theo cử chỉ (hover, drag, swipe, slide, press, type, select) + 24 âm thanh Web Audio trong một file; |
+| [scena](../../22-motion-design-animation/README.md#nt-scena) | `johannesPettersson80/scena` | MIT OR Apache-2.0 (hai file LICENSE-MIT và LICENSE-APACHE) | 26 | đọc mã 2026-11-23 | 22 | Thư viện 3D Rust (glTF, headless CPU/GPU) có công cụ hồi quy hình sẵn: so RGBA8 theo dung sai điểm ảnh, ảnh tham chiếu ghim SHA-256 và neo thêm ảnh Blender Cycles làm th… |

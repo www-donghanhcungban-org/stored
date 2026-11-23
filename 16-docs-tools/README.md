@@ -1426,3 +1426,43 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | Commit gần nhất 22/11/2026; Cargo version 0.29.0. |
 | Nhận định | SSG của nhóm Material for MkDocs, lõi Rust với wrapper Python. Đã qua mốc 0.0.x trong catalog (hiện 0.29.0 theo Cargo.toml) nhưng vẫn là phiên bản 0.x. |
 | Nguồn | [LICENSE.md](https://github.com/zensical/zensical/blob/2a9ade108aaec94fac6dd57ce329f9f3bf96654d/LICENSE.md) · [README.md](https://github.com/zensical/zensical/blob/2a9ade108aaec94fac6dd57ce329f9f3bf96654d/README.md) · [pyproject.toml](https://github.com/zensical/zensical/blob/2a9ade108aaec94fac6dd57ce329f9f3bf96654d/pyproject.toml) · [Cargo.toml](https://github.com/zensical/zensical/blob/2a9ade108aaec94fac6dd57ce329f9f3bf96654d/Cargo.toml) · [build.yml](https://github.com/zensical/zensical/blob/2a9ade108aaec94fac6dd57ce329f9f3bf96654d/.github/workflows/build.yml) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-docs-page"></a>
+
+### docs.page
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/invertase/docs.page |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `3ab96112cac0180678ec683bfc7f98e3dd1ba432` (commit 2026-11-13) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, package.json, app/src/app/api/[owner]/[repo]/llms.txt/route.ts, app/src/server/mcp/server.ts, packages/cli/src/commands/check.ts, skills/review-doc/SKILL.md, docs/ai-agents/ask-ai.mdx, docs/legal/privacy.mdx, .github/workflows/pull_request.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Tài liệu kỹ thuật cho người và agent, docs-as-code (phục vụ Markdown từ nhánh GitHub) |
+| Cơ chế đáng học | • Dịch vụ lấy Markdown/MDX từ repo GitHub công khai và phục vụ tại `docs.page/{owner}/{repo}`, không cần pipeline build; mỗi site có `llms.txt` sinh tự động (`app/src/app/api/[owner]/[repo]/llms.txt/route.ts` liệt kê tài liệu theo SHA đã giải).<br>• MCP server mỗi site với tool đọc trang, liệt kê file và tài nguyên schema cấu hình (`app/src/server/mcp/server.ts`).<br>• CLI `@docs.page/cli` có lệnh `check` kiểm metadata, asset, liên kết nội bộ, render, kèm ghi đè mức nghiêm trọng theo host và trả mã thoát khác 0 khi lỗi (`packages/cli/src/commands/check.ts`).<br>• Skill `skills/review-doc`: các check văn phong (16 file trong `checks/`) chạy bằng subagent, sửa tự động tối đa 3 vòng và ghi log JSON. |
+| Tiêu chí và cách kiểm | CI `pull_request.yaml` chạy Biome và `bun test`; test nằm ở `packages/mdx-bundler` và `packages/cli` (ví dụ `check.test.ts`). Phần ứng dụng Next.js trong `app/` chưa thấy test trong phần đã đọc. Skill review-doc là chỉ dẫn cho LLM, có thư mục evals nhưng tôi chưa đọc kết quả. |
+| Giới hạn và rủi ro | Apache-2.0. Là dịch vụ do Invertase vận hành: chỉ phục vụ repo GitHub công khai và phụ thuộc dịch vụ của họ, tự host cần kiểm riêng (app có Dockerfile, chưa đọc). Ask AI (beta) cần khóa LLM của chủ site, mã hóa bằng CLI; chính sách riêng tư của dịch vụ nằm ở `docs/legal/privacy.mdx`. 'Không có tracking script bên thứ ba' trong README là tuyên bố (chưa xác minh). Số sao 686 (chưa xác minh). |
+| So với | Docusaurus, Starlight, mdBook (trình dựng site tĩnh, phải tự build/host); llms.txt (đặc tả) và Context7 (đưa tài liệu thư viện vào agent). |
+| Nguồn | [LICENSE](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/LICENSE) · [README.md](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/README.md) · [package.json](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/package.json) · [route.ts](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/app/src/app/api/[owner]/[repo]/llms.txt/route.ts) · [server.ts](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/app/src/server/mcp/server.ts) · [check.ts](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/packages/cli/src/commands/check.ts) · [SKILL.md](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/skills/review-doc/SKILL.md) · [ask-ai.mdx](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/docs/ai-agents/ask-ai.mdx) · [privacy.mdx](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/docs/legal/privacy.mdx) · [pull_request.yaml](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/.github/workflows/pull_request.yaml) |
+
+<a id="nt-seiso"></a>
+
+### seiso
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/scarletkc/seiso |
+| License | MIT |
+| Phiên bản đã đọc | `5bae44facc43d81d4f422a1afef74963ef783d02` (commit 2026-10-13) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, seiso.toml, Cargo.toml, docs/evaluation/policy.md, docs/guides/checking.md, docs/rules/PTR001.md, src/rules/mod.rs, .github/workflows/ci.yml, .github/workflows/evaluation.yml; chưa chạy upstream |
+| Khoảng trống lấp | Tài liệu kỹ thuật cho người và agent: quy ước và cổng kiểm máy cho Markdown do AI viết |
+| Cơ chế đáng học | • Quy ước: mỗi tài liệu khai một `kind` (howto, reference, adr, changelog...), mỗi dữ kiện có một nơi sở hữu, không ghi giá trị đổi nhanh hơn trang, con trỏ phải chỉ tới tệp/ký hiệu cụ thể; `spec/convention.md` là đặc tả tách khỏi bản cài.<br>• Khoảng 27 luật trong `src/rules/mod.rs` (KND, OWN, DUP, PTR, LNK, STL, VOX, SUP...), mỗi luật có trang giải thích và ví dụ trong `docs/rules/`; luật mới ở dạng preview, chỉ chạy với `--preview`.<br>• Chính sách thăng hạng (`docs/evaluation/policy.md`): luật lên stable cần ít nhất 100 chẩn đoán holdout được người gán nhãn, độ chính xác ít nhất 95%, người thứ hai gán lại một phần năm mẫu.<br>• Suppression buộc phải có lý do; ngoại lệ không lý do bị coi là vi phạm (SUP001, SUP002). |
+| Tiêu chí và cách kiểm | `seiso check` trả exit 0 (sạch), 1 (có vi phạm), 2 (lỗi công cụ hoặc kiểm chưa đầy đủ); có `--exit-zero`. CI `ci.yml` chạy fmt, clippy, `cargo test --locked` trên ba hệ điều hành và tự kiểm tài liệu của chính repo; workflow `evaluation.yml` chỉ chạy thủ công để đo precision và hiệu năng. Kiểm bằng máy; điểm 95% là yêu cầu trong chính sách, tôi chưa đọc bản ghi kết quả (chưa xác minh). |
+| Giới hạn và rủi ro | MIT, Rust 2024, bản 0.4.0 và đặc tả được ghi là tạm thời trước 1.0.0, nên luật và mã có thể đổi. Chỉ kiểm cấu trúc và dấu hiệu, không đánh giá văn có 'giống máy viết' hay không (README nói rõ). Dự án mới, một tác giả chính; số sao 196 (chưa xác minh). |
+| So với | markdownlint và Vale (lint phong cách/cú pháp), lychee (liên kết), typos và CSpell (chính tả): seiso kiểm cấu trúc và sở hữu dữ kiện giữa các tệp thay vì cú pháp. |
+| Nguồn | [LICENSE](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/LICENSE) · [README.md](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/README.md) · [seiso.toml](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/seiso.toml) · [Cargo.toml](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/Cargo.toml) · [policy.md](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/docs/evaluation/policy.md) · [checking.md](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/docs/guides/checking.md) · [PTR001.md](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/docs/rules/PTR001.md) · [mod.rs](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/src/rules/mod.rs) · [ci.yml](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/.github/workflows/ci.yml) · [evaluation.yml](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/.github/workflows/evaluation.yml) |

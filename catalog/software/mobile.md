@@ -2,7 +2,7 @@
 
 # mobile — Kỹ thuật phần mềm & vận hành
 
-[← Mục lục catalog](../README.md) · 26 hồ sơ.
+[← Mục lục catalog](../README.md) · 28 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -28,7 +28,9 @@
 | [React Native Reusables](../../06-ui-ux-design/README.md#ch-react-native-reusables) | `founded-labs/react-native-reusables` | MIT | 8.737 | đọc tài liệu 2026-11-23 | 06 | shadcn cho React Native: 32 component (NativeWind/Uniwind), 7 block auth có bản Clerk; |
 | [NativeWind](../../06-ui-ux-design/README.md#ch-nativewind) | `nativewind/nativewind` | MIT | 8.130 | đọc tài liệu 2026-11-23 | 06 | Tailwind cho React Native, nền của RNR và gluestack; |
 | [Flutter Responsive Admin Panel](../../06-ui-ux-design/README.md#ch-flutter-responsive-admin-panel) | `abuanwar072/Flutter-Responsive-Admin-Panel-or-Dashboard` | MIT | 7.118 | đọc tài liệu 2026-11-23 | 06 | 1 layout dashboard responsive (side menu + dashboard), 17 file dart; |
+| [agent-device](../../11-browser-computer-use-sandbox/README.md#nt-agent-device) | `callstack/agent-device` | MIT (kèm Apache-2.0 và thành phần bên thứ ba trong LICENSES/) | 5.491 | đọc mã 2026-11-23 | 11 | Lớp thiết bị cho AI agent: CLI, MCP và API Node để điều khiển simulator, thiết bị thật, TV, web, desktop bằng snapshot accessibility và ref. |
 | [gluestack-ui](../../06-ui-ux-design/README.md#ch-gluestack-ui) | `gluestack/gluestack-ui` | MIT | 5.359 | đọc tài liệu 2026-11-23 | 06 | v3: 61 component RN + web trên NativeWind, 4 starter kit; |
 | [Taro UI](../../06-ui-ux-design/README.md#ch-taro-ui) | `jd-opensource/taro-ui` | MIT | 4.729 | đọc tài liệu 2026-11-23 | 06 | UI đa nền mini-program cho Taro 3; |
+| [tapflow](../../30-software-testing-quality/README.md#nt-tapflow) | `jo-duchan/tapflow` | MIT (kèm thành phần bên thứ ba Apache-2.0 trong NOTICE) | 2.292 | đọc mã 2026-11-23 | 30 | Ứng dụng tự host stream iOS Simulator và Android emulator ra trình duyệt cho QA không cần Xcode, kèm flow runner YAML và MCP. |
 | [Flutter](../../13-dev-stack-devops/README.md#ch-flutter) | `flutter/flutter` | BSD-3-Clause | — | đọc tài liệu 2026-11-23 | 13 | . |
 | [Kotlin Multiplatform](../../13-dev-stack-devops/README.md#ch-kotlin-multiplatform) | `JetBrains/kotlin` | Apache-2.0 | — | đọc tài liệu 2026-11-23 | 13 | . |

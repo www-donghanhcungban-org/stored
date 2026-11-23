@@ -2,7 +2,7 @@
 
 # devops — Kỹ thuật phần mềm & vận hành
 
-[← Mục lục catalog](../README.md) · 162 hồ sơ.
+[← Mục lục catalog](../README.md) · 163 hồ sơ.
 
 ## Container & Kubernetes (`container-orchestration`, 17)
 
@@ -220,8 +220,9 @@
 | [dashy](../../36-self-hosting-homelab/README.md#chuyen-dashy) | `lissy93/dashy` | MIT | 27.015 | đọc tài liệu 2026-11-18 | 36 | Trang chủ/dashboard tự host cho homelab, tập hợp liên kết ứng dụng kèm widget và giám sát trạng thái. |
 | [seafile](../../36-self-hosting-homelab/README.md#chuyen-seafile) | `haiwen/seafile` | GPL v2 kèm ngoại lệ cho phép liên kết với OpenSSL | 15.468 | đọc tài liệu 2026-11-18 | 36 | Repo daemon client đồng bộ của Seafile, hệ thống lưu trữ đám mây mã nguồn mở có mã hoá thư viện và cộng tác nhóm. |
 
-## Bảo mật CI & chuỗi cung ứng (`supply-chain-ci-security`, 1)
+## Bảo mật CI & chuỗi cung ứng (`supply-chain-ci-security`, 2)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [Harden-Runner](../../13-dev-stack-devops/README.md#ch-harden-runner) | `step-security/harden-runner` | Apache-2.0 | 1.295 | đọc tài liệu 2026-11-23 | 13 | Giám sát egress/file/process runner GitHub Actions, egress-policy block; |
+| [gh-actions-lock](../../31-software-supply-chain-security/README.md#nt-gh-actions-lock) | `github/gh-actions-lock` | MIT | 401 | đọc mã 2026-11-23 | 31 | Công cụ chính chủ GitHub tạo và kiểm lockfile cho Actions, với kiểm tổ tiên commit chống giả mạo. |

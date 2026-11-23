@@ -597,3 +597,162 @@ Framework thu thập web Python gộp HTTP nhanh, trình duyệt, parser và cra
 Nền tảng danh mục dữ liệu và quản trị metadata mã nguồn mở, gom lineage, chất lượng dữ liệu, sở hữu, glossary, hợp đồng dữ liệu thành đồ thị tri thức làm ngữ cảnh cho người dùng và agent AI. Hơn 130 connector; có lineage mức cột, kiểm thử chất lượng dữ liệu và profiling; cung cấp máy chủ MCP, API, SDK Python. Điều kiện: Tính năng quản lý doanh nghiệp, AI Studio, hỗ trợ thương mại thuộc sản phẩm Collate trả phí. ★ 18/11/2026: 15.805 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
 
 **Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-feast"></a>
+
+### Feast (feature store)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/feast-dev/feast |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `a291a0f12bf78bdc28409c97139e43fb347b5da4` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, sdk/python/feast/infra/offline_stores/dask.py, sdk/python/feast/infra/offline_stores/offline_utils.py, sdk/python/feast/permissions/enforcer.py; chưa chạy upstream |
+| Khoảng trống lấp | Feature store cho ML (kho chưa có mảng này) |
+| Cơ chế đáng học | - Point-in-time join: `dask.py` chuẩn hóa timestamp về UTC, sắp xếp rồi dùng `merge_asof`, `_filter_ttl` loại giá trị mới hơn mốc sự kiện hoặc cũ hơn `ttl` của feature view; `offline_utils.py` dựng truy vấn tương ứng cho store SQL.<br>- Tách offline store, online store (Redis, DynamoDB, SQLite, Postgres, vector store...) và registry thành interface thay được (`sdk/python/feast/infra/`).<br>- Quyền: `permissions/enforcer.py` áp `Permission` lên tài nguyên; nếu chưa định nghĩa quyền thì mọi người dùng đã xác thực đều có toàn quyền (có cảnh báo log).<br>- `audit/audit_logger.py` ghi JSONL cho lời gọi MCP/REST và quyết định authz, ghi chú rằng không đưa token, hàng entity hay giá trị feature vào log (tuyên bố trong docstring, chưa kiểm hết các lối ghi). |
+| Tiêu chí và cách kiểm | CI `unit_tests.yml` chạy test Python và test Go (`go test ./go/...`); còn nhiều workflow integration (duckdb, ray, rbac, registry) mà tôi chưa mở. Tính đúng của point-in-time join có test unit/universal trong `sdk/python/tests` (chưa mở). Chưa chạy. |
+| Giới hạn và rủi ro | Apache-2.0. Mặc định không có quyền thì cho phép mọi user đã xác thực: phải tự định nghĩa permissions và bật auth khi dùng feature server. Telemetry rời máy: không thấy trong file đã đọc; CHANGELOG nhắc gauge Prometheus về cài đặt (số đo cục bộ). Bề mặt rất rộng (hàng chục store contrib), mỗi cái có mức hỗ trợ khác nhau; repo có AGENTS.md/CLAUDE.md/skills chỉ là nội dung đọc. |
+| So với | MLflow (theo dõi thực nghiệm, mục 07), lakeFS (phiên bản hóa dữ liệu, mục 24), DataHub (metadata/lineage); kho chưa có feature store nào khác |
+| Nguồn | [LICENSE](https://github.com/feast-dev/feast/blob/a291a0f12bf78bdc28409c97139e43fb347b5da4/LICENSE) · [README.md](https://github.com/feast-dev/feast/blob/a291a0f12bf78bdc28409c97139e43fb347b5da4/README.md) · [dask.py](https://github.com/feast-dev/feast/blob/a291a0f12bf78bdc28409c97139e43fb347b5da4/sdk/python/feast/infra/offline_stores/dask.py) · [offline_utils.py](https://github.com/feast-dev/feast/blob/a291a0f12bf78bdc28409c97139e43fb347b5da4/sdk/python/feast/infra/offline_stores/offline_utils.py) · [enforcer.py](https://github.com/feast-dev/feast/blob/a291a0f12bf78bdc28409c97139e43fb347b5da4/sdk/python/feast/permissions/enforcer.py) · [audit_logger.py](https://github.com/feast-dev/feast/blob/a291a0f12bf78bdc28409c97139e43fb347b5da4/sdk/python/feast/audit/audit_logger.py) · [unit_tests.yml](https://github.com/feast-dev/feast/blob/a291a0f12bf78bdc28409c97139e43fb347b5da4/.github/workflows/unit_tests.yml) |
+
+<a id="nt-lakehq-sail"></a>
+
+### Sail (LakeSail)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/lakehq/sail |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `d7b5c1e01b804e551eec9e7cbacd49e81be8a663` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, scripts/common-gold-data/metrics.jq, scripts/spark-tests/run-tests.sh, .github/workflows/spark-tests.yml; chưa chạy upstream |
+| Khoảng trống lấp | Engine truy vấn nhúng/Rust và thay thế Spark |
+| Cơ chế đáng học | - Giao diện Spark Connect (`crates/sail-spark-connect`) nên không cần viết lại mã PySpark; parser Spark SQL tự viết (`sail-sql-parser`, `sail-sql-analyzer`).<br>- Gold data: `crates/sail-spark-connect/tests/gold_data/**.json` ghi đầu ra parser theo từng câu SQL; `scripts/common-gold-data/metrics.jq` đếm tp/tn/fp/fn và workflow `gold-data.yml` so báo cáo với commit nền của PR.<br>- Workflow `spark-tests.yml` dựng PySpark vá sẵn và chạy `scripts/spark-tests/run-tests.sh` với server Sail (cổng 50051); đặt `SPARK_TESTING_REMOTE_PORT` rỗng thì chạy trên Spark gốc để đối chiếu.<br>- Worker không trạng thái, shuffle trao đổi trực tiếp Arrow giữa worker (tuyên bố trong README, chưa kiểm). |
+| Tiêu chí và cách kiểm | Tương thích đo bằng gold data (mức parser/plan, không phải kết quả truy vấn) và test PySpark trong CI; README tự ghi script `compatibility_check` là thử nghiệm, chỉ kiểm hàm được cài và không bao Spark SQL dạng chuỗi. Benchmark TPC-H SF100 trên r8g.4xlarge: Spark 534,78 s so với Sail 52,81 s, do tác giả công bố, chưa tái lập. |
+| Giới hạn và rủi ro | Apache-2.0. Telemetry: exporter OTLP tắt trừ khi đặt `telemetry.exporter.otlp.endpoint` (theo `application.yaml` và `telemetry.rs`), tức không gửi ra ngoài mặc định. Phiên bản 0.7.3, phụ thuộc DataFusion 55.x nên API và hành vi còn đổi nhanh; không phải bản thay thế đủ cho mọi tính năng Spark (MLlib, một số UDF, streaming cần xem docs). Quy mô phụ thuộc cấu hình cluster/Kubernetes. |
+| So với | Apache Spark (engine được thay thế), DuckDB, Polars; Apache DataFusion (nền của Sail, hồ sơ trong đợt này) |
+| Nguồn | [LICENSE](https://github.com/lakehq/sail/blob/d7b5c1e01b804e551eec9e7cbacd49e81be8a663/LICENSE) · [README.md](https://github.com/lakehq/sail/blob/d7b5c1e01b804e551eec9e7cbacd49e81be8a663/README.md) · [metrics.jq](https://github.com/lakehq/sail/blob/d7b5c1e01b804e551eec9e7cbacd49e81be8a663/scripts/common-gold-data/metrics.jq) · [run-tests.sh](https://github.com/lakehq/sail/blob/d7b5c1e01b804e551eec9e7cbacd49e81be8a663/scripts/spark-tests/run-tests.sh) · [spark-tests.yml](https://github.com/lakehq/sail/blob/d7b5c1e01b804e551eec9e7cbacd49e81be8a663/.github/workflows/spark-tests.yml) · [gold-data.yml](https://github.com/lakehq/sail/blob/d7b5c1e01b804e551eec9e7cbacd49e81be8a663/.github/workflows/gold-data.yml) · [telemetry.rs](https://github.com/lakehq/sail/blob/d7b5c1e01b804e551eec9e7cbacd49e81be8a663/crates/sail-telemetry/src/telemetry.rs) |
+
+<a id="nt-apache-gravitino"></a>
+
+### Apache Gravitino
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/apache/gravitino |
+| License | Apache-2.0 (LICENSE gốc; kèm LICENSE.iceberg, LICENSE.lance, LICENSE.trino và LICENSE.bin cho phần phân phối/bundle) |
+| Phiên bản đã đọc | `9a3748eb6d67af1bc87b5e1d7f521c562e5f72d8` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, core/src/main/java/org/apache/gravitino/authorization/GravitinoAuthorizer.java, docs/security/authorization-pushdown.md, conf/gravitino.conf.template; chưa chạy upstream |
+| Khoảng trống lấp | Catalog/metadata đa engine và quản trị truy cập |
+| Cơ chế đáng học | - Giao diện `GravitinoAuthorizer` (`core/.../authorization/`): `authorize(principal, metalake, object, privilege, ctx)`; `canAccessDomain` mặc định đóng (fail closed).<br>- Đẩy quyền xuống nơi lưu dữ liệu: thuộc tính catalog `authorization-provider` là `ranger` hoặc `chain` (`docs/security/authorization-pushdown.md`); catalog không đặt thì chỉ quản quyền trong Gravitino.<br>- Mỗi nguồn là một module catalog (`catalogs/catalog-*`), gồm `catalog-model` cho model AI, cùng connector `trino-connector`, `spark-connector`, `flink-connector`.<br>- Có `mcp-server` (Python) cho agent truy cập metadata. |
+| Tiêu chí và cách kiểm | Rất nhiều workflow CI: `build.yml` (gradle assemble, test), integration test riêng cho backend, access-control, Trino, Spark, Flink, Python, MCP, multi-instance consistency. Chỉ đọc một phần `build.yml` (các dòng run); chưa mở các workflow integration. Chưa chạy. |
+| Giới hạn và rủi ro | Apache-2.0 cho mã nguồn; bản bin/bundle kèm các LICENSE riêng (iceberg, lance, trino) cần đọc khi phân phối lại. Mô tả của trinh sát "cả dữ liệu lẫn model/AI" đúng nhưng AI asset là WIP theo README. Quyền Gravitino chỉ cưỡng chế ở nơi khác nếu cấu hình pushdown. Dự án ASF top-level nhưng triển khai nặng (server, backend lưu entity, từng connector). |
+| So với | DataHub (catalog/lineage, mục 15), OpenMetadata (mục 24), Project Nessie (catalog giao dịch, hồ sơ đợt này), OpenFGA (phân quyền, mục 12) |
+| Nguồn | [LICENSE](https://github.com/apache/gravitino/blob/9a3748eb6d67af1bc87b5e1d7f521c562e5f72d8/LICENSE) · [README.md](https://github.com/apache/gravitino/blob/9a3748eb6d67af1bc87b5e1d7f521c562e5f72d8/README.md) · [GravitinoAuthorizer.java](https://github.com/apache/gravitino/blob/9a3748eb6d67af1bc87b5e1d7f521c562e5f72d8/core/src/main/java/org/apache/gravitino/authorization/GravitinoAuthorizer.java) · [authorization-pushdown.md](https://github.com/apache/gravitino/blob/9a3748eb6d67af1bc87b5e1d7f521c562e5f72d8/docs/security/authorization-pushdown.md) · [gravitino.conf.template](https://github.com/apache/gravitino/blob/9a3748eb6d67af1bc87b5e1d7f521c562e5f72d8/conf/gravitino.conf.template) · [build.yml](https://github.com/apache/gravitino/blob/9a3748eb6d67af1bc87b5e1d7f521c562e5f72d8/.github/workflows/build.yml) |
+
+<a id="nt-projectnessie-nessie"></a>
+
+### Project Nessie
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/projectnessie/nessie |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `6e94baa550519903f2006f40ccb1d901d8908342` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, SECURITY_THREAT_MODEL.md, versioned/spi/src/main/java/org/projectnessie/versioned/VersionStore.java, servers/quarkus-config/src/main/java/org/projectnessie/quarkus/config/QuarkusNessieAuthorizationConfig.java; chưa chạy upstream |
+| Khoảng trống lấp | Catalog/metadata đa engine và quản trị truy cập |
+| Cơ chế đáng học | - `VersionStore` (`versioned/spi/`): merge/transplant với `mergeKeyBehaviors`, tùy chọn dry-run (thử merge, kiểm xung đột nhưng không commit), ném `MergeConflictException`/`ReferenceConflictException`.<br>- Phân quyền bằng biểu thức CEL theo principal, reference, content key, thao tác (các lớp `CelAuthorizer`, `CompiledAuthorizationRules` trong `servers/quarkus-authz`, chưa mở nội dung; cấu hình mặc định đọc ở `QuarkusNessieAuthorizationConfig.java`); cấu hình `nessie.server.authorization.rules`.<br>- Tài liệu mô hình đe dọa `SECURITY_THREAT_MODEL.md` đánh dấu từng claim là documented, maintainer hoặc inferred.<br>- Công cụ GC riêng (`gc/`) dọn dữ liệu mồ côi cho Iceberg. |
+| Tiêu chí và cách kiểm | CI `ci.yml` (đọc các bước run) chạy `codeChecks`, `assemble`, test Quarkus, test events, kiểm tích hợp công cụ build; test version store tách theo backend (`versioned/storage/*-tests`). Kiểm bằng máy; chưa chạy. |
+| Giới hạn và rủi ro | Apache-2.0. README ghi rõ mặc định xác thực tắt (mọi yêu cầu là user anonymous) và `nessie.server.authorization.enabled` mặc định false: phải tự bật OIDC và rule CEL. CHANGELOG nêu nhiều version store cũ (JDBC, CASSANDRA, MONGODB, DynamoDB đời 1) đã deprecated, cần dùng bản `*2`. Image đã chuyển sang ghcr.io và quay.io. |
+| So với | lakeFS (phiên bản hóa dữ liệu kiểu Git trên object store, mục 24), Apache Gravitino (catalog liên hợp, hồ sơ đợt này), DataHub |
+| Nguồn | [LICENSE](https://github.com/projectnessie/nessie/blob/6e94baa550519903f2006f40ccb1d901d8908342/LICENSE) · [README.md](https://github.com/projectnessie/nessie/blob/6e94baa550519903f2006f40ccb1d901d8908342/README.md) · [SECURITY_THREAT_MODEL.md](https://github.com/projectnessie/nessie/blob/6e94baa550519903f2006f40ccb1d901d8908342/SECURITY_THREAT_MODEL.md) · [VersionStore.java](https://github.com/projectnessie/nessie/blob/6e94baa550519903f2006f40ccb1d901d8908342/versioned/spi/src/main/java/org/projectnessie/versioned/VersionStore.java) · [QuarkusNessieAuthorizationConfig.java](https://github.com/projectnessie/nessie/blob/6e94baa550519903f2006f40ccb1d901d8908342/servers/quarkus-config/src/main/java/org/projectnessie/quarkus/config/QuarkusNessieAuthorizationConfig.java) · [ci.yml](https://github.com/projectnessie/nessie/blob/6e94baa550519903f2006f40ccb1d901d8908342/.github/workflows/ci.yml) |
+
+<a id="nt-apache-xtable"></a>
+
+### Apache XTable (Incubating)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/apache/incubator-xtable |
+| License | Apache-2.0 (bundled jar của xtable-utilities kèm jol-core GPL-2.0 với Classpath Exception, và README nói bundled jar không mang LICENSE/NOTICE cho phần gói kèm) |
+| Phiên bản đã đọc | `603a057c7a623747be0abcf553431dc36269c5c5` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, DISCLAIMER, THREAT_MODEL.md, xtable-core/src/main/java/org/apache/xtable/conversion/ConversionController.java; chưa chạy upstream |
+| Khoảng trống lấp | Định dạng bảng mở và catalog lakehouse (Iceberg/Parquet/Delta) |
+| Cơ chế đáng học | - `ConversionController`: chế độ FULL hoặc INCREMENTAL; `getFormatsToSyncIncrementally` bỏ qua incremental nếu `isIncrementalSyncSafe()` sai hoặc không đủ lịch sử, rồi rơi về snapshot sync.<br>- Mô hình trung gian `InternalTable`/`InternalSnapshot`/`TableChange` (`xtable-api/.../model`), mỗi định dạng có `ConversionSource` và `ConversionTarget` (Delta, Hudi, Iceberg, Paimon).<br>- `TableSyncMetadata` lưu instant đã đồng bộ cuối để lần sau chạy tiếp.<br>- Cấu hình YAML (`sourceFormat`, `targetFormats`, `datasets`) và có thể thay converter bằng lớp tự viết. |
+| Tiêu chí và cách kiểm | CI `mvn-ci-build.yml` chạy `./mvnw clean install` (gồm unit test; IT như `ITConversionController`, `ITDeltaLogTruncationSafetyCheck` thuộc profile verify) và Spotless; có workflow kiểm license. Tính tương thích đo bằng test chuyển đổi cho từng cặp định dạng. Chưa chạy. |
+| Giới hạn và rủi ro | Apache-2.0 nhưng DISCLAIMER: Incubator, chưa được ASF xác nhận. Bundled jar chứa jol-core (GPL-2.0 with Classpath Exception) và README nói rõ không phải artifact phát hành. THREAT_MODEL.md ở trạng thái v1 draft chờ PPMC rà. Chuyển metadata không sửa dữ liệu nhưng đích thành bản sao metadata có thể lệch nếu ghi đồng thời từ hai phía; cần một nguồn ghi duy nhất. |
+| So với | Project Nessie (catalog giao dịch), Apache Gravitino (catalog liên hợp), lakeFS; kho chưa có hồ sơ Iceberg/Delta/Hudi riêng |
+| Nguồn | [LICENSE](https://github.com/apache/incubator-xtable/blob/603a057c7a623747be0abcf553431dc36269c5c5/LICENSE) · [README.md](https://github.com/apache/incubator-xtable/blob/603a057c7a623747be0abcf553431dc36269c5c5/README.md) · [DISCLAIMER](https://github.com/apache/incubator-xtable/blob/603a057c7a623747be0abcf553431dc36269c5c5/DISCLAIMER) · [THREAT_MODEL.md](https://github.com/apache/incubator-xtable/blob/603a057c7a623747be0abcf553431dc36269c5c5/THREAT_MODEL.md) · [ConversionController.java](https://github.com/apache/incubator-xtable/blob/603a057c7a623747be0abcf553431dc36269c5c5/xtable-core/src/main/java/org/apache/xtable/conversion/ConversionController.java) · [pom.xml](https://github.com/apache/incubator-xtable/blob/603a057c7a623747be0abcf553431dc36269c5c5/xtable-utilities/pom.xml) · [mvn-ci-build.yml](https://github.com/apache/incubator-xtable/blob/603a057c7a623747be0abcf553431dc36269c5c5/.github/workflows/mvn-ci-build.yml) |
+
+<a id="nt-bitol-odcs"></a>
+
+### Open Data Contract Standard (ODCS)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/bitol-io/open-data-contract-standard |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `7c7597ee04ec58f67ea4a9cbcddab2043ff7d01f` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, docs/data-quality.md, schema/README.md, schema/odcs-json-schema-latest.json; chưa chạy upstream |
+| Khoảng trống lấp | Data contract (ODCS) và kiểm chứng hợp đồng |
+| Cơ chế đáng học | - `schema/odcs-json-schema-v3.2.0.json` là bản chốt, `odcs-json-schema-latest.json` bám đầu nhánh; `validate-schema-parity.sh` kiểm latest trùng bản đã đánh phiên bản.<br>- Quality 4 mức trong `docs/data-quality.md`: `text`, `library` (metric `nullValues`, `missingValues`, `invalidValues`, `duplicateValues`, `rowCount` có operator so sánh), `sql`, `custom` (engine: soda, greatExpectations, dqx).<br>- `required` ở gốc: `version`, `apiVersion`, `kind`, `id`; `type` của server dùng `const` cho từng loại hệ thống.<br>- Đặt tên `.odcs.yaml` để công cụ tự nhận diện. |
+| Tiêu chí và cách kiểm | Workflow `validate-examples.yaml` cài ajv-cli, chạy `validate-schema-parity.sh`, `validate-examples.sh` (mọi ví dụ phải hợp lệ) và `validate-negative.sh` (44 file trong `src/script/negative-tests` phải bị schema từ chối). Kiểm bằng máy nhưng chỉ ở tầng cấu trúc. Chưa chạy. |
+| Giới hạn và rủi ro | Apache-2.0. Là chuẩn nên không có telemetry. Số phiên bản schema trong thư mục nhiều và gồm bản gắn ngày, người dùng cần ghim phiên bản; chuẩn mô tả hợp đồng chứ không bắt buộc ai thi hành. Mô tả trinh sát đúng (có JSON Schema, kiểm bằng máy được) nhưng kiểm ở đây là hợp lệ cấu trúc, không phải kiểm hợp đồng với dữ liệu thật. |
+| So với | Soda Core và Great Expectations (engine thi hành quality, mục 15), DataHub/OpenMetadata (catalog giữ metadata hợp đồng) |
+| Nguồn | [LICENSE](https://github.com/bitol-io/open-data-contract-standard/blob/7c7597ee04ec58f67ea4a9cbcddab2043ff7d01f/LICENSE) · [README.md](https://github.com/bitol-io/open-data-contract-standard/blob/7c7597ee04ec58f67ea4a9cbcddab2043ff7d01f/README.md) · [data-quality.md](https://github.com/bitol-io/open-data-contract-standard/blob/7c7597ee04ec58f67ea4a9cbcddab2043ff7d01f/docs/data-quality.md) · [README.md](https://github.com/bitol-io/open-data-contract-standard/blob/7c7597ee04ec58f67ea4a9cbcddab2043ff7d01f/schema/README.md) · [odcs-json-schema-latest.json](https://github.com/bitol-io/open-data-contract-standard/blob/7c7597ee04ec58f67ea4a9cbcddab2043ff7d01f/schema/odcs-json-schema-latest.json) · [validate-examples.yaml](https://github.com/bitol-io/open-data-contract-standard/blob/7c7597ee04ec58f67ea4a9cbcddab2043ff7d01f/.github/workflows/validate-examples.yaml) · [validate-negative.sh](https://github.com/bitol-io/open-data-contract-standard/blob/7c7597ee04ec58f67ea4a9cbcddab2043ff7d01f/src/script/validate-negative.sh) |
+
+<a id="nt-datasketch"></a>
+
+### datasketch
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ekzhu/datasketch |
+| License | MIT |
+| Phiên bản đã đọc | `c7eaaeea3f39909f906a9cf8ad4d21a878cb4e07` (commit 2026-10-09) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.rst, LICENSE, pyproject.toml, datasketch/lsh.py; chưa chạy upstream |
+| Khoảng trống lấp | Chống rò rỉ dữ liệu huấn luyện và khử trùng lặp |
+| Cơ chế đáng học | - `datasketch/lsh.py` `_optimal_param`: chọn cặp (b, r) cho `MinHashLSH` bằng cách quét mọi b và r sao cho `b*r <= num_perm`, tối thiểu hóa tổng có trọng số của xác suất dương tính giả và âm tính giả tính bằng tích phân; tham số `weights` mặc định (0.5, 0.5) chỉnh theo ưu tiên.<br>- `datasketch/minhash.py`: từ 2.0.0 mặc định sơ đồ `affine32` (sửa lệch ước lượng quá cao ở tập lớn), có `affine64` và `legacy`; `_check_scheme_consistency` làm lỗi to nếu trộn sơ đồ trong một chỉ mục thay vì trả kết quả sai âm thầm.<br>- `MinHashLSH.insertion_session` và `MinHash.bulk` để nạp theo lô; `datasketch/lsh_bloom.py` (LSHBloom) giảm bộ nhớ cho chỉ mục khử trùng lặp rất lớn (chỉ đọc README).<br>- `docs/lsh.rst`: benchmark trên hai kho tổng hợp (gần trùng và cụm chồng lấn) cho thấy độ chính xác phụ thuộc phân bố cặp quanh ngưỡng. |
+| Tiêu chí và cách kiểm | CI `test.yml` (đã mở) chạy `pytest --cov` trên Python 3.9 đến 3.13 và đẩy coverage lên Codecov; có workflow riêng cho Redis, Cassandra, Mongo. Test trong `test/` kiểm tính đúng của sketch và LSH bằng máy; độ chính xác khử trùng lặp trên văn bản thật phải tự đo: `docs/lsh.rst` chỉ báo kết quả trên dữ liệu tổng hợp. |
+| Giới hạn và rủi ro | MinHash ước lượng Jaccard theo tập shingle: bản dịch, diễn đạt lại hay thay đổi nhỏ đều lọt; với dữ liệu tiếng Việt phải tự quyết định tách từ và kích thước shingle. LSH có dương tính giả và âm tính giả theo ngưỡng. Nâng 2.0.0 làm hash khác bản cũ nên chỉ mục đã lưu phải dựng lại (hoặc dùng `scheme="legacy"`). Backend Redis và Cassandra là dịch vụ ngoài cần bảo mật riêng. Không telemetry thấy trong phần đã đọc, nhưng chưa quét toàn bộ mã. |
+| So với | `datatrove` và `data-juicer` (có hàm khử trùng lặp hoàn chỉnh cho corpus huấn luyện, hồ sơ có sẵn mục 24), `cleanlab`. |
+| Nguồn | [README.rst](https://github.com/ekzhu/datasketch/blob/c7eaaeea3f39909f906a9cf8ad4d21a878cb4e07/README.rst) · [LICENSE](https://github.com/ekzhu/datasketch/blob/c7eaaeea3f39909f906a9cf8ad4d21a878cb4e07/LICENSE) · [pyproject.toml](https://github.com/ekzhu/datasketch/blob/c7eaaeea3f39909f906a9cf8ad4d21a878cb4e07/pyproject.toml) · [lsh.py](https://github.com/ekzhu/datasketch/blob/c7eaaeea3f39909f906a9cf8ad4d21a878cb4e07/datasketch/lsh.py) · [minhash.py](https://github.com/ekzhu/datasketch/blob/c7eaaeea3f39909f906a9cf8ad4d21a878cb4e07/datasketch/minhash.py) · [lsh.rst](https://github.com/ekzhu/datasketch/blob/c7eaaeea3f39909f906a9cf8ad4d21a878cb4e07/docs/lsh.rst) · [test.yml](https://github.com/ekzhu/datasketch/blob/c7eaaeea3f39909f906a9cf8ad4d21a878cb4e07/.github/workflows/test.yml) |
+
+<a id="nt-nemo-curator"></a>
+
+### NVIDIA NeMo Curator
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/NVIDIA-NeMo/Curator |
+| License | Apache-2.0 (LICENSE gốc, header file Apache-2.0). Mô hình phân loại/embedding tải từ nơi khác có điều khoản riêng **(chưa xác minh)**, không mở |
+| Phiên bản đã đọc | `a27996bcef0576453749cf9d29ca55521b5d1370` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc `README.md`, `LICENSE`, `pyproject.toml`, `nemo_curator/stages/deduplication/fuzzy/workflow.py`, `nemo_curator/stages/deduplication/exact/identification.py`, `.github/workflows/cicd-main.yml`; chưa chạy upstream |
+| Khoảng trống lấp | Khử trùng lặp dữ liệu huấn luyện quy mô lớn (chưa có chống rò rỉ benchmark, xem giới hạn) |
+| Cơ chế đáng học | - `FuzzyDeduplicationWorkflow` (`fuzzy/workflow.py`): MinHash, LSH, đồ thị cạnh, thành phần liên thông, rồi danh sách id cần bỏ; mặc định `char_ngrams=24`, `num_bands=20`, `minhashes_per_band=13`, seed 42, cảnh báo nếu `char_ngrams<20` vì ~5% dương tính giả.<br>- `ExactDuplicateIdentification` (`exact/identification.py`) băm cột văn bản, có `normalize_text` (hạ chữ, gộp khoảng trắng).<br>- Cùng bộ stage cho văn bản, ảnh, video, âm thanh trên Ray; thư mục `semantic/` thêm khử trùng lặp theo embedding (K-means, ngưỡng `eps`).<br>- Bước loại bản sao chỉ ghi danh sách id (`perform_removal` mặc định False), tách nhận diện khỏi xóa. |
+| Tiêu chí và cách kiểm | Tham số được cảnh báo ngay trong mã; CI `cicd-main.yml` chạy unit test theo thư mục (có `stages-deduplication`) trên CPU (đã mở phần đầu file, chưa thấy phần GPU); thư mục `benchmarking/` đo hiệu năng hằng đêm (chỉ đọc README, chưa mở kết quả). |
+| Giới hạn và rủi ro | Đường dedup (exact, fuzzy) import `cudf` nên cần GPU CUDA 12 và RAPIDS 26.8 (`pyproject.toml`); gói `text_cpu` không phủ phần này. **Mô tả của trinh sát chưa đúng:** grep không thấy stage chống rò rỉ benchmark (decontamination) trong mã/tài liệu; repo chỉ khử trùng lặp trong tập huấn luyện. Phụ thuộc Ray, nhiều extra; tốc độ đổi phiên bản cao (26.02 đã đổi kiến trúc). |
+| So với | datatrove (hồ sơ có sẵn, chạy CPU/Slurm, MinHash cũng có), distilabel (sinh dữ liệu, không dedup), argilla. |
+| Nguồn | [README.md](https://github.com/NVIDIA-NeMo/Curator/blob/a27996bcef0576453749cf9d29ca55521b5d1370/README.md) · [LICENSE](https://github.com/NVIDIA-NeMo/Curator/blob/a27996bcef0576453749cf9d29ca55521b5d1370/LICENSE) · [pyproject.toml](https://github.com/NVIDIA-NeMo/Curator/blob/a27996bcef0576453749cf9d29ca55521b5d1370/pyproject.toml) · [workflow.py](https://github.com/NVIDIA-NeMo/Curator/blob/a27996bcef0576453749cf9d29ca55521b5d1370/nemo_curator/stages/deduplication/fuzzy/workflow.py) · [identification.py](https://github.com/NVIDIA-NeMo/Curator/blob/a27996bcef0576453749cf9d29ca55521b5d1370/nemo_curator/stages/deduplication/exact/identification.py) · [cicd-main.yml](https://github.com/NVIDIA-NeMo/Curator/blob/a27996bcef0576453749cf9d29ca55521b5d1370/.github/workflows/cicd-main.yml) |
+
+<a id="nt-bespoke-curator"></a>
+
+### Bespoke Curator
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/bespokelabsai/curator |
+| License | Apache-2.0 (LICENSE; `pyproject.toml` khai Apache-2.0). Không có trọng số |
+| Phiên bản đã đọc | `fab184b26578429568c39c6b1e6b1d67e1650ae1` (commit 2026-11-02) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc `README.md`, `LICENSE`, `pyproject.toml`, `src/bespokelabs/curator/llm/llm.py`, `src/bespokelabs/curator/telemetry/client.py`, `src/bespokelabs/curator/status_tracker/online_status_tracker.py`, `.github/workflows/lint-and-test.yaml`; chưa chạy upstream |
+| Khoảng trống lấp | Sinh dữ liệu tổng hợp bằng LLM có cache và chạy tiếp (post-training, fine-tuning) |
+| Cơ chế đáng học | - `llm/llm.py`: mỗi lần chạy có vân tay xxh64 từ hash dataset, hash hàm prompt và tham số sinh; thư mục chạy trùng vân tay thì dùng lại bản đã có (resume), `CURATOR_DISABLE_CACHE` tắt.<br>- Nhiều processor chung giao diện (`request_processor/`): online (OpenAI, Anthropic, LiteLLM), batch (OpenAI, Anthropic, Gemini, Azure, Mistral), vLLM offline.<br>- Kết quả ghi `responses_*.jsonl` và dataset Arrow; đọc lại chịu được dòng lỗi và báo khi toàn bộ phản hồi lỗi.<br>- Có thêm trainer Fireworks/Tinker và CodeExecutor, ngoài phạm vi dữ liệu. |
+| Tiêu chí và cách kiểm | CI chạy ruff và pytest với `--cov-fail-under=80` (đã mở workflow); nhưng tính đúng của dữ liệu sinh ra không được kiểm tự động, chỉ kiểm cơ chế gọi và cache. |
+| Giới hạn và rủi ro | Telemetry PostHog bật mặc định: khóa ghi công khai nằm trong `telemetry/client.py`, tắt bằng `TELEMETRY_ENABLED=false`; `online_status_tracker.py` gửi sự kiện `OnlineRequest` với toàn bộ trường của tracker (đếm yêu cầu/token/chi phí; có chứa nội dung prompt hay không **(chưa xác minh)**). Viewer lưu trữ chỉ bật khi `CURATOR_VIEWER=1`, khi đó dữ liệu chạy lên api.bespokelabs.ai. Phụ thuộc vLLM ghim `^0.6.3` đã cũ. Commit gần nhất 2026-11-02. |
+| So với | distilabel (hồ sơ có sẵn, pipeline sinh dữ liệu dạng đồ thị), datatrove và nemo-curator (lọc/dedup chứ không sinh), argilla. |
+| Nguồn | [README.md](https://github.com/bespokelabsai/curator/blob/fab184b26578429568c39c6b1e6b1d67e1650ae1/README.md) · [LICENSE](https://github.com/bespokelabsai/curator/blob/fab184b26578429568c39c6b1e6b1d67e1650ae1/LICENSE) · [pyproject.toml](https://github.com/bespokelabsai/curator/blob/fab184b26578429568c39c6b1e6b1d67e1650ae1/pyproject.toml) · [llm.py](https://github.com/bespokelabsai/curator/blob/fab184b26578429568c39c6b1e6b1d67e1650ae1/src/bespokelabs/curator/llm/llm.py) · [client.py](https://github.com/bespokelabsai/curator/blob/fab184b26578429568c39c6b1e6b1d67e1650ae1/src/bespokelabs/curator/telemetry/client.py) · [online_status_tracker.py](https://github.com/bespokelabsai/curator/blob/fab184b26578429568c39c6b1e6b1d67e1650ae1/src/bespokelabs/curator/status_tracker/online_status_tracker.py) · [lint-and-test.yaml](https://github.com/bespokelabsai/curator/blob/fab184b26578429568c39c6b1e6b1d67e1650ae1/.github/workflows/lint-and-test.yaml) |

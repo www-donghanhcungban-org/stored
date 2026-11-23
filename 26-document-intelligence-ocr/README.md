@@ -233,3 +233,111 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 ## Nguồn
 
 Các permalink trong từng hồ sơ cố định đúng phiên bản đã đọc; số sao/trạng thái archive là snapshot GitHub API ngày 2026-11-02. Không chạy mã, huấn luyện model hoặc tái lập kết quả của upstream.
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-paperless-ai"></a>
+
+### Paperless-AI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/clusterzx/paperless-ai |
+| License | MIT |
+| Phiên bản đã đọc | `595496d65513d3ef9a0aff49df7f16a73aa01fc4` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, PRIVACY_POLICY.md, package.json, src/server/processing/analyzer.ts, src/server/env.ts, src/server/mcp/tools.ts, docs/guide/prompt-rules.md, docs/guide/mcp.md, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Quản lý tài liệu/hồ sơ tuân thủ (DMS, OCR): lớp AI gắn thẻ và hỏi đáp trên kho tài liệu |
+| Cơ chế đáng học | • `src/server/processing/analyzer.ts`: gọi LLM với JSON schema, nếu đầu ra bị cắt (truncated) thì không áp dụng mà thử lại một lần với ngân sách token lớn hơn; JSON hỏng thì hỏi lại một lần rồi mới lỗi.<br>• Prompt chỉ đưa vào danh sách tag/correspondent/loại tài liệu sẵn có và loại tag đánh dấu nội bộ (`buildPromptContext`), nên AI bị giới hạn trong từ vựng của kho.<br>• Prompt rules theo điều kiện (tag, loại, người gửi, storage path, custom field) chọn prompt và model riêng cho từng loại hồ sơ (`docs/guide/prompt-rules.md`).<br>• MCP server với API key theo scope (read, write, delete, metadata, upload, chat), giới hạn theo thư viện và rate limit (`src/server/mcp/tools.ts`, `docs/guide/mcp.md`). |
+| Tiêu chí và cách kiểm | CI (`ci.yml`) chạy typecheck, eslint, vitest, build, thử build trên CPU x86-64-v2 giả lập và hai bộ Playwright e2e; thư mục `test/` có 15 nhóm test. Kiểm bằng máy cho mã, không có đánh giá độ chính xác phân loại của AI (chưa thấy trong phần đã đọc). |
+| Giới hạn và rủi ro | MIT. Nội dung tài liệu được gửi tới nhà cung cấp LLM đã cấu hình (OpenAI, Anthropic, Azure, tương thích OpenAI) trừ khi dùng Ollama/cục bộ; chính sách riêng tư trong repo chỉ nói về tiện ích Chrome. Telemetry ONNX Runtime bị tắt mặc định (`ORT_DISABLE_TELEMETRY` mặc định 1 trong `env.ts`). README cảnh báo phải hoàn tất setup trước khi mở ra mạng ngoài. Mô tả trinh sát hơi hẹp: v4.5.1 còn có kho lưu trữ tích hợp không cần Paperless-ngx, OCR PaddleOCR và MCP. Số sao 6159 (chưa xác minh). |
+| So với | paperless-ngx (DMS nền mà nó mở rộng); OCRmyPDF (OCR lớp dưới, không có AI phân loại); Open Notebook (hỏi đáp RAG trên tri thức). |
+| Nguồn | [LICENSE](https://github.com/clusterzx/paperless-ai/blob/595496d65513d3ef9a0aff49df7f16a73aa01fc4/LICENSE) · [README.md](https://github.com/clusterzx/paperless-ai/blob/595496d65513d3ef9a0aff49df7f16a73aa01fc4/README.md) · [PRIVACY_POLICY.md](https://github.com/clusterzx/paperless-ai/blob/595496d65513d3ef9a0aff49df7f16a73aa01fc4/PRIVACY_POLICY.md) · [package.json](https://github.com/clusterzx/paperless-ai/blob/595496d65513d3ef9a0aff49df7f16a73aa01fc4/package.json) · [analyzer.ts](https://github.com/clusterzx/paperless-ai/blob/595496d65513d3ef9a0aff49df7f16a73aa01fc4/src/server/processing/analyzer.ts) · [env.ts](https://github.com/clusterzx/paperless-ai/blob/595496d65513d3ef9a0aff49df7f16a73aa01fc4/src/server/env.ts) · [tools.ts](https://github.com/clusterzx/paperless-ai/blob/595496d65513d3ef9a0aff49df7f16a73aa01fc4/src/server/mcp/tools.ts) · [prompt-rules.md](https://github.com/clusterzx/paperless-ai/blob/595496d65513d3ef9a0aff49df7f16a73aa01fc4/docs/guide/prompt-rules.md) · [mcp.md](https://github.com/clusterzx/paperless-ai/blob/595496d65513d3ef9a0aff49df7f16a73aa01fc4/docs/guide/mcp.md) · [ci.yml](https://github.com/clusterzx/paperless-ai/blob/595496d65513d3ef9a0aff49df7f16a73aa01fc4/.github/workflows/ci.yml) |
+
+<a id="nt-papermerge"></a>
+
+### Papermerge (kho cũ)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ciur/papermerge |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `adac0a76f11489864be8b0a5ce0f785748824bec` (commit 2026-09-05) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, pyproject.toml, changelog.md, config/settings/base.py, papermerge/test/test_automate.py, docker/docker-compose.yml, .github/workflows/docker.yml, run_tests.sh; chưa chạy upstream |
+| Khoảng trống lấp | Quản lý tài liệu/hồ sơ tuân thủ (DMS, OCR): lưu trữ số hóa tài liệu quét |
+| Cơ chế đáng học | • Quy tắc tự động gán (model `Automate`) với bốn thuật toán khớp ALL, ANY, LITERAL, REGEX trên văn bản OCR; `papermerge/test/test_automate.py` kiểm khớp và áp dụng lên hàng đợi inbox.<br>• Thư mục nhập (importer dir) và vòng lặp quét với ngưỡng 'file không đổi tối thiểu' trong `config/settings/base.py`; cấu hình bằng Configula (`papermerge.conf.py`, biến PAPERMERGE_*).<br>• Phần lõi KHÔNG nằm trong repo này: `pyproject.toml` kéo `papermerge-core` từ git, nên phần đọc được chỉ là vỏ Django, cấu hình, docker và test. |
+| Tiêu chí và cách kiểm | Test Django chạy bằng `run_tests.sh` (settings test); workflow duy nhất `docker.yml` chỉ build và đẩy image khi phát hành, không chạy test. Phụ thuộc Django 3.2 và Python ^3.8. |
+| Giới hạn và rủi ro | Apache-2.0. README ghi rõ kho đã ARCHIVED, phát triển chuyển sang papermerge/papermerge-core, tác giả tập trung vào bản SaaS và tìm người bảo trì bản mã mở (tuyên bố trong README, cờ archive trên GitHub chưa kiểm). Mô tả trinh sát sai: đây không phải DMS đang hoạt động. `config/settings/base.py` có SECRET_KEY cố định và DEBUG=True, `docker-compose.yml` dùng mật khẩu Postgres mẫu: chỉ dùng làm tham khảo, không triển khai nguyên trạng. Changelog dừng ở 3.0.1 (2024-01). Số sao 2930 (chưa xác minh). |
+| So với | paperless-ngx (đang bảo trì, nên chọn thay thế); Paperless-AI; OCRmyPDF (chỉ OCR). |
+| Nguồn | [LICENSE](https://github.com/ciur/papermerge/blob/adac0a76f11489864be8b0a5ce0f785748824bec/LICENSE) · [README.md](https://github.com/ciur/papermerge/blob/adac0a76f11489864be8b0a5ce0f785748824bec/README.md) · [pyproject.toml](https://github.com/ciur/papermerge/blob/adac0a76f11489864be8b0a5ce0f785748824bec/pyproject.toml) · [changelog.md](https://github.com/ciur/papermerge/blob/adac0a76f11489864be8b0a5ce0f785748824bec/changelog.md) · [base.py](https://github.com/ciur/papermerge/blob/adac0a76f11489864be8b0a5ce0f785748824bec/config/settings/base.py) · [test_automate.py](https://github.com/ciur/papermerge/blob/adac0a76f11489864be8b0a5ce0f785748824bec/papermerge/test/test_automate.py) · [docker-compose.yml](https://github.com/ciur/papermerge/blob/adac0a76f11489864be8b0a5ce0f785748824bec/docker/docker-compose.yml) · [docker.yml](https://github.com/ciur/papermerge/blob/adac0a76f11489864be8b0a5ce0f785748824bec/.github/workflows/docker.yml) · [run_tests.sh](https://github.com/ciur/papermerge/blob/adac0a76f11489864be8b0a5ce0f785748824bec/run_tests.sh) |
+
+<a id="nt-chandra-ocr"></a>
+
+### Chandra OCR 2
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/datalab-to/chandra |
+| License | Mã Apache-2.0 (`LICENSE`); trọng số AI Pubs OpenRAIL-M sửa đổi (`MODEL_LICENSE`) với ngưỡng 2 triệu USD doanh thu hoặc vốn huy động và điều khoản cấm cạnh tranh |
+| Phiên bản đã đọc | `9c3a195573bec72b6e73cd66be099350ac11a4f5` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, MODEL_LICENSE, pyproject.toml; chưa chạy upstream |
+| Khoảng trống lấp | Model card, dataset card và license theo trọng số |
+| Cơ chế đáng học | - `LICENSE` (Apache-2.0) áp cho mã; `MODEL_LICENSE` (AI Pubs OpenRAIL-M sửa đổi) áp cho trọng số `datalab-to/chandra-ocr-2`; `pyproject.toml` ghi `Apache-2.0` nên metadata gói không phản ánh license trọng số.<br>- `chandra/model/vllm.py` và `chandra/settings.py`: gọi máy chủ vLLM qua client OpenAI (`VLLM_API_BASE` mặc định `http://localhost:8000/v1`), `temperature=0.0`, `top_p=0.1`, thử lại tối đa `MAX_VLLM_RETRIES=6`; ảnh được thu về tối thiểu `MIN_IMAGE_DIM=1536`.<br>- `chandra/model/util.py` `detect_repeat_token`: phát hiện đầu ra lặp (cửa sổ 500 ký tự, ngưỡng lặp co giãn nghịch theo độ dài chuỗi) để kích hoạt thử lại, cách chặn vòng lặp sinh của VLM đáng mượn.<br>- `chandra/skills/SKILL.md`: skill hướng dẫn agent gọi CLI `chandra ... --stdout`. |
+| Tiêu chí và cách kiểm | Có `tests/unit/test_chandra.py` (mock, không cần GPU) và workflow `integration.yml` chạy `pytest tests/unit tests/integration` trên runner GPU T4 mỗi lần push, dùng `HF_TOKEN` (đã mở workflow này; `publish.yml` chưa mở). Độ chính xác chỉ có bảng tự công bố trong README (olmocr, đa ngôn ngữ 43 ngôn ngữ): dòng `vi` là Chandra 2 80.4%, Chandra 1 81.6%, Gemini 2.5 Flash 89.5%, GPT-5 Mini 83.6% (chưa xác minh, số của hãng). |
+| Giới hạn và rủi ro | Ràng buộc trọng số (MODEL_LICENSE, Attachment A): cấm dùng cho mọi mục đích nếu đơn vị có doanh thu năm trước trên 2 triệu USD hoặc đã huy động trên 2 triệu USD, trừ dùng cá nhân/nghiên cứu; cấm nếu cung cấp sản phẩm cạnh tranh với hãng; điều 4(a) buộc đưa các hạn chế này vào thỏa thuận hạ nguồn, điều 8 share-a-like, điều 9 cho hãng quyền hạn chế hoặc cập nhật từ xa. README nói rõ tự host thương mại cần giấy phép. Do đó không phải mã nguồn mở theo nghĩa OSI đối với trọng số: `open_source: true` chỉ đúng cho phần mã. README còn quảng bá nền tảng trả phí của hãng. Tiếng Việt kém Gemini theo chính bảng của hãng. |
+| So với | `marker` và `surya` (cùng tác giả Datalab, đã có hồ sơ), `olmocr`, `paddleocr`, `mineru`; so điều kiện license trọng số với `dots-ocr` ở cùng lô. |
+| Nguồn | [README.md](https://github.com/datalab-to/chandra/blob/9c3a195573bec72b6e73cd66be099350ac11a4f5/README.md) · [LICENSE](https://github.com/datalab-to/chandra/blob/9c3a195573bec72b6e73cd66be099350ac11a4f5/LICENSE) · [MODEL_LICENSE](https://github.com/datalab-to/chandra/blob/9c3a195573bec72b6e73cd66be099350ac11a4f5/MODEL_LICENSE) · [pyproject.toml](https://github.com/datalab-to/chandra/blob/9c3a195573bec72b6e73cd66be099350ac11a4f5/pyproject.toml) · [settings.py](https://github.com/datalab-to/chandra/blob/9c3a195573bec72b6e73cd66be099350ac11a4f5/chandra/settings.py) · [vllm.py](https://github.com/datalab-to/chandra/blob/9c3a195573bec72b6e73cd66be099350ac11a4f5/chandra/model/vllm.py) · [util.py](https://github.com/datalab-to/chandra/blob/9c3a195573bec72b6e73cd66be099350ac11a4f5/chandra/model/util.py) · [SKILL.md](https://github.com/datalab-to/chandra/blob/9c3a195573bec72b6e73cd66be099350ac11a4f5/chandra/skills/SKILL.md) · [test_chandra.py](https://github.com/datalab-to/chandra/blob/9c3a195573bec72b6e73cd66be099350ac11a4f5/tests/unit/test_chandra.py) · [integration.yml](https://github.com/datalab-to/chandra/blob/9c3a195573bec72b6e73cd66be099350ac11a4f5/.github/workflows/integration.yml) |
+
+<a id="nt-pdf-extract-kit"></a>
+
+### PDF-Extract-Kit
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/opendatalab/PDF-Extract-Kit |
+| License | AGPL-3.0 |
+| Phiên bản đã đọc | `fdb25fd4bd9058ba4e13ac16cb68d4f06b23df56` (commit 2025-01-03) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE.md, requirements.txt, configs/ocr.yaml; chưa chạy upstream |
+| Khoảng trống lấp | OCR/layout cho tiếng Việt và tài liệu kỹ thuật |
+| Cơ chế đáng học | - `pdf_extract_kit/registry/registry.py`: hai registry `TASK_REGISTRY` và `MODEL_REGISTRY` đăng ký tác vụ và model bằng decorator; tác vụ lấy cấu hình từ `configs/*.yaml` nên đổi model chỉ cần sửa YAML.<br>- `configs/layout_detection.yaml` và `tasks/layout_detection/models/yolo.py`: DocLayout-YOLO với `img_size 1024`, `conf_thres 0.25`, `iou_thres 0.45`, trọng số tải riêng về `models/Layout/YOLO/`.<br>- `configs/ocr.yaml` và `tasks/ocr/models/paddle_ocr.py`: OCR PaddleOCR 2.7.3 với `lang: ch`, `det_db_box_thresh: 0.3`, mô hình PP-OCRv4 tiếng Trung; để đọc tiếng Việt phải đổi mô hình nhận dạng, repo không cấu hình sẵn (chưa xác minh khả năng).<br>- `project/pdf2markdown` là ví dụ ghép các tác vụ thành pipeline PDF sang Markdown (chỉ đọc cấu trúc thư mục). |
+| Tiêu chí và cách kiểm | Không có workflow CI và không có thư mục test của dự án. Phần Evaluation Metrics trong README ghi Coming Soon, tức chưa có chuẩn đo đi kèm; chất lượng chỉ được minh họa bằng ảnh. Kiểm bằng cách chạy script demo bằng tay. |
+| Giới hạn và rủi ro | AGPL-3.0 cho cả repo (README giải thích do dùng mã YOLO của Ultralytics và PyMuPDF đều AGPL), nghĩa là nhúng vào dịch vụ mạng sẽ kéo theo nghĩa vụ công bố mã nguồn; license trọng số tải riêng trên Hugging Face/ModelScope chưa đọc (chưa xác minh). Commit cuối 2025-01-03 (khoảng 22 tháng so với ngày kiểm). Ràng buộc phụ thuộc cũ (`paddleocr==2.7.3`, `doclayout-yolo==0.0.2`, `paddlepaddle-gpu`). Mặc định là tiếng Trung và Anh; không có hỗ trợ tiếng Việt được nêu trong repo. |
+| So với | `mineru` (sản phẩm hoàn chỉnh dựa trên bộ này, đã có hồ sơ), `docling`, `marker`, `surya`, `paddleocr`. |
+| Nguồn | [README.md](https://github.com/opendatalab/PDF-Extract-Kit/blob/fdb25fd4bd9058ba4e13ac16cb68d4f06b23df56/README.md) · [LICENSE.md](https://github.com/opendatalab/PDF-Extract-Kit/blob/fdb25fd4bd9058ba4e13ac16cb68d4f06b23df56/LICENSE.md) · [requirements.txt](https://github.com/opendatalab/PDF-Extract-Kit/blob/fdb25fd4bd9058ba4e13ac16cb68d4f06b23df56/requirements.txt) · [ocr.yaml](https://github.com/opendatalab/PDF-Extract-Kit/blob/fdb25fd4bd9058ba4e13ac16cb68d4f06b23df56/configs/ocr.yaml) · [layout_detection.yaml](https://github.com/opendatalab/PDF-Extract-Kit/blob/fdb25fd4bd9058ba4e13ac16cb68d4f06b23df56/configs/layout_detection.yaml) · [registry.py](https://github.com/opendatalab/PDF-Extract-Kit/blob/fdb25fd4bd9058ba4e13ac16cb68d4f06b23df56/pdf_extract_kit/registry/registry.py) · [paddle_ocr.py](https://github.com/opendatalab/PDF-Extract-Kit/blob/fdb25fd4bd9058ba4e13ac16cb68d4f06b23df56/pdf_extract_kit/tasks/ocr/models/paddle_ocr.py) · [yolo.py](https://github.com/opendatalab/PDF-Extract-Kit/blob/fdb25fd4bd9058ba4e13ac16cb68d4f06b23df56/pdf_extract_kit/tasks/layout_detection/models/yolo.py) |
+
+<a id="nt-dots-ocr"></a>
+
+### dots.ocr (dots.mocr)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/rednote-hilab/dots.ocr |
+| License | MIT (`LICENSE`) kèm `dots.ocr LICENSE AGREEMENT` riêng cho Model Materials (điều khoản sử dụng chấp nhận được, luật Trung Quốc, MIT thắng khi xung đột) |
+| Phiên bản đã đọc | `36d7248878f181c6257dc1cbd799ae940970444f` (commit 2026-03-24) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, dots.ocr LICENSE AGREEMENT, NOTICE; chưa chạy upstream |
+| Khoảng trống lấp | OCR/layout cho tiếng Việt và tài liệu kỹ thuật |
+| Cơ chế đáng học | - `dots_ocr/utils/prompts.py`: một mô hình, nhiều tác vụ chọn bằng chế độ prompt (`prompt_layout_all_en`, `prompt_layout_only_en`, `prompt_ocr`, `prompt_grounding_ocr`, `prompt_web_parsing`, `prompt_scene_spotting`, `prompt_image_to_svg`); prompt layout quy định 11 loại phần tử, bbox `[x1,y1,x2,y2]`, bảng HTML, công thức LaTeX, sắp theo thứ tự đọc.<br>- `dots_ocr/parser.py`: `_parse_single_image` kiểm `min_pixels`/`max_pixels`, gọi vLLM hoặc Hugging Face, hậu xử lý JSON; nếu JSON hỏng thì đặt cờ `filtered` và ghi phản hồi thô thay vì bỏ trang.<br>- `dots_ocr/utils/output_cleaner.py`: sửa đầu ra JSON hỏng bằng regex (thiếu dấu phân cách, bbox lỗi) và ghi báo cáo trước/sau làm sạch.<br>- Triển khai khuyến nghị bằng vLLM (README: tích hợp chính thức từ vLLM 0.11.0), `demo/` có script gọi API. |
+| Tiêu chí và cách kiểm | Không có test hay CI trong repo (không có `tests/` và không có `.github/workflows`). Số liệu benchmark (olmOCR-Bench, OmniDocBench v1.5, XDocParse, Elo) là bảng tự công bố trong README (chưa xác minh). Hậu xử lý có cờ `filtered` để báo trang model xuất JSON lỗi, nhưng không có ngưỡng chất lượng tự động. |
+| Giới hạn và rủi ro | License kép: `LICENSE` là MIT (2025, rednote-hilab) còn `dots.ocr LICENSE AGREEMENT` (hiệu lực 8/8/2025, Xingyin Information Technology Shanghai) định nghĩa Model Materials gồm cả trọng số, mã, dữ liệu; điều 1.6 nói MIT thắng khi mâu thuẫn, nhưng điều 3.3 cấm dùng để nhận dạng giấy tờ giả, trích thông tin cá nhân nhạy cảm không có căn cứ pháp lý, số hóa trái phép ấn phẩm hay cào hàng loạt (vi phạm làm chấm dứt mọi license), điều 5.2 hạn chế dữ liệu GDPR/HIPAA, luật áp dụng là Trung Quốc và trọng tài Hàng Châu. Hiệu lực pháp lý của hai văn bản chồng nhau chưa rõ. Văn bản thỏa thuận nhắc tên dots.mocr và repo dots.mocr, trong khi thư mục là dots.ocr: repo đã đổi thương hiệu 19/3/2026. Phụ thuộc `transformers==4.56.1`, `trust_remote_code=True` khi tải model Hugging Face trong `parser.py`. Tuyên bố hỗ trợ mọi chữ viết, chưa thấy README nêu riêng tiếng Việt (chưa xác minh). |
+| So với | `chandra-ocr` (cùng lô, license trọng số chặt hơn), `paddleocr`, `olmocr`, `mineru`, `docling`. |
+| Nguồn | [README.md](https://github.com/rednote-hilab/dots.ocr/blob/36d7248878f181c6257dc1cbd799ae940970444f/README.md) · [LICENSE](https://github.com/rednote-hilab/dots.ocr/blob/36d7248878f181c6257dc1cbd799ae940970444f/LICENSE) · [dots.ocr LICENSE AGREEMENT](https://github.com/rednote-hilab/dots.ocr/blob/36d7248878f181c6257dc1cbd799ae940970444f/dots.ocr%20LICENSE%20AGREEMENT) · [NOTICE](https://github.com/rednote-hilab/dots.ocr/blob/36d7248878f181c6257dc1cbd799ae940970444f/NOTICE) · [requirements.txt](https://github.com/rednote-hilab/dots.ocr/blob/36d7248878f181c6257dc1cbd799ae940970444f/requirements.txt) · [parser.py](https://github.com/rednote-hilab/dots.ocr/blob/36d7248878f181c6257dc1cbd799ae940970444f/dots_ocr/parser.py) · [prompts.py](https://github.com/rednote-hilab/dots.ocr/blob/36d7248878f181c6257dc1cbd799ae940970444f/dots_ocr/utils/prompts.py) · [output_cleaner.py](https://github.com/rednote-hilab/dots.ocr/blob/36d7248878f181c6257dc1cbd799ae940970444f/dots_ocr/utils/output_cleaner.py) |
+
+<a id="nt-table-transformer"></a>
+
+### Table Transformer (TATR)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/microsoft/table-transformer |
+| License | Mã: MIT (LICENSE gốc), thư mục `detr/` có LICENSE Apache-2.0 riêng. Trọng số: README dẫn checkpoint trên Hugging Face (tài khoản bsmock); điều khoản của trọng số và của dữ liệu PubTables-1M **(chưa xác minh)**, chưa mở thẻ model/dataset |
+| Phiên bản đã đọc | `16d124f616109746b7785f03085100f1f6247575` (commit 2023-09-06) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc `README.md`, `LICENSE`, `detr/LICENSE`, `src/inference.py`, `src/postprocess.py`, `src/structure_config.json`, `src/grits.py`; chưa chạy upstream |
+| Khoảng trống lấp | Trích xuất bảng và biểu mẫu: phát hiện bảng và nhận dạng cấu trúc hàng, cột, ô gộp |
+| Cơ chế đáng học | - Hai mô hình DETR tách biệt (phát hiện bảng; nhận dạng cấu trúc với 6 lớp: bảng, cột, hàng, tiêu đề cột, tiêu đề hàng chiếu, ô gộp), cấu hình ở `src/structure_config.json` (resnet18, 125 query).<br>- `src/postprocess.py` lọc theo ngưỡng riêng từng lớp, NMS theo độ chứa, căn hàng/cột theo token chữ rồi dựng ô bằng giao hàng-cột (`objects_to_cells`).<br>- `src/inference.py` nối ảnh sang HTML/CSV nhưng chữ phải do OCR hoặc PDF cấp riêng; mô hình chỉ cho hình học.<br>- `src/grits.py` cài thước đo GriTS (so lưới bảng bằng quy hoạch động) để chấm cấu trúc, không chỉ IoU hộp. |
+| Tiêu chí và cách kiểm | Ngưỡng điểm mặc định 0.5 cho mọi lớp trong `inference.py`; đo bằng GriTS và các script eval trong `src/eval.py` (chỉ liệt kê, chưa mở). `src/` không có bộ test riêng (`detr/test_all.py` chưa mở); thư mục workflow chỉ thấy tên file CodeQL, chưa mở. |
+| Giới hạn và rủi ro | Đã ngừng cập nhật thực chất: commit cuối 2023-09-06 (tuyên bố của trinh sát là repo archived **(chưa xác minh)**, không gọi API). Trọng số chỉ có cho PubTables-1M (và v1.1 Pub/Fin/All), tên miền khác phải tự huấn luyện. `torch.load` không đặt `weights_only` trong `inference.py` nên chỉ nạp checkpoint tin cậy. Chưa chạy nên chưa biết độ chính xác trên biểu mẫu tiếng Việt. |
+| So với | docling (hồ sơ có sẵn, bảng là một phần pipeline), mineru, surya, marker, olmocr: các công cụ này gói cả OCR và bố cục; TATR hẹp nhưng cho điểm tin cậy từng ô và có thước đo GriTS. |
+| Nguồn | [README.md](https://github.com/microsoft/table-transformer/blob/16d124f616109746b7785f03085100f1f6247575/README.md) · [LICENSE](https://github.com/microsoft/table-transformer/blob/16d124f616109746b7785f03085100f1f6247575/LICENSE) · [LICENSE](https://github.com/microsoft/table-transformer/blob/16d124f616109746b7785f03085100f1f6247575/detr/LICENSE) · [inference.py](https://github.com/microsoft/table-transformer/blob/16d124f616109746b7785f03085100f1f6247575/src/inference.py) · [postprocess.py](https://github.com/microsoft/table-transformer/blob/16d124f616109746b7785f03085100f1f6247575/src/postprocess.py) · [structure_config.json](https://github.com/microsoft/table-transformer/blob/16d124f616109746b7785f03085100f1f6247575/src/structure_config.json) · [grits.py](https://github.com/microsoft/table-transformer/blob/16d124f616109746b7785f03085100f1f6247575/src/grits.py) |

@@ -1410,3 +1410,111 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | Commit cuối 2025-11-26; README (cập nhật 12/2024) khuyên dùng AgentLab/BrowserGym cho thí nghiệm mới |
 | Nhận định | Benchmark web agent tự host (Docker); repo giữ triển khai chuẩn để tái lập kết quả, tác giả khuyên chuyển sang AgentLab cho thí nghiệm mới. Nhịp commit chậm. |
 | Nguồn | [README](https://github.com/web-arena-x/webarena/blob/dce04686a56253aefba7b18a4fa0937cf1dc987b/README.md) · [LICENSE](https://github.com/web-arena-x/webarena/blob/dce04686a56253aefba7b18a4fa0937cf1dc987b/LICENSE) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-rivet-agentos"></a>
+
+### agentOS (Rivet)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/rivet-dev/agentos |
+| License | Apache-2.0 (file LICENSE ở gốc) |
+| Phiên bản đã đọc | `04e6be73a743670726f70cc6d0551a3b4f46abfc` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, security-model, permissions, limitations, permissions.rs, network_policy.rs và ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Sandbox/isolation (microVM, WASM): lớp cách ly thứ ba, ở mức isolate/WASM trong tiến trình thay cho VM nặng |
+| Cơ chế đáng học | - Kernel ảo sở hữu filesystem, process table, socket, PTY và policy cho từng VM; mã khách (V8, WASM, Python) chỉ chạm host qua syscall do sidecar kiểm (security-model.mdx).<br>- `PermissionEvaluator` có ba dạng Deny, Allow, Dynamic và mặc định là Deny; bốn loại request fs/network/command/env (crates/vm-kernel/src/permissions.rs).<br>- Chặn kết nối ra dải private, link-local, CGNAT, multicast và IPv6 nhúng IPv4 (network_policy.rs); `network: deny` chặn cả DNS nhưng vẫn cho loopback trong VM (permissions.mdx).<br>- Actor hosted chỉ nhận cấu hình tuần tự hóa được: không nhận host mount, host path hay callback; các khả năng này chỉ có ở API nhúng tin cậy (README). |
+| Tiêu chí và cách kiểm | CI đã đọc (ci.yml): build turbo, check-types, biome, cargo fmt, test đơn vị gói nhanh và script kiểm layout/protocol. Kiểm bằng máy ở cấp build và kiểu; tôi chưa thấy trong ci.yml bước chạy test escape của kernel (chưa xác minh), và permissions.rs không có test nội tuyến (thư mục tests/ của vm-kernel có tệp test riêng, chưa đọc). |
+| Giới hạn và rủi ro | Beta, tự ghi là còn đang rà soát bảo mật; ranh giới cách ly là V8 và WASM trong tiến trình sidecar, yếu hơn microVM khi mã khách thoát được isolate (đánh giá của tôi). Không cài tùy ý binary, không Go/Rust/C++ native; muốn có thì phải nối sandbox ngoài. Có crate resource-accounting nhưng chưa xác minh có gửi dữ liệu ra ngoài. License Apache-2.0 đồng nhất ở gốc. |
+| So với | e2b, microsandbox, sandbox-runtime, gvisor, firecracker (hồ sơ sandbox có sẵn; các mục này dùng VM hoặc kernel Linux thật, agentOS không) |
+| Nguồn | [README.md](https://github.com/rivet-dev/agentos/blob/04e6be73a743670726f70cc6d0551a3b4f46abfc/README.md) · [LICENSE](https://github.com/rivet-dev/agentos/blob/04e6be73a743670726f70cc6d0551a3b4f46abfc/LICENSE) · [security-model.mdx](https://github.com/rivet-dev/agentos/blob/04e6be73a743670726f70cc6d0551a3b4f46abfc/docs/content/docs/security-model.mdx) · [permissions.mdx](https://github.com/rivet-dev/agentos/blob/04e6be73a743670726f70cc6d0551a3b4f46abfc/docs/content/docs/permissions.mdx) · [limitations.mdx](https://github.com/rivet-dev/agentos/blob/04e6be73a743670726f70cc6d0551a3b4f46abfc/docs/content/docs/limitations.mdx) · [permissions.rs](https://github.com/rivet-dev/agentos/blob/04e6be73a743670726f70cc6d0551a3b4f46abfc/crates/vm-kernel/src/permissions.rs) · [network_policy.rs](https://github.com/rivet-dev/agentos/blob/04e6be73a743670726f70cc6d0551a3b4f46abfc/crates/vm-kernel/src/network_policy.rs) · [ci.yml](https://github.com/rivet-dev/agentos/blob/04e6be73a743670726f70cc6d0551a3b4f46abfc/.github/workflows/ci.yml) |
+
+<a id="nt-arcbox"></a>
+
+### ArcBox
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/arcboxlabs/arcbox |
+| License | Apache-2.0 hoặc MIT (LICENSE-APACHE, LICENSE-MIT; NOTICE.md liệt kê phụ thuộc) |
+| Phiên bản đã đọc | `31419ccf96e624f9e40724c936c86147e1ca92bc` (commit 2026-11-06) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, agent-sandbox.md, sandbox-api.md, jail.rs, contract.rs và ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Sandbox/isolation (microVM, WASM): microVM cục bộ trên macOS, chạy agent coding trong VM thay vì cấp quyền từng lệnh |
+| Cơ chế đáng học | - `/workspace` bắt đầu rỗng, không mount thư mục host; kết quả ra bằng API file (giới hạn 256 MiB mỗi file) và tất cả bị hủy khi dừng sandbox (docs/agent-sandbox.md).<br>- Chỉ forward biến `ANTHROPIC_*` và `CLAUDE_*` vào sandbox cho phiên đó; không chép OAuth từ `~/.claude` (agent-sandbox.md).<br>- Firecracker chạy dưới jailer: chroot riêng, file kernel/đĩa/vmstate được stage vào bằng hard link hoặc copy và chown về uid/gid bị giam (virt/arcbox-fc-driver/src/jail.rs).<br>- Contract test dùng chung cho mọi adapter VMM, kèm bản fake chạy được không cần phần cứng (virt/arcbox-vm-driver/src/testkit/contract.rs); checkpoint và restore để khởi động gần như tức thì (README). |
+| Tiêu chí và cách kiểm | ci.yml chạy `cargo fmt --check`, `cargo clippy --workspace -D warnings`, build và `cargo test --workspace` (loại arcbox-agent), kèm job SDK TypeScript/Python và proto-compat; test với phần cứng thật đánh dấu ignore nên không nằm trong CI thường (suy từ contract.rs, chưa xác minh toàn bộ). |
+| Giới hạn và rủi ro | Chỉ macOS (Apple Silicon M3+, macOS 15+ cho sandbox); trên máy khác mọi RPC sandbox trả FAILED_PRECONDITION (docs). Bản beta; `abctl claude` tắt prompt quyền mặc định (có `--no-bypass`), nên an toàn dựa hoàn toàn vào ranh giới VM. Chưa thấy telemetry trong README và docs đã đọc (không grep toàn mã). Cài bằng script tải về rồi chuyển thẳng cho shell (curl rồi bash) là rủi ro chuỗi cung ứng cần tự rà. Cặp license MIT/Apache cho người dùng chọn. |
+| So với | microsandbox, e2b, firecracker, docker-sandboxes, cubesandbox |
+| Nguồn | [README.md](https://github.com/arcboxlabs/arcbox/blob/31419ccf96e624f9e40724c936c86147e1ca92bc/README.md) · [LICENSE-APACHE](https://github.com/arcboxlabs/arcbox/blob/31419ccf96e624f9e40724c936c86147e1ca92bc/LICENSE-APACHE) · [LICENSE-MIT](https://github.com/arcboxlabs/arcbox/blob/31419ccf96e624f9e40724c936c86147e1ca92bc/LICENSE-MIT) · [agent-sandbox.md](https://github.com/arcboxlabs/arcbox/blob/31419ccf96e624f9e40724c936c86147e1ca92bc/docs/agent-sandbox.md) · [sandbox-api.md](https://github.com/arcboxlabs/arcbox/blob/31419ccf96e624f9e40724c936c86147e1ca92bc/docs/sandbox-api.md) · [jail.rs](https://github.com/arcboxlabs/arcbox/blob/31419ccf96e624f9e40724c936c86147e1ca92bc/virt/arcbox-fc-driver/src/jail.rs) · [contract.rs](https://github.com/arcboxlabs/arcbox/blob/31419ccf96e624f9e40724c936c86147e1ca92bc/virt/arcbox-vm-driver/src/testkit/contract.rs) · [ci.yml](https://github.com/arcboxlabs/arcbox/blob/31419ccf96e624f9e40724c936c86147e1ca92bc/.github/workflows/ci.yml) |
+
+<a id="nt-e2b-open-computer-use"></a>
+
+### Open Computer Use (E2B)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/e2b-dev/open-computer-use |
+| License | Apache-2.0 (LICENSE) |
+| Phiên bản đã đọc | `ee1025911c36e1f28bb3400c7d81170a8482f35d` (commit 2026-10-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, sandbox_agent.py, config.py, osatlas_provider.py và tests/sandbox_agent.py; chưa chạy upstream |
+| Khoảng trống lấp | Computer-use an toàn: ví dụ nhỏ đọc được toàn bộ về agent điều khiển desktop trong sandbox đám mây |
+| Cơ chế đáng học | - `SandboxAgent.run`: mỗi vòng gia hạn timeout sandbox 60 giây, chụp màn hình, vision model mô tả, action model chọn tool; kết quả tool thành OBSERVATION trong lịch sử (os_computer_use/sandbox_agent.py).<br>- Tool đăng ký bằng decorator `@tool` vào dict `tools`; `call_function` bắt mọi exception và trả lỗi thành chuỗi (sandbox_agent.py).<br>- Click qua grounding: gửi ảnh và mô tả tới OS-Atlas, nhận bbox, lấy tâm rồi di chuột (osatlas_provider.py, grounding.py). |
+| Tiêu chí và cách kiểm | Không có workflow CI. tests/sandbox_agent.py dùng sandbox giả và ảnh tĩnh, đã mở nhưng chưa chạy; không có ngưỡng hay kiểm an toàn nào. |
+| Giới hạn và rủi ro | Mã không có hàng rào quyền: mô hình chạy được shell tùy ý trong sandbox (`run_command`, timeout 5 giây) và truy cập mạng của sandbox. Screenshot gửi tới Space công khai của Hugging Face (`maxiw/OS-ATLAS`) và các LLM provider; cần E2B API key và khóa LLM. Cấu hình mặc định đọc từ config.py (Groq llama-3.3, OpenRouter qwen-2.5-vl) có thể lệch README. Lần commit gần nhất 2026-10-23 là bump certifi; mức bảo trì thấp (chưa xác minh). |
+| So với | cua, e2b, browser-use, browsergym |
+| Nguồn | [README.md](https://github.com/e2b-dev/open-computer-use/blob/ee1025911c36e1f28bb3400c7d81170a8482f35d/README.md) · [LICENSE](https://github.com/e2b-dev/open-computer-use/blob/ee1025911c36e1f28bb3400c7d81170a8482f35d/LICENSE) · [sandbox_agent.py](https://github.com/e2b-dev/open-computer-use/blob/ee1025911c36e1f28bb3400c7d81170a8482f35d/os_computer_use/sandbox_agent.py) · [config.py](https://github.com/e2b-dev/open-computer-use/blob/ee1025911c36e1f28bb3400c7d81170a8482f35d/os_computer_use/config.py) · [osatlas_provider.py](https://github.com/e2b-dev/open-computer-use/blob/ee1025911c36e1f28bb3400c7d81170a8482f35d/os_computer_use/osatlas_provider.py) · [sandbox_agent.py](https://github.com/e2b-dev/open-computer-use/blob/ee1025911c36e1f28bb3400c7d81170a8482f35d/tests/sandbox_agent.py) |
+
+<a id="nt-e2b-surf"></a>
+
+### Surf (E2B)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/e2b-dev/surf |
+| License | Apache-2.0 (LICENSE) |
+| Phiên bản đã đọc | `d66db293ac513a98abe1fd5c58a69b5130e4a996` (commit 2026-10-13) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, route.ts, config.ts và lib/streaming/openai.ts (đọc từng phần); chưa chạy upstream |
+| Khoảng trống lấp | Computer-use an toàn: ví dụ web đầy đủ gắn model computer-use của OpenAI với sandbox desktop |
+| Cơ chế đáng học | - `POST /api/chat` tạo `Sandbox.create` của E2B với độ phân giải và timeout 300000 ms, hoặc nối lại `sandboxId`, rồi stream sự kiện (app/api/chat/route.ts).<br>- Độ phân giải giới hạn 640x480 tới 1024x768, mặc định 1024x720; screenshot gửi nguyên chi tiết, không scale (lib/config.ts).<br>- Vòng lặp trong lib/streaming/openai.ts áp dụng `truncation: auto`, gom batch hành động và chờ trễ 100 ms trước khi chụp lại trong một số trường hợp. |
+| Tiêu chí và cách kiểm | Không có workflow CI; `package.json` chỉ có script dev/build/start/lint. Có lib/streaming/resolution.test.ts nhưng không có script test chạy nó (chưa chạy, chưa mở nội dung). |
+| Giới hạn và rủi ro | Grep trong app và lib không thấy cơ chế xác thực, nên ai tới được endpoint đều tạo sandbox bằng `E2B_API_KEY` và gọi OpenAI bằng khóa của chủ triển khai (chi phí và lạm dụng). System prompt trong mã nói môi trường cho phép không lo bảo mật; không thấy xử lý pending safety checks của computer use (grep không có kết quả). Cần E2B và OpenAI key. License Apache-2.0. |
+| So với | e2b-open-computer-use (cùng hãng), cua, e2b, browser-use |
+| Nguồn | [README.md](https://github.com/e2b-dev/surf/blob/d66db293ac513a98abe1fd5c58a69b5130e4a996/README.md) · [LICENSE](https://github.com/e2b-dev/surf/blob/d66db293ac513a98abe1fd5c58a69b5130e4a996/LICENSE) · [route.ts](https://github.com/e2b-dev/surf/blob/d66db293ac513a98abe1fd5c58a69b5130e4a996/app/api/chat/route.ts) · [config.ts](https://github.com/e2b-dev/surf/blob/d66db293ac513a98abe1fd5c58a69b5130e4a996/lib/config.ts) · [openai.ts](https://github.com/e2b-dev/surf/blob/d66db293ac513a98abe1fd5c58a69b5130e4a996/lib/streaming/openai.ts) |
+
+<a id="nt-agent-device"></a>
+
+### agent-device
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/callstack/agent-device |
+| License | MIT (kèm Apache-2.0 và thành phần bên thứ ba trong LICENSES/) |
+| Phiên bản đã đọc | `ecb2089867e91c626be0f29e1c41cab466ceb954` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README, package.json, SECURITY.md, SKILL.md, ci.yml, perf-nightly.yml, conformance-differential.yml (phần đầu), cli-help.ts và management/app.ts (đoạn mô tả lệnh); chưa chạy upstream |
+| Khoảng trống lấp | Kiểm thử mobile trên thiết bị và hiệu năng (lớp thiết bị cho agent) |
+| Cơ chế đáng học | - Vòng lặp snapshot accessibility có `@ref`: `open` trả snapshot, hành động (`press`, `fill`, `--settle`) trả diff chỉ thay đổi, agent dùng ref thay vì toạ độ hay ảnh chụp (SKILL.md, README).<br>- Cùng một lõi phục vụ CLI, MCP (`src/mcp/`) và API Node; hỗ trợ iOS, Android, HarmonyOS, TV, web, macOS, Linux qua các package platform-* và provider đám mây.<br>- Khoá thiết bị giữa các agent song song: thiết bị đang bị session khác giữ thì từ chối ngay, có `--wait <ms>` rồi mới báo `DEVICE_IN_USE` nêu session sở hữu (mô tả lệnh open trong `packages/command-surface/src/management/app.ts`).<br>- Lệnh `perf` (frames, memory, cpu) và workflow `perf-nightly.yml` so trung vị với tối đa bảy đêm trước, bước chỉ bị đánh dấu khi vượt độ phân tán, sai số mẫu, 20% và 50 ms. |
+| Tiêu chí và cách kiểm | CI nhiều job (ci.yml: lint-typecheck, repo-guards, coverage có waiver, integration) cùng workflow riêng cho apple, android, linux, mutation test, replay nightly. `conformance-differential.yml` chạy cùng kịch bản qua Maestro thật và agent-device để so kết quả quan sát được, có khai báo `knownDivergence` (tất cả kiểm bằng máy trong CI, chưa chạy lại ở đây). |
+| Giới hạn và rủi ro | Phiên bản 0.21.43-dev: API còn đổi nhanh. Số tính năng và giới hạn nền tảng rất rộng, khó đánh giá hết; phần đã đọc chỉ là mẫu. Daemon điều khiển thiết bị và nhận lệnh chạy ứng dụng nên cần kiểm quyền và token daemon trước khi dùng cho agent không tin cậy. Không thấy gửi telemetry trong phần đã mở (chưa quét toàn bộ). Trinh sát ghi MIT: đúng nhưng LICENSES/ có Apache-2.0 và thành phần bên thứ ba. Mô tả lệnh trong CLI rất dài, tốn token nếu nạp vào ngữ cảnh agent. |
+| So với | maestro, appium-appium |
+| Nguồn | [LICENSE](https://github.com/callstack/agent-device/blob/ecb2089867e91c626be0f29e1c41cab466ceb954/LICENSE) · [README.md](https://github.com/callstack/agent-device/blob/ecb2089867e91c626be0f29e1c41cab466ceb954/README.md) · [package.json](https://github.com/callstack/agent-device/blob/ecb2089867e91c626be0f29e1c41cab466ceb954/package.json) · [SECURITY.md](https://github.com/callstack/agent-device/blob/ecb2089867e91c626be0f29e1c41cab466ceb954/SECURITY.md) · [skills/agent-device/SKILL.md](https://github.com/callstack/agent-device/blob/ecb2089867e91c626be0f29e1c41cab466ceb954/skills/agent-device/SKILL.md) · [.github/workflows/ci.yml](https://github.com/callstack/agent-device/blob/ecb2089867e91c626be0f29e1c41cab466ceb954/.github/workflows/ci.yml) · [.github/workflows/perf-nightly.yml](https://github.com/callstack/agent-device/blob/ecb2089867e91c626be0f29e1c41cab466ceb954/.github/workflows/perf-nightly.yml) · [.github/workflows/conformance-differential.yml](https://github.com/callstack/agent-device/blob/ecb2089867e91c626be0f29e1c41cab466ceb954/.github/workflows/conformance-differential.yml) · [src/commands/schema/cli-help.ts](https://github.com/callstack/agent-device/blob/ecb2089867e91c626be0f29e1c41cab466ceb954/src/commands/schema/cli-help.ts) · [packages/command-surface/src/management/app.ts](https://github.com/callstack/agent-device/blob/ecb2089867e91c626be0f29e1c41cab466ceb954/packages/command-surface/src/management/app.ts) |
+
+<a id="nt-perplexity-space"></a>
+
+### SPACE (Perplexity)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/perplexityai/SPACE |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `432ff2e7d9061cc0e47177d900a8b3c6cc5399df` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, docs/architecture.md, docs/egress-profiles.md, docs/installation.md; chưa chạy upstream |
+| Khoảng trống lấp | Sandbox/isolation (microVM): sandbox microVM Firecracker tự host cho agent, có lifecycle và egress có kiểm soát |
+| Cơ chế đáng học | - `docs/architecture.md`: template (có digest), sandbox (microVM có đĩa ghi riêng), process, command session (token đính kèm theo phiên) và operation bất đồng bộ; API ghi trạng thái mong muốn vào PostgreSQL, controller đối soát; hai adapter Kubernetes và direct.<br>- `docs/egress-profiles.md` và `crates/l40_api/api/src/egress_profiles.rs`: biến `SPACE_EGRESS_PROFILES` định nghĩa hồ sơ cho phép theo IP, CIDR, domain chính xác (không wildcard); chọn bằng header `X-Space-Egress-Profiles: +name -name`; deny của tenant và platform luôn thắng; lựa chọn bất biến theo vòng đời sandbox.<br>- Chính sách template tin cậy: danh sách bucket S3 cho phép khi đăng ký template (`SPACE_TRUSTED_TEMPLATE_STORAGE_BUCKETS`).<br>- `docs/observability.md`: bộ chọn exporter Datadog hoặc OTLP, lỗi cấu hình thì báo, không im lặng chuyển mặc định. |
+| Tiêu chí và cách kiểm | CI có nhiều workflow (`main-ci.yml` đã mở, còn pull-ci, kind-ci, fuzz...); `ARCHITECTURE.toml` do `cargo arch` kiểm quy tắc cấu trúc, `deny.toml` (cargo-deny) giới hạn license phụ thuộc và nguồn registry; kiểm bằng máy. Chưa chạy lại; `docs/versioning.md` nói 0.8.0 là baseline, 0.9.0 là lần phá vỡ cuối trước 1.0. |
+| Giới hạn và rủi ro | Apache-2.0 (LICENSE đã đọc, ghi Copyright 2026 Perplexity AI). Yêu cầu hạ tầng nặng: host Linux x86_64 có `/dev/kvm`, loop device, btrfs, Docker đặc quyền, 30 GiB trống; không chạy trên macOS. Trường `incubating` và các thao tác snapshot/checkpoint nằm ngoài hợp đồng hỗ trợ. Có CLA dự kiến, chỉ bản minor mới nhất nhận bản vá bảo mật (SECURITY.md). Độ cô lập của microVM là tuyên bố của kiến trúc **(chưa xác minh bằng kiểm thử thoát)**. |
+| So với | firecracker (thành phần nền), e2b và opensandbox (cùng nhiệm vụ sandbox cho agent), gvisor và kata-containers (cô lập kiểu khác) |
+| Nguồn | [LICENSE](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/LICENSE) · [README.md](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/README.md) · [docs/architecture.md](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/docs/architecture.md) · [docs/egress-profiles.md](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/docs/egress-profiles.md) · [docs/installation.md](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/docs/installation.md) · [docs/versioning.md](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/docs/versioning.md) · [docs/observability.md](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/docs/observability.md) · [crates/l40_api/api/src/egress_profiles.rs](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/crates/l40_api/api/src/egress_profiles.rs) · [ARCHITECTURE.toml](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/ARCHITECTURE.toml) · [deny.toml](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/deny.toml) · [.github/workflows/main-ci.yml](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/.github/workflows/main-ci.yml) |

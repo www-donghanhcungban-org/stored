@@ -2,7 +2,7 @@
 
 # agentic-video — Thiết kế, giao diện & media
 
-[← Mục lục catalog](../README.md) · 41 hồ sơ.
+[← Mục lục catalog](../README.md) · 45 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -32,6 +32,7 @@
 | [LocalMiniDrama](../../19-agentic-video-media/README.md#ch-localminidrama) | `xuanyustudio/LocalMiniDrama` | MIT | 2.530 | đọc tài liệu 2026-11-23 | 19 | Phim ngắn/truyện tranh động chạy offline, Vue3 + Node + SQLite, hỗ trợ Ollama; |
 | [OpenTimelineIO](../../19-agentic-video-media/README.md#3e-reproducible-media-pipelines) | `AcademySoftwareFoundation/OpenTimelineIO` | Apache-2.0 | 2.052 | đọc mã 2026-11-02 | 19 | Timeline interchange dùng RationalTime/external media; |
 | [Higgsfield AI Skills](../../19-agentic-video-media/README.md#3f-hồ-sơ-higgsfield-aiskills-9-skill-gọi-cli-đóng-của-higgsfield-để-sinh-ảnh-video-brand-kit-và-train-soul-khuôn-mặt-ảnh-readme-người-dùng-gửi-đọc-mã-3112026) | `higgsfield-ai/skills` | MIT | 1.869 | đọc mã 2026-11-03 | 19 | 9 skill (8 riêng + 1 alias) cho Claude Code/Codex/Cursor gọi CLI Higgsfield để sinh ảnh/video (30+ model), brand kit, product photoshoot, website deploy lên Cloudflare W… |
+| [Timeline Studio (ai-video-editor)](../../19-agentic-video-media/README.md#nt-ai-video-editor) | `MartinDelophy/ai-video-editor` | MIT (chỉ phạm vi mã gốc; model và dữ liệu có license riêng) | 1.007 | đọc tài liệu 2026-11-23 | 19 | Trình dựng video local-first chạy trong trình duyệt, cho người và agent sửa cùng một timeline qua WebMCP và MCP/CLI cục bộ theo quy trình inspect, preview, apply (một gi… |
 | [claude-youtube (AgriciDaniel)](../../19-agentic-video-media/README.md#xlsx-2026-11-23-claude-youtube) | `AgriciDaniel/claude-youtube` | MIT | 855 | đọc mã 2026-11-23 | 19 | Skill cố vấn YouTube: router + 14 sub-skill + 9 guide + 9 template + 6 script API (khóa API/OAuth, quota tracker, transcript qua yt-dlp); |
 | [Visual Skills (smixs)](../../19-agentic-video-media/README.md#xlsx-2026-11-23-visual-skills) | `smixs/visual-skills` | CC-BY-4.0 | 745 | đọc mã 2026-11-23 | 19 | Hai skill văn bản video và image viết prompt cho Seedance 2.5, Kling, Veo, Runway, Luma, Pika, Sora, Nano Banana, GPT Image theo hướng dramaturgy trước, cú pháp sau: SKI… |
 | [HeyGen Skills](../../19-agentic-video-media/README.md#xlsx-2026-11-23-heygen-skills) | `heygen-com/skills` | MIT | 565 | đọc mã 2026-11-23 | 19 | 3 skill chính thức của HeyGen: heygen-avatar (tạo avatar mặt + giọng), heygen-video, heygen-translate, chạy qua HeyGen CLI (HEYGEN_API_KEY) hoặc MCP OAuth tại mcp.heygen… |
@@ -42,8 +43,11 @@
 | [remotion-cuongit-template](../../19-agentic-video-media/README.md#ch-remotion-cuongit-template) | `Cuongyd196/remotion-cuongit-template` | MIT | 250 | đọc tài liệu 2026-11-23 | 19 | CuongIT (VN): template Remotion 4.0.407 + skill remotion-topic-explainer, TTS Edge/CIT; |
 | [auto-compare-video](../../19-agentic-video-media/README.md#ch-auto-compare-video) | `Cuongyd196/auto-compare-video` | MIT | 228 | đọc tài liệu 2026-11-23 | 19 | CuongIT (VN): video so sánh 'A vs B' ~20 s bằng HyperFrames 0.7.58 + skill create-video (Claude Code/Antigravity); |
 | [auto-video-gen (CuongIT)](../../19-agentic-video-media/README.md#ch-auto-video-gen-cuongit) | `Cuongyd196/auto-video-gen` | MIT | 207 | đọc tài liệu 2026-11-23 | 19 | Bản sao hoquanghai/Auto-Create-Video (31 file giống hệt, lịch sử bắt đầu lại) + Vbee + 2 theme; |
+| [Raven (OTIO viewer)](../../19-agentic-video-media/README.md#nt-raven-otio-viewer) | `OpenTimelineIO/raven` | Apache-2.0 | 143 | đọc tài liệu 2026-11-23 | 19 | Viết lại thử nghiệm của `otioview`: ứng dụng C++/Dear ImGui (có bản WASM và gói Python) để xem timeline OpenTimelineIO, hiển thị timecode (có drop-frame), snap theo khun… |
 | [comfyui-agent-skill (MieMieeeee)](../../19-agentic-video-media/README.md#xlsx-2026-11-23-comfyui-agent-skill-mie) | `MieMieeeee/comfyui-agent-skill` | Apache-2.0 | 120 | đọc tài liệu 2026-11-23 | 19 | Skill + CLI chạy workflow ComfyUI đã đăng ký (12 stable; |
 | [Runway Dev (runwayml/skills)](../../19-agentic-video-media/README.md#xlsx-2026-11-23-runwayml-skills) | `runwayml/skills` | MIT | 76 | đọc mã 2026-11-23 | 19 | Plugin chính thức Runway Dev v4.0.1: MCP + 7 skill tích hợp API bằng SDK; |
+| [Montage AI](../../19-agentic-video-media/README.md#nt-montage-ai) | `mfahsold/montage-ai` | PolyForm Noncommercial 1.0.0 | 68 | đọc mã 2026-11-23 | 19 | Công cụ dựng phim tự động có chỉnh sửa theo transcript và xuất timeline OTIO sang EDL, FCP XML, AAF kèm marker nhịp. |
+| [Media OS for Claude Code](../../19-agentic-video-media/README.md#nt-media-os) | `damionrashford/media-os` | MIT | 26 | đọc mã 2026-11-23 | 19 | Plugin Claude Code với hàng chục skill media (FFmpeg, HLS/DASH, HDR, VMAF, OBS, NDI), mode định tuyến và hook PreToolUse cảnh báo lỗi ffmpeg kinh điển. |
 | [ffmpeg-skill (n0an, FFmpeg Recipes)](../../19-agentic-video-media/README.md#xlsx-2026-11-23-ffmpeg-skill-n0an) | `n0an/ffmpeg-skill` | MIT | 17 | đọc tài liệu 2026-11-23 | 19 | Skill cheatsheet FFmpeg thuần tài liệu (SKILL.md + 6 tham chiếu), không mã thực thi, không CI; |
 | [runway-studio-skills](../../19-agentic-video-media/README.md#xlsx-2026-11-23-runway-studio-skills) | `runwayml/runway-studio-skills` | MIT | 1 | đọc mã 2026-11-23 | 19 | Skill Runway API (video/ảnh/audio) bằng script Python `uv run`; |
 | [Super Video Maker Skill](../../19-agentic-video-media/README.md#xlsx-2026-11-23-super-video-maker-skill) | `bomx/super-video-maker-skill` | — | — | đọc mã 2026-11-23 | 19 | Skill sản xuất video trọn gói của Distribb: avatar HeyGen, ảnh OpenAI, b-roll Seedance 2.5 qua fal.ai, ghi màn hình, Remotion/HyperFrames, FFmpeg, phụ đề Whisper, nhạc E… |

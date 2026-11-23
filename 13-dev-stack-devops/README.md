@@ -3783,3 +3783,60 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | Đang hoạt động (commit 2026-11-23) |
 | Nhận định | Lõi Vue 3 (reactivity, compiler, runtime DOM/SSR). Repo issue dành riêng cho bug/feature theo README; Nuxt và hệ sinh thái nằm ở repo khác. |
 | Nguồn | [README.md](https://github.com/vuejs/core/blob/44234e82bf4fcb234968061d7a51e37ea9f39e71/README.md) · [LICENSE](https://github.com/vuejs/core/blob/44234e82bf4fcb234968061d7a51e37ea9f39e71/LICENSE) · [package.json](https://github.com/vuejs/core/blob/44234e82bf4fcb234968061d7a51e37ea9f39e71/package.json) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-specdd"></a>
+
+### SpecDD
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/specdd/specdd |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `7f7fe774d5942d08fa149c31cd0da5626bf33055` (commit 2026-11-07) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, LANGUAGE.md, SECURITY.md; chưa chạy upstream |
+| Khoảng trống lấp | Spec-driven development ngoài Spec Kit/Kiro (spec cục bộ, ngôn ngữ riêng) |
+| Cơ chế đáng học | - `LANGUAGE.md`: đặc tả chuẩn (MUST/SHOULD), thụt lề 2 dấu cách, ghi chú công cụ; sau này công cụ sẽ dựa vào đó.<br>- `src/.specdd/bootstrap.md`: chuỗi đọc bootstrap, plugin đã bật, rồi `bootstrap.project.md`, `bootstrap.local.md`; bản local không được nới lỏng hợp đồng dự án.<br>- `.plugins/flow/plugin.md`: chỉ kích hoạt khi người dùng yêu cầu rõ; kế hoạch một lần chạy ở `.specdd/plan/<slug>.md` và bị gitignore.<br>- `Makefile` và `SECURITY.md`: bản phát hành `specdd.zip` ký GPG tách rời, plugin có `plugin.md.asc`. |
+| Tiêu chí và cách kiểm | Không có ngưỡng đo hay test trong repo; mức tuân thủ phụ thuộc agent đọc bootstrap. Việc kiểm chữ ký do CLI làm theo SECURITY.md (chưa xác minh vì CLI chưa đọc); trường `sig` trong `plugins.json` thực ra là SHA-256 của tệp để phát hiện sửa cục bộ, không phải chữ ký. |
+| Giới hạn và rủi ro | Phần lớn là tài liệu và bài viết marketing (thư mục `web/` có nhiều bài). Tuyên bố tương thích hàng chục agent chưa xác minh. Cú pháp riêng nên khóa vào hệ sinh thái SpecDD; `.sdd` chỉ có công cụ chính chủ. README nêu SpecDD là nhãn hiệu của tác giả và license Apache-2.0 không cấp quyền dùng nhãn hiệu. Chưa chạy thử thành quả nào. |
+| So với | github-spec-kit, openspec |
+| Nguồn | [README.md](https://github.com/specdd/specdd/blob/7f7fe774d5942d08fa149c31cd0da5626bf33055/README.md) · [LICENSE](https://github.com/specdd/specdd/blob/7f7fe774d5942d08fa149c31cd0da5626bf33055/LICENSE) · [LANGUAGE.md](https://github.com/specdd/specdd/blob/7f7fe774d5942d08fa149c31cd0da5626bf33055/LANGUAGE.md) · [SECURITY.md](https://github.com/specdd/specdd/blob/7f7fe774d5942d08fa149c31cd0da5626bf33055/SECURITY.md) · [Makefile](https://github.com/specdd/specdd/blob/7f7fe774d5942d08fa149c31cd0da5626bf33055/Makefile) · [bootstrap.md](https://github.com/specdd/specdd/blob/7f7fe774d5942d08fa149c31cd0da5626bf33055/src/.specdd/bootstrap.md) · [plugin.md](https://github.com/specdd/specdd/blob/7f7fe774d5942d08fa149c31cd0da5626bf33055/.plugins/flow/plugin.md) |
+
+<a id="nt-reverse-spec-flow"></a>
+
+### reverse-spec-flow
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/aws-samples/sample-reverse-spec-flow |
+| License | MIT-0 |
+| Phiên bản đã đọc | `caa0a9d147b79d7bb4432552554611c24afe8be1` (commit 2026-11-13) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, templates/gates.sh, selftest.sh; chưa chạy upstream |
+| Khoảng trống lấp | Spec-driven development ngoài Spec Kit/Kiro: đảo chiều từ mã cũ sang spec có kiểm chứng |
+| Cơ chế đáng học | - `templates/gates.sh` (6.059 dòng bash): hàng chục cổng như denominator, reconciliation, source_intact, link_closure, specid_unique, false_positive; bắt mẫu số trước rồi đòi phủ 100% đồ thị mã.<br>- `hosts/claude-code/hooks/verifier-guard.sh`: danh sách cho phép theo `SOURCE_PATH`, fail-closed (mọi lỗi thành exit 2), thừa nhận không chặn được Bash và symlink.<br>- `hosts/claude-code/agents/spec-verifier.md`: `omitClaudeMd: true`, tự kiểm cách ly bằng việc đọc `AGENTS.md` phải bị từ chối.<br>- `hosts/*/MEASURED.md`: ghi rõ điều đã đo và chưa đo cho Claude Code, Kiro CLI, Kiro IDE. |
+| Tiêu chí và cách kiểm | Cổng chạy bằng máy: `gates.sh` (mã thoát 2 khi cấu hình sai) và `selftest.sh` 14.848 dòng (T1 đến T6: init, bắt dự án rỗng, không báo nhầm, nhất quán mẫu, liên kết tri thức, danh sách nguồn). Không có workflow CI; selftest phải chạy tay. Số đo hành vi lấy từ chạy thử trên Apache Roller (R1 đến R4), do tác giả ghi, chưa xác minh. |
+| Giới hạn và rủi ro | Là mẫu của AWS ("sample"), license MIT-0 (không cần ghi công). Hook cách ly có lỗ hổng tác giả tự nêu: hook chỉ hoạt động sau khi người dùng duyệt tin cậy workspace, và không kiểm Bash. Chi phí token lớn cho codebase lớn (chưa có số đo cụ thể ở phần đã đọc). Tài liệu chính bằng tiếng Nhật; gates tối ưu cho bash trên macOS/Linux, Windows chậm hơn 7,6 lần (git bash so với WSL theo MEASURED.md). |
+| So với | github-spec-kit, openspec (đều đi từ spec tới mã; repo này đi từ mã tới spec) |
+| Nguồn | [README.md](https://github.com/aws-samples/sample-reverse-spec-flow/blob/caa0a9d147b79d7bb4432552554611c24afe8be1/README.md) · [LICENSE](https://github.com/aws-samples/sample-reverse-spec-flow/blob/caa0a9d147b79d7bb4432552554611c24afe8be1/LICENSE) · [gates.sh](https://github.com/aws-samples/sample-reverse-spec-flow/blob/caa0a9d147b79d7bb4432552554611c24afe8be1/templates/gates.sh) · [selftest.sh](https://github.com/aws-samples/sample-reverse-spec-flow/blob/caa0a9d147b79d7bb4432552554611c24afe8be1/selftest.sh) · [verifier-guard.sh](https://github.com/aws-samples/sample-reverse-spec-flow/blob/caa0a9d147b79d7bb4432552554611c24afe8be1/hosts/claude-code/hooks/verifier-guard.sh) · [spec-verifier.md](https://github.com/aws-samples/sample-reverse-spec-flow/blob/caa0a9d147b79d7bb4432552554611c24afe8be1/hosts/claude-code/agents/spec-verifier.md) · [MEASURED.md](https://github.com/aws-samples/sample-reverse-spec-flow/blob/caa0a9d147b79d7bb4432552554611c24afe8be1/hosts/claude-code/MEASURED.md) |
+
+<a id="nt-eo-locale"></a>
+
+### eo-locale
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/eotechlabs/eo-locale |
+| License | LICENSE gốc là MIT (Copyright IBIT LTD) trong khi `packages/*/package.json` khai `ISC`: **không khớp**, cần hỏi tác giả trước khi nhúng. Không có trọng số. Repo hiện nằm ở eotechlabs, README vẫn liên kết ibitcy/eo-locale |
+| Phiên bản đã đọc | `fde4e789a30c708a0b3827e56f8f53d55f69932f` (commit 2026-10-09) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc `README.md`, `LICENSE`, `packages/core/package.json`, `packages/core/src/translator.ts`, `packages/core/src/parser/parser.ts`, `packages/core/src/__tests__/plural.test.ts`, `.github/workflows/ci.yml`; chưa chạy upstream |
+| Khoảng trống lấp | i18n/l10n nhẹ cho React/Preact/React Native bám Intl (kho đã có lingui, formatjs, i18next, weblate) |
+| Cơ chế đáng học | - `packages/core/src/translator.ts` (80 dòng): `translate`, `formatDate`, `formatNumber` bọc `Intl.DateTimeFormat`/`Intl.NumberFormat`; thông điệp thiếu được ghi nhớ nên `onError` chỉ gọi một lần mỗi id, `defaultMessage` vẫn áp mỗi lần.<br>- `parser/parser.ts`: tự cài `plural` (kể cả `offset:` và `=N`), `select` và dấu `#`; chọn danh mục số nhiều bằng `Intl.PluralRules`, lỗi thì rơi về `other`.<br>- Hỗ trợ JSON lồng và đặt khóa kiểu `a.b.c`; chỉ vài chục dòng cho parser nên dễ đọc và bundle nhỏ. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: Jest (`plural.test.ts` có ca party lồng select và plural có offset) chạy CI trên Node 20, 22, 24 (đã mở ci.yml). Không có lint chuỗi, trích xuất thông điệp hay kiểm thiếu bản dịch. |
+| Giới hạn và rủi ro | **Tuyên bố của trinh sát chưa khớp:** README nói ICU nghiêm ngặt, nhưng parser chỉ có plural/select/#; không thấy `selectordinal`, định dạng `number`/`date` trong thông điệp, và không có lint chuỗi hay dữ liệu CLDR riêng (dựa vào `Intl` của runtime nên kết quả đổi theo môi trường). Mâu thuẫn MIT/ISC. |
+| So với | lingui (hồ sơ có sẵn, trích xuất và biên dịch thông điệp), formatjs (hướng ICU đầy đủ hơn), i18next, weblate (quy trình dịch). |
+| Nguồn | [README.md](https://github.com/eotechlabs/eo-locale/blob/fde4e789a30c708a0b3827e56f8f53d55f69932f/README.md) · [LICENSE](https://github.com/eotechlabs/eo-locale/blob/fde4e789a30c708a0b3827e56f8f53d55f69932f/LICENSE) · [package.json](https://github.com/eotechlabs/eo-locale/blob/fde4e789a30c708a0b3827e56f8f53d55f69932f/packages/core/package.json) · [translator.ts](https://github.com/eotechlabs/eo-locale/blob/fde4e789a30c708a0b3827e56f8f53d55f69932f/packages/core/src/translator.ts) · [parser.ts](https://github.com/eotechlabs/eo-locale/blob/fde4e789a30c708a0b3827e56f8f53d55f69932f/packages/core/src/parser/parser.ts) · [plural.test.ts](https://github.com/eotechlabs/eo-locale/blob/fde4e789a30c708a0b3827e56f8f53d55f69932f/packages/core/src/__tests__/plural.test.ts) · [ci.yml](https://github.com/eotechlabs/eo-locale/blob/fde4e789a30c708a0b3827e56f8f53d55f69932f/.github/workflows/ci.yml) |

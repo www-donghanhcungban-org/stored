@@ -2,7 +2,7 @@
 
 # awesome-list — Học tập, tài liệu & tri thức
 
-[← Mục lục catalog](../README.md) · 84 hồ sơ.
+[← Mục lục catalog](../README.md) · 85 hồ sơ.
 
 ## Skill, plugin & agent (`ai-agent-skills`, 15)
 
@@ -110,7 +110,7 @@
 | [marketing-apis-that-drive-roi](../../08-awesome-lists-learning/README.md#ch-marketing-apis-that-drive-roi) | `cporter202/marketing-apis-that-drive-roi` | — | 55 | đọc tài liệu 2026-11-23 | 08 | Danh mục 290 'API' là actor Apify gắn mã affiliate ?fpr=p2hrc6; |
 | [make.com-automation-recipes](../../08-awesome-lists-learning/README.md#ch-make-com-automation-recipes) | `cporter202/make-com-automation-recipes` | MIT | 37 | đọc tài liệu 2026-11-23 | 08 | 13/10/2026; |
 
-## Tài nguyên chung & xếp hạng (`general-resources`, 18)
+## Tài nguyên chung & xếp hạng (`general-resources`, 19)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -132,3 +132,4 @@
 | [awesome-neovim](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-rockerboo-awesome-neovim) | `rockerBOO/awesome-neovim` | CC0-1.0 | 21.607 | đọc tài liệu 2026-11-23 | 08 | Danh mục plugin tập trung vào các khả năng riêng của Neovim. |
 | [awesome-opus5-5-videos](../../22-motion-design-animation/README.md#ch-awesome-opus5-5-videos) | `yihui-dev/awesome-opus5-5-videos` | MIT | 16.281 | đọc tài liệu 2026-11-23 | 22 | Awesome-list + dataset prompt video Opus 5.5; |
 | [Github-Ranking](../../08-awesome-lists-learning/README.md#ch-github-ranking) | `EvanLi/Github-Ranking` | MIT | 13.148 | đọc tài liệu 2026-11-23 | 08 | Cập nhật hằng ngày. |
+| [awesome-lint](../../08-awesome-lists-learning/README.md#nt-awesome-lint) | `sindresorhus/awesome-lint` | MIT | 882 | đọc mã 2026-11-23 | 08 | Linter cho awesome-list (MIT) gồm rule cấu trúc và rule siêu dữ liệu repo (tuổi 30 ngày, topic, license). |

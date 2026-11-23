@@ -2,7 +2,7 @@
 
 # backend — Kỹ thuật phần mềm & vận hành
 
-[← Mục lục catalog](../README.md) · 122 hồ sơ.
+[← Mục lục catalog](../README.md) · 128 hồ sơ.
 
 ## Web framework (`web-framework`, 26)
 
@@ -46,7 +46,7 @@
 | [Hasura GraphQL Engine](../../34-backend-data-identity-integration/README.md#anhkysuai-hasura-graphql-engine) | `hasura/graphql-engine` | Apache-2.0; LICENSE-community theo MIT | 32.127 | đọc tài liệu 2026-11-23 | 34 | Engine cung cấp API GraphQL thống nhất trên các nguồn dữ liệu. |
 | [Parse Server](../../34-backend-data-identity-integration/README.md#anhkysuai-parse-community-parse-server) | `parse-community/parse-server` | Apache-2.0 | 21.399 | đọc tài liệu 2026-11-23 | 34 | Backend tương thích Parse API chạy trên Node.js/Express, nhúng hoặc độc lập. |
 
-## Xác thực & danh tính (`auth-identity`, 5)
+## Xác thực & danh tính (`auth-identity`, 7)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -55,8 +55,10 @@
 | [Auth.js](../../34-backend-data-identity-integration/README.md#anhkysuai-nextauthjs-next-auth) | `nextauthjs/next-auth` | ISC | 28.390 | đọc tài liệu 2026-11-23 | 34 | Bộ gói xác thực JavaScript dùng Web API chuẩn, hỗ trợ OAuth/OIDC và nhiều framework. |
 | [Authentik](../../34-backend-data-identity-integration/README.md#anhkysuai-goauthentik-authentik) | `goauthentik/authentik` | MIT cho core/client; CC-BY-SA-4.0 website; enterprise riêng | 26.421 | đọc tài liệu 2026-11-23 | 34 | Identity Provider tự host cho SSO qua SAML, OAuth2/OIDC, LDAP và RADIUS. |
 | [Teleport Source](../../34-backend-data-identity-integration/README.md#anhkysuai-gravitational-teleport) | `gravitational/teleport` | AGPL-3.0-only cho source; api Apache-2.0; binary CE khác | 21.127 | đọc tài liệu 2026-11-23 | 34 | Lớp kết nối, xác thực, quyền và audit cho máy chủ, Kubernetes, database và ứng dụng. |
+| [Authlib](../../34-backend-data-identity-integration/README.md#nt-authlib) | `authlib/authlib` | BSD-3-Clause hoặc giấy phép thương mại (COMMERCIAL-LICENSE) | 5.462 | đọc mã 2026-11-23 | 34 | Thư viện Python OAuth/OIDC cho cả client và server, mỗi RFC một module cắm vào lõi bằng hook, tích hợp Flask, Django và các HTTP client. |
+| [node-oidc-provider](../../34-backend-data-identity-integration/README.md#nt-node-oidc-provider) | `panva/node-oidc-provider` | MIT | 3.861 | đọc mã 2026-11-23 | 34 | Authorization server OAuth 2.0 và OpenID Connect cho Node, cấu hình được từng tính năng, có chạy OpenID Conformance Suite trong CI. |
 
-## API, RPC & client (`api-tooling`, 20)
+## API, RPC & client (`api-tooling`, 21)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -80,6 +82,7 @@
 | [validator](../../34-backend-data-identity-integration/README.md#chuyen-validator) | `go-playground/validator` | MIT | 20.239 | đọc tài liệu 2026-11-18 | 34 | Thư viện Go kiểm tra hợp lệ giá trị cho struct và từng trường dựa trên tag. |
 | [gRPC-Gateway](../../34-backend-data-identity-integration/README.md#anhkysuai-grpc-ecosystem-grpc-gateway) | `grpc-ecosystem/grpc-gateway` | BSD-3-Clause | 20.016 | đọc tài liệu 2026-11-23 | 34 | Plugin protoc sinh reverse proxy dịch HTTP/JSON sang gRPC theo annotation. |
 | [APIJSON](../../34-backend-data-identity-integration/README.md#chuyen-apijson) | `APIJSON/APIJSON` | Apache License 2.0 | 18.395 | đọc tài liệu 2026-11-18 | 34 | Giao thức truyền thông dựa trên JSON kèm thư viện ORM cho Java, cho phép client tự mô tả dữ liệu cần lấy để giảm việc viết API backend. |
+| [AsyncAPI Specification](../../29-software-architecture-api-contracts/README.md#nt-asyncapi-spec) | `asyncapi/spec` | Apache-2.0 | 5.345 | đọc tài liệu 2026-11-23 | 29 | Đặc tả AsyncAPI 3.1.0 cho API hướng thông điệp: channel, operation send/receive, message, reply và bindings theo giao thức. |
 
 ## ORM, migration & công cụ CSDL (`orm-db-tooling`, 5)
 
@@ -107,7 +110,7 @@
 | [Wagtail](../../34-backend-data-identity-integration/README.md#anhkysuai-wagtail-wagtail) | `wagtail/wagtail` | BSD-3-Clause | 20.826 | đọc tài liệu 2026-11-23 | 34 | CMS Django cho nội dung có cấu trúc và trải nghiệm biên tập tùy chỉnh. |
 | [litemall](../../34-backend-data-identity-integration/README.md#anhkysuai-linlinjava-litemall) | `linlinjava/litemall` | MIT | 20.412 | đọc tài liệu 2026-11-23 | 34 | Mẫu cửa hàng nhỏ với backend Spring Boot, admin Vue, WeChat mini-program và web mobile. |
 
-## Ứng dụng doanh nghiệp (ERP/CRM) (`business-app`, 11)
+## Ứng dụng doanh nghiệp (ERP/CRM) (`business-app`, 12)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -122,6 +125,7 @@
 | [ELADMIN JPA](../../34-backend-data-identity-integration/README.md#anhkysuai-elunez-eladmin) | `elunez/eladmin` | Apache-2.0 | 21.895 | đọc tài liệu 2026-11-23 | 34 | Backend quản trị Spring Boot/JPA với RBAC, quyền dữ liệu và generator. |
 | [aureuserp](../../34-backend-data-identity-integration/README.md#anhkysuai-2026-11-23-aureuserp-aureuserp) | `aureuserp/aureuserp` | MIT | 12.278 | đọc tài liệu 2026-11-23 | 34 | ERP viết bằng Laravel và Filament, tổ chức chức năng nghiệp vụ qua hệ plugin. |
 | [dolibarr](../../34-backend-data-identity-integration/README.md#anhkysuai-2026-11-23-dolibarr-dolibarr) | `Dolibarr/dolibarr` | GPL-3.0-or-later; phụ thuộc riêng | 7.889 | đọc tài liệu 2026-11-23 | 34 | Bộ ERP/CRM PHP quản lý liên hệ, đơn hàng, hóa đơn, kho và các hoạt động tổ chức. |
+| [OCA dms (Odoo 19)](../../34-backend-data-identity-integration/README.md#nt-oca-dms) | `OCA/dms` | LGPL-3.0 (module dms; LICENSE gốc repo là AGPL-3.0) | 175 | đọc mã 2026-11-23 | 34 | Một module dms (19.0.1.1.7) cho Odoo 19: cây thư mục và tệp, ba kiểu lưu (cơ sở dữ liệu, filestore, attachment), nhóm truy cập phân cấp theo quyền tạo, ghi, xóa, khóa tệ… |
 
 ## Ngôn ngữ & runtime (`language-runtime`, 14)
 
@@ -142,7 +146,7 @@
 | [GraalVM Community Edition](../../37-programming-languages-runtimes/README.md#anhkysuai-oracle-graal) | `oracle/graal` | GPL-2.0 với Classpath Exception cho bản CE; thành phần GPL-2.0, UPL và BSD riêng | 21.757 | đọc tài liệu 2026-11-23 | 37 | Bộ compiler và runtime hỗ trợ Java cùng biên dịch ahead-of-time thành chương trình native. |
 | [Crystal](../../37-programming-languages-runtimes/README.md#anhkysuai-crystal-lang-crystal) | `crystal-lang/crystal` | Apache-2.0 với ngoại lệ attribution cho phần compiler nhúng vào binary đầu ra | 20.518 | đọc tài liệu 2026-11-23 | 37 | Ngôn ngữ biên dịch native có cú pháp gần Ruby, kiểm kiểu tĩnh và suy luận kiểu. |
 
-## Microservice, cấu hình & service mesh (`microservice-infra`, 9)
+## Microservice, cấu hình & service mesh (`microservice-infra`, 10)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -155,6 +159,7 @@
 | [Sentinel](../../33-reliability-observability-operations/README.md#anhkysuai-alibaba-sentinel) | `alibaba/Sentinel` | Apache-2.0 | 23.141 | đọc tài liệu 2026-11-23 | 33 | Component kiểm soát lưu lượng, giới hạn đồng thời, circuit breaking và bảo vệ quá tải. |
 | [Go Micro](../../34-backend-data-identity-integration/README.md#anhkysuai-micro-go-micro) | `micro/go-micro` | Apache-2.0 | 23.077 | đọc tài liệu 2026-11-23 | 34 | Framework Go cho dịch vụ phân tán và agent dùng dịch vụ làm tool. |
 | [GoFr](../../34-backend-data-identity-integration/README.md#anhkysuai-gofr-dev-gofr) | `gofr-dev/gofr` | Apache-2.0 | 20.785 | đọc tài liệu 2026-11-23 | 34 | Framework Go hướng microservice/Kubernetes, gắn database và observability sẵn. |
+| [EventCatalog](../../29-software-architecture-api-contracts/README.md#nt-eventcatalog) | `event-catalog/eventcatalog` | BUSL-1.1 cho packages/core (chuyển MIT sau 4 năm); sdk, linter, fitness, cli, visualiser, exporters, connectors MIT | 2.977 | đọc mã 2026-11-23 | 29 | Công cụ tài liệu kiến trúc event-driven dựng từ Markdown, kèm linter, fitness function bằng TypeScript và SDK. |
 
 ## Ứng dụng tự host (`self-hosted-app`, 8)
 
@@ -169,7 +174,7 @@
 | [Navidrome](../../36-self-hosting-homelab/README.md#anhkysuai-navidrome-navidrome) | `navidrome/navidrome` | GPL-3.0 | 24.909 | đọc tài liệu 2026-11-23 | 36 | Máy chủ thư viện nhạc cá nhân và streaming qua trình duyệt/client. |
 | [LibreTranslate](../../36-self-hosting-homelab/README.md#chuyen-libretranslate) | `LibreTranslate/LibreTranslate` | GNU Affero General Public License v3 | 17.783 | đọc tài liệu 2026-11-18 | 36 | API dịch máy mã nguồn mở, tự host hoàn toàn, không phụ thuộc dịch vụ độc quyền như Google hay Azure. |
 
-## Realtime, bot & nhắn tin (`realtime-messaging`, 7)
+## Realtime, bot & nhắn tin (`realtime-messaging`, 8)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -180,3 +185,4 @@
 | [ws](../../34-backend-data-identity-integration/README.md#anhkysuai-websockets-ws) | `websockets/ws` | MIT | 22.838 | đọc tài liệu 2026-11-23 | 34 | WebSocket client và server cho Node.js, dùng cho kênh realtime hoặc dịch vụ kết nối nền. |
 | [LiveKit Server](../../34-backend-data-identity-integration/README.md#anhkysuai-livekit-livekit) | `livekit/livekit` | Apache-2.0 | 22.348 | đọc tài liệu 2026-11-23 | 34 | Máy chủ WebRTC SFU truyền audio, video và dữ liệu giữa người, thiết bị và model. |
 | [NATS Server](../../34-backend-data-identity-integration/README.md#anhkysuai-nats-io-nats-server) | `nats-io/nats-server` | Apache-2.0 | 21.113 | đọc tài liệu 2026-11-23 | 34 | Máy chủ truyền thông cho dịch vụ, hệ thống và thiết bị từ cloud tới edge. |
+| [FastStream](../../34-backend-data-identity-integration/README.md#nt-faststream) | `ag2ai/faststream` | Apache-2.0 | 5.397 | đọc mã 2026-11-23 | 34 | Framework Python event-driven cho Kafka, RabbitMQ, NATS, Redis và MQTT, sinh tài liệu AsyncAPI trực tiếp từ khai báo subscriber/publisher. |

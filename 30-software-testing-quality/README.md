@@ -570,3 +570,94 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | active (commit mới nhất 2026-11-09) |
 | Nhận định | Thư viện JS đo Core Web Vitals và gửi lên analytics, có bản attribution; package v6.2.3. Giới hạn: số đo phụ thuộc hỗ trợ API của trình duyệt. |
 | Nguồn | [README](https://github.com/GoogleChrome/web-vitals/blob/94b3b4bced9d63b4ff6bfb8290bf1f505daa00bb/README.md) · [LICENSE](https://github.com/GoogleChrome/web-vitals/blob/94b3b4bced9d63b4ff6bfb8290bf1f505daa00bb/LICENSE) · [manifest](https://github.com/GoogleChrome/web-vitals/blob/94b3b4bced9d63b4ff6bfb8290bf1f505daa00bb/package.json) · [workflow](https://github.com/GoogleChrome/web-vitals/blob/94b3b4bced9d63b4ff6bfb8290bf1f505daa00bb/.github/workflows/tests.yml) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-vegeta"></a>
+
+### Vegeta
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/tsenart/vegeta |
+| License | MIT |
+| Phiên bản đã đọc | `a5dcbf48acd83383d3687c3634ce067a54b06983` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README, go.mod, ci.yml, lib/attack.go, lib/pacer.go, lib/metrics.go (chỉ liệt kê tên test, chưa mở file test); chưa chạy upstream |
+| Khoảng trống lấp | Kiểm thử tải (HTTP, tốc độ cố định) |
+| Cơ chế đáng học | - Tải theo tốc độ yêu cầu cố định chứ không theo số kết nối: `ConstantPacer` trong `lib/pacer.go` tính số hit kỳ vọng theo thời gian trôi qua và gửi bù ngay khi chạy trễ; ngoài ra có `SinePacer` và `LinearPacer` cho tải dao động hoặc tăng dần.<br>- Giao diện `Pacer` (Pace, Rate) tách chính sách tải khỏi bộ tấn công, nên nhúng làm thư viện Go và tự viết pacer riêng được (`lib/attack.go`, `lib/pacer.go`).<br>- Số worker khởi đầu là 10 và tự nở thêm tới `MaxWorkers` để giữ tốc độ; độ trễ đo từ lúc ghi timestamp trong vùng khóa của `Attack` đến khi trả về, nên không gộp thời gian chờ hàng đợi nội bộ vào mẫu đã gửi.<br>- Báo cáo trong `lib/metrics.go`: p50/p90/p95/p99, max, tỷ lệ thành công và histogram mã trạng thái; phân vị lấy bằng t-digest (xấp xỉ, không chính xác tuyệt đối). |
+| Tiêu chí và cách kiểm | Không có ngưỡng đạt/trượt tích hợp; `go vet` và `go test -race ./...` chạy trong CI (đã mở ci.yml), kèm kiểm định dạng bằng goimports. Có test cho pacer và metrics, có fuzz target trong `lib/`. Muốn làm cổng CI phải tự đọc báo cáo JSON và so ngưỡng bằng script. |
+| Giới hạn và rủi ro | Chỉ HTTP/HTTPS; không kịch bản nhiều bước hay logic người dùng như k6 hoặc Locust. Xuất báo cáo bằng t-digest nên phân vị là xấp xỉ. Trinh sát ghi MIT: đúng (LICENSE MIT, 2013-2023 Tomás Senart). Không thấy telemetry trong phần đã đọc (chưa quét toàn bộ). Commit mới nhất 2026-11-19 nên còn bảo trì; go.mod yêu cầu Go 1.22. |
+| So với | grafana-k6, locustio-locust, oha (cùng lô) |
+| Nguồn | [LICENSE](https://github.com/tsenart/vegeta/blob/a5dcbf48acd83383d3687c3634ce067a54b06983/LICENSE) · [README.md](https://github.com/tsenart/vegeta/blob/a5dcbf48acd83383d3687c3634ce067a54b06983/README.md) · [go.mod](https://github.com/tsenart/vegeta/blob/a5dcbf48acd83383d3687c3634ce067a54b06983/go.mod) · [.github/workflows/ci.yml](https://github.com/tsenart/vegeta/blob/a5dcbf48acd83383d3687c3634ce067a54b06983/.github/workflows/ci.yml) · [lib/attack.go](https://github.com/tsenart/vegeta/blob/a5dcbf48acd83383d3687c3634ce067a54b06983/lib/attack.go) · [lib/pacer.go](https://github.com/tsenart/vegeta/blob/a5dcbf48acd83383d3687c3634ce067a54b06983/lib/pacer.go) · [lib/metrics.go](https://github.com/tsenart/vegeta/blob/a5dcbf48acd83383d3687c3634ce067a54b06983/lib/metrics.go) |
+
+<a id="nt-oha"></a>
+
+### oha
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/hatoo/oha |
+| License | MIT |
+| Phiên bản đã đọc | `780c4e6e23ea8297e68fc7a042a8b1b0413741d9` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README, Cargo.toml, CI.yml, src/cli.rs, src/client.rs, src/histogram.rs, src/db.rs; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm thử tải (HTTP, có TUI) |
+| Cơ chế đáng học | - Sinh tải HTTP bằng Rust, hiển thị TUI thời gian thực (ratatui); chế độ `--no-tui` không đặt `-q` hay burst dùng đường chạy nhanh hơn vì bỏ gom dữ liệu thời gian thực (README).<br>- Cờ `--latency-correction` đặt `start_latency_correction` trong `src/client.rs` để tính độ trễ từ thời điểm lẽ ra phải gửi, nhằm tránh coordinated omission; chỉ có hiệu lực khi đặt `-q` hoặc `--burst-delay` (theo README và mô tả cờ trong `src/cli.rs`).<br>- Ghi kết quả từng yêu cầu vào SQLite qua `--db-url` (`src/db.rs`, rusqlite) để phân tích sau.<br>- Hỗ trợ HTTP/1, HTTP/2, tuỳ chọn HTTP/3 và vsock qua feature flag trong `Cargo.toml`. |
+| Tiêu chí và cách kiểm | CI (CI.yml đã mở) chạy `cargo test` trên ubuntu, windows, macos với ba tổ hợp feature (mặc định rustls, native-tls, http3) cùng job rustfmt; có test tích hợp trong `tests/` và test đơn vị trong `src/histogram.rs`. Không có ngưỡng đạt/trượt cho mục tiêu được đo; đây là công cụ đo, không phải cổng. |
+| Giới hạn và rủi ro | Histogram tự dựng với số bin cố định, không phải HDR. Latency correction mặc định tắt. Không kịch bản nhiều bước. Trinh sát ghi MIT: đúng (LICENSE và Cargo.toml). Phần đã đọc không thấy telemetry. Edition 2024 và rust-version 1.88 nên cần toolchain mới để tự build. Có bảo trì (commit 2026-11-18). |
+| So với | vegeta (cùng lô), grafana-k6, locustio-locust |
+| Nguồn | [LICENSE](https://github.com/hatoo/oha/blob/780c4e6e23ea8297e68fc7a042a8b1b0413741d9/LICENSE) · [README.md](https://github.com/hatoo/oha/blob/780c4e6e23ea8297e68fc7a042a8b1b0413741d9/README.md) · [Cargo.toml](https://github.com/hatoo/oha/blob/780c4e6e23ea8297e68fc7a042a8b1b0413741d9/Cargo.toml) · [.github/workflows/CI.yml](https://github.com/hatoo/oha/blob/780c4e6e23ea8297e68fc7a042a8b1b0413741d9/.github/workflows/CI.yml) · [src/cli.rs](https://github.com/hatoo/oha/blob/780c4e6e23ea8297e68fc7a042a8b1b0413741d9/src/cli.rs) · [src/client.rs](https://github.com/hatoo/oha/blob/780c4e6e23ea8297e68fc7a042a8b1b0413741d9/src/client.rs) · [src/histogram.rs](https://github.com/hatoo/oha/blob/780c4e6e23ea8297e68fc7a042a8b1b0413741d9/src/histogram.rs) · [src/db.rs](https://github.com/hatoo/oha/blob/780c4e6e23ea8297e68fc7a042a8b1b0413741d9/src/db.rs) |
+
+<a id="nt-google-oss-fuzz"></a>
+
+### OSS-Fuzz
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/google/oss-fuzz |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `0a47116786dffb1fff93b2bfb48c7b4ae8463903` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, AGENTS.md, docs/getting-started/accepting_new_projects.md, docs/getting-started/bug_disclosure_guidelines.md, projects/zlib/build.sh, projects/zlib/project.yaml, infra/constants.py, .github/workflows/presubmit.yml; chưa chạy upstream |
+| Khoảng trống lấp | Fuzz, mutation, chaos/resilience: nền cho việc dựng fuzz harness và cấu hình sanitizer |
+| Cơ chế đáng học | - `projects/<tên>/` gồm `Dockerfile`, `build.sh`, `project.yaml`; ví dụ zlib khai libfuzzer, afl, honggfuzz, ba sanitizer (address, memory, undefined), hai kiến trúc.<br>- `build.sh` biên dịch từng `*_fuzzer.c(c)` với `$LIB_FUZZING_ENGINE` và đóng seed corpus; bỏ `make check` khi sanitizer là memory.<br>- `infra/helper.py` có `build_fuzzers`, `check_build`, `run_fuzzer`, `reproduce`; `infra/constants.py` liệt kê engine libfuzzer, afl, honggfuzz, centipede, none, wycheproof.<br>- Quy trình công bố lỗi 90 ngày kèm 14 ngày gia hạn (bug_disclosure_guidelines.md). |
+| Tiêu chí và cách kiểm | Điều kiện nhận: dự án mở có nhiều người dùng hoặc là hạ tầng quan trọng, email liên hệ là committer gắn tài khoản Google. Kiểm bằng máy: presubmit.yml (đã đọc) chạy lint/test hạ tầng, `check_build` xác nhận fuzzer chạy được. Kết quả fuzz thật nằm ở dịch vụ ClusterFuzz phía Google, không thấy trong repo. |
+| Giới hạn và rủi ro | Apache-2.0. Báo cáo lỗi tự động gửi tới liên hệ chính và công khai sau hạn; dự án nhận vào là cho Google chạy mã build của dự án trên hạ tầng của họ. Hỗ trợ x86_64 và i386, ngôn ngữ C/C++, Rust, Go, Python, JVM, JavaScript, Lua. Repo chứa hơn 1400 thư mục dự án, rất nặng nếu clone đầy đủ. Mô tả trinh sát đặt vào unit-integration là gần đúng nhưng đây là hạ tầng fuzz, không phải test unit. |
+| So với | Chưa có hồ sơ fuzz tương đương trong kho; gần nhất về vai trò cổng chất lượng là Semgrep và Trivy (quét tĩnh, không động) |
+| Nguồn | [README.md](https://github.com/google/oss-fuzz/blob/0a47116786dffb1fff93b2bfb48c7b4ae8463903/README.md) · [LICENSE](https://github.com/google/oss-fuzz/blob/0a47116786dffb1fff93b2bfb48c7b4ae8463903/LICENSE) · [AGENTS.md](https://github.com/google/oss-fuzz/blob/0a47116786dffb1fff93b2bfb48c7b4ae8463903/AGENTS.md) · [accepting_new_projects.md](https://github.com/google/oss-fuzz/blob/0a47116786dffb1fff93b2bfb48c7b4ae8463903/docs/getting-started/accepting_new_projects.md) · [bug_disclosure_guidelines.md](https://github.com/google/oss-fuzz/blob/0a47116786dffb1fff93b2bfb48c7b4ae8463903/docs/getting-started/bug_disclosure_guidelines.md) · [build.sh](https://github.com/google/oss-fuzz/blob/0a47116786dffb1fff93b2bfb48c7b4ae8463903/projects/zlib/build.sh) · [project.yaml](https://github.com/google/oss-fuzz/blob/0a47116786dffb1fff93b2bfb48c7b4ae8463903/projects/zlib/project.yaml) · [constants.py](https://github.com/google/oss-fuzz/blob/0a47116786dffb1fff93b2bfb48c7b4ae8463903/infra/constants.py) · [presubmit.yml](https://github.com/google/oss-fuzz/blob/0a47116786dffb1fff93b2bfb48c7b4ae8463903/.github/workflows/presubmit.yml) |
+
+<a id="nt-shopify-toxiproxy"></a>
+
+### Toxiproxy
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Shopify/toxiproxy |
+| License | MIT |
+| Phiên bản đã đọc | `49299d8838525126e09c85ebe0ba89940a3261e5` (commit 2026-10-14) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, CREATING_TOXICS.md, toxics/latency.go, toxics/reset_peer.go, .github/workflows/test.yml, .github/workflows/analysis.yml; chưa chạy upstream |
+| Khoảng trống lấp | Fuzz, mutation, chaos/resilience: gây lỗi mạng có kiểm soát cho test tích hợp |
+| Cơ chế đáng học | - Mỗi toxic hiện thực giao diện `Toxic { Pipe(*ToxicStub) }` (CREATING_TOXICS.md); `toxics/latency.go` trì hoãn bằng latency cộng trừ jitter, tính bù thời gian chunk đã chờ.<br>- `toxics/reset_peer.go` đặt SetLinger 0 để gửi RST thay vì đóng êm, mô phỏng đứt kết nối đột ngột.<br>- Tham số `toxicity` quyết định phần trăm kết nối bị ảnh hưởng, cho kiểm thử ngẫu nhiên.<br>- Đặt tên proxy theo `<app>_<env>_<datastore>_<shard>` và dùng chung một Toxiproxy (README FAQ). |
+| Tiêu chí và cách kiểm | Không có ngưỡng đạt/hỏng riêng, kết quả do test của ứng dụng quyết định. Repo tự kiểm: test.yml chạy `make test` và `make bench` trên Go 1.27; analysis.yml chạy golangci-lint, shellcheck, yamllint và quét lỗ hổng theo lịch hằng tuần (đã mở cả hai). Mỗi toxic có file test riêng. |
+| Giới hạn và rủi ro | MIT. README ghi API không xác thực mặc định và có thể tạo proxy tới upstream bất kỳ, có tùy chọn token (`--auth-token`); image Docker bind API ở 0.0.0.0 nên phải cô lập mạng. Cổng tạm thời trùng dải ephemeral gây lỗi ngắt quãng. Tuyên bố độ trễ dưới 100µs và khoảng 1000MB/s là số của tác giả (chưa xác minh). |
+| So với | Chưa có công cụ chaos mạng nào trong kho; về cổng chất lượng test tích hợp có thể đối chiếu các hồ sơ quality-gate cùng nhóm |
+| Nguồn | [README.md](https://github.com/Shopify/toxiproxy/blob/49299d8838525126e09c85ebe0ba89940a3261e5/README.md) · [LICENSE](https://github.com/Shopify/toxiproxy/blob/49299d8838525126e09c85ebe0ba89940a3261e5/LICENSE) · [CREATING_TOXICS.md](https://github.com/Shopify/toxiproxy/blob/49299d8838525126e09c85ebe0ba89940a3261e5/CREATING_TOXICS.md) · [latency.go](https://github.com/Shopify/toxiproxy/blob/49299d8838525126e09c85ebe0ba89940a3261e5/toxics/latency.go) · [reset_peer.go](https://github.com/Shopify/toxiproxy/blob/49299d8838525126e09c85ebe0ba89940a3261e5/toxics/reset_peer.go) · [test.yml](https://github.com/Shopify/toxiproxy/blob/49299d8838525126e09c85ebe0ba89940a3261e5/.github/workflows/test.yml) · [analysis.yml](https://github.com/Shopify/toxiproxy/blob/49299d8838525126e09c85ebe0ba89940a3261e5/.github/workflows/analysis.yml) |
+
+<a id="nt-tapflow"></a>
+
+### tapflow
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/jo-duchan/tapflow |
+| License | MIT (LICENSE). NOTICE nêu thành phần dẫn xuất/đóng gói theo Apache-2.0 (baguette, scrcpy-server, tinyh264, emulator_controller.proto) và danh sách nhãn từ simslim (MIT). Không có trọng số |
+| Phiên bản đã đọc | `a09d6eeb78f1a0cef9bc80c37d0551c3d15b91ee` (commit 2026-11-24) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc `README.md`, `LICENSE`, `NOTICE`, `packages/flow-runner/src/schema.ts`, `packages/relay/src/middleware/auth.ts`, `docs/reference/performance.md`, `.github/workflows/ci.yml`; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm thử mobile trên máy mô phỏng: stream iOS Simulator/Android emulator qua trình duyệt, tự host cho cả nhóm |
+| Cơ chế đáng học | - Ba phần: relay tự host (phục vụ dashboard), agent macOS kết nối ra ngoài tới relay, dashboard trình duyệt; iOS chèn cảm ứng không qua WebDriverAgent.<br>- `packages/flow-runner/src/schema.ts`: flow YAML gồm các bước tapOn, assertVisible, scroll, swipe, setOrientation, clearState...; selector theo text/id/label/role; `inputSecret` đưa giá trị khi chạy, không ghi vào flow hay log; replay không gọi LLM (đang đánh dấu thử nghiệm).<br>- `relay/src/middleware/auth.ts`: JWT 7 ngày gắn với dấu vân tay mật khẩu (`pwv`) nên đổi mật khẩu thu hồi mọi phiên; chỉ localhost được vào không xác thực, agent từ máy khác dùng token phạm vi `agent`.<br>- Có MCP server và endpoint chụp màn hình REST cho CI và agent. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: CI Node 22 và 24 (lint, test) và job `test-swift` riêng trên macOS (đã mở ci.yml); `docs/reference/performance.md` ghi đo độ trễ giải mã trên LAN (p50 khoảng 11 đến 17 ms) kèm cách tái lập, là số của tác giả **(chưa xác minh)**. |
+| Giới hạn và rủi ro | **Mô tả của trinh sát lệch:** là máy mô phỏng/emulator chạy trên Mac của bạn, không phải thiết bị thật, và không đo hiệu năng ứng dụng, chỉ đo độ trễ luồng hình. Agent chỉ chạy trên macOS 26/27 với Xcode 26/27; relay là ranh giới tin cậy, ai tới được relay là điều khiển được thiết bị và xem bản dựng. Dự án mới (v0.x, MIT 2026), phụ thuộc cấu hình bảo mật triển khai. |
+| So với | maestro (hồ sơ có sẵn, chạy flow YAML trên thiết bị/giả lập), appium-appium (điều khiển chuẩn WebDriver), genymobile-scrcpy (nguồn của luồng Android), docker-android. |
+| Nguồn | [README.md](https://github.com/jo-duchan/tapflow/blob/a09d6eeb78f1a0cef9bc80c37d0551c3d15b91ee/README.md) · [LICENSE](https://github.com/jo-duchan/tapflow/blob/a09d6eeb78f1a0cef9bc80c37d0551c3d15b91ee/LICENSE) · [NOTICE](https://github.com/jo-duchan/tapflow/blob/a09d6eeb78f1a0cef9bc80c37d0551c3d15b91ee/NOTICE) · [schema.ts](https://github.com/jo-duchan/tapflow/blob/a09d6eeb78f1a0cef9bc80c37d0551c3d15b91ee/packages/flow-runner/src/schema.ts) · [auth.ts](https://github.com/jo-duchan/tapflow/blob/a09d6eeb78f1a0cef9bc80c37d0551c3d15b91ee/packages/relay/src/middleware/auth.ts) · [performance.md](https://github.com/jo-duchan/tapflow/blob/a09d6eeb78f1a0cef9bc80c37d0551c3d15b91ee/docs/reference/performance.md) · [ci.yml](https://github.com/jo-duchan/tapflow/blob/a09d6eeb78f1a0cef9bc80c37d0551c3d15b91ee/.github/workflows/ci.yml) |

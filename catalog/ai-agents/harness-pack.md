@@ -2,7 +2,7 @@
 
 # harness-pack — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 52 hồ sơ.
+[← Mục lục catalog](../README.md) · 58 hồ sơ.
 
 ## Quy trình coding/TDD/review (`coding-workflow`, 15)
 
@@ -38,6 +38,13 @@
 | [AI Software Factory](../../03-agentic-patterns-loops/README.md#beyond-the-agent-5-lop-2026-11-11) | `coleam00/ai-software-factory` | — | 524 | đọc tài liệu 2026-11-11 | 03 | Lớp cài đặt software factory trên Archon: PRD → issue → vòng làm → hai reviewer không viết mã quyết định merge → người thử trên staging; |
 | [Startup Factory](../../03-agentic-patterns-loops/README.md#beyond-the-agent-5-lop-2026-11-11) | `alexrolls/startup-factory` | MIT | 23 | đọc tài liệu 2026-11-11 | 03 | Khung điều phối coding agent thành đội giao hàng: 9 vai (team lead, architect, sceptical architect, backend, frontend, QA, security, reviewer, integrator) qua Linear/Jir… |
 
+## Văn phòng & tài liệu (`office-docs`, 2)
+
+| Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
+|---|---|---|---|---|---|---|
+| [Markdown Exporter](../../20-claude-plugins-ecosystem/README.md#nt-markdown-exporter) | `bowenliang123/markdown-exporter` | Apache-2.0 | 275 | đọc mã 2026-11-23 | 20 | Vừa là Agent Skill, plugin Dify, vừa là CLI Python (`md-exporter`) đổi Markdown sang DOCX, PPTX, XLSX, PDF, PNG, SVG, HTML, IPYNB, CSV, JSON, XML, LaTeX hoặc tách code b… |
+| [Carbone agent plugin](../../20-claude-plugins-ecosystem/README.md#nt-carbone-agent-plugin) | `carboneio/carbone-agent-plugin` | Apache-2.0 | 6 | đọc mã 2026-11-23 | 20 | Plugin chính thức của Carbone gồm một skill dạy cú pháp mẫu (tag, vòng lặp, điều kiện, formatter, `:set`) cho DOCX, XLSX, PPTX, HTML, Markdown, PDF form và một máy chủ M… |
+
 ## Marketing, bán hàng & kinh doanh (`marketing-business`, 16)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
@@ -59,14 +66,15 @@
 | [QuickBooks plugin cho Claude](../../20-claude-plugins-ecosystem/README.md#3zd-kiểm-danh-sách-7-plugin-thay-7-vị-trí-quickbooks-stripe-shopify-canva-hubspot-legalzoom-zapier-danh-sách-người-dùng-gửi-đọc-mã-20112026) | `intuit/quickbooks-claude-plugin` | Apache-2.0 | 1 | đọc tài liệu 2026-11-20 | 20 | Plugin chính chủ Intuit (intuit-quickbooks 0.1.0) trong claude-plugins-official: 10 skill (business-health-check đọc P&L/dòng tiền/bảng cân đối/công nợ, chase-overdue-in… |
 | [Sales Skills (Apparate)](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-louisblythe-sales-skills) | `louisblythe/sales-skills` | MIT | — | đọc mã 2026-11-23 | 20 | 122 skill sales B2B (fork điều chỉnh từ marketingskills); |
 
-## Media & sáng tạo (`media-creative`, 2)
+## Media & sáng tạo (`media-creative`, 3)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [baoyu-skills](../../20-claude-plugins-ecosystem/README.md#chuyen-baoyu-skills) | `JimLiu/baoyu-skills` | MIT | 27.646 | đọc tài liệu 2026-11-18 | 20 | Bộ 21 Agent Skill cho Claude Code/Codex phục vụ sản xuất nội dung: sinh ảnh bìa, minh hoạ, infographic, slide, truyện tranh, dịch bài, chuyển URL/YouTube/X sang Markdown… |
 | [MiniMax skills](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-minimax-skills) | `MiniMax-AI/skills` | MIT (+ Apache-2.0 cho phần dẫn xuất từ Anthropic) | 13.903 | đọc tài liệu 2026-11-23 | 20 | 17 skill (dev đa nền tảng, Office, đa phương tiện qua API MiniMax); |
+| [Craft Skills (ZSeven-W)](../../20-claude-plugins-ecosystem/README.md#nt-craft-skills) | `ZSeven-W/craft-skills` | Apache-2.0 | 242 | đọc mã 2026-11-23 | 20 | Năm skill sinh ảnh (Qwen-Image, logo, truyện tranh nhân vật, PNG trong suốt gốc, diorama quy trình), mỗi skill kèm thư mục `evals/` gồm `cases.yaml` với route trigger ho… |
 
-## Chuyên ngành (`domain-specialist`, 7)
+## Chuyên ngành (`domain-specialist`, 10)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -76,6 +84,9 @@
 | [text-to-cad](../../20-claude-plugins-ecosystem/README.md#ch-text-to-cad) | `earthtojake/text-to-cad` | MIT | 27.212 | đọc tài liệu 2026-11-23 | 20 | Plugin CAD: 12 skill + MCP cadgen (build123d/OCP), STEP/STL/3MF, DFM/DfAM; |
 | [AI-Research-SKILLs](../../20-claude-plugins-ecosystem/README.md#chuyen-ai-research-skills) | `Orchestra-Research/AI-Research-SKILLs` | MIT | 14.630 | đọc tài liệu 2026-11-18 | 20 | Thư viện 98 Agent Skill giúp agent AI tự làm nghiên cứu AI trọn vòng đời: từ ý tưởng, khảo sát tài liệu, huấn luyện/tinh chỉnh/đánh giá/triển khai mô hình đến viết bài b… |
 | [Claude for Legal](../../20-claude-plugins-ecosystem/README.md#3zb-kiểm-ảnh-8-plugin-8-kỹ-năng-8-mcp-bộ-cài-sẵn-cho-claude-ảnh-phandonggiang-người-dùng-gửi-đọc-mã-8112026) | `anthropics/claude-for-legal` | Apache-2.0 | 9.930 | đọc tài liệu 2026-11-08 | 20 | Plugin pháp lý của Anthropic theo mảng hành nghề (thương mại, privacy, sản phẩm, doanh nghiệp, lao động, tranh tụng, AI governance, IP, sinh viên luật); |
+| [Legal Skills (Open)](../../20-claude-plugins-ecosystem/README.md#nt-legal-skills-open) | `ThomasMoreAI/legal-skills-open` | Apache-2.0 | 143 | đọc mã 2026-11-23 | 20 | Thư viện thật sự có 20.294 file SKILL.md (con số "18.000+" đúng) xếp theo `{quốc gia}/{lĩnh vực}/skills/{slug}`. |
+| [Redacta](../../20-claude-plugins-ecosystem/README.md#nt-redacta) | `nickjlamb/redacta` | MIT-0 | 9 | đọc mã 2026-11-23 | 20 | Skill và bộ công cụ giả danh hóa định danh bệnh nhân trong văn bản lâm sàng trước khi đưa vào AI: lớp mẫu tất định (số NHS có kiểm Modulus-11, NI, ngày sinh, postcode, M… |
+| [CuliOps skills](../../33-reliability-observability-operations/README.md#nt-culiops-skills) | `culiops/culiops-skills` | MIT | 5 | đọc mã 2026-11-23 | 33 | Plugin Claude Code gồm 9 skill vận hành cho AWS và Kubernetes (khám phá dịch vụ, truy vết runtime, pre-flight rủi ro, thay đổi IaC, chi phí, bàn giao, điều tra sự cố/RCA… |
 | [LegalZoom plugin](../../20-claude-plugins-ecosystem/README.md#3zd-kiểm-danh-sách-7-plugin-thay-7-vị-trí-quickbooks-stripe-shopify-canva-hubspot-legalzoom-zapier-danh-sách-người-dùng-gửi-đọc-mã-20112026) | `legalzoom/claude-plugins` | PROPRIETARY | 1 | đọc tài liệu 2026-11-20 | 20 | Plugin legalzoom 1.0.0: /review-contract (AI chấm rủi ro điều khoản, không gọi MCP, cấm giả lập luật sư) và skill attorney-assist đặt lịch luật sư LegalZoom qua MCP http… |
 
 ## Tạo/quản lý skill (`skill-meta`, 3)
