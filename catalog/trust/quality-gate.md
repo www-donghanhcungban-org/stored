@@ -2,7 +2,7 @@
 
 # quality-gate — Đánh giá, an toàn & chất lượng
 
-[← Mục lục catalog](../README.md) · 75 hồ sơ.
+[← Mục lục catalog](../README.md) · 88 hồ sơ.
 
 ## Test unit/integration (`unit-integration`, 15)
 
@@ -24,15 +24,18 @@
 | [Testcontainers Python](../../30-software-testing-quality/README.md#testcontainers-python-factory) | `testcontainers/testcontainers-python` | Apache-2.0 | — | đọc mã 2026-11-04 | 30 | Dependency container thật và wait/cleanup; |
 | [Vitest](../../30-software-testing-quality/README.md#vitest-factory) | `vitest-dev/vitest` | MIT | — | đọc mã 2026-11-04 | 30 | Runner JS/TS Vite Node/browser; |
 
-## E2E & trình duyệt (`e2e-browser`, 3)
+## E2E & trình duyệt (`e2e-browser`, 6)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [Playwright](../../11-browser-computer-use-sandbox/README.md#playwright) | `microsoft/playwright` | Apache-2.0 | 99.090 | đọc mã 2026-11-02 | 11 | Runner/library gốc; |
 | [Selenium](../../30-software-testing-quality/README.md#anhkysuai-seleniumhq-selenium) | `SeleniumHQ/selenium` | Apache-2.0 | 34.607 | đọc tài liệu 2026-11-23 | 30 | Hạ tầng tự động hóa trình duyệt theo W3C WebDriver. |
 | [Appium](../../30-software-testing-quality/README.md#anhkysuai-appium-appium) | `appium/appium` | Apache-2.0 | 22.251 | đọc tài liệu 2026-11-23 | 30 | Framework tự động hóa kiểm thử ứng dụng native, hybrid, mobile web, desktop và thiết bị qua WebDriver. |
+| [TestZeus Hercules](../../06-ui-ux-design/README.md#ux-testzeus-hercules) | `test-zeus-ai/testzeus-hercules` | AGPL-3.0-only | 1.231 | đọc mã 2026-11-23 | 06 | Engine QA mã nguồn mở: viết bước kiểm thử bằng ngôn ngữ tự nhiên, model đọc bước và quyết định, mã thực hiện hành động và kiểm kết quả trong Chromium thật, có CLI, UI cụ… |
+| [Harness (user-test agent)](../../06-ui-ux-design/README.md#ux-awizemann-harness) | `awizemann/harness` | MIT | 366 | đọc mã 2026-11-23 | 06 | Ứng dụng macOS (alpha) cho agent LLM đóng vai người dùng thật với persona và mục tiêu, lái iOS Simulator, app macOS hoặc web (WKWebView) qua ảnh chụp màn hình có đánh số… |
+| [WebQA Agent](../../06-ui-ux-design/README.md#ux-webqa-agent) | `MigoXLab/webqa-agent` | Apache-2.0 | 240 | đọc mã 2026-11-23 | 06 | Agent kiểm thử web đa phương thức với ba chế độ (Flash qua chrome-devtools-mcp, Standard Generate, Run YAML) và MCP server cho Cursor/Claude Code. |
 
-## Visual regression & accessibility (`visual-a11y`, 7)
+## Visual regression & accessibility (`visual-a11y`, 15)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -40,11 +43,19 @@
 | [axe-core](../../06-ui-ux-design/README.md#ch-axe-core) | `dequelabs/axe-core` | MPL-2.0 | 7.874 | đọc tài liệu 2026-11-23 | 06 | Engine a11y runtime: 105 luật WCAG 2.0/2.1/2.2 A–AAA + best practice, v4.14.0; |
 | [pixelmatch](../../06-ui-ux-design/README.md#ch-pixelmatch) | `mapbox/pixelmatch` | ISC | 7.028 | đọc tài liệu 2026-11-23 | 06 | So ảnh pixel ~600 dòng, không phụ thuộc, OKLab + HyAB, dò khử răng cưa; |
 | [VMAF](../../19-agentic-video-media/README.md#ch-vmaf) | `Netflix/vmaf` | BSD-2-Clause-Patent | 5.655 | đọc tài liệu 2026-11-23 | 19 | Chỉ số chất lượng video cảm nhận + PSNR/SSIM/MS-SSIM/CIEDE2000/CAMBI; |
+| [Pa11y](../../06-ui-ux-design/README.md#ux-pa11y) | `pa11y/pa11y` | LGPL-3.0-only | 4.603 | đọc mã 2026-11-23 | 06 | CLI/thư viện Node chạy Chromium (Puppeteer) rồi áp HTML_CodeSniffer (mặc định) và/hoặc axe-core lên trang, in lỗi dạng error/warning/notice và thoát mã 2 nếu có lỗi vượt… |
 | [eslint-plugin-jsx-a11y](../../06-ui-ux-design/README.md#ch-eslint-plugin-jsx-a11y) | `jsx-eslint/eslint-plugin-jsx-a11y` | MIT | 3.631 | đọc tài liệu 2026-11-23 | 06 | 39 luật a11y tĩnh cho JSX; |
+| [AIPex: skill wcag22-a11y-audit](../../06-ui-ux-design/README.md#ux-aipex-wcag22-a11y-audit) | `AIPexStudio/AIPex` | MIT | 1.284 | đọc tài liệu 2026-11-23 | 06 | Skill tích hợp sẵn của tiện ích trình duyệt AIPex: audit trang đang mở theo 8 tiêu chí (1.1.1, 1.4.3, 1.4.11, 2.1.1, 2.1.2, 2.4.3, 2.4.7, 4.1.2), mỗi tiêu chí có bước ki… |
 | [Argos](../../06-ui-ux-design/README.md#ch-argos) | `argos-ci/argos` | MIT | 666 | đọc tài liệu 2026-11-23 | 06 | Nền tảng visual testing review ảnh chụp trong PR (Playwright/Storybook/Cypress), so ảnh bằng odiff-bin; |
+| [Pa11y CI](../../06-ui-ux-design/README.md#ux-pa11y-ci) | `pa11y/pa11y-ci` | LGPL-3.0-only | 649 | đọc tài liệu 2026-11-23 | 06 | Bộ chạy Pa11y trên danh sách URL, file cục bộ (glob) hoặc sitemap, dùng một trình duyệt chung, in kết quả cuối và JSON để chặn CI. |
+| [Guidepup](../../06-ui-ux-design/README.md#ux-guidepup) | `guidepup/guidepup` | MIT | 604 | đọc mã 2026-11-23 | 06 | Thư viện TypeScript điều khiển screen reader thật (NVDA trên Windows, Orca trên Linux, VoiceOver trên macOS) qua một API chung (`next`, `nextHeading`, `act`, `spokenPhra… |
 | [ffmpeg-quality-metrics](../../19-agentic-video-media/README.md#ch-ffmpeg-quality-metrics) | `slhck/ffmpeg-quality-metrics` | MIT | 566 | đọc tài liệu 2026-11-23 | 19 | CLI/Python bọc ffmpeg tính PSNR/SSIM/VIF/MSAD/VMAF từng frame + thống kê + GUI; |
+| [HappyHands](../../06-ui-ux-design/README.md#ux-happyhands) | `ShuaiMXu/happyhands` | MIT (Copyright 2026 HappyHands contributors; kèm vendor MIT/Apache-2.0 trong THIRD_PARTY_NOTICES.md) | 537 | đọc tài liệu 2026-11-23 | 06 | Harness cục bộ cho coding agent: chụp trang thật ở nhiều viewport/trạng thái, chẩn đoán, sửa trong git worktree cô lập, chụp lại và nhờ reviewer độc lập chấm trên bằng c… |
+| [Happo (client)](../../06-ui-ux-design/README.md#ux-happo) | `happo/happo` | — | 515 | đọc mã 2026-11-23 | 06 | Thư viện/CLI client của dịch vụ happo.io: chụp snapshot DOM và tài sản (Storybook, Cypress, Playwright, custom), tải lên SaaS để so ảnh trên Chrome/Firefox/Safari/iOS và… |
+| [Accessibility Agents (Community-Access)](../../06-ui-ux-design/README.md#ux-accessibility-agents-community-access) | `Community-Access/accessibility-agents` | MIT | 456 | đọc mã 2026-11-23 | 06 | Gói 113 skill WCAG 2.2 AA (6 router + chuyên gia + kb-\*) chạy trên nhiều client, kèm hook chặn sửa file UI cho đến khi `accessibility-lead` hoàn tất và MCP server 39 too… |
+| [a11y-specialist-skills (masuP9)](../../06-ui-ux-design/README.md#ux-a11y-specialist-skills) | `masup9/a11y-specialist-skills` | MIT | 61 | đọc mã 2026-11-23 | 06 | Sáu skill WCAG 2.2 A/AA cho Claude Code và Codex, nổi bật là `auditing-wcag`: quy trình 6 bước gán Pass/Fail/NT/NA cho từng tiêu chí kèm bằng chứng, chạy CLI `@a11y-skil… |
 
-## Phân tích tĩnh & lint (`static-analysis`, 19)
+## Phân tích tĩnh & lint (`static-analysis`, 21)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -65,6 +76,8 @@
 | [jscpd](../../13-dev-stack-devops/README.md#ch-jscpd) | `kucherenko/jscpd` | MIT | 6.472 | đọc tài liệu 2026-11-23 | 13 | Phát hiện code trùng lặp; |
 | [actionlint](../../13-dev-stack-devops/README.md#ch-actionlint) | `rhysd/actionlint` | MIT | 4.371 | đọc tài liệu 2026-11-23 | 13 | Lint workflow GitHub Actions: kiểm kiểu ${{ }}, shellcheck/pyflakes; |
 | [@shadcn/lint](../../06-ui-ux-design/README.md#ch-shadcn-lint) | `shadcn-ui/lint` | MIT | 3.455 | đọc tài liệu 2026-11-23 | 06 | 6 luật ESLint/Oxlint cho design system Tailwind v4, thông báo lỗi viết cho agent; |
+| [Shadscan](../../06-ui-ux-design/README.md#ux-shadscan) | `TheOrcDev/shadscan` | MIT (Copyright 2026 TheOrcDev) | 562 | đọc mã 2026-11-23 | 06 | CLI audit tĩnh tất định cho app React/shadcn: 62 luật, 6 hạng mục, điểm 0-100 và chia báo cáo thành Fixes/Decisions/Advisories/Not applicable, kèm lệnh --check-ui đo trà… |
+| [squirrelscan](../../06-ui-ux-design/README.md#ux-squirrelscan) | `squirrelscan/squirrelscan` | MIT (Copyright 2026 squirrelscan; tên và logo theo TRADEMARKS.md) | 334 | đọc mã 2026-11-23 | 06 | CLI/Bun audit website 350+ luật trong 22 nhóm (SEO, a11y 63 luật, mobile, content, performance, security, agent experience...), điểm 0-100 theo trọng số luật và xuất báo… |
 | [crapper / dryer / mutator (Uncle Bob)](../../20-claude-plugins-ecosystem/README.md#ch-crapper-dryer-mutator-uncle-bob) | `unclebob/crapper` | 0BSD | 243 | đọc tài liệu 2026-11-23 | 20 | Bộ cổng chất lượng Python của Robert C. |
 | [dependency-cruiser](../../29-software-architecture-api-contracts/README.md#dependency-cruiser-architecture-gates) | `sverweij/dependency-cruiser` | MIT | — | đọc mã 2026-11-04 | 29 | Kiểm graph/rule dependency JS/TS; |
 
