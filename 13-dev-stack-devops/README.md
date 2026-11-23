@@ -734,16 +734,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Julia
 
-- **Repo:** [JuliaLang/julia](https://github.com/JuliaLang/julia).
-- **Mục đích:** Ngôn ngữ động dành cho tính toán kỹ thuật và khoa học.
-- **Điểm đáng dùng:** README chỉ rõ source runtime, tài liệu, hệ package và cách quản lý nhiều phiên bản bằng juliaup; có ích khi xây công cụ số trong môi trường thống nhất.
-- **License:** MIT; phụ thuộc có giấy phép riêng.
-- **Giới hạn:** Chưa chạy benchmark hoặc package khoa học; hiệu năng phụ thuộc compile, kiểu dữ liệu và workload. Binary không chính thức có thể không được dự án hỗ trợ.
-- **Tích hợp:** Dùng Julia/juliaup chính thức, ghi Project/Manifest và phiên bản runtime cho khả năng tái lập.
-- **Đối chiếu:** Python với NumPy cho hệ sinh thái; R cho thống kê; MATLAB cho môi trường thương mại kỹ thuật.
-- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
-- **Snapshot:** kiểm ngày 2026-11-23; commit `562474cbd28258fdf04731b001ece9f4cd2f6171` (2026-11-23T10:21:25+01:00); 49,293 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
-- **Bằng chứng:** [README.md](https://github.com/JuliaLang/julia/blob/562474cbd28258fdf04731b001ece9f4cd2f6171/README.md) · [LICENSE.md](https://github.com/JuliaLang/julia/blob/562474cbd28258fdf04731b001ece9f4cd2f6171/LICENSE.md) · [.github/workflows/LabelCheck.yml](https://github.com/JuliaLang/julia/blob/562474cbd28258fdf04731b001ece9f4cd2f6171/.github/workflows/LabelCheck.yml) · [GitHub API](https://api.github.com/repos/JuliaLang/julia).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 37](../37-programming-languages-runtimes/README.md#anhkysuai-julialang-julia); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-cli-cli"></a>
 
@@ -1019,16 +1010,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### V
 
-- **Repo:** [vlang/v](https://github.com/vlang/v).
-- **Mục đích:** Ngôn ngữ và compiler hướng cú pháp gọn, backend C/JavaScript.
-- **Điểm đáng dùng:** README liệt kê GC mặc định cùng chế độ memory khác và hot reload; workflow đọc có kiểm thử driver cơ sở dữ liệu.
-- **License:** MIT.
-- **Giới hạn:** Trước 1.0 vẫn đổi API/cú pháp và mục tiêu không undefined behavior còn WIP; tốc độ cùng an toàn là tuyên bố chưa được kiểm chứng ở đây.
-- **Tích hợp:** Thử công cụ nhỏ ít rủi ro, khóa compiler và kiểm tra C interop, memory trước khi chuẩn hóa template.
-- **Đối chiếu:** [Go](../08-awesome-lists-learning/README.md#6c514-ngôn-ngữ--runtime) cho tooling; [Rust](../08-awesome-lists-learning/README.md#6c514-ngôn-ngữ--runtime) cho kiểm soát bộ nhớ; Zig cho hệ thống và C interop.
-- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
-- **Snapshot:** kiểm ngày 2026-11-23; commit `827f160f069e5272a36a57a4f5ff5ae0e45cceb6` (2026-11-23T08:50:41+03:00); 38,124 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
-- **Bằng chứng:** [README.md](https://github.com/vlang/v/blob/827f160f069e5272a36a57a4f5ff5ae0e45cceb6/README.md) · [LICENSE](https://github.com/vlang/v/blob/827f160f069e5272a36a57a4f5ff5ae0e45cceb6/LICENSE) · [.github/workflows/db_ci.yml](https://github.com/vlang/v/blob/827f160f069e5272a36a57a4f5ff5ae0e45cceb6/.github/workflows/db_ci.yml) · [GitHub API](https://api.github.com/repos/vlang/v).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 37](../37-programming-languages-runtimes/README.md#anhkysuai-vlang-v); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-nervjs-taro"></a>
 
@@ -1169,16 +1151,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Carbon Language
 
-- **Repo:** [carbon-language/carbon-lang](https://github.com/carbon-language/carbon-lang).
-- **Mục đích:** Nghiên cứu ngôn ngữ kế nhiệm C++ với hướng tương tác hai chiều.
-- **Điểm đáng dùng:** README nêu mục tiêu LLVM, C++ interop và migration công cụ; CI có cấu hình tối ưu và AddressSanitizer.
-- **License:** Apache-2.0 WITH LLVM-exception.
-- **Giới hạn:** Tài liệu ghi rõ experimental và chưa sẵn sàng sử dụng; mục tiêu an toàn bộ nhớ/hiệu năng không phải bảo đảm hiện trạng.
-- **Tích hợp:** Lưu để theo dõi compiler và thử ví dụ riêng, chưa dùng làm chuẩn ngôn ngữ cho sản phẩm đang giao.
-- **Đối chiếu:** [Rust](../08-awesome-lists-learning/README.md#6c514-ngôn-ngữ--runtime) cho ngôn ngữ hệ thống; Zig cho C interop; C++ cho codebase hiện hữu.
-- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
-- **Snapshot:** kiểm ngày 2026-11-23; commit `0072b2812979e4a75b3467f0fd0ac086eee209a4` (2026-11-22T05:19:35Z); 33,969 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
-- **Bằng chứng:** [README.md](https://github.com/carbon-language/carbon-lang/blob/0072b2812979e4a75b3467f0fd0ac086eee209a4/README.md) · [LICENSE](https://github.com/carbon-language/carbon-lang/blob/0072b2812979e4a75b3467f0fd0ac086eee209a4/LICENSE) · [pyproject.toml](https://github.com/carbon-language/carbon-lang/blob/0072b2812979e4a75b3467f0fd0ac086eee209a4/pyproject.toml) · [.github/workflows/tests.yaml](https://github.com/carbon-language/carbon-lang/blob/0072b2812979e4a75b3467f0fd0ac086eee209a4/.github/workflows/tests.yaml) · [GitHub API](https://api.github.com/repos/carbon-language/carbon-lang).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 37](../37-programming-languages-runtimes/README.md#anhkysuai-carbon-language-carbon-lang); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-tokio-rs-tokio"></a>
 
@@ -1379,16 +1352,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Niri
 
-- **Repo:** [niri-wm/niri](https://github.com/niri-wm/niri).
-- **Mục đích:** Wayland compositor xếp cửa sổ thành dải cột cuộn ngang.
-- **Điểm đáng dùng:** Mỗi màn hình có dải/workspace riêng; README mô tả giữ bố cục qua tháo màn hình, screencast và che cửa sổ nhạy cảm.
-- **License:** GPL-3.0-or-later.
-- **Giới hạn:** Không phải desktop environment hoàn chỉnh; cần shell, portal và công cụ phụ, CI test đọc loại trừ visual tests ở bước build.
-- **Tích hợp:** Thử như cấu hình workstation tùy chọn, kiểm tra đa màn hình, screen sharing và accessibility trước khi dùng hằng ngày.
-- **Đối chiếu:** Sway cho tiling Wayland; Hyprland cho compositor động; GNOME cho desktop tích hợp.
-- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
-- **Snapshot:** kiểm ngày 2026-11-23; commit `02ee0585b9da359cb30aa2a13a6023a6e471cc23` (2026-11-23T09:35:25+03:00); 29,212 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
-- **Bằng chứng:** [README.md](https://github.com/niri-wm/niri/blob/02ee0585b9da359cb30aa2a13a6023a6e471cc23/README.md) · [LICENSE](https://github.com/niri-wm/niri/blob/02ee0585b9da359cb30aa2a13a6023a6e471cc23/LICENSE) · [Cargo.toml](https://github.com/niri-wm/niri/blob/02ee0585b9da359cb30aa2a13a6023a6e471cc23/Cargo.toml) · [.github/workflows/ci.yml](https://github.com/niri-wm/niri/blob/02ee0585b9da359cb30aa2a13a6023a6e471cc23/.github/workflows/ci.yml) · [GitHub API](https://api.github.com/repos/niri-wm/niri).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-niri-wm-niri); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-reflex-dev-reflex"></a>
 
@@ -1544,16 +1508,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### UniGetUI
 
-- **Repo:** [Devolutions/UniGetUI](https://github.com/Devolutions/UniGetUI).
-- **Mục đích:** GUI tập trung cho nhiều package manager, ưu tiên Windows và có bản đa nền.
-- **Điểm đáng dùng:** Giao diện tìm/cài/nâng/gỡ qua WinGet, Scoop, Chocolatey và manager khác; README nêu chủ quản Devolutions và nguồn chính thức.
-- **License:** MIT; package được cài có license riêng.
-- **Giới hạn:** GUI không xác thực chất lượng mọi package upstream; README cảnh báo tên miền giả, package manager và publisher cần kiểm tra riêng.
-- **Tích hợp:** Dùng cho quản lý workstation, xuất danh sách gói có version và duyệt nguồn trước thao tác cài hàng loạt.
-- **Đối chiếu:** WinGet CLI cho Windows; [Homebrew](../13-dev-stack-devops/README.md#anhkysuai-homebrew-brew) cho macOS/Linux; Chocolatey cho quản lý package Windows.
-- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
-- **Snapshot:** kiểm ngày 2026-11-23; commit `bb42035d57d7c3bd9ff7254b94f713129e040b4c` (2026-11-20T14:40:43-05:00); 27,211 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
-- **Bằng chứng:** [README.md](https://github.com/Devolutions/UniGetUI/blob/bb42035d57d7c3bd9ff7254b94f713129e040b4c/README.md) · [LICENSE](https://github.com/Devolutions/UniGetUI/blob/bb42035d57d7c3bd9ff7254b94f713129e040b4c/LICENSE) · [.github/workflows/dotnet-test.yml](https://github.com/Devolutions/UniGetUI/blob/bb42035d57d7c3bd9ff7254b94f713129e040b4c/.github/workflows/dotnet-test.yml) · [GitHub API](https://api.github.com/repos/Devolutions/UniGetUI).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-devolutions-unigetui); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-angular-angular-cli"></a>
 
@@ -1649,16 +1604,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Bend
 
-- **Repo:** [bendlang/bend](https://github.com/bendlang/bend).
-- **Mục đích:** Ngôn ngữ hướng tính toán song song và khai báo luật kèm chứng minh.
-- **Điểm đáng dùng:** README tại SHA giới thiệu LAWS.bend để ràng buộc thay đổi, cùng purity/linearity và compiler CPU/GPU; workflow có repo gate.
-- **License:** Apache-2.0.
-- **Giới hạn:** Đánh giá này chưa kiểm tra compiler hoặc tái hiện claim tốc độ/chứng minh; luật đúng hình thức không bảo đảm đặc tả đầy đủ hay toàn hệ thống không có lỗi.
-- **Tích hợp:** Lưu làm hướng nghiên cứu formal specification, thử bài toán nhỏ có oracle độc lập trước khi xét cho sản phẩm.
-- **Đối chiếu:** Lean cho chứng minh; Dafny cho verification chương trình; [Rust](../08-awesome-lists-learning/README.md#6c514-ngôn-ngữ--runtime) cho ngôn ngữ hệ thống.
-- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
-- **Snapshot:** kiểm ngày 2026-11-23; commit `6b806192284fc9c64404d9b0b59c937f568d87ec` (2026-11-23T06:50:12-03:00); 25,792 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
-- **Bằng chứng:** [README.md](https://github.com/bendlang/bend/blob/6b806192284fc9c64404d9b0b59c937f568d87ec/README.md) · [LICENSE](https://github.com/bendlang/bend/blob/6b806192284fc9c64404d9b0b59c937f568d87ec/LICENSE) · [.github/workflows/repo-gate.yml](https://github.com/bendlang/bend/blob/6b806192284fc9c64404d9b0b59c937f568d87ec/.github/workflows/repo-gate.yml) · [GitHub API](https://api.github.com/repos/bendlang/bend).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 37](../37-programming-languages-runtimes/README.md#anhkysuai-bendlang-bend); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-modernizr-modernizr"></a>
 
@@ -1739,16 +1685,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### V8
 
-- **Repo:** [v8/v8](https://github.com/v8/v8).
-- **Mục đích:** Engine JavaScript C++ dùng độc lập hoặc nhúng trong ứng dụng.
-- **Điểm đáng dùng:** README mô tả triển khai ECMAScript và quy trình depot_tools/gclient để lấy dependency; LICENSE phân biệt lõi với thư viện ngoại vi.
-- **License:** BSD-3-Clause cho lõi; thư viện ngoài và test có license riêng.
-- **Giới hạn:** Clone repo riêng chưa tạo toolchain build hoàn chỉnh; nhúng mã không tin cậy cần mô hình giới hạn tài nguyên/host API, không xem engine là sandbox đủ mặc định.
-- **Tích hợp:** Chỉ cân nhắc khi cần nhúng runtime C++, khóa dependency và thiết kế lifecycle/isolation cùng cập nhật an ninh.
-- **Đối chiếu:** QuickJS cho engine nhỏ; JavaScriptCore cho nền WebKit; [Node.js](../08-awesome-lists-learning/README.md#6c514-ngôn-ngữ--runtime) cho runtime sẵn.
-- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
-- **Snapshot:** kiểm ngày 2026-11-23; commit `49f0798037cdd08460664363947a92bcb65f7957` (2026-11-23T01:49:19-08:00); 25,346 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
-- **Bằng chứng:** [README.md](https://github.com/v8/v8/blob/49f0798037cdd08460664363947a92bcb65f7957/README.md) · [LICENSE](https://github.com/v8/v8/blob/49f0798037cdd08460664363947a92bcb65f7957/LICENSE) · [LICENSE.fdlibm](https://github.com/v8/v8/blob/49f0798037cdd08460664363947a92bcb65f7957/LICENSE.fdlibm) · [LICENSE.strongtalk](https://github.com/v8/v8/blob/49f0798037cdd08460664363947a92bcb65f7957/LICENSE.strongtalk) · [GitHub API](https://api.github.com/repos/v8/v8).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 37](../37-programming-languages-runtimes/README.md#anhkysuai-v8-v8); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-pypa-pipenv"></a>
 
@@ -1937,37 +1874,13 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### AeroSpace
 
-**Repo:** [nikitabobko/AeroSpace](https://github.com/nikitabobko/AeroSpace) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`6ed6af62429e`](https://github.com/nikitabobko/AeroSpace/tree/6ed6af62429e8aaec4d3d6516184945e19728fa4) (commit 2026-11-13). **Sao:** 23,926 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/nikitabobko/AeroSpace).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Trình quản lý cửa sổ dạng tiling kiểu i3 cho macOS. |
-| Giá trị và cơ chế theo tài liệu | README mô tả cây bố cục, workspace tự mô phỏng, CLI/config text và không cần tắt SIP; CI build Swift debug/release và chạy test. |
-| Giới hạn | README đặt nhãn beta. Workspace mô phỏng có hành vi khác Spaces gốc; chưa thử app đặc biệt, accessibility permission hoặc nhiều màn hình thực tế. |
-| Điều kiện tích hợp | Thử cấu hình phím với vài ứng dụng, giữ cách thoát/tắt nhanh; kiểm màn hình ngoài, floating exception và nâng cấp macOS trước dùng làm môi trường hằng ngày. |
-| Lựa chọn đối chiếu | yabai; Amethyst; Rectangle. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/nikitabobko/AeroSpace/blob/6ed6af62429e8aaec4d3d6516184945e19728fa4/README.md) · [LICENSE.txt](https://github.com/nikitabobko/AeroSpace/blob/6ed6af62429e8aaec4d3d6516184945e19728fa4/LICENSE.txt) · [.github/workflows/build.yml](https://github.com/nikitabobko/AeroSpace/blob/6ed6af62429e8aaec4d3d6516184945e19728fa4/.github/workflows/build.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-nikitabobko-aerospace); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-ruby-ruby"></a>
 
 ### Ruby
 
-**Repo:** [ruby/ruby](https://github.com/ruby/ruby) · **License:** Ruby License OR BSD-2-Clause; thành phần trong LEGAL có điều khoản riêng · **Kiểm:** 2026-11-23, `docs-read`, [`0b4e7e04e318`](https://github.com/ruby/ruby/tree/0b4e7e04e3187be7fef6389b1518b357860e8802) (commit 2026-11-23). **Sao:** 23,859 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/ruby/ruby).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Mã nguồn ngôn ngữ Ruby thông dịch, hướng đối tượng, dùng cho web và scripting. |
-| Giá trị và cơ chế theo tài liệu | README nêu mixin, closure, GC và portability; COPYING cho lựa chọn BSDL hai điều khoản hoặc Ruby License, Cargo chứa phần Rust liên kết vào runtime. |
-| Giới hạn | Repo là runtime, không đại diện Rails hoặc toàn bộ gem. Một số file có điều khoản trong LEGAL; chưa build interpreter, chạy RubySpec hay đo JIT/GC. |
-| Điều kiện tích hợp | Chọn release còn hỗ trợ và toolchain của hệ đích, ghim gem/native extension; thử tương thích ứng dụng và benchmark workload trước nâng runtime. |
-| Lựa chọn đối chiếu | [Python](../08-awesome-lists-learning/README.md#6c521-thuật-toán--phỏng-vấn); [Crystal](../13-dev-stack-devops/README.md#anhkysuai-crystal-lang-crystal); JRuby. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/ruby/ruby/blob/0b4e7e04e3187be7fef6389b1518b357860e8802/README.md) · [COPYING](https://github.com/ruby/ruby/blob/0b4e7e04e3187be7fef6389b1518b357860e8802/COPYING) · [COPYING.ja](https://github.com/ruby/ruby/blob/0b4e7e04e3187be7fef6389b1518b357860e8802/COPYING.ja) · [Cargo.toml](https://github.com/ruby/ruby/blob/0b4e7e04e3187be7fef6389b1518b357860e8802/Cargo.toml) · [.github/workflows/annocheck.yml](https://github.com/ruby/ruby/blob/0b4e7e04e3187be7fef6389b1518b357860e8802/.github/workflows/annocheck.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 37](../37-programming-languages-runtimes/README.md#anhkysuai-ruby-ruby); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-validatorjs-validator.js"></a>
 
@@ -2027,19 +1940,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### WinBoat
 
-**Repo:** [winboat-org/winboat](https://github.com/winboat-org/winboat) · **License:** MIT cho ứng dụng; Windows và phần mềm khách có giấy phép riêng · **Kiểm:** 2026-11-23, `docs-read`, [`b9a2df2cc33b`](https://github.com/winboat-org/winboat/tree/b9a2df2cc33b2a5e2dc95b3f0472d832f44e86d3) (commit 2026-09-10). **Sao:** 23,435 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/winboat-org/winboat).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Ứng dụng Electron giúp chạy cửa sổ phần mềm Windows trong desktop Linux. |
-| Giá trị và cơ chế theo tài liệu | README giải thích Windows VM nằm trong Docker/Podman, guest server và FreeRDP RemoteApp; manifest Bun/Electron và workflow build xác định các thành phần. |
-| Giới hạn | README ghi beta; không bảo đảm mọi app Windows hoạt động. Home directory được mount sang Windows nên phải kiểm phạm vi chia sẻ; MIT không cấp quyền hệ điều hành khách. |
-| Điều kiện tích hợp | Thử VM với dữ liệu riêng, kiểm CPU/RAM/virtualization và ứng dụng mục tiêu; giới hạn mount, chuẩn bị backup và đối chiếu giấy phép Windows trước dùng lâu dài. |
-| Lựa chọn đối chiếu | Wine; Bottles; virt-manager. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/winboat-org/winboat/blob/b9a2df2cc33b2a5e2dc95b3f0472d832f44e86d3/README.md) · [LICENSE](https://github.com/winboat-org/winboat/blob/b9a2df2cc33b2a5e2dc95b3f0472d832f44e86d3/LICENSE) · [package.json](https://github.com/winboat-org/winboat/blob/b9a2df2cc33b2a5e2dc95b3f0472d832f44e86d3/package.json) · [.github/workflows/release.yml](https://github.com/winboat-org/winboat/blob/b9a2df2cc33b2a5e2dc95b3f0472d832f44e86d3/.github/workflows/release.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-winboat-org-winboat); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-reduxjs-react-redux"></a>
 
@@ -2171,19 +2072,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### RustPython
 
-**Repo:** [RustPython/RustPython](https://github.com/RustPython/RustPython) · **License:** MIT cho interpreter; CC-BY-4.0 cho logo · **Kiểm:** 2026-11-23, `docs-read`, [`ad3268e88a10`](https://github.com/RustPython/RustPython/tree/ad3268e88a10e6cb9b92cec53263acf023eeead4) (commit 2026-11-22). **Sao:** 22,503 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/RustPython/RustPython).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Trình thông dịch Python viết bằng Rust, hướng đến nhúng scripting vào ứng dụng Rust và chạy trong WebAssembly. |
-| Giá trị và cơ chế theo tài liệu | README chỉ ra ví dụ embedding, WASI và các lựa chọn SSL; Cargo workspace tách feature cho stdlib, threading, host environment và nhà cung cấp TLS. Hữu ích để thử scripting trong sản phẩm Rust. |
-| Giới hạn | README nói rõ chưa hoàn toàn sẵn sàng production; dòng tương thích CPython không chứng minh mọi package hoặc extension hoạt động. Logo có giấy phép riêng, thư viện được mang vào cần kiểm theo thành phần. |
-| Điều kiện tích hợp | Lập danh sách cú pháp, module và extension cần dùng; thử cùng workload thực tế, giới hạn quyền host và tài nguyên nếu nhận script không tin cậy. Chưa chạy bộ tương thích hoặc kiểm sandbox. |
-| Lựa chọn đối chiếu | [CPython](../08-awesome-lists-learning/README.md#6c514-ngôn-ngữ--runtime); PyO3; [MicroPython](../13-dev-stack-devops/README.md#anhkysuai-micropython-micropython). |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/RustPython/RustPython/blob/ad3268e88a10e6cb9b92cec53263acf023eeead4/README.md) · [LICENSE](https://github.com/RustPython/RustPython/blob/ad3268e88a10e6cb9b92cec53263acf023eeead4/LICENSE) · [LICENSE-logo](https://github.com/RustPython/RustPython/blob/ad3268e88a10e6cb9b92cec53263acf023eeead4/LICENSE-logo) · [Cargo.toml](https://github.com/RustPython/RustPython/blob/ad3268e88a10e6cb9b92cec53263acf023eeead4/Cargo.toml) · [.github/workflows/ci.yaml](https://github.com/RustPython/RustPython/blob/ad3268e88a10e6cb9b92cec53263acf023eeead4/.github/workflows/ci.yaml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 37](../37-programming-languages-runtimes/README.md#anhkysuai-rustpython-rustpython); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-vueuse-vueuse"></a>
 
@@ -2207,19 +2096,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### MicroPython
 
-**Repo:** [micropython/micropython](https://github.com/micropython/micropython) · **License:** MIT cho lõi; các port và thư viện kèm có giấy phép riêng · **Kiểm:** 2026-11-23, `docs-read`, [`1c8e39768802`](https://github.com/micropython/micropython/tree/1c8e39768802b47f80e91924a00cc9bbd6ce7bf5) (commit 2026-11-21). **Sao:** 22,222 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/micropython/micropython).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Triển khai Python cho vi điều khiển và môi trường hạn chế tài nguyên, có API truy cập ngoại vi phần cứng. |
-| Giá trị và cơ chế theo tài liệu | README mô tả script .py, bytecode .mpy hoặc mã frozen, cùng GPIO, SPI, I2C, Bluetooth và USB theo port. LICENSE lập bảng phạm vi thư viện, SDK và công cụ đi kèm. |
-| Giới hạn | Chỉ hỗ trợ một phần Python 3 và module; tính năng thread, mạng, SSL phụ thuộc port. Giấy phép SDK, btstack và một số thành phần khác cần kiểm riêng; không suy toàn bộ firmware chỉ MIT. |
-| Điều kiện tích hợp | Chọn board/port trước, đo RAM, heap và độ trễ với tác vụ thật; xác minh driver, cập nhật firmware và quyền phân phối toàn bộ thành phần được đưa vào bản build. |
-| Lựa chọn đối chiếu | CircuitPython; [RustPython](../13-dev-stack-devops/README.md#anhkysuai-rustpython-rustpython); Lua. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/micropython/micropython/blob/1c8e39768802b47f80e91924a00cc9bbd6ce7bf5/README.md) · [LICENSE](https://github.com/micropython/micropython/blob/1c8e39768802b47f80e91924a00cc9bbd6ce7bf5/LICENSE) · [pyproject.toml](https://github.com/micropython/micropython/blob/1c8e39768802b47f80e91924a00cc9bbd6ce7bf5/pyproject.toml) · [.github/workflows/docs.yml](https://github.com/micropython/micropython/blob/1c8e39768802b47f80e91924a00cc9bbd6ce7bf5/.github/workflows/docs.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 37](../37-programming-languages-runtimes/README.md#anhkysuai-micropython-micropython); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-postcss-autoprefixer"></a>
 
@@ -2243,19 +2120,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Gleam
 
-**Repo:** [gleam-lang/gleam](https://github.com/gleam-lang/gleam) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`05fb252bf83e`](https://github.com/gleam-lang/gleam/tree/05fb252bf83e5a29cb73ca0f926e50bd37e7e815) (commit 2026-11-21). **Sao:** 22,083 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/gleam-lang/gleam).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Ngôn ngữ có kiểm kiểu tĩnh, compiler viết bằng Rust sinh mã Erlang hoặc JavaScript. |
-| Giá trị và cơ chế theo tài liệu | Tài liệu compiler mô tả parser, sắp xếp dependency, type checker, code generation và cache metadata; tách core không IO, CLI, language server và giao diện WASM. Có hướng dẫn integration và snapshot test. |
-| Giới hạn | Đây là đánh giá cấu trúc tài liệu, chưa xác minh compiler hay độ tương thích thư viện. Lựa chọn target ảnh hưởng runtime và thư viện có thể dùng; lợi ích quy mô trong README chưa có benchmark độc lập. |
-| Điều kiện tích hợp | Thử một dịch vụ hoặc thư viện nhỏ với target cụ thể; kiểm FFI, xử lý lỗi, gói Hex/npm và pipeline build/deploy trước mở rộng sang hệ thống chính. |
-| Lựa chọn đối chiếu | Elixir; Erlang; [TypeScript](../08-awesome-lists-learning/README.md#6c514-ngôn-ngữ--runtime). |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/gleam-lang/gleam/blob/05fb252bf83e5a29cb73ca0f926e50bd37e7e815/README.md) · [LICENCE](https://github.com/gleam-lang/gleam/blob/05fb252bf83e5a29cb73ca0f926e50bd37e7e815/LICENCE) · [Cargo.toml](https://github.com/gleam-lang/gleam/blob/05fb252bf83e5a29cb73ca0f926e50bd37e7e815/Cargo.toml) · [.github/workflows/ci.yaml](https://github.com/gleam-lang/gleam/blob/05fb252bf83e5a29cb73ca0f926e50bd37e7e815/.github/workflows/ci.yaml) · [docs/compiler/README.md](https://github.com/gleam-lang/gleam/blob/05fb252bf83e5a29cb73ca0f926e50bd37e7e815/docs/compiler/README.md).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 37](../37-programming-languages-runtimes/README.md#anhkysuai-gleam-lang-gleam); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-qwikdev-qwik"></a>
 
@@ -2333,19 +2198,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### GraalVM Community Edition
 
-**Repo:** [oracle/graal](https://github.com/oracle/graal) · **License:** GPL-2.0 với Classpath Exception cho bản CE; thành phần GPL-2.0, UPL và BSD riêng · **Kiểm:** 2026-11-23, `docs-read`, [`0e2ec13d8816`](https://github.com/oracle/graal/tree/0e2ec13d8816476a7de70991cc4af28d5f6b8ec9) (commit 2026-11-23). **Sao:** 21,757 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/oracle/graal).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Bộ compiler và runtime hỗ trợ Java cùng biên dịch ahead-of-time thành chương trình native. |
-| Giá trị và cơ chế theo tài liệu | README lập bản đồ compiler, SubstrateVM, Truffle, SDK, Sulong và GraalWasm; workflow có build GraalVM. Có thể khảo sát cho dịch vụ cần thời gian khởi động hoặc bộ nhớ khác JVM thông thường. |
-| Giới hạn | Tuyên bố startup và tài nguyên của upstream chưa được benchmark tại đây. License theo từng thành phần; GraalJS/GraalPy nằm ở repo khác, không suy mọi bản phân phối mang cùng điều khoản với CE. |
-| Điều kiện tích hợp | Chọn distribution/JDK cụ thể, kiểm metadata cho reflection, tài nguyên và thư viện native; đo build time, startup và tải dài hạn bằng ứng dụng thật trước đổi runtime. |
-| Lựa chọn đối chiếu | OpenJDK; Eclipse OpenJ9; Quarkus. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/oracle/graal/blob/0e2ec13d8816476a7de70991cc4af28d5f6b8ec9/README.md) · [LICENSE](https://github.com/oracle/graal/blob/0e2ec13d8816476a7de70991cc4af28d5f6b8ec9/LICENSE) · [pyproject.toml](https://github.com/oracle/graal/blob/0e2ec13d8816476a7de70991cc4af28d5f6b8ec9/pyproject.toml) · [.github/workflows/build-graalvm.yml](https://github.com/oracle/graal/blob/0e2ec13d8816476a7de70991cc4af28d5f6b8ec9/.github/workflows/build-graalvm.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 37](../37-programming-languages-runtimes/README.md#anhkysuai-oracle-graal); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-leptos-rs-leptos"></a>
 
@@ -2459,19 +2312,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Crystal
 
-**Repo:** [crystal-lang/crystal](https://github.com/crystal-lang/crystal) · **License:** Apache-2.0 với ngoại lệ attribution cho phần compiler nhúng vào binary đầu ra · **Kiểm:** 2026-11-23, `docs-read`, [`48118b0e8f56`](https://github.com/crystal-lang/crystal/tree/48118b0e8f564567495228e273ef6a88d563d15f) (commit 2026-11-22). **Sao:** 20,518 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/crystal-lang/crystal).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Ngôn ngữ biên dịch native có cú pháp gần Ruby, kiểm kiểu tĩnh và suy luận kiểu. |
-| Giá trị và cơ chế theo tài liệu | README mô tả C bindings, sinh mã lúc compile và OOP; LICENSE có ngoại lệ khi compiler đưa một phần mã của nó vào chương trình đầu ra. Có giá trị khảo sát cho CLI hoặc dịch vụ muốn cú pháp ngắn. |
-| Giới hạn | Tương thích Ruby không phải mục tiêu; không thể coi gem Ruby dùng trực tiếp. Chưa build compiler, đo hiệu năng hoặc kiểm hỗ trợ dependency trên từng nền tảng; workflow đọc tập trung build thư viện Windows. |
-| Điều kiện tích hợp | Thử một chương trình đại diện, khóa compiler và shards, kiểm thư viện C cùng toolchain đóng gói; đo build time, tài nguyên runtime và công sức vận hành trước chuyển mã. |
-| Lựa chọn đối chiếu | [Ruby](../13-dev-stack-devops/README.md#anhkysuai-ruby-ruby); [Go](../08-awesome-lists-learning/README.md#6c514-ngôn-ngữ--runtime); Nim. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/crystal-lang/crystal/blob/48118b0e8f564567495228e273ef6a88d563d15f/README.md) · [LICENSE](https://github.com/crystal-lang/crystal/blob/48118b0e8f564567495228e273ef6a88d563d15f/LICENSE) · [.github/workflows/win_build_libs.yml](https://github.com/crystal-lang/crystal/blob/48118b0e8f564567495228e273ef6a88d563d15f/.github/workflows/win_build_libs.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 37](../37-programming-languages-runtimes/README.md#anhkysuai-crystal-lang-crystal); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-fastapi-typer"></a>
 
@@ -2531,21 +2372,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Mole
 
-**Repo:** [tw93/Mole](https://github.com/tw93/Mole) · **License:** GPL-3.0 · **★ 75,916 (GitHub API, 2026-11-23)**
-
-**Mục đích:** CLI macOS để dọn cache, gỡ ứng dụng, phân tích dung lượng và theo dõi hệ thống.
-
-**Giá trị:** Gom các thao tác bảo trì vào cùng giao diện dòng lệnh; README tách rõ CLI trong repo với ứng dụng native thương mại.
-
-**Giới hạn:** Thao tác dọn/xóa có thể tác động dữ liệu máy; bản native Mac/Windows không được suy là cùng giấy phép với CLI GPL-3.0.
-
-**Cách tham khảo/tích hợp:** Tham khảo thiết kế dry-run và xác nhận trước khi xóa; kiểm từng đường dẫn trong môi trường thử trước khi tích hợp với agent.
-
-**Lựa chọn để đối chiếu:** [qarmin/czkawka](https://github.com/qarmin/czkawka) · [rclone/rclone](https://github.com/rclone/rclone). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`15af96cb100d6ff72ad9ee20d3a81f3bb8ffb3b0`](https://github.com/tw93/Mole/commit/15af96cb100d6ff72ad9ee20d3a81f3bb8ffb3b0), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/tw93/Mole/blob/15af96cb100d6ff72ad9ee20d3a81f3bb8ffb3b0/README.md) · [LICENSE](https://github.com/tw93/Mole/blob/15af96cb100d6ff72ad9ee20d3a81f3bb8ffb3b0/LICENSE) · [go.mod](https://github.com/tw93/Mole/blob/15af96cb100d6ff72ad9ee20d3a81f3bb8ffb3b0/go.mod) · [.github/workflows/test.yml](https://github.com/tw93/Mole/blob/15af96cb100d6ff72ad9ee20d3a81f3bb8ffb3b0/.github/workflows/test.yml) · [metadata GitHub](https://api.github.com/repos/tw93/Mole).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-tw93-mole); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-rclone-rclone"></a>
 
@@ -2571,201 +2398,61 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### alist
 
-**Repo:** [AlistGo/alist](https://github.com/AlistGo/alist) · **License:** AGPL-3.0 · **★ 50,480 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Dịch vụ liệt kê tệp và WebDAV gom nhiều backend lưu trữ, dùng Go/Gin và SolidJS.
-
-**Giá trị:** Có preview, upload và nhiều adapter cloud, phù hợp tham khảo cách thống nhất truy cập tệp qua một giao diện.
-
-**Giới hạn:** AGPL-3.0; dịch vụ nắm credential và quyền dữ liệu của các backend, còn proxy/preview có thể tạo đường truyền dữ liệu bổ sung.
-
-**Cách tham khảo/tích hợp:** Thử bằng tài khoản ít quyền, kiểm từng adapter và đường tải/preview; tách dịch vụ lưu trữ khỏi quyền tùy ý của agent.
-
-**Lựa chọn để đối chiếu:** [rclone/rclone](https://github.com/rclone/rclone) · [nextcloud/server](https://github.com/nextcloud/server). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`92e745360766cce32564f94a468cb576f577d27e`](https://github.com/AlistGo/alist/commit/92e745360766cce32564f94a468cb576f577d27e), ngày commit 2026-10-21. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/AlistGo/alist/blob/92e745360766cce32564f94a468cb576f577d27e/README.md) · [LICENSE](https://github.com/AlistGo/alist/blob/92e745360766cce32564f94a468cb576f577d27e/LICENSE) · [go.mod](https://github.com/AlistGo/alist/blob/92e745360766cce32564f94a468cb576f577d27e/go.mod) · [.github/workflows/build.yml](https://github.com/AlistGo/alist/blob/92e745360766cce32564f94a468cb576f577d27e/.github/workflows/build.yml) · [metadata GitHub](https://api.github.com/repos/AlistGo/alist).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-alistgo-alist); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-iina-iina"></a>
 
 ### iina
 
-**Repo:** [iina/iina](https://github.com/iina/iina) · **License:** GPL-3.0 · **★ 47,238 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Trình phát media native macOS xây trên mpv, hỗ trợ phụ đề, playlist và plugin.
-
-**Giá trị:** Tham khảo cách bọc bộ giải mã mạnh bằng giao diện phù hợp hệ điều hành và mở rộng qua plugin.
-
-**Giới hạn:** Phạm vi chính là macOS; khả năng phát codec phụ thuộc mpv và thư viện đi cùng, không suy từ README thành kết quả đã thử.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [mpv-player/mpv](https://github.com/mpv-player/mpv) · [videolan/vlc](https://github.com/videolan/vlc). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`d71bb5c0feca2dbd9871a97f9091ad44d1079c1d`](https://github.com/iina/iina/commit/d71bb5c0feca2dbd9871a97f9091ad44d1079c1d), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/iina/iina/blob/d71bb5c0feca2dbd9871a97f9091ad44d1079c1d/README.md) · [LICENSE](https://github.com/iina/iina/blob/d71bb5c0feca2dbd9871a97f9091ad44d1079c1d/LICENSE) · [.github/workflows/ci.yml](https://github.com/iina/iina/blob/d71bb5c0feca2dbd9871a97f9091ad44d1079c1d/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/iina/iina).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-iina-iina); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-heyputer-puter"></a>
 
 ### puter
 
-**Repo:** [HeyPuter/puter](https://github.com/HeyPuter/puter) · **License:** AGPL-3.0 · **★ 44,233 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Môi trường desktop trong trình duyệt và nền tảng ứng dụng có lưu trữ, API và khả năng tự host.
-
-**Giá trị:** Có giá trị tham khảo cho giao diện gom ứng dụng, quản lý tệp và dịch vụ dùng chung của nhiều app.
-
-**Giới hạn:** AGPL-3.0; tự host mã không tự cấp quyền sử dụng dịch vụ AI/cloud bên ngoài. Các tuyên bố miễn phí và đầy đủ tính năng cần kiểm theo deployment.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [spacedriveapp/spacedrive](https://github.com/spacedriveapp/spacedrive) · [nextcloud/server](https://github.com/nextcloud/server). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`0a5328bb2481cd2d4411d68f8bff055580c784e9`](https://github.com/HeyPuter/puter/commit/0a5328bb2481cd2d4411d68f8bff055580c784e9), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/HeyPuter/puter/blob/0a5328bb2481cd2d4411d68f8bff055580c784e9/README.md) · [LICENSE.txt](https://github.com/HeyPuter/puter/blob/0a5328bb2481cd2d4411d68f8bff055580c784e9/LICENSE.txt) · [package.json](https://github.com/HeyPuter/puter/blob/0a5328bb2481cd2d4411d68f8bff055580c784e9/package.json) · [.github/workflows/docs-build.yml](https://github.com/HeyPuter/puter/blob/0a5328bb2481cd2d4411d68f8bff055580c784e9/.github/workflows/docs-build.yml) · [metadata GitHub](https://api.github.com/repos/HeyPuter/puter).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-heyputer-puter); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-schollz-croc"></a>
 
 ### croc
 
-**Repo:** [schollz/croc](https://github.com/schollz/croc) · **License:** MIT · **★ 41,000 (GitHub API, 2026-11-23)**
-
-**Mục đích:** CLI truyền tệp/thư mục giữa máy, hỗ trợ kết nối trực tiếp và relay dự phòng.
-
-**Giá trị:** Phù hợp tham khảo luồng ghép phiên bằng mã, truyền đa nền tảng và tiếp tục phiên bị ngắt.
-
-**Giới hạn:** Chưa kiểm giao thức mã hóa hoặc thử truyền; cần phân biệt vai trò relay, code phrase và các tùy chọn ghi đè/tạm lưu.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [rclone/rclone](https://github.com/rclone/rclone) · [syncthing/syncthing](https://github.com/syncthing/syncthing). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`d77d59a8931d67460574f7603b9446470d475070`](https://github.com/schollz/croc/commit/d77d59a8931d67460574f7603b9446470d475070), ngày commit 2026-11-21. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/schollz/croc/blob/d77d59a8931d67460574f7603b9446470d475070/README.md) · [LICENSE](https://github.com/schollz/croc/blob/d77d59a8931d67460574f7603b9446470d475070/LICENSE) · [go.mod](https://github.com/schollz/croc/blob/d77d59a8931d67460574f7603b9446470d475070/go.mod) · [.github/workflows/ci.yml](https://github.com/schollz/croc/blob/d77d59a8931d67460574f7603b9446470d475070/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/schollz/croc).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-schollz-croc); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-spacedriveapp-spacedrive"></a>
 
 ### spacedrive
 
-**Repo:** [spacedriveapp/spacedrive](https://github.com/spacedriveapp/spacedrive) · **License:** Apache-2.0 · **★ 39,580 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Trình quản lý tệp đa nguồn với lớp filesystem phân tán viết bằng Rust.
-
-**Giá trị:** Mô hình index nguồn, lịch sử và API dùng chung đáng tham khảo cho kho dữ liệu dài hạn và app desktop.
-
-**Giới hạn:** README tại SHA đọc ghi beta2.0 dự kiến27/11/2026, beta đầu hỗ trợ macOS/Linux; không ghi phiên bản tương lai là đã phát hành hoặc bảo đảm Windows.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [HeyPuter/puter](https://github.com/HeyPuter/puter) · [rclone/rclone](https://github.com/rclone/rclone). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`30576ad1e5567b26dacdd0a68083ad77f714e960`](https://github.com/spacedriveapp/spacedrive/commit/30576ad1e5567b26dacdd0a68083ad77f714e960), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/spacedriveapp/spacedrive/blob/30576ad1e5567b26dacdd0a68083ad77f714e960/README.md) · [LICENSE](https://github.com/spacedriveapp/spacedrive/blob/30576ad1e5567b26dacdd0a68083ad77f714e960/LICENSE) · [package.json](https://github.com/spacedriveapp/spacedrive/blob/30576ad1e5567b26dacdd0a68083ad77f714e960/package.json) · [Cargo.toml](https://github.com/spacedriveapp/spacedrive/blob/30576ad1e5567b26dacdd0a68083ad77f714e960/Cargo.toml) · [.github/workflows/ci.yml](https://github.com/spacedriveapp/spacedrive/blob/30576ad1e5567b26dacdd0a68083ad77f714e960/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/spacedriveapp/spacedrive).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-spacedriveapp-spacedrive); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-pbatard-rufus"></a>
 
 ### rufus
 
-**Repo:** [pbatard/rufus](https://github.com/pbatard/rufus) · **License:** GPL-3.0 · **★ 38,468 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Tiện ích Windows định dạng và tạo USB khởi động từ nhiều loại ảnh hệ điều hành.
-
-**Giá trị:** Tham khảo luồng chọn thiết bị, định dạng và chuẩn BIOS/UEFI trong một công cụ có phạm vi rõ.
-
-**Giới hạn:** Thao tác ghi thiết bị có thể xóa dữ liệu; chưa chạy hoặc kiểm khả năng boot của bất kỳ ảnh nào trong đợt này.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [ventoy/Ventoy](https://github.com/ventoy/Ventoy) · [balena-io/etcher](https://github.com/balena-io/etcher). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`bed2c33669048a432c7135441d8cbcae72fd315f`](https://github.com/pbatard/rufus/commit/bed2c33669048a432c7135441d8cbcae72fd315f), ngày commit 2026-11-17. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/pbatard/rufus/blob/bed2c33669048a432c7135441d8cbcae72fd315f/README.md) · [LICENSE.txt](https://github.com/pbatard/rufus/blob/bed2c33669048a432c7135441d8cbcae72fd315f/LICENSE.txt) · [.github/workflows/lock.yml](https://github.com/pbatard/rufus/blob/bed2c33669048a432c7135441d8cbcae72fd315f/.github/workflows/lock.yml) · [metadata GitHub](https://api.github.com/repos/pbatard/rufus).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-pbatard-rufus); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-permissionlesstech-bitchat"></a>
 
 ### bitchat
 
-**Repo:** [permissionlesstech/bitchat](https://github.com/permissionlesstech/bitchat) · **License:** Unlicense · **★ 37,198 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Ứng dụng nhắn tin dùng Bluetooth mesh khi offline và Nostr khi có Internet.
-
-**Giá trị:** Tham khảo thiết kế hai lớp truyền và định tuyến tin trực tiếp trong ứng dụng không dựa trên tài khoản số điện thoại.
-
-**Giới hạn:** Chưa audit mật mã, quyền thiết bị hoặc rò rỉ metadata; nhãn phi tập trung không chứng minh ẩn danh. README yêu cầu kiểm nguồn của bản biên dịch.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [zulip/zulip](https://github.com/zulip/zulip) · [matrix-org/synapse](https://github.com/matrix-org/synapse). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`04995f68e470a18d1fc99f86fa326c2a87bab4f2`](https://github.com/permissionlesstech/bitchat/commit/04995f68e470a18d1fc99f86fa326c2a87bab4f2), ngày commit 2026-10-25. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/permissionlesstech/bitchat/blob/04995f68e470a18d1fc99f86fa326c2a87bab4f2/README.md) · [LICENSE](https://github.com/permissionlesstech/bitchat/blob/04995f68e470a18d1fc99f86fa326c2a87bab4f2/LICENSE) · [.github/workflows/swift-tests.yml](https://github.com/permissionlesstech/bitchat/blob/04995f68e470a18d1fc99f86fa326c2a87bab4f2/.github/workflows/swift-tests.yml) · [metadata GitHub](https://api.github.com/repos/permissionlesstech/bitchat).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-permissionlesstech-bitchat); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-vorssaint-vorssaint-utils"></a>
 
 ### vorssaint-utils
 
-**Repo:** [vorssaint/vorssaint-utils](https://github.com/vorssaint/vorssaint-utils) · **License:** GPL-3.0 · **★ 35,826 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Bộ tiện ích thanh menu macOS cho âm thanh, cửa sổ, clipboard, tệp và theo dõi hệ thống.
-
-**Giá trị:** Thiết kế bật riêng từng tính năng giúp tham khảo cách gom nhiều tiện ích mà giữ lựa chọn của người dùng.
-
-**Giới hạn:** Tuyên bố không telemetry mới được đọc từ README, chưa kiểm đường mạng; tên/logo có chính sách riêng ngoài GPL-3.0-or-later.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [MonitorControl/MonitorControl](https://github.com/MonitorControl/MonitorControl) · [tw93/Mole](https://github.com/tw93/Mole). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`21682edaac2958577267ab7d0940a7b2d1662eb7`](https://github.com/vorssaint/vorssaint-utils/commit/21682edaac2958577267ab7d0940a7b2d1662eb7), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/vorssaint/vorssaint-utils/blob/21682edaac2958577267ab7d0940a7b2d1662eb7/README.md) · [LICENSE](https://github.com/vorssaint/vorssaint-utils/blob/21682edaac2958577267ab7d0940a7b2d1662eb7/LICENSE) · [.github/workflows/ci.yml](https://github.com/vorssaint/vorssaint-utils/blob/21682edaac2958577267ab7d0940a7b2d1662eb7/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/vorssaint/vorssaint-utils).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-vorssaint-vorssaint-utils); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-qarmin-czkawka"></a>
 
 ### czkawka
 
-**Repo:** [qarmin/czkawka](https://github.com/qarmin/czkawka) · **License:** MIT / GPL-3.0-only theo ứng dụng; CC BY-4.0 cho ảnh/âm thanh · **★ 35,440 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Bộ công cụ tìm tệp trùng, thư mục rỗng và ảnh tương tự với core Rust cùng nhiều frontend.
-
-**Giá trị:** Tách core khỏi GUI/CLI và hỗ trợ các kiểu tìm khác nhau, hữu ích tham khảo thiết kế công cụ dọn dữ liệu.
-
-**Giới hạn:** README khuyên chuyển GTK GUI sang Krokiet; MIT cho một số thành phần, GPL-3.0-only cho Krokiet/Cedinia và CC BY4.0 cho media. Chưa chạy hay kiểm an toàn xóa.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [tw93/Mole](https://github.com/tw93/Mole) · [rclone/rclone](https://github.com/rclone/rclone). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`1cdc6a4373b6a626c3a306e455b79576357a0b41`](https://github.com/qarmin/czkawka/commit/1cdc6a4373b6a626c3a306e455b79576357a0b41), ngày commit 2026-11-15. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/qarmin/czkawka/blob/1cdc6a4373b6a626c3a306e455b79576357a0b41/README.md) · [LICENSE_CC_BY_4_ICONS](https://github.com/qarmin/czkawka/blob/1cdc6a4373b6a626c3a306e455b79576357a0b41/LICENSE_CC_BY_4_ICONS) · [LICENSE_MIT_EVERYTHING_OUTSIDE_ANY_CARGO_APP_LIBRARY](https://github.com/qarmin/czkawka/blob/1cdc6a4373b6a626c3a306e455b79576357a0b41/LICENSE_MIT_EVERYTHING_OUTSIDE_ANY_CARGO_APP_LIBRARY) · [Cargo.toml](https://github.com/qarmin/czkawka/blob/1cdc6a4373b6a626c3a306e455b79576357a0b41/Cargo.toml) · [.github/workflows/mac.yml](https://github.com/qarmin/czkawka/blob/1cdc6a4373b6a626c3a306e455b79576357a0b41/.github/workflows/mac.yml) · [metadata GitHub](https://api.github.com/repos/qarmin/czkawka).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-qarmin-czkawka); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-monitorcontrol-monitorcontrol"></a>
 
 ### MonitorControl
 
-**Repo:** [MonitorControl/MonitorControl](https://github.com/MonitorControl/MonitorControl) · **License:** MIT · **★ 34,803 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Ứng dụng macOS điều chỉnh độ sáng, âm lượng và tương phản màn hình từ menu hoặc phím.
-
-**Giá trị:** Phân biệt DDC, giao thức Apple và làm tối bằng phần mềm, hữu ích tham khảo lớp adapter phần cứng.
-
-**Giới hạn:** Khả năng điều khiển phụ thuộc màn hình, cáp và giao thức; chưa thử trên phần cứng thật.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [vorssaint/vorssaint-utils](https://github.com/vorssaint/vorssaint-utils) · [jordanbaird/Ice](https://github.com/jordanbaird/Ice). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`7cfe64500d19cbbcbf82121a91c826f658a403bd`](https://github.com/MonitorControl/MonitorControl/commit/7cfe64500d19cbbcbf82121a91c826f658a403bd), ngày commit 2026-10-14. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/MonitorControl/MonitorControl/blob/7cfe64500d19cbbcbf82121a91c826f658a403bd/README.md) · [License.txt](https://github.com/MonitorControl/MonitorControl/blob/7cfe64500d19cbbcbf82121a91c826f658a403bd/License.txt) · [metadata GitHub](https://api.github.com/repos/MonitorControl/MonitorControl).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-monitorcontrol-monitorcontrol); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-serenityos-serenity"></a>
 
@@ -2791,221 +2478,67 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### wttr.in
 
-**Repo:** [chubin/wttr.in](https://github.com/chubin/wttr.in) · **License:** Apache-2.0 · **★ 30,812 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Dịch vụ dự báo thời tiết hướng terminal, có nhiều dạng đầu ra như văn bản, hình và JSON.
-
-**Giá trị:** Một API biểu diễn thông tin theo client phù hợp để tham khảo UX dòng lệnh và định dạng đáp ứng.
-
-**Giới hạn:** Dữ liệu dự báo đến từ nguồn bên ngoài; không đánh giá độ đúng thời tiết hoặc SLA của dịch vụ công cộng.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [open-meteo/open-meteo](https://github.com/open-meteo/open-meteo) · [public-apis/public-apis](https://github.com/public-apis/public-apis). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`3873fd294bb6fadfcf6e4391e0f0666bf827fcf5`](https://github.com/chubin/wttr.in/commit/3873fd294bb6fadfcf6e4391e0f0666bf827fcf5), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/chubin/wttr.in/blob/3873fd294bb6fadfcf6e4391e0f0666bf827fcf5/README.md) · [LICENSE](https://github.com/chubin/wttr.in/blob/3873fd294bb6fadfcf6e4391e0f0666bf827fcf5/LICENSE) · [go.mod](https://github.com/chubin/wttr.in/blob/3873fd294bb6fadfcf6e4391e0f0666bf827fcf5/go.mod) · [.github/workflows/makefile.yml](https://github.com/chubin/wttr.in/blob/3873fd294bb6fadfcf6e4391e0f0666bf827fcf5/.github/workflows/makefile.yml) · [metadata GitHub](https://api.github.com/repos/chubin/wttr.in).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-chubin-wttr.in); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-ente-ente"></a>
 
 ### ente
 
-**Repo:** [ente/ente](https://github.com/ente/ente) · **License:** AGPL-3.0 · **★ 30,410 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Nền tảng lưu trữ và ứng dụng có mã hóa đầu-cuối cho ảnh, xác thực và tài liệu.
-
-**Giá trị:** Monorepo nhiều client cho phép tham khảo cách chia dịch vụ lưu trữ và trải nghiệm đa nền tảng.
-
-**Giới hạn:** Tuyên bố E2EE được đọc từ tài liệu, chưa audit mật mã hoặc luồng khôi phục khóa; AGPL-3.0 và phụ thuộc hạ tầng cần xem khi tự host.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [immich-app/immich](https://github.com/immich-app/immich) · [nextcloud/server](https://github.com/nextcloud/server). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`6ace5d36ec91d96caf3f17d08cb41a945741c301`](https://github.com/ente/ente/commit/6ace5d36ec91d96caf3f17d08cb41a945741c301), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/ente/ente/blob/6ace5d36ec91d96caf3f17d08cb41a945741c301/README.md) · [LICENSE](https://github.com/ente/ente/blob/6ace5d36ec91d96caf3f17d08cb41a945741c301/LICENSE) · [.github/workflows/ci.yml](https://github.com/ente/ente/blob/6ace5d36ec91d96caf3f17d08cb41a945741c301/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/ente/ente).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-ente-ente); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-jordanbaird-ice"></a>
 
 ### Ice
 
-**Repo:** [jordanbaird/Ice](https://github.com/jordanbaird/Ice) · **License:** GPL-3.0 · **★ 30,088 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Ứng dụng macOS để sắp xếp, ẩn và hiện các biểu tượng trên menu bar.
-
-**Giá trị:** README tách rõ tính năng đã có và roadmap, giúp đối chiếu nhu cầu quản lý menu bar cụ thể.
-
-**Giới hạn:** README còn mô tả active development nhưng commit được clone từ năm 2025; không suy trạng thái bảo trì hiện tại chỉ từ câu quảng bá. Cần thử quyền hệ thống và phiên bản macOS đích.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [dwarvesf/hidden](https://github.com/dwarvesf/hidden) · [MonitorControl/MonitorControl](https://github.com/MonitorControl/MonitorControl). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`11edd39115f3f43a83ae114b5348df6a0e1741cf`](https://github.com/jordanbaird/Ice/commit/11edd39115f3f43a83ae114b5348df6a0e1741cf), ngày commit 2025-09-20. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/jordanbaird/Ice/blob/11edd39115f3f43a83ae114b5348df6a0e1741cf/README.md) · [LICENSE](https://github.com/jordanbaird/Ice/blob/11edd39115f3f43a83ae114b5348df6a0e1741cf/LICENSE) · [.github/workflows/lint.yml](https://github.com/jordanbaird/Ice/blob/11edd39115f3f43a83ae114b5348df6a0e1741cf/.github/workflows/lint.yml) · [metadata GitHub](https://api.github.com/repos/jordanbaird/Ice).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-jordanbaird-ice); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-nickemanarin-screentogif"></a>
 
 ### ScreenToGif
 
-**Repo:** [NickeManarin/ScreenToGif](https://github.com/NickeManarin/ScreenToGif) · **License:** MS-PL · **★ 27,984 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Ứng dụng Windows ghi vùng màn hình, chỉnh từng khung và xuất GIF hoặc video.
-
-**Giá trị:** Hợp làm hình minh họa thao tác và tái hiện lỗi ngắn; quy trình ghi và chỉnh sửa nằm trong cùng công cụ.
-
-**Giới hạn:** README yêu cầu .NET 9 Desktop Runtime hoặc mới hơn; cần kiểm khả năng chạy trên máy đích và tránh ghi lộ dữ liệu trong vùng màn hình.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [ShareX/ShareX](https://github.com/ShareX/ShareX) · [obsproject/obs-studio](https://github.com/obsproject/obs-studio). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a4d0a67c2131cd048ceec86cd40afc2f1a06f2fd`](https://github.com/NickeManarin/ScreenToGif/commit/a4d0a67c2131cd048ceec86cd40afc2f1a06f2fd), ngày commit 2026-07-28. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/NickeManarin/ScreenToGif/blob/a4d0a67c2131cd048ceec86cd40afc2f1a06f2fd/README.md) · [LICENSE.txt](https://github.com/NickeManarin/ScreenToGif/blob/a4d0a67c2131cd048ceec86cd40afc2f1a06f2fd/LICENSE.txt) · [.github/workflows/discord-releases.yml](https://github.com/NickeManarin/ScreenToGif/blob/a4d0a67c2131cd048ceec86cd40afc2f1a06f2fd/.github/workflows/discord-releases.yml) · [metadata GitHub](https://api.github.com/repos/NickeManarin/ScreenToGif).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-nickemanarin-screentogif); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-gopeedlab-gopeed"></a>
 
 ### gopeed
 
-**Repo:** [GopeedLab/gopeed](https://github.com/GopeedLab/gopeed) · **License:** GPL-3.0 · **★ 27,904 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Trình quản lý tải đa nền tảng viết bằng Go và Flutter, hỗ trợ HTTP, torrent, magnet và ed2k.
-
-**Giá trị:** REST API, CLI và extension JavaScript được tài liệu hóa, phù hợp nghiên cứu quy trình tải có hàng đợi và tự động hóa.
-
-**Giới hạn:** Tuyên bố tốc độ chưa được đo ở lượt này; extension và giao diện web tự host mở thêm bề mặt quyền truy cập, cần kiểm trước khi cấp đường dẫn và tài khoản tải.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [aria2/aria2](https://github.com/aria2/aria2) · [rclone/rclone](https://github.com/rclone/rclone). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`996685c8478ac055f4842746682b1db2a8b810f8`](https://github.com/GopeedLab/gopeed/commit/996685c8478ac055f4842746682b1db2a8b810f8), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/GopeedLab/gopeed/blob/996685c8478ac055f4842746682b1db2a8b810f8/README.md) · [LICENSE](https://github.com/GopeedLab/gopeed/blob/996685c8478ac055f4842746682b1db2a8b810f8/LICENSE) · [go.mod](https://github.com/GopeedLab/gopeed/blob/996685c8478ac055f4842746682b1db2a8b810f8/go.mod) · [.github/workflows/test.yml](https://github.com/GopeedLab/gopeed/blob/996685c8478ac055f4842746682b1db2a8b810f8/.github/workflows/test.yml) · [metadata GitHub](https://api.github.com/repos/GopeedLab/gopeed).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-gopeedlab-gopeed); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-molunerfinn-picgo"></a>
 
 ### PicGo
 
-**Repo:** [Molunerfinn/PicGo](https://github.com/Molunerfinn/PicGo) · **License:** MIT · **★ 27,514 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Ứng dụng tải ảnh lên dịch vụ lưu trữ và chép link cho trình soạn thảo, hỗ trợ hệ plugin.
-
-**Giá trị:** Có thể giảm thao tác khi viết tài liệu với nhiều ảnh và nhiều định dạng liên kết.
-
-**Giới hạn:** Bản hiện tại đặt PicGo Cloud làm mặc định cho cài mới; nhà cung cấp, plugin và token lưu trữ có điều khoản/quyền riêng. Không suy MIT của ứng dụng bao gồm dịch vụ cloud.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [ShareX/ShareX](https://github.com/ShareX/ShareX) · [rclone/rclone](https://github.com/rclone/rclone). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`bf4069bd3bdbec9b33d43e37df6bc91265415d47`](https://github.com/Molunerfinn/PicGo/commit/bf4069bd3bdbec9b33d43e37df6bc91265415d47), ngày commit 2026-11-17. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/Molunerfinn/PicGo/blob/bf4069bd3bdbec9b33d43e37df6bc91265415d47/README.md) · [LICENSE](https://github.com/Molunerfinn/PicGo/blob/bf4069bd3bdbec9b33d43e37df6bc91265415d47/LICENSE) · [package.json](https://github.com/Molunerfinn/PicGo/blob/bf4069bd3bdbec9b33d43e37df6bc91265415d47/package.json) · [.github/workflows/ci-check.yml](https://github.com/Molunerfinn/PicGo/blob/bf4069bd3bdbec9b33d43e37df6bc91265415d47/.github/workflows/ci-check.yml) · [metadata GitHub](https://api.github.com/repos/Molunerfinn/PicGo).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-molunerfinn-picgo); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-kovidgoyal-calibre"></a>
 
 ### calibre
 
-**Repo:** [kovidgoyal/calibre](https://github.com/kovidgoyal/calibre) · **License:** GPL-3.0 · **★ 26,497 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Bộ quản lý ebook đa nền tảng để tổ chức thư viện, đọc, chuyển đổi và chỉnh sửa sách.
-
-**Giá trị:** Bao quát nhiều bước xử lý ebook và tương tác thiết bị đọc; phù hợp tham khảo luồng metadata và chuyển đổi định dạng.
-
-**Giới hạn:** COPYRIGHT liệt kê nhiều thành phần có giấy phép riêng; chuyển đổi cần kiểm kết quả bố cục và quyền của từng ebook. Lượt đọc này chưa chạy bộ chuyển đổi.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [readest/readest](https://github.com/readest/readest) · [koreader/koreader](https://github.com/koreader/koreader). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`443ecd46162912147ac991fa84b563930cbfa1cf`](https://github.com/kovidgoyal/calibre/commit/443ecd46162912147ac991fa84b563930cbfa1cf), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/kovidgoyal/calibre/blob/443ecd46162912147ac991fa84b563930cbfa1cf/README.md) · [COPYRIGHT](https://github.com/kovidgoyal/calibre/blob/443ecd46162912147ac991fa84b563930cbfa1cf/COPYRIGHT) · [LICENSE](https://github.com/kovidgoyal/calibre/blob/443ecd46162912147ac991fa84b563930cbfa1cf/LICENSE) · [LICENSE.rtf](https://github.com/kovidgoyal/calibre/blob/443ecd46162912147ac991fa84b563930cbfa1cf/LICENSE.rtf) · [pyproject.toml](https://github.com/kovidgoyal/calibre/blob/443ecd46162912147ac991fa84b563930cbfa1cf/pyproject.toml) · [.github/workflows/ci.yml](https://github.com/kovidgoyal/calibre/blob/443ecd46162912147ac991fa84b563930cbfa1cf/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/kovidgoyal/calibre).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-kovidgoyal-calibre); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-aprilnea-openlogi"></a>
 
 ### OpenLogi
 
-**Repo:** [AprilNEA/OpenLogi](https://github.com/AprilNEA/OpenLogi) · **License:** MIT OR Apache-2.0 (mã); tài sản thương hiệu riêng · **★ 26,065 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Ứng dụng Rust cấu hình thiết bị Logitech qua HID++, có giao diện native và API tự động hóa JSON.
-
-**Giá trị:** Hỗ trợ cấu hình TOML và cả GUI/CLI, phù hợp nghiên cứu điều khiển ngoại vi trên nhiều hệ điều hành.
-
-**Giới hạn:** README ghi chưa ổn định; danh sách thiết bị và quyền hệ thống cần kiểm riêng. Mã MIT OR Apache-2.0, nhưng logo/icon trong design là all rights reserved.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [pwr-Solaar/Solaar](https://github.com/pwr-Solaar/Solaar) · [PixlOne/logiops](https://github.com/PixlOne/logiops). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`da245558a4cafef5271480cc10e633c901f62a82`](https://github.com/AprilNEA/OpenLogi/commit/da245558a4cafef5271480cc10e633c901f62a82), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/AprilNEA/OpenLogi/blob/da245558a4cafef5271480cc10e633c901f62a82/README.md) · [LICENSE-APACHE](https://github.com/AprilNEA/OpenLogi/blob/da245558a4cafef5271480cc10e633c901f62a82/LICENSE-APACHE) · [LICENSE-MIT](https://github.com/AprilNEA/OpenLogi/blob/da245558a4cafef5271480cc10e633c901f62a82/LICENSE-MIT) · [Cargo.toml](https://github.com/AprilNEA/OpenLogi/blob/da245558a4cafef5271480cc10e633c901f62a82/Cargo.toml) · [.github/workflows/ci.yml](https://github.com/AprilNEA/OpenLogi/blob/da245558a4cafef5271480cc10e633c901f62a82/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/AprilNEA/OpenLogi).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-aprilnea-openlogi); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-arendst-tasmota"></a>
 
 ### Tasmota
 
-**Repo:** [arendst/Tasmota](https://github.com/arendst/Tasmota) · **License:** GPL-3.0 · **★ 25,013 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Firmware thay thế cho thiết bị ESP8266/ESP32, điều khiển cục bộ qua MQTT, HTTP và các giao thức thiết bị.
-
-**Giá trị:** Quy tắc, timer và OTA được tài liệu hóa, hữu ích cho nghiên cứu tự động hóa IoT giảm phụ thuộc cloud.
-
-**Giới hạn:** README cảnh báo cập nhật có thể thất bại và cần khôi phục qua serial; phải xác định đúng bo mạch, sao lưu cấu hình và thử trên thiết bị dễ tiếp cận trước.
-
-**Cách tham khảo/tích hợp:** Ghim phiên bản, xác định quyền cần cấp và thử quy trình trong môi trường riêng; kiểm kết quả và đường khôi phục trước dùng với tài nguyên thật.
-
-**Lựa chọn để đối chiếu:** [esphome/esphome](https://github.com/esphome/esphome) · [home-assistant/core](https://github.com/home-assistant/core). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`016be6317eb963777ae1879b9f59a76cca9e83e9`](https://github.com/arendst/Tasmota/commit/016be6317eb963777ae1879b9f59a76cca9e83e9), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/arendst/Tasmota/blob/016be6317eb963777ae1879b9f59a76cca9e83e9/README.md) · [LICENSE.txt](https://github.com/arendst/Tasmota/blob/016be6317eb963777ae1879b9f59a76cca9e83e9/LICENSE.txt) · [.github/workflows/Tasmota_build_devel.yml](https://github.com/arendst/Tasmota/blob/016be6317eb963777ae1879b9f59a76cca9e83e9/.github/workflows/Tasmota_build_devel.yml) · [metadata GitHub](https://api.github.com/repos/arendst/Tasmota).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-2026-11-23-arendst-tasmota); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-ayangweb-bongocat"></a>
 
 ### BongoCat
 
-**Repo:** [ayangweb/BongoCat](https://github.com/ayangweb/BongoCat) · **License:** Apache-2.0 · **★ 24,760 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Thú cưng desktop Live2D phản ứng với phím, chuột và gamepad trên Windows/macOS.
-
-**Giá trị:** Hỗ trợ thay model và hiển thị phản hồi thao tác, phù hợp làm overlay hoặc tham khảo tương tác desktop.
-
-**Giới hạn:** Tuyên bố offline/không thu dữ liệu mới được đọc trong tài liệu; quyền model Live2D và quyền theo dõi input cần xem riêng với từng bản phân phối.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [MMmmmoko/Bongo-Cat-Mver](https://github.com/MMmmmoko/Bongo-Cat-Mver) · [MagicMirrorOrg/MagicMirror](https://github.com/MagicMirrorOrg/MagicMirror). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`47a73ed1765b13fdd674ec356d51b5b16a6b5a5b`](https://github.com/ayangweb/BongoCat/commit/47a73ed1765b13fdd674ec356d51b5b16a6b5a5b), ngày commit 2026-10-28. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/ayangweb/BongoCat/blob/47a73ed1765b13fdd674ec356d51b5b16a6b5a5b/README.md) · [LICENSE](https://github.com/ayangweb/BongoCat/blob/47a73ed1765b13fdd674ec356d51b5b16a6b5a5b/LICENSE) · [Cargo.toml](https://github.com/ayangweb/BongoCat/blob/47a73ed1765b13fdd674ec356d51b5b16a6b5a5b/Cargo.toml) · [.github/workflows/verify.yml](https://github.com/ayangweb/BongoCat/blob/47a73ed1765b13fdd674ec356d51b5b16a6b5a5b/.github/workflows/verify.yml) · [metadata GitHub](https://api.github.com/repos/ayangweb/BongoCat).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-ayangweb-bongocat); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-magicmirrororg-magicmirror"></a>
 
 ### MagicMirror
 
-**Repo:** [MagicMirrorOrg/MagicMirror](https://github.com/MagicMirrorOrg/MagicMirror) · **License:** MIT · **★ 24,241 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Nền tảng gương thông minh dạng mô-đun sử dụng Electron và hệ module mở rộng.
-
-**Giá trị:** Cho phép tổ chức các khối thông tin thành dashboard cá nhân; cách phân tách module hữu ích cho màn hình thông tin tại chỗ.
-
-**Giới hạn:** Mỗi module ngoài có nguồn dữ liệu, token và giấy phép riêng; cần kiểm tài nguyên thiết bị và tránh hiển thị dữ liệu cá nhân ở không gian công cộng.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [gethomepage/homepage](https://github.com/gethomepage/homepage) · [lissy93/dashy](https://github.com/lissy93/dashy). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f138f5b690ceab6450f55c852ac81d268363f563`](https://github.com/MagicMirrorOrg/MagicMirror/commit/f138f5b690ceab6450f55c852ac81d268363f563), ngày commit 2026-10-01. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/MagicMirrorOrg/MagicMirror/blob/f138f5b690ceab6450f55c852ac81d268363f563/README.md) · [LICENSE.md](https://github.com/MagicMirrorOrg/MagicMirror/blob/f138f5b690ceab6450f55c852ac81d268363f563/LICENSE.md) · [package.json](https://github.com/MagicMirrorOrg/MagicMirror/blob/f138f5b690ceab6450f55c852ac81d268363f563/package.json) · [.github/workflows/spellcheck.yaml](https://github.com/MagicMirrorOrg/MagicMirror/blob/f138f5b690ceab6450f55c852ac81d268363f563/.github/workflows/spellcheck.yaml) · [metadata GitHub](https://api.github.com/repos/MagicMirrorOrg/MagicMirror).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-magicmirrororg-magicmirror); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-desktop-desktop"></a>
 
@@ -3051,101 +2584,31 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Mos
 
-**Repo:** [Caldis/Mos](https://github.com/Caldis/Mos) · **License:** CC-BY-NC-4.0 · **★ 21,981 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Tiện ích macOS làm mượt cuộn chuột, đổi hướng theo trục và tùy chỉnh nút theo ứng dụng.
-
-**Giá trị:** Cấu hình riêng từng app giúp giải quyết sự khác biệt giữa chuột truyền thống và trackpad.
-
-**Giới hạn:** Cần quyền Accessibility để đọc/ghi sự kiện; LICENSE là CC BY-NC 4.0 và README yêu cầu không đưa lên App Store, nên không gắn nhãn nguồn mở thương mại tự do.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [AprilNEA/OpenLogi](https://github.com/AprilNEA/OpenLogi) · [linearmouse/linearmouse](https://github.com/linearmouse/linearmouse). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`b95fee8985240261627f9e86d31398734885eeb0`](https://github.com/Caldis/Mos/commit/b95fee8985240261627f9e86d31398734885eeb0), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/Caldis/Mos/blob/b95fee8985240261627f9e86d31398734885eeb0/README.md) · [LICENSE](https://github.com/Caldis/Mos/blob/b95fee8985240261627f9e86d31398734885eeb0/LICENSE) · [.github/workflows/pages.yml](https://github.com/Caldis/Mos/blob/b95fee8985240261627f9e86d31398734885eeb0/.github/workflows/pages.yml) · [metadata GitHub](https://api.github.com/repos/Caldis/Mos).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-caldis-mos); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-komi-store-komi-store"></a>
 
 ### komi-store
 
-**Repo:** [komi-store/komi-store](https://github.com/komi-store/komi-store) · **License:** Apache-2.0 · **★ 22,082 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Kho ứng dụng đa nền tảng tìm và cài bản phát hành từ GitHub, Codeberg và Forgejo/Gitea.
-
-**Giá trị:** Giảm thao tác tìm release giữa nhiều forge; có giá trị tham khảo catalog ứng dụng đa nguồn.
-
-**Giới hạn:** README ghi bản macOS chưa notarize; đánh giá này không khuyến nghị bỏ kiểm tra hệ điều hành. Tính tin cậy vẫn phụ thuộc nguồn release, chữ ký và quyền từng ứng dụng.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [ImranR98/Obtainium](https://github.com/ImranR98/Obtainium) · [marticliment/UniGetUI](https://github.com/marticliment/UniGetUI). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`19eb74474f5f45a63cca45fc1dc9b8f7314687f0`](https://github.com/komi-store/komi-store/commit/19eb74474f5f45a63cca45fc1dc9b8f7314687f0), ngày commit 2026-10-25. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/komi-store/komi-store/blob/19eb74474f5f45a63cca45fc1dc9b8f7314687f0/README.md) · [LICENSE](https://github.com/komi-store/komi-store/blob/19eb74474f5f45a63cca45fc1dc9b8f7314687f0/LICENSE) · [.github/workflows/pr-checks.yml](https://github.com/komi-store/komi-store/blob/19eb74474f5f45a63cca45fc1dc9b8f7314687f0/.github/workflows/pr-checks.yml) · [metadata GitHub](https://api.github.com/repos/komi-store/komi-store).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-komi-store-komi-store); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-imranr98-obtainium"></a>
 
 ### Obtainium
 
-**Repo:** [ImranR98/Obtainium](https://github.com/ImranR98/Obtainium) · **License:** GPL-3.0 · **★ 21,828 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Ứng dụng Android theo dõi, cài và cập nhật phần mềm trực tiếp từ trang phát hành gốc.
-
-**Giá trị:** Có cấu hình nguồn cộng đồng và deep link, phù hợp người muốn quản lý ứng dụng từ nhiều nguồn phát hành.
-
-**Giới hạn:** README nêu một số nguồn phải scrape web và dễ hỏng khi trang đổi; cấu hình cộng đồng không thay thế kiểm chữ ký, nhà phát hành và quyền của APK.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [komi-store/komi-store](https://github.com/komi-store/komi-store) · [f-droid/fdroidclient](https://github.com/f-droid/fdroidclient). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`42575039fa6b501d442ed8485c40e1150928e85a`](https://github.com/ImranR98/Obtainium/commit/42575039fa6b501d442ed8485c40e1150928e85a), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/ImranR98/Obtainium/blob/42575039fa6b501d442ed8485c40e1150928e85a/README.md) · [LICENSE.txt](https://github.com/ImranR98/Obtainium/blob/42575039fa6b501d442ed8485c40e1150928e85a/LICENSE.txt) · [.github/workflows/release.yml](https://github.com/ImranR98/Obtainium/blob/42575039fa6b501d442ed8485c40e1150928e85a/.github/workflows/release.yml) · [metadata GitHub](https://api.github.com/repos/ImranR98/Obtainium).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-imranr98-obtainium); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-videolan-vlc"></a>
 
 ### vlc
 
-**Repo:** [videolan/vlc](https://github.com/videolan/vlc) · **License:** GPL-2.0-or-later (player); LGPL-2.1-or-later (libVLC) · **★ 20,558 (GitHub API, 2026-11-23)**
-
-**Mục đích:** VLC media player và engine libVLC cho phát, chuyển đổi và xử lý luồng đa phương tiện.
-
-**Giá trị:** Nhiều nền tảng và khả năng nhúng libVLC tạo giá trị tham khảo cho ứng dụng media.
-
-**Giới hạn:** README tách GPL-2.0-or-later của player và LGPL của engine; COPYING.LIB là LGPL 2.1, một số nền tảng chịu GPLv3 do phụ thuộc. Cần kiểm đúng thành phần và build.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [mpv-player/mpv](https://github.com/mpv-player/mpv) · [iina/iina](https://github.com/iina/iina). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`391a3bf87302769a3e45143b8a2f9961be45db0e`](https://github.com/videolan/vlc/commit/391a3bf87302769a3e45143b8a2f9961be45db0e), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/videolan/vlc/blob/391a3bf87302769a3e45143b8a2f9961be45db0e/README.md) · [COPYING](https://github.com/videolan/vlc/blob/391a3bf87302769a3e45143b8a2f9961be45db0e/COPYING) · [COPYING.LIB](https://github.com/videolan/vlc/blob/391a3bf87302769a3e45143b8a2f9961be45db0e/COPYING.LIB) · [Cargo.toml](https://github.com/videolan/vlc/blob/391a3bf87302769a3e45143b8a2f9961be45db0e/Cargo.toml) · [metadata GitHub](https://api.github.com/repos/videolan/vlc).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-videolan-vlc); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-files-community-files"></a>
 
 ### Files
 
-**Repo:** [files-community/Files](https://github.com/files-community/Files) · **License:** MIT và MPL-2.0 theo thành phần; kiểm header từng tệp · **★ 46,764 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Trình quản lý tệp cho Windows với đa nhiệm, tag và tích hợp hệ thống.
-
-**Giá trị:** Có thể tham khảo UX thao tác tệp và quy trình cộng đồng phát triển ứng dụng desktop.
-
-**Giới hạn:** Repo có LICENSE-MIT và LICENSE-MPL; chưa có căn cứ coi cả hai là lựa chọn OR cho mọi tệp. Cần đọc header phần được nhúng và thử tác vụ sao chép/xóa trên dữ liệu mẫu.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [spacedriveapp/spacedrive](https://github.com/spacedriveapp/spacedrive) · [sxyazi/yazi](https://github.com/sxyazi/yazi). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`802ee6831f6882880c5d0613ddab67bd17d3965f`](https://github.com/files-community/Files/commit/802ee6831f6882880c5d0613ddab67bd17d3965f), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [.github/README.md](https://github.com/files-community/Files/blob/802ee6831f6882880c5d0613ddab67bd17d3965f/.github/README.md) · [LICENSE-MIT](https://github.com/files-community/Files/blob/802ee6831f6882880c5d0613ddab67bd17d3965f/LICENSE-MIT) · [LICENSE-MPL](https://github.com/files-community/Files/blob/802ee6831f6882880c5d0613ddab67bd17d3965f/LICENSE-MPL) · [.github/workflows/ci.yml](https://github.com/files-community/Files/blob/802ee6831f6882880c5d0613ddab67bd17d3965f/.github/workflows/ci.yml) · [.github/CONTRIBUTING.md](https://github.com/files-community/Files/blob/802ee6831f6882880c5d0613ddab67bd17d3965f/.github/CONTRIBUTING.md) · [metadata GitHub](https://api.github.com/repos/files-community/Files).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-files-community-files); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-corentinth-it-tools"></a>
 
@@ -3171,61 +2634,19 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### ShareX
 
-**Repo:** [ShareX/ShareX](https://github.com/ShareX/ShareX) · **License:** GPL-3.0 · **★ 41,321 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Ứng dụng Windows chụp/quay màn hình, chỉnh ảnh, tải tệp và nối workflow bằng phím tắt.
-
-**Giá trị:** Tự động hóa chuỗi capture → sửa → lưu/upload hữu ích cho hỗ trợ, tài liệu và tái hiện lỗi.
-
-**Giới hạn:** Tự upload có thể đưa ảnh hoặc clipboard lên nhà cung cấp ngoài; cần kiểm đích tải, token, vùng chụp và license dịch vụ. Chưa thử workflow thực tế trong lượt này.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [NickeManarin/ScreenToGif](https://github.com/NickeManarin/ScreenToGif) · [Molunerfinn/PicGo](https://github.com/Molunerfinn/PicGo). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`099bcb60a1c4af514f8b8b936a870492744e98fd`](https://github.com/ShareX/ShareX/commit/099bcb60a1c4af514f8b8b936a870492744e98fd), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/ShareX/ShareX/blob/099bcb60a1c4af514f8b8b936a870492744e98fd/README.md) · [LICENSE.txt](https://github.com/ShareX/ShareX/blob/099bcb60a1c4af514f8b8b936a870492744e98fd/LICENSE.txt) · [.github/workflows/build.yml](https://github.com/ShareX/ShareX/blob/099bcb60a1c4af514f8b8b936a870492744e98fd/.github/workflows/build.yml) · [metadata GitHub](https://api.github.com/repos/ShareX/ShareX).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-sharex-sharex); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-koreader-koreader"></a>
 
 ### koreader
 
-**Repo:** [koreader/koreader](https://github.com/koreader/koreader) · **License:** AGPL-3.0 · **★ 31,280 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Ứng dụng đọc tài liệu tối ưu thiết bị e-ink, hỗ trợ nhiều định dạng và nền tảng.
-
-**Giá trị:** Có tùy chỉnh dàn trang và reflow PDF/DjVu, phù hợp nghiên cứu trải nghiệm đọc trên thiết bị tài nguyên hạn chế.
-
-**Giới hạn:** Cài đặt phụ thuộc model/firmware thiết bị; cần kiểm font, chú thích và quyền sách. AGPL của ứng dụng tách khỏi quyền tài liệu và thư viện phụ thuộc.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [readest/readest](https://github.com/readest/readest) · [koodo-reader/koodo-reader](https://github.com/koodo-reader/koodo-reader). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`1294bb3d377c51fdd0b7ef250620aee2ca08927c`](https://github.com/koreader/koreader/commit/1294bb3d377c51fdd0b7ef250620aee2ca08927c), ngày commit 2026-11-21. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/koreader/koreader/blob/1294bb3d377c51fdd0b7ef250620aee2ca08927c/README.md) · [COPYING](https://github.com/koreader/koreader/blob/1294bb3d377c51fdd0b7ef250620aee2ca08927c/COPYING) · [.github/workflows/build.yml](https://github.com/koreader/koreader/blob/1294bb3d377c51fdd0b7ef250620aee2ca08927c/.github/workflows/build.yml) · [metadata GitHub](https://api.github.com/repos/koreader/koreader).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-koreader-koreader); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-koodo-reader-koodo-reader"></a>
 
 ### koodo-reader
 
-**Repo:** [koodo-reader/koodo-reader](https://github.com/koodo-reader/koodo-reader) · **License:** AGPL-3.0 · **★ 28,951 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Trình đọc và quản lý ebook đa nền tảng với đồng bộ, sao lưu và plugin.
-
-**Giá trị:** Danh sách định dạng rộng, hỗ trợ cả tài liệu và truyện tranh trong cùng thư viện.
-
-**Giới hạn:** Cần kiểm độ bảo toàn layout/annotation khi chuyển đổi và điều khoản dịch vụ sync; hỗ trợ Mobipocket/Kindle được README giới hạn DRM-free, không suy đọc được mọi sách.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [kovidgoyal/calibre](https://github.com/kovidgoyal/calibre) · [readest/readest](https://github.com/readest/readest). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`bb4ec25af94e3e023d773714467d8d6f5cc7b065`](https://github.com/koodo-reader/koodo-reader/commit/bb4ec25af94e3e023d773714467d8d6f5cc7b065), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/koodo-reader/koodo-reader/blob/bb4ec25af94e3e023d773714467d8d6f5cc7b065/README.md) · [LICENSE](https://github.com/koodo-reader/koodo-reader/blob/bb4ec25af94e3e023d773714467d8d6f5cc7b065/LICENSE) · [package.json](https://github.com/koodo-reader/koodo-reader/blob/bb4ec25af94e3e023d773714467d8d6f5cc7b065/package.json) · [.github/workflows/upload.yml](https://github.com/koodo-reader/koodo-reader/blob/bb4ec25af94e3e023d773714467d8d6f5cc7b065/.github/workflows/upload.yml) · [metadata GitHub](https://api.github.com/repos/koodo-reader/koodo-reader).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-koodo-reader-koodo-reader); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-wox-launcher-wox"></a>
 
@@ -3251,21 +2672,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### readest
 
-**Repo:** [readest/readest](https://github.com/readest/readest) · **License:** AGPL-3.0 · **★ 26,598 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Trình đọc ebook đa nền tảng dựa trên Tauri/Next.js, phát triển từ ý tưởng Foliate.
-
-**Giá trị:** Hướng tới trải nghiệm đọc sâu với nhiều định dạng và khả năng chạy cả web lẫn native.
-
-**Giới hạn:** README tách tính năng dự kiến và hiện có; Windows cần WebView2, Linux có giới hạn compositor. Cần kiểm dữ liệu đồng bộ, font và license engine/tài liệu đi kèm.
-
-**Cách tham khảo/tích hợp:** Dùng bản phát hành phù hợp hệ điều hành, kiểm quyền ứng dụng và thao tác với dữ liệu mẫu; giữ khả năng khôi phục trước tác vụ ghi/xóa.
-
-**Lựa chọn để đối chiếu:** [koreader/koreader](https://github.com/koreader/koreader) · [koodo-reader/koodo-reader](https://github.com/koodo-reader/koodo-reader). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`0856099ee905f91bbe7fcf6b84cba767851f7935`](https://github.com/readest/readest/commit/0856099ee905f91bbe7fcf6b84cba767851f7935), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/readest/readest/blob/0856099ee905f91bbe7fcf6b84cba767851f7935/README.md) · [LICENSE](https://github.com/readest/readest/blob/0856099ee905f91bbe7fcf6b84cba767851f7935/LICENSE) · [package.json](https://github.com/readest/readest/blob/0856099ee905f91bbe7fcf6b84cba767851f7935/package.json) · [Cargo.toml](https://github.com/readest/readest/blob/0856099ee905f91bbe7fcf6b84cba767851f7935/Cargo.toml) · [.github/workflows/nix-build.yml](https://github.com/readest/readest/blob/0856099ee905f91bbe7fcf6b84cba767851f7935/.github/workflows/nix-build.yml) · [metadata GitHub](https://api.github.com/repos/readest/readest).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-readest-readest); catalog con xem [catalog/](../catalog/README.md).
 
 ## 7. Nguồn
 
@@ -3276,3 +2683,397 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 - https://www.augmentcode.com/tools/best-spec-driven-development-tools · https://reenbit.com/bmad-vs-spec-kit-vs-openspec-choosing-your-spec-driven-ai-framework/ · https://www.fundesk.io/spec-driven-development-github-spec-kit-guide · https://github.com/Anioko/spec-driven-development · https://www.braingrid.ai/blog/spec-driven-development-tools
 - https://dupple.com/learn/best-ai-code-review-tools · https://www.morphllm.com/github-ai-code-review · https://www.stork.ai/blog/best-ai-code-review-tools-2026 · https://screencli.sh/blog/best-ai-pr-review-tools-2026 · https://wetheflywheel.com/en/guides/best-ai-code-review-tools-2026/ · https://blog.codercops.com/blog/ai-code-review-tools-compared-2026
 - §4c (12/10/2026): https://github.com/astral-sh/uv · https://pydevtools.com/blog/openai-acquires-astral/ · https://github.com/astral-sh/ruff · https://github.com/microsoft/pyright · https://github.com/biomejs/biome · https://github.com/oxc-project/oxc · https://github.com/webpro-nl/knip · https://github.com/kucherenko/jscpd · https://github.com/renovatebot/renovate · https://github.com/pre-commit/pre-commit · https://github.com/googleapis/release-please · https://github.com/reviewdog/reviewdog · https://github.com/stryker-mutator/stryker-js · https://github.com/GoogleChrome/lighthouse-ci · https://github.com/alibaba/open-code-review
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+36 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-linux"></a>
+
+### linux
+
+`torvalds/linux` · License: GPL-2.0 WITH Linux-syscall-note · ★ 256.236 · docs-read · 2026-11-18
+
+Mã nguồn nhân Linux, lõi của mọi hệ điều hành Linux, quản lý phần cứng, tài nguyên hệ thống và cung cấp dịch vụ nền cho phần mềm khác. Phiên bản trong Makefile là 7.4.0-rc3; hỗ trợ 23 mục kiến trúc trong thư mục arch/ và có thư mục rust/; README hướng dẫn theo vai trò kèm tài liệu build, gửi patch, mailing list. Điều kiện: Giấy phép GPL v2 only (copyleft); đóng góp qua patch gửi email/mailing list theo Documentation/process/submitting-patches.rst. ★ 18/11/2026: 256.236 (GitHub search API), nhóm "Container & DevOps" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c55-container--devops) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-vscode"></a>
+
+### vscode
+
+`microsoft/vscode` · License: MIT · ★ 195.711 · docs-read · 2026-11-18
+
+Kho mã nguồn mở "Code - OSS" nơi Microsoft phát triển trình soạn thảo Visual Studio Code cùng cộng đồng. README nêu VS Code cập nhật hằng tháng, chạy trên Windows, macOS và Linux; thư mục extensions chứa các extension tích hợp sẵn (ngữ pháp, snippet nhiều ngôn ngữ); có sẵn dev container và hỗ trợ Codespaces để build. Điều kiện: Bản VS Code do Microsoft phát hành có tuỳ biến riêng và theo giấy phép sản phẩm Microsoft, khác MIT của mã nguồn; build đầy đủ cần ít nhất 4 nhân và 6 GB RAM. ★ 18/11/2026: 195.711 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-ohmyzsh"></a>
+
+### ohmyzsh
+
+`ohmyzsh/ohmyzsh` · License: MIT · ★ 190.765 · docs-read · 2026-11-18
+
+Khung mã nguồn mở do cộng đồng phát triển để quản lý cấu hình zsh, kèm nhiều plugin và theme. Thư mục plugins có hơn 370 mục và themes hơn 140 mục; hỗ trợ Linux, macOS, FreeBSD, Android và Windows qua WSL2; có huy hiệu OpenSSF Best Practices và CI. Điều kiện: Cần zsh (khuyến nghị 5.0.8+), curl hoặc wget và git; Windows chỉ qua WSL2. ★ 18/11/2026: 190.765 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-gitignore"></a>
+
+### gitignore
+
+`github/gitignore` · License: CC0 1.0 Universal · ★ 176.339 · docs-read · 2026-11-18
+
+Bộ sưu tập mẫu .gitignore của GitHub, dùng cho bộ chọn mẫu khi tạo repo trên GitHub.com. Khoảng 317 file .gitignore theo ngôn ngữ, công cụ và hệ điều hành; chia thư mục gốc, Global và community kèm quy tắc phiên bản; phát hành CC0 nên dùng tự do. ★ 18/11/2026: 176.339 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-terminal"></a>
+
+### terminal
+
+`microsoft/terminal` · License: MIT · ★ 105.413 · docs-read · 2026-11-18
+
+Mã nguồn Windows Terminal, Windows Terminal Preview, console host conhost.exe và các thành phần dùng chung. Phát hành qua Microsoft Store, GitHub Releases và winget; repo còn chứa ColorTool và dự án mẫu dùng Windows Console API; có kênh Canary cho bản dựng mới. Điều kiện: Chỉ cho Windows; cần Windows 10 2004 (build 19041) trở lên. ★ 18/11/2026: 105.413 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-neovim"></a>
+
+### neovim
+
+`neovim/neovim` · License: Apache-2.0 · ★ 103.928 · docs-read · 2026-11-18
+
+Neovim là bản tái cấu trúc mạnh của Vim, hướng tới dễ bảo trì, mở rộng và hỗ trợ giao diện nâng cao. API truy cập từ nhiều ngôn ngữ (C, Go, Lua, Python, Rust…) và trình giả lập terminal nhúng; điều khiển job bất đồng bộ; gói dựng sẵn cho Windows, macOS, Linux và có trong Homebrew, Debian, Fedora, Arch…. ★ 18/11/2026: 103.928 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-zed"></a>
+
+### zed
+
+`zed-industries/zed` · License: Chủ yếu GPL-3.0-or-later · ★ 95.238 · docs-read · 2026-11-18
+
+Zed là trình soạn thảo mã hiệu năng cao, hỗ trợ cộng tác nhiều người, từ nhóm tác giả Atom và Tree-sitter. Có bản cho macOS, Linux và Windows; viết bằng Rust (workspace Cargo với thư mục crates); dùng cargo-about để tự động tuân thủ giấy phép phụ thuộc. Điều kiện: Chưa có bản Web; mã chủ yếu GPL-3.0 (copyleft); phát triển bởi công ty vì lợi nhuận Zed Industries. ★ 18/11/2026: 95.238 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-fzf"></a>
+
+### fzf
+
+`junegunn/fzf` · License: MIT · ★ 84.249 · docs-read · 2026-11-18
+
+fzf là công cụ tìm kiếm mờ đa dụng trên dòng lệnh kiêm bộ công cụ dựng giao diện terminal tương tác. Phân phối dạng một file nhị phân duy nhất; tích hợp sẵn cho Bash, Zsh, Fish, Nushell, Vim và Neovim; có phím tắt dòng lệnh và fuzzy completion cho file, PID, host. ★ 18/11/2026: 84.249 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-lazygit"></a>
+
+### lazygit
+
+`jesseduffield/lazygit` · License: MIT · ★ 83.950 · docs-read · 2026-11-18
+
+lazygit là giao diện terminal đơn giản cho các lệnh git. Stage theo hunk hoặc từng dòng, rebase tương tác, cherry-pick, bisect và undo ngay trong TUI; hỗ trợ worktree và đồ thị commit; có gói cho Homebrew, Scoop, Arch, Debian/Ubuntu, NixOS…. Điều kiện: Cần git. ★ 18/11/2026: 83.950 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-firacode"></a>
+
+### FiraCode
+
+`tonsky/FiraCode` · License: SIL Open Font License 1.1 · ★ 82.209 · docs-read · 2026-11-18
+
+Fira Code là phông chữ đơn cách miễn phí có ligature cho các tổ hợp ký tự lập trình phổ biến. Mã nguồn vẫn tương thích ASCII vì ligature chỉ là tính năng hiển thị; có nhiều character variant và stylistic set (cv01, ss01…); có glyph riêng cho thanh tiến trình tại U+EE00 và hỗ trợ vẽ khung, powerline. Điều kiện: Một số trình soạn thảo không hiển thị ligature (danh sách trong README). ★ 18/11/2026: 82.209 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-code-server"></a>
+
+### code-server
+
+`coder/code-server` · License: MIT · ★ 79.900 · docs-read · 2026-11-18
+
+code-server chạy VS Code trên bất kỳ máy nào và truy cập qua trình duyệt. Có script cài đặt dùng trình quản lý gói hệ thống và chế độ --dry-run để xem trước; dùng kho extension Open-VSX; có devcontainer feature và triển khai cho nhóm qua coder/coder. Điều kiện: Cần máy Linux có WebSockets, tối thiểu 1 GB RAM và 2 vCPU; không dùng được Marketplace của Microsoft do điều khoản dịch vụ, thay bằng Open-VSX. ★ 18/11/2026: 79.900 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-tabby"></a>
+
+### tabby
+
+`Eugeny/tabby` · License: MIT · ★ 75.475 · docs-read · 2026-11-18
+
+Trình giả lập terminal cấu hình cao kèm client SSH, Telnet và serial cho Windows, macOS và Linux (trước đây tên Terminus). Tích hợp client SSH2 có trình quản lý kết nối, chuyển tiếp X11/cổng, jump host và kho mã hoá cho bí mật SSH; hỗ trợ PowerShell, WSL, Git-Bash, Cygwin, MSYS2, CMD và chạy portable trên Windows; có hệ plugin/theme cài từ Settings và bản web app tự host được. Điều kiện: README nói rõ không nhẹ (dựa trên Electron), tốn RAM. ★ 18/11/2026: 75.475 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-yazi"></a>
+
+### yazi
+
+`sxyazi/yazi` · License: MIT · ★ 43.468 · docs-read · 2026-11-18
+
+Trình quản lý file trong terminal viết bằng Rust, dựa trên I/O bất đồng bộ, có xem trước ảnh/mã và hệ plugin Lua. Mọi thao tác I/O bất đồng bộ, lập lịch tác vụ có tiến độ và huỷ được; hỗ trợ sẵn nhiều giao thức ảnh (kitty, iTerm2, WezTerm, Sixel…); có plugin Lua đồng thời, trình quản lý gói plugin/theme và VFS cho file từ xa. Điều kiện: README ghi đang ở beta công khai (dùng hằng ngày được), phát triển mạnh và có thể có thay đổi phá vỡ. ★ 18/11/2026: 43.468 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-cli"></a>
+
+### cli
+
+`googleworkspace/cli` · License: Apache-2.0 · ★ 32.371 · docs-read · 2026-11-18
+
+CLI gws dùng chung cho mọi API Google Workspace (Drive, Gmail, Calendar, Sheets…), sinh lệnh động từ Google Discovery Service, xuất JSON cho người và AI agent. Tự nhận endpoint mới vì đọc Discovery Service lúc chạy; có --dry-run, tự phân trang và xuất NDJSON; kèm thư mục skills cho agent (khoảng 95 mục) và thông tin đăng nhập mã hoá AES-256-GCM với khoá trong keyring. Điều kiện: Cần dự án Google Cloud (OAuth) và tài khoản Google Workspace; README ghi không phải sản phẩm Google hỗ trợ chính thức; đang phát triển, có thể có thay đổi phá vỡ trước v1.0; app OAuth chưa xác minh bị giới hạn khoảng 25 scope. ★ 18/11/2026: 32.371 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-tqdm"></a>
+
+### tqdm
+
+`tqdm/tqdm` · License: MPL-2.0 và MIT · ★ 31.390 · docs-read · 2026-11-18
+
+Thư viện Python hiển thị thanh tiến độ thông minh cho vòng lặp và lệnh shell qua pipe. Chỉ cần bọc iterable bằng tqdm(iterable); overhead khoảng 60ns mỗi vòng lặp theo README và có kiểm thử hồi quy hiệu năng; không cần phụ thuộc nào, chạy trên Linux, Windows, Mac, BSD và Jupyter. Điều kiện: Giấy phép kép MPL-2.0/MIT theo file LICENCE. ★ 18/11/2026: 31.390 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-zsh-syntax-highlighting"></a>
+
+### zsh-syntax-highlighting
+
+`zsh-users/zsh-syntax-highlighting` · License: BSD 3-Clause · ★ 23.096 · docs-read · 2026-11-18
+
+Plugin cho zsh tô màu cú pháp dòng lệnh ngay khi gõ ở dấu nhắc, theo kiểu fish, giúp phát hiện lỗi cú pháp trước khi chạy. Có sẵn trong kho gói của nhiều hệ (Arch, Debian, Fedora, FreeBSD, Gentoo, Homebrew, NetBSD, OpenBSD, Ubuntu, Void); kiến trúc nhiều highlighter tách biệt (main, brackets, cursor, line, pattern, regexp, root); thư mục tests riêng trong repo. Điều kiện: Cần zsh 4.3.11+; phải source ở cuối .zshrc; tô sáng khi tìm lịch sử tăng dần cần zsh 5.4+. ★ 18/11/2026: 23.096 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-witr"></a>
+
+### witr
+
+`pranshuparmar/witr` · License: Apache-2.0 · ★ 23.032 · docs-read · 2026-11-18
+
+Công cụ dòng lệnh (kèm TUI) trả lời câu hỏi vì sao một tiến trình, dịch vụ, container hay cổng đang chạy bằng cách truy ngược chuỗi nguồn gốc của PID. Một binary tĩnh cho Linux, macOS, FreeBSD và Windows; có đầu ra --json và exit code phân biệt để dùng với AI agent; phân phối qua nhiều trình quản lý gói (APT Debian/Ubuntu, Homebrew, MacPorts, Conda, AUR, Winget, npm, Chocolatey, Scoop). ★ 18/11/2026: 23.032 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-nnn"></a>
+
+### nnn
+
+`jarun/nnn` · License: BSD 2-Clause · ★ 22.126 · docs-read · 2026-11-18
+
+Trình quản lý file trên terminal rất nhỏ gọn (~150 KiB), gần như không cần cấu hình, có phân tích dung lượng đĩa, đổi tên hàng loạt và chọn file. Thường dùng dưới 3,5 MB bộ nhớ thường trú; chạy trên Linux, macOS, BSD, Haiku, Cygwin, WSL, Termux; kho plugin trong repo có khoảng 60 mục. ★ 18/11/2026: 22.126 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-larksuite-cli"></a>
+
+### larksuite/cli
+
+`larksuite/cli` · License: MIT · ★ 18.144 · docs-read · 2026-11-18
+
+CLI chính thức của Lark/Feishu cho người và AI agent, bao phủ nhắn tin, tài liệu, Base, Sheets, lịch, mail, tác vụ, cuộc họp và nhiều miền khác. Hơn 200 lệnh theo ba tầng (shortcut, lệnh API, API thô); thư mục skills có 25 skill cho agent; lưu thông tin xác thực qua keychain của hệ điều hành. Điều kiện: Cần ứng dụng và quyền trên Lark/Feishu Open Platform cùng Node.js; README cảnh báo rủi ro agent ảo giác và prompt injection khi hành động dưới danh tính người dùng; mặc định gửi tín hiệu kiểm soát rủi ro (loại hệ điều hành, model phần cứng) tới tên miền Lark/Feishu, tắt bằng lark-cli config risk-control off. ★ 18/11/2026: 18.144 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-cz-cli"></a>
+
+### cz-cli
+
+`commitizen/cz-cli` · License: MIT · ★ 17.503 · docs-read · 2026-11-18
+
+Công cụ dòng lệnh nhắc người dùng điền các trường bắt buộc khi commit để thông điệp commit theo quy ước (ví dụ conventional-changelog). Dùng git cz hoặc npx cz thay cho git commit; commitizen init cài adapter và ghi cấu hình vào package.json (npm, yarn, pnpm); hỗ trợ chạy qua git hook với tuỳ chọn --hook. Điều kiện: README nêu được kiểm thử trên Node.js 12, 14, 16 và cần npm 6+. ★ 18/11/2026: 17.503 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-electerm"></a>
+
+### electerm
+
+`electerm/electerm` · License: MIT · ★ 15.656 · docs-read · 2026-11-18
+
+Trình khách terminal/ssh/sftp/ftp/telnet/serialport/RDP/VNC/Spice mã nguồn mở, kiêm trình quản lý tệp, chạy đa nền tảng. Chạy trên Windows 7+, macOS 10.15+, Linux (nhiều kiến trúc gồm riscv64, LoongArch), Android, iOS, HarmonyOS; hỗ trợ tunnel ssh, nhảy kết nối, Zmodem/Trzsz và đồng bộ bookmark qua gist/webdav; tích hợp trợ lý AI và widget MCP. Điều kiện: Trợ lý AI cần API của nhà cung cấp LLM tự cấu hình; đồng bộ dữ liệu cần tài khoản GitHub/Gitee/WebDAV hoặc electerm cloud. ★ 18/11/2026: 15.656 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-bash-it"></a>
+
+### bash-it
+
+`Bash-it/bash-it` · License: MIT · ★ 15.307 · docs-read · 2026-11-18
+
+Khung cấu hình Bash do cộng đồng đóng góp, gom alias, plugin, completion và theme để quản lý shell hằng ngày (tương tự oh-my-zsh cho Bash). Repo có khoảng 81 plugin, 50 bộ alias, 90 completion và 87 theme; có lệnh chẩn đoán bash-it doctor và tìm/bật/tắt thành phần bằng bash-it search; 97% mã tương thích bash 3.2+. Điều kiện: Trình cài sửa ~/.bashrc tại chỗ (có sao lưu); vài plugin cần bash 5. ★ 18/11/2026: 15.307 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-hugo"></a>
+
+### hugo
+
+`gohugoio/hugo` · License: Apache-2.0 · ★ 90.501 · docs-read · 2026-11-18
+
+Trình sinh trang tĩnh viết bằng Go, tối ưu tốc độ, dùng cho blog, trang tài liệu, trang doanh nghiệp. Có pipeline tài nguyên tích hợp: xử lý CSS, Sass, Tailwind, bundle JS/TypeScript, xử lý ảnh; Hugo Modules chia sẻ theme, nội dung qua Git; bản deploy đẩy thẳng lên S3, Google Cloud Storage, Azure. Điều kiện: Build từ nguồn cần Go 1.27.0+ và Git. ★ 18/11/2026: 90.501 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-open-saas"></a>
+
+### open-saas
+
+`wasp-lang/open-saas` · License: MIT · ★ 16.350 · docs-read · 2026-11-18
+
+Mẫu khởi đầu SaaS miễn phí dựng trên Wasp (React, Node.js, Prisma), kèm xác thực, thanh toán, trang quản trị, blog/tài liệu Astro. Tích hợp sẵn Stripe, Polar.sh hoặc Lemon Squeezy, gửi email SendGrid/Mailgun/SMTP, upload AWS S3; có test đầu-cuối Playwright trong template/e2e-tests; triển khai một lệnh lên Railway hoặc Fly.io. Điều kiện: Các tích hợp cần tài khoản/khoá dịch vụ ngoài (Stripe/Polar/Lemon Squeezy, OpenAI, AWS S3, SendGrid/Mailgun, Plausible/Google Analytics); Wasp CLI chạy trên macOS, Linux hoặc Windows qua WSL. ★ 18/11/2026: 16.350 (GitHub search API), nhóm "Framework Frontend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c510-framework-frontend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-lodash"></a>
+
+### lodash
+
+`lodash/lodash` · License: MIT · ★ 61.453 · docs-read · 2026-11-18
+
+Thư viện tiện ích JavaScript (v4.18.1) cho thao tác mảng, đối tượng, chuỗi, số và ghép hàm. Có nhiều bản dựng: core khoảng 4 kB gzip, full khoảng 24 kB gzip, bản FP tự curry; nạp từng phương thức riêng (lodash/at) để giảm kích thước bundle; được Sovereign Tech Agency hỗ trợ và chuyển sang giai đoạn Feature-Complete để giữ ổn định, an toàn lâu dài. ★ 18/11/2026: 61.453 (GitHub search API), nhóm "Ngôn ngữ & Runtime" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c514-ngôn-ngữ--runtime) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-turborepo"></a>
+
+### turborepo
+
+`vercel/turborepo` · License: MIT · ★ 31.361 · docs-read · 2026-11-18
+
+Hệ thống build cho monorepo JavaScript/TypeScript, tự giới thiệu là "build system for coding agents", lõi viết bằng Rust. Lõi Rust (Cargo workspace trong crates/) kèm gói npm turbo; có thư mục examples và test codemod; cộng đồng qua GitHub Discussions và kênh báo lỗ hổng bảo mật riêng. ★ 18/11/2026: 31.361 (GitHub search API), nhóm "Ngôn ngữ & Runtime" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c514-ngôn-ngữ--runtime) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-effect"></a>
+
+### effect
+
+`Effect-TS/effect` · License: MIT · ★ 17.596 · docs-read · 2026-11-18
+
+Thư viện TypeScript để xây ứng dụng an toàn kiểu, xử lý lỗi có kiểu, tiêm phụ thuộc, đồng thời có cấu trúc, lập lịch, tracing và schema. Effect 4.x là bản LTS cam kết hỗ trợ ít nhất ba năm; monorepo gồm effect, platform, sql, opentelemetry, ai, vitest; có MIGRATION.md hướng dẫn nâng từ 3.x. Điều kiện: Cần TypeScript 5.9 trở lên với strict bật, Node.js 22.19 trở lên. ★ 18/11/2026: 17.596 (GitHub search API), nhóm "Ngôn ngữ & Runtime" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c514-ngôn-ngữ--runtime) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-type-fest"></a>
+
+### type-fest
+
+`sindresorhus/type-fest` · License: Song giấy phép MIT hoặc CC0-1.0 · ★ 17.540 · docs-read · 2026-11-18
+
+Bộ sưu tập các kiểu tiện ích TypeScript thiết yếu (Except, Primitive, Class...) dùng khi khai báo kiểu. Chỉ chứa kiểu, có thể thêm làm phụ thuộc hoặc chép thẳng mà không cần ghi công; mỗi kiểu có tài liệu và tệp nguồn riêng trong source/; có test kiểu trong test-d. Điều kiện: Cần TypeScript 6 trở lên, ESM, strict và exactOptionalPropertyTypes bật. ★ 18/11/2026: 17.540 (GitHub search API), nhóm "Ngôn ngữ & Runtime" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c514-ngôn-ngữ--runtime) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-ts-pattern"></a>
+
+### ts-pattern
+
+`gvergnaud/ts-pattern` · License: MIT · ★ 15.222 · docs-read · 2026-11-18
+
+Thư viện pattern matching cho TypeScript với suy luận kiểu và kiểm tra đủ trường hợp. Kiểm tra đầy đủ nhánh bằng .exhaustive(); khớp mẫu trên đối tượng lồng, mảng, tuple, Set, Map và kiểu nguyên thủy; bundle nhỏ khoảng 2 kB. ★ 18/11/2026: 15.222 (GitHub search API), nhóm "Ngôn ngữ & Runtime" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c514-ngôn-ngữ--runtime) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-electron"></a>
+
+### electron
+
+`electron/electron` · License: MIT · ★ 123.959 · docs-read · 2026-11-18
+
+Framework viết ứng dụng desktop đa nền tảng bằng JavaScript, HTML và CSS, dựa trên Node.js và Chromium. Cung cấp binary cho macOS, Windows, Linux (x64 và arm64); được dùng bởi Visual Studio Code; có Electron Fiddle để thử nghiệm nhanh. Điều kiện: macOS Ventura trở lên, Windows 10 trở lên. ★ 18/11/2026: 123.959 (GitHub search API), nhóm "Ứng dụng đa nền tảng & Game" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c528-ứng-dụng-đa-nền-tảng--game) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-imgui"></a>
+
+### imgui
+
+`ocornut/imgui` · License: MIT · ★ 77.153 · docs-read · 2026-11-18
+
+Thư viện giao diện người dùng immediate-mode cho C++, gọn nhẹ, sinh vertex buffer để render trong ứng dụng 3D; hợp cho công cụ, debug trong game engine. Lõi tự chứa trong vài file imgui*.cpp/h, không phụ thuộc ngoài, không cần quy trình build riêng; có backend cho DirectX 9-12, OpenGL, Metal, SDL2/3, GLFW, Android, Allegro; kèm ví dụ trong examples/. ★ 18/11/2026: 77.153 (GitHub search API), nhóm "Ứng dụng đa nền tảng & Game" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c528-ứng-dụng-đa-nền-tảng--game) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-pake"></a>
+
+### Pake
+
+`tw93/Pake` · License: GPL-3.0 kèm ngoại lệ Pake Output Exception · ★ 63.759 · docs-read · 2026-11-18
+
+CLI biến bất kỳ trang web nào thành ứng dụng desktop nhẹ bằng một lệnh, dùng Rust Tauri trên WebView hệ thống. Gói cài thường dưới 10 MB vì không kèm Chromium; hỗ trợ macOS, Windows, Linux; có build trực tuyến qua GitHub Actions và gói sẵn cho nhiều trang phổ biến. Điều kiện: Fork hoặc sản phẩm phái sinh không được dùng tên và logo Pake (TRADEMARK.md); ứng dụng desktop đồ hoạ là bản tải riêng từ pake.run. ★ 18/11/2026: 63.759 (GitHub search API), nhóm "Ứng dụng đa nền tảng & Game" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c528-ứng-dụng-đa-nền-tảng--game) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="anhkysuai-2026-11-23-jsoncrack"></a>
+
+### JSON Crack
+
+**Repo:** [AykutSarac/jsoncrack.com](https://github.com/AykutSarac/jsoncrack.com) · **License:** Apache-2.0 · **★ 44,603 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Trình xem và chỉnh dữ liệu JSON dưới dạng đồ thị hoặc cây tương tác.
+
+**Giá trị và cơ chế:** README mô tả chuyển đổi JSON/YAML/CSV/XML, truy vấn jq/JSONPath và sinh schema; monorepo có các đích web và extension, thuận tiện khảo sát payload phức tạp.
+
+**Giới hạn:** Cam kết xử lý cục bộ mới được đọc trong tài liệu; chưa kiểm mạng hoặc dữ liệu rất lớn. Không xem việc vẽ đúng đồ thị là kiểm chứng ý nghĩa của dữ liệu.
+
+**Cách tham khảo/tích hợp:** Dùng bản tự host cho dữ liệu riêng, giảm payload trước khi mở và đối chiếu schema bằng công cụ độc lập.
+
+**Thay thế:** jsoneditor, [D2](../16-docs-tools/README.md#anhkysuai-2026-11-23-d2), [Mermaid](https://github.com/mermaid-js/mermaid).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a46d0d0adb09`](https://github.com/AykutSarac/jsoncrack.com/commit/a46d0d0adb098e12e577a083e87ead7f61f90098). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/AykutSarac/jsoncrack.com/blob/a46d0d0adb098e12e577a083e87ead7f61f90098/README.md) · [LICENSE.md](https://github.com/AykutSarac/jsoncrack.com/blob/a46d0d0adb098e12e577a083e87ead7f61f90098/LICENSE.md) · [metadata GitHub](https://api.github.com/repos/AykutSarac/jsoncrack.com).
+
+<a id="anhkysuai-ryanoasis-nerd-fonts"></a>
+
+### Nerd Fonts
+
+- **Repo:** [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts).
+- **Mục đích:** Bộ font được vá thêm glyph và công cụ tạo font cho terminal, editor và prompt.
+- **Điểm đáng dùng:** LICENSE tách mã patcher MIT khỏi font OFL và các nguồn icon khác; manifest và workflow shellcheck cho thấy đây vừa là bộ tài sản vừa là công cụ xử lý.
+- **License:** MIT cho mã gốc; OFL-1.1 và giấy phép riêng cho font/glyph.
+- **Giới hạn:** Không thể suy MIT cho mọi font/icon; phải giữ license và tên font dự trữ theo từng nguồn. Đường dẫn nhánh master không được tác giả coi là ổn định.
+- **Tích hợp:** Chọn đúng font từ release hoặc gói hệ thống; khi phân phối asset phải kèm điều khoản của font cụ thể.
+- **Đối chiếu:** Font Awesome cho icon web; Material Symbols cho glyph UI; font monospace gốc khi không cần icon.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae` (2026-10-18T00:03:51+02:00); 65,280 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [readme.md](https://github.com/ryanoasis/nerd-fonts/blob/adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae/readme.md) · [LICENSE](https://github.com/ryanoasis/nerd-fonts/blob/adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae/LICENSE) · [license-audit.md](https://github.com/ryanoasis/nerd-fonts/blob/adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae/license-audit.md) · [package.json](https://github.com/ryanoasis/nerd-fonts/blob/adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae/package.json) · [.github/workflows/shellcheck.yml](https://github.com/ryanoasis/nerd-fonts/blob/adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae/.github/workflows/shellcheck.yml) · [GitHub API](https://api.github.com/repos/ryanoasis/nerd-fonts).
+
+<a id="anhkysuai-mbadolato-iterm2-color-schemes"></a>
+
+### iTerm2 Color Schemes
+
+- **Repo:** [mbadolato/iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes).
+- **Mục đích:** Bộ phối màu terminal và các bản chuyển định dạng cho nhiều editor/terminal.
+- **Điểm đáng dùng:** README có đầu ra JSONL dùng máy và CI bắt buộc mỗi scheme có mục license; công cụ tạo các bản port từ nguồn chung.
+- **License:** MIT cho công cụ; mỗi theme theo licenses.yml.
+- **Giới hạn:** Không áp MIT root cho tất cả theme: registry cho phép unknown/nonfree; tương phản màu và font thực tế cần kiểm tra.
+- **Tích hợp:** Chọn theme có quyền phân phối rõ, giữ attribution và thử độ đọc được trong light/dark trước khi đóng gói dev theme.
+- **Đối chiếu:** Catppuccin cho hệ theme; Dracula cho bộ màu; theme tích hợp terminal cho ít dependency.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `c7fd7a806e240e423b16b0ff8549b2bc680990cc` (2026-11-22T19:16:43-07:00); 27,337 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/c7fd7a806e240e423b16b0ff8549b2bc680990cc/README.md) · [LICENSE](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/c7fd7a806e240e423b16b0ff8549b2bc680990cc/LICENSE) · [.github/workflows/check-licenses.yml](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/c7fd7a806e240e423b16b0ff8549b2bc680990cc/.github/workflows/check-licenses.yml) · [GitHub API](https://api.github.com/repos/mbadolato/iTerm2-Color-Schemes).
+
+<a id="anhkysuai-antonmedv-fx"></a>
+
+### fx
+
+**Repo:** [antonmedv/fx](https://github.com/antonmedv/fx) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`0cd57fae925d`](https://github.com/antonmedv/fx/tree/0cd57fae925d65f2f488b227d9c141316859e893) (commit 2026-11-20). **Sao:** 20,723 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/antonmedv/fx).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Công cụ terminal để xem và xử lý JSON; repo gồm ứng dụng Go và bản JavaScript không tương tác cho pipeline. |
+| Giá trị và cơ chế theo tài liệu | README npm mô tả ghép hàm JavaScript, xử lý luồng từng object, slurp, raw input và edit-in-place. go.mod có Bubble Tea/Goja, CI kiểm Go trên nhiều kiến trúc cùng bản npm. |
+| Giới hạn | README gốc rất ngắn; tính năng npm không được suy đồng nhất hoàn toàn với giao diện Go. Biểu thức và .fxrc.js là mã thực thi, save ghi đè dữ liệu; chưa thử bộ xử lý. |
+| Điều kiện tích hợp | Khóa bản và chọn đúng binary/package, dùng biểu thức tin cậy, thử trên bản sao JSON và ghi ra tệp mới trước khi dùng save. Giới hạn slurp với dữ liệu lớn. |
+| Lựa chọn đối chiếu | jq; Jless; VisiData. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/README.md) · [LICENSE](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/LICENSE) · [go.mod](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/go.mod) · [.github/workflows/test.yml](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/.github/workflows/test.yml) · [npm/README.md](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/npm/README.md).

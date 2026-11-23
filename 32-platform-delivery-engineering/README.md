@@ -110,37 +110,13 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Coolify
 
-**Repo:** [coollabsio/coolify](https://github.com/coollabsio/coolify) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`619e9a78d0d1`](https://github.com/coollabsio/coolify/tree/619e9a78d0d1d66e085e151c0e41cd5d9a083576) (commit 2026-11-23). **Sao:** 66,375 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/coollabsio/coolify).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Nền tảng triển khai ứng dụng, cơ sở dữ liệu và dịch vụ trên máy chủ tự quản lý qua SSH. |
-| Giá trị và cơ chế theo tài liệu | Tài liệu gom Git, Dockerfile/Compose, proxy HTTPS, preview và rollback trong một bảng điều khiển; cấu trúc Laravel/Composer giúp đọc được tầng điều phối. |
-| Giới hạn | Quyền SSH và bí mật triển khai có phạm vi ảnh hưởng lớn. Khả năng rollback, cách cô lập mạng và phục hồi dữ liệu mới được đọc từ tài liệu, chưa thử trên hệ thống thật. |
-| Điều kiện tích hợp | Đọc script cài trước khi dùng; triển khai thử trên máy chủ riêng, giới hạn quyền và kiểm quy trình backup/restore của từng dịch vụ. |
-| Lựa chọn đối chiếu | [Dokploy](../32-platform-delivery-engineering/README.md#anhkysuai-dokploy-dokploy); [Dokku](../32-platform-delivery-engineering/README.md#anhkysuai-dokku-dokku); CapRover. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/coollabsio/coolify/blob/619e9a78d0d1d66e085e151c0e41cd5d9a083576/README.md) · [LICENSE](https://github.com/coollabsio/coolify/blob/619e9a78d0d1d66e085e151c0e41cd5d9a083576/LICENSE) · [package.json](https://github.com/coollabsio/coolify/blob/619e9a78d0d1d66e085e151c0e41cd5d9a083576/package.json) · [composer.json](https://github.com/coollabsio/coolify/blob/619e9a78d0d1d66e085e151c0e41cd5d9a083576/composer.json) · [.github/workflows/build.yaml](https://github.com/coollabsio/coolify/blob/619e9a78d0d1d66e085e151c0e41cd5d9a083576/.github/workflows/build.yaml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-coollabsio-coolify); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-pi-hole-pi-hole"></a>
 
 ### Pi-hole Core
 
-**Repo:** [pi-hole/pi-hole](https://github.com/pi-hole/pi-hole) · **License:** EUPL-1.2 · **Kiểm:** 2026-11-23, `docs-read`, [`f7c0220e63e7`](https://github.com/pi-hole/pi-hole/tree/f7c0220e63e753c664a1ec08d42d6b647b86005d) (commit 2026-11-11). **Sao:** 62,184 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/pi-hole/pi-hole).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | DNS sinkhole chặn tên miền không mong muốn cho cả mạng, có thể kiêm DHCP. |
-| Giá trị và cơ chế theo tài liệu | Có CLI shell và BATS/ShellCheck trong CI; việc cấu hình DNS tại router cho phép áp chính sách cho nhiều thiết bị. |
-| Giới hạn | Chặn theo DNS không đồng nghĩa chặn mọi nội dung quảng cáo; độ phủ phụ thuộc đường DNS thiết bị dùng. LICENSE ghi ngoại lệ lịch sử trước phiên bản 3.0. |
-| Điều kiện tích hợp | Đọc installer trước khi chạy; thử cấu hình DNS và phương án khôi phục, tránh tạo hai máy chủ DHCP cùng mạng. |
-| Lựa chọn đối chiếu | [AdGuard Home](../32-platform-delivery-engineering/README.md#anhkysuai-adguardteam-adguardhome); Technitium DNS; NextDNS. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/pi-hole/pi-hole/blob/f7c0220e63e753c664a1ec08d42d6b647b86005d/README.md) · [LICENSE](https://github.com/pi-hole/pi-hole/blob/f7c0220e63e753c664a1ec08d42d6b647b86005d/LICENSE) · [.github/workflows/test.yml](https://github.com/pi-hole/pi-hole/blob/f7c0220e63e753c664a1ec08d42d6b647b86005d/.github/workflows/test.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-pi-hole-pi-hole); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-acmesh-official-acme.sh"></a>
 
@@ -200,55 +176,19 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Portainer Community Edition
 
-**Repo:** [portainer/portainer](https://github.com/portainer/portainer) · **License:** Zlib · **Kiểm:** 2026-11-23, `docs-read`, [`08a5576af343`](https://github.com/portainer/portainer/tree/08a5576af343fe330ae57f9a9d16b5085df37097) (commit 2026-11-20). **Sao:** 38,893 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/portainer/portainer).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Giao diện quản lý container cho Docker, Swarm, Podman, Kubernetes và ACI. |
-| Giá trị và cơ chế theo tài liệu | README phân biệt CE với Business Edition; manifest Go/frontend và script Vitest/typecheck cho thấy cách phát triển giao diện quản trị. |
-| Giới hạn | README tại SHA này định vị CE cho homelab/học tập, không hỗ trợ production hay cam kết SLA. Giấy phép Zlib cho phép dùng thương mại nhưng không tạo cam kết hỗ trợ đó. |
-| Điều kiện tích hợp | Dùng CE trong môi trường thử, giới hạn quyền truy cập Docker/Kubernetes; nếu vận hành doanh nghiệp, đối chiếu yêu cầu RBAC/audit/SSO và edition phù hợp. |
-| Lựa chọn đối chiếu | [Rancher](../32-platform-delivery-engineering/README.md#anhkysuai-rancher-rancher); [Dockge](../32-platform-delivery-engineering/README.md#anhkysuai-louislam-dockge); Headlamp. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/portainer/portainer/blob/08a5576af343fe330ae57f9a9d16b5085df37097/README.md) · [LICENSE](https://github.com/portainer/portainer/blob/08a5576af343fe330ae57f9a9d16b5085df37097/LICENSE) · [package.json](https://github.com/portainer/portainer/blob/08a5576af343fe330ae57f9a9d16b5085df37097/package.json) · [go.mod](https://github.com/portainer/portainer/blob/08a5576af343fe330ae57f9a9d16b5085df37097/go.mod).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-portainer-portainer); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-adguardteam-adguardhome"></a>
 
 ### AdGuard Home
 
-**Repo:** [AdguardTeam/AdGuardHome](https://github.com/AdguardTeam/AdGuardHome) · **License:** GPL-3.0 · **Kiểm:** 2026-11-23, `docs-read`, [`69ee3d389910`](https://github.com/AdguardTeam/AdGuardHome/tree/69ee3d389910d5d30701cbe867280cf1809853ac) (commit 2026-11-20). **Sao:** 38,749 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/AdguardTeam/AdGuardHome).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Máy chủ DNS tự host chặn tên miền quảng cáo và theo dõi trên mạng. |
-| Giá trị và cơ chế theo tài liệu | README giải thích cơ chế chuyển hướng tên miền, API và khác biệt với DNS công cộng; go.mod cho thấy các thư viện DNS proxy và bộ lọc. |
-| Giới hạn | DNS filtering không bảo đảm chặn nội dung cùng tên miền hoặc thiết bị dùng DNS khác. Chưa kiểm danh sách lọc, độ trễ hay bảo vệ log truy vấn. |
-| Điều kiện tích hợp | Thử với một nhóm thiết bị, chọn upstream tin cậy và chính sách log; chuẩn bị DNS dự phòng, tránh làm mất phân giải tên của cả mạng. |
-| Lựa chọn đối chiếu | Pi-hole; Technitium DNS; Blocky. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/AdguardTeam/AdGuardHome/blob/69ee3d389910d5d30701cbe867280cf1809853ac/README.md) · [LICENSE.txt](https://github.com/AdguardTeam/AdGuardHome/blob/69ee3d389910d5d30701cbe867280cf1809853ac/LICENSE.txt) · [go.mod](https://github.com/AdguardTeam/AdGuardHome/blob/69ee3d389910d5d30701cbe867280cf1809853ac/go.mod) · [.github/workflows/build.yaml](https://github.com/AdguardTeam/AdGuardHome/blob/69ee3d389910d5d30701cbe867280cf1809853ac/.github/workflows/build.yaml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-adguardteam-adguardhome); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-dokploy-dokploy"></a>
 
 ### Dokploy
 
-**Repo:** [Dokploy/dokploy](https://github.com/Dokploy/dokploy) · **License:** Apache-2.0 ngoài proprietary; proprietary theo DSAL-1.0 · **Kiểm:** 2026-11-23, `docs-read`, [`3b13bcde8dca`](https://github.com/Dokploy/dokploy/tree/3b13bcde8dca8b4ec0e4d48445b2aa1b0c183449) (commit 2026-11-20). **Sao:** 38,652 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/Dokploy/dokploy).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | PaaS tự host để triển khai ứng dụng, cơ sở dữ liệu và Docker Compose. |
-| Giá trị và cơ chế theo tài liệu | README kết hợp Traefik, nhiều máy chủ, backup và CLI/API; workflow upgrade integration tạo cặp phiên bản để kiểm đường nâng cấp. |
-| Giới hạn | LICENSE tách proprietary sang DSAL đòi thỏa thuận thương mại cho production. Có workflow nâng cấp chưa chứng minh mọi stack nâng cấp an toàn; quyền quản trị máy chủ cần giới hạn. |
-| Điều kiện tích hợp | Thử ứng dụng và database có backup phục hồi được; chốt phần Apache/DSAL sử dụng, quyền SSH, bí mật và đường rollback trước khi triển khai rộng. |
-| Lựa chọn đối chiếu | [Coolify](../32-platform-delivery-engineering/README.md#anhkysuai-coollabsio-coolify); [Dokku](../32-platform-delivery-engineering/README.md#anhkysuai-dokku-dokku); CapRover. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/Dokploy/dokploy/blob/3b13bcde8dca8b4ec0e4d48445b2aa1b0c183449/README.md) · [LICENSE.MD](https://github.com/Dokploy/dokploy/blob/3b13bcde8dca8b4ec0e4d48445b2aa1b0c183449/LICENSE.MD) · [LICENSE_PROPRIETARY.md](https://github.com/Dokploy/dokploy/blob/3b13bcde8dca8b4ec0e4d48445b2aa1b0c183449/LICENSE_PROPRIETARY.md) · [package.json](https://github.com/Dokploy/dokploy/blob/3b13bcde8dca8b4ec0e4d48445b2aa1b0c183449/package.json) · [.github/workflows/upgrade-integration-test.yml](https://github.com/Dokploy/dokploy/blob/3b13bcde8dca8b4ec0e4d48445b2aa1b0c183449/.github/workflows/upgrade-integration-test.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-dokploy-dokploy); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-istio-istio"></a>
 
@@ -344,19 +284,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Dokku
 
-**Repo:** [dokku/dokku](https://github.com/dokku/dokku) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`5112d90e44e1`](https://github.com/dokku/dokku/tree/5112d90e44e17ff90b89452cd4c2fc972881974c) (commit 2026-11-22). **Sao:** 32,233 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/dokku/dokku).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | PaaS dùng Docker để quản lý vòng đời ứng dụng trên máy chủ tự quản. |
-| Giá trị và cơ chế theo tài liệu | README định vị như Heroku nhỏ gọn; cấu trúc plugin, tài liệu và workflow build package cung cấp nền cho triển khai đơn giản bằng CLI. |
-| Giới hạn | Tính nhỏ gọn không bảo đảm HA hay phục hồi dữ liệu. Plugin và backend build có phạm vi riêng; chưa cài máy chủ hoặc kiểm deployment/rollback. |
-| Điều kiện tích hợp | Thử một ứng dụng stateless, cấu hình domain/HTTPS và biến môi trường; kiểm quyền SSH, volume/database backup và đường nâng cấp plugin. |
-| Lựa chọn đối chiếu | [Coolify](../32-platform-delivery-engineering/README.md#anhkysuai-coollabsio-coolify); [Dokploy](../32-platform-delivery-engineering/README.md#anhkysuai-dokploy-dokploy); CapRover. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/dokku/dokku/blob/5112d90e44e17ff90b89452cd4c2fc972881974c/README.md) · [LICENSE](https://github.com/dokku/dokku/blob/5112d90e44e17ff90b89452cd4c2fc972881974c/LICENSE) · [.github/workflows/ci.yml](https://github.com/dokku/dokku/blob/5112d90e44e17ff90b89452cd4c2fc972881974c/.github/workflows/ci.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-dokku-dokku); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-abiosoft-colima"></a>
 
@@ -398,19 +326,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Proxmox VE Helper Scripts
 
-**Repo:** [community-scripts/ProxmoxVE](https://github.com/community-scripts/ProxmoxVE) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`ffd23fd306e2`](https://github.com/community-scripts/ProxmoxVE/tree/ffd23fd306e2a6415160a3965b1b3ca8d5960529) (commit 2026-11-23). **Sao:** 30,167 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/community-scripts/ProxmoxVE).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Bộ script cộng đồng cài ứng dụng vào container hoặc VM trên Proxmox VE. |
-| Giá trị và cơ chế theo tài liệu | README phân tách script mô tả ứng dụng với shared engine ở repo core, hỗ trợ đường chạy Incus riêng; CI gọi kiểm script dùng chung. |
-| Giới hạn | Lệnh mẫu chạy bằng root trên host và nạp engine ngoài; chỉ review repo này chưa bao phủ toàn chuỗi tải/cài. Chưa thực thi script hoặc xác minh app cuối cùng. |
-| Điều kiện tích hợp | Đọc và ghim script lẫn core, thử trên host/VM không chứa dữ liệu chính; kiểm tài nguyên, mạng, storage và cách khôi phục trước khi dùng tiện ích cài nhanh. |
-| Lựa chọn đối chiếu | [Ansible](../08-awesome-lists-learning/README.md#6c55-container--devops); Terraform/OpenTofu; cấu hình Proxmox thủ công. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/community-scripts/ProxmoxVE/blob/ffd23fd306e2a6415160a3965b1b3ca8d5960529/README.md) · [LICENSE](https://github.com/community-scripts/ProxmoxVE/blob/ffd23fd306e2a6415160a3965b1b3ca8d5960529/LICENSE) · [.github/workflows/pr-script-test.yml](https://github.com/community-scripts/ProxmoxVE/blob/ffd23fd306e2a6415160a3965b1b3ca8d5960529/.github/workflows/pr-script-test.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-community-scripts-proxmoxve); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-hashicorp-vagrant"></a>
 
@@ -524,19 +440,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Dockge
 
-**Repo:** [louislam/dockge](https://github.com/louislam/dockge) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`0329dabb5003`](https://github.com/louislam/dockge/tree/0329dabb5003f206d4fd9f7403a6af26d7138497) (commit 2026-10-23). **Sao:** 24,884 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/louislam/dockge).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Giao diện quản lý các stack compose.yaml và nhiều Docker host. |
-| Giá trị và cơ chế theo tài liệu | README nhấn mạnh compose file vẫn nằm trên đĩa và dùng được bằng CLI thường; có terminal thời gian thực, manifest/CI lint, typecheck và build frontend. |
-| Giới hạn | Quyền terminal/engine có ảnh hưởng lớn đến host; kiểm TypeScript không thay test thao tác runtime. Windows được README ghi chưa hỗ trợ, dù CI có bước liên quan Windows. |
-| Điều kiện tích hợp | Thử với stack dev, bảo vệ dashboard và quyền Docker socket; giữ compose trong version control, kiểm backup volume và hành vi cập nhật image. |
-| Lựa chọn đối chiếu | Portainer; Docker Compose CLI; Dockhand. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/louislam/dockge/blob/0329dabb5003f206d4fd9f7403a6af26d7138497/README.md) · [LICENSE](https://github.com/louislam/dockge/blob/0329dabb5003f206d4fd9f7403a6af26d7138497/LICENSE) · [package.json](https://github.com/louislam/dockge/blob/0329dabb5003f206d4fd9f7403a6af26d7138497/package.json) · [.github/workflows/ci.yml](https://github.com/louislam/dockge/blob/0329dabb5003f206d4fd9f7403a6af26d7138497/.github/workflows/ci.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-louislam-dockge); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-slimtoolkit-slim"></a>
 
@@ -709,3 +613,69 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 - OpenTofu: LICENSE, `internal/command/plan.go`, `internal/backend/local/backend_local.go`, docs plan/sensitive-state và `.github/workflows/checks.yml` tại SHA §3.
 - Argo CD: LICENSE, `server/application/application.go`, `docs/user-guide/auto_sync.md` và `.github/workflows/ci-build.yaml` tại SHA §4.
 - Các permalink trong từng hồ sơ là nguồn gốc đọc 4/11/2026. Số sao không được thu thập; trạng thái release/maintenance không suy chỉ từ HEAD. Không có phép đo hay chạy upstream được nhận là của kho.
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+6 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-caddy"></a>
+
+### caddy
+
+`caddyserver/caddy` · License: Apache License 2.0 · ★ 79.146 · docs-read · 2026-11-18
+
+Máy chủ web/nền tảng máy chủ mở rộng viết bằng Go, mặc định dùng TLS và tự động cấp chứng chỉ HTTPS. HTTPS tự động qua ZeroSSL và Let's Encrypt, có CA nội bộ cho tên/IP nội bộ; hỗ trợ HTTP/1.1, HTTP/2 và HTTP/3 mặc định; cấu hình động qua JSON API, Caddyfile và config adapter, kiến trúc module (thư mục modules/ có caddyhttp, caddytls, caddypki). Điều kiện: Build từ mã cần Go 1.26.0 trở lên; bind cổng thấp trên Linux cần setcap cap_net_bind_service. ★ 18/11/2026: 79.146 (GitHub search API), nhóm "Container & DevOps" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c55-container--devops) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-moby"></a>
+
+### moby
+
+`moby/moby` · License: Apache License 2.0 · ★ 72.275 · docs-read · 2026-11-18
+
+Dự án mã nguồn mở do Docker tạo, cung cấp bộ thành phần để lắp ráp hệ thống container; là upstream của Docker Engine. Docker cam kết dùng Moby làm upstream cho sản phẩm Docker; cung cấp module Go github.com/moby/moby/client và api cho Docker Engine API; có badge OpenSSF Scorecard và OpenSSF Best Practices. Điều kiện: Bản phát hành chỉ hỗ trợ theo khả năng (best effort), không hỗ trợ thương mại; module github.com/docker/docker đã ngừng cập nhật từ v29; việc dùng và chuyển giao có thể chịu hạn chế xuất khẩu của Mỹ và các chính phủ khác. ★ 18/11/2026: 72.275 (GitHub search API), nhóm "Container & DevOps" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c55-container--devops) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-ansible"></a>
+
+### ansible
+
+`ansible/ansible` · License: GNU General Public License v3.0 · ★ 71.623 · docs-read · 2026-11-18
+
+Hệ thống tự động hoá hạ tầng IT (ansible-core): quản lý cấu hình, triển khai ứng dụng, cấp phát cloud, thực thi tác vụ ad-hoc và tự động hoá mạng. Không cần agent, dùng SSH sẵn có; điều phối nhiều node, hỗ trợ cập nhật cuốn chiếu không downtime; được Red Hat tài trợ với hơn 5000 người đóng góp. Điều kiện: GPL v3: phân phối bản sửa đổi phải theo điều khoản copyleft. ★ 18/11/2026: 71.623 (GitHub search API), nhóm "Container & DevOps" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c55-container--devops) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-cilium"></a>
+
+### cilium
+
+`cilium/cilium` · License: Apache License 2.0 cho thành phần user space · ★ 25.863 · docs-read · 2026-11-18
+
+Giải pháp mạng, quan sát và bảo mật cho Kubernetes dựa trên eBPF: CNI, cân bằng tải, chính sách mạng L3-L7, service mesh. Dự án tốt nghiệp (graduated) của CNCF; có thể thay thế hoàn toàn kube-proxy bằng hash table eBPF; duy trì 3 nhánh ổn định (v1.18 đến v1.20), ảnh có SBOM định dạng SPDX từ 1.13. Điều kiện: Cần nhân Linux hỗ trợ eBPF; ảnh chỉ cho AMD64 và AArch64; ảnh build từ main/RC không dùng cho production. ★ 18/11/2026: 25.863 (GitHub search API), nhóm "Container & DevOps" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c55-container--devops) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-sealos"></a>
+
+### sealos
+
+`labring/sealos` · License: Sealos Sustainable Use License 1.0 · ★ 18.398 · docs-read · 2026-11-18
+
+Hệ điều hành cloud xây trên Kubernetes, gom cloud IDE (DevBox), cơ sở dữ liệu quản lý, object storage và app store để phát triển, triển khai và vận hành ứng dụng. Cloud IDE DevBox truy cập từ VSCode và Cursor; cơ sở dữ liệu quản lý PostgreSQL, MySQL, MongoDB, Redis cùng object storage tương thích S3; đa tenant theo workspace với RBAC và quota tài nguyên. Điều kiện: Giấy phép cấm dùng để cung cấp dịch vụ cloud (công khai, riêng hay managed) cho bên thứ ba và hạn chế phân phối; đóng góp phải đồng ý CLA và điều khoản đổi giấy phép. ★ 18/11/2026: 18.398 (GitHub search API), nhóm "Container & DevOps" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c55-container--devops) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-kubesphere"></a>
+
+### kubesphere
+
+`kubesphere/kubesphere` · License: Apache License 2.0 kèm điều kiện bổ sung · ★ 17.083 · docs-read · 2026-11-18
+
+Nền tảng container đa thuê bao dùng Kubernetes làm nhân, quản lý ứng dụng cloud-native đa cụm, datacenter và biên qua giao diện web, có kiến trúc mở rộng bằng plugin. Quản lý đa cụm Kubernetes từ một control plane tập trung; tích hợp DevOps (Argo CD, Jenkins), service mesh dựa Istio, App Store cho Helm và biên qua KubeEdge; hỗ trợ cài đặt air-gapped. Điều kiện: Cần cụm Kubernetes; giấy phép v4.x cấm dùng thương mại cho bên thứ ba, SaaS hoặc đổi thương hiệu nếu không có giấy phép thương mại (liên hệ kubesphere@yunify.com). ★ 18/11/2026: 17.083 (GitHub search API), nhóm "Container & DevOps" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c55-container--devops) (bảng/đoạn chung, giữ nguyên tại chỗ).

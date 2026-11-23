@@ -764,3 +764,29 @@ Nguyên tắc xuyên suốt mà ảnh không ghi: mỗi ô phải nói rõ **cod
 - §3g (12/10/2026): https://github.com/BitterSecurity/Decepticon (clone đầy đủ, 1.324 commit, có v1.4.0: README.md, SECURITY.md, TELEMETRY.md, docker-compose.yml, packages/decepticon/decepticon/middleware/{roe,egress,hitl,engagement}.py) · decepticon.red · app.decepticon.red · docs/benchmark-comparison.md (nội bộ repo) · https://github.com/PurpleAILAB/Decepticon (tên tổ chức cũ còn trong SECURITY.md/benchmark) · https://github.com/usestrix/strix · https://github.com/GreyDGL/PentestGPT · https://github.com/westonbrown/Cyber-AutoAgent · https://github.com/xbow-engineering/validation-benchmarks · arXiv 2607.13085, 2605.21497
 - §3f (12/10/2026): https://github.com/requie/AI-Red-Teaming-Guide (clone đầy đủ, HEAD `7b7dde8`: README.md, CHANGELOG.md, resources-validation.md, templates/, .github/workflows/) · https://github.com/requie · https://github.com/requie/LLMSecurityGuide · https://github.com/Cogensec/Gideon · https://airedteamkit.com/ · https://tarique-io.lovable.app/ · https://huggingface.co/spaces/Cogensec/README · https://www.microsoft.com/en-us/security/blog/2026/06/04/updating-taxonomy-failure-modes-agentic-ai-systems-year-red-teaming-taught-us/ · https://futurumgroup.com/?p=87434 · https://news.bloomberglaw.com/us-law-week/openai-buying-ai-security-startup-promptfoo-to-safeguard-agents · https://www.canberratimes.com.au/story/9359341/openai-apologises-for-medicare-hack-creates-task-force/ · https://aisi.go.jp/assets/pdf/E1_ai_safety_RT_v1.10_en.pdf · https://github.com/cloudstreet-dev/AI-Red-Teaming · https://github.com/Vect0rdecay/ai-red-team-course
 - §3h (13/10/2026): https://github.com/yeswehack/claude-kit (clone đầy đủ, 4 commit, HEAD 3928c34: README.md, always-on-rules.md, hooks/hooks.json, skills/{write,triage,gotchas}/SKILL.md, skills/triage/references/ai-slop.md, .claude-plugin/{plugin,marketplace}.json, LICENSE) · https://www.yeswehack.com/fr/learn-bug-bounty/triager-grade-reports-claude-code · https://www.yeswehack.com/fr/learn-bug-bounty/write-effective-bug-bounty-reports · bối cảnh: https://bleepingcomputer.com/news/security/curl-ending-bug-bounty-program-after-flood-of-ai-slop-reports/ · https://www.techradar.com/pro/security/curl-will-stop-bug-bounties-program-due-to-avalanche-of-ai-slop · so sánh: https://github.com/elementalsouls/Claude-BugHunter, https://github.com/trailofbits/skills-curated
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+2 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-sherlock"></a>
+
+### sherlock
+
+`sherlock-project/sherlock` · License: MIT · ★ 113.816 · docs-read · 2026-11-18
+
+Công cụ dòng lệnh tìm tài khoản mạng xã hội theo tên người dùng trên hơn 400 trang. Kiểm tra nhiều username cùng lúc, xuất kết quả ra txt, CSV hoặc xlsx; Hỗ trợ proxy, giới hạn theo trang (--site) và nạp danh sách trang từ file JSON; Cài được qua pipx/pip/uv, Docker hoặc dnf, phiên bản pyproject 0.16.2. Điều kiện: Công cụ OSINT tra cứu tài khoản người khác: cần tuân thủ luật về quyền riêng tư và điều khoản các trang được truy vấn (dự án không nêu cụ thể); README cảnh báo gói ParrotOS và Ubuntu 24.04 do bên thứ ba duy trì có vẻ bị hỏng. ★ 18/11/2026: 113.816 (GitHub search API), nhóm "Bảo mật & Hack" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c53-bảo-mật--hack) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-magika"></a>
+
+### magika
+
+`google/magika` · License: Apache-2.0 · ★ 18.831 · docs-read · 2026-11-18
+
+Công cụ nhận diện loại tệp bằng mô hình học sâu nhỏ gọn, có CLI viết bằng Rust và thư viện Python, JavaScript, Rust, Go. Huấn luyện trên khoảng 100 triệu mẫu với hơn 200 loại nội dung, độ chính xác trung bình khoảng 99% trên tập test; suy luận khoảng 5 ms mỗi tệp trên một CPU; được Google dùng cho Gmail, Drive, Safe Browsing và tích hợp với VirusTotal. Điều kiện: README ghi không phải dự án Google chính thức, không được Google hỗ trợ; gói npm và binding Go còn thử nghiệm/đang làm. ★ 18/11/2026: 18.831 (GitHub search API), nhóm "Bảo mật & Hack" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c53-bảo-mật--hack) (bảng/đoạn chung, giữ nguyên tại chỗ).

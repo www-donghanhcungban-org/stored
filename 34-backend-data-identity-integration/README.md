@@ -181,19 +181,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Vaultwarden
 
-**Repo:** [dani-garcia/vaultwarden](https://github.com/dani-garcia/vaultwarden) · **License:** AGPL-3.0-only · **Kiểm:** 2026-11-23, `docs-read`, [`6f7a7f70347e`](https://github.com/dani-garcia/vaultwarden/tree/6f7a7f70347e0cdde9d3506342ff04b22a9c78ce) (commit 2026-11-23). **Sao:** 71,206 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/dani-garcia/vaultwarden).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Máy chủ Rust tương thích API và client Bitwarden để tự lưu kho mật khẩu. |
-| Giá trị và cơ chế theo tài liệu | README mô tả vault cá nhân, tổ chức, chia sẻ và nhiều cách xác thực; Cargo tách các backend SQLite, MySQL, PostgreSQL bằng feature. |
-| Giới hạn | Đây là triển khai độc lập với Bitwarden. Web vault cần HTTPS; dữ liệu mật khẩu và bản sao lưu đòi hỏi kiểm soát vận hành. Chưa kiểm toán mật mã hay tương thích mọi client. |
-| Điều kiện tích hợp | Ưu tiên container chính thức của dự án, volume bền và reverse proxy HTTPS; kiểm nghĩa vụ AGPL trước khi sửa và cung cấp dịch vụ. |
-| Lựa chọn đối chiếu | Bitwarden; KeePassXC; Passbolt. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/dani-garcia/vaultwarden/blob/6f7a7f70347e0cdde9d3506342ff04b22a9c78ce/README.md) · [LICENSE.txt](https://github.com/dani-garcia/vaultwarden/blob/6f7a7f70347e0cdde9d3506342ff04b22a9c78ce/LICENSE.txt) · [Cargo.toml](https://github.com/dani-garcia/vaultwarden/blob/6f7a7f70347e0cdde9d3506342ff04b22a9c78ce/Cargo.toml) · [.github/workflows/build.yml](https://github.com/dani-garcia/vaultwarden/blob/6f7a7f70347e0cdde9d3506342ff04b22a9c78ce/.github/workflows/build.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-dani-garcia-vaultwarden); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-socketio-socket.io"></a>
 
@@ -469,19 +457,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### PhotoPrism
 
-**Repo:** [photoprism/photoprism](https://github.com/photoprism/photoprism) · **License:** AGPL-3.0; điều khoản bổ sung về nhãn hiệu và tài sản thương hiệu · **Kiểm:** 2026-11-23, `docs-read`, [`3d2c27ec7bf2`](https://github.com/photoprism/photoprism/tree/3d2c27ec7bf2fd150aaf9669a4a94773a4c96934) (commit 2026-11-23). **Sao:** 40,471 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/photoprism/photoprism).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Ứng dụng tự host để quản lý, duyệt, tìm và gắn nhãn ảnh/video. |
-| Giá trị và cơ chế theo tài liệu | README mô tả thư viện media và giao diện web; manifest Go/frontend và workflow CodeQL cung cấp điểm kiểm nền tảng. |
-| Giới hạn | LICENSE có điều khoản bổ sung về nhãn hiệu, không chỉ nhãn AGPL của bộ dò. Nhận diện và quyền riêng tư chưa được đo/kiểm; cần dự trù dung lượng gốc, thumbnail và cơ sở dữ liệu. |
-| Điều kiện tích hợp | Nhập bộ ảnh thử, kiểm metadata, quyền truy cập và restore; tách sao lưu ảnh gốc khỏi index, đọc điều khoản thương hiệu trước khi phân phối bản đổi tên. |
-| Lựa chọn đối chiếu | [Immich](../08-awesome-lists-learning/README.md#6c526-tự-host--nhà-thông-minh); LibrePhotos; Nextcloud Photos. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/photoprism/photoprism/blob/3d2c27ec7bf2fd150aaf9669a4a94773a4c96934/README.md) · [LICENSE](https://github.com/photoprism/photoprism/blob/3d2c27ec7bf2fd150aaf9669a4a94773a4c96934/LICENSE) · [package.json](https://github.com/photoprism/photoprism/blob/3d2c27ec7bf2fd150aaf9669a4a94773a4c96934/package.json) · [go.mod](https://github.com/photoprism/photoprism/blob/3d2c27ec7bf2fd150aaf9669a4a94773a4c96934/go.mod) · [.github/workflows/codeql-analysis.yml](https://github.com/photoprism/photoprism/blob/3d2c27ec7bf2fd150aaf9669a4a94773a4c96934/.github/workflows/codeql-analysis.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-photoprism-photoprism); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-halo-dev-halo"></a>
 
@@ -523,19 +499,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Nextcloud Server
 
-**Repo:** [nextcloud/server](https://github.com/nextcloud/server) · **License:** AGPL-3.0-or-later; thành phần bên thứ ba theo SPDX riêng · **Kiểm:** 2026-11-23, `docs-read`, [`0ff6535942dd`](https://github.com/nextcloud/server/tree/0ff6535942ddf0a2ab38c215c3d0ff78aa6f43f7) (commit 2026-11-23). **Sao:** 37,615 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/nextcloud/server).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Máy chủ lưu, đồng bộ và chia sẻ tệp với hệ sinh thái ứng dụng cộng tác. |
-| Giá trị và cơ chế theo tài liệu | README nối files, contacts, calendar và các app riêng; Composer/Node cùng CI frontend giúp xác định ranh giới server và phần mở rộng. |
-| Giới hạn | Các ứng dụng trong App Store không nằm hết trong phạm vi review. Tuyên bố mã hóa/an toàn chưa được kiểm; tính bảo mật phụ thuộc cách cấu hình và vận hành server. |
-| Điều kiện tích hợp | Dùng bản phát hành phù hợp PHP/database, thử chia sẻ và ACL bằng tài khoản khác nhau; kiểm backup cả dữ liệu lẫn database và quy trình nâng cấp app. |
-| Lựa chọn đối chiếu | [Seafile](../08-awesome-lists-learning/README.md#6c526-tự-host--nhà-thông-minh); ownCloud; [Syncthing](../08-awesome-lists-learning/README.md#6c526-tự-host--nhà-thông-minh). |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/nextcloud/server/blob/0ff6535942ddf0a2ab38c215c3d0ff78aa6f43f7/README.md) · [COPYING](https://github.com/nextcloud/server/blob/0ff6535942ddf0a2ab38c215c3d0ff78aa6f43f7/COPYING) · [COPYING-README](https://github.com/nextcloud/server/blob/0ff6535942ddf0a2ab38c215c3d0ff78aa6f43f7/COPYING-README) · [package.json](https://github.com/nextcloud/server/blob/0ff6535942ddf0a2ab38c215c3d0ff78aa6f43f7/package.json) · [composer.json](https://github.com/nextcloud/server/blob/0ff6535942ddf0a2ab38c215c3d0ff78aa6f43f7/composer.json) · [.github/workflows/node-test.yml](https://github.com/nextcloud/server/blob/0ff6535942ddf0a2ab38c215c3d0ff78aa6f43f7/.github/workflows/node-test.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-nextcloud-server); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-fastify-fastify"></a>
 
@@ -919,19 +883,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Cloudreve
 
-**Repo:** [cloudreve/cloudreve](https://github.com/cloudreve/cloudreve) · **License:** GPL-3.0 · **Kiểm:** 2026-11-23, `docs-read`, [`6193d04f4a95`](https://github.com/cloudreve/cloudreve/tree/6193d04f4a95a770c63fa2a29b7b335f09a6612e) (commit 2026-11-23). **Sao:** 29,002 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/cloudreve/cloudreve).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Hệ quản lý và chia sẻ tệp tự host nối nhiều nhà cung cấp lưu trữ. |
-| Giá trị và cơ chế theo tài liệu | README mô tả truyền thẳng client-storage, WebDAV, upload tiếp tục, nhóm người dùng và liên kết hết hạn; go.mod xác định adapter/provider. |
-| Giới hạn | Độ tương thích từng provider, preview và download nền chưa được kiểm. Liên kết chia sẻ, credential storage và node tải ngoài mở rộng phạm vi dữ liệu phải bảo vệ. |
-| Điều kiện tích hợp | Thử một backend với file lớn/ngắt mạng, kiểm ACL và expiry bằng tài khoản khác; backup metadata, quản lý khóa provider và rà luồng WebDAV trước khi dùng. |
-| Lựa chọn đối chiếu | Nextcloud; [Seafile](../08-awesome-lists-learning/README.md#6c526-tự-host--nhà-thông-minh); File Browser. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/cloudreve/cloudreve/blob/6193d04f4a95a770c63fa2a29b7b335f09a6612e/README.md) · [LICENSE](https://github.com/cloudreve/cloudreve/blob/6193d04f4a95a770c63fa2a29b7b335f09a6612e/LICENSE) · [go.mod](https://github.com/cloudreve/cloudreve/blob/6193d04f4a95a770c63fa2a29b7b335f09a6612e/go.mod).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-cloudreve-cloudreve); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-mongodb-mongo"></a>
 
@@ -1153,19 +1105,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Navidrome
 
-**Repo:** [navidrome/navidrome](https://github.com/navidrome/navidrome) · **License:** GPL-3.0 · **Kiểm:** 2026-11-23, `docs-read`, [`06df4a5661dc`](https://github.com/navidrome/navidrome/tree/06df4a5661dc7aea82d15deb75684854743149d0) (commit 2026-11-22). **Sao:** 24,909 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/navidrome/navidrome).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Máy chủ thư viện nhạc cá nhân và streaming qua trình duyệt/client. |
-| Giá trị và cơ chế theo tài liệu | README tách bản release khỏi master có thể không ổn định; Go manifest cho biết các thư viện tag/media, hỗ trợ đánh giá ứng dụng lưu trữ tự quản. |
-| Giới hạn | Không phải kho nhạc có quyền phân phối sẵn. Chưa thử codec, scan metadata hoặc stream trên mobile; workflow đã đọc chỉ quản lý nhãn review, không chứng minh test chức năng. |
-| Điều kiện tích hợp | Dùng release với thư viện mẫu, kiểm tagging, transcoding và quyền tài khoản; sao lưu nhạc gốc lẫn database, chỉ mở ra mạng ngoài sau cấu hình HTTPS. |
-| Lựa chọn đối chiếu | Jellyfin; Airsonic-Advanced; Ampache. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/navidrome/navidrome/blob/06df4a5661dc7aea82d15deb75684854743149d0/README.md) · [LICENSE](https://github.com/navidrome/navidrome/blob/06df4a5661dc7aea82d15deb75684854743149d0/LICENSE) · [go.mod](https://github.com/navidrome/navidrome/blob/06df4a5661dc7aea82d15deb75684854743149d0/go.mod) · [.github/workflows/review-attestation-label.yml](https://github.com/navidrome/navidrome/blob/06df4a5661dc7aea82d15deb75684854743149d0/.github/workflows/review-attestation-label.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-navidrome-navidrome); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-krayin-laravel-crm"></a>
 
@@ -1714,16 +1654,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### NumPy
 
-- **Repo:** [numpy/numpy](https://github.com/numpy/numpy).
-- **Mục đích:** Nền tảng mảng nhiều chiều và tính toán số cho Python.
-- **Điểm đáng dùng:** Broadcasting, đại số tuyến tính, FFT và tích hợp C/C++/Fortran giúp dựng xử lý dữ liệu; tài liệu test có pytest và Hypothesis tùy chọn.
-- **License:** BSD-3-Clause AND 0BSD AND MIT AND CC0-1.0.
-- **Giới hạn:** HEAD là 2.6.0.dev0 cần Python >=3.12; dtype, overflow và ABI native cần kiểm thử, không lấy workflow redirect artifact làm bằng chứng suite đã chạy.
-- **Tích hợp:** Khóa phiên bản cùng thư viện native, kiểm thử shape/dtype và kết quả số trên dữ liệu đại diện.
-- **Đối chiếu:** JAX cho autodiff/accelerator; [PyTorch](../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện) cho tensor; [Polars](../15-ai-for-data/README.md) cho bảng dữ liệu.
-- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
-- **Snapshot:** kiểm ngày 2026-11-23; commit `d592eb072efbd8dcabb5d624ba3706e675ec3538` (2026-11-22T17:20:36-07:00); 33,458 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
-- **Bằng chứng:** [README.md](https://github.com/numpy/numpy/blob/d592eb072efbd8dcabb5d624ba3706e675ec3538/README.md) · [LICENSE.txt](https://github.com/numpy/numpy/blob/d592eb072efbd8dcabb5d624ba3706e675ec3538/LICENSE.txt) · [pyproject.toml](https://github.com/numpy/numpy/blob/d592eb072efbd8dcabb5d624ba3706e675ec3538/pyproject.toml) · [.github/workflows/circleci.yml](https://github.com/numpy/numpy/blob/d592eb072efbd8dcabb5d624ba3706e675ec3538/.github/workflows/circleci.yml) · [GitHub API](https://api.github.com/repos/numpy/numpy).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 15](../15-ai-for-data/README.md#anhkysuai-numpy-numpy); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-sequelize-sequelize"></a>
 
@@ -1861,41 +1792,13 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### monica
 
-**Repo:** [monicahq/monica](https://github.com/monicahq/monica) · **License:** AGPL-3.0 · **★ 25,827 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Ứng dụng quản lý quan hệ cá nhân để ghi thông tin, sự kiện và tương tác với người quen.
-
-**Giá trị:** Mô hình PRM phù hợp tham khảo tổ chức dữ liệu quan hệ và nhắc việc theo ngữ cảnh cá nhân.
-
-**Giới hạn:** Nhánh được clone là beta; README trỏ bản ổn định sang nhánh 4.x. Dữ liệu quan hệ có tính riêng tư, cần kiểm quyền truy cập, sao lưu và xuất dữ liệu trước sử dụng.
-
-**Cách tham khảo/tích hợp:** Đọc cấu hình triển khai, giới hạn license và hợp đồng dữ liệu; thử auth, migration, backup/restore với dữ liệu mẫu trước tích hợp.
-
-**Lựa chọn để đối chiếu:** [monicahq/chandler](https://github.com/monicahq/chandler) · [twentyhq/twenty](https://github.com/twentyhq/twenty). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`dab74273acc5c9e0ba713a9f7c2c71c24ab16993`](https://github.com/monicahq/monica/commit/dab74273acc5c9e0ba713a9f7c2c71c24ab16993), ngày commit 2026-10-28. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/monicahq/monica/blob/dab74273acc5c9e0ba713a9f7c2c71c24ab16993/README.md) · [LICENSE.md](https://github.com/monicahq/monica/blob/dab74273acc5c9e0ba713a9f7c2c71c24ab16993/LICENSE.md) · [package.json](https://github.com/monicahq/monica/blob/dab74273acc5c9e0ba713a9f7c2c71c24ab16993/package.json) · [composer.json](https://github.com/monicahq/monica/blob/dab74273acc5c9e0ba713a9f7c2c71c24ab16993/composer.json) · [.github/workflows/tests.yml](https://github.com/monicahq/monica/blob/dab74273acc5c9e0ba713a9f7c2c71c24ab16993/.github/workflows/tests.yml) · [metadata GitHub](https://api.github.com/repos/monicahq/monica).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-2026-11-23-monicahq-monica); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-firefly-iii-firefly-iii"></a>
 
 ### firefly-iii
 
-**Repo:** [firefly-iii/firefly-iii](https://github.com/firefly-iii/firefly-iii) · **License:** AGPL-3.0 · **★ 25,320 (GitHub API, 2026-11-23)**
-
-**Mục đích:** Ứng dụng tự host quản lý thu chi cá nhân, ngân sách, nhãn và báo cáo.
-
-**Giá trị:** Tham khảo mô hình giao dịch và phân loại chi tiêu; hệ sinh thái có công cụ nhập dữ liệu được giới thiệu trong README.
-
-**Giới hạn:** Chưa xác minh đối soát số liệu hoặc cơ chế bảo vệ dữ liệu tài chính bằng chạy thử; tích hợp nguồn nhập cần kiểm định dạng, tiền tệ, sao lưu và quyền truy cập.
-
-**Cách tham khảo/tích hợp:** Đọc cấu hình triển khai, giới hạn license và hợp đồng dữ liệu; thử auth, migration, backup/restore với dữ liệu mẫu trước tích hợp.
-
-**Lựa chọn để đối chiếu:** [actualbudget/actual](https://github.com/actualbudget/actual) · [maybe-finance/maybe](https://github.com/maybe-finance/maybe). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`e1a90bf8ee7499524039b331179e40431b3c84af`](https://github.com/firefly-iii/firefly-iii/commit/e1a90bf8ee7499524039b331179e40431b3c84af), ngày commit 2026-11-14. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [readme.md](https://github.com/firefly-iii/firefly-iii/blob/e1a90bf8ee7499524039b331179e40431b3c84af/readme.md) · [COPYING](https://github.com/firefly-iii/firefly-iii/blob/e1a90bf8ee7499524039b331179e40431b3c84af/COPYING) · [LICENSE](https://github.com/firefly-iii/firefly-iii/blob/e1a90bf8ee7499524039b331179e40431b3c84af/LICENSE) · [package.json](https://github.com/firefly-iii/firefly-iii/blob/e1a90bf8ee7499524039b331179e40431b3c84af/package.json) · [composer.json](https://github.com/firefly-iii/firefly-iii/blob/e1a90bf8ee7499524039b331179e40431b3c84af/composer.json) · [.github/workflows/lock.yml](https://github.com/firefly-iii/firefly-iii/blob/e1a90bf8ee7499524039b331179e40431b3c84af/.github/workflows/lock.yml) · [metadata GitHub](https://api.github.com/repos/firefly-iii/firefly-iii).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-2026-11-23-firefly-iii-firefly-iii); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-aureuserp-aureuserp"></a>
 
@@ -1956,3 +1859,339 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 **Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a255d7688770af9713daff1439c47ff9bc6abd47`](https://github.com/laravel/laravel/commit/a255d7688770af9713daff1439c47ff9bc6abd47), ngày commit 2026-11-13. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
 
 **Nguồn:** [README.md](https://github.com/laravel/laravel/blob/a255d7688770af9713daff1439c47ff9bc6abd47/README.md) · [package.json](https://github.com/laravel/laravel/blob/a255d7688770af9713daff1439c47ff9bc6abd47/package.json) · [composer.json](https://github.com/laravel/laravel/blob/a255d7688770af9713daff1439c47ff9bc6abd47/composer.json) · [.github/workflows/tests.yml](https://github.com/laravel/laravel/blob/a255d7688770af9713daff1439c47ff9bc6abd47/.github/workflows/tests.yml) · [metadata GitHub](https://api.github.com/repos/laravel/laravel).
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+32 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-axios"></a>
+
+### axios
+
+`axios/axios` · License: MIT · ★ 109.516 · docs-read · 2026-11-18
+
+Thư viện HTTP client dựa trên Promise cho trình duyệt và Node.js. Hỗ trợ interceptor request/response, huỷ request và tự chuyển đổi JSON, multipart/form-data; Chạy cả trình duyệt (XMLHttpRequest) lẫn Node.js (module http), có mục hỗ trợ HTTP/2 trong README; Có file định nghĩa kiểu TypeScript (index.d.ts, index.d.cts), bản package.json hiện tại 1.21.1. ★ 18/11/2026: 109.516 (GitHub search API), nhóm "API & Dịch vụ dữ liệu" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c52-api--dịch-vụ-dữ-liệu) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-hoppscotch"></a>
+
+### hoppscotch
+
+`hoppscotch/hoppscotch` · License: MIT · ★ 80.841 · docs-read · 2026-11-18
+
+Hệ sinh thái phát triển API mã nguồn mở: ứng dụng web/desktop để gửi và kiểm thử request REST, GraphQL, WebSocket, SSE, Socket.IO, MQTT. Hỗ trợ nhiều giao thức (REST, GraphQL, WebSocket, Server-Sent Events, Socket.IO, MQTT) và nhiều kiểu xác thực (Basic, Bearer, OAuth 2.0, OIDC/PKCE); Có collection, workspace, team cộng tác và pre-request script JavaScript; Monorepo có backend, CLI, ứng dụng desktop, bản self-host web và trang admin (thư mục packages/). Điều kiện: Một số tính năng (ví dụ SSO) chỉ có ở bản Enterprise; tự host theo tài liệu self-host trên docs.hoppscotch.io. ★ 18/11/2026: 80.841 (GitHub search API), nhóm "API & Dịch vụ dữ liệu" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c52-api--dịch-vụ-dữ-liệu) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-openai-python"></a>
+
+### openai-python
+
+`openai/openai-python` · License: Apache License 2.0 · ★ 32.184 · docs-read · 2026-11-18
+
+Thư viện Python chính thức truy cập REST API của OpenAI, có client đồng bộ và bất đồng bộ. Có định nghĩa kiểu cho mọi tham số request và trường response, sinh từ đặc tả OpenAPI; Hỗ trợ streaming, Realtime API, phân trang tự động, xác minh webhook, retry và timeout cấu hình được; Hỗ trợ xác thực workload identity (Kubernetes, Azure, GCP, X.509) thay cho khoá API dài hạn. Điều kiện: Cần khoá API OpenAI (OPENAI_API_KEY) và tài khoản trả phí theo điều khoản OpenAI; Python 3.10+. ★ 18/11/2026: 32.184 (GitHub search API), nhóm "API & Dịch vụ dữ liệu" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c52-api--dịch-vụ-dữ-liệu) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-jumpserver"></a>
+
+### jumpserver
+
+`jumpserver/jumpserver` · License: GPL-3.0 · ★ 31.982 · docs-read · 2026-11-18
+
+Nền tảng quản lý truy cập đặc quyền (PAM/bastion host) mã nguồn mở, có tính năng AI, cho phép truy cập an toàn tới SSH, RDP, Kubernetes, cơ sở dữ liệu, website, RemoteApp. README nêu rõ lịch bảo trì phiên bản (5.x đang bảo trì, 4.10.x là LTS, 3.10.x chỉ sửa lỗi nghiêm trọng); cài nhanh bằng một script quick_start.sh; README có bản dịch nhiều ngôn ngữ kể cả tiếng Việt. Điều kiện: Máy chủ Linux 64-bit tối thiểu 4 nhân CPU, 8 GB RAM; giấy phép GPLv3 (copyleft); một số thành phần thuộc bản Enterprise; V3 CE hết hỗ trợ 31/12/2026; phải đổi mật khẩu mặc định admin/ChangeMe. ★ 18/11/2026: 31.982 (GitHub search API), nhóm "Bảo mật & Hack" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c53-bảo-mật--hack) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-nacos"></a>
+
+### nacos
+
+`alibaba/nacos` · License: Apache License 2.0 · ★ 33.525 · docs-read · 2026-11-18
+
+Nền tảng khám phá dịch vụ, quản lý cấu hình động và quản lý dịch vụ cho ứng dụng cloud-native và microservice. Đăng ký/khám phá dịch vụ qua DNS hoặc HTTP kèm health check thời gian thực; quản lý cấu hình tập trung, cập nhật không cần redeploy; hỗ trợ Dubbo/gRPC, Spring Cloud và Kubernetes. ★ 18/11/2026: 33.525 (GitHub search API), nhóm "Container & DevOps" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c55-container--devops) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-gin"></a>
+
+### gin
+
+`gin-gonic/gin` · License: MIT · ★ 89.531 · docs-read · 2026-11-18
+
+Framework web HTTP hiệu năng cao cho Go, API kiểu Martini dựa trên httprouter. Router không cấp phát heap; middleware recovery chống panic làm sập server, binding và kiểm tra JSON tự động; bản 1.12.0 đã phát hành, CI có quét bảo mật Trivy và codecov. Điều kiện: Cần Go 1.26+. ★ 18/11/2026: 89.531 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-mall"></a>
+
+### mall
+
+`macrozheng/mall` · License: Apache-2.0 · ★ 85.057 · docs-read · 2026-11-18
+
+Hệ thống thương mại điện tử đầy đủ (cửa hàng và trang quản trị) xây trên Spring Boot và MyBatis, triển khai bằng Docker. Nhánh master dùng Spring Boot 3.5 và JDK 17 (pom: spring-boot-starter-parent 3.5.14); chia module rõ: admin, portal, search (Elasticsearch), security, mbg; có tài liệu và hướng dẫn triển khai Windows, Docker, Docker Compose, Jenkins tại macrozheng.com. Điều kiện: Tài liệu chủ yếu tiếng Trung; cần MySQL, Redis (chỉ mall-admin) và thêm Elasticsearch, RabbitMQ, MongoDB cho đầy đủ; frontend ở repo riêng mall-admin-web, mall-app-web. ★ 18/11/2026: 85.057 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-flask"></a>
+
+### flask
+
+`pallets/flask` · License: BSD-3-Clause · ★ 75.381 · docs-read · 2026-11-18
+
+Framework ứng dụng web WSGI gọn nhẹ cho Python, xây quanh Werkzeug và Jinja. Không ép phụ thuộc hay cấu trúc dự án; hệ sinh thái extension cộng đồng lớn; do tổ chức Pallets duy trì, nhánh chính đang ở 3.2.0.dev. Điều kiện: Cần Python 3.11+ (theo pyproject.toml). ★ 18/11/2026: 75.381 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-strapi"></a>
+
+### strapi
+
+`strapi/strapi` · License: MIT · ★ 73.510 · docs-read · 2026-11-18
+
+Headless CMS mã nguồn mở tự host bằng JavaScript/TypeScript, sinh API REST và GraphQL từ mô hình nội dung. Content-Type Builder thiết kế mô hình trực quan không cần code; tự sinh API REST và GraphQL, có Roles và Permissions, Media Library, i18n, Draft và Publish; hỗ trợ SQLite, PostgreSQL, MySQL, MariaDB. Điều kiện: Tính năng trong ee/ cần giấy phép Enterprise; không có ảnh Docker chính thức; Strapi Cloud là dịch vụ trả phí. ★ 18/11/2026: 73.510 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-protobuf"></a>
+
+### protobuf
+
+`protocolbuffers/protobuf` · License: BSD 3-Clause · ★ 72.179 · docs-read · 2026-11-18
+
+Protocol Buffers: cơ chế tuần tự hoá dữ liệu có cấu trúc trung lập ngôn ngữ và nền tảng của Google, gồm trình biên dịch protoc và runtime cho nhiều ngôn ngữ. Runtime trong repo cho C++, Java, Python, Objective-C, C#, Ruby, PHP, Rust (Go, Dart, JavaScript ở repo riêng); hỗ trợ Bazel Bzlmod (Bazel 8+) và CMake; có bảng điểm OpenSSF Scorecard và file version.json theo dõi phiên bản từng ngôn ngữ. Điều kiện: README khuyên dùng bản phát hành, nhánh main có thể hỏng; C++ cần build từ mã nguồn. ★ 18/11/2026: 72.179 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-express"></a>
+
+### express
+
+`expressjs/express` · License: MIT · ★ 69.801 · docs-read · 2026-11-18
+
+Framework web tối giản, không áp đặt cấu trúc cho Node.js, cung cấp định tuyến và tiện ích HTTP. Phiên bản 5.3.0 trong package.json; định tuyến mạnh, hỗ trợ hơn 14 template engine và content negotiation; có thư mục examples và bộ test, huy hiệu OpenSSF Scorecard. Điều kiện: Cần Node.js 18 trở lên. ★ 18/11/2026: 69.801 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-directus"></a>
+
+### directus
+
+`directus/directus` · License: Monospace Sustainable Core License 1.0 · ★ 38.747 · docs-read · 2026-11-18
+
+Lớp backend bọc bất kỳ cơ sở dữ liệu SQL nào, tự sinh REST và GraphQL API, kèm Studio quản trị trực quan và MCP server cho tác tử AI. Hỗ trợ Postgres, MySQL, MariaDB, MS SQL, SQLite, OracleDB, CockroachDB; phân quyền theo chính sách tới mức trường; có SDK, Dockerfile và nhiều storage driver (S3, GCS, Azure, Cloudinary, Supabase). Điều kiện: Giấy phép không phải OSI: miễn phí cho tổ chức dưới 5 triệu USD doanh thu năm và 50 nhân viên qua Open Innovation Grant; vượt ngưỡng dùng tính năng nâng cao cần giấy phép thương mại; không được dùng để cạnh tranh với dịch vụ thương mại của Monospace. ★ 18/11/2026: 38.747 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-medusa"></a>
+
+### medusa
+
+`medusajs/medusa` · License: MIT cho phần lớn repo · ★ 37.296 · docs-read · 2026-11-18
+
+Nền tảng thương mại điện tử mã nguồn mở có framework tuỳ biến, dùng để xây cửa hàng B2B/DTC, marketplace, POS. Monorepo Yarn với các Commerce Module (product, cart, order, pricing, payment...); provider có sẵn cho Stripe, S3, SendGrid, Redis, OIDC; có Admin dashboard, design system Medusa UI và bộ integration test trên PostgreSQL. Điều kiện: Cần Node.js v22.22.0 trở lên và PostgreSQL; bật cờ tính năng Enterprise đồng nghĩa khẳng định có hợp đồng thương mại; không được dùng RBAC/SSO khi chưa có giấy phép. ★ 18/11/2026: 37.296 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-go-zero"></a>
+
+### go-zero
+
+`zeromicro/go-zero` · License: MIT · ★ 33.431 · docs-read · 2026-11-18
+
+Framework web và RPC cho Go với nhiều thực hành kỹ thuật tích hợp sẵn, kèm công cụ sinh mã goctl. Tích hợp sẵn kiểm soát timeout chuỗi, rate limit, circuit breaker và load shedding thích ứng; goctl sinh mã Go, iOS, Android, Kotlin, Dart, TypeScript, JavaScript từ file .api; có gói mcp và có trong CNCF Landscape. ★ 18/11/2026: 33.431 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-python-telegram-bot"></a>
+
+### python-telegram-bot
+
+`python-telegram-bot/python-telegram-bot` · License: LGPL-3.0 · ★ 29.602 · docs-read · 2026-11-18
+
+Thư viện Python thuần, bất đồng bộ cho Telegram Bot API, kèm các lớp cấp cao trong telegram.ext để viết bot. Hỗ trợ đầy đủ Telegram Bot API 10.0; tương thích Python 3.11+ và đã thử với free threading 3.14; có các gói phụ tuỳ chọn như job-queue, webhooks, rate-limiter. Điều kiện: Cần token bot Telegram; bản sửa đổi hoặc liên kết tĩnh phải phát hành dưới LGPL-3, ứng dụng chỉ dùng thư viện thì không bắt buộc. ★ 18/11/2026: 29.602 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-kratos"></a>
+
+### kratos
+
+`go-kratos/kratos` · License: MIT · ★ 26.032 · docs-read · 2026-11-18
+
+Framework Go nhẹ để xây vi dịch vụ cloud-native, cung cấp API cho transport, middleware, registry, cấu hình, log và sinh mã. Phát triển API-first với Protobuf, sinh mã HTTP/gRPC; log dựa trên log/slog chuẩn kèm mở rộng OpenTelemetry; hệ contrib cho registry, config store, middleware, quan sát. Điều kiện: Cần Go 1.25 trở lên, protoc và protoc-gen-go. ★ 18/11/2026: 26.032 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-gin-vue-admin"></a>
+
+### gin-vue-admin
+
+`flipped-aurora/gin-vue-admin` · License: Apache-2.0 · ★ 25.139 · docs-read · 2026-11-18
+
+Khung hệ thống quản trị full-stack tách frontend/backend dựa trên Gin (Go) và Vue 3, có JWT, menu động, Casbin, trình sinh form và sinh mã. Tích hợp xác thực JWT, phân quyền Casbin, định tuyến và menu động; có trình sinh mã và form generator; có tài liệu trực tuyến, video hướng dẫn và trang demo. Điều kiện: Cần Go >= 1.26.10 và Node; có bản trả phí (Licensed Edition) cho tính năng mở rộng và hỗ trợ thương mại; phải thay khoá Qiniu mẫu trong cấu hình. ★ 18/11/2026: 25.139 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-wechaty"></a>
+
+### wechaty
+
+`wechaty/wechaty` · License: Apache License 2.0 · ★ 23.589 · docs-read · 2026-11-18
+
+SDK RPA hội thoại để viết chatbot một lần chạy trên nhiều nền tảng nhắn tin (WeChat, WhatsApp, Telegram, Line…) thông qua các puppet provider. Chatbot tối thiểu chỉ 6 dòng JavaScript; chọn giao thức qua biến môi trường WECHATY_PUPPET; có ảnh Docker chạy trực tiếp bot.js hoặc bot.ts. Điều kiện: Một số giao thức (puppet) ngoài Web cần token, README hướng dẫn xin token qua wiki; tự động hoá tài khoản nhắn tin có thể vướng điều khoản dịch vụ của nền tảng (chưa xác minh trong README). ★ 18/11/2026: 23.589 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-validator"></a>
+
+### validator
+
+`go-playground/validator` · License: MIT · ★ 20.239 · docs-read · 2026-11-18
+
+Thư viện Go kiểm tra hợp lệ giá trị cho struct và từng trường dựa trên tag. Hỗ trợ kiểm tra chéo trường và chéo struct, đi sâu vào slice, array, map (cả khoá và giá trị); thông báo lỗi tuỳ biến có i18n với thư mục translations; là validator mặc định của framework gin. ★ 18/11/2026: 20.239 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-apijson"></a>
+
+### APIJSON
+
+`APIJSON/APIJSON` · License: Apache License 2.0 · ★ 18.395 · docs-read · 2026-11-18
+
+Giao thức truyền thông dựa trên JSON kèm thư viện ORM cho Java, cho phép client tự mô tả dữ liệu cần lấy để giảm việc viết API backend. Một request lấy được nhiều loại dữ liệu, hỗ trợ CRUD, tìm kiếm mờ, gọi hàm từ xa; README liệt kê demo cho nhiều CSDL như MySQL, PostgreSQL, SQL Server, Oracle, ClickHouse, DuckDB; phát hành qua JitPack, phiên bản 8.4.0 trong pom.xml. ★ 18/11/2026: 18.395 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-hydra"></a>
+
+### hydra
+
+`ory/hydra` · License: Apache License 2.0 · ★ 17.671 · docs-read · 2026-11-18
+
+Máy chủ OAuth 2.0 và nhà cung cấp OpenID Connect, kết nối với hệ thống định danh sẵn có qua ứng dụng login và consent riêng. Được chứng nhận OpenID Certified; không tự quản lý người dùng nên ghép được với Ory Kratos hoặc hệ thống riêng; hỗ trợ PostgreSQL, MySQL, CockroachDB và có nhiều file quickstart docker-compose. Điều kiện: README khuyến nghị hệ thống quan trọng dùng Ory Enterprise License để có bản vá CVE có SLA và bản build doanh nghiệp; telemetry ẩn danh bật mặc định, tắt được. ★ 18/11/2026: 17.671 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-casdoor"></a>
+
+### casdoor
+
+`casdoor/casdoor` · License: Apache License 2.0 · ★ 14.881 · docs-read · 2026-11-18
+
+Máy chủ đăng nhập một lần (SSO) và xác thực có bảng điều khiển web, là nhà cung cấp định danh đầy đủ lưu người dùng và cấp token. Hỗ trợ OAuth 2.0, OIDC, SAML 2.0, CAS, LDAP, SCIM 2.0, WebAuthn trên cùng một thư mục người dùng; phân quyền theo chính sách bằng Casbin (ACL, RBAC, ABAC); tự host bằng một binary Go cộng CSDL, có SDK cho Go, Java, Python, Node.js, .NET, PHP, Rust. Điều kiện: Ảnh all-in-one chỉ để thử, không dùng production (dữ liệu mất cùng container); tài khoản mặc định admin/123 cần đổi. ★ 18/11/2026: 14.881 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-elasticsearch"></a>
+
+### elasticsearch
+
+`elastic/elasticsearch` · License: Mặc định ba giấy phép tuỳ chọn AGPL-3.0-only · ★ 78.816 · docs-read · 2026-11-18
+
+Máy tìm kiếm và phân tích phân tán, kho dữ liệu và cơ sở dữ liệu vector, dùng cho full-text search, log, metric, APM, RAG. Hỗ trợ tìm kiếm vector và tìm kiếm gần thời gian thực trên dữ liệu lớn; có script start-local dựng Elasticsearch và Kibana bằng Docker kèm API key; mã nguồn Java build bằng Gradle với bộ test và benchmarks trong repo. Điều kiện: Script start-local chỉ cho phát triển/thử nghiệm (tắt HTTPS), cần Docker (Windows cần WSL); bản cục bộ kèm trial 1 tháng rồi về bậc Basic; tính năng x-pack chịu Elastic License 2.0. ★ 18/11/2026: 78.816 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-redis"></a>
+
+### redis
+
+`redis/redis` · License: Từ Redis 8 · ★ 77.671 · docs-read · 2026-11-18
+
+Kho dữ liệu trong bộ nhớ dùng làm cache, máy chủ cấu trúc dữ liệu, message broker, cơ sở dữ liệu tài liệu và truy vấn vector. Hỗ trợ JSON, time series, Bloom filter, Query Engine với tìm kiếm vector và full-text; có streams, pub/sub, giao dịch và scripting; có API module để mở rộng lệnh. Điều kiện: Giấy phép RSALv2/SSPLv1/AGPLv3 có hạn chế khi cung cấp dạng dịch vụ; dùng tên/logo Redis phải theo chính sách thương hiệu; build đầy đủ module cần CMake 3.25–3.31.6, LLVM 21, Rust. ★ 18/11/2026: 77.671 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-meilisearch"></a>
+
+### meilisearch
+
+`meilisearch/meilisearch` · License: MIT AND OpenLDAP AND BUSL-1.1 · ★ 59.889 · docs-read · 2026-11-18
+
+Công cụ tìm kiếm viết bằng Rust cho tìm kiếm toàn văn, ngữ nghĩa và lai, nhúng vào ứng dụng và website qua REST API. Chịu lỗi chính tả, lọc, faceting, sắp xếp và đồng nghĩa có sẵn; tìm kiếm khi gõ trả kết quả dưới 50 ms theo README; tự host bằng một lệnh Docker hoặc binary. Điều kiện: Bản Enterprise Edition (sharding và tính năng nâng cao) cần thỏa thuận thương mại khi dùng production (BUSL-1.1); bản Community MIT dùng tự do. ★ 18/11/2026: 59.889 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-typesense"></a>
+
+### typesense
+
+`typesense/typesense` · License: GNU General Public License v3.0 · ★ 27.153 · docs-read · 2026-11-18
+
+Công cụ tìm kiếm nhanh, chịu lỗi chính tả viết bằng C++, tự giới thiệu là phương án mở thay Algolia và dễ dùng hơn Elasticsearch. Viết bằng C++ cho tìm kiếm tức thời dưới 50 ms; có chịu lỗi chính tả, faceting, lọc, sắp xếp và tìm kiếm ngữ nghĩa/lai; nhiều demo trực tiếp trên tập dữ liệu lớn (32 triệu bài hát). Điều kiện: GPL-3.0 (copyleft) khi phân phối bản sửa đổi. ★ 18/11/2026: 27.153 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-dolt"></a>
+
+### dolt
+
+`dolthub/dolt` · License: Apache License 2.0 · ★ 24.933 · docs-read · 2026-11-18
+
+Cơ sở dữ liệu SQL tương thích MySQL có quản lý phiên bản kiểu Git: fork, clone, branch, merge, push, pull trên bảng dữ liệu. CLI có cùng lệnh như git (commit, branch, merge, diff, blame theo hàng); chức năng phiên bản dùng được qua bảng hệ thống, hàm và thủ tục SQL; chạy làm MySQL server bằng dolt sql-server. ★ 18/11/2026: 24.933 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-doris"></a>
+
+### doris
+
+`apache/doris` · License: Apache-2.0 · ★ 16.238 · docs-read · 2026-11-18
+
+Cơ sở dữ liệu phân tích và tìm kiếm thời gian thực kiến trúc MPP thuộc Apache: phân tích SQL nhanh, tăng tốc truy vấn lakehouse và tìm kiếm hybrid trên dữ liệu có cấu trúc, văn bản, vector. Nạp dữ liệu dạng luồng và truy vấn dưới một giây ở độ đồng thời cao; truy vấn trực tiếp Iceberg, Delta Lake, Hudi; có Kubernetes Operator để triển khai. Điều kiện: Một số phụ thuộc bên thứ ba không tương thích Apache 2.0, cần tắt tính năng tương ứng nếu muốn tuân thủ hoàn toàn. ★ 18/11/2026: 16.238 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-excelize"></a>
+
+### excelize
+
+`qax-os/excelize` · License: BSD 3-Clause · ★ 21.137 · docs-read · 2026-11-18
+
+Thư viện Go thuần để đọc và ghi tệp bảng tính XLAM/XLSM/XLSX/XLTM/XLTX của Microsoft Excel 2007 trở lên. Viết bằng Go thuần, không phụ thuộc Excel; có API streaming để ghi/đọc trang tính dữ liệu rất lớn; mỗi thành phần (calc, chart, crypt, datavalidation...) có tệp test riêng. Điều kiện: Cần Go 1.26.0 trở lên. ★ 18/11/2026: 21.137 (GitHub search API), nhóm "Ngôn ngữ & Runtime" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c514-ngôn-ngữ--runtime) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-bitcoin"></a>
+
+### bitcoin
+
+`bitcoin/bitcoin` · License: MIT · ★ 90.693 · docs-read · 2026-11-18
+
+Bitcoin Core: phần mềm nút kết nối mạng ngang hàng Bitcoin, tải và xác thực đầy đủ khối và giao dịch, kèm ví và giao diện đồ họa tùy chọn. Build bằng CMake, có unit test chạy qua ctest và test chức năng/hồi quy viết bằng Python; tag phát hành ổn định được cắt từ nhánh release; có SECURITY.md và quy trình đóng góp trong CONTRIBUTING.md. Điều kiện: README nhấn mạnh nhánh master không đảm bảo ổn định và đây là dự án nhạy cảm bảo mật, lỗi có thể gây mất tiền. ★ 18/11/2026: 90.693 (GitHub search API), nhóm "Tài chính & Crypto" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c524-tài-chính--crypto) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-union"></a>
+
+### union
+
+`unionlabs/union` · License: Hai file giấy phép ở gốc · ★ 73.711 · docs-read · 2026-11-18
+
+Union: lớp hạ tầng zero-knowledge cho truyền thông điệp tổng quát, chuyển tài sản, NFT và DeFi giữa các chuỗi, dựa trên xác minh đồng thuận và triển khai IBC. Gồm nút uniond (Go, CometBLS), prover galoisd (Go, Gnark), relayer voyager (Rust), hợp đồng CosmWasm và EVM, TypeScript SDK; build tái lập được bằng Nix (nix build .#uniond); kết nối chuỗi Cosmos và EVM như Ethereum, Arbitrum, Berachain. Điều kiện: Một số thành phần chỉ build được trên Linux (macOS cần VM NixOS); liên quan tài sản tiền mã hóa. ★ 18/11/2026: 73.711 (GitHub search API), nhóm "Tài chính & Crypto" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c524-tài-chính--crypto) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="anhkysuai-2026-11-23-thingsboard"></a>
+
+### ThingsBoard
+
+**Repo:** [thingsboard/thingsboard](https://github.com/thingsboard/thingsboard) · **License:** BUSL-1.1 cho 4.4+; một số phần Apache-2.0 · **★ 22,714 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Nền tảng IoT quản lý thiết bị, thu telemetry, rule chain, cảnh báo và dashboard.
+
+**Giá trị và cơ chế:** README và manifest thể hiện hệ backend/frontend đầy đủ cho luồng thiết bị–dữ liệu–hiển thị; hữu ích tham khảo kiến trúc sản phẩm IoT tự lưu trữ.
+
+**Giới hạn:** HEAD 4.4.1-SNAPSHOT chịu BUSL: miễn phí thương mại tối đa 100 thiết bị/một server, phi thương mại 1.000, kèm key và thương hiệu; đổi Apache sau bốn năm. Không dùng nhãn Apache của bản cũ cho HEAD. Chưa triển khai.
+
+**Cách tham khảo/tích hợp:** Đối chiếu số thiết bị và bản license, thử dữ liệu giả lập trước nối hệ thống vận hành.
+
+**Thay thế:** [Node-RED](../05-low-code-llm-platforms/README.md#factory-lowcode-runtime-boundaries-2026-11-04), mainflux, home-assistant.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`2f2a2bd63a82`](https://github.com/thingsboard/thingsboard/commit/2f2a2bd63a82f4fa4dedd414015576df6156146e). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/thingsboard/thingsboard/blob/2f2a2bd63a82f4fa4dedd414015576df6156146e/README.md) · [LICENSE](https://github.com/thingsboard/thingsboard/blob/2f2a2bd63a82f4fa4dedd414015576df6156146e/LICENSE) · [metadata GitHub](https://api.github.com/repos/thingsboard/thingsboard).

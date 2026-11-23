@@ -131,3 +131,29 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 **Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
 
 **Nguồn tại cùng SHA:** [README.rst](https://github.com/getsops/sops/blob/9aa10f12bcd82400b7eb73331dd7a87a93bb17f7/README.rst) · [LICENSE](https://github.com/getsops/sops/blob/9aa10f12bcd82400b7eb73331dd7a87a93bb17f7/LICENSE) · [go.mod](https://github.com/getsops/sops/blob/9aa10f12bcd82400b7eb73331dd7a87a93bb17f7/go.mod) · [.github/workflows/cli.yml](https://github.com/getsops/sops/blob/9aa10f12bcd82400b7eb73331dd7a87a93bb17f7/.github/workflows/cli.yml).
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+2 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-zizmor"></a>
+
+### zizmor
+
+`zizmorcore/zizmor` · License: MIT · ★ 6.856
+
+Phân tích tĩnh bảo mật GitHub Actions, 41 audit, SARIF, offline/online; bản 1.31.1; ★ 2/11/2026 (GitHub search API), mục 13 §6h
+
+**Hồ sơ gốc:** [mục 13](../13-dev-stack-devops/README.md) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-infisical"></a>
+
+### infisical
+
+`Infisical/infisical` · License: MIT · ★ 30.570 · docs-read · 2026-11-18
+
+Nền tảng hạ tầng bảo mật mã nguồn mở để quản lý bí mật, chứng chỉ, khoá, truy cập đặc quyền và truy cập của AI agent; có quét lộ bí mật. Hỗ trợ xoay vòng bí mật và bí mật động cho PostgreSQL, MySQL, AWS IAM; có Kubernetes Operator, CLI và SDK cho nhiều ngôn ngữ (Node, Python, Go, Java, .NET, Rust...); tự host được bằng Docker Compose. Điều kiện: Tính năng trong thư mục ee/ cần giấy phép doanh nghiệp Infisical; chạy cục bộ cần Git và Docker; có bản Infisical Cloud trả phí/miễn phí tuỳ gói. ★ 18/11/2026: 30.570 (GitHub search API), nhóm "Bảo mật & Hack" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c53-bảo-mật--hack) (bảng/đoạn chung, giữ nguyên tại chỗ).

@@ -890,3 +890,29 @@ Phần này có **2 hồ sơ** từ bảng xlsx người dùng gửi ngày 2026-
 **Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`10511e5af86f`](https://github.com/nateherkai/herk-edit-kit/commit/10511e5af86fc47756ea89803b397422e2d89284) (2026-10-14). Đã đọc README (200 dòng đầu), LICENSE, `licenses/PIPELINE-USE-PERMISSION.txt`, `THIRD_PARTY_NOTICES.md`, `package.json`, `skills-lock.json` (đầu), `check.yml`, `cut-silences/SKILL.md` (đầu), grep endpoint ở `transcribe-elevenlabs.mjs` và `kie.mjs`. Chưa chạy `npm ci`/test/demo, chưa đọc `check-kit.mjs`, `cut-mistakes`, `short-form-edit`.
 
 **Nguồn:** [README.md](https://github.com/nateherkai/herk-edit-kit/blob/10511e5af86fc47756ea89803b397422e2d89284/README.md) · [LICENSE](https://github.com/nateherkai/herk-edit-kit/blob/10511e5af86fc47756ea89803b397422e2d89284/LICENSE) · [licenses/PIPELINE-USE-PERMISSION.txt](https://github.com/nateherkai/herk-edit-kit/blob/10511e5af86fc47756ea89803b397422e2d89284/licenses/PIPELINE-USE-PERMISSION.txt) · [THIRD_PARTY_NOTICES.md](https://github.com/nateherkai/herk-edit-kit/blob/10511e5af86fc47756ea89803b397422e2d89284/THIRD_PARTY_NOTICES.md) · [package.json](https://github.com/nateherkai/herk-edit-kit/blob/10511e5af86fc47756ea89803b397422e2d89284/package.json) · [.github/workflows/check.yml](https://github.com/nateherkai/herk-edit-kit/blob/10511e5af86fc47756ea89803b397422e2d89284/.github/workflows/check.yml) · [scripts/transcribe-elevenlabs.mjs](https://github.com/nateherkai/herk-edit-kit/blob/10511e5af86fc47756ea89803b397422e2d89284/scripts/transcribe-elevenlabs.mjs) · [.agents/skills/cut-silences/SKILL.md](https://github.com/nateherkai/herk-edit-kit/blob/10511e5af86fc47756ea89803b397422e2d89284/.agents/skills/cut-silences/SKILL.md) · [.agents/skills/motion-showreel/scripts/kie.mjs](https://github.com/nateherkai/herk-edit-kit/blob/10511e5af86fc47756ea89803b397422e2d89284/.agents/skills/motion-showreel/scripts/kie.mjs) · [metadata GitHub](https://api.github.com/repos/nateherkai/herk-edit-kit) (không đọc được, 403).
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+2 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-godot"></a>
+
+### godot
+
+`godotengine/godot` · License: MIT · ★ 120.330 · docs-read · 2026-11-18
+
+Engine game 2D và 3D đa nền tảng với giao diện biên tập thống nhất, xuất game một cú bấm ra desktop, di động, web. Giấy phép MIT, không thu phí bản quyền; xuất sang Linux, macOS, Windows, Android, iOS và web; được Godot Foundation phi lợi nhuận hỗ trợ. Điều kiện: Xuất sang console cần qua bên thứ ba (theo trang consoles của Godot, chưa xác minh chi tiết). ★ 18/11/2026: 120.330 (GitHub search API), nhóm "Ứng dụng đa nền tảng & Game" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c528-ứng-dụng-đa-nền-tảng--game) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-gdevelop"></a>
+
+### GDevelop
+
+`4ian/GDevelop` · License: MIT cho Core · ★ 29.018 · docs-read · 2026-11-18
+
+Phần mềm làm game không cần code, mã nguồn mở, tạo game 2D, 3D và nhiều người chơi cho mobile, desktop và web bằng hệ thống sự kiện và behavior. Engine GDJS viết bằng TypeScript, render bằng PixiJS và Three.js (WebGL); editor newIDE dùng React và Electron, Core gắn sang JavaScript qua WebAssembly; vật lý Box2D và Jolt Physics chạy WebAssembly trong Extensions. Điều kiện: Không được dùng tên/logo GDevelop (tài sản riêng của Florian Rival); dịch vụ online và hỗ trợ thương mại có trả phí. ★ 18/11/2026: 29.018 (GitHub search API), nhóm "Ứng dụng đa nền tảng & Game" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c528-ứng-dụng-đa-nền-tảng--game) (bảng/đoạn chung, giữ nguyên tại chỗ).

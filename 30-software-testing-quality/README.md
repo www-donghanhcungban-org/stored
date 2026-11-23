@@ -496,3 +496,57 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 **Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`89a34a44b7a6a5311dc84f3b8a1b8b45c0905aea`](https://github.com/typicode/json-server/commit/89a34a44b7a6a5311dc84f3b8a1b8b45c0905aea), ngày commit 2026-03-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
 
 **Nguồn:** [README.md](https://github.com/typicode/json-server/blob/89a34a44b7a6a5311dc84f3b8a1b8b45c0905aea/README.md) · [LICENSE](https://github.com/typicode/json-server/blob/89a34a44b7a6a5311dc84f3b8a1b8b45c0905aea/LICENSE) · [package.json](https://github.com/typicode/json-server/blob/89a34a44b7a6a5311dc84f3b8a1b8b45c0905aea/package.json) · [.github/workflows/node.js.yml](https://github.com/typicode/json-server/blob/89a34a44b7a6a5311dc84f3b8a1b8b45c0905aea/.github/workflows/node.js.yml) · [metadata GitHub](https://api.github.com/repos/typicode/json-server).
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+4 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-web-vitals"></a>
+
+### web-vitals
+
+`GoogleChrome/web-vitals` · License: Apache-2.0 · ★ 8.669
+
+Thư viện chính thức đo LCP/INP/CLS ở người dùng thật, build attribution chỉ ra nguyên nhân; v6.2.3; dùng đo tác động của animation; commit cuối 16/10/2026; ★ 2/11/2026 (GitHub search API), mục 22 §9g
+
+**Hồ sơ gốc:** [mục 22](../22-motion-design-animation/README.md) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-keploy"></a>
+
+### keploy
+
+`keploy/keploy` · License: Apache License 2.0 · ★ 19.881 · docs-read · 2026-11-18
+
+Công cụ kiểm thử API và tích hợp, ghi lại lưu lượng thật (API, truy vấn DB, sự kiện streaming) bằng eBPF rồi phát lại thành test và mock. Không cần sửa code hay SDK, độc lập ngôn ngữ; mock được Postgres, MySQL, MongoDB, Kafka, RabbitMQ; tích hợp CI/CD và đóng băng thời gian để phát lại tất định. Điều kiện: Một số phụ thuộc giao thức không mã nguồn mở theo README; một số tính năng (console, mock registry, mở rộng bằng AI) thuộc nền tảng keploy.io (chưa xác minh phạm vi miễn phí). ★ 18/11/2026: 19.881 (GitHub search API), nhóm "Container & DevOps" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c55-container--devops) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-react-doctor"></a>
+
+### react-doctor
+
+`millionco/react-doctor` · License: Modified MIT License · ★ 15.154 · docs-read · 2026-11-18
+
+Công cụ quét tĩnh có tính tất định cho dự án React, báo lỗi về state/effect, hiệu năng, kiến trúc, bảo mật, a11y và khả năng bảo trì. Hỗ trợ Next.js, Vite, Astro, TanStack, React Native, Expo; có lệnh cài skill cho agent và lệnh cài quét CI cho từng PR; có plugin eslint và oxlint trong packages. Điều kiện: CLI thu thập báo cáo crash và dữ liệu sử dụng ẩn danh (tắt bằng --no-telemetry); giấy phép cấm dùng làm dữ liệu huấn luyện AI hoặc bán dạng SaaS khi chưa được phép. ★ 18/11/2026: 15.154 (GitHub search API), nhóm "Framework Frontend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c510-framework-frontend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="anhkysuai-locustio-locust"></a>
+
+### Locust
+
+**Repo:** [locustio/locust](https://github.com/locustio/locust) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`85d6d65da7d1`](https://github.com/locustio/locust/tree/85d6d65da7d12f07fc1001192e52c4ede286528f) (commit 2026-11-16). **Sao:** 28,307 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/locustio/locust).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Công cụ viết kịch bản kiểm tải bằng Python cho HTTP và giao thức mở rộng. |
+| Giá trị và cơ chế theo tài liệu | README mô tả greenlet theo người dùng, CLI/WebUI và xuất throughput/latency/errors; Python/Node manifests cùng CI thể hiện engine và frontend. |
+| Giới hạn | Kết quả phụ thuộc mô hình hành vi, máy tạo tải và dữ liệu kiểm. Chưa chạy tải hoặc xác minh giới hạn throughput; vòng lặp benchmark không tự mô phỏng người dùng thật. |
+| Điều kiện tích hợp | Viết hành trình có thời gian chờ và kiểm response, chạy trong môi trường được phép; tách bottleneck load generator và theo dõi percentile/error trước khi kết luận sức tải. |
+| Lựa chọn đối chiếu | k6; JMeter; Gatling. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/README.md) · [LICENSE](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/LICENSE) · [package.json](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/package.json) · [pyproject.toml](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/pyproject.toml) · [.github/workflows/tests.yml](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/.github/workflows/tests.yml).

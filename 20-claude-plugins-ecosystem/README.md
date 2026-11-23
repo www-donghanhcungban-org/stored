@@ -1804,3 +1804,89 @@ Phần này có **9 hồ sơ** từ bảng xlsx người dùng gửi ngày 2026-
 **Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`02853d885acb`](https://github.com/MiniMax-AI/skills/commit/02853d885acb1abc157477ce00c4d98a8ed14a71) (2026-11-10). Đọc README, LICENSE, CREDITS, marketplace.json, danh sách thư mục, SKILL.md `vision-analysis`, đầu `validate_skills.py`, grep lệnh cài/endpoint. Chưa đọc script setup/render; chưa chạy.
 
 **Nguồn:** [README.md](https://github.com/MiniMax-AI/skills/blob/02853d885acb1abc157477ce00c4d98a8ed14a71/README.md) · [LICENSE](https://github.com/MiniMax-AI/skills/blob/02853d885acb1abc157477ce00c4d98a8ed14a71/LICENSE) · [CREDITS.md](https://github.com/MiniMax-AI/skills/blob/02853d885acb1abc157477ce00c4d98a8ed14a71/CREDITS.md) · [marketplace.json](https://github.com/MiniMax-AI/skills/blob/02853d885acb1abc157477ce00c4d98a8ed14a71/.claude-plugin/marketplace.json) · [vision-analysis](https://github.com/MiniMax-AI/skills/blob/02853d885acb1abc157477ce00c4d98a8ed14a71/skills/vision-analysis/SKILL.md) · [validate_skills.py](https://github.com/MiniMax-AI/skills/blob/02853d885acb1abc157477ce00c4d98a8ed14a71/.claude/skills/pr-review/scripts/validate_skills.py) · [metadata GitHub](https://api.github.com/search/repositories?q=repo:MiniMax-AI/skills).
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+8 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-academic-research-skills"></a>
+
+### academic-research-skills
+
+`Imbad0202/academic-research-skills` · License: CC-BY-NC-4.0 · ★ 57.341 · docs-read · 2026-11-18
+
+Bộ skill Claude Code cho nghiên cứu học thuật: pipeline 10 giai đoạn từ nghiên cứu tài liệu, viết, phản biện tới xuất bản, dừng xin xác nhận ở từng giai đoạn và có cổng liêm chính. Kiểm trích dẫn qua Semantic Scholar, audit đối chiếu nguồn với từng nhận định (tùy chọn); SR-Screener sàng lọc bằng 2 reviewer AI mù và trọng tài, tính kappa, đếm PRISMA 2020; có DATA_FLOWS.md nêu dữ liệu nào rời máy. Điều kiện: Giấy phép cấm dùng thương mại. bắt buộc ghi nguồn; cần khóa API; người dùng chịu trách nhiệm mọi nhận định nộp đi. ★ 18/11/2026: 57.341 (GitHub search API), nhóm "Skill, Prompt & Mẫu cho AI" trong kho-repo của Phan Đông Giang, mục 08 §6c
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c-kho-repo-của-phan-đông-giang-phandonggiangcomkho-repo-694-repo-32-nhóm-và-24-repo-aiagent-đọc-mã-bảng-người-dùng-dán-kiểm-18112026) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-pm-skills"></a>
+
+### pm-skills
+
+`phuryn/pm-skills` · License: MIT · ★ 28.113 · docs-read · 2026-11-18
+
+Marketplace plugin quản lý sản phẩm: 72 skill và 42 command chia 9 plugin (discovery, strategy, execution, go-to-market, growth, analytics…), mỗi skill mã hóa một khung PM (Teresa Torres, Marty Cagan, Alberto Savoia). Command nối chuỗi skill, ví dụ /discover từ brainstorm tới thử nghiệm; cài được trên Claude Code và Codex; có tests/ và validate_plugins.py. Điều kiện: Command chỉ chạy trên Claude Code/Cowork. công cụ khác dùng skill; plugin pm-ai-shipping đã chuyển sang phuryn/product-engineering. ★ 18/11/2026: 28.113 (GitHub search API), nhóm "Skill, Prompt & Mẫu cho AI" trong kho-repo của Phan Đông Giang, mục 08 §6c
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c-kho-repo-của-phan-đông-giang-phandonggiangcomkho-repo-694-repo-32-nhóm-và-24-repo-aiagent-đọc-mã-bảng-người-dùng-dán-kiểm-18112026) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-skills"></a>
+
+### skills
+
+`google/skills` · License: Apache-2.0 · ★ 24.400 · docs-read · 2026-11-18
+
+Bộ Agent Skills chính thức của Google, chủ yếu Google Cloud (GKE, Compute Engine, Cloud Storage, BigQuery, Gemini, IAM…) cùng Ads, Analytics, Identity; kèm plugin Skill + MCP. 207 SKILL.md theo nhóm; index.json sinh tự động; mỗi skill ghi khi nào dùng và khi nào không; plugin cho Claude Code, Codex, Antigravity; cập nhật bằng npx skills update. Điều kiện: Phần lớn skill cần dự án GCP. gcloud và quyền IAM; nhiều skill gắn tag agent-skills/1.0 vào User-Agent khi chạy lệnh gcloud (bỏ được nếu yêu cầu). ★ 18/11/2026: 24.400 (GitHub search API), nhóm "Skill, Prompt & Mẫu cho AI" trong kho-repo của Phan Đông Giang, mục 08 §6c
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c-kho-repo-của-phan-đông-giang-phandonggiangcomkho-repo-694-repo-32-nhóm-và-24-repo-aiagent-đọc-mã-bảng-người-dùng-dán-kiểm-18112026) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-nuwa-skill"></a>
+
+### nuwa-skill
+
+`alchaincyf/nuwa-skill` · License: MIT · ★ 38.518 · docs-read · 2026-11-18
+
+Agent Skill "女娲" chưng cất cách nghĩ, mô hình tư duy và giọng nói của một nhân vật công khai (Munger, Naval, Musk…) thành skill riêng: chỉ cần nhập tên, skill tự nghiên cứu, trích xuất và kiểm định. Theo chuẩn mở Agent Skills, README liệt kê chạy được trên Claude Code, Codex, Cursor, OpenClaw, Hermes, Gemini CLI… và có plugin cho DeepSeek Harness; thư mục examples có 15 skill nhân vật đã chưng cất sẵn; mỗi skill sinh ra có mục "giới hạn trung thực" nói rõ điều không làm được. Điều kiện: Chỉ dựa trên thông tin công khai về người thật; README tự nêu: không chưng cất được trực giác, chỉ là ảnh chụp tới mốc nghiên cứu, phát ngôn công khai không đồng nghĩa niềm tin thật. ★ 18/11/2026: 38.518 (GitHub search API), nhóm "Skill, Prompt & Mẫu cho AI" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c518-skill-prompt--mẫu-cho-ai) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-baoyu-skills"></a>
+
+### baoyu-skills
+
+`JimLiu/baoyu-skills` · License: MIT · ★ 27.646 · docs-read · 2026-11-18
+
+Bộ 21 Agent Skill cho Claude Code/Codex phục vụ sản xuất nội dung: sinh ảnh bìa, minh hoạ, infographic, slide, truyện tranh, dịch bài, chuyển URL/YouTube/X sang Markdown và đăng lên WeChat, Weibo, X. Thư mục skills có 21 skill độc lập, cài riêng từng skill được; hỗ trợ nhiều backend sinh ảnh (OpenAI, Azure, OpenRouter, Google, DashScope, Z.AI, MiniMax, Seedream…) chọn qua biến môi trường; có marketplace plugin Claude Code và script đăng từng skill lên ClawHub. Điều kiện: Cần Node.js và npx bun; nhiều skill cần khoá API (OPENAI_API_KEY, GOOGLE_API_KEY…) hoặc thông tin xác thực WeChat; hai skill baoyu-danger-gemini-web và baoyu-danger-x-to-markdown dùng API đảo ngược (reverse-engineered) của Gemini Web và X, dùng cookie đăng nhập, bắt buộc người dùng chấp thuận rủi ro trước khi chạy — có thể trái điều khoản dịch vụ. ★ 18/11/2026: 27.646 (GitHub search API), nhóm "Skill, Prompt & Mẫu cho AI" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c518-skill-prompt--mẫu-cho-ai) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-khazix-skills"></a>
+
+### khazix-skills
+
+`KKKKhazix/khazix-skills` · License: MIT · ★ 22.367 · docs-read · 2026-11-18
+
+Bộ 6 Agent Skill tác giả dùng hằng ngày: leader (biến ý tưởng mơ hồ thành mục tiêu agent chạy được lâu), storage-analyzer (quét ổ đĩa và đề xuất dọn), aihot (lấy tin AI từ aihot.news), neat-freak (đối soát tài liệu/CLAUDE.md/bộ nhớ agent), hv-analysis (báo cáo nghiên cứu), khazix-writer (viết bài tiếng Trung theo giọng tác giả). Theo chuẩn Agent Skills, dùng được với Claude Code, Codex và hơn 40 agent; storage-analyzer hỗ trợ macOS, Windows, Linux, quét chỉ đọc, xoá cần xác nhận và có CI đa nền tảng; workflow validate chạy test, kiểm gói và fixture đánh giá trên Ubuntu, macOS, Windows. Điều kiện: Cần agent có quyền hệ thống tệp, duyệt web hoặc chạy lệnh cho các skill quét máy/nghiên cứu; aihot phụ thuộc dịch vụ aihot.news (không cần khoá API). ★ 18/11/2026: 22.367 (GitHub search API), nhóm "Skill, Prompt & Mẫu cho AI" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c518-skill-prompt--mẫu-cho-ai) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-skill-seekers"></a>
+
+### Skill_Seekers
+
+`yusufkaraaslan/Skill_Seekers` · License: MIT · ★ 15.333 · docs-read · 2026-11-18
+
+Công cụ CLI Python (kèm máy chủ MCP) biến trang tài liệu, repo GitHub, PDF, video, notebook, wiki… (18 loại nguồn) thành tài sản tri thức có cấu trúc để đóng gói thành AI Skill, dữ liệu RAG hoặc ngữ cảnh cho trợ lý lập trình (22 đích xuất). Phát hành trên PyPI (skill-seekers), yêu cầu Python 3.10+, có các gói tuỳ chọn [mcp], [all-llms], [all]; lệnh scan dùng agent AI dò framework của dự án và sinh cấu hình; chế độ LOCAL dùng Claude Code, Codex, Kimi Code… không tốn phí API, thư mục tests có 191 mục. Điều kiện: Chế độ API cần khoá nhà cung cấp (ví dụ ANTHROPIC_API_KEY để tải skill lên Claude); cào trang tài liệu/GitHub cần tuân thủ điều khoản của nguồn (chưa xác minh README có nêu). ★ 18/11/2026: 15.333 (GitHub search API), nhóm "Skill, Prompt & Mẫu cho AI" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c518-skill-prompt--mẫu-cho-ai) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-ai-research-skills"></a>
+
+### AI-Research-SKILLs
+
+`Orchestra-Research/AI-Research-SKILLs` · License: MIT · ★ 14.630 · docs-read · 2026-11-18
+
+Thư viện 98 Agent Skill giúp agent AI tự làm nghiên cứu AI trọn vòng đời: từ ý tưởng, khảo sát tài liệu, huấn luyện/tinh chỉnh/đánh giá/triển khai mô hình đến viết bài báo, có skill autoresearch điều phối. 98 tệp SKILL.md chia 23 nhóm (kiến trúc mô hình, fine-tuning, huấn luyện phân tán, suy luận, RAG, an toàn, viết bài ML…); có trình cài tương tác qua npm (@orchestra-research/ai-research-skills); có CITATION.cff và CONTRIBUTING.md. ★ 18/11/2026: 14.630 (GitHub search API), nhóm "Skill, Prompt & Mẫu cho AI" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c518-skill-prompt--mẫu-cho-ai) (bảng/đoạn chung, giữ nguyên tại chỗ).

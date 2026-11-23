@@ -218,19 +218,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### Locust
 
-**Repo:** [locustio/locust](https://github.com/locustio/locust) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`85d6d65da7d1`](https://github.com/locustio/locust/tree/85d6d65da7d12f07fc1001192e52c4ede286528f) (commit 2026-11-16). **Sao:** 28,307 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/locustio/locust).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Công cụ viết kịch bản kiểm tải bằng Python cho HTTP và giao thức mở rộng. |
-| Giá trị và cơ chế theo tài liệu | README mô tả greenlet theo người dùng, CLI/WebUI và xuất throughput/latency/errors; Python/Node manifests cùng CI thể hiện engine và frontend. |
-| Giới hạn | Kết quả phụ thuộc mô hình hành vi, máy tạo tải và dữ liệu kiểm. Chưa chạy tải hoặc xác minh giới hạn throughput; vòng lặp benchmark không tự mô phỏng người dùng thật. |
-| Điều kiện tích hợp | Viết hành trình có thời gian chờ và kiểm response, chạy trong môi trường được phép; tách bottleneck load generator và theo dõi percentile/error trước khi kết luận sức tải. |
-| Lựa chọn đối chiếu | k6; JMeter; Gatling. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/README.md) · [LICENSE](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/LICENSE) · [package.json](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/package.json) · [pyproject.toml](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/pyproject.toml) · [.github/workflows/tests.yml](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/.github/workflows/tests.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 30](../30-software-testing-quality/README.md#anhkysuai-locustio-locust); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-henrygd-beszel"></a>
 
@@ -285,3 +273,109 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 **Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
 
 **Nguồn tại cùng SHA:** [README.md](https://github.com/allinurl/goaccess/blob/33995aa31c8d3cbd9490309fa363dcc4239ee9a8/README.md) · [COPYING](https://github.com/allinurl/goaccess/blob/33995aa31c8d3cbd9490309fa363dcc4239ee9a8/COPYING) · [.github/workflows/build-test.yml](https://github.com/allinurl/goaccess/blob/33995aa31c8d3cbd9490309fa363dcc4239ee9a8/.github/workflows/build-test.yml).
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+10 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-netdata"></a>
+
+### netdata
+
+`netdata/netdata` · License: GPL-3.0 · ★ 81.458 · docs-read · 2026-11-18
+
+Nền tảng quan sát full-stack thu thập metric theo từng giây, log, trace, luồng mạng, có cảnh báo và học máy, chạy trên Linux, macOS, FreeBSD, Windows, Kubernetes. Hơn 800 tích hợp gồm OpenTelemetry, SNMP, NetFlow/IPFIX/sFlow, IPMI; Agent có máy chủ MCP tích hợp; mở rộng từ một nút tới hàng trăm nghìn nút qua kiến trúc Parent. Điều kiện: Telemetry ẩn danh bật mặc định (tắt bằng --disable-telemetry hoặc file opt-out); giao diện UI mã đóng giấy phép NCUL1; tính năng Cloud (SSO, RBAC, truy cập từ xa) cần tài khoản Netdata Cloud. ★ 18/11/2026: 81.458 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-grafana"></a>
+
+### grafana
+
+`grafana/grafana` · License: AGPL-3.0-only · ★ 77.975 · docs-read · 2026-11-18
+
+Nền tảng giám sát và quan sát mã nguồn mở để truy vấn, trực quan hoá, cảnh báo trên metric và log từ nhiều nguồn dữ liệu. Dashboard động với biến template, trộn nhiều nguồn dữ liệu trong một biểu đồ; cảnh báo gửi tới Slack, PagerDuty, OpsGenie; có bản demo trực tiếp tại play.grafana.org. Điều kiện: AGPL-3.0: cung cấp bản sửa đổi qua mạng phải công bố mã nguồn. ★ 18/11/2026: 77.975 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-signoz"></a>
+
+### signoz
+
+`SigNoz/signoz` · License: MIT · ★ 32.673 · docs-read · 2026-11-18
+
+Nền tảng observability mã nguồn mở dựa trên OpenTelemetry, gộp logs, metrics, traces, cảnh báo và dashboard một chỗ. Gộp APM, quản lý log, metrics, distributed tracing và cảnh báo trong một sản phẩm; truy vấn bằng Query Builder, PromQL hoặc ClickHouse SQL; tự host bằng Docker, Kubernetes hoặc Linux. Điều kiện: Mã trong ee/ cần giấy phép SigNoz Enterprise để dùng production; trợ lý Noz chỉ có trên SigNoz Cloud (README). ★ 18/11/2026: 32.673 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-skywalking"></a>
+
+### skywalking
+
+`apache/skywalking` · License: Apache License 2.0 · ★ 25.010 · docs-read · 2026-11-18
+
+Hệ thống APM cho microservice và kiến trúc cloud native: distributed tracing, giám sát và chẩn đoán hệ phân tán. Có agent cho Java, .Net Core, PHP, NodeJS, Golang, Lua, Rust, C++, Python và JavaScript phía client; agent Rover dùng eBPF để giám sát Kubernetes; nhận dữ liệu từ Zipkin, OpenTelemetry, Prometheus, Zabbix, Fluentd. ★ 18/11/2026: 25.010 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-jaeger"></a>
+
+### jaeger
+
+`jaegertracing/jaeger` · License: Apache License 2.0 · ★ 23.422 · docs-read · 2026-11-18
+
+Nền tảng distributed tracing do Uber tạo và tặng CNCF, nhận trace qua OTLP và có giao diện truy vấn. Dự án CNCF đã graduated (10/2019); Jaeger v2 dựa trên thành phần OpenTelemetry Collector; có chính sách bảo đảm tương thích cấu hình với thời gian ân hạn ít nhất 3 tháng. ★ 18/11/2026: 23.422 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-openobserve"></a>
+
+### openobserve
+
+`openobserve/openobserve` · License: GNU Affero General Public License v3.0 · ★ 23.096 · docs-read · 2026-11-18
+
+Nền tảng observability cloud native viết bằng Rust cho logs, metrics, traces, RUM và quan sát AI/LLM, định vị thay Datadog, Splunk, Elasticsearch. Triển khai một binary duy nhất; lưu trữ cột Parquet trên S3 (README nêu chi phí lưu trữ thấp hơn 140 lần so với Elasticsearch); truy vấn bằng SQL và PromQL, gốc OpenTelemetry. Điều kiện: AGPL-3.0 (copyleft cả khi cung cấp qua mạng); có Enterprise Edition riêng (điều khoản chưa xác minh). ★ 18/11/2026: 23.096 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-vector"></a>
+
+### vector
+
+`vectordotdev/vector` · License: Mozilla Public License 2.0 · ★ 22.895 · docs-read · 2026-11-18
+
+Pipeline dữ liệu observability hiệu năng cao viết bằng Rust, chạy như agent hoặc aggregator để thu, biến đổi và định tuyến logs và metrics. Viết bằng Rust với mục tiêu thiết kế chính là độ tin cậy; có ngôn ngữ biến đổi VRL và lệnh vector validate, vector test, vector top, vector tap; do nhóm Community Open Source Engineering của Datadog duy trì. ★ 18/11/2026: 22.895 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-kibana"></a>
+
+### kibana
+
+`elastic/kibana` · License: Mặc định ba giấy phép AGPL-3.0-only · ★ 21.382 · docs-read · 2026-11-18
+
+Giao diện để truy vấn, phân tích, trực quan hoá và quản lý dữ liệu lưu trong Elasticsearch. Là giao diện chính thức của Elastic Stack; README có bảng tương thích phiên bản Kibana–Elasticsearch rõ ràng; có bản tải sẵn và bản hosted trên Elastic Cloud. Điều kiện: Cần Elasticsearch cùng phiên bản major; mã x-pack chỉ theo Elastic License 2.0. ★ 18/11/2026: 21.382 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-victoriametrics"></a>
+
+### VictoriaMetrics
+
+`VictoriaMetrics/VictoriaMetrics` · License: Apache-2.0 · ★ 18.126 · docs-read · 2026-11-18
+
+Cơ sở dữ liệu chuỗi thời gian và giải pháp giám sát nhanh, tiết kiệm, mở rộng được; dùng làm lưu trữ dài hạn hoặc thay thế Prometheus/Graphite trong Grafana. Hỗ trợ PromQL và MetricsQL; nhận dữ liệu qua Prometheus remote write, InfluxDB line protocol, Graphite, OpenTSDB, DataDog, NewRelic, OpenTelemetry; có bản single-node và cluster cùng bộ công cụ vmagent, vmalert, vmauth, vmbackup. Điều kiện: Tính năng Enterprise và bản LTS cần giấy phép thương mại. ★ 18/11/2026: 18.126 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-zipkin"></a>
+
+### zipkin
+
+`openzipkin/zipkin` · License: Apache-2.0 · ★ 17.475 · docs-read · 2026-11-18
+
+Hệ thống truy vết phân tán, thu thập và tra cứu dữ liệu thời gian để gỡ lỗi độ trễ trong kiến trúc dịch vụ, kèm giao diện web và sơ đồ phụ thuộc. Nhận dữ liệu qua HTTP, Kafka, gRPC, RabbitMQ, ActiveMQ, Pulsar; lưu trong bộ nhớ, Cassandra hoặc Elasticsearch; có bản slim, ảnh Docker và công thức Homebrew. Điều kiện: Máy chủ cần JRE 17+; ứng dụng phải được gắn thư viện instrumentation. ★ 18/11/2026: 17.475 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).

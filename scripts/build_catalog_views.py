@@ -12,7 +12,7 @@ HEADER = '<!-- File sinh tự động bởi scripts/build_catalog_views.py; sử
 
 
 def cell(text):
-    return str(text).replace('\\', '\\\\').replace('|', '\\|').replace('\n', ' ').strip()
+    return str(text).replace('\\', '\\\\').replace('*', '\\*').replace('|', '\\|').replace('\n', ' ').strip()
 
 
 def summary(notes, limit=170):

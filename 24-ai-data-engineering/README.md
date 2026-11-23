@@ -544,37 +544,13 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### fx
 
-**Repo:** [antonmedv/fx](https://github.com/antonmedv/fx) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`0cd57fae925d`](https://github.com/antonmedv/fx/tree/0cd57fae925d65f2f488b227d9c141316859e893) (commit 2026-11-20). **Sao:** 20,723 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/antonmedv/fx).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Công cụ terminal để xem và xử lý JSON; repo gồm ứng dụng Go và bản JavaScript không tương tác cho pipeline. |
-| Giá trị và cơ chế theo tài liệu | README npm mô tả ghép hàm JavaScript, xử lý luồng từng object, slurp, raw input và edit-in-place. go.mod có Bubble Tea/Goja, CI kiểm Go trên nhiều kiến trúc cùng bản npm. |
-| Giới hạn | README gốc rất ngắn; tính năng npm không được suy đồng nhất hoàn toàn với giao diện Go. Biểu thức và .fxrc.js là mã thực thi, save ghi đè dữ liệu; chưa thử bộ xử lý. |
-| Điều kiện tích hợp | Khóa bản và chọn đúng binary/package, dùng biểu thức tin cậy, thử trên bản sao JSON và ghi ra tệp mới trước khi dùng save. Giới hạn slurp với dữ liệu lớn. |
-| Lựa chọn đối chiếu | jq; Jless; VisiData. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/README.md) · [LICENSE](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/LICENSE) · [go.mod](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/go.mod) · [.github/workflows/test.yml](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/.github/workflows/test.yml) · [npm/README.md](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/npm/README.md).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 13](../13-dev-stack-devops/README.md#anhkysuai-antonmedv-fx); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-meta-prophet"></a>
 
 ### Prophet
 
-**Repo:** [meta/prophet](https://github.com/meta/prophet) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`5cf15c0f6e5d`](https://github.com/meta/prophet/tree/5cf15c0f6e5d5259d9dd8d511fb4e15a45884cdc) (commit 2026-10-22). **Sao:** 20,496 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/meta/prophet).
-
-| Mục | Đánh giá |
-|---|---|
-| Mục đích | Dự báo chuỗi thời gian bằng mô hình cộng với xu hướng, mùa vụ theo năm/tuần/ngày và ảnh hưởng ngày lễ. |
-| Giá trị và cơ chế theo tài liệu | README mô tả trường hợp phù hợp là dữ liệu có mùa vụ mạnh và nhiều chu kỳ lịch sử; có gói Python/R, CI kiểm Python. Có thể làm baseline cho dự báo nhu cầu hoặc chỉ số hoạt động. |
-| Giới hạn | README 2026 xác nhận maintenance mode từ v1.4.0: sửa lỗi, dependency và đồng bộ R/Python, không có tính năng mới dự kiến. Tuyên bố chống outlier không thay kiểm định trên dữ liệu cụ thể. |
-| Điều kiện tích hợp | Backtest theo trục thời gian, so với seasonal naive, kiểm leakage và khoảng dự báo; chuẩn hóa lịch/ngày lễ, theo dõi sai số theo phân khúc trước dùng quyết định sản phẩm. |
-| Lựa chọn đối chiếu | StatsForecast; Statsmodels; Darts. |
-
-**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
-
-**Nguồn tại cùng SHA:** [README.md](https://github.com/meta/prophet/blob/5cf15c0f6e5d5259d9dd8d511fb4e15a45884cdc/README.md) · [LICENSE](https://github.com/meta/prophet/blob/5cf15c0f6e5d5259d9dd8d511fb4e15a45884cdc/LICENSE) · [.github/workflows/build-and-test.yml](https://github.com/meta/prophet/blob/5cf15c0f6e5d5259d9dd8d511fb4e15a45884cdc/.github/workflows/build-and-test.yml).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 15](../15-ai-for-data/README.md#anhkysuai-meta-prophet); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-datatalksclub-data-engineering-zoomcamp"></a>
 
@@ -595,3 +571,29 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 **Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`813d2774083186d0c9705c920deaf3e6e1693335`](https://github.com/DataTalksClub/data-engineering-zoomcamp/commit/813d2774083186d0c9705c920deaf3e6e1693335), ngày commit 2026-11-16. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
 
 **Nguồn:** [README.md](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/813d2774083186d0c9705c920deaf3e6e1693335/README.md) · [07-streaming/extras/extras/pyflink/LICENSE](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/813d2774083186d0c9705c920deaf3e6e1693335/07-streaming/extras/extras/pyflink/LICENSE) · [metadata GitHub](https://api.github.com/repos/DataTalksClub/data-engineering-zoomcamp).
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+2 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-scrapling"></a>
+
+### Scrapling
+
+`D4Vinci/Scrapling` · License: BSD-3-Clause · ★ 103.979 · docs-read · 2026-11-18
+
+Framework thu thập web Python gộp HTTP nhanh, trình duyệt, parser và crawl đồng thời; dùng từ Python, terminal hoặc agent qua MCP server và Agent Skill. Spider kiểu Scrapy có pause/resume, AutoThrottle, tùy chọn tuân thủ robots.txt; theo dõi phần tử thích ứng khi trang đổi; xuất Markdown sạch cho RAG; kiểu đầy đủ, kiểm bằng PyRight và MyPy. Điều kiện: Python 3.10+; README nêu chỉ dùng cho giáo dục và nghiên cứu. phải tuân luật dữ liệu. điều khoản website và robots.txt. ★ 18/11/2026: 103.979 (GitHub search API), nhóm "Thu thập dữ liệu & Trình duyệt tự động" trong kho-repo của Phan Đông Giang, mục 08 §6c
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c-kho-repo-của-phan-đông-giang-phandonggiangcomkho-repo-694-repo-32-nhóm-và-24-repo-aiagent-đọc-mã-bảng-người-dùng-dán-kiểm-18112026) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-openmetadata"></a>
+
+### OpenMetadata
+
+`open-metadata/OpenMetadata` · License: Apache-2.0 · ★ 15.805 · docs-read · 2026-11-18
+
+Nền tảng danh mục dữ liệu và quản trị metadata mã nguồn mở, gom lineage, chất lượng dữ liệu, sở hữu, glossary, hợp đồng dữ liệu thành đồ thị tri thức làm ngữ cảnh cho người dùng và agent AI. Hơn 130 connector; có lineage mức cột, kiểm thử chất lượng dữ liệu và profiling; cung cấp máy chủ MCP, API, SDK Python. Điều kiện: Tính năng quản lý doanh nghiệp, AI Studio, hỗ trợ thương mại thuộc sản phẩm Collate trả phí. ★ 18/11/2026: 15.805 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).

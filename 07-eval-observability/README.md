@@ -247,3 +247,29 @@
 - https://futureagi.com/blog/best-open-source-eval-frameworks-2026/ · https://inference.net/content/llm-evaluation-tools-comparison/ · https://agentscamp.com/guides/evaluation/best-llm-eval-tools-2026 · https://aiml.qa/llm-evaluation-framework-benchmark-2026/ · https://genai.qa/blog/promptfoo-vs-deepeval-vs-ragas/ · https://techsy.io/en/blog/best-llm-evaluation-tools
 - Bổ sung (12/10/2026): https://github.com/UKGovernmentBEIS/inspect_ai · https://inspect.aisi.org.uk/ · https://github.com/METR/vivaria · https://github.com/EleutherAI/lm-evaluation-harness · https://github.com/harbor-framework/harbor · https://github.com/harbor-framework/terminal-bench-1 · https://www.tbench.ai/news · https://github.com/sierra-research/tau2-bench · https://arxiv.org/abs/2506.07982 · https://github.com/comet-ml/opik · https://github.com/mlflow/mlflow · https://github.com/traceloop/openllmetry · https://www.calcalistech.com/ctechnews/article/sjghwiqf11e · https://github.com/lmnr-ai/lmnr · https://github.com/open-compass/opencompass · https://github.com/huggingface/lighteval · https://github.com/stanford-crfm/helm · https://github.com/openai/evals · https://github.com/AgentOps-AI/agentops · https://github.com/wandb/weave
 - Case study Overmind (12/10/2026): https://github.com/overmind-core/overmind (clone đầy đủ: README.md, .env.example, docker-compose.yml, overbae/settings.py, overbae/api/auth_registration.py, overbae/services/project_invites.py, overbae/services/mcp/{catalog,context}.py, overmind/overmind/{analytics,config}.py, .agents/hooks/guards.py, .claude/settings.json) · https://github.com/overmind-core/overmind/releases · https://pypi.org/project/overmind/ · https://pypistats.org/packages/overmind · https://trendshift.io/repositories/274765 · https://overmindlab.ai/pricing · https://overmindlab.ai/about · https://tech.eu/2026/02/11/overmind-launches-with-2m-in-seed-funding-to-support-development-of-agentic-ai/ · https://osneycapital.com/portfolio/overmind · https://digg.com/ai/fj6px48f · https://themenonlab.blog/blog/overmind-training-platform-specialized-agents · https://www.opensourcealternatives.to/item/overmind · https://github.com/OpenPipe/ART · https://github.com/DarthSim/overmind · https://github.com/cerebral/overmind · https://github.com/overmindtech/cli · https://startupintros.com/news/2025-09-01-overmind-seed
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+2 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-shap"></a>
+
+### shap
+
+`shap/shap` · License: MIT License · ★ 25.867 · docs-read · 2026-11-18
+
+Thư viện giải thích đầu ra của mô hình học máy bằng giá trị Shapley (SHAP), kèm nhiều biểu đồ trực quan hoá. Có thuật toán chính xác tốc độ cao cho tree ensemble (XGBoost, LightGBM, CatBoost, scikit-learn, pyspark) viết bằng C++; GPUTreeExplainer qua gói shap-cuda; tuân SPEC 0 về phiên bản phụ thuộc tối thiểu. Điều kiện: Tăng tốc GPU cần gói riêng shap[cuda] và phần cứng CUDA. ★ 18/11/2026: 25.867 (GitHub search API), nhóm "Mô hình AI & Huấn luyện" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-netron"></a>
+
+### netron
+
+`lutzroeder/netron` · License: MIT · ★ 33.703 · docs-read · 2026-11-18
+
+Trình xem mô hình mạng nơ-ron, học sâu và học máy; hiển thị đồ thị mô hình trên trình duyệt hoặc ứng dụng desktop. Hỗ trợ ONNX, TensorFlow Lite, PyTorch, Core ML, OpenVINO, Keras, Safetensors và nhiều định dạng khác; có bản trình duyệt netron.app không cần cài; có bản macOS, Linux, Windows và gói Python. ★ 18/11/2026: 33.703 (GitHub search API), nhóm "Đồ họa, 3D & Sơ đồ" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ) (bảng/đoạn chung, giữ nguyên tại chỗ).

@@ -831,21 +831,7 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### uBlock
 
-**Repo:** [gorhill/uBlock](https://github.com/gorhill/uBlock) · **License:** GPL-3.0 · **★ 69,588 (GitHub API, 2026-11-23)**
-
-**Mục đích:** uBlock Origin: tiện ích trình duyệt chặn nội dung theo các bộ lọc và quy tắc.
-
-**Giá trị:** Tham khảo cơ chế lọc nhiều nguồn và cho phép người dùng tinh chỉnh quy tắc; phạm vi trình duyệt được trình bày riêng trong README.
-
-**Giới hạn:** README ghi Chrome Web Store đã gỡ bản này ngày 31/8/2026; khả năng cài phụ thuộc trình duyệt và kênh phân phối, không suy mọi Chromium còn hỗ trợ như nhau.
-
-**Cách tham khảo/tích hợp:** Đối chiếu môi trường đích và quyền của tiện ích; kiểm tác động lên website cần dùng trước khi thêm bộ lọc.
-
-**Lựa chọn để đối chiếu:** [AdguardTeam/AdGuardHome](https://github.com/AdguardTeam/AdGuardHome) · [pi-hole/pi-hole](https://github.com/pi-hole/pi-hole). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
-
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`515aad2643a6112ece4d0703453f85d0810fcb78`](https://github.com/gorhill/uBlock/commit/515aad2643a6112ece4d0703453f85d0810fcb78), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
-
-**Nguồn:** [README.md](https://github.com/gorhill/uBlock/blob/515aad2643a6112ece4d0703453f85d0810fcb78/README.md) · [LICENSE.txt](https://github.com/gorhill/uBlock/blob/515aad2643a6112ece4d0703453f85d0810fcb78/LICENSE.txt) · [package.json](https://github.com/gorhill/uBlock/blob/515aad2643a6112ece4d0703453f85d0810fcb78/package.json) · [.github/workflows/main.yml](https://github.com/gorhill/uBlock/blob/515aad2643a6112ece4d0703453f85d0810fcb78/.github/workflows/main.yml) · [metadata GitHub](https://api.github.com/repos/gorhill/uBlock).
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 35](../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-gorhill-ublock); catalog con xem [catalog/](../catalog/README.md).
 
 <a id="anhkysuai-2026-11-23-pavlobu-deskreen"></a>
 
