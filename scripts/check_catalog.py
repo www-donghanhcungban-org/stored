@@ -37,6 +37,38 @@ def valid_url(value):
         return False
 
 
+def taxonomy_subcategories(root, categories, fail):
+    """Kiểm data/taxonomy.json (nếu có); trả {category: tập subcategory} hoặc None khi chưa có taxonomy."""
+    path = root / 'data/taxonomy.json'
+    if not path.exists():
+        return None
+    try:
+        tax = json.loads(path.read_text(encoding='utf-8'))
+    except (OSError, ValueError) as exc:
+        fail(f'taxonomy.json: {exc}'); return {}
+    groups = tax.get('groups') if isinstance(tax, dict) else None
+    if not isinstance(groups, dict) or not groups:
+        fail('taxonomy.json cần groups là object không rỗng'); return {}
+    seen, result = [], {}
+    for g, gv in groups.items():
+        if not re.fullmatch(r'[a-z0-9-]+', g) or not isinstance(gv, dict) or not isinstance(gv.get('label'), str) or not isinstance(gv.get('categories'), dict):
+            fail(f'taxonomy nhóm {g}: cần id chữ thường, label và categories'); continue
+        for c, cv in gv['categories'].items():
+            seen.append(c)
+            subs = cv.get('subcategories', {}) if isinstance(cv, dict) else None
+            if not isinstance(subs, dict) or any(not re.fullmatch(r'[a-z0-9-]+', k) or not isinstance(v, str) or not v for k, v in subs.items()):
+                fail(f'taxonomy {c}: subcategories cần object id → nhãn'); subs = {}
+            result[c] = set(subs)
+    if len(seen) != len(set(seen)):
+        fail('taxonomy: category nằm trong nhiều nhóm')
+    if set(seen) != set(categories):
+        fail(f'taxonomy lệch meta.categories: thiếu {sorted(set(categories) - set(seen))}, thừa {sorted(set(seen) - set(categories))}')
+    merged = tax.get('merged_categories', {})
+    if not isinstance(merged, dict) or any(k in categories or v not in categories for k, v in merged.items()):
+        fail('taxonomy merged_categories: tên cũ không còn dùng, tên mới phải đăng ký')
+    return result
+
+
 def markdown_anchors(text):
     anchors, counts, fence = set(), {}, None
     text = re.sub(r'<!--.*?-->', '', text, flags=re.S)
@@ -116,6 +148,7 @@ def validate(root=ROOT):
     if not valid_date(meta.get('snapshot_date')):
         fail('meta.snapshot_date phải là ngày ISO hợp lệ')
     sections = {p.name[:2] for p in root.iterdir() if p.is_dir() and re.match(r'^\d{2}-', p.name)}
+    subcats = taxonomy_subcategories(root, categories, fail)
     names, ids = set(), set()
     if type(meta.get('count')) is not int or meta['count'] != len(ps):
         fail('meta.count không khớp số hồ sơ')
@@ -134,6 +167,14 @@ def validate(root=ROOT):
         names.add(name)
         if p.get('category') not in categories:
             fail(f'{label}: category chưa đăng ký')
+        if subcats is not None:
+            allowed = subcats.get(p.get('category'), set())
+            if allowed and p.get('subcategory') not in allowed:
+                fail(f'{label}: subcategory thiếu hoặc chưa đăng ký cho {p.get("category")}')
+            elif not allowed and 'subcategory' in p:
+                fail(f'{label}: category {p.get("category")} không có subcategory')
+        elif 'subcategory' in p:
+            fail(f'{label}: subcategory cần data/taxonomy.json')
         if not isinstance(p.get('section'), str) or p['section'] not in sections:
             fail(f'{label}: section không có thư mục')
         repo = p.get('repo')

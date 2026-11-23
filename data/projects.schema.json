@@ -60,6 +60,11 @@
           "category": {
             "type": "string"
           },
+          "subcategory": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$",
+            "description": "Danh mục con theo data/taxonomy.json; bắt buộc khi category có danh sách con."
+          },
           "notes": {
             "type": "string"
           },
