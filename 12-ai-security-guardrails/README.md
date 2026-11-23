@@ -790,3 +790,611 @@ Công cụ dòng lệnh tìm tài khoản mạng xã hội theo tên người d�
 Công cụ nhận diện loại tệp bằng mô hình học sâu nhỏ gọn, có CLI viết bằng Rust và thư viện Python, JavaScript, Rust, Go. Huấn luyện trên khoảng 100 triệu mẫu với hơn 200 loại nội dung, độ chính xác trung bình khoảng 99% trên tập test; suy luận khoảng 5 ms mỗi tệp trên một CPU; được Google dùng cho Gmail, Drive, Safe Browsing và tích hợp với VirusTotal. Điều kiện: README ghi không phải dự án Google chính thức, không được Google hỗ trợ; gói npm và binding Go còn thử nghiệm/đang làm. ★ 18/11/2026: 18.831 (GitHub search API), nhóm "Bảo mật & Hack" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
 
 **Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c53-bảo-mật--hack) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-a-i-g-ai-infra-guard"></a>
+
+### A.I.G (AI-Infra-Guard)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Tencent/AI-Infra-Guard |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `6d24f9f1775586db00ab11db203e48f9031e0e3d` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, go.mod; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-23, có CHANGELOG và nhiều workflow phát hành |
+| Nhận định | Nền tảng quét hạ tầng AI/MCP/skill/agent của Tencent (Go, có frontend, docker-compose). Có file NOTICE đi kèm Apache-2.0; cấu hình compose và việc không xác thực là nhận định cũ của kho, **chưa kiểm lại** ở lượt này. |
+| Nguồn | [README](https://github.com/Tencent/AI-Infra-Guard/blob/6d24f9f1775586db00ab11db203e48f9031e0e3d/README.md) · [LICENSE](https://github.com/Tencent/AI-Infra-Guard/blob/6d24f9f1775586db00ab11db203e48f9031e0e3d/LICENSE) · [go.mod](https://github.com/Tencent/AI-Infra-Guard/blob/6d24f9f1775586db00ab11db203e48f9031e0e3d/go.mod) |
+
+<a id="ch-agent-governance-toolkit"></a>
+
+### Agent Governance Toolkit
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/agent-governance-toolkit |
+| License | MIT |
+| Phiên bản đã đọc | `f85abe1fffc5aaeed716a94bd6654677329215b9` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-18; nhiều workflow CI/bảo mật; README nhắc gói cũ agent-os-kernel đã deprecated |
+| Nhận định | Bộ công cụ quản trị agent của Microsoft: engine chính sách, SDK nhiều ngôn ngữ và hook cho các CLI agent. Tuyên bố mức sẵn sàng production và quy mô mã là của tác giả **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/microsoft/agent-governance-toolkit/blob/f85abe1fffc5aaeed716a94bd6654677329215b9/README.md) · [LICENSE](https://github.com/microsoft/agent-governance-toolkit/blob/f85abe1fffc5aaeed716a94bd6654677329215b9/LICENSE) |
+
+<a id="ch-agent-scan"></a>
+
+### agent-scan
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/snyk/agent-scan |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `a2ed4730a41f7924c586598ba6d6458128025e20` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-23; v0.7.0 (pyproject) |
+| Nhận định | Máy quét chuỗi cung ứng agent của Snyk (MCP server, skill, agent trên máy). README nói rõ định dạng đầu ra có thể đổi giữa các bản, không nên nhúng vào quy trình sản xuất. |
+| Nguồn | [README](https://github.com/snyk/agent-scan/blob/a2ed4730a41f7924c586598ba6d6458128025e20/README.md) · [LICENSE](https://github.com/snyk/agent-scan/blob/a2ed4730a41f7924c586598ba6d6458128025e20/LICENSE) · [pyproject.toml](https://github.com/snyk/agent-scan/blob/a2ed4730a41f7924c586598ba6d6458128025e20/pyproject.toml) |
+
+<a id="ch-ai-red-teaming-guide"></a>
+
+### AI-Red-Teaming-Guide
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/requie/AI-Red-Teaming-Guide |
+| License | Không có file LICENSE |
+| Phiên bản đã đọc | `7b7dde88f9ca1d699ca678ad3aa9afd5a50166ad` (commit 2026-10-11) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md; chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-10-11 (khớp HEAD 7b7dde8 đã ghi); có bản dịch ES/FR/ZH |
+| Nhận định | Guide red-team AI một tác giả, nhiều template; không có file LICENSE nên quyền tái sử dụng không rõ dù README ghi MIT. Danh sách "trusted by" là logo tự gắn, không phải xác nhận của các hãng. |
+| Nguồn | [README](https://github.com/requie/AI-Red-Teaming-Guide/blob/7b7dde88f9ca1d699ca678ad3aa9afd5a50166ad/README.md) |
+
+<a id="ch-anthropic-cybersecurity-skills-cong-ong"></a>
+
+### Anthropic-Cybersecurity-Skills (cộng đồng)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mukul975/Anthropic-Cybersecurity-Skills |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `54a798831d2266a3ca61ce68a7acb80b81160d57` (commit 2026-08-31) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-08-31 (~12 tuần trước) |
+| Nhận định | Thư viện skill an ninh mạng cộng đồng (số skill/khung ánh xạ do README tự công bố **(chưa xác minh)**). Tên chứa "Anthropic" nhưng README nói rõ không liên kết; dual-use, cần ủy quyền. |
+| Nguồn | [README](https://github.com/mukul975/Anthropic-Cybersecurity-Skills/blob/54a798831d2266a3ca61ce68a7acb80b81160d57/README.md) · [LICENSE](https://github.com/mukul975/Anthropic-Cybersecurity-Skills/blob/54a798831d2266a3ca61ce68a7acb80b81160d57/LICENSE) |
+
+<a id="ch-awesome-ai-security-skills"></a>
+
+### Awesome-AI-Security-Skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/EvanThomasLuke/Awesome-AI-Security-Skills |
+| License | Không có file LICENSE |
+| Phiên bản đã đọc | `71df77b1a20c5349ec0bafbc176180d5c37a3318` (commit 2026-11-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-15; repo chỉ có README.md |
+| Nhận định | Danh sách link skill bảo mật AI, tác giả tự cảnh báo chạy skill của người khác có thể làm lộ máy. Không có LICENSE nên chỉ nên cite link, không chép nội dung. |
+| Nguồn | [README](https://github.com/EvanThomasLuke/Awesome-AI-Security-Skills/blob/71df77b1a20c5349ec0bafbc176180d5c37a3318/README.md) |
+
+<a id="ch-awesome-bug-bounty-tools"></a>
+
+### Awesome Bug Bounty Tools
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vavkamil/awesome-bugbounty-tools |
+| License | CC0-1.0 |
+| Phiên bản đã đọc | `d56f6c25c02774de317710483069864492f6831f` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-23; có workflow zizmor kiểm CI |
+| Nhận định | Danh sách công cụ bug bounty theo giai đoạn (recon, khai thác...). CC0 nên dùng lại tự do; mức độ bảo trì từng công cụ trong danh sách không được kiểm. |
+| Nguồn | [README](https://github.com/vavkamil/awesome-bugbounty-tools/blob/d56f6c25c02774de317710483069864492f6831f/README.md) · [LICENSE](https://github.com/vavkamil/awesome-bugbounty-tools/blob/d56f6c25c02774de317710483069864492f6831f/LICENSE) |
+
+<a id="ch-bumblebee-perplexity"></a>
+
+### Bumblebee (Perplexity)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/perplexityai/bumblebee |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `93b8877e28ac23f50357aa610a0bd287525be4b1` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-18 |
+| Nhận định | Bộ kiểm kê chỉ đọc trên máy dev để đối chiếu advisory chuỗi cung ứng, xuất NDJSON. Giới hạn: chỉ khớp chính xác với exposure catalog đã biết. |
+| Nguồn | [README](https://github.com/perplexityai/bumblebee/blob/93b8877e28ac23f50357aa610a0bd287525be4b1/README.md) · [LICENSE](https://github.com/perplexityai/bumblebee/blob/93b8877e28ac23f50357aa610a0bd287525be4b1/LICENSE) |
+
+<a id="ch-claude-bughunter"></a>
+
+### Claude-BugHunter
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/elementalsouls/Claude-BugHunter |
+| License | MIT (mã) + CC-BY-4.0 (nội dung) (khác catalog cũ: MIT + CC-BY-4.0) |
+| Phiên bản đã đọc | `a7e73914e6e7eba98f39721df53d76629b9bed23` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, LICENSE-CONTENT; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-23; 8 workflow (lint, test, leak-guard...) |
+| Nhận định | Bundle skill săn lỗi/red-team cho Claude Code (README tuyên bố 83 skill, 681 mẫu báo cáo **(chưa xác minh)**). Dual-use; nội dung theo CC-BY-4.0 nên cần ghi công. |
+| Nguồn | [README](https://github.com/elementalsouls/Claude-BugHunter/blob/a7e73914e6e7eba98f39721df53d76629b9bed23/README.md) · [LICENSE](https://github.com/elementalsouls/Claude-BugHunter/blob/a7e73914e6e7eba98f39721df53d76629b9bed23/LICENSE) · [LICENSE-CONTENT](https://github.com/elementalsouls/Claude-BugHunter/blob/a7e73914e6e7eba98f39721df53d76629b9bed23/LICENSE-CONTENT) |
+
+<a id="ch-claude-code-security-review"></a>
+
+### claude-code-security-review
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anthropics/claude-code-security-review |
+| License | MIT |
+| Phiên bản đã đọc | `0c6a49f1fa56a1d472575da86a94dbc1edb78eda` (commit 2026-02-11) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-02-11 (~9 tháng trước) |
+| Nhận định | Action chính thức của Anthropic rà soát thay đổi PR bằng Claude, lọc dương tính giả. Cần khóa API Claude, và workflow mẫu dùng quyền ghi PR nên phải cẩn trọng với PR từ fork. Nhịp commit chậm. |
+| Nguồn | [README](https://github.com/anthropics/claude-code-security-review/blob/0c6a49f1fa56a1d472575da86a94dbc1edb78eda/README.md) · [LICENSE](https://github.com/anthropics/claude-code-security-review/blob/0c6a49f1fa56a1d472575da86a94dbc1edb78eda/LICENSE) |
+
+<a id="ch-claude-red"></a>
+
+### claude-red
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/SnailSploit/claude-red |
+| License | MIT |
+| Phiên bản đã đọc | `6196ba7464662de34e8744d359f175d1a7bca530` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-17 |
+| Nhận định | Thư viện skill tấn công cho Claude, dual-use, dành cho engagement có ủy quyền. Có install.sh nên cần đọc trước khi chạy; số skill do README tự nêu **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/SnailSploit/claude-red/blob/6196ba7464662de34e8744d359f175d1a7bca530/README.md) · [LICENSE](https://github.com/SnailSploit/claude-red/blob/6196ba7464662de34e8744d359f175d1a7bca530/LICENSE) |
+
+<a id="ch-cosign"></a>
+
+### cosign
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/sigstore/cosign |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `19c90f91263701e6e3fb9f6e32ae1a8199712baf` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-22; nhiều workflow CI/e2e/conformance |
+| Nhận định | Công cụ ký và xác minh container/artifact của Sigstore, dự án trưởng thành do cộng đồng OpenSSF duy trì. Đáng tham khảo cho chuỗi cung ứng; keyless phụ thuộc hạ tầng Fulcio/Rekor công cộng. |
+| Nguồn | [README](https://github.com/sigstore/cosign/blob/19c90f91263701e6e3fb9f6e32ae1a8199712baf/README.md) · [LICENSE](https://github.com/sigstore/cosign/blob/19c90f91263701e6e3fb9f6e32ae1a8199712baf/LICENSE) |
+
+<a id="ch-cybersecurity-threats-guide"></a>
+
+### Cybersecurity Threats Guide
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/s4ntrx/Cybersecurity-Threats-Guide |
+| License | MIT |
+| Phiên bản đã đọc | `b3767e0707fa91ecb32c3a7994f81e792e656e51` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-22; có CI chạy compileall/test |
+| Nhận định | Guide giáo dục kèm script phát hiện/phòng ngừa Python, một tác giả. README tự nói script là tài liệu dạy học; nhận định cũ về tarfile.extractall **(chưa kiểm lại)**. |
+| Nguồn | [README](https://github.com/s4ntrx/Cybersecurity-Threats-Guide/blob/b3767e0707fa91ecb32c3a7994f81e792e656e51/README.md) · [LICENSE](https://github.com/s4ntrx/Cybersecurity-Threats-Guide/blob/b3767e0707fa91ecb32c3a7994f81e792e656e51/LICENSE) |
+
+<a id="ch-dcg-destructive-command-guard"></a>
+
+### dcg (Destructive Command Guard)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Dicklesworthstone/destructive_command_guard |
+| License | MIT kèm rider cấm OpenAI/Anthropic (không OSI) (khác catalog cũ: MIT + rider cấm OpenAI/Anthropic) |
+| Phiên bản đã đọc | `b4f82a73df6fb1eadaf46d8de8bbccb0258b1e6f` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-23; rất nhiều workflow |
+| Nhận định | Hook Rust chặn lệnh phá hủy cho nhiều coding agent. Rider cấm OpenAI/Anthropic nên không phải mã nguồn mở theo OSI và không dùng được cho các bên bị loại trừ; cần soi kỹ trước khi tích hợp. |
+| Nguồn | [README](https://github.com/Dicklesworthstone/destructive_command_guard/blob/b4f82a73df6fb1eadaf46d8de8bbccb0258b1e6f/README.md) · [LICENSE](https://github.com/Dicklesworthstone/destructive_command_guard/blob/b4f82a73df6fb1eadaf46d8de8bbccb0258b1e6f/LICENSE) |
+
+<a id="ch-decepticon"></a>
+
+### Decepticon
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/BitterSecurity/Decepticon |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `6b15092d2e0b41f2ef5af79a16333582cc3fb353` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-20; CI, scorecard, release |
+| Nhận định | Agent red team tự chủ (README Apache-2.0, kèm ghi nhận giấy phép bên thứ ba). Dual-use; các chi tiết kiến trúc/RoE trong nhận định cũ **(chưa kiểm lại)** ở lượt này. |
+| Nguồn | [README](https://github.com/BitterSecurity/Decepticon/blob/6b15092d2e0b41f2ef5af79a16333582cc3fb353/README.md) · [LICENSE](https://github.com/BitterSecurity/Decepticon/blob/6b15092d2e0b41f2ef5af79a16333582cc3fb353/LICENSE) |
+
+<a id="ch-fickling"></a>
+
+### fickling
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/trailofbits/fickling |
+| License | LGPL-3.0 |
+| Phiên bản đã đọc | `a7c65144eecb3ad95d679aa6e30a243e8db050de` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-19 |
+| Nhận định | Phân tích và viết lại bytecode pickle để phát hiện file độc hại (kể cả PyTorch). LGPL-3.0 có ràng buộc khi liên kết/phân phối lại. |
+| Nguồn | [README](https://github.com/trailofbits/fickling/blob/a7c65144eecb3ad95d679aa6e30a243e8db050de/README.md) · [LICENSE](https://github.com/trailofbits/fickling/blob/a7c65144eecb3ad95d679aa6e30a243e8db050de/LICENSE) · [pyproject.toml](https://github.com/trailofbits/fickling/blob/a7c65144eecb3ad95d679aa6e30a243e8db050de/pyproject.toml) |
+
+<a id="ch-gitleaks"></a>
+
+### gitleaks
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/gitleaks/gitleaks |
+| License | MIT |
+| Phiên bản đã đọc | `5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c` (commit 2026-10-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit 2026-10-23; README: feature complete, chỉ vá bảo mật, tác giả chuyển sang Betterleaks |
+| Nhận định | Công cụ phát hiện secret trong git/file/stdin. Nên cân nhắc Betterleaks cho tính năng mới; bản này chỉ còn vá bảo mật theo README. |
+| Nguồn | [README](https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/README.md) · [LICENSE](https://github.com/gitleaks/gitleaks/blob/5f6ec56cfa6f8c67648d863582c7ae2f206d5c1c/LICENSE) |
+
+<a id="ch-guardrails-ai"></a>
+
+### Guardrails AI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/guardrails-ai/guardrails |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `06d0ff2c5f9bcb493d976b76f885e37e41ce845d` (commit 2026-08-26) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-08-26; v0.11.0 |
+| Nhận định | Framework guard đầu vào/đầu ra và sinh dữ liệu có cấu trúc từ LLM. Hub từ xa và inference hosted đã bị bỏ theo README, validator cài qua pip; ngày mốc README (6/7/2026) lệch ngày ghi trước đó. |
+| Nguồn | [README](https://github.com/guardrails-ai/guardrails/blob/06d0ff2c5f9bcb493d976b76f885e37e41ce845d/README.md) · [LICENSE](https://github.com/guardrails-ai/guardrails/blob/06d0ff2c5f9bcb493d976b76f885e37e41ce845d/LICENSE) · [pyproject.toml](https://github.com/guardrails-ai/guardrails/blob/06d0ff2c5f9bcb493d976b76f885e37e41ce845d/pyproject.toml) |
+
+<a id="ch-hexstrike-ai"></a>
+
+### HexStrike AI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/0x4m4/hexstrike-ai |
+| License | MIT |
+| Phiên bản đã đọc | `d689933ff579d839c676c82b231f8e98326c5f04` (commit 2026-08-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-08-03; README ghi sở hữu bởi OTT Cybersecurity LLC |
+| Nhận định | MCP gói công cụ pentest. Nhận định cũ về endpoint chạy lệnh tuỳ ý không xác thực **(chưa kiểm lại bằng đọc mã ở lượt này)**; chỉ dùng trong lab cô lập. |
+| Nguồn | [README](https://github.com/0x4m4/hexstrike-ai/blob/d689933ff579d839c676c82b231f8e98326c5f04/README.md) · [LICENSE](https://github.com/0x4m4/hexstrike-ai/blob/d689933ff579d839c676c82b231f8e98326c5f04/LICENSE) |
+
+<a id="ch-llm-guard"></a>
+
+### LLM Guard
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/protectai/llm-guard |
+| License | MIT |
+| Phiên bản đã đọc | `168c1034ffdb33837e7ae6fd6a16b80567c1be03` (commit 2026-07-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-07-09; README đầu trang: dự án đã ARCHIVED, không còn phát triển/bảo trì |
+| Nhận định | Bộ scanner LLM (prompt injection, rò dữ liệu...). Dự án đã ngừng bảo trì theo README nên không nên chọn cho hệ mới; chỉ tham khảo thiết kế. |
+| Nguồn | [README](https://github.com/protectai/llm-guard/blob/168c1034ffdb33837e7ae6fd6a16b80567c1be03/README.md) · [LICENSE](https://github.com/protectai/llm-guard/blob/168c1034ffdb33837e7ae6fd6a16b80567c1be03/LICENSE) · [pyproject.toml](https://github.com/protectai/llm-guard/blob/168c1034ffdb33837e7ae6fd6a16b80567c1be03/pyproject.toml) |
+
+<a id="ch-mitre-atlas-data"></a>
+
+### MITRE ATLAS Data
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mitre-atlas/atlas-data |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `f56c1468731d6428e5bf875263b4643b46d67437` (commit 2026-10-28) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit 2026-10-28; v6.1.0 |
+| Nhận định | Dữ liệu ATLAS (TTP nhắm vào hệ AI) dạng YAML kèm công cụ kiểm định và phát hành STIX/Navigator. Dùng file YAML trong atlas/, không dùng dist/ATLAS.yaml. |
+| Nguồn | [README](https://github.com/mitre-atlas/atlas-data/blob/f56c1468731d6428e5bf875263b4643b46d67437/README.md) · [LICENSE](https://github.com/mitre-atlas/atlas-data/blob/f56c1468731d6428e5bf875263b4643b46d67437/LICENSE) · [pyproject.toml](https://github.com/mitre-atlas/atlas-data/blob/f56c1468731d6428e5bf875263b4643b46d67437/pyproject.toml) |
+
+<a id="ch-model-signing-model-transparency"></a>
+
+### model-signing (Model Transparency)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/sigstore/model-transparency |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `05e665f0fc435c164d1be73dea56ca45ff3df176` (commit 2026-11-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-09; gói model-signing |
+| Nhận định | Ký và xác minh toàn vẹn model ML bằng Sigstore/khóa, thuộc OpenSSF. README nêu mục Status, mức ổn định API nên xem trước khi nhúng. |
+| Nguồn | [README](https://github.com/sigstore/model-transparency/blob/05e665f0fc435c164d1be73dea56ca45ff3df176/README.md) · [LICENSE](https://github.com/sigstore/model-transparency/blob/05e665f0fc435c164d1be73dea56ca45ff3df176/LICENSE) · [pyproject.toml](https://github.com/sigstore/model-transparency/blob/05e665f0fc435c164d1be73dea56ca45ff3df176/pyproject.toml) |
+
+<a id="ch-modelscan"></a>
+
+### ModelScan
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/protectai/modelscan |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `61fcec9c2a37c24c1fb12d84ede30fe248a364bd` (commit 2026-02-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-02-18 (khớp nhận định cũ) |
+| Nhận định | Quét file model tìm mã không an toàn (pickle, H5, SavedModel). Cùng hãng với llm-guard (đã archive) nhưng repo này chưa bị đánh dấu archive trong README. |
+| Nguồn | [README](https://github.com/protectai/modelscan/blob/61fcec9c2a37c24c1fb12d84ede30fe248a364bd/README.md) · [LICENSE](https://github.com/protectai/modelscan/blob/61fcec9c2a37c24c1fb12d84ede30fe248a364bd/LICENSE) · [pyproject.toml](https://github.com/protectai/modelscan/blob/61fcec9c2a37c24c1fb12d84ede30fe248a364bd/pyproject.toml) |
+
+<a id="ch-nemo-guardrails"></a>
+
+### NeMo Guardrails
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/NVIDIA-NeMo/Guardrails |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `5112cf1cae863e5a96a21766046b933c43a1c6d8` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-19; v0.25.0 |
+| Nhận định | Thư viện guardrail lập trình được cho LLM/agent (rail công cụ, PII, jailbreak, hooks server). Có thay đổi API lớn ở 0.25 (LLMRails sang Guardrails) nên chú ý khi nâng cấp. |
+| Nguồn | [README](https://github.com/NVIDIA-NeMo/Guardrails/blob/5112cf1cae863e5a96a21766046b933c43a1c6d8/README.md) · [LICENSE.md](https://github.com/NVIDIA-NeMo/Guardrails/blob/5112cf1cae863e5a96a21766046b933c43a1c6d8/LICENSE.md) · [pyproject.toml](https://github.com/NVIDIA-NeMo/Guardrails/blob/5112cf1cae863e5a96a21766046b933c43a1c6d8/pyproject.toml) |
+
+<a id="ch-nist-ai-rmf-1-0-ai-600-1-generative-ai-profile"></a>
+
+### NIST AI RMF 1.0 + AI 600-1 (Generative AI Profile)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://www.nist.gov/itl/ai-risk-management-framework |
+| License | Không có file LICENSE; ấn phẩm của chính phủ Mỹ, **điều khoản chưa xác minh** (chưa đọc trang Copyright & Disclaimers) |
+| Phiên bản đã đọc | Không áp dụng (trang web, đọc 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang chính thức NIST AI RMF (curl); chưa đọc toàn văn AI RMF 1.0/AI 600-1 |
+| Bảo trì | Trang đang cập nhật |
+| Nhận định | Khung Govern/Map/Measure/Manage; trang ghi AI RMF 1.0 **đang được sửa đổi** theo White House AI Action Plan và NIST công bố concept note (7/4/2026) cho profile hạ tầng trọng yếu. Trạng thái bản sửa đổi chưa có ngày chốt trên trang. |
+| Nguồn | [Trang NIST AI RMF](https://www.nist.gov/itl/ai-risk-management-framework) |
+
+<a id="ch-nono"></a>
+
+### nono
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/nolabs-ai/nono |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `d126274c9d0e530f5d877abb2dd72cbf2890f904` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Cargo.toml; chưa chạy upstream |
+| Bảo trì | Commit 2026-11-23; trước 1.0, API còn có thể đổi |
+| Nhận định | Runtime bảo mật cho agent: sandbox mức kernel, tiêm credential qua proxy, attestation skill bằng Sigstore, audit. Mô tả tính năng là tuyên bố của README **(chưa xác minh)**; chưa 1.0. |
+| Nguồn | [README](https://github.com/nolabs-ai/nono/blob/d126274c9d0e530f5d877abb2dd72cbf2890f904/README.md) · [LICENSE](https://github.com/nolabs-ai/nono/blob/d126274c9d0e530f5d877abb2dd72cbf2890f904/LICENSE) · [Cargo.toml](https://github.com/nolabs-ai/nono/blob/d126274c9d0e530f5d877abb2dd72cbf2890f904/Cargo.toml) |
+
+<a id="ch-opa-conftest"></a>
+
+### OPA / conftest
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/open-policy-agent/conftest |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `320fc8bf4d6753adda288a0e3210a1f06b58727a` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, go.mod; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Công cụ viết test Rego cho file cấu hình có cấu trúc (K8s, Terraform, Tekton…), chạy được trong CI để chặn PR vi phạm. README không nói gì về tool gateway cho agent; việc dùng OPA làm gateway là cách ghép của catalog, phải tự tích hợp. |
+| Nguồn | [README](https://github.com/open-policy-agent/conftest/blob/320fc8bf4d6753adda288a0e3210a1f06b58727a/README.md) · [LICENSE](https://github.com/open-policy-agent/conftest/blob/320fc8bf4d6753adda288a0e3210a1f06b58727a/LICENSE) · [go.mod](https://github.com/open-policy-agent/conftest/blob/320fc8bf4d6753adda288a0e3210a1f06b58727a/go.mod) |
+
+<a id="ch-openssf-scorecard"></a>
+
+### OpenSSF Scorecard
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ossf/scorecard |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `789a810815a4398abf14b10898b111d3ced5d94d` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Chấm điểm sức khỏe bảo mật chuỗi cung ứng của repo bằng các check heuristic, dùng qua CLI, GitHub Action, API công khai hoặc MCP. Điểm chỉ là chỉ báo, không phải bằng chứng an toàn. |
+| Nguồn | [README](https://github.com/ossf/scorecard/blob/789a810815a4398abf14b10898b111d3ced5d94d/README.md) · [LICENSE](https://github.com/ossf/scorecard/blob/789a810815a4398abf14b10898b111d3ced5d94d/LICENSE) |
+
+<a id="ch-osv-scanner"></a>
+
+### OSV-Scanner
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/google/osv-scanner |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `925d1b4cf77c4dd26540672f6fa045a3a8327754` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Quét dependency, container và gói OS để đối chiếu CVE trong cơ sở dữ liệu OSV. Điểm mạnh là phủ nhiều hệ sinh thái; cần mạng để tra OSV nếu không dùng chế độ offline **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/google/osv-scanner/blob/925d1b4cf77c4dd26540672f6fa045a3a8327754/README.md) · [LICENSE](https://github.com/google/osv-scanner/blob/925d1b4cf77c4dd26540672f6fa045a3a8327754/LICENSE) |
+
+<a id="ch-owasp-mcp-top-10"></a>
+
+### OWASP MCP Top 10
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/OWASP/www-project-mcp-top-10 |
+| License | CC-BY-SA-4.0 |
+| Phiên bản đã đọc | `165fe0f78ef104459237b4a8e0f6e78db9b02391` (commit 2026-07-29) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, index.md, project.owasp.yaml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit HEAD 2026-07-29); index.md tự ghi đang ở giai đoạn Beta |
+| Nhận định | Danh sách 10 rủi ro bảo mật cho hệ dùng MCP (token/secret, leo thang đặc quyền, tool poisoning…), mỗi mục một trang trong thư mục 2025. Là tài liệu bản beta, chưa phải chuẩn chốt; nội dung do cộng đồng soạn, nên đối chiếu với nguồn gốc rủi ro. |
+| Nguồn | [README](https://github.com/OWASP/www-project-mcp-top-10/blob/165fe0f78ef104459237b4a8e0f6e78db9b02391/README.md) · [LICENSE](https://github.com/OWASP/www-project-mcp-top-10/blob/165fe0f78ef104459237b4a8e0f6e78db9b02391/LICENSE.md) · [index.md](https://github.com/OWASP/www-project-mcp-top-10/blob/165fe0f78ef104459237b4a8e0f6e78db9b02391/index.md) · [project.owasp.yaml](https://github.com/OWASP/www-project-mcp-top-10/blob/165fe0f78ef104459237b4a8e0f6e78db9b02391/project.owasp.yaml) |
+
+<a id="ch-pentagi"></a>
+
+### PentAGI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vxcontrol/pentagi |
+| License | MIT (kèm EULA) |
+| Phiên bản đã đọc | `cffed9485aa1cca70762cd08a57ac62a80406258` (commit 2026-10-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, EULA.md; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Hệ đa agent tự chủ pentest, tự host bằng Docker compose, dual-use. Rủi ro đã đọc trong README: mật khẩu mặc định phải đổi ngay, docker.sock là quyền gần root trên host; chỉ chạy trên hệ được phép kiểm thử. |
+| Nguồn | [README](https://github.com/vxcontrol/pentagi/blob/cffed9485aa1cca70762cd08a57ac62a80406258/README.md) · [LICENSE](https://github.com/vxcontrol/pentagi/blob/cffed9485aa1cca70762cd08a57ac62a80406258/LICENSE) · [EULA](https://github.com/vxcontrol/pentagi/blob/cffed9485aa1cca70762cd08a57ac62a80406258/EULA.md) |
+
+<a id="ch-purplellama"></a>
+
+### PurpleLlama
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/meta-llama/PurpleLlama |
+| License | MIT (CodeShield, CyberSecEval, LlamaFirewall, SensitiveDocClassification); LICENSE gốc là Llama 3.2 Community License |
+| Phiên bản đã đọc | `87219c6200b25037d58251ebbc398f5c7ae2e074` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, CodeShield/LICENSE; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Gói chung của Meta gồm Llama Guard, Prompt Guard 2, LlamaFirewall, CodeShield và CyberSecEval. License khác nhau theo thành phần, phải đọc từng thư mục trước khi dùng; weights Llama chịu điều khoản cộng đồng Llama **(gating chưa xác minh)**. |
+| Nguồn | [README](https://github.com/meta-llama/PurpleLlama/blob/87219c6200b25037d58251ebbc398f5c7ae2e074/README.md) · [LICENSE (gốc)](https://github.com/meta-llama/PurpleLlama/blob/87219c6200b25037d58251ebbc398f5c7ae2e074/LICENSE) · [CodeShield/LICENSE](https://github.com/meta-llama/PurpleLlama/blob/87219c6200b25037d58251ebbc398f5c7ae2e074/CodeShield/LICENSE) |
+
+<a id="ch-pyrit"></a>
+
+### PyRIT
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/PyRIT |
+| License | MIT |
+| Phiên bản đã đọc | `5022951da1329faaeaf02649019ba3f7c0293dc5` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Bộ công cụ red-team AI tạo sinh của Microsoft AI Red Team: CLI scanner, GUI và framework Python cho tấn công đa lượt. Dual-use; nên chạy trong môi trường cô lập và chỉ nhắm hệ được phép. |
+| Nguồn | [README](https://github.com/microsoft/PyRIT/blob/5022951da1329faaeaf02649019ba3f7c0293dc5/README.md) · [LICENSE](https://github.com/microsoft/PyRIT/blob/5022951da1329faaeaf02649019ba3f7c0293dc5/LICENSE) · [pyproject.toml](https://github.com/microsoft/PyRIT/blob/5022951da1329faaeaf02649019ba3f7c0293dc5/pyproject.toml) |
+
+<a id="ch-semgrep"></a>
+
+### Semgrep
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/semgrep/semgrep |
+| License | LGPL-2.1 |
+| Phiên bản đã đọc | `c4dbe9ee2fc6d0022ba02ef6b97c5954ed9549e3` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, COPYRIGHT; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | SAST khớp mẫu ngữ nghĩa cho 30+ ngôn ngữ, chạy cục bộ, mặc định không upload mã theo README **(chưa xác minh)**. Giới hạn: bản Community bỏ sót nhiều true positive bảo mật; rule lấy từ repo khác với license riêng. |
+| Nguồn | [README](https://github.com/semgrep/semgrep/blob/c4dbe9ee2fc6d0022ba02ef6b97c5954ed9549e3/README.md) · [LICENSE](https://github.com/semgrep/semgrep/blob/c4dbe9ee2fc6d0022ba02ef6b97c5954ed9549e3/LICENSE) · [COPYRIGHT](https://github.com/semgrep/semgrep/blob/c4dbe9ee2fc6d0022ba02ef6b97c5954ed9549e3/COPYRIGHT) |
+
+<a id="ch-skill-scanner-cisco"></a>
+
+### skill-scanner (Cisco)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/cisco-ai-defense/skill-scanner |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `c558c421157c546ec417cf23778ce81a3a8f35fd` (commit 2026-11-06) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Quét skill agent bằng pattern YAML/YARA-X, phân tích AST/dataflow, tùy chọn LLM và dịch vụ cloud, xuất SARIF cho CI. Số liệu recall/F1 là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/cisco-ai-defense/skill-scanner/blob/c558c421157c546ec417cf23778ce81a3a8f35fd/README.md) · [LICENSE](https://github.com/cisco-ai-defense/skill-scanner/blob/c558c421157c546ec417cf23778ce81a3a8f35fd/LICENSE) |
+
+<a id="ch-skillspector"></a>
+
+### SkillSpector
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/NVIDIA/SkillSpector |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `f9bb13dd1667eb4e7ac97b8ebace3160041ed571` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Quét tĩnh kết hợp LLM các skill agent trước khi cài (prompt injection, exfiltration, MCP tool poisoning…). Là scanner chứ không phải sandbox; tỉ lệ 26,1% skill có lỗ hổng là số liệu nghiên cứu của tác giả **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/NVIDIA/SkillSpector/blob/f9bb13dd1667eb4e7ac97b8ebace3160041ed571/README.md) · [LICENSE](https://github.com/NVIDIA/SkillSpector/blob/f9bb13dd1667eb4e7ac97b8ebace3160041ed571/LICENSE) · [pyproject.toml](https://github.com/NVIDIA/SkillSpector/blob/f9bb13dd1667eb4e7ac97b8ebace3160041ed571/pyproject.toml) |
+
+<a id="ch-strix"></a>
+
+### Strix
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/usestrix/strix |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `00912af5d179fda5e52961421f9061240a43676c` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, docs/advanced/configuration.mdx; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Agent pentest tự chủ nhiều agent, chạy PoC thật, có chế độ CI cho PR. Dual-use; telemetry bật mặc định nên cần đặt STRIX_TELEMETRY=0 nếu không muốn gửi số liệu. |
+| Nguồn | [README](https://github.com/usestrix/strix/blob/00912af5d179fda5e52961421f9061240a43676c/README.md) · [LICENSE](https://github.com/usestrix/strix/blob/00912af5d179fda5e52961421f9061240a43676c/LICENSE) · [pyproject.toml](https://github.com/usestrix/strix/blob/00912af5d179fda5e52961421f9061240a43676c/pyproject.toml) · [docs/advanced/configuration.mdx](https://github.com/usestrix/strix/blob/00912af5d179fda5e52961421f9061240a43676c/docs/advanced/configuration.mdx) |
+
+<a id="ch-syft"></a>
+
+### syft
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anchore/syft |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `9ad9aa5e80a6762c33b0344d252ec669ae53afdc` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Sinh SBOM từ container image và filesystem cho nhiều hệ đóng gói, ghép với Grype để quét lỗ hổng. Công cụ chín, đầu ra chuẩn nên dễ nối vào pipeline. |
+| Nguồn | [README](https://github.com/anchore/syft/blob/9ad9aa5e80a6762c33b0344d252ec669ae53afdc/README.md) · [LICENSE](https://github.com/anchore/syft/blob/9ad9aa5e80a6762c33b0344d252ec669ae53afdc/LICENSE) |
+
+<a id="ch-trail-of-bits-skills"></a>
+
+### Trail of Bits skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/trailofbits/skills |
+| License | CC-BY-SA-4.0 |
+| Phiên bản đã đọc | `149d7b21f4067765b82e67029730b42d228ef4b4` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Marketplace skill/plugin bảo mật cho Claude Code và Codex của Trail of Bits. Giấy phép ShareAlike ràng buộc khi tái phân phối; từng plugin cần tự rà trước khi bật. |
+| Nguồn | [README](https://github.com/trailofbits/skills/blob/149d7b21f4067765b82e67029730b42d228ef4b4/README.md) · [LICENSE](https://github.com/trailofbits/skills/blob/149d7b21f4067765b82e67029730b42d228ef4b4/LICENSE) |
+
+<a id="ch-trivy"></a>
+
+### Trivy
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/aquasecurity/trivy |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `13e05e7469dfe913488dcc06fabb28ea72c94880` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, SECURITY.md; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Scanner đa năng cho lỗ hổng, cấu hình IaC, secret và SBOM. Ghi chú catalog về sự cố chuỗi cung ứng 2026 là **(chưa xác minh)** từ repo này; vẫn nên ghim phiên bản/Action theo SHA. |
+| Nguồn | [README](https://github.com/aquasecurity/trivy/blob/13e05e7469dfe913488dcc06fabb28ea72c94880/README.md) · [LICENSE](https://github.com/aquasecurity/trivy/blob/13e05e7469dfe913488dcc06fabb28ea72c94880/LICENSE) · [SECURITY.md](https://github.com/aquasecurity/trivy/blob/13e05e7469dfe913488dcc06fabb28ea72c94880/SECURITY.md) |
+
+<a id="ch-trufflehog"></a>
+
+### trufflehog
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/trufflesecurity/trufflehog |
+| License | AGPL-3.0 |
+| Phiên bản đã đọc | `4ef51f69ca6347aaa76a5e64a87eac9c0c909f71` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Tìm, phân loại và xác thực secret trên Git, chat, wiki, object store, filesystem (800+ loại theo README, **chưa xác minh**). AGPL-3.0 cần cân nhắc khi nhúng vào dịch vụ. |
+| Nguồn | [README](https://github.com/trufflesecurity/trufflehog/blob/4ef51f69ca6347aaa76a5e64a87eac9c0c909f71/README.md) · [LICENSE](https://github.com/trufflesecurity/trufflehog/blob/4ef51f69ca6347aaa76a5e64a87eac9c0c909f71/LICENSE) |
+
+<a id="ch-varlock"></a>
+
+### Varlock
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/dmno-dev/varlock |
+| License | MIT |
+| Phiên bản đã đọc | `658da7e34f3c99d98378a14531cba971285b388e` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Schema .env cho agent đọc cấu trúc mà không thấy giá trị secret, kèm quét rò rỉ, che log và plugin nguồn secret (1Password, Vault, cloud). Telemetry có tồn tại, nên đặt DO_NOT_TRACK=1 nếu cần. |
+| Nguồn | [README](https://github.com/dmno-dev/varlock/blob/658da7e34f3c99d98378a14531cba971285b388e/README.md) · [LICENSE](https://github.com/dmno-dev/varlock/blob/658da7e34f3c99d98378a14531cba971285b388e/LICENSE) |
+
+<a id="ch-yeswehack-claude-kit"></a>
+
+### YesWeHack claude-kit
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/yeswehack/claude-kit |
+| License | GPL-3.0 |
+| Phiên bản đã đọc | `3928c3475bae5211835d05190d17fa1c445dd6f7` (commit 2026-08-25) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, hooks/hooks.json; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit HEAD 2026-08-25) |
+| Nhận định | Plugin Claude Code giúp viết và triage báo cáo bug bounty chỉ từ dữ kiện người dùng cung cấp. Hook an toàn ở mức đọc file; GPL-3.0 cần lưu ý nếu chỉnh sửa rồi phân phối. |
+| Nguồn | [README](https://github.com/yeswehack/claude-kit/blob/3928c3475bae5211835d05190d17fa1c445dd6f7/README.md) · [LICENSE](https://github.com/yeswehack/claude-kit/blob/3928c3475bae5211835d05190d17fa1c445dd6f7/LICENSE) · [hooks/hooks.json](https://github.com/yeswehack/claude-kit/blob/3928c3475bae5211835d05190d17fa1c445dd6f7/hooks/hooks.json) |

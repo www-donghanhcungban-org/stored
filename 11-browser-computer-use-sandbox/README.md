@@ -900,3 +900,513 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 - §3b (12/10/2026): https://github.com/bytedance/UI-TARS-desktop · https://github.com/trycua/cua · https://github.com/simular-ai/Agent-S · https://github.com/firecrawl/firecrawl · https://github.com/unclecode/crawl4ai · https://github.com/ChromeDevTools/chrome-devtools-mcp · https://github.com/google/gvisor · https://github.com/firecracker-microvm/firecracker · https://github.com/anthropics/sandbox-runtime · https://github.com/superradcompany/microsandbox · https://github.com/microsoft/OmniParser · https://github.com/browserless/browserless · https://github.com/jina-ai/reader · https://github.com/steel-dev/steel-browser
 - §1b e2e (13/10/2026): https://github.com/tester-army/e2e (clone nông, HEAD fc90644: README.md, AGENTS.md, SECURITY.md, NOTICE, docs/{cache,security,telemetry,subscriptions,models}.mdx, packages/e2e/package.json 0.20.0, .github/workflows) · https://e2e.tester.army/docs · https://ycombinator.com/companies/testerarmy · https://hn.svelte.dev/item/48586299 (Launch HN) · https://docs.expo.dev/guides/using-e2e/ · https://testdino.com/blog/playwright-vs-e2e (blog) · https://ai-tldr.dev/releases/tester-army-e2e-0-18/ (blog) · https://www.testmuai.com/blog/e2e-by-testerarmy/ (blog) · so sánh: https://github.com/web-infra-dev/midscene, https://midscenejs.com/midscene-test/overview, https://github.com/mobile-dev-inc/Maestro, https://github.com/wix/Detox
 - §1c browser-use (13/10/2026): https://github.com/browser-use/browser-use (clone nông, HEAD c75e847: pyproject.toml 0.13.11, browser_use/config.py, browser_use/telemetry/{service,views}.py, browser_use/agent/{service,views}.py, browser_use/llm/browser_use/chat.py, browser_use/mcp/server.py, browser_use/skills/install.py, browser_use/sandbox/sandbox.py, AGENTS.md, CLOUD.md, skills/x402/SKILL.md, server.json) · https://github.com/browser-use/browser-harness (telemetry.py) · shields.io stars/forks/license 13/10/2026
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-agent-browser"></a>
+
+### agent-browser
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vercel-labs/agent-browser |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `d2dfc782ccdd79d25a9b4f0acced9321789cecb8` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-21) |
+| Nhận định | CLI trình duyệt cho agent (Rust CLI, package 0.43.0, ghi chú cũ 0.41.0); license Apache-2.0 khớp. |
+| Nguồn | [README.md](https://github.com/vercel-labs/agent-browser/blob/d2dfc782ccdd79d25a9b4f0acced9321789cecb8/README.md) · [LICENSE](https://github.com/vercel-labs/agent-browser/blob/d2dfc782ccdd79d25a9b4f0acced9321789cecb8/LICENSE) · [package.json](https://github.com/vercel-labs/agent-browser/blob/d2dfc782ccdd79d25a9b4f0acced9321789cecb8/package.json) |
+
+<a id="ch-agent-s"></a>
+
+### Agent S
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/simular-ai/Agent-S |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `bcdf1d6c8f1cbe3f1c4004e83fad6020651db925` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, setup.py (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Framework agent dùng máy tính (Agent S); license Apache-2.0 khớp; số OSWorld là tự báo cáo (chưa xác minh). |
+| Nguồn | [README.md](https://github.com/simular-ai/Agent-S/blob/bcdf1d6c8f1cbe3f1c4004e83fad6020651db925/README.md) · [LICENSE](https://github.com/simular-ai/Agent-S/blob/bcdf1d6c8f1cbe3f1c4004e83fad6020651db925/LICENSE) · [setup.py](https://github.com/simular-ai/Agent-S/blob/bcdf1d6c8f1cbe3f1c4004e83fad6020651db925/setup.py) |
+
+<a id="ch-agent-sandbox-kubernetes-sig-apps"></a>
+
+### Agent Sandbox (Kubernetes SIG Apps)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/kubernetes-sigs/agent-sandbox |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `1b7d5336539b9acd44ec431a61f4e83700a0a392` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, go.mod (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-21) |
+| Nhận định | Dự án kubernetes-sigs cho CRD Sandbox; license Apache-2.0 khớp; README ví dụ cài v1.0.2, chưa đối chiếu được tag v1.0.9 nêu trong ghi chú cũ. |
+| Nguồn | [README.md](https://github.com/kubernetes-sigs/agent-sandbox/blob/1b7d5336539b9acd44ec431a61f4e83700a0a392/README.md) · [LICENSE](https://github.com/kubernetes-sigs/agent-sandbox/blob/1b7d5336539b9acd44ec431a61f4e83700a0a392/LICENSE) · [go.mod](https://github.com/kubernetes-sigs/agent-sandbox/blob/1b7d5336539b9acd44ec431a61f4e83700a0a392/go.mod) |
+
+<a id="ch-agentdojo"></a>
+
+### AgentDojo
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ethz-spylab/agentdojo |
+| License | MIT |
+| Phiên bản đã đọc | `089ed468cf3ed0322acc66b0211f26d9d90dbf60` (commit 2026-06-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | low-activity (commit cuối 2026-06-02) |
+| Nhận định | Benchmark prompt injection cho agent (package 0.1.35); license MIT khớp; commit cuối 2026-06-02. |
+| Nguồn | [README.md](https://github.com/ethz-spylab/agentdojo/blob/089ed468cf3ed0322acc66b0211f26d9d90dbf60/README.md) · [LICENSE](https://github.com/ethz-spylab/agentdojo/blob/089ed468cf3ed0322acc66b0211f26d9d90dbf60/LICENSE) · [pyproject.toml](https://github.com/ethz-spylab/agentdojo/blob/089ed468cf3ed0322acc66b0211f26d9d90dbf60/pyproject.toml) |
+
+<a id="ch-browsentic"></a>
+
+### Browsentic
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/imshaikot/browsentic |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `9c0892a457e86cf2a5c3d1f4a8eea7eeb0900632` (commit 2026-11-06) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-06) |
+| Nhận định | Extension trình duyệt + bridge cục bộ cho CLI agent; license Apache-2.0 khớp; kho còn nhỏ. |
+| Nguồn | [README.md](https://github.com/imshaikot/browsentic/blob/9c0892a457e86cf2a5c3d1f4a8eea7eeb0900632/README.md) · [LICENSE](https://github.com/imshaikot/browsentic/blob/9c0892a457e86cf2a5c3d1f4a8eea7eeb0900632/LICENSE) · [package.json](https://github.com/imshaikot/browsentic/blob/9c0892a457e86cf2a5c3d1f4a8eea7eeb0900632/package.json) |
+
+<a id="ch-browser-use"></a>
+
+### Browser Use
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/browser-use/browser-use |
+| License | MIT |
+| Phiên bản đã đọc | `753d629d76eb2b670f4cf467f3355bbe750f6845` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-21) |
+| Nhận định | Thư viện agent trình duyệt Python; pyproject hiện version 1.0.8 và README liệt kê Browser Use Pi như runtime TypeScript riêng, lệch ghi chú cũ (0.13.14 là bản Python cuối); license MIT khớp. |
+| Nguồn | [README.md](https://github.com/browser-use/browser-use/blob/753d629d76eb2b670f4cf467f3355bbe750f6845/README.md) · [LICENSE](https://github.com/browser-use/browser-use/blob/753d629d76eb2b670f4cf467f3355bbe750f6845/LICENSE) · [pyproject.toml](https://github.com/browser-use/browser-use/blob/753d629d76eb2b670f4cf467f3355bbe750f6845/pyproject.toml) |
+
+<a id="ch-browser-use-pi"></a>
+
+### browser-use-pi
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/browser-use/browser-use-pi |
+| License | MIT |
+| Phiên bản đã đọc | `3583b8a10a2cf393956ad75c32fec302b227aa32` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-20) |
+| Nhận định | Runtime TypeScript trên Pi, package 0.2.0; license MIT khớp; không có thư mục .github/workflows. |
+| Nguồn | [README.md](https://github.com/browser-use/browser-use-pi/blob/3583b8a10a2cf393956ad75c32fec302b227aa32/README.md) · [LICENSE](https://github.com/browser-use/browser-use-pi/blob/3583b8a10a2cf393956ad75c32fec302b227aa32/LICENSE) · [package.json](https://github.com/browser-use/browser-use-pi/blob/3583b8a10a2cf393956ad75c32fec302b227aa32/package.json) |
+
+<a id="ch-browserbase-mcp-self-host-archived"></a>
+
+### Browserbase MCP (self-host, archived)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/browserbase/mcp-server-browserbase |
+| License | Apache-2.0. Khớp catalog. |
+| Phiên bản đã đọc | `3e6f53461949037d5e65dd425da3ceb1263f11d6` (commit 2026-07-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | archived |
+| Nhận định | MCP tự host 6 tool (start/end/navigate/act/observe/extract) trên Browserbase + Stagehand; README nói tool khớp bản hosted. Đã ngừng bảo trì nên chỉ để tham khảo, không dựa vào cho sản phẩm mới. |
+| Nguồn | [README.md](https://github.com/browserbase/mcp-server-browserbase/blob/3e6f53461949037d5e65dd425da3ceb1263f11d6/README.md) · [LICENSE](https://github.com/browserbase/mcp-server-browserbase/blob/3e6f53461949037d5e65dd425da3ceb1263f11d6/LICENSE) · [package.json](https://github.com/browserbase/mcp-server-browserbase/blob/3e6f53461949037d5e65dd425da3ceb1263f11d6/package.json) |
+
+<a id="ch-browsergym"></a>
+
+### BrowserGym
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ServiceNow/BrowserGym |
+| License | Apache-2.0 (LICENSE chỉ có dòng bản quyền ServiceNow + đoạn áp dụng Apache, không có văn bản đầy đủ nên GitHub báo NOASSERTION). Khớp catalog (đã ghi chú NOASSERTION). |
+| Phiên bản đã đọc | `62a678feefaff0f93e9bab03f51c5402a1e1db00` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Môi trường kiểu Gym cho agent web, gộp nhiều benchmark qua các gói con. README tự cảnh báo chỉ cho nghiên cứu, "not a consumer product". |
+| Nguồn | [README.md](https://github.com/ServiceNow/BrowserGym/blob/62a678feefaff0f93e9bab03f51c5402a1e1db00/README.md) · [LICENSE](https://github.com/ServiceNow/BrowserGym/blob/62a678feefaff0f93e9bab03f51c5402a1e1db00/LICENSE) · [pyproject.toml](https://github.com/ServiceNow/BrowserGym/blob/62a678feefaff0f93e9bab03f51c5402a1e1db00/pyproject.toml) |
+
+<a id="ch-crawl4ai"></a>
+
+### Crawl4AI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/unclecode/crawl4ai |
+| License | Apache-2.0. Khớp catalog. |
+| Phiên bản đã đọc | `4e4bab5d44a7557eb403f137ec589833368a3e38` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Crawler xuất Markdown/JSON cho LLM, cài bằng Python hoặc Docker. Lưu ý README đẩy mạnh bản cloud; phụ thuộc playwright/patchright. |
+| Nguồn | [README.md](https://github.com/unclecode/crawl4ai/blob/4e4bab5d44a7557eb403f137ec589833368a3e38/README.md) · [LICENSE](https://github.com/unclecode/crawl4ai/blob/4e4bab5d44a7557eb403f137ec589833368a3e38/LICENSE) · [pyproject.toml](https://github.com/unclecode/crawl4ai/blob/4e4bab5d44a7557eb403f137ec589833368a3e38/pyproject.toml) |
+
+<a id="ch-cua"></a>
+
+### Cua
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/trycua/cua |
+| License | MIT (gốc); FSL-1.1-MIT cho Cua Spaces và libs/cua-driver-bench; AGPL-3.0-or-later cho libs/python/som. Khớp catalog "MIT một phần FSL/AGPL"; đính chính chi tiết: README mục Licensing nói cua-driver-bench trước 11/10/2026 là MIT, nay FSL-1.1-MIT; AGPL ở som và artifact model OmniParser (đọc README + legal/LICENSING.md). |
+| Phiên bản đã đọc | `316b098571adf4872f0fa1a96f8237e737f72754` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json, pyproject.toml, legal/LICENSING.md; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Monorepo hạ tầng computer-use (SDK, Cua Driver, Lume, bench). Phần lớn MIT nhưng có thư mục FSL (không dùng để cạnh tranh dịch vụ hosted) và AGPL, cần xem LICENSING.md theo từng thư mục trước khi dùng. |
+| Nguồn | [README.md](https://github.com/trycua/cua/blob/316b098571adf4872f0fa1a96f8237e737f72754/README.md) · [LICENSE.md](https://github.com/trycua/cua/blob/316b098571adf4872f0fa1a96f8237e737f72754/LICENSE.md) · [package.json](https://github.com/trycua/cua/blob/316b098571adf4872f0fa1a96f8237e737f72754/package.json) · [pyproject.toml](https://github.com/trycua/cua/blob/316b098571adf4872f0fa1a96f8237e737f72754/pyproject.toml) · [LICENSING.md](https://github.com/trycua/cua/blob/316b098571adf4872f0fa1a96f8237e737f72754/legal/LICENSING.md) |
+
+<a id="ch-cubesandbox"></a>
+
+### CubeSandbox
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/TencentCloud/CubeSandbox |
+| License | Apache-2.0 trừ các thành phần bên thứ ba liệt kê trong LICENSE. Khớp catalog. |
+| Phiên bản đã đọc | `a260523d30186d1a17010345984e71af49c19edc` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | MicroVM KVM của Tencent Cloud cho sandbox agent (repo nhiều thành phần Cube*, SDK, hypervisor). Cần đọc phần bên thứ ba trong LICENSE; tuyên bố tương thích E2B là của tác giả (chưa xác minh). |
+| Nguồn | [README.md](https://github.com/TencentCloud/CubeSandbox/blob/a260523d30186d1a17010345984e71af49c19edc/README.md) · [LICENSE](https://github.com/TencentCloud/CubeSandbox/blob/a260523d30186d1a17010345984e71af49c19edc/LICENSE) |
+
+<a id="ch-daytona"></a>
+
+### Daytona
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/daytonaio/daytona |
+| License | Không có file LICENSE ở HEAD. Không có file LICENSE ở HEAD (README trỏ tới LICENSE ở tag v0.190.0); khớp catalog (null). |
+| Phiên bản đã đọc | `ec4c21b2d597091ac09ecc278f3bcc172575a987` (commit 2026-06-25) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md; chưa chạy upstream |
+| Bảo trì | deprecated-by-readme |
+| Nhận định | Không còn mã nguồn để tham khảo ở nhánh mặc định; chỉ README mô tả nền tảng sandbox (SDK/API/CLI). Không nên coi là dự án mã mở đang phát triển; tài nguyên mới ở github.com/daytona. |
+| Nguồn | [README.md](https://github.com/daytonaio/daytona/blob/ec4c21b2d597091ac09ecc278f3bcc172575a987/README.md) |
+
+<a id="ch-e2b"></a>
+
+### E2B
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/e2b-dev/E2B |
+| License | Apache-2.0. Khớp catalog. |
+| Phiên bản đã đọc | `08c4eeba6d08413779ec3fa5e7ac0edf3f608b33` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | SDK và CLI cho sandbox E2B; mô tả Firecracker microVM trong catalog là tuyên bố nền tảng (chưa xác minh trong repo này). |
+| Nguồn | [README.md](https://github.com/e2b-dev/E2B/blob/08c4eeba6d08413779ec3fa5e7ac0edf3f608b33/README.md) · [LICENSE](https://github.com/e2b-dev/E2B/blob/08c4eeba6d08413779ec3fa5e7ac0edf3f608b33/LICENSE) · [package.json](https://github.com/e2b-dev/E2B/blob/08c4eeba6d08413779ec3fa5e7ac0edf3f608b33/package.json) |
+
+<a id="ch-e2e-testerarmy"></a>
+
+### e2e (TesterArmy)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/tester-army/e2e |
+| License | Apache-2.0. Khớp catalog; có thêm file NOTICE. |
+| Phiên bản đã đọc | `74904fcbfdefc27be8db0fffa73a3af8a92fb6d0` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, NOTICE, package.json; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Framework E2E agentic dạng monorepo (@e2e-dev/*: web, mobile, desktop, acp...). Cần lưu ý khả năng đổi owner sang e2e-inc. |
+| Nguồn | [README.md](https://github.com/tester-army/e2e/blob/74904fcbfdefc27be8db0fffa73a3af8a92fb6d0/README.md) · [LICENSE](https://github.com/tester-army/e2e/blob/74904fcbfdefc27be8db0fffa73a3af8a92fb6d0/LICENSE) · [NOTICE](https://github.com/tester-army/e2e/blob/74904fcbfdefc27be8db0fffa73a3af8a92fb6d0/NOTICE) · [package.json](https://github.com/tester-army/e2e/blob/74904fcbfdefc27be8db0fffa73a3af8a92fb6d0/package.json) |
+
+<a id="ch-fara"></a>
+
+### Fara
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/fara |
+| License | MIT. Khớp catalog. |
+| Phiên bản đã đọc | `a675d6d61c41c47ae87bacefeab22caad18e3e84` (commit 2026-07-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | low-activity |
+| Nhận định | Mô hình computer-use Fara1.5 (4B/9B/27B) kèm harness Playwright và WebTailBench. Trọng số ở Hugging Face, license riêng của model cần xem ở model card. |
+| Nguồn | [README.md](https://github.com/microsoft/fara/blob/a675d6d61c41c47ae87bacefeab22caad18e3e84/README.md) · [LICENSE](https://github.com/microsoft/fara/blob/a675d6d61c41c47ae87bacefeab22caad18e3e84/LICENSE) · [pyproject.toml](https://github.com/microsoft/fara/blob/a675d6d61c41c47ae87bacefeab22caad18e3e84/pyproject.toml) |
+
+<a id="ch-firecracker"></a>
+
+### Firecracker
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/firecracker-microvm/firecracker |
+| License | Apache-2.0. Khớp catalog. |
+| Phiên bản đã đọc | `58cf1b2cdca407f2323d1b0b25ebb95dfe5b4bcb` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, NOTICE, Cargo.toml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | VMM microVM nền tảng cho nhiều sandbox (AWS Lambda, E2B...). Repo trưởng thành, CI qua workflow cho PR/style/build. |
+| Nguồn | [README.md](https://github.com/firecracker-microvm/firecracker/blob/58cf1b2cdca407f2323d1b0b25ebb95dfe5b4bcb/README.md) · [LICENSE](https://github.com/firecracker-microvm/firecracker/blob/58cf1b2cdca407f2323d1b0b25ebb95dfe5b4bcb/LICENSE) · [NOTICE](https://github.com/firecracker-microvm/firecracker/blob/58cf1b2cdca407f2323d1b0b25ebb95dfe5b4bcb/NOTICE) · [Cargo.toml](https://github.com/firecracker-microvm/firecracker/blob/58cf1b2cdca407f2323d1b0b25ebb95dfe5b4bcb/Cargo.toml) |
+
+<a id="ch-firecrawl"></a>
+
+### Firecrawl
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/firecrawl/firecrawl |
+| License | AGPL-3.0 (chính); SDK và một số thành phần UI MIT theo LICENSE từng thư mục. Khớp catalog (AGPL, SDK MIT): README mục License và LICENSE riêng trong apps/*-sdk. |
+| Phiên bản đã đọc | `6f2c50739e8426c49e83832408927bf0f862e69b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Scrape/crawl/search cho LLM, có self-host và Firecrawl Local. AGPL gốc ràng buộc khi tự host dịch vụ; README nói scrape cục bộ có thể fallback qua Firecrawl Cloud theo mặc định. |
+| Nguồn | [README.md](https://github.com/firecrawl/firecrawl/blob/6f2c50739e8426c49e83832408927bf0f862e69b/README.md) · [LICENSE](https://github.com/firecrawl/firecrawl/blob/6f2c50739e8426c49e83832408927bf0f862e69b/LICENSE) |
+
+<a id="ch-kata-containers"></a>
+
+### Kata Containers
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/kata-containers/kata-containers |
+| License | Apache-2.0. Khớp catalog. |
+| Phiên bản đã đọc | `e7e4c61dd6367046a45dcfb75d523a96ab5774d5` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Cargo.toml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Container chạy trong VM nhẹ cho cách ly workload; trưởng thành, CI đa nền tảng. Chi tiết Scorecard/zizmor/osv trong catalog chưa kiểm ở mức workflow. |
+| Nguồn | [README.md](https://github.com/kata-containers/kata-containers/blob/e7e4c61dd6367046a45dcfb75d523a96ab5774d5/README.md) · [LICENSE](https://github.com/kata-containers/kata-containers/blob/e7e4c61dd6367046a45dcfb75d523a96ab5774d5/LICENSE) · [Cargo.toml](https://github.com/kata-containers/kata-containers/blob/e7e4c61dd6367046a45dcfb75d523a96ab5774d5/Cargo.toml) |
+
+<a id="ch-maestro"></a>
+
+### Maestro
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mobile-dev-inc/Maestro |
+| License | Apache-2.0. Khớp catalog. |
+| Phiên bản đã đọc | `d9561331af38c6417ff39ce655251aea898ae3f6` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Framework E2E mobile/web bằng flow YAML, nay có MCP cho coding agent. iOS thật chưa hỗ trợ theo README. |
+| Nguồn | [README.md](https://github.com/mobile-dev-inc/Maestro/blob/d9561331af38c6417ff39ce655251aea898ae3f6/README.md) · [LICENSE](https://github.com/mobile-dev-inc/Maestro/blob/d9561331af38c6417ff39ce655251aea898ae3f6/LICENSE) |
+
+<a id="ch-microsandbox"></a>
+
+### microsandbox
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/superradcompany/microsandbox |
+| License | Apache-2.0. Khớp catalog. |
+| Phiên bản đã đọc | `5ca1046a23fd8fba5037a0ef80b386ea4799784b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Cargo.toml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | MicroVM chạy cục bộ trên libkrun, workspace Rust nhiều crate. Còn beta nên API có thể đổi. |
+| Nguồn | [README.md](https://github.com/superradcompany/microsandbox/blob/5ca1046a23fd8fba5037a0ef80b386ea4799784b/README.md) · [LICENSE](https://github.com/superradcompany/microsandbox/blob/5ca1046a23fd8fba5037a0ef80b386ea4799784b/LICENSE) · [Cargo.toml](https://github.com/superradcompany/microsandbox/blob/5ca1046a23fd8fba5037a0ef80b386ea4799784b/Cargo.toml) |
+
+<a id="ch-midscene-js"></a>
+
+### Midscene.js
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/web-infra-dev/midscene |
+| License | MIT. Khớp catalog. |
+| Phiên bản đã đọc | `8a0f9949e6ad615b9bb3678e1b2147fe2b418d78` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Thao tác/assert bằng AI dựa trên ảnh chụp cho web, Android, iOS và desktop. Phụ thuộc mô hình thị giác bên ngoài. |
+| Nguồn | [README.md](https://github.com/web-infra-dev/midscene/blob/8a0f9949e6ad615b9bb3678e1b2147fe2b418d78/README.md) · [LICENSE](https://github.com/web-infra-dev/midscene/blob/8a0f9949e6ad615b9bb3678e1b2147fe2b418d78/LICENSE) · [package.json](https://github.com/web-infra-dev/midscene/blob/8a0f9949e6ad615b9bb3678e1b2147fe2b418d78/package.json) |
+
+<a id="ch-modal"></a>
+
+### Modal
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/modal-labs/modal-client |
+| License | Apache-2.0 (SDK). Khớp catalog (chỉ SDK). |
+| Phiên bản đã đọc | `ded1c859db9b8861793da618de47f152321fb28c` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Chỉ là SDK client mã mở; nền tảng chạy phía Modal là dịch vụ đóng. Có skill chính thức cho coding agent (`modal skills install`). |
+| Nguồn | [README.md](https://github.com/modal-labs/modal-client/blob/ded1c859db9b8861793da618de47f152321fb28c/README.md) · [LICENSE](https://github.com/modal-labs/modal-client/blob/ded1c859db9b8861793da618de47f152321fb28c/LICENSE) |
+
+<a id="ch-monty"></a>
+
+### Monty
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/pydantic/monty |
+| License | MIT. Khớp catalog. |
+| Phiên bản đã đọc | `89379319399e3b6d328c394f41e2f3577601d46e` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, Cargo.toml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Trình thông dịch Python tập con viết bằng Rust cho code do LLM sinh; có binding Python/JS. Dự án rất mới, nhiều crate. |
+| Nguồn | [README.md](https://github.com/pydantic/monty/blob/89379319399e3b6d328c394f41e2f3577601d46e/README.md) · [LICENSE](https://github.com/pydantic/monty/blob/89379319399e3b6d328c394f41e2f3577601d46e/LICENSE) · [pyproject.toml](https://github.com/pydantic/monty/blob/89379319399e3b6d328c394f41e2f3577601d46e/pyproject.toml) · [Cargo.toml](https://github.com/pydantic/monty/blob/89379319399e3b6d328c394f41e2f3577601d46e/Cargo.toml) |
+
+<a id="ch-nsjail"></a>
+
+### nsjail
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/google/nsjail |
+| License | Apache-2.0. Khớp catalog. |
+| Phiên bản đã đọc | `ec259a3edb34c3b138fbad859c09e0e70259ff8b` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Công cụ jail tiến trình Linux gọn, cấu hình bằng protobuf hoặc CLI. Cần quyền (namespace/cgroup) khi chạy. |
+| Nguồn | [README.md](https://github.com/google/nsjail/blob/ec259a3edb34c3b138fbad859c09e0e70259ff8b/README.md) · [LICENSE](https://github.com/google/nsjail/blob/ec259a3edb34c3b138fbad859c09e0e70259ff8b/LICENSE) |
+
+<a id="ch-obscura"></a>
+
+### Obscura
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/h4ckf0r0day/obscura |
+| License | Apache-2.0. Khớp catalog. |
+| Phiên bản đã đọc | `fef52749c09d875ca5eb72143458d9b68a8fb728` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Cargo.toml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Engine trình duyệt headless Rust có CDP và MCP, tự nhận thay Chromium. Dự án còn mới (version 0.1.0). |
+| Nguồn | [README.md](https://github.com/h4ckf0r0day/obscura/blob/fef52749c09d875ca5eb72143458d9b68a8fb728/README.md) · [LICENSE](https://github.com/h4ckf0r0day/obscura/blob/fef52749c09d875ca5eb72143458d9b68a8fb728/LICENSE) · [Cargo.toml](https://github.com/h4ckf0r0day/obscura/blob/fef52749c09d875ca5eb72143458d9b68a8fb728/Cargo.toml) |
+
+<a id="ch-opensandbox"></a>
+
+### OpenSandbox
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/opensandbox-group/OpenSandbox |
+| License | Apache-2.0. Khớp catalog. |
+| Phiên bản đã đọc | `5039696283031c67a7945f1091deef7c8efe61b6` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Nền tảng sandbox tự host từ Docker tới Kubernetes, SDK nhiều ngôn ngữ. Chi tiết runtime mặc định runc/gVisor/Kata chưa kiểm ở mức code. |
+| Nguồn | [README.md](https://github.com/opensandbox-group/OpenSandbox/blob/5039696283031c67a7945f1091deef7c8efe61b6/README.md) · [LICENSE](https://github.com/opensandbox-group/OpenSandbox/blob/5039696283031c67a7945f1091deef7c8efe61b6/LICENSE) |
+
+<a id="ch-osworld"></a>
+
+### OSWorld
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/xlang-ai/OSWorld |
+| License | Apache-2.0. Khớp catalog. |
+| Phiên bản đã đọc | `0ad41bee56565efe7bb3c3a5ebc67590a1b8276f` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Benchmark computer-use trên VM với nhiều provider. Phụ thuộc nặng (paddleocr, nhiều SDK LLM) nên cài tách môi trường. |
+| Nguồn | [README.md](https://github.com/xlang-ai/OSWorld/blob/0ad41bee56565efe7bb3c3a5ebc67590a1b8276f/README.md) · [LICENSE](https://github.com/xlang-ai/OSWorld/blob/0ad41bee56565efe7bb3c3a5ebc67590a1b8276f/LICENSE) · [pyproject.toml](https://github.com/xlang-ai/OSWorld/blob/0ad41bee56565efe7bb3c3a5ebc67590a1b8276f/pyproject.toml) |
+
+<a id="ch-playwright-cli"></a>
+
+### playwright-cli
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/playwright-cli |
+| License | Apache-2.0. Khớp catalog. |
+| Phiên bản đã đọc | `c872a33cec77fa03c28fa7c6d1ad99d15d04ce42` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Playwright dạng lệnh kèm skill cho coding agent. Phiên bản 0.1.x nên còn thay đổi nhanh. |
+| Nguồn | [README.md](https://github.com/microsoft/playwright-cli/blob/c872a33cec77fa03c28fa7c6d1ad99d15d04ce42/README.md) · [LICENSE](https://github.com/microsoft/playwright-cli/blob/c872a33cec77fa03c28fa7c6d1ad99d15d04ce42/LICENSE) · [package.json](https://github.com/microsoft/playwright-cli/blob/c872a33cec77fa03c28fa7c6d1ad99d15d04ce42/package.json) |
+
+<a id="ch-playwright-mcp"></a>
+
+### Playwright MCP
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/playwright-mcp |
+| License | Apache-2.0. Khớp catalog. |
+| Phiên bản đã đọc | `2337aff0213d28db41d3e3daf48cee19b3d0bd82` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | MCP điều khiển trình duyệt qua Playwright; README tự đưa CLI+SKILLS làm lựa chọn tiết kiệm token hơn cho agent lập trình. |
+| Nguồn | [README.md](https://github.com/microsoft/playwright-mcp/blob/2337aff0213d28db41d3e3daf48cee19b3d0bd82/README.md) · [LICENSE](https://github.com/microsoft/playwright-mcp/blob/2337aff0213d28db41d3e3daf48cee19b3d0bd82/LICENSE) · [package.json](https://github.com/microsoft/playwright-mcp/blob/2337aff0213d28db41d3e3daf48cee19b3d0bd82/package.json) |
+
+<a id="ch-rea-reverse-engineer-anything"></a>
+
+### REA – Reverse Engineer Anything
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/morluto/rea |
+| License | MIT. Khớp catalog (có THIRD_PARTY_NOTICES và thư mục licenses). |
+| Phiên bản đã đọc | `caf5f4e38a1ec1a71dacf77130c211d6b0e3229b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, licenses, package.json; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | CLI và MCP server dịch ngược cho agent (binary native, Electron/JS, .NET, website), chạy cục bộ. Dự án một tác giả, cần thận trọng với phân tích mã độc. |
+| Nguồn | [README.md](https://github.com/morluto/rea/blob/caf5f4e38a1ec1a71dacf77130c211d6b0e3229b/README.md) · [LICENSE](https://github.com/morluto/rea/blob/caf5f4e38a1ec1a71dacf77130c211d6b0e3229b/LICENSE) · [licenses](https://github.com/morluto/rea/blob/caf5f4e38a1ec1a71dacf77130c211d6b0e3229b/licenses) · [package.json](https://github.com/morluto/rea/blob/caf5f4e38a1ec1a71dacf77130c211d6b0e3229b/package.json) |
+
+<a id="ch-sandbox-runtime"></a>
+
+### sandbox-runtime
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anthropics/sandbox-runtime |
+| License | Apache-2.0. Khớp catalog. |
+| Phiên bản đã đọc | `0bbebed0aa9a8e628dc4df8bc30293550a1988eb` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Sandbox cấp OS không cần container cho agent/MCP/lệnh bash; mặc định tối thiểu quyền (theo README). Còn là bản preview, API có thể đổi. |
+| Nguồn | [README.md](https://github.com/anthropics/sandbox-runtime/blob/0bbebed0aa9a8e628dc4df8bc30293550a1988eb/README.md) · [LICENSE](https://github.com/anthropics/sandbox-runtime/blob/0bbebed0aa9a8e628dc4df8bc30293550a1988eb/LICENSE) · [package.json](https://github.com/anthropics/sandbox-runtime/blob/0bbebed0aa9a8e628dc4df8bc30293550a1988eb/package.json) |
+
+<a id="ch-skyvern"></a>
+
+### Skyvern
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Skyvern-AI/skyvern |
+| License | AGPL-3.0 (README: lõi AGPL, ngoại trừ biện pháp chống bot chỉ có ở bản cloud). Khớp catalog (AGPL-3.0). |
+| Phiên bản đã đọc | `9db98c92dcb5af83be0f98d7495379b8d1a0581b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Agent tự động hóa trình duyệt bằng LLM và thị giác. AGPL ràng buộc khi tự host thành dịch vụ; tính năng chống bot không có trong bản mở. |
+| Nguồn | [README.md](https://github.com/Skyvern-AI/skyvern/blob/9db98c92dcb5af83be0f98d7495379b8d1a0581b/README.md) · [LICENSE](https://github.com/Skyvern-AI/skyvern/blob/9db98c92dcb5af83be0f98d7495379b8d1a0581b/LICENSE) · [pyproject.toml](https://github.com/Skyvern-AI/skyvern/blob/9db98c92dcb5af83be0f98d7495379b8d1a0581b/pyproject.toml) |
+
+<a id="ch-stagehand"></a>
+
+### Stagehand
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/browserbase/stagehand |
+| License | MIT. Khớp catalog. |
+| Phiên bản đã đọc | `3bedd822f2e31c6716added7743179405985a439` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, pyproject.toml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | SDK tự động hóa trình duyệt bằng AI (TS, Python) trong monorepo; là nền cho Browserbase MCP đã archive. |
+| Nguồn | [README.md](https://github.com/browserbase/stagehand/blob/3bedd822f2e31c6716added7743179405985a439/README.md) · [LICENSE](https://github.com/browserbase/stagehand/blob/3bedd822f2e31c6716added7743179405985a439/LICENSE) · [package.json](https://github.com/browserbase/stagehand/blob/3bedd822f2e31c6716added7743179405985a439/package.json) · [pyproject.toml](https://github.com/browserbase/stagehand/blob/3bedd822f2e31c6716added7743179405985a439/pyproject.toml) |
+
+<a id="ch-ui-tars-desktop"></a>
+
+### UI-TARS-desktop
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/bytedance/UI-TARS-desktop |
+| License | Apache-2.0. Khớp catalog. |
+| Phiên bản đã đọc | `3ac2cb8d946d78d5ff92ad17b318eaafa18c178c` (commit 2026-10-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | low-activity |
+| Nhận định | Ứng dụng desktop GUI agent dùng mô hình UI-TARS cùng Agent TARS CLI. Hoạt động chậm hơn các repo cùng lô. |
+| Nguồn | [README.md](https://github.com/bytedance/UI-TARS-desktop/blob/3ac2cb8d946d78d5ff92ad17b318eaafa18c178c/README.md) · [LICENSE](https://github.com/bytedance/UI-TARS-desktop/blob/3ac2cb8d946d78d5ff92ad17b318eaafa18c178c/LICENSE) · [package.json](https://github.com/bytedance/UI-TARS-desktop/blob/3ac2cb8d946d78d5ff92ad17b318eaafa18c178c/package.json) |
+
+<a id="ch-webarena"></a>
+
+### WebArena
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/web-arena-x/webarena |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `dce04686a56253aefba7b18a4fa0937cf1dc987b` (commit 2025-11-26) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit cuối 2025-11-26; README (cập nhật 12/2024) khuyên dùng AgentLab/BrowserGym cho thí nghiệm mới |
+| Nhận định | Benchmark web agent tự host (Docker); repo giữ triển khai chuẩn để tái lập kết quả, tác giả khuyên chuyển sang AgentLab cho thí nghiệm mới. Nhịp commit chậm. |
+| Nguồn | [README](https://github.com/web-arena-x/webarena/blob/dce04686a56253aefba7b18a4fa0937cf1dc987b/README.md) · [LICENSE](https://github.com/web-arena-x/webarena/blob/dce04686a56253aefba7b18a4fa0937cf1dc987b/LICENSE) |

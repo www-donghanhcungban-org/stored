@@ -7,7 +7,7 @@
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [React Native](../../13-dev-stack-devops/README.md#anhkysuai-2026-11-23-identity-react-native) | `react/react-native` | MIT | 126.999 | đọc tài liệu 2026-11-23 | 13 | + Expo Đối chiếu 2026-11-23: facebook/react-native → react/react-native, cùng GitHub repository ID 29028775; |
-| [Tauri](../../13-dev-stack-devops/README.md) | `tauri-apps/tauri` | MIT OR Apache-2.0 | 112.380 | chưa chuẩn hóa | 13 | App desktop/mobile với frontend web + lõi Rust; |
+| [Tauri](../../13-dev-stack-devops/README.md#ch-tauri) | `tauri-apps/tauri` | MIT OR Apache-2.0 | 112.380 | đọc tài liệu 2026-11-23 | 13 | App desktop/mobile với frontend web + lõi Rust; |
 | [Expo](../../13-dev-stack-devops/README.md#anhkysuai-expo-expo) | `expo/expo` | MIT cho mã Expo; phụ thuộc có giấy phép riêng | 53.736 | đọc tài liệu 2026-11-23 | 13 | Nền tảng React Native cho ứng dụng Android, iOS và web. |
 | [Alamofire](../../13-dev-stack-devops/README.md#anhkysuai-alamofire-alamofire) | `Alamofire/Alamofire` | MIT | 42.397 | đọc tài liệu 2026-11-23 | 13 | Thư viện HTTP Swift cho ứng dụng trên nền tảng Apple. |
 | [uni-app](../../13-dev-stack-devops/README.md#anhkysuai-dcloudio-uni-app) | `dcloudio/uni-app` | Apache-2.0 cho mã repo; license.md dẫn điều khoản DCloud riêng cần kiểm tra | 41.699 | đọc tài liệu 2026-11-23 | 13 | Framework Vue phát triển web, ứng dụng và mini-program nhiều nền tảng. |
@@ -21,7 +21,7 @@
 | [SnapKit](../../13-dev-stack-devops/README.md#anhkysuai-snapkit-snapkit) | `SnapKit/SnapKit` | MIT | 20.342 | đọc tài liệu 2026-11-23 | 13 | DSL Swift để viết ràng buộc Auto Layout cho giao diện iOS, macOS và tvOS. |
 | [flutter/samples](../../06-ui-ux-design/README.md#ch-flutter-samples) | `flutter/samples` | BSD-3-Clause | 19.295 | đọc tài liệu 2026-11-23 | 06 | Mẫu chính thức Flutter: material_3_demo, cupertino_gallery, platform_design, compass_app; |
 | [artemis](../../08-awesome-lists-learning/README.md#6c523-trợ-lý-lập-trình-ai) | `google/artemis` | Apache-2.0 | 17.651 | đọc tài liệu 2026-11-18 | 08 | Agent đa phương thức điều khiển điện thoại Android thật bằng ngôn ngữ tự nhiên cho kiểm thử và tác vụ hằng ngày, kèm MCP server để IDE AI điều khiển thiết bị, lấy Logcat… |
-| [Maestro](../../11-browser-computer-use-sandbox/README.md) | `mobile-dev-inc/Maestro` | Apache-2.0 | 16.278 | chưa chuẩn hóa | 11 | E2E flow YAML cho mobile và web, tất định là chính; |
+| [Maestro](../../11-browser-computer-use-sandbox/README.md#ch-maestro) | `mobile-dev-inc/Maestro` | Apache-2.0 | 16.493 | đọc tài liệu 2026-11-23 | 11 | E2E flow YAML cho mobile và web, tất định là chính; |
 | [Tamagui (Bento)](../../06-ui-ux-design/README.md#ch-tamagui-bento) | `tamagui/tamagui` | MIT | 14.317 | đọc tài liệu 2026-11-23 | 06 | UI RN + web; |
 | [UI Kitten](../../06-ui-ux-design/README.md#ch-ui-kitten) | `akveo/react-native-ui-kitten` | MIT | 10.667 | đọc tài liệu 2026-11-23 | 06 | Hồi sinh 2026 (179/193 commit một người), 6.2.1, README nói chạy New Architecture RN 0.81 (chưa xác minh); |
 | [react-native-calendars](../../06-ui-ux-design/README.md#ch-react-native-calendars) | `wix/react-native-calendars` | MIT | 10.326 | đọc tài liệu 2026-11-23 | 06 | Chuẩn de facto, gần như đứng (3 commit/12 tháng); |
@@ -30,5 +30,5 @@
 | [Flutter Responsive Admin Panel](../../06-ui-ux-design/README.md#ch-flutter-responsive-admin-panel) | `abuanwar072/Flutter-Responsive-Admin-Panel-or-Dashboard` | MIT | 7.118 | đọc tài liệu 2026-11-23 | 06 | 1 layout dashboard responsive (side menu + dashboard), 17 file dart; |
 | [gluestack-ui](../../06-ui-ux-design/README.md#ch-gluestack-ui) | `gluestack/gluestack-ui` | MIT | 5.359 | đọc tài liệu 2026-11-23 | 06 | v3: 61 component RN + web trên NativeWind, 4 starter kit; |
 | [Taro UI](../../06-ui-ux-design/README.md#ch-taro-ui) | `jd-opensource/taro-ui` | MIT | 4.729 | đọc tài liệu 2026-11-23 | 06 | UI đa nền mini-program cho Taro 3; |
-| [Flutter](../../13-dev-stack-devops/README.md) | `flutter/flutter` | BSD-3 | — | chưa chuẩn hóa | 13 |  |
-| [Kotlin Multiplatform](../../13-dev-stack-devops/README.md) | `JetBrains/kotlin` | Apache-2.0 | — | chưa chuẩn hóa | 13 |  |
+| [Flutter](../../13-dev-stack-devops/README.md#ch-flutter) | `flutter/flutter` | BSD-3-Clause | — | đọc tài liệu 2026-11-23 | 13 | . |
+| [Kotlin Multiplatform](../../13-dev-stack-devops/README.md#ch-kotlin-multiplatform) | `JetBrains/kotlin` | Apache-2.0 | — | đọc tài liệu 2026-11-23 | 13 | . |

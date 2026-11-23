@@ -8,7 +8,7 @@
 |---|---|---|---|---|---|---|
 | [Conductor OSS](../../21-autonomous-workflows/README.md) | `conductor-oss/conductor` | Apache-2.0 | 32.399 | chưa chuẩn hóa | 21 | Engine workflow gốc Netflix (2016), nay có task LLM/MCP/A2A, SWITCH theo quyết định model, DO_WHILE có trần vòng; |
 | [dapr](../../08-awesome-lists-learning/README.md#6c55-container--devops) | `dapr/dapr` | Apache License 2.0 | 26.204 | đọc tài liệu 2026-11-18 | 08 | Runtime chạy dạng sidecar cho ứng dụng phân tán, workflow bền vững và AI agent, cung cấp API thống nhất qua HTTP/gRPC. |
-| [iii engine](../../10-local-llm-rag-memory/README.md) | `iii-hq/iii` | Elastic-2.0 (engine) / Apache-2.0 (SDK) | 18.876 | chưa chuẩn hóa | 10 | Runtime worker/function/trigger thay Express+DB+queue+OTEL; |
+| [iii engine](../../10-local-llm-rag-memory/README.md#ch-iii-engine) | `iii-hq/iii` | Elastic-2.0 (engine/) và Apache-2.0 (SDK, docs, workers) | 18.937 | đọc tài liệu 2026-11-23 | 10 | Runtime worker/function/trigger thay Express+DB+queue+OTEL; |
 | [Trigger.dev](../../21-autonomous-workflows/README.md) | `triggerdotdev/trigger.dev` | Apache-2.0 | 16.667 | chưa chuẩn hóa | 21 | Task TypeScript dài không timeout, retry, queue, waitpoint người duyệt, cron, module chat/skills cho agent; |
 | [Hatchet](../../21-autonomous-workflows/README.md) | `hatchet-dev/hatchet` | MIT | 8.212 | chưa chuẩn hóa | 21 | Engine Go/Postgres: durable task, DAG, durable sleep/event wait, cron, webhook, rate limit, OTel; |
 | [Absurd](../../21-autonomous-workflows/README.md) | `earendil-works/absurd` | Apache-2.0 | 2.522 | chưa chuẩn hóa | 21 | Durable execution chỉ cần Postgres (một file SQL), SDK TS/Py/Go; |

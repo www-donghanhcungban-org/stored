@@ -24,7 +24,7 @@
 | [containerd](../../32-platform-delivery-engineering/README.md#anhkysuai-containerd-containerd) | `containerd/containerd` | Apache-2.0 | 21.527 | đọc tài liệu 2026-11-23 | 32 | Runtime daemon quản lý image và vòng đời container trên Linux/Windows. |
 | [kubectx và kubens](../../32-platform-delivery-engineering/README.md#anhkysuai-ahmetb-kubectx) | `ahmetb/kubectx` | Apache-2.0 | 20.130 | đọc tài liệu 2026-11-23 | 32 | CLI chuyển context/namespace Kubernetes nhanh, có tích hợp tìm kiếm tương tác. |
 | [kubesphere](../../32-platform-delivery-engineering/README.md#chuyen-kubesphere) | `kubesphere/kubesphere` | Apache License 2.0 kèm điều kiện bổ sung | 17.083 | đọc tài liệu 2026-11-18 | 32 | Nền tảng container đa thuê bao dùng Kubernetes làm nhân, quản lý ứng dụng cloud-native đa cụm, datacenter và biên qua giao diện web, có kiến trúc mở rộng bằng plugin. |
-| [Kubernetes](../../13-dev-stack-devops/README.md) | `kubernetes/kubernetes` | Apache-2.0 | — | chưa chuẩn hóa | 13 |  |
+| [Kubernetes](../../13-dev-stack-devops/README.md#ch-kubernetes) | `kubernetes/kubernetes` | Apache-2.0 | — | đọc tài liệu 2026-11-23 | 13 | . |
 
 ## IaC & quản lý cấu hình (`iac-config`, 5)
 
@@ -34,19 +34,19 @@
 | [nacos](../../34-backend-data-identity-integration/README.md#chuyen-nacos) | `alibaba/nacos` | Apache License 2.0 | 33.525 | đọc tài liệu 2026-11-18 | 34 | Nền tảng khám phá dịch vụ, quản lý cấu hình động và quản lý dịch vụ cho ứng dụng cloud-native và microservice. |
 | [Pulumi](../../32-platform-delivery-engineering/README.md#anhkysuai-pulumi-pulumi) | `pulumi/pulumi` | Apache-2.0 | 25.939 | đọc tài liệu 2026-11-23 | 32 | Infrastructure as Code dùng ngôn ngữ lập trình thông thường và Automation API. |
 | [OpenTofu](../../32-platform-delivery-engineering/README.md#factory-opentofu-2026-11-04) | `opentofu/opentofu` | MPL-2.0 | — | đọc mã 2026-11-04 | 13 | Fork Terraform Đọc sâu 4/11/2026: plan detailed-exitcode 0=no diff/1=error/2=changes; |
-| [Terraform](../../13-dev-stack-devops/README.md) | `hashicorp/terraform` | BSL-1.1 | — | chưa chuẩn hóa | 13 |  |
+| [Terraform](../../13-dev-stack-devops/README.md#ch-terraform) | `hashicorp/terraform` | BSL-1.1 (Business Source License 1.1, licensor IBM) | — | đọc tài liệu 2026-11-23 | 13 | . |
 
 ## CI/CD & phát hành (`ci-cd-release`, 7)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [act](../../13-dev-stack-devops/README.md) | `nektos/act` | MIT | 72.504 | chưa chuẩn hóa | 13 | Chạy GitHub Actions cục bộ; |
+| [act](../../13-dev-stack-devops/README.md#ch-act) | `nektos/act` | MIT | 72.504 | đọc tài liệu 2026-11-23 | 13 | Chạy GitHub Actions cục bộ; |
 | [Harness Open Source](../../32-platform-delivery-engineering/README.md#anhkysuai-harness-harness) | `harness/harness` | Apache-2.0 | 38.955 | đọc tài liệu 2026-11-23 | 32 | Nền tảng tự host code, pipeline DevOps, Gitspaces và artifact registry. |
 | [Jenkins](../../32-platform-delivery-engineering/README.md#anhkysuai-jenkinsci-jenkins) | `jenkinsci/jenkins` | MIT | 26.804 | đọc tài liệu 2026-11-23 | 32 | Máy chủ tự động hóa build, kiểm thử và triển khai với hệ plugin. |
 | [semantic-release](../../32-platform-delivery-engineering/README.md#anhkysuai-semantic-release-semantic-release) | `semantic-release/semantic-release` | MIT | 24.193 | đọc tài liệu 2026-11-23 | 32 | Tự động chọn version, tạo release notes và publish package theo commit. |
 | [GoReleaser](../../13-dev-stack-devops/README.md#goreleaser) | `goreleaser/goreleaser` | MIT | 16.131 | đọc mã 2026-11-02 | 13 | Release pipeline đa nền tảng; |
 | [Argo CD](../../32-platform-delivery-engineering/README.md#factory-argocd-2026-11-04) | `argoproj/argo-cd` | Apache-2.0 | — | đọc mã 2026-11-04 | 13 | CNCF graduated Đọc sâu 4/11/2026: Server.Rollback từ chối khi automated sync bật; |
-| [Dagger](../../13-dev-stack-devops/README.md) | `dagger/dagger` | Apache-2.0 | — | chưa chuẩn hóa | 13 |  |
+| [Dagger](../../13-dev-stack-devops/README.md#ch-dagger) | `dagger/dagger` | Apache-2.0 | — | đọc tài liệu 2026-11-23 | 13 | . |
 
 ## PaaS tự host & bảng điều khiển server (`paas-self-hosting`, 7)
 
@@ -158,7 +158,7 @@
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [gitignore](../../13-dev-stack-devops/README.md#chuyen-gitignore) | `github/gitignore` | CC0 1.0 Universal | 176.339 | đọc tài liệu 2026-11-18 | 13 | Bộ sưu tập mẫu .gitignore của GitHub, dùng cho bộ chọn mẫu khi tạo repo trên GitHub.com. |
-| [uv](../../13-dev-stack-devops/README.md) | `astral-sh/uv` | Apache-2.0/MIT | 91.402 | chưa chuẩn hóa | 13 | Package manager Python nhanh (Astral); |
+| [uv](../../13-dev-stack-devops/README.md#ch-uv) | `astral-sh/uv` | Apache-2.0 OR MIT | 91.402 | đọc tài liệu 2026-11-23 | 13 | Package manager Python nhanh (Astral); |
 | [Homebrew](../../13-dev-stack-devops/README.md#anhkysuai-homebrew-brew) | `Homebrew/brew` | BSD-2-Clause cho code; tài liệu theo CC BY | 50.411 | đọc tài liệu 2026-11-23 | 13 | Trình quản lý gói và môi trường công cụ, có formula, cask và bundle. |
 | [pyenv](../../13-dev-stack-devops/README.md#anhkysuai-pyenv-pyenv) | `pyenv/pyenv` | MIT | 45.183 | đọc tài liệu 2026-11-23 | 13 | Chuyển phiên bản Python theo người dùng, thư mục dự án hoặc biến môi trường. |
 | [V](../../37-programming-languages-runtimes/README.md#anhkysuai-vlang-v) | `vlang/v` | MIT | 38.124 | đọc tài liệu 2026-11-23 | 37 | Ngôn ngữ và compiler hướng cú pháp gọn, backend C/JavaScript. |
@@ -224,4 +224,4 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [Harden-Runner](../../13-dev-stack-devops/README.md) | `step-security/harden-runner` | Apache-2.0 | 1.295 | chưa chuẩn hóa | 13 | Giám sát egress/file/process runner GitHub Actions, egress-policy block; |
+| [Harden-Runner](../../13-dev-stack-devops/README.md#ch-harden-runner) | `step-security/harden-runner` | Apache-2.0 | 1.295 | đọc tài liệu 2026-11-23 | 13 | Giám sát egress/file/process runner GitHub Actions, egress-policy block; |

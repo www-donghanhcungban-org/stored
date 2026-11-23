@@ -3287,3 +3287,569 @@ Phần này có **1 hồ sơ** từ bảng xlsx người dùng gửi ngày 2026-
 **Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f2f8eaca4f7e`](https://github.com/jqueryscript/awesome-agent-skills/commit/f2f8eaca4f7e107d22e682d49af6f4e266a7fdc3) (2026-11-19). Đọc toàn bộ cấu trúc, đầu/cuối README, các entry liên quan. Chưa kiểm từng link và từng skill được liệt kê.
 
 **Nguồn:** [README.md](https://github.com/jqueryscript/awesome-agent-skills/blob/f2f8eaca4f7e107d22e682d49af6f4e266a7fdc3/README.md) · [metadata GitHub](https://api.github.com/search/repositories?q=repo:jqueryscript/awesome-agent-skills).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-agentic-awesome-skills"></a>
+
+### Agentic Awesome Skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/sickn33/agentic-awesome-skills |
+| License | MIT (code) + CC BY 4.0 (nội dung, LICENSE-CONTENT) |
+| Phiên bản đã đọc | `a99b3d3bb6db184e75020f26714bce1951629356` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, LICENSE-CONTENT, package.json; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-23 |
+| Nhận định | Thư viện lớn các SKILL.md cho agent lập trình kèm công cụ AAS Core (tìm, xác thực, lập kế hoạch). Quy mô lớn nên cần soát từng skill trước khi cài; README nói tạm dừng publish npm, dùng GitHub để cập nhật. |
+| Nguồn | [README.md](https://github.com/sickn33/agentic-awesome-skills/blob/a99b3d3bb6db184e75020f26714bce1951629356/README.md) · [LICENSE](https://github.com/sickn33/agentic-awesome-skills/blob/a99b3d3bb6db184e75020f26714bce1951629356/LICENSE) · [LICENSE-CONTENT](https://github.com/sickn33/agentic-awesome-skills/blob/a99b3d3bb6db184e75020f26714bce1951629356/LICENSE-CONTENT) · [package.json](https://github.com/sickn33/agentic-awesome-skills/blob/a99b3d3bb6db184e75020f26714bce1951629356/package.json) |
+
+<a id="ch-agents-course"></a>
+
+### agents-course
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/huggingface/agents-course |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `9b3d6b3887bc489510da0239d4c1bc1ee23fd40f` (commit 2026-11-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-03 |
+| Nhận định | Khóa học agent của Hugging Face (từ nền tảng tới bài tập cuối có benchmark), nội dung chính nằm ở hf.co/learn. Chứng chỉ do HF cấp là tuyên bố cũ, **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/huggingface/agents-course/blob/9b3d6b3887bc489510da0239d4c1bc1ee23fd40f/README.md) · [LICENSE](https://github.com/huggingface/agents-course/blob/9b3d6b3887bc489510da0239d4c1bc1ee23fd40f/LICENSE) |
+
+<a id="ch-ai-agents-for-beginners"></a>
+
+### ai-agents-for-beginners
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/ai-agents-for-beginners |
+| License | MIT |
+| Phiên bản đã đọc | `3bee2ddf8e7aab27b17ef9e1d4a3f2c541a1913e` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-16 |
+| Nhận định | Khóa 18 bài về agent của Microsoft (khung agent, tool use, agentic RAG, đa agent, an toàn, triển khai...), có bản dịch hàng chục ngôn ngữ gồm tiếng Việt. Một số bài gắn dịch vụ Azure/Microsoft Agent Framework. |
+| Nguồn | [README.md](https://github.com/microsoft/ai-agents-for-beginners/blob/3bee2ddf8e7aab27b17ef9e1d4a3f2c541a1913e/README.md) · [LICENSE](https://github.com/microsoft/ai-agents-for-beginners/blob/3bee2ddf8e7aab27b17ef9e1d4a3f2c541a1913e/LICENSE) |
+
+<a id="ch-ai-engineering-from-scratch"></a>
+
+### AI Engineering from Scratch
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/rohitg00/ai-engineering-from-scratch |
+| License | MIT |
+| Phiên bản đã đọc | `9712e323fde8cb2ec933310ac619e920e8e31017` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/translate.yml; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-18 |
+| Nhận định | Khóa AI engineering từ cơ bản, 20 phase/542 bài, kèm cheatsheet, phỏng vấn, dự án. Bản i18n là dịch máy nên chất lượng cần kiểm khi dùng; chưa chạy code bài học. |
+| Nguồn | [README.md](https://github.com/rohitg00/ai-engineering-from-scratch/blob/9712e323fde8cb2ec933310ac619e920e8e31017/README.md) · [LICENSE](https://github.com/rohitg00/ai-engineering-from-scratch/blob/9712e323fde8cb2ec933310ac619e920e8e31017/LICENSE) · [package.json](https://github.com/rohitg00/ai-engineering-from-scratch/blob/9712e323fde8cb2ec933310ac619e920e8e31017/package.json) · [.github/workflows/translate.yml](https://github.com/rohitg00/ai-engineering-from-scratch/blob/9712e323fde8cb2ec933310ac619e920e8e31017/.github/workflows/translate.yml) |
+
+<a id="ch-ai-engineering-interview-questions"></a>
+
+### ai-engineering-interview-questions
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/amitshekhariitbhu/ai-engineering-interview-questions |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ceb74cd826db44450e42884914972b4a9de72813` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-23 |
+| Nhận định | Danh sách câu hỏi/đáp phỏng vấn AI engineering (RAG, agent, MCP, LLMOps...), phần lớn dạng tài liệu một file; độ chính xác đáp án là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/amitshekhariitbhu/ai-engineering-interview-questions/blob/ceb74cd826db44450e42884914972b4a9de72813/README.md) · [LICENSE](https://github.com/amitshekhariitbhu/ai-engineering-interview-questions/blob/ceb74cd826db44450e42884914972b4a9de72813/LICENSE) |
+
+<a id="ch-ai-growth-stack"></a>
+
+### ai-growth-stack
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/cporter202/ai-growth-stack |
+| License | không có file LICENSE |
+| Phiên bản đã đọc | `efed75900404a033c0e3dc4dc2d6ad7f502d3cf4` (commit 2026-10-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-10-17 (clone nông không xem được lịch sử); ghi chú cũ nói không đổi từ 12/2025 |
+| Nhận định | Danh mục 6 "API" quảng bá qua RapidAPI, thực chất chỉ là một README quảng cáo, không có mã hay giấy phép. Badge STATUS ACTIVE là tuyên bố của tác giả **(chưa xác minh)**; không đáng làm nguồn kỹ thuật. |
+| Nguồn | [README.md](https://github.com/cporter202/ai-growth-stack/blob/efed75900404a033c0e3dc4dc2d6ad7f502d3cf4/README.md) |
+
+<a id="ch-aie-book"></a>
+
+### aie-book
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/chiphuyen/aie-book |
+| License | không có file LICENSE |
+| Phiên bản đã đọc | `f375e0065ef19e4f411b809a2f9a2d65582db287` (commit 2026-07-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-07-03 |
+| Nhận định | Tài liệu đồng hành sách AI Engineering của Chip Huyen (mục lục, tóm tắt chương, tài nguyên). Không có giấy phép nên chỉ nên dẫn liên kết, không sao chép. |
+| Nguồn | [README.md](https://github.com/chiphuyen/aie-book/blob/f375e0065ef19e4f411b809a2f9a2d65582db287/README.md) |
+
+<a id="ch-aima-python"></a>
+
+### aima-python
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/aimacode/aima-python |
+| License | MIT |
+| Phiên bản đã đọc | `c12988eddcaeedd3365fd718a4e165178549d528` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-20 |
+| Nhận định | Code Python cho giáo trình AIMA (search, logic, planning, ML, agent), có notebook, tests và docs; có CI (tests, docs). Phù hợp học thuật hơn là dùng sản xuất. |
+| Nguồn | [README.md](https://github.com/aimacode/aima-python/blob/c12988eddcaeedd3365fd718a4e165178549d528/README.md) · [LICENSE](https://github.com/aimacode/aima-python/blob/c12988eddcaeedd3365fd718a4e165178549d528/LICENSE) · [pyproject.toml](https://github.com/aimacode/aima-python/blob/c12988eddcaeedd3365fd718a4e165178549d528/pyproject.toml) |
+
+<a id="ch-annotated-deep-learning-paper-implementations"></a>
+
+### annotated_deep_learning_paper_implementations
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/labmlai/annotated_deep_learning_paper_implementations |
+| License | MIT |
+| Phiên bản đã đọc | `db59a04a8a2c6af922f1656f8c0fd113dd9a51b8` (commit 2026-11-01) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc readme.md, license, setup.py; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-01 |
+| Nhận định | Bộ cài đặt PyTorch có chú thích cạnh code cho nhiều paper (transformer, GAN, RL, diffusion...), site nn.labml.ai. Gói pip phụ thuộc torchtext cũ nên cài nguyên gói có thể lỗi (chưa xác minh), dùng đọc là chính. |
+| Nguồn | [readme.md](https://github.com/labmlai/annotated_deep_learning_paper_implementations/blob/db59a04a8a2c6af922f1656f8c0fd113dd9a51b8/readme.md) · [license](https://github.com/labmlai/annotated_deep_learning_paper_implementations/blob/db59a04a8a2c6af922f1656f8c0fd113dd9a51b8/license) · [setup.py](https://github.com/labmlai/annotated_deep_learning_paper_implementations/blob/db59a04a8a2c6af922f1656f8c0fd113dd9a51b8/setup.py) |
+
+<a id="ch-automate-for-growth"></a>
+
+### automate-for-growth
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/cporter202/automate-for-growth |
+| License | không có file LICENSE |
+| Phiên bản đã đọc | `29d439dd167c5b63681dcd0d5e09a9f816ae3c25` (commit 2026-10-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-10-17 (clone nông); ghi chú cũ nói dừng từ 12/2025 |
+| Nhận định | "Khóa học" tự động hóa nội dung mạng xã hội gồm các module markdown, không có mã chạy được chứng minh; nội dung mang tính quảng bá (nhận định phễu quảng cáo ViralWave là của lần đọc trước, chưa xác minh lại đầy đủ). Không giấy phép; nên tránh. |
+| Nguồn | [README.md](https://github.com/cporter202/automate-for-growth/blob/29d439dd167c5b63681dcd0d5e09a9f816ae3c25/README.md) |
+
+<a id="ch-awesome-ai-agents-e2b"></a>
+
+### Awesome AI Agents (E2B)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/e2b-dev/awesome-ai-agents |
+| License | CC-BY-NC-SA-4.0 |
+| Phiên bản đã đọc | `9596ab1e69fbbb6c95291141c8dab5c181083216` (commit 2026-08-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-08-21; ghi chú cũ nói phần lớn commit gần đây chỉ gắn UTM |
+| Nhận định | Danh sách khoảng 200 agent AI do E2B bảo trì, ít cập nhật nội dung. License phi thương mại hạn chế dùng lại; tình trạng link chết là kết quả thử cũ, không kiểm lại. |
+| Nguồn | [README.md](https://github.com/e2b-dev/awesome-ai-agents/blob/9596ab1e69fbbb6c95291141c8dab5c181083216/README.md) · [LICENSE.md](https://github.com/e2b-dev/awesome-ai-agents/blob/9596ab1e69fbbb6c95291141c8dab5c181083216/LICENSE.md) |
+
+<a id="ch-awesome-claude-code"></a>
+
+### awesome-claude-code
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/hesreallyhim/awesome-claude-code |
+| License | CC-BY-NC-ND-4.0 (khác catalog cũ: không có) |
+| Phiên bản đã đọc | `325e7162b39f6698c76d69e221489f21f433effe` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-23 |
+| Nhận định | Danh sách tuyển chọn tài nguyên cho Claude Code (skill, hook, lệnh, công cụ), sinh README từ CSV/YAML. License NC-ND hạn chế sao chép/phái sinh nên chỉ nên dẫn liên kết. |
+| Nguồn | [README.md](https://github.com/hesreallyhim/awesome-claude-code/blob/325e7162b39f6698c76d69e221489f21f433effe/README.md) · [LICENSE](https://github.com/hesreallyhim/awesome-claude-code/blob/325e7162b39f6698c76d69e221489f21f433effe/LICENSE) |
+
+<a id="ch-awesome-design-systems"></a>
+
+### awesome-design-systems
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/klaufel/awesome-design-systems |
+| License | CC0-1.0 |
+| Phiên bản đã đọc | `dc4d0202e58884000bd4b03f871260bd38a4b03c` (commit 2026-11-10) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-10 |
+| Nhận định | Danh sách tuyển chọn tài liệu và bài viết về design system hướng tới lập trình viên. Công khai tên miền công cộng, rủi ro license thấp; độ sống của liên kết chưa kiểm. |
+| Nguồn | [README.md](https://github.com/klaufel/awesome-design-systems/blob/dc4d0202e58884000bd4b03f871260bd38a4b03c/README.md) · [LICENSE](https://github.com/klaufel/awesome-design-systems/blob/dc4d0202e58884000bd4b03f871260bd38a4b03c/LICENSE) |
+
+<a id="ch-awesome-generative-ai-guide"></a>
+
+### Awesome Generative AI Guide
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/aishwaryanr/awesome-generative-ai-guide |
+| License | MIT |
+| Phiên bản đã đọc | `3a067b647eba7022606c49056dfa5d167181e61f` (commit 2026-11-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-02 |
+| Nhận định | Kho tổng hợp khóa học, lộ trình, ôn phỏng vấn và cập nhật nghiên cứu GenAI. Quảng cáo khóa trả phí và kết quả thử link (9/10 sống) là ghi chú cũ, chưa kiểm lại. |
+| Nguồn | [README.md](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/3a067b647eba7022606c49056dfa5d167181e61f/README.md) · [LICENSE.md](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/3a067b647eba7022606c49056dfa5d167181e61f/LICENSE.md) |
+
+<a id="ch-awesome-generative-ui"></a>
+
+### awesome-generative-ui
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/narrowin/awesome-generative-ui |
+| License | CC-BY-4.0 |
+| Phiên bản đã đọc | `3a8f2a9de6a76495a5ca8b0373aeb5512f8a3ddc` (commit 2026-10-26) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-10-26 |
+| Nhận định | Danh sách tuyển chọn tài nguyên cho UI sinh bởi AI (LLM sinh/ghép component). Yêu cầu ghi công theo CC BY; kho nhỏ, chủ yếu liên kết ngoài. |
+| Nguồn | [README.md](https://github.com/narrowin/awesome-generative-ui/blob/3a8f2a9de6a76495a5ca8b0373aeb5512f8a3ddc/README.md) · [LICENSE](https://github.com/narrowin/awesome-generative-ui/blob/3a8f2a9de6a76495a5ca8b0373aeb5512f8a3ddc/LICENSE) |
+
+<a id="ch-awesome-github-copilot"></a>
+
+### Awesome GitHub Copilot
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/github/awesome-copilot |
+| License | MIT |
+| Phiên bản đã đọc | `f10fdb8b2660ce85c98f220b2f1ca24653768a5c` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-20 |
+| Nhận định | Kho cộng đồng do GitHub chính chủ duy trì: agent, instruction, skill, hook, plugin cho Copilot, có website tìm kiếm. Nội dung cộng đồng đóng góp nên cần soát trước khi dùng; chi tiết luật pr-risk-scan là ghi chú cũ, chưa xác minh. |
+| Nguồn | [README.md](https://github.com/github/awesome-copilot/blob/f10fdb8b2660ce85c98f220b2f1ca24653768a5c/README.md) · [LICENSE](https://github.com/github/awesome-copilot/blob/f10fdb8b2660ce85c98f220b2f1ca24653768a5c/LICENSE) · [package.json](https://github.com/github/awesome-copilot/blob/f10fdb8b2660ce85c98f220b2f1ca24653768a5c/package.json) |
+
+<a id="ch-awesome-llm-apps"></a>
+
+### awesome-llm-apps
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Shubhamsaboo/awesome-llm-apps |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `14c5f8ff0094659f321801385d2b52ccc65fea3b` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-17 |
+| Nhận định | Tuyển tập 100+ ứng dụng LLM/agent/RAG mẫu, mỗi ứng dụng tự đóng gói riêng; tuyên bố "tested end-to-end" của README **(chưa xác minh)**. Phụ thuộc khóa API nhiều nhà cung cấp. |
+| Nguồn | [README.md](https://github.com/Shubhamsaboo/awesome-llm-apps/blob/14c5f8ff0094659f321801385d2b52ccc65fea3b/README.md) · [LICENSE](https://github.com/Shubhamsaboo/awesome-llm-apps/blob/14c5f8ff0094659f321801385d2b52ccc65fea3b/LICENSE) |
+
+<a id="ch-awesome-mcp-servers"></a>
+
+### awesome-mcp-servers
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/wong2/awesome-mcp-servers |
+| License | MIT (khác catalog cũ: không có) |
+| Phiên bản đã đọc | `39eb1d76d76e562657f3c657266a504cea159e23` (commit 2026-07-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-07-13; README ghi không nhận PR, gửi qua website |
+| Nhận định | Danh sách MCP server tuyển chọn, README chuyển hướng việc đóng góp sang website. Commit gần nhất tháng 7/2026 nên có thể lệch so với website; có mục nhà tài trợ trong README. |
+| Nguồn | [README.md](https://github.com/wong2/awesome-mcp-servers/blob/39eb1d76d76e562657f3c657266a504cea159e23/README.md) · [LICENSE](https://github.com/wong2/awesome-mcp-servers/blob/39eb1d76d76e562657f3c657266a504cea159e23/LICENSE) |
+
+<a id="ch-awesome-openclaw-skills"></a>
+
+### Awesome OpenClaw Skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/VoltAgent/awesome-openclaw-skills |
+| License | MIT |
+| Phiên bản đã đọc | `2ddb4d0ee520904c49cfd7f857535174cbd7669b` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, .github/workflows/pr-check.yml; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-11-18 |
+| Nhận định | Danh sách skill OpenClaw lấy từ ClawHub theo nhóm. Chỉ kiểm định dạng PR, không audit nội dung; cần tự soát skill trước khi cài. |
+| Nguồn | [README.md](https://github.com/VoltAgent/awesome-openclaw-skills/blob/2ddb4d0ee520904c49cfd7f857535174cbd7669b/README.md) · [LICENSE](https://github.com/VoltAgent/awesome-openclaw-skills/blob/2ddb4d0ee520904c49cfd7f857535174cbd7669b/LICENSE) · [.github/workflows/pr-check.yml](https://github.com/VoltAgent/awesome-openclaw-skills/blob/2ddb4d0ee520904c49cfd7f857535174cbd7669b/.github/workflows/pr-check.yml) |
+
+<a id="ch-cs336-assignment-1-basics"></a>
+
+### CS336 Assignment 1 (Basics)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/stanford-cs336/assignment1-basics |
+| License | MIT |
+| Phiên bản đã đọc | `a158843b20107949f1a8d7df1b05cd33b9166712` (commit 2026-04-07) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, AGENTS.md, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-04-07 |
+| Nhận định | Bài tập 1 CS336 (xây LM từ đầu: BPE tokenizer, Transformer, AdamW) chấm bằng bộ test pytest và snapshot, không có CI. Số test/snapshot cụ thể chưa đếm; chưa chạy bài. |
+| Nguồn | [README.md](https://github.com/stanford-cs336/assignment1-basics/blob/a158843b20107949f1a8d7df1b05cd33b9166712/README.md) · [LICENSE](https://github.com/stanford-cs336/assignment1-basics/blob/a158843b20107949f1a8d7df1b05cd33b9166712/LICENSE) · [AGENTS.md](https://github.com/stanford-cs336/assignment1-basics/blob/a158843b20107949f1a8d7df1b05cd33b9166712/AGENTS.md) · [pyproject.toml](https://github.com/stanford-cs336/assignment1-basics/blob/a158843b20107949f1a8d7df1b05cd33b9166712/pyproject.toml) |
+
+<a id="ch-data-science-interviews"></a>
+
+### data-science-interviews
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/alexeygrigorev/data-science-interviews |
+| License | CC-BY-4.0 |
+| Phiên bản đã đọc | `919f44547ef5ffc2bd59674fd301940529f4c1a8` (commit 2026-08-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2026-08-18 |
+| Nhận định | Câu hỏi và đáp án phỏng vấn data science cổ điển (lý thuyết, kỹ thuật), ít liên quan LLM. Cần ghi công theo CC BY. |
+| Nguồn | [README.md](https://github.com/alexeygrigorev/data-science-interviews/blob/919f44547ef5ffc2bd59674fd301940529f4c1a8/README.md) · [LICENSE](https://github.com/alexeygrigorev/data-science-interviews/blob/919f44547ef5ffc2bd59674fd301940529f4c1a8/LICENSE) |
+
+<a id="ch-deep-learning-tuning-playbook"></a>
+
+### Deep Learning Tuning Playbook
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/google-research/tuning_playbook |
+| License | CC-BY-4.0 |
+| Phiên bản đã đọc | `7554a51f5d3002ba90308d39701b586f5a9b962e` (commit 2024-06-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit mới nhất 2024-06-12, đứng yên gần 2,5 năm |
+| Nhận định | Cẩm nang tune siêu tham số có hệ thống của Google Research/Harvard. Nội dung ổn định nhưng không còn cập nhật; ví dụ mô hình có thể đã cũ. |
+| Nguồn | [README.md](https://github.com/google-research/tuning_playbook/blob/7554a51f5d3002ba90308d39701b586f5a9b962e/README.md) · [LICENSE](https://github.com/google-research/tuning_playbook/blob/7554a51f5d3002ba90308d39701b586f5a9b962e/LICENSE) |
+
+<a id="ch-design-resources-for-developers"></a>
+
+### design-resources-for-developers
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/bradtraversy/design-resources-for-developers |
+| License | MIT |
+| Phiên bản đã đọc | `035bac33121d13f51983c2997ba7369abdce082c` (commit 2026-10-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, readme.md, .github/workflows/validate-contribution.yml; chưa chạy upstream |
+| Bảo trì | low-activity: Commit cuối 2026-10-18; README nói tạm dừng nhận tài nguyên mới, chỉ nhận báo lỗi bảo trì |
+| Nhận định | Danh sách tài nguyên thiết kế (đồ họa UI, font, màu, icon, ảnh stock, mockup, CSS framework...) do Brad Traversy gom, README có mục lục theo nhóm. Đáng tham khảo làm điểm xuất phát; hiện không nhận mục mới nên độ cập nhật sẽ giảm dần. |
+| Nguồn | [LICENSE](https://github.com/bradtraversy/design-resources-for-developers/blob/035bac33121d13f51983c2997ba7369abdce082c/LICENSE) · [readme.md](https://github.com/bradtraversy/design-resources-for-developers/blob/035bac33121d13f51983c2997ba7369abdce082c/readme.md) · [validate-contribution.yml](https://github.com/bradtraversy/design-resources-for-developers/blob/035bac33121d13f51983c2997ba7369abdce082c/.github/workflows/validate-contribution.yml) |
+
+<a id="ch-developer-roadmap"></a>
+
+### developer-roadmap
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/nilbuild/developer-roadmap |
+| License | Tùy biến, hạn chế (file `license`): chỉ dùng cá nhân, không đăng lại nội dung/hình; khớp "custom" của catalog |
+| Phiên bản đã đọc | `57b601f727a265925c30de66456cfddd5c56757b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc license, readme.md, package.json, .github/workflows/sync-content-to-repo.yml; chưa chạy upstream |
+| Bảo trì | active: Commit cuối 2026-11-23 |
+| Nhận định | Roadmap tương tác roadmap.sh; repo giữ nội dung dạng markdown theo thư mục roadmaps/ cùng script đồng bộ sang cơ sở dữ liệu. Giá trị tham khảo cao về lộ trình, nhưng license cấm tái sử dụng/đăng lại nội dung nên không dùng làm nguồn dữ liệu cho dự án khác. |
+| Nguồn | [license](https://github.com/nilbuild/developer-roadmap/blob/57b601f727a265925c30de66456cfddd5c56757b/license) · [readme.md](https://github.com/nilbuild/developer-roadmap/blob/57b601f727a265925c30de66456cfddd5c56757b/readme.md) · [package.json](https://github.com/nilbuild/developer-roadmap/blob/57b601f727a265925c30de66456cfddd5c56757b/package.json) · [sync-content-to-repo.yml](https://github.com/nilbuild/developer-roadmap/blob/57b601f727a265925c30de66456cfddd5c56757b/.github/workflows/sync-content-to-repo.yml) |
+
+<a id="ch-freecodecamp"></a>
+
+### freeCodeCamp
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/freeCodeCamp/freeCodeCamp |
+| License | BSD-3-Clause cho phần mềm; `curriculum/` ghi riêng là copyright © freeCodeCamp.org (catalog chỉ ghi BSD-3) |
+| Phiên bản đã đọc | `e6f7968747dacccf8f8c85fdcac799a6b1ac46e9` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE.md, README.md, package.json, .github/workflows/node.js-tests.yml; chưa chạy upstream |
+| Bảo trì | active: Commit cuối 2026-11-23; nhiều workflow CI/deploy |
+| Nhận định | Codebase nền tảng học lập trình và chương trình học (curriculum/) của freeCodeCamp; monorepo pnpm có api, client, e2e. Mã tái dùng được theo BSD-3, còn nội dung bài học thì không nên coi là cùng license. |
+| Nguồn | [LICENSE.md](https://github.com/freeCodeCamp/freeCodeCamp/blob/e6f7968747dacccf8f8c85fdcac799a6b1ac46e9/LICENSE.md) · [README.md](https://github.com/freeCodeCamp/freeCodeCamp/blob/e6f7968747dacccf8f8c85fdcac799a6b1ac46e9/README.md) · [package.json](https://github.com/freeCodeCamp/freeCodeCamp/blob/e6f7968747dacccf8f8c85fdcac799a6b1ac46e9/package.json) · [node.js-tests.yml](https://github.com/freeCodeCamp/freeCodeCamp/blob/e6f7968747dacccf8f8c85fdcac799a6b1ac46e9/.github/workflows/node.js-tests.yml) |
+
+<a id="ch-generative-ai-for-beginners"></a>
+
+### generative-ai-for-beginners
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/generative-ai-for-beginners |
+| License | MIT |
+| Phiên bản đã đọc | `e45c369a8c76bdae831cb5a172d36a6a0fc3a6a2` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md; chưa chạy upstream |
+| Bảo trì | active: Commit cuối 2026-11-17 |
+| Nhận định | Khóa 21 bài của Microsoft Cloud Advocates về xây ứng dụng generative AI (prompt, chat, search, function calling, bảo mật, RAG, agent). README nhắc 50+ bản dịch do Co-op Translator duy trì nên có thể chậm hơn bản gốc (chưa đo). |
+| Nguồn | [LICENSE](https://github.com/microsoft/generative-ai-for-beginners/blob/e45c369a8c76bdae831cb5a172d36a6a0fc3a6a2/LICENSE) · [README.md](https://github.com/microsoft/generative-ai-for-beginners/blob/e45c369a8c76bdae831cb5a172d36a6a0fc3a6a2/README.md) |
+
+<a id="ch-github-ranking"></a>
+
+### Github-Ranking
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/EvanLi/Github-Ranking |
+| License | MIT (khác catalog cũ: null) |
+| Phiên bản đã đọc | `1737eb25adc277c0e1b3aa80cea985f8f4bfe829` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, auto_run.sh; chưa chạy upstream |
+| Bảo trì | active: Cập nhật tự động hằng ngày; commit cuối 2026-11-23 (auto update) |
+| Nhận định | Bảng xếp hạng repo nhiều sao/fork được sinh tự động bằng script Python và commit hằng ngày. Số liệu là snapshot do bot ghi, không phải đánh giá chất lượng; phụ thuộc máy chủ cron của tác giả. |
+| Nguồn | [LICENSE](https://github.com/EvanLi/Github-Ranking/blob/1737eb25adc277c0e1b3aa80cea985f8f4bfe829/LICENSE) · [README.md](https://github.com/EvanLi/Github-Ranking/blob/1737eb25adc277c0e1b3aa80cea985f8f4bfe829/README.md) · [auto_run.sh](https://github.com/EvanLi/Github-Ranking/blob/1737eb25adc277c0e1b3aa80cea985f8f4bfe829/auto_run.sh) |
+
+<a id="ch-hugging-face-course"></a>
+
+### Hugging Face Course
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/huggingface/course |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `8b893f0ede6c781045692a7f892f25a0c92b4805` (commit 2026-10-06) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, .github/workflows/quality.yml, chapters/en/_toctree.yml; chưa chạy upstream |
+| Bảo trì | low-activity: Commit cuối 2026-10-06 |
+| Nhận định | Khóa NLP/Transformers chính chủ Hugging Face, nội dung nằm trong chapters/<ngôn ngữ>. Bản tiếng Việt có nhưng thiếu các chương mới (10–12); README liệt kê bản dịch nhiều ngôn ngữ ở trạng thái WIP. |
+| Nguồn | [LICENSE](https://github.com/huggingface/course/blob/8b893f0ede6c781045692a7f892f25a0c92b4805/LICENSE) · [README.md](https://github.com/huggingface/course/blob/8b893f0ede6c781045692a7f892f25a0c92b4805/README.md) · [quality.yml](https://github.com/huggingface/course/blob/8b893f0ede6c781045692a7f892f25a0c92b4805/.github/workflows/quality.yml) · [_toctree.yml](https://github.com/huggingface/course/blob/8b893f0ede6c781045692a7f892f25a0c92b4805/chapters/en/_toctree.yml) |
+
+<a id="ch-llm-course"></a>
+
+### llm-course
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mlabonne/llm-course |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `7abd96e8284bfae232048fdb77b52397a2114847` (commit 2026-02-05) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md; chưa chạy upstream |
+| Bảo trì | low-activity: Commit cuối 2026-02-05; repo chỉ có README, ảnh và LICENSE |
+| Nhận định | Lộ trình học LLM của Maxime Labonne (nền tảng, xây LLM, triển khai ứng dụng) dưới dạng README kèm link notebook Colab. Là danh mục link, không có code trong repo; README cũng quảng bá sách Packt của tác giả. Chưa kiểm các notebook bên ngoài. |
+| Nguồn | [LICENSE](https://github.com/mlabonne/llm-course/blob/7abd96e8284bfae232048fdb77b52397a2114847/LICENSE) · [README.md](https://github.com/mlabonne/llm-course/blob/7abd96e8284bfae232048fdb77b52397a2114847/README.md) |
+
+<a id="ch-llm-evaluation-guidebook"></a>
+
+### LLM Evaluation Guidebook
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/huggingface/evaluation-guidebook |
+| License | CC-BY-NC-SA-4.0 |
+| Phiên bản đã đọc | `e09b159dddd03498e44929fc45bd581c94c13c7f` (commit 2025-12-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md; chưa chạy upstream |
+| Bảo trì | deprecated-by-readme: README: NO LONGER MAINTAINED; bản mới ở HF Space OpenEvals/evaluation-guidebook (commit cuối 2025-12-03) |
+| Nhận định | Sổ tay đánh giá LLM (benchmark tự động, LLM-as-judge, người chấm, xử lý sự cố). Repo đã ngừng bảo trì theo README; nếu dùng nên tham chiếu bản HF Space (chưa đọc) và lưu ý license phi thương mại. |
+| Nguồn | [LICENSE](https://github.com/huggingface/evaluation-guidebook/blob/e09b159dddd03498e44929fc45bd581c94c13c7f/LICENSE) · [README.md](https://github.com/huggingface/evaluation-guidebook/blob/e09b159dddd03498e44929fc45bd581c94c13c7f/README.md) |
+
+<a id="ch-llm-interview-questions-and-answers-hub"></a>
+
+### LLM Interview Questions and Answers Hub
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/KalyanKS-NLP/LLM-Interview-Questions-and-Answers-Hub |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `280c8b642acd65006b11aad76633826a867f3a63` (commit 2026-02-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md; chưa chạy upstream |
+| Bảo trì | low-activity: Commit cuối 2026-02-09 (đổi mức giảm giá sách) |
+| Nhận định | Bộ câu hỏi phỏng vấn LLM kèm đáp án viết sẵn, chia thành các file QA_x-y.md. Hữu ích để ôn nhanh; chất lượng đáp án chưa thẩm định (chưa xác minh), và README mang tính phễu cho sách/newsletter của tác giả. |
+| Nguồn | [LICENSE](https://github.com/KalyanKS-NLP/LLM-Interview-Questions-and-Answers-Hub/blob/280c8b642acd65006b11aad76633826a867f3a63/LICENSE) · [README.md](https://github.com/KalyanKS-NLP/LLM-Interview-Questions-and-Answers-Hub/blob/280c8b642acd65006b11aad76633826a867f3a63/README.md) |
+
+<a id="ch-llms-from-scratch"></a>
+
+### LLMs-from-scratch
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/rasbt/LLMs-from-scratch |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `5790c0c50bcb7d95bf9ee39f438c09ea31826b7d` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE.txt, README.md, pyproject.toml, .github/workflows/basic-tests-linux-uv.yml; chưa chạy upstream |
+| Bảo trì | active: Commit cuối 2026-11-22 |
+| Nhận định | Code từng chương để dựng, tiền huấn luyện và tinh chỉnh GPT nhỏ bằng PyTorch theo sách; pyproject yêu cầu Python >=3.10,<3.15. Giá trị giáo dục cao; chưa chạy notebook nào. Mô hình nhỏ cho mục đích học, không phải hệ thống production. |
+| Nguồn | [LICENSE.txt](https://github.com/rasbt/LLMs-from-scratch/blob/5790c0c50bcb7d95bf9ee39f438c09ea31826b7d/LICENSE.txt) · [README.md](https://github.com/rasbt/LLMs-from-scratch/blob/5790c0c50bcb7d95bf9ee39f438c09ea31826b7d/README.md) · [pyproject.toml](https://github.com/rasbt/LLMs-from-scratch/blob/5790c0c50bcb7d95bf9ee39f438c09ea31826b7d/pyproject.toml) · [basic-tests-linux-uv.yml](https://github.com/rasbt/LLMs-from-scratch/blob/5790c0c50bcb7d95bf9ee39f438c09ea31826b7d/.github/workflows/basic-tests-linux-uv.yml) |
+
+<a id="ch-machine-learning-engineering-open-book"></a>
+
+### Machine Learning Engineering Open Book
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/stas00/ml-engineering |
+| License | CC-BY-SA-4.0 |
+| Phiên bản đã đọc | `1a78efc30ab987bfd8a016df00acfcdd653a268c` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE-CC-BY-SA, README.md, SKILL.md, skills/ml-engineering/SKILL.md; chưa chạy upstream |
+| Bảo trì | active: Commit cuối 2026-11-21 |
+| Nhận định | Sách mở ghi lại kinh nghiệm huấn luyện/suy luận LLM và VLM quy mô lớn (SLURM, mạng, lưu trữ, gỡ lỗi, benchmark). Có kèm skill cho agent; chưa kiểm các script benchmark. Copyleft ShareAlike khi tái phân phối nội dung. |
+| Nguồn | [LICENSE-CC-BY-SA](https://github.com/stas00/ml-engineering/blob/1a78efc30ab987bfd8a016df00acfcdd653a268c/LICENSE-CC-BY-SA) · [README.md](https://github.com/stas00/ml-engineering/blob/1a78efc30ab987bfd8a016df00acfcdd653a268c/README.md) · [SKILL.md](https://github.com/stas00/ml-engineering/blob/1a78efc30ab987bfd8a016df00acfcdd653a268c/SKILL.md) · [SKILL.md](https://github.com/stas00/ml-engineering/blob/1a78efc30ab987bfd8a016df00acfcdd653a268c/skills/ml-engineering/SKILL.md) |
+
+<a id="ch-make-com-automation-recipes"></a>
+
+### make.com-automation-recipes
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/cporter202/make-com-automation-recipes |
+| License | MIT (khác catalog cũ: null) |
+| Phiên bản đã đọc | `a8544d3ce5f2fd0ce7a2ff58bc884a7b20af55d9` (commit 2026-10-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md; chưa chạy upstream |
+| Bảo trì | low-activity: Commit cuối 2026-10-17 |
+| Nhận định | Thư viện 600+ link tới template Make.com, mọi link gắn mã affiliate (README có tuyên bố affiliate). Không phải mã/workflow tự chứa; giá trị tham khảo thấp, nên coi là phễu quảng bá. |
+| Nguồn | [LICENSE](https://github.com/cporter202/make-com-automation-recipes/blob/a8544d3ce5f2fd0ce7a2ff58bc884a7b20af55d9/LICENSE) · [README.md](https://github.com/cporter202/make-com-automation-recipes/blob/a8544d3ce5f2fd0ce7a2ff58bc884a7b20af55d9/README.md) |
+
+<a id="ch-marketing-apis-that-drive-roi"></a>
+
+### marketing-apis-that-drive-roi
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/cporter202/marketing-apis-that-drive-roi |
+| License | Không có file LICENSE (khớp catalog: không license) |
+| Phiên bản đã đọc | `e35d6b971973b899d1b0c9b25dbc5b4773f3ebf3` (commit 2026-10-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, META.json; chưa chạy upstream |
+| Bảo trì | low-activity: Commit cuối 2026-10-20 |
+| Nhận định | Danh mục 290 "API" thực chất là actor Apify chia theo nhóm, không có mã nguồn đáng kể. Cùng mẫu phễu affiliate với các repo cporter202 khác; không có license nên không có quyền tái sử dụng rõ ràng. |
+| Nguồn | [README.md](https://github.com/cporter202/marketing-apis-that-drive-roi/blob/e35d6b971973b899d1b0c9b25dbc5b4773f3ebf3/README.md) · [META.json](https://github.com/cporter202/marketing-apis-that-drive-roi/blob/e35d6b971973b899d1b0c9b25dbc5b4773f3ebf3/META.json) |
+
+<a id="ch-mcp-for-beginners"></a>
+
+### MCP for Beginners
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/mcp-for-beginners |
+| License | MIT |
+| Phiên bản đã đọc | `c7efcc2ac5839100dd2cd961e8cc44dfefc1e7bf` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, 03-GettingStarted/01-first-server/solution/typescript/package.json; chưa chạy upstream |
+| Bảo trì | active: Commit cuối 2026-11-21 |
+| Nhận định | Giáo trình MCP của Microsoft từ khái niệm, bảo mật tới server/client mẫu và case study. Mẫu code không có CI nên chưa có bảo đảm chạy được; bản dịch (kể cả tiếng Việt) có thể chậm hơn gốc (chưa đo). |
+| Nguồn | [LICENSE](https://github.com/microsoft/mcp-for-beginners/blob/c7efcc2ac5839100dd2cd961e8cc44dfefc1e7bf/LICENSE) · [README.md](https://github.com/microsoft/mcp-for-beginners/blob/c7efcc2ac5839100dd2cd961e8cc44dfefc1e7bf/README.md) · [package.json](https://github.com/microsoft/mcp-for-beginners/blob/c7efcc2ac5839100dd2cd961e8cc44dfefc1e7bf/03-GettingStarted/01-first-server/solution/typescript/package.json) |
+
+<a id="ch-nanochat"></a>
+
+### nanochat
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/karpathy/nanochat |
+| License | MIT |
+| Phiên bản đã đọc | `92d63d4e8bb4df75c3b71618f31ddde2378b2bcd` (commit 2026-07-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, pyproject.toml; chưa chạy upstream |
+| Bảo trì | low-activity: Commit cuối 2026-07-03 |
+| Nhận định | Chuỗi huấn luyện ChatGPT tối giản (tokenizer, pretrain, finetune, eval, chat) với mã gọn trong thư mục nanochat/. Phù hợp để học và thử nghiệm; leaderboard là số liệu tự công bố (chưa xác minh), chưa chạy. |
+| Nguồn | [LICENSE](https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/LICENSE) · [README.md](https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/README.md) · [pyproject.toml](https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/pyproject.toml) |
+
+<a id="ch-rag-techniques"></a>
+
+### RAG_Techniques
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/NirDiamant/RAG_Techniques |
+| License | Tùy biến, phi thương mại, bắt buộc ghi công (khớp catalog "Non-commercial (custom)") |
+| Phiên bản đã đọc | `2fd7bd0ffe5b8520cfd1a6ee75fcb86fc41bf8c6` (commit 2026-11-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, .github/workflows/notebook-smoke.yml; chưa chạy upstream |
+| Bảo trì | active: Commit cuối 2026-11-02 |
+| Nhận định | Bộ notebook kỹ thuật RAG (simple, rerank, graph RAG, self-RAG, RAPTOR...). Cấm dùng thương mại nên không chép vào sản phẩm; CI chỉ parse notebook, không chứng minh kết quả chạy đúng. |
+| Nguồn | [LICENSE](https://github.com/NirDiamant/RAG_Techniques/blob/2fd7bd0ffe5b8520cfd1a6ee75fcb86fc41bf8c6/LICENSE) · [README.md](https://github.com/NirDiamant/RAG_Techniques/blob/2fd7bd0ffe5b8520cfd1a6ee75fcb86fc41bf8c6/README.md) · [notebook-smoke.yml](https://github.com/NirDiamant/RAG_Techniques/blob/2fd7bd0ffe5b8520cfd1a6ee75fcb86fc41bf8c6/.github/workflows/notebook-smoke.yml) |
+
+<a id="ch-social-growth-apis-for-creators"></a>
+
+### social-growth-apis-for-creators
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/cporter202/social-growth-apis-for-creators |
+| License | Không có file LICENSE (khớp catalog: không license) |
+| Phiên bản đã đọc | `828f6bc12a138119ba52c8f4209d64601682ac01` (commit 2026-10-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, META.json; chưa chạy upstream |
+| Bảo trì | low-activity: Commit cuối 2026-10-20 |
+| Nhận định | Danh mục actor Apify cho mạng xã hội (Facebook/Meta, Instagram/TikTok, YouTube, X/LinkedIn...) do cporter202 gom, không có mã đáng kể. Không license và mục đích affiliate nên giá trị tham khảo thấp. |
+| Nguồn | [README.md](https://github.com/cporter202/social-growth-apis-for-creators/blob/828f6bc12a138119ba52c8f4209d64601682ac01/README.md) · [META.json](https://github.com/cporter202/social-growth-apis-for-creators/blob/828f6bc12a138119ba52c8f4209d64601682ac01/META.json) |
+
+<a id="ch-system-design-primer"></a>
+
+### system-design-primer
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/donnemartin/system-design-primer |
+| License | CC-BY-4.0 |
+| Phiên bản đã đọc | `ae9bbd7b02d90b9866215de185217d33f39ab733` (commit 2026-03-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE.txt, README.md; chưa chạy upstream |
+| Bảo trì | low-activity: Commit cuối 2026-03-19 |
+| Nhận định | Tài liệu học thiết kế hệ thống kèm đề mẫu và lời giải trong solutions/, bản dịch ngôn ngữ khác trong repo. Nền tảng tốt nhưng nội dung cập nhật chậm; chưa đối chiếu với thực tế công nghệ hiện tại. |
+| Nguồn | [LICENSE.txt](https://github.com/donnemartin/system-design-primer/blob/ae9bbd7b02d90b9866215de185217d33f39ab733/LICENSE.txt) · [README.md](https://github.com/donnemartin/system-design-primer/blob/ae9bbd7b02d90b9866215de185217d33f39ab733/README.md) |

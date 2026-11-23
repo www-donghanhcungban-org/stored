@@ -8,10 +8,10 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [FastAPI](../../13-dev-stack-devops/README.md) | `fastapi/fastapi` | MIT | 104.390 | chưa chuẩn hóa | 13 | ; |
+| [FastAPI](../../13-dev-stack-devops/README.md#ch-fastapi) | `fastapi/fastapi` | MIT | 104.390 | đọc tài liệu 2026-11-23 | 13 | ; |
 | [gin](../../34-backend-data-identity-integration/README.md#chuyen-gin) | `gin-gonic/gin` | MIT | 89.531 | đọc tài liệu 2026-11-18 | 34 | Framework web HTTP hiệu năng cao cho Go, API kiểu Martini dựa trên httprouter. |
 | [Laravel application skeleton](../../34-backend-data-identity-integration/README.md#anhkysuai-2026-11-23-laravel-laravel) | `laravel/laravel` | MIT (composer.json và README) | 85.489 | đọc tài liệu 2026-11-23 | 34 | Bộ khung ứng dụng khởi tạo Laravel với cấu hình và phụ thuộc cho dự án PHP. |
-| [NestJS](../../13-dev-stack-devops/README.md) | `nestjs/nest` | MIT | 76.957 | chưa chuẩn hóa | 13 | 10/2026; |
+| [NestJS](../../13-dev-stack-devops/README.md#ch-nestjs) | `nestjs/nest` | MIT | 76.957 | đọc tài liệu 2026-11-23 | 13 | 10/2026; |
 | [flask](../../34-backend-data-identity-integration/README.md#chuyen-flask) | `pallets/flask` | BSD-3-Clause | 75.381 | đọc tài liệu 2026-11-18 | 34 | Framework ứng dụng web WSGI gọn nhẹ cho Python, xây quanh Werkzeug và Jinja. |
 | [express](../../34-backend-data-identity-integration/README.md#chuyen-express) | `expressjs/express` | MIT | 69.801 | đọc tài liệu 2026-11-18 | 34 | Framework web tối giản, không áp đặt cấu trúc cho Node.js, cung cấp định tuyến và tiện ích HTTP. |
 | [Full Stack FastAPI Template](../../34-backend-data-identity-integration/README.md#anhkysuai-fastapi-full-stack-fastapi-template) | `fastapi/full-stack-fastapi-template` | MIT | 46.322 | đọc tài liệu 2026-11-23 | 34 | Mẫu full-stack FastAPI, SQLModel/PostgreSQL và frontend React phục vụ cùng miền. |
@@ -20,7 +20,7 @@
 | [Hackathon Starter](../../34-backend-data-identity-integration/README.md#anhkysuai-sahat-hackathon-starter) | `sahat/hackathon-starter` | MIT | 35.260 | đọc tài liệu 2026-11-23 | 34 | Boilerplate Node.js giúp bắt đầu ứng dụng web và học các tích hợp đăng nhập. |
 | [Laravel Framework](../../34-backend-data-identity-integration/README.md#anhkysuai-laravel-framework) | `laravel/framework` | MIT | 35.058 | đọc tài liệu 2026-11-23 | 34 | Mã lõi framework PHP cho routing, dependency injection, migration, queue và sự kiện. |
 | [Echo](../../34-backend-data-identity-integration/README.md#anhkysuai-labstack-echo) | `labstack/echo` | MIT | 32.831 | đọc tài liệu 2026-11-23 | 34 | Framework Go xây trên net/http, thêm routing, binding, middleware và xử lý lỗi tập trung. |
-| [Hono](../../13-dev-stack-devops/README.md) | `honojs/hono` | MIT | 32.763 | chưa chuẩn hóa | 13 | ; |
+| [Hono](../../13-dev-stack-devops/README.md#ch-hono) | `honojs/hono` | MIT | 32.763 | đọc tài liệu 2026-11-23 | 13 | ; |
 | [Symfony](../../34-backend-data-identity-integration/README.md#anhkysuai-symfony-symfony) | `symfony/symfony` | MIT | 31.458 | đọc tài liệu 2026-11-23 | 34 | Framework PHP cho ứng dụng web/console và tập component có thể dùng riêng. |
 | [Django REST Framework](../../34-backend-data-identity-integration/README.md#anhkysuai-encode-django-rest-framework) | `encode/django-rest-framework` | BSD-3-Clause | 30.256 | đọc tài liệu 2026-11-23 | 34 | Bộ công cụ xây Web API trên Django với serializer, policy xác thực và browsable API. |
 | [Vapor](../../34-backend-data-identity-integration/README.md#anhkysuai-vapor-vapor) | `vapor/vapor` | MIT | 26.233 | đọc tài liệu 2026-11-23 | 34 | Framework HTTP phía server cho Swift để xây website, API và dịch vụ. |
@@ -32,15 +32,15 @@
 | [Tornado](../../34-backend-data-identity-integration/README.md#anhkysuai-tornadoweb-tornado) | `tornadoweb/tornado` | Apache-2.0 | 22.175 | đọc tài liệu 2026-11-23 | 34 | Framework web và thư viện mạng async Python cho kết nối dài. |
 | [Clean Architecture ASP.NET Template](../../34-backend-data-identity-integration/README.md#anhkysuai-jasontaylordev-cleanarchitecture) | `jasontaylordev/CleanArchitecture` | MIT | 20.735 | đọc tài liệu 2026-11-23 | 34 | Template ASP.NET Core/Aspire cho Angular, React hoặc Web API riêng. |
 | [The $12 Server Challenge](../../34-backend-data-identity-integration/README.md#6-kỹ-thuật-đáng-học-từ-nhóm-dẫn-đầu-the-12-server-challenge-twelve-dollar-server-challenge-đọc-readme-bài-dự-thi-4112026) | `arjaythedev/twelve-dollar-server-challenge` | MIT | 660 | đọc tài liệu 2026-11-04 | 34 | Cuộc thi hiệu năng Social Media API trên SQLite in-process, 1 vCPU/2 GB; |
-| [Django](../../13-dev-stack-devops/README.md) | `django/django` | BSD-3 | — | chưa chuẩn hóa | 13 |  |
-| [Spring Boot](../../13-dev-stack-devops/README.md) | `spring-projects/spring-boot` | Apache-2.0 | — | chưa chuẩn hóa | 13 |  |
+| [Django](../../13-dev-stack-devops/README.md#ch-django) | `django/django` | BSD-3-Clause | — | đọc tài liệu 2026-11-23 | 13 | . |
+| [Spring Boot](../../13-dev-stack-devops/README.md#ch-spring-boot) | `spring-projects/spring-boot` | Apache-2.0 | — | đọc tài liệu 2026-11-23 | 13 | . |
 
 ## BaaS & nền tảng backend (`baas-platform`, 6)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [Supabase](../../13-dev-stack-devops/README.md) | `supabase/supabase` | Apache-2.0 | 114.382 | chưa chuẩn hóa | 13 | Postgres + Auth + Storage + Realtime, tự host bằng docker/ (tag self-hosted/v\*); |
-| [PocketBase](../../13-dev-stack-devops/README.md) | `pocketbase/pocketbase` | MIT | 61.620 | chưa chuẩn hóa | 13 | Backend Go một file (SQLite, auth, realtime); |
+| [Supabase](../../13-dev-stack-devops/README.md#ch-supabase) | `supabase/supabase` | Apache-2.0 | 114.382 | đọc tài liệu 2026-11-23 | 13 | Postgres + Auth + Storage + Realtime, tự host bằng docker/ (tag self-hosted/v\*); |
+| [PocketBase](../../13-dev-stack-devops/README.md#ch-pocketbase) | `pocketbase/pocketbase` | MIT | 61.620 | đọc tài liệu 2026-11-23 | 13 | Backend Go một file (SQLite, auth, realtime); |
 | [Appwrite](../../34-backend-data-identity-integration/README.md#anhkysuai-appwrite-appwrite) | `appwrite/appwrite` | BSD-3-Clause | 58.614 | đọc tài liệu 2026-11-23 | 34 | Nền tảng backend gồm xác thực, dữ liệu, lưu trữ và công cụ cho ứng dụng lẫn agent. |
 | [directus](../../34-backend-data-identity-integration/README.md#chuyen-directus) | `directus/directus` | Monospace Sustainable Core License 1.0 | 38.747 | đọc tài liệu 2026-11-18 | 34 | Lớp backend bọc bất kỳ cơ sở dữ liệu SQL nào, tự sinh REST và GraphQL API, kèm Studio quản trị trực quan và MCP server cho tác tử AI. |
 | [Hasura GraphQL Engine](../../34-backend-data-identity-integration/README.md#anhkysuai-hasura-graphql-engine) | `hasura/graphql-engine` | Apache-2.0; LICENSE-community theo MIT | 32.127 | đọc tài liệu 2026-11-23 | 34 | Engine cung cấp API GraphQL thống nhất trên các nguồn dữ liệu. |

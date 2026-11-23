@@ -3077,3 +3077,709 @@ CLI biến bất kỳ trang web nào thành ứng dụng desktop nhẹ bằng m�
 **Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
 
 **Nguồn tại cùng SHA:** [README.md](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/README.md) · [LICENSE](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/LICENSE) · [go.mod](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/go.mod) · [.github/workflows/test.yml](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/.github/workflows/test.yml) · [npm/README.md](https://github.com/antonmedv/fx/blob/0cd57fae925d65f2f488b227d9c141316859e893/npm/README.md).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-act"></a>
+
+### act
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/nektos/act |
+| License | MIT |
+| Phiên bản đã đọc | `ac4c09993f474fc8091608f2f7cf85a69dfd012f` (commit 2026-11-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, SECURITY_AUDIT.md, VERSION; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Chạy workflow GitHub Actions cục bộ bằng Docker. Rủi ro: audit tự nhận nhiều lỗi thoát container, nên không chạy workflow không tin cậy khi chưa bật policy hạn chế. |
+| Nguồn | [README](https://github.com/nektos/act/blob/ac4c09993f474fc8091608f2f7cf85a69dfd012f/README.md) · [LICENSE](https://github.com/nektos/act/blob/ac4c09993f474fc8091608f2f7cf85a69dfd012f/LICENSE) · [SECURITY_AUDIT.md](https://github.com/nektos/act/blob/ac4c09993f474fc8091608f2f7cf85a69dfd012f/SECURITY_AUDIT.md) · [VERSION](https://github.com/nektos/act/blob/ac4c09993f474fc8091608f2f7cf85a69dfd012f/VERSION) |
+
+<a id="ch-actionlint"></a>
+
+### actionlint
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/rhysd/actionlint |
+| License | MIT |
+| Phiên bản đã đọc | `011a6d15e749bb3f2d771eed9c7aa0e7e3e10ee7` (commit 2026-04-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.txt; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit HEAD 2026-04-19, hơn 7 tháng) |
+| Nhận định | Linter tĩnh cho workflow GitHub Actions: kiểm khóa, kiểu biểu thức ${{ }}, input/output của action và reusable workflow. Ít commit gần đây nhưng công cụ ổn định. |
+| Nguồn | [README](https://github.com/rhysd/actionlint/blob/011a6d15e749bb3f2d771eed9c7aa0e7e3e10ee7/README.md) · [LICENSE](https://github.com/rhysd/actionlint/blob/011a6d15e749bb3f2d771eed9c7aa0e7e3e10ee7/LICENSE.txt) |
+
+<a id="ch-agent-os"></a>
+
+### Agent OS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/buildermethods/agent-os |
+| License | MIT |
+| Phiên bản đã đọc | `e892e61d322759165e7d9173e92c1010406c9f4d` (commit 2026-10-07) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, CHANGELOG.md; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-10-07, bản 3.0 ngày 2026-01-20) |
+| Nhận định | Bộ lệnh/prompt rút chuẩn mã từ codebase và định hình spec cho nhiều công cụ AI. Quy mô nhỏ, chủ yếu script shell và markdown; install script ghi vào dự án nên đọc trước khi chạy. |
+| Nguồn | [README](https://github.com/buildermethods/agent-os/blob/e892e61d322759165e7d9173e92c1010406c9f4d/README.md) · [LICENSE](https://github.com/buildermethods/agent-os/blob/e892e61d322759165e7d9173e92c1010406c9f4d/LICENSE) · [CHANGELOG.md](https://github.com/buildermethods/agent-os/blob/e892e61d322759165e7d9173e92c1010406c9f4d/CHANGELOG.md) |
+
+<a id="ch-angular"></a>
+
+### Angular
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/angular/angular |
+| License | MIT |
+| Phiên bản đã đọc | `3492295b9a75878e4221e7588df2dd5635402df9` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Framework web TypeScript của Google, monorepo Bazel/pnpm; có AGENTS.md và context7.json cho agent. Dự án lớn, nhiều workflow CI. |
+| Nguồn | [README](https://github.com/angular/angular/blob/3492295b9a75878e4221e7588df2dd5635402df9/README.md) · [LICENSE](https://github.com/angular/angular/blob/3492295b9a75878e4221e7588df2dd5635402df9/LICENSE) |
+
+<a id="ch-astro"></a>
+
+### Astro
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/withastro/astro |
+| License | MIT |
+| Phiên bản đã đọc | `ebcaf69d3d7b9b2ac1879d08b45ffcdc70e4cfaf` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Framework web ưu tiên nội dung, cài bằng `npm create astro@latest`; monorepo pnpm/turbo, có AGENTS.md. |
+| Nguồn | [README](https://github.com/withastro/astro/blob/ebcaf69d3d7b9b2ac1879d08b45ffcdc70e4cfaf/README.md) · [LICENSE](https://github.com/withastro/astro/blob/ebcaf69d3d7b9b2ac1879d08b45ffcdc70e4cfaf/LICENSE) |
+
+<a id="ch-biome"></a>
+
+### Biome
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/biomejs/biome |
+| License | MIT OR Apache-2.0 (hai file LICENSE-MIT và LICENSE-APACHE) |
+| Phiên bản đã đọc | `016c27511538d03f182e84041d99e54346078880` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE-MIT, LICENSE-APACHE; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Formatter và linter một công cụ cho JS/TS/JSX/JSON/CSS/GraphQL/HTML, viết bằng Rust, thay thế Prettier/ESLint ở nhiều trường hợp. Số lượng rule là tuyên bố **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/biomejs/biome/blob/016c27511538d03f182e84041d99e54346078880/README.md) · [LICENSE-MIT](https://github.com/biomejs/biome/blob/016c27511538d03f182e84041d99e54346078880/LICENSE-MIT) · [LICENSE-APACHE](https://github.com/biomejs/biome/blob/016c27511538d03f182e84041d99e54346078880/LICENSE-APACHE) |
+
+<a id="ch-bmad-method"></a>
+
+### BMAD-METHOD
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/bmad-code-org/BMAD-METHOD |
+| License | MIT |
+| Phiên bản đã đọc | `e435a22574fe55722841086e5566420178b98df3` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Phương pháp phát triển hướng AI theo vai agent (brief, spec, kiến trúc), cài bằng `npx bmad-method install`. V7 còn alpha nên chưa ổn định; nhãn hiệu có điều khoản riêng. |
+| Nguồn | [README](https://github.com/bmad-code-org/BMAD-METHOD/blob/e435a22574fe55722841086e5566420178b98df3/README.md) · [LICENSE](https://github.com/bmad-code-org/BMAD-METHOD/blob/e435a22574fe55722841086e5566420178b98df3/LICENSE) |
+
+<a id="ch-code-review-graph"></a>
+
+### code-review-graph
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/tirth8205/code-review-graph |
+| License | MIT |
+| Phiên bản đã đọc | `bbdda4b9e4b4818a9f04d7ef96ac0e50da13f208` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Đồ thị mã Tree-sitter/SQLite phục vụ review qua MCP, cho biết blast radius của thay đổi. Cài đặt ghi vào cấu hình nhiều công cụ và git hook (pre-commit…), nên xem danh sách file trước khi đồng ý. |
+| Nguồn | [README](https://github.com/tirth8205/code-review-graph/blob/bbdda4b9e4b4818a9f04d7ef96ac0e50da13f208/README.md) · [LICENSE](https://github.com/tirth8205/code-review-graph/blob/bbdda4b9e4b4818a9f04d7ef96ac0e50da13f208/LICENSE) · [pyproject.toml](https://github.com/tirth8205/code-review-graph/blob/bbdda4b9e4b4818a9f04d7ef96ac0e50da13f208/pyproject.toml) |
+
+<a id="ch-coderabbit"></a>
+
+### CodeRabbit
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://www.coderabbit.ai |
+| License | Proprietary (SaaS thương mại, không có mã nguồn công khai) |
+| Phiên bản đã đọc | Không áp dụng (trang web, không có SHA) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang chủ và /pricing; chưa dùng thử |
+| Bảo trì | Dịch vụ đang bán, trang còn cập nhật |
+| Nhận định | Dịch vụ review PR bằng AI. Giá $24/$48 là giá thanh toán theo năm (theo tháng $30/$60), có thêm bậc $72; review vượt hạn mức tính $0.25 mỗi file theo trang giá. Chất lượng review chưa kiểm **(chưa xác minh)**. |
+| Nguồn | [Trang chủ](https://www.coderabbit.ai/) · [Pricing](https://www.coderabbit.ai/pricing) |
+
+<a id="ch-dagger"></a>
+
+### Dagger
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/dagger/dagger |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `c1f8e9ae88f6c238ee02bef12ff131847052abc2` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Nền tảng tự động hóa build/test/ship lập trình được bằng SDK, chạy cục bộ giống CI. Cần engine container; trace OTel có thể xuất ra backend ngoài. |
+| Nguồn | [README](https://github.com/dagger/dagger/blob/c1f8e9ae88f6c238ee02bef12ff131847052abc2/README.md) · [LICENSE](https://github.com/dagger/dagger/blob/c1f8e9ae88f6c238ee02bef12ff131847052abc2/LICENSE) |
+
+<a id="ch-django"></a>
+
+### Django
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/django/django |
+| License | BSD-3-Clause |
+| Phiên bản đã đọc | `29d2c0ba4ec475d355f7a18a1a6ab47ddea4a7ca` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.rst, LICENSE, LICENSE.python; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Framework web Python cao cấp, tài liệu trong thư mục docs. Dự án trưởng thành, CI rộng. |
+| Nguồn | [README](https://github.com/django/django/blob/29d2c0ba4ec475d355f7a18a1a6ab47ddea4a7ca/README.rst) · [LICENSE](https://github.com/django/django/blob/29d2c0ba4ec475d355f7a18a1a6ab47ddea4a7ca/LICENSE) · [LICENSE.python](https://github.com/django/django/blob/29d2c0ba4ec475d355f7a18a1a6ab47ddea4a7ca/LICENSE.python) |
+
+<a id="ch-fastapi"></a>
+
+### FastAPI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/fastapi/fastapi |
+| License | MIT |
+| Phiên bản đã đọc | `05e6df7e906c3decba377c37548019973f40bf15` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, workflow test.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Framework web API Python dựa trên type hints, Starlette và Pydantic; có CI test/benchmark/coverage trong workflow test.yml. Các con số "nhanh hơn 200-300%" trong README là ước tính nội bộ của tác giả **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/fastapi/fastapi/blob/05e6df7e906c3decba377c37548019973f40bf15/README.md) · [LICENSE](https://github.com/fastapi/fastapi/blob/05e6df7e906c3decba377c37548019973f40bf15/LICENSE) · [pyproject.toml](https://github.com/fastapi/fastapi/blob/05e6df7e906c3decba377c37548019973f40bf15/pyproject.toml) · [workflow test.yml](https://github.com/fastapi/fastapi/blob/05e6df7e906c3decba377c37548019973f40bf15/.github/workflows/test.yml) |
+
+<a id="ch-flutter"></a>
+
+### Flutter
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/flutter/flutter |
+| License | BSD-3-Clause |
+| Phiên bản đã đọc | `a7c861f6b2e720aed2d93a7d5fbea844a3322636` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, workflow tool-test-general.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | SDK UI đa nền tảng của Google trong monorepo lớn (engine, packages, dev). Lưu ý README nói công cụ flutter sẽ tải tài nguyên (Dart SDK) từ máy chủ Google khi chạy lần đầu. |
+| Nguồn | [README](https://github.com/flutter/flutter/blob/a7c861f6b2e720aed2d93a7d5fbea844a3322636/README.md) · [LICENSE](https://github.com/flutter/flutter/blob/a7c861f6b2e720aed2d93a7d5fbea844a3322636/LICENSE) · [workflow tool-test-general.yml](https://github.com/flutter/flutter/blob/a7c861f6b2e720aed2d93a7d5fbea844a3322636/.github/workflows/tool-test-general.yml) |
+
+<a id="ch-greptile"></a>
+
+### Greptile
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://www.greptile.com |
+| License | proprietary (theo catalog, chưa xác minh) |
+| Phiên bản đã đọc | không áp dụng (dịch vụ web, không có SHA) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang chủ; chưa chạy upstream |
+| Bảo trì | unknown (không có lịch sử commit công khai để kiểm) |
+| Nhận định | Dịch vụ review PR bằng AI thương mại (đóng); trang chủ nêu agent review/test PR, CLI, tài liệu và gói Enterprise liên hệ bán hàng. Tính năng và hiệu quả là tuyên bố nhà cung cấp **(chưa xác minh)**. |
+| Nguồn | [Trang chủ](https://www.greptile.com) |
+
+<a id="ch-grype"></a>
+
+### Grype
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anchore/grype |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `8b2987cf575c69fb715ae4d3b15bb470e3e8f83b` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, go.mod, workflow validations.yaml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Bộ quét lỗ hổng cho image container, filesystem và SBOM (Go); README nêu ưu tiên theo EPSS, KEV, risk score và lọc bằng OpenVEX. CI validations.yaml có static analysis, unit và integration test (Linux/Windows). |
+| Nguồn | [README](https://github.com/anchore/grype/blob/8b2987cf575c69fb715ae4d3b15bb470e3e8f83b/README.md) · [LICENSE](https://github.com/anchore/grype/blob/8b2987cf575c69fb715ae4d3b15bb470e3e8f83b/LICENSE) · [go.mod](https://github.com/anchore/grype/blob/8b2987cf575c69fb715ae4d3b15bb470e3e8f83b/go.mod) · [workflow validations.yaml](https://github.com/anchore/grype/blob/8b2987cf575c69fb715ae4d3b15bb470e3e8f83b/.github/workflows/validations.yaml) |
+
+<a id="ch-harden-runner"></a>
+
+### Harden-Runner
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/step-security/harden-runner |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `aebdcf6156ab6691adf63218240e476564a1ed4c` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, action.yml, package.json, workflow test.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | GitHub Action giám sát egress/file/process trên runner CI, chặn theo allowed-endpoints. Bậc miễn phí chỉ cho repo public trên runner GitHub-hosted; tính năng nâng cao, repo private và self-hosted cần gói trả phí; có gửi telemetry tới StepSecurity API trừ khi tắt (chỉ khi policy block). Hiệu quả phát hiện sự cố trong README là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/step-security/harden-runner/blob/aebdcf6156ab6691adf63218240e476564a1ed4c/README.md) · [LICENSE](https://github.com/step-security/harden-runner/blob/aebdcf6156ab6691adf63218240e476564a1ed4c/LICENSE) · [action.yml](https://github.com/step-security/harden-runner/blob/aebdcf6156ab6691adf63218240e476564a1ed4c/action.yml) · [package.json](https://github.com/step-security/harden-runner/blob/aebdcf6156ab6691adf63218240e476564a1ed4c/package.json) · [workflow test.yml](https://github.com/step-security/harden-runner/blob/aebdcf6156ab6691adf63218240e476564a1ed4c/.github/workflows/test.yml) |
+
+<a id="ch-hono"></a>
+
+### Hono
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/honojs/hono |
+| License | MIT |
+| Phiên bản đã đọc | `9075031ea46533ae3b6e5b6c11f8333d67a7d6c2` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, workflow ci.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Framework web nhỏ, dựa trên Web Standards, chạy trên Cloudflare Workers và nhiều runtime JS khác; CI kiểm thử đa runtime (Deno, JSR dry-run, coverage). Tuyên bố "ultrafast" của README chưa kiểm **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/honojs/hono/blob/9075031ea46533ae3b6e5b6c11f8333d67a7d6c2/README.md) · [LICENSE](https://github.com/honojs/hono/blob/9075031ea46533ae3b6e5b6c11f8333d67a7d6c2/LICENSE) · [workflow ci.yml](https://github.com/honojs/hono/blob/9075031ea46533ae3b6e5b6c11f8333d67a7d6c2/.github/workflows/ci.yml) |
+
+<a id="ch-jscpd"></a>
+
+### jscpd
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/kucherenko/jscpd |
+| License | MIT |
+| Phiên bản đã đọc | `65b7bf4bfdb66543fa9391abd9a6313a4a5b1638` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, workflow rust.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Phát hiện code trùng lặp (Rabin-Karp theo token, 224 định dạng). Nhánh mặc định nay là v5 Rust (binary, cài qua script/npm/pip/cargo/brew/Docker, có GitHub Action v5 và MCP stdio); v4 Node.js vẫn bảo trì ở nhánh master-v4. Cần ghim phiên bản vì khác biệt v4/v5 (baseline mode chỉ có ở v5). |
+| Nguồn | [README](https://github.com/kucherenko/jscpd/blob/65b7bf4bfdb66543fa9391abd9a6313a4a5b1638/README.md) · [LICENSE](https://github.com/kucherenko/jscpd/blob/65b7bf4bfdb66543fa9391abd9a6313a4a5b1638/LICENSE) · [workflow rust.yml](https://github.com/kucherenko/jscpd/blob/65b7bf4bfdb66543fa9391abd9a6313a4a5b1638/.github/workflows/rust.yml) |
+
+<a id="ch-kiro"></a>
+
+### Kiro
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://kiro.dev |
+| License | proprietary (theo catalog, chưa xác minh) |
+| Phiên bản đã đọc | không áp dụng (dịch vụ web, không có SHA) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang chủ; chưa chạy upstream |
+| Bảo trì | unknown (không có lịch sử commit công khai để kiểm) |
+| Nhận định | IDE/CLI tác tử AI thương mại; trang chủ nêu các bề mặt IDE, CLI, Web, Mobile và chế độ "Conductor" điều phối agent. Chưa xác nhận chủ sở hữu và giấy phép từ trang đã đọc **(chưa xác minh)**. |
+| Nguồn | [Trang chủ](https://kiro.dev) |
+
+<a id="ch-knip"></a>
+
+### knip
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/webpro-nl/knip |
+| License | ISC |
+| Phiên bản đã đọc | `74c07a6361e720ee31ac2e428c6b6648f5598210` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, workflow ci.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Công cụ tìm file, export và dependency không dùng cho dự án TS/JS (monorepo workspaces); nội dung chi tiết nằm ở packages/knip/README.md và knip.dev, chưa đọc trong lượt này. |
+| Nguồn | [README](https://github.com/webpro-nl/knip/blob/74c07a6361e720ee31ac2e428c6b6648f5598210/README.md) · [LICENSE](https://github.com/webpro-nl/knip/blob/74c07a6361e720ee31ac2e428c6b6648f5598210/LICENSE) · [package.json](https://github.com/webpro-nl/knip/blob/74c07a6361e720ee31ac2e428c6b6648f5598210/package.json) · [workflow ci.yml](https://github.com/webpro-nl/knip/blob/74c07a6361e720ee31ac2e428c6b6648f5598210/.github/workflows/ci.yml) |
+
+<a id="ch-kotlin-multiplatform"></a>
+
+### Kotlin Multiplatform
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/JetBrains/kotlin |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `b3fd0171b87104f525fba8d62aa20544501eac1e` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc ReadMe.md, license/LICENSE.txt, workflow npm-publish.yaml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Repo JetBrains/kotlin là compiler và công cụ của ngôn ngữ Kotlin; Kotlin Multiplatform chỉ là một khả năng được mô tả trong README (liên kết tài liệu ngoài), không phải repo riêng. CI GitHub trong repo chỉ có npm-publish.yaml; build chính chạy ở TeamCity theo README. |
+| Nguồn | [README](https://github.com/JetBrains/kotlin/blob/b3fd0171b87104f525fba8d62aa20544501eac1e/ReadMe.md) · [LICENSE](https://github.com/JetBrains/kotlin/blob/b3fd0171b87104f525fba8d62aa20544501eac1e/license/LICENSE.txt) · [workflow npm-publish.yaml](https://github.com/JetBrains/kotlin/blob/b3fd0171b87104f525fba8d62aa20544501eac1e/.github/workflows/npm-publish.yaml) |
+
+<a id="ch-kubernetes"></a>
+
+### Kubernetes
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/kubernetes/kubernetes |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `43cbb94ee845ad387717fe851bf5f421b7284329` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Hệ thống điều phối container do CNCF lưu trữ, monorepo rất lớn (thư mục LICENSES chứa giấy phép bên thứ ba/vendor). Thư mục .github/workflows không có trong cây gốc nên chưa xác định CI từ repo này. |
+| Nguồn | [README](https://github.com/kubernetes/kubernetes/blob/43cbb94ee845ad387717fe851bf5f421b7284329/README.md) · [LICENSE](https://github.com/kubernetes/kubernetes/blob/43cbb94ee845ad387717fe851bf5f421b7284329/LICENSE) |
+
+<a id="ch-lighthouse-ci"></a>
+
+### Lighthouse CI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/GoogleChrome/lighthouse-ci |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `947c5790b8e2c29259c65a6cfebfb89432555bc8` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, workflow ci.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Bộ công cụ chạy Lighthouse liên tục trong CI, lưu kết quả và assert theo ngưỡng; README có mẫu workflow GitHub Actions. Commit gần nhất 2026-11-17 cho thấy vẫn có bảo trì (tần suất chưa đo vì clone nông). |
+| Nguồn | [README](https://github.com/GoogleChrome/lighthouse-ci/blob/947c5790b8e2c29259c65a6cfebfb89432555bc8/README.md) · [LICENSE](https://github.com/GoogleChrome/lighthouse-ci/blob/947c5790b8e2c29259c65a6cfebfb89432555bc8/LICENSE) · [workflow ci.yml](https://github.com/GoogleChrome/lighthouse-ci/blob/947c5790b8e2c29259c65a6cfebfb89432555bc8/.github/workflows/ci.yml) |
+
+<a id="ch-nestjs"></a>
+
+### NestJS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/nestjs/nest |
+| License | MIT |
+| Phiên bản đã đọc | `3e615d431c56a177b42cd2ba83c2c0e10c1223ea` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc Readme.md, LICENSE, package.json, workflow codeql-analysis.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Framework backend TypeScript trên Node.js (Express, Fastify hoặc node:http), monorepo workspaces. CI GitHub chỉ có CodeQL và kiểm nội dung PR; thư mục .circleci gợi ý kiểm thử chạy ở CircleCI (chưa đọc). |
+| Nguồn | [README](https://github.com/nestjs/nest/blob/3e615d431c56a177b42cd2ba83c2c0e10c1223ea/Readme.md) · [LICENSE](https://github.com/nestjs/nest/blob/3e615d431c56a177b42cd2ba83c2c0e10c1223ea/LICENSE) · [package.json](https://github.com/nestjs/nest/blob/3e615d431c56a177b42cd2ba83c2c0e10c1223ea/package.json) · [workflow codeql-analysis.yml](https://github.com/nestjs/nest/blob/3e615d431c56a177b42cd2ba83c2c0e10c1223ea/.github/workflows/codeql-analysis.yml) |
+
+<a id="ch-next-js"></a>
+
+### Next.js
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vercel/next.js |
+| License | MIT |
+| Phiên bản đã đọc | `112872f3edc675f4fcfb3c7dcda5703c9a774dd0` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, license.md, Cargo.toml, workflow build_and_test.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Framework React full-stack của Vercel; repo có workspace Rust lớn cho Turbopack và binding native. Chưa đọc mã triển khai nên chưa đánh giá chi tiết. |
+| Nguồn | [README](https://github.com/vercel/next.js/blob/112872f3edc675f4fcfb3c7dcda5703c9a774dd0/README.md) · [LICENSE](https://github.com/vercel/next.js/blob/112872f3edc675f4fcfb3c7dcda5703c9a774dd0/license.md) · [Cargo.toml](https://github.com/vercel/next.js/blob/112872f3edc675f4fcfb3c7dcda5703c9a774dd0/Cargo.toml) · [workflow build_and_test.yml](https://github.com/vercel/next.js/blob/112872f3edc675f4fcfb3c7dcda5703c9a774dd0/.github/workflows/build_and_test.yml) |
+
+<a id="ch-nuxt"></a>
+
+### Nuxt
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/nuxt/nuxt |
+| License | MIT |
+| Phiên bản đã đọc | `a3c8819daf36847ef8d85a771b2a4f959bed5cc6` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, workflow ci.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Framework full-stack trên Vue.js. CI có gate/build và kiểm tra trên Windows; repo có AGENTS.md và ARCHITECTURE.md hữu ích để đọc kiến trúc. |
+| Nguồn | [README](https://github.com/nuxt/nuxt/blob/a3c8819daf36847ef8d85a771b2a4f959bed5cc6/README.md) · [LICENSE](https://github.com/nuxt/nuxt/blob/a3c8819daf36847ef8d85a771b2a4f959bed5cc6/LICENSE) · [workflow ci.yml](https://github.com/nuxt/nuxt/blob/a3c8819daf36847ef8d85a771b2a4f959bed5cc6/.github/workflows/ci.yml) |
+
+<a id="ch-open-code-review-ocr"></a>
+
+### open-code-review (ocr)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/alibaba/open-code-review |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `e74f2c6bd4422bd1e12d257d1725bcce1d6b9ddd` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, go.mod, workflow ci.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | CLI review code bằng AI (Go) đọc git diff, gửi file đổi cho LLM qua agent có tool-use; nguồn gốc từ trợ lý review nội bộ Alibaba theo README. Delegation Mode dùng model của host agent nên không cần API key riêng. Số liệu benchmark (F1, ~1/9 token so với Claude Code) là tuyên bố của tác giả **(chưa xác minh)**; luật glob rule.json chưa thấy trong phần README đã đọc **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/alibaba/open-code-review/blob/e74f2c6bd4422bd1e12d257d1725bcce1d6b9ddd/README.md) · [LICENSE](https://github.com/alibaba/open-code-review/blob/e74f2c6bd4422bd1e12d257d1725bcce1d6b9ddd/LICENSE) · [go.mod](https://github.com/alibaba/open-code-review/blob/e74f2c6bd4422bd1e12d257d1725bcce1d6b9ddd/go.mod) · [workflow ci.yml](https://github.com/alibaba/open-code-review/blob/e74f2c6bd4422bd1e12d257d1725bcce1d6b9ddd/.github/workflows/ci.yml) |
+
+<a id="ch-openspec"></a>
+
+### OpenSpec
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Fission-AI/OpenSpec |
+| License | MIT |
+| Phiên bản đã đọc | `0c737dc1b543249b38b0f4716816fcf493d894dd` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, workflow ci.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Khung spec-driven cho trợ lý code AI: mỗi thay đổi sinh thư mục proposal/specs/design/tasks trong openspec/changes. Triết lý "fluid, iterative, brownfield" là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/Fission-AI/OpenSpec/blob/0c737dc1b543249b38b0f4716816fcf493d894dd/README.md) · [LICENSE](https://github.com/Fission-AI/OpenSpec/blob/0c737dc1b543249b38b0f4716816fcf493d894dd/LICENSE) · [package.json](https://github.com/Fission-AI/OpenSpec/blob/0c737dc1b543249b38b0f4716816fcf493d894dd/package.json) · [workflow ci.yml](https://github.com/Fission-AI/OpenSpec/blob/0c737dc1b543249b38b0f4716816fcf493d894dd/.github/workflows/ci.yml) |
+
+<a id="ch-oxlint"></a>
+
+### oxlint
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/oxc-project/oxc |
+| License | MIT |
+| Phiên bản đã đọc | `98d0dc75a2994cb71011aadc04e97ac21d8921a9` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Cargo.toml, workflow ci.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Linter JS/TS viết bằng Rust, nằm trong monorepo oxc (parser, minifier, formatter…); CI ci.yml chạy Linux/ARM64/Mac và nhiều job khác. Chưa đọc mã luật lint cụ thể. |
+| Nguồn | [README](https://github.com/oxc-project/oxc/blob/98d0dc75a2994cb71011aadc04e97ac21d8921a9/README.md) · [LICENSE](https://github.com/oxc-project/oxc/blob/98d0dc75a2994cb71011aadc04e97ac21d8921a9/LICENSE) · [Cargo.toml](https://github.com/oxc-project/oxc/blob/98d0dc75a2994cb71011aadc04e97ac21d8921a9/Cargo.toml) · [workflow ci.yml](https://github.com/oxc-project/oxc/blob/98d0dc75a2994cb71011aadc04e97ac21d8921a9/.github/workflows/ci.yml) |
+
+<a id="ch-pocketbase"></a>
+
+### PocketBase
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/pocketbase/pocketbase |
+| License | MIT |
+| Phiên bản đã đọc | `7f2773ec234b62d0b80ca47c508397cb3d0da3ea` (commit 2026-10-26) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, go.mod, workflow release.yaml; chưa chạy upstream |
+| Bảo trì | deprecated-by-readme |
+| Nhận định | Backend Go một file (SQLite, auth, realtime). README đầu trang cho biết repo đã chuyển sang máy chủ riêng của tác giả; changelog nói bản GitHub này gần như là bản cuối, bản kế tiếp sẽ lấy từ ganigeorgiev.com (lúc đọc, theo changelog, chưa có gì ở đó). Cờ archived chưa xác nhận bằng API. Cần theo dõi nơi phát hành mới trước khi chọn dùng. |
+| Nguồn | [README](https://github.com/pocketbase/pocketbase/blob/7f2773ec234b62d0b80ca47c508397cb3d0da3ea/README.md) · [LICENSE](https://github.com/pocketbase/pocketbase/blob/7f2773ec234b62d0b80ca47c508397cb3d0da3ea/LICENSE.md) · [go.mod](https://github.com/pocketbase/pocketbase/blob/7f2773ec234b62d0b80ca47c508397cb3d0da3ea/go.mod) · [workflow release.yaml](https://github.com/pocketbase/pocketbase/blob/7f2773ec234b62d0b80ca47c508397cb3d0da3ea/.github/workflows/release.yaml) |
+
+<a id="ch-pre-commit"></a>
+
+### pre-commit
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/pre-commit/pre-commit |
+| License | MIT |
+| Phiên bản đã đọc | `ba5c4209a6d561b0dff5db24620778d2133d068e` (commit 2026-11-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, setup.cfg, workflow main.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Framework quản lý hook git đa ngôn ngữ (Python); README gốc rất ngắn, tài liệu nằm ở pre-commit.com (chưa đọc). CI chạy trên Linux và Windows. |
+| Nguồn | [README](https://github.com/pre-commit/pre-commit/blob/ba5c4209a6d561b0dff5db24620778d2133d068e/README.md) · [LICENSE](https://github.com/pre-commit/pre-commit/blob/ba5c4209a6d561b0dff5db24620778d2133d068e/LICENSE) · [setup.cfg](https://github.com/pre-commit/pre-commit/blob/ba5c4209a6d561b0dff5db24620778d2133d068e/setup.cfg) · [workflow main.yml](https://github.com/pre-commit/pre-commit/blob/ba5c4209a6d561b0dff5db24620778d2133d068e/.github/workflows/main.yml) |
+
+<a id="ch-pyright"></a>
+
+### pyright
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/pyright |
+| License | MIT |
+| Phiên bản đã đọc | `2981f9f1ce41be5c15667da1f7a3cfda4f245089` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.txt, workflow build.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Type checker Python của Microsoft (TypeScript, monorepo lerna) với CLI và extension VS Code; có AI_POLICY.md và workflow mypy_primer so sánh kết quả. Chưa đọc mã triển khai. |
+| Nguồn | [README](https://github.com/microsoft/pyright/blob/2981f9f1ce41be5c15667da1f7a3cfda4f245089/README.md) · [LICENSE](https://github.com/microsoft/pyright/blob/2981f9f1ce41be5c15667da1f7a3cfda4f245089/LICENSE.txt) · [workflow build.yml](https://github.com/microsoft/pyright/blob/2981f9f1ce41be5c15667da1f7a3cfda4f245089/.github/workflows/build.yml) |
+
+<a id="ch-qodo-merge"></a>
+
+### Qodo Merge
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/The-PR-Agent/pr-agent |
+| License | MIT |
+| Phiên bản đã đọc | `48edc526e369bc2dc8cd70992661d66a3977621e` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, workflow build-and-test.yaml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | PR-Agent: tác tử review PR bằng AI mã nguồn mở, README nói rõ đây là dự án legacy do cộng đồng duy trì và khác với dịch vụ Qodo Merge thương mại. Không nên đánh đồng hai thứ khi so sánh tính năng/giá. Tuyên bố tính năng khác trong README chưa kiểm **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/The-PR-Agent/pr-agent/blob/48edc526e369bc2dc8cd70992661d66a3977621e/README.md) · [LICENSE](https://github.com/The-PR-Agent/pr-agent/blob/48edc526e369bc2dc8cd70992661d66a3977621e/LICENSE) · [workflow build-and-test.yaml](https://github.com/The-PR-Agent/pr-agent/blob/48edc526e369bc2dc8cd70992661d66a3977621e/.github/workflows/build-and-test.yaml) |
+
+<a id="ch-release-please"></a>
+
+### release-please
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/googleapis/release-please |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ea20bc261acd75149f0be90890bb9c90e681eea7` (commit 2026-11-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, workflow ci.yaml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Tự động hóa changelog, release PR và tăng version từ Conventional Commits; README nói rõ không xử lý publish lên package manager và không hỗ trợ quy trình nhánh phức tạp. CI ci.yaml có test, lint, Windows. |
+| Nguồn | [README](https://github.com/googleapis/release-please/blob/ea20bc261acd75149f0be90890bb9c90e681eea7/README.md) · [LICENSE](https://github.com/googleapis/release-please/blob/ea20bc261acd75149f0be90890bb9c90e681eea7/LICENSE) · [package.json](https://github.com/googleapis/release-please/blob/ea20bc261acd75149f0be90890bb9c90e681eea7/package.json) · [workflow ci.yaml](https://github.com/googleapis/release-please/blob/ea20bc261acd75149f0be90890bb9c90e681eea7/.github/workflows/ci.yaml) |
+
+<a id="ch-renovate"></a>
+
+### Renovate
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/renovatebot/renovate |
+| License | AGPL-3.0 |
+| Phiên bản đã đọc | `d7353a43d9196f0bfe5e5b0fcd89b19406a92aa0` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc package.json, license, workflow build.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Công cụ tự cập nhật dependency (TypeScript); license AGPL-3.0 nên cần cân nhắc nếu sửa mã và cung cấp qua mạng. CI build.yml có nhiều job lint/build. |
+| Nguồn | [README](https://github.com/renovatebot/renovate/blob/d7353a43d9196f0bfe5e5b0fcd89b19406a92aa0/package.json) · [LICENSE](https://github.com/renovatebot/renovate/blob/d7353a43d9196f0bfe5e5b0fcd89b19406a92aa0/license) · [workflow build.yml](https://github.com/renovatebot/renovate/blob/d7353a43d9196f0bfe5e5b0fcd89b19406a92aa0/.github/workflows/build.yml) |
+
+<a id="ch-reviewdog"></a>
+
+### reviewdog
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/reviewdog/reviewdog |
+| License | MIT |
+| Phiên bản đã đọc | `5bfadf3557c14f3c44438a596281ea7fe6fd6af4` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, workflow go.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Công cụ Go đẩy kết quả linter thành comment review trên PR/CI. README gốc ngắn trong phần đã đọc, chi tiết tích hợp chưa đọc đầy đủ. |
+| Nguồn | [README](https://github.com/reviewdog/reviewdog/blob/5bfadf3557c14f3c44438a596281ea7fe6fd6af4/README.md) · [LICENSE](https://github.com/reviewdog/reviewdog/blob/5bfadf3557c14f3c44438a596281ea7fe6fd6af4/LICENSE) · [workflow go.yml](https://github.com/reviewdog/reviewdog/blob/5bfadf3557c14f3c44438a596281ea7fe6fd6af4/.github/workflows/go.yml) |
+
+<a id="ch-ruff"></a>
+
+### ruff
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/astral-sh/ruff |
+| License | MIT |
+| Phiên bản đã đọc | `09a6006c81409f949d3ffff70b5947abe27a0ce0` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Cargo.toml, workflow ci.yaml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Linter/formatter Python viết bằng Rust (Astral), Cargo workspace nhiều crate; CI rất đầy đủ, có security-review và ai-policy workflow. Chưa đọc mã luật cụ thể. |
+| Nguồn | [README](https://github.com/astral-sh/ruff/blob/09a6006c81409f949d3ffff70b5947abe27a0ce0/README.md) · [LICENSE](https://github.com/astral-sh/ruff/blob/09a6006c81409f949d3ffff70b5947abe27a0ce0/LICENSE) · [Cargo.toml](https://github.com/astral-sh/ruff/blob/09a6006c81409f949d3ffff70b5947abe27a0ce0/Cargo.toml) · [workflow ci.yaml](https://github.com/astral-sh/ruff/blob/09a6006c81409f949d3ffff70b5947abe27a0ce0/.github/workflows/ci.yaml) |
+
+<a id="ch-s-remote"></a>
+
+### S-remote
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/thsangyk-oss/sremote |
+| License | không có file LICENSE (package.json khai ISC) |
+| Phiên bản đã đọc | `e715bf025c484aae67f06d06b65113ed0b149034` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, package.json; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Terminal và truy cập từ xa tự host, đi trực tiếp qua Tailscale (README: không relay, không tài khoản, không cloud **(chưa xác minh)**); bộ cài tải zip từ release, chạy npm install và đăng ký autostart nên cần soát trước khi chạy. Thiếu file LICENSE, package.json khai ISC; repo do một người duy trì, không có CI. |
+| Nguồn | [README](https://github.com/thsangyk-oss/sremote/blob/e715bf025c484aae67f06d06b65113ed0b149034/README.md) · [package.json](https://github.com/thsangyk-oss/sremote/blob/e715bf025c484aae67f06d06b65113ed0b149034/package.json) |
+
+<a id="ch-slsa"></a>
+
+### SLSA
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/slsa-framework/slsa |
+| License | Community Specification License 1.0 |
+| Phiên bản đã đọc | `b2d82a4ee232f7a85d7311bcfe54cfa3ccdd500c` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, workflow lint.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Đặc tả khung chuỗi cung ứng phần mềm SLSA (spec/) và nguồn website slsa.dev (www/), không phải công cụ chạy được. Số phiên bản đặc tả cụ thể chưa đọc trong spec/ ở lượt này, nên mốc v1.2 trong ghi chú cũ chưa xác minh lại. |
+| Nguồn | [README](https://github.com/slsa-framework/slsa/blob/b2d82a4ee232f7a85d7311bcfe54cfa3ccdd500c/README.md) · [LICENSE](https://github.com/slsa-framework/slsa/blob/b2d82a4ee232f7a85d7311bcfe54cfa3ccdd500c/LICENSE.md) · [workflow lint.yml](https://github.com/slsa-framework/slsa/blob/b2d82a4ee232f7a85d7311bcfe54cfa3ccdd500c/.github/workflows/lint.yml) |
+
+<a id="ch-spring-boot"></a>
+
+### Spring Boot
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/spring-projects/spring-boot |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ebb5e11c70c50469c45f8aada56dd6d477c6b77f` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.adoc, LICENSE.txt, gradle.properties; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-21) |
+| Nhận định | Khung ứng dụng Java/Spring có quan điểm riêng, chạy bằng `java -jar` hoặc WAR, kèm starter và CLI. Đáng tham khảo cho backend doanh nghiệp; phiên bản trên main là SNAPSHOT, không phải bản phát hành (cần đối chiếu tag phát hành khi tích hợp). |
+| Nguồn | [README.adoc](https://github.com/spring-projects/spring-boot/blob/ebb5e11c70c50469c45f8aada56dd6d477c6b77f/README.adoc) · [LICENSE.txt](https://github.com/spring-projects/spring-boot/blob/ebb5e11c70c50469c45f8aada56dd6d477c6b77f/LICENSE.txt) · [gradle.properties](https://github.com/spring-projects/spring-boot/blob/ebb5e11c70c50469c45f8aada56dd6d477c6b77f/gradle.properties) |
+
+<a id="ch-strykerjs"></a>
+
+### StrykerJS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/stryker-mutator/stryker-js |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `8f24ef0be3a2119fc44ac48bfce58930ab2c9032` (commit 2026-10-29) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, lerna.json; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-10-29) |
+| Nhận định | Công cụ mutation testing cho JS/TS, tổ chức monorepo gồm core và các runner/checker. Dùng để đo chất lượng bộ test, không thay thế test; chi phí chạy lớn trên dự án lớn (chưa xác minh, suy từ bản chất mutation testing). |
+| Nguồn | [README.md](https://github.com/stryker-mutator/stryker-js/blob/8f24ef0be3a2119fc44ac48bfce58930ab2c9032/README.md) · [LICENSE](https://github.com/stryker-mutator/stryker-js/blob/8f24ef0be3a2119fc44ac48bfce58930ab2c9032/LICENSE) · [lerna.json](https://github.com/stryker-mutator/stryker-js/blob/8f24ef0be3a2119fc44ac48bfce58930ab2c9032/lerna.json) |
+
+<a id="ch-supabase"></a>
+
+### Supabase
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/supabase/supabase |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `fb3ed7ee3c7a9263748ae9d577f7dc8e0c484b1e` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, docker/.env.example, docker/setup.sh; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-23) |
+| Nhận định | Nền tảng Postgres + Auth + Storage + Realtime + Edge Functions; tự host qua docker compose. Rủi ro: .env.example mang khóa mẫu công khai, bắt buộc đổi secret trước khi triển khai thật; đây là tuyên bố từ file mẫu, chưa chạy thử. |
+| Nguồn | [README.md](https://github.com/supabase/supabase/blob/fb3ed7ee3c7a9263748ae9d577f7dc8e0c484b1e/README.md) · [LICENSE](https://github.com/supabase/supabase/blob/fb3ed7ee3c7a9263748ae9d577f7dc8e0c484b1e/LICENSE) · [.env.example](https://github.com/supabase/supabase/blob/fb3ed7ee3c7a9263748ae9d577f7dc8e0c484b1e/docker/.env.example) · [setup.sh](https://github.com/supabase/supabase/blob/fb3ed7ee3c7a9263748ae9d577f7dc8e0c484b1e/docker/setup.sh) |
+
+<a id="ch-svelte"></a>
+
+### Svelte
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/sveltejs/svelte |
+| License | MIT |
+| Phiên bản đã đọc | `66417f4fe68158a818d29cee890ba2a63637d34b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, packages/svelte/package.json; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-23) |
+| Nhận định | Trình biên dịch component sinh JS cập nhật DOM trực tiếp (Svelte 5, runes). Hệ sinh thái khung/bộ công cụ nằm ở repo khác (SvelteKit) nên hồ sơ này chỉ phản ánh lõi compiler. |
+| Nguồn | [README.md](https://github.com/sveltejs/svelte/blob/66417f4fe68158a818d29cee890ba2a63637d34b/README.md) · [LICENSE.md](https://github.com/sveltejs/svelte/blob/66417f4fe68158a818d29cee890ba2a63637d34b/LICENSE.md) · [package.json](https://github.com/sveltejs/svelte/blob/66417f4fe68158a818d29cee890ba2a63637d34b/packages/svelte/package.json) |
+
+<a id="ch-tailwind-css"></a>
+
+### Tailwind CSS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/tailwindlabs/tailwindcss |
+| License | MIT |
+| Phiên bản đã đọc | `5b6219b439e374e47c84e019d2ceaa64cce244e1` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, packages/tailwindcss/package.json; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-23) |
+| Nhận định | Framework CSS utility-first v4, bộ quét class viết bằng Rust (crates/oxide) và các tích hợp Vite/PostCSS/webpack/CLI. Đáng tham khảo cho cấu hình CSS-first; v4 đổi cách cấu hình so với v3 (di cư cần công cụ upgrade trong packages). |
+| Nguồn | [README.md](https://github.com/tailwindlabs/tailwindcss/blob/5b6219b439e374e47c84e019d2ceaa64cce244e1/README.md) · [LICENSE](https://github.com/tailwindlabs/tailwindcss/blob/5b6219b439e374e47c84e019d2ceaa64cce244e1/LICENSE) · [package.json](https://github.com/tailwindlabs/tailwindcss/blob/5b6219b439e374e47c84e019d2ceaa64cce244e1/packages/tailwindcss/package.json) |
+
+<a id="ch-tanstack-query"></a>
+
+### TanStack Query
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/TanStack/query |
+| License | MIT |
+| Phiên bản đã đọc | `9784d86d3301a372838909273f09194719c036a0` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, packages/query-core/package.json; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-23) |
+| Nhận định | Thư viện quản lý server state/cache với lõi framework-agnostic và nhiều adapter. Kho còn nhiều gói experimental (hậu tố -experimental, react-query-next-experimental), không nên coi mọi gói đều ổn định. |
+| Nguồn | [README.md](https://github.com/TanStack/query/blob/9784d86d3301a372838909273f09194719c036a0/README.md) · [LICENSE](https://github.com/TanStack/query/blob/9784d86d3301a372838909273f09194719c036a0/LICENSE) · [package.json](https://github.com/TanStack/query/blob/9784d86d3301a372838909273f09194719c036a0/packages/query-core/package.json) |
+
+<a id="ch-tauri"></a>
+
+### Tauri
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/tauri-apps/tauri |
+| License | MIT OR Apache-2.0 (hai file LICENSE-MIT, LICENSE-APACHE-2.0) |
+| Phiên bản đã đọc | `ec0007903beef8bd0848fa4fea58dba525666736` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE-MIT, LICENSE-APACHE-2.0, LICENSE.spdx, crates/tauri/Cargo.toml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-23) |
+| Nhận định | Framework app desktop/mobile với frontend web và lõi Rust, có bundler, CLI, driver và schema generator. README ghi trạng thái stable; thông tin v3 alpha trong catalog **(chưa xác minh)** vì chỉ đọc nhánh mặc định. |
+| Nguồn | [README.md](https://github.com/tauri-apps/tauri/blob/ec0007903beef8bd0848fa4fea58dba525666736/README.md) · [LICENSE-MIT](https://github.com/tauri-apps/tauri/blob/ec0007903beef8bd0848fa4fea58dba525666736/LICENSE-MIT) · [LICENSE-APACHE-2.0](https://github.com/tauri-apps/tauri/blob/ec0007903beef8bd0848fa4fea58dba525666736/LICENSE-APACHE-2.0) · [LICENSE.spdx](https://github.com/tauri-apps/tauri/blob/ec0007903beef8bd0848fa4fea58dba525666736/LICENSE.spdx) · [Cargo.toml](https://github.com/tauri-apps/tauri/blob/ec0007903beef8bd0848fa4fea58dba525666736/crates/tauri/Cargo.toml) |
+
+<a id="ch-terraform"></a>
+
+### Terraform
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/hashicorp/terraform |
+| License | BSL-1.1 (Business Source License 1.1, licensor IBM) |
+| Phiên bản đã đọc | `2a1f0dad5a56d7c4109d43d5669b396829851588` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, go.mod, version/VERSION; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-23) |
+| Nhận định | Công cụ IaC (plan/apply, resource graph) viết bằng Go. Không phải mã nguồn mở theo OSI: dùng nội bộ/production được, nhưng cấm đóng gói thành dịch vụ cạnh tranh; OpenTofu là lựa chọn thay thế license mở (chưa đọc trong lô này). |
+| Nguồn | [README.md](https://github.com/hashicorp/terraform/blob/2a1f0dad5a56d7c4109d43d5669b396829851588/README.md) · [LICENSE](https://github.com/hashicorp/terraform/blob/2a1f0dad5a56d7c4109d43d5669b396829851588/LICENSE) · [go.mod](https://github.com/hashicorp/terraform/blob/2a1f0dad5a56d7c4109d43d5669b396829851588/go.mod) · [VERSION](https://github.com/hashicorp/terraform/blob/2a1f0dad5a56d7c4109d43d5669b396829851588/version/VERSION) |
+
+<a id="ch-uv"></a>
+
+### uv
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/astral-sh/uv |
+| License | Apache-2.0 OR MIT |
+| Phiên bản đã đọc | `4f3c8b7d26aba29fbeced456613e9b2b5fef9a5a` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE-MIT, LICENSE-APACHE, crates/uv/Cargo.toml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-23) |
+| Nhận định | Trình quản lý gói/dự án Python viết bằng Rust thay pip/pip-tools/pipx/poetry/virtualenv. Con số "nhanh hơn pip 10-100 lần" là tuyên bố của tác giả **(chưa xác minh)**; vẫn 0.x nên giao diện có thể đổi. |
+| Nguồn | [README.md](https://github.com/astral-sh/uv/blob/4f3c8b7d26aba29fbeced456613e9b2b5fef9a5a/README.md) · [LICENSE-MIT](https://github.com/astral-sh/uv/blob/4f3c8b7d26aba29fbeced456613e9b2b5fef9a5a/LICENSE-MIT) · [LICENSE-APACHE](https://github.com/astral-sh/uv/blob/4f3c8b7d26aba29fbeced456613e9b2b5fef9a5a/LICENSE-APACHE) · [Cargo.toml](https://github.com/astral-sh/uv/blob/4f3c8b7d26aba29fbeced456613e9b2b5fef9a5a/crates/uv/Cargo.toml) |
+
+<a id="ch-vite"></a>
+
+### Vite
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vitejs/vite |
+| License | MIT |
+| Phiên bản đã đọc | `3567471998e3da315675086f44368e266c9c0e33` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, packages/vite/package.json; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-20) |
+| Nhận định | Công cụ build/dev server frontend với HMR và plugin API, kèm create-vite và plugin-legacy. Nhánh main đang là beta, nên đối chiếu tag ổn định trước khi ghim phiên bản. |
+| Nguồn | [README.md](https://github.com/vitejs/vite/blob/3567471998e3da315675086f44368e266c9c0e33/README.md) · [LICENSE](https://github.com/vitejs/vite/blob/3567471998e3da315675086f44368e266c9c0e33/LICENSE) · [package.json](https://github.com/vitejs/vite/blob/3567471998e3da315675086f44368e266c9c0e33/packages/vite/package.json) |
+
+<a id="ch-vue"></a>
+
+### Vue
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vuejs/core |
+| License | MIT |
+| Phiên bản đã đọc | `44234e82bf4fcb234968061d7a51e37ea9f39e71` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-23) |
+| Nhận định | Lõi Vue 3 (reactivity, compiler, runtime DOM/SSR). Repo issue dành riêng cho bug/feature theo README; Nuxt và hệ sinh thái nằm ở repo khác. |
+| Nguồn | [README.md](https://github.com/vuejs/core/blob/44234e82bf4fcb234968061d7a51e37ea9f39e71/README.md) · [LICENSE](https://github.com/vuejs/core/blob/44234e82bf4fcb234968061d7a51e37ea9f39e71/LICENSE) · [package.json](https://github.com/vuejs/core/blob/44234e82bf4fcb234968061d7a51e37ea9f39e71/package.json) |
