@@ -6,7 +6,7 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [Stable Diffusion WebUI](../../14-voice-multimodal/README.md) | `AUTOMATIC1111/stable-diffusion-webui` | AGPL-3.0 | 165.208 | chưa chuẩn hóa | 14 | dừng phát triển; |
+| [Stable Diffusion WebUI](../../14-voice-multimodal/README.md#ch-stable-diffusion-webui) | `AUTOMATIC1111/stable-diffusion-webui` | AGPL-3.0 | 165.373 | đọc tài liệu 2026-11-23 | 14 | dừng phát triển; |
 | [ComfyUI](../../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026) | `Comfy-Org/ComfyUI` | GPL-3.0 | 145.616 | đọc tài liệu 2026-11-08 | 14 | 122k–136k; |
 | [Stable Diffusion v1 — CompVis](../../14-voice-multimodal/README.md#anhkysuai-2026-11-23-stable-diffusion-v1-compvis) | `CompVis/stable-diffusion` | CreativeML Open RAIL-M | 73.598 | đọc tài liệu 2026-11-23 | 14 | Triển khai và tài liệu tham chiếu cho Stable Diffusion v1 tạo ảnh từ văn bản trong latent space. |
 | [Fooocus](../../14-voice-multimodal/README.md#ch-fooocus) | `lllyasviel/Fooocus` | GPL-3.0 | 53.776 | đọc tài liệu 2026-11-23 | 14 | LTS; |

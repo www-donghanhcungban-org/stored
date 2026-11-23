@@ -177,3 +177,23 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 Linter JSON/YAML, ruleset sẵn OpenAPI/AsyncAPI/Arazzo v1 (hỗ trợ Arazzo 1.1 chưa xác minh); CLI 6.17.0; ★ 2/11/2026 (GitHub search API), mục 05 §Nâng trần 2/11
 
 **Hồ sơ gốc:** [mục 05](../05-low-code-llm-platforms/README.md) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-spectral"></a>
+
+### Spectral
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/stoplightio/spectral |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `16aae2b6f4448e9bf1a5bbb093601149f0ae0ac2` (commit 2026-11-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/commit.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-13) |
+| Nhận định | Linter JSON/YAML theo ruleset tùy chỉnh, có ruleset dựng sẵn cho OpenAPI v2/3.0/3.1/3.2, AsyncAPI, Arazzo v1; monorepo yarn. |
+| Nguồn | [README](https://github.com/stoplightio/spectral/blob/16aae2b6f4448e9bf1a5bbb093601149f0ae0ac2/README.md) · [LICENSE](https://github.com/stoplightio/spectral/blob/16aae2b6f4448e9bf1a5bbb093601149f0ae0ac2/LICENSE) · [manifest](https://github.com/stoplightio/spectral/blob/16aae2b6f4448e9bf1a5bbb093601149f0ae0ac2/package.json) · [workflow](https://github.com/stoplightio/spectral/blob/16aae2b6f4448e9bf1a5bbb093601149f0ae0ac2/.github/workflows/commit.yml) |

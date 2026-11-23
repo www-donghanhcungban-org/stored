@@ -201,10 +201,10 @@
 | [AeroSpace](../../35-desktop-productivity-apps/README.md#anhkysuai-nikitabobko-aerospace) | `nikitabobko/AeroSpace` | MIT | 23.926 | đọc tài liệu 2026-11-23 | 35 | Trình quản lý cửa sổ dạng tiling kiểu i3 cho macOS. |
 | [WinBoat](../../35-desktop-productivity-apps/README.md#anhkysuai-winboat-org-winboat) | `winboat-org/winboat` | MIT cho ứng dụng; Windows và phần mềm khách có giấy phép riêng | 23.435 | đọc tài liệu 2026-11-23 | 35 | Ứng dụng Electron giúp chạy cửa sổ phần mềm Windows trong desktop Linux. |
 | [voyager](../../35-desktop-productivity-apps/README.md#chuyen-voyager) | `voyager-crew/voyager` | GPL-3.0 | 20.655 | đọc tài liệu 2026-11-18 | 35 | Tiện ích trình duyệt bổ sung thư mục, dòng thời gian, xuất hội thoại và chép công thức cho Gemini, AI Studio, ChatGPT, Claude, DeepSeek và Kimi; |
-| [Applite](../../35-desktop-productivity-apps/README.md) | `milanvarady/Applite` | MIT | 7.104 | chưa chuẩn hóa | 35 | GUI Homebrew cho cask/app trên macOS; |
-| [Cork](../../35-desktop-productivity-apps/README.md) | `buresdv/Cork` | provisional (không OSI) | 4.717 | chưa chuẩn hóa | 35 | GUI Homebrew; |
-| [BrewUI](../../35-desktop-productivity-apps/README.md) | `Homebrew/BrewUI` | AGPL-3.0 | 2.769 | chưa chuẩn hóa | 35 | GUI chính thức của Homebrew (SwiftUI, macOS 26+), cask homebrew-app, ra cùng Homebrew 7.0.0; |
-| [CleanMyLinux](../../35-desktop-productivity-apps/README.md) | `Better-Linux/CleanMyLinux` | MIT | 10 | chưa chuẩn hóa | 35 | App dọn dẹp Linux desktop (Tauri v2+Rust+React19), gỡ app + cập nhật đa package manager, có ml/ phân loại app. |
+| [Applite](../../35-desktop-productivity-apps/README.md#ch-applite) | `milanvarady/Applite` | MIT | 7.174 | đọc tài liệu 2026-11-23 | 35 | GUI Homebrew cho cask/app trên macOS; |
+| [Cork](../../35-desktop-productivity-apps/README.md#ch-cork) | `buresdv/Cork` | Provisional custom license (dựa trên Commons Clause, source- | 4.733 | đọc tài liệu 2026-11-23 | 35 | GUI Homebrew; |
+| [BrewUI](../../35-desktop-productivity-apps/README.md#ch-brewui) | `Homebrew/BrewUI` | AGPL-3.0 | 2.881 | đọc tài liệu 2026-11-23 | 35 | GUI chính thức của Homebrew (SwiftUI, macOS 26+), cask homebrew-app, ra cùng Homebrew 7.0.0; |
+| [CleanMyLinux](../../35-desktop-productivity-apps/README.md#ch-cleanmylinux) | `Better-Linux/CleanMyLinux` | MIT | 10 | đọc tài liệu 2026-11-23 | 35 | App dọn dẹp Linux desktop (Tauri v2+Rust+React19), gỡ app + cập nhật đa package manager, có ml/ phân loại app. |
 
 ## Ứng dụng tự host (ảnh, git, file...) (`self-hosted-app`, 9)
 

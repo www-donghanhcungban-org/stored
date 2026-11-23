@@ -27,7 +27,7 @@
 | [skill-scanner (Cisco)](../../12-ai-security-guardrails/README.md#ch-skill-scanner-cisco) | `cisco-ai-defense/skill-scanner` | Apache-2.0 | 2.674 | đọc tài liệu 2026-11-23 | 12 | Quét skill best-effort; |
 | [Cisco MCP Scanner](../../04-protocols-standards/README.md#ch-cisco-mcp-scanner) | `cisco-ai-defense/mcp-scanner` | Apache-2.0 | 1.127 | đọc tài liệu 2026-11-23 | 04 | Quét tool MCP bằng YARA, LLM judge, API Cisco AI Defense, readiness tĩnh; |
 | [AgentDojo](../../11-browser-computer-use-sandbox/README.md#ch-agentdojo) | `ethz-spylab/agentdojo` | MIT | 1.069 | đọc tài liệu 2026-11-23 | 11 | Đo utility + tỷ lệ tấn công prompt injection thành công trên 4 suite (workspace, slack, travel, banking), registry tấn công và phòng thủ (tool_filter, detector); |
-| [Open-Prompt-Injection](../../17-prompt-engineering/README.md) | `liu00222/Open-Prompt-Injection` | MIT | 510 | chưa chuẩn hóa | 17 | Benchmark tấn công/phòng thủ prompt injection, đo ASV, detector DataSentinel, PromptLocate (checkpoint Google Drive); |
+| [Open-Prompt-Injection](../../17-prompt-engineering/README.md#ch-open-prompt-injection) | `liu00222/Open-Prompt-Injection` | MIT | 518 | đọc tài liệu 2026-11-23 | 17 | Benchmark tấn công/phòng thủ prompt injection, đo ASV, detector DataSentinel, PromptLocate (checkpoint Google Drive); |
 | [YesWeHack claude-kit](../../12-ai-security-guardrails/README.md#ch-yeswehack-claude-kit) | `yeswehack/claude-kit` | GPL-3.0 | 357 | đọc tài liệu 2026-11-23 | 12 | Plugin Claude Code chính chủ YesWeHack: luật luôn bật qua hook SessionStart (chỉ cat file) + skill write/triage/gotchas (14 lớp lỗi) để báo cáo bug bounty chỉ từ bằng ch… |
 | [LLM Guard](../../12-ai-security-guardrails/README.md#ch-llm-guard) | `protectai/llm-guard` | MIT | — | đọc tài liệu 2026-11-23 | 12 | ~35 scanner; |
 | [OWASP MCP Top 10](../../12-ai-security-guardrails/README.md#ch-owasp-mcp-top-10) | `OWASP/www-project-mcp-top-10` | CC-BY-SA-4.0 | — | đọc tài liệu 2026-11-23 | 12 | . |
@@ -71,10 +71,10 @@
 | [Decepticon](../../12-ai-security-guardrails/README.md#ch-decepticon) | `BitterSecurity/Decepticon` | Apache-2.0 | 6.500 | đọc tài liệu 2026-11-23 | 12 | Agent red team tự chủ (LangGraph, 16 agent, Kali sandbox, Sliver C2, Neo4j KG); |
 | [Claude-BugHunter](../../12-ai-security-guardrails/README.md#ch-claude-bughunter) | `elementalsouls/Claude-BugHunter` | MIT (mã) + CC-BY-4.0 (nội dung) | 5.360 | đọc tài liệu 2026-11-23 | 12 | Clone đầy đủ 17/10/2026 (HEAD 35e7614): 83 skill (58 hunt-\*) + 15 command, dual-use săn lỗi/red-team; |
 | [PyRIT](../../12-ai-security-guardrails/README.md#ch-pyrit) | `microsoft/PyRIT` | MIT | 4.718 | đọc tài liệu 2026-11-23 | 12 | Red-team AI tạo sinh; |
-| [DeepTeam](../../17-prompt-engineering/README.md) | `confident-ai/deepteam` | Apache-2.0 | 3.079 | chưa chuẩn hóa | 17 | Red-team LLM/agent 50+ lỗ hổng; |
+| [DeepTeam](../../17-prompt-engineering/README.md#ch-deepteam) | `confident-ai/deepteam` | Apache-2.0 | 3.120 | đọc tài liệu 2026-11-23 | 17 | Red-team LLM/agent 50+ lỗ hổng; |
 | [MITRE ATLAS Data](../../12-ai-security-guardrails/README.md#ch-mitre-atlas-data) | `mitre-atlas/atlas-data` | Apache-2.0 | 203 | đọc tài liệu 2026-11-23 | 12 | Dữ liệu ATLAS YAML phát hành hằng tháng (2026.10: 16 tactic, 129 technique, 77 case study); |
 | [ARTEX](../../12-ai-security-guardrails/README.md) | `Autumn-27/ARTEX` | AGPL-3.0 | — | chưa chuẩn hóa | 12 | Agent pentest tự chủ (Go+Next.js); |
-| [Claude-Red (fork)](../../23-own-repos-lessons/README.md) | `www-donghanhcungban-org/Claude-Red` | MIT | — | chưa chuẩn hóa | 23 | Fork SnailSploit/claude-red v0.3.0: 78 SKILL.md red-team dual-use, manifest claude-skills.json; |
+| [Claude-Red (fork)](../../23-own-repos-lessons/README.md#ch-claude-red-fork) | `www-donghanhcungban-org/Claude-Red` | MIT | — | đọc tài liệu 2026-11-23 | 23 | Fork SnailSploit/claude-red v0.3.0: 78 SKILL.md red-team dual-use, manifest claude-skills.json; |
 
 ## Danh tính & truy cập (`identity-access`, 7)
 
@@ -94,5 +94,5 @@
 |---|---|---|---|---|---|---|
 | [uBlock](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-gorhill-ublock) | `gorhill/uBlock` | GPL-3.0 | 69.588 | đọc tài liệu 2026-11-23 | 35 | uBlock Origin: tiện ích trình duyệt chặn nội dung theo các bộ lọc và quy tắc. |
 | [Presidio](../../12-ai-security-guardrails/README.md#4e-kiểm-infographic-5-vị-trí-cần-đặt-guardrails-trong-ai-agent-ảnh-người-dùng-gửi-2026-11-02) | `data-privacy-stack/presidio` | MIT | 11.631 | đọc tài liệu 2026-11-02 | 12 | Phát hiện và che PII (text, ảnh, dữ liệu có cấu trúc; |
-| [VideoSeal](../../19-agentic-video-media/README.md) | `facebookresearch/videoseal` | MIT | 817 | chưa chuẩn hóa | 19 | Watermark ẩn ảnh/video (VideoSeal, PixelSeal, ChunkySeal) + WmForger thử tấn công; |
+| [VideoSeal](../../19-agentic-video-media/README.md#ch-videoseal) | `facebookresearch/videoseal` | MIT | 828 | đọc tài liệu 2026-11-23 | 19 | Watermark ẩn ảnh/video (VideoSeal, PixelSeal, ChunkySeal) + WmForger thử tấn công; |
 | [AudioSeal](../../14-voice-multimodal/README.md#ch-audioseal) | `facebookresearch/audioseal` | MIT | 802 | đọc tài liệu 2026-11-23 | 14 | Watermark âm thanh định vị theo đoạn, streaming từ v0.2; |

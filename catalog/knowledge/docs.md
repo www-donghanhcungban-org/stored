@@ -8,33 +8,33 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [Docusaurus](../../16-docs-tools/README.md) | `meta/docusaurus` | MIT | 66.600 | chưa chuẩn hóa | 16 | ; |
+| [Docusaurus](../../16-docs-tools/README.md#ch-docusaurus) | `meta/docusaurus` | MIT (docs: CC-BY-4.0 trong LICENSE-docs) | 66.788 | đọc tài liệu 2026-11-23 | 16 | ; |
 | [Jekyll](../../16-docs-tools/README.md#anhkysuai-jekyll-jekyll) | `jekyll/jekyll` | MIT | 51.793 | đọc tài liệu 2026-11-23 | 16 | Sinh website tĩnh từ Markdown và template Liquid, phù hợp blog và tài liệu. |
 | [Hexo](../../16-docs-tools/README.md#anhkysuai-hexojs-hexo) | `hexojs/hexo` | MIT | 41.782 | đọc tài liệu 2026-11-23 | 16 | Sinh blog tĩnh từ nội dung Markdown trên Node.js. |
 | [DevDocs](../../16-docs-tools/README.md#anhkysuai-freecodecamp-devdocs) | `freeCodeCamp/devdocs` | MPL-2.0 cho phần mềm; tài liệu nhập có license riêng | 39.658 | đọc tài liệu 2026-11-23 | 16 | Trình duyệt nhiều bộ tài liệu API có tìm kiếm và chế độ offline. |
 | [Backstage TechDocs](../../16-docs-tools/README.md#docs-version-trust-2026-11-02) | `backstage/backstage` | Apache-2.0 | 34.765 | đọc mã 2026-11-02 | 16 | Portal từ Spotify/CNCF: Catalog entity/owner + TechDocs prepare/generate/publish/reader. |
-| [Docsify](../../16-docs-tools/README.md) | `docsifyjs/docsify` | MIT | 31.572 | chưa chuẩn hóa | 16 | Render Markdown phía client; |
+| [Docsify](../../16-docs-tools/README.md#ch-docsify) | `docsifyjs/docsify` | MIT | 31.606 | đọc tài liệu 2026-11-23 | 16 | Render Markdown phía client; |
+| [GitBook (renderer mã mở)](../../16-docs-tools/README.md#ch-gitbook-renderer-ma-mo) | `GitbookIO/gitbook` | GPL-3.0 | 29.105 | đọc tài liệu 2026-11-23 | 16 | Phần render site GitBook (Next.js): route llms.txt, llms-full.txt, Markdown từng trang, MCP; |
 | [Swagger UI](../../34-backend-data-identity-integration/README.md#anhkysuai-swagger-api-swagger-ui) | `swagger-api/swagger-ui` | Apache-2.0 | 29.087 | đọc tài liệu 2026-11-23 | 34 | Giao diện hiển thị và tương tác với API sinh từ OpenAPI specification. |
-| [GitBook (renderer mã mở)](../../16-docs-tools/README.md) | `GitbookIO/gitbook` | GPL-3.0 | 29.082 | chưa chuẩn hóa | 16 | Phần render site GitBook (Next.js): route llms.txt, llms-full.txt, Markdown từng trang, MCP; |
+| [Material for MkDocs](../../16-docs-tools/README.md#ch-material-for-mkdocs) | `squidfunk/mkdocs-material` | MIT | 27.641 | đọc tài liệu 2026-11-23 | 16 | kế nhiệm Zensical. |
 | [Kuboard v4 Documentation](../../32-platform-delivery-engineering/README.md#anhkysuai-eip-work-kuboard-press) | `eip-work/kuboard-press` | UNLICENSED trong package.json; chưa thấy giấy phép mã nguồn gốc | 25.281 | đọc tài liệu 2026-11-23 | 32 | Mã nguồn website tài liệu song ngữ VitePress của Kuboard v4. |
-| [mdBook](../../16-docs-tools/README.md) | `rust-lang/mdBook` | MPL-2.0 | 22.253 | chưa chuẩn hóa | 16 | Dựng The Rust Book; |
-| [VitePress](../../16-docs-tools/README.md) | `vuejs/vitepress` | MIT | 18.450 | chưa chuẩn hóa | 16 | SSG Vite + Vue; |
-| [Scalar](../../16-docs-tools/README.md) | `scalar/scalar` | MIT | 16.356 | chưa chuẩn hóa | 16 | API reference từ OpenAPI + API client offline + gói openapi-to-markdown cho LLM; |
-| [Sphinx](../../16-docs-tools/README.md) | `sphinx-doc/sphinx` | BSD-2-Clause | 8.085 | chưa chuẩn hóa | 16 | Docs Python; |
-| [Zensical](../../16-docs-tools/README.md) | `zensical/zensical` | MIT | 6.056 | chưa chuẩn hóa | 16 | Kế nhiệm Material for MkDocs; |
-| [Fumadocs](../../16-docs-tools/README.md) | `fuma-nama/fumadocs` | MIT | — | chưa chuẩn hóa | 16 |  |
-| [Material for MkDocs](../../16-docs-tools/README.md) | `squidfunk/mkdocs-material` | MIT | — | chưa chuẩn hóa | 16 | kế nhiệm Zensical |
-| [Starlight](../../16-docs-tools/README.md) | `withastro/starlight` | MIT | — | chưa chuẩn hóa | 16 |  |
+| [mdBook](../../16-docs-tools/README.md#ch-mdbook) | `rust-lang/mdBook` | MPL-2.0 | 22.322 | đọc tài liệu 2026-11-23 | 16 | Dựng The Rust Book; |
+| [VitePress](../../16-docs-tools/README.md#ch-vitepress) | `vuejs/vitepress` | MIT | 18.521 | đọc tài liệu 2026-11-23 | 16 | SSG Vite + Vue; |
+| [Scalar](../../16-docs-tools/README.md#ch-scalar) | `scalar/scalar` | MIT | 16.451 | đọc tài liệu 2026-11-23 | 16 | API reference từ OpenAPI + API client offline + gói openapi-to-markdown cho LLM; |
+| [Fumadocs](../../16-docs-tools/README.md#ch-fumadocs) | `fuma-nama/fumadocs` | MIT | 13.697 | đọc tài liệu 2026-11-23 | 16 | . |
+| [Starlight](../../16-docs-tools/README.md#ch-starlight) | `withastro/starlight` | MIT | 9.643 | đọc tài liệu 2026-11-23 | 16 | . |
+| [Sphinx](../../16-docs-tools/README.md#ch-sphinx) | `sphinx-doc/sphinx` | BSD-2-Clause | 8.104 | đọc tài liệu 2026-11-23 | 16 | Docs Python; |
+| [Zensical](../../16-docs-tools/README.md#ch-zensical) | `zensical/zensical` | MIT | 6.249 | đọc tài liệu 2026-11-23 | 16 | Kế nhiệm Material for MkDocs; |
 
 ## Kiểm tài liệu (lint, link, chính tả) (`docs-quality`, 6)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [markdownlint](../../16-docs-tools/README.md) | `DavidAnson/markdownlint` | MIT | 6.410 | chưa chuẩn hóa | 16 | Engine lint Markdown của markdownlint-cli2 (kho này dùng trong CI); |
+| [markdownlint](../../16-docs-tools/README.md#ch-markdownlint) | `DavidAnson/markdownlint` | MIT | 6.448 | đọc tài liệu 2026-11-23 | 16 | Engine lint Markdown của markdownlint-cli2 (kho này dùng trong CI); |
 | [Vale](../../16-docs-tools/README.md#factory-docs-executable-2026-11-04) | `vale-cli/vale` | MIT | 6.313 | đọc mã 2026-11-04 | 16 | Linter văn xuôi hiểu markup, style Microsoft/Google/Red Hat qua Packages; |
-| [typos](../../16-docs-tools/README.md) | `crate-ci/typos` | MIT OR Apache-2.0 | 4.204 | chưa chuẩn hóa | 16 | Bắt lỗi gõ ít false positive, chạy được trên PR; |
-| [lychee](../../16-docs-tools/README.md) | `lycheeverse/lychee` | MIT OR Apache-2.0 | 4.078 | chưa chuẩn hóa | 16 | Kiểm link Rust bất đồng bộ, cache, kiểm anchor, lychee-action; |
-| [CSpell](../../16-docs-tools/README.md) | `streetsidesoftware/cspell` | MIT | 1.703 | chưa chuẩn hóa | 16 | Spell check cho code và docs; |
+| [typos](../../16-docs-tools/README.md#ch-typos) | `crate-ci/typos` | MIT OR Apache-2.0 | 4.232 | đọc tài liệu 2026-11-23 | 16 | Bắt lỗi gõ ít false positive, chạy được trên PR; |
+| [lychee](../../16-docs-tools/README.md#ch-lychee) | `lycheeverse/lychee` | MIT OR Apache-2.0 | 4.156 | đọc tài liệu 2026-11-23 | 16 | Kiểm link Rust bất đồng bộ, cache, kiểm anchor, lychee-action; |
+| [CSpell](../../16-docs-tools/README.md#ch-cspell) | `streetsidesoftware/cspell` | MIT | 1.709 | đọc tài liệu 2026-11-23 | 16 | Spell check cho code và docs; |
 | [Sybil](../../16-docs-tools/README.md#factory-docs-executable-2026-11-04) | `simplistix/sybil` | MIT | — | đọc mã 2026-11-04 | 16 | Đọc mã 4/11/2026: parser ví dụ reST/Markdown/MyST đưa vào pytest; |
 
 ## Tài liệu cho agent (llms.txt, context) (`docs-for-agents`, 5)
@@ -44,15 +44,15 @@
 | [Context7](../../16-docs-tools/README.md#docs-version-trust-2026-11-02) | `upstash/context7` | MIT (client/MCP code) | 64.069 | đọc mã 2026-11-02 | 16 | Đọc sâu client/MCP/API guide: version số chưa index có thể fallback thành công; |
 | [Obsidian Skills](../../20-claude-plugins-ecosystem/README.md#3zc-kiểm-bài-5-repo-skill-đáng-lưu-matt-pocock-addy-osmani-cloudflare-obsidian-google-egm-bài-người-dùng-gửi-đọc-mã-16112026) | `obsidianmd/obsidian-skills` | MIT | 52.915 | đọc mã 2026-11-16 | 20 | Skill chính thức của Obsidian (Steph Ango/kepano): obsidian-markdown, obsidian-bases, json-canvas, obsidian-cli, obsidian-headless, defuddle, knap theo chuẩn Agent Skill… |
 | [book-to-skill](../../16-docs-tools/README.md#chuyen-book-to-skill) | `virgiliojr94/book-to-skill` | MIT | 38.301 | đọc tài liệu 2026-11-18 | 16 | Biến sách kỹ thuật hoặc thư mục tài liệu (PDF, EPUB, DOCX, MD, HTML…) thành agent skill có cấu trúc: SKILL.md, file theo chương, glossary, để agent nạp khi cần. |
+| [llms.txt](../../16-docs-tools/README.md#ch-llms-txt) | `AnswerDotAI/llms-txt` | Apache-2.0 | 2.701 | đọc tài liệu 2026-11-23 | 16 | đề xuất 9/2024. |
 | [agent-notion-template-docs (notion-doc)](../../16-docs-tools/README.md#xlsx-2026-11-23-agent-notion-template-docs) | `heyman333/agent-notion-template-docs` | MIT | 106 | đọc tài liệu 2026-11-23 | 16 | Skill notion-doc: tài liệu HTML kiểu Notion từ một template chuẩn + lint + hook PostToolUse fail-open + workflow tuần so token với trang Notion công khai của bên thứ ba; |
-| [llms.txt](../../16-docs-tools/README.md) | `AnswerDotAI/llms-txt` | Apache-2.0 | — | chưa chuẩn hóa | 16 | đề xuất 9/2024 |
 
 ## Sơ đồ & hình vẽ (`diagram`, 5)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [archify](../../16-docs-tools/README.md#chuyen-archify) | `tt-a1i/archify` | Apache-2.0 | 97.508 | đọc tài liệu 2026-11-18 | 16 | Skill biến mô tả, câu hỏi hoặc repo thành một file HTML tương tác tự chứa: sơ đồ kiến trúc, workflow, ERD, timeline, waterfall hoặc trang giải thích. |
-| [Mermaid](../../16-docs-tools/README.md) | `mermaid-js/mermaid` | MIT | 90.949 | chưa chuẩn hóa | 16 | Sơ đồ dạng văn bản nhúng trong Markdown/docs; |
+| [Mermaid](../../16-docs-tools/README.md#ch-mermaid) | `mermaid-js/mermaid` | MIT | 91.211 | đọc tài liệu 2026-11-23 | 16 | Sơ đồ dạng văn bản nhúng trong Markdown/docs; |
 | [Diagrams](../../16-docs-tools/README.md#anhkysuai-2026-11-23-diagrams) | `mingrammer/diagrams` | MIT | 42.828 | đọc tài liệu 2026-11-23 | 16 | Vẽ sơ đồ kiến trúc hệ thống bằng mã Python. |
 | [D2](../../16-docs-tools/README.md#anhkysuai-2026-11-23-d2) | `d2lang/d2` | MPL-2.0 | 25.899 | đọc tài liệu 2026-11-23 | 16 | Ngôn ngữ và công cụ CLI tạo sơ đồ từ văn bản khai báo. |
 | [VHS](../../16-docs-tools/README.md#anhkysuai-charmbracelet-vhs) | `charmbracelet/vhs` | MIT | 21.386 | đọc tài liệu 2026-11-23 | 16 | Ghi demo terminal thành GIF bằng tệp kịch bản .tape để dùng trong tài liệu và minh họa CLI. |
@@ -115,7 +115,7 @@
 | [markdown-it](../../16-docs-tools/README.md#anhkysuai-2026-11-23-markdown-it) | `markdown-it/markdown-it` | MIT | 22.056 | đọc tài liệu 2026-11-23 | 16 | Parser Markdown JavaScript với hệ rule và plugin mở rộng. |
 | [KaTeX](../../16-docs-tools/README.md#anhkysuai-katex-katex) | `KaTeX/KaTeX` | MIT | 20.534 | đọc tài liệu 2026-11-23 | 16 | Thư viện dựng công thức TeX trên web, hỗ trợ xuất HTML phía server để dùng trong tài liệu và nội dung giáo dục. |
 | [quarkdown](../../16-docs-tools/README.md#chuyen-quarkdown) | `iamgio/quarkdown` | GPL-3.0 | 16.396 | đọc tài liệu 2026-11-18 | 16 | Hệ thống dàn trang dựa trên Markdown mở rộng có hàm (Turing-complete), biên dịch một nguồn thành sách in, bài báo, cơ sở tri thức hoặc trình chiếu. |
-| [Diátaxis](../../16-docs-tools/README.md) | `evildmp/diataxis-documentation-framework` | CC-BY-SA-4.0 | 1.267 | chưa chuẩn hóa | 16 | Khung tài liệu 4 loại (tutorial, how-to, reference, explanation); |
+| [Diátaxis](../../16-docs-tools/README.md#ch-diataxis) | `evildmp/diataxis-documentation-framework` | CC-BY-SA-4.0 | 1.285 | đọc tài liệu 2026-11-23 | 16 | Khung tài liệu 4 loại (tutorial, how-to, reference, explanation); |
 
 ## Ứng dụng năng suất (`productivity-app`, 9)
 

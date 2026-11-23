@@ -85,11 +85,11 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [React Bits](../../22-motion-design-animation/README.md) | `DavidHDev/react-bits` | MIT + Commons Clause | 50.856 | chưa chuẩn hóa | 22 | Component React có animation; |
+| [React Bits](../../22-motion-design-animation/README.md#ch-react-bits) | `DavidHDev/react-bits` | MIT + Commons Clause | 52.546 | đọc tài liệu 2026-11-23 | 22 | Component React có animation; |
 | [fullPage.js](../../06-ui-ux-design/README.md#anhkysuai-alvarotrigo-fullpage-js) | `alvarotrigo/fullPage.js` | GPL-3.0 hoặc giấy phép thương mại; extension theo điều khoản riêng | 35.353 | đọc tài liệu 2026-11-23 | 06 | Tạo trang cuộn từng section toàn màn hình và slide ngang. |
-| [Magic UI](../../22-motion-design-animation/README.md) | `magicuidesign/magicui` | MIT | 23.002 | chưa chuẩn hóa | 22 | Component animated copy-paste; |
+| [Magic UI](../../22-motion-design-animation/README.md#ch-magic-ui) | `magicuidesign/magicui` | MIT | 23.482 | đọc tài liệu 2026-11-23 | 22 | Component animated copy-paste; |
 | [ThreeUI Community](../../06-ui-ux-design/README.md#ch-threeui-community) | `MengTo/threeui` | MIT (tài sản/font có file license riêng) | 7.424 | đọc tài liệu 2026-11-23 | 06 | Catalog shader/Three.js open-core (gói @designcodeio/threeui); |
-| [Motion Primitives](../../22-motion-design-animation/README.md) | `ibelick/motion-primitives` | MIT | 6.873 | chưa chuẩn hóa | 22 | UI kit animation trên Motion; |
+| [Motion Primitives](../../22-motion-design-animation/README.md#ch-motion-primitives) | `ibelick/motion-primitives` | MIT | 7.013 | đọc tài liệu 2026-11-23 | 22 | UI kit animation trên Motion; |
 | [canvas-ui](../../06-ui-ux-design/README.md#ch-canvas-ui) | `DavidHDev/canvas-ui` | MIT + Commons Clause (tùy biến) | 5.537 | đọc tài liệu 2026-11-23 | 06 | Thư viện canvas component (cùng tác giả React Bits): html-in-canvas vẽ DOM thật + shader WebGL, giữ chọn chữ/link; |
 | [beUI](../../06-ui-ux-design/README.md#7za-kiểm-bài-8-kho-ui-sẵn-dùng-librariesdev-bencho-beui-arc-ui-boardui-kobra-affectui-watermelon-ui-bài-người-dùng-gửi-đọc-mã-8112026) | `starc007/ui-components` | MIT | 1.934 | đọc tài liệu 2026-11-08 | 06 | Component motion cho React/Next.js (component, block, AI agents, chart), registry shadcn @beui, MCP mcp.beui.dev không cần key, skill beui/beui-pro, llms.txt, 35 file te… |
 | [OriginKit](../../06-ui-ux-design/README.md#7zc-hai-mươi-trang-cảm-hứng-và-tài-nguyên-thiết-kế-gallery-từng-phần-giao-diện-chuyển-động-làm-web-bằng-ai-danh-sách-người-dùng-gửi-đọc-16112026) | `vellum-ai/originkit` | MIT | 32 | đọc tài liệu 2026-11-16 | 06 | Thư viện component animation miễn phí của Vellum AI (interactive, gallery, text, background, button) cho React/Next.js/Vite/Framer với CSS/Tailwind/CSS Modules; |

@@ -129,7 +129,7 @@
 |---|---|---|---|---|---|---|
 | [go](../../37-programming-languages-runtimes/README.md#chuyen-go) | `golang/go` | BSD 3-Clause | 140.176 | đọc tài liệu 2026-11-18 | 37 | Mã nguồn ngôn ngữ lập trình Go: trình biên dịch, bộ công cụ và thư viện chuẩn. |
 | [rust](../../37-programming-languages-runtimes/README.md#chuyen-rust) | `rust-lang/rust` | Kép MIT hoặc Apache License 2.0 | 122.313 | đọc tài liệu 2026-11-18 | 37 | Kho mã chính của ngôn ngữ Rust: trình biên dịch, thư viện chuẩn và tài liệu. |
-| [Bun](../../37-programming-languages-runtimes/README.md) | `oven-sh/bun` | MIT (+ LGPL-2 link tĩnh) | 96.488 | chưa chuẩn hóa | 37 | Runtime/bundler/test runner JS của Anthropic; |
+| [Bun](../../37-programming-languages-runtimes/README.md#ch-bun) | `oven-sh/bun` | MIT (LICENSE.md; kèm ghi chú LGPL-2 cho JavaScriptCore liên | 96.840 | đọc tài liệu 2026-11-23 | 37 | Runtime/bundler/test runner JS của Anthropic; |
 | [nvm](../../37-programming-languages-runtimes/README.md#chuyen-nvm) | `nvm-sh/nvm` | MIT | 96.242 | đọc tài liệu 2026-11-18 | 37 | Node Version Manager: công cụ quản lý nhiều phiên bản Node.js, cài theo từng người dùng và gọi trong từng shell. |
 | [cpython](../../37-programming-languages-runtimes/README.md#chuyen-cpython) | `python/cpython` | PSF License Agreement | 78.497 | đọc tài liệu 2026-11-18 | 37 | Mã nguồn chính thức của trình thông dịch Python (CPython) cùng thư viện chuẩn và tài liệu; |
 | [swift](../../37-programming-languages-runtimes/README.md#chuyen-swift) | `swiftlang/swift` | Apache License 2.0 kèm Runtime Library Exception | 70.565 | đọc tài liệu 2026-11-18 | 37 | Mã nguồn trình biên dịch, thư viện chuẩn và runtime của ngôn ngữ lập trình Swift. |

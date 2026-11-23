@@ -542,3 +542,261 @@ Các SHA trên không mới hơn bản khảo sát §8d ở mọi repo; phần n
 - reveser (= morluto/rea): `README.md`, `AGENTS.md`, `CHANGELOG.md`, `package.json`, `docs/{installation,roadmap,mcp-prompts,provider-evaluation,product-catalog.json}`, `docs/adr/{README,0002-controlled-replay-authority-and-sandbox}.md`, `skills/reverse-engineer-anything/SKILL.md`, `.github/workflows/{ci,release,real-*}.yml`
 - Sales-Hunter: `AGENTS.md`, `PROJECT-STATUS.md`, `TRAPS.md`, `CODEMAP.md`, `pyproject.toml`, `Makefile`, `.pre-commit-config.yaml`, `docs/{SUBAGENT-TASK-CONVENTION,PROMPT-SHEET,TASK-PACK,AN-TOAN-AFFILIATE,PRODUCTION-CHECKLIST,GIA-DINH-NEN-TANG}.md`, `docs/task-packs/TEMPLATE-SUBTASK.md`, `docs/prompts/ORCHESTRATOR.md`, `docs/adr/{0001,0002,0009,0010,0011}-*.md`, `docs/sessions/README.md`, `docs/audits/2026-09-25/README.md`, `tools/{check_status_freshness,validate_repo}.py`, `.github/workflows/{ci,scheduled-audit}.yml`
 - Hermes-Agents: `README.md`, `install.py`, `bridge/{claude_code,codex}.py`, `plugins/grill-tab/`, `config/{hermes-rotation,hermes-free-tier}.example.yaml`, `docs/{CURRENT_SETUP_VI,ENGINEERING_WORKBENCH_VI}.md`, `skills/VENDORED-SKILLS.md`, `skills/hermes-agent/SKILL.md` + `references/*.md`, `skills/{evidence-driven-delivery,project-harness-engineering,safe-ai-state-authority,ai-eval-evidence-integrity,instruction-repo-conformance-auditor,hermes-subagent-orchestration,merge-reconciler,provider-proxy-engineering,cli-provider-bridges,skill-vendoring,delivery-plan,parallel-work,qa-gate,work-loop,adversarial-consensus,rules-distill}/SKILL.md`, `.hermes/environment.json`, `.github/workflows/{hermes-native-smoke,audit-hardening}.yml`
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-ai-gateway-seeker19110"></a>
+
+### ai-gateway (seeker19110)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/seeker19110/x-shop |
+| License | MIT |
+| Phiên bản đã đọc | `386764800fdb9b7a4a57b8f2bea2528208247859` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | unknown (commit cuối 2026-11-23) |
+| Nhận định | Repo hiện là webshop thời trang x-shop (Medusa v2 + Next.js, pnpm), không còn là gateway LLM; mục catalog cũ không còn đúng. |
+| Nguồn | [README.md](https://github.com/seeker19110/x-shop/blob/386764800fdb9b7a4a57b8f2bea2528208247859/README.md) · [LICENSE](https://github.com/seeker19110/x-shop/blob/386764800fdb9b7a4a57b8f2bea2528208247859/LICENSE) · [package.json](https://github.com/seeker19110/x-shop/blob/386764800fdb9b7a4a57b8f2bea2528208247859/package.json) |
+
+<a id="ch-case-study-ft41"></a>
+
+### case-study-ft41
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/www-donghanhcungban-org/case-study-ft41 |
+| License | MIT (khác catalog cũ) |
+| Phiên bản đã đọc | `43149a7e2f8d692f90cb4c1c660402fb7f22106a` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Repo hiện công khai, README mô tả X-Workspace: web app tự host quản lý mạng xã hội (Next.js 16.4.6, PostgreSQL, Drizzle), CI/DevSecOps nhiều workflow; ghi chú cũ nói private. |
+| Nguồn | [README.md](https://github.com/www-donghanhcungban-org/case-study-ft41/blob/43149a7e2f8d692f90cb4c1c660402fb7f22106a/README.md) · [LICENSE](https://github.com/www-donghanhcungban-org/case-study-ft41/blob/43149a7e2f8d692f90cb4c1c660402fb7f22106a/LICENSE) · [package.json](https://github.com/www-donghanhcungban-org/case-study-ft41/blob/43149a7e2f8d692f90cb4c1c660402fb7f22106a/package.json) |
+
+<a id="ch-claude-red-fork"></a>
+
+### Claude-Red (fork)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/www-donghanhcungban-org/Claude-Red |
+| License | MIT |
+| Phiên bản đã đọc | `852d41286a9d124003149b21538154a3e134ae66` (commit 2026-10-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, claude-skills.json, .github/workflows/codeql.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-10-13) |
+| Nhận định | Fork của SnailSploit/claude-red: thư viện 78 SKILL.md red-team (23 nhóm), manifest claude-skills.json v0.3.0; dual-use, chỉ dùng khi có ủy quyền. |
+| Nguồn | [README](https://github.com/www-donghanhcungban-org/Claude-Red/blob/852d41286a9d124003149b21538154a3e134ae66/README.md) · [LICENSE](https://github.com/www-donghanhcungban-org/Claude-Red/blob/852d41286a9d124003149b21538154a3e134ae66/LICENSE) · [manifest](https://github.com/www-donghanhcungban-org/Claude-Red/blob/852d41286a9d124003149b21538154a3e134ae66/claude-skills.json) · [workflow](https://github.com/www-donghanhcungban-org/Claude-Red/blob/852d41286a9d124003149b21538154a3e134ae66/.github/workflows/codeql.yml) |
+
+<a id="ch-dhcb"></a>
+
+### dhcb
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/www-donghanhcungban-org/dhcb |
+| License | MIT (catalog cũ: –) |
+| Phiên bản đã đọc | `eb9ea92c27af44f8e90301d4729e150807e3cca7` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-20) |
+| Nhận định | Ứng dụng gia sư AI Việt-Anh đang chạy production (Express 5, React 19, PostgreSQL); có .opencodereview/rule.json và CI nhiều job. Đáng tham khảo cách tổ chức harness và CI; bản quyền sản phẩm/nội dung cần xem thêm NOTICE. |
+| Nguồn | [README](https://github.com/www-donghanhcungban-org/dhcb/blob/eb9ea92c27af44f8e90301d4729e150807e3cca7/README.md) · [LICENSE](https://github.com/www-donghanhcungban-org/dhcb/blob/eb9ea92c27af44f8e90301d4729e150807e3cca7/LICENSE) · [manifest](https://github.com/www-donghanhcungban-org/dhcb/blob/eb9ea92c27af44f8e90301d4729e150807e3cca7/package.json) · [workflow](https://github.com/www-donghanhcungban-org/dhcb/blob/eb9ea92c27af44f8e90301d4729e150807e3cca7/.github/workflows/ci.yml) |
+
+<a id="ch-dhcb-tools"></a>
+
+### Dhcb-Tools
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/www-donghanhcungban-org/Dhcb-Tools |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `2002cf291c01cf07e73b9920edd82e6547dca78c` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, .github/workflows/tests.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-21) |
+| Nhận định | Add-in C# cho Revit và AutoCAD, HTTP bridge/MCP cho agent, AI offline (Ollama). Đáng tham khảo vòng dry-run -> xác nhận cho lệnh sửa mô hình; README nêu 14 lệnh dùng được ngay (số 68 lệnh chưa đếm lại). **(chưa xác minh)** hiệu quả thực tế trên Revit/AutoCAD. |
+| Nguồn | [README](https://github.com/www-donghanhcungban-org/Dhcb-Tools/blob/2002cf291c01cf07e73b9920edd82e6547dca78c/README.md) · [LICENSE](https://github.com/www-donghanhcungban-org/Dhcb-Tools/blob/2002cf291c01cf07e73b9920edd82e6547dca78c/LICENSE) · [manifest](https://github.com/www-donghanhcungban-org/Dhcb-Tools/blob/2002cf291c01cf07e73b9920edd82e6547dca78c/pyproject.toml) · [workflow](https://github.com/www-donghanhcungban-org/Dhcb-Tools/blob/2002cf291c01cf07e73b9920edd82e6547dca78c/.github/workflows/tests.yml) |
+
+<a id="ch-hermes-agents"></a>
+
+### Hermes-Agents
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/donghanhcungban/hermes-agents |
+| License | MIT |
+| Phiên bản đã đọc | `b2e4ab8510d5339d8c89939a87cce931d969ef36` (commit 2026-10-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, requirements-dev.txt, .github/workflows/tests.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-10-19) |
+| Nhận định | Plugin model-provider Hermes Agent qua OAuth Google Antigravity kèm provider claude-code-cli (gọi claude -p), engineering-workbench và thư mục skills. Gần như trùng README với Plugin-4-Hermes; vùng xám điều khoản dịch vụ khi dùng OAuth IDE cho API. |
+| Nguồn | [README](https://github.com/donghanhcungban/hermes-agents/blob/b2e4ab8510d5339d8c89939a87cce931d969ef36/README.md) · [LICENSE](https://github.com/donghanhcungban/hermes-agents/blob/b2e4ab8510d5339d8c89939a87cce931d969ef36/LICENSE) · [manifest](https://github.com/donghanhcungban/hermes-agents/blob/b2e4ab8510d5339d8c89939a87cce931d969ef36/requirements-dev.txt) · [workflow](https://github.com/donghanhcungban/hermes-agents/blob/b2e4ab8510d5339d8c89939a87cce931d969ef36/.github/workflows/tests.yml) |
+
+<a id="ch-plugin-4-hermes"></a>
+
+### Plugin-4-Hermes
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/seeker19110/Plugin-4-Hermes |
+| License | MIT |
+| Phiên bản đã đọc | `312ca78fd0f3c5cb7db2d7c506a0e56388f040f3` (commit 2026-10-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README_EN.md, LICENSE, README_EN.md; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-10-13) |
+| Nhận định | Plugin model-provider cho Hermes Agent qua OAuth Google Antigravity, có bridge server cục bộ cổng 8100 (API kiểu OpenAI) và xoay nhiều tài khoản Google. README tự nêu rủi ro nằm ở khối lượng dùng lớn; vùng xám ToS. |
+| Nguồn | [README](https://github.com/seeker19110/Plugin-4-Hermes/blob/312ca78fd0f3c5cb7db2d7c506a0e56388f040f3/README_EN.md) · [LICENSE](https://github.com/seeker19110/Plugin-4-Hermes/blob/312ca78fd0f3c5cb7db2d7c506a0e56388f040f3/LICENSE) · [manifest](https://github.com/seeker19110/Plugin-4-Hermes/blob/312ca78fd0f3c5cb7db2d7c506a0e56388f040f3/README_EN.md) |
+
+<a id="ch-projects-template"></a>
+
+### projects-template
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/seeker19110/projects-template |
+| License | MIT (catalog cũ: –) |
+| Phiên bản đã đọc | `bac75d31e61c490d82f82a2abb3810234fc4fd38` (commit 2026-10-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, VERSION, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-10-13) |
+| Nhận định | Bộ khung drop-in cho dự án dùng AI agent (tài liệu, quy trình 9 giai đoạn, hook, script tự kiểm, copy-framework). Không kèm scaffold công nghệ mặc định (ADR-0004). Giá trị ở quy trình và cổng kiểm. |
+| Nguồn | [README](https://github.com/seeker19110/projects-template/blob/bac75d31e61c490d82f82a2abb3810234fc4fd38/README.md) · [LICENSE](https://github.com/seeker19110/projects-template/blob/bac75d31e61c490d82f82a2abb3810234fc4fd38/LICENSE) · [manifest](https://github.com/seeker19110/projects-template/blob/bac75d31e61c490d82f82a2abb3810234fc4fd38/VERSION) · [workflow](https://github.com/seeker19110/projects-template/blob/bac75d31e61c490d82f82a2abb3810234fc4fd38/.github/workflows/ci.yml) |
+
+<a id="ch-qlkh"></a>
+
+### qlkh
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/donghanhcungban/qlkh |
+| License | MIT (catalog cũ: –) |
+| Phiên bản đã đọc | `5d88ace34b4b0a56661a9c3f06dc603f84c52b9a` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, license-allow.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-22) |
+| Nhận định | README hiện trình bày X-Office: văn phòng 3D trên trình duyệt hiển thị trạng thái agent từ bằng chứng máy của vòng tự động, chạy bằng scripts/xt.py; repo vẫn mang framework, 12 workflow CI (build/typecheck/lint/test/coverage, mutation, dep-audit...). Khác mô tả cũ "quản lý khóa học". |
+| Nguồn | [README](https://github.com/donghanhcungban/qlkh/blob/5d88ace34b4b0a56661a9c3f06dc603f84c52b9a/README.md) · [LICENSE](https://github.com/donghanhcungban/qlkh/blob/5d88ace34b4b0a56661a9c3f06dc603f84c52b9a/LICENSE) · [manifest](https://github.com/donghanhcungban/qlkh/blob/5d88ace34b4b0a56661a9c3f06dc603f84c52b9a/license-allow.json) · [workflow](https://github.com/donghanhcungban/qlkh/blob/5d88ace34b4b0a56661a9c3f06dc603f84c52b9a/.github/workflows/ci.yml) |
+
+<a id="ch-reveser-mirror-morluto-rea"></a>
+
+### reveser (mirror morluto/rea)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/www-donghanhcungban-org/reveser |
+| License | MIT |
+| Phiên bản đã đọc | `16f092104ef8d361359a9cb53857e45e92be9b2b` (commit 2026-07-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | low-activity (commit mới nhất 2026-07-20) |
+| Nhận định | Mirror của morluto/rea (rea-agents v2.1.0): CLI và MCP server cho agent đảo ngược phần mềm (Hopper/Ghidra, skills). Công cụ dual-use, cần ủy quyền hợp pháp; một số đường (Windows Ghidra) tự nhận thử nghiệm. |
+| Nguồn | [README](https://github.com/www-donghanhcungban-org/reveser/blob/16f092104ef8d361359a9cb53857e45e92be9b2b/README.md) · [LICENSE](https://github.com/www-donghanhcungban-org/reveser/blob/16f092104ef8d361359a9cb53857e45e92be9b2b/LICENSE) · [manifest](https://github.com/www-donghanhcungban-org/reveser/blob/16f092104ef8d361359a9cb53857e45e92be9b2b/package.json) · [workflow](https://github.com/www-donghanhcungban-org/reveser/blob/16f092104ef8d361359a9cb53857e45e92be9b2b/.github/workflows/ci.yml) |
+
+<a id="ch-sales-hunter"></a>
+
+### Sales-Hunter
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/www-donghanhcungban-org/Sales-Hunter |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `50af03382357e50ce72111be4d81d2ac3deb7c50` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-18) |
+| Nhận định | Khung hệ thống săn sale và tạo nội dung affiliate (Shopee, TikTok Shop): publication candidate, approval + dry-run, kill switch, API vận hành, SQLite. README nói mới ở mức skeleton Phase 1-6, chưa chạy thật với nền tảng. **(chưa xác minh)** độ trưởng thành. |
+| Nguồn | [README](https://github.com/www-donghanhcungban-org/Sales-Hunter/blob/50af03382357e50ce72111be4d81d2ac3deb7c50/README.md) · [LICENSE](https://github.com/www-donghanhcungban-org/Sales-Hunter/blob/50af03382357e50ce72111be4d81d2ac3deb7c50/LICENSE) · [manifest](https://github.com/www-donghanhcungban-org/Sales-Hunter/blob/50af03382357e50ce72111be4d81d2ac3deb7c50/pyproject.toml) · [workflow](https://github.com/www-donghanhcungban-org/Sales-Hunter/blob/50af03382357e50ce72111be4d81d2ac3deb7c50/.github/workflows/ci.yml) |
+
+<a id="ch-x-agents"></a>
+
+### X-Agents
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/www-donghanhcungban-org/X-Agents |
+| License | Apache-2.0 (catalog cũ: –) |
+| Phiên bản đã đọc | `650358717c0c4cfacef5c40e514ef9de9870e117` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-20) |
+| Nhận định | Hub nhiều "công ty AI" đa agent event-driven (bus SQLite, JSON Schema, blackboard, human gate); eval ghi/phát lại chạy được trong CI không gọi model. Đáng tham khảo guardrail và golden test. |
+| Nguồn | [README](https://github.com/www-donghanhcungban-org/X-Agents/blob/650358717c0c4cfacef5c40e514ef9de9870e117/README.md) · [LICENSE](https://github.com/www-donghanhcungban-org/X-Agents/blob/650358717c0c4cfacef5c40e514ef9de9870e117/LICENSE) · [manifest](https://github.com/www-donghanhcungban-org/X-Agents/blob/650358717c0c4cfacef5c40e514ef9de9870e117/pyproject.toml) · [workflow](https://github.com/www-donghanhcungban-org/X-Agents/blob/650358717c0c4cfacef5c40e514ef9de9870e117/.github/workflows/ci.yml) |
+
+<a id="ch-x-company"></a>
+
+### X-Company
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/www-donghanhcungban-org/X-Company |
+| License | MIT (catalog cũ: Độc quyền (LICENSE chưa điền chủ sở hữu)) |
+| Phiên bản đã đọc | `dc5f770d6b1d5a3cfa882caff758f0152030a283` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-20) |
+| Nhận định | Website công ty, webapp điều hành nội bộ (chấm công, công việc, nghiệm thu) và PWA; README tự nhận đang xây P0, chưa phát hành, chưa có người dùng thật. Có license-policy.yaml kiểm license phụ thuộc. |
+| Nguồn | [README](https://github.com/www-donghanhcungban-org/X-Company/blob/dc5f770d6b1d5a3cfa882caff758f0152030a283/README.md) · [LICENSE](https://github.com/www-donghanhcungban-org/X-Company/blob/dc5f770d6b1d5a3cfa882caff758f0152030a283/LICENSE) · [manifest](https://github.com/www-donghanhcungban-org/X-Company/blob/dc5f770d6b1d5a3cfa882caff758f0152030a283/package.json) · [workflow](https://github.com/www-donghanhcungban-org/X-Company/blob/dc5f770d6b1d5a3cfa882caff758f0152030a283/.github/workflows/ci.yml) |
+
+<a id="ch-x-scanner"></a>
+
+### X-Scanner
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/www-donghanhcungban-org/X-Scanner |
+| License | MIT (catalog cũ: –) |
+| Phiên bản đã đọc | `867ce13f2265c4e376115ef67c35d894a906c612` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, apps/mobile/pubspec.yaml, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-20) |
+| Nhận định | App scan tài liệu Android offline (Flutter), xuất PDF/JPG/PNG; README nêu thư viện nhiều tài liệu, chỉnh 4 góc, giữ bản gốc. Dùng framework projects-template có kiểm adoption. |
+| Nguồn | [README](https://github.com/www-donghanhcungban-org/X-Scanner/blob/867ce13f2265c4e376115ef67c35d894a906c612/README.md) · [LICENSE](https://github.com/www-donghanhcungban-org/X-Scanner/blob/867ce13f2265c4e376115ef67c35d894a906c612/LICENSE) · [manifest](https://github.com/www-donghanhcungban-org/X-Scanner/blob/867ce13f2265c4e376115ef67c35d894a906c612/apps/mobile/pubspec.yaml) · [workflow](https://github.com/www-donghanhcungban-org/X-Scanner/blob/867ce13f2265c4e376115ef67c35d894a906c612/.github/workflows/ci.yml) |
+
+<a id="ch-x-studio"></a>
+
+### X-Studio
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/www-donghanhcungban-org/X-Studio |
+| License | Apache-2.0 (catalog cũ: –) |
+| Phiên bản đã đọc | `7dddfac3d1a7789c2e71c96f5b0a5e9903d717f1` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, .github/workflows/verify.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-18) |
+| Nhận định | Xưởng sản xuất video: chủ đề -> kịch bản -> lời đọc -> dựng FFmpeg -> phụ đề -> xuất bản YouTube, một bảng điều khiển tiếng Việt, một worker, SQLite; demo dùng model/media giả. Cần Python 3.11+, uv, FFmpeg. |
+| Nguồn | [README](https://github.com/www-donghanhcungban-org/X-Studio/blob/7dddfac3d1a7789c2e71c96f5b0a5e9903d717f1/README.md) · [LICENSE](https://github.com/www-donghanhcungban-org/X-Studio/blob/7dddfac3d1a7789c2e71c96f5b0a5e9903d717f1/LICENSE) · [manifest](https://github.com/www-donghanhcungban-org/X-Studio/blob/7dddfac3d1a7789c2e71c96f5b0a5e9903d717f1/pyproject.toml) · [workflow](https://github.com/www-donghanhcungban-org/X-Studio/blob/7dddfac3d1a7789c2e71c96f5b0a5e9903d717f1/.github/workflows/verify.yml) |
+
+<a id="ch-xboss"></a>
+
+### xboss
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/www-donghanhcungban-org/xboss |
+| License | MIT (catalog cũ: –) |
+| Phiên bản đã đọc | `b73011c4cfe7e789368ab9e54f461dd07e771967` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-20) |
+| Nhận định | Web app quản lý tiến độ thi công MEP/ACMV cho dự án TT AVIO Tháp A (Next.js + PostgreSQL tự host, PWA), v0.3.0, Node 24. Repo giàu harness (hook, CI nhiều job, scorecard). |
+| Nguồn | [README](https://github.com/www-donghanhcungban-org/xboss/blob/b73011c4cfe7e789368ab9e54f461dd07e771967/README.md) · [LICENSE](https://github.com/www-donghanhcungban-org/xboss/blob/b73011c4cfe7e789368ab9e54f461dd07e771967/LICENSE) · [manifest](https://github.com/www-donghanhcungban-org/xboss/blob/b73011c4cfe7e789368ab9e54f461dd07e771967/package.json) · [workflow](https://github.com/www-donghanhcungban-org/xboss/blob/b73011c4cfe7e789368ab9e54f461dd07e771967/.github/workflows/ci.yml) |
+
+<a id="ch-xboss-manager"></a>
+
+### xboss-manager
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/seeker19110/xboss-manager |
+| License | MIT (catalog cũ: –) |
+| Phiên bản đã đọc | `fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, VERSION, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-23) |
+| Nhận định | README hiện là X-Templates v3.34.0 (VERSION 3.35.0): thư viện yêu cầu có ID cho mọi loại phần mềm, công cụ ghép checklist, kiểm "xong" bằng máy và harness cho agent. Không còn đơn thuần là "tiền thân của khung". |
+| Nguồn | [README](https://github.com/seeker19110/xboss-manager/blob/fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb/README.md) · [LICENSE](https://github.com/seeker19110/xboss-manager/blob/fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb/LICENSE) · [manifest](https://github.com/seeker19110/xboss-manager/blob/fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb/VERSION) · [workflow](https://github.com/seeker19110/xboss-manager/blob/fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb/.github/workflows/ci.yml) |
+
+<a id="ch-xgold"></a>
+
+### Xgold
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/www-donghanhcungban-org/Xgold |
+| License | MIT (catalog cũ: –) |
+| Phiên bản đã đọc | `2fbf44ecd260db52fafa963e4f06507bf0c07e24` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-16) |
+| Nhận định | Web app theo dõi giá vàng XAU/USD và bạc XAG/USD với chart nến, Multi-MA/RSI, MACD, Bollinger và gợi ý tham khảo; dữ liệu Postgres (Supabase), Next.js, v1.6.0. Tín hiệu mua/bán chỉ mang tính tham khảo. |
+| Nguồn | [README](https://github.com/www-donghanhcungban-org/Xgold/blob/2fbf44ecd260db52fafa963e4f06507bf0c07e24/README.md) · [LICENSE](https://github.com/www-donghanhcungban-org/Xgold/blob/2fbf44ecd260db52fafa963e4f06507bf0c07e24/LICENSE) · [manifest](https://github.com/www-donghanhcungban-org/Xgold/blob/2fbf44ecd260db52fafa963e4f06507bf0c07e24/package.json) · [workflow](https://github.com/www-donghanhcungban-org/Xgold/blob/2fbf44ecd260db52fafa963e4f06507bf0c07e24/.github/workflows/ci.yml) |

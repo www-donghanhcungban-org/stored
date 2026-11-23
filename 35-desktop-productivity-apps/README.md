@@ -885,3 +885,65 @@ Radar tin tức dùng AI: gom tin từ RSS, Hacker News, Reddit, Telegram, X, Gi
 **Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`0856099ee905f91bbe7fcf6b84cba767851f7935`](https://github.com/readest/readest/commit/0856099ee905f91bbe7fcf6b84cba767851f7935), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
 
 **Nguồn:** [README.md](https://github.com/readest/readest/blob/0856099ee905f91bbe7fcf6b84cba767851f7935/README.md) · [LICENSE](https://github.com/readest/readest/blob/0856099ee905f91bbe7fcf6b84cba767851f7935/LICENSE) · [package.json](https://github.com/readest/readest/blob/0856099ee905f91bbe7fcf6b84cba767851f7935/package.json) · [Cargo.toml](https://github.com/readest/readest/blob/0856099ee905f91bbe7fcf6b84cba767851f7935/Cargo.toml) · [.github/workflows/nix-build.yml](https://github.com/readest/readest/blob/0856099ee905f91bbe7fcf6b84cba767851f7935/.github/workflows/nix-build.yml) · [metadata GitHub](https://api.github.com/repos/readest/readest).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-applite"></a>
+
+### Applite
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/milanvarady/Applite |
+| License | MIT |
+| Phiên bản đã đọc | `cf9712ae57a23628f4946389192959eb7079c6be` (commit 2026-09-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.txt, Applite.xcodeproj/project.pbxproj; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-09-12) |
+| Nhận định | App macOS native làm "app store" cho Homebrew Cask (SwiftUI). README có mục "Development and AI" (chưa đọc chi tiết). Chỉ chạy trên macOS, phụ thuộc Homebrew. |
+| Nguồn | [README](https://github.com/milanvarady/Applite/blob/cf9712ae57a23628f4946389192959eb7079c6be/README.md) · [LICENSE](https://github.com/milanvarady/Applite/blob/cf9712ae57a23628f4946389192959eb7079c6be/LICENSE.txt) · [manifest](https://github.com/milanvarady/Applite/blob/cf9712ae57a23628f4946389192959eb7079c6be/Applite.xcodeproj/project.pbxproj) |
+
+<a id="ch-brewui"></a>
+
+### BrewUI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Homebrew/BrewUI |
+| License | AGPL-3.0 |
+| Phiên bản đã đọc | `4390497f1a09deaf100bea9a93afb11a37b606c5` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Package.swift, .github/workflows/build.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-20) |
+| Nhận định | GUI chính thức của Homebrew cho macOS (SwiftUI, Swift 6.2, yêu cầu macOS 26): đọc từ brew CLI và Homebrew JSON API, công khai thao tác brew. AGPL-3.0 hạn chế dùng lại mã trong sản phẩm đóng. |
+| Nguồn | [README](https://github.com/Homebrew/BrewUI/blob/4390497f1a09deaf100bea9a93afb11a37b606c5/README.md) · [LICENSE](https://github.com/Homebrew/BrewUI/blob/4390497f1a09deaf100bea9a93afb11a37b606c5/LICENSE) · [manifest](https://github.com/Homebrew/BrewUI/blob/4390497f1a09deaf100bea9a93afb11a37b606c5/Package.swift) · [workflow](https://github.com/Homebrew/BrewUI/blob/4390497f1a09deaf100bea9a93afb11a37b606c5/.github/workflows/build.yml) |
+
+<a id="ch-cleanmylinux"></a>
+
+### CleanMyLinux
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Better-Linux/CleanMyLinux |
+| License | MIT |
+| Phiên bản đã đọc | `02de64d1168e06820a4e280971b49175bdc31307` (commit 2026-05-25) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | low-activity (commit mới nhất 2026-05-25) |
+| Nhận định | App dọn dẹp và quản lý ứng dụng cho Linux desktop (Tauri + Vite), bản 1.0.0-beta.2; hỗ trợ Ubuntu 22.04+, Debian 12+, Fedora 40+; Arch chưa kiểm. Commit mới nhất 2026-05-25. |
+| Nguồn | [README](https://github.com/Better-Linux/CleanMyLinux/blob/02de64d1168e06820a4e280971b49175bdc31307/README.md) · [LICENSE](https://github.com/Better-Linux/CleanMyLinux/blob/02de64d1168e06820a4e280971b49175bdc31307/LICENSE) · [manifest](https://github.com/Better-Linux/CleanMyLinux/blob/02de64d1168e06820a4e280971b49175bdc31307/package.json) · [workflow](https://github.com/Better-Linux/CleanMyLinux/blob/02de64d1168e06820a4e280971b49175bdc31307/.github/workflows/ci.yml) |
+
+<a id="ch-cork"></a>
+
+### Cork
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/buresdv/Cork |
+| License | Provisional custom license (dựa trên Commons Clause, source-available, không OSI) |
+| Phiên bản đã đọc | `aee5584a348b629da9fd52386b89ad5fdd4998a1` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, Project.swift, .github/workflows/tuist-test.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-22) |
+| Nhận định | GUI Homebrew viết SwiftUI (macOS 14+, Tuist). Mã xem được nhưng giấy phép tạm cấm bán lại, biên dịch ngoài mục đích cá nhân và dựng sản phẩm cạnh tranh; README nói không dùng AI viết mã. Không phải mã mở. |
+| Nguồn | [README](https://github.com/buresdv/Cork/blob/aee5584a348b629da9fd52386b89ad5fdd4998a1/README.md) · [LICENSE](https://github.com/buresdv/Cork/blob/aee5584a348b629da9fd52386b89ad5fdd4998a1/LICENSE.md) · [manifest](https://github.com/buresdv/Cork/blob/aee5584a348b629da9fd52386b89ad5fdd4998a1/Project.swift) · [workflow](https://github.com/buresdv/Cork/blob/aee5584a348b629da9fd52386b89ad5fdd4998a1/.github/workflows/tuist-test.yml) |

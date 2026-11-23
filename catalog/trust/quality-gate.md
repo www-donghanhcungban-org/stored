@@ -15,9 +15,9 @@
 | [Catch2](../../30-software-testing-quality/README.md#anhkysuai-catchorg-catch2) | `catchorg/Catch2` | BSL-1.0 | 21.590 | đọc tài liệu 2026-11-23 | 30 | Framework unit test C++ với assertion tự nhiên, section chia sẻ setup, macro BDD và microbenchmark cơ bản. |
 | [AVA](../../30-software-testing-quality/README.md#anhkysuai-avajs-ava) | `avajs/ava` | MIT | 20.825 | đọc tài liệu 2026-11-23 | 30 | Test runner Node.js với cú pháp ngắn, assertion chi tiết và chạy đồng thời các test độc lập. |
 | [keploy](../../30-software-testing-quality/README.md#chuyen-keploy) | `keploy/keploy` | Apache License 2.0 | 19.881 | đọc tài liệu 2026-11-18 | 30 | Công cụ kiểm thử API và tích hợp, ghi lại lưu lượng thật (API, truy vấn DB, sự kiện streaming) bằng eBPF rồi phát lại thành test và mock. |
-| [Great Expectations (GX Core)](../../15-ai-for-data/README.md) | `fivetran/great_expectations` | Apache-2.0 | 11.913 | chưa chuẩn hóa | 15 | Unit test cho dữ liệu (Expectation + Checkpoint), v1.24.1; |
+| [Great Expectations (GX Core)](../../15-ai-for-data/README.md#ch-great-expectations-gx-core) | `fivetran/great_expectations` | Apache-2.0 | 11.945 | đọc tài liệu 2026-11-23 | 15 | Unit test cho dữ liệu (Expectation + Checkpoint), v1.24.1; |
 | [StrykerJS](../../13-dev-stack-devops/README.md#ch-strykerjs) | `stryker-mutator/stryker-js` | Apache-2.0 | 3.306 | đọc tài liệu 2026-11-23 | 13 | Mutation testing JS/TS; |
-| [Soda Core](../../15-ai-for-data/README.md) | `sodadata/soda-core` | Elastic-2.0 (ELv2; GitHub báo NOASSERTION) | 2.463 | chưa chuẩn hóa | 15 | Data contract YAML, 50+ check, CLI/Python trên Postgres/Snowflake/BigQuery/DuckDB…; |
+| [Soda Core](../../15-ai-for-data/README.md#ch-soda-core) | `sodadata/soda-core` | Elastic-2.0 (ELv2; pyproject khai "Proprietary") | 2.463 | đọc tài liệu 2026-11-23 | 15 | Data contract YAML, 50+ check, CLI/Python trên Postgres/Snowflake/BigQuery/DuckDB…; |
 | [Hypothesis](../../30-software-testing-quality/README.md#hypothesis-factory) | `HypothesisWorks/hypothesis` | MPL-2.0 | — | đọc mã 2026-11-04 | 30 | Property-based Python và thu nhỏ phản ví dụ; |
 | [pytest](../../30-software-testing-quality/README.md#pytest-factory) | `pytest-dev/pytest` | MIT | — | đọc mã 2026-11-04 | 30 | Runner Python fixture/parametrization; |
 | [Storybook Vitest addon](../../06-ui-ux-design/README.md#storybook-addon-vitest-factory) | `storybookjs/storybook` | MIT | — | đọc mã 2026-11-04 | 06 | Thực thể addon kiểm thử, khác Storybook thư viện; |
@@ -39,10 +39,10 @@
 | [Responsively App](../../30-software-testing-quality/README.md#anhkysuai-responsively-org-responsively-app) | `responsively-org/responsively-app` | AGPL-3.0 | 25.577 | đọc tài liệu 2026-11-23 | 30 | Browser Electron hiển thị nhiều viewport để kiểm tra responsive. |
 | [axe-core](../../06-ui-ux-design/README.md#ch-axe-core) | `dequelabs/axe-core` | MPL-2.0 | 7.874 | đọc tài liệu 2026-11-23 | 06 | Engine a11y runtime: 105 luật WCAG 2.0/2.1/2.2 A–AAA + best practice, v4.14.0; |
 | [pixelmatch](../../06-ui-ux-design/README.md#ch-pixelmatch) | `mapbox/pixelmatch` | ISC | 7.028 | đọc tài liệu 2026-11-23 | 06 | So ảnh pixel ~600 dòng, không phụ thuộc, OKLab + HyAB, dò khử răng cưa; |
-| [VMAF](../../19-agentic-video-media/README.md) | `Netflix/vmaf` | BSD-2-Clause-Patent | 5.578 | chưa chuẩn hóa | 19 | Chỉ số chất lượng video cảm nhận + PSNR/SSIM/MS-SSIM/CIEDE2000/CAMBI; |
+| [VMAF](../../19-agentic-video-media/README.md#ch-vmaf) | `Netflix/vmaf` | BSD-2-Clause-Patent | 5.655 | đọc tài liệu 2026-11-23 | 19 | Chỉ số chất lượng video cảm nhận + PSNR/SSIM/MS-SSIM/CIEDE2000/CAMBI; |
 | [eslint-plugin-jsx-a11y](../../06-ui-ux-design/README.md#ch-eslint-plugin-jsx-a11y) | `jsx-eslint/eslint-plugin-jsx-a11y` | MIT | 3.631 | đọc tài liệu 2026-11-23 | 06 | 39 luật a11y tĩnh cho JSX; |
 | [Argos](../../06-ui-ux-design/README.md#ch-argos) | `argos-ci/argos` | MIT | 666 | đọc tài liệu 2026-11-23 | 06 | Nền tảng visual testing review ảnh chụp trong PR (Playwright/Storybook/Cypress), so ảnh bằng odiff-bin; |
-| [ffmpeg-quality-metrics](../../19-agentic-video-media/README.md) | `slhck/ffmpeg-quality-metrics` | MIT | 561 | chưa chuẩn hóa | 19 | CLI/Python bọc ffmpeg tính PSNR/SSIM/VIF/MSAD/VMAF từng frame + thống kê + GUI; |
+| [ffmpeg-quality-metrics](../../19-agentic-video-media/README.md#ch-ffmpeg-quality-metrics) | `slhck/ffmpeg-quality-metrics` | MIT | 566 | đọc tài liệu 2026-11-23 | 19 | CLI/Python bọc ffmpeg tính PSNR/SSIM/VIF/MSAD/VMAF từng frame + thống kê + GUI; |
 
 ## Phân tích tĩnh & lint (`static-analysis`, 19)
 
@@ -60,24 +60,24 @@
 | [react-doctor](../../30-software-testing-quality/README.md#chuyen-react-doctor) | `millionco/react-doctor` | Modified MIT License | 15.154 | đọc tài liệu 2026-11-18 | 30 | Công cụ quét tĩnh có tính tất định cho dự án React, báo lỗi về state/effect, hiệu năng, kiến trúc, bảo mật, a11y và khả năng bảo trì. |
 | [knip](../../13-dev-stack-devops/README.md#ch-knip) | `webpro-nl/knip` | ISC | 12.560 | đọc tài liệu 2026-11-23 | 13 | Tìm file/export/dependency chết; |
 | [Stylelint](../../06-ui-ux-design/README.md#ch-stylelint) | `stylelint/stylelint` | MIT | 11.557 | đọc tài liệu 2026-11-23 | 06 | 154 luật lint CSS (color-no-hex, declaration-property-value-allowed-list, no-unknown-custom-properties) để cấm giá trị ngoài token; |
-| [SQLFluff](../../15-ai-for-data/README.md) | `sqlfluff/sqlfluff` | MIT | 10.011 | chưa chuẩn hóa | 15 | Linter + auto-fix SQL, 28 file dialect, templater Jinja/dbt, lõi Rust sqlfluffrs; |
-| [zizmor](../../31-software-supply-chain-security/README.md) | `zizmorcore/zizmor` | MIT | 6.856 | chưa chuẩn hóa | 31 | Phân tích tĩnh bảo mật GitHub Actions, 41 audit, SARIF, offline/online; |
+| [SQLFluff](../../15-ai-for-data/README.md#ch-sqlfluff) | `sqlfluff/sqlfluff` | MIT | 10.035 | đọc tài liệu 2026-11-23 | 15 | Linter + auto-fix SQL, 28 file dialect, templater Jinja/dbt, lõi Rust sqlfluffrs; |
+| [zizmor](../../31-software-supply-chain-security/README.md#ch-zizmor) | `zizmorcore/zizmor` | MIT | 7.126 | đọc tài liệu 2026-11-23 | 31 | Phân tích tĩnh bảo mật GitHub Actions, 41 audit, SARIF, offline/online; |
 | [jscpd](../../13-dev-stack-devops/README.md#ch-jscpd) | `kucherenko/jscpd` | MIT | 6.472 | đọc tài liệu 2026-11-23 | 13 | Phát hiện code trùng lặp; |
 | [actionlint](../../13-dev-stack-devops/README.md#ch-actionlint) | `rhysd/actionlint` | MIT | 4.371 | đọc tài liệu 2026-11-23 | 13 | Lint workflow GitHub Actions: kiểm kiểu ${{ }}, shellcheck/pyflakes; |
 | [@shadcn/lint](../../06-ui-ux-design/README.md#ch-shadcn-lint) | `shadcn-ui/lint` | MIT | 3.455 | đọc tài liệu 2026-11-23 | 06 | 6 luật ESLint/Oxlint cho design system Tailwind v4, thông báo lỗi viết cho agent; |
-| [crapper / dryer / mutator (Uncle Bob)](../../20-claude-plugins-ecosystem/README.md) | `unclebob/crapper` | 0BSD | 171 | chưa chuẩn hóa | 20 | Bộ cổng chất lượng Python của Robert C. |
+| [crapper / dryer / mutator (Uncle Bob)](../../20-claude-plugins-ecosystem/README.md#ch-crapper-dryer-mutator-uncle-bob) | `unclebob/crapper` | 0BSD | 243 | đọc tài liệu 2026-11-23 | 20 | Bộ cổng chất lượng Python của Robert C. |
 | [dependency-cruiser](../../29-software-architecture-api-contracts/README.md#dependency-cruiser-architecture-gates) | `sverweij/dependency-cruiser` | MIT | — | đọc mã 2026-11-04 | 29 | Kiểm graph/rule dependency JS/TS; |
 
 ## Eval skill/agent (`ai-skill-eval`, 6)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
+| [NVIDIA SkillEvaluator](../../20-claude-plugins-ecosystem/README.md#ch-nvidia-skillevaluator) | `NVIDIA/SkillEvaluator` | Apache-2.0 | 4.442 | đọc tài liệu 2026-11-23 | 20 | Eval skill 3 tầng: chất lượng + scanner, trùng lặp, chạy agent có/không skill; |
 | [SkillsBench](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-skillsbench) | `benchflow-ai/skillsbench` | Apache-2.0 | 1.936 | đọc mã 2026-11-23 | 20 | Benchmark skill của agent: task.md + Docker + oracle + verifier (reward 1/0 từ pytest, phụ thuộc ghim); |
-| [agent-skills-eval](../../20-claude-plugins-ecosystem/README.md) | `darkrishabh/agent-skills-eval` | MIT | 809 | chưa chuẩn hóa | 20 | Test runner skill with_skill vs without_skill có judge, báo cáo HTML; |
-| [skillgrade](../../20-claude-plugins-ecosystem/README.md) | `mgechev/skillgrade` | MIT | 734 | chưa chuẩn hóa | 20 | Unit test cho skill: eval.yaml, chạy nhiều harness trong Docker, grader tất định/LLM/người, --ci --threshold, JUnit; |
-| [NVIDIA SkillEvaluator](../../20-claude-plugins-ecosystem/README.md) | `NVIDIA/SkillEvaluator` | Apache-2.0 | 622 | chưa chuẩn hóa | 20 | Eval skill 3 tầng: chất lượng + scanner, trùng lặp, chạy agent có/không skill; |
+| [agent-skills-eval](../../20-claude-plugins-ecosystem/README.md#ch-agent-skills-eval) | `darkrishabh/agent-skills-eval` | MIT | 821 | đọc tài liệu 2026-11-23 | 20 | Test runner skill with_skill vs without_skill có judge, báo cáo HTML; |
+| [skillgrade](../../20-claude-plugins-ecosystem/README.md#ch-skillgrade) | `mgechev/skillgrade` | MIT | 737 | đọc tài liệu 2026-11-23 | 20 | Unit test cho skill: eval.yaml, chạy nhiều harness trong Docker, grader tất định/LLM/người, --ci --threshold, JUnit; |
 | [agnix](../../20-claude-plugins-ecosystem/README.md#factory-skill-admission-2026-11-04) | `agent-sh/agnix` | MIT OR Apache-2.0 | 465 | đọc mã 2026-11-04 | 20 | Linter 757 luật cho CLAUDE.md, SKILL.md, hooks, MCP, plugin của nhiều harness; |
-| [Coder Eval](../../20-claude-plugins-ecosystem/README.md) | `UiPath/coder_eval` | Apache-2.0 | 156 | chưa chuẩn hóa | 20 | Eval coding agent trong sandbox, kiểm skill_triggered theo harness, A/B, GitHub Action; |
+| [Coder Eval](../../20-claude-plugins-ecosystem/README.md#ch-coder-eval) | `UiPath/coder_eval` | Apache-2.0 | 159 | đọc tài liệu 2026-11-23 | 20 | Eval coding agent trong sandbox, kiểm skill_triggered theo harness, A/B, GitHub Action; |
 
 ## Hợp đồng API & schema (`api-contract`, 8)
 
@@ -87,7 +87,7 @@
 | [Zod](../../30-software-testing-quality/README.md#anhkysuai-colinhacks-zod) | `colinhacks/zod` | MIT | 44.394 | đọc mã 2026-11-23 | 30 | Schema validation JavaScript/TypeScript đồng thời suy luận kiểu dữ liệu. |
 | [Insomnia](../../30-software-testing-quality/README.md#anhkysuai-kong-insomnia) | `Kong/insomnia` | Apache-2.0 cho mã repo; tính năng dịch vụ theo gói riêng | 40.183 | đọc tài liệu 2026-11-23 | 30 | API client và bộ công cụ thiết kế, chạy thử REST, GraphQL, gRPC và WebSocket. |
 | [Pydantic](../../30-software-testing-quality/README.md#anhkysuai-pydantic-pydantic) | `pydantic/pydantic` | MIT | 29.634 | đọc tài liệu 2026-11-23 | 30 | Validation dữ liệu Python qua type hint và model. |
-| [Spectral](../../29-software-architecture-api-contracts/README.md) | `stoplightio/spectral` | Apache-2.0 | 3.247 | chưa chuẩn hóa | 29 | Linter JSON/YAML, ruleset sẵn OpenAPI/AsyncAPI/Arazzo v1 (hỗ trợ Arazzo 1.1 chưa xác minh); |
+| [Spectral](../../29-software-architecture-api-contracts/README.md#ch-spectral) | `stoplightio/spectral` | Apache-2.0 | 3.263 | đọc tài liệu 2026-11-23 | 29 | Linter JSON/YAML, ruleset sẵn OpenAPI/AsyncAPI/Arazzo v1 (hỗ trợ Arazzo 1.1 chưa xác minh); |
 | [OpenTelemetry Weaver](../../07-eval-observability/README.md#ch-opentelemetry-weaver) | `open-telemetry/weaver` | Apache-2.0 | 537 | đọc tài liệu 2026-11-23 | 07 | registry check/live-check OTLP so với semconv, GitHub Action fail theo severity; |
 | [oasdiff](../../29-software-architecture-api-contracts/README.md#oasdiff-compatibility-gates) | `oasdiff/oasdiff` | Apache-2.0 | — | đọc mã 2026-11-04 | 29 | Breaking diff OpenAPI base/revision; |
 | [Schemathesis](../../30-software-testing-quality/README.md#schemathesis-factory) | `schemathesis/schemathesis` | MIT | — | đọc mã 2026-11-04 | 30 | Schema-based OpenAPI/GraphQL/gRPC testing và stateful sequences; |
@@ -101,7 +101,7 @@
 | [Hyperfine](../../30-software-testing-quality/README.md#anhkysuai-sharkdp-hyperfine) | `sharkdp/hyperfine` | MIT OR Apache-2.0 | 29.338 | đọc tài liệu 2026-11-23 | 30 | Benchmark lệnh qua nhiều lần chạy và xuất thống kê. |
 | [Locust](../../30-software-testing-quality/README.md#anhkysuai-locustio-locust) | `locustio/locust` | MIT | 28.307 | đọc tài liệu 2026-11-23 | 30 | Công cụ viết kịch bản kiểm tải bằng Python cho HTTP và giao thức mở rộng. |
 | [React Scan](../../30-software-testing-quality/README.md#anhkysuai-aidenybai-react-scan) | `aidenybai/react-scan` | MIT | 21.882 | đọc tài liệu 2026-11-23 | 30 | Công cụ hiển thị component và điểm nóng hiệu năng khi quan sát ứng dụng React đang chạy. |
-| [web-vitals](../../30-software-testing-quality/README.md) | `GoogleChrome/web-vitals` | Apache-2.0 | 8.669 | chưa chuẩn hóa | 30 | Thư viện chính thức đo LCP/INP/CLS ở người dùng thật, build attribution chỉ ra nguyên nhân; |
+| [web-vitals](../../30-software-testing-quality/README.md#ch-web-vitals) | `GoogleChrome/web-vitals` | Apache-2.0 | 8.700 | đọc tài liệu 2026-11-23 | 30 | Thư viện chính thức đo LCP/INP/CLS ở người dùng thật, build attribution chỉ ra nguyên nhân; |
 | [Lighthouse CI](../../13-dev-stack-devops/README.md#ch-lighthouse-ci) | `GoogleChrome/lighthouse-ci` | Apache-2.0 | 7.122 | đọc tài liệu 2026-11-23 | 13 | Commit cuối 26/6/2025 (đứng yên); |
 | [Web Quality Skills](../../06-ui-ux-design/README.md#ch-web-quality-skills) | `addyosmani/web-quality-skills` | MIT | 3.122 | đọc tài liệu 2026-11-23 | 06 | 6 Agent Skills đo-trước (audit, performance, Core Web Vitals, a11y WCAG 2.2, SEO, best practices); |
 | [AIPerf](../../10-local-llm-rag-memory/README.md#aiperf) | `ai-dynamo/aiperf` | Apache-2.0 | 842 | đọc mã 2026-11-02 | 10 | Load generator đo TTFT/ITL/throughput; |

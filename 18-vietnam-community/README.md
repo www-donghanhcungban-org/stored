@@ -351,3 +351,317 @@ UAX #15 được đọc ở bản revision 58 (12/8/2026); CLDR và runtime đư
 - https://pypi.org/project/underthesea/ · https://github.com/undertheseanlp/underthesea · https://aclanthology.org/N18-5012/
 - https://www.sotatek.com/newsroom/sotatek-contributes-to-vigen-vietnams-first-open-source-vietnamese-language-dataset-for-ai/ · https://technode.global/2026/06/18/vietnams-developers-are-moving-from-outsourcing-to-ai-building/ · https://morsoftware.com/news/codex-community-hackathon-hanoi-2026 · https://www.vietnam.vn/en/khoi-dong-cuoc-thi-vietnam-ai-open-hackathon-2026 · https://www.vietnam.vn/en/lam-chu-ai-va-phat-trien-phan-mem-nguon-mo-an-toan · https://www.openhackathons.org/s/siteevent/a0CUP00004VRMiz2AH/se000492
 - Repo/model đã xác minh (12/10/2026): https://github.com/VinAIResearch/PhoBERT · https://huggingface.co/vinai/phobert-base · https://huggingface.co/vinai/phobert-base-v2 · https://github.com/VinAIResearch/PhoWhisper · https://huggingface.co/vinai/PhoWhisper-large · https://github.com/DAMO-NLP-SG/SeaLLMs · https://huggingface.co/SeaLLMs/SeaLLMs-v3-7B-Chat · https://github.com/pnnbao97/VieNeu-TTS · https://github.com/nguyenthienhy/F5-TTS-Vietnamese · https://huggingface.co/hynt/F5-TTS-Vietnamese-ViVoice · https://github.com/thinhlpg/vixtts-demo · https://huggingface.co/capleaf/viXTTS · https://huggingface.co/bkai-foundation-models/vietnamese-bi-encoder · https://huggingface.co/AITeamVN/Vietnamese_Embedding · https://github.com/ZaloAI-Jaist/VMLU · https://github.com/VinAIResearch/BARTpho · https://github.com/vietai/ViT5 · https://github.com/trungtv/pyvi
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-awsome-vietnamese-nlp"></a>
+
+### awsome-vietnamese-nlp
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vndee/awsome-vietnamese-nlp |
+| License | không có file LICENSE |
+| Phiên bản đã đọc | `73cbd9e6bc72af46f4a0d889fbf34169fb9a0299` (commit 2025-10-28) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2025-10-28; chỉ là danh sách link. |
+| Nhận định | Danh sách link (awesome-list) tài nguyên NLP tiếng Việt (LLM, ASR, TTS, bộ dữ liệu); không chứa mã. Không có LICENSE nên không có quyền tái sử dụng rõ ràng cho nội dung danh sách; chất lượng từng link chưa kiểm. |
+| Nguồn | [README](https://github.com/vndee/awsome-vietnamese-nlp/blob/73cbd9e6bc72af46f4a0d889fbf34169fb9a0299/README.md) |
+
+<a id="ch-elasticsearch-vietnamese-analysis"></a>
+
+### Elasticsearch Vietnamese Analysis
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/duydo/elasticsearch-analysis-vietnamese |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `4f24e15a7be7f31caf964ae511dbbc9f65d45424` (commit 2026-10-30) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE.txt, pom.xml, arcade-architecture-analysis.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-10-30; theo kịp Elasticsearch 9.3.0. |
+| Nhận định | Plugin Elasticsearch cung cấp vi_analyzer, vi_tokenizer, vi_stop dùng bộ tách từ C++ của Cốc Cốc (cần dict_path). Phải build/cài theo đúng phiên bản Elasticsearch; compose mẫu dùng mật khẩu mặc định changeme chỉ cho thử nghiệm. |
+| Nguồn | [README](https://github.com/duydo/elasticsearch-analysis-vietnamese/blob/4f24e15a7be7f31caf964ae511dbbc9f65d45424/README.md) · [LICENSE.txt](https://github.com/duydo/elasticsearch-analysis-vietnamese/blob/4f24e15a7be7f31caf964ae511dbbc9f65d45424/LICENSE.txt) · [pom.xml](https://github.com/duydo/elasticsearch-analysis-vietnamese/blob/4f24e15a7be7f31caf964ae511dbbc9f65d45424/pom.xml) · [arcade-architecture-analysis.yml](https://github.com/duydo/elasticsearch-analysis-vietnamese/blob/4f24e15a7be7f31caf964ae511dbbc9f65d45424/.github/workflows/arcade-architecture-analysis.yml) |
+
+<a id="ch-f5-tts-vietnamese"></a>
+
+### F5-TTS-Vietnamese
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/nguyenthienhy/F5-TTS-Vietnamese |
+| License | MIT (mã); weights chưa xác minh từ repo |
+| Phiên bản đã đọc | `e74db9d5a5e521bb930490e7cd7912438bf7ae84` (commit 2025-04-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2025-04-23; mức hoạt động thấp. |
+| Nhận định | Quy trình tinh chỉnh F5-TTS cho tiếng Việt (script chuẩn bị metadata, mở rộng embedding/vocab, fine_tuning.sh, infer.sh) kèm mẹo huấn luyện; README chỉ dẫn demo trên Hugging Face. License weights chưa xác minh từ repo **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/nguyenthienhy/F5-TTS-Vietnamese/blob/e74db9d5a5e521bb930490e7cd7912438bf7ae84/README.md) · [LICENSE](https://github.com/nguyenthienhy/F5-TTS-Vietnamese/blob/e74db9d5a5e521bb930490e7cd7912438bf7ae84/LICENSE) · [pyproject.toml](https://github.com/nguyenthienhy/F5-TTS-Vietnamese/blob/e74db9d5a5e521bb930490e7cd7912438bf7ae84/pyproject.toml) |
+
+<a id="ch-gipformer"></a>
+
+### Gipformer
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ggroup-ai-lab/gipformer |
+| License | Không có file LICENSE (README và pyproject tuyên bố MIT) |
+| Phiên bản đã đọc | `0cac5b183d2e1a9e3429ff69080e09cc62ebdf9b` (commit 2026-09-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-09-17. |
+| Nhận định | Mã suy luận ASR tiếng Việt Zipformer RNN-T 68M (infer_onnx.py, infer_pytorch.py, audio mẫu); có hai checkpoint gipformer và gipformer1.5 trên Hugging Face. Ưu thế "SOTA/tổng đài" là tuyên bố README **(chưa xác minh)**; thiếu file LICENSE nên điều khoản chính thức mới chỉ là dòng tuyên bố. |
+| Nguồn | [README](https://github.com/ggroup-ai-lab/gipformer/blob/0cac5b183d2e1a9e3429ff69080e09cc62ebdf9b/README.md) · [pyproject.toml](https://github.com/ggroup-ai-lab/gipformer/blob/0cac5b183d2e1a9e3429ff69080e09cc62ebdf9b/pyproject.toml) |
+
+<a id="ch-local-ai-ocr"></a>
+
+### Local AI OCR
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/th1nhhdk/local_ai_ocr |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `237410b5457823db45b2d4ce09b3faa58bcba6d6` (commit 2026-07-05) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-07-05; mức hoạt động thấp. |
+| Nhận định | Ứng dụng PySide6 OCR ảnh/PDF cục bộ bằng DeepSeek-OCR-2, xếp hàng nhiều tệp, xuất kết quả kèm ảnh trích. Tuyên bố "offline tuyệt đối" chỉ đúng sau lần tải weights đầu **(chưa xác minh)**; license weights nằm ở repo model, không ở đây. |
+| Nguồn | [README.md](https://github.com/th1nhhdk/local_ai_ocr/blob/237410b5457823db45b2d4ce09b3faa58bcba6d6/README.md) · [LICENSE](https://github.com/th1nhhdk/local_ai_ocr/blob/237410b5457823db45b2d4ce09b3faa58bcba6d6/LICENSE) |
+
+<a id="ch-phobert"></a>
+
+### PhoBERT
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/VinAIResearch/PhoBERT |
+| License | MIT (base/large); AGPL-3.0 (base-v2) |
+| Phiên bản đã đọc | `7b4a3e38cd316c14d4006fe0328d3e2d6f1edada` (commit 2026-08-04) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, LICENSE_for_PhoBERT_v2; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-08-04; repo gần như chỉ có tài liệu. |
+| Nhận định | Mô hình ngôn ngữ RoBERTa tiền huấn luyện cho tiếng Việt (base, large, base-v2); repo chỉ chứa README và license, trọng số nằm trên Hugging Face. Chọn base-v2 kéo theo điều khoản AGPL-3.0 khác với hai bản còn lại. |
+| Nguồn | [README](https://github.com/VinAIResearch/PhoBERT/blob/7b4a3e38cd316c14d4006fe0328d3e2d6f1edada/README.md) · [LICENSE](https://github.com/VinAIResearch/PhoBERT/blob/7b4a3e38cd316c14d4006fe0328d3e2d6f1edada/LICENSE) · [LICENSE_for_PhoBERT_v2](https://github.com/VinAIResearch/PhoBERT/blob/7b4a3e38cd316c14d4006fe0328d3e2d6f1edada/LICENSE_for_PhoBERT_v2) |
+
+<a id="ch-phogpt"></a>
+
+### PhoGPT
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/VinAIResearch/PhoGPT |
+| License | BSD-3-Clause (repo) (khác catalog cũ) |
+| Phiên bản đã đọc | `92f7d303fda43002f80a9afd2957ee663171b866` (commit 2024-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2024-11-12; mức hoạt động thấp. |
+| Nhận định | Loạt mô hình sinh tiếng Việt PhoGPT-4B và PhoGPT-4B-Chat (tiền huấn luyện từ đầu); repo chứa README, cấu hình fine-tune và mẫu dữ liệu instruction, trọng số ở Hugging Face. Điều khoản dùng weights chưa kiểm **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/VinAIResearch/PhoGPT/blob/92f7d303fda43002f80a9afd2957ee663171b866/README.md) · [LICENSE](https://github.com/VinAIResearch/PhoGPT/blob/92f7d303fda43002f80a9afd2957ee663171b866/LICENSE) |
+
+<a id="ch-phowhisper"></a>
+
+### PhoWhisper
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/VinAIResearch/PhoWhisper |
+| License | BSD-3-Clause |
+| Phiên bản đã đọc | `b06f1937995cfee75b9e4ad3e2ae0798faf1a562` (commit 2024-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2024-11-12; không thấy cập nhật sau đó. |
+| Nhận định | Whisper tinh chỉnh cho ASR tiếng Việt (844 giờ dữ liệu nhiều giọng vùng miền), trích dẫn paper ICLR 2024 Tiny Papers. Kết quả SOTA là tuyên bố tác giả **(chưa xác minh)**; repo chỉ có README và LICENSE, trọng số trên Hugging Face. |
+| Nguồn | [README](https://github.com/VinAIResearch/PhoWhisper/blob/b06f1937995cfee75b9e4ad3e2ae0798faf1a562/README.md) · [LICENSE](https://github.com/VinAIResearch/PhoWhisper/blob/b06f1937995cfee75b9e4ad3e2ae0798faf1a562/LICENSE) |
+
+<a id="ch-sea-helm"></a>
+
+### SEA-HELM
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/aisingapore/SEA-HELM |
+| License | MIT (mã); pyproject ghi Apache-2.0; dữ liệu theo license riêng |
+| Phiên bản đã đọc | `9be3986d00185dc6d6ec362b71542ed29642a6be` (commit 2026-08-05) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, pyproject.toml, pre-commit.yaml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-08-05; v1.3.0. |
+| Nhận định | Bộ đánh giá LLM cho tiếng Đông Nam Á của AI Singapore (nhiều nhóm tác vụ, có chat_templates, script slurm/pbs). Mã MIT nhưng khai báo license trong pyproject lệch (Apache-2.0) và từng dataset có license riêng; CI chỉ là pre-commit lint, không phải chạy benchmark. |
+| Nguồn | [README](https://github.com/aisingapore/SEA-HELM/blob/9be3986d00185dc6d6ec362b71542ed29642a6be/README.md) · [LICENSE](https://github.com/aisingapore/SEA-HELM/blob/9be3986d00185dc6d6ec362b71542ed29642a6be/LICENSE) · [pyproject.toml](https://github.com/aisingapore/SEA-HELM/blob/9be3986d00185dc6d6ec362b71542ed29642a6be/pyproject.toml) · [pre-commit.yaml](https://github.com/aisingapore/SEA-HELM/blob/9be3986d00185dc6d6ec362b71542ed29642a6be/.github/workflows/pre-commit.yaml) |
+
+<a id="ch-seallms"></a>
+
+### SeaLLMs
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/DAMO-NLP-SG/SeaLLMs |
+| License | Không có file LICENSE (README dẫn SeaLLMs Terms of Use) |
+| Phiên bản đã đọc | `5841cc2ece1ba1ec3339c3d66a265209326c24bd` (commit 2024-07-30) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2024-07-30; không thấy cập nhật tiếp. |
+| Nhận định | Trang giới thiệu họ LLM Đông Nam Á của DAMO/Alibaba (SeaLLM-7B-v2, v2.5, v3) cùng ảnh đánh giá và thư mục evaluation/vmlu; không chứa mã huấn luyện. Điều khoản dùng nằm ngoài repo (HF, chưa đọc) **(chưa xác minh)**; số liệu so ChatGPT là tuyên bố tác giả. |
+| Nguồn | [README](https://github.com/DAMO-NLP-SG/SeaLLMs/blob/5841cc2ece1ba1ec3339c3d66a265209326c24bd/README.md) |
+
+<a id="ch-underthesea"></a>
+
+### underthesea
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/undertheseanlp/underthesea |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `22bdc17ec411622cfbd39333c61ed2b0005ef568` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-16; nhiều workflow CI/release. |
+| Nhận định | Bộ công cụ Python cho NLP tiếng Việt (tách từ, POS, NER...) nay kèm module agent đa nhà cung cấp chỉ dùng thư viện chuẩn gọi API LLM. Phạm vi mở rộng sang agent/TTS khiến dependency và bề mặt API thay đổi; việc đổi license chưa kiểm lịch sử **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/undertheseanlp/underthesea/blob/22bdc17ec411622cfbd39333c61ed2b0005ef568/README.md) · [LICENSE](https://github.com/undertheseanlp/underthesea/blob/22bdc17ec411622cfbd39333c61ed2b0005ef568/LICENSE) · [pyproject.toml](https://github.com/undertheseanlp/underthesea/blob/22bdc17ec411622cfbd39333c61ed2b0005ef568/pyproject.toml) |
+
+<a id="ch-v-tts"></a>
+
+### V-TTS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/tronghieuit/v-tts |
+| License | CC-BY-NC-4.0 |
+| Phiên bản đã đọc | `e22eef3267869375e40a096b376cde94aa41e610` (commit 2026-07-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, setup.py; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-07-23; README cập nhật 4/2026. |
+| Nhận định | TTS tiếng Việt đa giọng và clone giọng zero-shot, 74,8M tham số, chạy CPU theo tuyên bố **(chưa xác minh)**; có Docker, demo Gradio, thư mục deployments (android/edge/web). License cấm thương mại; file .exe nhị phân không ký trong repo là rủi ro chuỗi cung ứng, không chạy. |
+| Nguồn | [README](https://github.com/tronghieuit/v-tts/blob/e22eef3267869375e40a096b376cde94aa41e610/README.md) · [LICENSE](https://github.com/tronghieuit/v-tts/blob/e22eef3267869375e40a096b376cde94aa41e610/LICENSE) · [setup.py](https://github.com/tronghieuit/v-tts/blob/e22eef3267869375e40a096b376cde94aa41e610/setup.py) |
+
+<a id="ch-vieneu-tts"></a>
+
+### VieNeu-TTS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/pnnbao97/VieNeu-TTS |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `6566468cf14974807050495036ab75cd041143f7` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, pyproject.toml, ci.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-19; v1/v2 deprecated, v3 Turbo hiện hành. |
+| Nhận định | TTS tiếng Việt chạy trên thiết bị, clone giọng từ mẫu 3-8 giây, API tương thích OpenAI và Docker. Bản mạnh nhất (v4) đóng, bản mở là v3 Turbo; số liệu độ trễ/RTF là tuyên bố README **(chưa xác minh)**; license weights nằm ở repo HF chưa đọc. |
+| Nguồn | [README](https://github.com/pnnbao97/VieNeu-TTS/blob/6566468cf14974807050495036ab75cd041143f7/README.md) · [LICENSE](https://github.com/pnnbao97/VieNeu-TTS/blob/6566468cf14974807050495036ab75cd041143f7/LICENSE) · [pyproject.toml](https://github.com/pnnbao97/VieNeu-TTS/blob/6566468cf14974807050495036ab75cd041143f7/pyproject.toml) · [ci.yml](https://github.com/pnnbao97/VieNeu-TTS/blob/6566468cf14974807050495036ab75cd041143f7/.github/workflows/ci.yml) |
+
+<a id="ch-vietnamese-bi-encoder-bkai"></a>
+
+### vietnamese-bi-encoder (BKAI)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://huggingface.co/bkai-foundation-models/vietnamese-bi-encoder |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | Trang HF, lastModified 2024-03-11 (không có SHA) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc model card HF (README raw); chưa chạy upstream |
+| Bảo trì | lastModified 2024-03-11; ~887k lượt tải (tổng, trang HF 2026-11-23). |
+| Nhận định | Bi-encoder embedding tiếng Việt cho tìm kiếm ngữ nghĩa/RAG, đánh giá trên 20% còn lại của tập pháp lý Zalo 2021 (bảng Acc@k/MRR do tác giả công bố **(chưa xác minh)**). Dữ liệu dịch máy và miền pháp lý có thể lệch với miền khác; nền PhoBERT-v2 mang AGPL-3.0, cần kiểm khi tích hợp. |
+| Nguồn | [Trang HF](https://huggingface.co/bkai-foundation-models/vietnamese-bi-encoder) · [README raw](https://huggingface.co/bkai-foundation-models/vietnamese-bi-encoder/raw/main/README.md) |
+
+<a id="ch-vietnamese-embedding-aiteamvn"></a>
+
+### Vietnamese_Embedding (AITeamVN)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://huggingface.co/AITeamVN/Vietnamese_Embedding |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | Trang HF, lastModified 2025-08-25 (không có SHA) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc model card HF (README raw); chưa chạy upstream |
+| Bảo trì | lastModified 2025-08-25; ~9,3k lượt tải trang HF 2026-11-23. |
+| Nhận định | Embedding truy hồi tiếng Việt (sentence-transformers, có ONNX) từ BGE-M3; điểm đáng tham khảo là độ dài 2048 và nền đa ngôn ngữ mạnh. Dữ liệu huấn luyện và số liệu đánh giá do tác giả công bố **(chưa xác minh)**; số lượt tải hiện ~9,3k khác ghi chú cũ (21,7k/tháng). |
+| Nguồn | [Trang HF](https://huggingface.co/AITeamVN/Vietnamese_Embedding) · [README raw](https://huggingface.co/AITeamVN/Vietnamese_Embedding/raw/main/README.md) |
+
+<a id="ch-vietnamese-provinces-database"></a>
+
+### Vietnamese Provinces Database
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/thanglequoc/vietnamese-provinces-database |
+| License | MIT |
+| Phiên bản đã đọc | `8b78ba5118715e1fa81769286724db79346abf52` (commit 2026-09-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, first-workflow.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-09-22; bám các nghị quyết mới (v5.2.0). |
+| Nhận định | CSDL đơn vị hành chính Việt Nam sau sáp nhập (34 tỉnh) xuất ra nhiều dạng SQL/NoSQL (MySQL, Postgres, Oracle, SQL Server, Mongo, Redis, Elasticsearch) kèm GIS, mã bưu chính và bộ sinh dữ liệu bằng Go. Nguồn là nghị quyết nhưng không phải nguồn chính thức, cần đối chiếu trước khi dùng pháp lý; có AGENTS.md/opencode cho agent. |
+| Nguồn | [README](https://github.com/thanglequoc/vietnamese-provinces-database/blob/8b78ba5118715e1fa81769286724db79346abf52/README.md) · [LICENSE](https://github.com/thanglequoc/vietnamese-provinces-database/blob/8b78ba5118715e1fa81769286724db79346abf52/LICENSE) · [first-workflow.yml](https://github.com/thanglequoc/vietnamese-provinces-database/blob/8b78ba5118715e1fa81769286724db79346abf52/.github/workflows/first-workflow.yml) |
+
+<a id="ch-vistral"></a>
+
+### Vistral
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://huggingface.co/Viet-Mistral/Vistral-7B-Chat |
+| License | AFL-3.0 (theo trang HF; không phải Apache-2.0) (khác catalog cũ) |
+| Phiên bản đã đọc | Trang HF (không có SHA), lastModified 2024-02-27 |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang model HF (raw README trả 401); chưa chạy upstream |
+| Bảo trì | Cập nhật cuối 2024-02-27; không thấy bản mới. |
+| Nhận định | Mô hình chat tiếng Việt 7B (Mistral) của Viet-Mistral trên Hugging Face, không phải repo GitHub; truy cập qua gated, nội dung model card chỉ đọc từ trang HTML vì raw README trả 401. Benchmark là tuyên bố tác giả **(chưa xác minh)**. |
+| Nguồn | [Trang HF](https://huggingface.co/Viet-Mistral/Vistral-7B-Chat) |
+
+<a id="ch-vixtts"></a>
+
+### viXTTS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/thinhlpg/vixtts-demo |
+| License | MPL-2.0 (repo demo); weights chưa kiểm |
+| Phiên bản đã đọc | `13512f40f4f70b5bfa1691b5ca68fb2ca2f131be` (commit 2025-04-04) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE.txt; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2025-04-04; README nói không bảo trì tích cực. |
+| Nhận định | Demo Gradio/Colab của viXTTS (XTTS-v2 tinh chỉnh tiếng Việt) clone giọng; chạy trên Ubuntu/WSL2. Tác giả nói không bảo trì tích cực; weights XTTS kế thừa điều khoản Coqui CPML (không thương mại) **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/thinhlpg/vixtts-demo/blob/13512f40f4f70b5bfa1691b5ca68fb2ca2f131be/README.md) · [LICENSE.txt](https://github.com/thinhlpg/vixtts-demo/blob/13512f40f4f70b5bfa1691b5ca68fb2ca2f131be/LICENSE.txt) |
+
+<a id="ch-vmlu"></a>
+
+### VMLU
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ZaloAI-Jaist/VMLU |
+| License | MIT (mã); license dữ liệu chưa xác định |
+| Phiên bản đã đọc | `b0225316f4eaa1e2ca39c4164075d1b1aee4e220` (commit 2024-05-04) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE.txt; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2024-05-04; không thấy cập nhật tiếp. |
+| Nhận định | Benchmark LLM tiếng Việt VMLU (58 môn, 4 nhóm STEM/nhân văn/xã hội/khác) kèm code_benchmark mẫu và bảng thống kê; dữ liệu tải qua trang riêng, đáp án test không công khai. Điều khoản dùng dữ liệu chưa rõ (TBU) **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/ZaloAI-Jaist/VMLU/blob/b0225316f4eaa1e2ca39c4164075d1b1aee4e220/README.md) · [LICENSE.txt](https://github.com/ZaloAI-Jaist/VMLU/blob/b0225316f4eaa1e2ca39c4164075d1b1aee4e220/LICENSE.txt) |
+
+<a id="ch-vncorenlp"></a>
+
+### VnCoreNLP
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vncorenlp/VnCoreNLP |
+| License | GPL-3.0-or-later |
+| Phiên bản đã đọc | `62bbc58fe5d113c898eae112656be97dcf50b3a0` (commit 2023-02-11) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc Readme.md, LICENSE.md, pom.xml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2023-02-11; không còn cập nhật. |
+| Nhận định | Pipeline NLP tiếng Việt viết bằng Java (tách từ, POS, NER, phân tích phụ thuộc) dùng qua dòng lệnh/API, kèm file jar và mô hình có sẵn. GPL copyleft mạnh; dự án không còn cập nhật từ 2023. |
+| Nguồn | [Readme.md](https://github.com/vncorenlp/VnCoreNLP/blob/62bbc58fe5d113c898eae112656be97dcf50b3a0/Readme.md) · [LICENSE.md](https://github.com/vncorenlp/VnCoreNLP/blob/62bbc58fe5d113c898eae112656be97dcf50b3a0/LICENSE.md) · [pom.xml](https://github.com/vncorenlp/VnCoreNLP/blob/62bbc58fe5d113c898eae112656be97dcf50b3a0/pom.xml) |
+
+<a id="ch-vnhsge"></a>
+
+### VNHSGE
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Xdao85/VNHSGE |
+| License | Không có file LICENSE |
+| Phiên bản đã đọc | `04c845dccd5bf7b619e1e6b3ddae4d53c1264620` (commit 2026-10-30) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-10-30. |
+| Nhận định | Bộ dữ liệu đề thi tốt nghiệp THPT dạng song ngữ, có hình ảnh, để đánh giá LLM. Không có LICENSE nên điều khoản tái sử dụng dữ liệu không rõ, và nguồn đề thuộc bộ giáo dục; không thấy phần nào kiểm chứng đáp án. |
+| Nguồn | [README.md](https://github.com/Xdao85/VNHSGE/blob/04c845dccd5bf7b619e1e6b3ddae4d53c1264620/README.md) |
+
+<a id="ch-zerotts"></a>
+
+### ZeroTTS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/zeroweight-ai/ZeroTTS |
+| License | MIT |
+| Phiên bản đã đọc | `319c3e07c8575c1e38617f07c773ec76a780a1f1` (commit 2026-09-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, NOTICE, pyproject.toml, ci.yml, publish-pypi.yml; chưa chạy upstream |
+| Bảo trì | commit 17/9/2026 (~2 tháng), có CI ci.yml (ruff, pytest ma trận Python 3.9/3.11/3.12) và publish-pypi.yml; pyproject ghi Beta, v0.1.5 |
+| Nhận định | TTS tiếng Việt zero-shot chạy ONNX trên CPU (numpy + onnxruntime, không torch), có streaming, nhân bản giọng từ vài giây âm thanh, có cả bản C++/WASM và demo trình duyệt. Có test và CI thật. Các con số "ít lỗi từ hơn 4 lần", RTF 0,5, 70 ms là tuyên bố của tác giả **(chưa xác minh)**; weights khoảng 900 MB tải từ Hugging Face. |
+| Nguồn | [README.md](https://github.com/zeroweight-ai/ZeroTTS/blob/319c3e07c8575c1e38617f07c773ec76a780a1f1/README.md) · [LICENSE](https://github.com/zeroweight-ai/ZeroTTS/blob/319c3e07c8575c1e38617f07c773ec76a780a1f1/LICENSE) · [NOTICE](https://github.com/zeroweight-ai/ZeroTTS/blob/319c3e07c8575c1e38617f07c773ec76a780a1f1/NOTICE) · [pyproject.toml](https://github.com/zeroweight-ai/ZeroTTS/blob/319c3e07c8575c1e38617f07c773ec76a780a1f1/pyproject.toml) · [ci.yml](https://github.com/zeroweight-ai/ZeroTTS/blob/319c3e07c8575c1e38617f07c773ec76a780a1f1/.github/workflows/ci.yml) · [publish-pypi.yml](https://github.com/zeroweight-ai/ZeroTTS/blob/319c3e07c8575c1e38617f07c773ec76a780a1f1/.github/workflows/publish-pypi.yml) |

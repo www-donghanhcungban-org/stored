@@ -27,8 +27,8 @@
 | [Inspect Evals](../../07-eval-observability/README.md#ch-inspect-evals) | `UKGovernmentBEIS/inspect_evals` | MIT | 756 | đọc tài liệu 2026-11-23 | 07 | >200 task Inspect; |
 | [AgentLab](../../11-browser-computer-use-sandbox/README.md#agentlab) | `ServiceNow/AgentLab` | Apache-2.0 (notice) | 661 | đọc mã 2026-11-02 | 11 | Thí nghiệm BrowserGym; |
 | [chunking_evaluation (Chroma)](../../10-local-llm-rag-memory/README.md#ch-chunking-evaluation-chroma) | `brandonstarxel/chunking_evaluation` | MIT | 514 | đọc tài liệu 2026-11-23 | 10 | Đo chunking mức token: precision/recall/IoU so với đoạn trích chuẩn (báo cáo kỹ thuật Chroma), sinh câu hỏi tổng hợp; |
-| [UTMOSv2](../../14-voice-multimodal/README.md) | `sarulab-speech/UTMOSv2` | MIT | 377 | chưa chuẩn hóa | 14 | Dự đoán MOS độ tự nhiên giọng tổng hợp; |
-| [UltraEval-Audio](../../14-voice-multimodal/README.md) | `OpenBMB/UltraEval-Audio` | Apache-2.0 | 328 | chưa chuẩn hóa | 14 | Khung eval audio foundation model: 34 benchmark, 10 ngôn ngữ, hiểu + sinh giọng, lệnh tái lập kết quả (ACL 2026 demo); |
+| [UTMOSv2](../../14-voice-multimodal/README.md#ch-utmosv2) | `sarulab-speech/UTMOSv2` | MIT | 381 | đọc tài liệu 2026-11-23 | 14 | Dự đoán MOS độ tự nhiên giọng tổng hợp; |
+| [UltraEval-Audio](../../14-voice-multimodal/README.md#ch-ultraeval-audio) | `OpenBMB/UltraEval-Audio` | Apache-2.0 | 333 | đọc tài liệu 2026-11-23 | 14 | Khung eval audio foundation model: 34 benchmark, 10 ngôn ngữ, hiểu + sinh giọng, lệnh tái lập kết quả (ACL 2026 demo); |
 | [EVA (ServiceNow)](../../14-voice-multimodal/README.md#ch-eva-servicenow) | `ServiceNow/eva` | MIT | 235 | đọc tài liệu 2026-11-23 | 14 | Eval voice agent nhiều lượt bot-to-bot: EVA-A (đúng việc) + EVA-X (trải nghiệm); |
 | [OpenEvals](../../07-eval-observability/README.md#openevals-factory) | `langchain-ai/openevals` | MIT | — | đọc mã 2026-11-04 | 07 | Scorer exact/JSON và LLM judge Python/JS; |
 
@@ -62,7 +62,7 @@
 | [tau2-bench](../../07-eval-observability/README.md#ch-tau2-bench) | `sierra-research/tau2-bench` | MIT | 2.500 | đọc tài liệu 2026-11-23 | 07 | τ²/τ³-bench tool–agent–user; |
 | [BEIR](../../10-local-llm-rag-memory/README.md#ch-beir) | `beir-cellar/beir` | Apache-2.0 | 2.336 | đọc tài liệu 2026-11-23 | 10 | Chuẩn định dạng corpus/queries/qrels + nDCG@10/Recall@k cho retrieval zero-shot (NeurIPS 2021), 17 bộ dữ liệu tiền xử lý; |
 | [OmniDocBench](../../26-document-intelligence-ocr/README.md#omnidocbench) | `opendatalab/OmniDocBench` | Apache-2.0 (eval code); dataset kiểm riêng | 2.140 | đọc mã 2026-11-02 | 26 | Đọc mã/đặc tả 2/11/2026, ea2d138c7d2e; |
-| [VBench](../../19-agentic-video-media/README.md) | `Vchitect/VBench` | Apache-2.0 | 1.836 | chưa chuẩn hóa | 19 | Benchmark model sinh video: VBench 16 chiều T2V, VBench-2.0 18 chiều (vật lý, chuyển động người, thường thức), I2V, video dài; |
+| [VBench](../../19-agentic-video-media/README.md#ch-vbench) | `Vchitect/VBench` | Apache-2.0 | 1.851 | đọc tài liệu 2026-11-23 | 19 | Benchmark model sinh video: VBench 16 chiều T2V, VBench-2.0 18 chiều (vật lý, chuyển động người, thường thức), I2V, video dài; |
 | [RewardBench](../../07-eval-observability/README.md#ch-rewardbench) | `allenai/reward-bench` | Apache-2.0 | 749 | đọc tài liệu 2026-11-23 | 07 | RewardBench 2 (arXiv 2506.01937) chấm reward model và judge sinh văn bản; |
 | [Picovoice Speech-to-Text Benchmark](../../14-voice-multimodal/README.md#ch-picovoice-speech-to-text-benchmark) | `Picovoice/speech-to-text-benchmark` | Apache-2.0 | 698 | đọc tài liệu 2026-11-23 | 14 | Khung đo WER + độ trễ trên LibriSpeech, TED-LIUM, Common Voice, MLS, VoxPopuli, FLEURS…; |
 | [SWE-bench Pro](../../01-ai-coding-agents/README.md#ch-swe-bench-pro) | `scaleapi/SWE-bench_Pro-os` | MIT | 570 | đọc tài liệu 2026-11-23 | 01 | V2 642 task định dạng Harbor, HARD-51, locked protocol (agent không mạng trừ endpoint model, verifier chấm `model.patch` ở image sạch (vẫn có mạng)), GATE.md oracle 642/… |

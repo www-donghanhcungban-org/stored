@@ -282,3 +282,23 @@ Mã nguồn trình biên dịch, thư viện chuẩn và runtime của ngôn ng�
 **Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
 
 **Nguồn tại cùng SHA:** [README.md](https://github.com/crystal-lang/crystal/blob/48118b0e8f564567495228e273ef6a88d563d15f/README.md) · [LICENSE](https://github.com/crystal-lang/crystal/blob/48118b0e8f564567495228e273ef6a88d563d15f/LICENSE) · [.github/workflows/win_build_libs.yml](https://github.com/crystal-lang/crystal/blob/48118b0e8f564567495228e273ef6a88d563d15f/.github/workflows/win_build_libs.yml).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-bun"></a>
+
+### Bun
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/oven-sh/bun |
+| License | MIT (LICENSE.md; kèm ghi chú LGPL-2 cho JavaScriptCore liên kết tĩnh và các dependency khác) |
+| Phiên bản đã đọc | `6bd9289db8f2dfedb4a83beef6b20676a45ad606` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, Cargo.toml, .github/workflows/lint.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-23) |
+| Nhận định | Toolkit JS/TS một file thực thi: runtime thay thế Node, test runner, package manager, bundler; README nay nói viết bằng Rust trên JavaScriptCore. Phức tạp về license do liên kết tĩnh JSC/WebKit (LGPL-2) cùng nhiều dependency. |
+| Nguồn | [README](https://github.com/oven-sh/bun/blob/6bd9289db8f2dfedb4a83beef6b20676a45ad606/README.md) · [LICENSE](https://github.com/oven-sh/bun/blob/6bd9289db8f2dfedb4a83beef6b20676a45ad606/LICENSE.md) · [manifest](https://github.com/oven-sh/bun/blob/6bd9289db8f2dfedb4a83beef6b20676a45ad606/Cargo.toml) · [workflow](https://github.com/oven-sh/bun/blob/6bd9289db8f2dfedb4a83beef6b20676a45ad606/.github/workflows/lint.yml) |

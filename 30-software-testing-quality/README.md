@@ -550,3 +550,23 @@ Công cụ quét tĩnh có tính tất định cho dự án React, báo lỗi v�
 **Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
 
 **Nguồn tại cùng SHA:** [README.md](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/README.md) · [LICENSE](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/LICENSE) · [package.json](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/package.json) · [pyproject.toml](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/pyproject.toml) · [.github/workflows/tests.yml](https://github.com/locustio/locust/blob/85d6d65da7d12f07fc1001192e52c4ede286528f/.github/workflows/tests.yml).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-web-vitals"></a>
+
+### web-vitals
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/GoogleChrome/web-vitals |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `94b3b4bced9d63b4ff6bfb8290bf1f505daa00bb` (commit 2026-11-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/tests.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-09) |
+| Nhận định | Thư viện JS đo Core Web Vitals và gửi lên analytics, có bản attribution; package v6.2.3. Giới hạn: số đo phụ thuộc hỗ trợ API của trình duyệt. |
+| Nguồn | [README](https://github.com/GoogleChrome/web-vitals/blob/94b3b4bced9d63b4ff6bfb8290bf1f505daa00bb/README.md) · [LICENSE](https://github.com/GoogleChrome/web-vitals/blob/94b3b4bced9d63b4ff6bfb8290bf1f505daa00bb/LICENSE) · [manifest](https://github.com/GoogleChrome/web-vitals/blob/94b3b4bced9d63b4ff6bfb8290bf1f505daa00bb/package.json) · [workflow](https://github.com/GoogleChrome/web-vitals/blob/94b3b4bced9d63b4ff6bfb8290bf1f505daa00bb/.github/workflows/tests.yml) |
