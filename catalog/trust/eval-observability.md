@@ -54,10 +54,10 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [Berkeley Function Calling Leaderboard (gorilla)](../../02-agent-frameworks/README.md) | `ShishirPatil/gorilla` | Apache-2.0 | 13.062 | chưa chuẩn hóa | 02 | BFCL V4: chấm gọi hàm AST + thực thi, multi-turn, agentic (web search, memory, format); |
+| [Berkeley Function Calling Leaderboard (gorilla)](../../02-agent-frameworks/README.md#ch-berkeley-function-calling-leaderboard-gorilla) | `ShishirPatil/gorilla` | Apache-2.0 | 13.085 | đọc tài liệu 2026-11-23 | 02 | BFCL V4: chấm gọi hàm AST + thực thi, multi-turn, agentic (web search, memory, format); |
 | [Harbor (Terminal-Bench)](../../07-eval-observability/README.md) | `harbor-framework/harbor` | Apache-2.0 | 6.671 | chưa chuẩn hóa | 07 | Runner chính thức Terminal-Bench 2.0+; |
-| [SWE-bench (harness)](../../01-ai-coding-agents/README.md) | `SWE-bench/SWE-bench` | MIT | 6.133 | chưa chuẩn hóa | 01 | Bộ chấm Docker gốc; |
-| [AgentBench](../../02-agent-frameworks/README.md) | `THUDM/AgentBench` | Apache-2.0 | 3.806 | chưa chuẩn hóa | 02 | AgentBench FC (10/2025) trên AgentRL: 5 môi trường container (alfworld, DB, KG, OS, WebShop); |
+| [SWE-bench (harness)](../../01-ai-coding-agents/README.md#ch-swe-bench-harness) | `SWE-bench/SWE-bench` | MIT | 6.234 | đọc tài liệu 2026-11-23 | 01 | Bộ chấm Docker gốc; |
+| [AgentBench](../../02-agent-frameworks/README.md#ch-agentbench) | `THUDM/AgentBench` | Apache-2.0 | 3.831 | đọc tài liệu 2026-11-23 | 02 | AgentBench FC (10/2025) trên AgentRL: 5 môi trường container (alfworld, DB, KG, OS, WebShop); |
 | [MTEB](../../10-local-llm-rag-memory/README.md) | `embeddings-benchmark/mteb` | Apache-2.0 | 3.488 | chưa chuẩn hóa | 10 | Cổng máy chọn embedding/reranker: CLI `mteb run`, leaderboard HF, task retrieval tự định nghĩa; |
 | [tau2-bench](../../07-eval-observability/README.md) | `sierra-research/tau2-bench` | MIT | 2.366 | chưa chuẩn hóa | 07 | τ²/τ³-bench tool–agent–user; |
 | [BEIR](../../10-local-llm-rag-memory/README.md) | `beir-cellar/beir` | Apache-2.0 | 2.327 | chưa chuẩn hóa | 10 | Chuẩn định dạng corpus/queries/qrels + nDCG@10/Recall@k cho retrieval zero-shot (NeurIPS 2021), 17 bộ dữ liệu tiền xử lý; |
@@ -65,10 +65,10 @@
 | [VBench](../../19-agentic-video-media/README.md) | `Vchitect/VBench` | Apache-2.0 | 1.836 | chưa chuẩn hóa | 19 | Benchmark model sinh video: VBench 16 chiều T2V, VBench-2.0 18 chiều (vật lý, chuyển động người, thường thức), I2V, video dài; |
 | [RewardBench](../../07-eval-observability/README.md) | `allenai/reward-bench` | Apache-2.0 | 748 | chưa chuẩn hóa | 07 | RewardBench 2 (arXiv 2506.01937) chấm reward model và judge sinh văn bản; |
 | [Picovoice Speech-to-Text Benchmark](../../14-voice-multimodal/README.md) | `Picovoice/speech-to-text-benchmark` | Apache-2.0 | 698 | chưa chuẩn hóa | 14 | Khung đo WER + độ trễ trên LibriSpeech, TED-LIUM, Common Voice, MLS, VoxPopuli, FLEURS…; |
-| [SWE-bench Pro](../../01-ai-coding-agents/README.md) | `scaleapi/SWE-bench_Pro-os` | MIT | 557 | chưa chuẩn hóa | 01 | V2 642 task định dạng Harbor, HARD-51, locked protocol (agent không mạng trừ endpoint model, verifier chấm `model.patch` ở image sạch (vẫn có mạng)), GATE.md oracle 642/… |
-| [Multi-SWE-bench](../../01-ai-coding-agents/README.md) | `multi-swe-bench/multi-swe-bench` | Apache-2.0 | 364 | chưa chuẩn hóa | 01 | ByteDance Seed, issue đa ngôn ngữ (Java/TS/Go/Rust/C++), bản mini/flash; |
+| [SWE-bench Pro](../../01-ai-coding-agents/README.md#ch-swe-bench-pro) | `scaleapi/SWE-bench_Pro-os` | MIT | 570 | đọc tài liệu 2026-11-23 | 01 | V2 642 task định dạng Harbor, HARD-51, locked protocol (agent không mạng trừ endpoint model, verifier chấm `model.patch` ở image sạch (vẫn có mạng)), GATE.md oracle 642/… |
+| [Multi-SWE-bench](../../01-ai-coding-agents/README.md#ch-multi-swe-bench) | `multi-swe-bench/multi-swe-bench` | Apache-2.0 | 364 | đọc tài liệu 2026-11-23 | 01 | ByteDance Seed, issue đa ngôn ngữ (Java/TS/Go/Rust/C++), bản mini/flash; |
 | [Open ASR Leaderboard](../../14-voice-multimodal/README.md) | `huggingface/open_asr_leaderboard` | Apache-2.0 | 278 | chưa chuẩn hóa | 14 | Mã leaderboard ASR của Hugging Face: short/long-form, multilingual (FLEURS/MCV/MLS), chạy HF Jobs cùng phần cứng, có tập riêng tư; |
-| [SWE-bench-Live](../../01-ai-coding-agents/README.md) | `microsoft/SWE-bench-Live` | MIT | 261 | chưa chuẩn hóa | 01 | Tập tự cập nhật chống nhiễm: Python +50 task/tháng, MultiLang 1.077 task, Windows; |
+| [SWE-bench-Live](../../01-ai-coding-agents/README.md#ch-swe-bench-live) | `microsoft/SWE-bench-Live` | MIT | 264 | đọc tài liệu 2026-11-23 | 01 | Tập tự cập nhật chống nhiễm: Python +50 task/tháng, MultiLang 1.077 task, Windows; |
 
 ## Giám sát hệ thống (`ops-monitoring`, 17)
 

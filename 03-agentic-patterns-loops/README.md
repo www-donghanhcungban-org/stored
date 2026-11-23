@@ -697,3 +697,289 @@ Trong repo: `starci contract new` → `starci task send` → worker nộp `starc
 - https://arxiv.org/pdf/2609.00006 · https://arxiv.org/pdf/2606.20683 · https://arxiv.org/pdf/2607.14159 · https://www.preprints.org/manuscript/202603.1756
 - https://github.com/FlorianBruniaux/claude-code-ultimate-guide/blob/main/guide/workflows/agent-teams.md · https://thepromptshelf.dev/blog/claude-code-multi-agent-orchestration-patterns-2026/ · https://www.developersdigest.tech/blog/git-worktrees-claude-code-parallel-agents-guide · https://www.aakashx.com/blog/parallel-claude-code-agents/
 - §8c ảnh "How AI Agents Work" (13/10/2026): https://langchain.com/blog/the-anatomy-of-an-agent-harness (Vivek Trivedy, 3/2026) · https://www.datacamp.com/blog/agent-harness · https://addyosmani.com/blog/agent-harness-engineering/ · https://blogs.oracle.com/developers/the-agent-loop-decoded-three-levels-every-agent-engineer-must-know · https://strandsagents.com/docs/learning/how-agents-really-work/ · https://www.anthropic.com/research/building-effective-agents · https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview (stop_reason, server tool)
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-adhd-adhd-agent"></a>
+
+### ADHD (adhd-agent)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/UditAkhourii/adhd |
+| License | MIT |
+| Phiên bản đã đọc | `7487ffe382567b6250dad8cfad490eb08f70a124` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động: commit 2026-11-20; package.json `adhd-agent` 0.1.4 |
+| Nhận định | Skill sinh ý tưởng phân kỳ: N tiến trình suy luận cô lập dưới các 'frame' khác nhau rồi critic chấm, gom cụm, cắt bẫy, đào sâu. Chi phí nhân lên theo N; kết quả eval/preprint là tự báo cáo **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/UditAkhourii/adhd/blob/7487ffe382567b6250dad8cfad490eb08f70a124/README.md) · [LICENSE](https://github.com/UditAkhourii/adhd/blob/7487ffe382567b6250dad8cfad490eb08f70a124/LICENSE) · [package.json](https://github.com/UditAkhourii/adhd/blob/7487ffe382567b6250dad8cfad490eb08f70a124/package.json) · [workflows](https://github.com/UditAkhourii/adhd/tree/7487ffe382567b6250dad8cfad490eb08f70a124/.github/workflows) |
+
+<a id="ch-agent-skills-for-context-engineering"></a>
+
+### Agent Skills for Context Engineering
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering |
+| License | MIT |
+| Phiên bản đã đọc | `d9202c76d6dc8351e648badb576a6e9b5aae1e7f` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động: commit 2026-11-21 |
+| Nhận định | Bộ Agent Skills dạng prompt về context engineering và harness engineering (context, memory, multi-agent, eval). Là tài liệu kiến thức, không phải runtime; chất lượng từng skill chưa đánh giá. |
+| Nguồn | [README](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/blob/d9202c76d6dc8351e648badb576a6e9b5aae1e7f/README.md) · [LICENSE](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/blob/d9202c76d6dc8351e648badb576a6e9b5aae1e7f/LICENSE) · [workflows](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/d9202c76d6dc8351e648badb576a6e9b5aae1e7f/.github/workflows) |
+
+<a id="ch-claude-advisor-tool"></a>
+
+### Claude Advisor Tool
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://code.claude.com/docs/en/advisor |
+| License | proprietary (tính năng Claude Code) |
+| Phiên bản đã đọc | Trang docs tại 2026-11-23 (không có SHA) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang docs chính thức; chưa chạy |
+| Bảo trì | Tính năng experimental đang phát triển; docs cập nhật |
+| Nhận định | Claude Code cho model chính tự gọi một model advisor (thường mạnh hơn) ở điểm quyết định; advisor đọc toàn hội thoại và trả lời khuyên, chạy server-side. Experimental: hành vi/giá có thể đổi; nay khả dụng trên Anthropic API, Claude Platform on AWS và Claude Models on Google Cloud (Anthropic managed), không có trên Bedrock/Foundry. Số liệu SWE-bench/chi phí là Anthropic tự đo **(chưa xác minh)**. |
+| Nguồn | [Claude Code docs](https://code.claude.com/docs/en/advisor) |
+
+<a id="ch-claude-code-agent-teams"></a>
+
+### Claude Code Agent Teams
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://code.claude.com/docs/en/agent-teams |
+| License | proprietary (tính năng Claude Code) |
+| Phiên bản đã đọc | Trang docs tại 2026-11-23 (không có SHA) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang docs chính thức; chưa chạy |
+| Bảo trì | Tính năng experimental đang phát triển; docs cập nhật |
+| Nhận định | Nhiều phiên Claude Code phối hợp: lead giao việc, teammate có context riêng, nhắn tin trực tiếp qua mailbox file và task list chung. Experimental, giới hạn về resume, trạng thái task và shutdown; teammate kế thừa chế độ quyền của lead (kể cả bypassPermissions) nên cần cẩn trọng. |
+| Nguồn | [Claude Code docs](https://code.claude.com/docs/en/agent-teams) |
+
+<a id="ch-claude-code-ultimate-guide"></a>
+
+### claude-code-ultimate-guide
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/FlorianBruniaux/claude-code-ultimate-guide |
+| License | CC-BY-SA-4.0 (catalog cũ: null) |
+| Phiên bản đã đọc | `063c8ab32d8edf6c3c51d787a4cad6dfc80f5aae` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động: commit 2026-11-23; nhiều workflow kiểm link/chỉ mục |
+| Nhận định | Hướng dẫn Claude Code dạng Markdown lớn, website cc.bruniaux.com là giao diện chính, repo giữ nguồn chuẩn và chỉ mục máy đọc. Nội dung CC-BY-SA: trích dài phải giữ cùng điều kiện. |
+| Nguồn | [README](https://github.com/FlorianBruniaux/claude-code-ultimate-guide/blob/063c8ab32d8edf6c3c51d787a4cad6dfc80f5aae/README.md) · [LICENSE](https://github.com/FlorianBruniaux/claude-code-ultimate-guide/blob/063c8ab32d8edf6c3c51d787a4cad6dfc80f5aae/LICENSE) · [workflows](https://github.com/FlorianBruniaux/claude-code-ultimate-guide/tree/063c8ab32d8edf6c3c51d787a4cad6dfc80f5aae/.github/workflows) |
+
+<a id="ch-context-mode"></a>
+
+### context-mode
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mksglu/context-mode |
+| License | Elastic-2.0 |
+| Phiên bản đã đọc | `0fe3f5dadfade06758de018a90e6e860274fb8de` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động: commit 2026-11-23; package.json 2.2.2 |
+| Nhận định | Plugin cục bộ giữ output tool ngoài context window, nay README nói hỗ trợ 11 coding agent (catalog cũ ghi 17 client) và quảng bá thêm Context Mode Gateway là dịch vụ hosted trả phí gửi request qua server của họ. Số tiết kiệm trong README là tự đo **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/mksglu/context-mode/blob/0fe3f5dadfade06758de018a90e6e860274fb8de/README.md) · [LICENSE](https://github.com/mksglu/context-mode/blob/0fe3f5dadfade06758de018a90e6e860274fb8de/LICENSE) · [package.json](https://github.com/mksglu/context-mode/blob/0fe3f5dadfade06758de018a90e6e860274fb8de/package.json) · [workflows](https://github.com/mksglu/context-mode/tree/0fe3f5dadfade06758de018a90e6e860274fb8de/.github/workflows) |
+
+<a id="ch-headroom"></a>
+
+### Headroom
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/headroomlabs-ai/headroom |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ce0460cfa8598dc939243dbc7aec4b2d35f4e44a` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, Cargo.toml, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động: commit 2026-11-21; pyproject `headroom-ai` 0.45.0 |
+| Nhận định | Nén output tool, log, RAG, file trước khi tới LLM (Python/TS, có Rust), chạy tại máy; README nêu 21–57% ít token đầu vào trên 4 kịch bản **(chưa xác minh)**, có `HEADROOM_OFFLINE=1` cho chạy không mạng. |
+| Nguồn | [README](https://github.com/headroomlabs-ai/headroom/blob/ce0460cfa8598dc939243dbc7aec4b2d35f4e44a/README.md) · [LICENSE](https://github.com/headroomlabs-ai/headroom/blob/ce0460cfa8598dc939243dbc7aec4b2d35f4e44a/LICENSE) · [pyproject.toml](https://github.com/headroomlabs-ai/headroom/blob/ce0460cfa8598dc939243dbc7aec4b2d35f4e44a/pyproject.toml) · [Cargo.toml](https://github.com/headroomlabs-ai/headroom/blob/ce0460cfa8598dc939243dbc7aec4b2d35f4e44a/Cargo.toml) · [workflows](https://github.com/headroomlabs-ai/headroom/tree/ce0460cfa8598dc939243dbc7aec4b2d35f4e44a/.github/workflows) |
+
+<a id="ch-lats-ma-goc"></a>
+
+### LATS (mã gốc)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/andyz245/LanguageAgentTreeSearch |
+| License | MIT |
+| Phiên bản đã đọc | `853d81614607dd27433faf17c7b0a7d660f95d22` (commit 2024-07-30) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Không hoạt động: commit HEAD 2024-07-30; README trỏ sang bản LangGraph/LlamaIndex cho dùng thực tế |
+| Nhận định | Mã chính thức paper LATS (ICML 2024): tìm kiếm cây MCTS kết hợp reasoning/acting/reflection, kèm prompt và output. Là mã nghiên cứu đứng yên; dùng thực tế nên xem bản LangGraph/LlamaIndex mà README giới thiệu. |
+| Nguồn | [README](https://github.com/andyz245/LanguageAgentTreeSearch/blob/853d81614607dd27433faf17c7b0a7d660f95d22/README.md) · [LICENSE](https://github.com/andyz245/LanguageAgentTreeSearch/blob/853d81614607dd27433faf17c7b0a7d660f95d22/LICENSE) |
+
+<a id="ch-learn-claude-code"></a>
+
+### learn-claude-code
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/shareAI-lab/learn-claude-code |
+| License | MIT |
+| Phiên bản đã đọc | `448c75bb596917ad196cc1fb7558f459c5c50fdd` (commit 2026-11-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động: commit 2026-11-15 |
+| Nhận định | Khóa học dựng lại harness kiểu Claude Code từng khối bằng Python, nhấn mạnh 'agent = model + harness'. Mã mang tính dạy học, không phải runtime an toàn để chạy thật. |
+| Nguồn | [README](https://github.com/shareAI-lab/learn-claude-code/blob/448c75bb596917ad196cc1fb7558f459c5c50fdd/README.md) · [LICENSE](https://github.com/shareAI-lab/learn-claude-code/blob/448c75bb596917ad196cc1fb7558f459c5c50fdd/LICENSE) · [workflows](https://github.com/shareAI-lab/learn-claude-code/tree/448c75bb596917ad196cc1fb7558f459c5c50fdd/.github/workflows) |
+
+<a id="ch-loop-engineering"></a>
+
+### Loop Engineering
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/cobusgreyling/loop-engineering |
+| License | MIT |
+| Phiên bản đã đọc | `84cd8ead7ae62f8abc864428d5bc690c2f2fc554` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động: commit 2026-11-23; nhiều workflow release từng gói loop |
+| Nhận định | Thư viện pattern vận hành agent quanh repo kèm CLI `@cobusgreyling/loop` (init/doctor), tuần đầu chế độ report-only; hỗ trợ claude/grok/codex/opencode. Hiệu quả các pattern chưa được đo độc lập. |
+| Nguồn | [README](https://github.com/cobusgreyling/loop-engineering/blob/84cd8ead7ae62f8abc864428d5bc690c2f2fc554/README.md) · [LICENSE](https://github.com/cobusgreyling/loop-engineering/blob/84cd8ead7ae62f8abc864428d5bc690c2f2fc554/LICENSE) · [package.json](https://github.com/cobusgreyling/loop-engineering/blob/84cd8ead7ae62f8abc864428d5bc690c2f2fc554/package.json) · [workflows](https://github.com/cobusgreyling/loop-engineering/tree/84cd8ead7ae62f8abc864428d5bc690c2f2fc554/.github/workflows) |
+
+<a id="ch-neuroarxiv"></a>
+
+### neuroarxiv
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/UditAkhourii/neuroarxiv |
+| License | MIT |
+| Phiên bản đã đọc | `7d59a92553762e6307b973312e0d2ed32118e6a8` (commit 2026-09-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Ít hoạt động: commit HEAD 2026-09-17 (nhánh master) |
+| Nhận định | Skill buộc agent tra arXiv trước khi thiết kế mới: tải bài thật, đọc cô lập, hội tụ thành một khuyến nghị có trích dẫn. Cùng tác giả ADHD; chất lượng khuyến nghị **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/UditAkhourii/neuroarxiv/blob/7d59a92553762e6307b973312e0d2ed32118e6a8/README.md) · [LICENSE](https://github.com/UditAkhourii/neuroarxiv/blob/7d59a92553762e6307b973312e0d2ed32118e6a8/LICENSE) · [package.json](https://github.com/UditAkhourii/neuroarxiv/blob/7d59a92553762e6307b973312e0d2ed32118e6a8/package.json) · [workflows](https://github.com/UditAkhourii/neuroarxiv/tree/7d59a92553762e6307b973312e0d2ed32118e6a8/.github/workflows) |
+
+<a id="ch-oh-my-claudecode"></a>
+
+### oh-my-claudecode
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Yeachan-Heo/oh-my-claudecode |
+| License | MIT |
+| Phiên bản đã đọc | `dec7e4188c0e3de6b92fb3d734ee5c95326021ed` (commit 2026-11-11) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động: commit 2026-11-11; gói npm `oh-my-claude-sisyphus` 5.8.6 |
+| Nhận định | Gói orchestration đa agent cho Claude Code (agent, skill, team, ralph). README đánh dấu `omc autoresearch` là shim hard-deprecated và giới thiệu gajae-code nhẹ hơn; cảnh báo worker team bỏ qua quyền theo hồ sơ cũ chưa đọc lại. |
+| Nguồn | [README](https://github.com/Yeachan-Heo/oh-my-claudecode/blob/dec7e4188c0e3de6b92fb3d734ee5c95326021ed/README.md) · [LICENSE](https://github.com/Yeachan-Heo/oh-my-claudecode/blob/dec7e4188c0e3de6b92fb3d734ee5c95326021ed/LICENSE) · [package.json](https://github.com/Yeachan-Heo/oh-my-claudecode/blob/dec7e4188c0e3de6b92fb3d734ee5c95326021ed/package.json) · [workflows](https://github.com/Yeachan-Heo/oh-my-claudecode/tree/dec7e4188c0e3de6b92fb3d734ee5c95326021ed/.github/workflows) |
+
+<a id="ch-ralph-claude-code"></a>
+
+### ralph-claude-code
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/frankbria/ralph-claude-code |
+| License | MIT (catalog cũ: null) |
+| Phiên bản đã đọc | `11f9df5becc8093ff2265542107e8e53a42e9970` (commit 2026-11-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động: commit 2026-11-03; README ghi v0.11.5 'Active Development' |
+| Nhận định | Vòng lặp phát triển tự động cho Claude Code với cổng thoát kép (dấu hiệu hoàn thành + EXIT_SIGNAL), rate limit, circuit breaker, có sandbox Docker/E2B. Số liệu 784 test/100% pass là tự báo cáo **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/frankbria/ralph-claude-code/blob/11f9df5becc8093ff2265542107e8e53a42e9970/README.md) · [LICENSE](https://github.com/frankbria/ralph-claude-code/blob/11f9df5becc8093ff2265542107e8e53a42e9970/LICENSE) · [package.json](https://github.com/frankbria/ralph-claude-code/blob/11f9df5becc8093ff2265542107e8e53a42e9970/package.json) · [workflows](https://github.com/frankbria/ralph-claude-code/tree/11f9df5becc8093ff2265542107e8e53a42e9970/.github/workflows) |
+
+<a id="ch-ralph-snarktank"></a>
+
+### Ralph (snarktank)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/snarktank/ralph |
+| License | MIT |
+| Phiên bản đã đọc | `6c53cb0b831ebe8739c6a003e22af14902d8b0b5` (commit 2026-02-01) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Ít hoạt động: commit HEAD 2026-02-01 |
+| Nhận định | Vòng lặp Ralph tối giản chạy Amp (mặc định) hoặc Claude Code lặp lại tới khi xong PRD, mỗi vòng context mới, bộ nhớ qua git/progress.txt/prd.json. Không có cổng an toàn đáng kể ngoài promise string. |
+| Nguồn | [README](https://github.com/snarktank/ralph/blob/6c53cb0b831ebe8739c6a003e22af14902d8b0b5/README.md) · [LICENSE](https://github.com/snarktank/ralph/blob/6c53cb0b831ebe8739c6a003e22af14902d8b0b5/LICENSE) |
+
+<a id="ch-ralph-wiggum-loop-plugin"></a>
+
+### Ralph Wiggum loop (plugin)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anthropics/claude-plugins-official/tree/65adb96f26deb662f6a993f74347d0ccd1a61a52/plugins/ralph-loop (trước: https://github.com/anthropics/claude-code, plugin `ralph-wiggum`) |
+| License | Apache-2.0 (LICENSE trong plugins/ralph-loop; catalog cũ ghi n/a; repo claude-code gốc là độc quyền © Anthropic) |
+| Phiên bản đã đọc | `65adb96f26deb662f6a993f74347d0ccd1a61a52` (commit 2026-11-23); claude-code đọc tại `50cdc7005318f630144c28217d1dada32e6ba762` |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc .claude-plugin/marketplace.json, plugins/README.md, plugins/ralph-loop/README.md, plugins/ralph-loop/LICENSE, plugins/ralph-loop/hooks/hooks.json, plugins/ralph-loop/hooks/stop-hook.sh; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Stop hook chặn kết thúc phiên và nạp lại nguyên prompt từ `.claude/ralph-loop.local.md`; dừng khi câu trả lời cuối có `<promise>` khớp nguyên văn hoặc đạt `max_iterations`. Mặc định không giới hạn vòng, và tín hiệu dừng là lời tự khai của model, không phải kết quả test, nên cần đặt trần và cổng kiểm riêng. Đường dẫn cũ `plugins/ralph-wiggum` đã bị xóa khỏi claude-code. |
+| Nguồn | [marketplace.json](https://github.com/anthropics/claude-code/blob/50cdc7005318f630144c28217d1dada32e6ba762/.claude-plugin/marketplace.json) · [README.md](https://github.com/anthropics/claude-code/blob/50cdc7005318f630144c28217d1dada32e6ba762/plugins/README.md) · [README.md](https://github.com/anthropics/claude-plugins-official/blob/65adb96f26deb662f6a993f74347d0ccd1a61a52/plugins/ralph-loop/README.md) · [LICENSE](https://github.com/anthropics/claude-plugins-official/blob/65adb96f26deb662f6a993f74347d0ccd1a61a52/plugins/ralph-loop/LICENSE) · [hooks.json](https://github.com/anthropics/claude-plugins-official/blob/65adb96f26deb662f6a993f74347d0ccd1a61a52/plugins/ralph-loop/hooks/hooks.json) · [stop-hook.sh](https://github.com/anthropics/claude-plugins-official/blob/65adb96f26deb662f6a993f74347d0ccd1a61a52/plugins/ralph-loop/hooks/stop-hook.sh) |
+
+<a id="ch-react-ma-goc"></a>
+
+### ReAct (mã gốc)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ysymyth/ReAct |
+| License | MIT |
+| Phiên bản đã đọc | `6bdb3a1fd38b8188fc7ba4102969fe483df8fdc9` (commit 2023-07-14) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, hotpotqa.ipynb; chưa chạy upstream |
+| Bảo trì | low-activity (commit cuối 2023-07-14) |
+| Nhận định | Notebook và prompt gốc của bài ICLR 2023 cho HotpotQA, FEVER, ALFWorld, WebShop, gọi API OpenAI cũ (text-davinci-002 đã ngừng), nên chỉ dùng để đọc prompt và cách xen kẽ Thought/Action/Observation. Không có package hay test; số liệu trong README là của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/ysymyth/ReAct/blob/6bdb3a1fd38b8188fc7ba4102969fe483df8fdc9/README.md) · [LICENSE](https://github.com/ysymyth/ReAct/blob/6bdb3a1fd38b8188fc7ba4102969fe483df8fdc9/LICENSE) · [hotpotqa.ipynb](https://github.com/ysymyth/ReAct/blob/6bdb3a1fd38b8188fc7ba4102969fe483df8fdc9/hotpotqa.ipynb) |
+
+<a id="ch-reflexion-ma-goc"></a>
+
+### Reflexion (mã gốc)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/noahshinn/reflexion |
+| License | MIT |
+| Phiên bản đã đọc | `218cf0ef1df84b05ce379dd4a8e47f17766733a0` (commit 2025-01-13) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, programming_runs/reflexion.py, programming_runs/executors/py_executor.py; chưa chạy upstream |
+| Bảo trì | low-activity (commit cuối 2025-01-13) |
+| Nhận định | Mã và log NeurIPS 2023 cho HotpotQA, ALFWorld, lập trình (HumanEval/LeetCode). Điểm đáng học: tách tín hiệu lặp (test tự sinh) khỏi chấm cuối (test ẩn). Rủi ro: `py_executor.py` chạy mã model sinh bằng `exec()` ngay trong tiến trình; README tự nói khó tái lập vì phụ thuộc GPT-4 và chi phí API. |
+| Nguồn | [README.md](https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/README.md) · [LICENSE](https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/LICENSE) · [reflexion.py](https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/reflexion.py) · [py_executor.py](https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/executors/py_executor.py) |
+
+<a id="ch-rtk"></a>
+
+### RTK
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/rtk-ai/rtk |
+| License | Apache-2.0 cho CLI; **BUSL-1.1** cho `engine/` và `proxy/` (Change Date 2030-09-09). Khác catalog cũ (chỉ ghi Apache-2.0); bản `rtk-oss` là Apache-2.0 thuần |
+| Phiên bản đã đọc | `fe56be06916d8c83d8558a3b8d7d587728a56649` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, engine/LICENSE, DISCLAIMER.md, Cargo.toml, hooks/claude/rtk-rewrite.sh; chưa chạy upstream |
+| Bảo trì | active (nhánh mặc định `develop`, v0.49.0) |
+| Nhận định | Binary Rust nén output lệnh shell trước khi agent đọc, gắn vào agent qua hook viết lại lệnh (`hooks/claude/rtk-rewrite.sh` gọi `rtk rewrite`, exit code quyết định allow/ask). Nay có thêm pipeline, proxy và bản thương mại RTK Pro. Mức tiết kiệm 60–90% là số của tác giả **(chưa xác minh)**. Bản `rtk` mặc định liên kết engine BUSL-1.1: được dùng production miễn phí nhưng không được bán lại dạng dịch vụ. |
+| Nguồn | [README.md](https://github.com/rtk-ai/rtk/blob/fe56be06916d8c83d8558a3b8d7d587728a56649/README.md) · [LICENSE](https://github.com/rtk-ai/rtk/blob/fe56be06916d8c83d8558a3b8d7d587728a56649/LICENSE) · [LICENSE](https://github.com/rtk-ai/rtk/blob/fe56be06916d8c83d8558a3b8d7d587728a56649/engine/LICENSE) · [DISCLAIMER.md](https://github.com/rtk-ai/rtk/blob/fe56be06916d8c83d8558a3b8d7d587728a56649/DISCLAIMER.md) · [Cargo.toml](https://github.com/rtk-ai/rtk/blob/fe56be06916d8c83d8558a3b8d7d587728a56649/Cargo.toml) · [rtk-rewrite.sh](https://github.com/rtk-ai/rtk/blob/fe56be06916d8c83d8558a3b8d7d587728a56649/hooks/claude/rtk-rewrite.sh) |
+
+<a id="ch-serena"></a>
+
+### Serena
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/oraios/serena |
+| License | GPL-3.0-or-later cho ứng dụng (catalog ghi GPL-3.0); SolidLSP MIT |
+| Phiên bản đã đọc | `b8f4c665773f96701be6cabfb197d0db26011699` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | MCP server cho công cụ truy xuất/sửa mã mức symbol, backend LSP miễn phí (trên 40 ngôn ngữ) hoặc plugin JetBrains trả phí; v2 thêm giao diện REPL. Chú ý: gói `serena-agent` là GPL-3.0-or-later, các commit cũ trong giai đoạn MIT vẫn giữ MIT. Lợi ích tốc độ, độ tin cậy là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/oraios/serena/blob/b8f4c665773f96701be6cabfb197d0db26011699/README.md) · [LICENSE](https://github.com/oraios/serena/blob/b8f4c665773f96701be6cabfb197d0db26011699/LICENSE) · [pyproject.toml](https://github.com/oraios/serena/blob/b8f4c665773f96701be6cabfb197d0db26011699/pyproject.toml) |
+
+<a id="ch-tree-of-thoughts-ma-goc"></a>
+
+### Tree of Thoughts (mã gốc)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/princeton-nlp/tree-of-thought-llm |
+| License | MIT |
+| Phiên bản đã đọc | `8050e67d0e3a0fddc424d7fa5801538722a4c4cc` (commit 2025-01-16) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, pyproject.toml, src/tot/models.py; chưa chạy upstream |
+| Bảo trì | low-activity (commit cuối 2025-01-16) |
+| Nhận định | Mã chính thức bài NeurIPS 2023 (gói PyPI `tree-of-thoughts-llm` 0.1.0) với ba trục generate/evaluate/select, task Game of 24, crosswords, viết văn. Chỉ cài đặt BFS, gọi GPT-4 mặc định nên tốn chi phí; dùng để đọc cấu trúc prompt propose/value hơn là làm thư viện. |
+| Nguồn | [README.md](https://github.com/princeton-nlp/tree-of-thought-llm/blob/8050e67d0e3a0fddc424d7fa5801538722a4c4cc/README.md) · [LICENSE](https://github.com/princeton-nlp/tree-of-thought-llm/blob/8050e67d0e3a0fddc424d7fa5801538722a4c4cc/LICENSE) · [pyproject.toml](https://github.com/princeton-nlp/tree-of-thought-llm/blob/8050e67d0e3a0fddc424d7fa5801538722a4c4cc/pyproject.toml) · [models.py](https://github.com/princeton-nlp/tree-of-thought-llm/blob/8050e67d0e3a0fddc424d7fa5801538722a4c4cc/src/tot/models.py) |

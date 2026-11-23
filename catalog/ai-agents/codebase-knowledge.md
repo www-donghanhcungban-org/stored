@@ -7,7 +7,7 @@
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [Graphify](../../16-docs-tools/README.md) | `Graphify-Labs/graphify` | Apache-2.0 | 141.191 | chưa chuẩn hóa | 16 | Codebase → knowledge graph truy vấn được cho agent; |
-| [Understand-Anything](../../01-ai-coding-agents/README.md) | `Egonex-AI/Understand-Anything` | MIT | 89.410 | chưa chuẩn hóa | 01 | Codebase → knowledge graph: Tree-sitter + LLM, 7 agent, dashboard, đa host, output vi; |
+| [Understand-Anything](../../01-ai-coding-agents/README.md#ch-understand-anything) | `Egonex-AI/Understand-Anything` | MIT | 93.761 | đọc tài liệu 2026-11-23 | 01 | Codebase → knowledge graph: Tree-sitter + LLM, 7 agent, dashboard, đa host, output vi; |
 | [codegraph](../../16-docs-tools/README.md) | `colbymchenry/codegraph` | MIT | 76.085 | chưa chuẩn hóa | 16 | Code knowledge graph local (SQLite+FTS, kernel Rust) auto-sync qua file-watch cho agent MCP; |
 | [codebase-memory-mcp](../../16-docs-tools/README.md) | `DeusData/codebase-memory-mcp` | MIT | 47.907 | chưa chuẩn hóa | 16 | MCP server viết bằng C: đồ thị code + docs + hạ tầng, 17 tool, 162 grammar; |
 | [Repomix](../../16-docs-tools/README.md) | `yamadashy/repomix` | MIT | 29.100 | chưa chuẩn hóa | 16 | Gói repo cho AI, Secretlint, MCP (`--sandbox`); |

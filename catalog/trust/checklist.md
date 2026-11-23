@@ -33,5 +33,5 @@
 | [OWASP SAMM Core](../../09-engineering-checklists/README.md#owasp-samm-factory) | `owaspsamm/core` | CC-BY-SA-4.0 | — | đọc mã 2026-11-04 | 09 | Model YAML trưởng thành tổ chức, 5 business functions/15 security practices; |
 | [owasp-asvs-checklist](../../09-engineering-checklists/README.md) | `shenril/owasp-asvs-checklist` | MIT | — | chưa chuẩn hóa | 09 | ASVS 5.0 audit checklist (xlsx/ods) |
 | [owasp-asvs-wstg-checklist](../../09-engineering-checklists/README.md) | `jeremychoi/owasp-asvs-wstg-checklist` | — | — | chưa chuẩn hóa | 09 | Map ASVS ↔ WSTG |
-| [WCAG 2.2](../../06-ui-ux-design/README.md) |  | W3C Document License | — | chưa chuẩn hóa | 06 | Chuẩn a11y W3C (Rec 10/2023); |
+| [WCAG 2.2](../../06-ui-ux-design/README.md#ch-wcag-2-2) |  | W3C Document License | — | đọc tài liệu 2026-11-23 | 06 | Chuẩn a11y W3C (Rec 10/2023); |
 | [WCAG motion + prefers-reduced-motion](../../22-motion-design-animation/README.md) |  | W3C Document License | — | chưa chuẩn hóa | 22 | WCAG 2.2 2.2.2 Pause Stop Hide (A), 2.3.1 Three Flashes (A), 2.3.3 Animation from Interactions (AAA); |

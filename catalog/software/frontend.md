@@ -29,8 +29,8 @@
 | [Leptos](../../13-dev-stack-devops/README.md#anhkysuai-leptos-rs-leptos) | `leptos-rs/leptos` | MIT | 21.570 | đọc tài liệu 2026-11-23 | 13 | Framework Rust cho web full-stack với reactive signal, component, routing, SSR và hydration. |
 | [SvelteKit](../../13-dev-stack-devops/README.md#anhkysuai-sveltejs-kit) | `sveltejs/kit` | MIT | 20.926 | đọc tài liệu 2026-11-23 | 13 | Framework ứng dụng web trên Svelte, ghép routing, rendering và build theo môi trường triển khai. |
 | [Build Awesome (Eleventy)](../../13-dev-stack-devops/README.md#anhkysuai-11ty-buildawesome) | `11ty/buildawesome` | MIT | 20.055 | đọc tài liệu 2026-11-23 | 13 | Static site generator JavaScript chuyển thư mục template thành HTML, phù hợp trang nội dung và tài liệu. |
-| [Omi](../../06-ui-ux-design/README.md) | `Tencent/omi` | MIT | 13.277 | chưa chuẩn hóa | 06 | Framework web components của Tencent; |
-| [Stencil](../../06-ui-ux-design/README.md) | `stenciljs/core` | MIT | 13.147 | chưa chuẩn hóa | 06 | Trình biên dịch web components (nền của Ionic); |
+| [Omi](../../06-ui-ux-design/README.md#ch-omi) | `Tencent/omi` | MIT (kèm thành phần bên thứ ba MIT: preact, polyfill) | 13.285 | đọc tài liệu 2026-11-23 | 06 | Framework web components của Tencent; |
+| [Stencil](../../06-ui-ux-design/README.md#ch-stencil) | `stenciljs/core` | MIT | 13.154 | đọc tài liệu 2026-11-23 | 06 | Trình biên dịch web components (nền của Ionic); |
 
 ## Build, bundler & monorepo (`build-tooling`, 9)
 
@@ -44,7 +44,7 @@
 | [SWC](../../13-dev-stack-devops/README.md#anhkysuai-swc-project-swc) | `swc-project/swc` | Apache-2.0 chủ yếu; kiểm tra thông báo từng thành phần | 34.222 | đọc tài liệu 2026-11-23 | 13 | Compiler JavaScript/TypeScript Rust với API cho Rust và JavaScript. |
 | [turborepo](../../13-dev-stack-devops/README.md#chuyen-turborepo) | `vercel/turborepo` | MIT | 31.361 | đọc tài liệu 2026-11-18 | 13 | Hệ thống build cho monorepo JavaScript/TypeScript, tự giới thiệu là "build system for coding agents", lõi viết bằng Rust. |
 | [Angular CLI](../../13-dev-stack-devops/README.md#anhkysuai-angular-angular-cli) | `angular/angular-cli` | MIT | 27.024 | đọc tài liệu 2026-11-23 | 13 | CLI tạo workspace, scaffold, build và nâng cấp ứng dụng Angular. |
-| [Mitosis](../../06-ui-ux-design/README.md) | `BuilderIO/mitosis` | MIT | 14.452 | chưa chuẩn hóa | 06 | Viết một lần biên dịch ra ~20 framework; |
+| [Mitosis](../../06-ui-ux-design/README.md#ch-mitosis) | `BuilderIO/mitosis` | MIT | 14.480 | đọc tài liệu 2026-11-23 | 06 | Viết một lần biên dịch ra ~20 framework; |
 
 ## State & data fetching (`state-data`, 6)
 
@@ -65,8 +65,8 @@
 | [Tailwind CSS](../../13-dev-stack-devops/README.md) | `tailwindlabs/tailwindcss` | MIT | 98.125 | chưa chuẩn hóa | 13 | Utility-first CSS, v4.3.3 (13/10/2026); |
 | [PostCSS](../../13-dev-stack-devops/README.md#anhkysuai-postcss-postcss) | `postcss/postcss` | MIT | 28.980 | đọc tài liệu 2026-11-23 | 13 | Phân tích và biến đổi CSS qua JavaScript plugin. |
 | [Autoprefixer](../../13-dev-stack-devops/README.md#anhkysuai-postcss-autoprefixer) | `postcss/autoprefixer` | MIT | 22.197 | đọc tài liệu 2026-11-23 | 13 | Plugin PostCSS tự thêm vendor prefix theo dữ liệu Can I Use để duy trì CSS theo nhóm trình duyệt mục tiêu. |
-| [Panda CSS](../../06-ui-ux-design/README.md) | `chakra-ui/panda` | MIT | 6.242 | chưa chuẩn hóa | 06 | CSS-in-JS không runtime, v2 lõi Rust/Oxc; |
-| [Capsize](../../06-ui-ux-design/README.md) | `seek-oss/capsize` | MIT | 1.735 | chưa chuẩn hóa | 06 | Căn chữ theo cap height bằng metric font, cắt khoảng trống trên/dưới để spacing đo được; |
+| [Panda CSS](../../06-ui-ux-design/README.md#ch-panda-css) | `chakra-ui/panda` | MIT | 6.259 | đọc tài liệu 2026-11-23 | 06 | CSS-in-JS không runtime, v2 lõi Rust/Oxc; |
+| [Capsize](../../06-ui-ux-design/README.md#ch-capsize) | `seek-oss/capsize` | MIT | 1.735 | đọc tài liệu 2026-11-23 | 06 | Căn chữ theo cap height bằng metric font, cắt khoảng trống trên/dưới để spacing đo được; |
 
 ## Ngôn ngữ & runtime JS/TS (`language-runtime`, 4)
 
@@ -102,15 +102,15 @@
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [lodash](../../13-dev-stack-devops/README.md#chuyen-lodash) | `lodash/lodash` | MIT | 61.453 | đọc tài liệu 2026-11-18 | 13 | Thư viện tiện ích JavaScript (v4.18.1) cho thao tác mảng, đối tượng, chuỗi, số và ghép hàm. |
-| [React Hook Form](../../06-ui-ux-design/README.md) | `react-hook-form/react-hook-form` | MIT | 44.896 | chưa chuẩn hóa | 06 | Chuẩn de facto cho form React, 0 phụ thuộc runtime; |
+| [React Hook Form](../../06-ui-ux-design/README.md#ch-react-hook-form) | `react-hook-form/react-hook-form` | MIT | 44.927 | đọc tài liệu 2026-11-23 | 06 | Chuẩn de facto cho form React, 0 phụ thuộc runtime; |
 | [date-fns](../../06-ui-ux-design/README.md#anhkysuai-2026-11-23-date-fns-date-fns) | `date-fns/date-fns` | MIT (tuyên bố README; từng package kiểm riêng) | 36.661 | đọc tài liệu 2026-11-23 | 06 | Thư viện TypeScript/JavaScript thao tác ngày theo hàm nhỏ, hỗ trợ locale và múi giờ. |
 | [RxJS](../../13-dev-stack-devops/README.md#anhkysuai-reactivex-rxjs) | `ReactiveX/rxjs` | Apache-2.0 | 31.722 | đọc tài liệu 2026-11-23 | 13 | Kết hợp luồng bất đồng bộ và sự kiện bằng Observable. |
-| [react-virtualized](../../06-ui-ux-design/README.md) | `bvaughn/react-virtualized` | MIT | 27.067 | chưa chuẩn hóa | 06 | v10.0.0 viết lại TS (18/10/2026); |
+| [react-virtualized](../../06-ui-ux-design/README.md#ch-react-virtualized) | `bvaughn/react-virtualized` | MIT | 27.071 | đọc tài liệu 2026-11-23 | 06 | v10.0.0 viết lại TS (18/10/2026); |
 | [Modernizr](../../13-dev-stack-devops/README.md#anhkysuai-modernizr-modernizr) | `Modernizr/Modernizr` | MIT | 25.679 | đọc tài liệu 2026-11-23 | 13 | Phát hiện khả năng HTML/CSS của browser để progressive enhancement. |
 | [core-js](../../13-dev-stack-devops/README.md#anhkysuai-zloirock-core-js) | `zloirock/core-js` | MIT | 25.515 | đọc tài liệu 2026-11-23 | 13 | Polyfill JavaScript tiêu chuẩn và một số đề xuất/API web. |
 | [Ramda](../../13-dev-stack-devops/README.md#anhkysuai-ramda-ramda) | `ramda/ramda` | MIT cho code; logo CC-BY-NC-SA-3.0 | 24.054 | đọc tài liệu 2026-11-23 | 13 | Thư viện lập trình hàm JavaScript với currying và pipeline. |
 | [validator.js](../../13-dev-stack-devops/README.md#anhkysuai-validatorjs-validator.js) | `validatorjs/validator.js` | MIT | 23.741 | đọc tài liệu 2026-11-23 | 13 | Thư viện validator và sanitizer dành riêng cho chuỗi JavaScript. |
-| [Intro.js](../../06-ui-ux-design/README.md) | `usablica/intro.js` | AGPL-3.0 + license thương mại | 23.455 | chưa chuẩn hóa | 06 | Tour/onboarding; |
+| [Intro.js](../../06-ui-ux-design/README.md#ch-intro-js) | `usablica/intro.js` | AGPL-3.0 + license thương mại | 23.460 | đọc tài liệu 2026-11-23 | 06 | Tour/onboarding; |
 | [Chalk](../../13-dev-stack-devops/README.md#anhkysuai-chalk-chalk) | `chalk/chalk` | MIT | 23.349 | đọc tài liệu 2026-11-23 | 13 | Thư viện tạo màu và kiểu chữ ANSI cho output terminal JavaScript. |
 | [JavaScript Cookie](../../13-dev-stack-devops/README.md#anhkysuai-js-cookie-js-cookie) | `js-cookie/js-cookie` | MIT | 22.559 | đọc tài liệu 2026-11-23 | 13 | API JavaScript nhỏ để đọc, ghi và xóa cookie phía trình duyệt, với thuộc tính và bộ chuyển đổi encoding. |
 | [VueUse](../../13-dev-stack-devops/README.md#anhkysuai-vueuse-vueuse) | `vueuse/vueuse` | MIT | 22.402 | đọc tài liệu 2026-11-23 | 13 | Tập tiện ích Composition API cho Vue, gồm trạng thái trình duyệt, lưu trữ và tương tác sự kiện. |
@@ -122,7 +122,7 @@
 | [react-pdf](../../06-ui-ux-design/README.md#chuyen-react-pdf) | `diegomura/react-pdf` | MIT | 16.858 | đọc tài liệu 2026-11-18 | 06 | Trình render React để tạo file PDF trên trình duyệt và máy chủ bằng các thành phần Document, Page, View, Text. |
 | [plate](../../06-ui-ux-design/README.md#chuyen-plate) | `udecode/plate` | MIT | 16.712 | đọc tài liệu 2026-11-18 | 06 | Framework trình soạn thảo văn bản giàu định dạng (rich-text) cho React, kèm các mẫu khởi đầu và tài liệu tại platejs.org. |
 | [ts-pattern](../../13-dev-stack-devops/README.md#chuyen-ts-pattern) | `gvergnaud/ts-pattern` | MIT | 15.222 | đọc tài liệu 2026-11-18 | 13 | Thư viện pattern matching cho TypeScript với suy luận kiểu và kiểm tra đủ trường hợp. |
-| [Golden Layout](../../06-ui-ux-design/README.md) | `golden-layout/golden-layout` | MIT | 6.721 | chưa chuẩn hóa | 06 | Docking layout; |
+| [Golden Layout](../../06-ui-ux-design/README.md#ch-golden-layout) | `golden-layout/golden-layout` | MIT | 6.722 | đọc tài liệu 2026-11-23 | 06 | Docking layout; |
 
 ## Template & starter (`starter-template`, 2)
 

@@ -49,7 +49,7 @@
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [hello-agents](../../08-awesome-lists-learning/README.md#6c512-học-ai--machine-learning) | `datawhalechina/hello-agents` | CC BY-NC-SA 4.0 | 87.250 | đọc tài liệu 2026-11-18 | 08 | Giáo trình tiếng Trung của cộng đồng Datawhale hướng dẫn xây dựng hệ thống agent AI từ nguyên lý đến thực hành. |
-| [learn-claude-code](../../03-agentic-patterns-loops/README.md) | `shareAI-lab/learn-claude-code` | MIT | 79.633 | chưa chuẩn hóa | 03 | 17 chương Python dựng lại từng khối harness kiểu Claude Code; |
+| [learn-claude-code](../../03-agentic-patterns-loops/README.md#ch-learn-claude-code) | `shareAI-lab/learn-claude-code` | MIT | 80.795 | đọc tài liệu 2026-11-23 | 03 | 17 chương Python dựng lại từng khối harness kiểu Claude Code; |
 | [ai-agents-for-beginners](../../08-awesome-lists-learning/README.md) | `microsoft/ai-agents-for-beginners` | MIT | 78.496 | chưa chuẩn hóa | 08 | 18 bài agent, có bản tiếng Việt; |
 | [ai-agent-book](../../08-awesome-lists-learning/README.md#6c512-học-ai--machine-learning) | `bojieli/ai-agent-book` | Apache License 2.0 | 58.567 | đọc tài liệu 2026-11-18 | 08 | Sách mã nguồn mở “深入理解 AI Agent：设计原理与工程实践” gồm 10 chương quanh công thức Agent = LLM + ngữ cảnh + công cụ, kèm thực nghiệm minh hoạ. |
 | [claude-howto](../../08-awesome-lists-learning/README.md#6c512-học-ai--machine-learning) | `luongnv89/claude-howto` | MIT License | 47.381 | đọc tài liệu 2026-11-18 | 08 | Hướng dẫn học Claude Code theo lộ trình 10 mô-đun (slash command, memory, skills, subagents, MCP, hooks, plugins, checkpoints, CLI) với sơ đồ Mermaid và mẫu cấu hình ché… |
@@ -60,9 +60,9 @@
 | [ai-guide](../../08-awesome-lists-learning/README.md#6c512-học-ai--machine-learning) | `liyupi/ai-guide` | Nội dung Markdown và hình | 22.185 | đọc tài liệu 2026-11-18 | 08 | Kho kiến thức AI miễn phí bằng tiếng Trung của 程序员鱼皮, trọng tâm là giáo trình Vibe Coding từ số 0, kèm hướng dẫn công cụ AI và DeepSeek. |
 | [agents-towards-production](../../08-awesome-lists-learning/README.md#6c512-học-ai--machine-learning) | `NirDiamant/agents-towards-production` | Giấy phép tùy chỉnh | 21.917 | đọc tài liệu 2026-11-18 | 08 | Bộ bài hướng dẫn xây agent GenAI cấp production: workflow có trạng thái, bộ nhớ vector, tìm web, Docker, FastAPI, guardrail bảo mật, GPU. |
 | [easy-vibe](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-datawhalechina-easy-vibe) | `datawhalechina/easy-vibe` | CC-BY-NC-SA-4.0 | 20.502 | đọc tài liệu 2026-11-23 | 08 | Khóa nhập môn xây sản phẩm với AI, có lộ trình từ prototype đến frontend/backend và workflow agent. |
-| [Agent Skills for Context Engineering](../../03-agentic-patterns-loops/README.md) | `muratcankoylan/Agent-Skills-for-Context-Engineering` | MIT | 18.263 | chưa chuẩn hóa | 03 | 18 skill kiến thức về context, harness, memory, multi-agent, eval; |
+| [Agent Skills for Context Engineering](../../03-agentic-patterns-loops/README.md#ch-agent-skills-for-context-engineering) | `muratcankoylan/Agent-Skills-for-Context-Engineering` | MIT | 18.407 | đọc tài liệu 2026-11-23 | 03 | 18 skill kiến thức về context, harness, memory, multi-agent, eval; |
 | [MCP for Beginners](../../08-awesome-lists-learning/README.md) | `microsoft/mcp-for-beginners` | MIT | 17.574 | chưa chuẩn hóa | 08 | 13 module MCP theo spec 2026-07-28, 54 bản dịch (có vi, chậm hơn bản gốc); |
-| [claude-code-ultimate-guide](../../03-agentic-patterns-loops/README.md) | `FlorianBruniaux/claude-code-ultimate-guide` | — | — | chưa chuẩn hóa | 03 | agent teams, workflows |
+| [claude-code-ultimate-guide](../../03-agentic-patterns-loops/README.md#ch-claude-code-ultimate-guide) | `FlorianBruniaux/claude-code-ultimate-guide` | CC-BY-SA-4.0 | 7.195 | đọc tài liệu 2026-11-23 | 03 | agent teams, workflows. |
 
 ## Nền tảng khoa học máy tính (`cs-fundamentals`, 14)
 
@@ -167,9 +167,9 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [Apple HIG: Layout](../../06-ui-ux-design/README.md) |  | — | — | chưa chuẩn hóa | 06 | Layout theo size class, safe area, tab bar → sidebar khi rộng; |
-| [Material 3 canonical layouts](../../06-ui-ux-design/README.md) |  | — | — | chưa chuẩn hóa | 06 | Hướng dẫn chính thức: list-detail, supporting pane, feed; |
-| [Mobbin](../../06-ui-ux-design/README.md) |  | proprietary | — | chưa chuẩn hóa | 06 | Thư viện ảnh chụp màn hình app thật, không có mã; |
+| [Apple HIG: Layout](../../06-ui-ux-design/README.md#ch-apple-hig-layout) |  | — | — | đọc tài liệu 2026-11-23 | 06 | Layout theo size class, safe area, tab bar → sidebar khi rộng; |
+| [Material 3 canonical layouts](../../06-ui-ux-design/README.md#ch-material-3-canonical-layouts) |  | — | — | đọc tài liệu 2026-11-23 | 06 | Hướng dẫn chính thức: list-detail, supporting pane, feed; |
+| [Mobbin](../../06-ui-ux-design/README.md#ch-mobbin) |  | proprietary | — | đọc tài liệu 2026-11-23 | 06 | Thư viện ảnh chụp màn hình app thật, không có mã; |
 
 ## Học bảo mật (`security-learning`, 2)
 

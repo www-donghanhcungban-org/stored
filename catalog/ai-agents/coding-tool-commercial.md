@@ -6,9 +6,9 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [Claude Code](../../01-ai-coding-agents/README.md) | `anthropics/claude-code` | proprietary | 154.088 | chưa chuẩn hóa | 01 | CLI/IDE/web; |
-| [Cursor](../../01-ai-coding-agents/README.md) |  | proprietary | — | chưa chuẩn hóa | 01 | $20/$60/$200; |
-| [Devin](../../01-ai-coding-agents/README.md) |  | proprietary | — | chưa chuẩn hóa | 01 |  |
-| [GitHub Copilot](../../01-ai-coding-agents/README.md) |  | proprietary | — | chưa chuẩn hóa | 01 | $10/$19/$39 |
-| [Google Jules](../../01-ai-coding-agents/README.md) |  | proprietary | — | chưa chuẩn hóa | 01 | Async cloud agent |
-| [Windsurf / Devin Desktop](../../01-ai-coding-agents/README.md) |  | proprietary | — | chưa chuẩn hóa | 01 | Cognition |
+| [Claude Code](../../01-ai-coding-agents/README.md#ch-claude-code) | `anthropics/claude-code` | proprietary | 156.787 | đọc tài liệu 2026-11-23 | 01 | CLI/IDE/web; |
+| [Cursor](../../01-ai-coding-agents/README.md#ch-cursor) |  | proprietary | — | đọc tài liệu 2026-11-23 | 01 | $20/$60/$200; |
+| [Devin](../../01-ai-coding-agents/README.md#ch-devin) |  | proprietary | — | đọc tài liệu 2026-11-23 | 01 | . |
+| [GitHub Copilot](../../01-ai-coding-agents/README.md) |  | proprietary | — | chưa chuẩn hóa | 01 | $10/$19/$39; |
+| [Google Jules](../../01-ai-coding-agents/README.md#ch-google-jules) |  | proprietary | — | đọc tài liệu 2026-11-23 | 01 | Async cloud agent. |
+| [Windsurf / Devin Desktop](../../01-ai-coding-agents/README.md#ch-windsurf-devin-desktop) |  | proprietary | — | đọc tài liệu 2026-11-23 | 01 | Cognition. |
