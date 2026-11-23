@@ -330,6 +330,8 @@ Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị t�
 
 Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị từ chối): ID, file và dòng lấy từ các đối chiếu đã ghi trước đó trong data/xt-handoff.json, chưa kiểm ở commit X-Templates hiện hành; đề xuất chỉ có hiệu lực sau khi đối chiếu lại.
 
+**Cập nhật 23/11/2026:** đã đọc lại X-Templates ở commit `764566d`: cả 12 ID control của XT-H-148…155 vẫn còn và đúng mức ghi; không có XT-H-148…155 nào xuất hiện trong X-Templates, nên các đề xuất **chưa được đưa vào** và còn mở. Mới kiểm ID còn tồn tại và mức, chưa kiểm sâu nội dung từng control.
+
 | Handoff | Bài học và hồ sơ | Control đã đối chiếu | Cột và xử lý |
 |---|---|---|---|
 | XT-H-148 | Metadata giấy phép trong chính một repo mâu thuẫn nhau: LobeHub có LICENSE là Community License nhưng package.json khai MIT; ralph-claude-code LICENSE MIT, package.json ISC; sea-helm LICENSE MIT, pyproject Apache-2.0; Dodaios LICENSE MIT, pyproject Apache-2.0; soda-core LICENSE ELv2, pyproject "Proprietary"; bảng so sánh trong README của Tambo ghi "MIT (SDK + backend)" nhưng apps/api, apps/web, packages/backend là Apache-2.0.<br>[05 · LobeHub](05-low-code-llm-platforms/README.md#ch-lobehub), [03 · ralph-claude-code](03-agentic-patterns-loops/README.md#ch-ralph-claude-code), [18 · sea-helm](18-vietnam-community/README.md#ch-sea-helm), [01 · Dodaios](01-ai-coding-agents/README.md#ch-personal-jarvis-nay-la-dodaios), [15 · soda-core](15-ai-for-data/README.md#ch-soda-core), [06 · Tambo](06-ui-ux-design/README.md#ch-tambo) | `CMP-LIC-004`, `CMP-LIC-022` | `deeper`: Chỉ thêm ví dụ và một phép kiểm: LICENSE ở commit đã ghim là nguồn đúng; trường license trong package.json/pyproject/README lệch LICENSE thì xếp "chưa rõ, hỏi tác giả" chứ không chọn một bên. Fixture: so SPDX suy từ LICENSE với trường license của manifest, báo lệch. Không cần ID mới. |
@@ -346,6 +348,8 @@ Ba cột: `deeper` 6 dòng (148, 151–155), `shallower` 1 dòng (149), `missing
 ## 4m. Bàn giao đợt nâng trần UI/UX và mốc 2300 hồ sơ (23/11/2026)
 
 Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị từ chối): ID, file và dòng lấy từ các đối chiếu đã ghi trước đó trong data/xt-handoff.json, chưa kiểm ở commit X-Templates hiện hành; đề xuất chỉ có hiệu lực sau khi đối chiếu lại.
+
+**Cập nhật 23/11/2026:** đã đọc lại X-Templates ở commit `764566d`: cả 6 ID control của XT-H-156…158 vẫn còn và đúng mức ghi; không có XT-H-156…158 nào xuất hiện trong X-Templates, nên các đề xuất **chưa được đưa vào** và còn mở. Mới kiểm ID còn tồn tại và mức, chưa kiểm sâu nội dung từng control.
 
 | Handoff | Bài học và hồ sơ | Control đã đối chiếu | Cột và xử lý |
 |---|---|---|---|
