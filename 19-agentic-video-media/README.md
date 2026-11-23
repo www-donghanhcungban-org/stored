@@ -1024,3 +1024,259 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 - §1b OpenCreator (13/10/2026): https://github.com/krillinai/OpenCreator (clone đầy đủ, 936 commit, HEAD 2b80bca 13/10/2026; README, LICENSE, CONTRIBUTING.md, `apps/desktop/src/main/telemetry.ts`, `settings-store.ts`, `apps/daemon/src/main.ts`, `startup.ts`, `.github/workflows/ci.yml`, commit afe6aa4/4d29f87/bfbf59a/406dec8) · https://trendshift.io/repositories/13360 · https://sourceforge.net/projects/krillinai.mirror/ · https://aiindigo.com/blog/krillinai-deep-dive-technical-review · https://tessl.io/registry/skills/github/krillinai/KrillinAI/krillinai-tts/review
 - https://github.com/THU-MAIC/OpenMAIC/discussions/346 · https://github.com/volcengine/OpenViking/discussions/1083
 - https://trendshift.io/topics/ai-video · https://www.atlascloud.ai/blog/tips/github-ai-video-generator-skill-directory-free-tools-vs-paid-apis-2026 · https://agenticvideos.org/ · https://arxiv.org/pdf/2608.29814 · https://arxiv.org/pdf/2608.28122
+
+<a id="xlsx-2026-11-23"></a>
+
+## Đánh giá bổ sung từ bảng "Top 100 GitHub AI Skills" — 23/11/2026
+
+Phần này có **12 hồ sơ** từ bảng xlsx người dùng gửi ngày 2026-11-23; đọc bằng `git clone --depth 1`, không cài hay chạy mã upstream. GitHub API không dùng được trong phiên nên ★ và `pushed_at` ghi **(chưa xác minh)** khi để trống.
+
+<a id="xlsx-2026-11-23-fal-ai-skills"></a>
+
+### fal-ai-community/skills (bộ skill chính thức cho fal.ai)
+
+**Repo:** [fal-ai-community/skills](https://github.com/fal-ai-community/skills) · **License:** MIT (LICENSE, © 2026 fal.ai; chỉ áp cho file skill, các model fal chạy trả phí theo endpoint) · **★ (chưa xác minh; GitHub API bị chặn ngày 2026-11-23)**
+
+**Mục đích:** thư viện **36 skill** (đếm thư mục `skills/*/SKILL.md`; README ghi "36-skill library", không phải khoảng 15) dạy agent chọn endpoint fal.ai, viết prompt theo họ model và nối nhiều lệnh để ra ảnh, video, âm thanh, 3D. Đường chạy mặc định là CLI `genmedia` (`models`, `schema`, `run`, `status`, `upload`, `pricing`); phần lớn skill là lớp tri thức, không gọi API trực tiếp.
+
+**Giá trị và cơ chế:** (1) tách lớp rõ: `genmedia` và `model-routing` (lõi), ba skill ô dù (`fal-models-catalog`, `fal-prompting`, `fal-recipes` với `references/` theo modality/họ model/use case), skill sản xuất, và 5 skill "kết quả trọn gói" có `assets/plan.json` cho bộ chạy có thể tiếp tục (`genmedia/scripts/run_plan.py`, chỉ dùng thư viện chuẩn Python + `subprocess`). (2) Quy tắc cứng trong `genmedia/SKILL.md`: luôn `--json`, không bịa endpoint ID, xem schema trước khi truyền tham số, tải file bằng `--download`. (3) CI kiểm chéo: `validate.yml` chạy trên ubuntu/macos/windows, `build-skills-index.py --check` (sinh `skills/index.json`) và `unittest`; `docs/public-access-audit.json` ghi 102 schema endpoint công khai được GET ẩn danh ngày 2026-11-06. (4) Phân phối nhiều nền: plugin Claude (`.claude-plugin`), Gemini, OpenClaw, MCP Registry (workflow `publish-mcp-registry.yml` chỉ chạy tay, phải gõ đúng chuỗi xác nhận).
+
+**Danh sách 36 skill theo nhóm:**
+
+| Nhóm | Skill |
+|---|---|
+| Lõi | `genmedia`, `model-routing`, `fal-media` (dùng khi host có MCP fal) |
+| Ô dù tri thức | `fal-models-catalog`, `fal-prompting`, `fal-recipes` |
+| Sản xuất ảnh/video | `character-design`, `character-sheet`, `cinematography`, `commercial`, `branded-graphics`, `storytelling`, `ugc`, `marketing`, `fal-shot-craft`, `h3-cinematic-prompter`, `fal-script-writer`, `fal-video-generation`, `fal-audio-generation`, `photo-editing` |
+| Kết quả trọn gói | `product-ad-campaign`, `game-asset-production`, `storyboard-to-short-film`, `ecommerce-product-photography`, `localize-and-repurpose` |
+| Quy trình/dọc | `fal-workflow`, `genmedia-workflow` (cũ), `fan-cam`, `fal-gamedev`, `fal-redesign`, `fal-regenerate-3d`, `fal-video-production`, `video-compositing`, `fal-motion-graphics`, `reels-creator`, `wrap-it-up` |
+
+**Giới hạn:** (1) `genmedia/SKILL.md` hướng dẫn cài CLI bằng `curl https://genmedia.sh/install -fsS | bash` rồi `genmedia setup --api-key "$FAL_KEY"`; CLI là repo khác (`fal-ai-community/genmedia-cli`, chưa đọc), nên không biết nó làm gì ngoài lời mô tả. (2) Mọi prompt, ảnh tham chiếu (`genmedia upload` đưa file lên CDN của fal) và kết quả đi qua fal.ai; ảnh người thật dùng cho `fan-cam`, `ugc`, `character-*` là dữ liệu cá nhân. (3) Chi phí theo endpoint (`genmedia pricing` có sẵn nhưng skill không đặt trần chi tiêu, chưa tìm thấy ngưỡng dừng trong phần đã đọc). (4) Một vài skill cần renderer cục bộ (`reels-creator`, `video-compositing`: "requires local rendering dependencies"). (5) Bản `distribution/openclaw/.mcp.json` trỏ `https://mcp.fal.ai/mcp-relay` dùng OAuth: dữ liệu qua máy chủ trung gian của fal. (6) README ghi nhiều kênh phát hành còn "pending"; HEAD đọc chỉ có 1 commit trong clone nông nên chưa đánh giá được nhịp bảo trì.
+
+**Cách tham khảo/tích hợp:** học cấu trúc ô dù + kết quả trọn gói + kiểm chỉ mục bằng CI, hơn là lấy từng skill. Nếu dùng: cài CLI thủ công và ghim bản, đặt hạn mức chi tiêu ở tài khoản fal, đọc `docs/public-access-audit.json` trước khi tin endpoint, và không tải ảnh người thật lên khi chưa có đồng ý.
+
+**Thay thế:** [higgsfield-ai/skills](../19-agentic-video-media/README.md#3f-hồ-sơ-higgsfield-aiskills-9-skill-gọi-cli-đóng-của-higgsfield-để-sinh-ảnh-video-brand-kit-và-train-soul-khuôn-mặt-ảnh-readme-người-dùng-gửi-đọc-mã-3112026) (skill gói một dịch vụ khác, CLI đóng), [calesthio/generative-media-skills](../19-agentic-video-media/README.md) (id `generative-media-skills`), [OpenMontage](../19-agentic-video-media/README.md#anhkysuai-2026-11-23-identity-openmontage) (pipeline nhiều provider, mã mở).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`ca79376d624d`](https://github.com/fal-ai-community/skills/commit/ca79376d624d244e601f9182fa80b5bf66efec9c) (2026-11-06). Đã đọc README, LICENSE, `validate.yml`, `publish-mcp-registry.yml` (đầu), `genmedia/SKILL.md`, frontmatter của cả 36 SKILL.md, `genmedia/scripts/run_plan.py` (chỉ import), `docs/public-access-audit.json`, `.claude-plugin/plugin.json`, `distribution/openclaw/.mcp.json`. Chưa đọc `references/`, `scripts/build-*.py`, `tests/`, CLI `genmedia`; chưa cài, chưa chạy, chưa gọi API.
+
+**Nguồn:** [README.md](https://github.com/fal-ai-community/skills/blob/ca79376d624d244e601f9182fa80b5bf66efec9c/README.md) · [LICENSE](https://github.com/fal-ai-community/skills/blob/ca79376d624d244e601f9182fa80b5bf66efec9c/LICENSE) · [.github/workflows/validate.yml](https://github.com/fal-ai-community/skills/blob/ca79376d624d244e601f9182fa80b5bf66efec9c/.github/workflows/validate.yml) · [.github/workflows/publish-mcp-registry.yml](https://github.com/fal-ai-community/skills/blob/ca79376d624d244e601f9182fa80b5bf66efec9c/.github/workflows/publish-mcp-registry.yml) · [skills/genmedia/SKILL.md](https://github.com/fal-ai-community/skills/blob/ca79376d624d244e601f9182fa80b5bf66efec9c/skills/genmedia/SKILL.md) · [skills/genmedia/scripts/run_plan.py](https://github.com/fal-ai-community/skills/blob/ca79376d624d244e601f9182fa80b5bf66efec9c/skills/genmedia/scripts/run_plan.py) · [docs/public-access-audit.json](https://github.com/fal-ai-community/skills/blob/ca79376d624d244e601f9182fa80b5bf66efec9c/docs/public-access-audit.json) · [distribution/openclaw/.mcp.json](https://github.com/fal-ai-community/skills/blob/ca79376d624d244e601f9182fa80b5bf66efec9c/distribution/openclaw/.mcp.json) · [metadata GitHub](https://api.github.com/repos/fal-ai-community/skills) (không đọc được, 403).
+
+<a id="xlsx-2026-11-23-super-video-maker-skill"></a>
+
+### bomx/super-video-maker-skill
+
+**Repo:** [bomx/super-video-maker-skill](https://github.com/bomx/super-video-maker-skill) (README clone từ `Bomx/super-video-maker-skill`) · **License:** **không có file LICENSE và README không nêu license** (mặc định bảo lưu mọi quyền, không phải mã mở) · **★ (chưa xác minh; GitHub API bị chặn ngày 2026-11-23)**
+
+**Mục đích:** skill "sản xuất video trọn gói" của Distribb: biến ý tưởng/link/kịch bản thành video bằng avatar HeyGen, ảnh OpenAI, b-roll Seedance 2.5 qua fal.ai (Replicate là phương án cũ), ghi màn hình, Remotion hoặc HyperFrames, FFmpeg, phụ đề Whisper, nhạc ElevenLabs. Định dạng chủ lực là "Avatar Explainer" kèm 17 recipe JSON (`recipes/*.json`).
+
+**Giá trị và cơ chế:** khác phần lớn skill video ở chỗ có đủ lớp kiểm: `tools/ffmpeg_qc.py`, `broll_layout_qc.py`, `ad_quality_gate.py`, `tests/test_video_recipes.py` kiểm schema recipe; 6.343 dòng Python trong `tools/` và `workflows/` (HeyGen client, Seedance qua fal, ghi màn hình bằng Playwright/Xvfb, ghép demo). Có tài liệu quyết định tốt: `SEEDANCE_AVATAR_ROI.md` kết luận avatar "NO-GO" làm mặc định vì chiếm khoảng 90% chi phí mỗi video mà không giúp mục tiêu AI-answer-engine (số liệu tự công bố trong file, chưa tái lập). `SKILL.md` yêu cầu ảnh gốc người thật phải "licensed/user-provided" trước khi tạo nhân vật hư cấu.
+
+**Giới hạn:** (1) **không license** nên không thể nhúng hay phân phối lại hợp pháp, chỉ nên tham khảo. (2) `SKILL.md` khai 5 biến môi trường bắt buộc (HeyGen, fal, OpenAI, ElevenLabs...) và `.env.example` còn có `REPLICATE_API_TOKEN`, `AWS_*`: nhiều khóa trả phí, nhiều nơi nhận dữ liệu. (3) **`tools/demo_video_composer.py` hàm `upload_to_s3` đặt `ACL: public-read`** và bucket mặc định `aiagentassets` nếu không đặt `AWS_S3_BUCKET`: video/phụ đề demo có thể thành công khai trên bucket của tác giả hoặc của bạn nếu cấu hình sai. Đây là đọc mã tĩnh, chưa chạy. (4) Không có CI (`.github/` vắng), kiểm chỉ có test cục bộ. (5) `agent_browser_recorder.py` cho agent điều khiển trình duyệt để quay "bằng chứng": rủi ro lộ phiên đăng nhập trên màn hình quay (chưa đọc kỹ cách xử lý cookie). (6) Một nhân vật "hư cấu" dựng từ ảnh người thật: cần đồng ý/quyền ảnh.
+
+**Cách tham khảo/tích hợp:** chỉ lấy ý tưởng: recipe JSON có schema, cổng QC trước khi xuất, và phép tính ROI cho avatar. Không chạy `demo_video_composer.py` với AWS thật khi chưa đổi ACL và bucket; không dán nhiều khóa vào một `.env` dùng chung. Muốn dùng mã thì hỏi tác giả về license.
+
+**Thay thế:** [browser-use/video-use](../19-agentic-video-media/README.md) (id `video-use`, MIT, dựng footage thô), [OpenMontage](../19-agentic-video-media/README.md#anhkysuai-2026-11-23-identity-openmontage), [heygen-com/skills](../19-agentic-video-media/README.md#xlsx-2026-11-23-heygen-skills) (chính thức, MIT).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`3fec4aa66a1d`](https://github.com/bomx/super-video-maker-skill/commit/3fec4aa66a1d4f8b249746eabc372547f67bba5c) (2026-08-09). Đã đọc README, SKILL.md (đầu và phần liên quan), `.env.example`, `SEEDANCE_AVATAR_ROI.md` (đầu), `tools/demo_video_composer.py` (hàm upload), grep endpoint trong `tools/*.py`. Chưa đọc `heygen_client.py`, `ugc_ad_runner.py`, workflows; chưa cài hay chạy.
+
+**Nguồn:** [README.md](https://github.com/bomx/super-video-maker-skill/blob/3fec4aa66a1d4f8b249746eabc372547f67bba5c/README.md) · [SKILL.md](https://github.com/bomx/super-video-maker-skill/blob/3fec4aa66a1d4f8b249746eabc372547f67bba5c/SKILL.md) · [.env.example](https://github.com/bomx/super-video-maker-skill/blob/3fec4aa66a1d4f8b249746eabc372547f67bba5c/.env.example) · [tools/demo_video_composer.py](https://github.com/bomx/super-video-maker-skill/blob/3fec4aa66a1d4f8b249746eabc372547f67bba5c/tools/demo_video_composer.py) · [SEEDANCE_AVATAR_ROI.md](https://github.com/bomx/super-video-maker-skill/blob/3fec4aa66a1d4f8b249746eabc372547f67bba5c/SEEDANCE_AVATAR_ROI.md) · [tests/test_video_recipes.py](https://github.com/bomx/super-video-maker-skill/blob/3fec4aa66a1d4f8b249746eabc372547f67bba5c/tests/test_video_recipes.py) · [metadata GitHub](https://api.github.com/repos/bomx/super-video-maker-skill) (không đọc được, 403).
+
+<a id="xlsx-2026-11-23-visual-skills"></a>
+
+### smixs/visual-skills
+
+**Repo:** [smixs/visual-skills](https://github.com/smixs/visual-skills) · **License:** **CC BY 4.0** (LICENSE + NOTICE; bắt buộc ghi công Serge Shima khi dùng/chuyển thể; CC không dành cho phần mềm nhưng ở đây áp cho văn bản skill) · **★ (chưa xác minh; GitHub API bị chặn ngày 2026-11-23)**
+
+**Mục đích:** hai skill chỉ gồm văn bản: `video` (viết prompt video AI theo vai đạo diễn/biên kịch/dựng phim cho Seedance 2.5, Kling, Veo, Runway, Luma, Pika, Sora) và `image` (prompt ảnh cho Nano Banana, GPT Image, kèm storyboard/keyframe). Có bản README tiếng Nga.
+
+**Giá trị và cơ chế:** `video/SKILL.md` chỉ 106 dòng và **cố ý mỏng**: ép đọc `references/dramaturgy.md` trước, rồi `universal-rules.md`, rồi một file model; đầu ra phải qua "dramaturgy check" 6 điểm và kiểm 3 chi tiết mỗi cảnh trước khi trả. Công thức cảnh `desire + obstacle + geometry + gaze + rhythm`, danh sách từ cấm ("cinematic", "epic", "stunning"...). `video/references/seedance-25.md` ghi theo hướng dẫn chính thức của ByteDance ngày 31/7/2026 (tác giả khai; chưa đối chiếu nguồn ByteDance). `NOTICE` ghi rõ nguồn chuyển thể: `agentara/skills` (MIT), viết lại, không chép.
+
+**Giới hạn:** không có mã, test, CI (`.github/` vắng) nên không có cổng máy; chất lượng chỉ đo bằng đọc. Nội dung gắn với phiên bản model giữa năm 2026 và sẽ lỗi thời nhanh. Không gọi API nào, không có dữ liệu rời máy (chỉ cài qua `npx skills add` từ skills.sh, README nêu). CC BY 4.0 buộc ghi công trong sản phẩm phái sinh, khác hẳn MIT của đa số skill cùng nhóm.
+
+**Cách tham khảo/tích hợp:** dùng làm lớp viết prompt đứng trước một skill chạy model (fal, Higgsfield, HeyGen). Khi nhúng hoặc sửa nội dung, giữ dòng ghi công và NOTICE. Trước khi tin cú pháp model, kiểm lại với tài liệu hiện hành của từng hãng.
+
+**Thay thế:** [fal-ai-community/skills](../19-agentic-video-media/README.md#xlsx-2026-11-23-fal-ai-skills) (`fal-prompting`, `fal-shot-craft`, cùng ý nhưng gắn endpoint fal, MIT), [higgsfield-ai/skills](../19-agentic-video-media/README.md#3f-hồ-sơ-higgsfield-aiskills-9-skill-gọi-cli-đóng-của-higgsfield-để-sinh-ảnh-video-brand-kit-và-train-soul-khuôn-mặt-ảnh-readme-người-dùng-gửi-đọc-mã-3112026), [OpenMontage](../19-agentic-video-media/README.md#anhkysuai-2026-11-23-identity-openmontage).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`61a60d317f0f`](https://github.com/smixs/visual-skills/commit/61a60d317f0fa0c3dc98902e58a7cb178838ae3f) (2026-11-06). Đọc README, LICENSE (đầu), NOTICE, `plugin.json`, `video/SKILL.md` (đầu và cuối), dòng đếm của `image/SKILL.md`; chưa đọc từng file trong `references/` (60 file trong repo). Chưa thử đầu ra prompt trên model thật.
+
+**Nguồn:** [README.md](https://github.com/smixs/visual-skills/blob/61a60d317f0fa0c3dc98902e58a7cb178838ae3f/README.md) · [LICENSE](https://github.com/smixs/visual-skills/blob/61a60d317f0fa0c3dc98902e58a7cb178838ae3f/LICENSE) · [NOTICE](https://github.com/smixs/visual-skills/blob/61a60d317f0fa0c3dc98902e58a7cb178838ae3f/NOTICE) · [.claude-plugin/plugin.json](https://github.com/smixs/visual-skills/blob/61a60d317f0fa0c3dc98902e58a7cb178838ae3f/.claude-plugin/plugin.json) · [video/SKILL.md](https://github.com/smixs/visual-skills/blob/61a60d317f0fa0c3dc98902e58a7cb178838ae3f/video/SKILL.md) · [image/SKILL.md](https://github.com/smixs/visual-skills/blob/61a60d317f0fa0c3dc98902e58a7cb178838ae3f/image/SKILL.md) · [metadata GitHub](https://api.github.com/repos/smixs/visual-skills) (không đọc được, 403).
+
+<a id="xlsx-2026-11-23-heygen-skills"></a>
+
+### heygen-com/skills
+
+**Repo:** [heygen-com/skills](https://github.com/heygen-com/skills) · **License:** MIT (LICENSE, © 2026 HeyGen; chỉ áp cho file skill, dịch vụ HeyGen thương mại, trừ credit gói) · **★ (chưa xác minh; GitHub API bị chặn ngày 2026-11-23)**
+
+**Mục đích:** 3 skill chính thức của HeyGen: `heygen-avatar` (tạo avatar bền vững: mặt + giọng, mặc định từ mô tả; ảnh thật hoặc video "digital twin" là tùy chọn), `heygen-video` (tạo video có avatar), `heygen-translate` (dịch/lồng tiếng video). Chạy qua HeyGen CLI (`HEYGEN_API_KEY`) hoặc MCP từ xa `https://mcp.heygen.com/mcp/v1/` (OAuth, dùng credit gói).
+
+**Giá trị và cơ chế:** (1) hai đường giao vận có thứ tự ưu tiên rõ: có `HEYGEN_API_KEY` thì dùng CLI, không thì dò MCP. (2) `heygen-video/references/` có `prompt-craft`, `frame-check`, `motion-vocabulary`, `official-prompt-guide`, `troubleshooting`: tri thức viết prompt cho video avatar. (3) Quy trình phát hành chuẩn: `release-please`, `CHANGELOG.md`, `VERSION` 3.2.0; `validate-skills.yml` kiểm skill **cài sạch qua `gh skill install`** (gói tự chứa), `publish.yml` đẩy lên ClawHub khi gắn tag `v*`. (4) Gắn nhãn đa nền: `.claude-plugin`, `.codex-plugin`, `.cursor-plugin`, `INSTALL_FOR_AGENTS.md` cho agent tự cài.
+
+**Giới hạn:** (1) Cài CLI bằng `curl -fsSL https://static.heygen.ai/cli/install.sh | bash` (README và `INSTALL_FOR_AGENTS.md`); CLI ở repo khác `heygen-com/heygen-cli`, chưa đọc. (2) **Có tín hiệu rời máy mặc định**: skill yêu cầu agent chạy `heygen feedback --rating ... --comment ...` "once per task" (CLI mode), và `heygen-video/scripts/update-check.sh` gọi `raw.githubusercontent.com/.../VERSION` định kỳ; tắt feedback bằng `HEYGEN_NO_ANALYTICS` hoặc `heygen config set analytics false`. Nội dung `--comment` do agent tự viết: có thể chứa chi tiết tác vụ (chưa kiểm). Tương phản với `liveavatar-agent-skills` (cùng hãng) nơi feedback chỉ gửi sau khi người dùng đồng ý. (3) `heygen-avatar` nhận ảnh/video người thật để tạo avatar (`create_photo_avatar`, digital twin); trong `SKILL.md` và `references/avatar-creation.md` không thấy từ "consent" hay bước xác nhận quyền ảnh, chỉ yêu cầu ảnh rõ mặt. Ảnh khuôn mặt là dữ liệu sinh trắc học (xem mục 18 §4e, số điều luật VN chưa xác minh). (4) HEAD là 2026-07-14 trong khi CHANGELOG mới nhất là 3.2.0 ngày 2026-05-13: có commit sau bản phát hành cuối. (5) Mặc định "Target = the agent": skill chủ động tạo danh tính avatar cho agent.
+
+**Cách tham khảo/tích hợp:** nếu cần video avatar chính chủ, đây là đường chính thức hơn các skill bên thứ ba. Cài CLI thủ công và ghim phiên bản, đặt `HEYGEN_NO_ANALYTICS=1` nếu không muốn gửi tín hiệu, chỉ dùng ảnh của chính mình hoặc người đã đồng ý bằng văn bản, gắn nhãn nội dung AI khi phát hành (mục 18 §4e). Học cách kiểm "cài sạch qua `gh skill`" trong CI.
+
+**Thay thế:** [higgsfield-ai/skills](../19-agentic-video-media/README.md#3f-hồ-sơ-higgsfield-aiskills-9-skill-gọi-cli-đóng-của-higgsfield-để-sinh-ảnh-video-brand-kit-và-train-soul-khuôn-mặt-ảnh-readme-người-dùng-gửi-đọc-mã-3112026) (CLI đóng, train khuôn mặt), [bomx/super-video-maker-skill](../19-agentic-video-media/README.md#xlsx-2026-11-23-super-video-maker-skill) (dùng HeyGen làm một provider, không license), [HyperFrames](../22-motion-design-animation/README.md) (cũng của HeyGen nhưng là engine render mở, Apache-2.0, chạy cục bộ).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`1bd5e4d33a02`](https://github.com/heygen-com/skills/commit/1bd5e4d33a028dfed3abf504c5e3dd644fb9ea8a) (2026-07-14). Đọc README, LICENSE, VERSION, CHANGELOG (đầu), `validate-skills.yml` (đầu), `publish.yml` (đầu), `.mcp.json`, `heygen-avatar/SKILL.md` (frontmatter + phần feedback), `avatar-creation.md` (đầu), `update-check.sh` (đầu). Chưa đọc `heygen-video/SKILL.md` toàn bộ, `heygen-translate`, `setup`; chưa cài, chưa đăng nhập, chưa gọi API.
+
+**Nguồn:** [README.md](https://github.com/heygen-com/skills/blob/1bd5e4d33a028dfed3abf504c5e3dd644fb9ea8a/README.md) · [LICENSE](https://github.com/heygen-com/skills/blob/1bd5e4d33a028dfed3abf504c5e3dd644fb9ea8a/LICENSE) · [CHANGELOG.md](https://github.com/heygen-com/skills/blob/1bd5e4d33a028dfed3abf504c5e3dd644fb9ea8a/CHANGELOG.md) · [.github/workflows/validate-skills.yml](https://github.com/heygen-com/skills/blob/1bd5e4d33a028dfed3abf504c5e3dd644fb9ea8a/.github/workflows/validate-skills.yml) · [.mcp.json](https://github.com/heygen-com/skills/blob/1bd5e4d33a028dfed3abf504c5e3dd644fb9ea8a/.mcp.json) · [heygen-avatar/SKILL.md](https://github.com/heygen-com/skills/blob/1bd5e4d33a028dfed3abf504c5e3dd644fb9ea8a/heygen-avatar/SKILL.md) · [heygen-avatar/references/avatar-creation.md](https://github.com/heygen-com/skills/blob/1bd5e4d33a028dfed3abf504c5e3dd644fb9ea8a/heygen-avatar/references/avatar-creation.md) · [heygen-video/scripts/update-check.sh](https://github.com/heygen-com/skills/blob/1bd5e4d33a028dfed3abf504c5e3dd644fb9ea8a/heygen-video/scripts/update-check.sh) · [metadata GitHub](https://api.github.com/repos/heygen-com/skills) (không đọc được, 403).
+
+<a id="xlsx-2026-11-23-runway-studio-skills"></a>
+
+### runway-studio-skills
+
+**Repo:** [runwayml/runway-studio-skills](https://github.com/runwayml/runway-studio-skills) · **License:** MIT (LICENSE ghi `Copyright (c) 2026`, không nêu tên chủ sở hữu) · **★ chưa xác minh (GitHub API không truy cập được trong phiên, 2026-11-23)**
+
+**Mục đích:** Skill đơn lẻ cho agent gọi Runway API sinh video, ảnh, âm thanh (quảng cáo sản phẩm, TTS, lồng tiếng) bằng bốn script Python chạy qua `uv run`.
+
+**Giá trị và cơ chế:** Một `SKILL.md` + `COOKBOOK.md` (công thức quảng cáo sản phẩm) + năm script (`generate_video.py` tự định tuyến text/image/video-to-video và character performance, `generate_image.py`, `generate_audio.py`, `get_task.py`, `runway_helpers.py`). `CLAUDE.md` dặn agent không hardcode khóa, không đọc lại file media vào hội thoại, tải kết quả ngay vì URL đầu ra hết hạn sau 24–48 giờ. Ảnh cục bộ được tải lên bằng `uploads.create_ephemeral` rồi dùng URI `runway://`.
+
+**Giới hạn:** Trả phí theo credit Runway và cần `RUNWAYML_API_SECRET`; đọc mã thấy `poll_task` lặp `while True` mỗi 5 giây, không có hạn chót tổng. Repo 12 file, một commit khi clone nông (2026-04-20), không có CI, không có test; danh sách model cứng trong README/SKILL có thể lỗi thời so với API. Repo `runwayml/skills` (hồ sơ kế bên) ghi trong CHANGELOG rằng các skill cũ đã bị gỡ khỏi gói đó, nhưng không có tuyên bố nào cho biết repo này bị thay thế (chưa xác minh trạng thái bảo trì).
+
+**Cách tham khảo/tích hợp:** Chỉ dùng làm mẫu cấu trúc skill gọi API sinh media. Trước khi dùng thật: đặt khóa trong secret manager, thêm timeout tổng cho vòng poll, đặt trần credit, và kiểm tên model với tài liệu Runway hiện hành.
+
+**Thay thế:** [runwayml/skills](#xlsx-2026-11-23-runwayml-skills), [higgsfield-skills](../19-agentic-video-media/README.md#3f-hồ-sơ-higgsfield-aiskills-9-skill-gọi-cli-đóng-của-higgsfield-để-sinh-ảnh-video-brand-kit-và-train-soul-khuôn-mặt-ảnh-readme-người-dùng-gửi-đọc-mã-3112026), generative-media-skills, [ComfyUI](../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`c1c0348fda3a`](https://github.com/runwayml/runway-studio-skills/commit/c1c0348fda3acf4ef864393b6485afb4600eedda) (commit ngày 2026-04-20). Đã đọc README, SKILL.md, CLAUDE.md, COOKBOOK.md, package.json, LICENSE, `scripts/runway_helpers.py` (khóa, poll, tải, upload) và đếm cấu trúc 12 file tại commit này; không có thư mục CI. Chưa cài `uv`, chưa gọi Runway API, chưa chạy script nào; chưa đọc đủ `generate_*.py` từng nhánh tham số.
+
+**Nguồn:** [README.md](https://github.com/runwayml/runway-studio-skills/blob/c1c0348fda3acf4ef864393b6485afb4600eedda/README.md) · [SKILL.md](https://github.com/runwayml/runway-studio-skills/blob/c1c0348fda3acf4ef864393b6485afb4600eedda/SKILL.md) · [CLAUDE.md](https://github.com/runwayml/runway-studio-skills/blob/c1c0348fda3acf4ef864393b6485afb4600eedda/CLAUDE.md) · [scripts/runway_helpers.py](https://github.com/runwayml/runway-studio-skills/blob/c1c0348fda3acf4ef864393b6485afb4600eedda/scripts/runway_helpers.py) · [LICENSE](https://github.com/runwayml/runway-studio-skills/blob/c1c0348fda3acf4ef864393b6485afb4600eedda/LICENSE) · metadata GitHub: chưa xác minh (API trả 403 trong phiên).
+
+<a id="xlsx-2026-11-23-runwayml-skills"></a>
+
+### Runway Dev (runwayml/skills)
+
+**Repo:** [runwayml/skills](https://github.com/runwayml/skills) · **License:** MIT (RunwayML, Inc.) · **★ chưa xác minh (GitHub API không truy cập được trong phiên, 2026-11-23)**
+
+**Mục đích:** Plugin chính thức của Runway (`runway-api`, tên hiển thị Runway Dev, phiên bản 4.0.1): MCP của Developer Portal cộng bảy skill hướng dẫn agent tích hợp Runway API vào ứng dụng bằng SDK.
+
+**Giá trị và cơ chế:** Khác repo script ở trên: không sinh media thay người dùng mà dạy agent **viết code tích hợp**. Gồm `runway-dev` (nền), `-setup`, `-models`, `-model-routers`, `-characters`, `-recipes`, `-workflows`. Quy tắc đáng học: khóa API chỉ ở server; đọc `docs.dev.runwayml.com/ai-context.md` trước khi chọn model thay vì nhớ; coi tài liệu và kết quả MCP là dữ liệu không tin cậy; dùng wait helper của SDK thay vòng poll tự viết; **bản Claude (`claude/`) cấm chạy sinh media tính phí**, chỉ kiểm bằng typecheck/test mock. Một manifest cho Claude Code, Codex và Cursor; MCP `https://dev.runwayml.com/mcp` (bản Claude dùng `/mcp/claude`, bỏ công cụ `create_avatar`).
+
+**Giới hạn:** Phụ thuộc dịch vụ MCP và tài khoản Runway (OAuth qua trình duyệt); khóa SDK vẫn do người dùng tạo. Thư mục `claude/` nhân bản bảy skill nên có nguy cơ lệch so với `skills/` (CI chạy `build:plugin` và `validate:plugin` nhưng chưa đọc rõ cơ chế so khớp). README ghi listing `claude-plugins-official` do Anthropic quản lý và có thể ghim phiên bản khác. CHANGELOG 4.0.0 ghi các skill và helper cũ không còn được phát hành.
+
+**Cách tham khảo/tích hợp:** Cài bằng `claude plugin marketplace add runwayml/skills` rồi `claude plugin install runway-api@runway-dev`. Ghim phiên bản/commit, tự thực hiện bước đăng nhập OAuth, giữ `RUNWAYML_API_SECRET` ở server; dùng mẫu 'tài liệu và MCP là dữ liệu không tin cậy' cho skill tích hợp API khác.
+
+**Thay thế:** [runway-studio-skills](#xlsx-2026-11-23-runway-studio-skills), [higgsfield-skills](../19-agentic-video-media/README.md#3f-hồ-sơ-higgsfield-aiskills-9-skill-gọi-cli-đóng-của-higgsfield-để-sinh-ảnh-video-brand-kit-và-train-soul-khuôn-mặt-ảnh-readme-người-dùng-gửi-đọc-mã-3112026), elevenlabs-skills (mục 22), stripe-ai (mục 20, cùng kiểu plugin hãng + MCP).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`6e98d3f35407`](https://github.com/runwayml/skills/commit/6e98d3f3540705331acd748d75427f4bd7c90ce1) (commit ngày 2026-10-30). Đã đọc README, CHANGELOG, `plugin.json`, `.claude-plugin/marketplace.json`, `claude/.mcp.json`, `.mcp.json`, hai SKILL.md (`runway-dev`, `runway-dev-setup`) và workflow CI `dev-plugin.yml`, LICENSE tại commit này. Chưa chạy `npm ci`/test/build plugin, chưa kết nối MCP, chưa kiểm hai cây skill có giống nhau không.
+
+**Nguồn:** [README.md](https://github.com/runwayml/skills/blob/6e98d3f3540705331acd748d75427f4bd7c90ce1/README.md) · [CHANGELOG.md](https://github.com/runwayml/skills/blob/6e98d3f3540705331acd748d75427f4bd7c90ce1/CHANGELOG.md) · [plugin.json](https://github.com/runwayml/skills/blob/6e98d3f3540705331acd748d75427f4bd7c90ce1/plugin.json) · [claude/skills/runway-dev/SKILL.md](https://github.com/runwayml/skills/blob/6e98d3f3540705331acd748d75427f4bd7c90ce1/claude/skills/runway-dev/SKILL.md) · [claude/.mcp.json](https://github.com/runwayml/skills/blob/6e98d3f3540705331acd748d75427f4bd7c90ce1/claude/.mcp.json) · [.github/workflows/dev-plugin.yml](https://github.com/runwayml/skills/blob/6e98d3f3540705331acd748d75427f4bd7c90ce1/.github/workflows/dev-plugin.yml) · [LICENSE](https://github.com/runwayml/skills/blob/6e98d3f3540705331acd748d75427f4bd7c90ce1/LICENSE) · metadata GitHub: chưa xác minh (API trả 403 trong phiên).
+
+<a id="xlsx-2026-11-23-ffmpeg-skill-kajisho5"></a>
+
+### ffmpeg-skill (kajisho5)
+
+**Repo:** [kajisho5/ffmpeg-skill](https://github.com/kajisho5/ffmpeg-skill) · **License:** MIT (Copyright (c) 2026 kajisho5) · **★ chưa xác minh (GitHub API không truy cập được trong phiên, 2026-11-23)**
+
+**Mục đích:** Skill + bộ 42 công cụ Python (chỉ thư viện chuẩn) bọc `ffmpeg`/`ffprobe` cho agent chỉnh sửa video/audio cục bộ, kèm MCP server và hợp đồng công cụ đọc được bằng máy (v4.7.0).
+
+**Giá trị và cơ chế:** Quy trình cố định probe → sửa không mất dữ liệu nếu được → kiểm → verify; công cụ nhận tham số có kiểu (`--aspect 9:16 --fit pad`) thay vì để agent tự ghép lệnh. `input_schema` của mỗi tool **sinh từ chính parser `argparse`** lúc chạy và CI báo lỗi nếu lệch; từ chối ghi đè nguồn nếu thiếu `--overwrite`; MCP mặc định chỉ liệt kê 12 tool lõi ('stable'), 30 tool còn lại 'beta'. PRIVACY.md nói không telemetry, không dùng mạng; ngoại lệ là engine Whisper do người dùng tự cài có thể tải model. CI chạy ma trận Ubuntu/macOS/Windows, Python 3.10/3.13, FFmpeg 6.1/7.1/8/9, kèm CodeQL, OpenSSF Scorecard, ClusterFuzzLite, dependabot.
+
+**Giới hạn:** Rất lớn so với đối thủ (498 file tracked, khoảng 27 nghìn dòng Python ở `scripts/`), nên chi phí đọc và rà trước khi nhúng cao; README tự gọi 30/42 tool là beta. Cần FFmpeg 6.1+ và Python 3.10+. Ảnh/clip demo do Veo sinh (README tự ghi). Hệ sinh thái riêng của tác giả (nhiều repo `*-skill`) gợi ý rủi ro phụ thuộc một người. `.claude/settings.json` của repo bật marketplace trailofbits cho phát triển (chỉ ảnh hưởng người clone repo để làm việc trong đó). Huy hiệu Trendshift/npm/Scorecard là tuyên bố trong README, chưa kiểm độc lập.
+
+**Cách tham khảo/tích hợp:** `npx ffmpeg-skill` hoặc cài plugin; ghim phiên bản, chạy `doctor` để biết FFmpeg có codec cần, đặt `FFMPEG_SKILL_MCP_TOOLS` để thu nhỏ danh sách tool. Dùng `--dry-run --json` trước các bước ghi và không bỏ cờ bảo vệ nguồn.
+
+**Thay thế:** [n0an/ffmpeg-skill](#xlsx-2026-11-23-ffmpeg-skill-n0an), [FFmpeg](../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026), video-use (mục 19), [ffmpeg.wasm](#anhkysuai-2026-11-23-ffmpeg.wasm).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`c559cb5fcbfb`](https://github.com/kajisho5/ffmpeg-skill/commit/c559cb5fcbfbb37b8a48165b0c49e6bdfa674883) (commit ngày 2026-11-22). Đã đọc README, SKILL.md, `.claude-plugin/plugin.json`, `package.json`, PRIVACY.md, `.claude/settings.json`, `.github/workflows/ci.yml`, LICENSE, danh sách `scripts/` và `bin/install.js` (chỉ `spawnSync` tới python/ffmpeg) tại commit này; grep `scripts/_contract.py`, `_review.py` không thấy `urllib`/`requests`/`socket` ngoài một comment. Chưa chạy bộ test (24 mục trong `tests/`), chưa chạy công cụ nào, chưa kiểm FFmpeg/codec; chưa đọc từng script trong 42 tool.
+
+**Nguồn:** [README.md](https://github.com/kajisho5/ffmpeg-skill/blob/c559cb5fcbfbb37b8a48165b0c49e6bdfa674883/README.md) · [SKILL.md](https://github.com/kajisho5/ffmpeg-skill/blob/c559cb5fcbfbb37b8a48165b0c49e6bdfa674883/SKILL.md) · [PRIVACY.md](https://github.com/kajisho5/ffmpeg-skill/blob/c559cb5fcbfbb37b8a48165b0c49e6bdfa674883/PRIVACY.md) · [scripts/_contract.py](https://github.com/kajisho5/ffmpeg-skill/blob/c559cb5fcbfbb37b8a48165b0c49e6bdfa674883/scripts/_contract.py) · [.github/workflows/ci.yml](https://github.com/kajisho5/ffmpeg-skill/blob/c559cb5fcbfbb37b8a48165b0c49e6bdfa674883/.github/workflows/ci.yml) · [LICENSE](https://github.com/kajisho5/ffmpeg-skill/blob/c559cb5fcbfbb37b8a48165b0c49e6bdfa674883/LICENSE) · metadata GitHub: chưa xác minh (API trả 403 trong phiên).
+
+<a id="xlsx-2026-11-23-ffmpeg-skill-n0an"></a>
+
+### ffmpeg-skill (n0an, FFmpeg Recipes)
+
+**Repo:** [n0an/ffmpeg-skill](https://github.com/n0an/ffmpeg-skill) · **License:** MIT (Copyright (c) 2026 Anton Novoselov) · **★ chưa xác minh (GitHub API không truy cập được trong phiên, 2026-11-23)**
+
+**Mục đích:** Skill thuần tài liệu (SKILL.md 87 dòng + 6 file tham chiếu, khoảng 750 dòng) gom công thức FFmpeg đã chọn lọc để agent ráp lệnh thay vì nhớ từ trí nhớ (v1.0.0).
+
+**Giá trị và cơ chế:** Không có mã thực thi: quy tắc cốt lõi nằm trong SKILL.md (không dùng `-c copy` khi có filter; seek đầu ra để cắt chính xác; mặc định libx264 `-crf 18 -pix_fmt yuv420p +faststart`; thẻ `hvc1` cho HEVC trên Apple; đặt lại timestamp sau `trim`), kèm mẫu đầu ra (lệnh một dòng + giải thích cờ + caveat). Tham chiếu tải theo nhu cầu (glossary, simple/advanced editing, audio, asset generation, encoding). Có manifest cho Claude Code, Gemini extension và `agents/openai.yaml` (Codex).
+
+**Giới hạn:** Chỉ là cheatsheet: không kiểm tra đầu ra, không dò năng lực FFmpeg cục bộ, không bảo vệ file nguồn; mọi lệnh do agent chạy qua shell của chính nó. Mặc định `-preset veryslow` rất chậm cho file dài. Một tác giả, một commit đọc được (2026-09-08, clone nông); không có CI (chỉ 13 file). Công thức chưa được chạy lại trong phiên này.
+
+**Cách tham khảo/tích hợp:** `npx skills add https://github.com/n0an/ffmpeg-skill --skill ffmpeg`. Phù hợp làm lớp tri thức nhẹ khi dự án đã có sandbox chạy FFmpeg; cần thêm bước probe/verify của dự án chủ.
+
+**Thay thế:** [kajisho5/ffmpeg-skill](#xlsx-2026-11-23-ffmpeg-skill-kajisho5), [SkillsBench](../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-skillsbench) (skill mẫu cắt/nối), [FFmpeg](../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`aec7706a3602`](https://github.com/n0an/ffmpeg-skill/commit/aec7706a3602134bfc606cc8a85eb010dfaa22ad) (commit ngày 2026-09-08). Đã đọc README, SKILL.md, `.claude-plugin/plugin.json`, `agents/openai.yaml`, LICENSE và đếm dòng các file tham chiếu tại commit này; không đọc từng công thức trong 6 file tham chiếu, không có mã để đọc. Chưa chạy lệnh nào.
+
+**Nguồn:** [README.md](https://github.com/n0an/ffmpeg-skill/blob/aec7706a3602134bfc606cc8a85eb010dfaa22ad/README.md) · [ffmpeg/SKILL.md](https://github.com/n0an/ffmpeg-skill/blob/aec7706a3602134bfc606cc8a85eb010dfaa22ad/ffmpeg/SKILL.md) · [ffmpeg/references/glossary.md](https://github.com/n0an/ffmpeg-skill/blob/aec7706a3602134bfc606cc8a85eb010dfaa22ad/ffmpeg/references/glossary.md) · [.claude-plugin/plugin.json](https://github.com/n0an/ffmpeg-skill/blob/aec7706a3602134bfc606cc8a85eb010dfaa22ad/.claude-plugin/plugin.json) · [LICENSE](https://github.com/n0an/ffmpeg-skill/blob/aec7706a3602134bfc606cc8a85eb010dfaa22ad/LICENSE) · metadata GitHub: chưa xác minh (API trả 403 trong phiên).
+
+<a id="xlsx-2026-11-23-comfyui-agent-skill-mie"></a>
+
+### comfyui-agent-skill (MieMieeeee)
+
+**Repo:** [MieMieeeee/comfyui-agent-skill](https://github.com/MieMieeeee/comfyui-agent-skill) · **License:** Apache-2.0 (LICENSE gốc); thư mục vendored `scripts/comfy_api_simplified/` mang LICENSE MIT riêng (VENDORING.md ghi Copyright 2024 deimos-deimos) · **★ chưa xác minh (GitHub API không truy cập được trong phiên, 2026-11-23)**
+
+**Mục đích:** Skill + CLI Python (gói PyPI `comfyui-agent-skill-mie`, bản 0.1.14) để agent chạy workflow ComfyUI **đã đăng ký** (ảnh, sửa ảnh, video LTX, nhạc, TTS, matting, LivePortrait, clone giọng) trên máy chủ ComfyUI cục bộ hoặc tự dựng đáng tin.
+
+**Giá trị và cơ chế:** Hợp đồng ổn định thay cho JSON workflow tự do: mỗi workflow có `*.config.json` đã duyệt (12 workflow 'stable'), CLI trả JSON có mã lỗi (`SERVER_UNAVAILABLE`, `NO_OUTPUT`...), có chế độ `--submit`/poll, `check` và `doctor` kiểm máy chủ và node/model trước khi chạy lâu. SKILL.md nói rõ **không chạy JSON workflow chưa duyệt**; workflow của người dùng chỉ được nhập vào registry riêng sau khi xem config. CHANGELOG ghi các bản vá cụ thể: timeout HTTP 10s/60s cho mọi lệnh `requests` (0.1.13), chặn đường dẫn đầu ra kiểu Windows/`..` (0.1.12), hỗ trợ đầu ra 3D (0.1.14).
+
+**Giới hạn:** README tự dặn không trỏ vào endpoint ComfyUI công cộng không tin cậy; không cài ComfyUI hay model, phần cứng GPU và custom node là việc của người dùng. Repo vendoring một phần `comfy_api_simplified` (sửa cục bộ `api.py`, phải áp lại khi đồng bộ). Bản 0.1.x, một tác giả; có `docs/internal/` (kế hoạch, findings) lẫn trong repo. Tên mẫu trong catalog dễ nhầm với ComfyUI gốc và các MCP/skill ComfyUI khác. Chưa đọc mã executor, nên các tuyên bố an toàn (registry, kiểm đường dẫn) chưa kiểm ở mức mã.
+
+**Cách tham khảo/tích hợp:** `pipx install comfyui-agent-skill-mie`, chạy `check`/`doctor` với máy chủ ComfyUI nội bộ; giữ máy chủ sau mạng tin cậy, ghim phiên bản gói và kiểm license model của từng workflow (model thường có license riêng, không thuộc Apache-2.0 của skill).
+
+**Thay thế:** [ComfyUI](../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026), Pixelle-Video (mục 19), generative-media-skills (mục 19, API đám mây), [higgsfield-skills](../19-agentic-video-media/README.md#3f-hồ-sơ-higgsfield-aiskills-9-skill-gọi-cli-đóng-của-higgsfield-để-sinh-ảnh-video-brand-kit-và-train-soul-khuôn-mặt-ảnh-readme-người-dùng-gửi-đọc-mã-3112026).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`b42d1076a7ae`](https://github.com/MieMieeeee/comfyui-agent-skill/commit/b42d1076a7ae4ea8084fe6580080aaaeb0610eeb) (commit ngày 2026-10-13). Đã đọc README, SKILL.md (phần mô tả và phạm vi sử dụng), VENDORING.md, CHANGELOG.md (0.1.11–0.1.14), `pyproject.toml`, workflow `ci.yml` (ma trận Ubuntu/Windows, Python 3.10/3.11, pytest), danh sách file và LICENSE tại commit này. Chưa đọc mã trong `scripts/comfyui/`, chưa chạy test, chưa kết nối ComfyUI; chưa kiểm bản PyPI khớp repo.
+
+**Nguồn:** [README.md](https://github.com/MieMieeeee/comfyui-agent-skill/blob/b42d1076a7ae4ea8084fe6580080aaaeb0610eeb/README.md) · [SKILL.md](https://github.com/MieMieeeee/comfyui-agent-skill/blob/b42d1076a7ae4ea8084fe6580080aaaeb0610eeb/SKILL.md) · [VENDORING.md](https://github.com/MieMieeeee/comfyui-agent-skill/blob/b42d1076a7ae4ea8084fe6580080aaaeb0610eeb/VENDORING.md) · [CHANGELOG.md](https://github.com/MieMieeeee/comfyui-agent-skill/blob/b42d1076a7ae4ea8084fe6580080aaaeb0610eeb/CHANGELOG.md) · [.github/workflows/ci.yml](https://github.com/MieMieeeee/comfyui-agent-skill/blob/b42d1076a7ae4ea8084fe6580080aaaeb0610eeb/.github/workflows/ci.yml) · [LICENSE](https://github.com/MieMieeeee/comfyui-agent-skill/blob/b42d1076a7ae4ea8084fe6580080aaaeb0610eeb/LICENSE) · metadata GitHub: chưa xác minh (API trả 403 trong phiên).
+
+<a id="xlsx-2026-11-23-youtube-agent-skill"></a>
+
+### youtube-agent-skill (Jake Schincariol)
+
+**Repo:** [Jakeschincariol/youtube-agent-skill](https://github.com/Jakeschincariol/youtube-agent-skill) · **License:** MIT (Copyright (c) 2026 Jake Schincariol) · **★ chưa xác minh (GitHub API không truy cập được trong phiên, 2026-11-23)**
+
+**Mục đích:** Bộ 11 skill Claude cho người làm kênh YouTube (script, tiêu đề + thumbnail, EDL từ transcript, retention, chapters, Shorts, SEO, bình luận, kế hoạch tuần, audit) kèm 6 công cụ Python không phụ thuộc thư viện (v1.0.0).
+
+**Giá trị và cơ chế:** Điểm khác biệt là phần kiểm bằng mã nhỏ: `hookscore.py` (bảng 5 thuộc tính cho hook, 21 công thức trong `hooks.json`), `title.py` (lint tiêu đề và thumbnail như một cặp), `deadair.py` (EDL từ SRT), `chapters.py` (kiểm luật chapter của YouTube), `retention.py` (đọc CSV retention), `swipe.py` (xếp hạng video theo bội số so với median của chính kênh, cần tối thiểu 4 video mỗi kênh). README ghi giới hạn thẳng: hookscore là heuristic hiệu chỉnh trên 74 hook, phân biệt hook tệ/thật tốt nhưng gần như không phân biệt hit/miss của cùng một người sáng tạo. Mọi skill kết thúc bằng khối để người dùng tự đăng, không tự xuất bản.
+
+**Giới hạn:** Hiệu chỉnh trên 74 hook, năm kênh (tuyên bố của tác giả, chưa tái lập). `/yt-viral` cần người dùng tự thu thập dữ liệu (ví dụ `yt-dlp --flat-playlist`); xếp hạng dựa trên tiêu đề, không giải thích vì sao video thành công. Tệp `voice.md` do người dùng viết quyết định chất lượng. Không CI, không test (repo 24 file, mã Python tổng cộng khoảng 535 dòng). Một tác giả; chưa kiểm mã từng script bằng chạy thật.
+
+**Cách tham khảo/tích hợp:** Sao chép `skills/yt-*` vào `~/.claude/skills/` hoặc `/plugin marketplace add Jakeschincariol/youtube-agent-skill`; điền `templates/voice.md`. Không cần khóa API nên rủi ro bí mật thấp; kết quả `swipe.py` chỉ phản ánh dữ liệu đầu vào người dùng đưa.
+
+**Thay thế:** [claude-youtube](#xlsx-2026-11-23-claude-youtube), ai-youtube-shorts-generator (mục 19), last30days-skill (mục 08), social-media-research-skills (mục 19).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a2feb2104981`](https://github.com/Jakeschincariol/youtube-agent-skill/commit/a2feb2104981a375ffd4f87ee04f4f5344ac43c6) (commit ngày 2026-09-16). Đã đọc README, LICENSE, `plugin.json`, SKILL.md của `yt-viral`, đầu file và import của sáu script (grep không thấy `urlopen`/`requests`/`socket`/`subprocess` trong các script) tại commit này. Không có thư mục `.github`. Chưa chạy script nào, chưa đọc đủ logic chấm điểm; số 74 hook/21 công thức chưa kiểm.
+
+**Nguồn:** [README.md](https://github.com/Jakeschincariol/youtube-agent-skill/blob/a2feb2104981a375ffd4f87ee04f4f5344ac43c6/README.md) · [skills/yt-viral/SKILL.md](https://github.com/Jakeschincariol/youtube-agent-skill/blob/a2feb2104981a375ffd4f87ee04f4f5344ac43c6/skills/yt-viral/SKILL.md) · [skills/yt-script/hookscore.py](https://github.com/Jakeschincariol/youtube-agent-skill/blob/a2feb2104981a375ffd4f87ee04f4f5344ac43c6/skills/yt-script/hookscore.py) · [skills/yt-viral/swipe.py](https://github.com/Jakeschincariol/youtube-agent-skill/blob/a2feb2104981a375ffd4f87ee04f4f5344ac43c6/skills/yt-viral/swipe.py) · [.claude-plugin/plugin.json](https://github.com/Jakeschincariol/youtube-agent-skill/blob/a2feb2104981a375ffd4f87ee04f4f5344ac43c6/.claude-plugin/plugin.json) · [LICENSE](https://github.com/Jakeschincariol/youtube-agent-skill/blob/a2feb2104981a375ffd4f87ee04f4f5344ac43c6/LICENSE) · metadata GitHub: chưa xác minh (API trả 403 trong phiên).
+
+<a id="xlsx-2026-11-23-claude-youtube"></a>
+
+### claude-youtube (AgriciDaniel)
+
+**Repo:** [AgriciDaniel/claude-youtube](https://github.com/AgriciDaniel/claude-youtube) · **License:** MIT (Copyright (c) 2025 Daniel Agrici) · **★ chưa xác minh (GitHub API không truy cập được trong phiên, 2026-11-23)**
+
+**Mục đích:** Skill 'cố vấn tăng trưởng YouTube' cho Claude Code: orchestrator `SKILL.md` điều tới 14 sub-skill (audit, SEO, script, hook, thumbnail, strategy, calendar, shorts, analyze, repurpose, monetize, competitor, metadata, ideate), 9 hướng dẫn tham chiếu, 9 mẫu theo loại kênh và 6 script Python gọi YouTube Data/Analytics API (bản 0.1.0, README ghi Beta).
+
+**Giá trị và cơ chế:** Cấu trúc 3 lớp rõ (router + sub-skill + references, tải theo nhu cầu); script tách riêng xác thực khóa API/OAuth (`youtube_auth.py`), bộ đếm quota 10.000 đơn vị/ngày (`quota_tracker.py`) và lấy transcript qua `yt-dlp` nếu có. Cùng tác giả với claude-seo nên dùng chung mô hình orchestrator/sub-skill.
+
+**Giới hạn:** Phần lớn là lời khuyên dạng markdown (README ghi hơn 5.300 dòng) với benchmark, tỷ lệ CTR/RPM nêu trong guide không kèm nguồn kiểm được (chưa xác minh). Cần khóa YouTube Data API hoặc OAuth client secrets cho dữ liệu thật; token OAuth lưu ở `~/.claude/.tmp/youtube_oauth_token.json` (đọc từ mã `youtube_auth.py`). `SKILL.md` khai báo công cụ rộng (Bash, WebSearch, Write, Agent). Cài đặt khuyến nghị dùng `curl | bash`; `install.sh` đọc được chỉ clone nông và chép file vào `~/.claude/skills/youtube`. Không có CI; commit cuối 2026-04-10, bản 0.1.0 (Beta), nên có thể đã tụt so với thay đổi chính sách YouTube.
+
+**Cách tham khảo/tích hợp:** Cài bằng cách tự đọc rồi chép `skills/claude-youtube/` vào `~/.claude/skills/youtube` thay vì pipe vào shell; nếu cần dữ liệu riêng, tạo OAuth client riêng với phạm vi chỉ đọc và bảo vệ token. Kiểm lại các con số benchmark trước khi đưa vào quyết định.
+
+**Thay thế:** [youtube-agent-skill](#xlsx-2026-11-23-youtube-agent-skill), [claude-seo](../20-claude-plugins-ecosystem/README.md#3z-hồ-sơ-agricidanielclaude-seo-claude-seo-plugin-audit-seo-và-geo-cho-claude-code-26-skill--19-agent--1077-test-ảnh-readme-người-dùng-gửi-đọc-mã-5112026), ai-youtube-shorts-generator (mục 19), [BrowserAct youtube-api-skill](#xlsx-2026-11-23-browser-act-youtube-api-skill).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`84c3fa680520`](https://github.com/AgriciDaniel/claude-youtube/commit/84c3fa6805200632fadb4fe2795ef265511271c7) (commit ngày 2026-04-10). Đã đọc README, SKILL.md (router), `plugin.json`, `install.sh`, SECURITY.md, `execution/utils/youtube_auth.py` (khóa từ `YOUTUBE_API_KEY` hoặc `~/.claude/youtube-credentials.json`, đường dẫn token OAuth), đầu `quota_tracker.py` và `fetch_transcript.py`, LICENSE tại commit này. Không có `.github/workflows`. Chưa đọc đủ bốn script `fetch_*`/`search_*`, chưa chạy script, chưa kiểm số benchmark trong guide.
+
+**Nguồn:** [README.md](https://github.com/AgriciDaniel/claude-youtube/blob/84c3fa6805200632fadb4fe2795ef265511271c7/README.md) · [skills/claude-youtube/SKILL.md](https://github.com/AgriciDaniel/claude-youtube/blob/84c3fa6805200632fadb4fe2795ef265511271c7/skills/claude-youtube/SKILL.md) · [skills/claude-youtube/execution/utils/youtube_auth.py](https://github.com/AgriciDaniel/claude-youtube/blob/84c3fa6805200632fadb4fe2795ef265511271c7/skills/claude-youtube/execution/utils/youtube_auth.py) · [install.sh](https://github.com/AgriciDaniel/claude-youtube/blob/84c3fa6805200632fadb4fe2795ef265511271c7/install.sh) · [SECURITY.md](https://github.com/AgriciDaniel/claude-youtube/blob/84c3fa6805200632fadb4fe2795ef265511271c7/SECURITY.md) · [LICENSE](https://github.com/AgriciDaniel/claude-youtube/blob/84c3fa6805200632fadb4fe2795ef265511271c7/LICENSE) · metadata GitHub: chưa xác minh (API trả 403 trong phiên).
+
+<a id="xlsx-2026-11-23-browser-act-youtube-api-skill"></a>
+
+### BrowserAct youtube-api-skill (browser-act/skills)
+
+**Repo:** [browser-act/skills](https://github.com/browser-act/skills) · **License:** MIT (Copyright (c) 2026 BrowserAct); dịch vụ BrowserAct đám mây là sản phẩm riêng, điều khoản riêng · **★ chưa xác minh (GitHub API không truy cập được trong phiên, 2026-11-23)**
+
+**Mục đích:** Phạm vi đọc: `solutions/video-platforms/youtube-api-skill`, một skill gọi workflow-template của dịch vụ BrowserAct để lấy số liệu video/kênh YouTube theo từ khóa và bộ lọc ngày tải lên. Repo `browser-act/skills` chứa 103 SKILL.md: skill CLI trình duyệt `browser-act`, `browser-act-skill-forge` và thư mục `solutions/` (thương mại điện tử, lead generation, social listening, video-platforms...).
+
+**Giá trị và cơ chế:** Một script `youtube_api.py` (106 dòng): đọc `BROWSERACT_API_KEY` từ môi trường, POST `run-task-by-template` tới `api.browseract.com/v2/workflow` với template ID cố định, poll trạng thái mỗi 10 giây tối đa 300 giây rồi in kết quả (tiêu đề, kênh, subscriber, view, like, comment, thời lượng). SKILL.md quy định agent không làm gì khác trước khi người dùng cung cấp khóa, chỉ retry một lần và không retry khi 'Invalid authorization'. Có timeout tổng và timeout từng request, khác nhiều skill gọi API khác.
+
+**Giới hạn:** Không thay YouTube Data API: dữ liệu do dịch vụ đám mây của bên thứ ba cào về, **từ khóa tìm kiếm gửi sang BrowserAct**, tính phí theo tài khoản BrowserAct (chưa xác minh giá), khóa API bắt buộc. Việc cào trang YouTube có thể mâu thuẫn điều khoản dịch vụ của YouTube (chưa xác minh, cần rà pháp lý của dự án chủ). Các tuyên bố 'không hallucination', 'không CAPTCHA', 'rẻ hơn AI thuần' trong SKILL.md là quảng cáo của nhà cung cấp, chưa kiểm. Mã trong repo chỉ là client; logic cào nằm trong template đóng ở phía dịch vụ nên không đọc được. CI của repo chỉ đồng bộ thư mục sang repo plugin và hoạt động cộng đồng, không kiểm skill.
+
+**Cách tham khảo/tích hợp:** Nếu chỉ cần số liệu YouTube hợp lệ, ưu tiên YouTube Data API chính thức. Dùng skill này khi chấp nhận phụ thuộc BrowserAct: lưu khóa trong secret manager, ghim commit, kiểm điều khoản và chi phí, không gửi từ khóa nhạy cảm. Skill CLI `browser-act` cài `uv tool install browser-act-cli` (tải gói PyPI ngoài), cần xem xét riêng.
+
+**Thay thế:** [yt-dlp](../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026), [claude-youtube](#xlsx-2026-11-23-claude-youtube) (YouTube Data API trực tiếp), social-media-research-skills (mục 19), last30days-skill (mục 08).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`593316aa0f8c`](https://github.com/browser-act/skills/commit/593316aa0f8ccd88bdf745c92b24a50641701973) (commit ngày 2026-11-04). Đã đọc README repo, `solutions/video-platforms/youtube-api-skill/SKILL.md` và toàn bộ `scripts/youtube_api.py`, đầu `browser-act/SKILL.md` (metadata quyền, cài đặt), `docs/installation.md`, workflow `sync-browser-act.yml`, LICENSE tại commit này. Chỉ phạm vi skill YouTube này; chưa đọc 100+ skill còn lại, chưa gọi API BrowserAct, chưa chạy script; template phía dịch vụ không truy cập được.
+
+**Nguồn:** [solutions/video-platforms/youtube-api-skill/SKILL.md](https://github.com/browser-act/skills/blob/593316aa0f8ccd88bdf745c92b24a50641701973/solutions/video-platforms/youtube-api-skill/SKILL.md) · [solutions/video-platforms/youtube-api-skill/scripts/youtube_api.py](https://github.com/browser-act/skills/blob/593316aa0f8ccd88bdf745c92b24a50641701973/solutions/video-platforms/youtube-api-skill/scripts/youtube_api.py) · [browser-act/SKILL.md](https://github.com/browser-act/skills/blob/593316aa0f8ccd88bdf745c92b24a50641701973/browser-act/SKILL.md) · [README.md](https://github.com/browser-act/skills/blob/593316aa0f8ccd88bdf745c92b24a50641701973/README.md) · [.github/workflows/sync-browser-act.yml](https://github.com/browser-act/skills/blob/593316aa0f8ccd88bdf745c92b24a50641701973/.github/workflows/sync-browser-act.yml) · [LICENSE](https://github.com/browser-act/skills/blob/593316aa0f8ccd88bdf745c92b24a50641701973/LICENSE) · metadata GitHub: chưa xác minh (API trả 403 trong phiên).

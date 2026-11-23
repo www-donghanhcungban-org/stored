@@ -876,3 +876,29 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 - https://codersera.com/blog/llms-txt-complete-guide-2026/ · https://limy.ai/blog/llms-txt-in-2026-the-full-guide · https://aisaasradar.com/article/llms-txt-adoption-data-2026 · https://seeklab.io/blog/what-is-llmstxt-the-honest-2026-guide/
 - §2b (12/10/2026): https://github.com/vuejs/vitepress · https://github.com/rust-lang/mdBook · https://github.com/sphinx-doc/sphinx · https://github.com/zensical/zensical · https://github.com/docsifyjs/docsify · https://github.com/yamadashy/repomix · https://github.com/AsyncFuncAI/deepwiki-open · https://github.com/coderamp-labs/gitingest · https://github.com/shuding/nextra · https://github.com/mintlify/starter
 - §2c (12/10/2026): https://github.com/braedonsaunders/codeflow (clone đầy đủ, HEAD `b0e82d1`: README.md, index.html, cli/codeflow.mjs, card/action.yml, card/lib/analyzer.js, card/README.md, .github/workflows/, tests/) · https://codeflow-five.vercel.app/ · https://github.com/braedonsaunders · https://themenonlab.blog/blog/codeflow-github-architecture-visualizer · https://www.skills.sh/akillness/jeo-skills/codeflow · https://github.com/ahmedkhaleel2004/gitdiagram · https://github.com/sverweij/dependency-cruiser · https://github.com/MaibornWolff/codecharta
+
+<a id="xlsx-2026-11-23"></a>
+
+## Đánh giá bổ sung từ bảng "Top 100 GitHub AI Skills" — 23/11/2026
+
+Phần này có **1 hồ sơ** từ bảng xlsx người dùng gửi ngày 2026-11-23; đọc bằng `git clone --depth 1`, không cài hay chạy mã upstream. GitHub API không dùng được trong phiên nên ★ và `pushed_at` ghi **(chưa xác minh)** khi để trống.
+
+<a id="xlsx-2026-11-23-agent-notion-template-docs"></a>
+
+### agent-notion-template-docs (notion-doc)
+
+**Repo:** [heyman333/agent-notion-template-docs](https://github.com/heyman333/agent-notion-template-docs) · **License:** MIT (Copyright 2026 heyman333, Yeongsu Han) · **★ 106 (GitHub search API, 2026-11-23)**
+
+**Mục đích:** Skill `notion-doc` bắt agent xuất tài liệu HTML có giao diện kiểu Notion (callout 5 màu, toggle, checklist, bookmark, code Prism, sáng/tối, in PDF). **Chỉ quyết định hình thức**, không lấy dữ liệu hay template từ Notion; tên repo dễ gây hiểu nhầm là kho template/API Notion.
+
+**Giá trị và cơ chế:** Một tệp chuẩn `skills/notion-doc/template.html` (CSS token, nội dung 720px) thay cho việc agent tự sinh CSS. Hook `PostToolUse` (`Write|Edit|MultiEdit|apply_patch`) chạy `notion-doc-lint.py`: nếu file có dấu vân tay canon thì gọi `lint.py` bắt CSS/class tự chế; nếu là HTML dạng tài liệu mà thiếu dấu vân tay thì nhắc nạp skill; bỏ qua `node_modules`, `dist`, `build`...; lỗi ngoại lệ thì fail-open. CI `lint.yml` chạy lint 3 ví dụ so với template, test gating hook, test diff token, kiểm manifest Codex/Claude Code cùng version. `notion-sync.yml` (thứ Hai hằng tuần, Playwright) so token màu và loại block với ảnh chụp `sync/notion-snapshot.json` (2026-09-01) của một trang tham chiếu công khai của bên thứ ba, trôi lệch thì mở issue.
+
+**Giới hạn:** Mô phỏng thị giác Notion; README không có tuyên bố "không liên kết với Notion" mà tôi đọc thấy (grep `affiliat|trademark|unofficial` không khớp), nên dùng tên/màu Notion trong sản phẩm công khai cần xem thêm điều khoản Notion (chưa xác minh). Tham chiếu trang `thomasfrank.notion.site` là nội dung bên thứ ba, chỉ để đo, không nhúng. Template nạp Prism từ cdnjs (script ngoài, `prism 1.29.0`). Skill ghi `MUST be used whenever creating documents` nên sẽ giành quyền với skill tài liệu khác. 31 commit trong 2 tháng, một tác giả. Chưa chạy lint, hook hay Playwright.
+
+**Cách tham khảo/tích hợp:** Mẫu "một template chuẩn + lint chặn lệch + hook nhắc + theo dõi drift hằng tuần" áp được cho mọi skill định dạng đầu ra (báo cáo, email). Khi nhúng: ghim SHA, đổi mô tả skill để không "MUST" mọi tài liệu, tự lưu Prism nếu cần chạy offline.
+
+**Thay thế:** [obsidian-skills](../16-docs-tools/README.md) (obsidianmd, định dạng đầu ra Obsidian), [canva-skills](../20-claude-plugins-ecosystem/README.md) (đầu ra thiết kế qua MCP), `canvas-design` trong [anthropics/skills](../22-motion-design-animation/README.md) (thiết kế tĩnh, không có lint).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`9f809554231f`](https://github.com/heyman333/agent-notion-template-docs/commit/9f809554231fc9782f1af3c1c9bf6ae4242df72d) (2026-10-26). Đọc README, LICENSE, SKILL.md, `hooks.json`, đầu `notion-doc-lint.py`, `lint.yml`, `notion-sync.yml`, `template.html` (chỗ script ngoài). Chưa đọc hết `lint.py` và scripts; chưa chạy.
+
+**Nguồn:** [README.md](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/README.md) · [LICENSE](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/LICENSE) · [SKILL.md](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/skills/notion-doc/SKILL.md) · [hooks.json](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/hooks/hooks.json) · [lint.yml](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/.github/workflows/lint.yml) · [notion-sync.yml](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/.github/workflows/notion-sync.yml) · [metadata GitHub](https://api.github.com/search/repositories?q=repo:heyman333/agent-notion-template-docs).

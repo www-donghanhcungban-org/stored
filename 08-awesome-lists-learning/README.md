@@ -3261,3 +3261,29 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 - §2d.2 (16/10/2026): https://github.com/cporter202/ai-growth-stack (clone đầy đủ, 7 commit 21/12/2025, chỉ README.md; 229★/70 fork shields) · https://rapidapi.com/user/contact-_OGid12Eu (trang cần JavaScript, không đọc được danh sách) · https://apidataframe.com (9 API, chỉ qua RapidAPI, không tên người vận hành) · https://github.com/cporter202 (40 repo, bio ViralWaveStudio.com) · https://www.buymeacoffee.com/viralwavestudio
 - §2g (16/10/2026): https://www.kdnuggets.com/the-roadmap-to-mastering-agentic-ai-systems-in-2026 (Vinod Chugani, 13/10/2026, đọc toàn bài) · https://github.com/microsoft/autogen (README: "now in maintenance mode… New users should start with Microsoft Agent Framework"; 61,4k★) · https://www.anthropic.com/engineering/multi-agent-research-system (13/6/2025: agent ~4×, multi-agent ~15× token so với chat) · https://www.anthropic.com/engineering/building-effective-agents · https://machinelearningmastery.com/the-roadmap-for-mastering-agentic-ai-in-2026/ (bài khác cùng chủ đề)
 - §2f ảnh Brij "How to become an AI engineer in 2026" (13/10/2026): https://genai.owasp.org/llmrisk/llm01-prompt-injection/ ("unclear if there are fool-proof methods of prevention") · https://roadmap.sh/ai-engineer · https://github.com/chiphuyen/aie-book (README: chương fine-tuning, dataset engineering) · https://github.com/patchy631/ai-engineering-hub · shields.io: aie-book ~18k, ai-engineering-hub ~38k MIT, developer-roadmap ~369k, litellm ~61k
+
+<a id="xlsx-2026-11-23"></a>
+
+## Đánh giá bổ sung từ bảng "Top 100 GitHub AI Skills" — 23/11/2026
+
+Phần này có **1 hồ sơ** từ bảng xlsx người dùng gửi ngày 2026-11-23; đọc bằng `git clone --depth 1`, không cài hay chạy mã upstream. GitHub API không dùng được trong phiên nên ★ và `pushed_at` ghi **(chưa xác minh)** khi để trống.
+
+<a id="xlsx-2026-11-23-awesome-agent-skills-jqueryscript"></a>
+
+### awesome-agent-skills (jqueryscript)
+
+**Repo:** [jqueryscript/awesome-agent-skills](https://github.com/jqueryscript/awesome-agent-skills) · **License:** huy hiệu README ghi CC BY 4.0; **không có file LICENSE** (GitHub API: không nhận diện) · **★ 16 (GitHub search API, 2026-11-23)**
+
+**Mục đích:** Danh mục một file README về ~500 Agent Skill, xếp theo nhóm việc và sao GitHub; do ScriptByAI (jqueryscript) tuyển chọn. **Không phải** `VoltAgent/awesome-agent-skills` đã có trong catalog (khác chủ, khác repo).
+
+**Giá trị và cơ chế:** Repo chỉ có `README.md` (856 dòng, 34 mục `##`, 498 dòng entry có `⭐`; README tự ghi 501). Chia theo nhóm việc (Official, Collections, Coding, UI, Review, Testing, Browser, Security, Docs, Research, …), kèm bảng "Skill vs MCP/Plugin/Prompt/Subagent", mục "Before Installing" và FAQ ghi rõ sao không bằng an toàn. Changelog theo tuần từ 2026-06-15; commit cuối 2026-11-19. Là nguồn tốt để phát hiện repo mới (gsap-skills, MiniMax-AI/skills, n8n-skills, WordPress/agent-skills đều nằm trong danh sách).
+
+**Giới hạn:** Sao in trong README là ảnh chụp lúc cập nhật nhóm, đã lệch: `anthropics/skills` ghi 182,9k (API hôm nay 199.295), `gsap-skills` 16,9k (18.948), MiniMax 13,9k (13.903, khớp). Mô tả từng entry là câu tóm tắt của người tuyển chọn, không có bằng chứng đã đọc mã; mục đã loại không có. 36 commit, một tác giả; không CI, không script kiểm link. Giấy phép chỉ qua huy hiệu nên quyền tái dùng nội dung chưa rõ.
+
+**Cách tham khảo/tích hợp:** Dùng làm danh sách ứng viên để đọc mã, không trích số sao. Lấy mẫu phân nhóm và mục "Before Installing" làm checklist thẩm định; không sao chép mô tả.
+
+**Thay thế:** [VoltAgent/awesome-agent-skills](../08-awesome-lists-learning/README.md) (37.472★ theo search 2026-11-23; số trong catalog nên rà), [sickn33/agentic-awesome-skills](../08-awesome-lists-learning/README.md) (50.191★ theo search; catalog 48.916), `heilcheng/awesome-agent-skills` (6.424★), `libukai/awesome-agent-skills` (5.231★), hai bản sau chưa đọc.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f2f8eaca4f7e`](https://github.com/jqueryscript/awesome-agent-skills/commit/f2f8eaca4f7e107d22e682d49af6f4e266a7fdc3) (2026-11-19). Đọc toàn bộ cấu trúc, đầu/cuối README, các entry liên quan. Chưa kiểm từng link và từng skill được liệt kê.
+
+**Nguồn:** [README.md](https://github.com/jqueryscript/awesome-agent-skills/blob/f2f8eaca4f7e107d22e682d49af6f4e266a7fdc3/README.md) · [metadata GitHub](https://api.github.com/search/repositories?q=repo:jqueryscript/awesome-agent-skills).

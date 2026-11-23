@@ -2084,3 +2084,36 @@ Kiểm đối kháng: mỗi nhóm chọn bốn nhóm claim làm đổi quyết �
 Các `sources` trong JSON và mục **Nguồn** tại từng hồ sơ là danh sách chi tiết để kiểm lại; snapshot nguồn không được coi là chứng cứ về chất lượng hay quyền tái sử dụng.
 
 **Kiểm đọc độc lập:** [Năm kết luận quan trọng](data/collections/anhkysuai-kho-review-checks.json) về thông báo Huly, điều khoản PLANKA/Surya, thực thể OpenMontage và mâu thuẫn giấy phép Awesome Mac đã được đối chiếu với cùng SHA. Kết quả xác nhận mô tả tài liệu trong cả năm trường hợp; giới hạn và những điều không thể suy ra được ghi riêng.
+
+## Bổ sung 2026-11-23 (bảng xlsx "Top 100 GitHub AI Skills Hằng Ngày" → mục 05, 08, 14, 16, 19, 20, 22)
+
+Nguồn gốc: file xlsx người dùng gửi (tab "Kho Skill Thực Chiến"); 27 repo chưa có hồ sơ được đọc trực tiếp bằng clone nông. Số sao của bảng là nguồn dựng **(chưa xác minh)**; GitHub API không dùng được trong phiên nên ★ để trống khi chưa có nguồn khác. Các nguồn đã đọc:
+
+- Marketing Skills (kostja94): https://github.com/kostja94/marketing-skills
+- AI Marketing Skills (Single Grain): https://github.com/ericosiu/ai-marketing-skills
+- E-Commerce Skills (Nexscope): https://github.com/nexscope-ai/ecommerce-skills
+- Sales Skills (Apparate): https://github.com/louisblythe/sales-skills
+- GTM Skills (LeadMagic): https://github.com/leadmagic/gtm-skills
+- Best Agent Skills (Linkly AI): https://github.com/linklyai/best-skills
+- fal.ai Skills (fal-ai-community/skills): https://github.com/fal-ai-community/skills
+- Super Video Maker Skill: https://github.com/bomx/super-video-maker-skill
+- Visual Skills (smixs): https://github.com/smixs/visual-skills
+- HeyGen Skills: https://github.com/heygen-com/skills
+- HyperFrames Motion Reel Skill: https://github.com/sunwood-ai-labs/hyperframes-motion-reel-skill
+- Herk Edit Kit: https://github.com/nateherkai/herk-edit-kit
+- LiveAvatar Agent Skills: https://github.com/heygen-com/liveavatar-agent-skills
+- runway-studio-skills: https://github.com/runwayml/runway-studio-skills
+- Runway Dev (runwayml/skills): https://github.com/runwayml/skills
+- ffmpeg-skill (kajisho5): https://github.com/kajisho5/ffmpeg-skill
+- ffmpeg-skill (n0an, FFmpeg Recipes): https://github.com/n0an/ffmpeg-skill
+- comfyui-agent-skill (MieMieeeee): https://github.com/MieMieeeee/comfyui-agent-skill
+- youtube-agent-skill (Jake Schincariol): https://github.com/Jakeschincariol/youtube-agent-skill
+- claude-youtube (AgriciDaniel): https://github.com/AgriciDaniel/claude-youtube
+- BrowserAct youtube-api-skill (browser-act/skills): https://github.com/browser-act/skills
+- SkillsBench: https://github.com/benchflow-ai/skillsbench
+- n8n-skills (czlonkowski): https://github.com/czlonkowski/n8n-skills
+- n8n-agent-skills (tmolavi): https://github.com/tmolavi/n8n-agent-skills
+- awesome-agent-skills (jqueryscript): https://github.com/jqueryscript/awesome-agent-skills
+- agent-notion-template-docs (notion-doc): https://github.com/heyman333/agent-notion-template-docs
+- WordPress agent-skills: https://github.com/WordPress/agent-skills
+- MiniMax skills: https://github.com/MiniMax-AI/skills

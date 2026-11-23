@@ -279,3 +279,49 @@ Khi đánh giá nền tảng, thử xuất gói, nhập vào một instance sạ
 
 - https://www.knowlee.ai/blog/dify-alternatives-2026 · https://toolhalla.ai/blog/dify-vs-flowise-vs-langflow-2026 · https://www.jahanzaib.ai/blog/flowise-vs-dify-vs-n8n-ai-agents · https://rapidclaw.dev/blog/low-code-ai-agent-platforms-compared-2026 · https://makerstack.co/reviews/langflow-review/ · https://enterprisedna.co/directories/compare/dify-vs-flowise-vs-langflow/
 - Bổ sung (12/10/2026): https://github.com/open-webui/open-webui · https://github.com/danny-avila/LibreChat · https://github.com/lobehub/lobehub · https://github.com/Mintplex-Labs/anything-llm · https://github.com/CherryHQ/cherry-studio · https://github.com/simstudioai/sim · https://github.com/labring/FastGPT · https://github.com/coze-dev/coze-studio · https://github.com/node-red/node-red · https://github.com/janhq/jan
+
+<a id="xlsx-2026-11-23"></a>
+
+## Đánh giá bổ sung từ bảng "Top 100 GitHub AI Skills" — 23/11/2026
+
+Phần này có **2 hồ sơ** từ bảng xlsx người dùng gửi ngày 2026-11-23; đọc bằng `git clone --depth 1`, không cài hay chạy mã upstream. GitHub API không dùng được trong phiên nên ★ và `pushed_at` ghi **(chưa xác minh)** khi để trống.
+
+<a id="xlsx-2026-11-23-n8n-skills-czlonkowski"></a>
+
+### n8n-skills (czlonkowski)
+
+**Repo:** [czlonkowski/n8n-skills](https://github.com/czlonkowski/n8n-skills) · **License:** MIT (Copyright 2025 Romuald Członkowski); phần hook điều chỉnh từ `n8n-io/skills` (Apache-2.0, có `NOTICES` + `NOTICES-APACHE-2.0.txt`) · **★ 6.700 (GitHub search API, 2026-11-23)**
+
+**Mục đích:** Bộ 14 skill + 1 skill router (`using-n8n-mcp-skills`) và lớp hook dạy coding agent dựng, kiểm, vận hành workflow n8n qua MCP server `n8n-mcp` (cùng tác giả, đã có hồ sơ ở mục 05).
+
+**Giá trị và cơ chế:** Thư mục thật có đúng 15 thư mục `skills/` (khớp README "14 + router"). `hooks/hooks.json` gắn `SessionStart` (nạp skill router, tự xóa dấu "đã nhắc" khi `clear`/`compact`), 7 `PreToolUse` (`get_node`, `n8n_create_workflow`, `n8n_update_*`, `validate_workflow`, `n8n_test_workflow`, `n8n_instances`, `n8n_manage_credentials`) và 1 `PostToolUse` sau `validate_workflow`. Các hook chỉ chèn `additionalContext` nhắc skill, không chặn lệnh (README: "fails open"). `create-workflow.sh` còn quét payload tìm node Code/HTTP Request thiếu ghi chú `Why Code:`/`Why HTTP:`. Có 68 file JSON dưới `evaluations/` (phần lớn là hỏi đáp một lượt) và `evaluations/build-tasks/` (5 ca dựng workflow, `score.py` chấm JSON: loại node, trần phân trang, ghi chú Why, nối dây; chạy tay, mỗi lần là phiên agent tính phí, không chạy trong CI). Skill `n8n-self-hosting` kèm `assets/` (docker-compose single/queue, Caddyfile, `.env` mẫu) với mặc định an toàn ghi trong README: khóa mã hóa tường minh, không mở cổng nội bộ, tắt telemetry n8n.
+
+**Giới hạn:** Không có `.github/` nên không có CI; `build.sh` chỉ dựng zip và so version hai manifest (`plugin.json` và `.claude-plugin/plugin.json` đều 1.38.0 khi đọc). `mcp.json` ở gốc trỏ `streamable-http` tới `https://api.n8n-mcp.com/mcp` (dịch vụ hosted của tác giả, không phải server tự lưu trữ); `.mcp.json.example` mới là bản `npx n8n-mcp` chạy cục bộ. Dùng bản hosted là gửi cấu trúc workflow tới bên thứ ba; telemetry của `n8n-mcp` xem hồ sơ n8n-MCP. Hook là shell, cần `jq` để đầy đủ (không có `jq` chỉ còn nhắc một lần). Gần như một tác giả (88 + 14 commit trên 107; 1 commit tên Claude), 107 commit từ 2025-10-20. README quảng bá dịch vụ tư vấn AiAdvisors (chỉ ở README). Chưa chạy hook, eval hay `n8n-mcp`.
+
+**Cách tham khảo/tích hợp:** Mẫu "skill + hook nhắc đúng lúc + eval build-task chấm bằng script" đáng chép cho bộ skill riêng; ghim SHA khi cài plugin, dùng `.mcp.json.example` (stdio, cục bộ) thay vì endpoint hosted khi workflow chứa dữ liệu khách hàng, và đọc `hooks/` trước khi bật. Ghép với [n8n-MCP](../05-low-code-llm-platforms/README.md) (server) và mục 20 về vòng đời skill.
+
+**Thay thế:** [n8n-MCP](../05-low-code-llm-platforms/README.md) (server, không phải skill), [tmolavi/n8n-agent-skills](#xlsx-2026-11-23-n8n-agent-skills-tmolavi) (16 skill, trung lập server, 1 tháng tuổi), `n8n-io/skills` (Apache-2.0, bản chính thức của n8n GmbH theo NOTICES của hai repo; chưa đọc, chưa xác minh số sao).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`ecdeca6f760b`](https://github.com/czlonkowski/n8n-skills/commit/ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5) (2026-11-18). Đọc LICENSE, NOTICES, 2 manifest, `mcp.json`, `hooks.json`, `session-start.sh`, `create-workflow.sh`, `build.sh`, SKILL.md `n8n-self-hosting`, README build-tasks. Chưa chạy mã, chưa đọc từng SKILL còn lại.
+
+**Nguồn:** [README.md](https://github.com/czlonkowski/n8n-skills/blob/ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5/README.md) · [LICENSE](https://github.com/czlonkowski/n8n-skills/blob/ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5/LICENSE) · [NOTICES](https://github.com/czlonkowski/n8n-skills/blob/ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5/NOTICES) · [hooks.json](https://github.com/czlonkowski/n8n-skills/blob/ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5/hooks/hooks.json) · [mcp.json](https://github.com/czlonkowski/n8n-skills/blob/ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5/mcp.json) · [plugin.json](https://github.com/czlonkowski/n8n-skills/blob/ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5/.claude-plugin/plugin.json) · [build-tasks](https://github.com/czlonkowski/n8n-skills/blob/ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5/evaluations/build-tasks/README.md) · [metadata GitHub](https://api.github.com/search/repositories?q=repo:czlonkowski/n8n-skills).
+
+<a id="xlsx-2026-11-23-n8n-agent-skills-tmolavi"></a>
+
+### n8n-agent-skills (tmolavi)
+
+**Repo:** [tmolavi/n8n-agent-skills](https://github.com/tmolavi/n8n-agent-skills) · **License:** MIT (Copyright 2026 Taghi Molavi) · **★ 2 (GitHub search API, 2026-11-23)**
+
+**Mục đích:** Bộ 16 skill n8n "trung lập server MCP" (router, lifecycle, MCP tooling, expressions, node, code, loop, agent, lỗi, credential, sub-workflow, binary, data table, debug, SEO/GEO, production ops) kèm manifest Claude Code/Codex, plugin OpenCode và cấu hình MCP mẫu.
+
+**Giá trị và cơ chế:** `skills/` có đúng 16 thư mục, khớp README. Hook (`SessionStart` + 4 `PreToolUse` gate + `PostToolUse` nhắc) chỉ chèn nhắc nhở; `side-effects-gate.sh` nhắc hỏi người dùng trước khi `test_workflow`/`execute_workflow` có thể gây tác dụng phụ thật (Slack, DB, thanh toán). `configs/mcp.multi.example.json` gom ví dụ cho server chính thức và các server cộng đồng. `.claude-plugin/plugin.json` khai `userConfig` (URL n8n) và MCP `${user_config.n8n_url}/mcp-server/http`.
+
+**Giới hạn:** Repo mới (2026-08-27), 2 commit, 2 sao, một tác giả; không có `.github/workflows` (không CI). `scripts/validate-skills.sh` chỉ kiểm có `name:`/`description:` và **cảnh báo khi thiếu link `molavi.pro`**; cả 16 SKILL.md đều chứa link quảng bá tác giả, mọi hook nhắc đều in `Repo/Author` vào ngữ cảnh agent, và skill `n8n-ai-seo-geo-automation` đẩy sang công cụ riêng của tác giả (`geo-scope`, `mcp-geo-server`). `NOTICE` ghi cảm hứng từ `n8n-io/skills` (Apache-2.0) và `n8n-mcp` nhưng không có file giấy phép Apache kèm theo như repo czlonkowski (mức sao chép chưa so, chưa xác minh). Tên tác giả hiện hai dạng (Taghi/Taqi Molavi). Chưa chạy hook hay installer; `scripts/install.sh` ghi đè thư mục skill đích (`rm -rf` rồi `cp -R`), nên dùng `--dry-run` trước.
+
+**Cách tham khảo/tích hợp:** Chỉ nên lấy ý tưởng bảng chọn server MCP (`n8n-mcp-tooling/references/SERVER_MATRIX.md`) hoặc đọc làm đối chiếu; nếu dùng thật, tách link/quảng bá khỏi hook và ghim SHA. Với dự án nghiêm túc ưu tiên bộ czlonkowski hoặc `n8n-io/skills`.
+
+**Thay thế:** [n8n-skills (czlonkowski)](#xlsx-2026-11-23-n8n-skills-czlonkowski), [n8n-MCP](../05-low-code-llm-platforms/README.md), `n8n-io/skills` (chưa đọc).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`868436013817`](https://github.com/tmolavi/n8n-agent-skills/commit/868436013817a5f62a917aa6c6cb93881945c9be) (2026-09-18). Đọc LICENSE, NOTICE, package.json, plugin.json, hooks.json, `side-effects-gate.sh`, `validate-skills.sh`, `install.sh` (đầu file), CHANGELOG, SECURITY, SKILL credentials và SEO/GEO. Chưa chạy mã.
+
+**Nguồn:** [README.md](https://github.com/tmolavi/n8n-agent-skills/blob/868436013817a5f62a917aa6c6cb93881945c9be/README.md) · [LICENSE](https://github.com/tmolavi/n8n-agent-skills/blob/868436013817a5f62a917aa6c6cb93881945c9be/LICENSE) · [NOTICE](https://github.com/tmolavi/n8n-agent-skills/blob/868436013817a5f62a917aa6c6cb93881945c9be/NOTICE) · [hooks.json](https://github.com/tmolavi/n8n-agent-skills/blob/868436013817a5f62a917aa6c6cb93881945c9be/hooks/hooks.json) · [validate-skills.sh](https://github.com/tmolavi/n8n-agent-skills/blob/868436013817a5f62a917aa6c6cb93881945c9be/scripts/validate-skills.sh) · [side-effects-gate.sh](https://github.com/tmolavi/n8n-agent-skills/blob/868436013817a5f62a917aa6c6cb93881945c9be/hooks/pre-tool-use/side-effects-gate.sh) · [plugin.json](https://github.com/tmolavi/n8n-agent-skills/blob/868436013817a5f62a917aa6c6cb93881945c9be/.claude-plugin/plugin.json) · [metadata GitHub](https://api.github.com/search/repositories?q=repo:tmolavi/n8n-agent-skills).
