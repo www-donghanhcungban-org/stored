@@ -9,6 +9,6 @@
 | [Claude Code](../../01-ai-coding-agents/README.md#ch-claude-code) | `anthropics/claude-code` | proprietary | 156.787 | đọc tài liệu 2026-11-23 | 01 | CLI/IDE/web; |
 | [Cursor](../../01-ai-coding-agents/README.md#ch-cursor) |  | proprietary | — | đọc tài liệu 2026-11-23 | 01 | $20/$60/$200; |
 | [Devin](../../01-ai-coding-agents/README.md#ch-devin) |  | proprietary | — | đọc tài liệu 2026-11-23 | 01 | . |
-| [GitHub Copilot](../../01-ai-coding-agents/README.md) |  | proprietary | — | chưa chuẩn hóa | 01 | $10/$19/$39; |
+| [GitHub Copilot](../../01-ai-coding-agents/README.md#bo-sung-github-copilot-2026-11-23) |  | proprietary | — | đọc tài liệu 2026-11-23 | 01 | Trợ lý lập trình GitHub: gợi ý mã, hỏi đáp, review và tác vụ agent theo tài liệu chính thức; |
 | [Google Jules](../../01-ai-coding-agents/README.md#ch-google-jules) |  | proprietary | — | đọc tài liệu 2026-11-23 | 01 | Async cloud agent. |
 | [Windsurf / Devin Desktop](../../01-ai-coding-agents/README.md#ch-windsurf-devin-desktop) |  | proprietary | — | đọc tài liệu 2026-11-23 | 01 | Cognition. |

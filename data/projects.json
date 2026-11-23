@@ -408,10 +408,16 @@
       "license": "proprietary",
       "stars": null,
       "open_source": false,
-      "notes": "$10/$19/$39; ngày 2026-11-23 không đọc lại được (curl https://github.com/features/copilot trả HTTP 403 từ proxy phiên (github.com chỉ mở cho repo được gắn); chưa đọc đượ), giữ chưa chuẩn hóa",
+      "notes": "Trợ lý lập trình GitHub: gợi ý mã, hỏi đáp, review và tác vụ agent theo tài liệu chính thức; chưa chạy thử, giá và điều kiện gói cần đối chiếu trang giá.",
       "section": "01",
       "id": "github-copilot",
-      "profile_path": "01-ai-coding-agents/README.md"
+      "profile_path": "01-ai-coding-agents/README.md",
+      "verification_level": "docs-read",
+      "last_verified_at": "2026-11-23",
+      "sources": [
+        "https://docs.github.com/en/copilot/get-started/about-github-copilot"
+      ],
+      "profile_anchor": "01-ai-coding-agents/README.md#bo-sung-github-copilot-2026-11-23"
     },
     {
       "name": "Google Jules",
@@ -505,7 +511,7 @@
       "license": "MIT",
       "stars": null,
       "open_source": true,
-      "notes": "AutoGen + Semantic Kernel; ngày 2026-11-23 không đọc lại được (git clone https://github.com/microsoft/agent-framework thất bại: proxy phiên trả 403 'GitHub access to this repository i), giữ chưa chuẩn hóa",
+      "notes": "AutoGen + Semantic Kernel; ngày 2026-11-23 không đọc lại được (git clone https://github.com/microsoft/agent-framework thất bại: proxy phiên trả 403 'GitHub access to this repository i), giữ chưa chuẩn hóa Rà lại 2026-11-23: Tài liệu Microsoft Learn xác nhận kế thừa AutoGen và Semantic Kernel; chưa truy cập được repo tại commit xác định nên chưa xác minh mã, LICENSE hoặc cấp docs-read cho repo. Nguồn: https://learn.microsoft.com/en-us/agent-framework/overview/ (23/11/2026).",
       "section": "02",
       "id": "microsoft-agent-framework",
       "profile_path": "02-agent-frameworks/README.md"
@@ -1356,10 +1362,16 @@
       "license": "proprietary",
       "stars": null,
       "open_source": false,
-      "notes": "; ngày 2026-11-23 không đọc lại được (curl -sL https://lovable.dev trả HTTP 403 (trang thử thách Cloudflare \"Just a moment...\"), không đọc được nội dung), giữ chưa chuẩn hóa",
+      "notes": "Nền tảng tạo ứng dụng và website qua hội thoại theo trang chính thức; chưa chạy thử hoặc kiểm điều khoản và giá.",
       "section": "06",
       "id": "lovable",
-      "profile_path": "06-ui-ux-design/README.md"
+      "profile_path": "06-ui-ux-design/README.md",
+      "verification_level": "docs-read",
+      "last_verified_at": "2026-11-23",
+      "sources": [
+        "https://lovable.dev/build"
+      ],
+      "profile_anchor": "06-ui-ux-design/README.md#bo-sung-lovable-2026-11-23"
     },
     {
       "name": "bolt.diy",
@@ -5557,7 +5569,7 @@
       "license": "MIT",
       "stars": null,
       "open_source": true,
-      "notes": "Agent điều khiển Blender (mirror jangtrinh): sentinel AGENT_OK/FAIL, verify ladder, gate hash-bound, robot arm 38 STL, 93 test headless; research image→3D; ngày 2026-11-23 không đọc lại được (git clone seeker19110/design-os-3d-blender: fatal could not read Username for https://github.com (terminal prompts disab), giữ chưa chuẩn hóa",
+      "notes": "Agent điều khiển Blender (mirror jangtrinh): sentinel AGENT_OK/FAIL, verify ladder, gate hash-bound, robot arm 38 STL, 93 test headless; research image→3D; ngày 2026-11-23 không đọc lại được (git clone seeker19110/design-os-3d-blender: fatal could not read Username for https://github.com (terminal prompts disab), giữ chưa chuẩn hóa Rà lại 2026-11-23: Chưa truy cập được repo seeker19110/design-os-3d-blender qua GitHub kết nối; chưa xác minh danh tính repo hay commit. Upstream jangtrinh/design-os-3d-blender có trang công khai, chưa chứng minh hai repo trùng commit.",
       "section": "23",
       "id": "design-os-3d-blender",
       "profile_path": "23-own-repos-lessons/README.md"
@@ -5592,7 +5604,7 @@
       "license": "– (chưa rõ)",
       "stars": null,
       "open_source": true,
-      "notes": "Ghi chú System Design Interview (Alex Xu) 28 chương + ~25 link paper gốc; upstream/license chưa rõ; ngày 2026-11-23 không đọc lại được (git clone seeker19110/system-design-notes: fatal could not read Username for https://github.com (terminal prompts disabl), giữ chưa chuẩn hóa",
+      "notes": "Ghi chú System Design Interview (Alex Xu) 28 chương + ~25 link paper gốc; upstream/license chưa rõ; ngày 2026-11-23 không đọc lại được (git clone seeker19110/system-design-notes: fatal could not read Username for https://github.com (terminal prompts disabl), giữ chưa chuẩn hóa Rà lại 2026-11-23: Chưa truy cập được repo seeker19110/system-design-notes qua GitHub kết nối; chưa xác minh quyền, nội dung hoặc giấy phép. Không suy ra repo đã bị xóa.",
       "section": "23",
       "id": "system-design-notes",
       "profile_path": "23-own-repos-lessons/README.md",
@@ -11800,7 +11812,7 @@
       "license": "AGPL-3.0",
       "stars": null,
       "open_source": false,
-      "notes": "Agent pentest tự chủ (Go+Next.js); CrowdStrike gán loạt xâm nhập ngân hàng Hàn Quốc 9/2026 cho operator dùng ARTEX, tác giả gỡ và chuyển closed-source 8/10/2026 (repo gốc nay 404); ảnh người dùng gửi là mirror Hinln/ARTEX (716★/1,1k fork). Dual-use có lạm dụng thật — chỉ giữ hồ sơ cảnh báo, không tích hợp; ★ null (gốc đã gỡ), đọc 15/10/2026; ngày 2026-11-23 không đọc lại được (git clone https://github.com/Autumn-27/ARTEX thất bại: 'could not read Username' (GitHub trả như repo không công khai/kh), giữ chưa chuẩn hóa",
+      "notes": "Agent pentest tự chủ (Go+Next.js); CrowdStrike gán loạt xâm nhập ngân hàng Hàn Quốc 9/2026 cho operator dùng ARTEX, tác giả gỡ và chuyển closed-source 8/10/2026 (repo gốc nay 404); ảnh người dùng gửi là mirror Hinln/ARTEX (716★/1,1k fork). Dual-use có lạm dụng thật — chỉ giữ hồ sơ cảnh báo, không tích hợp; ★ null (gốc đã gỡ), đọc 15/10/2026; ngày 2026-11-23 không đọc lại được (git clone https://github.com/Autumn-27/ARTEX thất bại: 'could not read Username' (GitHub trả như repo không công khai/kh), giữ chưa chuẩn hóa Rà lại 2026-11-23: Repo gốc Autumn-27/ARTEX trả 404 khi truy cập; không suy ra nguyên nhân hoặc trạng thái pháp lý. Hồ sơ lịch sử và cảnh báo dual-use được giữ; chưa đọc lại được commit gốc.",
       "section": "12",
       "id": "artex",
       "profile_path": "12-ai-security-guardrails/README.md",
@@ -18910,10 +18922,16 @@
       "license": "Google (tài liệu)",
       "stars": null,
       "open_source": false,
-      "notes": "Motion scheme standard/expressive, spring spatial/effects × fast/default/slow; tên token và giá trị chỉ đọc từ gói bên thứ ba (chưa xác minh từ m3.material.io); mục 22 §9g; ngày 2026-11-23 không đọc lại được (curl 200 nhưng trang chỉ trả \"This website requires JavaScript\" (SPA, không có nội dung khi không chạy JS); không đọc đư), giữ chưa chuẩn hóa",
+      "notes": "Android Compose Material 3 có scheme standard/expressive và spec spatial/effects ở ba tốc độ; chưa kiểm giá trị token web.",
       "section": "22",
       "id": "material-3-motion",
-      "profile_path": "22-motion-design-animation/README.md"
+      "profile_path": "22-motion-design-animation/README.md",
+      "verification_level": "docs-read",
+      "last_verified_at": "2026-11-23",
+      "sources": [
+        "https://developer.android.com/reference/kotlin/androidx/compose/material3/MotionScheme"
+      ],
+      "profile_anchor": "22-motion-design-animation/README.md#bo-sung-material-3-motion-2026-11-23"
     },
     {
       "name": "Lottie Specification",
