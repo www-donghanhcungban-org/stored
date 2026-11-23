@@ -1,6 +1,6 @@
 # 12 · AI Security, Guardrails & Agent Safety
 
-> **Cập nhật 24/11/2026:** `Autumn-27/ARTEX` đã được loại khỏi catalog vì không đọc lại được repo gốc tại commit xác định. Phân tích lịch sử và cảnh báo dual-use bên dưới được giữ làm bối cảnh, không phải khuyến nghị tích hợp.
+**Cập nhật 24/11/2026:** `Autumn-27/ARTEX` đã được loại khỏi catalog vì không đọc lại được repo gốc tại commit xác định. Phân tích lịch sử và cảnh báo dual-use bên dưới được giữ làm bối cảnh, không phải khuyến nghị tích hợp.
 
 > Rủi ro bảo mật của LLM/agent/MCP và công cụ phòng thủ. Bổ sung cho mục 09 (checklist deploy) và mục 04 (giao thức).
 
