@@ -4,6 +4,45 @@
 
 ---
 
+## Danh mục repo chủ sở hữu — 23/11/2026
+
+Ảnh chụp từ danh sách repo thuộc hai tài khoản GitHub đã kết nối: **20 repo** của
+`www-donghanhcungban-org` và **2 repo** của `donghanhcungban`. Các repo dưới đây đều công khai
+theo kết quả danh sách tại thời điểm kiểm. Phạm vi phụ thuộc quyền kết nối GitHub; không khẳng định
+đây là toàn bộ repo ở các tài khoản hoặc tổ chức khác. Mô tả dựa trên README của nhánh mặc định;
+chưa chạy ứng dụng, kiểm mã chi tiết hay xác minh trạng thái triển khai. Các phần sau là khảo sát
+lịch sử, có thể dùng tên hoặc mô tả cũ.
+
+| Repo | Mục đích theo README | Nhánh mặc định |
+|---|---|---|
+| [Claude-Red](https://github.com/www-donghanhcungban-org/Claude-Red) | Bộ skill bảo mật tấn công; README dẫn upstream SnailSploit | `main` |
+| [dhcb](https://github.com/www-donghanhcungban-org/dhcb) | Ứng dụng tự học và trợ lý AI Đồng Hành Cùng Bạn | `main` |
+| [Dhcb-Tools](https://github.com/www-donghanhcungban-org/Dhcb-Tools) | Add-in Revit/AutoCAD, tự động hóa và cầu nối agent | `main` |
+| [Hermes-Agents](https://github.com/www-donghanhcungban-org/Hermes-Agents) | Provider và cầu nối OAuth cho Hermes Agent | `main` |
+| [hotel-manager](https://github.com/www-donghanhcungban-org/hotel-manager) | Quản lý phòng, hợp đồng và lưu trú; README ghi pre-release | `main` |
+| [projects-template-old](https://github.com/www-donghanhcungban-org/projects-template-old) | Khung quy trình phát triển phần mềm | `main` |
+| [reveser](https://github.com/www-donghanhcungban-org/reveser) | REA: CLI/MCP cho phân tích phần mềm; README dẫn upstream morluto/rea | `agent/javascript-vite-rollup-esbuild-adapters` |
+| [Sales-Hunter](https://github.com/www-donghanhcungban-org/Sales-Hunter) | Khung săn sale và tạo nội dung affiliate; README ghi skeleton | `bootstrap/base` |
+| [stored](https://github.com/www-donghanhcungban-org/stored) | Kho hồ sơ, phân tích và tài liệu tham khảo | `main` |
+| [webbandienthoai](https://github.com/www-donghanhcungban-org/webbandienthoai) | Cửa hàng điện thoại, giỏ hàng và quản lý đơn | `claude/phone-shop-mvp` |
+| [X-Agents](https://github.com/www-donghanhcungban-org/X-Agents) | Hub các hệ đa agent mô phỏng phòng ban | `main` |
+| [X-Company](https://github.com/www-donghanhcungban-org/X-Company) | Website và ứng dụng điều hành công ty; README ghi đang xây P0 | `main` |
+| [X-Office](https://github.com/www-donghanhcungban-org/X-Office) | Giao diện văn phòng 3D theo dõi agent | `main` |
+| [X-Scanner](https://github.com/www-donghanhcungban-org/X-Scanner) | Ứng dụng scan tài liệu và xuất PDF hoặc ảnh | `main` |
+| [x-shop](https://github.com/www-donghanhcungban-org/x-shop) | Ứng dụng bán thời trang, thanh toán và giao hàng | `master` |
+| [X-Studio](https://github.com/www-donghanhcungban-org/X-Studio) | Xưởng sản xuất video từ chủ đề đến xuất bản | `main` |
+| [X-Templates](https://github.com/www-donghanhcungban-org/X-Templates) | Khung yêu cầu, checklist và công cụ kiểm phát triển phần mềm | `main` |
+| [X-Workspace](https://github.com/www-donghanhcungban-org/X-Workspace) | Quản lý mạng xã hội tự host; README ghi một số tính năng còn đang xây | `main` |
+| [xboss](https://github.com/www-donghanhcungban-org/xboss) | Quản lý tiến độ thi công MEP/ACMV | `main` |
+| [Xgold](https://github.com/www-donghanhcungban-org/Xgold) | Theo dõi và phân tích kỹ thuật giá vàng, bạc | `main` |
+| [Plugin-4-Hermes](https://github.com/donghanhcungban/Plugin-4-Hermes) | Provider và cầu nối OAuth cho Hermes Agent | `main` |
+| [projects-template](https://github.com/donghanhcungban/projects-template) | Khung drop-in cho quy trình phát triển phần mềm | `main` |
+
+Danh sách là ảnh chụp, không chứng minh quan hệ phát sinh giữa các repo cùng chức năng; fork/mirror
+vẫn cần dẫn nguồn upstream. Các hồ sơ sâu hơn và bằng chứng tại commit cụ thể nằm ở các phần bên dưới.
+
+---
+
 ## 0. Tóm tắt 60 giây
 
 - Các repo tạo thành **một hệ sinh thái nhất quán**: một bộ khung drop-in cho Claude Code (`projects-template`, tiền thân `xboss-manager`, bản áp dụng `case-study-ft41`, `x-scanner`, `xgold`) → một "công ty AI" đa agent (`X-Agents`, nhánh video `X-Studio`, sản phẩm đầu ra `qlkh`) → hạ tầng model dùng subscription thay API (`ai-gateway`, `Plugin-4-Hermes`) → sản phẩm thật (`dhcb`, `xgold`) → kho tham chiếu (`claude-red`, `system-design-notes`, `design-os-3d-blender`).
