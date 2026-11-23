@@ -671,3 +671,29 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 - https://github.com/QwenLM/Qwen3-VL · https://github.com/LLaVA-VL/LLaVA-NeXT · https://github.com/EvolvingLMMs-Lab/LLaVA-OneVision-2
 - https://en.wikipedia.org/wiki/ComfyUI · https://en.wikipedia.org/wiki/Automatic1111 · https://github.com/lllyasviel/Fooocus · https://insiderllm.com/guides/comfyui-vs-automatic1111-vs-fooocus/ · https://meetrix.io/blogs/fooocus-vs-automatic1111-vs-comfyui/
 - Audio8 TTS (2026-10-12): https://github.com/edge0-ai/audio8_tts (clone đầy đủ) · https://huggingface.co/Audio8/Audio8-TTS-Preview-0.6b · https://huggingface.co/Audio8/Audio8-TTS-Preview-0.1b · https://audio8-ai.github.io/Audio8_TTS/ · https://deepinfra.com/Audio8/Audio8-TTS-Preview-0.6b · https://github.com/john-rocky/coreai-model-zoo/pull/47 · https://github.com/0xShug0/audio.cpp/blob/main/docs/community_models/audio8_tts.md · https://hackernoon.com/audio8-tts-preview-06b-compact-multilingual-voice-cloning · https://creativeaishow.com/audio8-tts-preview-the-free-0-6b-ai-voice-cloning-model-that-runs-on-your-cpu/ · https://huggingface.co/fishaudio/s2-pro/blob/main/LICENSE.md · https://fish.audio/fr/blog/what-we-mean-by-open-source-for-s2/
+
+<a id="xlsx-2026-11-23"></a>
+
+## Đánh giá bổ sung từ bảng "Top 100 GitHub AI Skills" — 23/11/2026
+
+Phần này có **1 hồ sơ** từ bảng xlsx người dùng gửi ngày 2026-11-23; đọc bằng `git clone --depth 1`, không cài hay chạy mã upstream. GitHub API không dùng được trong phiên nên ★ và `pushed_at` ghi **(chưa xác minh)** khi để trống.
+
+<a id="xlsx-2026-11-23-liveavatar-agent-skills"></a>
+
+### heygen-com/liveavatar-agent-skills
+
+**Repo:** [heygen-com/liveavatar-agent-skills](https://github.com/heygen-com/liveavatar-agent-skills) · **License:** MIT (LICENSE, © 2026 HeyGen; chỉ áp cho 4 file skill, dịch vụ LiveAvatar là sản phẩm thương mại cần API key) · **★ (chưa xác minh; GitHub API bị chặn ngày 2026-11-23)**
+
+**Mục đích:** 4 skill cho agent lập trình tích hợp avatar hội thoại thời gian thực của LiveAvatar (HeyGen): `liveavatar-demo` (dựng demo từ danh mục 4 repo mẫu), `liveavatar-integrate` (chọn lối Embed / FULL / LITE rồi hướng dẫn từng bước), `liveavatar-debug` (triệu chứng: avatar câm, âm thanh vỡ, lỗi auth), `liveavatar-feedback` (gửi góp ý cho đội LiveAvatar).
+
+**Giá trị và cơ chế:** repo chỉ là tri thức dạng văn bản (không có mã chạy, `package.json` không có dependency). Điểm đáng học: `liveavatar-integrate` ép tách backend/frontend (`X-API-KEY` chỉ ở backend, frontend chỉ nhận `livekit_client_token`) và khuyến nghị bắt đầu bằng sandbox (`is_sandbox: true`, phiên khoảng 1 phút). `liveavatar-demo` ghi thẳng điều agent **không** làm được (không nghe được avatar nói, không tự nhập key). `liveavatar-feedback` có cổng đồng ý đúng nghĩa: SKILL.md bắt buộc trình bản tóm tắt cho người dùng, "Nothing is sent until you say yes", từ chối thì bỏ.
+
+**Giới hạn:** phụ thuộc dịch vụ trả phí và API `api.liveavatar.com`; `liveavatar-demo` clone và cài repo bên thứ ba (4 demo, trong đó có demo dùng GPT-Live) rồi chạy `npm install`/`uv` trên máy bạn, tức là thực thi mã ngoài repo này. Không có CI, không có test, không có kiểm schema skill. Dữ liệu rời máy: lưu lượng hội thoại qua LiveAvatar/LiveKit; feedback chỉ gửi sau khi người dùng đồng ý (theo văn bản SKILL.md, chưa kiểm hành vi thực).
+
+**Cách tham khảo/tích hợp:** dùng làm mẫu cho skill tích hợp API thương mại: lead bằng "gotcha", nhãn rõ chỗ chạy (backend/frontend) và loại auth, cổng đồng ý trước khi gửi dữ liệu. Nếu dùng thật, giữ key trong biến môi trường backend và dùng sandbox trước; kiểm từng repo demo trước khi để agent chạy `npm install`.
+
+**Thay thế:** [LiveKit Agents](../14-voice-multimodal/README.md) (id `livekit-agents`, tự dựng pipeline STT-LLM-TTS), [Pipecat](../14-voice-multimodal/README.md) (id `pipecat`), skill video không thời gian thực của cùng hãng ở [heygen-com/skills](../19-agentic-video-media/README.md#xlsx-2026-11-23-heygen-skills).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`88960dc00ebb`](https://github.com/heygen-com/liveavatar-agent-skills/commit/88960dc00ebb35c128b15345a97c5aebcd89a676) (2026-09-10). Đọc README, LICENSE, package.json, `liveavatar-feedback/SKILL.md` toàn bộ, đầu `liveavatar-demo/SKILL.md` và `liveavatar-integrate/SKILL.md`; không có `.github/` nên không có CI để đọc. Chưa cài, chưa gọi API, chưa kiểm 4 repo demo.
+
+**Nguồn:** [README.md](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/README.md) · [LICENSE](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/LICENSE) · [package.json](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/package.json) · [skills/liveavatar-feedback/SKILL.md](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/skills/liveavatar-feedback/SKILL.md) · [skills/liveavatar-demo/SKILL.md](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/skills/liveavatar-demo/SKILL.md) · [skills/liveavatar-integrate/SKILL.md](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/skills/liveavatar-integrate/SKILL.md) · [metadata GitHub](https://api.github.com/repos/heygen-com/liveavatar-agent-skills) (không đọc được, 403).
