@@ -2,7 +2,7 @@
 
 # devops — Kỹ thuật phần mềm & vận hành
 
-[← Mục lục catalog](../README.md) · 161 hồ sơ.
+[← Mục lục catalog](../README.md) · 162 hồ sơ.
 
 ## Container & Kubernetes (`container-orchestration`, 17)
 
@@ -113,7 +113,7 @@
 | [fish](../../13-dev-stack-devops/README.md#anhkysuai-fish-shell-fish-shell) | `fish-shell/fish-shell` | GPL-2.0-only AND LGPL-2.0-or-later AND MIT AND PSF-2.0 | 34.513 | đọc tài liệu 2026-11-23 | 13 | Shell tương tác có gợi ý, tô cú pháp và completion sẵn. |
 | [Delta](../../13-dev-stack-devops/README.md#anhkysuai-dandavison-delta) | `dandavison/delta` | MIT | 32.815 | đọc tài liệu 2026-11-23 | 13 | Pager tô cú pháp và bố trí diff cho Git, grep và review terminal. |
 | [Atuin](../../13-dev-stack-devops/README.md#anhkysuai-atuinsh-atuin) | `atuinsh/atuin` | MIT | 32.575 | đọc tài liệu 2026-11-23 | 13 | Lưu và tìm lịch sử shell cùng thread công cụ agent. |
-| [cli](../../13-dev-stack-devops/README.md#chuyen-cli) | `googleworkspace/cli` | Apache-2.0 | 32.371 | đọc tài liệu 2026-11-18 | 13 | CLI gws dùng chung cho mọi API Google Workspace (Drive, Gmail, Calendar, Sheets…), sinh lệnh động từ Google Discovery Service, xuất JSON cho người và AI agent. |
+| [cli](../../13-dev-stack-devops/README.md#chuyen-cli) | `googleworkspace/cli` | Apache-2.0 | 32.452 | đọc tài liệu 2026-11-18 | 13 | CLI gws dùng chung cho mọi API Google Workspace (Drive, Gmail, Calendar, Sheets…), sinh lệnh động từ Google Discovery Service, xuất JSON cho người và AI agent. |
 | [tqdm](../../13-dev-stack-devops/README.md#chuyen-tqdm) | `tqdm/tqdm` | MPL-2.0 và MIT | 31.390 | đọc tài liệu 2026-11-18 | 13 | Thư viện Python hiển thị thanh tiến độ thông minh cho vòng lặp và lệnh shell qua pipe. |
 | [WezTerm](../../13-dev-stack-devops/README.md#anhkysuai-wezterm-wezterm) | `wezterm/wezterm` | MIT | 29.662 | đọc tài liệu 2026-11-23 | 13 | Terminal và multiplexer đa nền tảng viết Rust, dùng GPU. |
 | [Python Fire](../../13-dev-stack-devops/README.md#anhkysuai-google-python-fire) | `google/python-fire` | Apache-2.0 | 28.229 | đọc tài liệu 2026-11-23 | 13 | Sinh CLI trực tiếp từ function, class, module hoặc object Python. |
@@ -153,11 +153,12 @@
 | [lazy.nvim](../../13-dev-stack-devops/README.md#anhkysuai-folke-lazy.nvim) | `folke/lazy.nvim` | Apache-2.0 | 21.766 | đọc tài liệu 2026-11-23 | 13 | Trình quản lý plugin Neovim với lazy-loading theo sự kiện, lệnh, filetype và phím tắt. |
 | [IntelliJ Open Source Repository](../../13-dev-stack-devops/README.md#anhkysuai-jetbrains-intellij-community) | `JetBrains/intellij-community` | Apache-2.0 cho mã theo LICENSE.txt; Open-Source Build Terms và license bên thứ ba áp dụng theo bản phân phối | 20.749 | đọc tài liệu 2026-11-23 | 13 | Phần mã nguồn mở của IntelliJ Platform, IntelliJ IDEA và PyCharm để nghiên cứu nền tảng IDE hoặc xây công cụ mở rộng. |
 
-## Môi trường dev & quản lý toolchain (`dev-env`, 25)
+## Môi trường dev & quản lý toolchain (`dev-env`, 26)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [gitignore](../../13-dev-stack-devops/README.md#chuyen-gitignore) | `github/gitignore` | CC0 1.0 Universal | 176.339 | đọc tài liệu 2026-11-18 | 13 | Bộ sưu tập mẫu .gitignore của GitHub, dùng cho bộ chọn mẫu khi tạo repo trên GitHub.com. |
+| [uv](../../13-dev-stack-devops/README.md) | `astral-sh/uv` | Apache-2.0/MIT | 91.402 | chưa chuẩn hóa | 13 | Package manager Python nhanh (Astral); |
 | [Homebrew](../../13-dev-stack-devops/README.md#anhkysuai-homebrew-brew) | `Homebrew/brew` | BSD-2-Clause cho code; tài liệu theo CC BY | 50.411 | đọc tài liệu 2026-11-23 | 13 | Trình quản lý gói và môi trường công cụ, có formula, cask và bundle. |
 | [pyenv](../../13-dev-stack-devops/README.md#anhkysuai-pyenv-pyenv) | `pyenv/pyenv` | MIT | 45.183 | đọc tài liệu 2026-11-23 | 13 | Chuyển phiên bản Python theo người dùng, thư mục dự án hoặc biến môi trường. |
 | [V](../../37-programming-languages-runtimes/README.md#anhkysuai-vlang-v) | `vlang/v` | MIT | 38.124 | đọc tài liệu 2026-11-23 | 37 | Ngôn ngữ và compiler hướng cú pháp gọn, backend C/JavaScript. |

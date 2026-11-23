@@ -6,13 +6,13 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [Firecrawl](../../11-browser-computer-use-sandbox/README.md) | `firecrawl/firecrawl` | AGPL-3.0 | 197.401 | chưa chuẩn hóa | 11 | Scrape/crawl/search cho LLM, MCP; |
-| [Browser Use](../../11-browser-computer-use-sandbox/README.md) | `browser-use/browser-use` | MIT | 119.676 | chưa chuẩn hóa | 11 | 13/10/2026; |
+| [Firecrawl](../../11-browser-computer-use-sandbox/README.md) | `firecrawl/firecrawl` | AGPL-3.0 | 207.565 | chưa chuẩn hóa | 11 | Scrape/crawl/search cho LLM, MCP; |
+| [Browser Use](../../11-browser-computer-use-sandbox/README.md) | `browser-use/browser-use` | MIT | 121.836 | chưa chuẩn hóa | 11 | 13/10/2026; |
 | [Agent-Reach](../../08-awesome-lists-learning/README.md#6c-kho-repo-của-phan-đông-giang-phandonggiangcomkho-repo-694-repo-32-nhóm-và-24-repo-aiagent-đọc-mã-bảng-người-dùng-dán-kiểm-18112026) | `Panniantong/Agent-Reach` | MIT | 112.815 | đọc tài liệu 2026-11-18 | 08 | CLI Python cho agent đọc và tìm trên X, Reddit, YouTube, Bilibili, Xiaohongshu, V2EX, LinkedIn, GitHub… bằng một cú pháp agent-reach <kênh> <hành động>. |
 | [puppeteer](../../08-awesome-lists-learning/README.md#6c520-thu-thập-dữ-liệu--trình-duyệt-tự-động) | `puppeteer/puppeteer` | Apache License 2.0 | 95.855 | đọc tài liệu 2026-11-18 | 08 | Thư viện JavaScript cung cấp API cấp cao để điều khiển Chrome hoặc Firefox qua DevTools Protocol hoặc WebDriver BiDi, mặc định chạy headless. |
 | [Crawl4AI](../../11-browser-computer-use-sandbox/README.md) | `unclecode/crawl4ai` | Apache-2.0 | 86.660 | chưa chuẩn hóa | 11 | Crawler xuất Markdown cho LLM; |
 | [Chrome DevTools MCP](../../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026) | `ChromeDevTools/chrome-devtools-mcp` | Apache-2.0 | 54.937 | đọc tài liệu 2026-11-08 | 11 | MCP chính thức điều khiển/soi Chrome; |
-| [agent-browser](../../11-browser-computer-use-sandbox/README.md) | `vercel-labs/agent-browser` | Apache-2.0 | 46.938 | chưa chuẩn hóa | 11 | CLI Rust; |
+| [agent-browser](../../11-browser-computer-use-sandbox/README.md) | `vercel-labs/agent-browser` | Apache-2.0 | 53.557 | chưa chuẩn hóa | 11 | CLI Rust; |
 | [EasySpider](../../08-awesome-lists-learning/README.md#6c520-thu-thập-dữ-liệu--trình-duyệt-tự-động) | `NaiboWang/EasySpider` | GNU AGPL-3.0 | 44.797 | đọc tài liệu 2026-11-18 | 08 | Phần mềm cào dữ liệu và tự động hoá trình duyệt trực quan không cần viết code: chọn phần tử trên trang để thiết kế rồi chạy tác vụ thu thập. |
 | [Lightpanda](../../11-browser-computer-use-sandbox/README.md#anhkysuai-2026-11-23-lightpanda) | `lightpanda-io/browser` | AGPL-3.0-only | 42.394 | đọc mã 2026-11-23 | 11 | Trình duyệt headless viết bằng Zig cho tự động hóa và thu thập web. |
 | [SearXNG](../../11-browser-computer-use-sandbox/README.md#anhkysuai-searxng-searxng) | `searxng/searxng` | AGPL-3.0-or-later | 39.800 | đọc tài liệu 2026-11-23 | 11 | Metasearch tự host, gom kết quả từ nhiều công cụ tìm kiếm. |
@@ -38,6 +38,7 @@
 | [Agent S](../../11-browser-computer-use-sandbox/README.md) | `simular-ai/Agent-S` | Apache-2.0 | 12.840 | chưa chuẩn hóa | 11 | Agent S3 72,6% OSWorld (tự báo cáo); |
 | [e2e (TesterArmy)](../../11-browser-computer-use-sandbox/README.md) | `tester-army/e2e` | Apache-2.0 | 12.396 | chưa chuẩn hóa | 11 | Framework E2E web (Playwright) + mobile (agent-device) trộn bước agent act/assert/waitFor/extract với locator+expect; |
 | [RobotGo](../../11-browser-computer-use-sandbox/README.md#anhkysuai-2026-11-23-robotgo) | `go-vgo/robotgo` | Apache-2.0; một số thành phần BSD-like | 10.912 | đọc tài liệu 2026-11-23 | 11 | Thư viện Go tự động hóa chuột, bàn phím, màn hình và cửa sổ desktop. |
+| [BrowserAct youtube-api-skill (browser-act/skills)](../../19-agentic-video-media/README.md#xlsx-2026-11-23-browser-act-youtube-api-skill) | `browser-act/skills` | MIT | 6.422 | đọc mã 2026-11-23 | 19 | Phạm vi youtube-api-skill của browser-act/skills (103 SKILL.md): client Python gọi workflow template đám mây BrowserAct bằng BROWSERACT_API_KEY, poll tối đa 300s; |
 | [Fara](../../11-browser-computer-use-sandbox/README.md) | `microsoft/fara` | MIT | 6.238 | chưa chuẩn hóa | 11 | Mô hình CUA Fara1.5 (4B/9B/27B, Qwen3.5) + harness Playwright + WebTailBench; |
 | [Browserbase MCP (self-host, archived)](../../11-browser-computer-use-sandbox/README.md) | `browserbase/mcp-server-browserbase` | Apache-2.0 | 3.398 | chưa chuẩn hóa | 11 | ĐÃ ARCHIVE 20/7/2026 ('no longer maintained'); |
 | [OSWorld](../../11-browser-computer-use-sandbox/README.md) | `xlang-ai/OSWorld` | Apache-2.0 | 3.248 | chưa chuẩn hóa | 11 | Benchmark computer use trên VM: 368 task trong test_all.json, chấm bằng hàm kiểm trạng thái; |
@@ -45,5 +46,4 @@
 | [BrowserGym](../../11-browser-computer-use-sandbox/README.md) | `ServiceNow/BrowserGym` | Apache-2.0 (LICENSE có tiêu đề ServiceNow; GitHub báo NOASSERTION) | 1.425 | chưa chuẩn hóa | 11 | API kiểu Gym chung cho MiniWoB, WebArena, WebArenaVerified, VisualWebArena, WorkArena, AssistantBench, WebLINX; |
 | [browser-use-pi](../../11-browser-computer-use-sandbox/README.md) | `browser-use/browser-use-pi` | MIT | 461 | chưa chuẩn hóa | 11 | Runtime TypeScript kế nhiệm browser-use Python: Pi Mono + REPL V8 bền + CDP, agent tự viết JavaScript điều khiển Chrome; |
 | [Browsentic](../../11-browser-computer-use-sandbox/README.md) | `imshaikot/browsentic` | Apache-2.0 | 260 | chưa chuẩn hóa | 11 | Extension + Bridge cục bộ: CLI agent sẵn có (Claude Code/Codex/Antigravity…) điều khiển trình duyệt thật đã đăng nhập, có MCP; |
-| [BrowserAct youtube-api-skill (browser-act/skills)](../../19-agentic-video-media/README.md#xlsx-2026-11-23-browser-act-youtube-api-skill) | `browser-act/skills` | MIT | — | đọc mã 2026-11-23 | 19 | Phạm vi youtube-api-skill của browser-act/skills (103 SKILL.md): client Python gọi workflow template đám mây BrowserAct bằng BROWSERACT_API_KEY, poll tối đa 300s; |
 | [Skyvern](../../11-browser-computer-use-sandbox/README.md) | `Skyvern-AI/skyvern` | AGPL-3.0 | — | chưa chuẩn hóa | 11 |  |
