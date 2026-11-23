@@ -30,7 +30,7 @@
 | [Apple HIG: Motion](../../22-motion-design-animation/README.md#ch-apple-hig-motion) |  | Apple (tài liệu độc quyền) | — | đọc tài liệu 2026-11-23 | 22 | Nguyên lý motion: purposeful, optional, cancelable, tránh motion cho tương tác lặp lại; |
 | [EBU R 128 / ITU-R BS.1770](../../19-agentic-video-media/README.md#ch-ebu-r-128-itu-r-bs-1770) |  | — | — | đọc tài liệu 2026-11-23 | 19 | Loudness: −23 LUFS ±1 LU, true peak −1 dBTP; |
 | [Google SRE Workbook](../../09-engineering-checklists/README.md#ch-google-sre-workbook) |  | CC BY-NC-ND 4.0 | — | đọc tài liệu 2026-11-23 | 09 | Sách SRE (2018): chương SLO, phụ lục A mẫu tài liệu SLO, phụ lục B chính sách error budget mẫu; |
-| [Material 3 Motion](../../22-motion-design-animation/README.md) |  | Google (tài liệu) | — | chưa chuẩn hóa | 22 | Motion scheme standard/expressive, spring spatial/effects × fast/default/slow; |
+| [Material 3 Motion](../../22-motion-design-animation/README.md#bo-sung-material-3-motion-2026-11-23) |  | Google (tài liệu) | — | đọc tài liệu 2026-11-23 | 22 | Android Compose Material 3 có scheme standard/expressive và spec spatial/effects ở ba tốc độ; |
 | [NIST AI RMF 1.0 + AI 600-1 (Generative AI Profile)](../../12-ai-security-guardrails/README.md#ch-nist-ai-rmf-1-0-ai-600-1-generative-ai-profile) |  | — | — | đọc tài liệu 2026-11-23 | 12 | Khung Govern/Map/Measure/Manage; |
 | [OWASP SAMM Core](../../09-engineering-checklists/README.md#owasp-samm-factory) | `owaspsamm/core` | CC-BY-SA-4.0 | — | đọc mã 2026-11-04 | 09 | Model YAML trưởng thành tổ chức, 5 business functions/15 security practices; |
 | [WCAG 2.2](../../06-ui-ux-design/README.md#ch-wcag-2-2) |  | W3C Document License | — | đọc tài liệu 2026-11-23 | 06 | Chuẩn a11y W3C (Rec 10/2023); |

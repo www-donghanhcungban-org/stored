@@ -1538,3 +1538,12 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | active (commit cuối 2026-11-14) |
 | Nhận định | Ảnh tĩnh thành video vẽ bảng trắng với app Gradio cục bộ; README ghim revision model ISNet, CC0 không phủ ảnh tay, artwork demo, model weights; ISNet vendor là Apache-2.0. |
 | Nguồn | [README.md](https://github.com/letuandat131/whiteboard-animation-vi/blob/7c750e629819fc53d8de76cd8c13b2d78e7b4f41/README.md) · [LICENSE](https://github.com/letuandat131/whiteboard-animation-vi/blob/7c750e629819fc53d8de76cd8c13b2d78e7b4f41/LICENSE) · [THIRD_PARTY_NOTICES.md](https://github.com/letuandat131/whiteboard-animation-vi/blob/7c750e629819fc53d8de76cd8c13b2d78e7b4f41/THIRD_PARTY_NOTICES.md) |
+
+
+<a id="bo-sung-material-3-motion-2026-11-23"></a>
+
+### Material 3 Motion — đối chiếu nguồn chính thức 23/11/2026
+
+Tài liệu Android Compose chính thức mô tả hai scheme standard và expressive, mỗi scheme có spec spatial/effects ở fast/default/slow. Đây là bằng chứng API Compose, không xác nhận giá trị token web hay mọi nền tảng; trang m3.material.io vẫn không đọc được nội dung qua công cụ.
+
+Nguồn: [https://developer.android.com/reference/kotlin/androidx/compose/material3/MotionScheme](https://developer.android.com/reference/kotlin/androidx/compose/material3/MotionScheme).

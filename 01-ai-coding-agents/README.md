@@ -1331,3 +1331,12 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | Không xác định từ mã; trang sản phẩm đang hoạt động dưới tên Devin Desktop |
 | Nhận định | IDE/agent thương mại của Cognition, nay mang tên Devin Desktop: quản lý nhiều agent local hoặc cloud từ một nơi. Xác nhận việc đổi tên qua chuyển hướng tên miền; tính năng và giá **(chưa xác minh)**. |
 | Nguồn | [windsurf.com](https://windsurf.com) · [devin.ai/desktop](https://devin.ai/desktop) |
+
+
+<a id="bo-sung-github-copilot-2026-11-23"></a>
+
+### GitHub Copilot — đối chiếu nguồn chính thức 23/11/2026
+
+GitHub mô tả tính năng gợi ý mã, hỏi đáp về codebase, review và giao tác vụ agent. Phạm vi phụ thuộc gói, client và chính sách tổ chức. Chưa thử sản phẩm hoặc xác minh giá; số giá cũ không còn được dùng làm giá hiện hành.
+
+Nguồn: [https://docs.github.com/en/copilot/get-started/about-github-copilot](https://docs.github.com/en/copilot/get-started/about-github-copilot).

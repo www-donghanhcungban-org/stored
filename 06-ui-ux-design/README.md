@@ -5270,3 +5270,12 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | active (đang hoạt động) |
 | Nhận định | Design system React của Zendesk; nhánh hiện tại là v10 (10.0.0-next.4, release candidate) gộp mọi component vào một gói, v9 (các gói @zendeskgarden/react-*) vẫn là bản ổn định. API v10 còn có thể đổi. |
 | Nguồn | [README.md](https://github.com/zendeskgarden/react-components/blob/60faa730776976016b86f1e3f90d00b0c0d43b22/README.md) · [LICENSE.md](https://github.com/zendeskgarden/react-components/blob/60faa730776976016b86f1e3f90d00b0c0d43b22/LICENSE.md) · [package.json](https://github.com/zendeskgarden/react-components/blob/60faa730776976016b86f1e3f90d00b0c0d43b22/package.json) |
+
+
+<a id="bo-sung-lovable-2026-11-23"></a>
+
+### Lovable — đối chiếu nguồn chính thức 23/11/2026
+
+Trang chính thức mô tả tạo ứng dụng và website qua hội thoại, với giao diện, dữ liệu và logic. Đây là mô tả của nhà cung cấp; chưa thử sản phẩm, đánh giá bảo mật hay xác minh chi phí.
+
+Nguồn: [https://lovable.dev/build](https://lovable.dev/build).

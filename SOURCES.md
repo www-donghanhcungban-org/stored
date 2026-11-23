@@ -2117,3 +2117,11 @@ Nguồn gốc: file xlsx người dùng gửi (tab "Kho Skill Thực Chiến"); 
 - agent-notion-template-docs (notion-doc): https://github.com/heyman333/agent-notion-template-docs
 - WordPress agent-skills: https://github.com/WordPress/agent-skills
 - MiniMax skills: https://github.com/MiniMax-AI/skills
+
+## Đối chiếu bảy hồ sơ còn thiếu — 23/11/2026
+
+- [GitHub Docs: About Copilot](https://docs.github.com/en/copilot/get-started/about-github-copilot): tính năng Copilot; chưa thử sản phẩm hoặc kiểm giá.
+- [Lovable: AI app & website builder](https://lovable.dev/build): mô tả sản phẩm của nhà cung cấp; chưa thử sản phẩm.
+- [Android Developers: MotionScheme](https://developer.android.com/reference/kotlin/androidx/compose/material3/MotionScheme): API Compose standard/expressive và các spec; không xác nhận giá trị token trên web.
+- [Microsoft Learn: Agent Framework](https://learn.microsoft.com/en-us/agent-framework/overview/): mô tả nền tảng và quan hệ với AutoGen, Semantic Kernel; chưa đọc repo ở commit xác định.
+- Các repo `Autumn-27/ARTEX`, `seeker19110/design-os-3d-blender` và `seeker19110/system-design-notes` chưa truy cập được để đối chiếu commit; không khẳng định nguyên nhân.
