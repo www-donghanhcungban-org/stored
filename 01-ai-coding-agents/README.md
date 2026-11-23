@@ -1332,7 +1332,6 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Nhận định | IDE/agent thương mại của Cognition, nay mang tên Devin Desktop: quản lý nhiều agent local hoặc cloud từ một nơi. Xác nhận việc đổi tên qua chuyển hướng tên miền; tính năng và giá **(chưa xác minh)**. |
 | Nguồn | [windsurf.com](https://windsurf.com) · [devin.ai/desktop](https://devin.ai/desktop) |
 
-
 <a id="bo-sung-github-copilot-2026-11-23"></a>
 
 ### GitHub Copilot — đối chiếu nguồn chính thức 23/11/2026

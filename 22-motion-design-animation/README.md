@@ -1539,7 +1539,6 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Nhận định | Ảnh tĩnh thành video vẽ bảng trắng với app Gradio cục bộ; README ghim revision model ISNet, CC0 không phủ ảnh tay, artwork demo, model weights; ISNet vendor là Apache-2.0. |
 | Nguồn | [README.md](https://github.com/letuandat131/whiteboard-animation-vi/blob/7c750e629819fc53d8de76cd8c13b2d78e7b4f41/README.md) · [LICENSE](https://github.com/letuandat131/whiteboard-animation-vi/blob/7c750e629819fc53d8de76cd8c13b2d78e7b4f41/LICENSE) · [THIRD_PARTY_NOTICES.md](https://github.com/letuandat131/whiteboard-animation-vi/blob/7c750e629819fc53d8de76cd8c13b2d78e7b4f41/THIRD_PARTY_NOTICES.md) |
 
-
 <a id="bo-sung-material-3-motion-2026-11-23"></a>
 
 ### Material 3 Motion — đối chiếu nguồn chính thức 23/11/2026

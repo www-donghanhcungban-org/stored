@@ -978,7 +978,6 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Nhận định | Framework agent TypeScript mã nguồn mở (memory, RAG, guardrail, tool, MCP, workflow, supervisor/sub-agent) đi kèm VoltOps Console (cloud/self-host) cho observability. Phần console là sản phẩm riêng; ranh giới license của nó chưa kiểm. |
 | Nguồn | [README](https://github.com/VoltAgent/voltagent/blob/e9fc599f6059afcd88b34f2bfc50d0d1d6a0877c/README.md) · [LICENCE](https://github.com/VoltAgent/voltagent/blob/e9fc599f6059afcd88b34f2bfc50d0d1d6a0877c/LICENCE) · [package.json](https://github.com/VoltAgent/voltagent/blob/e9fc599f6059afcd88b34f2bfc50d0d1d6a0877c/package.json) · [workflows](https://github.com/VoltAgent/voltagent/tree/e9fc599f6059afcd88b34f2bfc50d0d1d6a0877c/.github/workflows) |
 
-
 ### Microsoft Agent Framework — tài liệu chính thức 23/11/2026
 
 Theo [Microsoft Learn](https://learn.microsoft.com/en-us/agent-framework/overview/), Agent Framework kế thừa AutoGen và Semantic Kernel, bổ sung workflow điều phối. Chỉ đọc tài liệu sản phẩm; chưa truy cập được repo tại commit xác định, chưa kiểm license hoặc mã, chưa nâng mức xác minh của repo.
