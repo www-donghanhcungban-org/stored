@@ -74,7 +74,7 @@
       "project-management",
       "simulation"
     ],
-    "count": 2296,
+    "count": 2295,
     "schema_version": 2
   },
   "projects": [
@@ -13506,18 +13506,6 @@
       "notes": "TTS tiếng Việt zero-shot 202M tham số chạy ONNX trên CPU, code + weights MIT; benchmark tự làm không so VieNeu-TTS; ★ 31/10/2026 (GitHub API), mục 18 §4d",
       "section": "18",
       "id": "zerotts",
-      "profile_path": "18-vietnam-community/README.md"
-    },
-    {
-      "name": "Vietnamese_LLMs (VietnamAIHub)",
-      "repo": "VietnamAIHub/Vietnamese_LLMs",
-      "category": "vietnam",
-      "license": "Apache-2.0",
-      "stars": 285,
-      "open_source": true,
-      "notes": "Bộ instruction tiếng Việt dịch máy + LLaMA-2 tinh chỉnh từ 2023; commit 10/2026 chỉ là CI; dùng làm tư liệu lịch sử; ★ 31/10/2026 (GitHub API), mục 18 §4d",
-      "section": "18",
-      "id": "vietnamese-llms-vietnamaihub",
       "profile_path": "18-vietnam-community/README.md"
     },
     {

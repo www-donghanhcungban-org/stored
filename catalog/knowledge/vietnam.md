@@ -2,7 +2,7 @@
 
 # vietnam — Học tập, tài liệu & tri thức
 
-[← Mục lục catalog](../README.md) · 19 hồ sơ.
+[← Mục lục catalog](../README.md) · 18 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -10,7 +10,6 @@
 | [Local AI OCR](../../18-vietnam-community/README.md) | `th1nhhdk/local_ai_ocr` | Apache-2.0 | 888 | chưa chuẩn hóa | 18 | App PySide6 chạy DeepSeek-OCR-2 cục bộ, ảnh/PDF → Markdown/Word; |
 | [PhoBERT](../../18-vietnam-community/README.md) | `VinAIResearch/PhoBERT` | MIT (base-v2: AGPL-3.0) | 810 | chưa chuẩn hóa | 18 | Encoder RoBERTa tiếng Việt; |
 | [Elasticsearch Vietnamese Analysis](../../18-vietnam-community/README.md) | `duydo/elasticsearch-analysis-vietnamese` | Apache-2.0 | 565 | chưa chuẩn hóa | 18 | Plugin vi_analyzer cho Elasticsearch 9.x dùng bộ tách từ C++ của Cốc Cốc; |
-| [Vietnamese_LLMs (VietnamAIHub)](../../18-vietnam-community/README.md) | `VietnamAIHub/Vietnamese_LLMs` | Apache-2.0 | 285 | chưa chuẩn hóa | 18 | Bộ instruction tiếng Việt dịch máy + LLaMA-2 tinh chỉnh từ 2023; |
 | [SeaLLMs](../../18-vietnam-community/README.md) | `DAMO-NLP-SG/SeaLLMs` | SeaLLMs Terms of Use | 176 | chưa chuẩn hóa | 18 | LLM Đông Nam Á (Alibaba DAMO), ngừng từ 7/2024; |
 | [VMLU](../../18-vietnam-community/README.md) | `ZaloAI-Jaist/VMLU` | MIT | 83 | chưa chuẩn hóa | 18 | Benchmark LLM tiếng Việt 10.880 câu/58 môn; |
 | [SEA-HELM](../../18-vietnam-community/README.md) | `aisingapore/SEA-HELM` | MIT | 42 | chưa chuẩn hóa | 18 | Bộ đánh giá LLM Đông Nam Á v1.3.0 (AI Singapore, leaderboard SEA-LION), ~20 nhóm task có cấu hình vi, 8 lượt chạy + khoảng tin cậy; |

@@ -618,7 +618,7 @@
         "15 §Nâng cấp",
         "06 §7r"
       ],
-      "lesson": "Tín hiệu bảo trì đọc sai: gitingest `pushed_at` 28/10/2026 nhưng HEAD `main` 16/8/2025 (chỉ nhánh Renovate); awesome-ai-agents chỉ thêm UTM; Vietnamese_LLMs chỉ thêm workflow/font; Ragas, LibreChat chuyển org; vanna archive không báo trong README; PrimeReact xoá workflow CI, baseweb \"limiting engagement\" (16 §2g, 08 §2j, 18 §4d, 07, 15, 06 §7r)",
+      "lesson": "Tín hiệu bảo trì đọc sai: gitingest `pushed_at` 28/10/2026 nhưng HEAD `main` 16/8/2025 (chỉ nhánh Renovate); awesome-ai-agents chỉ thêm UTM; Ragas, LibreChat chuyển org; vanna archive không báo trong README; PrimeReact xoá workflow CI, baseweb \"limiting engagement\" (16 §2g, 08 §2j, 18 §4d, 07, 15, 06 §7r)",
       "xt_ids": [
         "OPS-MAINT-008",
         "BASE-DEP-006",
