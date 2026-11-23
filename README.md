@@ -4,7 +4,7 @@
 >
 > **Phạm vi:** kho chỉ lưu hồ sơ repo và đánh giá để các dự án khác tham khảo và tích hợp; không chứa code hay công cụ để dùng (xem [WORKFLOW.md](WORKFLOW.md)).
 >
-> **Khảo sát ban đầu:** 2026-10-12 · **Catalog cập nhật:** 2026-11-04 · **Phương pháp:** tìm kiếm web + đối chiếu nhiều nguồn (blog so sánh, trang GitHub, tài liệu chính thức, bài báo học thuật). Số sao GitHub là **ước lượng tại thời điểm khảo sát** (Q3–Q4/2026) và sai lệch giữa các nguồn; xem từng mục để biết nguồn.
+> **Khảo sát ban đầu:** 2026-10-12 · **Catalog cập nhật:** 2026-11-23 · **Phương pháp:** tìm kiếm web + đối chiếu nhiều nguồn (blog so sánh, trang GitHub, tài liệu chính thức, bài báo học thuật). Số sao GitHub là **ước lượng tại thời điểm khảo sát** (Q3–Q4/2026) và sai lệch giữa các nguồn; xem từng mục để biết nguồn.
 
 ---
 
@@ -12,9 +12,11 @@
 
 **Dùng kho cho xưởng phát triển phần mềm:** đọc [FACTORY.md](FACTORY.md) để ghép các chuyên mục thành chín cổng từ nhu cầu → kiến trúc → lập trình → kiểm chứng → phát hành → vận hành. Đợt 2026-11-04 đào sâu 28 mục hiện có và bổ sung sáu mục 29–34 cho các lớp kỹ thuật sản phẩm còn thiếu; hồ sơ mới/đọc lại ghi phạm vi bằng chứng riêng.
 
-Kho hiện có **34 chuyên mục, 1.040 hồ sơ, 69 category**. Chọn tuyến đọc ở [GUIDES.md](GUIDES.md); xem [METHOD.md](METHOD.md) để hiểu mức bằng chứng và giới hạn kiểm. Catalog [JSON](data/projects.json) / [CSV](data/projects.csv) có [schema](data/projects.schema.json); cách đóng góp ở [CONTRIBUTING.md](CONTRIBUTING.md).
+Kho hiện có **34 chuyên mục, 2.268 hồ sơ, 73 category**. Chọn tuyến đọc ở [GUIDES.md](GUIDES.md); xem [METHOD.md](METHOD.md) để hiểu mức bằng chứng và giới hạn kiểm. Catalog [JSON](data/projects.json) / [CSV](data/projects.csv) có [schema](data/projects.schema.json); cách đóng góp ở [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Chuỗi dữ liệu đến sản phẩm: **[dữ liệu AI](24-ai-data-engineering/README.md) → [model adaptation](25-model-adaptation-post-training/README.md) → [inference](10-local-llm-rag-memory/README.md) → [eval](07-eval-observability/README.md) → [hiệu quả sản phẩm](28-product-discovery-experimentation/README.md)**. Nhánh [OCR/tài liệu](26-document-intelligence-ocr/README.md) và [CAD/BIM](27-3d-cad-bim-engineering/README.md) nối trực tiếp các case study đã có ở mục 23.
+
+**Nguồn Anh Kỹ Sư AI (23/11/2026):** đã đối chiếu đủ [1.295 link](data/collections/anhkysuai-kho-links.txt); [snapshot đầy đủ](data/collections/anhkysuai-kho.json) ghi 600 repo đã có, 691 hồ sơ mới và 4 repo đổi tên được cập nhật vào ID cũ. Các đánh giá mới nằm tại phần “Đánh giá từ kho Anh Kỹ Sư AI” của chuyên mục tương ứng, với SHA/ngày/mức kiểm và giấy phép theo phạm vi.
 
 ## 🗂️ Mục lục
 
@@ -65,6 +67,14 @@ Chuỗi dữ liệu đến sản phẩm: **[dữ liệu AI](24-ai-data-engineeri
 ---
 
 ## 🔭 Bức tranh tổng thể (tóm tắt phân tích)
+
+### Đối chiếu nguồn tuyển chọn với repo gốc — 23/11/2026
+
+Đợt này bổ sung toàn bộ repo thiếu từ 1.295 link, gồm cả những mục trước đây chỉ được ghi trong danh sách tuyển chọn. Kết quả là **691 hồ sơ mới**, **4 hồ sơ giữ ID và đổi đường dẫn chuẩn**, cùng 600 repo đã có giữ phạm vi đánh giá cũ. Xem [bảng trạng thái từng link](data/collections/anhkysuai-kho.json) và [nguồn theo chuyên mục](SOURCES.md#bổ-sung-2026-11-23--đủ-1295-link-từ-kho-anh-kỹ-sư-ai).
+
+Các hồ sơ cho thấy cần tách bốn quyết định khi chọn repo: giấy phép code/model/nội dung/asset; nhánh đang đọc với bản ổn định; trạng thái hỗ trợ được công bố với cờ archive; và repo chuyển tên với fork độc lập. Ví dụ [Huly](21-autonomous-workflows/README.md#anhkysuai-2026-11-23-hcengineering-platform) công bố đóng băng/ngừng hosted, [PLANKA](21-autonomous-workflows/README.md#anhkysuai-2026-11-23-plankanban-planka) có giới hạn hosting thương mại, [Awesome Mac](08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-jaywcjlove-awesome-mac) có nhãn giấy phép mâu thuẫn. Chi tiết và permalink nằm tại hồ sơ.
+
+**Giới hạn bằng chứng:** đa số hồ sơ là `docs-read`, một số `code-read` có phạm vi file/đường gọi cụ thể. Đã clone và đọc, chưa cài/chạy upstream hoặc tái lập benchmark; test của chính kho chỉ kiểm tính nhất quán dữ liệu và liên kết. Việc có mặt trong kho là kết quả đánh giá để tham khảo, không phải xác nhận phù hợp production.
 
 ### 1. Coding agent đã trở thành "mặt tiền" của AI cho lập trình viên
 

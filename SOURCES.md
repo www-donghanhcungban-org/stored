@@ -2043,3 +2043,44 @@ Kiểm đối kháng: mỗi nhóm chọn bốn nhóm claim làm đổi quyết �
 ## Bổ sung 2026-11-20 (danh sách "7 plugin thay 7 vị trí" và ảnh claude-plugins-official → mục 20 §3zd)
 
 - Clone `--filter=blob:none` 20/11/2026, đọc ở SHA marketplace ghim: `anthropics/claude-plugins-official` HEAD `d7d32797e7e02708d0bb00ffe8b8f2397dc1aea6`; `intuit/quickbooks-claude-plugin` `c8daa17a64d4d0fdeabdf0516524f72549b6ad19`; `stripe/ai` `deae744bc0cbf6034b4b6f22f51c690b71a4e779` (HEAD `119bc4a8de4eb4370db1f5838275bc9e7a0d8e4a`); `Shopify/Shopify-AI-Toolkit` `3c32168c6e4cb73f0b46243c82586176ca58bb48` (HEAD `0388268a61051d1e8400996a58b0e3590c1e1500`); `canva-sdks/canva-skills` `bfcbc681560f6031e9949ea52f81e20beb87e39e` (HEAD `508753389ae753417d776dc4e74bb5a7e1302aa1`); `HubSpot/hubspot-mcp-plugins` `a0c59600fc1ddcf03ceca71aebf0c28aa55f49e3` (HEAD `032d294bc91577cb1b9c4a61372567266ca8524e`); `legalzoom/claude-plugins` `f9fd8a0ca6e1421bc1aacb113a109663a7a6f6d8`; `zapier/zapier-mcp` `54a12277a12c60df51ec16cf4e4ef0b27b166649` (HEAD `4e347e2f7a360882a9b431749fad9412990b4e7d`). GitHub search API 20/11/2026 cho số sao (zapier/zapier-mcp không trả kết quả, giữ số 8/11).
+
+## Bổ sung 2026-11-23 — đủ 1.295 link từ kho Anh Kỹ Sư AI
+
+- Nguồn phát hiện: <https://anhkysuai.com/kho/> và 42 trang chuyên mục. Đã đối chiếu đủ 1.295 owner/repo duy nhất; giữ [snapshot và disposition từng link](data/collections/anhkysuai-kho.json) cùng [1.295 URL GitHub](data/collections/anhkysuai-kho-links.txt).
+- Catalog trước đợt: 1,577 hồ sơ. 600 repo đã có được dẫn lại theo phạm vi cũ; 695 repo chưa khớp tên đều đã clone và đọc: 691 hồ sơ mới, 4 URL đổi tên khớp GitHub repository ID nên cập nhật hồ sơ cũ. Catalog sau đợt: 2,268 hồ sơ.
+- Nguồn chính: README, LICENSE/COPYING/EULA/model license, manifest, CI và các file triển khai thực sự được dẫn trong hồ sơ tại full commit SHA. Metadata tên chuẩn, stable ID, sao, archive và push lấy từ GitHub API ngày 2026-11-23; sao của nguồn tuyển chọn được giữ riêng, không dùng thay xác minh.
+- Phạm vi trong 691 hồ sơ mới: 15 hồ sơ `code-read`; 676 hồ sơ `docs-read`; 4 đối chiếu nhận diện ở mức docs-read. Không cài/chạy upstream, chưa tái lập benchmark. Không có kiểm toán độc lập cho toàn bộ tính năng của từng dự án; giới hạn và mâu thuẫn được ghi trong mỗi đánh giá.
+- Đối chiếu tên: React (`facebook/react` → `react/react`, ID 10270250), React Native (`facebook/react-native` → `react/react-native`, ID 29028775), OpenMontage (`calesthio/OpenMontage` → `OpenMontageInc/OpenMontage`, ID 1195360525), gVisor (`google/gvisor` → `gvisor/gvisor`, ID 131212638). Mỗi hồ sơ có link API cũ/mới và permalink clone.
+
+| Chuyên mục chứa đánh giá | Số phạm vi thêm/đối chiếu |
+|---|---:|
+| [01-ai-coding-agents](01-ai-coding-agents/README.md#anhkysuai-2026-11-23) | 1 |
+| [02-agent-frameworks](02-agent-frameworks/README.md#anhkysuai-2026-11-23) | 7 |
+| [04-protocols-standards](04-protocols-standards/README.md#anhkysuai-2026-11-23) | 4 |
+| [06-ui-ux-design](06-ui-ux-design/README.md#anhkysuai-2026-11-23) | 74 |
+| [08-awesome-lists-learning](08-awesome-lists-learning/README.md#anhkysuai-2026-11-23) | 92 |
+| [10-local-llm-rag-memory](10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23) | 13 |
+| [11-browser-computer-use-sandbox](11-browser-computer-use-sandbox/README.md#anhkysuai-2026-11-23) | 13 |
+| [13-dev-stack-devops](13-dev-stack-devops/README.md#anhkysuai-2026-11-23) | 167 |
+| [14-voice-multimodal](14-voice-multimodal/README.md#anhkysuai-2026-11-23) | 19 |
+| [15-ai-for-data](15-ai-for-data/README.md#anhkysuai-2026-11-23) | 8 |
+| [16-docs-tools](16-docs-tools/README.md#anhkysuai-2026-11-23) | 22 |
+| [17-prompt-engineering](17-prompt-engineering/README.md#anhkysuai-2026-11-23) | 3 |
+| [19-agentic-video-media](19-agentic-video-media/README.md#anhkysuai-2026-11-23) | 10 |
+| [21-autonomous-workflows](21-autonomous-workflows/README.md#anhkysuai-2026-11-23) | 28 |
+| [22-motion-design-animation](22-motion-design-animation/README.md#anhkysuai-2026-11-23) | 5 |
+| [24-ai-data-engineering](24-ai-data-engineering/README.md#anhkysuai-2026-11-23) | 13 |
+| [25-model-adaptation-post-training](25-model-adaptation-post-training/README.md#anhkysuai-2026-11-23) | 4 |
+| [26-document-intelligence-ocr](26-document-intelligence-ocr/README.md#anhkysuai-2026-11-23) | 3 |
+| [27-3d-cad-bim-engineering](27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23) | 34 |
+| [28-product-discovery-experimentation](28-product-discovery-experimentation/README.md#anhkysuai-2026-11-23) | 4 |
+| [29-software-architecture-api-contracts](29-software-architecture-api-contracts/README.md#anhkysuai-2026-11-23) | 2 |
+| [30-software-testing-quality](30-software-testing-quality/README.md#anhkysuai-2026-11-23) | 23 |
+| [31-software-supply-chain-security](31-software-supply-chain-security/README.md#anhkysuai-2026-11-23) | 1 |
+| [32-platform-delivery-engineering](32-platform-delivery-engineering/README.md#anhkysuai-2026-11-23) | 35 |
+| [33-reliability-observability-operations](33-reliability-observability-operations/README.md#anhkysuai-2026-11-23) | 10 |
+| [34-backend-data-identity-integration](34-backend-data-identity-integration/README.md#anhkysuai-2026-11-23) | 100 |
+
+Các `sources` trong JSON và mục **Nguồn** tại từng hồ sơ là danh sách chi tiết để kiểm lại; snapshot nguồn không được coi là chứng cứ về chất lượng hay quyền tái sử dụng.
+
+**Kiểm đọc độc lập:** [Năm kết luận quan trọng](data/collections/anhkysuai-kho-review-checks.json) về thông báo Huly, điều khoản PLANKA/Surya, thực thể OpenMontage và mâu thuẫn giấy phép Awesome Mac đã được đối chiếu với cùng SHA. Kết quả xác nhận mô tả tài liệu trong cả năm trường hợp; giới hạn và những điều không thể suy ra được ghi riêng.

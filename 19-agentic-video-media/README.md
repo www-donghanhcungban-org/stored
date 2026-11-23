@@ -817,6 +817,206 @@ Liên quan: mục 22 (motion, HyperFrames, Lemo-Opuscar §9k), mục 14 (giọng
 
 **Nguồn §3h:** ảnh người dùng gửi 8/11/2026 · clone `--filter=blob:none`: https://github.com/remotion-dev/skills/blob/a2824c67f8b4585c294a8101db9f9f0ad3c643f8/README.md · https://github.com/blender/blender/blob/9c4fc4363b03d30e576d76b86420b929f1e18465/README.md · https://github.com/blender/blender/blob/9c4fc4363b03d30e576d76b86420b929f1e18465/COPYING · https://github.com/ahujasid/mcp-for-blender/blob/2e4b0bc294694b1570d76ed01be657c22e6d02a0/README.md · https://github.com/ahujasid/mcp-for-blender/blob/2e4b0bc294694b1570d76ed01be657c22e6d02a0/LICENSE · https://github.com/SYSTRAN/faster-whisper/blob/846467d436117e44d54ad74f555d85c75834edb0/README.md · https://github.com/SYSTRAN/faster-whisper/blob/846467d436117e44d54ad74f555d85c75834edb0/LICENSE · https://github.com/resemble-ai/chatterbox/blob/ab55923c27757c90cfcc407baa57dc25a7d25217/README.md · https://github.com/resemble-ai/chatterbox/blob/ab55923c27757c90cfcc407baa57dc25a7d25217/LICENSE · https://github.com/greensock/GSAP/blob/5e6c35ff8eedea12d4f229129def635277d8b0f2/README.md · https://github.com/greensock/GSAP/blob/5e6c35ff8eedea12d4f229129def635277d8b0f2/package.json · danh sách 14 công cụ người dùng gửi thêm, clone `--depth 1 --sparse`: https://github.com/ChromeDevTools/chrome-devtools-mcp/blob/0b37364dc0a88a804c6d73d3335e776adc7f33c4/README.md · https://github.com/FFmpeg/FFmpeg/blob/2bf291526e50480d2c355b4c6c8dd04863212aa1/README.md · https://github.com/remotion-dev/remotion/blob/5dee2b6b14f7f0cebb040b7d92b0097b6be582a9/README.md · https://github.com/pbakaus/impeccable/blob/924bbd194d02e5e15a227e75b5901fb0d7a4ecad/README.md · https://github.com/mrdoob/three.js/blob/f2b6a71bdd088d9da387fcc62802323341099b92/README.md · https://github.com/Comfy-Org/ComfyUI/blob/bdb0816a292d221efeb6ec4ae41bcdff3f91fc86/README.md · https://github.com/yt-dlp/yt-dlp/blob/412e7f0a4b0588fe884a02b344ac66a06538475b/README.md · https://github.com/heygen-com/hyperframes/blob/adf14d7324109694614955f32ba6cf2b97ad79d2/README.md · https://github.com/remotion-dev/remotion/blob/5dee2b6b14f7f0cebb040b7d92b0097b6be582a9/LICENSE.md · GitHub search API 8/11/2026.
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **10 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-identity-openmontage"></a>
+
+### OpenMontage: đối chiếu tên repo
+
+**Kết luận:** [calesthio/OpenMontage](https://github.com/calesthio/OpenMontage) và [OpenMontageInc/OpenMontage](https://github.com/OpenMontageInc/OpenMontage) là cùng thực thể GitHub, repository ID `1195360525` theo API ngày 2026-11-23. Giữ ID catalog `openmontage` và hồ sơ gốc; cập nhật đường dẫn chuẩn, không thêm hồ sơ trùng.
+
+**Phạm vi đọc lại:** `docs-read`; clone tại commit [`2e003e65fa99a0f329478a2c1cdcf26bc481933a`](https://github.com/OpenMontageInc/OpenMontage/commit/2e003e65fa99a0f329478a2c1cdcf26bc481933a) và đọc tài liệu được dẫn. Đã có hồ sơ openmontage tại calesthio/OpenMontage. GitHub get_repo URL cũ trả canonical OpenMontageInc/OpenMontage, stable repository ID 1195360525 trùng metadata URL mới; git ls-remote hai URL cũng cùng HEAD. Không tạo hồ sơ trùng. Những nhận định kỹ thuật cũ ở các phần trước giữ ngày/phạm vi cũ; lượt đối chiếu này chưa tái kiểm toàn bộ implementation hoặc chạy upstream.
+
+**Metadata:** ★ 82,544 (GitHub API, 2026-11-23); commit ngày 2026-11-15. Trạng thái archived là `false`, không dùng riêng cờ này để kết luận mức bảo trì.
+
+**Nguồn:** [README.md](https://github.com/OpenMontageInc/OpenMontage/blob/2e003e65fa99a0f329478a2c1cdcf26bc481933a/README.md) · [LICENSE](https://github.com/OpenMontageInc/OpenMontage/blob/2e003e65fa99a0f329478a2c1cdcf26bc481933a/LICENSE) · [ci.yml](https://github.com/OpenMontageInc/OpenMontage/blob/2e003e65fa99a0f329478a2c1cdcf26bc481933a/.github/workflows/ci.yml) · [OpenMontage](https://api.github.com/repos/OpenMontageInc/OpenMontage) · [OpenMontage](https://api.github.com/repos/calesthio/OpenMontage).
+
+<a id="anhkysuai-2026-11-23-mpv"></a>
+
+### mpv
+
+**Repo:** [mpv-player/mpv](https://github.com/mpv-player/mpv) · **License:** GPL-2.0-or-later mặc định; LGPL-2.1-or-later theo cấu hình build · **★ 38,265 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Trình phát audio/video dòng lệnh hỗ trợ nhiều định dạng và phụ đề.
+
+**Giá trị và cơ chế:** README mô tả yêu cầu CPU/GPU và quyền điều khiển playback; Copyright giải thích ranh giới GPL/LGPL, hữu ích khi chọn thành phần phát media cho ứng dụng.
+
+**Giới hạn:** Hardware decoding không mặc định bật theo tài liệu; chưa đo playback hay kiểm môi trường nhúng. License nhị phân còn phụ thuộc cờ build và thư viện liên kết.
+
+**Cách tham khảo/tích hợp:** Ghim bản build và lựa chọn codec, kiểm phụ đề/màu/âm thanh trên bộ media thực tế trước khi nhúng.
+
+**Thay thế:** vlc, [FFmpeg](../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026), gstreamer.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`1eb941fdb974`](https://github.com/mpv-player/mpv/commit/1eb941fdb974fe25dc0ac68a33652c145ff41f9d). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/mpv-player/mpv/blob/1eb941fdb974fe25dc0ac68a33652c145ff41f9d/README.md) · [Copyright](https://github.com/mpv-player/mpv/blob/1eb941fdb974fe25dc0ac68a33652c145ff41f9d/Copyright) · [LICENSE.GPL](https://github.com/mpv-player/mpv/blob/1eb941fdb974fe25dc0ac68a33652c145ff41f9d/LICENSE.GPL) · [LICENSE.LGPL](https://github.com/mpv-player/mpv/blob/1eb941fdb974fe25dc0ac68a33652c145ff41f9d/LICENSE.LGPL) · [metadata GitHub](https://api.github.com/repos/mpv-player/mpv).
+
+<a id="anhkysuai-2026-11-23-mediamtx"></a>
+
+### MediaMTX
+
+**Repo:** [bluenviron/mediamtx](https://github.com/bluenviron/mediamtx) · **License:** MIT · **★ 20,751 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Server/proxy media cho phát, đọc, ghi và phát lại luồng video/audio thời gian thực.
+
+**Giá trị và cơ chế:** README mô tả định tuyến giữa RTSP, RTMP, WebRTC, HLS và nhiều giao thức, đường stream riêng, reload cấu hình và xác thực nội bộ/HTTP/JWT.
+
+**Giới hạn:** Đổi giao thức không tự bảo đảm chuyển codec phù hợp mọi client; chưa đo latency hay throughput. Chứng chỉ, NAT và xác thực cần cấu hình theo môi trường.
+
+**Cách tham khảo/tích hợp:** Dựng một nguồn thử và hai kiểu client, kiểm reconnect/ghi hình trước mở thêm stream.
+
+**Thay thế:** srs, ovenmediaengine, mistserver.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`8c10ac7dbc46`](https://github.com/bluenviron/mediamtx/commit/8c10ac7dbc466e87a8fe6cac3ecbefc36daaf426). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/bluenviron/mediamtx/blob/8c10ac7dbc466e87a8fe6cac3ecbefc36daaf426/README.md) · [LICENSE](https://github.com/bluenviron/mediamtx/blob/8c10ac7dbc466e87a8fe6cac3ecbefc36daaf426/LICENSE) · [metadata GitHub](https://api.github.com/repos/bluenviron/mediamtx).
+
+<a id="anhkysuai-2026-11-23-ffmpeg.wasm"></a>
+
+### ffmpeg.wasm
+
+**Repo:** [ffmpegwasm/ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm) · **License:** MIT cho wrapper; FFmpeg/core và codec theo license bản dựng · **★ 17,984 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Mang các thao tác FFmpeg vào trình duyệt thông qua WebAssembly và JavaScript.
+
+**Giá trị và cơ chế:** README và workspace tách wrapper với core đơn/đa luồng; phù hợp xử lý media phía client khi không muốn tải file lên server.
+
+**Giới hạn:** Chưa chuyển đổi file hoặc đo RAM; core và các thư viện codec có license riêng. Cấu hình phục vụ test dùng COOP/COEP, cần xem điều kiện worker đa luồng. HEAD được lấy không chứng minh bản phát hành còn cập nhật.
+
+**Cách tham khảo/tích hợp:** Thử định dạng và dung lượng thực, ghim core cùng wrapper, bố trí thông báo tiến độ/hủy tác vụ.
+
+**Thay thế:** [FFmpeg](../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026), webcodecs, [MediaMTX](../19-agentic-video-media/README.md#anhkysuai-2026-11-23-mediamtx).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f876f907c7e9`](https://github.com/ffmpegwasm/ffmpeg.wasm/commit/f876f907c7e9b9bf51d4ed0b913a855a63ae63fc). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/ffmpegwasm/ffmpeg.wasm/blob/f876f907c7e9b9bf51d4ed0b913a855a63ae63fc/README.md) · [LICENSE](https://github.com/ffmpegwasm/ffmpeg.wasm/blob/f876f907c7e9b9bf51d4ed0b913a855a63ae63fc/LICENSE) · [apps/website/docs/faq.md](https://github.com/ffmpegwasm/ffmpeg.wasm/blob/f876f907c7e9b9bf51d4ed0b913a855a63ae63fc/apps/website/docs/faq.md) · [metadata GitHub](https://api.github.com/repos/ffmpegwasm/ffmpeg.wasm).
+
+<a id="anhkysuai-2026-11-23-obs-studio"></a>
+
+### OBS Studio
+
+**Repo:** [obsproject/obs-studio](https://github.com/obsproject/obs-studio) · **License:** GPL-2.0-or-later · **★ 80,076 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng thu, phối trộn, mã hóa, ghi hình và phát trực tiếp video.
+
+**Giá trị và cơ chế:** README cùng CMake tách frontend Qt, scripting và các thành phần media; phù hợp tham khảo ứng dụng desktop ghép nhiều nguồn hình/âm thanh.
+
+**Giới hạn:** Chưa ghi hoặc stream thử, không đánh giá chất lượng encoder và tải GPU. License plugin/codec và hỗ trợ capture khác theo nền tảng; workflow được xem là kiểm format, không chứng minh build toàn ứng dụng.
+
+**Cách tham khảo/tích hợp:** Tạo scene thử và đo dropped frames/âm thanh đồng bộ theo cấu hình encoder, giữ profile cho từng máy.
+
+**Thay thế:** [Cap](../19-agentic-video-media/README.md#anhkysuai-2026-11-23-cap), [Screenity](../19-agentic-video-media/README.md#anhkysuai-2026-11-23-screenity), [FFmpeg](../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`0c790bd0151f`](https://github.com/obsproject/obs-studio/commit/0c790bd0151fb9f574867e025ecf57e6eedc58e2). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.rst](https://github.com/obsproject/obs-studio/blob/0c790bd0151fb9f574867e025ecf57e6eedc58e2/README.rst) · [COPYING](https://github.com/obsproject/obs-studio/blob/0c790bd0151fb9f574867e025ecf57e6eedc58e2/COPYING) · [metadata GitHub](https://api.github.com/repos/obsproject/obs-studio).
+
+<a id="anhkysuai-2026-11-23-losslesscut"></a>
+
+### LosslessCut
+
+**Repo:** [mifi/lossless-cut](https://github.com/mifi/lossless-cut) · **License:** GPL-2.0 · **★ 46,341 (GitHub API, 2026-11-23)**
+
+**Mục đích:** GUI desktop dùng FFmpeg để cắt, ghép và remux video/audio mà hạn chế mã hóa lại.
+
+**Giá trị và cơ chế:** README mô tả gần như sao chép trực tiếp stream, quản lý segment, track và metadata; phù hợp rough cut nhanh và giữ chất lượng nguồn.
+
+**Giới hạn:** Chưa kiểm độ chính xác điểm cắt, đồng bộ audio hay codec trên file thật. Ghép yêu cầu codec tương thích; lossless không đồng nghĩa mọi ranh giới cắt đều tự do như encode lại.
+
+**Cách tham khảo/tích hợp:** Dùng bản sao, kiểm đầu/cuối từng segment trong player đích và giữ EDL/marker để tái dựng quyết định cắt.
+
+**Thay thế:** avidemux, [shotcut](../08-awesome-lists-learning/README.md#6c57-dựng-video--slide-tự-động), [FFmpeg](../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`8f95118fb021`](https://github.com/mifi/lossless-cut/commit/8f95118fb021a6fb95761f2807e760b92482af05). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/mifi/lossless-cut/blob/8f95118fb021a6fb95761f2807e760b92482af05/README.md) · [LICENSE](https://github.com/mifi/lossless-cut/blob/8f95118fb021a6fb95761f2807e760b92482af05/LICENSE) · [metadata GitHub](https://api.github.com/repos/mifi/lossless-cut).
+
+<a id="anhkysuai-2026-11-23-cap"></a>
+
+### Cap
+
+**Repo:** [CapSoftware/Cap](https://github.com/CapSoftware/Cap) · **License:** AGPL-3.0, ngoại trừ `cap-camera*` và `scap-*` theo MIT · **★ 25,458 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Quay màn hình, chỉnh sửa và chia sẻ video qua ứng dụng desktop và dịch vụ web.
+
+**Giá trị và cơ chế:** Tài liệu phân biệt Studio xử lý bản ghi cục bộ và Instant tải lên trong lúc quay; cấu trúc hỗ trợ tự host và lưu trữ tương thích S3.
+
+**Giới hạn:** Không thể gọi mọi chế độ là offline. LICENSE tách phạm vi AGPL/MIT; chưa kiểm luồng upload, quyền truy cập link hay chi phí các dịch vụ tùy chọn.
+
+**Cách tham khảo/tích hợp:** Chọn chế độ ghi phù hợp, cấu hình storage và chính sách chia sẻ, rồi thử quyền xem/xóa với tài khoản riêng.
+
+**Thay thế:** [OBS Studio](../19-agentic-video-media/README.md#anhkysuai-2026-11-23-obs-studio), [Screenity](../19-agentic-video-media/README.md#anhkysuai-2026-11-23-screenity), Loom.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f6e70ac50ed9`](https://github.com/CapSoftware/Cap/commit/f6e70ac50ed9de70b6134b704834c7af67205985). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/CapSoftware/Cap/blob/f6e70ac50ed9de70b6134b704834c7af67205985/README.md) · [LICENSE](https://github.com/CapSoftware/Cap/blob/f6e70ac50ed9de70b6134b704834c7af67205985/LICENSE) · [metadata GitHub](https://api.github.com/repos/CapSoftware/Cap).
+
+<a id="anhkysuai-2026-11-23-video2x"></a>
+
+### Video2X
+
+**Repo:** [k4yt3x/video2x](https://github.com/k4yt3x/video2x) · **License:** AGPL-3.0; thư viện và models bên thứ ba có điều khoản riêng · **★ 22,853 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tăng độ phân giải video và nội suy khung hình với các backend xử lý ảnh.
+
+**Giá trị và cơ chế:** Snapshot dùng C++ và cấu hình cho các backend NCNN/Vulkan như Real-ESRGAN, Real-CUGAN, Anime4K và RIFE; phù hợp khảo sát chuỗi xử lý video.
+
+**Giới hạn:** Chưa chạy GPU hoặc đo artefact, tốc độ và đồng bộ audio. Giấy phép chương trình không bao trùm mọi model; binary dựng sẵn có yêu cầu phần cứng riêng.
+
+**Cách tham khảo/tích hợp:** Thử một đoạn video ngắn, so sánh frame và audio, ghi rõ backend/weights trước khi xử lý theo lô.
+
+**Thay thế:** Upscayl, [Real-ESRGAN](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-real-esrgan), [Anime4K](../19-agentic-video-media/README.md#anhkysuai-2026-11-23-anime4k).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`7db9c18d6278`](https://github.com/k4yt3x/video2x/commit/7db9c18d6278bbad9c3eda0e4e4ae210f9a688eb). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/k4yt3x/video2x/blob/7db9c18d6278bbad9c3eda0e4e4ae210f9a688eb/README.md) · [LICENSE](https://github.com/k4yt3x/video2x/blob/7db9c18d6278bbad9c3eda0e4e4ae210f9a688eb/LICENSE) · [metadata GitHub](https://api.github.com/repos/k4yt3x/video2x).
+
+<a id="anhkysuai-2026-11-23-anime4k"></a>
+
+### Anime4K
+
+**Repo:** [bloc97/Anime4K](https://github.com/bloc97/Anime4K) · **License:** MIT cho mã; hình minh họa giữ quyền của chủ sở hữu · **★ 21,659 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Upscale và làm sạch hình anime theo hướng xử lý thời gian thực bằng shader.
+
+**Giá trị và cơ chế:** README nêu phạm vi tối ưu là nguồn anime 1080p và cung cấp preset tích hợp trình phát; phù hợp thử cải thiện hiển thị khi xem.
+
+**Giới hạn:** Tác giả phân biệt rõ với phục hồi nguồn 720p, DVD hoặc nội dung suy giảm mạnh. Chưa đo tốc độ hay so sánh chất lượng; license mã không bao gồm ảnh minh họa.
+
+**Cách tham khảo/tích hợp:** Chọn preset theo nguồn và GPU, so sánh cảnh nhiều nét hoặc phụ đề để phát hiện viền giả và mất chi tiết.
+
+**Thay thế:** [Real-ESRGAN](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-real-esrgan), waifu2x, [Video2X](../19-agentic-video-media/README.md#anhkysuai-2026-11-23-video2x).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`7684e9586f8d`](https://github.com/bloc97/Anime4K/commit/7684e9586f8dcc738af08a1cdceb024cc184f426). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/bloc97/Anime4K/blob/7684e9586f8dcc738af08a1cdceb024cc184f426/README.md) · [LICENSE](https://github.com/bloc97/Anime4K/blob/7684e9586f8dcc738af08a1cdceb024cc184f426/LICENSE) · [metadata GitHub](https://api.github.com/repos/bloc97/Anime4K).
+
+<a id="anhkysuai-2026-11-23-screenity"></a>
+
+### Screenity
+
+**Repo:** [alyssaxuu/screenity](https://github.com/alyssaxuu/screenity) · **License:** GPL-3.0 (nhánh MV3 hiện tại) · **★ 19,009 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Quay màn hình trong trình duyệt, chú thích trong lúc ghi và chỉnh sửa bản ghi.
+
+**Giá trị và cơ chế:** README mô tả extension Manifest V3 cùng lưu trữ/xuất video; tích hợp Google Drive cần cấu hình OAuth của bản triển khai.
+
+**Giới hạn:** Phiên bản hiện tại đã chuyển từ MIT cũ sang GPL-3.0. Screenity Pro là dịch vụ riêng; chưa kiểm permissions, hiệu năng ghi hay luồng tải dữ liệu.
+
+**Cách tham khảo/tích hợp:** Kiểm quyền extension, chính sách lưu video và OAuth trên tài khoản thử trước khi phân phối nội bộ.
+
+**Thay thế:** [OBS Studio](../19-agentic-video-media/README.md#anhkysuai-2026-11-23-obs-studio), [Cap](../19-agentic-video-media/README.md#anhkysuai-2026-11-23-cap), Loom.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`45562d130fcf`](https://github.com/alyssaxuu/screenity/commit/45562d130fcf745683ac34651e1a5389340f8301). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/alyssaxuu/screenity/blob/45562d130fcf745683ac34651e1a5389340f8301/README.md) · [LICENSE](https://github.com/alyssaxuu/screenity/blob/45562d130fcf745683ac34651e1a5389340f8301/LICENSE) · [metadata GitHub](https://api.github.com/repos/alyssaxuu/screenity).
+
 ## 4. Nguồn
 
 - https://github.com/calesthio/OpenMontage (README, AGENTS.md, AGENT_GUIDE.md, commits) · https://github.com/calesthio · https://openmontage.video

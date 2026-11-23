@@ -113,3 +113,51 @@ Không chọn cả bốn công cụ cho mọi dự án. Một service nhỏ có 
 - [Mục 04](../04-protocols-standards/README.md): phiên bản wire/conformance cho MCP/A2A; khác compatibility của API nghiệp vụ.
 - [Mục 09](../09-engineering-checklists/README.md): checklist quyết định; [mục 13](../13-dev-stack-devops/README.md): toolchain; [mục 23](../23-own-repos-lessons/README.md): bài học repo chủ kho.
 - [Mục 28](../28-product-discovery-experimentation/README.md): nhu cầu và phép đo sản phẩm; mục 30/34 bổ sung nghiệm thu runtime và data/identity.
+
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **2 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-microsoft-api-guidelines"></a>
+
+### api-guidelines
+
+**Repo:** [microsoft/api-guidelines](https://github.com/microsoft/api-guidelines) · **License:** CC-BY-4.0 · **★ 23,353 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Hướng dẫn thiết kế REST API của Microsoft, có nhánh hướng dẫn riêng cho Azure và Microsoft Graph.
+
+**Giá trị:** Tham khảo cách thống nhất quy ước API và tách yêu cầu chung khỏi bối cảnh dịch vụ cụ thể.
+
+**Giới hạn:** Đây là tài liệu định hướng của một tổ chức; cần chọn quy tắc phù hợp với hệ thống đang xây, không áp nguyên bộ Azure/Graph cho mọi API.
+
+**Cách tham khảo/tích hợp:** Chọn quy tắc phù hợp bối cảnh API, chuyển thành hợp đồng có ví dụ và kiểm tương thích trước áp dụng cho dịch vụ.
+
+**Lựa chọn để đối chiếu:** [zalando/restful-api-guidelines](https://github.com/zalando/restful-api-guidelines) · [microsoft/cloud-design-patterns](https://github.com/microsoft/cloud-design-patterns). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`1c58ca7f1eb51768cb4e21facd6ce0154ee4db64`](https://github.com/microsoft/api-guidelines/commit/1c58ca7f1eb51768cb4e21facd6ce0154ee4db64), ngày commit 2026-10-30. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/microsoft/api-guidelines/blob/1c58ca7f1eb51768cb4e21facd6ce0154ee4db64/README.md) · [license.txt](https://github.com/microsoft/api-guidelines/blob/1c58ca7f1eb51768cb4e21facd6ce0154ee4db64/license.txt) · [metadata GitHub](https://api.github.com/repos/microsoft/api-guidelines).
+
+<a id="anhkysuai-2026-11-23-googlecloudplatform-microservices-demo"></a>
+
+### microservices-demo
+
+**Repo:** [GoogleCloudPlatform/microservices-demo](https://github.com/GoogleCloudPlatform/microservices-demo) · **License:** Apache-2.0 · **★ 21,208 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Online Boutique: ứng dụng thương mại điện tử mẫu minh họa microservices trên Kubernetes.
+
+**Giá trị:** Có thể học cách nối nhiều dịch vụ, gRPC và quan sát hệ thống qua một luồng mua hàng giả lập.
+
+**Giới hạn:** Đây là demo và nhiều hướng dẫn gắn sản phẩm Google Cloud; cần đánh giá chi phí, tài khoản, dữ liệu và cấu hình triển khai riêng trước dùng ngoài môi trường học.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [docker/awesome-compose](https://github.com/docker/awesome-compose) · [microsoft/eShop](https://github.com/microsoft/eShop). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712`](https://github.com/GoogleCloudPlatform/microservices-demo/commit/c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712), ngày commit 2026-10-27. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/GoogleCloudPlatform/microservices-demo/blob/c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712/README.md) · [LICENSE](https://github.com/GoogleCloudPlatform/microservices-demo/blob/c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712/LICENSE) · [.github/workflows/ci-pr.yaml](https://github.com/GoogleCloudPlatform/microservices-demo/blob/c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712/.github/workflows/ci-pr.yaml) · [metadata GitHub](https://api.github.com/repos/GoogleCloudPlatform/microservices-demo).

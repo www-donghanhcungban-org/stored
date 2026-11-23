@@ -105,3 +105,29 @@ Artifact bàn giao gồm source SHA, lock digest, builder identity, image/packag
 - [32 · Delivery](../32-platform-delivery-engineering/README.md): deployment chỉ nhận digest đã verify; rollout/rollback có kiểm.
 
 Ngày snapshot không phải ngày xác minh mọi hồ sơ cũ được dẫn. Phát hiện về parser/CLI chỉ áp dụng SHA đã đọc; chưa xác minh mọi cấu hình runtime, advisory feed, latency, độ phủ scanner hoặc tình trạng toàn bộ release. Không cộng các lớp thành một điểm an toàn duy nhất.
+
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **1 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-getsops-sops"></a>
+
+### SOPS
+
+**Repo:** [getsops/sops](https://github.com/getsops/sops) · **License:** MPL-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`9aa10f12bcd8`](https://github.com/getsops/sops/tree/9aa10f12bcd82400b7eb73331dd7a87a93bb17f7) (commit 2026-11-09). **Sao:** 23,807 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/getsops/sops).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Công cụ sửa tệp bí mật đã mã hóa theo YAML, JSON, ENV, INI hoặc binary. |
+| Giá trị và cơ chế theo tài liệu | README liệt kê KMS cloud, age và PGP; Go manifest nối từng provider, CI build/test theo OS/architecture giúp đánh giá chuỗi sử dụng CLI. |
+| Giới hạn | Mã hóa tệp không thay quản trị khóa, quyền KMS hoặc bảo vệ plaintext trong editor/CI. Chưa kiểm cơ chế cryptography hay recovery khi mất khóa. |
+| Điều kiện tích hợp | Thử tệp giả và policy recipient, bảo đảm recovery/rotation trước dùng secrets thật; tránh plaintext trong log, diff, artifact và giới hạn quyền giải mã pipeline. |
+| Lựa chọn đối chiếu | age; git-crypt; Sealed Secrets. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.rst](https://github.com/getsops/sops/blob/9aa10f12bcd82400b7eb73331dd7a87a93bb17f7/README.rst) · [LICENSE](https://github.com/getsops/sops/blob/9aa10f12bcd82400b7eb73331dd7a87a93bb17f7/LICENSE) · [go.mod](https://github.com/getsops/sops/blob/9aa10f12bcd82400b7eb73331dd7a87a93bb17f7/go.mod) · [.github/workflows/cli.yml](https://github.com/getsops/sops/blob/9aa10f12bcd82400b7eb73331dd7a87a93bb17f7/.github/workflows/cli.yml).

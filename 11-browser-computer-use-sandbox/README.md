@@ -655,6 +655,258 @@ Với Claude Code hoặc client MCP khác: thêm `{"mcpServers": {"agent-desktop
 
 **Nguồn §3h:** ảnh README người dùng gửi 6/11/2026 · clone https://github.com/vercel-labs/agent-desktop HEAD `b43ac4f6e892ef608f8851428613c4009f0e84c7`: https://github.com/vercel-labs/agent-desktop/blob/b43ac4f6e892ef608f8851428613c4009f0e84c7/README.md · https://github.com/vercel-labs/agent-desktop/blob/b43ac4f6e892ef608f8851428613c4009f0e84c7/LICENSE · https://github.com/vercel-labs/agent-desktop/blob/b43ac4f6e892ef608f8851428613c4009f0e84c7/Cargo.toml · `crates/{core,ffi,macos,windows,linux}`, `.github/workflows/*`, `benchmarks/` · https://registry.npmjs.org/agent-desktop (1.2.0) · https://api.npmjs.org/downloads/point/last-month/agent-desktop · GitHub search API 6/11/2026.
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **13 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-lightpanda"></a>
+
+### Lightpanda
+
+**Repo:** [lightpanda-io/browser](https://github.com/lightpanda-io/browser) · **License:** AGPL-3.0-only · **★ 42,394 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Trình duyệt headless viết bằng Zig cho tự động hóa và thu thập web.
+
+**Giá trị và cơ chế:** Đã đọc telemetry: init tắt nếu biến LIGHTPANDA_DISABLE_TELEMETRY tồn tại, record trả sớm khi tắt; mặc định có gửi event tới telemetry.lightpanda.io/v2. Callsite main ghi sự kiện chạy.
+
+**Giới hạn:** Chỉ kiểm nhánh telemetry, chưa chứng minh tương thích CDP hoặc các số tăng tốc upstream. Khi cần tắt, sự hiện diện biến môi trường là điều kiện, không phải kiểm giá trị true/false.
+
+**Cách tham khảo/tích hợp:** Thử corpus website đích và đặt LIGHTPANDA_DISABLE_TELEMETRY=true nếu không muốn gửi số liệu sử dụng.
+
+**Thay thế:** [Playwright](../11-browser-computer-use-sandbox/README.md#playwright), [Browser Use](https://github.com/browser-use/browser-use), [Stagehand](https://github.com/browserbase/stagehand).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`a33cb1cc4694`](https://github.com/lightpanda-io/browser/commit/a33cb1cc469400fdbd20c7d1776abec399047ad7). Luồng telemetry init/record/send, callsite main và CI e2e; không kiểm toàn engine browser. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/lightpanda-io/browser/blob/a33cb1cc469400fdbd20c7d1776abec399047ad7/README.md) · [LICENSE](https://github.com/lightpanda-io/browser/blob/a33cb1cc469400fdbd20c7d1776abec399047ad7/LICENSE) · [src/telemetry/lightpanda.zig](https://github.com/lightpanda-io/browser/blob/a33cb1cc469400fdbd20c7d1776abec399047ad7/src/telemetry/lightpanda.zig) · [src/telemetry/telemetry.zig](https://github.com/lightpanda-io/browser/blob/a33cb1cc469400fdbd20c7d1776abec399047ad7/src/telemetry/telemetry.zig) · [src/main.zig](https://github.com/lightpanda-io/browser/blob/a33cb1cc469400fdbd20c7d1776abec399047ad7/src/main.zig) · [LICENSING.md](https://github.com/lightpanda-io/browser/blob/a33cb1cc469400fdbd20c7d1776abec399047ad7/LICENSING.md) · [metadata GitHub](https://api.github.com/repos/lightpanda-io/browser).
+
+<a id="anhkysuai-2026-11-23-nanobrowser"></a>
+
+### Nanobrowser
+
+**Repo:** [nanobrowser/nanobrowser](https://github.com/nanobrowser/nanobrowser) · **License:** Apache-2.0 · **★ 14,371 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tiện ích browser cho agent đọc trang, thao tác và quản lý tác vụ qua side panel.
+
+**Giá trị và cơ chế:** Đọc URL policy thấy chặn scheme nguy hiểm, ghép allow/deny và blocked-site; bài check gọi session.navigate/tabs có ca redirect và history. Chưa chạy các ca này.
+
+**Giới hạn:** CI nói browser/model checks chạy thủ công. Privacy policy ghi gửi nội dung tới model đã chọn và analytics tổng hợp mặc định bật; không gọi hoàn toàn offline. Ask/Auto có phạm vi chấp thuận khác nhau.
+
+**Cách tham khảo/tích hợp:** Dùng profile browser thử, cấu hình site rules và provider, kiểm các bước gửi/xóa trước cấp quyền trang thật.
+
+**Thay thế:** [Browser Use](https://github.com/browser-use/browser-use), [Skyvern](https://github.com/Skyvern-AI/skyvern), [Stagehand](https://github.com/browserbase/stagehand).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`291d5f3927ee`](https://github.com/nanobrowser/nanobrowser/commit/291d5f3927ee4c4795b0ea4588f2b404838b3ff6). URL policy và các ca gọi session trong navigation check, cùng CI; chưa chạy browser checks. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/nanobrowser/nanobrowser/blob/291d5f3927ee4c4795b0ea4588f2b404838b3ff6/README.md) · [LICENSE](https://github.com/nanobrowser/nanobrowser/blob/291d5f3927ee4c4795b0ea4588f2b404838b3ff6/LICENSE) · [src/background/checks/navigation-policy.ts](https://github.com/nanobrowser/nanobrowser/blob/291d5f3927ee4c4795b0ea4588f2b404838b3ff6/src/background/checks/navigation-policy.ts) · [src/browser-control/core/url-policy.ts](https://github.com/nanobrowser/nanobrowser/blob/291d5f3927ee4c4795b0ea4588f2b404838b3ff6/src/browser-control/core/url-policy.ts) · [PRIVACY.md](https://github.com/nanobrowser/nanobrowser/blob/291d5f3927ee4c4795b0ea4588f2b404838b3ff6/PRIVACY.md) · [metadata GitHub](https://api.github.com/repos/nanobrowser/nanobrowser).
+
+<a id="anhkysuai-2026-11-23-robotgo"></a>
+
+### RobotGo
+
+**Repo:** [go-vgo/robotgo](https://github.com/go-vgo/robotgo) · **License:** Apache-2.0; một số thành phần BSD-like · **★ 10,912 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện Go tự động hóa chuột, bàn phím, màn hình và cửa sổ desktop.
+
+**Giá trị và cơ chế:** README và go.mod cho thấy backend native/Cgo và pure Go theo nền tảng; thích hợp lớp công cụ computer-use hoặc kiểm thử giao diện desktop.
+
+**Giới hạn:** Chưa gửi input hay chụp màn hình thử. macOS cần quyền riêng, hỗ trợ Wayland/X11 và thao tác cửa sổ tùy backend; RobotGo-Pro không nằm trong mã mở này.
+
+**Cách tham khảo/tích hợp:** Dùng desktop thử, kiểm tọa độ/DPI và quyền hệ điều hành, thêm chốt xác nhận ở luồng hành động nhạy cảm.
+
+**Thay thế:** pyautogui, nut-js, xdotool.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`513810704bd4`](https://github.com/go-vgo/robotgo/commit/513810704bd4d5a624db272ecb8537d614f99a54). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/go-vgo/robotgo/blob/513810704bd4d5a624db272ecb8537d614f99a54/README.md) · [LICENSE](https://github.com/go-vgo/robotgo/blob/513810704bd4d5a624db272ecb8537d614f99a54/LICENSE) · [metadata GitHub](https://api.github.com/repos/go-vgo/robotgo).
+
+<a id="anhkysuai-2026-11-23-browser-use-web-ui"></a>
+
+### Browser Use WebUI
+
+**Repo:** [browser-use/web-ui](https://github.com/browser-use/web-ui) · **License:** MIT · **★ 16,664 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Giao diện Gradio để cấu hình và chạy tác vụ browser-use với nhiều nhà cung cấp model.
+
+**Giá trị và cơ chế:** Đã đọc đường truyền cấu hình từ UI vào BrowserConfig/context và khởi chạy agent. CustomBrowser dựng launch arguments; cờ disable_security thêm các tham số tắt bảo vệ trình duyệt.
+
+**Giới hạn:** Phạm vi đọc là launch/configuration và callsite, chưa kiểm toàn bộ agent hoặc ranh giới quyền. Dùng profile trình duyệt thật có thể đưa session và nội dung trang vào tác vụ; CI đã đọc chỉ build image.
+
+**Cách tham khảo/tích hợp:** Dùng profile thử riêng, giữ cấu hình bảo vệ và giới hạn tài khoản trước khi đánh giá các tác vụ có đăng nhập.
+
+**Thay thế:** nanobrowser, [Stagehand](https://github.com/browserbase/stagehand), [Skyvern](https://github.com/Skyvern-AI/skyvern).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`61962296c38a`](https://github.com/browser-use/web-ui/commit/61962296c38a0d064e0ba02c827192b7a81d1819). Đọc browser launch, truyền cấu hình context từ UI và callsite agent.run; đọc workflow build Docker, chưa kiểm toàn bộ agent hoặc runtime permissions. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/browser-use/web-ui/blob/61962296c38a0d064e0ba02c827192b7a81d1819/README.md) · [LICENSE](https://github.com/browser-use/web-ui/blob/61962296c38a0d064e0ba02c827192b7a81d1819/LICENSE) · [src/browser/custom_browser.py](https://github.com/browser-use/web-ui/blob/61962296c38a0d064e0ba02c827192b7a81d1819/src/browser/custom_browser.py) · [src/webui/components/browser_use_agent_tab.py](https://github.com/browser-use/web-ui/blob/61962296c38a0d064e0ba02c827192b7a81d1819/src/webui/components/browser_use_agent_tab.py) · [SECURITY.md](https://github.com/browser-use/web-ui/blob/61962296c38a0d064e0ba02c827192b7a81d1819/SECURITY.md) · [metadata GitHub](https://api.github.com/repos/browser-use/web-ui).
+
+<a id="anhkysuai-searxng-searxng"></a>
+
+### SearXNG
+
+**Repo:** [searxng/searxng](https://github.com/searxng/searxng) · **License:** AGPL-3.0-or-later · **Kiểm:** 2026-11-23, `docs-read`, [`a7163d091037`](https://github.com/searxng/searxng/tree/a7163d091037cae586c444b05f22ecca162bb492) (commit 2026-11-23). **Sao:** 39,800 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/searxng/searxng).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Metasearch tự host, gom kết quả từ nhiều công cụ tìm kiếm. |
+| Giá trị và cơ chế theo tài liệu | README dẫn cấu hình engine và triển khai; cấu trúc Python cùng công cụ frontend cung cấp nền cho dịch vụ tìm kiếm riêng. |
+| Giới hạn | Không theo dõi người dùng là tuyên bố thiết kế, chưa kiểm toàn bộ cấu hình hay upstream. Khả năng truy cập engine phụ thuộc giới hạn, thay đổi giao diện và điều khoản nhà cung cấp. |
+| Điều kiện tích hợp | Bắt đầu một nhóm engine cần thiết, kiểm outbound request, log và rate limit; giám sát chất lượng kết quả, không suy bảo đảm riêng tư từ mặc định. |
+| Lựa chọn đối chiếu | Searx; Whoogle; Brave Search API. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.rst](https://github.com/searxng/searxng/blob/a7163d091037cae586c444b05f22ecca162bb492/README.rst) · [LICENSE](https://github.com/searxng/searxng/blob/a7163d091037cae586c444b05f22ecca162bb492/LICENSE) · [package.json](https://github.com/searxng/searxng/blob/a7163d091037cae586c444b05f22ecca162bb492/package.json) · [go.mod](https://github.com/searxng/searxng/blob/a7163d091037cae586c444b05f22ecca162bb492/go.mod) · [.github/workflows/l10n.yml](https://github.com/searxng/searxng/blob/a7163d091037cae586c444b05f22ecca162bb492/.github/workflows/l10n.yml).
+
+<a id="anhkysuai-archivebox-archivebox"></a>
+
+### ArchiveBox
+
+**Repo:** [ArchiveBox/ArchiveBox](https://github.com/ArchiveBox/ArchiveBox) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`5a5f6386e323`](https://github.com/ArchiveBox/ArchiveBox/tree/5a5f6386e323f940c6fa2e6a4c5b67feeeb0e8b6) (commit 2026-11-23). **Sao:** 29,082 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/ArchiveBox/ArchiveBox).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Ứng dụng lưu trữ nội dung web thành HTML, PDF, ảnh, văn bản và định dạng archive. |
+| Giá trị và cơ chế theo tài liệu | README nêu CLI, REST API, webhook và đầu ra chuẩn; CI phân tách lint, test platform, CodeQL, Python artifact và Docker. |
+| Giới hạn | Manifest là bản rc tại SHA đọc. Không bảo đảm mọi website hay nội dung đăng nhập lưu đầy đủ; tuyên bố đọc được hàng chục năm chưa thể xác minh trong review này. |
+| Điều kiện tích hợp | Thử nhóm URL đại diện, giới hạn credential/crawler và kiểm nội dung lưu; sao lưu index lẫn artifact, xác nhận quyền truy cập trước khi xuất bản archive. |
+| Lựa chọn đối chiếu | SingleFile; [Karakeep](../21-autonomous-workflows/README.md#anhkysuai-karakeep-app-karakeep); Wallabag. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/ArchiveBox/ArchiveBox/blob/5a5f6386e323f940c6fa2e6a4c5b67feeeb0e8b6/README.md) · [LICENSE](https://github.com/ArchiveBox/ArchiveBox/blob/5a5f6386e323f940c6fa2e6a4c5b67feeeb0e8b6/LICENSE) · [pyproject.toml](https://github.com/ArchiveBox/ArchiveBox/blob/5a5f6386e323f940c6fa2e6a4c5b67feeeb0e8b6/pyproject.toml) · [.github/workflows/ci.yml](https://github.com/ArchiveBox/ArchiveBox/blob/5a5f6386e323f940c6fa2e6a4c5b67feeeb0e8b6/.github/workflows/ci.yml).
+
+<a id="anhkysuai-m1k1o-neko"></a>
+
+### Neko
+
+**Repo:** [m1k1o/neko](https://github.com/m1k1o/neko) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`8fd303c932e9`](https://github.com/m1k1o/neko/tree/8fd303c932e9189a25dfdce0acb31157940b02e7) (commit 2026-11-18). **Sao:** 22,709 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/m1k1o/neko).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Trình duyệt ảo tự host trong Docker, chia sẻ giao diện qua WebRTC. |
+| Giá trị và cơ chế theo tài liệu | README mô tả nhiều người dùng cùng phiên browser, trình diễn và thử web; CI tách build client và image nền cho nhánh. |
+| Giới hạn | Docker/WebRTC không tự bảo đảm riêng tư hay cô lập đủ cho mã không tin cậy. Chia sẻ browser đồng nghĩa chia sẻ phiên đăng nhập; chưa kiểm sandbox, media hay mạng NAT. |
+| Điều kiện tích hợp | Dùng profile riêng không chứa tài khoản nhạy cảm, cấu hình auth/TLS và quyền host; thử mạng/TURN, clipboard/file transfer và xóa phiên sau sử dụng. |
+| Lựa chọn đối chiếu | Kasm Workspaces; noVNC; Apache Guacamole. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/m1k1o/neko/blob/8fd303c932e9189a25dfdce0acb31157940b02e7/README.md) · [LICENSE](https://github.com/m1k1o/neko/blob/8fd303c932e9189a25dfdce0acb31157940b02e7/LICENSE) · [.github/workflows/branch_test.yml](https://github.com/m1k1o/neko/blob/8fd303c932e9189a25dfdce0acb31157940b02e7/.github/workflows/branch_test.yml).
+
+<a id="anhkysuai-wasmerio-wasmer"></a>
+
+### Wasmer
+
+**Repo:** [wasmerio/wasmer](https://github.com/wasmerio/wasmer) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`29e67da7ca5f`](https://github.com/wasmerio/wasmer/tree/29e67da7ca5fb5b3b41300d643437b623411c7c9) (commit 2026-11-19). **Sao:** 21,258 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/wasmerio/wasmer).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Runtime sandbox WebAssembly và CLI chạy ứng dụng từ package hoặc nhúng qua SDK. |
+| Giá trị và cơ chế theo tài liệu | README mô tả cấp quyền filesystem bằng volume và mạng bằng net, tách Wasmer SDK ở repo riêng; Cargo/CI build nhiều nền tảng. |
+| Giới hạn | Mô tả secure-by-default chưa là kiểm toán cách ly. Package registry, runtime và SDK là các phạm vi khác nhau; chưa kiểm syscall, resource limit hay escape. |
+| Điều kiện tích hợp | Ghim runtime/package, mặc định cấp quyền hẹp và thử dữ liệu không nhạy cảm; đo CPU/RAM, filesystem/network và giới hạn thời gian trước cho agent thực thi mã. |
+| Lựa chọn đối chiếu | Wasmtime; Firecracker; gVisor. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/wasmerio/wasmer/blob/29e67da7ca5fb5b3b41300d643437b623411c7c9/README.md) · [LICENSE](https://github.com/wasmerio/wasmer/blob/29e67da7ca5fb5b3b41300d643437b623411c7c9/LICENSE) · [Cargo.toml](https://github.com/wasmerio/wasmer/blob/29e67da7ca5fb5b3b41300d643437b623411c7c9/Cargo.toml) · [.github/workflows/build.yml](https://github.com/wasmerio/wasmer/blob/29e67da7ca5fb5b3b41300d643437b623411c7c9/.github/workflows/build.yml).
+
+<a id="anhkysuai-2026-11-23-identity-gvisor"></a>
+
+### gVisor: đối chiếu tên repo
+
+**Kết luận:** [google/gvisor](https://github.com/google/gvisor) và [gvisor/gvisor](https://github.com/gvisor/gvisor) là cùng thực thể GitHub, repository ID `131212638` theo API ngày 2026-11-23. Giữ ID catalog `gvisor` và hồ sơ gốc; cập nhật đường dẫn chuẩn, không thêm hồ sơ trùng.
+
+**Phạm vi đọc lại:** `docs-read`; clone tại commit [`6abe42f82cb9fadf431d622741ac8bd9f3e75ab1`](https://github.com/gvisor/gvisor/commit/6abe42f82cb9fadf431d622741ac8bd9f3e75ab1) và đọc tài liệu được dẫn. GitHub get_repo cho google/gvisor trả canonical gvisor/gvisor, ID 131212638; metadata gvisor/gvisor cùng ID. Catalog đã có entity id gvisor trỏ tên cũ google/gvisor. Không tạo hồ sơ trùng; vẫn clone và đọc README/LICENSE/manifest/CI của SHA này. Những nhận định kỹ thuật cũ ở các phần trước giữ ngày/phạm vi cũ; lượt đối chiếu này chưa tái kiểm toàn bộ implementation hoặc chạy upstream.
+
+**Metadata:** ★ 20,088 (GitHub API, 2026-11-23); commit ngày 2026-11-23. Trạng thái archived là `false`, không dùng riêng cờ này để kết luận mức bảo trì.
+
+**Nguồn:** [gvisor](https://api.github.com/repos/google/gvisor) · [gvisor](https://api.github.com/repos/gvisor/gvisor) · [README.md](https://github.com/gvisor/gvisor/blob/6abe42f82cb9fadf431d622741ac8bd9f3e75ab1/README.md) · [LICENSE](https://github.com/gvisor/gvisor/blob/6abe42f82cb9fadf431d622741ac8bd9f3e75ab1/LICENSE) · [go.mod](https://github.com/gvisor/gvisor/blob/6abe42f82cb9fadf431d622741ac8bd9f3e75ab1/go.mod) · [build.yml](https://github.com/gvisor/gvisor/blob/6abe42f82cb9fadf431d622741ac8bd9f3e75ab1/.github/workflows/build.yml).
+
+<a id="anhkysuai-2026-11-23-gorhill-ublock"></a>
+
+### uBlock
+
+**Repo:** [gorhill/uBlock](https://github.com/gorhill/uBlock) · **License:** GPL-3.0 · **★ 69,588 (GitHub API, 2026-11-23)**
+
+**Mục đích:** uBlock Origin: tiện ích trình duyệt chặn nội dung theo các bộ lọc và quy tắc.
+
+**Giá trị:** Tham khảo cơ chế lọc nhiều nguồn và cho phép người dùng tinh chỉnh quy tắc; phạm vi trình duyệt được trình bày riêng trong README.
+
+**Giới hạn:** README ghi Chrome Web Store đã gỡ bản này ngày 31/8/2026; khả năng cài phụ thuộc trình duyệt và kênh phân phối, không suy mọi Chromium còn hỗ trợ như nhau.
+
+**Cách tham khảo/tích hợp:** Đối chiếu môi trường đích và quyền của tiện ích; kiểm tác động lên website cần dùng trước khi thêm bộ lọc.
+
+**Lựa chọn để đối chiếu:** [AdguardTeam/AdGuardHome](https://github.com/AdguardTeam/AdGuardHome) · [pi-hole/pi-hole](https://github.com/pi-hole/pi-hole). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`515aad2643a6112ece4d0703453f85d0810fcb78`](https://github.com/gorhill/uBlock/commit/515aad2643a6112ece4d0703453f85d0810fcb78), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/gorhill/uBlock/blob/515aad2643a6112ece4d0703453f85d0810fcb78/README.md) · [LICENSE.txt](https://github.com/gorhill/uBlock/blob/515aad2643a6112ece4d0703453f85d0810fcb78/LICENSE.txt) · [package.json](https://github.com/gorhill/uBlock/blob/515aad2643a6112ece4d0703453f85d0810fcb78/package.json) · [.github/workflows/main.yml](https://github.com/gorhill/uBlock/blob/515aad2643a6112ece4d0703453f85d0810fcb78/.github/workflows/main.yml) · [metadata GitHub](https://api.github.com/repos/gorhill/uBlock).
+
+<a id="anhkysuai-2026-11-23-pavlobu-deskreen"></a>
+
+### deskreen
+
+**Repo:** [pavlobu/deskreen](https://github.com/pavlobu/deskreen) · **License:** AGPL-3.0 · **★ 21,797 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Deskreen Community Edition truyền màn hình máy tính tới trình duyệt thiết bị khác qua WebRTC.
+
+**Giá trị:** Cho phép dùng thiết bị có trình duyệt làm màn hình phụ, có ứng dụng cho Windows, macOS và Linux.
+
+**Giới hạn:** README tách bản CE giới hạn tính năng với Pro; cần đo độ trễ, quyền chia sẻ màn hình và khả năng mạng thực tế. AGPL của CE không được suy áp dụng cho Pro.
+
+**Cách tham khảo/tích hợp:** Thiết lập phạm vi thiết bị và xác thực phiên rõ ràng, kiểm đường truyền/relay và quyền điều khiển trong môi trường thử.
+
+**Lựa chọn để đối chiếu:** [rustdesk/rustdesk](https://github.com/rustdesk/rustdesk) · [LizardByte/Sunshine](https://github.com/LizardByte/Sunshine). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`b5dc3d4d1a74ec38091d36578fd84174db3792bc`](https://github.com/pavlobu/deskreen/commit/b5dc3d4d1a74ec38091d36578fd84174db3792bc), ngày commit 2026-07-08. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/pavlobu/deskreen/blob/b5dc3d4d1a74ec38091d36578fd84174db3792bc/README.md) · [LICENSE](https://github.com/pavlobu/deskreen/blob/b5dc3d4d1a74ec38091d36578fd84174db3792bc/LICENSE) · [package.json](https://github.com/pavlobu/deskreen/blob/b5dc3d4d1a74ec38091d36578fd84174db3792bc/package.json) · [.github/workflows/release.yml](https://github.com/pavlobu/deskreen/blob/b5dc3d4d1a74ec38091d36578fd84174db3792bc/.github/workflows/release.yml) · [metadata GitHub](https://api.github.com/repos/pavlobu/deskreen).
+
+<a id="anhkysuai-2026-11-23-genymobile-scrcpy"></a>
+
+### scrcpy
+
+**Repo:** [Genymobile/scrcpy](https://github.com/Genymobile/scrcpy) · **License:** Apache-2.0 · **★ 155,456 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Công cụ hiển thị và điều khiển Android từ máy tính qua USB hoặc TCP/IP.
+
+**Giá trị:** Không cần root theo README, hỗ trợ bàn phím/chuột và âm thanh, phù hợp demo hoặc kiểm thử thủ công thiết bị.
+
+**Giới hạn:** Cần quản lý quyền debug và kết nối mạng; các số FPS/độ trễ phụ thuộc thiết bị và chưa đo lại. README nhấn mạnh chỉ tải release từ nguồn chính thức.
+
+**Cách tham khảo/tích hợp:** Thiết lập phạm vi thiết bị và xác thực phiên rõ ràng, kiểm đường truyền/relay và quyền điều khiển trong môi trường thử.
+
+**Lựa chọn để đối chiếu:** [rustdesk/rustdesk](https://github.com/rustdesk/rustdesk) · [pavlobu/deskreen](https://github.com/pavlobu/deskreen). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`c939183a7cdca4599cee337e60bc0e147b6c9828`](https://github.com/Genymobile/scrcpy/commit/c939183a7cdca4599cee337e60bc0e147b6c9828), ngày commit 2026-11-19. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/Genymobile/scrcpy/blob/c939183a7cdca4599cee337e60bc0e147b6c9828/README.md) · [LICENSE](https://github.com/Genymobile/scrcpy/blob/c939183a7cdca4599cee337e60bc0e147b6c9828/LICENSE) · [build.gradle](https://github.com/Genymobile/scrcpy/blob/c939183a7cdca4599cee337e60bc0e147b6c9828/build.gradle) · [.github/workflows/release.yml](https://github.com/Genymobile/scrcpy/blob/c939183a7cdca4599cee337e60bc0e147b6c9828/.github/workflows/release.yml) · [metadata GitHub](https://api.github.com/repos/Genymobile/scrcpy).
+
+<a id="anhkysuai-2026-11-23-rustdesk-rustdesk"></a>
+
+### rustdesk
+
+**Repo:** [rustdesk/rustdesk](https://github.com/rustdesk/rustdesk) · **License:** AGPL-3.0 · **★ 130,912 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng remote desktop bằng Rust, hỗ trợ dùng relay/rendezvous công cộng hoặc tự host.
+
+**Giá trị:** Có lựa chọn kiểm soát hạ tầng kết nối và nhiều nền tảng, phù hợp nghiên cứu remote access.
+
+**Giới hạn:** Tuyên bố kiểm soát dữ liệu trong README chưa thay kiểm bảo mật; cần cấu hình server, xác thực và quyền phiên. AGPL của client tách khỏi Server Pro và điều khoản dịch vụ.
+
+**Cách tham khảo/tích hợp:** Thiết lập phạm vi thiết bị và xác thực phiên rõ ràng, kiểm đường truyền/relay và quyền điều khiển trong môi trường thử.
+
+**Lựa chọn để đối chiếu:** [Genymobile/scrcpy](https://github.com/Genymobile/scrcpy) · [guacamole/guacamole-client](https://github.com/guacamole/guacamole-client). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`51f94394ce61e1f3d26229565c326b2862cbdd1f`](https://github.com/rustdesk/rustdesk/commit/51f94394ce61e1f3d26229565c326b2862cbdd1f), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/rustdesk/rustdesk/blob/51f94394ce61e1f3d26229565c326b2862cbdd1f/README.md) · [LICENCE](https://github.com/rustdesk/rustdesk/blob/51f94394ce61e1f3d26229565c326b2862cbdd1f/LICENCE) · [Cargo.toml](https://github.com/rustdesk/rustdesk/blob/51f94394ce61e1f3d26229565c326b2862cbdd1f/Cargo.toml) · [.github/workflows/ci.yml](https://github.com/rustdesk/rustdesk/blob/51f94394ce61e1f3d26229565c326b2862cbdd1f/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/rustdesk/rustdesk).
+
 ## 4. Nguồn
 
 - https://gist.github.com/kevinmichaelchen/9d77b8a681238cc45297dff969686175 · https://www.firecrawl.dev/blog/best-browser-agents · https://scrapfly.io/blog/posts/stagehand-vs-browser-use · https://agentscamp.com/guides/comparisons/browser-agents-compared-2026 · https://bug0.com/blog/expect-vs-agent-browser-vs-stagehand-vs-passmark · https://github.com/browserbase/stagehand · https://kanopylabs.com/blog/stagehand-vs-browserbase-vs-steel-browser-ai

@@ -1819,3 +1819,1218 @@ npx @animate-ui/cli@latest animate all
 - https://www.tasteskill.dev/ · https://www.x-cmd.com/install/taste-skill/ · https://apito.ai/en/blog/seo/ai-frontend-template-look-taste-skill/ · https://github.com/maxbogo/awesome-ai-tools-for-ui
 - https://refactoringui.com/ · https://github.com/klaufel/awesome-design-systems · https://github.com/bradtraversy/design-resources-for-developers · https://designsystemsrepo.com/design-systems/ · https://designsystems.surf/design-systems
 - https://github.com/copilotkit/copilotkit · https://github.com/ag-ui-protocol/ag-ui · https://techcrunch.com/2026/05/05/copilotkit-raises-27m-to-help-devs-deploy-app-native-ai-agents/ · https://alatirok.com/best-ai-agent-chat-ui-library/
+
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **74 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-photocraft"></a>
+
+### PhotoCraft
+
+**Repo:** [storytold/photocraft](https://github.com/storytold/photocraft) · **License:** MIT OR Apache-2.0 · **★ 81,102 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Trình sửa ảnh desktop bằng Rust, làm việc với layer, mask và tài liệu PSD.
+
+**Giá trị và cơ chế:** README và workspace tách engine tài liệu, raster và giao diện; cùng hệ lệnh được mô tả cho UI, CLI và MCP, đáng tham khảo khi muốn AI thao tác ứng dụng native.
+
+**Giới hạn:** Tỷ lệ tương thích PSD và tốc độ GPU là số tác giả công bố; chưa mở tệp thử hay xác minh control channel. Một số codec cần feature riêng.
+
+**Cách tham khảo/tích hợp:** Thử bằng corpus PSD có layer của dự án trước khi dùng làm bộ chuyển đổi; ghim cả revision craft-libs.
+
+**Thay thế:** gimp, krita, [Penpot](../06-ui-ux-design/README.md#7zg-hồ-sơ-penpotpenpot-nền-tảng-thiết-kế-mã-mở-tự-host-design-token-gốc-mcp-server-chính-thức-ảnh-readme-người-dùng-gửi-đọc-mã-19112026).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`42ade5fc41a6`](https://github.com/storytold/photocraft/commit/42ade5fc41a6669c1bc5c80375ca094488c0de04). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/storytold/photocraft/blob/42ade5fc41a6669c1bc5c80375ca094488c0de04/README.md) · [LICENSE-APACHE](https://github.com/storytold/photocraft/blob/42ade5fc41a6669c1bc5c80375ca094488c0de04/LICENSE-APACHE) · [LICENSE-MIT](https://github.com/storytold/photocraft/blob/42ade5fc41a6669c1bc5c80375ca094488c0de04/LICENSE-MIT) · [metadata GitHub](https://api.github.com/repos/storytold/photocraft).
+
+<a id="anhkysuai-2026-11-23-apache-echarts"></a>
+
+### Apache ECharts
+
+**Repo:** [apache/echarts](https://github.com/apache/echarts) · **License:** Apache-2.0; các phần dẫn xuất theo NOTICE/LICENSE · **★ 67,783 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện JavaScript tạo biểu đồ tương tác cho dashboard và ứng dụng web.
+
+**Giá trị và cơ chế:** README mô tả lớp biểu đồ trên zrender, có gói npm, kiểu TypeScript và quy trình dựng bản phân phối; thích hợp cho bộ biểu đồ cấu hình được.
+
+**Giới hạn:** Chưa chạy render, đo dữ liệu lớn hay kiểm accessibility. LICENSE còn liệt kê mã dẫn xuất và giấy phép liên quan, nên không chỉ giữ nhãn của package.
+
+**Cách tham khảo/tích hợp:** Chọn loại biểu đồ và chỉ nạp thành phần cần dùng; kiểm kích thước bundle, nội dung tooltip và điều kiện attribution.
+
+**Thay thế:** plotly, chartjs, [Recharts](../06-ui-ux-design/README.md#anhkysuai-2026-11-23-recharts).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`34f4d927eafe`](https://github.com/apache/echarts/commit/34f4d927eafe251f26f63afd3aeefa30f2feba30). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/apache/echarts/blob/34f4d927eafe251f26f63afd3aeefa30f2feba30/README.md) · [LICENSE](https://github.com/apache/echarts/blob/34f4d927eafe251f26f63afd3aeefa30f2feba30/LICENSE) · [metadata GitHub](https://api.github.com/repos/apache/echarts).
+
+<a id="anhkysuai-2026-11-23-drawio-desktop"></a>
+
+### draw.io Desktop
+
+**Repo:** [jgraph/drawio-desktop](https://github.com/jgraph/drawio-desktop) · **License:** GPL-3.0-only · **★ 64,111 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng Electron đóng gói trình biên tập sơ đồ draw.io để dùng trên desktop.
+
+**Giá trị và cơ chế:** README phân biệt installer, bản portable và cơ chế cập nhật theo nền tảng; package có bài kiểm Node riêng, phù hợp nhu cầu sơ đồ lưu thành tệp cục bộ.
+
+**Giới hạn:** Tài liệu nói không gửi nội dung sơ đồ nhưng thừa nhận media nhúng từ URL có thể tạo kết nối ngoài. Chưa kiểm lưu lượng hoặc đọc renderer; không coi ứng dụng hoàn toàn ngoại tuyến.
+
+**Cách tham khảo/tích hợp:** Kiểm đường dẫn media/font và cấu hình cập nhật; đánh giá nghĩa vụ GPL nếu sửa và phân phối bản đóng gói.
+
+**Thay thế:** [Excalidraw](https://github.com/excalidraw/excalidraw), [Mermaid](https://github.com/mermaid-js/mermaid), [D2](../16-docs-tools/README.md#anhkysuai-2026-11-23-d2).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`5e8406789216`](https://github.com/jgraph/drawio-desktop/commit/5e8406789216bed8f043bc503f4927b4034d7a71). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/jgraph/drawio-desktop/blob/5e8406789216bed8f043bc503f4927b4034d7a71/README.md) · [LICENSE](https://github.com/jgraph/drawio-desktop/blob/5e8406789216bed8f043bc503f4927b4034d7a71/LICENSE) · [metadata GitHub](https://api.github.com/repos/jgraph/drawio-desktop).
+
+<a id="anhkysuai-2026-11-23-streamlit"></a>
+
+### Streamlit
+
+**Repo:** [streamlit/streamlit](https://github.com/streamlit/streamlit) · **License:** Apache-2.0 · **★ 46,485 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Framework viết ứng dụng dữ liệu và giao diện tương tác bằng Python.
+
+**Giá trị và cơ chế:** README nêu bảng chỉnh sửa, form, chat và streaming trong cùng lớp Python; phù hợp dựng công cụ nội bộ nơi tính toán và quyết định cần xuất hiện cạnh nhau.
+
+**Giới hạn:** Tuyên bố quy mô sử dụng và khả năng enterprise chưa được kiểm độc lập. Chưa thử quản lý session, auth hoặc tải đồng thời; tài liệu hiện thông báo tạm ngừng nhận PR ngoài nhóm duy trì.
+
+**Cách tham khảo/tích hợp:** Tách logic dữ liệu khỏi giao diện, kiểm cache theo người dùng và quyền truy cập trước khi chia sẻ app.
+
+**Thay thế:** [gradio](../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện), [dash](../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ), panel.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`259fbb652404`](https://github.com/streamlit/streamlit/commit/259fbb652404888bff49b923b8228bd2bd9d4888). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/streamlit/streamlit/blob/259fbb652404888bff49b923b8228bd2bd9d4888/README.md) · [LICENSE](https://github.com/streamlit/streamlit/blob/259fbb652404888bff49b923b8228bd2bd9d4888/LICENSE) · [metadata GitHub](https://api.github.com/repos/streamlit/streamlit).
+
+<a id="anhkysuai-2026-11-23-jsoncrack"></a>
+
+### JSON Crack
+
+**Repo:** [AykutSarac/jsoncrack.com](https://github.com/AykutSarac/jsoncrack.com) · **License:** Apache-2.0 · **★ 44,603 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Trình xem và chỉnh dữ liệu JSON dưới dạng đồ thị hoặc cây tương tác.
+
+**Giá trị và cơ chế:** README mô tả chuyển đổi JSON/YAML/CSV/XML, truy vấn jq/JSONPath và sinh schema; monorepo có các đích web và extension, thuận tiện khảo sát payload phức tạp.
+
+**Giới hạn:** Cam kết xử lý cục bộ mới được đọc trong tài liệu; chưa kiểm mạng hoặc dữ liệu rất lớn. Không xem việc vẽ đúng đồ thị là kiểm chứng ý nghĩa của dữ liệu.
+
+**Cách tham khảo/tích hợp:** Dùng bản tự host cho dữ liệu riêng, giảm payload trước khi mở và đối chiếu schema bằng công cụ độc lập.
+
+**Thay thế:** jsoneditor, [D2](../16-docs-tools/README.md#anhkysuai-2026-11-23-d2), [Mermaid](https://github.com/mermaid-js/mermaid).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a46d0d0adb09`](https://github.com/AykutSarac/jsoncrack.com/commit/a46d0d0adb098e12e577a083e87ead7f61f90098). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/AykutSarac/jsoncrack.com/blob/a46d0d0adb098e12e577a083e87ead7f61f90098/README.md) · [LICENSE.md](https://github.com/AykutSarac/jsoncrack.com/blob/a46d0d0adb098e12e577a083e87ead7f61f90098/LICENSE.md) · [metadata GitHub](https://api.github.com/repos/AykutSarac/jsoncrack.com).
+
+<a id="anhkysuai-2026-11-23-xyflow"></a>
+
+### xyflow
+
+**Repo:** [xyflow/xyflow](https://github.com/xyflow/xyflow) · **License:** MIT · **★ 39,122 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Các thư viện React, Svelte và Vue để dựng giao diện node và flow tương tác.
+
+**Giá trị và cơ chế:** Monorepo chia packages theo framework và lớp system dùng chung; thuận tiện làm editor workflow với UI tùy biến nhưng giữ một bộ primitive chung.
+
+**Giới hạn:** README phân biệt rõ yêu cầu hỗ trợ trả phí khi bỏ attribution là kỳ vọng của tác giả, không phải điều kiện pháp lý của MIT. Chưa kiểm performance của đồ thị lớn hay accessibility.
+
+**Cách tham khảo/tích hợp:** Dùng đúng package của framework; tách model workflow khỏi vị trí node và xác minh quy tắc kết nối tại backend.
+
+**Thay thế:** rete, drawflow, [Excalidraw](https://github.com/excalidraw/excalidraw).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`8b95de4602fd`](https://github.com/xyflow/xyflow/commit/8b95de4602fd1fa10243b2fe1b0916aeab551337). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/xyflow/xyflow/blob/8b95de4602fd1fa10243b2fe1b0916aeab551337/README.md) · [LICENSE](https://github.com/xyflow/xyflow/blob/8b95de4602fd1fa10243b2fe1b0916aeab551337/LICENSE) · [metadata GitHub](https://api.github.com/repos/xyflow/xyflow).
+
+<a id="anhkysuai-2026-11-23-sharp"></a>
+
+### sharp
+
+**Repo:** [lovell/sharp](https://github.com/lovell/sharp) · **License:** Apache-2.0 · **★ 32,867 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện Node.js xử lý và chuyển đổi ảnh dựa trên libvips.
+
+**Giá trị và cơ chế:** README và manifest cho thấy API phục vụ resize, xoay, ghép và xuất nhiều định dạng; phù hợp pipeline thumbnail hoặc ảnh web bên máy chủ.
+
+**Giới hạn:** Tuyên bố tốc độ trong README chưa được đo lại. Binary native, phiên bản Node và codec tùy bản dựng ảnh hưởng triển khai; không phải trình biên tập tài liệu nhiều layer.
+
+**Cách tham khảo/tích hợp:** Đo kích thước, thời gian và bộ nhớ với ảnh thực; ghim phiên bản và giới hạn đầu vào trong dịch vụ upload.
+
+**Thay thế:** [ImageMagick](../06-ui-ux-design/README.md#anhkysuai-2026-11-23-imagemagick), pillow, libvips.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`461a8d56e31e`](https://github.com/lovell/sharp/commit/461a8d56e31e081f0791f4c6265ac2b184a0d4ec). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/lovell/sharp/blob/461a8d56e31e081f0791f4c6265ac2b184a0d4ec/README.md) · [LICENSE](https://github.com/lovell/sharp/blob/461a8d56e31e081f0791f4c6265ac2b184a0d4ec/LICENSE) · [metadata GitHub](https://api.github.com/repos/lovell/sharp).
+
+<a id="anhkysuai-2026-11-23-graphite"></a>
+
+### Graphite
+
+**Repo:** [GraphiteEditor/Graphite](https://github.com/GraphiteEditor/Graphite) · **License:** MIT OR Apache-2.0 · **★ 28,014 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Trình thiết kế đồ họa kết hợp chỉnh sửa vector và quy trình node theo thủ tục.
+
+**Giá trị và cơ chế:** README và workspace Rust chia editor, giao diện, lưu trữ/migration; có giá trị tham khảo mô hình tài liệu dùng chung cho thao tác trực tiếp và graph.
+
+**Giới hạn:** Dự án tự ghi alpha; nhiều khả năng motion/VFX được trình bày như hướng phát triển. Chưa mở tài liệu, đo GPU hay xác nhận độ ổn định xuất file.
+
+**Cách tham khảo/tích hợp:** Thử bản ghim với tài sản có thể phục hồi, tập trung học mô hình node và lệnh chỉnh sửa trước dùng sản xuất.
+
+**Thay thế:** inkscape, [Penpot](../06-ui-ux-design/README.md#7zg-hồ-sơ-penpotpenpot-nền-tảng-thiết-kế-mã-mở-tự-host-design-token-gốc-mcp-server-chính-thức-ảnh-readme-người-dùng-gửi-đọc-mã-19112026), krita.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`615b4050ba4d`](https://github.com/GraphiteEditor/Graphite/commit/615b4050ba4d247712dfd2fca745d87a9bba315f). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/GraphiteEditor/Graphite/blob/615b4050ba4d247712dfd2fca745d87a9bba315f/README.md) · [LICENSE-APACHE](https://github.com/GraphiteEditor/Graphite/blob/615b4050ba4d247712dfd2fca745d87a9bba315f/LICENSE-APACHE) · [LICENSE-MIT](https://github.com/GraphiteEditor/Graphite/blob/615b4050ba4d247712dfd2fca745d87a9bba315f/LICENSE-MIT) · [metadata GitHub](https://api.github.com/repos/GraphiteEditor/Graphite).
+
+<a id="anhkysuai-2026-11-23-recharts"></a>
+
+### Recharts
+
+**Repo:** [recharts/recharts](https://github.com/recharts/recharts) · **License:** MIT · **★ 27,739 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thành phần biểu đồ React dựng từ SVG và các tiện ích D3.
+
+**Giá trị và cơ chế:** README mô tả composable chart components; phù hợp dashboard React cần khai báo trục, tooltip và series bằng JSX.
+
+**Giới hạn:** Không có phép đo render dữ liệu lớn trong lần đánh giá. SVG và cập nhật React có chi phí; README lưu ý đồng bộ phiên bản react-is với React và phân biệt nhánh phát triển/phát hành.
+
+**Cách tham khảo/tích hợp:** Tạo biểu đồ với số điểm thực, kiểm responsive, tooltip và khả năng truy cập trước đưa thành design system.
+
+**Thay thế:** [visx](../06-ui-ux-design/README.md#anhkysuai-2026-11-23-visx), [Apache ECharts](../06-ui-ux-design/README.md#anhkysuai-2026-11-23-apache-echarts), nivo.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`9f1a412cf6fd`](https://github.com/recharts/recharts/commit/9f1a412cf6fd774175eb2282478e06256d29beeb). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/recharts/recharts/blob/9f1a412cf6fd774175eb2282478e06256d29beeb/README.md) · [LICENSE](https://github.com/recharts/recharts/blob/9f1a412cf6fd774175eb2282478e06256d29beeb/LICENSE) · [metadata GitHub](https://api.github.com/repos/recharts/recharts).
+
+<a id="anhkysuai-2026-11-23-chartdb"></a>
+
+### ChartDB
+
+**Repo:** [chartdb/chartdb](https://github.com/chartdb/chartdb) · **License:** AGPL-3.0 · **★ 23,159 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng dựng và chỉnh sửa sơ đồ schema cơ sở dữ liệu trong trình duyệt.
+
+**Giá trị và cơ chế:** README trình bày SmartQuery lấy schema dạng JSON, sơ đồ quan hệ và xuất DDL có hỗ trợ AI; phù hợp tài liệu hóa và trao đổi mô hình dữ liệu.
+
+**Giới hạn:** Dự án ghi public beta; chưa thử import schema hoặc tính đúng DDL sinh ra. AI có thể dùng OpenAI/endpoint tùy chỉnh, nên phải biết metadata được gửi đi đâu.
+
+**Cách tham khảo/tích hợp:** Nhập schema không chứa dữ liệu nghiệp vụ, duyệt DDL bằng công cụ migration và DB thử trước áp dụng.
+
+**Thay thế:** [draw.io Desktop](../06-ui-ux-design/README.md#anhkysuai-2026-11-23-drawio-desktop), dbdiagram, [drawdb](../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`ee95448d154c`](https://github.com/chartdb/chartdb/commit/ee95448d154cfdcf65264c45745f440c0480ef84). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/chartdb/chartdb/blob/ee95448d154cfdcf65264c45745f440c0480ef84/README.md) · [LICENSE](https://github.com/chartdb/chartdb/blob/ee95448d154cfdcf65264c45745f440c0480ef84/LICENSE) · [metadata GitHub](https://api.github.com/repos/chartdb/chartdb).
+
+<a id="anhkysuai-2026-11-23-visx"></a>
+
+### visx
+
+**Repo:** [airbnb/visx](https://github.com/airbnb/visx) · **License:** MIT · **★ 21,117 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Các thành phần trực quan hóa cấp thấp kết hợp D3 và React.
+
+**Giá trị và cơ chế:** README có ví dụ dựng bar chart từ scale, shape và group; phù hợp xây biểu đồ riêng theo design system thay vì phụ thuộc một cấu hình chart khép kín.
+
+**Giới hạn:** Nhóm dùng phải tự kết nối trục, tooltip và tương tác; v4 yêu cầu React 18/19. Chưa đo render dữ liệu lớn hoặc kiểm accessibility trên dashboard.
+
+**Cách tham khảo/tích hợp:** Đóng gói thành component nội bộ sau khi chốt scale/format và thử resize với dữ liệu thiếu.
+
+**Thay thế:** [Recharts](../06-ui-ux-design/README.md#anhkysuai-2026-11-23-recharts), [Apache ECharts](../06-ui-ux-design/README.md#anhkysuai-2026-11-23-apache-echarts), nivo.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`485c0359664e`](https://github.com/airbnb/visx/commit/485c0359664ee8e612992defb16e1f035ed40b23). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/airbnb/visx/blob/485c0359664ee8e612992defb16e1f035ed40b23/README.md) · [LICENSE](https://github.com/airbnb/visx/blob/485c0359664ee8e612992defb16e1f035ed40b23/LICENSE) · [metadata GitHub](https://api.github.com/repos/airbnb/visx).
+
+<a id="anhkysuai-2026-11-23-imagemagick"></a>
+
+### ImageMagick
+
+**Repo:** [ImageMagick/ImageMagick](https://github.com/ImageMagick/ImageMagick) · **License:** ImageMagick License · **★ 17,919 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ CLI và API C tạo, chỉnh sửa, ghép và chuyển đổi ảnh bitmap.
+
+**Giá trị và cơ chế:** README mô tả nhiều định dạng và thao tác có thể ghép thành pipeline; hữu ích tự động hóa tài sản, thumbnail và xuất ảnh từ tài liệu.
+
+**Giới hạn:** README yêu cầu thiết kế security policy cho môi trường; delegate/codec thực tế tùy bản dựng. Chưa kiểm file không tin cậy hoặc so sánh chất lượng chuyển đổi. License riêng cho phép dùng thương mại với điều kiện thông báo.
+
+**Cách tham khảo/tích hợp:** Giới hạn định dạng, tài nguyên và delegate; kiểm corpus đầu vào cùng font/color profile trước triển khai.
+
+**Thay thế:** [sharp](../06-ui-ux-design/README.md#anhkysuai-2026-11-23-sharp), libvips, graphicsmagick.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`3eeefb963328`](https://github.com/ImageMagick/ImageMagick/commit/3eeefb9633286904621822e9721971e266af7288). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/ImageMagick/ImageMagick/blob/3eeefb9633286904621822e9721971e266af7288/README.md) · [LICENSE](https://github.com/ImageMagick/ImageMagick/blob/3eeefb9633286904621822e9721971e266af7288/LICENSE) · [metadata GitHub](https://api.github.com/repos/ImageMagick/ImageMagick).
+
+<a id="anhkysuai-chartjs-chart-js"></a>
+
+### Chart.js
+
+- **Repo:** [chartjs/Chart.js](https://github.com/chartjs/Chart.js).
+- **Mục đích:** Thư viện biểu đồ JavaScript dựng bằng canvas cho dashboard web.
+- **Điểm đáng dùng:** Manifest có đầu ra ESM, CommonJS, bản UMD, kiểu TypeScript và các entry auto/helpers; phù hợp nhúng biểu đồ vào nhiều hệ build.
+- **License:** MIT.
+- **Giới hạn:** Canvas cần lớp văn bản hoặc bảng dữ liệu bổ sung khi yêu cầu truy cập bằng screen reader; chưa đo hiệu năng, độ chính xác đồ thị hay hành vi trình duyệt.
+- **Tích hợp:** Cài chart.js, ghim phiên bản và chọn entry phù hợp hệ module; cung cấp dữ liệu và cấu hình trục rõ ràng.
+- **Đối chiếu:** Apache ECharts cho nhiều loại biểu đồ; [D3](../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ) cho tùy biến mức thấp; Recharts cho API component React.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `ff1bdc38a102e7b9e97756041b1118272ed08564` (2026-11-23T07:08:46+02:00); 67,820 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/chartjs/Chart.js/blob/ff1bdc38a102e7b9e97756041b1118272ed08564/README.md) · [LICENSE.md](https://github.com/chartjs/Chart.js/blob/ff1bdc38a102e7b9e97756041b1118272ed08564/LICENSE.md) · [package.json](https://github.com/chartjs/Chart.js/blob/ff1bdc38a102e7b9e97756041b1118272ed08564/package.json) · [composer.json](https://github.com/chartjs/Chart.js/blob/ff1bdc38a102e7b9e97756041b1118272ed08564/composer.json) · [.github/workflows/ci.yml](https://github.com/chartjs/Chart.js/blob/ff1bdc38a102e7b9e97756041b1118272ed08564/.github/workflows/ci.yml) · [GitHub API](https://api.github.com/repos/chartjs/Chart.js).
+
+<a id="anhkysuai-ryanoasis-nerd-fonts"></a>
+
+### Nerd Fonts
+
+- **Repo:** [ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts).
+- **Mục đích:** Bộ font được vá thêm glyph và công cụ tạo font cho terminal, editor và prompt.
+- **Điểm đáng dùng:** LICENSE tách mã patcher MIT khỏi font OFL và các nguồn icon khác; manifest và workflow shellcheck cho thấy đây vừa là bộ tài sản vừa là công cụ xử lý.
+- **License:** MIT cho mã gốc; OFL-1.1 và giấy phép riêng cho font/glyph.
+- **Giới hạn:** Không thể suy MIT cho mọi font/icon; phải giữ license và tên font dự trữ theo từng nguồn. Đường dẫn nhánh master không được tác giả coi là ổn định.
+- **Tích hợp:** Chọn đúng font từ release hoặc gói hệ thống; khi phân phối asset phải kèm điều khoản của font cụ thể.
+- **Đối chiếu:** Font Awesome cho icon web; Material Symbols cho glyph UI; font monospace gốc khi không cần icon.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae` (2026-10-18T00:03:51+02:00); 65,280 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [readme.md](https://github.com/ryanoasis/nerd-fonts/blob/adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae/readme.md) · [LICENSE](https://github.com/ryanoasis/nerd-fonts/blob/adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae/LICENSE) · [license-audit.md](https://github.com/ryanoasis/nerd-fonts/blob/adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae/license-audit.md) · [package.json](https://github.com/ryanoasis/nerd-fonts/blob/adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae/package.json) · [.github/workflows/shellcheck.yml](https://github.com/ryanoasis/nerd-fonts/blob/adbd16ab7ca911eaca7ce3b0f2b7994207c7ecae/.github/workflows/shellcheck.yml) · [GitHub API](https://api.github.com/repos/ryanoasis/nerd-fonts).
+
+<a id="anhkysuai-pmndrs-zustand"></a>
+
+### Zustand
+
+- **Repo:** [pmndrs/zustand](https://github.com/pmndrs/zustand).
+- **Mục đích:** Quản lý trạng thái React bằng store và hook với API nhỏ.
+- **Điểm đáng dùng:** README mô tả selector theo phần state, cập nhật bất biến và set có merge; manifest tách vanilla, React và middleware, CI chạy types, lint, spec và build.
+- **License:** MIT.
+- **Giới hạn:** Không suy từ lời tác giả rằng mọi lỗi concurrency đều đã được giải quyết; hydration, state chia sẻ và dữ liệu persist cần kiểm theo ứng dụng.
+- **Tích hợp:** Cài zustand, tách store theo miền và dùng selector nhỏ; kiểm vòng đời store khi SSR hoặc nhiều phiên người dùng.
+- **Đối chiếu:** Redux Toolkit cho quy ước chặt; Jotai cho atom; React Context cho state đơn giản.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `5d66d53be80363b94491868b41325ea058fd16bb` (2026-11-23T09:21:45+09:00); 58,986 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/pmndrs/zustand/blob/5d66d53be80363b94491868b41325ea058fd16bb/README.md) · [LICENSE](https://github.com/pmndrs/zustand/blob/5d66d53be80363b94491868b41325ea058fd16bb/LICENSE) · [package.json](https://github.com/pmndrs/zustand/blob/5d66d53be80363b94491868b41325ea058fd16bb/package.json) · [.github/workflows/test.yml](https://github.com/pmndrs/zustand/blob/5d66d53be80363b94491868b41325ea058fd16bb/.github/workflows/test.yml) · [GitHub API](https://api.github.com/repos/pmndrs/zustand).
+
+<a id="anhkysuai-h5bp-html5-boilerplate"></a>
+
+### HTML5 Boilerplate
+
+- **Repo:** [h5bp/html5-boilerplate](https://github.com/h5bp/html5-boilerplate).
+- **Mục đích:** Bộ khởi đầu HTML/CSS/JavaScript không ép framework.
+- **Điểm đáng dùng:** README phân biệt rõ dist được phát hành với Gulp và công cụ chỉ phục vụ xây template; CI kiểm bản archive, giúp tham khảo hợp đồng giữa nguồn và sản phẩm mẫu.
+- **License:** MIT.
+- **Giới hạn:** Không nên sao chép toàn repo tác giả vào app mới; cấu hình nền không thay kiểm accessibility, bảo mật hay hiệu năng thực tế.
+- **Tích hợp:** Lấy package hoặc generator phát hành rồi giữ phần cần dùng; kiểm yêu cầu Node của công cụ đi kèm.
+- **Đối chiếu:** Vite template cho app hiện đại; [Astro](../13-dev-stack-devops/README.md) cho nội dung; khung HTML tối giản cho trang nhỏ.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `7fa0bd6c9e6818d11a1a7efad56fe715ae56d848` (2026-11-17T12:08:59-05:00); 57,701 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/h5bp/html5-boilerplate/blob/7fa0bd6c9e6818d11a1a7efad56fe715ae56d848/README.md) · [LICENSE.txt](https://github.com/h5bp/html5-boilerplate/blob/7fa0bd6c9e6818d11a1a7efad56fe715ae56d848/LICENSE.txt) · [package.json](https://github.com/h5bp/html5-boilerplate/blob/7fa0bd6c9e6818d11a1a7efad56fe715ae56d848/package.json) · [.github/workflows/test.yml](https://github.com/h5bp/html5-boilerplate/blob/7fa0bd6c9e6818d11a1a7efad56fe715ae56d848/.github/workflows/test.yml) · [GitHub API](https://api.github.com/repos/h5bp/html5-boilerplate).
+
+<a id="anhkysuai-gatsbyjs-gatsby"></a>
+
+### Gatsby
+
+- **Repo:** [gatsbyjs/gatsby](https://github.com/gatsbyjs/gatsby).
+- **Mục đích:** Framework React cho website nội dung, kết hợp nạp dữ liệu và nhiều chế độ render.
+- **Điểm đáng dùng:** README nêu source plugin và lớp GraphQL chung, cùng SSG, DSG và SSR theo trang; hữu ích khi dữ liệu tới từ CMS, Markdown và API khác nhau.
+- **License:** MIT.
+- **Giới hạn:** SSR và DSG cần nền tảng vận hành phù hợp, không thể suy mọi site chỉ cần CDN; claim hiệu năng mặc định chưa được tái lập, plugin cần đánh giá riêng.
+- **Tích hợp:** Chọn starter và source plugin tối thiểu, ghim runtime theo manifest và kiểm pipeline build với dữ liệu thật.
+- **Đối chiếu:** [Astro](../13-dev-stack-devops/README.md) cho nội dung nhẹ; [Next.js](../13-dev-stack-devops/README.md) cho React full stack; [Hugo](../08-awesome-lists-learning/README.md#6c59-framework-backend) cho sinh tĩnh ít phụ thuộc.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `0ac6c88a72c4dfd4d541e3ac43c664343e8e15b6` (2026-11-09T11:28:50-05:00); 55,916 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/gatsbyjs/gatsby/blob/0ac6c88a72c4dfd4d541e3ac43c664343e8e15b6/README.md) · [LICENSE](https://github.com/gatsbyjs/gatsby/blob/0ac6c88a72c4dfd4d541e3ac43c664343e8e15b6/LICENSE) · [package.json](https://github.com/gatsbyjs/gatsby/blob/0ac6c88a72c4dfd4d541e3ac43c664343e8e15b6/package.json) · [.github/workflows/schedule-stale.yml](https://github.com/gatsbyjs/gatsby/blob/0ac6c88a72c4dfd4d541e3ac43c664343e8e15b6/.github/workflows/schedule-stale.yml) · [GitHub API](https://api.github.com/repos/gatsbyjs/gatsby).
+
+<a id="anhkysuai-chenglou-pretext"></a>
+
+### Pretext
+
+- **Repo:** [chenglou/pretext](https://github.com/chenglou/pretext).
+- **Mục đích:** Đo và bố trí văn bản nhiều dòng bằng JavaScript/TypeScript, hỗ trợ render DOM, canvas hoặc SVG.
+- **Điểm đáng dùng:** README tách prepare để phân đoạn, đo font bằng canvas khỏi layout chỉ tính trên width cache; có giá trị cho virtualization và UI chat thay vì đo DOM mỗi lần resize.
+- **License:** MIT.
+- **Giới hạn:** Font và tùy chọn phải đồng bộ với phần render; không được suy mọi ngôn ngữ hay layout chính xác từ claim của tác giả, chưa tái lập benchmark.
+- **Tích hợp:** Tái dùng handle prepare cho cùng văn bản/font, chỉ gọi layout khi đổi chiều rộng và kiểm font tải hoàn tất.
+- **Đối chiếu:** Đo DOM trực tiếp cho chính xác theo browser; Canvas measureText cho nhu cầu đơn giản; CSS layout khi không cần biết kích thước trước.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `6ed1edd294698374ab2fb0d3eb36276527084879` (2026-11-18T17:44:50-08:00); 51,092 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/chenglou/pretext/blob/6ed1edd294698374ab2fb0d3eb36276527084879/README.md) · [LICENSE](https://github.com/chenglou/pretext/blob/6ed1edd294698374ab2fb0d3eb36276527084879/LICENSE) · [package.json](https://github.com/chenglou/pretext/blob/6ed1edd294698374ab2fb0d3eb36276527084879/package.json) · [.github/workflows/pages.yml](https://github.com/chenglou/pretext/blob/6ed1edd294698374ab2fb0d3eb36276527084879/.github/workflows/pages.yml) · [GitHub API](https://api.github.com/repos/chenglou/pretext).
+
+<a id="anhkysuai-jgthms-bulma"></a>
+
+### Bulma
+
+- **Repo:** [jgthms/bulma](https://github.com/jgthms/bulma).
+- **Mục đích:** Framework CSS dựa trên Flexbox, cung cấp lớp giao diện không kèm JavaScript.
+- **Điểm đáng dùng:** README tách CSS biên dịch sẵn khỏi Sass để tùy biến; không áp đặt framework logic, phù hợp trang nội dung hoặc dashboard có stack sẵn.
+- **License:** MIT.
+- **Giới hạn:** Tương tác như menu, modal và accessibility phải được triển khai riêng; không suy tên workflow e2e thành kiểm đầy đủ vì đoạn Cypress đã đọc có phần bị comment.
+- **Tích hợp:** Cài bulma hoặc nhập CSS/Sass, quản lý token riêng và kiểm hành vi tương tác trên browser mục tiêu.
+- **Đối chiếu:** [Bootstrap](../08-awesome-lists-learning/README.md#6c522-thư-viện-giao-diện--css) cho bộ CSS/JS; [Tailwind CSS](../13-dev-stack-devops/README.md) cho utility; Pico CSS cho giao diện nhẹ.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `c5cd04baf0258cfcc77b4e8610488a0d439effa2` (2026-09-21T10:56:01+01:00); 50,036 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/jgthms/bulma/blob/c5cd04baf0258cfcc77b4e8610488a0d439effa2/README.md) · [LICENSE](https://github.com/jgthms/bulma/blob/c5cd04baf0258cfcc77b4e8610488a0d439effa2/LICENSE) · [package.json](https://github.com/jgthms/bulma/blob/c5cd04baf0258cfcc77b4e8610488a0d439effa2/package.json) · [.github/workflows/main.yml](https://github.com/jgthms/bulma/blob/c5cd04baf0258cfcc77b4e8610488a0d439effa2/.github/workflows/main.yml) · [GitHub API](https://api.github.com/repos/jgthms/bulma).
+
+<a id="anhkysuai-bigskysoftware-htmx"></a>
+
+### htmx
+
+- **Repo:** [bigskysoftware/htmx](https://github.com/bigskysoftware/htmx).
+- **Mục đích:** Bổ sung tương tác HTTP và cập nhật từng phần giao diện thông qua thuộc tính HTML.
+- **Điểm đáng dùng:** README mô tả hx-post/hx-swap, dependency ít và bộ kiểm theo thuộc tính/core/extension; phù hợp ứng dụng server render muốn giảm JavaScript phía client.
+- **License:** 0BSD.
+- **Giới hạn:** HTML trả về vẫn cần escape và kiểm quyền; mô hình này không tự thay state phức tạp của SPA. Hiệu năng hay kích thước quảng bá chưa đo lại.
+- **Tích hợp:** Dùng package htmx.org, trả fragment HTML có hợp đồng rõ và kiểm lịch sử, lỗi mạng, CSRF.
+- **Đối chiếu:** Turbo cho điều hướng HTML; Alpine.js cho tương tác cục bộ; React cho state UI phức tạp.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `51c3e67bcedc5568b2a968b079888f13aedf4eb7` (2026-11-18T10:01:49-07:00); 49,655 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/bigskysoftware/htmx/blob/51c3e67bcedc5568b2a968b079888f13aedf4eb7/README.md) · [LICENSE](https://github.com/bigskysoftware/htmx/blob/51c3e67bcedc5568b2a968b079888f13aedf4eb7/LICENSE) · [package.json](https://github.com/bigskysoftware/htmx/blob/51c3e67bcedc5568b2a968b079888f13aedf4eb7/package.json) · [.github/workflows/ci.yml](https://github.com/bigskysoftware/htmx/blob/51c3e67bcedc5568b2a968b079888f13aedf4eb7/.github/workflows/ci.yml) · [GitHub API](https://api.github.com/repos/bigskysoftware/htmx).
+
+<a id="anhkysuai-microsoft-monaco-editor"></a>
+
+### Monaco Editor
+
+- **Repo:** [microsoft/monaco-editor](https://github.com/microsoft/monaco-editor).
+- **Mục đích:** Editor mã nhúng trong trình duyệt, tách model văn bản và view.
+- **Điểm đáng dùng:** README giải thích model có URI duy nhất, editor gắn vào DOM và monaco.d.ts là API được version; phù hợp thiết kế editor trong workspace AI.
+- **License:** MIT.
+- **Giới hạn:** Build AMD bị đánh dấu deprecated; API nội bộ ngoài hợp đồng có thể đổi. Phải dispose model/editor để giải phóng tài nguyên; không mặc nhiên chạy được extension VS Code.
+- **Tích hợp:** Dùng ESM, quản lý URI/model theo file và cấu hình worker ngôn ngữ theo bundler.
+- **Đối chiếu:** CodeMirror cho editor module; Ace cho editor web lâu đời; VS Code Web khi cần IDE rộng hơn.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `ba7a57d4757f03ad92bd62963268faa86b2ff1ab` (2026-11-21T18:11:43+01:00); 47,000 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/microsoft/monaco-editor/blob/ba7a57d4757f03ad92bd62963268faa86b2ff1ab/README.md) · [LICENSE.txt](https://github.com/microsoft/monaco-editor/blob/ba7a57d4757f03ad92bd62963268faa86b2ff1ab/LICENSE.txt) · [package.json](https://github.com/microsoft/monaco-editor/blob/ba7a57d4757f03ad92bd62963268faa86b2ff1ab/package.json) · [.github/workflows/ci.yml](https://github.com/microsoft/monaco-editor/blob/ba7a57d4757f03ad92bd62963268faa86b2ff1ab/.github/workflows/ci.yml) · [GitHub API](https://api.github.com/repos/microsoft/monaco-editor).
+
+<a id="anhkysuai-leaflet-leaflet"></a>
+
+### Leaflet
+
+- **Repo:** [Leaflet/Leaflet](https://github.com/Leaflet/Leaflet).
+- **Mục đích:** Thư viện JavaScript dựng bản đồ tương tác trên web và thiết bị di động.
+- **Điểm đáng dùng:** README nêu API và hệ plugin, CI có typecheck/build/test types; manifest snapshot là 2.0.0-beta.5 nên dữ liệu đánh giá gắn đúng nhánh thử nghiệm.
+- **License:** BSD-2-Clause.
+- **Giới hạn:** License thư viện không cấp quyền tile hoặc dữ liệu bản đồ; cần theo điều khoản nhà cung cấp. Chưa kiểm hiệu năng với nhiều điểm hay plugin.
+- **Tích hợp:** Chọn release phù hợp, cấp tile URL/attribution và kiểm tương thích plugin khi chuyển major.
+- **Đối chiếu:** MapLibre GL JS cho bản đồ vector; OpenLayers cho GIS phong phú; CesiumJS cho địa cầu 3D.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `6d5b3bea118afe0f158c16688abc117b2627848a` (2026-11-22T21:09:20+02:00); 45,972 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/Leaflet/Leaflet/blob/6d5b3bea118afe0f158c16688abc117b2627848a/README.md) · [LICENSE](https://github.com/Leaflet/Leaflet/blob/6d5b3bea118afe0f158c16688abc117b2627848a/LICENSE) · [package.json](https://github.com/Leaflet/Leaflet/blob/6d5b3bea118afe0f158c16688abc117b2627848a/package.json) · [.github/workflows/main.yml](https://github.com/Leaflet/Leaflet/blob/6d5b3bea118afe0f158c16688abc117b2627848a/.github/workflows/main.yml) · [GitHub API](https://api.github.com/repos/Leaflet/Leaflet).
+
+<a id="anhkysuai-charmbracelet-bubbletea"></a>
+
+### Bubble Tea
+
+- **Repo:** [charmbracelet/bubbletea](https://github.com/charmbracelet/bubbletea).
+- **Mục đích:** Framework TUI Go theo mô hình state, event và view.
+- **Điểm đáng dùng:** README trình bày Init/Update/View và Cmd cho I/O; module charm.land/bubbletea/v2 giúp tham khảo cách tách cập nhật trạng thái khỏi hiệu ứng bên ngoài.
+- **License:** MIT.
+- **Giới hạn:** V2 có hướng dẫn nâng cấp riêng; keyboard, clipboard và render phụ thuộc terminal. Chưa chạy để xác minh độ trễ hay mọi client.
+- **Tích hợp:** Dùng module v2, giữ Update dễ kiểm và đưa I/O vào command, ghép Bubbles khi cần component.
+- **Đối chiếu:** [Textual](../06-ui-ux-design/README.md#anhkysuai-textualize-textual) cho Python; Ratatui cho Rust; [Ink](../06-ui-ux-design/README.md#anhkysuai-vadimdemedes-ink) cho React trong terminal.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `585149e50e7c3f1002db5d0fc3912c44bbc6ef92` (2026-11-20T19:01:53+04:00); 45,843 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/charmbracelet/bubbletea/blob/585149e50e7c3f1002db5d0fc3912c44bbc6ef92/README.md) · [LICENSE](https://github.com/charmbracelet/bubbletea/blob/585149e50e7c3f1002db5d0fc3912c44bbc6ef92/LICENSE) · [go.mod](https://github.com/charmbracelet/bubbletea/blob/585149e50e7c3f1002db5d0fc3912c44bbc6ef92/go.mod) · [.github/workflows/build.yml](https://github.com/charmbracelet/bubbletea/blob/585149e50e7c3f1002db5d0fc3912c44bbc6ef92/.github/workflows/build.yml) · [GitHub API](https://api.github.com/repos/charmbracelet/bubbletea).
+
+<a id="anhkysuai-colorlibhq-adminlte"></a>
+
+### AdminLTE
+
+- **Repo:** [ColorlibHQ/AdminLTE](https://github.com/ColorlibHQ/AdminLTE).
+- **Mục đích:** Mẫu bảng quản trị Bootstrap 5.3, JavaScript thuần cho các màn hình vận hành.
+- **Điểm đáng dùng:** Tài liệu phân biệt bản HTML cốt lõi với các repo tích hợp React, Vue, Laravel; CI có kiểm tra kiểu và Playwright.
+- **License:** MIT; ảnh và thư viện demo có điều khoản riêng.
+- **Giới hạn:** Không xem các edition framework là nội dung có sẵn trong repo này; composer mô tả Bootstrap 4 đã lệch README, cần theo bản phân phối đã khóa.
+- **Tích hợp:** Tách layout, menu và token màu thành mẫu XTemplates, gắn quyền truy cập và API của sản phẩm riêng.
+- **Đối chiếu:** [Tabler](../06-ui-ux-design/README.md#anhkysuai-tabler-tabler) cho dashboard Bootstrap; [shadcn/ui](../06-ui-ux-design/README.md) cho thành phần React; [Ant Design](../06-ui-ux-design/README.md) cho ứng dụng nghiệp vụ.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `7cf90cb0a72758c7b9f049d07696d0a81966fdc5` (2026-11-19T19:46:47+02:00); 45,706 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/ColorlibHQ/AdminLTE/blob/7cf90cb0a72758c7b9f049d07696d0a81966fdc5/README.md) · [LICENSE](https://github.com/ColorlibHQ/AdminLTE/blob/7cf90cb0a72758c7b9f049d07696d0a81966fdc5/LICENSE) · [package.json](https://github.com/ColorlibHQ/AdminLTE/blob/7cf90cb0a72758c7b9f049d07696d0a81966fdc5/package.json) · [composer.json](https://github.com/ColorlibHQ/AdminLTE/blob/7cf90cb0a72758c7b9f049d07696d0a81966fdc5/composer.json) · [.github/workflows/tests.yml](https://github.com/ColorlibHQ/AdminLTE/blob/7cf90cb0a72758c7b9f049d07696d0a81966fdc5/.github/workflows/tests.yml) · [GitHub API](https://api.github.com/repos/ColorlibHQ/AdminLTE).
+
+<a id="anhkysuai-tabler-tabler"></a>
+
+### Tabler
+
+- **Repo:** [tabler/tabler](https://github.com/tabler/tabler).
+- **Mục đích:** UI kit dashboard Bootstrap 5 với layout và trang demo sẵn.
+- **Điểm đáng dùng:** Sass/CSS custom properties, dark mode, RTL và stylesheet tách phần giúp dựng nhiều biến thể giao diện.
+- **License:** MIT cho Tabler; plugin phân phối kèm có license riêng.
+- **Giới hạn:** dist/libs có thư viện bên thứ ba: README cảnh báo ApexCharts từ v5 dùng điều khoản riêng, không được xem toàn bundle là MIT.
+- **Tích hợp:** Chọn thành phần cần dùng, kiểm kê license từng plugin và tách demo assets trước khi đóng gói mẫu thương mại.
+- **Đối chiếu:** [AdminLTE](../06-ui-ux-design/README.md#anhkysuai-colorlibhq-adminlte) cho dashboard Bootstrap; [Ant Design](../06-ui-ux-design/README.md) cho React; [shadcn/ui](../06-ui-ux-design/README.md) cho thành phần tùy biến.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `68c81fc9767f679eb3a0f312b79d80435d99e7f7` (2026-11-21T10:42:17+01:00); 42,119 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/tabler/tabler/blob/68c81fc9767f679eb3a0f312b79d80435d99e7f7/README.md) · [LICENSE](https://github.com/tabler/tabler/blob/68c81fc9767f679eb3a0f312b79d80435d99e7f7/LICENSE) · [package.json](https://github.com/tabler/tabler/blob/68c81fc9767f679eb3a0f312b79d80435d99e7f7/package.json) · [.github/workflows/build.yml](https://github.com/tabler/tabler/blob/68c81fc9767f679eb3a0f312b79d80435d99e7f7/.github/workflows/build.yml) · [GitHub API](https://api.github.com/repos/tabler/tabler).
+
+<a id="anhkysuai-styled-components-styled-components"></a>
+
+### styled-components
+
+- **Repo:** [styled-components/styled-components](https://github.com/styled-components/styled-components).
+- **Mục đích:** CSS theo component React với kiểu TypeScript và style phụ thuộc props.
+- **Điểm đáng dùng:** README package minh họa transient prop tiền tố $, biến thể component và StyleSheetManager; vendor prefix mặc định tắt và bật bằng plugin.
+- **License:** MIT.
+- **Giới hạn:** Phải kiểm tra SSR/CSP và browser target; không áp dụng tự động hướng dẫn cũ về prefix cho snapshot này, nguồn bảo trì tập trung ít người.
+- **Tích hợp:** Gắn token theme vào component, tránh truyền props nội bộ ra DOM và kiểm tra thứ tự CSS khi streaming SSR.
+- **Đối chiếu:** [Tailwind CSS](../13-dev-stack-devops/README.md) cho utility; CSS Modules cho scope tĩnh; Emotion cho CSS-in-JS.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `e2aa1c8f6e40b74ae164e7489f68067019d47772` (2026-11-10T00:30:36-05:00); 41,061 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/styled-components/styled-components/blob/e2aa1c8f6e40b74ae164e7489f68067019d47772/README.md) · [LICENSE](https://github.com/styled-components/styled-components/blob/e2aa1c8f6e40b74ae164e7489f68067019d47772/LICENSE) · [package.json](https://github.com/styled-components/styled-components/blob/e2aa1c8f6e40b74ae164e7489f68067019d47772/package.json) · [.github/workflows/test.yml](https://github.com/styled-components/styled-components/blob/e2aa1c8f6e40b74ae164e7489f68067019d47772/.github/workflows/test.yml) · [packages/styled-components/README.md](https://github.com/styled-components/styled-components/blob/e2aa1c8f6e40b74ae164e7489f68067019d47772/packages/styled-components/README.md) · [packages/styled-components/package.json](https://github.com/styled-components/styled-components/blob/e2aa1c8f6e40b74ae164e7489f68067019d47772/packages/styled-components/package.json) · [GitHub API](https://api.github.com/repos/styled-components/styled-components).
+
+<a id="anhkysuai-phaserjs-phaser"></a>
+
+### Phaser
+
+- **Repo:** [phaserjs/phaser](https://github.com/phaserjs/phaser).
+- **Mục đích:** Framework game HTML5 với WebGL/Canvas, dùng JavaScript hoặc TypeScript.
+- **Điểm đáng dùng:** README chỉ ra template cho nhiều framework/bundler và khả năng tinh giảm build; gói đọc mang phiên bản 4.2.1.
+- **License:** MIT.
+- **Giới hạn:** Đóng gói native cần công cụ bên thứ ba; kích thước bundle và tốc độ là công bố tài liệu, chưa đo trên thiết bị mục tiêu. Workflow đã đọc chỉ quản lý thảo luận.
+- **Tích hợp:** Dùng cho mẫu game web, tách asset có license riêng và kiểm tra input, âm thanh, bộ nhớ trên mobile.
+- **Đối chiếu:** PixiJS cho rendering 2D; [Bevy](../13-dev-stack-devops/README.md#anhkysuai-bevyengine-bevy) cho game Rust; [raylib](../06-ui-ux-design/README.md#anhkysuai-raysan5-raylib) cho thư viện native.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `02d8931b626d9764c133cbb3fbf99966c03c757c` (2026-08-21T18:04:38+12:00); 40,774 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/phaserjs/phaser/blob/02d8931b626d9764c133cbb3fbf99966c03c757c/README.md) · [LICENSE.md](https://github.com/phaserjs/phaser/blob/02d8931b626d9764c133cbb3fbf99966c03c757c/LICENSE.md) · [package.json](https://github.com/phaserjs/phaser/blob/02d8931b626d9764c133cbb3fbf99966c03c757c/package.json) · [.github/workflows/lock-comments.yml](https://github.com/phaserjs/phaser/blob/02d8931b626d9764c133cbb3fbf99966c03c757c/.github/workflows/lock-comments.yml) · [GitHub API](https://api.github.com/repos/phaserjs/phaser).
+
+<a id="anhkysuai-vadimdemedes-ink"></a>
+
+### Ink
+
+- **Repo:** [vadimdemedes/ink](https://github.com/vadimdemedes/ink).
+- **Mục đích:** Renderer React cho giao diện terminal.
+- **Điểm đáng dùng:** Dùng Yoga để bố trí Flexbox và mô hình component React; manifest bản 8 yêu cầu Node >=22, React >=19.3.
+- **License:** MIT.
+- **Giới hạn:** README nói đang mô tả phiên bản sắp phát hành; terminal khác trình duyệt về layout, input và accessibility, cần kiểm tra riêng.
+- **Tích hợp:** Dùng cho CLI của xưởng phần mềm khi đã có React, bổ sung chế độ không tương tác và đầu ra JSON cho pipeline.
+- **Đối chiếu:** [Bubble Tea](../06-ui-ux-design/README.md#anhkysuai-charmbracelet-bubbletea) cho Go; [Textual](../06-ui-ux-design/README.md#anhkysuai-textualize-textual) cho Python; [Rich](../13-dev-stack-devops/README.md#anhkysuai-textualize-rich) cho in thông tin có định dạng.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `2a885845648d70564a8722bf06bd38802614740f` (2026-11-22T00:18:44+07:00); 40,317 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [readme.md](https://github.com/vadimdemedes/ink/blob/2a885845648d70564a8722bf06bd38802614740f/readme.md) · [license](https://github.com/vadimdemedes/ink/blob/2a885845648d70564a8722bf06bd38802614740f/license) · [package.json](https://github.com/vadimdemedes/ink/blob/2a885845648d70564a8722bf06bd38802614740f/package.json) · [.github/workflows/test.yml](https://github.com/vadimdemedes/ink/blob/2a885845648d70564a8722bf06bd38802614740f/.github/workflows/test.yml) · [GitHub API](https://api.github.com/repos/vadimdemedes/ink).
+
+<a id="anhkysuai-videojs-video-js"></a>
+
+### Video.js
+
+- **Repo:** [videojs/video.js](https://github.com/videojs/video.js).
+- **Mục đích:** Framework media player mô-đun cho Web và React.
+- **Điểm đáng dùng:** README tại SHA xác nhận nhánh v10 stable, monorepo có bước chọn package tests theo thay đổi; manifest công cụ yêu cầu Node >=22.22.
+- **License:** Apache-2.0.
+- **Giới hạn:** Đây là v10, không áp dụng mặc định hướng dẫn/plugin v8; codec, nguồn video và DRM có hỗ trợ/điều khoản riêng.
+- **Tích hợp:** Khóa phiên bản player cùng plugin, kiểm tra caption, bàn phím và nguồn stream thực tế trên browser mục tiêu.
+- **Đối chiếu:** [Plyr](../06-ui-ux-design/README.md#anhkysuai-sampotts-plyr) cho giao diện media gọn; Shaka Player cho streaming; phần tử video HTML cho nhu cầu cơ bản.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `fd24318727bbeba0e0d2a34d5feb161132adaec4` (2026-11-23T12:51:14+11:00); 40,239 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/videojs/video.js/blob/fd24318727bbeba0e0d2a34d5feb161132adaec4/README.md) · [LICENSE](https://github.com/videojs/video.js/blob/fd24318727bbeba0e0d2a34d5feb161132adaec4/LICENSE) · [package.json](https://github.com/videojs/video.js/blob/fd24318727bbeba0e0d2a34d5feb161132adaec4/package.json) · [.github/workflows/ci.yml](https://github.com/videojs/video.js/blob/fd24318727bbeba0e0d2a34d5feb161132adaec4/.github/workflows/ci.yml) · [GitHub API](https://api.github.com/repos/videojs/video.js).
+
+<a id="anhkysuai-ueberdosis-tiptap"></a>
+
+### Tiptap
+
+- **Repo:** [ueberdosis/tiptap](https://github.com/ueberdosis/tiptap).
+- **Mục đích:** Rich-text editor headless dựa trên ProseMirror.
+- **Điểm đáng dùng:** Mô hình extension/node cho phép tự dựng UI; Hocuspocus là backend cộng tác Yjs riêng, workflow kiểm tra build và package exports.
+- **License:** MIT cho editor mở; Pro Extensions và dịch vụ theo thuê bao.
+- **Giới hạn:** Không có toolbar hoàn chỉnh mặc định; bình luận, chuyển đổi và các Pro Extension có điều kiện thuê bao, nội dung nhập cần xử lý an toàn.
+- **Tích hợp:** Chốt schema tài liệu và extension tối thiểu, lưu JSON có version rồi kiểm tra paste, undo và cộng tác.
+- **Đối chiếu:** Lexical cho editor React; [Slate](../06-ui-ux-design/README.md#anhkysuai-ianstormtaylor-slate) cho mô hình tự thiết kế; [Editor.js](../06-ui-ux-design/README.md#anhkysuai-codex-team-editor-js) cho block JSON.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `643792f65e8ea5506fc2591cfd140fc3aec6d29b` (2026-11-22T14:51:33+01:00); 39,117 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/ueberdosis/tiptap/blob/643792f65e8ea5506fc2591cfd140fc3aec6d29b/README.md) · [LICENSE.md](https://github.com/ueberdosis/tiptap/blob/643792f65e8ea5506fc2591cfd140fc3aec6d29b/LICENSE.md) · [package.json](https://github.com/ueberdosis/tiptap/blob/643792f65e8ea5506fc2591cfd140fc3aec6d29b/package.json) · [.github/workflows/build.yml](https://github.com/ueberdosis/tiptap/blob/643792f65e8ea5506fc2591cfd140fc3aec6d29b/.github/workflows/build.yml) · [GitHub API](https://api.github.com/repos/ueberdosis/tiptap).
+
+<a id="anhkysuai-preactjs-preact"></a>
+
+### Preact
+
+- **Repo:** [preactjs/preact](https://github.com/preactjs/preact).
+- **Mục đích:** Thư viện UI Virtual DOM nhỏ với API component quen thuộc React.
+- **Điểm đáng dùng:** README giải thích render diff cây và alias preact/compat; CI có kiểm tra kích thước, build/test và benchmark.
+- **License:** MIT.
+- **Giới hạn:** Tương thích qua compat không bảo đảm mọi thư viện React hoạt động; kích thước 4kB là mô tả tác giả, phụ thuộc bundle ứng dụng.
+- **Tích hợp:** Dùng cho widget hoặc trang chú trọng tải nhẹ, thử dependency React và hydration trên bản đã khóa.
+- **Đối chiếu:** React cho hệ sinh thái; [Solid](../06-ui-ux-design/README.md#anhkysuai-solidjs-solid) cho fine-grained reactivity; [Svelte](../13-dev-stack-devops/README.md) cho compiler UI.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `1fbc07f67bd841315332cac73de8ce1ae3e8b7b5` (2026-11-21T09:15:28+01:00); 39,015 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/preactjs/preact/blob/1fbc07f67bd841315332cac73de8ce1ae3e8b7b5/README.md) · [LICENSE](https://github.com/preactjs/preact/blob/1fbc07f67bd841315332cac73de8ce1ae3e8b7b5/LICENSE) · [package.json](https://github.com/preactjs/preact/blob/1fbc07f67bd841315332cac73de8ce1ae3e8b7b5/package.json) · [.github/workflows/ci.yml](https://github.com/preactjs/preact/blob/1fbc07f67bd841315332cac73de8ce1ae3e8b7b5/.github/workflows/ci.yml) · [GitHub API](https://api.github.com/repos/preactjs/preact).
+
+<a id="anhkysuai-ant-design-ant-design-pro"></a>
+
+### Ant Design Pro
+
+- **Repo:** [ant-design/ant-design-pro](https://github.com/ant-design/ant-design-pro).
+- **Mục đích:** Boilerplate React cho ứng dụng doanh nghiệp có trang, theme và i18n.
+- **Điểm đáng dùng:** Snapshot v6 kết hợp React 19, Umi Max 4, Ant Design 6; workflow có lint và tsc, template cung cấp mock API.
+- **License:** MIT.
+- **Giới hạn:** Lệnh chuyển sang simple version xóa vĩnh viễn nhiều trang/dependency; mock và AI chatbot demo chưa thành backend sản xuất.
+- **Tích hợp:** Tách một bản mẫu có version, thay mock bằng hợp đồng API và nối auth/permission trước khi tái sử dụng.
+- **Đối chiếu:** [React-admin](../06-ui-ux-design/README.md#anhkysuai-marmelab-react-admin) cho CRUD dữ liệu; [Refine](../06-ui-ux-design/README.md) cho headless admin; [Tabler](../06-ui-ux-design/README.md#anhkysuai-tabler-tabler) cho HTML dashboard.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `c70e0d89525933c4dab373143d486c93331392fb` (2026-11-21T00:24:51+08:00); 38,977 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/ant-design/ant-design-pro/blob/c70e0d89525933c4dab373143d486c93331392fb/README.md) · [LICENSE](https://github.com/ant-design/ant-design-pro/blob/c70e0d89525933c4dab373143d486c93331392fb/LICENSE) · [package.json](https://github.com/ant-design/ant-design-pro/blob/c70e0d89525933c4dab373143d486c93331392fb/package.json) · [.github/workflows/ci.yml](https://github.com/ant-design/ant-design-pro/blob/c70e0d89525933c4dab373143d486c93331392fb/.github/workflows/ci.yml) · [GitHub API](https://api.github.com/repos/ant-design/ant-design-pro).
+
+<a id="anhkysuai-dogfalo-materialize"></a>
+
+### Materialize (Dogfalo)
+
+- **Repo:** [Dogfalo/materialize](https://github.com/Dogfalo/materialize).
+- **Mục đích:** CSS framework theo Material Design với bộ component web.
+- **Điểm đáng dùng:** README chỉ ra Grunt/BrowserSync cho docs và Jasmine cho component tests; package mang bản 1.0.0.
+- **License:** MIT.
+- **Giới hạn:** Commit đọc cuối năm 2020 và tài liệu còn Bower/deprecated workflow; cần phân biệt fork hiện đại với đúng repo Dogfalo này.
+- **Tích hợp:** Giữ trong kho cho bảo trì dự án cũ, kiểm tra accessibility và dependency trước khi áp vào template mới.
+- **Đối chiếu:** [MUI](../06-ui-ux-design/README.md) cho React Material; [Material Web](../06-ui-ux-design/README.md) cho web components; [Bootstrap](../08-awesome-lists-learning/README.md#6c522-thư-viện-giao-diện--css) cho CSS tổng quát.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `824e78248b3de81e383445e76ffb04cc3264fe7d` (2020-06-01T09:39:49-07:00); 38,770 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/Dogfalo/materialize/blob/824e78248b3de81e383445e76ffb04cc3264fe7d/README.md) · [LICENSE](https://github.com/Dogfalo/materialize/blob/824e78248b3de81e383445e76ffb04cc3264fe7d/LICENSE) · [package.json](https://github.com/Dogfalo/materialize/blob/824e78248b3de81e383445e76ffb04cc3264fe7d/package.json) · [GitHub API](https://api.github.com/repos/Dogfalo/materialize).
+
+<a id="anhkysuai-textualize-textual"></a>
+
+### Textual
+
+- **Repo:** [Textualize/textual](https://github.com/Textualize/textual).
+- **Mục đích:** Framework Python cho giao diện terminal có thể phục vụ qua trình duyệt.
+- **Điểm đáng dùng:** Widget, layout, command palette và dev console riêng hỗ trợ xây app tương tác; async bên dưới nhưng API không bắt buộc mọi mã dùng async.
+- **License:** MIT.
+- **Giới hạn:** Phục vụ web thêm ranh giới xác thực và kết nối, không chỉ đổi nơi hiển thị; workflow đọc là CodeQL, chưa chạy suite UI.
+- **Tích hợp:** Dùng cho bảng điều khiển công cụ nội bộ, xử lý tác vụ chậm ngoài vòng lặp UI và khóa quyền khi mở web.
+- **Đối chiếu:** [Rich](../13-dev-stack-devops/README.md#anhkysuai-textualize-rich) cho output tĩnh; [Bubble Tea](../06-ui-ux-design/README.md#anhkysuai-charmbracelet-bubbletea) cho Go TUI; [Ink](../06-ui-ux-design/README.md#anhkysuai-vadimdemedes-ink) cho React terminal.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `5e5b7ef58b8c5572c13a3ff9027d756623661495` (2026-10-09T18:24:09+01:00); 37,718 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/Textualize/textual/blob/5e5b7ef58b8c5572c13a3ff9027d756623661495/README.md) · [LICENSE](https://github.com/Textualize/textual/blob/5e5b7ef58b8c5572c13a3ff9027d756623661495/LICENSE) · [pyproject.toml](https://github.com/Textualize/textual/blob/5e5b7ef58b8c5572c13a3ff9027d756623661495/pyproject.toml) · [.github/workflows/codeql.yml](https://github.com/Textualize/textual/blob/5e5b7ef58b8c5572c13a3ff9027d756623661495/.github/workflows/codeql.yml) · [GitHub API](https://api.github.com/repos/Textualize/textual).
+
+<a id="anhkysuai-solidjs-solid"></a>
+
+### Solid
+
+- **Repo:** [solidjs/solid](https://github.com/solidjs/solid).
+- **Mục đích:** UI JavaScript với reactivity chi tiết và JSX biên dịch sang DOM.
+- **Điểm đáng dùng:** README snapshot 2.0 mô tả component chạy một lần, tracking theo biểu thức, microtask batching/flush và SSR streaming.
+- **License:** MIT.
+- **Giới hạn:** API khác Solid 1.x, được giữ ở nhánh riêng; không lấy root package version làm version phát hành hoặc trộn ví dụ cũ.
+- **Tích hợp:** Khóa compiler/renderer và major, viết test vòng đời reactive, async boundary cùng hydration cho template.
+- **Đối chiếu:** React cho component VDOM; [Svelte](../13-dev-stack-devops/README.md) cho compiler; [Preact](../06-ui-ux-design/README.md#anhkysuai-preactjs-preact) cho runtime nhỏ.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `30e7805eb1bbd9e2601d0252558e91d2547e96f4` (2026-11-22T21:46:49-08:00); 36,927 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/solidjs/solid/blob/30e7805eb1bbd9e2601d0252558e91d2547e96f4/README.md) · [LICENSE](https://github.com/solidjs/solid/blob/30e7805eb1bbd9e2601d0252558e91d2547e96f4/LICENSE) · [package.json](https://github.com/solidjs/solid/blob/30e7805eb1bbd9e2601d0252558e91d2547e96f4/package.json) · [.github/workflows/main-ci.yml](https://github.com/solidjs/solid/blob/30e7805eb1bbd9e2601d0252558e91d2547e96f4/.github/workflows/main-ci.yml) · [GitHub API](https://api.github.com/repos/solidjs/solid).
+
+<a id="anhkysuai-raysan5-raylib"></a>
+
+### raylib
+
+- **Repo:** [raysan5/raylib](https://github.com/raysan5/raylib).
+- **Mục đích:** Thư viện C99 cho game, đồ họa và công cụ tương tác.
+- **Điểm đáng dùng:** Các module rlgl/raymath, audio và nhiều định dạng asset tạo nền lập trình trực tiếp, không phụ thuộc editor trực quan.
+- **License:** Zlib; dependency nhúng có license riêng.
+- **Giới hạn:** README ghi mặc định một cửa sổ/một OpenGL context, texture render đảo chiều dọc; dependency được nhúng không đồng nghĩa không có license phụ.
+- **Tích hợp:** Làm mẫu render/input nhỏ, kiểm kê src/external và kiểm tra GPU/HTML5 trên target cần phát hành.
+- **Đối chiếu:** SDL cho multimedia thấp tầng; [Bevy](../13-dev-stack-devops/README.md#anhkysuai-bevyengine-bevy) cho game ECS; [Phaser](../06-ui-ux-design/README.md#anhkysuai-phaserjs-phaser) cho game web.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `4b0c5962dda6ca2b473fe81254e6027c84714b51` (2026-11-22T20:53:27+01:00); 35,770 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/raysan5/raylib/blob/4b0c5962dda6ca2b473fe81254e6027c84714b51/README.md) · [LICENSE](https://github.com/raysan5/raylib/blob/4b0c5962dda6ca2b473fe81254e6027c84714b51/LICENSE) · [CMakeLists.txt](https://github.com/raysan5/raylib/blob/4b0c5962dda6ca2b473fe81254e6027c84714b51/CMakeLists.txt) · [.github/workflows/build_cmake.yml](https://github.com/raysan5/raylib/blob/4b0c5962dda6ca2b473fe81254e6027c84714b51/.github/workflows/build_cmake.yml) · [GitHub API](https://api.github.com/repos/raysan5/raylib).
+
+<a id="anhkysuai-alvarotrigo-fullpage-js"></a>
+
+### fullPage.js
+
+- **Repo:** [alvarotrigo/fullPage.js](https://github.com/alvarotrigo/fullPage.js).
+- **Mục đích:** Tạo trang cuộn từng section toàn màn hình và slide ngang.
+- **Điểm đáng dùng:** README mô tả cấu trúc section/slide, callback, media và tùy chọn responsive; package đang ở dòng 4.
+- **License:** GPL-3.0 hoặc giấy phép thương mại; extension theo điều khoản riêng.
+- **Giới hạn:** licenseKey là bắt buộc theo tài liệu; sản phẩm đóng cần xem giấy phép thương mại. Hành vi cuộn cần kiểm tra bàn phím, reduced-motion và nội dung dài.
+- **Tích hợp:** Chỉ dùng khi thiết kế thực sự cần snap toàn trang, kiểm tra giấy phép phân phối template trước khi đóng gói.
+- **Đối chiếu:** CSS scroll-snap cho nền web; Swiper cho slider; [GSAP](../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026) cho điều khiển animation.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `49f15effa7b195def295a36f872c28153cf9fb00` (2026-03-04T21:31:23+07:00); 35,353 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/alvarotrigo/fullPage.js/blob/49f15effa7b195def295a36f872c28153cf9fb00/README.md) · [LICENSE](https://github.com/alvarotrigo/fullPage.js/blob/49f15effa7b195def295a36f872c28153cf9fb00/LICENSE) · [package.json](https://github.com/alvarotrigo/fullPage.js/blob/49f15effa7b195def295a36f872c28153cf9fb00/package.json) · [GitHub API](https://api.github.com/repos/alvarotrigo/fullPage.js).
+
+<a id="anhkysuai-vbenjs-vue-vben-admin"></a>
+
+### Vue Vben Admin
+
+- **Repo:** [vbenjs/vue-vben-admin](https://github.com/vbenjs/vue-vben-admin).
+- **Mục đích:** Mẫu quản trị Vue 3, Vite và TypeScript có theme, i18n và route permission.
+- **Điểm đáng dùng:** README phân biệt v5 không tương thích bản trước, manifest khóa các dòng Node/pnpm và giao diện dựa trên browser hiện đại.
+- **License:** MIT.
+- **Giới hạn:** Quyền route ở client không thay authorization server; Tailwind v4 đặt sàn browser, không phù hợp yêu cầu IE.
+- **Tích hợp:** Chọn v5 rõ ràng, thay tài khoản demo/mock, nối phân quyền backend và kiểm thử menu theo vai trò.
+- **Đối chiếu:** [Ant Design Pro](../06-ui-ux-design/README.md#anhkysuai-ant-design-ant-design-pro) cho React; [Quasar](../06-ui-ux-design/README.md#anhkysuai-quasarframework-quasar) cho Vue đa target; [Refine](../06-ui-ux-design/README.md) cho admin có data provider.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `e726bc92780c1023c2393042871470d413ad79dc` (2026-11-19T13:15:40+08:00); 33,845 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/vbenjs/vue-vben-admin/blob/e726bc92780c1023c2393042871470d413ad79dc/README.md) · [LICENSE](https://github.com/vbenjs/vue-vben-admin/blob/e726bc92780c1023c2393042871470d413ad79dc/LICENSE) · [package.json](https://github.com/vbenjs/vue-vben-admin/blob/e726bc92780c1023c2393042871470d413ad79dc/package.json) · [.github/workflows/ci.yml](https://github.com/vbenjs/vue-vben-admin/blob/e726bc92780c1023c2393042871470d413ad79dc/.github/workflows/ci.yml) · [GitHub API](https://api.github.com/repos/vbenjs/vue-vben-admin).
+
+<a id="anhkysuai-vercel-swr"></a>
+
+### SWR
+
+- **Repo:** [vercel/swr](https://github.com/vercel/swr).
+- **Mục đích:** React hooks quản lý lấy dữ liệu và cache theo stale-while-revalidate.
+- **Điểm đáng dùng:** Key xác định request, fetcher tùy biến, deduplication, revalidation khi focus/network và optimistic mutation giảm mã lặp.
+- **License:** MIT.
+- **Giới hạn:** Snapshot là 2.6 beta; cache key phải phân biệt người dùng/quyền truy cập, stale data không phù hợp mọi hành động cần chính xác tức thời.
+- **Tích hợp:** Chuẩn hóa fetcher, lỗi và key theo phiên, kiểm tra invalidation sau mutation và đăng xuất.
+- **Đối chiếu:** [TanStack Query](../13-dev-stack-devops/README.md) cho server state; RTK Query cho Redux; Apollo Client cho GraphQL.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `8148ef012fd5b317d1e8ec2da4b2ca0673f63c0f` (2026-10-16T19:57:57+02:00); 32,495 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/vercel/swr/blob/8148ef012fd5b317d1e8ec2da4b2ca0673f63c0f/README.md) · [LICENSE](https://github.com/vercel/swr/blob/8148ef012fd5b317d1e8ec2da4b2ca0673f63c0f/LICENSE) · [package.json](https://github.com/vercel/swr/blob/8148ef012fd5b317d1e8ec2da4b2ca0673f63c0f/package.json) · [.github/workflows/test.yml](https://github.com/vercel/swr/blob/8148ef012fd5b317d1e8ec2da4b2ca0673f63c0f/.github/workflows/test.yml) · [GitHub API](https://api.github.com/repos/vercel/swr).
+
+<a id="anhkysuai-emilk-egui"></a>
+
+### egui
+
+- **Repo:** [emilk/egui](https://github.com/emilk/egui).
+- **Mục đích:** GUI immediate-mode Rust dùng native, web hoặc nhúng trong engine.
+- **Điểm đáng dùng:** eframe cung cấp runtime ứng dụng, epaint và renderer cho textured triangles thuận tiện tích hợp công cụ đồ họa.
+- **License:** MIT OR Apache-2.0; font kèm theo có license riêng.
+- **Giới hạn:** Accessibility tùy nền tảng, README nêu screen reader web còn thử nghiệm; không suy ra UX native chỉ từ tính portable.
+- **Tích hợp:** Dùng bảng điều khiển/editor nội bộ, kiểm tra input, DPI, font và trợ năng theo target.
+- **Đối chiếu:** [Iced](../06-ui-ux-design/README.md#anhkysuai-iced-rs-iced) cho Elm-style Rust; [Slint](../06-ui-ux-design/README.md#anhkysuai-slint-ui-slint) cho UI khai báo; Dear ImGui cho công cụ C++.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `d33dec58efd165add27acb9cddaf7e457eb5e64f` (2026-11-20T13:52:23Z); 32,444 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/emilk/egui/blob/d33dec58efd165add27acb9cddaf7e457eb5e64f/README.md) · [LICENSE-APACHE](https://github.com/emilk/egui/blob/d33dec58efd165add27acb9cddaf7e457eb5e64f/LICENSE-APACHE) · [LICENSE-MIT](https://github.com/emilk/egui/blob/d33dec58efd165add27acb9cddaf7e457eb5e64f/LICENSE-MIT) · [Cargo.toml](https://github.com/emilk/egui/blob/d33dec58efd165add27acb9cddaf7e457eb5e64f/Cargo.toml) · [.github/workflows/link_checker.yml](https://github.com/emilk/egui/blob/d33dec58efd165add27acb9cddaf7e457eb5e64f/.github/workflows/link_checker.yml) · [GitHub API](https://api.github.com/repos/emilk/egui).
+
+<a id="anhkysuai-iced-rs-iced"></a>
+
+### Iced
+
+- **Repo:** [iced-rs/iced](https://github.com/iced-rs/iced).
+- **Mục đích:** GUI Rust đa nền tảng theo kiến trúc Elm.
+- **Điểm đáng dùng:** Tách state, message, view và update; renderer wgpu hoặc tiny-skia cùng task async giúp tổ chức UI có kiểu.
+- **License:** MIT.
+- **Giới hạn:** README gọi experimental, manifest 0.15.0-dev; API/toolchain có thể đổi và hỗ trợ web/native cần xác nhận riêng.
+- **Tích hợp:** Thử màn hình tương tác nhỏ, phân tách cập nhật state với I/O và kiểm thử renderer trên GPU mục tiêu.
+- **Đối chiếu:** [egui](../06-ui-ux-design/README.md#anhkysuai-emilk-egui) cho immediate mode; [Slint](../06-ui-ux-design/README.md#anhkysuai-slint-ui-slint) cho UI khai báo; [Dioxus](../13-dev-stack-devops/README.md#anhkysuai-dioxuslabs-dioxus) cho web-style UI.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `98bd48fe011efc0ec5819fee0fa7673a7169ff11` (2026-11-19T13:06:00+01:00); 32,110 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/iced-rs/iced/blob/98bd48fe011efc0ec5819fee0fa7673a7169ff11/README.md) · [LICENSE](https://github.com/iced-rs/iced/blob/98bd48fe011efc0ec5819fee0fa7673a7169ff11/LICENSE) · [Cargo.toml](https://github.com/iced-rs/iced/blob/98bd48fe011efc0ec5819fee0fa7673a7169ff11/Cargo.toml) · [.github/workflows/test.yml](https://github.com/iced-rs/iced/blob/98bd48fe011efc0ec5819fee0fa7673a7169ff11/.github/workflows/test.yml) · [GitHub API](https://api.github.com/repos/iced-rs/iced).
+
+<a id="anhkysuai-codex-team-editor-js"></a>
+
+### Editor.js
+
+- **Repo:** [codex-team/editor.js](https://github.com/codex-team/editor.js).
+- **Mục đích:** Editor dạng block lưu dữ liệu JSON thay HTML.
+- **Điểm đáng dùng:** Mỗi loại block là plugin, editor.save trả Promise dữ liệu; mô hình thuận tiện render lại trên nhiều kênh.
+- **License:** Apache-2.0.
+- **Giới hạn:** HEAD 2.32.0-rc.4, roadmap cộng tác còn cập nhật basic tools; JSON vẫn phải validate/sanitize theo từng plugin.
+- **Tích hợp:** Khóa schema block và plugin, viết migration dữ liệu và kiểm thử render nội dung không tin cậy.
+- **Đối chiếu:** [Tiptap](../06-ui-ux-design/README.md#anhkysuai-ueberdosis-tiptap) cho ProseMirror; Lexical cho editor React; [Slate](../06-ui-ux-design/README.md#anhkysuai-ianstormtaylor-slate) cho mô hình tự tùy biến.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `60db62e960480faab1f10f98e96cf4fd3af4a146` (2026-11-18T13:59:20+03:00); 32,007 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/codex-team/editor.js/blob/60db62e960480faab1f10f98e96cf4fd3af4a146/README.md) · [LICENSE](https://github.com/codex-team/editor.js/blob/60db62e960480faab1f10f98e96cf4fd3af4a146/LICENSE) · [package.json](https://github.com/codex-team/editor.js/blob/60db62e960480faab1f10f98e96cf4fd3af4a146/package.json) · [.github/workflows/eslint.yml](https://github.com/codex-team/editor.js/blob/60db62e960480faab1f10f98e96cf4fd3af4a146/.github/workflows/eslint.yml) · [GitHub API](https://api.github.com/repos/codex-team/editor.js).
+
+<a id="anhkysuai-ianstormtaylor-slate"></a>
+
+### Slate
+
+- **Repo:** [ianstormtaylor/slate](https://github.com/ianstormtaylor/slate).
+- **Mục đích:** Framework rich-text editor React cho schema và hành vi tùy biến.
+- **Điểm đáng dùng:** Chuỗi plugin bao quanh contenteditable giúp mở rộng logic thay vì giới hạn vào tập định dạng cố định; CI có artifact Playwright.
+- **License:** MIT.
+- **Giới hạn:** README ghi beta, API chưa chốt và không có lịch 1.0; người dùng phải đảm nhận schema, serialization, paste và lỗi browser.
+- **Tích hợp:** Chốt schema tài liệu có version, test IME/selection/undo và paste trước khi dùng làm editor chung của template.
+- **Đối chiếu:** [Tiptap](../06-ui-ux-design/README.md#anhkysuai-ueberdosis-tiptap) cho extension ProseMirror; Lexical cho editor React; Quill cho bộ editor sẵn.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `7e6e576f30b01a4ed83a9fd233cb1c5a64bf069c` (2026-11-20T12:54:19-07:00); 31,750 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [Readme.md](https://github.com/ianstormtaylor/slate/blob/7e6e576f30b01a4ed83a9fd233cb1c5a64bf069c/Readme.md) · [License.md](https://github.com/ianstormtaylor/slate/blob/7e6e576f30b01a4ed83a9fd233cb1c5a64bf069c/License.md) · [package.json](https://github.com/ianstormtaylor/slate/blob/7e6e576f30b01a4ed83a9fd233cb1c5a64bf069c/package.json) · [.github/workflows/ci.yml](https://github.com/ianstormtaylor/slate/blob/7e6e576f30b01a4ed83a9fd233cb1c5a64bf069c/.github/workflows/ci.yml) · [GitHub API](https://api.github.com/repos/ianstormtaylor/slate).
+
+<a id="anhkysuai-transloadit-uppy"></a>
+
+### Uppy
+
+- **Repo:** [transloadit/uppy](https://github.com/transloadit/uppy).
+- **Mục đích:** Bộ tải tệp JavaScript mô-đun với UI sẵn hoặc headless.
+- **Điểm đáng dùng:** Plugin tus hỗ trợ tiếp tục upload, Companion lấy tệp remote; tài liệu phân biệt dashboard, headless component và hooks.
+- **License:** MIT.
+- **Giới hạn:** Kiểm tra file phía client không bảo vệ backend; remote URL/OAuth qua Companion cần cấu hình quyền, giới hạn kích thước và đích tải.
+- **Tích hợp:** Dùng endpoint xác thực và validate server, thử mạng đứt cùng resume và kiểm kê plugin thật sự cần.
+- **Đối chiếu:** FilePond cho uploader UI; tus-js-client cho giao thức resume; input file HTML cho tải đơn giản.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `31a49e492db21f1dd37539ef24010e74be82ed51` (2026-11-23T18:06:42+08:00); 31,087 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/transloadit/uppy/blob/31a49e492db21f1dd37539ef24010e74be82ed51/README.md) · [LICENSE](https://github.com/transloadit/uppy/blob/31a49e492db21f1dd37539ef24010e74be82ed51/LICENSE) · [package.json](https://github.com/transloadit/uppy/blob/31a49e492db21f1dd37539ef24010e74be82ed51/package.json) · [.github/workflows/ci.yml](https://github.com/transloadit/uppy/blob/31a49e492db21f1dd37539ef24010e74be82ed51/.github/workflows/ci.yml) · [GitHub API](https://api.github.com/repos/transloadit/uppy).
+
+<a id="anhkysuai-layui-layui"></a>
+
+### Layui
+
+- **Repo:** [layui/layui](https://github.com/layui/layui).
+- **Mục đích:** Bộ UI HTML/CSS/JavaScript thuần cho trang web nghiệp vụ.
+- **Điểm đáng dùng:** README phân biệt dòng 2 đang dùng với main dòng 3; bộ công cụ hướng đến phát triển trực tiếp trong browser.
+- **License:** MIT.
+- **Giới hạn:** Manifest 3.0.0-alpha.3; README không khuyến nghị production và nói prerelease chưa thuộc phạm vi cập nhật/bulletin an ninh thường lệ.
+- **Tích hợp:** Giữ để bảo trì dự án Layui và thử v3 riêng, khóa major cùng tài liệu trước khi đóng gói template.
+- **Đối chiếu:** [Bootstrap](../08-awesome-lists-learning/README.md#6c522-thư-viện-giao-diện--css) cho UI thuần; [Element Plus](../06-ui-ux-design/README.md#anhkysuai-element-plus-element-plus) cho Vue; [Ant Design](../06-ui-ux-design/README.md) cho React.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `13725717407d23fac11b15b1a1155d26328b6d99` (2026-11-12T16:50:06+08:00); 30,597 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/layui/layui/blob/13725717407d23fac11b15b1a1155d26328b6d99/README.md) · [LICENSE](https://github.com/layui/layui/blob/13725717407d23fac11b15b1a1155d26328b6d99/LICENSE) · [package.json](https://github.com/layui/layui/blob/13725717407d23fac11b15b1a1155d26328b6d99/package.json) · [.github/workflows/ci.yml](https://github.com/layui/layui/blob/13725717407d23fac11b15b1a1155d26328b6d99/.github/workflows/ci.yml) · [GitHub API](https://api.github.com/repos/layui/layui).
+
+<a id="anhkysuai-sampotts-plyr"></a>
+
+### Plyr
+
+- **Repo:** [sampotts/plyr](https://github.com/sampotts/plyr).
+- **Mục đích:** Giao diện media player thống nhất cho HTML5, YouTube và Vimeo.
+- **Điểm đáng dùng:** Controls, captions, keyboard, sự kiện chung và integration streaming giúp bảo trì player đang có.
+- **License:** MIT.
+- **Giới hạn:** README và manifest thông báo deprecated, chỉ cập nhật an ninh; tác giả hướng dự án mới sang Video.js 10.
+- **Tích hợp:** Lưu làm tham chiếu bảo trì/migration, kiểm tra caption và plugin hiện dùng rồi chuyển từng nguồn phát sang API đích.
+- **Đối chiếu:** Video.js 10 theo hướng upstream; Shaka Player cho adaptive streaming; video HTML cho nhu cầu cơ bản.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `b23f9b7d52366d171ed4ec45bd06aedd85954486` (2026-10-21T11:09:32+11:00); 29,983 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/sampotts/plyr/blob/b23f9b7d52366d171ed4ec45bd06aedd85954486/README.md) · [LICENSE.md](https://github.com/sampotts/plyr/blob/b23f9b7d52366d171ed4ec45bd06aedd85954486/LICENSE.md) · [package.json](https://github.com/sampotts/plyr/blob/b23f9b7d52366d171ed4ec45bd06aedd85954486/package.json) · [.github/workflows/ci.yml](https://github.com/sampotts/plyr/blob/b23f9b7d52366d171ed4ec45bd06aedd85954486/.github/workflows/ci.yml) · [GitHub API](https://api.github.com/repos/sampotts/plyr).
+
+<a id="anhkysuai-pmndrs-react-spring"></a>
+
+### React Spring
+
+- **Repo:** [pmndrs/react-spring](https://github.com/pmndrs/react-spring).
+- **Mục đích:** Animation React theo mô hình lò xo cho DOM và react-three-fiber.
+- **Điểm đáng dùng:** API khai báo hoặc imperative, spring mặc định và duration/easing tùy chọn giúp mô tả tương tác liên tục.
+- **License:** MIT.
+- **Giới hạn:** Thông số spring không thay yêu cầu accessibility; toolchain monorepo yêu cầu Node >=26.13.1, không nhầm với yêu cầu app tiêu thụ package.
+- **Tích hợp:** Dùng cho chuyển trạng thái có ý nghĩa, tôn trọng reduced-motion và kiểm tra ngắt/đảo animation cùng hiệu năng thiết bị.
+- **Đối chiếu:** [Motion](../22-motion-design-animation/README.md) cho React animation; [GSAP](../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026) cho timeline; CSS transitions cho hiệu ứng đơn giản.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `13aacc5a88af35061da375c0259629f1a16a3caa` (2026-11-23T07:55:18Z); 29,325 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/pmndrs/react-spring/blob/13aacc5a88af35061da375c0259629f1a16a3caa/README.md) · [LICENSE](https://github.com/pmndrs/react-spring/blob/13aacc5a88af35061da375c0259629f1a16a3caa/LICENSE) · [package.json](https://github.com/pmndrs/react-spring/blob/13aacc5a88af35061da375c0259629f1a16a3caa/package.json) · [.github/workflows/tests.yml](https://github.com/pmndrs/react-spring/blob/13aacc5a88af35061da375c0259629f1a16a3caa/.github/workflows/tests.yml) · [GitHub API](https://api.github.com/repos/pmndrs/react-spring).
+
+<a id="anhkysuai-fyne-io-fyne"></a>
+
+### Fyne
+
+- **Repo:** [fyne-io/fyne](https://github.com/fyne-io/fyne).
+- **Mục đích:** UI toolkit Go cho desktop và mobile.
+- **Điểm đáng dùng:** API app/widget chung và công cụ fyne package/install hỗ trợ tạo binary, demo mobile simulation giúp khảo sát layout.
+- **License:** BSD-3-Clause.
+- **Giới hạn:** Build cần compiler C và toolchain hệ thống; simulation không thay thiết bị thật và ký gói mobile, lần build đầu có thể tốn thời gian.
+- **Tích hợp:** Dùng cho tiện ích Go, kiểm tra font, DPI, input và đóng gói từng OS trước khi chuẩn hóa mẫu.
+- **Đối chiếu:** [Wails](../13-dev-stack-devops/README.md#anhkysuai-wailsapp-wails) cho Go với web UI; Gio cho GUI Go; [Flutter](../13-dev-stack-devops/README.md) cho UI đa nền.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `653e7928066891434a2ebe9dec4e63823493dce5` (2026-11-21T19:20:30+01:00); 28,859 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/fyne-io/fyne/blob/653e7928066891434a2ebe9dec4e63823493dce5/README.md) · [LICENSE](https://github.com/fyne-io/fyne/blob/653e7928066891434a2ebe9dec4e63823493dce5/LICENSE) · [go.mod](https://github.com/fyne-io/fyne/blob/653e7928066891434a2ebe9dec4e63823493dce5/go.mod) · [.github/workflows/web_tests.yml](https://github.com/fyne-io/fyne/blob/653e7928066891434a2ebe9dec4e63823493dce5/.github/workflows/web_tests.yml) · [GitHub API](https://api.github.com/repos/fyne-io/fyne).
+
+<a id="anhkysuai-tanstack-table"></a>
+
+### TanStack Table
+
+- **Repo:** [TanStack/table](https://github.com/TanStack/table).
+- **Mục đích:** Lõi bảng dữ liệu headless cho nhiều framework.
+- **Điểm đáng dùng:** Sorting, filtering, grouping, aggregation và selection tách khỏi markup/style; adapter giúp chia sẻ logic bảng giữa stack.
+- **License:** MIT.
+- **Giới hạn:** Headless đòi hỏi tự làm UI/a11y; virtualizable không có nghĩa tự cung cấp virtualization. Workflow đọc kiểm skill tài liệu, chưa chạy table tests.
+- **Tích hợp:** Tách state bảng và server query, định nghĩa pagination/filter contract rồi kiểm tra bộ dữ liệu lớn và bàn phím.
+- **Đối chiếu:** AG Grid cho datagrid đầy đủ; MUI Data Grid cho React; Ant Design Table cho ứng dụng nghiệp vụ.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `1cfb2e57cbfecf25e3d4ee1bda32fbd65e4e0327` (2026-11-18T15:03:12-05:00); 28,604 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/TanStack/table/blob/1cfb2e57cbfecf25e3d4ee1bda32fbd65e4e0327/README.md) · [LICENSE](https://github.com/TanStack/table/blob/1cfb2e57cbfecf25e3d4ee1bda32fbd65e4e0327/LICENSE) · [package.json](https://github.com/TanStack/table/blob/1cfb2e57cbfecf25e3d4ee1bda32fbd65e4e0327/package.json) · [.github/workflows/check-skills.yml](https://github.com/TanStack/table/blob/1cfb2e57cbfecf25e3d4ee1bda32fbd65e4e0327/.github/workflows/check-skills.yml) · [GitHub API](https://api.github.com/repos/TanStack/table).
+
+<a id="anhkysuai-mobxjs-mobx"></a>
+
+### MobX
+
+- **Repo:** [mobxjs/mobx](https://github.com/mobxjs/mobx).
+- **Mục đích:** Quản lý state qua observable và dependency tracking tự động.
+- **Điểm đáng dùng:** README minh họa observer theo dõi field đọc khi render, action cập nhật observable và truyền thay đổi tới computation liên quan.
+- **License:** MIT.
+- **Giới hạn:** Tracking ngầm cần hiểu ranh giới async và lifecycle; tuyên bố optimal rendering chưa phải benchmark ứng dụng hoặc bảo đảm không có side effect.
+- **Tích hợp:** Tách domain state khỏi UI, quản lý disposal của reaction và viết test mutation/derived state.
+- **Đối chiếu:** [Zustand](../06-ui-ux-design/README.md#anhkysuai-pmndrs-zustand) cho store đơn giản; Redux Toolkit cho luồng explicit; Jotai cho atom.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `abd3a5879796bcd0f1a23967444a5ff90c99709a` (2026-11-23T14:52:24+07:00); 28,217 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/mobxjs/mobx/blob/abd3a5879796bcd0f1a23967444a5ff90c99709a/README.md) · [LICENSE](https://github.com/mobxjs/mobx/blob/abd3a5879796bcd0f1a23967444a5ff90c99709a/LICENSE) · [package.json](https://github.com/mobxjs/mobx/blob/abd3a5879796bcd0f1a23967444a5ff90c99709a/package.json) · [.github/workflows/build_and_test.yml](https://github.com/mobxjs/mobx/blob/abd3a5879796bcd0f1a23967444a5ff90c99709a/.github/workflows/build_and_test.yml) · [GitHub API](https://api.github.com/repos/mobxjs/mobx).
+
+<a id="anhkysuai-element-plus-element-plus"></a>
+
+### Element Plus
+
+- **Repo:** [element-plus/element-plus](https://github.com/element-plus/element-plus).
+- **Mục đích:** Bộ UI Vue 3 viết TypeScript và Composition API.
+- **Điểm đáng dùng:** README cung cấp migration từ Element UI và component playground; workflow đã đọc kiểm tra SSR bằng Chromium/Puppeteer.
+- **License:** MIT.
+- **Giới hạn:** Migration tool không bảo đảm tương thích hành vi ứng dụng; cần kiểm thử SSR/hydration, locale và accessibility từng component sử dụng.
+- **Tích hợp:** Đóng gói theme/token cùng Vue version, chọn import phù hợp và viết smoke test cho form, bảng, dialog.
+- **Đối chiếu:** [Naive UI](../06-ui-ux-design/README.md) cho Vue; PrimeVue cho bộ nghiệp vụ; [Vuetify](../06-ui-ux-design/README.md) cho Material Design.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `7e6a728c90261c2bc9ff4378f17dca74bcb219d1` (2026-11-23T13:41:50+08:00); 27,872 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/element-plus/element-plus/blob/7e6a728c90261c2bc9ff4378f17dca74bcb219d1/README.md) · [LICENSE](https://github.com/element-plus/element-plus/blob/7e6a728c90261c2bc9ff4378f17dca74bcb219d1/LICENSE) · [package.json](https://github.com/element-plus/element-plus/blob/7e6a728c90261c2bc9ff4378f17dca74bcb219d1/package.json) · [.github/workflows/test-ssr.yml](https://github.com/element-plus/element-plus/blob/7e6a728c90261c2bc9ff4378f17dca74bcb219d1/.github/workflows/test-ssr.yml) · [GitHub API](https://api.github.com/repos/element-plus/element-plus).
+
+<a id="anhkysuai-mbadolato-iterm2-color-schemes"></a>
+
+### iTerm2 Color Schemes
+
+- **Repo:** [mbadolato/iTerm2-Color-Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes).
+- **Mục đích:** Bộ phối màu terminal và các bản chuyển định dạng cho nhiều editor/terminal.
+- **Điểm đáng dùng:** README có đầu ra JSONL dùng máy và CI bắt buộc mỗi scheme có mục license; công cụ tạo các bản port từ nguồn chung.
+- **License:** MIT cho công cụ; mỗi theme theo licenses.yml.
+- **Giới hạn:** Không áp MIT root cho tất cả theme: registry cho phép unknown/nonfree; tương phản màu và font thực tế cần kiểm tra.
+- **Tích hợp:** Chọn theme có quyền phân phối rõ, giữ attribution và thử độ đọc được trong light/dark trước khi đóng gói dev theme.
+- **Đối chiếu:** Catppuccin cho hệ theme; Dracula cho bộ màu; theme tích hợp terminal cho ít dependency.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `c7fd7a806e240e423b16b0ff8549b2bc680990cc` (2026-11-22T19:16:43-07:00); 27,337 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/c7fd7a806e240e423b16b0ff8549b2bc680990cc/README.md) · [LICENSE](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/c7fd7a806e240e423b16b0ff8549b2bc680990cc/LICENSE) · [.github/workflows/check-licenses.yml](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/c7fd7a806e240e423b16b0ff8549b2bc680990cc/.github/workflows/check-licenses.yml) · [GitHub API](https://api.github.com/repos/mbadolato/iTerm2-Color-Schemes).
+
+<a id="anhkysuai-quasarframework-quasar"></a>
+
+### Quasar
+
+- **Repo:** [quasarframework/quasar](https://github.com/quasarframework/quasar).
+- **Mục đích:** Framework Vue cho SPA, SSR/SSG, PWA, extension, hybrid mobile và desktop Electron.
+- **Điểm đáng dùng:** Cùng hệ component và cấu hình target giảm công việc lặp; workflow ui-tests xây package UI và chuẩn bị kiểm thử.
+- **License:** MIT.
+- **Giới hạn:** Một codebase không loại bỏ khác biệt runtime native/web; tuyên bố enterprise-ready/accessibility trong README chưa được xác minh bằng thử nghiệm ở đây.
+- **Tích hợp:** Chọn target đầu tiên, kiểm tra plugin native và SSR rồi tạo cấu hình build riêng cho từng môi trường.
+- **Đối chiếu:** [Nuxt](../13-dev-stack-devops/README.md) cho Vue web; Ionic cho hybrid UI; [Vuetify](../06-ui-ux-design/README.md) cho bộ component Vue.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `16637f69c0edb6dd78b73cce4af7c502ff31fc84` (2026-11-21T12:57:53+02:00); 27,198 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/quasarframework/quasar/blob/16637f69c0edb6dd78b73cce4af7c502ff31fc84/README.md) · [LICENSE](https://github.com/quasarframework/quasar/blob/16637f69c0edb6dd78b73cce4af7c502ff31fc84/LICENSE) · [package.json](https://github.com/quasarframework/quasar/blob/16637f69c0edb6dd78b73cce4af7c502ff31fc84/package.json) · [.github/workflows/ui-tests.yml](https://github.com/quasarframework/quasar/blob/16637f69c0edb6dd78b73cce4af7c502ff31fc84/.github/workflows/ui-tests.yml) · [GitHub API](https://api.github.com/repos/quasarframework/quasar).
+
+<a id="anhkysuai-marmelab-react-admin"></a>
+
+### React-admin
+
+- **Repo:** [marmelab/react-admin](https://github.com/marmelab/react-admin).
+- **Mục đích:** Framework React xây ứng dụng quản trị trên REST/GraphQL.
+- **Điểm đáng dùng:** Data Provider nối API, Resource khai báo CRUD và controller hooks có thể thay UI; dựa trên MUI và công cụ form/query.
+- **License:** MIT cho bản mở; Enterprise Edition theo điều khoản riêng.
+- **Giới hạn:** Adapter không tự khớp pagination/filter của mọi API; role ở UI phải đi cùng authorization server, Enterprise không nằm trong quyền MIT chung.
+- **Tích hợp:** Làm data/auth provider nhỏ với hợp đồng API cụ thể, kiểm thử optimistic update/undo và phân quyền bản ghi.
+- **Đối chiếu:** [Refine](../06-ui-ux-design/README.md) cho admin headless; [Ant Design Pro](../06-ui-ux-design/README.md#anhkysuai-ant-design-ant-design-pro) cho boilerplate; [ToolJet](../05-low-code-llm-platforms/README.md) cho low-code nội bộ.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `0c8a5cda6ca68cb115565835af4062c102d62c6a` (2026-11-23T11:08:21+01:00); 27,000 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/marmelab/react-admin/blob/0c8a5cda6ca68cb115565835af4062c102d62c6a/README.md) · [LICENSE.md](https://github.com/marmelab/react-admin/blob/0c8a5cda6ca68cb115565835af4062c102d62c6a/LICENSE.md) · [package.json](https://github.com/marmelab/react-admin/blob/0c8a5cda6ca68cb115565835af4062c102d62c6a/package.json) · [.github/workflows/test.yml](https://github.com/marmelab/react-admin/blob/0c8a5cda6ca68cb115565835af4062c102d62c6a/.github/workflows/test.yml) · [GitHub API](https://api.github.com/repos/marmelab/react-admin).
+
+<a id="anhkysuai-airbnb-lottie-ios"></a>
+
+### Lottie iOS
+
+- **Repo:** [airbnb/lottie-ios](https://github.com/airbnb/lottie-ios).
+- **Mục đích:** Render animation vector bodymovin JSON trên nền tảng Apple.
+- **Điểm đáng dùng:** Playback, loop, scrub và thay thuộc tính runtime giúp bàn giao thiết kế thành animation; tài liệu phân biệt lottie-ios nguồn và lottie-spm trỏ XCFramework.
+- **License:** Apache-2.0 cho thư viện; animation asset theo license riêng.
+- **Giới hạn:** Asset JSON có thể phức tạp dù nhỏ; phải kiểm tra feature exporter, reduced-motion, CPU/GPU và license ảnh/font/animation.
+- **Tích hợp:** Khóa thư viện và asset, chọn nguồn hay binary có chủ đích, đo animation trên thiết bị yếu trong màn hình thật.
+- **Đối chiếu:** Rive cho animation tương tác; Core Animation cho nền Apple; Lottie Web cho web.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `1fb4d7d5b45b0e81239c0c0cab95136a10153762` (2026-10-06T10:02:32-07:00); 26,950 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/airbnb/lottie-ios/blob/1fb4d7d5b45b0e81239c0c0cab95136a10153762/README.md) · [LICENSE](https://github.com/airbnb/lottie-ios/blob/1fb4d7d5b45b0e81239c0c0cab95136a10153762/LICENSE) · [package.json](https://github.com/airbnb/lottie-ios/blob/1fb4d7d5b45b0e81239c0c0cab95136a10153762/package.json) · [.github/workflows/main.yml](https://github.com/airbnb/lottie-ios/blob/1fb4d7d5b45b0e81239c0c0cab95136a10153762/.github/workflows/main.yml) · [GitHub API](https://api.github.com/repos/airbnb/lottie-ios).
+
+<a id="anhkysuai-select2-select2"></a>
+
+### Select2
+
+- **Repo:** [select2/select2](https://github.com/select2/select2).
+- **Mục đích:** Nâng select HTML thành tìm kiếm, multiselect và dữ liệu remote.
+- **Điểm đáng dùng:** AJAX/pagination, optgroup lồng và templating hỗ trợ tập dữ liệu lớn; hoạt động như select và có file i18n riêng.
+- **License:** MIT.
+- **Giới hạn:** Phụ thuộc jQuery; danh sách browser rất cũ trong README không thay xác minh browser hiện tại, custom renderer cần tránh XSS.
+- **Tích hợp:** Phù hợp bảo trì form jQuery, xác thực dữ liệu server, giới hạn search và thử bàn phím/screen reader.
+- **Đối chiếu:** Tom Select cho vanilla JS; Choices.js cho select không jQuery; React Select cho React.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `c9e950c43419563853e5104dd9132b1d3733fe76` (2026-11-23T01:32:28Z); 25,908 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/select2/select2/blob/c9e950c43419563853e5104dd9132b1d3733fe76/README.md) · [LICENSE.md](https://github.com/select2/select2/blob/c9e950c43419563853e5104dd9132b1d3733fe76/LICENSE.md) · [package.json](https://github.com/select2/select2/blob/c9e950c43419563853e5104dd9132b1d3733fe76/package.json) · [pyproject.toml](https://github.com/select2/select2/blob/c9e950c43419563853e5104dd9132b1d3733fe76/pyproject.toml) · [.github/workflows/main.yml](https://github.com/select2/select2/blob/c9e950c43419563853e5104dd9132b1d3733fe76/.github/workflows/main.yml) · [GitHub API](https://api.github.com/repos/select2/select2).
+
+<a id="anhkysuai-libgdx-libgdx"></a>
+
+### libGDX
+
+- **Repo:** [libgdx/libgdx](https://github.com/libgdx/libgdx).
+- **Mục đích:** Framework game Java 2D/3D dựa trên OpenGL/ES cho nhiều nền.
+- **Điểm đáng dùng:** Gradle và project setup tách core game khỏi backend target; workflow xây native library và gói phát hành.
+- **License:** Apache-2.0; dependency/asset giữ license riêng.
+- **Giới hạn:** Không có editor game đầy đủ trong phạm vi README; toolchain iOS/web và thư viện native làm build khác nhau từng nền.
+- **Tích hợp:** Dùng mẫu game Java với core thuần, thử input/audio/lifecycle trên target và kiểm kê asset trước phân phối.
+- **Đối chiếu:** [Bevy](../13-dev-stack-devops/README.md#anhkysuai-bevyengine-bevy) cho ECS Rust; [raylib](../06-ui-ux-design/README.md#anhkysuai-raysan5-raylib) cho C; [Phaser](../06-ui-ux-design/README.md#anhkysuai-phaserjs-phaser) cho game web.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `be635906dc2a437450403bd88b7a40fc8d944354` (2026-11-19T13:58:15Z); 25,551 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/libgdx/libgdx/blob/be635906dc2a437450403bd88b7a40fc8d944354/README.md) · [LICENSE](https://github.com/libgdx/libgdx/blob/be635906dc2a437450403bd88b7a40fc8d944354/LICENSE) · [build.gradle](https://github.com/libgdx/libgdx/blob/be635906dc2a437450403bd88b7a40fc8d944354/build.gradle) · [.github/workflows/build-publish.yml](https://github.com/libgdx/libgdx/blob/be635906dc2a437450403bd88b7a40fc8d944354/.github/workflows/build-publish.yml) · [GitHub API](https://api.github.com/repos/libgdx/libgdx).
+
+<a id="anhkysuai-angular-components"></a>
+
+### Angular Components
+
+- **Repo:** [angular/components](https://github.com/angular/components).
+- **Mục đích:** Bộ Angular Material, CDK, ARIA và wrapper API Google.
+- **Điểm đáng dùng:** README phân tách headless directives ARIA, interaction primitive CDK và component Material để chọn đúng mức tùy biến.
+- **License:** MIT.
+- **Giới hạn:** HEAD 22.4.0-next.0; Google Maps/YouTube là API dịch vụ ngoài, thư viện không thay điều khoản/quota. Accessibility vẫn cần kiểm tra theo ứng dụng.
+- **Tích hợp:** Khóa major với Angular, dùng CDK/ARIA cho design system riêng và kiểm thử keyboard/focus của flow thật.
+- **Đối chiếu:** PrimeNG cho Angular nghiệp vụ; [NG-ZORRO](../06-ui-ux-design/README.md) cho Ant Design; [Material Web](../06-ui-ux-design/README.md) cho web components.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `386c01bf16327d6fe9699eb121337ba90f08c356` (2026-11-23T09:52:49+01:00); 25,049 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/angular/components/blob/386c01bf16327d6fe9699eb121337ba90f08c356/README.md) · [LICENSE](https://github.com/angular/components/blob/386c01bf16327d6fe9699eb121337ba90f08c356/LICENSE) · [package.json](https://github.com/angular/components/blob/386c01bf16327d6fe9699eb121337ba90f08c356/package.json) · [.github/workflows/ci.yml](https://github.com/angular/components/blob/386c01bf16327d6fe9699eb121337ba90f08c356/.github/workflows/ci.yml) · [GitHub API](https://api.github.com/repos/angular/components).
+
+<a id="anhkysuai-highlightjs-highlight-js"></a>
+
+### Highlight.js
+
+- **Repo:** [highlightjs/highlight.js](https://github.com/highlightjs/highlight.js).
+- **Mục đích:** Tô cú pháp mã nguồn trong browser hoặc server bằng JavaScript.
+- **Điểm đáng dùng:** Có tự nhận diện ngôn ngữ và import bộ common/định nghĩa riêng, không lệ thuộc framework; CI kiểm build CDN/ESM.
+- **License:** BSD-3-Clause.
+- **Giới hạn:** Autodetect có thể sai và tốn thời gian cho khối lớn; nội dung mã cần escape đúng, theme/ngôn ngữ bên thứ ba phải kiểm tra riêng.
+- **Tích hợp:** Ghi language rõ trong template docs, chỉ bundle ngôn ngữ cần và dùng worker/server rendering nếu khối mã lớn.
+- **Đối chiếu:** Shiki cho TextMate theme; Prism cho highlight web; [Tree-sitter](../13-dev-stack-devops/README.md#anhkysuai-tree-sitter-tree-sitter) cho cây cú pháp tăng dần.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `35f98874f935d3e4b98dbbbef9895c5fbc7d9b4c` (2026-11-11T08:49:44Z); 25,018 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/highlightjs/highlight.js/blob/35f98874f935d3e4b98dbbbef9895c5fbc7d9b4c/README.md) · [LICENSE](https://github.com/highlightjs/highlight.js/blob/35f98874f935d3e4b98dbbbef9895c5fbc7d9b4c/LICENSE) · [package.json](https://github.com/highlightjs/highlight.js/blob/35f98874f935d3e4b98dbbbef9895c5fbc7d9b4c/package.json) · [.github/workflows/tests.js.yml](https://github.com/highlightjs/highlight.js/blob/35f98874f935d3e4b98dbbbef9895c5fbc7d9b4c/.github/workflows/tests.js.yml) · [GitHub API](https://api.github.com/repos/highlightjs/highlight.js).
+
+<a id="anhkysuai-slint-ui-slint"></a>
+
+### Slint
+
+- **Repo:** [slint-ui/slint](https://github.com/slint-ui/slint).
+- **Mục đích:** GUI khai báo bằng .slint nối logic Rust, C++, JavaScript hoặc Python.
+- **Điểm đáng dùng:** Tách UI khỏi nghiệp vụ, live preview và backend từ desktop/mobile tới embedded giúp dùng chung mô hình giao diện.
+- **License:** GPL-3.0-only OR Slint Royalty-free 2.0 OR Commercial; docs/examples MIT.
+- **Giới hạn:** Royalty-free có nghĩa vụ công bố sử dụng và loại trừ embedded; embedded đóng cần license thương mại theo LICENSE.md. Từng asset vẫn có điều khoản riêng.
+- **Tích hợp:** Chọn giấy phép theo kiểu sản phẩm trước, thử renderer/input và ngân sách bộ nhớ trên thiết bị thật.
+- **Đối chiếu:** Qt cho toolkit đa nền; [Iced](../06-ui-ux-design/README.md#anhkysuai-iced-rs-iced) cho GUI Rust; [Flutter](../13-dev-stack-devops/README.md) cho UI ứng dụng.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `c924c3042473dcbe33837315da93e6aec6f3195d` (2026-11-23T11:15:41+01:00); 24,685 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/slint-ui/slint/blob/c924c3042473dcbe33837315da93e6aec6f3195d/README.md) · [LICENSE.md](https://github.com/slint-ui/slint/blob/c924c3042473dcbe33837315da93e6aec6f3195d/LICENSE.md) · [package.json](https://github.com/slint-ui/slint/blob/c924c3042473dcbe33837315da93e6aec6f3195d/package.json) · [Cargo.toml](https://github.com/slint-ui/slint/blob/c924c3042473dcbe33837315da93e6aec6f3195d/Cargo.toml) · [.github/workflows/ci.yaml](https://github.com/slint-ui/slint/blob/c924c3042473dcbe33837315da93e6aec6f3195d/.github/workflows/ci.yaml) · [GitHub API](https://api.github.com/repos/slint-ui/slint).
+
+<a id="anhkysuai-charmbracelet-gum"></a>
+
+### Gum
+
+- **Repo:** [charmbracelet/gum](https://github.com/charmbracelet/gum).
+- **Mục đích:** Các lệnh giao diện terminal để ghép vào shell script.
+- **Điểm đáng dùng:** choose, input, confirm, filter, table và spin nhận cấu hình qua cờ/biến môi trường, trả kết quả stdout để shell kết hợp.
+- **License:** MIT.
+- **Giới hạn:** UI tương tác cần TTY và đường hủy/lỗi rõ; đầu ra người dùng phải truyền dưới dạng đối số, không nối thành shell code.
+- **Tích hợp:** Dùng cho wizard tạo template, giữ chế độ non-interactive có tham số cho CI và kiểm tra mã thoát khi người dùng hủy.
+- **Đối chiếu:** [fzf](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) cho chọn tương tác; [Bubble Tea](../06-ui-ux-design/README.md#anhkysuai-charmbracelet-bubbletea) cho TUI Go tùy biến; dialog cho shell UI.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `b4a8eceee6552a61d683934ff736b998e3d4c80b` (2026-11-20T14:15:18+04:00); 24,647 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/charmbracelet/gum/blob/b4a8eceee6552a61d683934ff736b998e3d4c80b/README.md) · [LICENSE](https://github.com/charmbracelet/gum/blob/b4a8eceee6552a61d683934ff736b998e3d4c80b/LICENSE) · [go.mod](https://github.com/charmbracelet/gum/blob/b4a8eceee6552a61d683934ff736b998e3d4c80b/go.mod) · [.github/workflows/build.yml](https://github.com/charmbracelet/gum/blob/b4a8eceee6552a61d683934ff736b998e3d4c80b/.github/workflows/build.yml) · [GitHub API](https://api.github.com/repos/charmbracelet/gum).
+
+<a id="anhkysuai-youzan-vant"></a>
+
+### Vant
+
+- **Repo:** [youzan/vant](https://github.com/youzan/vant).
+- **Mục đích:** Bộ UI Vue cho ứng dụng web trên mobile.
+- **Điểm đáng dùng:** Theme, tree shaking, i18n, SSR và bộ component mobile giúp dựng mẫu nhanh; tài liệu tách dòng Vue 2 với Vue 3 và các repo mini-program.
+- **License:** MIT.
+- **Giới hạn:** Accessibility còn cải thiện theo README; claim kích thước/coverage chưa đo, Vant Weapp/Taro không phải cùng package web.
+- **Tích hợp:** Khóa major theo Vue/Nuxt, kiểm tra touch, bàn phím ảo, safe area và component cần dùng trên thiết bị mục tiêu.
+- **Đối chiếu:** Ionic cho mobile web; [Quasar](../06-ui-ux-design/README.md#anhkysuai-quasarframework-quasar) cho Vue đa target; [Element Plus](../06-ui-ux-design/README.md#anhkysuai-element-plus-element-plus) cho ứng dụng desktop web.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `7cc499279866e74b117593abf612567d5a2eb28d` (2026-10-26T10:13:10+08:00); 24,430 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/youzan/vant/blob/7cc499279866e74b117593abf612567d5a2eb28d/README.md) · [LICENSE](https://github.com/youzan/vant/blob/7cc499279866e74b117593abf612567d5a2eb28d/LICENSE) · [package.json](https://github.com/youzan/vant/blob/7cc499279866e74b117593abf612567d5a2eb28d/package.json) · [.github/workflows/test.yml](https://github.com/youzan/vant/blob/7cc499279866e74b117593abf612567d5a2eb28d/.github/workflows/test.yml) · [GitHub API](https://api.github.com/repos/youzan/vant).
+
+<a id="anhkysuai-electron-react-boilerplate-electron-react-boilerplate"></a>
+
+### Electron React Boilerplate
+
+- **Repo:** [electron-react-boilerplate/electron-react-boilerplate](https://github.com/electron-react-boilerplate/electron-react-boilerplate).
+- **Mục đích:** Mẫu ứng dụng desktop Electron/React với build và đóng gói sẵn.
+- **Điểm đáng dùng:** Tài liệu hiện dùng electron-vite, tách main/preload/renderer và smoke test IPC; native dependencies ở release/app/package.json.
+- **License:** MIT.
+- **Giới hạn:** Không áp hướng dẫn webpack/DLL cũ; IPC/preload là ranh giới quyền cần kiểm tra, gói cài và cập nhật phải ký/xác minh riêng.
+- **Tích hợp:** Khóa Electron/Node, expose API preload tối thiểu và test gói production trên từng OS trước nhân bản template.
+- **Đối chiếu:** Electron Forge cho scaffold; [Tauri](../13-dev-stack-devops/README.md) cho WebView/Rust; [Wails](../13-dev-stack-devops/README.md#anhkysuai-wailsapp-wails) cho Go desktop.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `e5b8242d8b21a4290c3a1f18ae3b64167e9de04a` (2026-09-15T14:13:26-07:00); 24,249 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/electron-react-boilerplate/electron-react-boilerplate/blob/e5b8242d8b21a4290c3a1f18ae3b64167e9de04a/README.md) · [LICENSE](https://github.com/electron-react-boilerplate/electron-react-boilerplate/blob/e5b8242d8b21a4290c3a1f18ae3b64167e9de04a/LICENSE) · [package.json](https://github.com/electron-react-boilerplate/electron-react-boilerplate/blob/e5b8242d8b21a4290c3a1f18ae3b64167e9de04a/package.json) · [.github/workflows/test.yml](https://github.com/electron-react-boilerplate/electron-react-boilerplate/blob/e5b8242d8b21a4290c3a1f18ae3b64167e9de04a/.github/workflows/test.yml) · [GitHub API](https://api.github.com/repos/electron-react-boilerplate/electron-react-boilerplate).
+
+<a id="anhkysuai-pure-css-pure"></a>
+
+### Pure CSS
+
+**Repo:** [pure-css/pure](https://github.com/pure-css/pure) · **License:** BSD-3-Clause; thành phần nền có thông báo riêng · **Kiểm:** 2026-11-23, `docs-read`, [`ba73c847bc29`](https://github.com/pure-css/pure/tree/ba73c847bc297fec8489907aff58b4ee3abf59ab) (commit 2026-11-19). **Sao:** 23,717 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/pure-css/pure).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Bộ module CSS nhỏ cho grid, form, button, menu và table responsive. |
+| Giá trị và cơ chế theo tài liệu | README mô tả nền Normalize.css, tách core/non-responsive/module build; package 3.1.0 và CI lint/test cho phép chỉ lấy phần giao diện cần dùng. |
+| Giới hạn | Kích thước 3.7KB là số upstream, chưa đo bundle tích hợp. CSS cung cấp kiểu dáng, không tự tạo hành vi tương tác hay accessibility của menu/form. |
+| Điều kiện tích hợp | Chọn module và breakpoint phù hợp, thử keyboard/focus/contrast với nội dung thật; giữ style tùy chỉnh có phạm vi và kiểm browser mục tiêu trước dùng toàn site. |
+| Lựa chọn đối chiếu | [Bootstrap](../08-awesome-lists-learning/README.md#6c522-thư-viện-giao-diện--css); Bulma; Pico CSS. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/pure-css/pure/blob/ba73c847bc297fec8489907aff58b4ee3abf59ab/README.md) · [LICENSE](https://github.com/pure-css/pure/blob/ba73c847bc297fec8489907aff58b4ee3abf59ab/LICENSE) · [package.json](https://github.com/pure-css/pure/blob/ba73c847bc297fec8489907aff58b4ee3abf59ab/package.json) · [composer.json](https://github.com/pure-css/pure/blob/ba73c847bc297fec8489907aff58b4ee3abf59ab/composer.json) · [.github/workflows/test.yml](https://github.com/pure-css/pure/blob/ba73c847bc297fec8489907aff58b4ee3abf59ab/.github/workflows/test.yml).
+
+<a id="anhkysuai-svg-svgo"></a>
+
+### SVGO
+
+**Repo:** [svg/svgo](https://github.com/svg/svgo) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`31194fb4b3b5`](https://github.com/svg/svgo/tree/31194fb4b3b592d7a65956f8f3b343b9fd6b80a6) (commit 2026-11-07). **Sao:** 22,838 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/svg/svgo).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Tối ưu SVG qua thư viện Node.js hoặc CLI, phù hợp pipeline icon và tài sản giao diện. |
+| Giá trị và cơ chế theo tài liệu | README mô tả plugin, preset và cấu hình svgo.config.mjs; manifest 4.1.0 có build bundle, kiểm kiểu và regression script. Có thể chuẩn hóa bước nén asset trước phát hành. |
+| Giới hạn | Chưa đo mức giảm dung lượng hoặc kiểm so sánh hình ảnh. Thay đổi metadata, ID và cấu trúc SVG cần thử trên icon có CSS, animation, liên kết và accessibility. |
+| Điều kiện tích hợp | Khóa phiên bản, giữ bản gốc và cấu hình plugin trong repo; chạy so sánh hình ảnh cùng kiểm ID được tham chiếu trước khi thay toàn bộ asset. |
+| Lựa chọn đối chiếu | SVGOMG; Scour; oxipng. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/svg/svgo/blob/31194fb4b3b592d7a65956f8f3b343b9fd6b80a6/README.md) · [LICENSE](https://github.com/svg/svgo/blob/31194fb4b3b592d7a65956f8f3b343b9fd6b80a6/LICENSE) · [package.json](https://github.com/svg/svgo/blob/31194fb4b3b592d7a65956f8f3b343b9fd6b80a6/package.json) · [.github/workflows/ci.yml](https://github.com/svg/svgo/blob/31194fb4b3b592d7a65956f8f3b343b9fd6b80a6/.github/workflows/ci.yml).
+
+<a id="anhkysuai-tabler-tabler-icons"></a>
+
+### Tabler Icons
+
+**Repo:** [tabler/tabler-icons](https://github.com/tabler/tabler-icons) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`85e870dbe868`](https://github.com/tabler/tabler-icons/tree/85e870dbe8680c2d6deefd062122d30ef1544a41) (commit 2026-11-16). **Sao:** 22,769 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/tabler/tabler-icons).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Bộ SVG icon outline và filled cho web, có các gói theo framework và định dạng. |
+| Giá trị và cơ chế theo tài liệu | README tại SHA kiểm ghi 6.545 icon, lưới 24×24 và nét 2px; cung cấp SVG, sprite, webfont, React và React Native. Manifest và CI có bước validate, optimize và build gói. |
+| Giới hạn | Số lượng là số upstream công bố tại snapshot, chưa đếm độc lập. Không suy diễn mọi biểu tượng tự có nhãn truy cập hoặc mọi hình thức import đều tối ưu bundle. |
+| Điều kiện tích hợp | Chọn một kiểu nét và tập icon nhất quán; import có chọn lọc, bổ sung nhãn cho nút chỉ có icon và giữ thông báo MIT khi phân phối. |
+| Lựa chọn đối chiếu | Lucide; Heroicons; Phosphor Icons. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/tabler/tabler-icons/blob/85e870dbe8680c2d6deefd062122d30ef1544a41/README.md) · [LICENSE](https://github.com/tabler/tabler-icons/blob/85e870dbe8680c2d6deefd062122d30ef1544a41/LICENSE) · [package.json](https://github.com/tabler/tabler-icons/blob/85e870dbe8680c2d6deefd062122d30ef1544a41/package.json) · [.github/workflows/build.yml](https://github.com/tabler/tabler-icons/blob/85e870dbe8680c2d6deefd062122d30ef1544a41/.github/workflows/build.yml).
+
+<a id="anhkysuai-react-grid-layout-react-grid-layout"></a>
+
+### React-Grid-Layout
+
+**Repo:** [react-grid-layout/react-grid-layout](https://github.com/react-grid-layout/react-grid-layout) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`ec4ab79c9744`](https://github.com/react-grid-layout/react-grid-layout/tree/ec4ab79c97448947b04601c2237b2861d94a0fcb) (commit 2026-11-18). **Sao:** 22,501 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/react-grid-layout/react-grid-layout).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Lưới dashboard React cho phép kéo, đổi kích thước và lưu layout theo breakpoint. |
+| Giá trị và cơ chế theo tài liệu | README v2 mô tả bản viết lại TypeScript, hooks đo container và compactor tùy biến; manifest 2.3.0 cùng CI có unit test, build và kiểm ngân sách số phép tính. |
+| Giới hạn | API mới thay đổi kiểu và cấu hình; legacy wrapper là lộ trình chuyển đổi do upstream công bố, chưa được kiểm độc lập. width là prop bắt buộc; chưa thử bàn phím, chạm hoặc hiệu năng dashboard lớn. |
+| Điều kiện tích hợp | Lưu layout có phiên bản, dùng useContainerWidth hoặc ResizeObserver; thử resize và khôi phục bố cục ở nhiều breakpoint, cung cấp thao tác thay thế cho người không kéo thả. |
+| Lựa chọn đối chiếu | GridStack; dnd-kit; CSS Grid. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/react-grid-layout/react-grid-layout/blob/ec4ab79c97448947b04601c2237b2861d94a0fcb/README.md) · [LICENSE](https://github.com/react-grid-layout/react-grid-layout/blob/ec4ab79c97448947b04601c2237b2861d94a0fcb/LICENSE) · [package.json](https://github.com/react-grid-layout/react-grid-layout/blob/ec4ab79c97448947b04601c2237b2861d94a0fcb/package.json) · [.github/workflows/test.yml](https://github.com/react-grid-layout/react-grid-layout/blob/ec4ab79c97448947b04601c2237b2861d94a0fcb/.github/workflows/test.yml).
+
+<a id="anhkysuai-palantir-blueprint"></a>
+
+### Blueprint
+
+**Repo:** [palantir/blueprint](https://github.com/palantir/blueprint) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`75a8495a8c56`](https://github.com/palantir/blueprint/tree/75a8495a8c5654cc5bf6c93c08dc1778cb5a0098) (commit 2026-11-20). **Sao:** 22,228 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/palantir/blueprint).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Bộ component React hướng tới ứng dụng desktop trên trình duyệt với giao diện nhiều dữ liệu. |
+| Giá trị và cơ chế theo tài liệu | README tách core, colors, icons, select, datetime và bảng kiểu spreadsheet; có docs app và ví dụ React. Phù hợp console quản trị hoặc công cụ phân tích cần hệ thống thành phần thống nhất. |
+| Giới hạn | Upstream nói rõ không ưu tiên mobile. Manifest gốc 0.0.0 là monorepo, không phải bản component; workflow được đọc chỉ tạo bình luận preview nên chưa chứng minh chất lượng kiểm thử UI. |
+| Điều kiện tích hợp | Chọn gói thực sự cần, kiểm phiên bản React, theme và tải icon/CSS; thử bảng lớn, bàn phím, độ tương phản và bố cục trên màn hình mục tiêu. |
+| Lựa chọn đối chiếu | Ant Design; MUI; Mantine. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/palantir/blueprint/blob/75a8495a8c5654cc5bf6c93c08dc1778cb5a0098/README.md) · [LICENSE](https://github.com/palantir/blueprint/blob/75a8495a8c5654cc5bf6c93c08dc1778cb5a0098/LICENSE) · [package.json](https://github.com/palantir/blueprint/blob/75a8495a8c5654cc5bf6c93c08dc1778cb5a0098/package.json) · [.github/workflows/preview-comment.yml](https://github.com/palantir/blueprint/blob/75a8495a8c5654cc5bf6c93c08dc1778cb5a0098/.github/workflows/preview-comment.yml).
+
+<a id="anhkysuai-colorlibhq-gentelella"></a>
+
+### Gentelella
+
+**Repo:** [ColorlibHQ/gentelella](https://github.com/ColorlibHQ/gentelella) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`3f9d772dfb21`](https://github.com/ColorlibHQ/gentelella/tree/3f9d772dfb21c7a4cd886222db7e1bd018a5a2f0) (commit 2026-11-17). **Sao:** 21,571 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/ColorlibHQ/gentelella).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Mẫu dashboard quản trị HTML để khởi tạo giao diện SaaS, CRM hoặc công cụ nội bộ. |
+| Giá trị và cơ chế theo tài liệu | Snapshot v4.2.2 dùng vanilla JavaScript, SCSS và Vite 8; README mô tả trang mẫu, ECharts, kanban, inbox, theme và PWA. Workflow build/lint rồi xuất GitHub Pages. |
+| Giới hạn | Khác nền Bootstrap/jQuery của các bản cũ; số trang và nhãn production-ready là mô tả upstream, chưa kiểm độc lập. UI mẫu không cung cấp sẵn backend, phân quyền hoặc dữ liệu nghiệp vụ. |
+| Điều kiện tích hợp | Tách dữ liệu demo, ghép API và xác thực của sản phẩm; kiểm form, accessibility, đường dẫn tài sản và service worker. Khóa bản trước tùy chỉnh theme để dễ nâng cấp. |
+| Lựa chọn đối chiếu | Tabler; AdminLTE; CoreUI. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/ColorlibHQ/gentelella/blob/3f9d772dfb21c7a4cd886222db7e1bd018a5a2f0/README.md) · [LICENSE.txt](https://github.com/ColorlibHQ/gentelella/blob/3f9d772dfb21c7a4cd886222db7e1bd018a5a2f0/LICENSE.txt) · [package.json](https://github.com/ColorlibHQ/gentelella/blob/3f9d772dfb21c7a4cd886222db7e1bd018a5a2f0/package.json) · [.github/workflows/deploy-pages.yml](https://github.com/ColorlibHQ/gentelella/blob/3f9d772dfb21c7a4cd886222db7e1bd018a5a2f0/.github/workflows/deploy-pages.yml).
+
+<a id="anhkysuai-xtermjs-xterm.js"></a>
+
+### xterm.js
+
+**Repo:** [xtermjs/xterm.js](https://github.com/xtermjs/xterm.js) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`eefaadc7787f`](https://github.com/xtermjs/xterm.js/tree/eefaadc7787f5b1c95c22867d02e4074e91f93c9) (commit 2026-11-21). **Sao:** 21,384 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/xtermjs/xterm.js).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Component terminal chạy trong trình duyệt cho IDE web, console máy chủ hoặc công cụ điều khiển từ xa. |
+| Giá trị và cơ chế theo tài liệu | README mô tả Unicode/CJK, IME, addon, renderer GPU tùy chọn và chế độ screen reader; gói @xterm/xterm 6.0.0 có build TypeScript cùng CI tạo artifact. |
+| Giới hạn | Đây là phần hiển thị terminal, không phải shell hay backend PTY. Chưa thử khả năng tương thích ứng dụng terminal, hiệu năng scrollback hoặc accessibility; quyền chạy lệnh thuộc kiến trúc server. |
+| Điều kiện tích hợp | Ghép PTY qua kênh đã xác thực, giới hạn phiên và quyền hệ điều hành; kiểm resize, Unicode, copy/paste, link và mất kết nối, bật chế độ truy cập phù hợp. |
+| Lựa chọn đối chiếu | Ghostty; hterm; ttyd. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/xtermjs/xterm.js/blob/eefaadc7787f5b1c95c22867d02e4074e91f93c9/README.md) · [LICENSE](https://github.com/xtermjs/xterm.js/blob/eefaadc7787f5b1c95c22867d02e4074e91f93c9/LICENSE) · [package.json](https://github.com/xtermjs/xterm.js/blob/eefaadc7787f5b1c95c22867d02e4074e91f93c9/package.json) · [.github/workflows/ci.yml](https://github.com/xtermjs/xterm.js/blob/eefaadc7787f5b1c95c22867d02e4074e91f93c9/.github/workflows/ci.yml).
+
+<a id="anhkysuai-longbridge-gpui-kit"></a>
+
+### GPUI Kit
+
+**Repo:** [longbridge/gpui-kit](https://github.com/longbridge/gpui-kit) · **License:** Apache-2.0 cho mã; văn bản và minh họa đủ quyền trong docs còn có lựa chọn CC-BY-4.0 · **Kiểm:** 2026-11-23, `docs-read`, [`48e53b11762a`](https://github.com/longbridge/gpui-kit/tree/48e53b11762a7ac37835acca889a924c569ff681) (commit 2026-11-23). **Sao:** 21,217 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/longbridge/gpui-kit).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Framework component desktop Rust trên GPUI, có lớp hành vi nền, giao diện có style và gói ghép ứng dụng. |
+| Giá trị và cơ chế theo tài liệu | README phân tách gpui-kit, gpui-base và gpui-component; gói kit khóa GPUI tương ứng, có WASM, AccessKit và runtime extension JavaScript tùy chọn. CI kiểm pin, dependency và tài liệu recipe. |
+| Giới hạn | Tuyên bố production-ready và hơn 75 component là từ upstream, chưa chạy ứng dụng. License CC-BY bổ sung chỉ áp dụng tài liệu đủ quyền, không đổi license mã, snippet hoặc tài sản bên thứ ba. |
+| Điều kiện tích hợp | Khóa đúng bộ crate và GPUI, làm prototype trên từng hệ điều hành; kiểm input, accessibility, font và đóng gói, chỉ bật runtime extension khi có chính sách quyền phù hợp. |
+| Lựa chọn đối chiếu | Slint; Iced; egui. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/longbridge/gpui-kit/blob/48e53b11762a7ac37835acca889a924c569ff681/README.md) · [LICENSE-APACHE](https://github.com/longbridge/gpui-kit/blob/48e53b11762a7ac37835acca889a924c569ff681/LICENSE-APACHE) · [LICENSE-DOCS.md](https://github.com/longbridge/gpui-kit/blob/48e53b11762a7ac37835acca889a924c569ff681/LICENSE-DOCS.md) · [Cargo.toml](https://github.com/longbridge/gpui-kit/blob/48e53b11762a7ac37835acca889a924c569ff681/Cargo.toml) · [.github/workflows/ci.yml](https://github.com/longbridge/gpui-kit/blob/48e53b11762a7ac37835acca889a924c569ff681/.github/workflows/ci.yml).
+
+<a id="anhkysuai-basecamp-trix"></a>
+
+### Trix
+
+**Repo:** [basecamp/trix](https://github.com/basecamp/trix) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`e2df97a56bcf`](https://github.com/basecamp/trix/tree/e2df97a56bcf1b6689ccd08d0d11a3f96006da8b) (commit 2026-10-09). **Sao:** 20,014 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/basecamp/trix).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Rich text editor cho bài viết, bình luận và tin nhắn, dùng document model nội bộ và xuất HTML. |
+| Giá trị và cơ chế theo tài liệu | README mô tả custom element, thao tác chỉnh sửa và attachment; manifest 2.1.19 có build Rollup/Sass, browser test. Ứng dụng tự upload tệp rồi cấp URL bền vững cho attachment. |
+| Giới hạn | README cảnh báo HTML không tin cậy đặt trực tiếp trong trix-editor có thể được browser thực thi trước sanitizer. Editor không cung cấp sẵn lưu trữ hoặc chính sách bảo mật tệp; chưa thử trình duyệt/IME. |
+| Điều kiện tích hợp | Khởi tạo nội dung qua hidden input đã escape hoặc gán value bằng DOM, kiểm HTML phía server và quyền URL attachment; thử paste, upload lỗi, undo và nội dung dài. |
+| Lựa chọn đối chiếu | Tiptap; Lexical; ProseMirror. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/basecamp/trix/blob/e2df97a56bcf1b6689ccd08d0d11a3f96006da8b/README.md) · [LICENSE](https://github.com/basecamp/trix/blob/e2df97a56bcf1b6689ccd08d0d11a3f96006da8b/LICENSE) · [package.json](https://github.com/basecamp/trix/blob/e2df97a56bcf1b6689ccd08d0d11a3f96006da8b/package.json) · [.github/workflows/ci.yml](https://github.com/basecamp/trix/blob/e2df97a56bcf1b6689ccd08d0d11a3f96006da8b/.github/workflows/ci.yml).
+
+<a id="anhkysuai-2026-11-23-storytold-artcraft"></a>
+
+### artcraft
+
+**Repo:** [storytold/artcraft](https://github.com/storytold/artcraft) · **License:** MIT OR Apache-2.0 · **★ 42,033 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Môi trường sáng tạo ảnh/video AI có bố cục 2D, dựng cảnh 3D và lựa chọn nhiều mô hình.
+
+**Giá trị:** Chuyển từ prompt đơn thuần sang kiểm soát cảnh, thành phần và góc nhìn; hữu ích tham khảo thiết kế công cụ sáng tạo.
+
+**Giới hạn:** Mã MIT hoặc Apache-2.0 không bao gồm mọi model, tài sản hay dịch vụ được nối; chi phí và quyền đầu ra phải kiểm theo nhà cung cấp.
+
+**Cách tham khảo/tích hợp:** Đối chiếu phạm vi và giấy phép, thử một ca nhỏ có kết quả mong đợi trước khi nhúng vào dự án.
+
+**Lựa chọn để đối chiếu:** [OpenMontageInc/OpenMontage](https://github.com/OpenMontageInc/OpenMontage) · [pixijs/pixijs](https://github.com/pixijs/pixijs). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`de571bb2f8351ade6c742d41caea81f11f595801`](https://github.com/storytold/artcraft/commit/de571bb2f8351ade6c742d41caea81f11f595801), ngày commit 2026-11-20. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/storytold/artcraft/blob/de571bb2f8351ade6c742d41caea81f11f595801/README.md) · [LICENSE-APACHE](https://github.com/storytold/artcraft/blob/de571bb2f8351ade6c742d41caea81f11f595801/LICENSE-APACHE) · [LICENSE-MIT](https://github.com/storytold/artcraft/blob/de571bb2f8351ade6c742d41caea81f11f595801/LICENSE-MIT) · [Cargo.toml](https://github.com/storytold/artcraft/blob/de571bb2f8351ade6c742d41caea81f11f595801/Cargo.toml) · [.github/workflows/freebsd.yml](https://github.com/storytold/artcraft/blob/de571bb2f8351ade6c742d41caea81f11f595801/.github/workflows/freebsd.yml) · [metadata GitHub](https://api.github.com/repos/storytold/artcraft).
+
+<a id="anhkysuai-2026-11-23-date-fns-date-fns"></a>
+
+### date-fns
+
+**Repo:** [date-fns/date-fns](https://github.com/date-fns/date-fns) · **License:** MIT (tuyên bố README; từng package kiểm riêng) · **★ 36,661 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện TypeScript/JavaScript thao tác ngày theo hàm nhỏ, hỗ trợ locale và múi giờ.
+
+**Giá trị:** Dùng native Date và hàm không sửa dữ liệu đầu vào theo tài liệu, thuận tiện chọn chức năng cần thiết.
+
+**Giới hạn:** Không lấy MIT của riêng pkgs/tz để suy toàn bộ; README dự án cũng khai báo MIT. Cần kiểm parsing, DST, locale và múi giờ bằng ví dụ thực của ứng dụng.
+
+**Cách tham khảo/tích hợp:** Ghim phiên bản và kiểm ví dụ nhỏ với framework/trình duyệt đích, gồm accessibility, tải dữ liệu và các trường hợp biên.
+
+**Lựa chọn để đối chiếu:** [iamkun/dayjs](https://github.com/iamkun/dayjs) · [moment/luxon](https://github.com/moment/luxon). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a9739fb3e5384a810e90d7376446f6d84ecc5029`](https://github.com/date-fns/date-fns/commit/a9739fb3e5384a810e90d7376446f6d84ecc5029), ngày commit 2026-10-24. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/date-fns/date-fns/blob/a9739fb3e5384a810e90d7376446f6d84ecc5029/README.md) · [pkgs/tz/LICENSE.md](https://github.com/date-fns/date-fns/blob/a9739fb3e5384a810e90d7376446f6d84ecc5029/pkgs/tz/LICENSE.md) · [package.json](https://github.com/date-fns/date-fns/blob/a9739fb3e5384a810e90d7376446f6d84ecc5029/package.json) · [.github/workflows/tz_tests.yaml](https://github.com/date-fns/date-fns/blob/a9739fb3e5384a810e90d7376446f6d84ecc5029/.github/workflows/tz_tests.yaml) · [metadata GitHub](https://api.github.com/repos/date-fns/date-fns).

@@ -273,6 +273,94 @@ README có ví dụ 30 dòng: server FastAPI phát `RUN_STARTED`, `TEXT_MESSAGE_
 
 **Dùng khi:** cần đưa agent vào giao diện người dùng (web, mobile, Slack/Teams, terminal) mà không viết giao thức stream riêng cho từng framework; cần shared state hai chiều, tool chạy phía app hoặc duyệt của người giữa lượt chạy. Liên quan: §1 (bản đồ giao thức), §4b.3 (A2UI), §4c (bộ conformance của MCP/A2A), mục 06 §7p (OpenUI, Tambo dùng sự kiện AG-UI).
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **4 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-apache-apisix"></a>
+
+### Apache APISIX
+
+**Repo:** [apache/apisix](https://github.com/apache/apisix) · **License:** Apache-2.0; kèm notices thành phần thứ ba · **★ 17,361 (GitHub API, 2026-11-23)**
+
+**Mục đích:** API gateway động cho định tuyến, kiểm soát lưu lượng và các API mô hình AI.
+
+**Giá trị và cơ chế:** README mô tả lớp NGINX/OpenResty, plugin xác thực, canary, circuit breaker và observability; phù hợp điểm vào chung cho dịch vụ truyền thống lẫn LLM.
+
+**Giới hạn:** Chưa đọc triển khai plugin hoặc đo benchmark. Gateway không tự giải quyết quyền dữ liệu trong ứng dụng; cấu hình plugin, upstream và control plane quyết định vận hành.
+
+**Cách tham khảo/tích hợp:** Dùng route thử với retry/rate limit rõ ràng, đo streaming và xử lý lỗi trước chuyển lưu lượng thật.
+
+**Thay thế:** [kong](../08-awesome-lists-learning/README.md#6c55-container--devops), [LiteLLM](https://github.com/BerriAI/litellm), envoy.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`bd310c5782e4`](https://github.com/apache/apisix/commit/bd310c5782e46fed758582a184fe387cf5df8d39). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/apache/apisix/blob/bd310c5782e46fed758582a184fe387cf5df8d39/README.md) · [LICENSE](https://github.com/apache/apisix/blob/bd310c5782e46fed758582a184fe387cf5df8d39/LICENSE) · [metadata GitHub](https://api.github.com/repos/apache/apisix).
+
+<a id="anhkysuai-2026-11-23-dsh-our-free-model"></a>
+
+### dsh-our-free-model
+
+**Repo:** [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model) · **License:** MIT và notices thành phần; Qoder auth WASM chưa rõ quyền phân phối · **★ 84,542 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Plugin và proxy local tập hợp nhiều đường truy cập mô hình qua gateway/nhà cung cấp.
+
+**Giá trị và cơ chế:** README mô tả catalog cập nhật từ upstream, kiểm khả dụng theo mạng và chuyển tiếp API tương thích OpenAI; hữu ích tham khảo quản lý provider và chẩn đoán lỗi route.
+
+**Giới hạn:** LICENSE tự ghi Qoder auth WASM chưa xác định cơ sở phân phối; không gọi cả gói MIT. Cam kết miễn phí/không giới hạn chưa kiểm; README thừa nhận quota, chặn vùng và upstream có thể lưu prompt.
+
+**Cách tham khảo/tích hợp:** Đánh giá adapter với tài khoản được phép, tránh nội dung bí mật và kiểm điều khoản từng upstream trước dùng.
+
+**Thay thế:** [LiteLLM](https://github.com/BerriAI/litellm), [CLIProxyAPI](../04-protocols-standards/README.md#anhkysuai-2026-11-23-cliproxyapi), [one-api](https://github.com/songquanpeng/one-api).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f111941c46bb`](https://github.com/Ebony-Vinyl/dsh-our-free-model/commit/f111941c46bb6789b236d858ed85edbe41c89bfc). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f111941c46bb6789b236d858ed85edbe41c89bfc/README.md) · [LICENSE](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f111941c46bb6789b236d858ed85edbe41c89bfc/LICENSE) · [metadata GitHub](https://api.github.com/repos/Ebony-Vinyl/dsh-our-free-model).
+
+<a id="anhkysuai-2026-11-23-gpt4free"></a>
+
+### GPT4Free
+
+**Repo:** [xtekky/gpt4free](https://github.com/xtekky/gpt4free) · **License:** GPL-3.0 · **★ 67,099 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tập hợp adapter nhiều nhà cung cấp LLM/media với GUI và REST API tương thích OpenAI.
+
+**Giá trị và cơ chế:** README mô tả client Python/JavaScript, chế độ synchronous/async và Docker; hữu ích tham khảo chuẩn hóa bề mặt provider cho thử nghiệm.
+
+**Giới hạn:** Tên gpt4free không bảo đảm quyền truy cập, miễn phí hoặc ổn định; provider có thể cần token và đổi giao diện. Chưa kiểm đường truyền, đăng nhập hay toàn adapter. README yêu cầu auth/HTTPS khi đưa server ra mạng.
+
+**Cách tham khảo/tích hợp:** Chỉ cấu hình provider được phép sử dụng, lưu lỗi/quota rõ ràng và tách thử nghiệm khỏi dịch vụ sản xuất.
+
+**Thay thế:** [LiteLLM](https://github.com/BerriAI/litellm), [CLIProxyAPI](../04-protocols-standards/README.md#anhkysuai-2026-11-23-cliproxyapi), openrouter.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`9059e300bdd7`](https://github.com/xtekky/gpt4free/commit/9059e300bdd71a02973107805933cd882040de4b). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/xtekky/gpt4free/blob/9059e300bdd71a02973107805933cd882040de4b/README.md) · [LICENSE](https://github.com/xtekky/gpt4free/blob/9059e300bdd71a02973107805933cd882040de4b/LICENSE) · [metadata GitHub](https://api.github.com/repos/xtekky/gpt4free).
+
+<a id="anhkysuai-2026-11-23-cliproxyapi"></a>
+
+### CLIProxyAPI
+
+**Repo:** [router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) · **License:** MIT · **★ 59,282 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Proxy Go đưa nhiều provider/CLI account về API tương thích OpenAI, Gemini hoặc Claude.
+
+**Giá trị và cơ chế:** README và go.mod thể hiện adapter giao thức, model alias và các dự án quản lý liên quan; hữu ích tham khảo cách đồng nhất nhiều bề mặt API cho client.
+
+**Giới hạn:** Chưa đọc adapter xác thực hoặc xác minh mọi endpoint đang hoạt động. Điều khoản tài khoản và quota upstream độc lập MIT; workflow được xem chỉ build/cross-build, không xác nhận tính tương đương giao thức.
+
+**Cách tham khảo/tích hợp:** Dùng credential được phép, kiểm streaming/tool-call và thông báo lỗi theo từng provider trước thay endpoint.
+
+**Thay thế:** [LiteLLM](https://github.com/BerriAI/litellm), [one-api](https://github.com/songquanpeng/one-api), apisix.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`6eb8554f0ede`](https://github.com/router-for-me/CLIProxyAPI/commit/6eb8554f0ede597b2aa3e508ffb3f111d3c2b9e6). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/router-for-me/CLIProxyAPI/blob/6eb8554f0ede597b2aa3e508ffb3f111d3c2b9e6/README.md) · [LICENSE](https://github.com/router-for-me/CLIProxyAPI/blob/6eb8554f0ede597b2aa3e508ffb3f111d3c2b9e6/LICENSE) · [metadata GitHub](https://api.github.com/repos/router-for-me/CLIProxyAPI).
+
 ## 5. Nguồn
 
 - https://en.wikipedia.org/wiki/Model_Context_Protocol · https://github.com/wong2/awesome-mcp-servers · https://github.com/sadekxD/Awesome-MCP · https://uibakery.io/blog/best-mcp-servers

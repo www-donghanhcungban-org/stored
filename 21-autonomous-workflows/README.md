@@ -575,6 +575,538 @@ SDK MIT dùng `ctx.run` để ghi kết quả thao tác không tất định và
 
 **Nguồn §10i:** ảnh README người dùng gửi 4/11/2026 · clone https://github.com/deepseek-ai/dsh-superagent-prototype HEAD `8c32a9dc5d72c033816c6a8110b37f40cf94fba4`: https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/README.md · https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/SETUP.md · https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/LICENSE · https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/package.json · https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/docs/002-authorization.md · https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/docs/003-execution.md · https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/docs/005-panel.md · https://github.com/deepseek-ai/dsh-superagent-prototype/blob/8c32a9dc5d72c033816c6a8110b37f40cf94fba4/docs/006-deployment.md · `prompts/dispatch.md` · GitHub search API `dsh-superagent` 4/11/2026.
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **28 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-changedetection-io"></a>
+
+### changedetection.io
+
+**Repo:** [dgtlmoon/changedetection.io](https://github.com/dgtlmoon/changedetection.io) · **License:** Apache-2.0 · **★ 35,973 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Theo dõi thay đổi website và gửi thông báo khi nội dung quan tâm thay đổi.
+
+**Giá trị và cơ chế:** README tách lấy trang, điều kiện theo dõi và thông báo; bổ sung tóm tắt/điều kiện LLM qua nhà cung cấp đám mây hoặc Ollama.
+
+**Giới hạn:** Chưa kiểm tra trình duyệt thực, chống bỏ sót thay đổi hay tính đúng của bộ lọc. Trang động và cookie đăng nhập làm tăng công vận hành; dùng LLM ngoài máy có thể gửi nội dung theo dõi đi.
+
+**Cách tham khảo/tích hợp:** Tạo vài watch có mẫu thay đổi đã biết, kiểm tra selector và ngưỡng rồi mới tăng lịch quét.
+
+**Thay thế:** [Huginn](https://github.com/huginn/huginn), [n8n](https://github.com/n8n-io/n8n), [Crawlee](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-crawlee).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`ae3d178881ce`](https://github.com/dgtlmoon/changedetection.io/commit/ae3d178881ceef13e524c8ec9378ec3b2a5b29b5). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/dgtlmoon/changedetection.io/blob/ae3d178881ceef13e524c8ec9378ec3b2a5b29b5/README.md) · [LICENSE](https://github.com/dgtlmoon/changedetection.io/blob/ae3d178881ceef13e524c8ec9378ec3b2a5b29b5/LICENSE) · [metadata GitHub](https://api.github.com/repos/dgtlmoon/changedetection.io).
+
+<a id="anhkysuai-mastodon-mastodon"></a>
+
+### Mastodon
+
+**Repo:** [mastodon/mastodon](https://github.com/mastodon/mastodon) · **License:** AGPL-3.0-or-later · **Kiểm:** 2026-11-23, `docs-read`, [`47c3a7dafa52`](https://github.com/mastodon/mastodon/tree/47c3a7dafa52551850756744e189beb447fc2c48) (commit 2026-11-23). **Sao:** 50,713 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/mastodon/mastodon).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Máy chủ mạng xã hội liên thông bằng ActivityPub. |
+| Giá trị và cơ chế theo tài liệu | README mô tả federation, timeline, media và công cụ kiểm duyệt; repo có ứng dụng web cùng kiểm thử JavaScript. |
+| Giới hạn | Tự host tạo trách nhiệm kiểm duyệt, lưu media và vận hành liên thông; tính riêng tư không thể suy chỉ từ nhãn federated. Chưa thử federation hay tải thực tế. |
+| Điều kiện tích hợp | Dùng instance thử, kiểm chính sách liên thông và quyền ứng dụng; cân nhắc AGPL khi sửa server và cung cấp qua mạng. |
+| Lựa chọn đối chiếu | Misskey; Pleroma; GoToSocial. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/mastodon/mastodon/blob/47c3a7dafa52551850756744e189beb447fc2c48/README.md) · [LICENSE](https://github.com/mastodon/mastodon/blob/47c3a7dafa52551850756744e189beb447fc2c48/LICENSE) · [package.json](https://github.com/mastodon/mastodon/blob/47c3a7dafa52551850756744e189beb447fc2c48/package.json) · [.github/workflows/test-js.yml](https://github.com/mastodon/mastodon/blob/47c3a7dafa52551850756744e189beb447fc2c48/.github/workflows/test-js.yml).
+
+<a id="anhkysuai-calcom-cal.diy"></a>
+
+### Cal.diy
+
+**Repo:** [calcom/cal.diy](https://github.com/calcom/cal.diy) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`ae027bb70e69`](https://github.com/calcom/cal.diy/tree/ae027bb70e694e2d2c44569f398d6cbcee0389b1) (commit 2026-11-13). **Sao:** 50,329 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/calcom/cal.diy).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Bản cộng đồng tự host cho đặt lịch, tách khỏi các tính năng thương mại của Cal.com. |
+| Giá trị và cơ chế theo tài liệu | README nêu rõ đã bỏ Teams, Organizations, Insights, Workflows và SSO/SAML; LICENSE MIT khớp mô tả phạm vi cộng đồng. |
+| Giới hạn | Tác giả khuyến cáo dùng cá nhân, không production. Không suy chức năng Enterprise hoặc độ sẵn sàng của Cal.com sang Cal.diy. |
+| Điều kiện tích hợp | Thử riêng luồng đặt lịch, múi giờ, lịch ngoài và OAuth; dùng Cal.com hoặc sản phẩm phù hợp nếu cần điều kiện vận hành thương mại đã hỗ trợ. |
+| Lựa chọn đối chiếu | Cal.com; Easy!Appointments; Rallly. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/calcom/cal.diy/blob/ae027bb70e694e2d2c44569f398d6cbcee0389b1/README.md) · [LICENSE](https://github.com/calcom/cal.diy/blob/ae027bb70e694e2d2c44569f398d6cbcee0389b1/LICENSE) · [package.json](https://github.com/calcom/cal.diy/blob/ae027bb70e694e2d2c44569f398d6cbcee0389b1/package.json) · [.github/workflows/run-ci.yml](https://github.com/calcom/cal.diy/blob/ae027bb70e694e2d2c44569f398d6cbcee0389b1/.github/workflows/run-ci.yml).
+
+<a id="anhkysuai-discourse-discourse"></a>
+
+### Discourse
+
+**Repo:** [discourse/discourse](https://github.com/discourse/discourse) · **License:** GPL-2.0; COPYRIGHT.md ghi or-later, package.json ghi only · **Kiểm:** 2026-11-23, `docs-read`, [`a672f97a50b3`](https://github.com/discourse/discourse/tree/a672f97a50b352e3ff18caccb6a4cf89c53d115f) (commit 2026-11-23). **Sao:** 48,108 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/discourse/discourse).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Nền tảng cộng đồng với chủ đề thảo luận, chat, theme và plugin. |
+| Giá trị và cơ chế theo tài liệu | README nêu các hướng self-host và plugin AI/Data Explorer; workflow Tests phân tách core, plugin và chat. |
+| Giới hạn | Có bất nhất giữa thông báo COPYRIGHT cho phép GPLv2-or-later và package.json ghi GPLv2-only; giữ rõ hai nguồn thay vì tự kết luận. Chưa kiểm plugin bên ngoài hoặc vận hành mail. |
+| Điều kiện tích hợp | Dùng quy trình triển khai được hỗ trợ, thử backup và plugin trên staging; kiểm phạm vi giấy phép của mã định tái sử dụng. |
+| Lựa chọn đối chiếu | Flarum; NodeBB; [Zulip](../21-autonomous-workflows/README.md#anhkysuai-zulip-zulip). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/discourse/discourse/blob/a672f97a50b352e3ff18caccb6a4cf89c53d115f/README.md) · [COPYRIGHT.md](https://github.com/discourse/discourse/blob/a672f97a50b352e3ff18caccb6a4cf89c53d115f/COPYRIGHT.md) · [LICENSE.txt](https://github.com/discourse/discourse/blob/a672f97a50b352e3ff18caccb6a4cf89c53d115f/LICENSE.txt) · [package.json](https://github.com/discourse/discourse/blob/a672f97a50b352e3ff18caccb6a4cf89c53d115f/package.json) · [.github/workflows/tests.yml](https://github.com/discourse/discourse/blob/a672f97a50b352e3ff18caccb6a4cf89c53d115f/.github/workflows/tests.yml).
+
+<a id="anhkysuai-rocketchat-rocket.chat"></a>
+
+### Rocket.Chat
+
+**Repo:** [RocketChat/Rocket.Chat](https://github.com/RocketChat/Rocket.Chat) · **License:** MIT; thư mục ee theo giấy phép thương mại riêng · **Kiểm:** 2026-11-23, `docs-read`, [`62e0e5ac583d`](https://github.com/RocketChat/Rocket.Chat/tree/62e0e5ac583d64690b8ac18a5834a18b50f4b0d7) (commit 2026-11-20). **Sao:** 46,603 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/RocketChat/Rocket.Chat).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Nền tảng liên lạc nhóm có thể tự host, mở rộng bằng ứng dụng và tích hợp. |
+| Giá trị và cơ chế theo tài liệu | README phân nhóm deployment, collaboration và Apps-Engine; manifest và CI cho thấy monorepo TypeScript với các lớp kiểm khác nhau. |
+| Giới hạn | Các tuyên bố an toàn/E2EE cần kiểm theo cấu hình; LICENSE tách apps/meteor/ee và ee khỏi MIT. Nhánh đã đọc là bản phát triển, chưa thử call/federation. |
+| Điều kiện tích hợp | Chọn bản phát hành, đối chiếu tính năng CE/EE; thử SSO, quyền, lưu trữ và phục hồi trước khi thay hệ liên lạc hiện tại. |
+| Lựa chọn đối chiếu | [Mattermost](../21-autonomous-workflows/README.md#anhkysuai-mattermost-mattermost); [Zulip](../21-autonomous-workflows/README.md#anhkysuai-zulip-zulip); Matrix/Element. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/RocketChat/Rocket.Chat/blob/62e0e5ac583d64690b8ac18a5834a18b50f4b0d7/README.md) · [LICENSE](https://github.com/RocketChat/Rocket.Chat/blob/62e0e5ac583d64690b8ac18a5834a18b50f4b0d7/LICENSE) · [package.json](https://github.com/RocketChat/Rocket.Chat/blob/62e0e5ac583d64690b8ac18a5834a18b50f4b0d7/package.json) · [.github/workflows/ci.yml](https://github.com/RocketChat/Rocket.Chat/blob/62e0e5ac583d64690b8ac18a5834a18b50f4b0d7/.github/workflows/ci.yml).
+
+<a id="anhkysuai-gitroomhq-postiz-app"></a>
+
+### Postiz
+
+**Repo:** [gitroomhq/postiz-app](https://github.com/gitroomhq/postiz-app) · **License:** AGPL-3.0 · **Kiểm:** 2026-11-23, `docs-read`, [`ab9eb87d6283`](https://github.com/gitroomhq/postiz-app/tree/ab9eb87d628303f0df0fa0b44cb766dda9c27604) (commit 2026-11-23). **Sao:** 42,201 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/gitroomhq/postiz-app).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Ứng dụng lập lịch và quản lý xuất bản nội dung trên các kênh mạng xã hội. |
+| Giá trị và cơ chế theo tài liệu | Monorepo tách backend, frontend, orchestrator, extension và SDK; README cùng workflow build cung cấp điểm bắt đầu cho triển khai tự quản. |
+| Giới hạn | Mỗi kênh cần quyền API và giới hạn riêng; tài liệu không chứng minh mọi tích hợp luôn hoạt động. Chưa đăng nội dung, kiểm OAuth hoặc phục hồi lịch gửi thất bại. |
+| Điều kiện tích hợp | Thử bằng tài khoản và nội dung nháp, kiểm múi giờ, token và retry; chỉ cấp quyền cần thiết và theo dõi trạng thái xuất bản. |
+| Lựa chọn đối chiếu | Mixpost; Buffer; Hootsuite. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/gitroomhq/postiz-app/blob/ab9eb87d628303f0df0fa0b44cb766dda9c27604/README.md) · [LICENSE](https://github.com/gitroomhq/postiz-app/blob/ab9eb87d628303f0df0fa0b44cb766dda9c27604/LICENSE) · [package.json](https://github.com/gitroomhq/postiz-app/blob/ab9eb87d628303f0df0fa0b44cb766dda9c27604/package.json) · [.github/workflows/build.yml](https://github.com/gitroomhq/postiz-app/blob/ab9eb87d628303f0df0fa0b44cb766dda9c27604/.github/workflows/build.yml).
+
+<a id="anhkysuai-novuhq-novu"></a>
+
+### Novu
+
+**Repo:** [novuhq/novu](https://github.com/novuhq/novu) · **License:** MIT và Enterprise theo phạm vi gói/thư mục · **Kiểm:** 2026-11-23, `docs-read`, [`31d684d3404f`](https://github.com/novuhq/novu/tree/31d684d3404f4fd3bda55566811b3dbc8b9892e2) (commit 2026-11-23). **Sao:** 40,412 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/novuhq/novu).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Hạ tầng điều phối thông báo và hội thoại qua inbox, email, SMS, push và chat. |
+| Giá trị và cơ chế theo tài liệu | README mô tả workflow, digest, webhook và inbox nhúng; monorepo tách API, worker, WebSocket và giao diện quản trị. |
+| Giới hạn | Kho có LICENSE-MIT, LICENSE-ENTERPRISE và quy định gói EE; không coi toàn bộ tính năng là MIT. Chưa kiểm giao hàng, đồng ý nhận tin hoặc lỗi nhà cung cấp. |
+| Điều kiện tích hợp | Thử một workflow với provider sandbox, định nghĩa dedup/retry và preference của người nhận; kiểm ranh giới CE/EE, secrets và retention sự kiện. |
+| Lựa chọn đối chiếu | Knock; Courier; [ntfy](../21-autonomous-workflows/README.md#anhkysuai-binwiederhier-ntfy). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/novuhq/novu/blob/31d684d3404f4fd3bda55566811b3dbc8b9892e2/README.md) · [LICENSE-ENTERPRISE](https://github.com/novuhq/novu/blob/31d684d3404f4fd3bda55566811b3dbc8b9892e2/LICENSE-ENTERPRISE) · [LICENSE-MIT](https://github.com/novuhq/novu/blob/31d684d3404f4fd3bda55566811b3dbc8b9892e2/LICENSE-MIT) · [package.json](https://github.com/novuhq/novu/blob/31d684d3404f4fd3bda55566811b3dbc8b9892e2/package.json) · [.github/workflows/check-only.yml](https://github.com/novuhq/novu/blob/31d684d3404f4fd3bda55566811b3dbc8b9892e2/.github/workflows/check-only.yml).
+
+<a id="anhkysuai-chatwoot-chatwoot"></a>
+
+### Chatwoot
+
+**Repo:** [chatwoot/chatwoot](https://github.com/chatwoot/chatwoot) · **License:** MIT ngoài phạm vi enterprise; enterprise có điều khoản riêng · **Kiểm:** 2026-11-23, `docs-read`, [`14b264e9498b`](https://github.com/chatwoot/chatwoot/tree/14b264e9498b4084f588eca30085ea6806131b6f) (commit 2026-11-23). **Sao:** 40,392 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/chatwoot/chatwoot).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Hộp thư hỗ trợ khách hàng gom nhiều kênh và trung tâm trợ giúp. |
+| Giá trị và cơ chế theo tài liệu | README mô tả inbox, phân công, nhãn, ghi chú và các kênh liên lạc; manifest Ruby/Vue cùng runtime giúp đánh giá cách tự host. |
+| Giới hạn | Captain AI và các tuyên bố tự động xử lý chưa được kiểm. LICENSE tách enterprise; quyền API, lưu dữ liệu khách hàng và giới hạn nhà cung cấp vẫn cần quản lý. |
+| Điều kiện tích hợp | Thử một kênh với dữ liệu giả lập, chốt phân quyền, retention và chuyển giao cho người; kiểm tính năng CE/EE trước khi thay helpdesk. |
+| Lựa chọn đối chiếu | Zammad; FreeScout; Zendesk. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/chatwoot/chatwoot/blob/14b264e9498b4084f588eca30085ea6806131b6f/README.md) · [LICENSE](https://github.com/chatwoot/chatwoot/blob/14b264e9498b4084f588eca30085ea6806131b6f/LICENSE) · [package.json](https://github.com/chatwoot/chatwoot/blob/14b264e9498b4084f588eca30085ea6806131b6f/package.json) · [.github/workflows/deploy_check.yml](https://github.com/chatwoot/chatwoot/blob/14b264e9498b4084f588eca30085ea6806131b6f/.github/workflows/deploy_check.yml).
+
+<a id="anhkysuai-mattermost-mattermost"></a>
+
+### Mattermost
+
+**Repo:** [mattermost/mattermost](https://github.com/mattermost/mattermost) · **License:** AGPL-3.0 hoặc thương mại cho source; Apache-2.0 cho phần chỉ định; enterprise riêng · **Kiểm:** 2026-11-23, `docs-read`, [`72bef7f84497`](https://github.com/mattermost/mattermost/tree/72bef7f84497e86c6000500571284e5e30ac2d78) (commit 2026-11-23). **Sao:** 39,694 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/mattermost/mattermost).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Nền tảng liên lạc và workflow nhóm có thể tự triển khai. |
+| Giá trị và cơ chế theo tài liệu | README mô tả ứng dụng Go/React với PostgreSQL, chat và tích hợp; LICENSE phân tách nguồn, công cụ quản trị và bản binary do nhà cung cấp phát hành. |
+| Giới hạn | MIT dành cho binary chính thức không có nghĩa toàn bộ mã nguồn MIT. Các khả năng call, AI, compliance và enterprise chưa được kiểm theo edition. |
+| Điều kiện tích hợp | Chọn đúng edition và hình thức phân phối, thử tích hợp cùng phân quyền; kiểm lưu media, backup/restore và nghĩa vụ giấy phép trước khi sửa source. |
+| Lựa chọn đối chiếu | [Zulip](../21-autonomous-workflows/README.md#anhkysuai-zulip-zulip); [Rocket.Chat](../21-autonomous-workflows/README.md#anhkysuai-rocketchat-rocket.chat); Matrix/Element. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/mattermost/mattermost/blob/72bef7f84497e86c6000500571284e5e30ac2d78/README.md) · [LICENSE.enterprise](https://github.com/mattermost/mattermost/blob/72bef7f84497e86c6000500571284e5e30ac2d78/LICENSE.enterprise) · [LICENSE.txt](https://github.com/mattermost/mattermost/blob/72bef7f84497e86c6000500571284e5e30ac2d78/LICENSE.txt) · [.github/workflows/docs-ci.yaml](https://github.com/mattermost/mattermost/blob/72bef7f84497e86c6000500571284e5e30ac2d78/.github/workflows/docs-ci.yaml).
+
+<a id="anhkysuai-rssnext-folo"></a>
+
+### Folo
+
+**Repo:** [RSSNext/Folo](https://github.com/RSSNext/Folo) · **License:** AGPL-3.0-only; icons/mgc không được phân phối lại · **Kiểm:** 2026-11-23, `docs-read`, [`292d15d94f9e`](https://github.com/RSSNext/Folo/tree/292d15d94f9e7680899e1e2567c1c0d48a423f48) (commit 2026-11-19). **Sao:** 39,338 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/RSSNext/Folo).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Trình đọc RSS đa nền tảng gom blog, tin tức, podcast, video và nguồn xã hội. |
+| Giá trị và cơ chế theo tài liệu | README mô tả đồng bộ subscriptions/read status, tóm tắt và dịch bằng AI; monorepo có workflow build iOS với Expo. |
+| Giới hạn | LICENSE loại trừ quyền phân phối lại icons/mgc. Các nền tảng và khả năng AI mới được đọc từ tài liệu; chưa thử đồng bộ hoặc kiểm dữ liệu gửi đến dịch vụ AI. |
+| Điều kiện tích hợp | Dùng bộ feed thử, kiểm import/export và quyền riêng tư; phân biệt ứng dụng client với dịch vụ đồng bộ và xử lý AI trước khi tự host hoặc fork. |
+| Lựa chọn đối chiếu | FreshRSS; Miniflux; NewsBlur. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/RSSNext/Folo/blob/292d15d94f9e7680899e1e2567c1c0d48a423f48/README.md) · [LICENSE](https://github.com/RSSNext/Folo/blob/292d15d94f9e7680899e1e2567c1c0d48a423f48/LICENSE) · [package.json](https://github.com/RSSNext/Folo/blob/292d15d94f9e7680899e1e2567c1c0d48a423f48/package.json) · [.github/workflows/build-ios.yml](https://github.com/RSSNext/Folo/blob/292d15d94f9e7680899e1e2567c1c0d48a423f48/.github/workflows/build-ios.yml).
+
+<a id="anhkysuai-binwiederhier-ntfy"></a>
+
+### ntfy
+
+**Repo:** [binwiederhier/ntfy](https://github.com/binwiederhier/ntfy) · **License:** Apache-2.0 OR GPL-2.0; tài nguyên bên thứ ba riêng · **Kiểm:** 2026-11-23, `docs-read`, [`e33bf6c8293d`](https://github.com/binwiederhier/ntfy/tree/e33bf6c8293d7e8315c7fb5b5b478190baacc9cb) (commit 2026-11-22). **Sao:** 35,703 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/binwiederhier/ntfy).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Dịch vụ thông báo pub/sub qua HTTP PUT/POST cho điện thoại và máy tính. |
+| Giá trị và cơ chế theo tài liệu | README phân biệt instance tự host, dịch vụ ntfy.sh và các app di động riêng; go.mod cùng CI build tài liệu/kiểm giúp tìm đường tích hợp script. |
+| Giới hạn | Không đăng ký ở ví dụ công cộng không đồng nghĩa topic riêng tư. Chưa kiểm ACL, lưu bền, push delivery hay giới hạn thuê bao; README xác nhận dual license, còn âm thanh/tài nguyên mang điều khoản riêng. |
+| Điều kiện tích hợp | Tạo topic và tài khoản thử, cấu hình xác thực/quyền cùng rate limit; tránh gửi bí mật trong nội dung và kiểm hành vi khi thiết bị mất kết nối. |
+| Lựa chọn đối chiếu | Gotify; [Novu](../21-autonomous-workflows/README.md#anhkysuai-novuhq-novu); Apprise. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/binwiederhier/ntfy/blob/e33bf6c8293d7e8315c7fb5b5b478190baacc9cb/README.md) · [LICENSE](https://github.com/binwiederhier/ntfy/blob/e33bf6c8293d7e8315c7fb5b5b478190baacc9cb/LICENSE) · [LICENSE.GPLv2](https://github.com/binwiederhier/ntfy/blob/e33bf6c8293d7e8315c7fb5b5b478190baacc9cb/LICENSE.GPLv2) · [go.mod](https://github.com/binwiederhier/ntfy/blob/e33bf6c8293d7e8315c7fb5b5b478190baacc9cb/go.mod) · [.github/workflows/test.yaml](https://github.com/binwiederhier/ntfy/blob/e33bf6c8293d7e8315c7fb5b5b478190baacc9cb/.github/workflows/test.yaml).
+
+<a id="anhkysuai-karakeep-app-karakeep"></a>
+
+### Karakeep
+
+**Repo:** [karakeep-app/karakeep](https://github.com/karakeep-app/karakeep) · **License:** AGPL-3.0 · **Kiểm:** 2026-11-23, `docs-read`, [`85695fa3ec6a`](https://github.com/karakeep-app/karakeep/tree/85695fa3ec6a0f6e4a3c85c82b55ab98ebcbfb08) (commit 2026-11-22). **Sao:** 30,785 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/karakeep-app/karakeep).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Ứng dụng lưu bookmark, ghi chú, ảnh/PDF với tìm kiếm và phân loại bằng AI. |
+| Giá trị và cơ chế theo tài liệu | README xác nhận tên cũ Hoarder, mô tả REST API/CLI, rule engine, OCR và lưu trang; monorepo có worker và migration queue riêng. |
+| Giới hạn | Lưu trữ trang/video phụ thuộc công cụ ngoài và nội dung nguồn. Chưa đo tìm kiếm/OCR hay kiểm dữ liệu đưa vào LLM; bản sao bookmark không tự là archive đầy đủ. |
+| Điều kiện tích hợp | Thử bộ liên kết đa dạng, chọn model/local provider phù hợp và kiểm quyền chia sẻ; sao lưu cả database, tệp và dữ liệu worker. |
+| Lựa chọn đối chiếu | [Linkwarden](../21-autonomous-workflows/README.md#anhkysuai-linkwarden-linkwarden); [ArchiveBox](../11-browser-computer-use-sandbox/README.md#anhkysuai-archivebox-archivebox); Linkding. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/karakeep-app/karakeep/blob/85695fa3ec6a0f6e4a3c85c82b55ab98ebcbfb08/README.md) · [LICENSE](https://github.com/karakeep-app/karakeep/blob/85695fa3ec6a0f6e4a3c85c82b55ab98ebcbfb08/LICENSE) · [package.json](https://github.com/karakeep-app/karakeep/blob/85695fa3ec6a0f6e4a3c85c82b55ab98ebcbfb08/package.json) · [.github/workflows/ci.yml](https://github.com/karakeep-app/karakeep/blob/85695fa3ec6a0f6e4a3c85c82b55ab98ebcbfb08/.github/workflows/ci.yml).
+
+<a id="anhkysuai-requarks-wiki"></a>
+
+### Wiki.js
+
+**Repo:** [requarks/wiki](https://github.com/requarks/wiki) · **License:** AGPL-3.0 · **Kiểm:** 2026-11-23, `docs-read`, [`d05ff15437ed`](https://github.com/requarks/wiki/tree/d05ff15437ed3452f1132862ef928fa9a6bf0ecd) (commit 2026-11-23). **Sao:** 29,362 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/requarks/wiki).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Ứng dụng wiki tự host cho tài liệu và kiến thức của nhóm. |
+| Giá trị và cơ chế theo tài liệu | README tập trung liên kết yêu cầu, cài đặt, changelog và tài liệu; workflow build/publish cho thấy quy trình tạo artifact và draft release. |
+| Giới hạn | README gốc ít mô tả cơ chế quyền và storage; chưa đọc backend hay thử editor, search, import/export. Không suy mọi tính năng trên website đã có trong nhánh đã clone. |
+| Điều kiện tích hợp | Chọn release, kiểm tài liệu tương ứng và yêu cầu database; thử quyền đọc/sửa, sao lưu và xuất nội dung trước khi nhập kho tri thức. |
+| Lựa chọn đối chiếu | BookStack; [Outline](../08-awesome-lists-learning/README.md#6c515-năng-suất-ghi-chú--việc-làm); XWiki. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/requarks/wiki/blob/d05ff15437ed3452f1132862ef928fa9a6bf0ecd/README.md) · [LICENSE](https://github.com/requarks/wiki/blob/d05ff15437ed3452f1132862ef928fa9a6bf0ecd/LICENSE) · [.github/workflows/build.yml](https://github.com/requarks/wiki/blob/d05ff15437ed3452f1132862ef928fa9a6bf0ecd/.github/workflows/build.yml).
+
+<a id="anhkysuai-celery-celery"></a>
+
+### Celery
+
+**Repo:** [celery/celery](https://github.com/celery/celery) · **License:** BSD-3-Clause · **Kiểm:** 2026-11-23, `docs-read`, [`c5742e22c99f`](https://github.com/celery/celery/tree/c5742e22c99f82f03b07945e9e08566d8b4714fa) (commit 2026-11-23). **Sao:** 29,262 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/celery/celery).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Task queue phân tán cho công việc nền trong hệ Python. |
+| Giá trị và cơ chế theo tài liệu | README mô tả giao thức nhiều ngôn ngữ và phiên bản Python hỗ trợ; license xác nhận BSD-3-Clause, CI smoke tests dựng môi trường broker/container. |
+| Giới hạn | Hàng đợi không tự bảo đảm tác vụ chạy đúng một lần. Broker, result backend, ack và retry quyết định hành vi lỗi; chưa kiểm mất worker hay tải thực tế. |
+| Điều kiện tích hợp | Chọn broker/backend được hỗ trợ, viết task idempotent và timeout; thử retry, duplicate, shutdown và quan sát backlog trước khi chuyển việc nền quan trọng. |
+| Lựa chọn đối chiếu | RQ; Dramatiq; Temporal. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.rst](https://github.com/celery/celery/blob/c5742e22c99f82f03b07945e9e08566d8b4714fa/README.rst) · [LICENSE](https://github.com/celery/celery/blob/c5742e22c99f82f03b07945e9e08566d8b4714fa/LICENSE) · [pyproject.toml](https://github.com/celery/celery/blob/c5742e22c99f82f03b07945e9e08566d8b4714fa/pyproject.toml) · [.github/workflows/smoke-tests.yml](https://github.com/celery/celery/blob/c5742e22c99f82f03b07945e9e08566d8b4714fa/.github/workflows/smoke-tests.yml).
+
+<a id="anhkysuai-zulip-zulip"></a>
+
+### Zulip
+
+**Repo:** [zulip/zulip](https://github.com/zulip/zulip) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`7bb11b60d91d`](https://github.com/zulip/zulip/tree/7bb11b60d91def4644f6c74be6611fcc85488b06) (commit 2026-11-22). **Sao:** 26,291 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/zulip/zulip).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Ứng dụng chat nhóm tổ chức hội thoại theo topic để hỗ trợ trao đổi trực tiếp và bất đồng bộ. |
+| Giá trị và cơ chế theo tài liệu | README mô tả server/web app và tài liệu đóng góp; pyproject Django cùng CI nhiều Ubuntu/Debian/Python giúp đánh giá nền tự host. |
+| Giới hạn | Các số liệu người dùng/contributor trong README không là kiểm chứng sức tải của đội riêng. Chưa chạy chat, search, notification hay migration; client di động có repo riêng. |
+| Điều kiện tích hợp | Thử cách tổ chức topic với một nhóm, kiểm quyền và xuất dữ liệu; cấu hình mail/push, retention, backup/restore trước khi chuyển lịch sử trao đổi. |
+| Lựa chọn đối chiếu | [Mattermost](../21-autonomous-workflows/README.md#anhkysuai-mattermost-mattermost); [Rocket.Chat](../21-autonomous-workflows/README.md#anhkysuai-rocketchat-rocket.chat); Matrix/Element. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/zulip/zulip/blob/7bb11b60d91def4644f6c74be6611fcc85488b06/README.md) · [LICENSE](https://github.com/zulip/zulip/blob/7bb11b60d91def4644f6c74be6611fcc85488b06/LICENSE) · [package.json](https://github.com/zulip/zulip/blob/7bb11b60d91def4644f6c74be6611fcc85488b06/package.json) · [pyproject.toml](https://github.com/zulip/zulip/blob/7bb11b60d91def4644f6c74be6611fcc85488b06/pyproject.toml) · [.github/workflows/zulip-ci.yml](https://github.com/zulip/zulip/blob/7bb11b60d91def4644f6c74be6611fcc85488b06/.github/workflows/zulip-ci.yml).
+
+<a id="anhkysuai-knadh-listmonk"></a>
+
+### listmonk
+
+**Repo:** [knadh/listmonk](https://github.com/knadh/listmonk) · **License:** AGPL-3.0 · **Kiểm:** 2026-11-23, `docs-read`, [`6242fd857bc0`](https://github.com/knadh/listmonk/tree/6242fd857bc0e9ed106e8dfc59d2328f9ec7363b) (commit 2026-11-22). **Sao:** 24,430 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/knadh/listmonk).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Trình quản lý newsletter và mailing list tự host dùng Go/Vue/PostgreSQL. |
+| Giá trị và cơ chế theo tài liệu | README mô tả single binary, Compose và lệnh install/upgrade; workflow build sanity cung cấp cách đóng gói sản phẩm độc lập. |
+| Giới hạn | Tuyên bố upgrade idempotent chưa được thử. Gửi thư còn phụ thuộc nhà cung cấp SMTP, danh sách đồng ý nhận và deliverability; chưa gửi email hay đo throughput. |
+| Điều kiện tích hợp | Thử với danh sách nội bộ đã đồng ý, xác minh unsubscribe/bounce và template; quản lý SMTP credentials, rate limit, backup database và đường nâng cấp. |
+| Lựa chọn đối chiếu | Mautic; Keila; Mailtrain. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/knadh/listmonk/blob/6242fd857bc0e9ed106e8dfc59d2328f9ec7363b/README.md) · [LICENSE](https://github.com/knadh/listmonk/blob/6242fd857bc0e9ed106e8dfc59d2328f9ec7363b/LICENSE) · [go.mod](https://github.com/knadh/listmonk/blob/6242fd857bc0e9ed106e8dfc59d2328f9ec7363b/go.mod) · [.github/workflows/build-sanity.yml](https://github.com/knadh/listmonk/blob/6242fd857bc0e9ed106e8dfc59d2328f9ec7363b/.github/workflows/build-sanity.yml).
+
+<a id="anhkysuai-wekan-wekan"></a>
+
+### WeKan
+
+**Repo:** [wekan/wekan](https://github.com/wekan/wekan) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`938689d594a9`](https://github.com/wekan/wekan/tree/938689d594a9ee442ab89fe61fecc93639a7a837) (commit 2026-11-23). **Sao:** 21,174 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/wekan/wekan).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Ứng dụng bảng kanban cộng tác xây bằng Meteor. |
+| Giá trị và cơ chế theo tài liệu | README mô tả self-host và các backend database/FerretDB; manifest có kiểm Node/e2e, CI đóng gói BSD với bước xác minh artifact. |
+| Giới hạn | Độ phủ bản dịch không đồng nghĩa chất lượng dịch, README cũng phân biệt rõ điều này. Một số backend ghi thử nghiệm; chưa kiểm board permissions, đồng bộ hoặc upgrade database. |
+| Điều kiện tích hợp | Chọn database được hỗ trợ ổn định, thử import/export và quyền board; kiểm attachment, mail, backup/restore cùng runtime phù hợp trước chuyển dữ liệu công việc. |
+| Lựa chọn đối chiếu | Kanboard; Planka; [Plane](../28-product-discovery-experimentation/README.md#anhkysuai-makeplane-plane). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/wekan/wekan/blob/938689d594a9ee442ab89fe61fecc93639a7a837/README.md) · [LICENSE](https://github.com/wekan/wekan/blob/938689d594a9ee442ab89fe61fecc93639a7a837/LICENSE) · [package.json](https://github.com/wekan/wekan/blob/938689d594a9ee442ab89fe61fecc93639a7a837/package.json) · [.github/workflows/bsd.yml](https://github.com/wekan/wekan/blob/938689d594a9ee442ab89fe61fecc93639a7a837/.github/workflows/bsd.yml).
+
+<a id="anhkysuai-linkwarden-linkwarden"></a>
+
+### Linkwarden
+
+**Repo:** [linkwarden/linkwarden](https://github.com/linkwarden/linkwarden) · **License:** AGPL-3.0 · **Kiểm:** 2026-11-23, `docs-read`, [`24adcc146ba3`](https://github.com/linkwarden/linkwarden/tree/24adcc146ba356632859a1e8adb4bffae2874d11) (commit 2026-11-10). **Sao:** 20,508 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/linkwarden/linkwarden).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Trình quản lý bookmark cộng tác với đọc, chú thích và lưu ảnh/PDF của trang. |
+| Giá trị và cơ chế theo tài liệu | README giải thích chống link rot và chia sẻ công khai/nhóm; workspace tách web/worker, CI điều phối unit/integration/e2e web/email/extension. |
+| Giới hạn | Lưu screenshot/PDF không bảo đảm giữ toàn bộ nội dung động hay có đăng nhập. Chưa kiểm ACL, crawler, nhập/xuất hoặc khả năng restore; dịch vụ Cloud là phạm vi khác. |
+| Điều kiện tích hợp | Thử nhiều loại URL và quyền collection, tách worker lấy trang khỏi dữ liệu nhạy cảm; backup database/artifact, kiểm quota và hành vi link hỏng. |
+| Lựa chọn đối chiếu | [Karakeep](../21-autonomous-workflows/README.md#anhkysuai-karakeep-app-karakeep); [ArchiveBox](../11-browser-computer-use-sandbox/README.md#anhkysuai-archivebox-archivebox); Linkding. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/linkwarden/linkwarden/blob/24adcc146ba356632859a1e8adb4bffae2874d11/README.md) · [LICENSE.md](https://github.com/linkwarden/linkwarden/blob/24adcc146ba356632859a1e8adb4bffae2874d11/LICENSE.md) · [package.json](https://github.com/linkwarden/linkwarden/blob/24adcc146ba356632859a1e8adb4bffae2874d11/package.json) · [.github/workflows/ci.yml](https://github.com/linkwarden/linkwarden/blob/24adcc146ba356632859a1e8adb4bffae2874d11/.github/workflows/ci.yml).
+
+<a id="anhkysuai-mail-0-zero"></a>
+
+### Zero Email
+
+**Repo:** [Mail-0/Zero](https://github.com/Mail-0/Zero) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`4b642dfd9890`](https://github.com/Mail-0/Zero/tree/4b642dfd9890a1fdcb1b98a177fe74ca3142c445) (commit 2026-11-15). **Sao:** 10,898 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/Mail-0/Zero).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Ứng dụng email tự host gom provider ngoài và bổ sung hỗ trợ AI. |
+| Giá trị và cơ chế theo tài liệu | README nêu Next.js/React, Node/Drizzle/PostgreSQL và Better Auth/Google OAuth; manifest tách frontend/server, CI chủ yếu lint. |
+| Giới hạn | Tự host app không thay thế Gmail/Outlook hoặc chính sách model/provider. README thừa nhận dữ liệu gửi dịch vụ ngoài thuộc điều khoản của họ; chưa kiểm quyền OAuth, đồng bộ, gửi thư hay AI. |
+| Điều kiện tích hợp | Thử tài khoản riêng với mail giả lập, hạn chế OAuth scope và model access; kiểm lưu token, xóa dữ liệu, backup và xác nhận thao tác gửi trước dùng thư thật. |
+| Lựa chọn đối chiếu | Roundcube; SnappyMail; Thunderbird. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/Mail-0/Zero/blob/4b642dfd9890a1fdcb1b98a177fe74ca3142c445/README.md) · [LICENSE](https://github.com/Mail-0/Zero/blob/4b642dfd9890a1fdcb1b98a177fe74ca3142c445/LICENSE) · [package.json](https://github.com/Mail-0/Zero/blob/4b642dfd9890a1fdcb1b98a177fe74ca3142c445/package.json) · [.github/workflows/ci.yml](https://github.com/Mail-0/Zero/blob/4b642dfd9890a1fdcb1b98a177fe74ca3142c445/.github/workflows/ci.yml).
+
+<a id="anhkysuai-2026-11-23-hcengineering-platform"></a>
+
+### Huly Platform
+
+**Repo:** [hcengineering/platform](https://github.com/hcengineering/platform) · **License:** EPL-2.0 · **★ 28,174 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Huly Platform: nền tảng ứng dụng doanh nghiệp tích hợp quản lý dự án, chat, CRM và nhân sự.
+
+**Giá trị:** Có giá trị tham khảo mô hình nhiều ứng dụng cùng nền tảng và tài liệu chuyển sang tự triển khai.
+
+**Giới hạn:** README tại SHA nêu repo đã đóng băng, không còn duy trì chủ động và dịch vụ Hosted Huly đã ngừng. Chỉ nên cân nhắc với kế hoạch tự bảo trì, sao lưu và di chuyển dữ liệu.
+
+**Cách tham khảo/tích hợp:** Thử với dự án mẫu, đối chiếu phân quyền, xuất dữ liệu và migration trước dùng quy trình hoặc dữ liệu công việc thật.
+
+**Lựa chọn để đối chiếu:** [opf/openproject](https://github.com/opf/openproject) · [go-vikunja/vikunja](https://github.com/go-vikunja/vikunja). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a1dd19d4f7699e8b8d9e0dbeb610c7884b6255bc`](https://github.com/hcengineering/platform/commit/a1dd19d4f7699e8b8d9e0dbeb610c7884b6255bc), ngày commit 2026-11-09. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/hcengineering/platform/blob/a1dd19d4f7699e8b8d9e0dbeb610c7884b6255bc/README.md) · [LICENSE](https://github.com/hcengineering/platform/blob/a1dd19d4f7699e8b8d9e0dbeb610c7884b6255bc/LICENSE) · [.github/workflows/main.yml](https://github.com/hcengineering/platform/blob/a1dd19d4f7699e8b8d9e0dbeb610c7884b6255bc/.github/workflows/main.yml) · [metadata GitHub](https://api.github.com/repos/hcengineering/platform).
+
+<a id="anhkysuai-2026-11-23-opf-openproject"></a>
+
+### openproject
+
+**Repo:** [opf/openproject](https://github.com/opf/openproject) · **License:** GPL-3.0 · **★ 17,648 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Nền tảng quản lý dự án, danh mục, tác vụ, roadmap và cộng tác có thể tự host.
+
+**Giá trị:** Phạm vi quản lý rộng phù hợp tổ chức cần quy trình nhiều dự án và quyền kiểm soát dữ liệu.
+
+**Giới hạn:** Cần đối chiếu tính năng theo bản triển khai và chi phí vận hành; mã GPLv3, icon font có CC BY 3.0 riêng. Chưa kiểm migration, phân quyền hay tích hợp bằng chạy thử.
+
+**Cách tham khảo/tích hợp:** Thử với dự án mẫu, đối chiếu phân quyền, xuất dữ liệu và migration trước dùng quy trình hoặc dữ liệu công việc thật.
+
+**Lựa chọn để đối chiếu:** [go-vikunja/vikunja](https://github.com/go-vikunja/vikunja) · [Leantime/leantime](https://github.com/Leantime/leantime). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`3a0f515d05258e83f938488f02c88429a0579706`](https://github.com/opf/openproject/commit/3a0f515d05258e83f938488f02c88429a0579706), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/opf/openproject/blob/3a0f515d05258e83f938488f02c88429a0579706/README.md) · [COPYRIGHT](https://github.com/opf/openproject/blob/3a0f515d05258e83f938488f02c88429a0579706/COPYRIGHT) · [COPYRIGHT_short](https://github.com/opf/openproject/blob/3a0f515d05258e83f938488f02c88429a0579706/COPYRIGHT_short) · [LICENSE](https://github.com/opf/openproject/blob/3a0f515d05258e83f938488f02c88429a0579706/LICENSE) · [package.json](https://github.com/opf/openproject/blob/3a0f515d05258e83f938488f02c88429a0579706/package.json) · [.github/workflows/test-core.yml](https://github.com/opf/openproject/blob/3a0f515d05258e83f938488f02c88429a0579706/.github/workflows/test-core.yml) · [metadata GitHub](https://api.github.com/repos/opf/openproject).
+
+<a id="anhkysuai-2026-11-23-plankanban-planka"></a>
+
+### planka
+
+**Repo:** [plankanban/planka](https://github.com/plankanban/planka) · **License:** PLANKA Community License 1.1; Pro/Enterprise riêng · **★ 12,705 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng Kanban tự host theo dõi dự án và công việc nhóm, có bản Community và Pro.
+
+**Giá trị:** Giao diện board và API phù hợp nhóm cần kiểm soát dữ liệu; README mô tả rõ nâng cấp Community sang Pro là migration thật.
+
+**Giới hạn:** Community License cho dùng nội bộ nhưng hạn chế hosting thương mại cho bên thứ ba; tệp Pro/Enterprise cần license riêng, nên đây là fair-code chứ không phải quyền nguồn mở không hạn chế lĩnh vực.
+
+**Cách tham khảo/tích hợp:** Thử với dự án mẫu, đối chiếu phân quyền, xuất dữ liệu và migration trước dùng quy trình hoặc dữ liệu công việc thật.
+
+**Lựa chọn để đối chiếu:** [kanboard/kanboard](https://github.com/kanboard/kanboard) · [usekaneo/kaneo](https://github.com/usekaneo/kaneo). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`2cf423824a09f84df7dc3acf0ded9a700292d882`](https://github.com/plankanban/planka/commit/2cf423824a09f84df7dc3acf0ded9a700292d882), ngày commit 2026-11-06. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/plankanban/planka/blob/2cf423824a09f84df7dc3acf0ded9a700292d882/README.md) · [LICENSE.md](https://github.com/plankanban/planka/blob/2cf423824a09f84df7dc3acf0ded9a700292d882/LICENSE.md) · [package.json](https://github.com/plankanban/planka/blob/2cf423824a09f84df7dc3acf0ded9a700292d882/package.json) · [.github/workflows/build-and-test.yml](https://github.com/plankanban/planka/blob/2cf423824a09f84df7dc3acf0ded9a700292d882/.github/workflows/build-and-test.yml) · [metadata GitHub](https://api.github.com/repos/plankanban/planka).
+
+<a id="anhkysuai-2026-11-23-leantime-leantime"></a>
+
+### leantime
+
+**Repo:** [Leantime/leantime](https://github.com/Leantime/leantime) · **License:** AGPL-3.0 (core); app/Plugins có license riêng · **★ 12,139 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Công cụ quản lý dự án gắn mục tiêu, chiến lược, kế hoạch và thực thi cho nhóm không chuyên PM.
+
+**Giá trị:** Tập trung khả năng tiếp cận và kết nối mục tiêu với công việc, phù hợp thử quy trình quản lý nhẹ.
+
+**Giới hạn:** Core AGPLv3 nhưng README loại trừ plugin trong app/Plugins có thể mang enterprise license; các tuyên bố phù hợp ADHD/autism/dyslexia là định hướng thiết kế, chưa được đánh giá hiệu quả ở đây.
+
+**Cách tham khảo/tích hợp:** Thử với dự án mẫu, đối chiếu phân quyền, xuất dữ liệu và migration trước dùng quy trình hoặc dữ liệu công việc thật.
+
+**Lựa chọn để đối chiếu:** [opf/openproject](https://github.com/opf/openproject) · [go-vikunja/vikunja](https://github.com/go-vikunja/vikunja). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`e4763f16c36139bccdf03fc4e5b21edcd2774ac3`](https://github.com/Leantime/leantime/commit/e4763f16c36139bccdf03fc4e5b21edcd2774ac3), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/Leantime/leantime/blob/e4763f16c36139bccdf03fc4e5b21edcd2774ac3/README.md) · [LICENSE](https://github.com/Leantime/leantime/blob/e4763f16c36139bccdf03fc4e5b21edcd2774ac3/LICENSE) · [package.json](https://github.com/Leantime/leantime/blob/e4763f16c36139bccdf03fc4e5b21edcd2774ac3/package.json) · [composer.json](https://github.com/Leantime/leantime/blob/e4763f16c36139bccdf03fc4e5b21edcd2774ac3/composer.json) · [.github/workflows/unittests.yml](https://github.com/Leantime/leantime/blob/e4763f16c36139bccdf03fc4e5b21edcd2774ac3/.github/workflows/unittests.yml) · [metadata GitHub](https://api.github.com/repos/Leantime/leantime).
+
+<a id="anhkysuai-2026-11-23-kanboard-kanboard"></a>
+
+### kanboard
+
+**Repo:** [kanboard/kanboard](https://github.com/kanboard/kanboard) · **License:** MIT · **★ 9,975 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Phần mềm quản lý dự án tập trung vào phương pháp Kanban.
+
+**Giá trị:** Phạm vi gọn phù hợp nhóm muốn workflow bảng công việc thay vì bộ quản trị nhiều mô-đun.
+
+**Giới hạn:** README công bố maintenance mode: tác giả chủ yếu sửa nhỏ, vẫn nhận đóng góp và có release; không nên kỳ vọng roadmap tính năng lớn do maintainer tự phát triển.
+
+**Cách tham khảo/tích hợp:** Thử với dự án mẫu, đối chiếu phân quyền, xuất dữ liệu và migration trước dùng quy trình hoặc dữ liệu công việc thật.
+
+**Lựa chọn để đối chiếu:** [plankanban/planka](https://github.com/plankanban/planka) · [usekaneo/kaneo](https://github.com/usekaneo/kaneo). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`ee4e5ddd889c2408174cd9567f5cda7a831e2041`](https://github.com/kanboard/kanboard/commit/ee4e5ddd889c2408174cd9567f5cda7a831e2041), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/kanboard/kanboard/blob/ee4e5ddd889c2408174cd9567f5cda7a831e2041/README.md) · [LICENSE](https://github.com/kanboard/kanboard/blob/ee4e5ddd889c2408174cd9567f5cda7a831e2041/LICENSE) · [composer.json](https://github.com/kanboard/kanboard/blob/ee4e5ddd889c2408174cd9567f5cda7a831e2041/composer.json) · [.github/workflows/unit_tests.yml](https://github.com/kanboard/kanboard/blob/ee4e5ddd889c2408174cd9567f5cda7a831e2041/.github/workflows/unit_tests.yml) · [metadata GitHub](https://api.github.com/repos/kanboard/kanboard).
+
+<a id="anhkysuai-2026-11-23-usekaneo-kaneo"></a>
+
+### kaneo
+
+**Repo:** [usekaneo/kaneo](https://github.com/usekaneo/kaneo) · **License:** MIT · **★ 9,867 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Quản lý dự án tự host với board, list, calendar, Gantt và kết nối GitHub/Gitea.
+
+**Giá trị:** REST API, CLI và MCP được giới thiệu cùng workflow cập nhật theo hoạt động repo, hữu ích cho nhóm phát triển.
+
+**Giới hạn:** Cần thử phân quyền, webhook, đồng bộ và migration trong môi trường riêng; MIT của mã không tự bao gồm điều khoản Kaneo Cloud hoặc dịch vụ tích hợp.
+
+**Cách tham khảo/tích hợp:** Thử với dự án mẫu, đối chiếu phân quyền, xuất dữ liệu và migration trước dùng quy trình hoặc dữ liệu công việc thật.
+
+**Lựa chọn để đối chiếu:** [go-vikunja/vikunja](https://github.com/go-vikunja/vikunja) · [kanboard/kanboard](https://github.com/kanboard/kanboard). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`e46680d28a00be1173922ad065ca69243e30ab31`](https://github.com/usekaneo/kaneo/commit/e46680d28a00be1173922ad065ca69243e30ab31), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/usekaneo/kaneo/blob/e46680d28a00be1173922ad065ca69243e30ab31/README.md) · [LICENSE](https://github.com/usekaneo/kaneo/blob/e46680d28a00be1173922ad065ca69243e30ab31/LICENSE) · [package.json](https://github.com/usekaneo/kaneo/blob/e46680d28a00be1173922ad065ca69243e30ab31/package.json) · [.github/workflows/ci.yml](https://github.com/usekaneo/kaneo/blob/e46680d28a00be1173922ad065ca69243e30ab31/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/usekaneo/kaneo).
+
+<a id="anhkysuai-2026-11-23-ahmadhassan-bted-jantt"></a>
+
+### Jantt
+
+**Repo:** [AhmadHassan-BTed/Jantt](https://github.com/AhmadHassan-BTed/Jantt) · **License:** MIT · **★ 6,239 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Công cụ/libraries Gantt tương tác có AI Copilot BYOK, nhiều view và tính lịch công việc.
+
+**Giá trị:** Có hướng dùng qua web, framework và MCP, phù hợp nghiên cứu chuyển lịch tác vụ giữa giao diện và tự động hóa.
+
+**Giới hạn:** Tuyên bố 100.000 task, 60 FPS và cloud miễn phí là thông tin upstream chưa đo lại; cần kiểm thuật toán critical path, múi giờ, lịch làm việc và dữ liệu gửi nhà cung cấp AI.
+
+**Cách tham khảo/tích hợp:** Thử với dự án mẫu, đối chiếu phân quyền, xuất dữ liệu và migration trước dùng quy trình hoặc dữ liệu công việc thật.
+
+**Lựa chọn để đối chiếu:** [frappe/gantt](https://github.com/frappe/gantt) · [usekaneo/kaneo](https://github.com/usekaneo/kaneo). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`49407b4a4e33c6b238a813442b5d988f6ac95f99`](https://github.com/AhmadHassan-BTed/Jantt/commit/49407b4a4e33c6b238a813442b5d988f6ac95f99), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/AhmadHassan-BTed/Jantt/blob/49407b4a4e33c6b238a813442b5d988f6ac95f99/README.md) · [LICENSE](https://github.com/AhmadHassan-BTed/Jantt/blob/49407b4a4e33c6b238a813442b5d988f6ac95f99/LICENSE) · [package.json](https://github.com/AhmadHassan-BTed/Jantt/blob/49407b4a4e33c6b238a813442b5d988f6ac95f99/package.json) · [.github/workflows/ci.yml](https://github.com/AhmadHassan-BTed/Jantt/blob/49407b4a4e33c6b238a813442b5d988f6ac95f99/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/AhmadHassan-BTed/Jantt).
+
+<a id="anhkysuai-2026-11-23-frappe-gantt"></a>
+
+### gantt
+
+**Repo:** [frappe/gantt](https://github.com/frappe/gantt) · **License:** MIT · **★ 6,159 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện JavaScript vẽ biểu đồ Gantt có tùy chỉnh timeline và các khoảng thời gian bỏ qua.
+
+**Giá trị:** Phù hợp nhúng lịch tác vụ nhẹ vào ứng dụng web, với API và cấu hình được ghi ngay trong README.
+
+**Giới hạn:** Thư viện hiển thị không tự cung cấp hệ quản lý dự án hay bảo đảm tính lịch phức tạp; cần kiểm phụ thuộc task, múi giờ và hiệu năng với số lượng mục thực tế.
+
+**Cách tham khảo/tích hợp:** Thử với dự án mẫu, đối chiếu phân quyền, xuất dữ liệu và migration trước dùng quy trình hoặc dữ liệu công việc thật.
+
+**Lựa chọn để đối chiếu:** [AhmadHassan-BTed/Jantt](https://github.com/AhmadHassan-BTed/Jantt) · [visjs/vis-timeline](https://github.com/visjs/vis-timeline). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`5c83708d300a99d9142edea0d4d52f421e3a2e68`](https://github.com/frappe/gantt/commit/5c83708d300a99d9142edea0d4d52f421e3a2e68), ngày commit 2026-03-05. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/frappe/gantt/blob/5c83708d300a99d9142edea0d4d52f421e3a2e68/README.md) · [license.txt](https://github.com/frappe/gantt/blob/5c83708d300a99d9142edea0d4d52f421e3a2e68/license.txt) · [package.json](https://github.com/frappe/gantt/blob/5c83708d300a99d9142edea0d4d52f421e3a2e68/package.json) · [.github/workflows/publish.yml](https://github.com/frappe/gantt/blob/5c83708d300a99d9142edea0d4d52f421e3a2e68/.github/workflows/publish.yml) · [metadata GitHub](https://api.github.com/repos/frappe/gantt).
+
+<a id="anhkysuai-2026-11-23-go-vikunja-vikunja"></a>
+
+### Vikunja
+
+**Repo:** [go-vikunja/vikunja](https://github.com/go-vikunja/vikunja) · **License:** AGPL-3.0-or-later (chính); GPL-3.0-or-later (desktop); ảnh riêng · **★ 6,147 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng quản lý công việc có thể tự host, kèm lựa chọn hosted và Pro.
+
+**Giá trị:** Phù hợp cá nhân/nhóm muốn sở hữu dữ liệu và chọn cách vận hành theo nhu cầu.
+
+**Giới hạn:** README tách admin panel, audit log và time tracking sang Pro; phần lớn mã AGPL-3.0-or-later, desktop GPL-3.0-or-later và ảnh Unsplash có quyền riêng.
+
+**Cách tham khảo/tích hợp:** Thử với dự án mẫu, đối chiếu phân quyền, xuất dữ liệu và migration trước dùng quy trình hoặc dữ liệu công việc thật.
+
+**Lựa chọn để đối chiếu:** [usekaneo/kaneo](https://github.com/usekaneo/kaneo) · [Leantime/leantime](https://github.com/Leantime/leantime). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`84751cab7f3f7b746dc2f57192e5f255e87b4793`](https://github.com/go-vikunja/vikunja/commit/84751cab7f3f7b746dc2f57192e5f255e87b4793), ngày commit 2026-11-22. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/go-vikunja/vikunja/blob/84751cab7f3f7b746dc2f57192e5f255e87b4793/README.md) · [LICENSE](https://github.com/go-vikunja/vikunja/blob/84751cab7f3f7b746dc2f57192e5f255e87b4793/LICENSE) · [go.mod](https://github.com/go-vikunja/vikunja/blob/84751cab7f3f7b746dc2f57192e5f255e87b4793/go.mod) · [.github/workflows/ci.yml](https://github.com/go-vikunja/vikunja/blob/84751cab7f3f7b746dc2f57192e5f255e87b4793/.github/workflows/ci.yml) · [metadata GitHub](https://api.github.com/repos/go-vikunja/vikunja).
+
 ## 11. Nguồn
 
 - Mục 23 §2, §4.3, §4.5 (projects-template, xboss, Sales-Hunter; đọc 2026-10-12)

@@ -162,6 +162,74 @@ Hồ sơ gốc ở [mục 10](../10-local-llm-rag-memory/README.md); giữ nguy�
 
 **Đã đổi so với đợt trước:** chuẩn hóa phạm vi đọc Docling tại SHA mới và đưa `PARTIAL_SUCCESS` vào điều kiện nghiệm thu; chưa đánh giá lại accuracy hoặc quyền từng bộ weights. **Nguồn §5:** [README.md](https://github.com/docling-project/docling/blob/0634e2f74561e5950d69b2cace67ef95400506ad/README.md) · [LICENSE](https://github.com/docling-project/docling/blob/0634e2f74561e5950d69b2cace67ef95400506ad/LICENSE) · [docling/datamodel/pipeline_options.py](https://github.com/docling-project/docling/blob/0634e2f74561e5950d69b2cace67ef95400506ad/docling/datamodel/pipeline_options.py) · [docling/document_converter.py](https://github.com/docling-project/docling/blob/0634e2f74561e5950d69b2cace67ef95400506ad/docling/document_converter.py) · [docling/pipeline/base_pipeline.py](https://github.com/docling-project/docling/blob/0634e2f74561e5950d69b2cace67ef95400506ad/docling/pipeline/base_pipeline.py) · [docling/pipeline/standard_pdf_pipeline.py](https://github.com/docling-project/docling/blob/0634e2f74561e5950d69b2cace67ef95400506ad/docling/pipeline/standard_pdf_pipeline.py) · [.github/workflows/ci.yml](https://github.com/docling-project/docling/blob/0634e2f74561e5950d69b2cace67ef95400506ad/.github/workflows/ci.yml) · [.github/workflows/checks.yml](https://github.com/docling-project/docling/blob/0634e2f74561e5950d69b2cace67ef95400506ad/.github/workflows/checks.yml).
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **3 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-surya"></a>
+
+### Surya
+
+**Repo:** [datalab-to/surya](https://github.com/datalab-to/surya) · **License:** Apache-2.0 cho mã; AI Pubs OpenRAIL-M sửa đổi cho model · **★ 21,612 (GitHub API, 2026-11-23)**
+
+**Mục đích:** OCR và phân tích layout tài liệu bằng VLM, xuất text, bảng và thứ tự đọc.
+
+**Giá trị và cơ chế:** Đọc client thấy ảnh được đổi PNG/base64 và gửi chat-completions, có batch, retry lỗi/lặp token; CLI chọn OCR toàn trang hoặc layout rồi từng block. Đây là client điều phối backend, không phải toàn bộ model.
+
+**Giới hạn:** MODEL_LICENSE đặt ngưỡng trên 5 triệu USD doanh thu năm trước hoặc tổng vốn huy động, có ngoại lệ cá nhân/nghiên cứu ở hai điều ngưỡng; điều cấm cạnh tranh và attribution/share-alike cho cả output vẫn riêng. Điểm benchmark upstream chưa tái hiện.
+
+**Cách tham khảo/tích hợp:** Kiểm license weights, chạy corpus scan thực có bảng/chữ nhỏ và giữ tọa độ nguồn để đối chiếu.
+
+**Thay thế:** [PaddleOCR](../26-document-intelligence-ocr/README.md#paddleocr), [Docling](../26-document-intelligence-ocr/README.md#docling-factory), [Tesseract](../26-document-intelligence-ocr/README.md#tesseract).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`253888005c21`](https://github.com/datalab-to/surya/commit/253888005c21865f0ded5d50872727f2a3b307f1). Client chat-completions theo batch, retry và CLI OCR; không tải/chạy weights hay tái hiện benchmark. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/datalab-to/surya/blob/253888005c21865f0ded5d50872727f2a3b307f1/README.md) · [LICENSE](https://github.com/datalab-to/surya/blob/253888005c21865f0ded5d50872727f2a3b307f1/LICENSE) · [MODEL_LICENSE](https://github.com/datalab-to/surya/blob/253888005c21865f0ded5d50872727f2a3b307f1/MODEL_LICENSE) · [surya/inference/backends/openai_client.py](https://github.com/datalab-to/surya/blob/253888005c21865f0ded5d50872727f2a3b307f1/surya/inference/backends/openai_client.py) · [surya/scripts/ocr_text.py](https://github.com/datalab-to/surya/blob/253888005c21865f0ded5d50872727f2a3b307f1/surya/scripts/ocr_text.py) · [metadata GitHub](https://api.github.com/repos/datalab-to/surya).
+
+<a id="anhkysuai-2026-11-23-umi-ocr"></a>
+
+### Umi-OCR
+
+**Repo:** [hiroi-sora/Umi-OCR](https://github.com/hiroi-sora/Umi-OCR) · **License:** MIT cho app; engine/plugin theo thành phần · **★ 48,885 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng OCR desktop cho screenshot, ảnh hàng loạt, PDF và mã QR.
+
+**Giá trị và cơ chế:** Đã đọc route /api/ocr nhận base64, kiểm options rồi gửi MissionOCR; manager chọn engine, chạy theo path/bytes/base64 và áp ignore-area/parser trước trả text hoặc tọa độ.
+
+**Giới hạn:** Chưa chạy OCR hay kiểm toàn server; tree không có workflow CI nên giữ mức docs-read dù đã xem luồng xử lý. Khả năng offline/ngôn ngữ phụ thuộc plugin và weights được chọn.
+
+**Cách tham khảo/tích hợp:** Thử tài liệu tiếng Việt nhiều cột, kiểm thứ tự đọc và lưu bounding box để đối chiếu trước xuất searchable PDF.
+
+**Thay thế:** [Tesseract.js](../26-document-intelligence-ocr/README.md#anhkysuai-2026-11-23-tesseract-js), surya, [PaddleOCR](../26-document-intelligence-ocr/README.md#paddleocr).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`83173efc4f44`](https://github.com/hiroi-sora/Umi-OCR/commit/83173efc4f4453b41223ea96d63d44534bf0505c). Đọc endpoint OCR, kiểm đầu vào và dispatch mission sang engine cùng hậu xử lý; không thấy GitHub Actions workflow trong tree nên giữ docs-read. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/hiroi-sora/Umi-OCR/blob/83173efc4f4453b41223ea96d63d44534bf0505c/README.md) · [LICENSE](https://github.com/hiroi-sora/Umi-OCR/blob/83173efc4f4453b41223ea96d63d44534bf0505c/LICENSE) · [UmiOCR-data/py_src/server/ocr_server.py](https://github.com/hiroi-sora/Umi-OCR/blob/83173efc4f4453b41223ea96d63d44534bf0505c/UmiOCR-data/py_src/server/ocr_server.py) · [UmiOCR-data/py_src/mission/mission_ocr.py](https://github.com/hiroi-sora/Umi-OCR/blob/83173efc4f4453b41223ea96d63d44534bf0505c/UmiOCR-data/py_src/mission/mission_ocr.py) · [metadata GitHub](https://api.github.com/repos/hiroi-sora/Umi-OCR).
+
+<a id="anhkysuai-2026-11-23-tesseract-js"></a>
+
+### Tesseract.js
+
+**Repo:** [naptha/tesseract.js](https://github.com/naptha/tesseract.js) · **License:** Apache-2.0 · **★ 38,851 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bọc Tesseract WebAssembly để OCR ảnh trong browser và Node.js.
+
+**Giá trị và cơ chế:** Đã đọc worker gán jobId/action, gửi message và resolve/reject theo phản hồi; scheduler phân việc cho worker rảnh và tiếp hàng đợi khi kết thúc. Khởi tạo nạp core, ngôn ngữ rồi initialize.
+
+**Giới hạn:** README nói rõ không hỗ trợ PDF trực tiếp và không cải thiện model nhận dạng Tesseract. Chưa chạy OCR/CI hoặc đo RAM; số worker và dữ liệu ngôn ngữ ảnh hưởng bộ nhớ.
+
+**Cách tham khảo/tích hợp:** Tái sử dụng worker, rasterize PDF riêng và kiểm ảnh tiếng Việt/độ nghiêng trước tăng concurrency.
+
+**Thay thế:** scribe-js, [Umi-OCR](../26-document-intelligence-ocr/README.md#anhkysuai-2026-11-23-umi-ocr), surya.
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`a1ca80d9e31c`](https://github.com/naptha/tesseract.js/commit/a1ca80d9e31c34512d0ded75ff8821ddcf3f2f91). Đọc worker message/job lifecycle, scheduler queue và CI lint/test theo ma trận Node; chưa kiểm lõi Tesseract/WASM hoặc chạy OCR. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/naptha/tesseract.js/blob/a1ca80d9e31c34512d0ded75ff8821ddcf3f2f91/README.md) · [LICENSE.md](https://github.com/naptha/tesseract.js/blob/a1ca80d9e31c34512d0ded75ff8821ddcf3f2f91/LICENSE.md) · [src/createWorker.js](https://github.com/naptha/tesseract.js/blob/a1ca80d9e31c34512d0ded75ff8821ddcf3f2f91/src/createWorker.js) · [src/createScheduler.js](https://github.com/naptha/tesseract.js/blob/a1ca80d9e31c34512d0ded75ff8821ddcf3f2f91/src/createScheduler.js) · [metadata GitHub](https://api.github.com/repos/naptha/tesseract.js).
+
 ## Nguồn
 
 Các permalink trong từng hồ sơ cố định đúng phiên bản đã đọc; số sao/trạng thái archive là snapshot GitHub API ngày 2026-11-02. Không chạy mã, huấn luyện model hoặc tái lập kết quả của upstream.
