@@ -4,7 +4,7 @@
 
 Các tuyến đọc dưới đây ghép những hồ sơ đã có trong kho. Bắt đầu bằng ràng buộc, chọn 2–4 ứng viên để thử trên tác vụ thật, giữ baseline và kiểm lại ngày/license trong hồ sơ. Đây là bản đồ tham khảo, không phải cấu hình triển khai đã được kho chạy thử.
 
-Để xây **xưởng phát triển phần mềm**, đọc [FACTORY.md](FACTORY.md): bản đồ 34 mục, chín cổng giao hàng, trách nhiệm, bằng chứng phát hành và đường khởi đầu theo loại sản phẩm. Đợt 2026-11-04 bổ sung các tuyến sản phẩm thông thường bên dưới để ghép với các chuyên mục AI.
+Để xây **xưởng phát triển phần mềm**, đọc [FACTORY.md](FACTORY.md): bản đồ 37 mục, chín cổng giao hàng, trách nhiệm, bằng chứng phát hành và đường khởi đầu theo loại sản phẩm. Đợt 2026-11-04 bổ sung các tuyến sản phẩm thông thường bên dưới để ghép với các chuyên mục AI.
 
 | Bài toán | Tuyến đọc | Quyết định và bằng chứng cần có |
 |---|---|---|
@@ -21,6 +21,9 @@ Các tuyến đọc dưới đây ghép những hồ sơ đã có trong kho. B�
 | Video/motion dùng thương mại | [19](19-agentic-video-media/README.md) → [22](22-motion-design-animation/README.md) → [14](14-voice-multimodal/README.md) | License model/font/nhạc/ảnh, timeline/frame/timebase, A/V sync, loudness, chất lượng bản xuất và provenance. |
 | Agent Revit/AutoCAD/Blender | [27](27-3d-cad-bim-engineering/README.md) → [23](23-own-repos-lessons/README.md) → [11](11-browser-computer-use-sandbox/README.md) | Mesh/B-rep/BIM, unit/tolerance, host version, dry-run→confirm→readback; schema pass không chứng minh hình học/thi công đúng. |
 | Chọn plugin/skill và đưa vào quy trình | [20](20-claude-plugins-ecosystem/README.md) → [04](04-protocols-standards/README.md) → [12](12-ai-security-guardrails/README.md) | Phạm vi cài, pin/lock/update, quyền/telemetry, eval kích hoạt, rollback và license nội dung. |
+| Dựng dịch vụ nội bộ tự host (wiki, file, git, giám sát) | [36](36-self-hosting-homelab/README.md) → [33](33-reliability-observability-operations/README.md) → [12](12-ai-security-guardrails/README.md) | Ai trực, sao lưu và thử khôi phục, cập nhật bảo mật, chứng chỉ, chỉ phơi cổng cần thiết; open-core có thư mục ee/ theo license riêng. |
+| Chọn app desktop/ghi chú cho nhóm | [35](35-desktop-productivity-apps/README.md) → [16](16-docs-tools/README.md) → [12](12-ai-security-guardrails/README.md) | Quyền hệ thống app yêu cầu, bản phát hành có ký số, định dạng dữ liệu xuất được và nơi đồng bộ. |
+| Chọn runtime/ngôn ngữ cho dự án mới | [37](37-programming-languages-runtimes/README.md) → [13](13-dev-stack-devops/README.md) → [32](32-platform-delivery-engineering/README.md) | Chính sách LTS, ghim phiên bản trong toolchain, lịch nâng cấp và kiểm tương thích. |
 
 ## Tuyến đọc cho xưởng phát triển phần mềm
 

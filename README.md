@@ -59,7 +59,7 @@ Chuỗi dữ liệu đến sản phẩm: **[dữ liệu AI](24-ai-data-engineeri
 | 35 | [Desktop & năng suất cá nhân](35-desktop-productivity-apps/README.md) | Tiện ích macOS/Windows/Linux, quản lý file/media, đọc sách, ghi chú và knowledge base cá nhân (Joplin, Logseq, AFFiNE, AppFlowy…); lập 23/11/2026 khi chia lại catalog |
 | 36 | [Tự host & homelab](36-self-hosting-homelab/README.md) | PaaS/bảng điều khiển (Coolify, Dokploy, 1Panel…), ứng dụng tự host (ảnh, file, tài liệu, chữ ký số), Pi-hole/AdGuard, uptime; trách nhiệm sao lưu và cập nhật thuộc người vận hành |
 | 37 | [Ngôn ngữ & runtime](37-programming-languages-runtimes/README.md) | Repo gốc ngôn ngữ/runtime và trình quản lý phiên bản; chọn theo chính sách phát hành/LTS và tương thích ngược |
-| — | [FACTORY.md](FACTORY.md) | Bản đồ 34 mục, vai trò/cổng giao hàng, manifest bằng chứng, mức áp dụng, chi phí và vòng học của xưởng |
+| — | [FACTORY.md](FACTORY.md) | Bản đồ 37 mục, vai trò/cổng giao hàng, manifest bằng chứng, mức áp dụng, chi phí và vòng học của xưởng |
 | — | [data/projects.json](data/projects.json) · [data/projects.csv](data/projects.csv) | Catalog máy-đọc-được (tên, repo, loại, license, sao ước lượng, ghi chú) |
 | — | [X-TEMPLATES.md](X-TEMPLATES.md) · [data/xt-handoff.json](data/xt-handoff.json) | **Thư viện cho X-Templates**: hợp đồng đọc kho, tổng hợp chéo telemetry + cổng CI của công cụ agent, bàn giao bài học → ID yêu cầu (ba cột), đề xuất nâng cấp |
 | — | [SOURCES.md](SOURCES.md) | Toàn bộ URL nguồn đã dùng |
@@ -563,6 +563,14 @@ Mục này còn có sơ đồ ghép cả 20 mục thành một quy trình làm m
 ### 91. "7 plugin thay 7 vị trí" (20/11/2026): QuickBooks, Stripe, Shopify, Canva, HubSpot, LegalZoom, Zapier
 
 Mục 20 §3zd đọc mã cả bảy plugin ở đúng SHA mà marketplace chính thức ghim. Cả bảy làm thay một phần việc chứ không thay cả vị trí. QuickBooks đọc báo cáo và nhắc nợ, HubSpot chuẩn bị cuộc gọi; skill nào ghi dữ liệu hay chuyển tiền (Stripe `stripe-pay`) đều hỏi xác nhận trước. Hai điểm trong danh sách đã sai. Shopify AI Toolkit là công cụ cho lập trình viên, nay chỉ còn 2 skill thay vì 18, và mặc định gửi telemetry kèm nguyên văn prompt. LegalZoom không thay luật sư mà chuyển người dùng sang luật sư thật khi rủi ro cao. Mục §3zd.3 cập nhật `claude-plugins-official` theo ảnh người dùng gửi: 47,8k★, plugin bên thứ ba nay nộp ở `claude.ai/directory/manage`, repo không còn nhận PR.
+
+### 92. Bảng "Top 100 GitHub AI Skills" (23/11/2026): 28 hồ sơ mới
+
+Đối chiếu 42 repo trong bảng xlsx người dùng gửi: 15 repo đã có hồ sơ, 27 repo được đọc bằng clone nông và thêm 28 hồ sơ vào mục 05, 08, 14, 16, 19, 20, 22 (fal-ai-community/skills có 36 skill chứ không phải 15). Số sao của bảng là nguồn dựng; lấy lại qua GitHub search API cùng ngày, các repo đầu bảng đúng trong khoảng 0,5%, còn catalog cũ lệch tới 5% (firecrawl 197k → 207k, anthropics/skills 189k → 199k). Rủi ro đáng ghi: super-video-maker-skill không có LICENSE và upload S3 `public-read`; louisblythe/sales-skills chỉ ghi MIT trong README; heygen skills bật feedback và kiểm cập nhật mặc định; 44/45 skill của ericosiu chèn CTA của tác giả; n8n-mcp mặc định gửi workflow lên server tác giả; herk-edit-kit là tên mới của hyperframes-student-kit.
+
+### 93. Chia lại catalog 3 cấp (23/11/2026): 70 catalog con, mục 35–37 và PLAYBOOK
+
+Mục 08 từng giữ 590/2.268 hồ sơ (26%), 359 trong số đó không phải khóa học hay danh sách; README lớn xếp theo đợt nhập thay vì chủ đề. `data/taxonomy.json` nay chia 70 category vào 9 nhóm và 13 category lớn có danh mục con bắt buộc; `scripts/build_catalog_views.py` sinh 70 bảng trong [catalog/](catalog/README.md), CI kiểm bảng không cũ. Ba mục mới 35 (desktop & năng suất), 36 (tự host & homelab), 37 (ngôn ngữ & runtime) nhận 251 hồ sơ chuyển về đúng chủ đề; neo cũ giữ đoạn dẫn nên link ngoài không gãy. [PLAYBOOK.md](PLAYBOOK.md) chắt lọc 98 skill/tính năng theo bốn mảng, mỗi mục có cơ chế, các bước áp dụng, khi không nên dùng, rủi ro và hồ sơ gốc. Giới hạn: danh mục con do agent gán theo tên và ghi chú, chưa duyệt từng dòng; các bước áp dụng chưa được kho chạy thử.
 
 ## 🧭 Cách dùng kho này
 

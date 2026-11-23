@@ -2,7 +2,7 @@
 
 # quality-gate — Đánh giá, an toàn & chất lượng
 
-[← Mục lục catalog](../README.md) · 76 hồ sơ.
+[← Mục lục catalog](../README.md) · 75 hồ sơ.
 
 ## Test unit/integration (`unit-integration`, 15)
 
@@ -44,11 +44,10 @@
 | [Argos](../../06-ui-ux-design/README.md) | `argos-ci/argos` | MIT | 656 | chưa chuẩn hóa | 06 | Nền tảng visual testing review ảnh chụp trong PR (Playwright/Storybook/Cypress), so ảnh bằng odiff-bin; |
 | [ffmpeg-quality-metrics](../../19-agentic-video-media/README.md) | `slhck/ffmpeg-quality-metrics` | MIT | 561 | chưa chuẩn hóa | 19 | CLI/Python bọc ffmpeg tính PSNR/SSIM/VIF/MSAD/VMAF từng frame + thống kê + GUI; |
 
-## Phân tích tĩnh & lint (`static-analysis`, 20)
+## Phân tích tĩnh & lint (`static-analysis`, 19)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [uv](../../13-dev-stack-devops/README.md) | `astral-sh/uv` | Apache-2.0/MIT | 91.402 | chưa chuẩn hóa | 13 | Package manager Python nhanh (Astral); |
 | [Prettier](../../30-software-testing-quality/README.md#anhkysuai-prettier-prettier) | `prettier/prettier` | MIT | 52.449 | đọc tài liệu 2026-11-23 | 30 | Formatter phân tích cú pháp rồi in lại mã với quy tắc thống nhất. |
 | [ruff](../../13-dev-stack-devops/README.md) | `astral-sh/ruff` | MIT | 50.369 | chưa chuẩn hóa | 13 | Linter/formatter Python (Astral); |
 | [Black](../../30-software-testing-quality/README.md#anhkysuai-psf-black) | `psf/black` | MIT | 42.210 | đọc tài liệu 2026-11-23 | 30 | Formatter Python theo bộ quy tắc cố định để giảm tranh luận định dạng. |
@@ -73,12 +72,12 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
+| [SkillsBench](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-skillsbench) | `benchflow-ai/skillsbench` | Apache-2.0 | 1.936 | đọc mã 2026-11-23 | 20 | Benchmark skill của agent: task.md + Docker + oracle + verifier (reward 1/0 từ pytest, phụ thuộc ghim); |
 | [agent-skills-eval](../../20-claude-plugins-ecosystem/README.md) | `darkrishabh/agent-skills-eval` | MIT | 809 | chưa chuẩn hóa | 20 | Test runner skill with_skill vs without_skill có judge, báo cáo HTML; |
 | [skillgrade](../../20-claude-plugins-ecosystem/README.md) | `mgechev/skillgrade` | MIT | 734 | chưa chuẩn hóa | 20 | Unit test cho skill: eval.yaml, chạy nhiều harness trong Docker, grader tất định/LLM/người, --ci --threshold, JUnit; |
 | [NVIDIA SkillEvaluator](../../20-claude-plugins-ecosystem/README.md) | `NVIDIA/SkillEvaluator` | Apache-2.0 | 622 | chưa chuẩn hóa | 20 | Eval skill 3 tầng: chất lượng + scanner, trùng lặp, chạy agent có/không skill; |
 | [agnix](../../20-claude-plugins-ecosystem/README.md#factory-skill-admission-2026-11-04) | `agent-sh/agnix` | MIT OR Apache-2.0 | 465 | đọc mã 2026-11-04 | 20 | Linter 757 luật cho CLAUDE.md, SKILL.md, hooks, MCP, plugin của nhiều harness; |
 | [Coder Eval](../../20-claude-plugins-ecosystem/README.md) | `UiPath/coder_eval` | Apache-2.0 | 156 | chưa chuẩn hóa | 20 | Eval coding agent trong sandbox, kiểm skill_triggered theo harness, A/B, GitHub Action; |
-| [SkillsBench](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-skillsbench) | `benchflow-ai/skillsbench` | Apache-2.0 | — | đọc mã 2026-11-23 | 20 | Benchmark skill của agent: task.md + Docker + oracle + verifier (reward 1/0 từ pytest, phụ thuộc ghim); |
 
 ## Hợp đồng API & schema (`api-contract`, 8)
 

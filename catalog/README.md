@@ -43,14 +43,14 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [scheduling](automation/scheduling.md) | 5 | — |
 | [project-management](automation/project-management.md) | 9 | — |
 
-## Đánh giá, an toàn & chất lượng (240)
+## Đánh giá, an toàn & chất lượng (239)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
 | [eval-observability](trust/eval-observability.md) | 68 | Eval LLM/agent (23), Tracing & observability LLM (13), Benchmark (15), Giám sát hệ thống (17) |
 | [security](trust/security.md) | 63 | Quét lỗ hổng ứng dụng (5), Guardrail & an toàn agent (13), Secret & chuỗi cung ứng (17), Pentest & red team (17), Danh tính & truy cập (7), Quyền riêng tư (4) |
 | [policy-as-code](trust/policy-as-code.md) | 4 | — |
-| [quality-gate](trust/quality-gate.md) | 76 | Test unit/integration (15), E2E & trình duyệt (3), Visual regression & accessibility (7), Phân tích tĩnh & lint (20), Eval skill/agent (6), Hợp đồng API & schema (8), Hiệu năng & tải (10), Cổng phát hành & review (7) |
+| [quality-gate](trust/quality-gate.md) | 75 | Test unit/integration (15), E2E & trình duyệt (3), Visual regression & accessibility (7), Phân tích tĩnh & lint (19), Eval skill/agent (6), Hợp đồng API & schema (8), Hiệu năng & tải (10), Cổng phát hành & review (7) |
 | [checklist](trust/checklist.md) | 29 | — |
 
 ## Mô hình, dữ liệu & tài liệu (321)
@@ -82,14 +82,14 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [video-engine](design-media/video-engine.md) | 26 | — |
 | [agentic-video](design-media/agentic-video.md) | 41 | — |
 
-## Kỹ thuật phần mềm & vận hành (422)
+## Kỹ thuật phần mềm & vận hành (423)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
 | [frontend](software/frontend.md) | 82 | Framework UI (23), Build, bundler & monorepo (9), State & data fetching (6), CSS & styling (6), Ngôn ngữ & runtime JS/TS (4), App desktop/đa nền tảng (6), Game engine & đồ họa (4), Thư viện tiện ích (22), Template & starter (2) |
 | [backend](software/backend.md) | 122 | Web framework (26), BaaS & nền tảng backend (6), Xác thực & danh tính (5), API, RPC & client (20), ORM, migration & công cụ CSDL (5), CMS & thương mại điện tử (11), Ứng dụng doanh nghiệp (ERP/CRM) (11), Ngôn ngữ & runtime (14), Microservice, cấu hình & service mesh (9), Ứng dụng tự host (8), Realtime, bot & nhắn tin (7) |
 | [mobile](software/mobile.md) | 26 | — |
-| [devops](software/devops.md) | 161 | Container & Kubernetes (17), IaC & quản lý cấu hình (5), CI/CD & phát hành (7), PaaS tự host & bảng điều khiển server (7), Mạng, proxy, DNS & chứng chỉ (8), Sao lưu, chi phí & vận hành hạ tầng (6), Terminal, shell & công cụ dòng lệnh (43), Editor & IDE (16), Môi trường dev & quản lý toolchain (25), Hệ điều hành & công cụ hệ thống (17), Ứng dụng tự host (ảnh, git, file...) (9), Bảo mật CI & chuỗi cung ứng (1) |
+| [devops](software/devops.md) | 162 | Container & Kubernetes (17), IaC & quản lý cấu hình (5), CI/CD & phát hành (7), PaaS tự host & bảng điều khiển server (7), Mạng, proxy, DNS & chứng chỉ (8), Sao lưu, chi phí & vận hành hạ tầng (6), Terminal, shell & công cụ dòng lệnh (43), Editor & IDE (16), Môi trường dev & quản lý toolchain (26), Hệ điều hành & công cụ hệ thống (17), Ứng dụng tự host (ảnh, git, file...) (9), Bảo mật CI & chuỗi cung ứng (1) |
 | [localization](software/localization.md) | 7 | — |
 | [reverse-engineering](software/reverse-engineering.md) | 7 | — |
 | [app-launcher](software/app-launcher.md) | 5 | — |

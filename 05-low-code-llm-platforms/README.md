@@ -284,7 +284,7 @@ Khi đánh giá nền tảng, thử xuất gói, nhập vào một instance sạ
 
 ## Đánh giá bổ sung từ bảng "Top 100 GitHub AI Skills" — 23/11/2026
 
-Phần này có **2 hồ sơ** từ bảng xlsx người dùng gửi ngày 2026-11-23; đọc bằng `git clone --depth 1`, không cài hay chạy mã upstream. GitHub API không dùng được trong phiên nên ★ và `pushed_at` ghi **(chưa xác minh)** khi để trống.
+Phần này có **2 hồ sơ** từ bảng xlsx người dùng gửi ngày 2026-11-23; đọc bằng `git clone --depth 1`, không cài hay chạy mã upstream. Lúc đọc, REST API của GitHub bị chặn nên trong hồ sơ ★ và `pushed_at` ghi **(chưa xác minh)**; số sao lấy lại cùng ngày qua GitHub search API nằm trong `data/projects.json` và [catalog/](../catalog/README.md), `pushed_at` vẫn chưa xác minh.
 
 <a id="xlsx-2026-11-23-n8n-skills-czlonkowski"></a>
 

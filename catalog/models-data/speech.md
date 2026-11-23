@@ -50,8 +50,8 @@
 | [F5-TTS-Vietnamese](../../18-vietnam-community/README.md) | `nguyenthienhy/F5-TTS-Vietnamese` | MIT (weights CC-BY-NC-SA-4.0) | 174 | chưa chuẩn hóa | 18 | Weights cấm thương mại; |
 | [Gipformer](../../18-vietnam-community/README.md) | `ggroup-ai-lab/gipformer` | — | 156 | chưa chuẩn hóa | 18 | ASR tiếng Việt Zipformer RNN-T 68M tham số, mạnh trên tập tổng đài riêng tư; |
 | [CIT Voice Studio](../../19-agentic-video-media/README.md) | `Cuongyd196/cit-voice-studio` | — | 142 | chưa chuẩn hóa | 19 | App TTS tiếng Việt cục bộ, ĐÓNG MÃ (repo chỉ 5 file tài liệu, README ghi Apache-2.0 nhưng không có LICENSE); |
+| [LiveAvatar Agent Skills](../../14-voice-multimodal/README.md#xlsx-2026-11-23-liveavatar-agent-skills) | `heygen-com/liveavatar-agent-skills` | MIT | 17 | đọc mã 2026-11-23 | 14 | 4 skill văn bản (liveavatar-demo, integrate, debug, feedback) cho agent tích hợp avatar hội thoại thời gian thực của LiveAvatar (HeyGen): tách backend X-API-KEY và front… |
 | [Fish Audio S2 Pro](../../14-voice-multimodal/README.md) | `fishaudio/fish-speech` | Fish Audio Research License | — | chưa chuẩn hóa | 14 | DualAR 4,6B; |
-| [LiveAvatar Agent Skills](../../14-voice-multimodal/README.md#xlsx-2026-11-23-liveavatar-agent-skills) | `heygen-com/liveavatar-agent-skills` | MIT | — | đọc mã 2026-11-23 | 14 | 4 skill văn bản (liveavatar-demo, integrate, debug, feedback) cho agent tích hợp avatar hội thoại thời gian thực của LiveAvatar (HeyGen): tách backend X-API-KEY và front… |
 | [Whisper](../../14-voice-multimodal/README.md) | `openai/whisper` | MIT | — | chưa chuẩn hóa | 14 |  |
 | [whisper.cpp](../../14-voice-multimodal/README.md) | `ggml-org/whisper.cpp` | MIT | — | chưa chuẩn hóa | 14 |  |
 | [WhisperX](../../14-voice-multimodal/README.md#factory-2026-11-04-whisperx) | `m-bain/whisperX` | BSD-2-Clause (code; models separate) | — | đọc mã 2026-11-04 | 14 | ASR → alignment theo ngôn ngữ → diarization tùy chọn; |
