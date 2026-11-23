@@ -7,7 +7,7 @@
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [yt-dlp](../../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026) | `yt-dlp/yt-dlp` | Unlicense | 206.055 | đọc tài liệu 2026-11-08 | 19 | CLI tải audio/video từ hàng nghìn trang (supportedsites.md), nhánh nâng cấp của youtube-dl; |
-| [OpenCut](../../01-ai-coding-agents/README.md) | `OpenCut-app/OpenCut` | — | 96.961 | chưa chuẩn hóa | 01 | Trình dựng video mở, đang viết lại lõi bằng Rust; |
+| [OpenCut](../../01-ai-coding-agents/README.md#ch-opencut) | `OpenCut-app/OpenCut` | MIT | 99.234 | đọc tài liệu 2026-11-23 | 01 | Trình dựng video mở, đang viết lại lõi bằng Rust; |
 | [HyperFrames](../../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026) | `heygen-com/hyperframes` | Apache-2.0 | 80.643 | đọc tài liệu 2026-11-08 | 22 | HeyGen: HTML thuần → Puppeteer Chrome + FFmpeg; |
 | [OBS Studio](../../19-agentic-video-media/README.md#anhkysuai-2026-11-23-obs-studio) | `obsproject/obs-studio` | GPL-2.0-or-later | 80.076 | đọc tài liệu 2026-11-23 | 19 | Ứng dụng thu, phối trộn, mã hóa, ghi hình và phát trực tiếp video. |
 | [Remotion](../../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026) | `remotion-dev/remotion` | Remotion License | 71.540 | đọc tài liệu 2026-11-08 | 22 | Remotion License is source-available, not OSI: Free License eligibility and Company License conditions apply; |

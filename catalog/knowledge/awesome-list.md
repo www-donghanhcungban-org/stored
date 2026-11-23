@@ -16,37 +16,37 @@
 | [awesome-cursorrules](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-patrickjs-awesome-cursorrules) | `PatrickJS/awesome-cursorrules` | CC0-1.0 | 41.184 | đọc tài liệu 2026-11-23 | 08 | Các mẫu Cursor Project Rules theo framework và quy trình, hiện dùng định dạng .mdc. |
 | [Awesome GitHub Copilot](../../08-awesome-lists-learning/README.md) | `github/awesome-copilot` | MIT | 40.630 | chưa chuẩn hóa | 08 | Kho chính chủ GitHub: 222 agent, 193 instruction, 448 skill, 110 plugin, 8 hook; |
 | [awesome-deepseek-integration](../../08-awesome-lists-learning/README.md#6c56-danh-sách-awesome--tổng-hợp) | `deepseek-ai/awesome-deepseek-integration` | CC0 1.0 Universal | 39.943 | đọc tài liệu 2026-11-18 | 08 | Danh sách phần mềm và framework đã tích hợp DeepSeek API (ứng dụng, framework agent, RAG, plugin…). |
+| [awesome-agent-skills](../../04-protocols-standards/README.md#ch-awesome-agent-skills) | `VoltAgent/awesome-agent-skills` | MIT | 37.474 | đọc tài liệu 2026-11-23 | 04 | 1000+ skills. |
 | [Awesome AI Agents (E2B)](../../08-awesome-lists-learning/README.md) | `e2b-dev/awesome-ai-agents` | CC BY-NC-SA 4.0 | 30.733 | chưa chuẩn hóa | 08 | 215 agent; |
 | [awesome-dsh-plugin](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-awesome-dsh-plugin-awesome-dsh-plugin) | `awesome-dsh-plugin/awesome-dsh-plugin` | CC0-1.0 | 25.478 | đọc tài liệu 2026-11-23 | 08 | Danh sách plugin cộng đồng cho DeepSeek Harness, có dữ liệu plugin và kiểm tra manifest. |
 | [awesome-artificial-intelligence](../../08-awesome-lists-learning/README.md#6c56-danh-sách-awesome--tổng-hợp) | `owainlewis/awesome-artificial-intelligence` | MIT | 16.855 | đọc tài liệu 2026-11-18 | 08 | Danh sách tài nguyên có chọn lọc cho lập trình viên học xây dựng và vận hành hệ thống AI tạo sinh và agent. |
 | [Awesome Claude Skills (travisvn)](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-awesome-claude-skills-travisvn) | `travisvn/awesome-claude-skills` | — | 15.915 | đọc tài liệu 2026-11-23 | 08 | Chỉ mục tài nguyên và bộ kỹ năng cộng đồng dành cho Claude và các quy trình liên quan. |
 | [Awesome Software Factories](../../03-agentic-patterns-loops/README.md#beyond-the-agent-5-lop-2026-11-11) | `varun1505/awesome-software-factories` | CC0-1.0 | 92 | đọc tài liệu 2026-11-11 | 03 | Danh mục hơn 600 mục về software/agent/dark factory: factory mở, ticket-to-PR, vòng lặp tự trị, quản lý session song song, cô lập, cổng review, sản phẩm thương mại, tườn… |
 | [awesome-agent-skills (jqueryscript)](../../08-awesome-lists-learning/README.md#xlsx-2026-11-23-awesome-agent-skills-jqueryscript) | `jqueryscript/awesome-agent-skills` | CC BY 4.0 (chỉ theo huy hiệu README, không có file LICENSE) | 16 | đọc tài liệu 2026-11-23 | 08 | Danh mục README ~500 skill của ScriptByAI, khác VoltAgent/awesome-agent-skills; |
-| [awesome-agent-skills](../../04-protocols-standards/README.md) | `VoltAgent/awesome-agent-skills` | — | — | chưa chuẩn hóa | 04 | 1000+ skills |
 
 ## MCP server (`mcp`, 3)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [awesome-mcp-servers (punkpeye)](../../04-protocols-standards/README.md) | `punkpeye/awesome-mcp-servers` | MIT | 97.133 | chưa chuẩn hóa | 04 | Danh sách MCP lớn nhất, không lọc chính chủ; |
-| [official-mcp-servers (VoltAgent)](../../04-protocols-standards/README.md) | `VoltAgent/official-mcp-servers` | MIT | 405 | chưa chuẩn hóa | 04 | 297 mục MCP chính chủ; |
+| [awesome-mcp-servers (punkpeye)](../../04-protocols-standards/README.md#ch-awesome-mcp-servers-punkpeye) | `punkpeye/awesome-mcp-servers` | MIT | 98.418 | đọc tài liệu 2026-11-23 | 04 | Danh sách MCP lớn nhất, không lọc chính chủ; |
+| [official-mcp-servers (VoltAgent)](../../04-protocols-standards/README.md#ch-official-mcp-servers-voltagent) | `VoltAgent/official-mcp-servers` | MIT | 425 | đọc tài liệu 2026-11-23 | 04 | 297 mục MCP chính chủ; |
 | [awesome-mcp-servers](../../08-awesome-lists-learning/README.md) | `wong2/awesome-mcp-servers` | — | — | chưa chuẩn hóa | 08 |  |
 
 ## Thiết kế & UI (`design-ui`, 12)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [awesome-design-md](../../06-ui-ux-design/README.md) | `VoltAgent/awesome-design-md` | MIT | 124.855 | chưa chuẩn hóa | 06 | 84 DESIGN.md trích xuất từ website; |
+| [awesome-design-md](../../06-ui-ux-design/README.md#ch-awesome-design-md) | `VoltAgent/awesome-design-md` | MIT | 128.738 | đọc tài liệu 2026-11-23 | 06 | 84 DESIGN.md trích xuất từ website; |
 | [design-resources-for-developers](../../08-awesome-lists-learning/README.md) | `bradtraversy/design-resources-for-developers` | MIT | 67.299 | chưa chuẩn hóa | 08 | ★ 19/10/2026 (shields); |
 | [awesome-android-ui](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-wasabeef-awesome-android-ui) | `wasabeef/awesome-android-ui` | MIT | 58.634 | đọc tài liệu 2026-11-23 | 08 | Danh sách thư viện UI/UX Android kèm ví dụ hình ảnh và nhãn giấy phép. |
 | [css-protips](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-allthingssmitty-css-protips) | `AllThingsSmitty/css-protips` | CC0-1.0 | 30.305 | đọc tài liệu 2026-11-23 | 08 | Tuyển tập mẹo CSS ngắn kèm ví dụ và giải thích cách dùng. |
 | [Awesome Design Systems (alexpate)](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-alexpate-awesome-design-systems) | `alexpate/awesome-design-systems` | Unlicense | 26.418 | đọc tài liệu 2026-11-23 | 08 | Danh mục design system với chỉ báo component, giọng điệu, bộ thiết kế và mã nguồn. |
-| [awesome-shadcn-ui](../../06-ui-ux-design/README.md) | `birobirobiro/awesome-shadcn-ui` | MIT | 20.738 | chưa chuẩn hóa | 06 | ~548 mục có ngày, CI kiểm link; |
-| [awesome-tailwindcss](../../06-ui-ux-design/README.md) | `aniftyco/awesome-tailwindcss` | CC0-1.0 | 15.215 | chưa chuẩn hóa | 06 | ~74 link chọn lọc; |
-| [awesome-design-skills (Bergside/TypeUI)](../../06-ui-ux-design/README.md) | `bergside/awesome-design-skills` | MIT | 3.429 | chưa chuẩn hóa | 06 | 67 cặp SKILL.md + DESIGN.md theo style, kéo bằng CLI typeui.sh; |
-| [awesome-ai-tools-for-ui](../../06-ui-ux-design/README.md) | `maxbogo/awesome-ai-tools-for-ui` | — | 1.002 | chưa chuẩn hóa | 06 | Danh sách công cụ AI cho UI (Taste Skill, Refactoring UI skill…); |
+| [awesome-shadcn-ui](../../06-ui-ux-design/README.md#ch-awesome-shadcn-ui) | `birobirobiro/awesome-shadcn-ui` | MIT | 20.853 | đọc tài liệu 2026-11-23 | 06 | ~548 mục có ngày, CI kiểm link; |
+| [awesome-tailwindcss](../../06-ui-ux-design/README.md#ch-awesome-tailwindcss) | `aniftyco/awesome-tailwindcss` | CC0-1.0 | 15.237 | đọc tài liệu 2026-11-23 | 06 | ~74 link chọn lọc; |
+| [awesome-design-skills (Bergside/TypeUI)](../../06-ui-ux-design/README.md#ch-awesome-design-skills-bergside-typeui) | `bergside/awesome-design-skills` | MIT | 3.778 | đọc tài liệu 2026-11-23 | 06 | 67 cặp SKILL.md + DESIGN.md theo style, kéo bằng CLI typeui.sh; |
+| [awesome-ai-tools-for-ui](../../06-ui-ux-design/README.md#ch-awesome-ai-tools-for-ui) | `maxbogo/awesome-ai-tools-for-ui` | — | 1.058 | đọc tài liệu 2026-11-23 | 06 | Danh sách công cụ AI cho UI (Taste Skill, Refactoring UI skill…); |
 | [awesome-design-systems](../../08-awesome-lists-learning/README.md) | `klaufel/awesome-design-systems` | CC0-1.0 | 907 | chưa chuẩn hóa | 08 | ★ 19/10/2026 (shields); |
-| [official-design-md (VoltAgent)](../../06-ui-ux-design/README.md) | `VoltAgent/official-design-md` | MIT | 528 | chưa chuẩn hóa | 06 | 11 DESIGN.md chính chủ; |
+| [official-design-md (VoltAgent)](../../06-ui-ux-design/README.md#ch-official-design-md-voltagent) | `VoltAgent/official-design-md` | MIT | 534 | đọc tài liệu 2026-11-23 | 06 | 11 DESIGN.md chính chủ; |
 | [awesome-generative-ui](../../08-awesome-lists-learning/README.md) | `narrowin/awesome-generative-ui` | CC-BY-4.0 | 144 | chưa chuẩn hóa | 08 | ★ 19/10/2026 (shields); |
 
 ## Hệ sinh thái ngôn ngữ/framework (`language-ecosystem`, 13)

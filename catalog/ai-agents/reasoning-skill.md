@@ -6,5 +6,5 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [ADHD (adhd-agent)](../../03-agentic-patterns-loops/README.md) | `UditAkhourii/adhd` | MIT | 4.491 | chưa chuẩn hóa | 03 | Skill parallel divergent ideation (5 frame cô lập → critic → deepen top-3); |
-| [neuroarxiv](../../03-agentic-patterns-loops/README.md) | `UditAkhourii/neuroarxiv` | MIT | 438 | chưa chuẩn hóa | 03 | Skill check prior art arXiv; |
+| [ADHD (adhd-agent)](../../03-agentic-patterns-loops/README.md#ch-adhd-adhd-agent) | `UditAkhourii/adhd` | MIT | 4.587 | đọc tài liệu 2026-11-23 | 03 | Skill parallel divergent ideation (5 frame cô lập → critic → deepen top-3); |
+| [neuroarxiv](../../03-agentic-patterns-loops/README.md#ch-neuroarxiv) | `UditAkhourii/neuroarxiv` | MIT | 439 | đọc tài liệu 2026-11-23 | 03 | Skill check prior art arXiv; |

@@ -37,11 +37,11 @@
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [Responsively App](../../30-software-testing-quality/README.md#anhkysuai-responsively-org-responsively-app) | `responsively-org/responsively-app` | AGPL-3.0 | 25.577 | đọc tài liệu 2026-11-23 | 30 | Browser Electron hiển thị nhiều viewport để kiểm tra responsive. |
-| [axe-core](../../06-ui-ux-design/README.md) | `dequelabs/axe-core` | MPL-2.0 | 7.738 | chưa chuẩn hóa | 06 | Engine a11y runtime: 105 luật WCAG 2.0/2.1/2.2 A–AAA + best practice, v4.14.0; |
-| [pixelmatch](../../06-ui-ux-design/README.md) | `mapbox/pixelmatch` | ISC | 7.007 | chưa chuẩn hóa | 06 | So ảnh pixel ~600 dòng, không phụ thuộc, OKLab + HyAB, dò khử răng cưa; |
+| [axe-core](../../06-ui-ux-design/README.md#ch-axe-core) | `dequelabs/axe-core` | MPL-2.0 | 7.874 | đọc tài liệu 2026-11-23 | 06 | Engine a11y runtime: 105 luật WCAG 2.0/2.1/2.2 A–AAA + best practice, v4.14.0; |
+| [pixelmatch](../../06-ui-ux-design/README.md#ch-pixelmatch) | `mapbox/pixelmatch` | ISC | 7.028 | đọc tài liệu 2026-11-23 | 06 | So ảnh pixel ~600 dòng, không phụ thuộc, OKLab + HyAB, dò khử răng cưa; |
 | [VMAF](../../19-agentic-video-media/README.md) | `Netflix/vmaf` | BSD-2-Clause-Patent | 5.578 | chưa chuẩn hóa | 19 | Chỉ số chất lượng video cảm nhận + PSNR/SSIM/MS-SSIM/CIEDE2000/CAMBI; |
-| [eslint-plugin-jsx-a11y](../../06-ui-ux-design/README.md) | `jsx-eslint/eslint-plugin-jsx-a11y` | MIT | 3.633 | chưa chuẩn hóa | 06 | 39 luật a11y tĩnh cho JSX; |
-| [Argos](../../06-ui-ux-design/README.md) | `argos-ci/argos` | MIT | 656 | chưa chuẩn hóa | 06 | Nền tảng visual testing review ảnh chụp trong PR (Playwright/Storybook/Cypress), so ảnh bằng odiff-bin; |
+| [eslint-plugin-jsx-a11y](../../06-ui-ux-design/README.md#ch-eslint-plugin-jsx-a11y) | `jsx-eslint/eslint-plugin-jsx-a11y` | MIT | 3.631 | đọc tài liệu 2026-11-23 | 06 | 39 luật a11y tĩnh cho JSX; |
+| [Argos](../../06-ui-ux-design/README.md#ch-argos) | `argos-ci/argos` | MIT | 666 | đọc tài liệu 2026-11-23 | 06 | Nền tảng visual testing review ảnh chụp trong PR (Playwright/Storybook/Cypress), so ảnh bằng odiff-bin; |
 | [ffmpeg-quality-metrics](../../19-agentic-video-media/README.md) | `slhck/ffmpeg-quality-metrics` | MIT | 561 | chưa chuẩn hóa | 19 | CLI/Python bọc ffmpeg tính PSNR/SSIM/VIF/MSAD/VMAF từng frame + thống kê + GUI; |
 
 ## Phân tích tĩnh & lint (`static-analysis`, 19)
@@ -59,12 +59,12 @@
 | [pyright](../../13-dev-stack-devops/README.md) | `microsoft/pyright` | MIT | 15.720 | chưa chuẩn hóa | 13 | Type checker Python; |
 | [react-doctor](../../30-software-testing-quality/README.md#chuyen-react-doctor) | `millionco/react-doctor` | Modified MIT License | 15.154 | đọc tài liệu 2026-11-18 | 30 | Công cụ quét tĩnh có tính tất định cho dự án React, báo lỗi về state/effect, hiệu năng, kiến trúc, bảo mật, a11y và khả năng bảo trì. |
 | [knip](../../13-dev-stack-devops/README.md) | `webpro-nl/knip` | ISC | 12.560 | chưa chuẩn hóa | 13 | Tìm file/export/dependency chết; |
-| [Stylelint](../../06-ui-ux-design/README.md) | `stylelint/stylelint` | MIT | 11.542 | chưa chuẩn hóa | 06 | 154 luật lint CSS (color-no-hex, declaration-property-value-allowed-list, no-unknown-custom-properties) để cấm giá trị ngoài token; |
+| [Stylelint](../../06-ui-ux-design/README.md#ch-stylelint) | `stylelint/stylelint` | MIT | 11.557 | đọc tài liệu 2026-11-23 | 06 | 154 luật lint CSS (color-no-hex, declaration-property-value-allowed-list, no-unknown-custom-properties) để cấm giá trị ngoài token; |
 | [SQLFluff](../../15-ai-for-data/README.md) | `sqlfluff/sqlfluff` | MIT | 10.011 | chưa chuẩn hóa | 15 | Linter + auto-fix SQL, 28 file dialect, templater Jinja/dbt, lõi Rust sqlfluffrs; |
 | [zizmor](../../31-software-supply-chain-security/README.md) | `zizmorcore/zizmor` | MIT | 6.856 | chưa chuẩn hóa | 31 | Phân tích tĩnh bảo mật GitHub Actions, 41 audit, SARIF, offline/online; |
 | [jscpd](../../13-dev-stack-devops/README.md) | `kucherenko/jscpd` | MIT | 6.472 | chưa chuẩn hóa | 13 | Phát hiện code trùng lặp; |
 | [actionlint](../../13-dev-stack-devops/README.md) | `rhysd/actionlint` | MIT | 4.371 | chưa chuẩn hóa | 13 | Lint workflow GitHub Actions: kiểm kiểu ${{ }}, shellcheck/pyflakes; |
-| [@shadcn/lint](../../06-ui-ux-design/README.md) | `shadcn-ui/lint` | MIT | 3.291 | chưa chuẩn hóa | 06 | 6 luật ESLint/Oxlint cho design system Tailwind v4, thông báo lỗi viết cho agent; |
+| [@shadcn/lint](../../06-ui-ux-design/README.md#ch-shadcn-lint) | `shadcn-ui/lint` | MIT | 3.455 | đọc tài liệu 2026-11-23 | 06 | 6 luật ESLint/Oxlint cho design system Tailwind v4, thông báo lỗi viết cho agent; |
 | [crapper / dryer / mutator (Uncle Bob)](../../20-claude-plugins-ecosystem/README.md) | `unclebob/crapper` | 0BSD | 171 | chưa chuẩn hóa | 20 | Bộ cổng chất lượng Python của Robert C. |
 | [dependency-cruiser](../../29-software-architecture-api-contracts/README.md#dependency-cruiser-architecture-gates) | `sverweij/dependency-cruiser` | MIT | — | đọc mã 2026-11-04 | 29 | Kiểm graph/rule dependency JS/TS; |
 

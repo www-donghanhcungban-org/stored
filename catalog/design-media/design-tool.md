@@ -8,33 +8,33 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [Excalidraw](../../06-ui-ux-design/README.md) | `excalidraw/excalidraw` | MIT | 134.936 | chưa chuẩn hóa | 06 | ★ 19/10/2026 (shields); |
+| [Excalidraw](../../06-ui-ux-design/README.md#ch-excalidraw) | `excalidraw/excalidraw` | MIT | 136.173 | đọc tài liệu 2026-11-23 | 06 | ★ 19/10/2026 (shields); |
 | [godot](../../22-motion-design-animation/README.md#chuyen-godot) | `godotengine/godot` | MIT | 120.330 | đọc tài liệu 2026-11-18 | 22 | Engine game 2D và 3D đa nền tảng với giao diện biên tập thống nhất, xuất game một cú bấm ra desktop, di động, web. |
 | [PhotoCraft](../../06-ui-ux-design/README.md#anhkysuai-2026-11-23-photocraft) | `storytold/photocraft` | MIT OR Apache-2.0 | 81.102 | đọc tài liệu 2026-11-23 | 06 | Trình sửa ảnh desktop bằng Rust, làm việc với layer, mask và tài liệu PSD. |
 | [Penpot](../../06-ui-ux-design/README.md#7zg-hồ-sơ-penpotpenpot-nền-tảng-thiết-kế-mã-mở-tự-host-design-token-gốc-mcp-server-chính-thức-ảnh-readme-người-dùng-gửi-đọc-mã-19112026) | `penpot/penpot` | MPL-2.0 | 62.550 | đọc mã 2026-11-19 | 06 | Nền tảng thiết kế và prototype mã mở thay Figma, SaaS hoặc tự host (Docker, Kubernetes); |
-| [tldraw](../../06-ui-ux-design/README.md) | `tldraw/tldraw` | tldraw license | 51.171 | chưa chuẩn hóa | 06 | ★ 19/10/2026 (shields); |
+| [tldraw](../../06-ui-ux-design/README.md#ch-tldraw) | `tldraw/tldraw` | tldraw license | 51.543 | đọc tài liệu 2026-11-23 | 06 | ★ 19/10/2026 (shields); |
 | [artcraft](../../06-ui-ux-design/README.md#anhkysuai-2026-11-23-storytold-artcraft) | `storytold/artcraft` | MIT OR Apache-2.0 | 42.033 | đọc tài liệu 2026-11-23 | 06 | Môi trường sáng tạo ảnh/video AI có bố cục 2D, dựng cảnh 3D và lựa chọn nhiều mô hình. |
 | [Aseprite](../../22-motion-design-animation/README.md#anhkysuai-2026-11-23-aseprite) | `aseprite/aseprite` | Aseprite EULA; một số thành phần MIT và giấy phép khác | 41.105 | đọc tài liệu 2026-11-23 | 22 | Ứng dụng vẽ pixel art và tạo animation sprite theo layer, frame. |
 | [GDevelop](../../22-motion-design-animation/README.md#chuyen-gdevelop) | `4ian/GDevelop` | MIT cho Core | 29.018 | đọc tài liệu 2026-11-18 | 22 | Phần mềm làm game không cần code, mã nguồn mở, tạo game 2D, 3D và nhiều người chơi cho mobile, desktop và web bằng hệ thống sự kiện và behavior. |
 | [Graphite](../../06-ui-ux-design/README.md#anhkysuai-2026-11-23-graphite) | `GraphiteEditor/Graphite` | MIT OR Apache-2.0 | 28.014 | đọc tài liệu 2026-11-23 | 06 | Trình thiết kế đồ họa kết hợp chỉnh sửa vector và quy trình node theo thủ tục. |
 | [Blender](../../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026) | `blender/blender` | GPL-3.0 | 21.750 | đọc tài liệu 2026-11-08 | 19 | Bộ công cụ 3D mở trọn quy trình: modeling, rigging, animation, simulation, render, compositing, motion tracking, dựng video; |
 | [drawnix](../../06-ui-ux-design/README.md#chuyen-drawnix) | `plait-board/drawnix` | MIT | 15.080 | đọc tài liệu 2026-11-18 | 06 | Bảng trắng mã nguồn mở tất cả trong một: sơ đồ tư duy, lưu đồ, vẽ tay trên canvas vô hạn, xây trên framework Plait. |
-| [Pencil (Evolus)](../../06-ui-ux-design/README.md) | `evolus/pencil` | GPL-2.0 | 9.891 | chưa chuẩn hóa | 06 | Wireframe Electron của Evolus (Việt Nam); |
-| [OpenPencil (open-pencil)](../../06-ui-ux-design/README.md) | `open-pencil/open-pencil` | MIT + Apache-2.0 (Cloud, REUSE.toml) | 9.510 | chưa chuẩn hóa | 06 | Trình thiết kế TS/Vue + Tauri, Skia CanvasKit, đọc/ghi .fig gốc (chưa trọn vẹn, tự ghi trong docs), 127 tool AI, MCP 127.0.0.1 + token + eval tắt; |
-| [OpenPencil (ZSeven-W)](../../06-ui-ux-design/README.md) | `ZSeven-W/openpencil` | MIT (kèm thư viện xác thực đóng) | 6.997 | chưa chuẩn hóa | 06 | Trình vẽ vector AI-native bằng Rust (~1,19 triệu dòng, 53 crate, ~15,7k test), MCP, xuất code 8 nền tảng; |
-| [FigCraft](../../06-ui-ux-design/README.md) | `storytold/figcraft` | MIT OR Apache-2.0 | 3.967 | chưa chuẩn hóa | 06 | Dựng lại Figma bằng Rust, 204k dòng sau 5 ngày, 72% commit Claude đồng tác giả; |
+| [OpenPencil (open-pencil)](../../06-ui-ux-design/README.md#ch-openpencil-open-pencil) | `open-pencil/open-pencil` | MIT + Apache-2.0 (phần Cloud, theo REUSE.toml) | 10.058 | đọc tài liệu 2026-11-23 | 06 | Trình thiết kế TS/Vue + Tauri, Skia CanvasKit, đọc/ghi .fig gốc (chưa trọn vẹn, tự ghi trong docs), 127 tool AI, MCP 127.0.0.1 + token + eval tắt; |
+| [Pencil (Evolus)](../../06-ui-ux-design/README.md#ch-pencil-evolus) | `evolus/pencil` | GPL-2.0 | 9.923 | đọc mã 2026-11-23 | 06 | Wireframe Electron của Evolus (Việt Nam); |
+| [OpenPencil (ZSeven-W)](../../06-ui-ux-design/README.md#ch-openpencil-zseven-w) | `ZSeven-W/openpencil` | MIT (kèm thư viện xác thực đóng prebuilt) | 7.335 | đọc tài liệu 2026-11-23 | 06 | Trình vẽ vector AI-native bằng Rust (~1,19 triệu dòng, 53 crate, ~15,7k test), MCP, xuất code 8 nền tảng; |
+| [FigCraft](../../06-ui-ux-design/README.md#ch-figcraft) | `storytold/figcraft` | MIT OR Apache-2.0 | 5.336 | đọc tài liệu 2026-11-23 | 06 | Dựng lại Figma bằng Rust, 204k dòng sau 5 ngày, 72% commit Claude đồng tác giả; |
 
 ## Design-to-code & MCP thiết kế (`design-to-code`, 10)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [OpenDesign](../../06-ui-ux-design/README.md) | `nexu-io/open-design` | Apache-2.0 | 105.186 | chưa chuẩn hóa | 06 | "Workspace agent thiết kế" local-first (Apache-2.0): brief → prototype/slides/ảnh/HyperFrames motion; |
-| [Onlook](../../06-ui-ux-design/README.md) | `onlook-dev/onlook` | Apache-2.0 | 27.064 | chưa chuẩn hóa | 06 | Visual editor React; |
-| [Framelink MCP for Figma (Figma-Context-MCP)](../../06-ui-ux-design/README.md) | `GLips/Figma-Context-MCP` | MIT | 16.130 | chưa chuẩn hóa | 06 | MCP rút gọn dữ liệu Figma REST cho agent, 2 tool; |
-| [Tkinter-Designer](../../06-ui-ux-design/README.md) | `ParthJadhav/Tkinter-Designer` | BSD-3-Clause | 10.252 | chưa chuẩn hóa | 06 | Figma REST → mã GUI Tkinter; |
-| [m3e-canvas](../../06-ui-ux-design/README.md) | `lnkiai/m3e-canvas` | MIT (+ NOTICE Apache-2.0) | 9.947 | chưa chuẩn hóa | 06 | Vẽ màn Material 3 Expressive trên trình duyệt, xuất prompt cho agent; |
-| [FigmaToCode](../../06-ui-ux-design/README.md) | `bernaferrari/FigmaToCode` | GPL-3.0 | 5.260 | chưa chuẩn hóa | 06 | Plugin Figma chuyển tất định sang HTML/React/Svelte/Tailwind/Flutter/SwiftUI; |
-| [Agentation](../../06-ui-ux-design/README.md) | `benjitaylor/agentation` | PolyForm Shield 1.0.0 (bản viết lại) | 5.176 | chưa chuẩn hóa | 06 | Thanh công cụ React: bấm phần tử, ghi chú, gửi agent; |
+| [OpenDesign](../../06-ui-ux-design/README.md#ch-opendesign) | `nexu-io/open-design` | Apache-2.0 | 109.119 | đọc tài liệu 2026-11-23 | 06 | "Workspace agent thiết kế" local-first (Apache-2.0): brief → prototype/slides/ảnh/HyperFrames motion; |
+| [Onlook](../../06-ui-ux-design/README.md#ch-onlook) | `onlook-dev/onlook` | Apache-2.0 (NOTICE liệt kê phụ thuộc bên thứ ba, có gói độc | 27.825 | đọc tài liệu 2026-11-23 | 06 | Visual editor React; |
+| [Framelink MCP for Figma (Figma-Context-MCP)](../../06-ui-ux-design/README.md#ch-framelink-mcp-for-figma-figma-context-mcp) | `GLips/Figma-Context-MCP` | MIT | 16.288 | đọc tài liệu 2026-11-23 | 06 | MCP rút gọn dữ liệu Figma REST cho agent, 2 tool; |
+| [m3e-canvas](../../06-ui-ux-design/README.md#ch-m3e-canvas) | `lnkiai/m3e-canvas` | MIT (+ NOTICE: mã port Apache-2.0 từ material-components-and | 10.805 | đọc tài liệu 2026-11-23 | 06 | Vẽ màn Material 3 Expressive trên trình duyệt, xuất prompt cho agent; |
+| [Tkinter-Designer](../../06-ui-ux-design/README.md#ch-tkinter-designer) | `ParthJadhav/Tkinter-Designer` | BSD-3-Clause | 10.250 | đọc tài liệu 2026-11-23 | 06 | Figma REST → mã GUI Tkinter; |
+| [Agentation](../../06-ui-ux-design/README.md#ch-agentation) | `benjitaylor/agentation` | PolyForm Shield 1.0.0 (bản viết lại) | 5.467 | đọc tài liệu 2026-11-23 | 06 | Thanh công cụ React: bấm phần tử, ghi chú, gửi agent; |
+| [FigmaToCode](../../06-ui-ux-design/README.md#ch-figmatocode) | `bernaferrari/FigmaToCode` | GPL-3.0 | 5.280 | đọc tài liệu 2026-11-23 | 06 | Plugin Figma chuyển tất định sang HTML/React/Svelte/Tailwind/Flutter/SwiftUI; |
 | [Motion In Design](../../06-ui-ux-design/README.md#7zc-hai-mươi-trang-cảm-hứng-và-tài-nguyên-thiết-kế-gallery-từng-phần-giao-diện-chuyển-động-làm-web-bằng-ai-danh-sách-người-dùng-gửi-đọc-16112026) |  | — | — | đọc tài liệu 2026-11-16 | 06 | Section web tương tác React/GSAP/Three.js bán dưới dạng prompt + spec Markdown cho AI coding (Copy Prompt); |
 | [MotionSites AI (motionsites.ai)](../../06-ui-ux-design/README.md#7w-kiểm-link-motionsitesai-thư-viện-prompt-trả-phí-skill-claude-miễn-phí-làm-mồi-và-các-bản-dump-bị-dmca-link-người-dùng-gửi-3112026) |  | proprietary | — | đọc tài liệu 2026-11-03 | 06 | Thư viện prompt trả phí cho Lovable/Bolt/v0/Cursor/Claude (hero, landing, background, section, 40+ Lovable template) + MCP trên Supabase Edge Function; |
 | [One Prompt Design](../../06-ui-ux-design/README.md#7zc-hai-mươi-trang-cảm-hứng-và-tài-nguyên-thiết-kế-gallery-từng-phần-giao-diện-chuyển-động-làm-web-bằng-ai-danh-sách-người-dùng-gửi-đọc-16112026) |  | — | — | đọc tài liệu 2026-11-16 | 06 | Prompt AI và tham chiếu hình cho quảng cáo, mạng xã hội: posters, images, mockups, gradients, backdrops (đọc trang 16/11/2026), mục 06 §7zc |
@@ -63,10 +63,10 @@
 |---|---|---|---|---|---|---|
 | [Nerd Fonts](../../13-dev-stack-devops/README.md#anhkysuai-ryanoasis-nerd-fonts) | `ryanoasis/nerd-fonts` | MIT cho mã gốc; OFL-1.1 và giấy phép riêng cho font/glyph | 65.280 | đọc tài liệu 2026-11-23 | 13 | Bộ font được vá thêm glyph và công cụ tạo font cho terminal, editor và prompt. |
 | [iTerm2 Color Schemes](../../13-dev-stack-devops/README.md#anhkysuai-mbadolato-iterm2-color-schemes) | `mbadolato/iTerm2-Color-Schemes` | MIT cho công cụ; mỗi theme theo licenses.yml | 27.337 | đọc tài liệu 2026-11-23 | 13 | Bộ phối màu terminal và các bản chuyển định dạng cho nhiều editor/terminal. |
-| [tweakcn](../../06-ui-ux-design/README.md) | `jnsahaj/tweakcn` | Apache-2.0 | 10.498 | chưa chuẩn hóa | 06 | Mã nguồn SaaS tweakcn.com chỉnh theme shadcn/Tailwind; |
-| [Style Dictionary](../../06-ui-ux-design/README.md) | `style-dictionary/style-dictionary` | Apache-2.0 | 4.875 | chưa chuẩn hóa | 06 | Build token → CSS/iOS/Android/JS; |
-| [designlang (design-extract)](../../06-ui-ux-design/README.md) | `Manavarya09/design-extract` | MIT | 4.437 | chưa chuẩn hóa | 06 | URL → DTCG, Tailwind, shadcn, Figma variables, DESIGN.md (quy ước design-extractor.com, không theo spec Google); |
-| [dembrandt](../../06-ui-ux-design/README.md) | `dembrandt/dembrandt` | MIT | 3.896 | chưa chuẩn hóa | 06 | CLI/MCP/GitHub Action trích token từ website, DESIGN.md theo spec google-labs-code/design.md 0.4 (test chạy linter thật), Drift Gate chặn lệch token trong CI; |
+| [tweakcn](../../06-ui-ux-design/README.md#ch-tweakcn) | `jnsahaj/tweakcn` | Apache-2.0 | 10.565 | đọc mã 2026-11-23 | 06 | Mã nguồn SaaS tweakcn.com chỉnh theme shadcn/Tailwind; |
+| [designlang (design-extract)](../../06-ui-ux-design/README.md#ch-designlang-design-extract) | `Manavarya09/design-extract` | MIT | 5.196 | đọc tài liệu 2026-11-23 | 06 | URL → DTCG, Tailwind, shadcn, Figma variables, DESIGN.md (quy ước design-extractor.com, không theo spec Google); |
+| [Style Dictionary](../../06-ui-ux-design/README.md#ch-style-dictionary) | `style-dictionary/style-dictionary` | Apache-2.0 | 4.891 | đọc tài liệu 2026-11-23 | 06 | Build token → CSS/iOS/Android/JS; |
+| [dembrandt](../../06-ui-ux-design/README.md#ch-dembrandt) | `dembrandt/dembrandt` | MIT | 4.073 | đọc mã 2026-11-23 | 06 | CLI/MCP/GitHub Action trích token từ website, DESIGN.md theo spec google-labs-code/design.md 0.4 (test chạy linter thật), Drift Gate chặn lệch token trong CI; |
 | [Font in Logo](../../06-ui-ux-design/README.md#7v-năm-trang-cảm-hứng-thiết-kế-postsdesign-saaspo-transitionsdev-icon-museum-font-in-logo-danh-sách-người-dùng-gửi-2112026) |  | — | — | đọc tài liệu 2026-11-02 | 06 | Tra font trong logo nổi tiếng với nhãn Verified / The Closest Font / Based On / Community Suggestion (chỉ Verified là đối chiếu nguồn); |
 
 ## Minh họa & sơ đồ (`diagram-illustration`, 11)

@@ -3108,3 +3108,2081 @@ Trình soạn sơ đồ quan hệ thực thể (ERD) cơ sở dữ liệu chạy
 Bảng trắng mã nguồn mở tất cả trong một: sơ đồ tư duy, lưu đồ, vẽ tay trên canvas vô hạn, xây trên framework Plait. Chuyển cú pháp Mermaid thành lưu đồ và Markdown thành sơ đồ tư duy; xuất PNG, JPG, JSON và tự lưu vào bộ nhớ trình duyệt; có image Docker để tự host. ★ 18/11/2026: 15.080 (GitHub search API), nhóm "Đồ họa, 3D & Sơ đồ" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
 
 **Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-agentation"></a>
+
+### Agentation
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/benjitaylor/agentation |
+| License | PolyForm Shield 1.0.0 (văn bản viết lại, không OSI) |
+| Phiên bản đã đọc | `0e3236eb1a0f5577852ab7bb5121f5dd46d42f1d` (commit 2026-09-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-09-21) |
+| Nhận định | Thanh công cụ React để bấm/ghi chú phần tử rồi chuyển cho agent, có MCP server (cổng 4747) và skill. License chặn dùng làm sản phẩm cạnh tranh; không CI. |
+| Nguồn | [README.md](https://github.com/benjitaylor/agentation/blob/0e3236eb1a0f5577852ab7bb5121f5dd46d42f1d/README.md) · [LICENSE](https://github.com/benjitaylor/agentation/blob/0e3236eb1a0f5577852ab7bb5121f5dd46d42f1d/LICENSE) · [package.json](https://github.com/benjitaylor/agentation/blob/0e3236eb1a0f5577852ab7bb5121f5dd46d42f1d/package.json) |
+
+<a id="ch-ai-website-cloner-template"></a>
+
+### ai-website-cloner-template
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/JCodesMore/ai-website-cloner-template |
+| License | MIT |
+| Phiên bản đã đọc | `5426e0e2ec35dbc173a7a18f47a3dfe2a765313e` (commit 2026-11-10) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-10) |
+| Nhận định | Starter Next.js + skill cho agent dựng lại website từ URL. Rủi ro pháp lý cao vì clone nội dung/thương hiệu site khác; README quảng bá proxy dân cư. |
+| Nguồn | [README.md](https://github.com/JCodesMore/ai-website-cloner-template/blob/5426e0e2ec35dbc173a7a18f47a3dfe2a765313e/README.md) · [LICENSE](https://github.com/JCodesMore/ai-website-cloner-template/blob/5426e0e2ec35dbc173a7a18f47a3dfe2a765313e/LICENSE) · [package.json](https://github.com/JCodesMore/ai-website-cloner-template/blob/5426e0e2ec35dbc173a7a18f47a3dfe2a765313e/package.json) · [.github/workflows/ci.yml](https://github.com/JCodesMore/ai-website-cloner-template/blob/5426e0e2ec35dbc173a7a18f47a3dfe2a765313e/.github/workflows/ci.yml) |
+
+<a id="ch-anatomy"></a>
+
+### Anatomy
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/wheresryan22/anatomy |
+| License | MIT |
+| Phiên bản đã đọc | `1482e8469b0a9e0d8cc18ea2740a01423d29ae80` (commit 2026-10-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, SKILL.md, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-10-18) |
+| Nhận định | Skill vẽ minh họa isometric tương tác (SVG/WebGL/3D) kèm kit không phụ thuộc và audit hình học. Cài bằng giải nén vào thư mục skills; chất lượng hình là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/wheresryan22/anatomy/blob/1482e8469b0a9e0d8cc18ea2740a01423d29ae80/README.md) · [LICENSE](https://github.com/wheresryan22/anatomy/blob/1482e8469b0a9e0d8cc18ea2740a01423d29ae80/LICENSE) · [SKILL.md](https://github.com/wheresryan22/anatomy/blob/1482e8469b0a9e0d8cc18ea2740a01423d29ae80/SKILL.md) · [.github/workflows/ci.yml](https://github.com/wheresryan22/anatomy/blob/1482e8469b0a9e0d8cc18ea2740a01423d29ae80/.github/workflows/ci.yml) |
+
+<a id="ch-anatomy-figures"></a>
+
+### anatomy-figures
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/wheresryan22/anatomy-figures |
+| License | MIT |
+| Phiên bản đã đọc | `d4590e39369d813cd98450f6f6407634a25ad85a` (commit 2026-10-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, figures.json; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-10-09) |
+| Nhận định | Gói npm các figure Anatomy dạng React/custom elements, có theme. Chỉ phát hành dist đã build nên khó kiểm mã nguồn. |
+| Nguồn | [README.md](https://github.com/wheresryan22/anatomy-figures/blob/d4590e39369d813cd98450f6f6407634a25ad85a/README.md) · [LICENSE](https://github.com/wheresryan22/anatomy-figures/blob/d4590e39369d813cd98450f6f6407634a25ad85a/LICENSE) · [package.json](https://github.com/wheresryan22/anatomy-figures/blob/d4590e39369d813cd98450f6f6407634a25ad85a/package.json) · [figures.json](https://github.com/wheresryan22/anatomy-figures/blob/d4590e39369d813cd98450f6f6407634a25ad85a/figures.json) |
+
+<a id="ch-ant-design"></a>
+
+### Ant Design
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ant-design/ant-design |
+| License | MIT |
+| Phiên bản đã đọc | `469bba8a737430015142ad36dd5b7e8e460244ae` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/test.yml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-23) |
+| Nhận định | Thư viện component React cho ứng dụng doanh nghiệp, bảo trì tích cực. Hỗ trợ MCP theo bài tổng hợp vẫn **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/ant-design/ant-design/blob/469bba8a737430015142ad36dd5b7e8e460244ae/README.md) · [LICENSE](https://github.com/ant-design/ant-design/blob/469bba8a737430015142ad36dd5b7e8e460244ae/LICENSE) · [package.json](https://github.com/ant-design/ant-design/blob/469bba8a737430015142ad36dd5b7e8e460244ae/package.json) · [.github/workflows/test.yml](https://github.com/ant-design/ant-design/blob/469bba8a737430015142ad36dd5b7e8e460244ae/.github/workflows/test.yml) |
+
+<a id="ch-ant-design-vue"></a>
+
+### ant-design-vue
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vueComponent/ant-design-vue |
+| License | MIT (3 khối MIT gộp) |
+| Phiên bản đã đọc | `7483836f0adac76516e527df893c3d84a7cd4005` (commit 2026-07-24) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ai-co-author.yml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-07-24) |
+| Nhận định | Bản Vue của Ant Design. MIT nhưng gần như không phát hành mới từ 11/2024, nên cân nhắc trước khi dùng cho dự án mới. |
+| Nguồn | [README.md](https://github.com/vueComponent/ant-design-vue/blob/7483836f0adac76516e527df893c3d84a7cd4005/README.md) · [LICENSE](https://github.com/vueComponent/ant-design-vue/blob/7483836f0adac76516e527df893c3d84a7cd4005/LICENSE) · [package.json](https://github.com/vueComponent/ant-design-vue/blob/7483836f0adac76516e527df893c3d84a7cd4005/package.json) · [.github/workflows/ai-co-author.yml](https://github.com/vueComponent/ant-design-vue/blob/7483836f0adac76516e527df893c3d84a7cd4005/.github/workflows/ai-co-author.yml) |
+
+<a id="ch-antd-mobile"></a>
+
+### antd-mobile
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ant-design/ant-design-mobile |
+| License | MIT |
+| Phiên bản đã đọc | `eee5477f8d6221ced8298e3547eb03e0a037a615` (commit 2026-09-14) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.txt, package.json, .github/workflows/check.yml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-09-14) |
+| Nhận định | Thư viện component React cho mobile web (H5). Ổn định nhưng nhịp phát triển chậm, toolchain cũ (gulp/babel). |
+| Nguồn | [README.md](https://github.com/ant-design/ant-design-mobile/blob/eee5477f8d6221ced8298e3547eb03e0a037a615/README.md) · [LICENSE.txt](https://github.com/ant-design/ant-design-mobile/blob/eee5477f8d6221ced8298e3547eb03e0a037a615/LICENSE.txt) · [package.json](https://github.com/ant-design/ant-design-mobile/blob/eee5477f8d6221ced8298e3547eb03e0a037a615/package.json) · [.github/workflows/check.yml](https://github.com/ant-design/ant-design-mobile/blob/eee5477f8d6221ced8298e3547eb03e0a037a615/.github/workflows/check.yml) |
+
+<a id="ch-antislop"></a>
+
+### antislop
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/miqdadbadjuber/anti-slop |
+| License | MIT |
+| Phiên bản đã đọc | `7f6a03df2931c12cb244dc4ab14ee4866b0ac2ba` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-21) |
+| Nhận định | Bộ luật lọc "AI slop" + skill cho UI, nội dung, code, đóng gói plugin cho nhiều agent. Lõi nạp luôn nên tốn ngữ cảnh; ngưỡng chữ lớn từng lệch WCAG (chưa kiểm lại). |
+| Nguồn | [README.md](https://github.com/miqdadbadjuber/anti-slop/blob/7f6a03df2931c12cb244dc4ab14ee4866b0ac2ba/README.md) · [LICENSE](https://github.com/miqdadbadjuber/anti-slop/blob/7f6a03df2931c12cb244dc4ab14ee4866b0ac2ba/LICENSE) · [package.json](https://github.com/miqdadbadjuber/anti-slop/blob/7f6a03df2931c12cb244dc4ab14ee4866b0ac2ba/package.json) · [.github/workflows/ci.yml](https://github.com/miqdadbadjuber/anti-slop/blob/7f6a03df2931c12cb244dc4ab14ee4866b0ac2ba/.github/workflows/ci.yml) |
+
+<a id="ch-apple-hig-layout"></a>
+
+### Apple HIG: Layout
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://developer.apple.com/design/human-interface-guidelines/layout |
+| License | Tài liệu của Apple, không có giấy phép mở (khớp catalog) |
+| Phiên bản đã đọc | Trang web, không có SHA (đọc 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang HIG Layout (dữ liệu JSON); chưa chạy upstream |
+| Bảo trì | Không rõ (tài liệu Apple cập nhật không theo lịch công bố) |
+| Nhận định | Hướng dẫn bố cục theo size class, safe area, chuyển tab bar thành sidebar khi màn hình rộng. Không đưa số margin iOS cố định, dùng làm nguyên tắc chứ không làm token. |
+| Nguồn | [HIG Layout](https://developer.apple.com/design/human-interface-guidelines/layout) · [JSON trang](https://developer.apple.com/tutorials/data/design/human-interface-guidelines/layout.json) |
+
+<a id="ch-arco-design-react"></a>
+
+### Arco Design (React)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/arco-design/arco-design |
+| License | MIT |
+| Phiên bản đã đọc | `84504beeaf68e8dd8a5fba7a74b45f4ca71c76f2` (commit 2026-11-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/main.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 13/11/2026) |
+| Nhận định | Thư viện React >60 component của ByteDance, theme bằng Less/Design Lab, @arco-design/web-react 2.66.18. peerDependencies react >=16; workflow `main.yml` (pr_check_react18) chỉ cài react@18 để test, nên hỗ trợ React 19 **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/arco-design/arco-design/blob/84504beeaf68e8dd8a5fba7a74b45f4ca71c76f2/README.md) · [LICENSE](https://github.com/arco-design/arco-design/blob/84504beeaf68e8dd8a5fba7a74b45f4ca71c76f2/LICENSE) · [package.json](https://github.com/arco-design/arco-design/blob/84504beeaf68e8dd8a5fba7a74b45f4ca71c76f2/package.json) · [.github/workflows/main.yml](https://github.com/arco-design/arco-design/blob/84504beeaf68e8dd8a5fba7a74b45f4ca71c76f2/.github/workflows/main.yml) |
+
+<a id="ch-argos"></a>
+
+### Argos
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/argos-ci/argos |
+| License | MIT |
+| Phiên bản đã đọc | `d443632d60cb5cc2c1d1062ab71456d56cd0f8c6` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, docker-compose.yml, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 23/11/2026) |
+| Nhận định | Nền tảng visual testing mã mở (backend + frontend trong `apps/`). `docker-compose.yml` dev gồm Postgres 18, RabbitMQ 4.2, Redis 6, DynamoDB local; `package.json` khoá Node 26. README không có hướng dẫn tự host; S3/GitHub App **(chưa xác minh)** từ mã. |
+| Nguồn | [README](https://github.com/argos-ci/argos/blob/d443632d60cb5cc2c1d1062ab71456d56cd0f8c6/README.md) · [LICENSE](https://github.com/argos-ci/argos/blob/d443632d60cb5cc2c1d1062ab71456d56cd0f8c6/LICENSE) · [package.json](https://github.com/argos-ci/argos/blob/d443632d60cb5cc2c1d1062ab71456d56cd0f8c6/package.json) · [docker-compose.yml](https://github.com/argos-ci/argos/blob/d443632d60cb5cc2c1d1062ab71456d56cd0f8c6/docker-compose.yml) · [.github/workflows/ci.yml](https://github.com/argos-ci/argos/blob/d443632d60cb5cc2c1d1062ab71456d56cd0f8c6/.github/workflows/ci.yml) |
+
+<a id="ch-ark-ui"></a>
+
+### Ark UI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/chakra-ui/ark |
+| License | MIT |
+| Phiên bản đã đọc | `831c8ea279431ffb22d793e912eeee4cebee429a` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/quality.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 23/11/2026) |
+| Nhận định | Headless component dựa trên máy trạng thái Zag.js, cùng API cho React/Solid/Vue/Svelte. Monorepo có thêm `packages/mcp` (MCP server) và `CLAUDE.md`. Tuyên bố WCAG "tested with real assistive technologies" **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/chakra-ui/ark/blob/831c8ea279431ffb22d793e912eeee4cebee429a/README.md) · [LICENSE](https://github.com/chakra-ui/ark/blob/831c8ea279431ffb22d793e912eeee4cebee429a/LICENSE) · [package.json](https://github.com/chakra-ui/ark/blob/831c8ea279431ffb22d793e912eeee4cebee429a/package.json) · [.github/workflows/quality.yml](https://github.com/chakra-ui/ark/blob/831c8ea279431ffb22d793e912eeee4cebee429a/.github/workflows/quality.yml) |
+
+<a id="ch-assistant-ui"></a>
+
+### assistant-ui
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/assistant-ui/assistant-ui |
+| License | MIT |
+| Phiên bản đã đọc | `8227544705c6045e70545711ee38d09040e1a282` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 23/11/2026), CI dày (codeql, perf-nightly, lighthouse…) |
+| Nhận định | Thư viện TypeScript/React dựng UI chat cho agent: primitive Thread/Message/Composer, CLI `assistant-ui create/init`, runtime cho AI SDK/LangGraph/A2A/AG-UI. Có dịch vụ cloud trả phí; README tự nhận "production-grade" **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/assistant-ui/assistant-ui/blob/8227544705c6045e70545711ee38d09040e1a282/README.md) · [LICENSE](https://github.com/assistant-ui/assistant-ui/blob/8227544705c6045e70545711ee38d09040e1a282/LICENSE) · [package.json](https://github.com/assistant-ui/assistant-ui/blob/8227544705c6045e70545711ee38d09040e1a282/package.json) |
+
+<a id="ch-astryx-meta"></a>
+
+### Astryx (Meta)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/meta/astryx |
+| License | MIT |
+| Phiên bản đã đọc | `fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, packages/core/package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 23/11/2026), Beta |
+| Nhận định | Design system React 19 + StyleX của Meta, đang Beta; `@astryx/core` hiện 0.7.18. README tự nhận "150+ component" và dùng cho 13.000+ app nội bộ **(chưa xác minh)**; có CLI, plugin agent (`.claude-plugin`, `plugins/`). |
+| Nguồn | [README](https://github.com/meta/astryx/blob/fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360/README.md) · [LICENSE](https://github.com/meta/astryx/blob/fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360/LICENSE) · [package.json](https://github.com/meta/astryx/blob/fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360/package.json) · [packages/core/package.json](https://github.com/meta/astryx/blob/fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360/packages/core/package.json) · [.github/workflows/ci.yml](https://github.com/meta/astryx/blob/fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360/.github/workflows/ci.yml) |
+
+<a id="ch-awesome-ai-tools-for-ui"></a>
+
+### awesome-ai-tools-for-ui
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/maxbogo/awesome-ai-tools-for-ui |
+| License | Không có file LICENSE |
+| Phiên bản đã đọc | `c16e509e4c089abaa5ea50ce8e8d38ac5a03edd2` (commit 2026-11-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md; chưa chạy upstream |
+| Bảo trì | Có cập nhật (commit 3/11/2026) |
+| Nhận định | Danh sách tuyển chọn công cụ AI cho UI (Skills, Apps, MCP/plugin, Design tools); khoảng 70 mục, link gắn utm. Không có file LICENSE nên mặc định không được cấp quyền tái sử dụng nội dung. |
+| Nguồn | [README](https://github.com/maxbogo/awesome-ai-tools-for-ui/blob/c16e509e4c089abaa5ea50ce8e8d38ac5a03edd2/README.md) |
+
+<a id="ch-awesome-design-md"></a>
+
+### awesome-design-md
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/VoltAgent/awesome-design-md |
+| License | MIT |
+| Phiên bản đã đọc | `fcc70284932276d085f01ef9f83edde90b1258cb` (commit 2026-10-28) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 28/10/2026) |
+| Nhận định | Bộ DESIGN.md trích từ website thật (thư mục `design-md/` có 84 mục). README dẫn tới getdesign.md để đặt bản riêng. Mức chính xác so với site gốc và quyền dùng nhận diện thương hiệu bên thứ ba **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/VoltAgent/awesome-design-md/blob/fcc70284932276d085f01ef9f83edde90b1258cb/README.md) · [LICENSE](https://github.com/VoltAgent/awesome-design-md/blob/fcc70284932276d085f01ef9f83edde90b1258cb/LICENSE) |
+
+<a id="ch-awesome-design-skills-bergside-typeui"></a>
+
+### awesome-design-skills (Bergside/TypeUI)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/bergside/awesome-design-skills |
+| License | MIT |
+| Phiên bản đã đọc | `f631a09b4fcc0166f2e2c1a8c81906ef680c57e8` (commit 2026-06-28) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 28/6/2026) |
+| Nhận định | Registry 67 style, mỗi style một cặp SKILL.md + DESIGN.md (thư mục `skills/` có 68 mục), kéo bằng `npx typeui.sh pull`. Nội dung khuôn mẫu lặp nhiều và độ tương phản màu kém theo phân tích cũ của kho. |
+| Nguồn | [README](https://github.com/bergside/awesome-design-skills/blob/f631a09b4fcc0166f2e2c1a8c81906ef680c57e8/README.md) · [LICENSE](https://github.com/bergside/awesome-design-skills/blob/f631a09b4fcc0166f2e2c1a8c81906ef680c57e8/LICENSE) |
+
+<a id="ch-awesome-shadcn-ui"></a>
+
+### awesome-shadcn-ui
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/birobirobiro/awesome-shadcn-ui |
+| License | MIT |
+| Phiên bản đã đọc | `3cfe24434664cd9e11d61f40f037aa67cc9a1c0e` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, .github/workflows/link-check.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 23/11/2026) |
+| Nhận định | Danh sách tài nguyên shadcn/ui dạng bảng có cột ngày (~600 dòng bảng), workflow kiểm link, thêm ngày và cập nhật sao. README có khối Sponsors trả phí đặt đầu trang. |
+| Nguồn | [README](https://github.com/birobirobiro/awesome-shadcn-ui/blob/3cfe24434664cd9e11d61f40f037aa67cc9a1c0e/README.md) · [LICENSE](https://github.com/birobirobiro/awesome-shadcn-ui/blob/3cfe24434664cd9e11d61f40f037aa67cc9a1c0e/LICENSE) · [.github/workflows/link-check.yml](https://github.com/birobirobiro/awesome-shadcn-ui/blob/3cfe24434664cd9e11d61f40f037aa67cc9a1c0e/.github/workflows/link-check.yml) |
+
+<a id="ch-awesome-tailwindcss"></a>
+
+### awesome-tailwindcss
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/aniftyco/awesome-tailwindcss |
+| License | CC0-1.0 |
+| Phiên bản đã đọc | `3759163f6a6f162f4d5a3dc1950636344ddd87c4` (commit 2026-10-27) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, CONTRIBUTING.md; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 27/10/2026) |
+| Nhận định | Danh sách tài nguyên Tailwind CSS có đánh dấu tài nguyên chính thức và mục deprecated. CONTRIBUTING cấm PR do LLM/agent viết. |
+| Nguồn | [README](https://github.com/aniftyco/awesome-tailwindcss/blob/3759163f6a6f162f4d5a3dc1950636344ddd87c4/README.md) · [LICENSE](https://github.com/aniftyco/awesome-tailwindcss/blob/3759163f6a6f162f4d5a3dc1950636344ddd87c4/LICENSE.md) · [CONTRIBUTING.md](https://github.com/aniftyco/awesome-tailwindcss/blob/3759163f6a6f162f4d5a3dc1950636344ddd87c4/CONTRIBUTING.md) |
+
+<a id="ch-axe-core"></a>
+
+### axe-core
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/dequelabs/axe-core |
+| License | MPL-2.0 |
+| Phiên bản đã đọc | `e80f6b797b32b5f9d60ddaa0a7afad6ed864f121` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, LICENSE-3RD-PARTY.txt, package.json, .github/workflows/test.yml, .github/workflows/nightly-tests.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 16/11/2026, nhánh develop) |
+| Nhận định | Engine kiểm a11y runtime theo WCAG 2.0–2.2 A–AAA + best practice, nay bản 4.14.1. README: bắt trung bình 57% lỗi WCAG, phần không chắc trả "incomplete" (số liệu của tác giả, **chưa xác minh**). MPL-2.0 copyleft theo file; có LICENSE-3RD-PARTY. |
+| Nguồn | [README](https://github.com/dequelabs/axe-core/blob/e80f6b797b32b5f9d60ddaa0a7afad6ed864f121/README.md) · [LICENSE](https://github.com/dequelabs/axe-core/blob/e80f6b797b32b5f9d60ddaa0a7afad6ed864f121/LICENSE) · [LICENSE-3RD-PARTY.txt](https://github.com/dequelabs/axe-core/blob/e80f6b797b32b5f9d60ddaa0a7afad6ed864f121/LICENSE-3RD-PARTY.txt) · [package.json](https://github.com/dequelabs/axe-core/blob/e80f6b797b32b5f9d60ddaa0a7afad6ed864f121/package.json) · [.github/workflows/test.yml](https://github.com/dequelabs/axe-core/blob/e80f6b797b32b5f9d60ddaa0a7afad6ed864f121/.github/workflows/test.yml) · [.github/workflows/nightly-tests.yml](https://github.com/dequelabs/axe-core/blob/e80f6b797b32b5f9d60ddaa0a7afad6ed864f121/.github/workflows/nightly-tests.yml) |
+
+<a id="ch-baoyu-design"></a>
+
+### baoyu-design
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/JimLiu/open-artifact (trước: https://github.com/JimLiu/baoyu-design) |
+| License | Apache-2.0 (khác catalog cũ: Hỗn hợp: MIT cho mã tác giả; phần lấy từ Anthropic không có license) |
+| Phiên bản đã đọc | `4d6485194733d6eacc18de1b74226bbbe805255a` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, NOTICE, CHANGELOG.md, package.json, Cargo.toml, .github/workflows/publish-npm.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 23/11/2026), đã đổi tên |
+| Nhận định | Đã đổi tên thành **Open Artifact** (`JimLiu/open-artifact`; URL cũ chuyển hướng theo README): daemon cục bộ + editor cho slides/design/whiteboard/sheets…, kèm plugin cho nhiều agent. LICENSE nay Apache-2.0, NOTICE chỉ ghi "formerly published as baoyu-design" và không còn tuyên bố phần của Anthropic; việc đã loại bỏ hết tài sản/prompt trích từ Anthropic **(chưa xác minh)**, các bản cũ trên npm vẫn mang rủi ro sở hữu trí tuệ đã ghi. |
+| Nguồn | [README](https://github.com/JimLiu/open-artifact/blob/4d6485194733d6eacc18de1b74226bbbe805255a/README.md) · [LICENSE](https://github.com/JimLiu/open-artifact/blob/4d6485194733d6eacc18de1b74226bbbe805255a/LICENSE) · [NOTICE](https://github.com/JimLiu/open-artifact/blob/4d6485194733d6eacc18de1b74226bbbe805255a/NOTICE) · [CHANGELOG.md](https://github.com/JimLiu/open-artifact/blob/4d6485194733d6eacc18de1b74226bbbe805255a/CHANGELOG.md) · [package.json](https://github.com/JimLiu/open-artifact/blob/4d6485194733d6eacc18de1b74226bbbe805255a/package.json) · [Cargo.toml](https://github.com/JimLiu/open-artifact/blob/4d6485194733d6eacc18de1b74226bbbe805255a/Cargo.toml) · [.github/workflows/publish-npm.yml](https://github.com/JimLiu/open-artifact/blob/4d6485194733d6eacc18de1b74226bbbe805255a/.github/workflows/publish-npm.yml) |
+
+<a id="ch-base-ui"></a>
+
+### Base UI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mui/base-ui |
+| License | MIT |
+| Phiên bản đã đọc | `52fac378e79c7eeccb38ae97adb9d33d9650b177` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, packages/react/package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 20/11/2026) |
+| Nhận định | Thư viện component không style của nhóm Radix/Floating UI/MUI; `@base-ui/react` 1.9.0, peer React 17–19. Repo có AGENTS.md/CLAUDE.md và CI kiểm thử, CodeQL, Scorecards. |
+| Nguồn | [README](https://github.com/mui/base-ui/blob/52fac378e79c7eeccb38ae97adb9d33d9650b177/README.md) · [LICENSE](https://github.com/mui/base-ui/blob/52fac378e79c7eeccb38ae97adb9d33d9650b177/LICENSE) · [package.json](https://github.com/mui/base-ui/blob/52fac378e79c7eeccb38ae97adb9d33d9650b177/package.json) · [packages/react/package.json](https://github.com/mui/base-ui/blob/52fac378e79c7eeccb38ae97adb9d33d9650b177/packages/react/package.json) · [.github/workflows/ci.yml](https://github.com/mui/base-ui/blob/52fac378e79c7eeccb38ae97adb9d33d9650b177/.github/workflows/ci.yml) |
+
+<a id="ch-base-web-uber"></a>
+
+### Base Web (Uber)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/uber/baseweb |
+| License | MIT |
+| Phiên bản đã đọc | `ed21081e33f7db2770922b4e04d16dcf5bbdfa85` (commit 2026-09-25) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/pr-check.yml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động: README "limiting our engagement", commit cuối 25/9/2026 |
+| Nhận định | Design system React của Uber (`baseui` 18.2.0) gắn chặt Styletron. README ghi đang hạn chế tham gia, chỉ mirror phát triển nội bộ; `pr-check.yml` chỉ install + build lib, không chạy test. Không nên chọn cho dự án mới. |
+| Nguồn | [README](https://github.com/uber/baseweb/blob/ed21081e33f7db2770922b4e04d16dcf5bbdfa85/README.md) · [LICENSE](https://github.com/uber/baseweb/blob/ed21081e33f7db2770922b4e04d16dcf5bbdfa85/LICENSE) · [package.json](https://github.com/uber/baseweb/blob/ed21081e33f7db2770922b4e04d16dcf5bbdfa85/package.json) · [.github/workflows/pr-check.yml](https://github.com/uber/baseweb/blob/ed21081e33f7db2770922b4e04d16dcf5bbdfa85/.github/workflows/pr-check.yml) |
+
+<a id="ch-best-flutter-ui-templates"></a>
+
+### Best-Flutter-UI-Templates
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mitesh77/Best-Flutter-UI-Templates |
+| License | MIT |
+| Phiên bản đã đọc | `c85450cb4367742e879ebfae6cda2b7b4da1c3cd` (commit 2025-12-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, best_flutter_ui_templates/pubspec.yaml, .github/workflows/dart.yml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 16/12/2025) |
+| Nhận định | Bộ màn hình demo Flutter (hotel booking, fitness, design course, drawer, introduction animation…) trong một app `publish_to: none`. Chỉ là mẫu giao diện, không có kiến trúc state hay test đáng kể. |
+| Nguồn | [README](https://github.com/mitesh77/Best-Flutter-UI-Templates/blob/c85450cb4367742e879ebfae6cda2b7b4da1c3cd/README.md) · [LICENSE](https://github.com/mitesh77/Best-Flutter-UI-Templates/blob/c85450cb4367742e879ebfae6cda2b7b4da1c3cd/LICENSE) · [best_flutter_ui_templates/pubspec.yaml](https://github.com/mitesh77/Best-Flutter-UI-Templates/blob/c85450cb4367742e879ebfae6cda2b7b4da1c3cd/best_flutter_ui_templates/pubspec.yaml) · [.github/workflows/dart.yml](https://github.com/mitesh77/Best-Flutter-UI-Templates/blob/c85450cb4367742e879ebfae6cda2b7b4da1c3cd/.github/workflows/dart.yml) |
+
+<a id="ch-bolt-diy"></a>
+
+### bolt.diy
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/stackblitz-labs/bolt.diy |
+| License | MIT |
+| Phiên bản đã đọc | `72db5ce846faee4a8b66e68f471635367602a77d` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yaml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 21/11/2026) |
+| Nhận định | Workspace AI dựng app full-stack trong trình duyệt, chọn LLM theo prompt (22+ nhà cung cấp), có Docker và app Electron. README lưu ý dùng WebContainers API vốn có điều khoản thương mại riêng cho triển khai doanh nghiệp. |
+| Nguồn | [README](https://github.com/stackblitz-labs/bolt.diy/blob/72db5ce846faee4a8b66e68f471635367602a77d/README.md) · [LICENSE](https://github.com/stackblitz-labs/bolt.diy/blob/72db5ce846faee4a8b66e68f471635367602a77d/LICENSE) · [package.json](https://github.com/stackblitz-labs/bolt.diy/blob/72db5ce846faee4a8b66e68f471635367602a77d/package.json) · [.github/workflows/ci.yaml](https://github.com/stackblitz-labs/bolt.diy/blob/72db5ce846faee4a8b66e68f471635367602a77d/.github/workflows/ci.yaml) |
+
+<a id="ch-canvas-ui"></a>
+
+### canvas-ui
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/DavidHDev/canvas-ui |
+| License | MIT + Commons Clause (tùy biến) (khác catalog cũ: NOASSERTION) |
+| Phiên bản đã đọc | `d5a6778cba7dc72edcc03a133e2841cd1f1e3c8a` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 21/11/2026) |
+| Nhận định | Thư viện 38 hiệu ứng canvas (WebGL/WebGPU) cho React/Solid/Preact/Vue/Svelte/vanilla, phân phối kiểu copy qua registry tương thích shadcn; hiệu ứng "Live HTML" dùng API HTML-in-canvas của Chrome, có fallback. LICENSE.md là MIT + Commons Clause: dùng thương mại trong sản phẩm được, nhưng cấm bán/phân phối lại chính component. |
+| Nguồn | [README](https://github.com/DavidHDev/canvas-ui/blob/d5a6778cba7dc72edcc03a133e2841cd1f1e3c8a/README.md) · [LICENSE](https://github.com/DavidHDev/canvas-ui/blob/d5a6778cba7dc72edcc03a133e2841cd1f1e3c8a/LICENSE.md) · [package.json](https://github.com/DavidHDev/canvas-ui/blob/d5a6778cba7dc72edcc03a133e2841cd1f1e3c8a/package.json) · [.github/workflows/ci.yml](https://github.com/DavidHDev/canvas-ui/blob/d5a6778cba7dc72edcc03a133e2841cd1f1e3c8a/.github/workflows/ci.yml) |
+
+<a id="ch-capsize"></a>
+
+### Capsize
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/seek-oss/capsize |
+| License | MIT |
+| Phiên bản đã đọc | `cbfb23088c55be74ffbbe749da2c6e8d3508d2d5` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, packages/core/package.json, .github/workflows/test.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 18/11/2026) |
+| Nhận định | Thư viện căn kích thước chữ theo cap height dựa trên metric font, cắt khoảng trống trên/dưới; gói `@capsizecss/core` 4.1.3, kèm metrics/unpack/vanilla-extract. |
+| Nguồn | [README](https://github.com/seek-oss/capsize/blob/cbfb23088c55be74ffbbe749da2c6e8d3508d2d5/README.md) · [LICENSE](https://github.com/seek-oss/capsize/blob/cbfb23088c55be74ffbbe749da2c6e8d3508d2d5/LICENSE) · [packages/core/package.json](https://github.com/seek-oss/capsize/blob/cbfb23088c55be74ffbbe749da2c6e8d3508d2d5/packages/core/package.json) · [.github/workflows/test.yml](https://github.com/seek-oss/capsize/blob/cbfb23088c55be74ffbbe749da2c6e8d3508d2d5/.github/workflows/test.yml) |
+
+<a id="ch-carbon"></a>
+
+### Carbon
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/carbon-design-system/carbon |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `f8fa9e863f4115798decb2267277418bce36a085` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 23/11/2026) |
+| Nhận định | Monorepo design system IBM: React, web components, Sass, token, icon, pictogram. README/AGENTS.md trong repo không nhắc Carbon MCP hay llms.txt, nên các điểm này vẫn **(chưa xác minh)** từ repo. |
+| Nguồn | [README](https://github.com/carbon-design-system/carbon/blob/f8fa9e863f4115798decb2267277418bce36a085/README.md) · [LICENSE](https://github.com/carbon-design-system/carbon/blob/f8fa9e863f4115798decb2267277418bce36a085/LICENSE) · [package.json](https://github.com/carbon-design-system/carbon/blob/f8fa9e863f4115798decb2267277418bce36a085/package.json) · [.github/workflows/ci.yml](https://github.com/carbon-design-system/carbon/blob/f8fa9e863f4115798decb2267277418bce36a085/.github/workflows/ci.yml) |
+
+<a id="ch-chakra-ui"></a>
+
+### Chakra UI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/chakra-ui/chakra-ui |
+| License | MIT |
+| Phiên bản đã đọc | `4fca0889be532fced536b77e1dff982001ebc672` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, apps/mcp/package.json, .github/workflows/quality.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 19/11/2026) |
+| Nhận định | Component React có style, hỗ trợ Next.js RSC; `@chakra-ui/react` 3.38.0. Repo có `apps/mcp` (gói `@chakra-ui/react-mcp` 2.1.1) và thư mục `skills/`, nên MCP chính thức có thật; chất lượng tool MCP **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/chakra-ui/chakra-ui/blob/4fca0889be532fced536b77e1dff982001ebc672/README.md) · [LICENSE](https://github.com/chakra-ui/chakra-ui/blob/4fca0889be532fced536b77e1dff982001ebc672/LICENSE) · [package.json](https://github.com/chakra-ui/chakra-ui/blob/4fca0889be532fced536b77e1dff982001ebc672/package.json) · [apps/mcp/package.json](https://github.com/chakra-ui/chakra-ui/blob/4fca0889be532fced536b77e1dff982001ebc672/apps/mcp/package.json) · [.github/workflows/quality.yml](https://github.com/chakra-ui/chakra-ui/blob/4fca0889be532fced536b77e1dff982001ebc672/.github/workflows/quality.yml) |
+
+<a id="ch-copilotkit"></a>
+
+### CopilotKit
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/CopilotKit/CopilotKit |
+| License | MIT |
+| Phiên bản đã đọc | `544e64f0423533c5ade8346cd7b9da3c0530a6bc` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 22/11/2026) |
+| Nhận định | Stack mã mở đưa agent tới người dùng: chat, generative UI, shared state, human-in-the-loop cho React/Angular/Vue/React Native/Slack/Teams; đội tác giả giao thức AG-UI. Lớp "CopilotKit Intelligence" là sản phẩm thương mại; LICENSE gốc và các package con đọc được đều MIT. |
+| Nguồn | [README](https://github.com/CopilotKit/CopilotKit/blob/544e64f0423533c5ade8346cd7b9da3c0530a6bc/README.md) · [LICENSE](https://github.com/CopilotKit/CopilotKit/blob/544e64f0423533c5ade8346cd7b9da3c0530a6bc/LICENSE) · [package.json](https://github.com/CopilotKit/CopilotKit/blob/544e64f0423533c5ade8346cd7b9da3c0530a6bc/package.json) |
+
+<a id="ch-coss-ui"></a>
+
+### coss ui
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/cosscom/ui |
+| License | MIT |
+| Phiên bản đã đọc | `66b96c8463c8e50ca65e543babae5607cf21c92f` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, packages/ui/package.json, .github/workflows/test.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 23/11/2026) |
+| Nhận định | Design system chính thức của Cal.com (trước là Origin UI, `apps/origin` giữ bản cũ). `packages/ui` yêu cầu React ^19.2.6 và Next ^16.3.8; có AGENTS.md và CI test/typecheck. |
+| Nguồn | [README](https://github.com/cosscom/ui/blob/66b96c8463c8e50ca65e543babae5607cf21c92f/README.md) · [LICENSE](https://github.com/cosscom/ui/blob/66b96c8463c8e50ca65e543babae5607cf21c92f/LICENSE) · [package.json](https://github.com/cosscom/ui/blob/66b96c8463c8e50ca65e543babae5607cf21c92f/package.json) · [packages/ui/package.json](https://github.com/cosscom/ui/blob/66b96c8463c8e50ca65e543babae5607cf21c92f/packages/ui/package.json) · [.github/workflows/test.yml](https://github.com/cosscom/ui/blob/66b96c8463c8e50ca65e543babae5607cf21c92f/.github/workflows/test.yml) |
+
+<a id="ch-daisyui"></a>
+
+### daisyUI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/saadeghi/daisyui |
+| License | MIT |
+| Phiên bản đã đọc | `43bc54e9ea25a0f26d85392c169dae6b9839d6e5` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, packages/daisyui/package.json, .github/workflows/run-tests.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 20/11/2026) |
+| Nhận định | Plugin component cho Tailwind CSS, daisyUI 5 (gói 5.8.2); repo có thêm skill và plugin cho Claude/Codex/Cursor. Template đầy đủ bán ở cửa hàng riêng (theo catalog cũ, **chưa xác minh** lại). |
+| Nguồn | [README](https://github.com/saadeghi/daisyui/blob/43bc54e9ea25a0f26d85392c169dae6b9839d6e5/README.md) · [LICENSE](https://github.com/saadeghi/daisyui/blob/43bc54e9ea25a0f26d85392c169dae6b9839d6e5/LICENSE) · [packages/daisyui/package.json](https://github.com/saadeghi/daisyui/blob/43bc54e9ea25a0f26d85392c169dae6b9839d6e5/packages/daisyui/package.json) · [.github/workflows/run-tests.yml](https://github.com/saadeghi/daisyui/blob/43bc54e9ea25a0f26d85392c169dae6b9839d6e5/.github/workflows/run-tests.yml) |
+
+<a id="ch-dembrandt"></a>
+
+### dembrandt
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/dembrandt/dembrandt |
+| License | MIT |
+| Phiên bản đã đọc | `f7edaabbc9e1ac2bee728e2e069f73a0a84b969f` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, package.json, lib/robots.ts, .github/workflows/smoke.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 22/11/2026) |
+| Nhận định | CLI/MCP/GitHub Action trích token thiết kế từ website bằng Playwright, xuất W3C token/DESIGN.md và chặn lệch token trong CI; nay v0.41.0. `lib/robots.ts`: lượt chạy "enforcing" từ chối khi robots cấm, lượt người dùng chạy chỉ cảnh báo rồi tiếp tục. |
+| Nguồn | [README](https://github.com/dembrandt/dembrandt/blob/f7edaabbc9e1ac2bee728e2e069f73a0a84b969f/README.md) · [LICENSE](https://github.com/dembrandt/dembrandt/blob/f7edaabbc9e1ac2bee728e2e069f73a0a84b969f/LICENSE) · [package.json](https://github.com/dembrandt/dembrandt/blob/f7edaabbc9e1ac2bee728e2e069f73a0a84b969f/package.json) · [lib/robots.ts](https://github.com/dembrandt/dembrandt/blob/f7edaabbc9e1ac2bee728e2e069f73a0a84b969f/lib/robots.ts) · [.github/workflows/smoke.yml](https://github.com/dembrandt/dembrandt/blob/f7edaabbc9e1ac2bee728e2e069f73a0a84b969f/.github/workflows/smoke.yml) |
+
+<a id="ch-design-md-spec-google"></a>
+
+### DESIGN.md spec (Google)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/google-labs-code/design.md |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `db977b3c1d1f309269f43d5d17ae828d54bd6ae3` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, docs/spec.md, packages/cli/package.json, .github/workflows/test.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 17/11/2026) |
+| Nhận định | Đặc tả DESIGN.md (token YAML + văn xuôi giải thích) cho agent, `docs/spec.md` ghi version alpha. CLI `@google/design.md` nay 0.4.1 để lint/diff/export. |
+| Nguồn | [README](https://github.com/google-labs-code/design.md/blob/db977b3c1d1f309269f43d5d17ae828d54bd6ae3/README.md) · [LICENSE](https://github.com/google-labs-code/design.md/blob/db977b3c1d1f309269f43d5d17ae828d54bd6ae3/LICENSE) · [docs/spec.md](https://github.com/google-labs-code/design.md/blob/db977b3c1d1f309269f43d5d17ae828d54bd6ae3/docs/spec.md) · [packages/cli/package.json](https://github.com/google-labs-code/design.md/blob/db977b3c1d1f309269f43d5d17ae828d54bd6ae3/packages/cli/package.json) · [.github/workflows/test.yml](https://github.com/google-labs-code/design.md/blob/db977b3c1d1f309269f43d5d17ae828d54bd6ae3/.github/workflows/test.yml) |
+
+<a id="ch-design-tokens-community-group-dtcg"></a>
+
+### Design Tokens Community Group (DTCG)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/design-tokens/community-group |
+| License | W3C Software and Document License |
+| Phiên bản đã đọc | `882ebd6716abef9a46d8ef5fb12e82009d6cee2e` (commit 2026-09-08) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, technical-reports/format/index.html, .github/workflows/pr.yml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 8/9/2026) |
+| Nhận định | Repo của nhóm cộng đồng W3C về design token: technical report Format/Color/Resolver, JSON Schema `schemas/src/2025.10`, test-suite. Nguồn spec ghi `specStatus: CG-DRAFT`, tức báo cáo Community Group, không phải W3C Recommendation. |
+| Nguồn | [README](https://github.com/design-tokens/community-group/blob/882ebd6716abef9a46d8ef5fb12e82009d6cee2e/README.md) · [LICENSE](https://github.com/design-tokens/community-group/blob/882ebd6716abef9a46d8ef5fb12e82009d6cee2e/LICENSE.md) · [technical-reports/format/index.html](https://github.com/design-tokens/community-group/blob/882ebd6716abef9a46d8ef5fb12e82009d6cee2e/technical-reports/format/index.html) · [.github/workflows/pr.yml](https://github.com/design-tokens/community-group/blob/882ebd6716abef9a46d8ef5fb12e82009d6cee2e/.github/workflows/pr.yml) |
+
+<a id="ch-designer-skills"></a>
+
+### designer-skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Owl-Listener/designer-skills |
+| License | MIT |
+| Phiên bản đã đọc | `9a6930cf84a822eb458624bd11c61aac5bbdf224` (commit 2026-09-05) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, CHANGELOG.md, .github/workflows/lint.yml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 5/9/2026) |
+| Nhận định | Bộ skill/lệnh nghề thiết kế dạng prompt cho Claude Code/Gemini CLI, 9 plugin trong repo; README nay quảng bá "273 skill, 76 lệnh, 33 plugin, 5 collection", tức tính cả plugin kéo từ repo khác qua marketplace. Chất lượng skill **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/Owl-Listener/designer-skills/blob/9a6930cf84a822eb458624bd11c61aac5bbdf224/README.md) · [LICENSE](https://github.com/Owl-Listener/designer-skills/blob/9a6930cf84a822eb458624bd11c61aac5bbdf224/LICENSE) · [CHANGELOG.md](https://github.com/Owl-Listener/designer-skills/blob/9a6930cf84a822eb458624bd11c61aac5bbdf224/CHANGELOG.md) · [.github/workflows/lint.yml](https://github.com/Owl-Listener/designer-skills/blob/9a6930cf84a822eb458624bd11c61aac5bbdf224/.github/workflows/lint.yml) |
+
+<a id="ch-designlang-design-extract"></a>
+
+### designlang (design-extract)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Manavarya09/design-extract |
+| License | MIT |
+| Phiên bản đã đọc | `7d37734ef93c57daf358638322ffcb2c45118b3d` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/test.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 18/11/2026) |
+| Nhận định | CLI `designlang` 13.4.1: dùng trình duyệt headless trích token (DTCG, Tailwind, shadcn, Figma variables, DESIGN.md…) kèm chấm điểm WCAG, drift. README đặt nhà tài trợ (Atlas Cloud, Infistar) lên đầu và quảng bá `--smart` gửi dữ liệu tới API LLM; grep `src/` không thấy xử lý robots.txt. |
+| Nguồn | [README](https://github.com/Manavarya09/design-extract/blob/7d37734ef93c57daf358638322ffcb2c45118b3d/README.md) · [LICENSE](https://github.com/Manavarya09/design-extract/blob/7d37734ef93c57daf358638322ffcb2c45118b3d/LICENSE) · [package.json](https://github.com/Manavarya09/design-extract/blob/7d37734ef93c57daf358638322ffcb2c45118b3d/package.json) · [.github/workflows/test.yml](https://github.com/Manavarya09/design-extract/blob/7d37734ef93c57daf358638322ffcb2c45118b3d/.github/workflows/test.yml) |
+
+<a id="ch-diagram-design"></a>
+
+### diagram-design
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/cathrynlavery/diagram-design |
+| License | MIT |
+| Phiên bản đã đọc | `0eeda75a708f419560d5e032693618bb9954f17b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, PRIVACY.md, .claude-plugin/plugin.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit 2026-11-23, plugin 2.6.174 tự bump) |
+| Nhận định | Skill agent vẽ sơ đồ thành một file HTML+SVG tự chứa theo brand; README nay ghi 52 loại sơ đồ (catalog cũ ghi 44), có onboarding brand từ URL, nhập drawio/Mermaid/Excalidraw. PRIVACY.md nói không server/analytics, chỉ tải font từ Google Fonts khi mở file. Chất lượng đầu ra là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/cathrynlavery/diagram-design/blob/0eeda75a708f419560d5e032693618bb9954f17b/README.md) · [LICENSE](https://github.com/cathrynlavery/diagram-design/blob/0eeda75a708f419560d5e032693618bb9954f17b/LICENSE) · [PRIVACY.md](https://github.com/cathrynlavery/diagram-design/blob/0eeda75a708f419560d5e032693618bb9954f17b/PRIVACY.md) · [plugin.json](https://github.com/cathrynlavery/diagram-design/blob/0eeda75a708f419560d5e032693618bb9954f17b/.claude-plugin/plugin.json) · [ci.yml](https://github.com/cathrynlavery/diagram-design/blob/0eeda75a708f419560d5e032693618bb9954f17b/.github/workflows/ci.yml) |
+
+<a id="ch-dicebear"></a>
+
+### DiceBear
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/dicebear/dicebear |
+| License | MIT cho mã; mỗi style có license riêng (giữ như catalog) |
+| Phiên bản đã đọc | `74d2a21337bed581c2aa76926e9ecf7ebf9480ae` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, src/js/core/package.json, .github/workflows/test.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Thư viện avatar tất định từ seed, bản port JS/PHP/Python/Rust/Go/Dart/C# cam kết SVG giống byte **(chưa xác minh)**. Mã MIT nhưng từng style có license riêng (một số CC BY 4.0 phải ghi công) — đọc trang license trước khi dùng. Nhánh mặc định là 11.x, core đang ở 11.0.0-rc.3. |
+| Nguồn | [README.md](https://github.com/dicebear/dicebear/blob/74d2a21337bed581c2aa76926e9ecf7ebf9480ae/README.md) · [LICENSE](https://github.com/dicebear/dicebear/blob/74d2a21337bed581c2aa76926e9ecf7ebf9480ae/LICENSE) · [package.json](https://github.com/dicebear/dicebear/blob/74d2a21337bed581c2aa76926e9ecf7ebf9480ae/package.json) · [package.json](https://github.com/dicebear/dicebear/blob/74d2a21337bed581c2aa76926e9ecf7ebf9480ae/src/js/core/package.json) · [test.yml](https://github.com/dicebear/dicebear/blob/74d2a21337bed581c2aa76926e9ecf7ebf9480ae/.github/workflows/test.yml) |
+
+<a id="ch-elastic-ui-eui"></a>
+
+### Elastic UI (EUI)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/elastic/eui |
+| License | SSPL-1.0 OR Elastic-2.0 (mặc định; vài file theo header khác) — khớp catalog |
+| Phiên bản đã đọc | `efc165bfc709ddf3b889a76f905319e3cf158396` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.txt, packages/eui/package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Thư viện React của Elastic, mặc định dual SSPL-1.0/Elastic-2.0 (không phải OSI), một số file theo header riêng. Bản 123.5.0 peer chỉ React 17/18. Chỉ hợp khi làm trong hệ Elastic; contributor ngoài chỉ được mở PR cho issue 'help wanted'. |
+| Nguồn | [README.md](https://github.com/elastic/eui/blob/efc165bfc709ddf3b889a76f905319e3cf158396/README.md) · [LICENSE.txt](https://github.com/elastic/eui/blob/efc165bfc709ddf3b889a76f905319e3cf158396/LICENSE.txt) · [package.json](https://github.com/elastic/eui/blob/efc165bfc709ddf3b889a76f905319e3cf158396/packages/eui/package.json) |
+
+<a id="ch-eslint-plugin-jsx-a11y"></a>
+
+### eslint-plugin-jsx-a11y
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/jsx-eslint/eslint-plugin-jsx-a11y |
+| License | MIT |
+| Phiên bản đã đọc | `8f75961d965e47afb88854d324bd32fafde7acfe` (commit 2026-01-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json, .github/workflows/node-4+.yml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-01-03) |
+| Nhận định | Plugin ESLint kiểm a11y tĩnh cho JSX, 39 luật. Bản 6.10.2 peer chỉ tới ESLint ^9; nhánh chính đứng từ 3/1/2026 nên dự án dùng ESLint 10 cần kiểm fork hoặc chờ. Chỉ bắt lỗi tĩnh, README khuyên dùng kèm axe. |
+| Nguồn | [README.md](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/8f75961d965e47afb88854d324bd32fafde7acfe/README.md) · [LICENSE.md](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/8f75961d965e47afb88854d324bd32fafde7acfe/LICENSE.md) · [package.json](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/8f75961d965e47afb88854d324bd32fafde7acfe/package.json) · [node-4+.yml](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/8f75961d965e47afb88854d324bd32fafde7acfe/.github/workflows/node-4+.yml) |
+
+<a id="ch-excalidraw"></a>
+
+### Excalidraw
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/excalidraw/excalidraw |
+| License | MIT |
+| Phiên bản đã đọc | `9c2e462ec23e54c4cf0493328840d6a27191c674` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/test.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Whiteboard vẽ tay mã mở, cộng tác và mã hóa đầu-cuối theo README; có gói npm @excalidraw/excalidraw để nhúng và Dockerfile để self-host. Bản Excalidraw+ là dịch vụ trả phí riêng. |
+| Nguồn | [README.md](https://github.com/excalidraw/excalidraw/blob/9c2e462ec23e54c4cf0493328840d6a27191c674/README.md) · [LICENSE](https://github.com/excalidraw/excalidraw/blob/9c2e462ec23e54c4cf0493328840d6a27191c674/LICENSE) · [package.json](https://github.com/excalidraw/excalidraw/blob/9c2e462ec23e54c4cf0493328840d6a27191c674/package.json) · [test.yml](https://github.com/excalidraw/excalidraw/blob/9c2e462ec23e54c4cf0493328840d6a27191c674/.github/workflows/test.yml) |
+
+<a id="ch-figcraft"></a>
+
+### FigCraft
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/storytold/figcraft |
+| License | MIT OR Apache-2.0 |
+| Phiên bản đã đọc | `b828e6c75a3a90fefc0e62f488c013ca4714a5fa` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE-MIT, LICENSE-APACHE, Cargo.toml, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Công cụ thiết kế giao diện kiểu Figma viết bằng Rust (thuộc ArtCraft), chạy native/web, không tài khoản, không telemetry theo README **(chưa xác minh)**. README tự ghi 'early alpha'; mở file .fig chỉ 'best effort' nên chưa thay được Figma cho file thật. |
+| Nguồn | [README.md](https://github.com/storytold/figcraft/blob/b828e6c75a3a90fefc0e62f488c013ca4714a5fa/README.md) · [LICENSE-MIT](https://github.com/storytold/figcraft/blob/b828e6c75a3a90fefc0e62f488c013ca4714a5fa/LICENSE-MIT) · [LICENSE-APACHE](https://github.com/storytold/figcraft/blob/b828e6c75a3a90fefc0e62f488c013ca4714a5fa/LICENSE-APACHE) · [Cargo.toml](https://github.com/storytold/figcraft/blob/b828e6c75a3a90fefc0e62f488c013ca4714a5fa/Cargo.toml) · [ci.yml](https://github.com/storytold/figcraft/blob/b828e6c75a3a90fefc0e62f488c013ca4714a5fa/.github/workflows/ci.yml) |
+
+<a id="ch-figmatocode"></a>
+
+### FigmaToCode
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/bernaferrari/FigmaToCode |
+| License | GPL-3.0 |
+| Phiên bản đã đọc | `f5c4831d5de6cffc19a73fe2823c56b4bb551281` (commit 2026-08-05) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, manifest.json, package.json, .github/workflows/test.yml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-08-05) |
+| Nhận định | Plugin Figma chuyển tất định (không AI) sang HTML/React/Svelte/Tailwind/Flutter/SwiftUI, có xuất starter Vite/Next. manifest.json không xin quyền, chặn mạng. GPL-3.0 ràng khi fork/nhúng plugin; ràng buộc với mã sinh ra **(chưa xác minh pháp lý)**. |
+| Nguồn | [README.md](https://github.com/bernaferrari/FigmaToCode/blob/f5c4831d5de6cffc19a73fe2823c56b4bb551281/README.md) · [LICENSE](https://github.com/bernaferrari/FigmaToCode/blob/f5c4831d5de6cffc19a73fe2823c56b4bb551281/LICENSE) · [manifest.json](https://github.com/bernaferrari/FigmaToCode/blob/f5c4831d5de6cffc19a73fe2823c56b4bb551281/manifest.json) · [package.json](https://github.com/bernaferrari/FigmaToCode/blob/f5c4831d5de6cffc19a73fe2823c56b4bb551281/package.json) · [test.yml](https://github.com/bernaferrari/FigmaToCode/blob/f5c4831d5de6cffc19a73fe2823c56b4bb551281/.github/workflows/test.yml) |
+
+<a id="ch-flowbite"></a>
+
+### Flowbite
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/themesberg/flowbite |
+| License | MIT |
+| Phiên bản đã đọc | `232ebdb33a9e37b31b293b9988d89b862ee121e5` (commit 2026-06-27) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-06-27) |
+| Nhận định | Thư viện component trên Tailwind, lõi MIT (v4.0.2), có llms.txt trong repo. Blocks 400+ section và Pro là sản phẩm trả phí. Repo không có CI và đứng từ 27/6/2026. |
+| Nguồn | [README.md](https://github.com/themesberg/flowbite/blob/232ebdb33a9e37b31b293b9988d89b862ee121e5/README.md) · [LICENSE.md](https://github.com/themesberg/flowbite/blob/232ebdb33a9e37b31b293b9988d89b862ee121e5/LICENSE.md) · [package.json](https://github.com/themesberg/flowbite/blob/232ebdb33a9e37b31b293b9988d89b862ee121e5/package.json) |
+
+<a id="ch-flowbite-admin-dashboard"></a>
+
+### Flowbite Admin Dashboard
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/themesberg/flowbite-admin-dashboard |
+| License | MIT |
+| Phiên bản đã đọc | `229df7ff25808ab2bbda65f03f2397a05f7b4288` (commit 2025-03-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2025-03-20) |
+| Nhận định | Mẫu admin dashboard Hugo + Tailwind v3 + Flowbite. README ghi 15 trang mẫu (catalog đếm file được 17). Đứng từ 3/2025, chưa lên Tailwind v4: chỉ nên làm tham khảo. |
+| Nguồn | [README.md](https://github.com/themesberg/flowbite-admin-dashboard/blob/229df7ff25808ab2bbda65f03f2397a05f7b4288/README.md) · [LICENSE](https://github.com/themesberg/flowbite-admin-dashboard/blob/229df7ff25808ab2bbda65f03f2397a05f7b4288/LICENSE) · [package.json](https://github.com/themesberg/flowbite-admin-dashboard/blob/229df7ff25808ab2bbda65f03f2397a05f7b4288/package.json) |
+
+<a id="ch-fluent-ui"></a>
+
+### Fluent UI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/fluentui |
+| License | MIT (catalog cũ để trống) |
+| Phiên bản đã đọc | `41c06a31611d4a0f6cf7153d71898957e6c497e3` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/pr.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Monorepo Fluent UI của Microsoft: React v9 (hướng tới), v8 (trưởng thành), Web Components. Phát triển rất tích cực. Hỗ trợ llms.txt/MCP chưa kiểm trong lần đọc này. |
+| Nguồn | [README.md](https://github.com/microsoft/fluentui/blob/41c06a31611d4a0f6cf7153d71898957e6c497e3/README.md) · [LICENSE](https://github.com/microsoft/fluentui/blob/41c06a31611d4a0f6cf7153d71898957e6c497e3/LICENSE) · [package.json](https://github.com/microsoft/fluentui/blob/41c06a31611d4a0f6cf7153d71898957e6c497e3/package.json) · [pr.yml](https://github.com/microsoft/fluentui/blob/41c06a31611d4a0f6cf7153d71898957e6c497e3/.github/workflows/pr.yml) |
+
+<a id="ch-flutter-responsive-admin-panel"></a>
+
+### Flutter Responsive Admin Panel
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/abuanwar072/Flutter-Responsive-Admin-Panel-or-Dashboard |
+| License | MIT |
+| Phiên bản đã đọc | `a0b5a89c2e6c6a7e4753b36a50b91230156f67b7` (commit 2026-07-28) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pubspec.yaml, .github/workflows/run_web.yml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-07-28) |
+| Nhận định | Mẫu dashboard Flutter responsive một layout (side menu + dashboard), dùng provider, flutter_svg, google_fonts. Nhỏ (17 file dart), hợp học hoặc khởi đầu, không phải bộ component. |
+| Nguồn | [README.md](https://github.com/abuanwar072/Flutter-Responsive-Admin-Panel-or-Dashboard/blob/a0b5a89c2e6c6a7e4753b36a50b91230156f67b7/README.md) · [LICENSE](https://github.com/abuanwar072/Flutter-Responsive-Admin-Panel-or-Dashboard/blob/a0b5a89c2e6c6a7e4753b36a50b91230156f67b7/LICENSE) · [pubspec.yaml](https://github.com/abuanwar072/Flutter-Responsive-Admin-Panel-or-Dashboard/blob/a0b5a89c2e6c6a7e4753b36a50b91230156f67b7/pubspec.yaml) · [run_web.yml](https://github.com/abuanwar072/Flutter-Responsive-Admin-Panel-or-Dashboard/blob/a0b5a89c2e6c6a7e4753b36a50b91230156f67b7/.github/workflows/run_web.yml) |
+
+<a id="ch-flutter-samples"></a>
+
+### flutter/samples
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/flutter/samples |
+| License | BSD-3-Clause |
+| Phiên bản đã đọc | `a5bccd247163b1017d2eb9320cf3b94a95ccfb5e` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pubspec.yaml, .github/workflows/main.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Bộ mẫu chính thức của Flutter, CI chạy script kiểm toàn repo. README nói nhóm tạm không thêm mẫu mới, vẫn nhận sửa lỗi. Trạng thái flutter_adaptive_scaffold chưa kiểm lại lần này. |
+| Nguồn | [README.md](https://github.com/flutter/samples/blob/a5bccd247163b1017d2eb9320cf3b94a95ccfb5e/README.md) · [LICENSE](https://github.com/flutter/samples/blob/a5bccd247163b1017d2eb9320cf3b94a95ccfb5e/LICENSE) · [pubspec.yaml](https://github.com/flutter/samples/blob/a5bccd247163b1017d2eb9320cf3b94a95ccfb5e/pubspec.yaml) · [main.yml](https://github.com/flutter/samples/blob/a5bccd247163b1017d2eb9320cf3b94a95ccfb5e/.github/workflows/main.yml) |
+
+<a id="ch-framelink-mcp-for-figma-figma-context-mcp"></a>
+
+### Framelink MCP for Figma (Figma-Context-MCP)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/GLips/Figma-Context-MCP |
+| License | MIT |
+| Phiên bản đã đọc | `c083d65c7e002923e7cb98f4e3bdafb105e90f6d` (commit 2026-06-24) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, server.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-06-24) |
+| Nhận định | MCP đưa dữ liệu Figma REST rút gọn cho agent. Có module src/telemetry nhưng README không nói (catalog ghi PostHog bật sẵn, tắt bằng --no-telemetry); server.json lệch phiên bản với package.json. Nhánh chính đứng từ 24/6/2026. |
+| Nguồn | [README.md](https://github.com/GLips/Figma-Context-MCP/blob/c083d65c7e002923e7cb98f4e3bdafb105e90f6d/README.md) · [LICENSE](https://github.com/GLips/Figma-Context-MCP/blob/c083d65c7e002923e7cb98f4e3bdafb105e90f6d/LICENSE) · [package.json](https://github.com/GLips/Figma-Context-MCP/blob/c083d65c7e002923e7cb98f4e3bdafb105e90f6d/package.json) · [server.json](https://github.com/GLips/Figma-Context-MCP/blob/c083d65c7e002923e7cb98f4e3bdafb105e90f6d/server.json) · [ci.yml](https://github.com/GLips/Figma-Context-MCP/blob/c083d65c7e002923e7cb98f4e3bdafb105e90f6d/.github/workflows/ci.yml) |
+
+<a id="ch-frontend-design-anthropic"></a>
+
+### frontend-design (Anthropic)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anthropics/claude-plugins-official |
+| License | Apache-2.0 (LICENSE trong thư mục plugin; repo claude-code gốc là độc quyền) |
+| Phiên bản đã đọc | `65adb96f26deb662f6a993f74347d0ccd1a61a52` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc plugins/frontend-design/LICENSE, plugins/frontend-design/.claude-plugin/plugin.json, plugins/frontend-design/skills/frontend-design/SKILL.md, plugins/frontend-design/skills/frontend-design/LICENSE.txt; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Skill chính chủ ~71 dòng hướng dẫn tránh giao diện mặc định 'AI', nay phát triển ở anthropics/claude-plugins-official (plugin 1.1.1); marketplace của claude-code chỉ trỏ tới. Chỉ là hướng dẫn văn bản, không có cổng kiểm máy. Lưu ý: repo claude-code gốc có LICENSE độc quyền, còn thư mục plugin mang Apache-2.0. |
+| Nguồn | [LICENSE](https://github.com/anthropics/claude-plugins-official/blob/65adb96f26deb662f6a993f74347d0ccd1a61a52/plugins/frontend-design/LICENSE) · [plugin.json](https://github.com/anthropics/claude-plugins-official/blob/65adb96f26deb662f6a993f74347d0ccd1a61a52/plugins/frontend-design/.claude-plugin/plugin.json) · [SKILL.md](https://github.com/anthropics/claude-plugins-official/blob/65adb96f26deb662f6a993f74347d0ccd1a61a52/plugins/frontend-design/skills/frontend-design/SKILL.md) · [LICENSE.txt](https://github.com/anthropics/claude-plugins-official/blob/65adb96f26deb662f6a993f74347d0ccd1a61a52/plugins/frontend-design/skills/frontend-design/LICENSE.txt) · [README.md](https://github.com/anthropics/claude-code/blob/50cdc7005318f630144c28217d1dada32e6ba762/plugins/README.md) · [marketplace.json](https://github.com/anthropics/claude-code/blob/50cdc7005318f630144c28217d1dada32e6ba762/.claude-plugin/marketplace.json) |
+
+<a id="ch-garden-skills"></a>
+
+### garden-skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ConardLi/garden-skills |
+| License | MIT (không ghi chủ sở hữu) |
+| Phiên bản đã đọc | `f2d7adeaf53dcce3d0eb19cbffe8c04f4c636c2a` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.ja-JP.md, LICENSE, package.json, .github/workflows/validate-skills.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Bộ 6 skill agent (thiết kế web, video, bài viết, ảnh…). LICENSE MIT không ghi chủ sở hữu. Repo vẫn phát lại file tự nhận là system prompt 'Claude Design' trong dist/prompts, nguồn gốc không rõ — rủi ro bản quyền khi dùng lại. |
+| Nguồn | [README.ja-JP.md](https://github.com/ConardLi/garden-skills/blob/f2d7adeaf53dcce3d0eb19cbffe8c04f4c636c2a/README.ja-JP.md) · [LICENSE](https://github.com/ConardLi/garden-skills/blob/f2d7adeaf53dcce3d0eb19cbffe8c04f4c636c2a/LICENSE) · [package.json](https://github.com/ConardLi/garden-skills/blob/f2d7adeaf53dcce3d0eb19cbffe8c04f4c636c2a/package.json) · [validate-skills.yml](https://github.com/ConardLi/garden-skills/blob/f2d7adeaf53dcce3d0eb19cbffe8c04f4c636c2a/.github/workflows/validate-skills.yml) |
+
+<a id="ch-gluestack-ui"></a>
+
+### gluestack-ui
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/gluestack/gluestack-ui |
+| License | MIT (chỉ trong packages/gluestack-ui/LICENSE) |
+| Phiên bản đã đọc | `b712c8541c85d57becbd1a1b2ba150a369223eb6` (commit 2026-09-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, packages/gluestack-ui/LICENSE, packages/gluestack-ui/package.json, .github/workflows/expo-latest.yml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-09-02) |
+| Nhận định | Thư viện component copy-paste cho React Native/Expo trên NativeWind; bản hiện tại là v5 (catalog ghi v3). Gốc repo không có LICENSE, chỉ packages/gluestack-ui có MIT. Commit cuối 2/9/2026. |
+| Nguồn | [README.md](https://github.com/gluestack/gluestack-ui/blob/b712c8541c85d57becbd1a1b2ba150a369223eb6/README.md) · [LICENSE](https://github.com/gluestack/gluestack-ui/blob/b712c8541c85d57becbd1a1b2ba150a369223eb6/packages/gluestack-ui/LICENSE) · [package.json](https://github.com/gluestack/gluestack-ui/blob/b712c8541c85d57becbd1a1b2ba150a369223eb6/packages/gluestack-ui/package.json) · [expo-latest.yml](https://github.com/gluestack/gluestack-ui/blob/b712c8541c85d57becbd1a1b2ba150a369223eb6/.github/workflows/expo-latest.yml) |
+
+<a id="ch-golden-layout"></a>
+
+### Golden Layout
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/golden-layout/golden-layout |
+| License | MIT |
+| Phiên bản đã đọc | `b053a23e2d9ea308810559370553a592a0e4bfae` (commit 2026-01-25) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/CI.yml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-01-25, vẫn 2.6.0) |
+| Nhận định | Trình quản lý layout docking kéo-thả cho web, có popup window và API lưu/tải layout. Vẫn ở 2.6.0, chỉ có sửa nhỏ; không nên chọn cho dự án mới. |
+| Nguồn | [README.md](https://github.com/golden-layout/golden-layout/blob/b053a23e2d9ea308810559370553a592a0e4bfae/README.md) · [LICENSE](https://github.com/golden-layout/golden-layout/blob/b053a23e2d9ea308810559370553a592a0e4bfae/LICENSE) · [package.json](https://github.com/golden-layout/golden-layout/blob/b053a23e2d9ea308810559370553a592a0e4bfae/package.json) · [CI.yml](https://github.com/golden-layout/golden-layout/blob/b053a23e2d9ea308810559370553a592a0e4bfae/.github/workflows/CI.yml) |
+
+<a id="ch-google-stitch"></a>
+
+### Google Stitch
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://stitch.withgoogle.com (chuyển hướng sang https://stitch.google.com/) |
+| License | Độc quyền (dịch vụ đóng) |
+| Phiên bản đã đọc | Trang web, không có SHA |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang chính (title, meta description); chưa chạy upstream |
+| Bảo trì | Không rõ (dịch vụ còn trực tuyến) |
+| Nhận định | Dịch vụ đóng của Google sinh UI cho app mobile và web bằng AI; trang chủ là ứng dụng web nên chỉ đọc được mô tả. Google công bố chuẩn DESIGN.md gắn với Stitch (xem mục 06 §7c). |
+| Nguồn | [Trang chính](https://stitch.google.com/) |
+
+<a id="ch-gov-uk-frontend"></a>
+
+### GOV.UK Frontend
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/alphagov/govuk-frontend |
+| License | MIT |
+| Phiên bản đã đọc | `d6cb3427cdbb2a4c66095fb209da57843161176a` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.txt, package.json, .github/workflows/tests.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Mã frontend của GOV.UK Design System do GDS duy trì, có workflow test, accessibility và screenshot. Hợp làm chuẩn tham khảo a11y; style gắn nhận diện chính phủ Anh. |
+| Nguồn | [README.md](https://github.com/alphagov/govuk-frontend/blob/d6cb3427cdbb2a4c66095fb209da57843161176a/README.md) · [LICENSE.txt](https://github.com/alphagov/govuk-frontend/blob/d6cb3427cdbb2a4c66095fb209da57843161176a/LICENSE.txt) · [package.json](https://github.com/alphagov/govuk-frontend/blob/d6cb3427cdbb2a4c66095fb209da57843161176a/package.json) · [tests.yml](https://github.com/alphagov/govuk-frontend/blob/d6cb3427cdbb2a4c66095fb209da57843161176a/.github/workflows/tests.yml) |
+
+<a id="ch-grommet"></a>
+
+### Grommet
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/grommet/grommet |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `b3095d571a1d95fb3ae1a1a2c09c235eb6cb0eb0` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Thư viện React của HPE, chú trọng a11y; bản 2.58.0 hỗ trợ React tới 19 nhưng bắt buộc styled-components. CI chính trên CircleCI/Chromatic. |
+| Nguồn | [README.md](https://github.com/grommet/grommet/blob/b3095d571a1d95fb3ae1a1a2c09c235eb6cb0eb0/README.md) · [LICENSE](https://github.com/grommet/grommet/blob/b3095d571a1d95fb3ae1a1a2c09c235eb6cb0eb0/LICENSE) · [package.json](https://github.com/grommet/grommet/blob/b3095d571a1d95fb3ae1a1a2c09c235eb6cb0eb0/package.json) |
+
+<a id="ch-hallmark"></a>
+
+### Hallmark
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Nutlope/hallmark |
+| License | MIT |
+| Phiên bản đã đọc | `04977e15f3dfd6ee4b74c887dac3eb52665d6c92` (commit 2026-11-11) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/verify.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Skill thiết kế trang 'không trông như AI làm' cho Claude Code/Codex/Cursor/OpenCode của Together AI; v2 có 50 theme, tầng gate Floor/Reflex và lint trong trình duyệt thật. Số gate và hiệu quả là tuyên bố của tác giả **(chưa xác minh)**; ảnh hotlink cần ghi công. |
+| Nguồn | [README.md](https://github.com/Nutlope/hallmark/blob/04977e15f3dfd6ee4b74c887dac3eb52665d6c92/README.md) · [LICENSE](https://github.com/Nutlope/hallmark/blob/04977e15f3dfd6ee4b74c887dac3eb52665d6c92/LICENSE) · [package.json](https://github.com/Nutlope/hallmark/blob/04977e15f3dfd6ee4b74c887dac3eb52665d6c92/package.json) · [verify.yml](https://github.com/Nutlope/hallmark/blob/04977e15f3dfd6ee4b74c887dac3eb52665d6c92/.github/workflows/verify.yml) |
+
+<a id="ch-harmony-evil-martians"></a>
+
+### Harmony (Evil Martians)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/evilmartians/harmony |
+| License | MIT |
+| Phiên bản đã đọc | `6dae4f337b7a2f56fb3a8222c3f67760b8d23c84` (commit 2026-07-24) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/tests.yaml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-07-24) |
+| Nhận định | Bảng màu OKLCH có tương phản đều theo mức sáng, có bản P3, thay được bảng Tailwind. Dựa trên APCA (license APCA hạn chế, xem mục 06 §7t). |
+| Nguồn | [README.md](https://github.com/evilmartians/harmony/blob/6dae4f337b7a2f56fb3a8222c3f67760b8d23c84/README.md) · [LICENSE](https://github.com/evilmartians/harmony/blob/6dae4f337b7a2f56fb3a8222c3f67760b8d23c84/LICENSE) · [package.json](https://github.com/evilmartians/harmony/blob/6dae4f337b7a2f56fb3a8222c3f67760b8d23c84/package.json) · [tests.yaml](https://github.com/evilmartians/harmony/blob/6dae4f337b7a2f56fb3a8222c3f67760b8d23c84/.github/workflows/tests.yaml) |
+
+<a id="ch-headless-ui"></a>
+
+### Headless UI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/tailwindlabs/headlessui |
+| License | MIT |
+| Phiên bản đã đọc | `eea57cf46fd6767ed1059012f7073b88eb159fba` (commit 2026-04-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/main.yml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-04-13) |
+| Nhận định | Component headless, không style, a11y cho React và Vue của Tailwind Labs. Nhánh chính đứng từ 13/4/2026; dự án mới nên cân nhắc Base UI hoặc React Aria. |
+| Nguồn | [README.md](https://github.com/tailwindlabs/headlessui/blob/eea57cf46fd6767ed1059012f7073b88eb159fba/README.md) · [LICENSE](https://github.com/tailwindlabs/headlessui/blob/eea57cf46fd6767ed1059012f7073b88eb159fba/LICENSE) · [package.json](https://github.com/tailwindlabs/headlessui/blob/eea57cf46fd6767ed1059012f7073b88eb159fba/package.json) · [main.yml](https://github.com/tailwindlabs/headlessui/blob/eea57cf46fd6767ed1059012f7073b88eb159fba/.github/workflows/main.yml) |
+
+<a id="ch-heroui-ten-cu-nextui"></a>
+
+### HeroUI (tên cũ NextUI)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/heroui-inc/heroui |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `0ef329698a0be930e96588c2a6c2f4717de08081` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/QA.yaml; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Thư viện React (tên cũ NextUI), v3 dựa trên React Aria và Tailwind v4, API compound component. Có MCP server và llms.txt cho agent. Nâng từ v2 lên v3 là thay đổi lớn. |
+| Nguồn | [README.md](https://github.com/heroui-inc/heroui/blob/0ef329698a0be930e96588c2a6c2f4717de08081/README.md) · [LICENSE](https://github.com/heroui-inc/heroui/blob/0ef329698a0be930e96588c2a6c2f4717de08081/LICENSE) · [package.json](https://github.com/heroui-inc/heroui/blob/0ef329698a0be930e96588c2a6c2f4717de08081/package.json) · [QA.yaml](https://github.com/heroui-inc/heroui/blob/0ef329698a0be930e96588c2a6c2f4717de08081/.github/workflows/QA.yaml) |
+
+<a id="ch-huashu-design"></a>
+
+### huashu-design
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/alchaincyf/huashu-design |
+| License | MIT |
+| Phiên bản đã đọc | `59065698ad63f87ea1532c126c87f488d4f93fd6` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.en.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Skill tiếng Trung biến một câu yêu cầu thành HTML, PPTX, MP4, PDF; scripts có design_lint.py, html2pptx.js, render-video.js. Tốn token, cần Playwright; repo không có CI nên chất lượng script **(chưa xác minh)**. |
+| Nguồn | [README.en.md](https://github.com/alchaincyf/huashu-design/blob/59065698ad63f87ea1532c126c87f488d4f93fd6/README.en.md) · [LICENSE](https://github.com/alchaincyf/huashu-design/blob/59065698ad63f87ea1532c126c87f488d4f93fd6/LICENSE) · [package.json](https://github.com/alchaincyf/huashu-design/blob/59065698ad63f87ea1532c126c87f488d4f93fd6/package.json) |
+
+<a id="ch-hyperui"></a>
+
+### HyperUI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/markmead/hyperui |
+| License | MIT |
+| Phiên bản đã đọc | `81842332a0e2185c19fc07e19a779c14477e6b16` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Bộ mẫu HTML + Tailwind copy-paste miễn phí (marketing, app, eCommerce). Không có gói npm; repo là site Astro + playwright. |
+| Nguồn | [README.md](https://github.com/markmead/hyperui/blob/81842332a0e2185c19fc07e19a779c14477e6b16/README.md) · [LICENSE](https://github.com/markmead/hyperui/blob/81842332a0e2185c19fc07e19a779c14477e6b16/LICENSE) · [package.json](https://github.com/markmead/hyperui/blob/81842332a0e2185c19fc07e19a779c14477e6b16/package.json) · [ci.yml](https://github.com/markmead/hyperui/blob/81842332a0e2185c19fc07e19a779c14477e6b16/.github/workflows/ci.yml) |
+
+<a id="ch-intro-js"></a>
+
+### Intro.js
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/usablica/intro.js |
+| License | AGPL-3.0 + license thương mại |
+| Phiên bản đã đọc | `0c5bcfc7598f6cce7b36999f44c9533ef70385e3` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, license.md, package.json, .github/workflows/nodejs.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Thư viện tour/onboarding sản phẩm, còn phát hành (8.7.0). Mã AGPL-3.0, dùng thương mại phải mua license; thay bằng driver.js hoặc react-joyride (MIT) nếu cần tránh. |
+| Nguồn | [README.md](https://github.com/usablica/intro.js/blob/0c5bcfc7598f6cce7b36999f44c9533ef70385e3/README.md) · [license.md](https://github.com/usablica/intro.js/blob/0c5bcfc7598f6cce7b36999f44c9533ef70385e3/license.md) · [package.json](https://github.com/usablica/intro.js/blob/0c5bcfc7598f6cce7b36999f44c9533ef70385e3/package.json) · [nodejs.yml](https://github.com/usablica/intro.js/blob/0c5bcfc7598f6cce7b36999f44c9533ef70385e3/.github/workflows/nodejs.yml) |
+
+<a id="ch-ionic-framework"></a>
+
+### Ionic Framework
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ionic-team/ionic-framework |
+| License | MIT |
+| Phiên bản đã đọc | `2ad93e5500c3d1e46b1d26e934ed41da642b7fbf` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, core/package.json, .github/workflows/build.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động |
+| Nhận định | Bộ công cụ app đa nền tảng trên Web Components (Stencil) với binding Angular/React/Vue, phát hành đều đặn (9.0.13). Do OutSystems nắm; telemetry của Ionic CLI không kiểm lần này. |
+| Nguồn | [README.md](https://github.com/ionic-team/ionic-framework/blob/2ad93e5500c3d1e46b1d26e934ed41da642b7fbf/README.md) · [LICENSE](https://github.com/ionic-team/ionic-framework/blob/2ad93e5500c3d1e46b1d26e934ed41da642b7fbf/LICENSE) · [package.json](https://github.com/ionic-team/ionic-framework/blob/2ad93e5500c3d1e46b1d26e934ed41da642b7fbf/core/package.json) · [build.yml](https://github.com/ionic-team/ionic-framework/blob/2ad93e5500c3d1e46b1d26e934ed41da642b7fbf/.github/workflows/build.yml) |
+
+<a id="ch-logo-design-skill"></a>
+
+### logo-design-skill
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/kaankiziltug/logo-design-skill |
+| License | MIT (TRADEMARKS.md loại trừ 1.432 logo thương hiệu) |
+| Phiên bản đã đọc | `e9eaddc07895575253d6663320354a708f53e955` (commit 2026-11-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, TRADEMARKS.md; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-13) |
+| Nhận định | Skill quy trình thiết kế logo kèm script Python và thư viện 1.432 SVG logo thật để tham khảo. TRADEMARKS.md nói rõ MIT không áp dụng cho thư mục logo và chỉ dùng để học, không sao chép; có workflow test. |
+| Nguồn | [README.md](https://github.com/kaankiziltug/logo-design-skill/blob/e9eaddc07895575253d6663320354a708f53e955/README.md) · [LICENSE](https://github.com/kaankiziltug/logo-design-skill/blob/e9eaddc07895575253d6663320354a708f53e955/LICENSE) · [TRADEMARKS.md](https://github.com/kaankiziltug/logo-design-skill/blob/e9eaddc07895575253d6663320354a708f53e955/TRADEMARKS.md) |
+
+<a id="ch-lucide"></a>
+
+### Lucide
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/lucide-icons/lucide |
+| License | ISC AND MIT (icon gốc Feather) |
+| Phiên bản đã đọc | `c26ce5515667640ca2753e095ba319d225fc0d8d` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-23) |
+| Nhận định | Bộ icon SVG cộng đồng (fork Feather) với nhiều gói framework và CI dày (lint icon, release, preview PR). LICENSE là ISC kèm đoạn MIT cho danh sách icon gốc Feather, nên công cụ quét có thể báo NOASSERTION; có BRAND_LOGOS_STATEMENT.md. |
+| Nguồn | [README.md](https://github.com/lucide-icons/lucide/blob/c26ce5515667640ca2753e095ba319d225fc0d8d/README.md) · [LICENSE](https://github.com/lucide-icons/lucide/blob/c26ce5515667640ca2753e095ba319d225fc0d8d/LICENSE) · [package.json](https://github.com/lucide-icons/lucide/blob/c26ce5515667640ca2753e095ba319d225fc0d8d/package.json) |
+
+<a id="ch-m3e-canvas"></a>
+
+### m3e-canvas
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/lnkiai/m3e-canvas |
+| License | MIT (+ NOTICE: mã port Apache-2.0 từ material-components-android) |
+| Phiên bản đã đọc | `9cbf6eb9ae30cb6c368c4e68742196ef358d7e94` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.ja.md, LICENSE, NOTICE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-23) |
+| Nhận định | Canvas trên trình duyệt để dựng màn Material 3 Expressive rồi xuất prompt cho agent; app Next.js tĩnh có CI và deploy. NOTICE ghi phần loading indicator port từ material-components-android (Apache-2.0); việc lưu API key plaintext trong localStorage là nhận định cũ, lần này chưa đọc lại mã. |
+| Nguồn | [README.ja.md](https://github.com/lnkiai/m3e-canvas/blob/9cbf6eb9ae30cb6c368c4e68742196ef358d7e94/README.ja.md) · [LICENSE](https://github.com/lnkiai/m3e-canvas/blob/9cbf6eb9ae30cb6c368c4e68742196ef358d7e94/LICENSE) · [NOTICE](https://github.com/lnkiai/m3e-canvas/blob/9cbf6eb9ae30cb6c368c4e68742196ef358d7e94/NOTICE) · [package.json](https://github.com/lnkiai/m3e-canvas/blob/9cbf6eb9ae30cb6c368c4e68742196ef358d7e94/package.json) |
+
+<a id="ch-mantine"></a>
+
+### Mantine
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mantinedev/mantine |
+| License | MIT |
+| Phiên bản đã đọc | `8f2ae606f8a37d5971f8315685e7daab44d9fbe2` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-23) |
+| Nhận định | Thư viện component React lớn, monorepo bản 9.8.2, có AGENTS.md/CLAUDE.md và workflow test/publish. Phù hợp làm nền UI tổng quát; không thấy rủi ro license. |
+| Nguồn | [README.md](https://github.com/mantinedev/mantine/blob/8f2ae606f8a37d5971f8315685e7daab44d9fbe2/README.md) · [LICENSE](https://github.com/mantinedev/mantine/blob/8f2ae606f8a37d5971f8315685e7daab44d9fbe2/LICENSE) · [package.json](https://github.com/mantinedev/mantine/blob/8f2ae606f8a37d5971f8315685e7daab44d9fbe2/package.json) |
+
+<a id="ch-material-3-canonical-layouts"></a>
+
+### Material 3 canonical layouts
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://developer.android.com/develop/ui/compose/layouts/adaptive/canonical-layouts |
+| License | Không áp dụng (tài liệu web; theo Content License của trang) |
+| Phiên bản đã đọc | Trang web, đọc 2026-11-23 (không có SHA) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc https://developer.android.com/develop/ui/compose/layouts/adaptive/canonical-layouts; chưa chạy upstream |
+| Bảo trì | Đang cập nhật |
+| Nhận định | Trang hướng dẫn chính thức Android về ba layout canonical: list-detail, feed, supporting pane, kèm mẫu Compose (cập nhật 2026-11-10). Ngưỡng breakpoint 600/840dp không nằm trên trang này mà ở trang window size classes được liên kết. |
+| Nguồn | [canonical-layouts](https://developer.android.com/develop/ui/compose/layouts/adaptive/canonical-layouts) |
+
+<a id="ch-material-web"></a>
+
+### Material Web
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/material-components/material-web |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `a0bab1d9448bbcecab053e6085b8ec621e4cae3e` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | README tự ghi chế độ bảo trì (commit cuối 2026-11-20) |
+| Nhận định | Web component Material 3 chính chủ Google (@material/web 2.5.0), có release-please và test. README tự ghi MWC đang ở chế độ bảo trì chờ người duy trì mới (discussion #5642), nên không nên chọn làm nền lâu dài dù vẫn có commit nhỏ. |
+| Nguồn | [README.md](https://github.com/material-components/material-web/blob/a0bab1d9448bbcecab053e6085b8ec621e4cae3e/README.md) · [LICENSE](https://github.com/material-components/material-web/blob/a0bab1d9448bbcecab053e6085b8ec621e4cae3e/LICENSE) · [package.json](https://github.com/material-components/material-web/blob/a0bab1d9448bbcecab053e6085b8ec621e4cae3e/package.json) |
+
+<a id="ch-mitosis"></a>
+
+### Mitosis
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/BuilderIO/mitosis |
+| License | MIT |
+| Phiên bản đã đọc | `2de76e9064d9e7916c5309c0a31206383403ae9d` (commit 2026-10-28) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.MD, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Nhịp thấp (commit cuối 2026-10-28) |
+| Nhận định | Viết component một lần rồi biên dịch sang nhiều framework (Builder.io). Commit mới nhất 28/10/2026, khớp nhận định nhịp phát triển đã giảm; nên thử kỹ đầu ra từng framework trước khi dùng. |
+| Nguồn | [README.MD](https://github.com/BuilderIO/mitosis/blob/2de76e9064d9e7916c5309c0a31206383403ae9d/README.MD) · [LICENSE](https://github.com/BuilderIO/mitosis/blob/2de76e9064d9e7916c5309c0a31206383403ae9d/LICENSE) · [package.json](https://github.com/BuilderIO/mitosis/blob/2de76e9064d9e7916c5309c0a31206383403ae9d/package.json) |
+
+<a id="ch-mobbin"></a>
+
+### Mobbin
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://mobbin.com |
+| License | proprietary |
+| Phiên bản đã đọc | Trang web, đọc 2026-11-23 (không có SHA) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc https://mobbin.com, https://mobbin.com/pricing.md; chưa chạy upstream |
+| Bảo trì | Đang cập nhật |
+| Nhận định | Thư viện ảnh chụp màn hình app/web thật để lấy cảm hứng, không có mã. Trang giá (pricing.md, cập nhật 2026-09-11) xác nhận Pro $10/tháng trả theo năm ($15 theo quý), Pro có MCP, REST API chỉ từ gói Team. |
+| Nguồn | [mobbin.com](https://mobbin.com) · [pricing.md](https://mobbin.com/pricing.md) |
+
+<a id="ch-morphic"></a>
+
+### Morphic
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/miurla/morphic |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `41c97193f82b8a7bd15dae2cc565ce7a83fe4508` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-23) |
+| Nhận định | Answer engine kiểu generative UI (Next.js), bản 1.10.0, có Docker, CI lint/test, eval và release. Telemetry/instrumentation cần cấu hình qua biến môi trường (nhận định cũ, lần này chưa đọc lại mã). |
+| Nguồn | [README.md](https://github.com/miurla/morphic/blob/41c97193f82b8a7bd15dae2cc565ce7a83fe4508/README.md) · [LICENSE](https://github.com/miurla/morphic/blob/41c97193f82b8a7bd15dae2cc565ce7a83fe4508/LICENSE) · [package.json](https://github.com/miurla/morphic/blob/41c97193f82b8a7bd15dae2cc565ce7a83fe4508/package.json) |
+
+<a id="ch-mui"></a>
+
+### MUI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mui/material-ui |
+| License | MIT |
+| Phiên bản đã đọc | `09da8e5c19cfcee5b89cdb32d8b204e7492b728e` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-23) |
+| Nhận định | Material UI, thư viện component React phổ biến nhất; nhánh mặc định đang ở 10.0.0-alpha.0, có skills/AGENTS.md và CI rất đầy đủ (CodeQL, scorecards). Lưu ý nhánh chính là alpha v10, bản ổn định cần chọn theo npm. |
+| Nguồn | [README.md](https://github.com/mui/material-ui/blob/09da8e5c19cfcee5b89cdb32d8b204e7492b728e/README.md) · [LICENSE](https://github.com/mui/material-ui/blob/09da8e5c19cfcee5b89cdb32d8b204e7492b728e/LICENSE) · [package.json](https://github.com/mui/material-ui/blob/09da8e5c19cfcee5b89cdb32d8b204e7492b728e/package.json) |
+
+<a id="ch-naive-ui"></a>
+
+### Naive UI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/tusen-ai/naive-ui |
+| License | MIT |
+| Phiên bản đã đọc | `ce8dc4d8b8b394fbbc7d9f00c2a02c77d8124ecc` (commit 2026-11-14) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-14) |
+| Nhận định | Thư viện component Vue 3, bản 2.45.3, có AGENTS.md và workflow Node.js test. Ổn cho dự án Vue; số issue mở cao là nhận định cũ, chưa đếm lại. |
+| Nguồn | [README.md](https://github.com/tusen-ai/naive-ui/blob/ce8dc4d8b8b394fbbc7d9f00c2a02c77d8124ecc/README.md) · [LICENSE](https://github.com/tusen-ai/naive-ui/blob/ce8dc4d8b8b394fbbc7d9f00c2a02c77d8124ecc/LICENSE) · [package.json](https://github.com/tusen-ai/naive-ui/blob/ce8dc4d8b8b394fbbc7d9f00c2a02c77d8124ecc/package.json) |
+
+<a id="ch-nativewind"></a>
+
+### NativeWind
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/nativewind/nativewind |
+| License | MIT |
+| Phiên bản đã đọc | `b56a0289e22a52839b1305e41381697413ae2232` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-19) |
+| Nhận định | Tailwind cho React Native; nhánh mặc định đã là 5.0.0-preview.4, có CI, release nightly và thư mục skills. Chọn v4 cho sản xuất, v5 còn preview. |
+| Nguồn | [README.md](https://github.com/nativewind/nativewind/blob/b56a0289e22a52839b1305e41381697413ae2232/README.md) · [LICENSE](https://github.com/nativewind/nativewind/blob/b56a0289e22a52839b1305e41381697413ae2232/LICENSE) · [package.json](https://github.com/nativewind/nativewind/blob/b56a0289e22a52839b1305e41381697413ae2232/package.json) |
+
+<a id="ch-neobrutalism-components"></a>
+
+### neobrutalism-components
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ekmas/neobrutalism-components |
+| License | MIT |
+| Phiên bản đã đọc | `f3c4d42973819ab5cf18697d08d6bd46f384d335` (commit 2026-11-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-15) |
+| Nhận định | Registry shadcn phong cách neobrutalism; README hiện không còn dòng "no longer maintained" và repo có commit 15/11/2026. Không có thư mục .github/workflows, tức không có CI trên GitHub. |
+| Nguồn | [README.md](https://github.com/ekmas/neobrutalism-components/blob/f3c4d42973819ab5cf18697d08d6bd46f384d335/README.md) · [LICENSE](https://github.com/ekmas/neobrutalism-components/blob/f3c4d42973819ab5cf18697d08d6bd46f384d335/LICENSE) · [package.json](https://github.com/ekmas/neobrutalism-components/blob/f3c4d42973819ab5cf18697d08d6bd46f384d335/package.json) |
+
+<a id="ch-next-shadcn-dashboard-starter"></a>
+
+### next-shadcn-dashboard-starter
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Kiranism/next-shadcn-dashboard-starter |
+| License | MIT |
+| Phiên bản đã đọc | `89f4e257650905a3a206f8449757f981bb811306` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-16) |
+| Nhận định | Starter dashboard Next.js + shadcn với nhiều trang mẫu, có Dockerfile, AGENTS.md/CLAUDE.md. Phụ thuộc dịch vụ xác thực bên ngoài (Clerk theo nhận định cũ) nên phải thay nếu muốn tự host trọn. |
+| Nguồn | [README.md](https://github.com/Kiranism/next-shadcn-dashboard-starter/blob/89f4e257650905a3a206f8449757f981bb811306/README.md) · [LICENSE](https://github.com/Kiranism/next-shadcn-dashboard-starter/blob/89f4e257650905a3a206f8449757f981bb811306/LICENSE) · [package.json](https://github.com/Kiranism/next-shadcn-dashboard-starter/blob/89f4e257650905a3a206f8449757f981bb811306/package.json) |
+
+<a id="ch-ng-zorro"></a>
+
+### NG-ZORRO
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/NG-ZORRO/ng-zorro-antd |
+| License | MIT |
+| Phiên bản đã đọc | `d3093bfa34cada0c6429d62d73654aa66fe1f130` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README-zh_CN.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-21) |
+| Nhận định | Ant Design cho Angular (README yêu cầu Angular ^22), có AGENTS.md, .mcp.json và cấu hình cho nhiều agent. CI chính chạy qua azure-pipelines.yml, GitHub Actions chỉ có sync-styles. |
+| Nguồn | [README-zh_CN.md](https://github.com/NG-ZORRO/ng-zorro-antd/blob/d3093bfa34cada0c6429d62d73654aa66fe1f130/README-zh_CN.md) · [LICENSE](https://github.com/NG-ZORRO/ng-zorro-antd/blob/d3093bfa34cada0c6429d62d73654aa66fe1f130/LICENSE) · [package.json](https://github.com/NG-ZORRO/ng-zorro-antd/blob/d3093bfa34cada0c6429d62d73654aa66fe1f130/package.json) |
+
+<a id="ch-oat-ui"></a>
+
+### Oat UI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/knadh/oat |
+| License | MIT |
+| Phiên bản đã đọc | `9e9338096548347644b5c4c5f800e5af058440fe` (commit 2026-11-01) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-01) |
+| Nhận định | Thư viện HTML/CSS ngữ nghĩa nhỏ gọn của Kailash Nadh, không phụ thuộc. Chỉ có workflow publish, không có test; version trong package.json là placeholder, phiên bản thật lấy từ tag. |
+| Nguồn | [README.md](https://github.com/knadh/oat/blob/9e9338096548347644b5c4c5f800e5af058440fe/README.md) · [LICENSE](https://github.com/knadh/oat/blob/9e9338096548347644b5c4c5f800e5af058440fe/LICENSE) · [package.json](https://github.com/knadh/oat/blob/9e9338096548347644b5c4c5f800e5af058440fe/package.json) |
+
+<a id="ch-official-design-md-voltagent"></a>
+
+### official-design-md (VoltAgent)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/VoltAgent/official-design-md |
+| License | MIT |
+| Phiên bản đã đọc | `7236b0562b219d12b778ef9cc66ac1e3422801ff` (commit 2026-09-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Nhịp thấp (commit cuối 2026-09-21) |
+| Nhận định | Danh mục DESIGN.md chính chủ của VoltAgent, repo chỉ gồm README và LICENSE. Commit cuối 21/09/2026; giá trị nằm ở các liên kết, cần tự kiểm từng file nguồn. |
+| Nguồn | [README.md](https://github.com/VoltAgent/official-design-md/blob/7236b0562b219d12b778ef9cc66ac1e3422801ff/README.md) · [LICENSE](https://github.com/VoltAgent/official-design-md/blob/7236b0562b219d12b778ef9cc66ac1e3422801ff/LICENSE) |
+
+<a id="ch-omi"></a>
+
+### Omi
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Tencent/omi |
+| License | MIT (kèm thành phần bên thứ ba MIT: preact, polyfill) |
+| Phiên bản đã đọc | `dd824ab22594fd3c6b8e31cd58a672e3c0f51126` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.CN.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-12) |
+| Nhận định | Framework web components của Tencent (monorepo packages/). Không có .github/workflows nên không có CI trên GitHub, khớp nhận định cũ; LICENSE liệt kê thêm preact và polyfill cùng MIT. |
+| Nguồn | [README.CN.md](https://github.com/Tencent/omi/blob/dd824ab22594fd3c6b8e31cd58a672e3c0f51126/README.CN.md) · [LICENSE](https://github.com/Tencent/omi/blob/dd824ab22594fd3c6b8e31cd58a672e3c0f51126/LICENSE) |
+
+<a id="ch-once-ui-core"></a>
+
+### Once UI core
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/once-ui-system/core |
+| License | MIT |
+| Phiên bản đã đọc | `f3a21a577e824c3ac47a3b2c1745db54bca10fac` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-22) |
+| Nhận định | Monorepo Once UI (block/thành phần Next.js), có CI, visual test và release. Cảnh báo CC BY-NC 4.0 thuộc repo riêng magic-portfolio, không nằm trong repo này. |
+| Nguồn | [README.md](https://github.com/once-ui-system/core/blob/f3a21a577e824c3ac47a3b2c1745db54bca10fac/README.md) · [LICENSE.md](https://github.com/once-ui-system/core/blob/f3a21a577e824c3ac47a3b2c1745db54bca10fac/LICENSE.md) · [package.json](https://github.com/once-ui-system/core/blob/f3a21a577e824c3ac47a3b2c1745db54bca10fac/package.json) |
+
+<a id="ch-onlook"></a>
+
+### Onlook
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/onlook-dev/onlook |
+| License | Apache-2.0 (NOTICE liệt kê phụ thuộc bên thứ ba, có gói độc quyền) |
+| Phiên bản đã đọc | `089840c3525faec88e74347bd5f7e06c76c8b3d0` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, NOTICE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-21) |
+| Nhận định | Visual editor cho app React, có CI và hướng dẫn build từ nguồn. NOTICE mới liệt kê phụ thuộc bên thứ ba, gồm cả gói độc quyền @anthropic-ai/claude-agent-sdk (đánh dấu cần rà soát), nên bản phân phối không thuần Apache-2.0. |
+| Nguồn | [README.md](https://github.com/onlook-dev/onlook/blob/089840c3525faec88e74347bd5f7e06c76c8b3d0/README.md) · [LICENSE](https://github.com/onlook-dev/onlook/blob/089840c3525faec88e74347bd5f7e06c76c8b3d0/LICENSE) · [NOTICE](https://github.com/onlook-dev/onlook/blob/089840c3525faec88e74347bd5f7e06c76c8b3d0/NOTICE) · [package.json](https://github.com/onlook-dev/onlook/blob/089840c3525faec88e74347bd5f7e06c76c8b3d0/package.json) |
+
+<a id="ch-opendesign"></a>
+
+### OpenDesign
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/nexu-io/open-design |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `5fdcc3db1e31bd4fa70f673041b78e87977507c3` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-23) |
+| Nhận định | Workspace agent thiết kế local-first (bản 0.27.3), có PRIVACY.md, rất nhiều workflow release/CI tự động. Các rủi ro telemetry và cờ bỏ kiểm quyền agent là từ lần đọc mã 31/10/2026, lần này chưa đọc lại mã. |
+| Nguồn | [README.md](https://github.com/nexu-io/open-design/blob/5fdcc3db1e31bd4fa70f673041b78e87977507c3/README.md) · [LICENSE](https://github.com/nexu-io/open-design/blob/5fdcc3db1e31bd4fa70f673041b78e87977507c3/LICENSE) · [package.json](https://github.com/nexu-io/open-design/blob/5fdcc3db1e31bd4fa70f673041b78e87977507c3/package.json) |
+
+<a id="ch-openintelligentui-copilotkit"></a>
+
+### OpenIntelligentUI (CopilotKit)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/CopilotKit/OpenIntelligentUI |
+| License | MIT |
+| Phiên bản đã đọc | `8391a94c1c3939c679e40ddd7bfc08a9ef690e70` (commit 2026-10-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Nhịp thấp (commit cuối 2026-10-13) |
+| Nhận định | App mẫu Next.js + LangGraph trả lời bằng UI sinh động (A2UI/widget iframe), có một workflow CI. Commit cuối 13/10/2026; phụ thuộc router bên thứ ba và telemetry CopilotKit là nhận định cũ, lần này chưa đọc lại mã. |
+| Nguồn | [README.md](https://github.com/CopilotKit/OpenIntelligentUI/blob/8391a94c1c3939c679e40ddd7bfc08a9ef690e70/README.md) · [LICENSE](https://github.com/CopilotKit/OpenIntelligentUI/blob/8391a94c1c3939c679e40ddd7bfc08a9ef690e70/LICENSE) · [package.json](https://github.com/CopilotKit/OpenIntelligentUI/blob/8391a94c1c3939c679e40ddd7bfc08a9ef690e70/package.json) |
+
+<a id="ch-openpencil-open-pencil"></a>
+
+### OpenPencil (open-pencil)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/open-pencil/open-pencil |
+| License | MIT + Apache-2.0 (phần Cloud, theo REUSE.toml) |
+| Phiên bản đã đọc | `1814dcbd0a493924adc6518e5bd35f25a60a582e` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, REUSE.toml, package.json, Cargo.toml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-23) |
+| Nhận định | Trình thiết kế TS/Vue + Tauri đọc/ghi .fig, bản 0.17.0, CI dày. REUSE.toml gán MIT cho toàn repo và Apache-2.0 cho server/portal Cloud, riêng giao thức client giữ MIT. |
+| Nguồn | [README.md](https://github.com/open-pencil/open-pencil/blob/1814dcbd0a493924adc6518e5bd35f25a60a582e/README.md) · [LICENSE](https://github.com/open-pencil/open-pencil/blob/1814dcbd0a493924adc6518e5bd35f25a60a582e/LICENSE) · [REUSE.toml](https://github.com/open-pencil/open-pencil/blob/1814dcbd0a493924adc6518e5bd35f25a60a582e/REUSE.toml) · [package.json](https://github.com/open-pencil/open-pencil/blob/1814dcbd0a493924adc6518e5bd35f25a60a582e/package.json) · [Cargo.toml](https://github.com/open-pencil/open-pencil/blob/1814dcbd0a493924adc6518e5bd35f25a60a582e/Cargo.toml) |
+
+<a id="ch-openpencil-zseven-w"></a>
+
+### OpenPencil (ZSeven-W)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ZSeven-W/openpencil |
+| License | MIT (kèm thư viện xác thực đóng prebuilt) |
+| Phiên bản đã đọc | `c939f85cbb7689663e3ea647af47cb5f484583cc` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.de.md, LICENSE, Cargo.toml, crates/op-auth-bridge/prebuilt; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-23) |
+| Nhận định | Trình vẽ vector AI-native bằng Rust (55 crate, bản 0.8.6), nhiều workflow phát hành đa nền tảng. crates/op-auth-bridge/prebuilt vẫn chứa thư viện tĩnh đóng theo từng target, ký bằng RELEASE-MANIFEST.sig, nên bản phát hành không thuần MIT. |
+| Nguồn | [README.de.md](https://github.com/ZSeven-W/openpencil/blob/c939f85cbb7689663e3ea647af47cb5f484583cc/README.de.md) · [LICENSE](https://github.com/ZSeven-W/openpencil/blob/c939f85cbb7689663e3ea647af47cb5f484583cc/LICENSE) · [Cargo.toml](https://github.com/ZSeven-W/openpencil/blob/c939f85cbb7689663e3ea647af47cb5f484583cc/Cargo.toml) · [prebuilt](https://github.com/ZSeven-W/openpencil/tree/c939f85cbb7689663e3ea647af47cb5f484583cc/crates/op-auth-bridge/prebuilt) |
+
+<a id="ch-openui-thesys"></a>
+
+### OpenUI (Thesys)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/thesysdev/openui |
+| License | MIT |
+| Phiên bản đã đọc | `e9662fe8e096f80e284ca892ea2dd37139d21e91` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-23) |
+| Nhận định | OpenUI Lang (spec + runtime đa framework) của Thesys, CI build/e2e/release đầy đủ. Telemetry postinstall và mẫu mặc định gọi api.thesys.dev là nhận định cũ, lần này chưa đọc lại mã. |
+| Nguồn | [README.md](https://github.com/thesysdev/openui/blob/e9662fe8e096f80e284ca892ea2dd37139d21e91/README.md) · [LICENSE](https://github.com/thesysdev/openui/blob/e9662fe8e096f80e284ca892ea2dd37139d21e91/LICENSE) · [package.json](https://github.com/thesysdev/openui/blob/e9662fe8e096f80e284ca892ea2dd37139d21e91/package.json) |
+
+<a id="ch-openui-w-b"></a>
+
+### OpenUI (W&B)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/wandb/openui |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `42d7ab4ab6650433486dfb12eb3783c393a3e475` (commit 2026-06-30) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Nhịp thấp (commit cuối 2026-06-30) |
+| Nhận định | App tự host sinh UI từ mô tả của W&B; commit mới nhất 30/06/2026, chỉ còn workflow docker. Rủi ro Weave tự bật qua WANDB_API_KEY/~/.netrc là nhận định cũ, chưa đọc lại mã. |
+| Nguồn | [README.md](https://github.com/wandb/openui/blob/42d7ab4ab6650433486dfb12eb3783c393a3e475/README.md) · [LICENSE](https://github.com/wandb/openui/blob/42d7ab4ab6650433486dfb12eb3783c393a3e475/LICENSE) |
+
+<a id="ch-panda-css"></a>
+
+### Panda CSS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/chakra-ui/panda |
+| License | MIT |
+| Phiên bản đã đọc | `af5cf02d63efefeb24b78a52037812b7c88c99cc` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json, Cargo.toml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 2026-11-21) |
+| Nhận định | CSS-in-JS không runtime, có crate Rust (Cargo.toml), AGENTS.md, skills và CI quality/rust/release. Phù hợp hệ design token build-time. |
+| Nguồn | [README.md](https://github.com/chakra-ui/panda/blob/af5cf02d63efefeb24b78a52037812b7c88c99cc/README.md) · [LICENSE.md](https://github.com/chakra-ui/panda/blob/af5cf02d63efefeb24b78a52037812b7c88c99cc/LICENSE.md) · [package.json](https://github.com/chakra-ui/panda/blob/af5cf02d63efefeb24b78a52037812b7c88c99cc/package.json) · [Cargo.toml](https://github.com/chakra-ui/panda/blob/af5cf02d63efefeb24b78a52037812b7c88c99cc/Cargo.toml) |
+
+<a id="ch-pencil-evolus"></a>
+
+### Pencil (Evolus)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/evolus/pencil |
+| License | GPL-2.0 |
+| Phiên bản đã đọc | `3fc5856b60415068259a8916d17a14adcd6ecc7a` (commit 2026-10-22) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE.md, package.json, app/tools/api-server.js; chưa chạy upstream |
+| Bảo trì | Hoạt động (HEAD 22/10/2026); không có `.github/workflows` (còn .travis.yml/appveyor.yml) |
+| Nhận định | Công cụ wireframe desktop Electron, v4 thêm máy chủ MCP để agent vẽ lên canvas. Rủi ro: mã tại SHA này lắng nghe mọi interface với CORS * và bật mặc định, trái với README ("100% local-first", loopback); chưa thấy lớp xác thực trong api-server.js (chưa đọc hết callsite). Electron 16 đã hết hỗ trợ. |
+| Nguồn | [README.md](https://github.com/evolus/pencil/blob/3fc5856b60415068259a8916d17a14adcd6ecc7a/README.md) · [LICENSE.md](https://github.com/evolus/pencil/blob/3fc5856b60415068259a8916d17a14adcd6ecc7a/LICENSE.md) · [package.json](https://github.com/evolus/pencil/blob/3fc5856b60415068259a8916d17a14adcd6ecc7a/package.json) · [app/tools/api-server.js](https://github.com/evolus/pencil/blob/3fc5856b60415068259a8916d17a14adcd6ecc7a/app/tools/api-server.js) |
+
+<a id="ch-pixelmatch"></a>
+
+### pixelmatch
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mapbox/pixelmatch |
+| License | ISC |
+| Phiên bản đã đọc | `ab76f526ef951c0ec6284e314a700e161b1800e6` (commit 2026-10-06) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/node.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit cuối 6/10/2026) |
+| Nhận định | Thư viện so ảnh mức pixel nhỏ, không phụ thuộc, chạy trên typed array (Node và trình duyệt); hợp làm lõi cổng visual regression tự host. Độ chính xác cảm nhận màu là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/mapbox/pixelmatch/blob/ab76f526ef951c0ec6284e314a700e161b1800e6/README.md) · [LICENSE](https://github.com/mapbox/pixelmatch/blob/ab76f526ef951c0ec6284e314a700e161b1800e6/LICENSE) · [package.json](https://github.com/mapbox/pixelmatch/blob/ab76f526ef951c0ec6284e314a700e161b1800e6/package.json) · [.github/workflows/node.yml](https://github.com/mapbox/pixelmatch/blob/ab76f526ef951c0ec6284e314a700e161b1800e6/.github/workflows/node.yml) |
+
+<a id="ch-polaris"></a>
+
+### Polaris
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Shopify/polaris-react-archive |
+| License | MIT (catalog cũ ghi null) |
+| Phiên bản đã đọc | `3f7954ae42fabf26d63cee68c23ceebfd7ef0972` (commit 2026-09-10) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json; chưa chạy upstream |
+| Bảo trì | Archived; README ghi "archived and unmaintained", Polaris React deprecated |
+| Nhận định | Monorepo lịch sử của Polaris React (components, tokens, icons, stylelint-polaris). Không dùng cho dự án mới; Shopify hướng sang Polaris Web Components trên shopify.dev. Chỉ còn giá trị tham khảo token/pattern. |
+| Nguồn | [README.md](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/README.md) · [LICENSE.md](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/LICENSE.md) · [package.json](https://github.com/Shopify/polaris-react-archive/blob/3f7954ae42fabf26d63cee68c23ceebfd7ef0972/package.json) |
+
+<a id="ch-preline-ui"></a>
+
+### Preline UI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/htmlstreamofficial/preline |
+| License | MIT + Preline UI Fair Use License |
+| Phiên bản đã đọc | `0dfbc35c10360c2608fd134021bc1dbc18d8c8eb` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (HEAD 12/11/2026) |
+| Nhận định | Thư viện component Tailwind kèm plugin JS headless; phần lớn block/template nằm trên site, không trong repo. Fair Use License cấm dùng tạo sản phẩm cạnh tranh và cho phép tác giả chấm dứt quyền — không phải MIT thuần, cần rà pháp lý trước khi tích hợp. |
+| Nguồn | [README.md](https://github.com/htmlstreamofficial/preline/blob/0dfbc35c10360c2608fd134021bc1dbc18d8c8eb/README.md) · [LICENSE](https://github.com/htmlstreamofficial/preline/blob/0dfbc35c10360c2608fd134021bc1dbc18d8c8eb/LICENSE) · [package.json](https://github.com/htmlstreamofficial/preline/blob/0dfbc35c10360c2608fd134021bc1dbc18d8c8eb/package.json) |
+
+<a id="ch-primer-css"></a>
+
+### Primer CSS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/primer/css |
+| License | MIT |
+| Phiên bản đã đọc | `d0cdad70d6c936501e9f8520212e00d0c4589f69` (commit 2026-11-10) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | KTLO theo README; vẫn có commit (HEAD 10/11/2026) |
+| Nhận định | Triển khai CSS của Primer (GitHub), chỉ giữ vận hành (KTLO). Dự án mới nên dùng Primer React hoặc @primer/primitives; dùng tiện ích CSS có sẵn khi cần. |
+| Nguồn | [README.md](https://github.com/primer/css/blob/d0cdad70d6c936501e9f8520212e00d0c4589f69/README.md) · [LICENSE](https://github.com/primer/css/blob/d0cdad70d6c936501e9f8520212e00d0c4589f69/LICENSE) · [package.json](https://github.com/primer/css/blob/d0cdad70d6c936501e9f8520212e00d0c4589f69/package.json) · [.github/workflows/ci.yml](https://github.com/primer/css/blob/d0cdad70d6c936501e9f8520212e00d0c4589f69/.github/workflows/ci.yml) |
+
+<a id="ch-primer-react"></a>
+
+### Primer React
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/primer/react |
+| License | MIT |
+| Phiên bản đã đọc | `2128032dca65a1bd565fe382c2e91c638c6473a4` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (HEAD 19/11/2026) |
+| Nhận định | Bản React của Primer design system, CI dày (VRT, a11y, CodeQL). Có gói MCP trong monorepo; khả năng cụ thể của MCP **(chưa xác minh)** ở lượt này. |
+| Nguồn | [README.md](https://github.com/primer/react/blob/2128032dca65a1bd565fe382c2e91c638c6473a4/README.md) · [LICENSE](https://github.com/primer/react/blob/2128032dca65a1bd565fe382c2e91c638c6473a4/LICENSE) · [package.json](https://github.com/primer/react/blob/2128032dca65a1bd565fe382c2e91c638c6473a4/package.json) · [.github/workflows/ci.yml](https://github.com/primer/react/blob/2128032dca65a1bd565fe382c2e91c638c6473a4/.github/workflows/ci.yml) |
+
+<a id="ch-primereact"></a>
+
+### PrimeReact
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/primefaces/primereact |
+| License | MIT |
+| Phiên bản đã đọc | `5cd9b145ce7d8b498e745002624ba958f307897e` (commit 2026-09-24) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json; chưa chạy upstream |
+| Bảo trì | README: không còn phát triển tích cực, chỉ vá bảo mật; chuyển sang PrimeUI |
+| Nhận định | Thư viện component React lớn nay chỉ nhận bản vá bảo mật cho các bản MIT; phát triển mới nằm ở PrimeUI với điều khoản license chưa đọc. Tránh cho dự án mới. |
+| Nguồn | [README.md](https://github.com/primefaces/primereact/blob/5cd9b145ce7d8b498e745002624ba958f307897e/README.md) · [LICENSE.md](https://github.com/primefaces/primereact/blob/5cd9b145ce7d8b498e745002624ba958f307897e/LICENSE.md) · [package.json](https://github.com/primefaces/primereact/blob/5cd9b145ce7d8b498e745002624ba958f307897e/package.json) |
+
+<a id="ch-radix-colors"></a>
+
+### Radix Colors
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/radix-ui/colors |
+| License | MIT |
+| Phiên bản đã đọc | `dbdb85470547c7d34b9001f48fddb08ded335979` (commit 2025-12-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Đứng yên: HEAD 17/12/2025 |
+| Nhận định | Hệ màu 12 bước có vai trò định sẵn, có sáng/tối và alpha; ổn định nhưng không còn cập nhật gần đây. Hợp làm nền token màu; tính "accessible" là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/radix-ui/colors/blob/dbdb85470547c7d34b9001f48fddb08ded335979/README.md) · [LICENSE](https://github.com/radix-ui/colors/blob/dbdb85470547c7d34b9001f48fddb08ded335979/LICENSE) · [package.json](https://github.com/radix-ui/colors/blob/dbdb85470547c7d34b9001f48fddb08ded335979/package.json) |
+
+<a id="ch-radix-ui"></a>
+
+### Radix UI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/radix-ui/primitives |
+| License | MIT |
+| Phiên bản đã đọc | `eb3a2b7091293e27df8f9ba906632d8daa3d81a3` (commit 2026-10-14) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/build.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (HEAD 14/10/2026) |
+| Nhận định | Thư viện primitive headless cho React, nền của nhiều design system (shadcn/ui cũ). Mức a11y là tuyên bố của tác giả **(chưa xác minh)**; nhịp commit chậm hơn các đối thủ. |
+| Nguồn | [README.md](https://github.com/radix-ui/primitives/blob/eb3a2b7091293e27df8f9ba906632d8daa3d81a3/README.md) · [LICENSE](https://github.com/radix-ui/primitives/blob/eb3a2b7091293e27df8f9ba906632d8daa3d81a3/LICENSE) · [package.json](https://github.com/radix-ui/primitives/blob/eb3a2b7091293e27df8f9ba906632d8daa3d81a3/package.json) · [.github/workflows/build.yml](https://github.com/radix-ui/primitives/blob/eb3a2b7091293e27df8f9ba906632d8daa3d81a3/.github/workflows/build.yml) |
+
+<a id="ch-react-bootstrap"></a>
+
+### React Bootstrap
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/react-bootstrap/react-bootstrap |
+| License | MIT |
+| Phiên bản đã đọc | `d5ebc9cf46b55f9383368c494d7902e707026e20` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (HEAD 19/11/2026) |
+| Nhận định | Component Bootstrap 5 cho React. Bản ổn định là 2.x, v3 vẫn beta trên master; README chưa nói lộ trình v3. Việc một người bảo trì **(chưa xác minh)** ở lượt này. |
+| Nguồn | [README.md](https://github.com/react-bootstrap/react-bootstrap/blob/d5ebc9cf46b55f9383368c494d7902e707026e20/README.md) · [LICENSE](https://github.com/react-bootstrap/react-bootstrap/blob/d5ebc9cf46b55f9383368c494d7902e707026e20/LICENSE) · [package.json](https://github.com/react-bootstrap/react-bootstrap/blob/d5ebc9cf46b55f9383368c494d7902e707026e20/package.json) · [.github/workflows/ci.yml](https://github.com/react-bootstrap/react-bootstrap/blob/d5ebc9cf46b55f9383368c494d7902e707026e20/.github/workflows/ci.yml) |
+
+<a id="ch-react-hook-form"></a>
+
+### React Hook Form
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/react-hook-form/react-hook-form |
+| License | MIT |
+| Phiên bản đã đọc | `074d174816ae4b4e61856925d296f6afb686387d` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/build-test.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (HEAD 23/11/2026) |
+| Nhận định | Thư viện form React dựa trên input không kiểm soát, hỗ trợ nhiều schema validator. Kích thước nhỏ và không phụ thuộc runtime theo README **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/react-hook-form/react-hook-form/blob/074d174816ae4b4e61856925d296f6afb686387d/README.md) · [LICENSE](https://github.com/react-hook-form/react-hook-form/blob/074d174816ae4b4e61856925d296f6afb686387d/LICENSE) · [package.json](https://github.com/react-hook-form/react-hook-form/blob/074d174816ae4b4e61856925d296f6afb686387d/package.json) · [.github/workflows/build-test.yml](https://github.com/react-hook-form/react-hook-form/blob/074d174816ae4b4e61856925d296f6afb686387d/.github/workflows/build-test.yml) |
+
+<a id="ch-react-native-calendars"></a>
+
+### react-native-calendars
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/wix/react-native-calendars |
+| License | MIT |
+| Phiên bản đã đọc | `808c6e100511f9adf65b1adec5e5830210f27ef4` (commit 2026-01-29) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Gần như đứng: HEAD 29/1/2026; không có .github/workflows |
+| Nhận định | Component lịch thuần JS cho React Native (đánh dấu ngày, kỳ, vuốt). Ít bảo trì; cần tự thử trên New Architecture trước khi dùng. |
+| Nguồn | [README.md](https://github.com/wix/react-native-calendars/blob/808c6e100511f9adf65b1adec5e5830210f27ef4/README.md) · [LICENSE](https://github.com/wix/react-native-calendars/blob/808c6e100511f9adf65b1adec5e5830210f27ef4/LICENSE) · [package.json](https://github.com/wix/react-native-calendars/blob/808c6e100511f9adf65b1adec5e5830210f27ef4/package.json) |
+
+<a id="ch-react-native-reusables"></a>
+
+### React Native Reusables
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/founded-labs/react-native-reusables |
+| License | MIT |
+| Phiên bản đã đọc | `7df9e76c65c6f866a0865aa2697635c162d3484f` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Hoạt động (HEAD 17/11/2026) |
+| Nhận định | Bộ component kiểu shadcn cho React Native (copy-code). Số component/block cụ thể theo catalog cũ **(chưa xác minh)** ở lượt này; không có CI workflow trong repo. |
+| Nguồn | [README.md](https://github.com/founded-labs/react-native-reusables/blob/7df9e76c65c6f866a0865aa2697635c162d3484f/README.md) · [LICENSE](https://github.com/founded-labs/react-native-reusables/blob/7df9e76c65c6f866a0865aa2697635c162d3484f/LICENSE) · [package.json](https://github.com/founded-labs/react-native-reusables/blob/7df9e76c65c6f866a0865aa2697635c162d3484f/package.json) |
+
+<a id="ch-react-native-web"></a>
+
+### react-native-web
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/necolas/react-native-web |
+| License | MIT |
+| Phiên bản đã đọc | `2ba89609cc24edc1cd4d63db651dfd4e56393081` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/tests.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (HEAD 23/11/2026) |
+| Nhận định | Lớp chạy component React Native trên web (monorepo). Nên ghim phiên bản vì nhánh 0.22 có thay đổi phá vỡ theo catalog cũ **(chưa xác minh)** ở lượt này. |
+| Nguồn | [README.md](https://github.com/necolas/react-native-web/blob/2ba89609cc24edc1cd4d63db651dfd4e56393081/README.md) · [LICENSE](https://github.com/necolas/react-native-web/blob/2ba89609cc24edc1cd4d63db651dfd4e56393081/LICENSE) · [package.json](https://github.com/necolas/react-native-web/blob/2ba89609cc24edc1cd4d63db651dfd4e56393081/package.json) · [.github/workflows/tests.yml](https://github.com/necolas/react-native-web/blob/2ba89609cc24edc1cd4d63db651dfd4e56393081/.github/workflows/tests.yml) |
+
+<a id="ch-react-spectrum-react-aria"></a>
+
+### React Spectrum / React Aria
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/adobe/react-spectrum |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `6be3466d87cc628ee69461230c1b5f4e3b64c6e3` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/nightly.yaml; chưa chạy upstream |
+| Bảo trì | Hoạt động (HEAD 21/11/2026); nightly.yaml chỉ là deploy thủ công, kiểm thử không thấy trong GitHub Actions |
+| Nhận định | Bộ thư viện của Adobe: React Aria (hook/component không style) mạnh về a11y và i18n, cộng React Spectrum có style. Các tuyên bố a11y/hơn 30 ngôn ngữ **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/adobe/react-spectrum/blob/6be3466d87cc628ee69461230c1b5f4e3b64c6e3/README.md) · [LICENSE](https://github.com/adobe/react-spectrum/blob/6be3466d87cc628ee69461230c1b5f4e3b64c6e3/LICENSE) · [package.json](https://github.com/adobe/react-spectrum/blob/6be3466d87cc628ee69461230c1b5f4e3b64c6e3/package.json) · [.github/workflows/nightly.yaml](https://github.com/adobe/react-spectrum/blob/6be3466d87cc628ee69461230c1b5f4e3b64c6e3/.github/workflows/nightly.yaml) |
+
+<a id="ch-react-suite-rsuite"></a>
+
+### React Suite (rsuite)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/rsuite/rsuite |
+| License | MIT |
+| Phiên bản đã đọc | `71175b9adbb9c840b6c4a4fe0a62cb607ebf2fac` (commit 2026-10-25) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/nodejs-ci.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (HEAD 25/10/2026) |
+| Nhận định | Bộ component React cho ứng dụng nhiều dữ liệu, có SSR. CI đa trình duyệt; MCP/skill theo catalog cũ **(chưa xác minh)** ở lượt này. |
+| Nguồn | [README.md](https://github.com/rsuite/rsuite/blob/71175b9adbb9c840b6c4a4fe0a62cb607ebf2fac/README.md) · [LICENSE](https://github.com/rsuite/rsuite/blob/71175b9adbb9c840b6c4a4fe0a62cb607ebf2fac/LICENSE) · [package.json](https://github.com/rsuite/rsuite/blob/71175b9adbb9c840b6c4a4fe0a62cb607ebf2fac/package.json) · [.github/workflows/nodejs-ci.yml](https://github.com/rsuite/rsuite/blob/71175b9adbb9c840b6c4a4fe0a62cb607ebf2fac/.github/workflows/nodejs-ci.yml) |
+
+<a id="ch-react-virtualized"></a>
+
+### react-virtualized
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/bvaughn/react-virtualized |
+| License | MIT |
+| Phiên bản đã đọc | `3f50a3f9c127051c99e11974710ee6cdd7272cd2` (commit 2026-11-14) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/vitest.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (HEAD 14/11/2026) |
+| Nhận định | Component render danh sách/bảng lớn bằng windowing, v10 viết lại TypeScript. README gợi ý cân nhắc react-window cho dự án mới. |
+| Nguồn | [README.md](https://github.com/bvaughn/react-virtualized/blob/3f50a3f9c127051c99e11974710ee6cdd7272cd2/README.md) · [LICENSE](https://github.com/bvaughn/react-virtualized/blob/3f50a3f9c127051c99e11974710ee6cdd7272cd2/LICENSE) · [package.json](https://github.com/bvaughn/react-virtualized/blob/3f50a3f9c127051c99e11974710ee6cdd7272cd2/package.json) · [.github/workflows/vitest.yml](https://github.com/bvaughn/react-virtualized/blob/3f50a3f9c127051c99e11974710ee6cdd7272cd2/.github/workflows/vitest.yml) |
+
+<a id="ch-refactoring-ui-skill"></a>
+
+### Refactoring UI Skill
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/s0xDk/refactoring-ui-skill |
+| License | MIT (kèm điều khoản: không bao gồm sách Refactoring UI) |
+| Phiên bản đã đọc | `48872143abb0a8feb6d9bf58e222afbd800210b0` (commit 2026-08-27) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Đứng: chỉ có commit 27/8/2026 |
+| Nhận định | Skill Claude Code đưa quy tắc sách Refactoring UI (thang spacing/type/màu/bóng, bảng chẩn đoán) kèm tokens.css. Việc "đối chiếu từng trang với sách" là tuyên bố tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/s0xDk/refactoring-ui-skill/blob/48872143abb0a8feb6d9bf58e222afbd800210b0/README.md) · [LICENSE](https://github.com/s0xDk/refactoring-ui-skill/blob/48872143abb0a8feb6d9bf58e222afbd800210b0/LICENSE) |
+
+<a id="ch-refine"></a>
+
+### Refine
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/refinedev/refine |
+| License | MIT |
+| Phiên bản đã đọc | `2352eb5b6539e2f39ad9aef652279ad1dcf2c467` (commit 2026-09-10) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/pull-request.yml; chưa chạy upstream |
+| Bảo trì | HEAD nhánh mặc định 10/9/2026; chưa đủ dữ liệu kết luận nhịp bảo trì |
+| Nhận định | Framework headless cho admin/dashboard/CRUD, tích hợp nhiều UI kit. Hơn 2 tháng không commit trên main tại thời điểm kiểm; nên xem lại nhịp phát hành trước khi chọn. |
+| Nguồn | [README.md](https://github.com/refinedev/refine/blob/2352eb5b6539e2f39ad9aef652279ad1dcf2c467/README.md) · [LICENSE](https://github.com/refinedev/refine/blob/2352eb5b6539e2f39ad9aef652279ad1dcf2c467/LICENSE) · [package.json](https://github.com/refinedev/refine/blob/2352eb5b6539e2f39ad9aef652279ad1dcf2c467/package.json) · [.github/workflows/pull-request.yml](https://github.com/refinedev/refine/blob/2352eb5b6539e2f39ad9aef652279ad1dcf2c467/.github/workflows/pull-request.yml) |
+
+<a id="ch-reka-ui"></a>
+
+### Reka UI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/unovue/reka-ui |
+| License | MIT |
+| Phiên bản đã đọc | `e4687cd0f745ca18f28235b69cfa35a7415553f8` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/build.yaml; chưa chạy upstream |
+| Bảo trì | Hoạt động (nhánh mặc định v2, HEAD 23/11/2026) |
+| Nhận định | Thư viện primitive headless cho Vue (trước là Radix Vue), nền của shadcn-vue và Nuxt UI. Tài liệu cho agent có sẵn; chất lượng a11y **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/unovue/reka-ui/blob/e4687cd0f745ca18f28235b69cfa35a7415553f8/README.md) · [LICENSE](https://github.com/unovue/reka-ui/blob/e4687cd0f745ca18f28235b69cfa35a7415553f8/LICENSE) · [package.json](https://github.com/unovue/reka-ui/blob/e4687cd0f745ca18f28235b69cfa35a7415553f8/package.json) · [.github/workflows/build.yaml](https://github.com/unovue/reka-ui/blob/e4687cd0f745ca18f28235b69cfa35a7415553f8/.github/workflows/build.yaml) |
+
+<a id="ch-semi-design"></a>
+
+### Semi Design
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/DouyinFE/semi-design |
+| License | MIT (LICENSE kèm notice license bên thứ ba) |
+| Phiên bản đã đọc | `57dd0c16c10a43d72171c0982c6af04ffb350836` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/test.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (HEAD 23/11/2026) |
+| Nhận định | Design system React của ByteDance với nhiều component và D2C từ Figma. Có gói MCP trong repo; hành vi tải docs lúc chạy theo catalog cũ **(chưa xác minh)** ở lượt này. |
+| Nguồn | [README.md](https://github.com/DouyinFE/semi-design/blob/57dd0c16c10a43d72171c0982c6af04ffb350836/README.md) · [LICENSE](https://github.com/DouyinFE/semi-design/blob/57dd0c16c10a43d72171c0982c6af04ffb350836/LICENSE) · [package.json](https://github.com/DouyinFE/semi-design/blob/57dd0c16c10a43d72171c0982c6af04ffb350836/package.json) · [.github/workflows/test.yml](https://github.com/DouyinFE/semi-design/blob/57dd0c16c10a43d72171c0982c6af04ffb350836/.github/workflows/test.yml) |
+
+<a id="ch-shadcn-admin"></a>
+
+### shadcn-admin
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/satnaing/shadcn-admin |
+| License | MIT |
+| Phiên bản đã đọc | `e16c87f213a5ba5e45964e9b67c792105ec74d26` (commit 2026-06-11) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Đứng từ HEAD 11/6/2026 |
+| Nhận định | Giao diện admin Vite + React dựng trên shadcn, có RTL và một số component đã chỉnh. Tác giả không coi là template; cập nhật component qua CLI cần merge tay với các file đã sửa. |
+| Nguồn | [README.md](https://github.com/satnaing/shadcn-admin/blob/e16c87f213a5ba5e45964e9b67c792105ec74d26/README.md) · [LICENSE](https://github.com/satnaing/shadcn-admin/blob/e16c87f213a5ba5e45964e9b67c792105ec74d26/LICENSE) · [package.json](https://github.com/satnaing/shadcn-admin/blob/e16c87f213a5ba5e45964e9b67c792105ec74d26/package.json) · [.github/workflows/ci.yml](https://github.com/satnaing/shadcn-admin/blob/e16c87f213a5ba5e45964e9b67c792105ec74d26/.github/workflows/ci.yml) |
+
+<a id="ch-shadcn-lint"></a>
+
+### @shadcn/lint
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/shadcn-ui/lint |
+| License | MIT |
+| Phiên bản đã đọc | `529de36e185297a46ed5ef7049eb2965272d102e` (commit 2026-11-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (HEAD 2/11/2026) |
+| Nhận định | Linter viết thông báo lỗi cho agent, kiểm luật design system Tailwind. Kết quả eval không commit nên hiệu quả với agent **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/shadcn-ui/lint/blob/529de36e185297a46ed5ef7049eb2965272d102e/README.md) · [LICENSE](https://github.com/shadcn-ui/lint/blob/529de36e185297a46ed5ef7049eb2965272d102e/LICENSE) · [package.json](https://github.com/shadcn-ui/lint/blob/529de36e185297a46ed5ef7049eb2965272d102e/package.json) · [.github/workflows/ci.yml](https://github.com/shadcn-ui/lint/blob/529de36e185297a46ed5ef7049eb2965272d102e/.github/workflows/ci.yml) |
+
+<a id="ch-shadcn-ui"></a>
+
+### shadcn/ui
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/shadcn-ui/ui |
+| License | MIT |
+| Phiên bản đã đọc | `055aa6b7837b1808456a24beb4c97a677864aa82` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json, .github/workflows/test.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (HEAD 23/11/2026) |
+| Nhận định | Bộ component copy-code cho React, dùng làm nền tự xây thư viện. Số layout block/chart và mặc định Base UI theo catalog cũ **(chưa xác minh)** ở lượt này. |
+| Nguồn | [README.md](https://github.com/shadcn-ui/ui/blob/055aa6b7837b1808456a24beb4c97a677864aa82/README.md) · [LICENSE.md](https://github.com/shadcn-ui/ui/blob/055aa6b7837b1808456a24beb4c97a677864aa82/LICENSE.md) · [package.json](https://github.com/shadcn-ui/ui/blob/055aa6b7837b1808456a24beb4c97a677864aa82/package.json) · [.github/workflows/test.yml](https://github.com/shadcn-ui/ui/blob/055aa6b7837b1808456a24beb4c97a677864aa82/.github/workflows/test.yml) |
+
+<a id="ch-shadcn-vue"></a>
+
+### shadcn-vue
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/unovue/shadcn-vue |
+| License | MIT |
+| Phiên bản đã đọc | `d1bf1b3a2d1a824b19f32d7253a28a43797b8253` (commit 2026-11-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/test.yaml; chưa chạy upstream |
+| Bảo trì | Hoạt động (nhánh mặc định dev, HEAD 3/11/2026) |
+| Nhận định | Bản Vue của shadcn/ui trên Reka UI. MCP trong CLI và bộ skill theo catalog cũ **(chưa xác minh)** ở lượt này. |
+| Nguồn | [README.md](https://github.com/unovue/shadcn-vue/blob/d1bf1b3a2d1a824b19f32d7253a28a43797b8253/README.md) · [LICENSE](https://github.com/unovue/shadcn-vue/blob/d1bf1b3a2d1a824b19f32d7253a28a43797b8253/LICENSE) · [package.json](https://github.com/unovue/shadcn-vue/blob/d1bf1b3a2d1a824b19f32d7253a28a43797b8253/package.json) · [.github/workflows/test.yaml](https://github.com/unovue/shadcn-vue/blob/d1bf1b3a2d1a824b19f32d7253a28a43797b8253/.github/workflows/test.yaml) |
+
+<a id="ch-skeleton"></a>
+
+### Skeleton
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/skeletonlabs/skeleton |
+| License | MIT |
+| Phiên bản đã đọc | `011910c49939628b883c745994657ede4460143c` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/code-quality.yml; chưa chạy upstream |
+| Bảo trì | Có commit mới (HEAD 23/11/2026) |
+| Nhận định | Design system dựa trên Tailwind với component cho nhiều framework. Trạng thái PR bảo mật Renovate theo catalog cũ **(chưa xác minh)** ở lượt này. |
+| Nguồn | [README.md](https://github.com/skeletonlabs/skeleton/blob/011910c49939628b883c745994657ede4460143c/README.md) · [LICENSE](https://github.com/skeletonlabs/skeleton/blob/011910c49939628b883c745994657ede4460143c/LICENSE) · [package.json](https://github.com/skeletonlabs/skeleton/blob/011910c49939628b883c745994657ede4460143c/package.json) · [.github/workflows/code-quality.yml](https://github.com/skeletonlabs/skeleton/blob/011910c49939628b883c745994657ede4460143c/.github/workflows/code-quality.yml) |
+
+<a id="ch-stageshow"></a>
+
+### Stageshow
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/benjitaylor/skills |
+| License | MIT (stageshow/LICENSE); app icon trong assets/app-icons.ts và logo trong kit/brands theo license/điều khoản riêng (NOTICE.md) |
+| Phiên bản đã đọc | `299140fafd08df55a9c234e610c3f64af3f45531` (commit 2026-11-04) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc stageshow/README.md, stageshow/LICENSE, stageshow/NOTICE.md, stageshow/package.json; chưa chạy upstream |
+| Bảo trì | Mới: HEAD 4/11/2026; không có CI workflow |
+| Nhận định | Skill + kit React dựng minh họa sản phẩm và chuyển động, kèm script quay phim kiểm khung hình. Asset thương hiệu/icon không thuộc MIT; không có CI. Hiệu quả cổng --gate **(chưa xác minh)**. |
+| Nguồn | [stageshow/README.md](https://github.com/benjitaylor/skills/blob/299140fafd08df55a9c234e610c3f64af3f45531/stageshow/README.md) · [stageshow/LICENSE](https://github.com/benjitaylor/skills/blob/299140fafd08df55a9c234e610c3f64af3f45531/stageshow/LICENSE) · [stageshow/NOTICE.md](https://github.com/benjitaylor/skills/blob/299140fafd08df55a9c234e610c3f64af3f45531/stageshow/NOTICE.md) · [stageshow/package.json](https://github.com/benjitaylor/skills/blob/299140fafd08df55a9c234e610c3f64af3f45531/stageshow/package.json) |
+
+<a id="ch-stencil"></a>
+
+### Stencil
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/stenciljs/core |
+| License | MIT |
+| Phiên bản đã đọc | `42307820e1e5ae4bc03bf881c28a0e6ba95167d7` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc readme.md, LICENSE, package.json, .github/workflows/main.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động (HEAD 19/11/2026) |
+| Nhận định | Trình biên dịch web component (nền Ionic). Telemetry mặc định của CLI v4 theo catalog cũ **(chưa xác minh)** ở lượt này; nên tắt khi dùng trong CI. |
+| Nguồn | [readme.md](https://github.com/stenciljs/core/blob/42307820e1e5ae4bc03bf881c28a0e6ba95167d7/readme.md) · [LICENSE](https://github.com/stenciljs/core/blob/42307820e1e5ae4bc03bf881c28a0e6ba95167d7/LICENSE) · [package.json](https://github.com/stenciljs/core/blob/42307820e1e5ae4bc03bf881c28a0e6ba95167d7/package.json) · [.github/workflows/main.yml](https://github.com/stenciljs/core/blob/42307820e1e5ae4bc03bf881c28a0e6ba95167d7/.github/workflows/main.yml) |
+
+<a id="ch-stitch-skills-google-labs"></a>
+
+### stitch-skills (Google Labs)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/google-labs-code/stitch-skills |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `62fdcd679747aca0792e5dd6591b10ddfad56825` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, .github/workflows/validate-skills.yml; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Bộ 16 skill/3 plugin cho Google Stitch MCP, cài qua marketplace Codex/Claude Code. Cần Stitch API key và gửi dữ liệu thiết kế lên Google; không phải sản phẩm Google hỗ trợ chính thức. Repo hoạt động lại (commit 20/11/2026). |
+| Nguồn | [README.md](https://github.com/google-labs-code/stitch-skills/blob/62fdcd679747aca0792e5dd6591b10ddfad56825/README.md) · [LICENSE](https://github.com/google-labs-code/stitch-skills/blob/62fdcd679747aca0792e5dd6591b10ddfad56825/LICENSE) · [validate-skills.yml](https://github.com/google-labs-code/stitch-skills/blob/62fdcd679747aca0792e5dd6591b10ddfad56825/.github/workflows/validate-skills.yml) |
+
+<a id="ch-storybook"></a>
+
+### Storybook
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/storybookjs/storybook |
+| License | MIT |
+| Phiên bản đã đọc | `d38b4c5c771bc15b8e139d1e352bcc207734d709` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Workshop dựng và test component UI cô lập, hỗ trợ nhiều framework. README nay thêm mục AI (prompt cho agent, MCP) — mức hữu ích cho agent **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/storybookjs/storybook/blob/d38b4c5c771bc15b8e139d1e352bcc207734d709/README.md) · [LICENSE](https://github.com/storybookjs/storybook/blob/d38b4c5c771bc15b8e139d1e352bcc207734d709/LICENSE) · [package.json](https://github.com/storybookjs/storybook/blob/d38b4c5c771bc15b8e139d1e352bcc207734d709/package.json) |
+
+<a id="ch-style-dictionary"></a>
+
+### Style Dictionary
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/style-dictionary/style-dictionary |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `795233d9bee6a7b5787d685d75d626df3399d24d` (commit 2026-11-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, CHANGELOG.md; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Build design token sang CSS/iOS/Android/JS từ một nguồn; hỗ trợ cú pháp DTCG 2025.10. Bản 5.8.0 có thay đổi breaking nhỏ về tên format `sketch/palette` — ghim phiên bản khi nâng cấp. |
+| Nguồn | [README.md](https://github.com/style-dictionary/style-dictionary/blob/795233d9bee6a7b5787d685d75d626df3399d24d/README.md) · [LICENSE](https://github.com/style-dictionary/style-dictionary/blob/795233d9bee6a7b5787d685d75d626df3399d24d/LICENSE) · [package.json](https://github.com/style-dictionary/style-dictionary/blob/795233d9bee6a7b5787d685d75d626df3399d24d/package.json) · [CHANGELOG.md](https://github.com/style-dictionary/style-dictionary/blob/795233d9bee6a7b5787d685d75d626df3399d24d/CHANGELOG.md) |
+
+<a id="ch-stylelint"></a>
+
+### Stylelint
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/stylelint/stylelint |
+| License | MIT |
+| Phiên bản đã đọc | `39f029d687cf2e667a43bc7005c1a16e8c36930d` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, CHANGELOG.md; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Linter CSS với ~150 luật dựng sẵn (vd. color-no-hex, declaration-property-value-allowed-list) để cấm giá trị ngoài token. Bản 18.x yêu cầu Node 22.22+; 18.1.0 sửa autofix nhiều lượt. |
+| Nguồn | [README.md](https://github.com/stylelint/stylelint/blob/39f029d687cf2e667a43bc7005c1a16e8c36930d/README.md) · [LICENSE](https://github.com/stylelint/stylelint/blob/39f029d687cf2e667a43bc7005c1a16e8c36930d/LICENSE) · [package.json](https://github.com/stylelint/stylelint/blob/39f029d687cf2e667a43bc7005c1a16e8c36930d/package.json) · [CHANGELOG.md](https://github.com/stylelint/stylelint/blob/39f029d687cf2e667a43bc7005c1a16e8c36930d/CHANGELOG.md) |
+
+<a id="ch-swiftui-agent-skill"></a>
+
+### SwiftUI Agent Skill
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/twostraws/SwiftUI-Agent-Skill |
+| License | MIT |
+| Phiên bản đã đọc | `f2920b63995263f57b3e198674e89a602efba6d2` (commit 2026-10-26) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, swiftui-pro/SKILL.md; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Skill SwiftUI Pro của Paul Hudson: SKILL.md ngắn nạp 12 file tham chiếu theo chủ đề (API, a11y, hiệu năng…). Chứa các sự thật nền tảng ghi cứng (iOS 27) nên cần cập nhật theo năm; không có CI. |
+| Nguồn | [README.md](https://github.com/twostraws/SwiftUI-Agent-Skill/blob/f2920b63995263f57b3e198674e89a602efba6d2/README.md) · [LICENSE](https://github.com/twostraws/SwiftUI-Agent-Skill/blob/f2920b63995263f57b3e198674e89a602efba6d2/LICENSE) · [SKILL.md](https://github.com/twostraws/SwiftUI-Agent-Skill/blob/f2920b63995263f57b3e198674e89a602efba6d2/swiftui-pro/SKILL.md) |
+
+<a id="ch-tailadmin-react-free"></a>
+
+### TailAdmin React (free)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/TailAdmin/free-react-tailwind-admin-dashboard |
+| License | MIT |
+| Phiên bản đã đọc | `486ed748b21e032a4432effeca4ef3684fa223d3` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Mẫu admin React 19 + Tailwind v4 miễn phí, một dashboard ecommerce; README đẩy sang bản Pro trả phí. Không có CI/test. |
+| Nguồn | [README.md](https://github.com/TailAdmin/free-react-tailwind-admin-dashboard/blob/486ed748b21e032a4432effeca4ef3684fa223d3/README.md) · [LICENSE.md](https://github.com/TailAdmin/free-react-tailwind-admin-dashboard/blob/486ed748b21e032a4432effeca4ef3684fa223d3/LICENSE.md) · [package.json](https://github.com/TailAdmin/free-react-tailwind-admin-dashboard/blob/486ed748b21e032a4432effeca4ef3684fa223d3/package.json) |
+
+<a id="ch-tailwind-plus"></a>
+
+### Tailwind Plus
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://tailwindcss.com/plus |
+| License | proprietary |
+| Phiên bản đã đọc | trang web đọc ngày 2026-11-23 (không có SHA) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc https://tailwindcss.com/blog/tailwind-is-joining-shopify, https://tailwindcss.com/plus; chưa chạy upstream |
+| Bảo trì | unknown (chưa rõ) |
+| Nhận định | Bộ UI block/template trả phí của Tailwind Labs (trước là Tailwind UI). Đã đóng bán cho khách mới từ 9/2026; chỉ còn ý nghĩa tham khảo với người đã mua. |
+| Nguồn | [tailwindcss.com/blog/tailwind-is-joining-shopify](https://tailwindcss.com/blog/tailwind-is-joining-shopify) · [tailwindcss.com/plus](https://tailwindcss.com/plus) |
+
+<a id="ch-tamagui-bento"></a>
+
+### Tamagui (Bento)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/tamagui/tamagui |
+| License | MIT |
+| Phiên bản đã đọc | `1d5e750ec5a17c97843613d86c916bad44ec900e` (commit 2026-11-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, code/bento/package.json; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Thư viện style + UI kit dùng chung React/React Native với compiler tối ưu. Bento (component/màn hình copy-paste) nay có nguồn MIT trong repo; monorepo lớn, build bằng bun/turbo. |
+| Nguồn | [README.md](https://github.com/tamagui/tamagui/blob/1d5e750ec5a17c97843613d86c916bad44ec900e/README.md) · [LICENSE](https://github.com/tamagui/tamagui/blob/1d5e750ec5a17c97843613d86c916bad44ec900e/LICENSE) · [package.json](https://github.com/tamagui/tamagui/blob/1d5e750ec5a17c97843613d86c916bad44ec900e/package.json) · [package.json](https://github.com/tamagui/tamagui/blob/1d5e750ec5a17c97843613d86c916bad44ec900e/code/bento/package.json) |
+
+<a id="ch-tambo"></a>
+
+### Tambo
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/tambo-ai/tambo |
+| License | MIT + Apache-2.0 (apps/api, apps/web, packages/backend) |
+| Phiên bản đã đọc | `6e2c1bff3b68a00c094b6d876788cc8f33f7bb02` (commit 2026-10-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, apps/api/LICENSE, packages/backend/LICENSE, apps/web/LICENSE; chưa chạy upstream |
+| Bảo trì | low-activity (ít hoạt động) |
+| Nhận định | SDK React biến component + schema Zod thành tool cho agent, có backend tự host bằng Docker. Cloud đã đóng nên phải tự host; nhóm đã chuyển sang sản phẩm khác, rủi ro ngừng phát triển. |
+| Nguồn | [README.md](https://github.com/tambo-ai/tambo/blob/6e2c1bff3b68a00c094b6d876788cc8f33f7bb02/README.md) · [LICENSE](https://github.com/tambo-ai/tambo/blob/6e2c1bff3b68a00c094b6d876788cc8f33f7bb02/LICENSE) · [LICENSE](https://github.com/tambo-ai/tambo/blob/6e2c1bff3b68a00c094b6d876788cc8f33f7bb02/apps/api/LICENSE) · [LICENSE](https://github.com/tambo-ai/tambo/blob/6e2c1bff3b68a00c094b6d876788cc8f33f7bb02/packages/backend/LICENSE) · [LICENSE](https://github.com/tambo-ai/tambo/blob/6e2c1bff3b68a00c094b6d876788cc8f33f7bb02/apps/web/LICENSE) |
+
+<a id="ch-taro-ui"></a>
+
+### Taro UI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/jd-opensource/taro-ui |
+| License | MIT |
+| Phiên bản đã đọc | `d0653307e44015ebf6de382f0a31dab4c9756e15` (commit 2026-09-25) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, docs/MAINTENANCE.md, packages/taro-ui/package.json; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Bộ UI đa nền (mini-program, H5, RN) cho Taro 3; có ví dụ chạy Taro 4 nhưng gói chính vẫn khai Taro 3.x. Tài liệu chủ yếu tiếng Trung. |
+| Nguồn | [README.md](https://github.com/jd-opensource/taro-ui/blob/d0653307e44015ebf6de382f0a31dab4c9756e15/README.md) · [LICENSE](https://github.com/jd-opensource/taro-ui/blob/d0653307e44015ebf6de382f0a31dab4c9756e15/LICENSE) · [package.json](https://github.com/jd-opensource/taro-ui/blob/d0653307e44015ebf6de382f0a31dab4c9756e15/package.json) · [MAINTENANCE.md](https://github.com/jd-opensource/taro-ui/blob/d0653307e44015ebf6de382f0a31dab4c9756e15/docs/MAINTENANCE.md) · [package.json](https://github.com/jd-opensource/taro-ui/blob/d0653307e44015ebf6de382f0a31dab4c9756e15/packages/taro-ui/package.json) |
+
+<a id="ch-taste-skill"></a>
+
+### Taste Skill
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Leonxlnx/taste-skill |
+| License | MIT |
+| Phiên bản đã đọc | `6c0b5c78f5d31776e2210305abaa210cdc0030bf` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, .github/workflows/check-skills.yml; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Skill chống giao diện "AI slop" cho trang web công ty: chia palette/font/layout, cổng kết thúc (Stop hook) và trình kiểm render ở 5 độ rộng màn hình. Repo đã tách còn 1 skill; các con số cũ về 13 skill không còn đúng. |
+| Nguồn | [README.md](https://github.com/Leonxlnx/taste-skill/blob/6c0b5c78f5d31776e2210305abaa210cdc0030bf/README.md) · [LICENSE](https://github.com/Leonxlnx/taste-skill/blob/6c0b5c78f5d31776e2210305abaa210cdc0030bf/LICENSE) · [check-skills.yml](https://github.com/Leonxlnx/taste-skill/blob/6c0b5c78f5d31776e2210305abaa210cdc0030bf/.github/workflows/check-skills.yml) |
+
+<a id="ch-threeui-community"></a>
+
+### ThreeUI Community
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/MengTo/threeui |
+| License | MIT (tài sản/font có file license riêng) |
+| Phiên bản đã đọc | `68802d5428071ada5c20db8094b1649e6bb770ed` (commit 2026-09-01) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, ASSET-LICENSES.md, package.json; chưa chạy upstream |
+| Bảo trì | low-activity (ít hoạt động) |
+| Nhận định | Catalog shader/Three.js bản cộng đồng (bỏ Pro/Beta) dạng open-core. Tài sản và font có license riêng, cần đọc trước khi dùng; Pro tải qua CLI có xác thực. |
+| Nguồn | [README.md](https://github.com/MengTo/threeui/blob/68802d5428071ada5c20db8094b1649e6bb770ed/README.md) · [LICENSE](https://github.com/MengTo/threeui/blob/68802d5428071ada5c20db8094b1649e6bb770ed/LICENSE) · [ASSET-LICENSES.md](https://github.com/MengTo/threeui/blob/68802d5428071ada5c20db8094b1649e6bb770ed/ASSET-LICENSES.md) · [package.json](https://github.com/MengTo/threeui/blob/68802d5428071ada5c20db8094b1649e6bb770ed/package.json) |
+
+<a id="ch-tkinter-designer"></a>
+
+### Tkinter-Designer
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ParthJadhav/Tkinter-Designer |
+| License | BSD-3-Clause |
+| Phiên bản đã đọc | `61ce0665ce68e255fd8bead3c14aac6c877bfa05` (commit 2026-10-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, .github/workflows/build.yml; chưa chạy upstream |
+| Bảo trì | low-activity (ít hoạt động) |
+| Nhận định | Sinh mã GUI Tkinter từ file Figma qua REST API. Phát triển gần như dừng, CI lỗi thời; chỉ đáng tham khảo ý tưởng design-to-code. |
+| Nguồn | [README.md](https://github.com/ParthJadhav/Tkinter-Designer/blob/61ce0665ce68e255fd8bead3c14aac6c877bfa05/README.md) · [LICENSE](https://github.com/ParthJadhav/Tkinter-Designer/blob/61ce0665ce68e255fd8bead3c14aac6c877bfa05/LICENSE) · [pyproject.toml](https://github.com/ParthJadhav/Tkinter-Designer/blob/61ce0665ce68e255fd8bead3c14aac6c877bfa05/pyproject.toml) · [build.yml](https://github.com/ParthJadhav/Tkinter-Designer/blob/61ce0665ce68e255fd8bead3c14aac6c877bfa05/.github/workflows/build.yml) |
+
+<a id="ch-tldraw"></a>
+
+### tldraw
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/tldraw/tldraw |
+| License | tldraw license |
+| Phiên bản đã đọc | `4aaf272ac8a245e4c875feb668cd9884c475a299` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | SDK canvas vô hạn cho React (shape/tool tùy biến, sync multiplayer, primitive cho LLM). Không phải OSS tự do: dùng production cần license key trả phí. |
+| Nguồn | [README.md](https://github.com/tldraw/tldraw/blob/4aaf272ac8a245e4c875feb668cd9884c475a299/README.md) · [LICENSE.md](https://github.com/tldraw/tldraw/blob/4aaf272ac8a245e4c875feb668cd9884c475a299/LICENSE.md) · [package.json](https://github.com/tldraw/tldraw/blob/4aaf272ac8a245e4c875feb668cd9884c475a299/package.json) |
+
+<a id="ch-transitions-dev"></a>
+
+### transitions.dev
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Jakubantalik/transitions.dev |
+| License | License riêng (cấm phân phối lại thư viện; tooling MIT) |
+| Phiên bản đã đọc | `add5b467b13be16664d10fd888330ce2f3288b07` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, package.json, refine/bin/cli.mjs; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Bộ transition CSS copy-paste kèm skill agent và luật tĩnh (agent/lib/rules.mjs). Rủi ro: `refine` tải và chạy script cài Cursor từ mạng; license cấm phân phối lại; mô hình trả phí Pro. |
+| Nguồn | [README.md](https://github.com/Jakubantalik/transitions.dev/blob/add5b467b13be16664d10fd888330ce2f3288b07/README.md) · [LICENSE](https://github.com/Jakubantalik/transitions.dev/blob/add5b467b13be16664d10fd888330ce2f3288b07/LICENSE) · [package.json](https://github.com/Jakubantalik/transitions.dev/blob/add5b467b13be16664d10fd888330ce2f3288b07/package.json) · [cli.mjs](https://github.com/Jakubantalik/transitions.dev/blob/add5b467b13be16664d10fd888330ce2f3288b07/refine/bin/cli.mjs) |
+
+<a id="ch-tremor"></a>
+
+### Tremor
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/tremorlabs/tremor |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ca4d588f47820ff3d514d37fa4ee08a4222dec11` (commit 2025-10-10) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | low-activity (ít hoạt động) |
+| Nhận định | Component chart/dashboard copy-paste trên Tailwind + Radix. Đứng từ 10/2025, còn React 18/Recharts 2; nên ưu tiên shadcn charts. |
+| Nguồn | [README.md](https://github.com/tremorlabs/tremor/blob/ca4d588f47820ff3d514d37fa4ee08a4222dec11/README.md) · [LICENSE](https://github.com/tremorlabs/tremor/blob/ca4d588f47820ff3d514d37fa4ee08a4222dec11/LICENSE) · [package.json](https://github.com/tremorlabs/tremor/blob/ca4d588f47820ff3d514d37fa4ee08a4222dec11/package.json) |
+
+<a id="ch-tremor-blocks"></a>
+
+### Tremor Blocks
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/tremorlabs/tremor-blocks |
+| License | MIT |
+| Phiên bản đã đọc | `b319e8d3d3678a4f60f4802f7e85bc1abc52d598` (commit 2025-01-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json; chưa chạy upstream |
+| Bảo trì | low-activity (ít hoạt động) |
+| Nhận định | Kho 323 block dashboard (KPI, bảng, billing, login…) trên Next.js + Tailwind. Ngừng cập nhật từ 1/2025; README không có tài liệu thực. |
+| Nguồn | [README.md](https://github.com/tremorlabs/tremor-blocks/blob/b319e8d3d3678a4f60f4802f7e85bc1abc52d598/README.md) · [LICENSE.md](https://github.com/tremorlabs/tremor-blocks/blob/b319e8d3d3678a4f60f4802f7e85bc1abc52d598/LICENSE.md) · [package.json](https://github.com/tremorlabs/tremor-blocks/blob/b319e8d3d3678a4f60f4802f7e85bc1abc52d598/package.json) |
+
+<a id="ch-tweakcn"></a>
+
+### tweakcn
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/jnsahaj/tweakcn |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `a3b47b37cba97dd637de517aab52c45ec0f83456` (commit 2026-09-03) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, package.json, lib/ai/providers.ts, lib/constants.ts; chưa chạy upstream |
+| Bảo trì | low-activity (ít hoạt động) |
+| Nhận định | Mã nguồn SaaS chỉnh theme shadcn/Tailwind trực quan; AI theme qua Gemini với 5 lượt miễn phí rồi trả phí. Không CI, ít commit gần đây. |
+| Nguồn | [README.md](https://github.com/jnsahaj/tweakcn/blob/a3b47b37cba97dd637de517aab52c45ec0f83456/README.md) · [LICENSE](https://github.com/jnsahaj/tweakcn/blob/a3b47b37cba97dd637de517aab52c45ec0f83456/LICENSE) · [package.json](https://github.com/jnsahaj/tweakcn/blob/a3b47b37cba97dd637de517aab52c45ec0f83456/package.json) · [providers.ts](https://github.com/jnsahaj/tweakcn/blob/a3b47b37cba97dd637de517aab52c45ec0f83456/lib/ai/providers.ts) · [constants.ts](https://github.com/jnsahaj/tweakcn/blob/a3b47b37cba97dd637de517aab52c45ec0f83456/lib/constants.ts) |
+
+<a id="ch-ui-kitten"></a>
+
+### UI Kitten
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/akveo/react-native-ui-kitten |
+| License | MIT |
+| Phiên bản đã đọc | `e73dce62f946e39c946ba4006dbd6c082d393161` (commit 2026-10-06) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.txt, package.json, src/components/package.json; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Thư viện UI React Native trên Eva Design System, 30+ component, theme runtime. Bản 6 tuyên bố chạy New Architecture **(chưa xác minh)**; phần lớn công sức từ một người duy trì. |
+| Nguồn | [README.md](https://github.com/akveo/react-native-ui-kitten/blob/e73dce62f946e39c946ba4006dbd6c082d393161/README.md) · [LICENSE.txt](https://github.com/akveo/react-native-ui-kitten/blob/e73dce62f946e39c946ba4006dbd6c082d393161/LICENSE.txt) · [package.json](https://github.com/akveo/react-native-ui-kitten/blob/e73dce62f946e39c946ba4006dbd6c082d393161/package.json) · [package.json](https://github.com/akveo/react-native-ui-kitten/blob/e73dce62f946e39c946ba4006dbd6c082d393161/src/components/package.json) |
+
+<a id="ch-ui-skills"></a>
+
+### ui-skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ibelick/ui-skills |
+| License | MIT |
+| Phiên bản đã đọc | `7ef0076fce1dfa39dd2bc43b7dc13add6eda8a41` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Registry skill UI/visual/motion cho agent, kèm CLI và MCP tới ui-skills.com. Phần lớn nội dung nằm ở dịch vụ web, repo chỉ chứa một phần skill. |
+| Nguồn | [README.md](https://github.com/ibelick/ui-skills/blob/7ef0076fce1dfa39dd2bc43b7dc13add6eda8a41/README.md) · [LICENSE](https://github.com/ibelick/ui-skills/blob/7ef0076fce1dfa39dd2bc43b7dc13add6eda8a41/LICENSE) · [package.json](https://github.com/ibelick/ui-skills/blob/7ef0076fce1dfa39dd2bc43b7dc13add6eda8a41/package.json) |
+
+<a id="ch-ui-ux-pro-max"></a>
+
+### UI UX Pro Max
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/nextlevelbuilder/ui-ux-pro-max-skill |
+| License | MIT |
+| Phiên bản đã đọc | `7e935ad920b390035e0e139bce555d091d14c70b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, src/ui-ux-pro-max/data/colors.csv, src/ui-ux-pro-max/data/typography.csv; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Kho CSV tra cứu + BM25 sinh design system theo loại sản phẩm, có CLI cho nhiều agent. Không đo render thật; số liệu tăng dần qua các bản. |
+| Nguồn | [README.md](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/7e935ad920b390035e0e139bce555d091d14c70b/README.md) · [LICENSE](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/7e935ad920b390035e0e139bce555d091d14c70b/LICENSE) · [colors.csv](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/7e935ad920b390035e0e139bce555d091d14c70b/src/ui-ux-pro-max/data/colors.csv) · [typography.csv](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/7e935ad920b390035e0e139bce555d091d14c70b/src/ui-ux-pro-max/data/typography.csv) |
+
+<a id="ch-uswds"></a>
+
+### USWDS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/uswds/uswds |
+| License | CC0-1.0 (phần GSA) + Apache-2.0 (Material Icons) + OFL-1.1 (font) (khác catalog cũ: None) |
+| Phiên bản đã đọc | `029d6d792241b3b4107a630590a27ee951a152b5` (commit 2026-10-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Design system chính phủ Mỹ: component HTML/Sass/JS kèm hướng dẫn. Chỉ nhánh 3.x được bảo trì; license nhiều phần cần ghi đúng khi tái dùng icon/font. |
+| Nguồn | [README.md](https://github.com/uswds/uswds/blob/029d6d792241b3b4107a630590a27ee951a152b5/README.md) · [LICENSE.md](https://github.com/uswds/uswds/blob/029d6d792241b3b4107a630590a27ee951a152b5/LICENSE.md) · [package.json](https://github.com/uswds/uswds/blob/029d6d792241b3b4107a630590a27ee951a152b5/package.json) |
+
+<a id="ch-ux-ui-agent-skills-xias"></a>
+
+### UX/UI Agent Skills (XIAS)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/plugin87/ux-ui-agent-skills |
+| License | MIT |
+| Phiên bản đã đọc | `d0ee2fa38edea5eba0b3d3a4a43f6b7e9ab923a6` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, CHANGELOG.md; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Doctrine thiết kế + token cho agent kèm 52 cổng đo trên trình duyệt thật và hook. Các con số 26 skill/2.144 design system là tuyên bố của tác giả **(chưa xác minh)**; nguồn gốc dữ liệu design system cần kiểm lại. |
+| Nguồn | [README.md](https://github.com/plugin87/ux-ui-agent-skills/blob/d0ee2fa38edea5eba0b3d3a4a43f6b7e9ab923a6/README.md) · [LICENSE](https://github.com/plugin87/ux-ui-agent-skills/blob/d0ee2fa38edea5eba0b3d3a4a43f6b7e9ab923a6/LICENSE) · [package.json](https://github.com/plugin87/ux-ui-agent-skills/blob/d0ee2fa38edea5eba0b3d3a4a43f6b7e9ab923a6/package.json) · [CHANGELOG.md](https://github.com/plugin87/ux-ui-agent-skills/blob/d0ee2fa38edea5eba0b3d3a4a43f6b7e9ab923a6/CHANGELOG.md) |
+
+<a id="ch-v0-app"></a>
+
+### v0.app
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://v0.app |
+| License | proprietary |
+| Phiên bản đã đọc | trang web đọc ngày 2026-11-23 (không có SHA) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc https://v0.app; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Dịch vụ đóng của Vercel sinh ứng dụng web full-stack từ prompt, mạnh ở scaffolding frontend. Phụ thuộc nền tảng Vercel, không tự host. |
+| Nguồn | [v0.app](https://v0.app) |
+
+<a id="ch-vercel-ai-sdk"></a>
+
+### Vercel AI SDK
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vercel/ai |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `fac1d6a5882903594278edef0d58859d25c80ae8` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, packages/ai/README.md, packages/ai/package.json; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Toolkit TypeScript trung lập nhà cung cấp cho ứng dụng/agent AI (React, Svelte, Vue…). Mặc định định tuyến qua Vercel AI Gateway; AI Elements là repo riêng. |
+| Nguồn | [README.md](https://github.com/vercel/ai/blob/fac1d6a5882903594278edef0d58859d25c80ae8/README.md) · [LICENSE](https://github.com/vercel/ai/blob/fac1d6a5882903594278edef0d58859d25c80ae8/LICENSE) · [README.md](https://github.com/vercel/ai/blob/fac1d6a5882903594278edef0d58859d25c80ae8/packages/ai/README.md) · [package.json](https://github.com/vercel/ai/blob/fac1d6a5882903594278edef0d58859d25c80ae8/packages/ai/package.json) |
+
+<a id="ch-vue-pure-admin"></a>
+
+### vue-pure-admin
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/pure-admin/vue-pure-admin |
+| License | MIT |
+| Phiên bản đã đọc | `fae75ad1cd52d11a7279931ef5bba2b80e363c7b` (commit 2026-10-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.en-US.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Mẫu admin Vue 3 đầy đủ, nhiều phụ thuộc nặng, không có test. Nên bắt đầu từ bản pure-admin-thin. |
+| Nguồn | [README.en-US.md](https://github.com/pure-admin/vue-pure-admin/blob/fae75ad1cd52d11a7279931ef5bba2b80e363c7b/README.en-US.md) · [LICENSE](https://github.com/pure-admin/vue-pure-admin/blob/fae75ad1cd52d11a7279931ef5bba2b80e363c7b/LICENSE) · [package.json](https://github.com/pure-admin/vue-pure-admin/blob/fae75ad1cd52d11a7279931ef5bba2b80e363c7b/package.json) |
+
+<a id="ch-vuetify"></a>
+
+### Vuetify
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vuetifyjs/vuetify |
+| License | MIT |
+| Phiên bản đã đọc | `e8963a2b544e5b99759e20f9cd43d9f957a78c1b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json, packages/vuetify/package.json; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Thư viện component Material cho Vue, nay ở 4.x. Vuetify 2 đã EOL, không còn vá bảo mật. |
+| Nguồn | [README.md](https://github.com/vuetifyjs/vuetify/blob/e8963a2b544e5b99759e20f9cd43d9f957a78c1b/README.md) · [LICENSE.md](https://github.com/vuetifyjs/vuetify/blob/e8963a2b544e5b99759e20f9cd43d9f957a78c1b/LICENSE.md) · [package.json](https://github.com/vuetifyjs/vuetify/blob/e8963a2b544e5b99759e20f9cd43d9f957a78c1b/package.json) · [package.json](https://github.com/vuetifyjs/vuetify/blob/e8963a2b544e5b99759e20f9cd43d9f957a78c1b/packages/vuetify/package.json) |
+
+<a id="ch-wcag-2-2"></a>
+
+### WCAG 2.2
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://www.w3.org/TR/WCAG22/ |
+| License | W3C Document License |
+| Phiên bản đã đọc | trang web đọc ngày 2026-11-23 (không có SHA) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc https://www.w3.org/TR/WCAG22/; chưa chạy upstream |
+| Bảo trì | active (đang hoạt động) |
+| Nhận định | Chuẩn tiếp cận W3C, thước đo cho axe-core, jsx-a11y. Bản TR hiện hành là Rec 12/12/2024. |
+| Nguồn | [www.w3.org/TR/WCAG22/](https://www.w3.org/TR/WCAG22/) |
