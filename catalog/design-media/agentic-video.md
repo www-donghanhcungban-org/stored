@@ -2,7 +2,7 @@
 
 # agentic-video — Thiết kế, giao diện & media
 
-[← Mục lục catalog](../README.md) · 51 hồ sơ.
+[← Mục lục catalog](../README.md) · 55 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -56,4 +56,8 @@
 | [OpenTimelineIO JS Bindings](../../19-agentic-video-media/README.md#n2-otio-js-bindings) | `JeanChristopheMorinPerso/OpenTimelineIO-JS-Bindings` | Apache-2.0 | 13 | đọc mã 2026-11-23 | 19 | Binding JS/WASM của OpenTimelineIO (embind) để web đọc ghi timeline và chuyển timecode, có test Jest và CI Release/Debug. |
 | [VietSub Studio](../../19-agentic-video-media/README.md#n2-vietsub-studio) | `qvinh8726/VietSub-Studio` | MIT | 3 | đọc mã 2026-11-23 | 19 | Ứng dụng Windows ba workspace (VietSub, Auto Edit, Publish Hub): OCR chữ cứng, dịch ra tiếng Việt, ghi phụ đề, TTS và xếp hàng đăng. |
 | [runway-studio-skills](../../19-agentic-video-media/README.md#xlsx-2026-11-23-runway-studio-skills) | `runwayml/runway-studio-skills` | MIT | 1 | đọc mã 2026-11-23 | 19 | Skill Runway API (video/ảnh/audio) bằng script Python `uv run`; |
+| [ClipsAI](../../19-agentic-video-media/README.md#n2-clipsai) | `ClipsAI/clipsai` | MIT | — | đọc mã 2026-11-24 | 19 | Thư viện Python cắt video dài thành clip theo nội dung transcript (WhisperX, nhúng câu bằng all-roberta-large-v1, TextTiling tìm ranh giới chủ đề) rồi đổi khung 16:9 san… |
+| [FunClip](../../19-agentic-video-media/README.md#n2-funclip) | `modelscope/FunClip` | MIT | — | đọc mã 2026-11-24 | 19 | FunClip là công cụ Gradio chạy cục bộ: nhận dạng giọng nói bằng FunASR (Paraformer/SeACo, tùy chọn Fun-ASR-Nano, SenseVoice, MOSS), người dùng dán đoạn chữ cần giữ hoặc… |
+| [OpenShorts](../../19-agentic-video-media/README.md#n2-openshorts) | `mutonby/openshorts` | MIT (lõi) + OpenShorts Commercial License cho thư mục cloud/ | — | đọc mã 2026-11-24 | 19 | Nền tảng tự host cắt video dài thành clip 9:16 (Gemini hoặc LLM tương thích OpenAI chọn khoảnh khắc, faster-whisper, reframe TRACK/GENERAL/SPLIT/SCREENCAST), kèm UGC AI… |
 | [Super Video Maker Skill](../../19-agentic-video-media/README.md#xlsx-2026-11-23-super-video-maker-skill) | `bomx/super-video-maker-skill` | — | — | đọc mã 2026-11-23 | 19 | Skill sản xuất video trọn gói của Distribb: avatar HeyGen, ảnh OpenAI, b-roll Seedance 2.5 qua fal.ai, ghi màn hình, Remotion/HyperFrames, FFmpeg, phụ đề Whisper, nhạc E… |
+| [ViralCutter](../../19-agentic-video-media/README.md#n2-viralcutter) | `RafaelGodoyEbert/ViralCutter` | GPL-3.0 | — | đọc mã 2026-11-24 | 19 | Công cụ mã nguồn mở thay thế Opus Clip: tải video YouTube bằng yt-dlp, phiên âm WhisperX cục bộ, nhờ LLM (Gemini API mặc định, g4f hoặc GGUF cục bộ qua llama-cpp) chọn đ… |
