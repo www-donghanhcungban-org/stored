@@ -3308,6 +3308,7 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Phiên bản đã đọc | `fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360` (commit 2026-11-23) |
 | Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, packages/core/package.json, .github/workflows/ci.yml; chưa chạy upstream |
 | Bảo trì | Hoạt động (commit 23/11/2026), Beta |
+| ★ (ngày) | 32.703 ★, 2.567 fork (2026-11-24, nguồn: GitHub search API). Đường tăng: 13,8k (31/10) → 27,2k (13/11, theo ảnh thẻ star-history, **chưa xác minh độc lập**) → 32,451 (23/11); gấp đôi trong khoảng 2 tuần, chưa rõ nguyên nhân |
 | Nhận định | Design system React 19 + StyleX của Meta, đang Beta; `@astryx/core` hiện 0.7.18. README tự nhận "150+ component" và dùng cho 13.000+ app nội bộ **(chưa xác minh)**; có CLI, plugin agent (`.claude-plugin`, `plugins/`). |
 | Nguồn | [README](https://github.com/meta/astryx/blob/fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360/README.md) · [LICENSE](https://github.com/meta/astryx/blob/fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360/LICENSE) · [package.json](https://github.com/meta/astryx/blob/fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360/package.json) · [packages/core/package.json](https://github.com/meta/astryx/blob/fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360/packages/core/package.json) · [.github/workflows/ci.yml](https://github.com/meta/astryx/blob/fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360/.github/workflows/ci.yml) |
 
