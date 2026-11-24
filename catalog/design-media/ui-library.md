@@ -47,7 +47,7 @@
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [Ant Design](../../06-ui-ux-design/README.md#ch-ant-design) | `ant-design/ant-design` | MIT | 100.357 | đọc tài liệu 2026-11-23 | 06 | Component đầy đủ cho ứng dụng doanh nghiệp; |
-| [Astryx (Meta)](../../06-ui-ux-design/README.md#ch-astryx-meta) | `meta/astryx` | MIT | 32.451 | đọc tài liệu 2026-11-23 | 06 | Design system React 19 + StyleX, Beta 0.7.x; |
+| [Astryx (Meta)](../../06-ui-ux-design/README.md#ch-astryx-meta) | `meta/astryx` | MIT | 32.703 | đọc tài liệu 2026-11-23 | 06 | Design system React 19 + StyleX, Beta 0.7.x; |
 | [Angular Components](../../06-ui-ux-design/README.md#anhkysuai-angular-components) | `angular/components` | MIT | 25.049 | đọc tài liệu 2026-11-23 | 06 | Bộ Angular Material, CDK, ARIA và wrapper API Google. |
 | [Blueprint](../../06-ui-ux-design/README.md#anhkysuai-palantir-blueprint) | `palantir/blueprint` | Apache-2.0 | 22.228 | đọc tài liệu 2026-11-23 | 06 | Bộ component React hướng tới ứng dụng desktop trên trình duyệt với giao diện nhiều dữ liệu. |
 | [Fluent UI](../../06-ui-ux-design/README.md#ch-fluent-ui) | `microsoft/fluentui` | MIT | 20.429 | đọc tài liệu 2026-11-23 | 06 | Fluent 2 của Microsoft; |
