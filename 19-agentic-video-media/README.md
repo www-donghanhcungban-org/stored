@@ -1992,3 +1992,230 @@ Hồ sơ lập từ ảnh người dùng gửi; đọc mã tại commit cố đ�
 | Giới hạn và rủi ro | (1) Kịch bản, ảnh tham chiếu và prompt được gửi tới nhà cung cấp bên thứ ba, trong đó có dịch vụ đặt tại Trung Quốc (Volcengine); không dùng với nội dung nội bộ hoặc nhạy cảm. (2) Cổng xác nhận chặn việc gọi API trả phí, còn các cảnh báo trong `_preview_warnings` chỉ là nhắc nhở ("soft gate"), không chặn; không suy ra toàn bộ quy trình đều bị chặn. (3) Cài bằng `npx skills add zenstory-ai/drama-skills -y -g` qua một trình cài đặt bên thứ ba, chưa đọc trình đó. (4) Các số liệu của dự án ("hơn một nghìn dự án", "gần 80.000 dòng GUI") chỉ là tuyên bố trong README. (5) Chưa đọc phần dựng phim (Remotion) và render, nên chưa biết nó tải gì lúc chạy. |
 | So với | awesome-short-drama-skills (danh sách tuyển chọn, chưa đọc), short-drama-skills của YvonneMovingon (chưa đọc) |
 | Nguồn | [LICENSE](https://github.com/zenstory-ai/drama-skills/blob/7fed9dfcd33c5a3134ff1b51709dd826488b5aab/LICENSE) · [README_EN.md](https://github.com/zenstory-ai/drama-skills/blob/7fed9dfcd33c5a3134ff1b51709dd826488b5aab/README_EN.md) · [pyproject.toml](https://github.com/zenstory-ai/drama-skills/blob/7fed9dfcd33c5a3134ff1b51709dd826488b5aab/pyproject.toml) · [skills/short-drama-produce/scripts/production_tool.py](https://github.com/zenstory-ai/drama-skills/blob/7fed9dfcd33c5a3134ff1b51709dd826488b5aab/skills/short-drama-produce/scripts/production_tool.py) · [skills/short-drama-produce/scripts/provider_adapters.py](https://github.com/zenstory-ai/drama-skills/blob/7fed9dfcd33c5a3134ff1b51709dd826488b5aab/skills/short-drama-produce/scripts/provider_adapters.py) · [skills/short-drama/scripts/dashboard_server.py](https://github.com/zenstory-ai/drama-skills/blob/7fed9dfcd33c5a3134ff1b51709dd826488b5aab/skills/short-drama/scripts/dashboard_server.py) · [metadata GitHub](https://api.github.com/repos/zenstory-ai/drama-skills) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-ebur128-rust"></a>
+
+### ebur128 (Rust)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/sdroege/ebur128 |
+| License | MIT |
+| Phiên bản đã đọc | `241d390ce4d64036f03d8a242b59c1c16689d74f` (commit 2026-10-27) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, Cargo.toml, CHANGELOG.md, tests/reference_tests.rs, src/ebur128.rs, .github/workflows/ebur128.yml; chưa chạy upstream |
+| Khoảng trống lấp | Cổng chất lượng video tất định (loudness, VMAF, timecode): đo loudness EBU R128 làm cổng tất định trong pipeline |
+| Cơ chế đáng học | • Bản Rust của libebur128: chế độ M, S, I, LRA, sample peak và true peak chọn bằng cờ `Mode` (`src/ebur128.rs`), API `loudness_global`, `loudness_range`, `true_peak`.<br>• Test tham chiếu (`tests/reference_tests.rs`) chạy các file thuộc bộ EBU Loudness Test Set (TECH 3341/3342) và so với giá trị chuẩn với dung sai tuyệt đối 0,1 LU cho loudness toàn cục.<br>• Có `capi` tương thích ABI libebur128 qua cargo-c và bản test C kiểm với valgrind (`capi-test/`). |
+| Tiêu chí và cách kiểm | CI (`ebur128.yml`): rustfmt, clippy với `-D warnings`, test tham chiếu EBU trên stable, beta, nightly (tải bộ mẫu từ bản sao GitHub, kiểm SHA-256 trước khi giải nén), test so với libebur128 bản C và quickcheck, build MSRV Rust 1.60, valgrind cho C API. Ngưỡng đạt là dung sai EBU của bộ test (0,1 LU cho loudness toàn cục); CHANGELOG 0.1.11 ghi đã sửa chênh lệch cuối bit giữa nền tảng không SSE2 và x86, tức tác giả quan tâm tới tính tái lập. |
+| Giới hạn và rủi ro | MIT, tác giả Jan Kokemüller và Sebastian Dröge. Thư viện đo chứ không phải CLI: muốn làm cổng phải tự viết lớp bọc đọc audio, đặt ngưỡng (ví dụ -23 LUFS) và xử lý lỗi. Nhận đầu vào dạng mẫu chưa giải mã, không đọc container video. Workflow dùng action cũ (`actions-rs/*`, `actions/checkout@v2`) không ghim SHA. Mô tả trinh sát đúng; số sao 135 chưa xác minh. Không telemetry (thư viện thuần tính toán). |
+| So với | libebur128 (bản C gốc, cùng chức năng), vmaf, ffmpeg-quality-metrics (cổng chất lượng hình, bổ sung cho âm thanh) |
+| Nguồn | [README.md](https://github.com/sdroege/ebur128/blob/241d390ce4d64036f03d8a242b59c1c16689d74f/README.md) · [LICENSE](https://github.com/sdroege/ebur128/blob/241d390ce4d64036f03d8a242b59c1c16689d74f/LICENSE) · [Cargo.toml](https://github.com/sdroege/ebur128/blob/241d390ce4d64036f03d8a242b59c1c16689d74f/Cargo.toml) · [CHANGELOG.md](https://github.com/sdroege/ebur128/blob/241d390ce4d64036f03d8a242b59c1c16689d74f/CHANGELOG.md) · [reference_tests.rs](https://github.com/sdroege/ebur128/blob/241d390ce4d64036f03d8a242b59c1c16689d74f/tests/reference_tests.rs) · [ebur128.rs](https://github.com/sdroege/ebur128/blob/241d390ce4d64036f03d8a242b59c1c16689d74f/src/ebur128.rs) · [ebur128.yml](https://github.com/sdroege/ebur128/blob/241d390ce4d64036f03d8a242b59c1c16689d74f/.github/workflows/ebur128.yml) |
+
+<a id="n2-video-quality-metrics-vqm"></a>
+
+### Video Quality Metrics (VQM)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/CrypticSignal/video-quality-metrics |
+| License | MIT |
+| Phiên bản đã đọc | `acbd775b94acd125afd97d1de708743f0315bfe4` (commit 2026-11-08) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, main.py, ffmpeg_tasks.py, metrics.py, tests.py; chưa chạy upstream |
+| Khoảng trống lấp | Cổng chất lượng video tất định: so VMAF, PSNR, SSIM giữa các giá trị tham số encoder |
+| Cơ chế đáng học | - ffmpeg_tasks.py dựng một filtergraph FFmpeg duy nhất: đặt lại PTS, ép khung hình tham chiếu và bản nén cùng độ phân giải (scale bicubic) rồi gọi bộ lọc libvmaf kèm PSNR và float_ssim; hai đầu vào dùng cùng tùy chọn tốc độ khung để ghép khung theo thứ tự.<br>- main.py có reason_to_recalculate: chỉ dùng lại file điểm JSON đã lưu khi file còn mới hơn bản transcode và settings lưu kèm trùng settings hiện tại.<br>- metrics.py đọc log JSON per-frame của libvmaf, tính trung bình, xuất report.html một file có đồ thị. |
+| Tiêu chí và cách kiểm | Không có ngưỡng đạt/trượt hay mã thoát theo điểm trong các file đã đọc: công cụ báo cáo và tô xanh giá trị cao nhất, người dùng tự quyết (chưa xác minh toàn mã). Kiểm bằng máy: tests.py (unittest, gồm test đầu cuối chạy main.py trên ForBiggerFun.mp4) và CI dùng ruff format/check; CI cài FFmpeg có libvmaf và kiểm bộ lọc tồn tại, nếu thiếu thì test e2e bị bỏ qua chứ không đỏ khi chạy local. |
+| Giới hạn và rủi ro | License MIT. Không thấy telemetry trong file đã đọc (chưa xác minh toàn mã). Cần FFmpeg có libvmaf; CI tải bản BtbN latest không ghim phiên bản. PSNR và SSIM chỉ trên kênh Y; mô hình VMAF dành cho SDR (có cảnh báo khi HDR). Bản VMAF 4K và HD dùng file model kèm trong repo. |
+| So với | VMAF, ffmpeg-quality-metrics |
+| Nguồn | [README.md](https://github.com/CrypticSignal/video-quality-metrics/blob/acbd775b94acd125afd97d1de708743f0315bfe4/README.md) · [LICENSE](https://github.com/CrypticSignal/video-quality-metrics/blob/acbd775b94acd125afd97d1de708743f0315bfe4/LICENSE) · [main.py](https://github.com/CrypticSignal/video-quality-metrics/blob/acbd775b94acd125afd97d1de708743f0315bfe4/main.py) · [ffmpeg_tasks.py](https://github.com/CrypticSignal/video-quality-metrics/blob/acbd775b94acd125afd97d1de708743f0315bfe4/ffmpeg_tasks.py) · [metrics.py](https://github.com/CrypticSignal/video-quality-metrics/blob/acbd775b94acd125afd97d1de708743f0315bfe4/metrics.py) · [tests.py](https://github.com/CrypticSignal/video-quality-metrics/blob/acbd775b94acd125afd97d1de708743f0315bfe4/tests.py) · [requirements.txt](https://github.com/CrypticSignal/video-quality-metrics/blob/acbd775b94acd125afd97d1de708743f0315bfe4/requirements.txt) · [tests.yml](https://github.com/CrypticSignal/video-quality-metrics/blob/acbd775b94acd125afd97d1de708743f0315bfe4/.github/workflows/tests.yml) |
+
+<a id="n2-vmafx"></a>
+
+### VMAFx
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/vidiko/vmafx |
+| License | EUPL-1.2 (mã do fork viết) + BSD-2-Clause-Patent (mã kế thừa Netflix) + giấy phép riêng từng file |
+| Phiên bản đã đọc | `6da90915748d2d4e4cf5881b33635edaea285a13` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, NOTICE, REUSE.toml, docs/licensing.md, AGENTS.md; chưa chạy upstream |
+| Khoảng trống lấp | Cổng chất lượng video tất định: VMAF kèm hợp đồng tương đương số học giữa CPU, GPU và SIMD |
+| Cơ chế đáng học | - Fork của Netflix/vmaf thêm backend CUDA, SYCL, HIP, Metal và đường SIMD; README coi ba cặp tham chiếu Netflix là cổng CI bắt buộc.<br>- scripts/ci/cross_backend_parity_gate.py chạy binary vmaf một lần cho mỗi backend, so metric từng khung với dung sai riêng từng đặc trưng (FEATURE_TOLERANCE, mặc định 5e-5 tức places=4; cặp song sinh chính xác là EXACT_TWINS; FP16 là 1e-2), xuất JSON và Markdown, mã thoát 0/1/2.<br>- Workflow tests-and-quality-gates.yml có job Netflix CPU Golden chạy pytest trên ca vmaf_runner và có bước kế hoạch tác động CI (plan-ci-impact.py) để bỏ qua cổng nặng kèm lý do ghi lại.<br>- mcp-server/vmaf-mcp có tool-contract.json liệt kê công cụ MCP (score, compare_models, describe_worst_frames). |
+| Tiêu chí và cách kiểm | Dung sai theo đặc trưng đặt trong mã và mỗi lần siết phải qua ADR; thông điệp trong file nói rõ không sửa assertion vàng của Netflix. Kiểm bằng máy: golden pytest, cổng parity theo ma trận (feature, cặp backend), 55 workflow (sanitizer, fuzz, scorecard, REUSE, supply-chain...). Tuyên bố điểm khớp từng byte với Netflix chưa được tự chạy lại (chưa xác minh). |
+| Giới hạn và rủi ro | Mô tả của trinh sát (VMAF tăng tốc GPU/SIMD, còn rất mới) đúng một phần: đây là fork có 1472 file ADR và harness agent dày (AGENTS.md, .claude, .agents), nhiều phần do agent sinh, cần kiểm độc lập. License lẫn: mã mới EUPL-1.2 (copyleft, nghĩa vụ cung cấp mã nguồn khi phân phối libvmaf), mã Netflix giữ BSD-2-Clause-Patent; docs/licensing.md nói bản libvmaf phân phối liên kết cả hai nên chịu EUPL-1.2; muốn giấy phép dễ dãi thì dùng Netflix/vmaf gốc. Bản fork có 7 sao (số của trinh sát), phát hành v1.0.0-rc.3. Chưa đọc telemetry của máy chủ MCP/K8s (chưa xác minh). |
+| So với | VMAF, ffmpeg-quality-metrics |
+| Nguồn | [README.md](https://github.com/vidiko/vmafx/blob/6da90915748d2d4e4cf5881b33635edaea285a13/README.md) · [LICENSE](https://github.com/vidiko/vmafx/blob/6da90915748d2d4e4cf5881b33635edaea285a13/LICENSE) · [NOTICE](https://github.com/vidiko/vmafx/blob/6da90915748d2d4e4cf5881b33635edaea285a13/NOTICE) · [REUSE.toml](https://github.com/vidiko/vmafx/blob/6da90915748d2d4e4cf5881b33635edaea285a13/REUSE.toml) · [licensing.md](https://github.com/vidiko/vmafx/blob/6da90915748d2d4e4cf5881b33635edaea285a13/docs/licensing.md) · [AGENTS.md](https://github.com/vidiko/vmafx/blob/6da90915748d2d4e4cf5881b33635edaea285a13/AGENTS.md) · [tests-and-quality-gates.yml](https://github.com/vidiko/vmafx/blob/6da90915748d2d4e4cf5881b33635edaea285a13/.github/workflows/tests-and-quality-gates.yml) · [cross_backend_parity_gate.py](https://github.com/vidiko/vmafx/blob/6da90915748d2d4e4cf5881b33635edaea285a13/scripts/ci/cross_backend_parity_gate.py) · [tool-contract.json](https://github.com/vidiko/vmafx/blob/6da90915748d2d4e4cf5881b33635edaea285a13/mcp-server/vmaf-mcp/tool-contract.json) |
+
+<a id="n2-otio-aaf-adapter"></a>
+
+### OpenTimelineIO AAF Adapter
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/OpenTimelineIO/otio-aaf-adapter |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `47886982d67c00573ad4a565ae51ad0e73f4caff` (commit 2026-09-21) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE.txt, pyproject.toml, .github/workflows/ci.yaml, src/otio_aaf_adapter/plugin_manifest.json, src/otio_aaf_adapter/adapters/advanced_authoring_format.py; chưa chạy upstream |
+| Khoảng trống lấp | Trao đổi timeline và timecode (OpenTimelineIO) với Avid qua định dạng AAF |
+| Cơ chế đáng học | - Plugin OTIO tên AAF đăng ký bằng plugin_manifest.json và entry point opentimelineio.plugins; đọc/ghi qua pyaaf2 trong advanced_authoring_format.py (hơn 2000 dòng) và aaf_writer.py.<br>- Timecode: _get_mob_start_tc lấy TC bắt đầu từ track timecode của mob rồi gán vào global_start_time; test có mẫu 29,97 fps và drop-frame (2997fps-DFTC.aaf, kỳ vọng 05:00:00;00 ở 30000/1001).<br>- Bốn hook (otio_aaf_pre/post_read/write_transcribe) trong hooks.py cho phép nhúng xử lý riêng quanh quá trình chuyển đổi. |
+| Tiêu chí và cách kiểm | tests/test_aaf_adapter.py (khoảng 70 test, mẫu AAF thật trong tests/sample_data); CI chạy flake8, dựng wheel/sdist, rồi ma trận ubuntu, windows-2022, macos-15 với OTIO main và 0.18.1 và Python 3.9 đến 3.12 (Codecov chỉ một ô). Bảng tính năng trong README tự khai: chưa có hiệu ứng, tốc độ phức tạp, CDL, chuỗi ảnh (chưa xác minh bằng chạy). |
+| Giới hạn và rủi ro | License Apache-2.0 (LICENSE.txt; README trỏ nhầm LICENSE.md). Commit gần nhất trên nhánh mặc định là 2026-09-21, ngày push 2026-10-22 của trinh sát thuộc nhánh khác. Đang tách khỏi OTIO lõi nên API có thể đổi; CI cài OTIO main từ git. Classifier liệt kê Python 3.7 và 3.8 dù requires-python lớn hơn 3.9. Phụ thuộc pyaaf2 do bên thứ ba bảo trì. |
+| So với | OpenTimelineIO |
+| Nguồn | [README.md](https://github.com/OpenTimelineIO/otio-aaf-adapter/blob/47886982d67c00573ad4a565ae51ad0e73f4caff/README.md) · [LICENSE.txt](https://github.com/OpenTimelineIO/otio-aaf-adapter/blob/47886982d67c00573ad4a565ae51ad0e73f4caff/LICENSE.txt) · [pyproject.toml](https://github.com/OpenTimelineIO/otio-aaf-adapter/blob/47886982d67c00573ad4a565ae51ad0e73f4caff/pyproject.toml) · [ci.yaml](https://github.com/OpenTimelineIO/otio-aaf-adapter/blob/47886982d67c00573ad4a565ae51ad0e73f4caff/.github/workflows/ci.yaml) · [plugin_manifest.json](https://github.com/OpenTimelineIO/otio-aaf-adapter/blob/47886982d67c00573ad4a565ae51ad0e73f4caff/src/otio_aaf_adapter/plugin_manifest.json) · [advanced_authoring_format.py](https://github.com/OpenTimelineIO/otio-aaf-adapter/blob/47886982d67c00573ad4a565ae51ad0e73f4caff/src/otio_aaf_adapter/adapters/advanced_authoring_format.py) · [hooks.py](https://github.com/OpenTimelineIO/otio-aaf-adapter/blob/47886982d67c00573ad4a565ae51ad0e73f4caff/src/otio_aaf_adapter/adapters/aaf_adapter/hooks.py) · [test_aaf_adapter.py](https://github.com/OpenTimelineIO/otio-aaf-adapter/blob/47886982d67c00573ad4a565ae51ad0e73f4caff/tests/test_aaf_adapter.py) |
+
+<a id="n2-otio-js-bindings"></a>
+
+### OpenTimelineIO JS Bindings
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/JeanChristopheMorinPerso/OpenTimelineIO-JS-Bindings |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `6f222d68ca1844c6b2598ec21589a07ece5bf915` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, package.json, .gitmodules, src/CMakeLists.txt, src/opentime/bindings.cpp; chưa chạy upstream |
+| Khoảng trống lấp | Trao đổi timeline và timecode (OpenTimelineIO) cho JavaScript và trình duyệt |
+| Cơ chế đáng học | - Biên dịch lõi C++ của OpenTimelineIO (submodule deps/OpenTimelineIO) sang WebAssembly bằng Emscripten/embind, xuất module MODULARIZE (src/CMakeLists.txt); src/opentime/bindings.cpp mở RationalTime, to_timecode, to_nearest_timecode.<br>- Vòng đời đối tượng chia sẻ giữa JS và retainer của OTIO: người dùng phải gọi delete() trên mọi handle trả về.<br>- Test Jest (tests/rationaltime.test.js và tests/opentimelineio) chạy trên bản build trong install/; README ghi test hồi quy Marker.2 chạy dạng expected failure. |
+| Tiêu chí và cách kiểm | CI tests.yaml build Release và Debug bằng emscripten, cài và chạy pnpm test, kèm job coverage C++. Đo bằng máy nhưng chỉ các API đã bind; mức bao phủ so với OTIO Python nằm ở scripts/api-coverage (chưa đọc). |
+| Giới hạn và rủi ro | Mô tả trinh sát hơi sai: repo nằm dưới tài khoản cá nhân của một maintainer, không thuộc tổ chức OpenTimelineIO, và README tự nói còn đang làm dở (work in progress). package.json ghi version 0.15.0 trong khi submodule ghim OTIO main 0.19 phát triển; chưa thấy bằng chứng phát hành npm (chưa xác minh). Clone nông không nạp submodule nên mã C++ upstream chưa đọc. Phải tự quản lý bộ nhớ bằng delete(), dễ rò rỉ. License Apache-2.0. |
+| So với | OpenTimelineIO, Mediabunny |
+| Nguồn | [README.md](https://github.com/JeanChristopheMorinPerso/OpenTimelineIO-JS-Bindings/blob/6f222d68ca1844c6b2598ec21589a07ece5bf915/README.md) · [LICENSE](https://github.com/JeanChristopheMorinPerso/OpenTimelineIO-JS-Bindings/blob/6f222d68ca1844c6b2598ec21589a07ece5bf915/LICENSE) · [package.json](https://github.com/JeanChristopheMorinPerso/OpenTimelineIO-JS-Bindings/blob/6f222d68ca1844c6b2598ec21589a07ece5bf915/package.json) · [.gitmodules](https://github.com/JeanChristopheMorinPerso/OpenTimelineIO-JS-Bindings/blob/6f222d68ca1844c6b2598ec21589a07ece5bf915/.gitmodules) · [CMakeLists.txt](https://github.com/JeanChristopheMorinPerso/OpenTimelineIO-JS-Bindings/blob/6f222d68ca1844c6b2598ec21589a07ece5bf915/src/CMakeLists.txt) · [bindings.cpp](https://github.com/JeanChristopheMorinPerso/OpenTimelineIO-JS-Bindings/blob/6f222d68ca1844c6b2598ec21589a07ece5bf915/src/opentime/bindings.cpp) · [rationaltime.test.js](https://github.com/JeanChristopheMorinPerso/OpenTimelineIO-JS-Bindings/blob/6f222d68ca1844c6b2598ec21589a07ece5bf915/tests/rationaltime.test.js) · [tests.yaml](https://github.com/JeanChristopheMorinPerso/OpenTimelineIO-JS-Bindings/blob/6f222d68ca1844c6b2598ec21589a07ece5bf915/.github/workflows/tests.yaml) |
+
+<a id="n2-timecode-agent"></a>
+
+### timecode:agent (video-agent)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/mupozg823/timecode-agent |
+| License | MIT |
+| Phiên bản đã đọc | `02f7c5a9ce1c09b4ba49177d2a4dc8e9ee1bbc03` (commit 2026-08-07) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, SECURITY.md, CONTRIBUTING.md, pyproject.toml, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Bằng chứng video có dấu thời gian cho coding agent, xuất EDL, FCPXML, OTIO |
+| Cơ chế đáng học | - Hai sổ ghi nối đuôi tách biệt: checkpoints.jsonl (khẳng định hiểu video) và sequences.jsonl (quyết định dựng); docs/ARCHITECTURE.md phân P0 đo vật lý, P1 nhận thức học máy, P2 khẳng định ngữ nghĩa, P3 quyết định dựng.<br>- export.py xuất edl, otio, fcpxml, xmeml, srt, md; với edl/otio/fcpxml có Receipt sidecar (schema tca-receipt-v1, artifact_sha256 và revision bằng chứng, không dấu thời gian nên tất định).<br>- decoded_timing.py chặn xuất NLE khi video biến thiên fps hoặc không đều cadence giải mã (_require_cfr_handoff), chỉ cho xuất văn bản.<br>- benchmarks/run_bench.py biến phần tất định thành cổng hồi quy trên ba video Blender CC-BY. |
+| Tiêu chí và cách kiểm | Đã thấy: validate_export_request từ chối tổ hợp tùy chọn sai; benchmarks/run_bench.py đối chiếu golden-public.json. Tuyên bố README về cổng nhịp beat (p90 lệch nhỏ hơn hoặc bằng 40 ms) chưa mở boundary_eval.py để kiểm (chưa xác minh). |
+| Giới hạn và rủi ro | Phát hiện chính: README có huy hiệu CI test, typecheck, package-smoke và CONTRIBUTING.md bảo chạy uv run pytest, nhưng cây git không có thư mục tests nào (0 file) và ci.yml chỉ có job package-smoke (dựng wheel, chạy va --version); tuyên bố có test/typecheck là quá mức ở commit này. Một người bảo trì, alpha; yêu cầu Python 3.12 đúng; tải mô hình whisper/sherpa lần đầu và gọi yt-dlp tới mạng khi ingest URL (có tùy chọn cookies trình duyệt, cần thận trọng). License MIT. |
+| So với | video-use, claude-video (/watch), OpenTimelineIO |
+| Nguồn | [README.md](https://github.com/mupozg823/timecode-agent/blob/02f7c5a9ce1c09b4ba49177d2a4dc8e9ee1bbc03/README.md) · [LICENSE](https://github.com/mupozg823/timecode-agent/blob/02f7c5a9ce1c09b4ba49177d2a4dc8e9ee1bbc03/LICENSE) · [SECURITY.md](https://github.com/mupozg823/timecode-agent/blob/02f7c5a9ce1c09b4ba49177d2a4dc8e9ee1bbc03/SECURITY.md) · [CONTRIBUTING.md](https://github.com/mupozg823/timecode-agent/blob/02f7c5a9ce1c09b4ba49177d2a4dc8e9ee1bbc03/CONTRIBUTING.md) · [pyproject.toml](https://github.com/mupozg823/timecode-agent/blob/02f7c5a9ce1c09b4ba49177d2a4dc8e9ee1bbc03/pyproject.toml) · [ci.yml](https://github.com/mupozg823/timecode-agent/blob/02f7c5a9ce1c09b4ba49177d2a4dc8e9ee1bbc03/.github/workflows/ci.yml) · [ARCHITECTURE.md](https://github.com/mupozg823/timecode-agent/blob/02f7c5a9ce1c09b4ba49177d2a4dc8e9ee1bbc03/docs/ARCHITECTURE.md) · [export.py](https://github.com/mupozg823/timecode-agent/blob/02f7c5a9ce1c09b4ba49177d2a4dc8e9ee1bbc03/src/video_agent/export.py) · [decoded_timing.py](https://github.com/mupozg823/timecode-agent/blob/02f7c5a9ce1c09b4ba49177d2a4dc8e9ee1bbc03/src/video_agent/decoded_timing.py) · [run_bench.py](https://github.com/mupozg823/timecode-agent/blob/02f7c5a9ce1c09b4ba49177d2a4dc8e9ee1bbc03/benchmarks/run_bench.py) |
+
+<a id="n2-vietsub-studio"></a>
+
+### VietSub Studio
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/qvinh8726/VietSub-Studio |
+| License | MIT |
+| Phiên bản đã đọc | `d9a8367d88bf9a7a82e5a4cfc30771260e171477` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, requirements.txt, app.py, vietsub/editor/subtitles.py, vietsub/editor/compat_signer.py; chưa chạy upstream |
+| Khoảng trống lấp | Phụ đề và dịch phụ đề tiếng Việt: OCR chữ cứng trong video, dịch, dựng lại |
+| Cơ chế đáng học | - app.py (hơn 8000 dòng) điều phối VideOCR cho OCR theo vùng crop, hợp nhất các khối SRT gần nhau cùng chữ (write_merged_videocr_srt) và cắt đoạn dài (45 phút) để OCR/dịch từng khúc.<br>- Dịch qua Gemini Notebook, DeepSeek, OpenRouter hoặc API tương thích OpenAI; từ chối SRT thiếu, dính khối hoặc sai cấu trúc, khôi phục số thứ tự và timecode từ bản gốc.<br>- vietsub/editor/subtitles.py đổi SRT sang ASS an toàn (không thực thi định dạng HTML) để libass ghi cứng vào video. |
+| Tiêu chí và cách kiểm | Tests: hơn 30 file unittest và test frontend Node; CI Windows chạy py_compile, unittest, kiểm cú pháp JS, rồi job desktop-ui chạy các script QA Playwright theo từng giai đoạn. Không có chỉ số chất lượng bản dịch: README nói rõ kiểm cấu trúc SRT không thay việc đọc lại nội dung. |
+| Giới hạn và rủi ro | Mô tả trinh sát (quy trình OCR phụ đề và dịch, chỉ làm mẫu) thiếu phạm vi: đây là bộ công cụ ba workspace chỉ cho Windows, còn tải video từ Douyin, Kuaishou, Xiaohongshu, TikTok, tạo TTS và tự đăng lên nền tảng (Publish Hub), dính điều khoản từng nền tảng và quyền nội dung. compat_signer.py tự khai là cài lại độc lập một ứng viên thuật toán ký từ repo bên thứ ba cho TTS CapCut, không chắc là thuật toán chính thức, nên rủi ro điều khoản và gãy bất kỳ lúc nào. Văn bản SRT, nội dung TTS đi tới nhà cung cấp bên ngoài; khóa API dùng DPAPI. License MIT; 3 sao, một tác giả. |
+| So với | VideoCaptioner, Pixelle-Video |
+| Nguồn | [README.md](https://github.com/qvinh8726/VietSub-Studio/blob/d9a8367d88bf9a7a82e5a4cfc30771260e171477/README.md) · [LICENSE](https://github.com/qvinh8726/VietSub-Studio/blob/d9a8367d88bf9a7a82e5a4cfc30771260e171477/LICENSE) · [requirements.txt](https://github.com/qvinh8726/VietSub-Studio/blob/d9a8367d88bf9a7a82e5a4cfc30771260e171477/requirements.txt) · [app.py](https://github.com/qvinh8726/VietSub-Studio/blob/d9a8367d88bf9a7a82e5a4cfc30771260e171477/app.py) · [subtitles.py](https://github.com/qvinh8726/VietSub-Studio/blob/d9a8367d88bf9a7a82e5a4cfc30771260e171477/vietsub/editor/subtitles.py) · [compat_signer.py](https://github.com/qvinh8726/VietSub-Studio/blob/d9a8367d88bf9a7a82e5a4cfc30771260e171477/vietsub/editor/compat_signer.py) · [tests.yml](https://github.com/qvinh8726/VietSub-Studio/blob/d9a8367d88bf9a7a82e5a4cfc30771260e171477/.github/workflows/tests.yml) |
+
+<a id="n2-ltx-2"></a>
+
+### LTX-2
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Lightricks/LTX-2 |
+| License | Apache-2.0 cho mã; trọng số theo giấy phép riêng LTX-2 Community License (LTX-2.3) và LTX-2.x Community License (LTX-2.5) |
+| Phiên bản đã đọc | `daa6b16fc7f0f1628f2c9e36a303e3312b333cc6` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, LICENSE-2_x, CHANGELOG.md, `marking/__init__.py`, t2v_lora.yaml, wandb_logger.py, captioning.py; chưa chạy upstream |
+| Khoảng trống lấp | Vận hành pipeline video cục bộ: chạy mô hình mở, huấn luyện LoRA, quản lý checkpoint và VRAM |
+| Cơ chế đáng học | - Ghép gói pipeline theo tác vụ (`packages/ltx-pipelines/src/ltx_pipelines/`: `distilled.py`, `ti2vid_two_stages_hq.py`, `retake.py`, `ic_lora.py`, `dubit.py`...) có cờ `--quantization fp8-cast --offload` khi thiếu VRAM.<br>- Trainer cấu hình bằng YAML (`ltx-trainer/configs/t2v_lora.yaml`): chiến lược `flexible`, LoRA rank 32, tiền xử lý latent/điều kiện/âm thanh rồi mới huấn luyện, nhiều cấu hình mẫu cho inpainting/outpainting/extend.<br>- Gói đánh dấu `marking/` nạp Videoseal/AudioSeal từ thư mục pack bắt buộc đủ 5 file, import không cần extra.<br>- `captioning.py` gọi máy chủ vLLM cục bộ (127.0.0.1:8001) hoặc Gemini để dựng caption. |
+| Tiêu chí và cách kiểm | Không thấy `.github/workflows` hay thư mục test ở mức tìm kiếm cấp 1 đến 4 của repo, nên không có cổng CI công khai; CHANGELOG ghi từng bản sửa lỗi (1.6.2 ngày 2026-11-12). Chất lượng sinh và điểm benchmark là tuyên bố của tác giả (chưa xác minh). Chưa tải trọng số hay chạy. |
+| Giới hạn và rủi ro | Giấy phép trọng số LTX-2.x: doanh nghiệp doanh thu từ 10 triệu USD phải có giấy phép thương mại trả phí, kèm Acceptable Use Policy (Attachment A) cập nhật được và điều khoản trọng tài; LTX-2.3 theo LICENSE-2 riêng. Encoder văn bản Gemma giữ giấy phép Google. Yêu cầu GPU lớn (khoảng 66 GiB tải về). W&B tắt mặc định (`enabled: false`); `hf auth login` cần token Hugging Face. |
+| So với | Wan2.2 (wan2-2), HunyuanVideo, CogVideoX (hồ sơ agentic-video có sẵn), ComfyUI (điều phối node, khác một mô hình đơn) |
+| Nguồn | [LICENSE](https://github.com/Lightricks/LTX-2/blob/daa6b16fc7f0f1628f2c9e36a303e3312b333cc6/LICENSE) · [LICENSE-2_x](https://github.com/Lightricks/LTX-2/blob/daa6b16fc7f0f1628f2c9e36a303e3312b333cc6/LICENSE-2_x) · [README.md](https://github.com/Lightricks/LTX-2/blob/daa6b16fc7f0f1628f2c9e36a303e3312b333cc6/README.md) · [CHANGELOG.md](https://github.com/Lightricks/LTX-2/blob/daa6b16fc7f0f1628f2c9e36a303e3312b333cc6/CHANGELOG.md) · [`__init__.py`](https:`//github.com/Lightricks/LTX-2/blob/daa6b16fc7f0f1628f2c9e36a303e3312b333cc6/packages/ltx-pipelines/src/ltx_pipelines/marking/__init__.py`) · [t2v_lora.yaml](https://github.com/Lightricks/LTX-2/blob/daa6b16fc7f0f1628f2c9e36a303e3312b333cc6/packages/ltx-trainer/configs/t2v_lora.yaml) · [wandb_logger.py](https://github.com/Lightricks/LTX-2/blob/daa6b16fc7f0f1628f2c9e36a303e3312b333cc6/packages/ltx-trainer/src/ltx_trainer/wandb_logger.py) · [captioning.py](https://github.com/Lightricks/LTX-2/blob/daa6b16fc7f0f1628f2c9e36a303e3312b333cc6/packages/ltx-trainer/src/ltx_trainer/captioning.py) |
+
+<a id="n2-jellyfish"></a>
+
+### Jellyfish
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Forget-C/Jellyfish |
+| License | Apache-2.0 (thư mục .agents/skills dùng MIT của tác giả khác) |
+| Phiên bản đã đọc | `b1d8add653a97ebe89c2eb8cc7b712af800b8f3c` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README.md, AGENTS_OVERVIEW.md, consistency_checker_agent.py, identity_references.py, automatic_checks.py, backend-tests.yml, commit-messages.yml; chưa chạy upstream |
+| Khoảng trống lấp | Nhất quán nhân vật/phong cách trong xưởng phim ngắn (không phải huấn luyện LoRA) |
+| Cơ chế đáng học | - `identity_references.py`: ràng buộc mỗi nhóm tham chiếu danh tính phải ứng với đúng một nhân vật/vật thể và một nguồn ảnh duy nhất, vi phạm thì `ValueError` từ chối nhận.<br>- `generation_canvas/automatic_checks.py`: đóng băng kế hoạch kiểm tự động khi nhận lệnh sinh, ước lượng số lần gọi, chỉ đẩy việc kiểm khi tác vụ sinh hoàn tất đủ đầu ra; thư mục cùng cấp có `check_duration.py`, `check_reference_media.py`, `check_rhythm.py`...<br>- `chains/agents/consistency_checker_agent.py`: agent LLM chỉ kiểm lỗi chữ và mâu thuẫn trong kịch bản, xuất JSON có `classification` (mâu thuẫn, mơ hồ, tùy chọn) và đoạn trích định vị.<br>- Trung tâm tác vụ bất đồng bộ cho văn bản, ảnh, video, có hủy và xem lỗi. |
+| Tiêu chí và cách kiểm | Workflow `backend-tests.yml` chạy preflight môi trường rồi `uv run pytest -q`; `commit-messages.yml` kiểm tiêu đề commit bằng test Node. Có bộ test backend lớn (cả server trình duyệt cho canvas). Đã mở hai workflow này; chưa chạy test, các workflow khác chỉ biết tên. |
+| Giới hạn và rủi ro | Apache-2.0; thư mục skill của agent mã hóa (.agents/skills) là MIT tác giả khác. Triển khai cần MySQL 9 và khóa nhà cung cấp mô hình ảnh/video trả phí nên prompt và ảnh tham chiếu rời máy tới nhà cung cấp. Tài liệu và prompt chủ yếu tiếng Trung; mã còn trẻ nên API có thể đổi. Không đọc phần lưu trữ file hay xác thực. |
+| So với | short-video-factory, pixelle-video, ai-video-editor (hồ sơ agentic-video có sẵn, thiên về dựng tự động hơn là canvas kiểm tham chiếu) |
+| Nguồn | [LICENSE](https://github.com/Forget-C/Jellyfish/blob/b1d8add653a97ebe89c2eb8cc7b712af800b8f3c/LICENSE) · [LICENSE](https://github.com/Forget-C/Jellyfish/blob/b1d8add653a97ebe89c2eb8cc7b712af800b8f3c/.agents/skills/LICENSE) · [README.md](https://github.com/Forget-C/Jellyfish/blob/b1d8add653a97ebe89c2eb8cc7b712af800b8f3c/README.md) · [AGENTS_OVERVIEW.md](https://github.com/Forget-C/Jellyfish/blob/b1d8add653a97ebe89c2eb8cc7b712af800b8f3c/backend/AGENTS_OVERVIEW.md) · [consistency_checker_agent.py](https://github.com/Forget-C/Jellyfish/blob/b1d8add653a97ebe89c2eb8cc7b712af800b8f3c/backend/app/chains/agents/consistency_checker_agent.py) · [identity_references.py](https://github.com/Forget-C/Jellyfish/blob/b1d8add653a97ebe89c2eb8cc7b712af800b8f3c/backend/app/services/directing/identity_references.py) · [automatic_checks.py](https://github.com/Forget-C/Jellyfish/blob/b1d8add653a97ebe89c2eb8cc7b712af800b8f3c/backend/app/services/generation_canvas/automatic_checks.py) · [backend-tests.yml](https://github.com/Forget-C/Jellyfish/blob/b1d8add653a97ebe89c2eb8cc7b712af800b8f3c/.github/workflows/backend-tests.yml) · [commit-messages.yml](https://github.com/Forget-C/Jellyfish/blob/b1d8add653a97ebe89c2eb8cc7b712af800b8f3c/.github/workflows/commit-messages.yml) |
+
+<a id="n2-duix-avatar"></a>
+
+### Duix Avatar
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/duixcom/Duix-Avatar |
+| License | Duix.com Community License (tùy biến, GitHub báo NOASSERTION); không phải OSI, ngưỡng 1.000 MAU, buộc ghi nhãn |
+| Phiên bản đã đọc | `1328feb5871448c8fa3d0e45b3bbc87e7c1d458a` (commit 2026-04-21) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README, compose, `video.js`, `f2f.js`, `config.js`; chưa chạy upstream |
+| Khoảng trống lấp | Mặt/miệng và avatar nói (lip-sync, talking head) |
+| Cơ chế đáng học | - Ứng dụng khách Electron chỉ làm điều phối: `src/main/api/f2f.js` gọi `POST /easy/submit` và `GET /easy/query?code=` tới container sinh video ở cổng 8383; `src/main/config/config.js` trỏ TTS tới cổng 18180.<br>- `src/main/service/video.js` quản lý hàng đợi tác vụ trong cơ sở dữ liệu cục bộ (trạng thái `draft`, `waiting`, hiển thị tiến độ `vị trí / tổng số hàng chờ`), tách khâu tạo giọng (`voice.js`) khỏi khâu ghép hình.<br>- `deploy/docker-compose*.yml` đóng gói ba dịch vụ (fun-asr, fish-speech-ziming, duix.avatar) với biến thể lite chỉ còn dịch vụ sinh video; có biến thể riêng cho Linux và GPU dòng 50. |
+| Tiêu chí và cách kiểm | Không có workflow CI (`.github` không tồn tại) và không thấy thư mục test trong cấp 1–2; kiểm bằng máy: không có. Cách dùng thật là chạy compose rồi gọi API cục bộ; yêu cầu nêu trong README: GPU NVIDIA, ổ D còn hơn 30 GB, ổ C hơn 100 GB, tải khoảng 70 GB lần đầu (tuyên bố của tác giả, chưa xác minh). |
+| Giới hạn và rủi ro | License: LICENSE của repo là thỏa thuận cộng đồng Duix.com, không phải OSI; cấp quyền dùng/sửa/phân phối nhưng buộc ghi "Built with DUIX.COM", kèm Notice, đặt tên "DUIX.COM" ở đầu tên mô hình AI huấn luyện từ tài liệu này, và cho Duix quyền vĩnh viễn dùng các ca/ứng dụng bạn tạo (mục 5c). Mục 2 yêu cầu xin giấy phép thương mại khi trên 1.000 MAU, trong khi bảng README ghi ngưỡng 100.000 người dùng hoặc doanh thu trên 10 triệu USD: hai nguồn lệch nhau, cần coi LICENSE là nguồn ràng buộc. Hai file PDF thỏa thuận cho mô hình có trong repo nhưng chưa đọc nội dung (chưa xác minh). Trọng số nằm trong image `guiji2025/*` trên Docker Hub, không kiểm được trong repo. Compose dùng `privileged: true`; `dev-app-update.yml` còn URL mẫu example.com nên cập nhật tự động chưa cấu hình; mã dev còn IP nội bộ cứng. Không đọc mã Python của container, nên chất lượng lip-sync chưa xác minh. Mô tả của trinh sát (NOASSERTION) đúng ở mặt GitHub, nhưng bỏ sót điều kiện thương mại. |
+| So với | HyperFrames (dựng video bằng HTML), LiveAvatar Agent Skills và HeyGen Skills (avatar qua dịch vụ trả phí, không chạy cục bộ). |
+| Nguồn | [LICENSE](https://github.com/duixcom/Duix-Avatar/blob/1328feb5871448c8fa3d0e45b3bbc87e7c1d458a/LICENSE) · [README.md](https://github.com/duixcom/Duix-Avatar/blob/1328feb5871448c8fa3d0e45b3bbc87e7c1d458a/README.md) · [docker-compose-lite.yml](https://github.com/duixcom/Duix-Avatar/blob/1328feb5871448c8fa3d0e45b3bbc87e7c1d458a/deploy/docker-compose-lite.yml) · [docker-compose.yml](https://github.com/duixcom/Duix-Avatar/blob/1328feb5871448c8fa3d0e45b3bbc87e7c1d458a/deploy/docker-compose.yml) · [video.js](https://github.com/duixcom/Duix-Avatar/blob/1328feb5871448c8fa3d0e45b3bbc87e7c1d458a/src/main/service/video.js) · [f2f.js](https://github.com/duixcom/Duix-Avatar/blob/1328feb5871448c8fa3d0e45b3bbc87e7c1d458a/src/main/api/f2f.js) · [config.js](https://github.com/duixcom/Duix-Avatar/blob/1328feb5871448c8fa3d0e45b3bbc87e7c1d458a/src/main/config/config.js) · [dev-app-update.yml](https://github.com/duixcom/Duix-Avatar/blob/1328feb5871448c8fa3d0e45b3bbc87e7c1d458a/dev-app-update.yml) |
+
+<a id="n2-gpac"></a>
+
+### GPAC (MP4Box, packager DASH/HLS/CMAF)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/gpac/gpac |
+| License | LGPL-2.1-or-later; phần lớn mã có thêm bản thương mại riêng |
+| Phiên bản đã đọc | `ca91126ce7766871bec9a053f5245f720b7236eb` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE (COPYING), README, AGENTS.md, THREAT_MODEL, SECURITY, `dasher.c` (phần enum và đuôi tệp), unittests/README, hai workflow; chưa chạy upstream |
+| Khoảng trống lấp | Đóng gói và phát trực tuyến (HLS/DASH/CMAF, packager) |
+| Cơ chế đáng học | - `src/filters/dasher.c` là bộ lọc phân đoạn: một pipeline sinh cả `mpd` và `m3u8` (nhánh `force_ext`, `segext`), enum `DasherCMAFMode` (`cmfc`, `cmf2`) và hỗ trợ khóa mặc định CENC (`DasherDefaultKIDInjection`).<br>- Kiến trúc bộ lọc: PID/gói tin nối các filter trong `src/filter_core/`; `src/media_tools/` giữ nhập, MPD (`mpd.c`, `m3u8.c`) và `dash_segmenter.c`; `applications/mp4box/` là CLI kiểm/đóng gói ISOBMFF.<br>- `THREAT_MODEL.md` và `SECURITY.md` mô tả bề mặt tấn công (tệp, manifest từ xa, SVG có script) và khuyên chạy xử lý media không tin cậy trong sandbox riêng. |
+| Tiêu chí và cách kiểm | Test: `unittests/` (bật bằng `configure --unittests`, chạy trong `make`) bổ sung cho `testsuite/` là submodule riêng; thư mục đó rỗng trong bản clone nên không đọc được kịch bản và ngưỡng. Workflow `master.yml` dựng image Docker và đẩy lên Docker Hub; `testbuilds.yml` dựng FreeBSD rồi chạy `gpac -h`. Badge README trỏ buildbot/tests.gpac.io (chưa xác minh, không mở). Không thấy cổng kiểm tuân thủ DASH/HLS trong CI GitHub. |
+| Giới hạn và rủi ro | License: LGPL-2.1 hoặc mới hơn, nên nhúng tĩnh vào sản phẩm đóng cần cân nhắc; README nói phần lớn mã có bản thương mại (Motion Spell). SECURITY.md yêu cầu báo lỗi công khai qua issue và chỉ coi là lỗ hổng khi có tác động an ninh rõ, không dùng GitHub Security Advisories; dự án tự nhận không phải sandbox, và là parser C xử lý định dạng phức tạp nên cần cô lập khi nhận tệp từ ngoài. Có thể gọi mạng khi nhận URL/manifest. Mô tả của trinh sát (LGPL-2.1, MP4Box/DASH/HLS/CMAF) khớp với repo; "bộ kiểm cấu trúc ISOBMFF" chỉ chứng minh qua việc có công cụ kiểm của MP4Box, chưa đọc ngưỡng cụ thể (chưa xác minh). |
+| So với | FFmpeg (muxer/segmenter HLS, DASH ít tuân thủ chuẩn hơn theo tuyên bố chung, chưa đối chiếu ở đây), MediaMTX (server phát luồng, không đóng gói file), Mediabunny (đóng gói trong trình duyệt). |
+| Nguồn | [COPYING](https://github.com/gpac/gpac/blob/ca91126ce7766871bec9a053f5245f720b7236eb/COPYING) · [README.md](https://github.com/gpac/gpac/blob/ca91126ce7766871bec9a053f5245f720b7236eb/README.md) · [AGENTS.md](https://github.com/gpac/gpac/blob/ca91126ce7766871bec9a053f5245f720b7236eb/AGENTS.md) · [THREAT_MODEL.md](https://github.com/gpac/gpac/blob/ca91126ce7766871bec9a053f5245f720b7236eb/THREAT_MODEL.md) · [SECURITY.md](https://github.com/gpac/gpac/blob/ca91126ce7766871bec9a053f5245f720b7236eb/SECURITY.md) · [dasher.c](https://github.com/gpac/gpac/blob/ca91126ce7766871bec9a053f5245f720b7236eb/src/filters/dasher.c) · [README.md](https://github.com/gpac/gpac/blob/ca91126ce7766871bec9a053f5245f720b7236eb/unittests/README.md) · [master.yml](https://github.com/gpac/gpac/blob/ca91126ce7766871bec9a053f5245f720b7236eb/.github/workflows/master.yml) · [testbuilds.yml](https://github.com/gpac/gpac/blob/ca91126ce7766871bec9a053f5245f720b7236eb/.github/workflows/testbuilds.yml) · [.gitmodules](https://github.com/gpac/gpac/blob/ca91126ce7766871bec9a053f5245f720b7236eb/.gitmodules) |
+
+<a id="n2-mediaconch"></a>
+
+### MediaConch (hồ sơ thiết kế và chính sách)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/MediaArea/MediaConch |
+| License | GPL-3.0-or-later hoặc MPL-2.0-or-later (mã trong `SourceCode/`); CC BY-SA 4.0 (tài sản theo README); không có LICENSE ở gốc repo |
+| Phiên bản đã đọc | `d2a4b62ffbaf5475c5c3e82b3e6fc9883a6be592` (commit 2021-09-29) |
+| Kiểm chứng | 2026-11-24; docs-read; đã đọc README, License.html, readme và registry của ImplementationChecks, XSL kiểm EBML (đầu và các nhánh ICID), mẫu PolicyChecks, Demo/README; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm định file media (container/codec conformance, MediaInfo/MediaConch) |
+| Cơ chế đáng học | - Sổ đăng ký check (`ImplementationCheckRegistry.md`): mỗi kiểm tra có CCID duy nhất, phiên bản, authority, định dạng đích và quan hệ phân cấp; ICID ví dụ `EBML-VER-COH`, `EBML-ELEMENT-VALID-PARENT`.<br>- `MetadataDevelopment/ImplementationChecks/implementationCheckEBML.xsl` (và Matroska/WebM) hiện thực từng ICID bằng XSLT trên đầu ra trace của MediaInfo; `PolicyCheckSampleOutput.xml` cho thấy một policy gồm các `check` có `expected`, `value` và `outcome` là pass hoặc fail kèm `reason`.<br>- Demo (`Demo/README.md`) cho ví dụ chính sách: định dạng Matroska, video FFV1, tỉ lệ khung hình 4:3, tốc độ 25 fps, chạy trên tệp mẫu `.mkv`. |
+| Tiêu chí và cách kiểm | Kết quả mỗi check là pass/fail có lý do trong XML; policy là biểu thức XPath/so sánh trên trường MediaInfo. Kiểm bằng máy khi chạy MediaConch, nhưng repo này không có CI hay test tự động và chưa chạy upstream; registry còn nhiều mục TODO (hợp nhất ICID, bỏ csv, FFV1 chưa chuẩn hóa ICID). |
+| Giới hạn và rủi ro | Repo ở trạng thái lưu trữ về mặt thực tế (commit cuối 2021-09-29, không có `.github`), không thay cho bản phát hành MediaConch mới; dùng cho thiết kế, không để dựng cổng CI. Mô tả trinh sát về chức năng đúng nhưng sao, license, ngày chưa xác minh được điền: license thật theo `SourceCode/License.html` là GPL-3.0+/MPL-2.0+, README ghi tài sản mở là CC BY-SA 4.0 và thư viện bên thứ ba có license riêng; ở thư mục gốc không có LICENSE. Tương thích copyleft khi nhúng cần đọc từng thư mục. Phải lấy mã hiện hành ở repo khác, chưa đọc ở đây. |
+| So với | VMAF (đo chất lượng cảm nhận, không đo tuân thủ cấu trúc), FFMetrics (giao diện đo bằng FFmpeg), Pa11y (kiểm theo chính sách nhưng cho web, cùng ý tưởng cổng bằng quy tắc). |
+| Nguồn | [README.md](https://github.com/MediaArea/MediaConch/blob/d2a4b62ffbaf5475c5c3e82b3e6fc9883a6be592/README.md) · [License.html](https://github.com/MediaArea/MediaConch/blob/d2a4b62ffbaf5475c5c3e82b3e6fc9883a6be592/SourceCode/License.html) · [readme.md](https://github.com/MediaArea/MediaConch/blob/d2a4b62ffbaf5475c5c3e82b3e6fc9883a6be592/MetadataDevelopment/ImplementationChecks/readme.md) · [ImplementationCheckRegistry.md](https://github.com/MediaArea/MediaConch/blob/d2a4b62ffbaf5475c5c3e82b3e6fc9883a6be592/MetadataDevelopment/ImplementationChecks/ImplementationCheckRegistry.md) · [implementationCheckEBML.xsl](https://github.com/MediaArea/MediaConch/blob/d2a4b62ffbaf5475c5c3e82b3e6fc9883a6be592/MetadataDevelopment/ImplementationChecks/implementationCheckEBML.xsl) · [PolicyCheckSampleOutput.xml](https://github.com/MediaArea/MediaConch/blob/d2a4b62ffbaf5475c5c3e82b3e6fc9883a6be592/MetadataDevelopment/PolicyChecks/PolicyCheckSampleOutput.xml) · [README.md](https://github.com/MediaArea/MediaConch/blob/d2a4b62ffbaf5475c5c3e82b3e6fc9883a6be592/Demo/README.md) |
+
+<a id="n2-remove-ai-watermarks"></a>
+
+### remove-ai-watermarks
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/wiltodelta/remove-ai-watermarks |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `442187775afb7721b0e3cdc04be998d06d4849e1` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README, `legal-and-safety.md`, `known-limitations.md`, `external-benchmark-licensing.md`, `gemini_engine.py` (đầu tệp, bản đồ alpha), `pyproject.toml` (phiên bản/license), workflow test; chưa chạy upstream |
+| Khoảng trống lấp | Nhãn AI và minh bạch nội dung sinh ra (EU AI Act, watermark, tấn công gỡ nhãn) |
+| Cơ chế đáng học | - `src/remove_ai_watermarks/gemini_engine.py`: gỡ sparkle Gemini bằng bản đồ alpha tính từ ảnh nền chụp mẫu 48 và 96 px (`gemini_bg_48.png`, `gemini_bg_96.png`), phát hiện theo nhiều tỉ lệ rồi tái dựng (`reverse=True`) và inpaint chung; lệnh `identify` chỉ đọc tín hiệu.<br>- `docs/known-limitations.md`: bảng từng đường xử lý (`metadata`, `visible`, `invisible`, `all`, `text`) ghi rõ phần bị gỡ, phần còn lại và cách kiểm phần còn lại; không lệnh nào cho kết luận "sạch".<br>- `docs/legal-and-safety.md`: ranh giới phạm vi (không nhắm xem trước ảnh stock, Nightshade/Glaze), bảng điều khoản pháp lý theo quốc gia kiểm 2026-09-23; `external-benchmark-licensing.md` ghi bộ ETI không có license nên không dùng được. |
+| Tiêu chí và cách kiểm | CI `test.yml` chạy ruff, quét lockfile (`uv-secure`), kiểm snapshot đăng ký C2PA soft-binding và pytest ma trận Python 3.11 trên ba hệ điều hành; thư mục `tests/` có hàng trăm tệp (257 mục, chưa đọc từng test). Hiệu quả gỡ watermark ẩn (SynthID, VideoSeal) là tuyên bố của tác giả (chưa xác minh); tài liệu giới hạn nói không có bộ giải mã cục bộ xác nhận SynthID đã mất. |
+| Giới hạn và rủi ro | Dùng sai mục đích có thể vi phạm quy định gỡ nhãn AI (tài liệu nêu Trung Quốc cấm cả cung cấp công cụ); không dùng để gỡ nhãn của nội dung không phải của mình. Tính năng tái sinh cần GPU CUDA/MPS và tải mô hình từ Hugging Face khi chạy lần đầu (`huggingface_hub`), nên có dữ liệu mạng ra vào ở bước tải. README quảng bá dịch vụ lưu trữ trả phí raiw.cc của tác giả. Một người duy trì, phát hành rất nhanh (0.74.0), phụ thuộc rất nhiều extras. Mô tả trinh sát (Apache-2.0, 6.490 sao) khớp ở license; số sao không kiểm lại. Khi mang cơ chế vào dự án khác: chỉ dùng phần `identify` và `known-limitations` để lập bộ test độ bền, chạy trong sandbox, không phát hành bản gỡ nhãn. |
+| So với | c2patool và c2pa-rs (ký/đọc C2PA, phía bảo vệ chứ không tấn công), HyperFrames (không liên quan watermark, cùng nhóm media). |
+| Nguồn | [LICENSE](https://github.com/wiltodelta/remove-ai-watermarks/blob/442187775afb7721b0e3cdc04be998d06d4849e1/LICENSE) · [README.md](https://github.com/wiltodelta/remove-ai-watermarks/blob/442187775afb7721b0e3cdc04be998d06d4849e1/README.md) · [legal-and-safety.md](https://github.com/wiltodelta/remove-ai-watermarks/blob/442187775afb7721b0e3cdc04be998d06d4849e1/docs/legal-and-safety.md) · [known-limitations.md](https://github.com/wiltodelta/remove-ai-watermarks/blob/442187775afb7721b0e3cdc04be998d06d4849e1/docs/known-limitations.md) · [external-benchmark-licensing.md](https://github.com/wiltodelta/remove-ai-watermarks/blob/442187775afb7721b0e3cdc04be998d06d4849e1/docs/external-benchmark-licensing.md) · [gemini_engine.py](https://github.com/wiltodelta/remove-ai-watermarks/blob/442187775afb7721b0e3cdc04be998d06d4849e1/src/remove_ai_watermarks/gemini_engine.py) · [pyproject.toml](https://github.com/wiltodelta/remove-ai-watermarks/blob/442187775afb7721b0e3cdc04be998d06d4849e1/pyproject.toml) · [test.yml](https://github.com/wiltodelta/remove-ai-watermarks/blob/442187775afb7721b0e3cdc04be998d06d4849e1/.github/workflows/test.yml) |

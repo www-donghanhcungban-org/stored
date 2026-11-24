@@ -2,7 +2,7 @@
 
 # harness-pack — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 58 hồ sơ.
+[← Mục lục catalog](../README.md) · 65 hồ sơ.
 
 ## Quy trình coding/TDD/review (`coding-workflow`, 15)
 
@@ -66,15 +66,17 @@
 | [QuickBooks plugin cho Claude](../../20-claude-plugins-ecosystem/README.md#3zd-kiểm-danh-sách-7-plugin-thay-7-vị-trí-quickbooks-stripe-shopify-canva-hubspot-legalzoom-zapier-danh-sách-người-dùng-gửi-đọc-mã-20112026) | `intuit/quickbooks-claude-plugin` | Apache-2.0 | 1 | đọc tài liệu 2026-11-20 | 20 | Plugin chính chủ Intuit (intuit-quickbooks 0.1.0) trong claude-plugins-official: 10 skill (business-health-check đọc P&L/dòng tiền/bảng cân đối/công nợ, chase-overdue-in… |
 | [Sales Skills (Apparate)](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-louisblythe-sales-skills) | `louisblythe/sales-skills` | MIT | — | đọc mã 2026-11-23 | 20 | 122 skill sales B2B (fork điều chỉnh từ marketingskills); |
 
-## Media & sáng tạo (`media-creative`, 3)
+## Media & sáng tạo (`media-creative`, 5)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [baoyu-skills](../../20-claude-plugins-ecosystem/README.md#chuyen-baoyu-skills) | `JimLiu/baoyu-skills` | MIT | 27.646 | đọc tài liệu 2026-11-18 | 20 | Bộ 21 Agent Skill cho Claude Code/Codex phục vụ sản xuất nội dung: sinh ảnh bìa, minh hoạ, infographic, slide, truyện tranh, dịch bài, chuyển URL/YouTube/X sang Markdown… |
 | [MiniMax skills](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-minimax-skills) | `MiniMax-AI/skills` | MIT (+ Apache-2.0 cho phần dẫn xuất từ Anthropic) | 13.903 | đọc tài liệu 2026-11-23 | 20 | 17 skill (dev đa nền tảng, Office, đa phương tiện qua API MiniMax); |
+| [scroll-craft](../../22-motion-design-animation/README.md#n2-scroll-craft) | `nateherkai/scroll-craft` | MIT | 5.386 | đọc mã 2026-11-23 | 22 | Skill Claude Code dựng trang landing cuộn kèm công cụ chụp từng pha cuộn để bắt dead scroll, clip đứng và tương phản thấp trên khung hình thật. |
 | [Craft Skills (ZSeven-W)](../../20-claude-plugins-ecosystem/README.md#nt-craft-skills) | `ZSeven-W/craft-skills` | Apache-2.0 | 242 | đọc mã 2026-11-23 | 20 | Năm skill sinh ảnh (Qwen-Image, logo, truyện tranh nhân vật, PNG trong suốt gốc, diorama quy trình), mỗi skill kèm thư mục `evals/` gồm `cases.yaml` với route trigger ho… |
+| [Agent Video Editing Skills](../../20-claude-plugins-ecosystem/README.md#n2-agents-video-editing-skills) | `iamaanahmad/agents-video-editing-skills` | MIT | 4 | đọc mã 2026-11-23 | 20 | Bộ 14 skill `SKILL.md` (router, planning, FFmpeg, export nền tảng, Remotion, moviepy, caption, TTS, trộn âm, quay demo, vertical shorts, motion, thumbnail, QA) cộng một… |
 
-## Chuyên ngành (`domain-specialist`, 10)
+## Chuyên ngành (`domain-specialist`, 15)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -85,9 +87,14 @@
 | [AI-Research-SKILLs](../../20-claude-plugins-ecosystem/README.md#chuyen-ai-research-skills) | `Orchestra-Research/AI-Research-SKILLs` | MIT | 14.630 | đọc tài liệu 2026-11-18 | 20 | Thư viện 98 Agent Skill giúp agent AI tự làm nghiên cứu AI trọn vòng đời: từ ý tưởng, khảo sát tài liệu, huấn luyện/tinh chỉnh/đánh giá/triển khai mô hình đến viết bài b… |
 | [Claude for Legal](../../20-claude-plugins-ecosystem/README.md#3zb-kiểm-ảnh-8-plugin-8-kỹ-năng-8-mcp-bộ-cài-sẵn-cho-claude-ảnh-phandonggiang-người-dùng-gửi-đọc-mã-8112026) | `anthropics/claude-for-legal` | Apache-2.0 | 9.930 | đọc tài liệu 2026-11-08 | 20 | Plugin pháp lý của Anthropic theo mảng hành nghề (thương mại, privacy, sản phẩm, doanh nghiệp, lao động, tranh tụng, AI governance, IP, sinh viên luật); |
 | [Legal Skills (Open)](../../20-claude-plugins-ecosystem/README.md#nt-legal-skills-open) | `ThomasMoreAI/legal-skills-open` | Apache-2.0 | 143 | đọc mã 2026-11-23 | 20 | Thư viện thật sự có 20.294 file SKILL.md (con số "18.000+" đúng) xếp theo `{quốc gia}/{lĩnh vực}/skills/{slug}`. |
+| [Dash0 OpenTelemetry skills](../../33-reliability-observability-operations/README.md#n2-dash0-agent-skills) | `dash0hq/agent-skills` | Apache-2.0 | 102 | đọc mã 2026-11-23 | 33 | Bộ skill Apache-2.0 dạy agent dùng OpenTelemetry, kèm harness eval đáng học: chạy agent thật trên ứng dụng mẫu rồi chấm bằng telemetry nhận được, không dùng LLM-judge, c… |
+| [Mobile Security Skill](../../12-ai-security-guardrails/README.md#n2-mobile-security-skill) | `harshdhamaniya/mobile-security-skill` | MIT | 24 | đọc mã 2026-11-23 | 12 | Skill và 18 subagent rà an ninh app di động, kết thúc bằng hội đồng công tố và hoài nghi để không gắn Confirmed khi chưa có bằng chứng. |
 | [Redacta](../../20-claude-plugins-ecosystem/README.md#nt-redacta) | `nickjlamb/redacta` | MIT-0 | 9 | đọc mã 2026-11-23 | 20 | Skill và bộ công cụ giả danh hóa định danh bệnh nhân trong văn bản lâm sàng trước khi đưa vào AI: lớp mẫu tất định (số NHS có kiểm Modulus-11, NI, ngày sinh, postcode, M… |
+| [CRA Readiness Skill](../../20-claude-plugins-ecosystem/README.md#n2-cra-readiness-skill) | `Killerz007/cra-readiness-skill` | Apache-2.0 | 5 | đọc mã 2026-11-23 | 20 | Skill trung lập agent đánh giá mức sẵn sàng theo Quy định (EU) 2024/2847 (CRA): ghim văn bản Công báo bằng SHA-256, sinh danh mục điều khoản có thể đánh giá, quyết định… |
 | [CuliOps skills](../../33-reliability-observability-operations/README.md#nt-culiops-skills) | `culiops/culiops-skills` | MIT | 5 | đọc mã 2026-11-23 | 33 | Plugin Claude Code gồm 9 skill vận hành cho AWS và Kubernetes (khám phá dịch vụ, truy vết runtime, pre-flight rủi ro, thay đổi IaC, chi phí, bàn giao, điều tra sự cố/RCA… |
+| [vn-legal-skills](../../20-claude-plugins-ecosystem/README.md#n2-vn-legal-skills) | `Tiro-dev-NT/vn-legal-skills` | MIT kèm đoạn miễn trừ bổ sung (GitHub báo NOASSERTION) | 4 | đọc mã 2026-11-23 | 20 | Skill `vn-legal-check` và 13 tệp 'mảng' (dữ liệu cá nhân, người tiêu dùng, TMĐT, quảng cáo, bản quyền, an ninh mạng, AI, game, thuế, đăng ký kinh doanh, thanh toán, nhãn… |
 | [LegalZoom plugin](../../20-claude-plugins-ecosystem/README.md#3zd-kiểm-danh-sách-7-plugin-thay-7-vị-trí-quickbooks-stripe-shopify-canva-hubspot-legalzoom-zapier-danh-sách-người-dùng-gửi-đọc-mã-20112026) | `legalzoom/claude-plugins` | PROPRIETARY | 1 | đọc tài liệu 2026-11-20 | 20 | Plugin legalzoom 1.0.0: /review-contract (AI chấm rủi ro điều khoản, không gọi MCP, cấm giả lập luật sư) và skill attorney-assist đặt lịch luật sư LegalZoom qua MCP http… |
+| [dress-rehearsal](../../33-reliability-observability-operations/README.md#n2-dress-rehearsal) | `ruinosus/dress-rehearsal` | MIT | 0 | đọc mã 2026-11-23 | 33 | Skill biến runbook sự cố thành buổi diễn tập chơi được: agent viết một file `<id>.drill.yaml` (cảnh, lựa chọn, vai trò, chi phí phút và thiệt hại), `build.mjs` kiểm đồ t… |
 
 ## Tạo/quản lý skill (`skill-meta`, 3)
 

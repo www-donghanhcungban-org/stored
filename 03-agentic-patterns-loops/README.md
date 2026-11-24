@@ -983,3 +983,26 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | low-activity (commit cuối 2025-01-16) |
 | Nhận định | Mã chính thức bài NeurIPS 2023 (gói PyPI `tree-of-thoughts-llm` 0.1.0) với ba trục generate/evaluate/select, task Game of 24, crosswords, viết văn. Chỉ cài đặt BFS, gọi GPT-4 mặc định nên tốn chi phí; dùng để đọc cấu trúc prompt propose/value hơn là làm thư viện. |
 | Nguồn | [README.md](https://github.com/princeton-nlp/tree-of-thought-llm/blob/8050e67d0e3a0fddc424d7fa5801538722a4c4cc/README.md) · [LICENSE](https://github.com/princeton-nlp/tree-of-thought-llm/blob/8050e67d0e3a0fddc424d7fa5801538722a4c4cc/LICENSE) · [pyproject.toml](https://github.com/princeton-nlp/tree-of-thought-llm/blob/8050e67d0e3a0fddc424d7fa5801538722a4c4cc/pyproject.toml) · [models.py](https://github.com/princeton-nlp/tree-of-thought-llm/blob/8050e67d0e3a0fddc424d7fa5801538722a4c4cc/src/tot/models.py) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-codeburn"></a>
+
+### CodeBurn
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/getagentseal/codeburn |
+| License | MIT |
+| Phiên bản đã đọc | `29c1de87bbf891d9275a0b9d4be97d04bade4ba9` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, package.json, docs/guard.md, `src/guard/flags.ts`, tests.yml; chưa chạy upstream |
+| Khoảng trống lấp | Đo token và chi phí agent cục bộ (FinOps) rồi chỉ ra chỗ lãng phí |
+| Cơ chế đáng học | • Đọc file phiên do từng agent tự ghi (Claude Code, Codex, Gemini, Cursor và nhiều tool khác; README nói 42 tích hợp, trinh sát nói 37, thư mục `src/providers/` có hàng chục file) và quy ra tiền theo giá LiteLLM làm mới mỗi ngày.<br>• `codeburn optimize` đối chiếu cấu hình với việc đã gọi: MCP server không dùng, skill chưa từng gọi, CLAUDE.md quá dài, file bị đọc lại; mỗi phát hiện ghi rõ số đo thật hay ước lượng; `--apply` có sao lưu và `act undo`.<br>• `codeburn guard`: hook Claude Code theo ngân sách — cảnh báo mềm 5 USD, dừng cứng 15 USD, cảnh báo khi một lời gọi lặp (4 lần) hoặc lệnh lỗi bị thử lại (3 lần) rồi dừng (8 và 5), chỉnh trong `guard.json` — `docs/guard.md`, `src/guard/flags.ts`.<br>• `codeburn audit` in nguồn gốc từng con số (đo hay ước lượng), `compare` so mô hình trên lịch sử của chính bạn. |
+| Tiêu chí và cách kiểm | Ngưỡng guard như trên (đọc từ docs, chưa đối chiếu hết với mã); CI chạy tsc và vitest trên Node 22.15, 22, 24, 26 cộng bước khoá riêng và kiểm nâng cấp. Số token là đo thật với tool ghi usage, còn Cursor, Kiro, một phần Copilot là ước lượng từ độ dài nội dung (theo README). |
+| Giới hạn và rủi ro | CLI tuyên bố không gửi gì, nhưng ứng dụng desktop, menu bar macOS và tray Windows gửi telemetry ẩn danh MẶC ĐỊNH BẬT (tắt trong Settings, README liệt kê sự kiện); có gọi mạng để lấy giá LiteLLM, tỷ giá Frankfurter, và tải export từ cursor.com bằng phiên đăng nhập Cursor (tắt bằng `cursorSync: false`). Đọc dữ liệu nhạy cảm trên đĩa (lịch sử phiên, quota dùng credential sẵn có của tool) nên cần tin mã. Chi phí quy đổi theo giá công bố, có thể lệch hóa đơn thật. |
+| So với | [OpenCost](09-engineering-checklists/README.md#operations-recovery-cost-evidence) (chi phí hạ tầng, không phải agent) · [Langfuse](07-eval-observability/README.md) (tracing LLM trong ứng dụng) · [freetoken](10-local-llm-rag-memory/README.md) (khác mục tiêu) |
+| Nguồn | [README.md](https://github.com/getagentseal/codeburn/blob/29c1de87bbf891d9275a0b9d4be97d04bade4ba9/README.md) · [LICENSE](https://github.com/getagentseal/codeburn/blob/29c1de87bbf891d9275a0b9d4be97d04bade4ba9/LICENSE) · [package.json](https://github.com/getagentseal/codeburn/blob/29c1de87bbf891d9275a0b9d4be97d04bade4ba9/package.json) · [guard.md](https://github.com/getagentseal/codeburn/blob/29c1de87bbf891d9275a0b9d4be97d04bade4ba9/docs/guard.md) · [flags.ts](https://github.com/getagentseal/codeburn/blob/29c1de87bbf891d9275a0b9d4be97d04bade4ba9/src/guard/flags.ts) · [tests.yml](https://github.com/getagentseal/codeburn/blob/29c1de87bbf891d9275a0b9d4be97d04bade4ba9/.github/workflows/tests.yml) |

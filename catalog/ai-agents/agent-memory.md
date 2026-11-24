@@ -2,7 +2,7 @@
 
 # agent-memory — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 19 hồ sơ.
+[← Mục lục catalog](../README.md) · 20 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -25,3 +25,4 @@
 | [engram](../../10-local-llm-rag-memory/README.md#ch-engram) | `Gentleman-Programming/engram` | MIT | 8.274 | đọc tài liệu 2026-11-23 | 10 | Bộ nhớ dài hạn cho coding agent: một binary Go + SQLite FTS5, 26 tool MCP + HTTP (127.0.0.1) + CLI + TUI, agent tự ghi qua mem_save (không LLM nén); |
 | [LoCoMo](../../10-local-llm-rag-memory/README.md#ch-locomo) | `snap-research/locomo` | CC-BY-NC-4.0 | 1.287 | đọc tài liệu 2026-11-23 | 10 | Benchmark hội thoại rất dài ACL 2024: 10 hội thoại, QA + event summary, chấm F1/EM/ROUGE; |
 | [LongMemEval](../../10-local-llm-rag-memory/README.md#ch-longmemeval) | `xiaowu0162/LongMemEval` | MIT | 1.240 | đọc tài liệu 2026-11-23 | 10 | Benchmark bộ nhớ dài hạn ICLR 2025: 500 câu, 5 năng lực, bản S/M/oracle, bản cleaned 9/2025; |
+| [MemoryAgentBench](../../10-local-llm-rag-memory/README.md#n2-memoryagentbench) | `HUST-AI-HYZ/MemoryAgentBench` | MIT | 491 | đọc mã 2026-11-23 | 10 | Benchmark trí nhớ agent ICLR 2026 đo bốn năng lực truy hồi, học lúc chạy, hiểu tầm xa và giải xung đột bằng văn bản đưa dần theo đoạn. |

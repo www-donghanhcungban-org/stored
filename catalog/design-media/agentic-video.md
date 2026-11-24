@@ -2,7 +2,7 @@
 
 # agentic-video — Thiết kế, giao diện & media
 
-[← Mục lục catalog](../README.md) · 46 hồ sơ.
+[← Mục lục catalog](../README.md) · 51 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -24,6 +24,7 @@
 | [HunyuanVideo](../../19-agentic-video-media/README.md#ch-hunyuanvideo) | `Tencent-Hunyuan/HunyuanVideo` | Tencent Hunyuan Community License (không áp dụng tại EU, UK, | 12.826 | đọc tài liệu 2026-11-23 | 19 | ; |
 | [rea-video](../../08-awesome-lists-learning/README.md#6c57-dựng-video--slide-tự-động) | `JuneYaooo/rea-video` | Apache-2.0 | 10.336 | đọc tài liệu 2026-11-18 | 08 | Công cụ CLI và skill cho agent phân tích ngược video theo từng cảnh quay: quay thật, do AI tạo hay dựng bằng code, và cách làm lại; |
 | [ffmpeg-skill (kajisho5)](../../19-agentic-video-media/README.md#xlsx-2026-11-23-ffmpeg-skill-kajisho5) | `kajisho5/ffmpeg-skill` | MIT | 10.067 | đọc mã 2026-11-23 | 19 | Skill + 42 tool Python stdlib bọc FFmpeg, MCP mặc định 12 tool, schema sinh từ argparse, CI ma trận 3 OS và FFmpeg 6.1-9; |
+| [Jellyfish](../../19-agentic-video-media/README.md#n2-jellyfish) | `Forget-C/Jellyfish` | Apache-2.0 (thư mục .agents/skills dùng MIT của tác giả khác) | 7.305 | đọc mã 2026-11-23 | 19 | Xưởng phim ngắn AI: tách chương thành cảnh, chuẩn bị ảnh tham chiếu nhân vật/bối cảnh/đạo cụ, dựng storyboard trên canvas, chạy mô hình ảnh/video rồi duyệt ứng viên; |
 | [youtube-agent-skill (Jake Schincariol)](../../19-agentic-video-media/README.md#xlsx-2026-11-23-youtube-agent-skill) | `Jakeschincariol/youtube-agent-skill` | MIT | 7.059 | đọc tài liệu 2026-11-23 | 19 | 11 skill YouTube + 6 script Python stdlib (hookscore, title, deadair, chapters, retention, swipe); |
 | [AI YouTube Shorts Generator](../../19-agentic-video-media/README.md#ch-ai-youtube-shorts-generator) | `Anil-matcha/AI-Youtube-Shorts-Generator` | MIT | 6.506 | đọc tài liệu 2026-11-23 | 19 | Video dài → Shorts 9:16 (chọn đoạn bằng LLM, Whisper, crop theo mặt); |
 | [Short Video Factory](../../19-agentic-video-media/README.md#ch-short-video-factory) | `YILS-LIN/short-video-factory` | AGPL-3.0 | 6.264 | đọc tài liệu 2026-11-23 | 19 | App Electron 22 (hết hỗ trợ 2/2024) tự động viết nội dung (API tương thích OpenAI) + EdgeTTS + ghép video/phụ đề, chạy hàng loạt; |
@@ -48,7 +49,11 @@
 | [comfyui-agent-skill (MieMieeeee)](../../19-agentic-video-media/README.md#xlsx-2026-11-23-comfyui-agent-skill-mie) | `MieMieeeee/comfyui-agent-skill` | Apache-2.0 | 120 | đọc tài liệu 2026-11-23 | 19 | Skill + CLI chạy workflow ComfyUI đã đăng ký (12 stable; |
 | [Runway Dev (runwayml/skills)](../../19-agentic-video-media/README.md#xlsx-2026-11-23-runwayml-skills) | `runwayml/skills` | MIT | 76 | đọc mã 2026-11-23 | 19 | Plugin chính thức Runway Dev v4.0.1: MCP + 7 skill tích hợp API bằng SDK; |
 | [Montage AI](../../19-agentic-video-media/README.md#nt-montage-ai) | `mfahsold/montage-ai` | PolyForm Noncommercial 1.0.0 | 68 | đọc mã 2026-11-23 | 19 | Công cụ dựng phim tự động có chỉnh sửa theo transcript và xuất timeline OTIO sang EDL, FCP XML, AAF kèm marker nhịp. |
+| [timecode:agent (video-agent)](../../19-agentic-video-media/README.md#n2-timecode-agent) | `mupozg823/timecode-agent` | MIT | 52 | đọc mã 2026-11-23 | 19 | CLI Python cho agent: ingest video thành bản ghi phiên âm và tín hiệu đặt chỗ, agent ghi checkpoint có thời điểm, rồi xuất EDL/FCPXML/OTIO kèm Receipt băm tất định. |
 | [Media OS for Claude Code](../../19-agentic-video-media/README.md#nt-media-os) | `damionrashford/media-os` | MIT | 26 | đọc mã 2026-11-23 | 19 | Plugin Claude Code với hàng chục skill media (FFmpeg, HLS/DASH, HDR, VMAF, OBS, NDI), mode định tuyến và hook PreToolUse cảnh báo lỗi ffmpeg kinh điển. |
+| [OpenTimelineIO AAF Adapter](../../19-agentic-video-media/README.md#n2-otio-aaf-adapter) | `OpenTimelineIO/otio-aaf-adapter` | Apache-2.0 | 24 | đọc mã 2026-11-23 | 19 | Adapter AAF chính thức, tách khỏi OTIO lõi, đọc và ghi timeline Avid qua pyaaf2, có hook và test với mẫu AAF thật gồm cả NTSC drop-frame. |
 | [ffmpeg-skill (n0an, FFmpeg Recipes)](../../19-agentic-video-media/README.md#xlsx-2026-11-23-ffmpeg-skill-n0an) | `n0an/ffmpeg-skill` | MIT | 17 | đọc tài liệu 2026-11-23 | 19 | Skill cheatsheet FFmpeg thuần tài liệu (SKILL.md + 6 tham chiếu), không mã thực thi, không CI; |
+| [OpenTimelineIO JS Bindings](../../19-agentic-video-media/README.md#n2-otio-js-bindings) | `JeanChristopheMorinPerso/OpenTimelineIO-JS-Bindings` | Apache-2.0 | 13 | đọc mã 2026-11-23 | 19 | Binding JS/WASM của OpenTimelineIO (embind) để web đọc ghi timeline và chuyển timecode, có test Jest và CI Release/Debug. |
+| [VietSub Studio](../../19-agentic-video-media/README.md#n2-vietsub-studio) | `qvinh8726/VietSub-Studio` | MIT | 3 | đọc mã 2026-11-23 | 19 | Ứng dụng Windows ba workspace (VietSub, Auto Edit, Publish Hub): OCR chữ cứng, dịch ra tiếng Việt, ghi phụ đề, TTS và xếp hàng đăng. |
 | [runway-studio-skills](../../19-agentic-video-media/README.md#xlsx-2026-11-23-runway-studio-skills) | `runwayml/runway-studio-skills` | MIT | 1 | đọc mã 2026-11-23 | 19 | Skill Runway API (video/ảnh/audio) bằng script Python `uv run`; |
 | [Super Video Maker Skill](../../19-agentic-video-media/README.md#xlsx-2026-11-23-super-video-maker-skill) | `bomx/super-video-maker-skill` | — | — | đọc mã 2026-11-23 | 19 | Skill sản xuất video trọn gói của Distribb: avatar HeyGen, ảnh OpenAI, b-roll Seedance 2.5 qua fal.ai, ghi màn hình, Remotion/HyperFrames, FFmpeg, phụ đề Whisper, nhạc E… |

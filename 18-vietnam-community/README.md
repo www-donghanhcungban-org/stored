@@ -722,3 +722,111 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | License MIT (file LICENSE, bản quyền ghi "XKey"). README tuyên bố chạy cục bộ, không thu thập dữ liệu (chưa xác minh toàn bộ): mã đã đọc cho thấy tính năng dịch gửi văn bản tới `translate.googleapis.com` (API miễn phí không chính thức) và hai nhà cung cấp khác, entitlement `network.client` bật; tự cập nhật qua Sparkle (`SUFeedURL` trỏ GitHub Pages, có `SUPublicEDKey`). Cần quyền Accessibility và theo dõi bàn phím, nên bộ gõ thấy mọi phím gõ; chế độ IMK ghi là thử nghiệm. Commit duy nhất trong clone nông, không đánh giá được lịch sử bảo trì; số sao 554 của trinh sát chưa xác minh. Chỉ macOS 12+. |
 | So với | Chưa có hồ sơ bộ gõ tiếng Việt nào trong kho; so gần nhất: Ice (`jordanbaird-ice`, tiện ích macOS cần quyền Accessibility), elasticsearch-vietnamese-analysis (`elasticsearch-vietnamese-analysis`, xử lý tiếng Việt phía tìm kiếm), awsome-vietnamese-nlp (`awsome-vietnamese-nlp`, danh mục) |
 | Nguồn | [LICENSE](https://github.com/xmannv/xkey/blob/9b5c9ab1264a5fe387b4b90d12738f899172ecca/LICENSE) · [README.md](https://github.com/xmannv/xkey/blob/9b5c9ab1264a5fe387b4b90d12738f899172ecca/README.md) · [TapEnvironment.swift](https://github.com/xmannv/xkey/blob/9b5c9ab1264a5fe387b4b90d12738f899172ecca/Shared/TapEnvironment.swift) · [GoogleTranslateProvider.swift](https://github.com/xmannv/xkey/blob/9b5c9ab1264a5fe387b4b90d12738f899172ecca/XKey/Core/Translation/GoogleTranslateProvider.swift) · [Info.plist](https://github.com/xmannv/xkey/blob/9b5c9ab1264a5fe387b4b90d12738f899172ecca/XKey/Info.plist) · [CorpusRegressionTests.swift](https://github.com/xmannv/xkey/blob/9b5c9ab1264a5fe387b4b90d12738f899172ecca/XKeyTests/CorpusRegressionTests.swift) · [ci.yml](https://github.com/xmannv/xkey/blob/9b5c9ab1264a5fe387b4b90d12738f899172ecca/.github/workflows/ci.yml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-evkey"></a>
+
+### EVKey
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/lamquangminh/EVKey |
+| License | không có file LICENSE |
+| Phiên bản đã đọc | `6b31c757c5afdfaa708b4b407511636267695eab` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, docs/LICENSE, temp/LICENSE, docs/privacy.html, evkau/evkau/sp_updater.cpp, stdafx.h; chưa chạy upstream |
+| Khoảng trống lấp | Tài nguyên tiếng Việt: bộ gõ (EVKey, bộ gõ Windows phân phối dạng nhị phân) |
+| Cơ chế đáng học | • Kho chỉ có mã nguồn của bộ cập nhật `evkau` (C++/Win32, `evkau/evkau/`); bộ gõ chính `EVKey32.exe`/`EVKey64.exe` nằm trong `release/` dưới dạng file nhị phân đã biên dịch, không có mã nguồn tương ứng trong kho.<br>• `sp_updater.cpp` đọc `release/cversion.txt` trên `raw.githubusercontent.com` (nhánh master), so phiên bản, hỏi người dùng rồi tải đè `EVKey<32/64>.exe`.<br>• Tuyên bố của tác giả về tính năng bộ gõ (chưa xác minh) vì không có mã bộ gõ để đọc. |
+| Tiêu chí và cách kiểm | Không có test, CI, hay kiểm chữ ký/băm cho file tải về: sau khi tải đủ kích thước, bộ cập nhật ghi thẳng ra file thực thi rồi chạy lại (`sp_updater.cpp`). Tính toàn vẹn chỉ dựa vào HTTPS và quyền ghi vào repo. Biên dịch cấu hình `USE_CURL 0` (`stdafx.h`) nên dùng WinHTTP; nhánh libcurl trong mã có `CURLOPT_SSL_VERIFYPEER` bằng 0 nhưng bị loại khi biên dịch mặc định. |
+| Giới hạn và rủi ro | Không có LICENSE gốc cho mã bộ gõ/bộ cập nhật (null). `docs/LICENSE` là MIT của chủ khác (Mauricio Urraco, theme trang web) và `temp/LICENSE` là AGPL-3.0, cả hai thuộc phần trang web chứ chưa chắc áp cho mã EVKey, nên không được coi là mã nguồn mở. Bộ gõ là nhị phân không kiểm được nguồn, loại phần mềm chạm bàn phím nên nhạy cảm về quyền riêng tư; trang web dùng Google AdSense và có thể dùng Google Analytics (`docs/privacy.html`). Sao do trinh sát ghi (307) chưa xác minh; mô tả trinh sát về license không rõ là đúng: không có license. |
+| So với | underthesea cùng chuyên mục vietnam nhưng là thư viện NLP mã mở; hồ sơ bộ gõ khác chưa có trong kho |
+| Nguồn | [README.md](https://github.com/lamquangminh/EVKey/blob/6b31c757c5afdfaa708b4b407511636267695eab/README.md) · [LICENSE](https://github.com/lamquangminh/EVKey/blob/6b31c757c5afdfaa708b4b407511636267695eab/docs/LICENSE) · [LICENSE](https://github.com/lamquangminh/EVKey/blob/6b31c757c5afdfaa708b4b407511636267695eab/temp/LICENSE) · [privacy.html](https://github.com/lamquangminh/EVKey/blob/6b31c757c5afdfaa708b4b407511636267695eab/docs/privacy.html) · [sp_updater.cpp](https://github.com/lamquangminh/EVKey/blob/6b31c757c5afdfaa708b4b407511636267695eab/evkau/evkau/sp_updater.cpp) · [stdafx.h](https://github.com/lamquangminh/EVKey/blob/6b31c757c5afdfaa708b4b407511636267695eab/evkau/evkau/stdafx.h) |
+
+<a id="n2-bartpho"></a>
+
+### BARTpho
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/VinAIResearch/BARTpho |
+| License | MIT |
+| Phiên bản đã đọc | `3dd783b41857afc6849c255eb94a24e1af03ed3c` (commit 2024-07-22) |
+| Kiểm chứng | 2026-11-24; docs-read; đã đọc README.md, LICENSE, VietnameseToneNormalization.md; chưa chạy upstream |
+| Khoảng trống lấp | Tài nguyên tiếng Việt: mô hình seq2seq tiền huấn luyện (tóm tắt, khôi phục hoa và dấu câu) |
+| Cơ chế đáng học | • Hai họ mô hình tiền huấn luyện theo BART, mức âm tiết và mức từ, bản base và large (132M đến 420M tham số), nạp qua `transformers` từ `vinai/bartpho-*` (README).<br>• Mức từ cần tách từ bằng VnCoreNLP vì corpus tiền huấn luyện đã được chuẩn hoá dấu thanh và tách từ như vậy.<br>• `VietnameseToneNormalization.md` cho bảng thay thế dấu thanh (ví dụ `òa` thành `oà`) để chuẩn hoá đầu vào trước khi đưa vào mô hình. |
+| Tiêu chí và cách kiểm | Không có test hay CI trong kho; kho chỉ có README, LICENSE và tài liệu chuẩn hoá dấu. Kết quả so với mBART trên tóm tắt, khôi phục hoa và dấu câu nằm trong bài báo Interspeech 2022, chưa xác minh. Trọng số tải từ Hugging Face và Google Drive (bản fairseq), không có băm trong kho. |
+| Giới hạn và rủi ro | Không có mã huấn luyện hay đánh giá trong kho, nên chỉ đọc được tài liệu (docs-read). Bản fairseq cần cài fork cá nhân của fairseq và transformers (README), gánh rủi ro chuỗi cung ứng và độ cũ. Commit cuối 2024-07 nên ít bảo trì. License MIT áp cho kho, trọng số theo trang Hugging Face (chưa xác minh). |
+| So với | phobert, vncorenlp (cùng nhóm VinAI; BARTpho là seq2seq còn PhoBERT là encoder) |
+| Nguồn | [README.md](https://github.com/VinAIResearch/BARTpho/blob/3dd783b41857afc6849c255eb94a24e1af03ed3c/README.md) · [LICENSE](https://github.com/VinAIResearch/BARTpho/blob/3dd783b41857afc6849c255eb94a24e1af03ed3c/LICENSE) · [VietnameseToneNormalization.md](https://github.com/VinAIResearch/BARTpho/blob/3dd783b41857afc6849c255eb94a24e1af03ed3c/VietnameseToneNormalization.md) |
+
+<a id="n2-phonlp"></a>
+
+### PhoNLP
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/VinAIResearch/PhoNLP |
+| License | BSD-3-Clause (file LICENSE; setup.py ghi MIT, không khớp) |
+| Phiên bản đã đọc | `29909454b4f1e88fe91d0133058d4f74a897cf55` (commit 2024-12-31) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, setup.py, phonlp/run_script.py, tests/test_phonlp.py; chưa chạy upstream |
+| Khoảng trống lấp | Tài nguyên tiếng Việt: mô hình đa tác vụ gán nhãn từ loại, nhận diện thực thể và phân tích phụ thuộc |
+| Cơ chế đáng học | • Một mô hình BERT (PhoBERT) huấn luyện chung ba tác vụ POS, NER và dependency parsing với trọng số tổn thất `lambda_pos/ner/dep` cộng bằng 1 (README, `phonlp/models/`).<br>• API gọn: `phonlp.download(save_dir)` rồi `phonlp.load(save_dir)` và `model.annotate(...)` (`phonlp/run_script.py`); đầu vào phải tách từ trước (khuyên dùng VnCoreNLP).<br>• Cũng dùng được cho ngôn ngữ khác nếu có dữ liệu ba tác vụ và mô hình BERT (tuyên bố của tác giả, chưa xác minh). |
+| Tiêu chí và cách kiểm | Chỉ có một test `tests/test_phonlp.py` là kịch bản chạy tay (tải mô hình, chạy, in kết quả, trỏ tới đường dẫn tuyệt đối của máy tác giả, không có khẳng định). Không có CI. Số liệu F1 nằm trong bài báo NAACL 2021, chưa xác minh. |
+| Giới hạn và rủi ro | Hai khai báo license mâu thuẫn: file LICENSE là BSD 3-Clause còn `setup.py` có classifier MIT. Mô hình tải bằng `gdown` từ Google Drive (không ghim băm) rồi nạp bằng `torch.load` không `weights_only` (`run_script.py`): rủi ro thực thi mã nếu file bị thay. Ràng buộc `transformers>=3.2.0, torch>=1.4.0` quá cũ so với hiện tại; commit cuối 2024-12. |
+| So với | vncorenlp, underthesea, phobert (bộ công cụ NLP tiếng Việt đã có trong kho) |
+| Nguồn | [README.md](https://github.com/VinAIResearch/PhoNLP/blob/29909454b4f1e88fe91d0133058d4f74a897cf55/README.md) · [LICENSE](https://github.com/VinAIResearch/PhoNLP/blob/29909454b4f1e88fe91d0133058d4f74a897cf55/LICENSE) · [setup.py](https://github.com/VinAIResearch/PhoNLP/blob/29909454b4f1e88fe91d0133058d4f74a897cf55/setup.py) · [run_script.py](https://github.com/VinAIResearch/PhoNLP/blob/29909454b4f1e88fe91d0133058d4f74a897cf55/phonlp/run_script.py) · [test_phonlp.py](https://github.com/VinAIResearch/PhoNLP/blob/29909454b4f1e88fe91d0133058d4f74a897cf55/tests/test_phonlp.py) |
+
+<a id="n2-vit5"></a>
+
+### ViT5
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/vietai/ViT5 |
+| License | MIT |
+| Phiên bản đã đọc | `b3886e9a9f8d29837aa156b11f840977cf7565be` (commit 2023-02-06) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, src/task.py, src/metrics.py, configs/t5/vit5_base.gin, setup.py; chưa chạy upstream |
+| Khoảng trống lấp | Tài nguyên tiếng Việt: mô hình text-to-text kiểu T5 cho sinh văn bản (tóm tắt, NER) |
+| Cơ chế đáng học | • Mô hình T5 tiếng Việt base và large, cấu hình bằng gin cho T5X/JAX (`configs/t5/vit5_base.gin`, `vit5_large.gin`), từ vựng SentencePiece riêng trên GCS.<br>• `src/task.py` đăng ký tác vụ seqio đọc TSV (input, target) và gắn metric; `src/metrics.py` có rouge, macro_f1, accuracy.<br>• Đã có checkpoint HuggingFace (`VietAI/vit5-base`, `vit5-large`) và bản tinh chỉnh tóm tắt vietnews; kho kèm tập test nhỏ (vietnews, wikilingua, phomt) trong `data/`. |
+| Tiêu chí và cách kiểm | Đo bằng ROUGE trên vietnews và wikilingua, bảng kết quả là ảnh trong README (chưa xác minh bằng chạy lại). Không có test tự động hay CI; `setup.py` cài thẳng T5X từ git bằng `os.system`. |
+| Giới hạn và rủi ro | Ổn định cũ: commit cuối 2023-02, phụ thuộc T5X/JAX/TF thay đổi nhanh nên khó tái hiện (`src/metrics.py` dùng `load_metric` đã bị bỏ khỏi thư viện datasets mới, chưa xác minh phiên bản). Checkpoint ở GCS công khai không ghim băm. License MIT cho kho; dữ liệu nguồn (Vietnews, Wikilingua, PhoNER) có license riêng. |
+| So với | phobert, phogpt (cùng nhóm mô hình ngôn ngữ tiếng Việt; ViT5 là encoder-decoder) |
+| Nguồn | [README.md](https://github.com/vietai/ViT5/blob/b3886e9a9f8d29837aa156b11f840977cf7565be/README.md) · [LICENSE](https://github.com/vietai/ViT5/blob/b3886e9a9f8d29837aa156b11f840977cf7565be/LICENSE) · [task.py](https://github.com/vietai/ViT5/blob/b3886e9a9f8d29837aa156b11f840977cf7565be/src/task.py) · [metrics.py](https://github.com/vietai/ViT5/blob/b3886e9a9f8d29837aa156b11f840977cf7565be/src/metrics.py) · [vit5_base.gin](https://github.com/vietai/ViT5/blob/b3886e9a9f8d29837aa156b11f840977cf7565be/configs/t5/vit5_base.gin) · [setup.py](https://github.com/vietai/ViT5/blob/b3886e9a9f8d29837aa156b11f840977cf7565be/setup.py) |
+
+<a id="n2-binhvq-news-corpus"></a>
+
+### Binhvq News Corpus (đã ngừng phân phối)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/binhvq/news-corpus |
+| License | MIT (file LICENSE là mẫu chưa điền; chỉ áp cho mã, không áp cho dữ liệu) |
+| Phiên bản đã đọc | `724ea522d89e09f771bdbee027113ad7915198d2` (commit 2026-08-13) |
+| Kiểm chứng | 2026-11-24; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Khoảng trống lấp | Tài nguyên tiếng Việt: kho ngữ liệu tin tức, nay chỉ còn thông báo ngừng phân phối |
+| Cơ chế đáng học | • Kho chỉ còn README và LICENSE: thông báo 08/2026 nói corpus đã ngừng phân phối vì bản quyền báo chí và dữ liệu cá nhân, link tải đã gỡ, file dữ liệu đã xoá.<br>• Thông tin lịch sử (do tác giả nêu, chưa xác minh): khoảng 14,9 triệu bài từ hơn 150 nguồn, ~111 triệu câu, thêm ~10 triệu bình luận Facebook.<br>• Bài học: dữ liệu cào báo chí và mạng xã hội có thể bị rút khỏi phân phối vì bản quyền và dữ liệu cá nhân. |
+| Tiêu chí và cách kiểm | Không có dữ liệu, mã, test hay CI để kiểm. Tuyên bố trong README (repo archive chỉ đọc, dữ liệu đã xoá) chưa kiểm được qua clone nên đánh dấu chưa xác minh. |
+| Giới hạn và rủi ro | Không dùng được làm nguồn dữ liệu: đã gỡ, tác giả xin đừng liên hệ. Các nghiên cứu cũ trích corpus này khó tái hiện. LICENSE là bản MIT chưa điền năm và tên (`[year] [fullname]`); README tự nói MIT không áp cho nội dung báo và bình luận. Mô tả trinh sát (corpus có sẵn để tải) lỗi thời: hiện không còn dữ liệu. |
+| So với | awsome-vietnamese-nlp, vncorenlp (danh mục và công cụ tiếng Việt còn hoạt động) |
+| Nguồn | [README.md](https://github.com/binhvq/news-corpus/blob/724ea522d89e09f771bdbee027113ad7915198d2/README.md) · [LICENSE](https://github.com/binhvq/news-corpus/blob/724ea522d89e09f771bdbee027113ad7915198d2/LICENSE) |
+
+<a id="n2-ibus-bamboo"></a>
+
+### IBus Bamboo
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/BambooEngine/ibus-bamboo |
+| License | GPL-3.0 (lõi bamboo-core vendor MIT; từ điển đóng gói ghi GPLv3 kèm nguồn GPL/CC-BY-SA) |
+| Phiên bản đã đọc | `49e03d7a36b8a8b796950c158b545af8cf9707d4` (commit 2026-05-19) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, config/config.go, engine.go (grep), x11_clipboard.c, spelling.go, release.yaml, tests/xtest.c, LICENSE.vietnamese.cm.dict; chưa chạy upstream |
+| Khoảng trống lấp | Bộ gõ tiếng Việt trên Linux (kho mới có OpenKey/xkey cho macOS/Windows) |
+| Cơ chế đáng học | - Lõi gõ tách thành `bamboo-core` (vendor, MIT): `spelling.go` mô tả dãy phụ âm đầu và nguyên âm hợp lệ, dùng để quyết định có biến đổi dấu hay không.<br>- Nhiều chế độ gõ theo ứng dụng (pre-edit, surrounding text, ForwardKeyEvent, backspace), lưu ánh xạ `InputModeMapping` theo ứng dụng trong `config/config.go`.<br>- Cấu hình và gõ tắt lưu ở `~/.config/ibus-bamboo/` dạng JSON và văn bản thường, không mã hóa.<br>- Có test Go (`engine_test.go`: `TestPreeditEngine`, `TestBsEngine`) và `tests/xtest.c` giả lập phím qua XTest. |
+| Tiêu chí và cách kiểm | Cổng duy nhất là `make test` rồi `make build` trong workflow release (Ubuntu, FreeBSD VM, Nix flake) chạy mỗi lần push; không thấy đo độ chính xác gõ hay kiểm quyền riêng tư. Chưa đọc từng ca test. |
+| Giới hạn và rủi ro | GPL-3.0. Quyền riêng tư: là engine IBus nên mọi phím gõ đi qua tiến trình; trong mã Go đã mở chỉ thấy `exec.Command("xdg-open")` mở trang, không thấy gọi mạng (grep không phải bảo đảm tuyệt đối). `x11_clipboard.c` chiếm quyền chủ sở hữu selection để dán chuỗi, và có dùng XTest/giám sát cửa sổ nên cần X11 hoặc Wayland qua wlr-foreign-toplevel. Dự án có thể không còn bảo trì. |
+| So với | OpenKey và xkey (bộ gõ macOS/Windows, hồ sơ có sẵn); phương án thay thế ngoài kho là fcitx5-unikey theo README (chưa xác minh) |
+| Nguồn | [LICENSE](https://github.com/BambooEngine/ibus-bamboo/blob/49e03d7a36b8a8b796950c158b545af8cf9707d4/LICENSE) · [README.md](https://github.com/BambooEngine/ibus-bamboo/blob/49e03d7a36b8a8b796950c158b545af8cf9707d4/README.md) · [config.go](https://github.com/BambooEngine/ibus-bamboo/blob/49e03d7a36b8a8b796950c158b545af8cf9707d4/config/config.go) · [engine.go](https://github.com/BambooEngine/ibus-bamboo/blob/49e03d7a36b8a8b796950c158b545af8cf9707d4/engine.go) · [x11_clipboard.c](https://github.com/BambooEngine/ibus-bamboo/blob/49e03d7a36b8a8b796950c158b545af8cf9707d4/x11_clipboard.c) · [LICENSE.vietnamese.cm.dict](https://github.com/BambooEngine/ibus-bamboo/blob/49e03d7a36b8a8b796950c158b545af8cf9707d4/data/LICENSE.vietnamese.cm.dict) · [spelling.go](https://github.com/BambooEngine/ibus-bamboo/blob/49e03d7a36b8a8b796950c158b545af8cf9707d4/vendor/github.com/BambooEngine/bamboo-core/spelling.go) · [release.yaml](https://github.com/BambooEngine/ibus-bamboo/blob/49e03d7a36b8a8b796950c158b545af8cf9707d4/.github/workflows/release.yaml) |

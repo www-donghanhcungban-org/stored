@@ -2,7 +2,7 @@
 
 # mobile — Kỹ thuật phần mềm & vận hành
 
-[← Mục lục catalog](../README.md) · 28 hồ sơ.
+[← Mục lục catalog](../README.md) · 33 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -18,6 +18,7 @@
 | [React Navigation](../../13-dev-stack-devops/README.md#anhkysuai-react-navigation-react-navigation) | `react-navigation/react-navigation` | MIT theo khai báo root và LICENSE package core; đối chiếu các package khác khi phân phối | 24.528 | đọc tài liệu 2026-11-23 | 13 | Routing và navigation cho ứng dụng React Native. |
 | [Kingfisher](../../13-dev-stack-devops/README.md#anhkysuai-onevcat-kingfisher) | `onevcat/Kingfisher` | MIT | 24.412 | đọc tài liệu 2026-11-23 | 13 | Tải, xử lý và cache ảnh từ mạng trong ứng dụng Swift. |
 | [Best-Flutter-UI-Templates](../../06-ui-ux-design/README.md#ch-best-flutter-ui-templates) | `mitesh77/Best-Flutter-UI-Templates` | MIT | 22.870 | đọc tài liệu 2026-11-23 | 06 | 5 app demo UI Flutter, không kiến trúc; |
+| [MobSF](../../31-software-supply-chain-security/README.md#n2-mobsf) | `MobSF/Mobile-Security-Framework-MobSF` | GPL-3.0-only | 22.312 | đọc mã 2026-11-23 | 31 | Nền tảng web (Django) quét tĩnh APK/AAB/IPA/Windows và có phân tích động qua Frida/thiết bị; |
 | [react-native-web](../../06-ui-ux-design/README.md#ch-react-native-web) | `necolas/react-native-web` | MIT | 22.162 | đọc tài liệu 2026-11-23 | 06 | Nghỉ 11 tháng rồi hồi sinh 9/2026 dưới người dẫn mới; |
 | [nowinandroid](../../13-dev-stack-devops/README.md#anhkysuai-2026-11-23-android-nowinandroid) | `android/nowinandroid` | Apache-2.0 | 22.120 | đọc tài liệu 2026-11-23 | 13 | Ứng dụng mẫu Android chính thức dùng Kotlin và Jetpack Compose, kèm tài liệu kiến trúc và modularization. |
 | [SnapKit](../../13-dev-stack-devops/README.md#anhkysuai-snapkit-snapkit) | `SnapKit/SnapKit` | MIT | 20.342 | đọc tài liệu 2026-11-23 | 13 | DSL Swift để viết ràng buộc Auto Layout cho giao diện iOS, macOS và tvOS. |
@@ -25,6 +26,7 @@
 | [artemis](../../08-awesome-lists-learning/README.md#6c523-trợ-lý-lập-trình-ai) | `google/artemis` | Apache-2.0 | 17.651 | đọc tài liệu 2026-11-18 | 08 | Agent đa phương thức điều khiển điện thoại Android thật bằng ngôn ngữ tự nhiên cho kiểm thử và tác vụ hằng ngày, kèm MCP server để IDE AI điều khiển thiết bị, lấy Logcat… |
 | [Maestro](../../11-browser-computer-use-sandbox/README.md#ch-maestro) | `mobile-dev-inc/Maestro` | Apache-2.0 | 16.493 | đọc tài liệu 2026-11-23 | 11 | E2E flow YAML cho mobile và web, tất định là chính; |
 | [Tamagui (Bento)](../../06-ui-ux-design/README.md#ch-tamagui-bento) | `tamagui/tamagui` | MIT | 14.317 | đọc tài liệu 2026-11-23 | 06 | UI RN + web; |
+| [Detox](../../30-software-testing-quality/README.md#n2-detox) | `wix/Detox` | MIT | 12.057 | đọc mã 2026-11-23 | 30 | Khung E2E gray-box cho app di động (React Native trước hết) chạy trên thiết bị hoặc giả lập. |
 | [UI Kitten](../../06-ui-ux-design/README.md#ch-ui-kitten) | `akveo/react-native-ui-kitten` | MIT | 10.667 | đọc tài liệu 2026-11-23 | 06 | Hồi sinh 2026 (179/193 commit một người), 6.2.1, README nói chạy New Architecture RN 0.81 (chưa xác minh); |
 | [react-native-calendars](../../06-ui-ux-design/README.md#ch-react-native-calendars) | `wix/react-native-calendars` | MIT | 10.326 | đọc tài liệu 2026-11-23 | 06 | Chuẩn de facto, gần như đứng (3 commit/12 tháng); |
 | [React Native Reusables](../../06-ui-ux-design/README.md#ch-react-native-reusables) | `founded-labs/react-native-reusables` | MIT | 8.737 | đọc tài liệu 2026-11-23 | 06 | shadcn cho React Native: 32 component (NativeWind/Uniwind), 7 block auth có bản Clerk; |
@@ -34,3 +36,6 @@
 | [gluestack-ui](../../06-ui-ux-design/README.md#ch-gluestack-ui) | `gluestack/gluestack-ui` | MIT | 5.359 | đọc tài liệu 2026-11-23 | 06 | v3: 61 component RN + web trên NativeWind, 4 starter kit; |
 | [Taro UI](../../06-ui-ux-design/README.md#ch-taro-ui) | `jd-opensource/taro-ui` | MIT | 4.729 | đọc tài liệu 2026-11-23 | 06 | UI đa nền mini-program cho Taro 3; |
 | [tapflow](../../30-software-testing-quality/README.md#nt-tapflow) | `jo-duchan/tapflow` | MIT (kèm thành phần bên thứ ba Apache-2.0 trong NOTICE) | 2.292 | đọc mã 2026-11-23 | 30 | Ứng dụng tự host stream iOS Simulator và Android emulator ra trình duyệt cho QA không cần Xcode, kèm flow runner YAML và MCP. |
+| [Flashlight](../../30-software-testing-quality/README.md#n2-flashlight) | `bamlab/flashlight` | MIT | 1.614 | đọc mã 2026-11-23 | 30 | Công cụ chấm điểm hiệu năng app Android (CPU, FPS, RAM, luồng CPU cao) qua adb, không cần cài gì vào app, xuất báo cáo HTML; |
+| [Patrol](../../30-software-testing-quality/README.md#n2-patrol) | `leancodepl/patrol` | Apache-2.0 | 1.459 | đọc mã 2026-11-23 | 30 | Framework E2E cho Flutter vượt giới hạn integration_test bằng cách gọi UI native (quyền, thông báo, wifi, WebView) qua UiAutomator trên Android, kèm finders cú pháp gọn,… |
+| [maestro-runner](../../30-software-testing-quality/README.md#n2-maestro-runner) | `devicelab-dev/maestro-runner` | Apache-2.0 (mã nguồn); driver APK/iOS agent của DeviceLab là proprietary | 535 | đọc mã 2026-11-23 | 30 | Runner Go một file nhị phân chạy flow YAML của Maestro trên Android (UIAutomator2), iOS (WebDriverAgent), web (Chrome CDP) và cloud Appium, có chạy song song, retry nguy… |

@@ -1518,3 +1518,94 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | Apache-2.0 (LICENSE đã đọc, ghi Copyright 2026 Perplexity AI). Yêu cầu hạ tầng nặng: host Linux x86_64 có `/dev/kvm`, loop device, btrfs, Docker đặc quyền, 30 GiB trống; không chạy trên macOS. Trường `incubating` và các thao tác snapshot/checkpoint nằm ngoài hợp đồng hỗ trợ. Có CLA dự kiến, chỉ bản minor mới nhất nhận bản vá bảo mật (SECURITY.md). Độ cô lập của microVM là tuyên bố của kiến trúc **(chưa xác minh bằng kiểm thử thoát)**. |
 | So với | firecracker (thành phần nền), e2b và opensandbox (cùng nhiệm vụ sandbox cho agent), gvisor và kata-containers (cô lập kiểu khác) |
 | Nguồn | [LICENSE](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/LICENSE) · [README.md](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/README.md) · [docs/architecture.md](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/docs/architecture.md) · [docs/egress-profiles.md](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/docs/egress-profiles.md) · [docs/installation.md](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/docs/installation.md) · [docs/versioning.md](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/docs/versioning.md) · [docs/observability.md](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/docs/observability.md) · [crates/l40_api/api/src/egress_profiles.rs](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/crates/l40_api/api/src/egress_profiles.rs) · [ARCHITECTURE.toml](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/ARCHITECTURE.toml) · [deny.toml](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/deny.toml) · [.github/workflows/main-ci.yml](https://github.com/perplexityai/SPACE/blob/432ff2e7d9061cc0e47177d900a8b3c6cc5399df/.github/workflows/main-ci.yml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-pullrun-agent-sandbox"></a>
+
+### Pullrun
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/pullrun/pullrun |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `0a45f4841753cd161439225a7bd14858dd7ec4d5` (commit 2026-11-24) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, docs/SECURITY_STATUS.md, docs/TIERS.md, docs/SNAPSHOTS.md, runtime/pullrun-vm/src/egress.rs, docs/BUSINESS.md, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Sandbox/isolation (microVM): runtime Rust chạy OCI image trong Firecracker hoặc Apple VM, snapshot bộ nhớ |
+| Cơ chế đáng học | - Cùng một image OCI chạy ở nhiều tầng: container, VM Firecracker từng tác vụ, nhóm sandbox trong một VM (macOS): `docs/TIERS.md`.<br>- Snapshot bộ nhớ Firecracker và rootfs; khôi phục 63–119 ms trong bản đo của tác giả, mã hóa AES-256-GCM kèm SHA-256 từng file: `docs/SNAPSHOTS.md`, `docs/SECURITY_STATUS.md`.<br>- Egress fail-closed bằng nftables theo từng VM trên bridge, chỉ cho phép danh sách và lưu lượng đã thiết lập: `runtime/pullrun-vm/src/egress.rs`.<br>- Có MCP server 15 tool để agent tự điều khiển. |
+| Tiêu chí và cách kiểm | CI: `cargo build/test --workspace`, clippy `-D warnings`, `fmt --check`, và workflow fuzz (đã mở `ci.yml`, chưa mở `fuzz.yml`); `SECURITY_STATUS.md` tự chấm từng nguyên tắc Met/Partial/Future, đo 23,7 triệu lượt fuzz parser OCI. Số đo tốc độ là của tác giả (chưa xác minh). |
+| Giới hạn và rủi ro | Đồng bộ tài liệu chưa nhất quán: README nói "bốn tầng cô lập" còn `TIERS.md` liệt kê ba; README ghi snapshot dạng văn bản thô, trong khi `SECURITY_STATUS.md` và `SNAPSHOTS.md` ghi mã hóa AES-256-GCM (README có thể cũ). Egress fail-closed chỉ cho container root và VM bridge; VM rootless chưa có; nhóm sandbox chỉ macOS; control plane chỉ là stub, một nút. Checkout nông nên không xác minh được lịch sử. Có lộ trình thương mại OEM/on-prem (`BUSINESS.md`), chưa có kiểm toán độc lập, 0.11.x còn sớm. |
+| So với | `firecracker`, `microsandbox`, `opensandbox` |
+| Nguồn | [README.md](https://github.com/pullrun/pullrun/blob/0a45f4841753cd161439225a7bd14858dd7ec4d5/README.md) · [LICENSE](https://github.com/pullrun/pullrun/blob/0a45f4841753cd161439225a7bd14858dd7ec4d5/LICENSE) · [SECURITY_STATUS.md](https://github.com/pullrun/pullrun/blob/0a45f4841753cd161439225a7bd14858dd7ec4d5/docs/SECURITY_STATUS.md) · [TIERS.md](https://github.com/pullrun/pullrun/blob/0a45f4841753cd161439225a7bd14858dd7ec4d5/docs/TIERS.md) · [SNAPSHOTS.md](https://github.com/pullrun/pullrun/blob/0a45f4841753cd161439225a7bd14858dd7ec4d5/docs/SNAPSHOTS.md) · [egress.rs](https://github.com/pullrun/pullrun/blob/0a45f4841753cd161439225a7bd14858dd7ec4d5/runtime/pullrun-vm/src/egress.rs) · [BUSINESS.md](https://github.com/pullrun/pullrun/blob/0a45f4841753cd161439225a7bd14858dd7ec4d5/docs/BUSINESS.md) · [ci.yml](https://github.com/pullrun/pullrun/blob/0a45f4841753cd161439225a7bd14858dd7ec4d5/.github/workflows/ci.yml) |
+
+<a id="n2-capsulerun-capsule-wasm"></a>
+
+### Capsule (capsulerun)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/capsulerun/runtime |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `7588fc7d24dddc5f8da38e51beb6c0d4eb30d061` (commit 2026-10-12) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, crates/capsule-core/src/wasm/execution_policy.rs, crates/capsule-core/Cargo.toml, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Sandbox WASM cho mã do agent sinh: mỗi tác vụ một module Wasm có hạn mức |
+| Cơ chế đáng học | - Hàm Python hoặc TypeScript gắn `@task`/`task()` được biên dịch thành module WebAssembly và chạy dưới Wasmtime; mỗi tác vụ một sandbox: `README.md`.<br>- CPU giới hạn bằng fuel của Wasm: LOW 100 triệu, MEDIUM 2 tỷ, HIGH 50 tỷ lệnh (hoặc `Custom`), cộng `ram`, `timeout`, `max_retries`: `execution_policy.rs`.<br>- Quyền mặc định rỗng: `allowed_files` (có chế độ ro), `allowed_hosts`, `env_variables` đều phải khai báo; nhật ký thực thi lưu fuel đã dùng, RAM, số request host vào SQLite: `config/log.rs`. |
+| Tiêu chí và cách kiểm | CI: `cargo fmt --check`, clippy `-D warnings`, test lõi Rust, thêm workflow phát hành cho adapter Python, TypeScript, MCP (đã mở `ci.yml`). Chưa chạy. |
+| Giới hạn và rủi ro | Chỉ chạy mã biên dịch được sang Wasm (hệ sinh thái Python/JS hạn chế, không chạy được tiến trình hay thư viện native tùy ý), khác với sandbox VM. Cô lập dựa vào Wasmtime 29 chứ không có kernel riêng. `ram` và `timeout` mặc định không giới hạn nên phải đặt tường minh. Không thấy telemetry trong mã Rust (tìm từ khóa, không phải kiểm toán). Dự án trẻ (0.8.x), cập nhật gần nhất 2026-10-12. |
+| So với | `monty`, `microsandbox`, `sandbox-runtime` |
+| Nguồn | [README.md](https://github.com/capsulerun/runtime/blob/7588fc7d24dddc5f8da38e51beb6c0d4eb30d061/README.md) · [LICENSE](https://github.com/capsulerun/runtime/blob/7588fc7d24dddc5f8da38e51beb6c0d4eb30d061/LICENSE) · [execution_policy.rs](https://github.com/capsulerun/runtime/blob/7588fc7d24dddc5f8da38e51beb6c0d4eb30d061/crates/capsule-core/src/wasm/execution_policy.rs) · [Cargo.toml](https://github.com/capsulerun/runtime/blob/7588fc7d24dddc5f8da38e51beb6c0d4eb30d061/crates/capsule-core/Cargo.toml) · [ci.yml](https://github.com/capsulerun/runtime/blob/7588fc7d24dddc5f8da38e51beb6c0d4eb30d061/.github/workflows/ci.yml) |
+
+<a id="n2-swe-rex-runtime"></a>
+
+### SWE-ReX
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/SWE-agent/SWE-ReX |
+| License | MIT |
+| Phiên bản đã đọc | `5c995c365dfb1fd5bc56fda688be5d8538f9931f` (commit 2026-03-02) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE.txt, src/swerex/runtime/abstract.py, src/swerex/server.py, src/swerex/deployment/docker.py, .github/workflows/pytest.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Lớp runtime thực thi shell cho agent trên nhiều backend (Docker, Modal, Fargate, Daytona), không phải sandbox cô lập |
+| Cơ chế đáng học | - Giao diện `AbstractRuntime` gồm phiên bash nhiều luồng, nhận biết lệnh kết thúc, lấy exit code và hỗ trợ lệnh tương tác (gdb, ipython): `runtime/abstract.py`.<br>- Cùng mã agent chạy trên `docker`, `modal`, `fargate`, `daytona`, `local`, `remote` nhờ lớp `Deployment` trừu tượng: `deployment/`.<br>- Triển khai Docker khởi chạy container, mở cổng, rồi đợi `is_alive` với token xác thực; server FastAPI kiểm `X-API-Key`, hỗ trợ `X-Request-ID` lũy đẳng: `server.py`, `deployment/docker.py`. |
+| Tiêu chí và cách kiểm | CI: workflow pytest dựng image Docker kiểm thử rồi chạy bộ test (có test docker, local, fargate; job dùng secret Modal). Đã mở `pytest.yaml`. Chưa chạy. |
+| Giới hạn và rủi ro | Mô tả trinh sát hơi lệch: đây không phải sandbox, cô lập hoàn toàn do backend (container Docker, Modal...); `LocalDeployment` chạy lệnh thẳng trên máy. `docker run -p` mặc định gắn mọi giao diện và `docker_args` tùy ý; so khóa bằng `!=` không phải so sánh hằng thời gian (chỉ đọc mã, không phải khai thác). Kiểm tra cổng nên đặt token luôn. Backend Daytona ghi WIP. Commit mới nhất 2026-03-02, tức khoảng 9 tháng không cập nhật tại thời điểm kiểm (bảo trì chậm). |
+| So với | `e2b`, `modal`, `daytona`, `opensandbox` |
+| Nguồn | [README.md](https://github.com/SWE-agent/SWE-ReX/blob/5c995c365dfb1fd5bc56fda688be5d8538f9931f/README.md) · [LICENSE.txt](https://github.com/SWE-agent/SWE-ReX/blob/5c995c365dfb1fd5bc56fda688be5d8538f9931f/LICENSE.txt) · [abstract.py](https://github.com/SWE-agent/SWE-ReX/blob/5c995c365dfb1fd5bc56fda688be5d8538f9931f/src/swerex/runtime/abstract.py) · [server.py](https://github.com/SWE-agent/SWE-ReX/blob/5c995c365dfb1fd5bc56fda688be5d8538f9931f/src/swerex/server.py) · [docker.py](https://github.com/SWE-agent/SWE-ReX/blob/5c995c365dfb1fd5bc56fda688be5d8538f9931f/src/swerex/deployment/docker.py) · [pytest.yaml](https://github.com/SWE-agent/SWE-ReX/blob/5c995c365dfb1fd5bc56fda688be5d8538f9931f/.github/workflows/pytest.yaml) |
+
+<a id="n2-pctx"></a>
+
+### pctx (Port of Context)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/portofcontext/pctx |
+| License | MIT |
+| Phiên bản đã đọc | `499379dfb6a145185f2f8021bb9751584f8ed6fd` (commit 2026-11-02) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README.md, CHANGELOG.md, lib.rs, module_loading.rs, timeout.rs; chưa chạy upstream |
+| Khoảng trống lấp | Sandbox/isolation: chạy mã do LLM sinh trong isolate hạn chế, giữ bí mật auth ngoài tầm nhìn của mô hình |
+| Cơ chế đáng học | - execute() giữ mutex V8 toàn tiến trình, chạy type check TypeScript trước, chỉ chạy khi không có diagnostic, rồi trả stdout, stderr, output và trace sự kiện (`crates/pctx_executor/src/lib.rs`).<br>- Isolate dựng từ snapshot, module loader là NoopModuleLoader nên mọi import() bị từ chối, kể cả đọc file host (`lib.rs`, `tests/module_loading.rs`).<br>- Hạn giờ mặc định 120 giây, vòng lặp vô hạn bị dừng và lần chạy sau vẫn chạy được (`tests/timeout.rs`).<br>- Telemetry OTLP là cấu hình tùy chọn với cờ enabled, mặc định tắt theo derive Default (`crates/pctx_config/src/telemetry.rs`). |
+| Tiêu chí và cách kiểm | Test Rust trong crates/pctx_executor/src/tests (module_loading, timeout, runtime_semantics, type_checking, mcp_client_usage, concurrent_v8_stress). Workflow ci.yaml đã mở: cargo fmt --check và cargo test --workspace --locked trên ubuntu; job clippy bị comment tắt; chỉ Linux (macOS và Windows còn TODO). Kiểm bằng máy, nhưng tôi chưa chạy. |
+| Giới hạn và rủi ro | MIT (Sideko, Inc.). Phiên bản v1.0.0 (2026-10-30 theo CHANGELOG). Cô lập chỉ ở mức isolate V8, không có giới hạn bộ nhớ hay CPU ngoài thời gian đã đọc thấy; không thấy ranh giới tiến trình hay hệ điều hành. Mô tả của trinh sát "microVM, WASM" là sai: đây là Deno/V8. Allow-list host trong README không có đường thực thi tương ứng trong executor (chưa xác minh phía session server). CI bỏ clippy. |
+| So với | sandbox-runtime (Anthropic, cô lập mức hệ điều hành), microsandbox (microVM), opensandbox; khác nhau ở chỗ pctx cô lập ngôn ngữ chứ không cô lập tiến trình |
+| Nguồn | [LICENSE](https://github.com/portofcontext/pctx/blob/499379dfb6a145185f2f8021bb9751584f8ed6fd/LICENSE) · [README.md](https://github.com/portofcontext/pctx/blob/499379dfb6a145185f2f8021bb9751584f8ed6fd/README.md) · [CHANGELOG.md](https://github.com/portofcontext/pctx/blob/499379dfb6a145185f2f8021bb9751584f8ed6fd/CHANGELOG.md) · [lib.rs](https://github.com/portofcontext/pctx/blob/499379dfb6a145185f2f8021bb9751584f8ed6fd/crates/pctx_executor/src/lib.rs) · [module_loading.rs](https://github.com/portofcontext/pctx/blob/499379dfb6a145185f2f8021bb9751584f8ed6fd/crates/pctx_executor/src/tests/module_loading.rs) · [timeout.rs](https://github.com/portofcontext/pctx/blob/499379dfb6a145185f2f8021bb9751584f8ed6fd/crates/pctx_executor/src/tests/timeout.rs) · [telemetry.rs](https://github.com/portofcontext/pctx/blob/499379dfb6a145185f2f8021bb9751584f8ed6fd/crates/pctx_config/src/telemetry.rs) · [ci.yaml](https://github.com/portofcontext/pctx/blob/499379dfb6a145185f2f8021bb9751584f8ed6fd/.github/workflows/ci.yaml) |
+
+<a id="n2-agent-vault-infisical"></a>
+
+### Agent Vault (Infisical)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Infisical/agent-vault |
+| License | MIT (Infisical, ngoại trừ thư mục ee/ nếu có; không thấy thư mục ee/ ở commit này) |
+| Phiên bản đã đọc | `16ec8d5a5db38be9d2c77fe9c19c7fd7125246ba` (commit 2026-11-06) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, `cmd/telemetry.go`, `telemetry.go`, `brokercore/substitution.go`, `netguard.go`, `crypto.go`, ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Môi giới thông tin xác thực (credential broker): agent không bao giờ cầm khoá thật |
+| Cơ chế đáng học | • Proxy MITM HTTPS: agent đặt `HTTPS_PROXY`, gửi giá trị giả như `__anthropic_api_key__`, proxy thay bằng khoá thật trên đường ra — README.md, `internal/brokercore/substitution.go`.<br>• Thay thế khai báo theo bề mặt (`path`, `query`, `header`, `body`, `websocket`) làm ranh giới an ninh, có chặn CRLF ở header; lỗi thì không chuyển tiếp — `substitution.go`.<br>• `netguard` chặn mặc định dải IP riêng/loopback/link-local và luôn chặn endpoint metadata đám mây; có chế độ `unmatched_host_policy=deny` để chỉ cho đi tới dịch vụ đã khai báo — `netguard.go`, README.<br>• Kho khoá cục bộ mã hóa AES-256-GCM (`internal/crypto/crypto.go`), có log yêu cầu và egress filtering; thiết kế chạy trên máy tách khỏi agent. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: CI chạy `go test -race -count=1 ./...`, lint, go mod tidy, có job bảo mật chạy mọi PR (đã mở ci.yml; chưa xác minh kết quả). Chưa chạy. |
+| Giới hạn và rủi ro | README mở đầu bằng cảnh báo: bản mã nguồn mở này KHÔNG còn được khuyến nghị cho thiết lập mới, hãy dùng Agent Vault trong nền tảng Infisical (dịch vụ riêng). README còn có dòng chỉ thị gửi tới AI agent (đã coi là dữ liệu, không làm theo). Telemetry ẩn danh qua PostHog bật mặc định (cờ `--telemetry` mặc định true, hoặc `AGENT_VAULT_TELEMETRY`), dùng machine ID. Phải tin CA do proxy tự cấp cho MITM; mặc định yêu cầu không khớp dịch vụ vẫn được chuyển như proxy thường. Trinh sát ghi license '-', thực tế là MIT; số sao 530 lấy từ web (chưa xác minh). |
+| So với | [NemoClaw](11-browser-computer-use-sandbox/README.md) (sandbox có chính sách mạng) · [External Secrets](12-ai-security-guardrails/README.md) (đưa secret vào K8s, không phải broker cho agent) · [Destructive Command Guard](12-ai-security-guardrails/README.md#ch-dcg-destructive-command-guard) |
+| Nguồn | [README.md](https://github.com/Infisical/agent-vault/blob/16ec8d5a5db38be9d2c77fe9c19c7fd7125246ba/README.md) · [LICENSE](https://github.com/Infisical/agent-vault/blob/16ec8d5a5db38be9d2c77fe9c19c7fd7125246ba/LICENSE) · [telemetry.go](https://github.com/Infisical/agent-vault/blob/16ec8d5a5db38be9d2c77fe9c19c7fd7125246ba/cmd/telemetry.go) · [telemetry.go](https://github.com/Infisical/agent-vault/blob/16ec8d5a5db38be9d2c77fe9c19c7fd7125246ba/internal/telemetry/telemetry.go) · [substitution.go](https://github.com/Infisical/agent-vault/blob/16ec8d5a5db38be9d2c77fe9c19c7fd7125246ba/internal/brokercore/substitution.go) · [netguard.go](https://github.com/Infisical/agent-vault/blob/16ec8d5a5db38be9d2c77fe9c19c7fd7125246ba/internal/netguard/netguard.go) · [crypto.go](https://github.com/Infisical/agent-vault/blob/16ec8d5a5db38be9d2c77fe9c19c7fd7125246ba/internal/crypto/crypto.go) · [ci.yml](https://github.com/Infisical/agent-vault/blob/16ec8d5a5db38be9d2c77fe9c19c7fd7125246ba/.github/workflows/ci.yml) |

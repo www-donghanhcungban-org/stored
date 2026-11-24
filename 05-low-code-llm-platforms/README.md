@@ -620,3 +620,43 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | Backend không có xác thực thật: `AllowAllAuthPort` bắt buộc đặt `WB_AUTH_PORT=allow-all` mới chạy, không có cô lập tenant; README cảnh báo không mở ra mạng chung, và compose deploy ai-studio publish cổng 8080 trên mọi interface. Tuyên bố của README về "approve with corrections" chỉ đúng một nửa: apps/backend/README.md ghi các chỉnh sửa (`edits`) được lưu nhưng chưa được áp vào bước sau (follow-up decision-settled-values). Chưa thấy phê duyệt nhiều cấp có sẵn: node phê duyệt là từng bước riêng, ghép nhiều cấp là việc của người dùng; trinh sát ghi "nhiều cấp" là chưa xác minh. Cần Temporal và Postgres tự vận hành. |
 | So với | temporal, n8n, langgraph |
 | Nguồn | [LICENSE](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/LICENSE) · [README.md](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/README.md) · [durable-pause.decision-log.md](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/packages/temporal/src/workflow/durable-pause.decision-log.md) · [verdict-validation.ts](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/packages/temporal/src/workflow/verdict-validation.ts) · [README.md](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/apps/backend/README.md) · [pr-check.yml](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/.github/workflows/pr-check.yml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-speakeasy-api-openapi"></a>
+
+### Speakeasy OpenAPI (Go)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/speakeasy-api/openapi |
+| License | MIT |
+| Phiên bản đã đọc | `c9d1c24238dc7dbff4bd3a7d25955e096ea3382c` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc arazzo/arazzo.go, arazzo/linter/rules/dependency_cycle.go, arazzo/linter/README.md, workflow ci.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Đặc tả workflow API (Arazzo) và công cụ: bộ phân tích, kiểm hợp lệ và lint Arazzo 1.0/1.1 bằng Go |
+| Cơ chế đáng học | • `arazzo.Validate` (arazzo/arazzo.go) kiểm phiên bản được hỗ trợ, tên sourceDescription và workflowId không trùng, `$self` hợp lệ, rồi `validateReferences` trả danh sách lỗi có vị trí trong cây YAML.<br>• Linter Arazzo tách luật ngữ nghĩa khỏi kiểm schema: ví dụ `semantic-dependency-cycle` (dependency_cycle.go) dựng đồ thị dependsOn của workflow và step rồi báo chu trình; còn có luật bước không chạy tới, output/input không dùng, retry-after, nguồn không HTTPS.<br>• CLI `openapi arazzo` có validate, lint (kèm `--fix` và `--dry-run`), graph (xuất Mermaid hoặc DOT), bootstrap từ OpenAPI và upgrade lên 1.1; cùng engine linter dùng cho OpenAPI, Overlay, AsyncAPI. |
+| Tiêu chí và cách kiểm | Luật lint có mức nghiêm trọng mặc định (chu trình dependsOn là error) và cấu hình ruleset; CI chạy fmt-check, mod-check, lint, kiểm ví dụ cập nhật, rồi test có cờ race trên ubuntu và windows kèm coverage. Kiểm bằng máy, nhưng chỉ kiểm tài liệu, không gọi API thật. |
+| Giới hạn và rủi ro | Không có bộ thực thi: đây là thư viện phân tích và kiểm, không chạy workflow (trinh sát ghi chung chung là bộ công cụ có validate, đúng nhưng không nên hiểu là engine). MIT, không thấy telemetry trong CLI (tìm theo từ khóa, chưa quét toàn bộ). Do Speakeasy duy trì và dùng cho sản phẩm SDK của họ nên lộ trình có thể theo nhu cầu thương mại; số sao 279 do trinh sát ghi (chưa xác minh). |
+| So với | arazzo-specification (đặc tả gốc), jentic-arazzo-engine (bộ chạy), open-workflow-specification, spectral (lint OpenAPI), openapitools-openapi-generator |
+| Nguồn | [LICENSE](https://github.com/speakeasy-api/openapi/blob/c9d1c24238dc7dbff4bd3a7d25955e096ea3382c/LICENSE) · [README.md](https://github.com/speakeasy-api/openapi/blob/c9d1c24238dc7dbff4bd3a7d25955e096ea3382c/README.md) · [arazzo.go](https://github.com/speakeasy-api/openapi/blob/c9d1c24238dc7dbff4bd3a7d25955e096ea3382c/arazzo/arazzo.go) · [dependency_cycle.go](https://github.com/speakeasy-api/openapi/blob/c9d1c24238dc7dbff4bd3a7d25955e096ea3382c/arazzo/linter/rules/dependency_cycle.go) · [README.md](https://github.com/speakeasy-api/openapi/blob/c9d1c24238dc7dbff4bd3a7d25955e096ea3382c/arazzo/linter/README.md) · [ci.yaml](https://github.com/speakeasy-api/openapi/blob/c9d1c24238dc7dbff4bd3a7d25955e096ea3382c/.github/workflows/ci.yaml) |
+
+<a id="n2-jentic-arazzo-engine"></a>
+
+### Jentic Arazzo Engine
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/jentic/arazzo-engine |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ba7f19e5d40693a433f48df41a914789584ec293` (commit 2026-06-12) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc runner/README.md, runner/arazzo_runner/executor/action_handler.py, runner.py, success_criteria.py, generator/arazzo_validator.py, workflow arazzo-engine.yml; chưa chạy upstream |
+| Khoảng trống lấp | Đặc tả workflow API (Arazzo): bộ chạy workflow và bộ sinh workflow từ OpenAPI |
+| Cơ chế đáng học | • Runner (runner/arazzo_runner) thực thi workflow Arazzo: `ArazzoRunner.execute_workflow`, ánh xạ biến môi trường cho xác thực API key, OAuth2 client-credentials/password, HTTP basic/bearer; một số luồng (authorization code, OpenID) ghi rõ chưa hỗ trợ.<br>• `SuccessCriteriaChecker` (executor/success_criteria.py): không khai successCriteria thì mặc định mã 2xx; `ActionHandler` chọn hành động goto, end, retry theo onSuccess/onFailure.<br>• Generator dùng LLM qua litellm để đề xuất chuỗi gọi từ OpenAPI rồi kiểm bằng schema Arazzo 1.0.1 đóng gói sẵn (arazzo_validator.py). |
+| Tiêu chí và cách kiểm | Runner có bộ test pytest lớn (thư mục tests với fixture, mock HTTP) và CI chia theo runner/generator, Python 3.11 đến 3.13, kèm phân tích tĩnh. Generator chỉ kiểm bằng schema, không chạy thử workflow sinh ra. |
+| Giới hạn và rủi ro | Runner ghi Beta. Điểm lệch tuyên bố: trong runner chỉ thấy `retryLimit` được đọc rồi trả về trong kết quả (action_handler.py), còn runner.py chỉ chuyển `retry_after` và đặt bước về PENDING, tìm toàn runner không thấy chỗ đếm số lần hay ngủ chờ (có thể do lớp gọi ngoài chịu trách nhiệm, chưa xác minh). Generator gửi mô tả OpenAPI tới nhà cung cấp LLM do người dùng chọn. Push cuối 2026-06-12, cũ hơn các repo cùng lô; Apache-2.0 cho cả runner và generator. |
+| So với | arazzo-specification, speakeasy-api-openapi (chỉ kiểm, không chạy), kestra, windmill |
+| Nguồn | [LICENSE](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/LICENSE) · [README.md](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/README.md) · [README.md](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/runner/README.md) · [pyproject.toml](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/runner/pyproject.toml) · [action_handler.py](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/runner/arazzo_runner/executor/action_handler.py) · [runner.py](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/runner/arazzo_runner/runner.py) · [pyproject.toml](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/generator/pyproject.toml) · [arazzo_validator.py](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/generator/arazzo_generator/validator/arazzo_validator.py) · [arazzo-engine.yml](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/.github/workflows/arazzo-engine.yml) |

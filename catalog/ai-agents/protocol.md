@@ -2,7 +2,7 @@
 
 # protocol — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 51 hồ sơ.
+[← Mục lục catalog](../README.md) · 56 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -40,6 +40,9 @@
 | [MCP Bundles (MCPB)](../../04-protocols-standards/README.md#ch-mcp-bundles-mcpb) | `modelcontextprotocol/mcpb` | MIT → Apache-2.0 (đang chuyển; tài liệu CC-BY-4.0) | 2.188 | đọc tài liệu 2026-11-23 | 04 | Spec + JSON Schema manifest .mcpb (trước là DXT) và CLI init/validate/pack/sign/verify; |
 | [Design Tokens Community Group (DTCG)](../../06-ui-ux-design/README.md#ch-design-tokens-community-group-dtcg) | `design-tokens/community-group` | W3C Software and Document License | 2.180 | đọc tài liệu 2026-11-23 | 06 | Spec Format/Color/Resolver Module 2025.10 + JSON Schema (schemas/src/2025.10) + test-suite valid/invalid; |
 | [A2A Samples](../../04-protocols-standards/README.md#nt-a2a-samples) | `a2aproject/a2a-samples` | Apache-2.0 | 1.843 | đọc mã 2026-11-23 | 04 | Kho mẫu chính thức cho A2A bằng Python, Go, Java, JS, .NET: hơn ba chục agent Python (LangGraph, CrewAI, ADK, Semantic Kernel, ...), host, và extension (agp, secure-pass… |
+| [Docker MCP Gateway](../../04-protocols-standards/README.md#n2-docker-mcp-gateway-cli) | `docker/mcp-gateway` | MIT | 1.646 | đọc mã 2026-11-23 | 04 | Gateway chạy cục bộ, cô lập từng server bằng container và quét secret hai chiều; |
+| [MCP Gateway & Registry (agentic-community)](../../04-protocols-standards/README.md#n2-mcp-gateway-registry-agentic-community) | `agentic-community/mcp-gateway-registry` | Apache-2.0 | 1.057 | đọc mã 2026-11-23 | 04 | Gateway cộng registry kiểu doanh nghiệp: nginx ở data plane và FastAPI ở control plane, quyền theo nhóm IdP, egress OBO theo người dùng, thêm kho agent/skill. |
+| [Microsoft MCP Gateway](../../04-protocols-standards/README.md#n2-microsoft-mcp-gateway-k8s) | `microsoft/mcp-gateway` | MIT | 925 | đọc mã 2026-11-23 | 04 | Gateway .NET cho AKS với quyền vai trò Entra và vòng đời adapter. |
 | [A2A Inspector](../../04-protocols-standards/README.md#ch-a2a-inspector) | `a2aproject/a2a-inspector` | Apache-2.0 | 514 | đọc tài liệu 2026-11-23 | 04 | Binary Go có UI kiểm agent card v1.0/v0.3 và validate từng request; |
 | [Arazzo Specification](../../05-low-code-llm-platforms/README.md#ch-arazzo-specification) | `OAI/Arazzo-Specification` | Apache-2.0 | 492 | đọc tài liệu 2026-11-23 | 05 | Chuẩn OpenAPI Initiative mô tả chuỗi gọi API; |
 | [Zapier MCP](../../20-claude-plugins-ecosystem/README.md#3zd-kiểm-danh-sách-7-plugin-thay-7-vị-trí-quickbooks-stripe-shopify-canva-hubspot-legalzoom-zapier-danh-sách-người-dùng-gửi-đọc-mã-20112026) | `zapier/zapier-mcp` | MIT | 454 | đọc tài liệu 2026-11-20 | 20 | Plugin phân phối cho Zapier MCP hosted: truy cập có kiểm soát 9.000+ ứng dụng, onboarding, demo, skill theo vai trò; |
@@ -50,6 +53,8 @@
 | [c2patool](../../19-agentic-video-media/README.md#factory-media-release-2026-11-04) | `contentauth/c2patool` | MIT OR Apache-2.0 | 174 | đọc mã 2026-11-04 | 19 | CLI C2PA riêng; |
 | [MCP Conformance](../../04-protocols-standards/README.md#factory-protocol-conformance-evidence-2026-11-04) | `modelcontextprotocol/conformance` | Apache-2.0 + MIT (chuyển license); docs CC-BY-4.0 | 140 | đọc mã 2026-11-04 | 04 | Bộ test conformance chính thức cho client/server MCP: kiểm JSON-RPC trên dây theo schema, --requirements theo bản spec, tier-check SEP-1730, GitHub Action; |
 | [Lottie Specification](../../22-motion-design-animation/README.md#ch-lottie-specification) | `lottie/lottie-spec` | Community Specification License 1.0 (spec); mã ví dụ MIT | 120 | đọc tài liệu 2026-11-23 | 22 | Spec Lottie v1.0 (Lottie Animation Community, JDF/Linux Foundation, 17/9/2024): JSON Schema + tests valid/invalid; |
+| [Kuadrant MCP Gateway](../../04-protocols-standards/README.md#n2-kuadrant-mcp-gateway-envoy) | `Kuadrant/mcp-gateway` | Apache-2.0 | 111 | đọc mã 2026-11-23 | 04 | Gateway kiểu hạ tầng, tận dụng Envoy và Gateway API thay vì tự viết proxy. |
+| [Agent Passport System (APS)](../../04-protocols-standards/README.md#n2-agent-passport-system-aps) | `agent-passport-system/agent-passport-system` | Apache-2.0 | 67 | đọc mã 2026-11-23 | 04 | Giao thức và SDK (không phải máy chủ) cho định danh, ủy quyền và bằng chứng hành động. |
 | [A2A TCK](../../04-protocols-standards/README.md#ch-a2a-tck) | `a2aproject/a2a-tck` | Apache-2.0 | 60 | đọc tài liệu 2026-11-23 | 04 | Technology Compatibility Kit cho A2A trên gRPC/JSON-RPC/HTTP+JSON; |
 | [c2pa-mcp (Content Credentials MCP)](../../19-agentic-video-media/README.md#nt-c2pa-mcp) | `contentauth/c2pa-mcp` | MIT OR Apache-2.0 (hai file LICENSE-MIT và LICENSE-APACHE) | 4 | đọc mã 2026-11-23 | 19 | MCP server Rust nhỏ gói SDK c2pa chính thức thành hai tool đọc Content Credentials từ file hoặc URL, nạp danh sách tin cậy C2PA/ITL lúc khởi động. |
 | [mcp-project-planner](../../09-engineering-checklists/README.md#ch-mcp-project-planner) | `PinoyFreeCoder/mcp-project-planner` | — | 1 | đọc tài liệu 2026-11-23 | 09 | Remote MCP server gợi ý repo/API/tech stack; |

@@ -12,6 +12,7 @@ Chọn theo bài toán bằng bảng "Nhu cầu → item" ở đầu mỗi chư�
 | [4. Xưởng phần mềm: chất lượng, phát hành & vận hành](#4-xưởng-phần-mềm-chất-lượng-phát-hành--vận-hành) | Xưởng phần mềm: chất lượng, phát hành & vận hành | 25 |
 | [5. Đề xuất: skill và tính năng UI/UX](#5-đề-xuất-skill-và-tính-năng-uiux-tốt-nhất-có-thể) | Đặc tả 9 skill, bản đồ 12 giai đoạn, giao thức đánh giá skill (đề xuất, chưa xây) | 9 |
 | [6. Đề xuất: skill và tính năng cho các nhóm còn lại](#6-đề-xuất-skill-và-tính-năng-cho-các-nhóm-còn-lại) | 87 ý tưởng cho mười nhóm (an toàn, agent, mô hình và tài liệu, dữ liệu, phần mềm, tự động hóa, media, tri thức, chất lượng công nghiệp), kèm khoảng trống và bài học đọc 150 repo | 87 |
+| [7. Đề xuất đợt hai: skill và tính năng cho các nhóm](#7-đề-xuất-đợt-hai-skill-và-tính-năng-cho-các-nhóm) | 79 ý tưởng mới cho mười nhóm, khác với chương 6 (đề xuất, chưa xây) | 79 |
 
 **Nguyên tắc chung khi mang sang dự án khác**
 
@@ -2093,3 +2094,323 @@ Kho có 37 hồ sơ cho 3 category: cad-bim 19, geospatial 14, simulation 4 (kh�
 - Danh sách khoảng trống và ý tưởng do các trinh sát tạo từ tìm kiếm web và GitHub; chỉ các repo được liệt kê trong hồ sơ mới đã được đọc mã hoặc tài liệu tại một commit cố định.
 - Trạng thái chuẩn và luật (đặc biệt ISO, TCVN, luật Việt Nam) có nhiều dòng chỉ từ nguồn thứ cấp hoặc không đọc được: xem mức xác minh trong [STANDARDS.md](STANDARDS.md).
 - Số sao và ngày commit của một số ứng viên chưa đo được vì hạn mức API; xem từng hồ sơ.
+
+## 7. Đề xuất đợt hai: skill và tính năng cho các nhóm
+
+> **Cách đọc.** Đây là **đề xuất**, chưa có ý nào được xây hay chạy. Mỗi nhóm có: hiện trạng của kho, khoảng trống, và các ý tưởng skill/tính năng kèm đầu vào, đầu ra, cổng kiểm máy, cách đo, cơ sở và rủi ro. Cơ sở là hồ sơ trong kho (nhiều hồ sơ mới thuộc phần "Nâng trần" của các README chuyên mục) hoặc nguồn web đã đọc. Trạng thái của chuẩn nêu trong ý tưởng **chưa chắc còn đúng**: tra [STANDARDS.md](STANDARDS.md) để biết mức xác minh từng chuẩn. Chương này bổ sung cho [chương 6](#6-đề-xuất-skill-và-tính-năng-cho-các-nhóm-còn-lại): ý tưởng KHÁC với đợt 1, từ khoảng trống mà đợt 1 chưa nhìn thấy.
+
+### 7.1 Bài học chung của đợt đọc 233 repo thứ hai
+
+1. **Mô tả của trinh sát sai ở rất nhiều repo, nên chỉ tin điều đã đọc.** Ví dụ trong đợt này: SWE-ReX không phải sandbox, AI-Gateway của Azure là bộ lab policy chứ không phải gateway tự host, MemoryAgentBench không đo quên chọn lọc, `ariga/atlas` chỉ là bản Community với 3 dialect dù README nêu 15, và `node-opcua` không có MTConnect hay Sparkplug.
+2. **Giấy phép "mã nguồn mở" thường có điều kiện đi kèm**: Camunda License 1.0 chỉ cho phi sản xuất, Nango theo Elastic License 2.0, repo-forensics theo PolyForm Noncommercial, Gatling giới hạn bản Community, immudb theo BUSL-1.1, Bytebase loại trừ thư mục enterprise, AFL++ theo từng file. Đọc LICENSE của từng thư mục và gói tính năng, không chỉ nhãn trên GitHub.
+3. **Telemetry và dữ liệu rời máy mặc định bật** ở nhiều công cụ dev và vận hành (Redocly, Artillery, Patrol, Flipt, Meltano, ccusage, mcp-gateway-registry, Bytebase kèm email người dùng). Kể cả công cụ chấm điểm có thể gửi nội dung ra ngoài (CRBugBench qua Copilot, code-review-benchmark qua API Martian).
+4. **Cổng "kiểm" thường thoát mã 0 hoặc chỉ là hình thức**: `cloudformation-guard` cho nhánh SKIP cùng mã thoát 0 nên luật hỏng vẫn xanh; `woke` mặc định thoát 0; `stryker-net` đặt ngưỡng break 0; `context-ci` giả bước ký số; `specforce-kit` để NOT-VERIFIABLE ra PASSED. Skill của anh/chị phải kiểm mã thoát và hành vi thật.
+5. **Mặc định mạng và xác thực lỏng ở công cụ dev**: `claude-remote-hub` bind `0.0.0.0`, `opal` không xác thực JWT và CORS `*`, `chaos-mesh` chạy `privileged` kèm `hostPID`, Gatekeeper mặc định `failurePolicy=ignore`.
+6. **Repo bên thứ ba có thể là kênh tấn công**: một repo tiếng Việt có workflow quét khóa API từ cây mã và lịch sử git rồi gửi tới một IP trần (đã bị loại khỏi kho). Đọc `.github/workflows` trước khi clone hay fork.
+7. **Mảng chất lượng công nghiệp mã mở vẫn mỏng**: đợt này tìm lại WPS/PQR, hiệu chuẩn và NDT bằng nhiều truy vấn và vẫn không có công cụ đạt chất lượng (WelDX là định dạng dữ liệu hàn, không phải công cụ WPS/PQR; qcadoo/mes không có OEE). Nên xây hoặc mua.
+
+### 7.2 An toàn, đánh giá và chất lượng
+
+Nhóm trust rất lớn (285 hồ sơ) và đã được đợt 1 bổ khoảng trống SAST/SBOM/policy. Đợt 2 nhìn từ kỹ năng nghề và vận hành: kho thiếu kiểm thử chủ động (fuzz, property, mutation đa ngôn ngữ, chaos), tuân thủ giấy phép, SCA vận hành và lớp chạy của MCP. Thiên lệch: quá nhiều công cụ lint/test JS/web, ít công cụ gắn bằng chứng máy đọc cho tuân thủ (OSCAL, CSAF, OSPS Baseline).
+
+**Khoảng trống của kho:**
+
+- **Kiểm thử thuộc tính và fuzz cấp ngôn ngữ ứng dụng**: Kho có hypothesis/schemathesis nhưng thiếu fast-check (JS), fuzz tiếp diễn kiểu ClusterFuzz và fuzzer lõi (AFL++); chuyên gia kỳ vọng cổng 'test sinh đầu vào' ngoài Python. *(gần nhất trong kho: HypothesisWorks/hypothesis, schemathesis/schemathesis)*
+- **Chaos/lỗi giả lập ở mức API và proxy**: Brief đợt 1 nêu chaos chung; góc khác là giả lập lỗi phía client/API (dev proxy, mock lỗi) rẻ hơn chaos hạ tầng và chạy được trong CI. *(gần nhất trong kho: Shopify/toxiproxy)*
+- **Tuân thủ giấy phép và nguồn gốc mã (license/provenance)**: Kho thiên về lỗ hổng, chưa có công cụ quét giấy phép/copyright cho SBOM, thứ pháp chế và phát hành cần.
+- **Quản lý lỗ hổng sau SBOM (SCA vận hành, triage, ưu tiên)**: Có osv-scanner/grype/dependency-track nhưng thiếu quét SBOM tự dựng, tương quan CVE đa nguồn và reachability. *(gần nhất trong kho: google/osv-scanner, DependencyTrack/dependency-track)*
+- **Kiểm thử mutation cho hệ sinh thái .NET/JVM**: Chỉ có stryker-js; dự án đích Java/.NET không có công cụ tương ứng để đo chất lượng test do agent viết. *(gần nhất trong kho: stryker-mutator/stryker-js)*
+- **Chính sách IaC/cấu hình dạng khai báo đa đám mây**: Đợt 1 nêu Kyverno/Gatekeeper/checkov; còn thiếu CloudFormation Guard và hướng policy gắn với attestation tại điểm phát hành. *(gần nhất trong kho: open-policy-agent/conftest)*
+- **Quản trị phân quyền thời gian thực (policy engine xuống ứng dụng)**: Có OpenFGA/SpiceDB/Cerbos; thiếu lớp đồng bộ chính sách thời gian thực cho agent và dịch vụ (OPAL). *(gần nhất trong kho: cerbos/cerbos, openfga/openfga)*
+- **Cổng gateway/proxy cho MCP có kiểm soát chính sách**: Đợt 1 nghiêng về quét tĩnh skill/MCP; thiếu lớp chạy (runtime proxy, registry kiểm soát) quản lý máy chủ MCP trong tổ chức. *(gần nhất trong kho: cisco-ai-defense/mcp-scanner)*
+- **Đánh giá tác động AI và hồ sơ rủi ro đối kháng**: Kho có mitre-atlas và checklist OWASP; thiếu mảng phân loại tấn công ML của NIST và đánh giá tác động theo ISO/IEC 42005. *(gần nhất trong kho: mitre-atlas/atlas-data)*
+- **Quan sát LLM theo vòng phản hồi chất lượng (eval gắn trace sản xuất)**: Kho có langfuse/phoenix/opik; còn thiếu nền tảng nguồn mở nhấn vòng phát hiện lỗi → dataset → eval tự động từ trace. *(gần nhất trong kho: langfuse/langfuse, Arize-ai/phoenix)*
+- **Kiểm thử ứng dụng động (DAST) khai báo bằng template**: Đợt 1 gộp SAST/DAST/IaC; thiếu DAST dạng template và DAST cho API. *(gần nhất trong kho: semgrep/semgrep, zaproxy/zaproxy)*
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Skill thiết kế thí nghiệm chaos tại CI cho API | OpenAPI + danh sách phụ thuộc ngoài + SLO → Kịch bản lỗi (độ trễ, 5xx, hết hạn mức) cho dev-proxy/toxiproxy kèm giả thuyết | Chạy kịch bản trong CI: SLO giữ nguyên hoặc có đường giảm cấp, exit code | Tỉ lệ phụ thuộc có kịch bản; số lỗi phát hiện trước sản xuất | [Shopify/toxiproxy](30-software-testing-quality/README.md#nt-shopify-toxiproxy); dotnet/dev-proxy (ứng viên) | Kịch bản tự sinh có thể tạo test dễ vỡ; cần ngưỡng loại nhiễu |
+| Skill property-based test cho hàm thuần từ spec | Docstring/spec Given-When-Then của hàm → Bộ test fast-check hoặc hypothesis với thuộc tính nêu rõ | Test xanh sau shrink; mutation score không giảm; seed lưu để tái hiện | Số bug tìm thêm so với test ví dụ; tỉ lệ thuộc tính bị bác | [HypothesisWorks/hypothesis](30-software-testing-quality/README.md#hypothesis-factory); dubzzz/fast-check (ứng viên) | Thuộc tính trivial qua mặt kiểm; cần mutation đối chứng |
+| Skill kiểm giấy phép và provenance trước phát hành | SBOM CycloneDX/SPDX + chính sách giấy phép cho phép → Báo cáo xung đột giấy phép, thành phần thiếu giấy phép, danh sách phải xử lý | Chính sách đánh giá (ORT/ScanCode) trả exit khác 0 khi vi phạm | Số vi phạm bắt được trên tập có chủ đích; tỉ lệ dương tính giả | [aboutcode-org/scancode-toolkit](31-software-supply-chain-security/README.md#n2-scancode-toolkit); oss-review-toolkit/ort (ứng viên) | Giấy phép NOASSERTION và phát hiện sai; cần người xét ca biên |
+| Skill đối chiếu SBOM với phần tử tối thiểu CISA | SBOM của dự án → Bảng thiếu/đủ từng phần tử (hash, giấy phép, công cụ sinh, ngữ cảnh) | Script kiểm schema và trường bắt buộc; cổng fail khi thiếu | Điểm đầy đủ trên tập SBOM mẫu có lỗi gài sẵn | CISA 2026 Minimum Elements (bên thứ ba); [interlynk-io/sbomqs](31-software-supply-chain-security/README.md#n2-sbomqs) | Văn bản cuối chưa đọc trực tiếp; ánh xạ phần tử có thể lệch |
+| Skill chấm repo theo OSPS Baseline | Repo + cấu hình CI + file SECURITY → Bảng đạt/không đạt theo mức 1-3 kèm bằng chứng tệp | Checklist máy đọc của baseline chạy bằng script; diff theo bản | Khớp với kết quả Scorecard/best-practices trên repo mẫu | [ossf/scorecard](12-ai-security-guardrails/README.md#ch-openssf-scorecard); [ossf/best-practices-badge](09-engineering-checklists/README.md#ch-openssf-best-practices-badge); OSPS Baseline | Phiên bản Baseline đổi; phải ghim bản |
+| Skill phát hành VEX/CSAF từ kết quả quét có reachability | Báo cáo quét (grype, dep-scan) + SBOM → VEX (OpenVEX/CycloneDX VEX) hoặc CSAF với trạng thái not_affected có lý do | Validator schema + kiểm mọi CVE not_affected có justification | Tỉ lệ CVE được phân xử; số lần phản biện sai bởi quét lại | [ossf/cve-bin-tool](31-software-supply-chain-security/README.md#n2-cve-bin-tool); owasp-dep-scan/dep-scan (ứng viên) | Gán not_affected sai gây an toàn giả |
+| Skill ánh xạ test red-team sang NIST AI 100-2 và ATLAS | Kết quả garak/PyRIT/deepteam → Ma trận độ phủ theo loại tấn công (evasion, poisoning, prompt injection, agent) | Script đếm lớp tấn công chưa có test; fail khi dưới ngưỡng độ phủ | Độ phủ theo lớp; thay đổi theo từng đợt | [NVIDIA/garak](12-ai-security-guardrails/README.md#factory-2026-11-04-garak); [microsoft/PyRIT](12-ai-security-guardrails/README.md#ch-pyrit); [mitre-atlas/atlas-data](12-ai-security-guardrails/README.md#ch-mitre-atlas-data); NIST AI 100-2e2025 | Phân loại tự động có thể sai; cần mẫu kiểm tay |
+| Skill kiểm truyền ngữ cảnh trace giữa agent và tool | Trace OTel xuất ra từ chạy thử luồng agent → Báo cáo span mồ côi, thiếu traceparent, thiếu thuộc tính GenAI bắt buộc | Script đọc OTLP JSON, kiểm cây span liền mạch và thuộc tính; exit code | Tỉ lệ span mồ côi trên luồng mẫu | [traceloop/openllmetry](07-eval-observability/README.md#ch-openllmetry); W3C Trace Context; OTel GenAI semconv | Trace Level 2 còn là CR; chỉ gắn vào Level 1 để chắc |
+
+### 7.3 AI agent: lõi, giao thức và hạ tầng
+
+Nhóm dày ở framework, protocol, browser-agent nhưng mỏng ở vận hành: đo chi phí, chính sách quyền, môi giới khoá, đánh giá tái lập, riêng tư của memory. context-optimization (6) và remote-access (6) chỉ có công cụ gói sẵn, chưa có thư viện đo hay truy cập zero-trust. Spec MCP bản draft đã đổi nhiều (Client ID Metadata Documents thay DCR, kiểm iss), kho cần cập nhật.
+
+**Khoảng trống của kho:**
+
+- **Chi phí và token của agent (FinOps)**: Kho có Headroom/RTK nhưng không có công cụ đo chi phí theo phiên, theo công cụ, theo tác vụ. *(gần nhất trong kho: Headroom, RTK)*
+- **Chính sách quyền chạy ở tầng hook/tool-call**: Nhóm sandbox cô lập tiến trình, chưa có hồ sơ nào về policy engine ở tầng hook/tool-call dùng chung nhiều agent. *(gần nhất trong kho: nono, sandbox-runtime)*
+- **Môi giới thông tin xác thực (credential broker)**: Sandbox nhiều nhưng khoá thật vẫn vào trong sandbox; thiếu mẫu proxy tiêm khoá để agent không nhìn thấy. *(gần nhất trong kho: Docker Sandboxes)*
+- **Đánh giá coding agent theo harness tái lập**: Chấm coding agent theo harness tái lập, có thẻ phiên bản benchmark; kho chỉ có hồ sơ lẻ.
+- **Memory: riêng tư, quên chủ động, đa chủ thể**: Đợt 1 nói quản trị memory chung; chưa có benchmark về rò rỉ giữa người dùng và quên chọn lọc. *(gần nhất trong kho: LongMemEval, LoCoMo)*
+- **Môi trường dev từ xa và truy cập zero-trust cho agent**: remote-access chỉ có 6 hồ sơ thiên về tunnel/desktop; thiếu workspace dev tự host và truy cập zero-trust. *(gần nhất trong kho: frp, rustdesk)*
+- **Giám sát agent từ xa và duyệt từ điện thoại**: Người dùng cuối cần duyệt quyền và xem tiến độ từ điện thoại; kho có happy/paseo nhưng thiếu so sánh. *(gần nhất trong kho: happy, paseo)*
+- **Định tuyến mô hình cục bộ tự host**: llm-gateway thiên cloud/proxy miễn phí; thiếu định tuyến cho mô hình cục bộ chạy luân phiên. *(gần nhất trong kho: LiteLLM)*
+- **Nén prompt có đo chất lượng**: context-optimization chỉ có công cụ gói sẵn; thiếu thư viện nén có đo chất lượng và chi phí. *(gần nhất trong kho: Caveman, toon)*
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| MCP OAuth conformance checker | URL server MCP HTTP → Báo cáo đạt/trượt theo từng yêu cầu MUST/SHOULD (PRM, resource, iss, CIMD) | Script gọi 401, lấy metadata, kiểm tham số; exit khác 0 khi vi phạm MUST | Số yêu cầu MUST đạt trên tổng; so với MCP Conformance | Spec MCP authorization draft (đã đọc 2026-11-24); hồ sơ MCP Conformance | Spec draft đổi nhanh; phải ghim bản |
+| Agent cost ledger | Log phiên các công cụ agent → Bảng chi phí theo tác vụ/phiên kèm cảnh báo vượt ngân sách | Parser có fixture log; cổng CI chặn khi tổng lệch >2% so với hóa đơn mẫu | Độ lệch so với hóa đơn nhà cung cấp | codeburn, TokenTracker (kết quả tìm kiếm GitHub) | Định dạng log đổi giữa phiên bản công cụ |
+| Tool-call policy tester | Tệp policy + bộ lệnh nguy hiểm/an toàn → Ma trận chặn/cho phép và ca vượt rào | Chạy payload giả qua hook; fail nếu lệnh trong danh sách đen lọt | Tỷ lệ chặn đúng và chặn nhầm | doberman-core, clash, prempti; guard.py của X-Templates | Hook có khoảng hở (CVE khi khởi động trước hook, theo bài tìm được) |
+| Credential leak canary | Cấu hình broker + khoá mồi → Báo cáo khoá mồi có xuất hiện trong prompt, log, bộ nhớ sandbox | Chạy agent với khoá giả, grep toàn bộ đầu ra; exit 1 nếu thấy | Số kênh rò rỉ phát hiện trên tổng kênh quét | Agent Vault, OneCLI (mô tả trên web) | Agent có thể mã hóa lại khoá, né grep |
+| Memory forgetting audit | Kho memory + yêu cầu xóa → Bằng chứng dữ liệu đã xóa không còn trả về qua truy vấn | Truy vấn đối kháng sau xóa; fail nếu còn trả lại | Độ chính xác xóa chọn lọc, rò rỉ chéo người dùng | memeval, GateMem, MemoryAgentBench | Benchmark nguồn còn mới, kết quả một lần chạy |
+| Agent harness regression gate | Phiên bản agent + bộ tác vụ ghim → So sánh tỷ lệ qua trước/sau khi nâng phiên bản | Chạy N lần, fail nếu tỷ lệ giảm vượt ngưỡng định sẵn | Tỷ lệ đạt và phương sai giữa các lần | Terminal-Bench/Harbor, SanityHarness | Tốn tiền; benchmark bị rò vào dữ liệu huấn luyện |
+| Remote agent exposure scanner | Máy chạy agent từ xa → Danh sách cổng/tunnel/token lộ ra mạng | Quét cổng và cấu hình; fail nếu dịch vụ nghe 0.0.0.0 không có xác thực | Số bề mặt lộ ra, giảm dần theo bản sửa | claude-remote-hub, pockode, octelium | Cần quyền trên máy đích |
+| Prompt-compression budget test | Prompt dài mẫu + bộ câu hỏi → Tỷ lệ nén so với độ chính xác trả lời | Chạy hai nhánh, fail nếu độ chính xác giảm quá ngưỡng | Điểm chính xác và độ trễ end-to-end | LLMLingua; bài arXiv 2604.02985 | Nén chỉ có lợi trên prompt dài (bài 4/2026) |
+
+### 7.4 AI agent: skill, plugin và prompt
+
+Đợt 2 nhìn từ vận hành và đo lường: kho có nhiều skill/khung nhưng gần như chưa có công cụ quan sát phiên, đo chi phí, hay chuỗi đo-kiểm cho prompt, review và spec. Nhóm coding-tool-commercial chỉ 6 hồ sơ sản phẩm, thiếu hệ phụ trợ (usage, replay, ACP). Reasoning-skill chỉ 2 hồ sơ dù có nhiều skill pre-mortem/first-principles. Agentic-ui nặng khung sinh UI, thiếu mảng phê duyệt HITL và a11y.
+
+**Khoảng trống của kho:**
+
+- **Quan sát và phát lại phiên agent**: Phiên agent là bằng chứng gốc; chưa có hồ sơ công cụ phát lại/xem log. *(gần nhất trong kho: Claude HUD)*
+- **Đo chi phí token/hạn mức của coding tool**: Chi phí là tiêu chí chọn công cụ nhưng kho chỉ mô tả sản phẩm. *(gần nhất trong kho: Claude Code)*
+- **Skill nghề accessibility/UX audit**: Người dùng cuối cần giao diện tiếp cận được; kho chỉ có skill giao diện chung. *(gần nhất trong kho: Vercel Agent Skills)*
+- **UI phê duyệt người-trong-vòng và MCP Apps**: Phê duyệt hành động rủi ro là điểm an toàn then chốt của UI agent. *(gần nhất trong kho: CopilotKit, BoardUI)*
+- **Skill an ninh ứng dụng/mobile theo nghề**: An ninh ứng dụng/mobile theo nghề chưa có skill nào.
+- **Skill tư duy phản biện có cổng kiểm (pre-mortem, first-principles)**: Chỉ 2 hồ sơ reasoning-skill; skill pre-mortem/first-principles còn rải rác. *(gần nhất trong kho: andrej-karpathy-skills)*
+- **Prompt như mã: registry, lint, hồi quy CI**: Kho có hồ sơ định dạng prompt (Prompty, Dotprompt) nhưng chưa có quy trình quản lý phiên bản/CI. *(gần nhất trong kho: Prompty, Dotprompt)*
+- **Đo chất lượng review và so sánh khung SDD**: Chỉ có sản phẩm review; benchmark độc lập (Martian, ReviewBench) chưa vào kho. *(gần nhất trong kho: CodeRabbit, Greptile)*
+- **Tương tác editor-agent (ACP) cho coding tool**: Giao thức editor-agent quyết định khả năng cắm công cụ vào IDE. *(gần nhất trong kho: Windsurf / Devin Desktop)*
+- **Truy vết yêu cầu tới test (spec-driven)**: Spec-driven cần nối yêu cầu với kịch bản kiểm thử. *(gần nhất trong kho: Doorstop, Trellis)*
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Kiểm phiên: dò skill không kích hoạt và vòng lặp | JSONL phiên Claude Code + danh sách skill → báo cáo JSON: skill khớp mô tả nhưng không gọi, chuỗi tool lặp | script phân tích chạy được trên phiên mẫu, schema báo cáo bằng JSON Schema | tỉ lệ phát hiện đúng trên 20 phiên gán nhãn tay | es617/claude-replay, simonw/claude-code-transcripts | log chứa bí mật; cần che trước khi lưu |
+| Sổ chi phí mô tả skill | thư mục skills → bảng token mô tả trên mỗi skill và tổng chi phí nạp | lệnh đếm token xác định, ngưỡng cấu hình làm đỏ khi vượt | so với ccusage trên cùng phiên, sai lệch < 5% (mục tiêu tự đặt) | [ryoppippi/ccusage](07-eval-observability/README.md#n2-ccusage) | bộ đếm token khác nhau giữa mô hình |
+| Cổng pre-mortem có cấu trúc | kế hoạch hoặc diff → JSON các kịch bản thất bại kèm tín hiệu sớm và việc giảm thiểu | JSON Schema bắt buộc mỗi kịch bản có tín hiệu kiểm được | tỉ lệ kịch bản về sau xảy ra thật trong lịch sử repo | honnibal/claude-skills, rjmurillo/ai-agents | sinh nhiều kịch bản chung chung |
+| Prompt-as-code CI | thư mục prompt YAML + ca kiểm → kết quả lint, diff phiên bản, cổng hồi quy | lint biến thiếu, schema đầu ra, ngưỡng hồi quy làm đỏ CI | số hồi quy bị bắt trước khi merge trên lịch sử thay đổi | [hsanchez/promptory](17-prompt-engineering/README.md#n2-promptory) | ca kiểm nhiễu do mô hình không tất định |
+| Truy vết spec sang Gherkin sang test | spec Markdown có ID yêu cầu → ma trận ID yêu cầu, kịch bản, test, thiếu phủ | parser khớp ID; làm đỏ khi yêu cầu không có test | tỉ lệ yêu cầu có test | Gherkin, ISO/IEC/IEEE 29148, Doorstop | khớp bằng tên dễ sai khi đổi tên |
+| Chạy benchmark review cục bộ | reviewer + bộ PR của benchmark → precision, recall, F1 và danh sách lỗi sót | script chấm so với bình luận vàng, kết quả cố định theo hạt giống | F1 so với số công bố của benchmark | [withmartian/code-review-benchmark](07-eval-observability/README.md#n2-code-review-benchmark) | giấy phép và rò rỉ dữ liệu huấn luyện |
+| Kiểm a11y cho UI phê duyệt | URL app agent hoặc story → báo cáo vi phạm ARIA/WCAG kèm ảnh | axe-core qua trình duyệt headless, làm đỏ khi có lỗi nghiêm trọng | số lỗi trước/sau sửa | WAI-ARIA 1.2, [dgesteves/signoff-ui](06-ui-ux-design/README.md#n2-signoff-ui) | axe bắt được chỉ một phần lỗi tiếp cận |
+| Thử khói MCP Apps | MCP server có ui:// resource → báo cáo csp/permissions và kết quả render trên basic-host | script khởi chạy host mẫu, kiểm resourceUri và csp tối thiểu | tỉ lệ app qua thử khói | MCP Apps | đặc tả thay đổi nhanh |
+
+### 7.5 Mô hình, RAG và tài liệu thông minh
+
+Đợt 2 nhìn từ góc vận hành, đo lường và tuân thủ. Kho (212 hồ sơ) thiên về thư viện và runtime để chạy mô hình, còn lớp 'chạy ổn định, đo được, kiểm toán được' mỏng. Gần như chưa có hồ sơ cho vận hành suy luận cấp cụm, đo hallucination, đo chất lượng giọng nói, chất lượng nhãn thị giác và vòng đời chỉ mục vector. Chuẩn trong STANDARDS.md chủ yếu là định dạng và an toàn chuỗi cung ứng chung; thiếu chuẩn quản lý rủi ro/tác động AI, chất lượng dữ liệu ML, metadata dataset và đóng gói mô hình.
+
+**Khoảng trống của kho:**
+
+- **Vận hành suy luận ở quy mô cụm (autoscaling, định tuyến, KV-cache, quan sát GPU)**: Chuyên gia SRE kỳ vọng điều phối theo tải, chia tách prefill/decode, định tuyến theo KV-cache và đo GPU; kho chỉ có runtime đơn lẻ. *(gần nhất trong kho: vLLM, SGLang, LMCache, llm-d)*
+- **Tái lập huấn luyện, hợp nhất mô hình và hậu huấn luyện RL**: Nhóm huấn luyện thiếu mảng hợp nhất trọng số, RLHF/RLVR quy mô lớn và huấn luyện có thể tái lập/chịu lỗi. *(gần nhất trong kho: TRL, Axolotl, Unsloth)*
+- **Chất lượng nhãn và dữ liệu thị giác (data-centric CV)**: Computer-vision thiên về mô hình; thiếu công cụ lọc dữ liệu, phát hiện nhãn sai và quản lý dataset ảnh/video. *(gần nhất trong kho: supervision)*
+- **Đo hallucination/groundedness có hệ thống**: Có RAG eval ở đợt 1 nhưng chưa có bảng xếp hạng/mô hình chấm độ bám nguồn (groundedness) độc lập với bộ truy hồi.
+- **Đo chất lượng giọng nói (DER, MOS, chống giả mạo)**: Speech có 51 hồ sơ nhưng gần như không có công cụ đo diarization, MOS tổng hợp, độ trễ hội thoại hay phát hiện giọng giả. *(gần nhất trong kho: Picovoice speech-to-text-benchmark)*
+- **Vòng đời chỉ mục vector (di trú, đổi embedding, reindex, xóa dữ liệu)**: Vận hành vector DB thực tế cần di trú giữa hệ, đổi embedding model không gián đoạn, đồng bộ xóa theo yêu cầu quyền riêng tư; kho chỉ có 9 hồ sơ vector-db. *(gần nhất trong kho: pgvector, lancedb)*
+- **Chuỗi cung ứng mô hình (ký, đóng gói OCI, mô tả metadata)**: Ký, xác minh và đóng gói mô hình (OCI) là kỹ năng chuỗi cung ứng; kho có safetensors/GGUF nhưng không có ký và registry. *(gần nhất trong kho: safetensors)*
+- **Đánh giá đa phương thức/VLM và chi phí (cache ngữ nghĩa, định tuyến)**: Đánh giá VLM/đa phương thức và tối ưu chi phí (semantic cache, router) chưa có; cần cho trải nghiệm người dùng cuối nhanh và rẻ.
+- **Benchmark vector DB và ANN có thể tái lập**: Chọn vector DB/ANN cần số đo tái lập (recall-QPS, lọc, ghi liên tục); đợt 1 mới nêu benchmark suy luận.
+- **Tuân thủ AI theo ISO/NIST theo từng phương thức (ảnh, giọng, tài liệu)**: Dự án cần đánh giá tác động và quản lý rủi ro AI có hồ sơ, nay mới có ISO 42001/NIST RMF chung, chưa theo phương thức.
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Ký và xác minh trọng số bằng OMS trước khi nạp | Thư mục mô hình (safetensors/GGUF), danh tính hoặc khóa ký → Gói chữ ký OMS cạnh mô hình và báo cáo xác minh | Chạy client OMS verify; fail nếu sai manifest, thiếu file hoặc file thừa; có thể thêm bộ conformance của spec | Tỷ lệ mô hình nạp có chữ ký hợp lệ; số lần phát hiện file lệch | ossf/model-signing-spec (đọc 2026-11-24) | Ký chỉ chứng minh toàn vẹn, không chứng minh nguồn gốc huấn luyện (metadata do người ký tự khai) |
+| Cổng hallucination cho câu trả lời RAG | Bộ (câu hỏi, ngữ cảnh truy hồi, câu trả lời) và mô hình chấm độ bám nguồn → Điểm groundedness theo mẫu, danh sách câu không bám nguồn | Ngưỡng tối thiểu trên bộ vàng cố định; fail CI nếu tụt quá biên so với baseline | Tương quan điểm máy với nhãn người trên 100 mẫu; tỷ lệ dương giả | vectara/hallucination-leaderboard, truera/trulens | Mô hình chấm thiên vị; bộ vàng quá nhỏ |
+| Kịch bản di trú và đổi embedding không gián đoạn | Chỉ mục nguồn, mô hình embedding cũ và mới, tập truy vấn kiểm → Kế hoạch song song (dual-write/dual-read), báo cáo recall trước và sau | Script so recall@k và độ trễ giữa hai chỉ mục; chặn chuyển đổi nếu recall giảm quá ngưỡng | Chênh recall@10; thời gian cửa sổ song song | zilliztech/vts, zilliztech/VectorDBBench | Chi phí lưu trữ gấp đôi; truy vấn thật khác truy vấn kiểm |
+| Xóa dữ liệu theo yêu cầu qua toàn bộ chuỗi RAG | Mã định danh tài liệu/chủ thể cần xóa; danh sách kho (nguồn, chunk, vector, cache, log) → Sổ xóa và bằng chứng không còn truy hồi được | Truy vấn thăm dò sau xóa: không chunk nào trả về; quét cache và log tìm ID | Tỷ lệ kho được phủ; thời gian từ yêu cầu đến xóa xong | [zilliztech/GPTCache](10-local-llm-rag-memory/README.md#n2-gptcache), [vespa-engine/vespa](10-local-llm-rag-memory/README.md#n2-vespa) (cập nhật thời gian thực) | Cache ngữ nghĩa và bản sao embedding bị bỏ sót |
+| Cổng chất lượng nhãn cho dataset thị giác | Dataset ảnh có nhãn và dự đoán mô hình tham chiếu → Danh sách mẫu nghi nhãn sai/trùng, báo cáo phân bố lớp | Tỷ lệ nghi sai không vượt ngưỡng; kiểm trùng lặp ảnh cận-giống giữa train/test | Duyệt tay 50 mẫu được gắn cờ để đo độ chính xác của cờ | [voxel51/fiftyone](24-ai-data-engineering/README.md#n2-fiftyone) | Mô hình tham chiếu thiên vị làm nhãn đúng bị gắn sai |
+| Bảng đo hội thoại giọng nói (DER, WER, độ trễ) | Âm thanh nhiều người nói kèm nhãn chuẩn RTTM và bản chép lời → DER, WER sau NFC, độ trễ phản hồi đầu-cuối | pyannote-metrics tính DER; script WER trên văn bản đã chuẩn hóa NFC; fail khi vượt ngân sách | Biên độ dao động giữa các lần chạy; so với baseline đã khóa | [pyannote/pyannote-metrics](14-voice-multimodal/README.md#n2-pyannote-metrics), huggingface/speech-to-speech | Nhãn chuẩn thưa; tiếng Việt thanh điệu làm WER lệch |
+| Gói đánh giá tác động AI theo ISO/IEC 42005 cho từng tính năng | Mô tả tính năng AI, dữ liệu, nhóm người dùng bị ảnh hưởng → Hồ sơ đánh giá tác động theo mẫu và sổ rủi ro liên kết | Kiểm schema: mọi trường bắt buộc có giá trị, mọi rủi ro có chủ và hạn; không kiểm điều khoản chuẩn (chưa xác minh điều khoản) | Tỷ lệ tính năng có hồ sơ; số rủi ro quá hạn | committee.iso.org/standard/44545.html, ISO/IEC 23894 | Hình thức hóa, điền cho đủ |
+| Cổng định tuyến và cache an toàn cho cuộc gọi LLM | Nhật ký yêu cầu có nhãn đúng/sai, chính sách định tuyến, cấu hình cache → Báo cáo chi phí, độ trễ, tỷ lệ trúng cache sai | Phát lại nhật ký: chất lượng giảm quá ngưỡng hoặc trúng cache sai > 0 trên bộ kiểm thì fail | Chi phí trên 1000 yêu cầu; chênh chất lượng so với mô hình mạnh | [vllm-project/semantic-router](10-local-llm-rag-memory/README.md#n2-vllm-semantic-router), [zilliztech/GPTCache](10-local-llm-rag-memory/README.md#n2-gptcache) | Nhật ký lệch so với tải thật; rò dữ liệu qua cache |
+
+### 7.6 Dữ liệu và phân tích sản phẩm
+
+Đợt 2 nhìn từ kỹ năng vận hành, tuân thủ và đo lường. Kho mạnh ở công cụ (engine, ORM, text-to-SQL) nhưng thiếu lớp quy trình quanh chúng: quản trị migration, tracking plan, PII/DSAR, process mining cho workflow và vận hành workflow bền. Product-research và feature-management còn mỏng. Phần lớn ứng viên mới có giấy phép không thuần OSI (AGPL, ELv2, FCL, GPL); cần ghi rõ khi lập hồ sơ.
+
+**Khoảng trống của kho:**
+
+- **Quản trị thay đổi schema CSDL (migration an toàn)**: Kho có ORM và engine nhưng không có công cụ lint/review migration, expand-contract hay kiểm tương thích ngược. *(gần nhất trong kho: GORM, SQLMesh)*
+- **Theo dõi sự kiện, tracking plan và CDP/reverse ETL**: Product-analytics chỉ có PostHog/Umami cấp ứng dụng; thiếu lớp thu sự kiện có schema, tracking plan, reverse ETL. *(gần nhất trong kho: PostHog, rrweb)*
+- **Phát hiện/ẩn danh PII và quyền chủ thể dữ liệu (DSAR)**: An toàn/tuân thủ dữ liệu cá nhân là mảng đòi hỏi kỹ năng riêng (phát hiện, ẩn danh, DSAR, đồng ý); kho chỉ có luật, chưa có công cụ.
+- **Process mining và phân tích nhật ký sự kiện quy trình**: Workflow-automation chưa có góc đo: không biết quy trình thật chạy ra sao, nút thắt, tuân thủ so với mô hình BPMN. *(gần nhất trong kho: Flowable Engine, Activiti)*
+- **Vận hành workflow: thử nghiệm, phiên bản, rollback, quan sát chạy**: Kho nhiều engine nhưng thiếu quy trình vận hành (kiểm thử workflow, replay lỗi, canary phiên bản, SLO job). *(gần nhất trong kho: Kestra, prefect)*
+- **Khoảng trống phản hồi người dùng cuối: vòng khép kín từ khảo sát tới việc phải làm**: Product-research có Formbricks nhưng thiếu công cụ phân tích định tính phản hồi/phỏng vấn và gắn vào backlog. *(gần nhất trong kho: Formbricks, Cookiy User Research Skill)*
+- **Đo lường chất lượng của chính phân tích (độ tin cậy số liệu sản phẩm)**: Chưa có mảng kiểm định tracking: sự kiện thiếu/trùng, định nghĩa chỉ số lệch giữa các dashboard. *(gần nhất trong kho: GrowthBook, Retentioneering)*
+- **Chi phí và hiệu năng truy vấn kho dữ liệu (FinOps dữ liệu)**: Kho nhiều engine nhưng thiếu công cụ đo chi phí/truy vấn chậm, hồi quy hiệu năng SQL. *(gần nhất trong kho: ClickHouse, DuckDB)*
+- **Tích hợp liên nhóm: flag, thí nghiệm, analytics, hợp đồng dữ liệu nối thành một vòng**: Các mảng đứng riêng; chưa có mô tả luồng flag -> sự kiện -> chỉ số -> quyết định tắt/bật. *(gần nhất trong kho: Unleash, GrowthBook, PostHog)*
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Cổng lint migration trước khi merge | Thư mục migration SQL + schema hiện tại (Atlas/goose/pgroll) → Báo cáo thay đổi phá vỡ (xóa cột, đổi kiểu, khóa dài) và đề xuất expand/contract | atlas migrate lint thoát khác 0 khi có thay đổi phá vỡ; chạy migration lên rồi xuống trên DB tạm | Tỷ lệ migration nguy hiểm bị bắt trên bộ mẫu có gắn nhãn tay; thời gian khóa đo trên DB mẫu | Atlas, pgroll, goose (ứng viên); skill /migrate-db | DB mẫu không mô phỏng tải thật; quy tắc lint theo phương ngữ |
+| Cổng PII cho bảng sự kiện | Mẫu bảng/log (đã ẩn thông tin thật) + danh sách trường → Danh sách cột nghi PII, đề xuất băm/che/xóa, ghi chú pháp lý | Presidio quét bộ mẫu tổng hợp có PII gài sẵn; thoát khác 0 khi còn PII không che | Precision/recall trên mẫu có nhãn gồm số CCCD, điện thoại VN | Presidio, ISO/IEC 20889 | Recognizer thiếu định dạng VN; dữ liệu thật không được đưa vào mẫu |
+| Phân tích log workflow bằng process mining | Log chạy workflow xuất theo OCEL 2.0 hoặc XES → Bản đồ quy trình, thời gian chờ từng bước, độ lệch so với mô hình | Schema OCEL hợp lệ trước khi phân tích; pm4py conformance checking cho tỷ lệ fitness | Fitness/precision so với mô hình tham chiếu; số nút thắt khớp kiểm tay | pm4py, OCEL 2.0 | Log thiếu case ID; AGPL của pm4py |
+| Kiểm tracking plan: sự kiện thật so với kế hoạch | Tracking plan (JSON Schema) + mẫu sự kiện từ môi trường thử → Báo cáo sự kiện thiếu, thừa, sai kiểu, trùng | Validate JSON Schema từng sự kiện; thoát khác 0 khi vi phạm | Tỷ lệ sự kiện hợp lệ; số sự kiện chưa khai báo | Snowplow, Jitsu | Mẫu thử không đại diện; sự kiện sinh từ nhiều SDK |
+| Kiểm tôn trọng Sec-GPC và đồng ý trong analytics tự host | URL ứng dụng thử + cấu hình analytics → Kết quả: có/không gửi sự kiện khi Sec-GPC: 1 | Test HTTP gửi header Sec-GPC: 1 rồi đếm request tới endpoint thu | Số request vi phạm bằng 0 trên các luồng chính | W3C GPC, Umami/OpenPanel | Chuẩn còn Working Draft; hành vi trình duyệt khác nhau |
+| Máy kiểm hồi quy hiệu năng truy vấn | Bộ truy vấn chuẩn + dữ liệu mẫu + engine → So sánh thời gian/bytes quét giữa hai commit | Benchmark lặp N lần, thoát khác 0 khi vượt ngưỡng phần trăm đã khóa | Độ biến thiên giữa các lần chạy; số hồi quy bắt được trên lịch sử | DuckDB, ClickHouse, DataFusion trong kho | Nhiễu máy chạy; dữ liệu mẫu nhỏ che hồi quy |
+| Máy kiểm phiên bản workflow có replay | Định nghĩa workflow cũ/mới + lịch sử chạy mẫu → Báo cáo workflow đang chạy có tiếp tục an toàn khi đổi phiên bản | Replay lịch sử bằng engine (durable/Temporal-style); thoát khác 0 nếu không xác định | Tỷ lệ replay thành công trên lịch sử mẫu | durable-workflow/workflow, dagu, Kestra | Engine khác nhau về ngữ nghĩa replay |
+| Vòng khép kín flag, thí nghiệm, chỉ số | Danh sách flag + sự kiện + định nghĩa chỉ số → Báo cáo flag thừa, flag không có chỉ số, đề xuất gỡ | Quét mã tìm flag chết; đối chiếu flag với sự kiện có dữ liệu trong 30 ngày | Số flag chết bị bắt trên repo mẫu; tỷ lệ đề xuất đúng khi xem tay | Flipt, Unleash, GrowthBook, OpenFeature | Flag đặt động che khỏi quét tĩnh |
+
+### 7.7 Kỹ thuật phần mềm và vận hành
+
+Đợt 2 nhìn từ góc nghề nghiệp: kho nghiêng framework, terminal, dev-env và chưa phủ phân tích ngược Android/native (chỉ Ghidra, radare2), quan sát hệ thống (không có Prometheus), vận hành CSDL, bảo mật mobile và QA bản dịch. Nhiều mảng có WCAG hoặc OTel nhưng chưa nối với nghĩa vụ pháp lý hay công cụ cưỡng chế. app-launcher chỉ 5 hồ sơ, lệch về dashboard.
+
+**Khoảng trống của kho:**
+
+- **Phân tích ngược Android/native/mã độc có công cụ chuẩn**: Kho chỉ có Ghidra, radare2 và vài skill RE nên thiếu decompiler APK, instrumentation động, phát hiện năng lực mã độc. *(gần nhất trong kho: NationalSecurityAgency/ghidra, radareorg/radare2)*
+- **Quan sát hệ thống: metric và cảnh báo (Prometheus)**: Có Grafana và OTel nhưng không có Prometheus; hồ sơ thiếu góc đo SLO/alert tuân thủ chuẩn exposition.
+- **GitOps và control plane hạ tầng**: Có argo-cd, terraform nhưng thiếu Flux và Crossplane (control plane khai báo). *(gần nhất trong kho: argoproj/argo-cd)*
+- **Quản trị thay đổi schema CSDL (migration review, drift)**: orm-db-tooling chỉ 5 hồ sơ; chưa có công cụ lint/diff migration có chính sách hay vận hành Postgres trên K8s. *(gần nhất trong kho: pressly/goose, sqlc-dev/sqlc)*
+- **Hàng đợi/job nền và kiểm thử tích hợp có container thật**: backend thiếu queue bền vững kiểu Redis/Postgres và thư viện Testcontainers cho test tích hợp.
+- **Bảo mật ứng dụng mobile (MASVS/MASTG)**: mobile 28 hồ sơ nghiêng UI kit; không có chuẩn bảo mật mobile (OWASP MASVS/MASTG) hay phân tích tĩnh/động.
+- **Phát hành mobile: OTA, kiểm thử E2E thiết bị, lint Kotlin**: Không có code push Flutter, Detox, detekt; thiếu vòng phát hành mobile.
+- **Mock API và ngân sách kích thước/phát hành cho frontend**: frontend chưa có MSW (mock mạng), size-limit, changesets cho release monorepo.
+- **Tuân thủ truy cập được pháp lý (EAA) cho sản phẩm số**: Kho có WCAG 2.2 nhưng chưa nối với nghĩa vụ pháp lý EAA/EN 301 549 cho sản phẩm bán ở EU.
+- **QA bản dịch và quy trình TMS/ngữ pháp**: localization 8 hồ sơ chủ yếu công cụ dịch; thiếu TMS (Tolgee, Pontoon) và kiểm lỗi ngữ pháp. *(gần nhất trong kho: WeblateOrg/weblate, formatjs/formatjs)*
+- **Hệ sinh thái launcher có extension/clipboard/text expansion**: app-launcher 5 hồ sơ, nghiêng dashboard; thiếu launcher desktop và text expansion. *(gần nhất trong kho: Wox-launcher/Wox)*
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Triage APK/binary không chạy mã | file APK hoặc ELF/PE → báo cáo: loại file, quyền, năng lực (ATT&CK), chuỗi đáng ngờ | jadx/apktool exit 0, capa JSON hợp lệ theo schema | tỷ lệ mẫu có nhãn được xếp đúng; thời gian trên mẫu | jadx, capa, Detect-It-Easy | mẫu độc cần sandbox, kết quả có thể sai |
+| Cổng MASVS cho app mobile | APK/IPA và danh sách điều khoản MASVS áp dụng → bảng điều khoản đạt/chưa đạt kèm bằng chứng | MobSF quét xuất JSON, không còn mục high chưa xử lý | phủ điều khoản tự động/tổng; số mục sai dương | OWASP MASVS/MASTG, MobSF | MobSF không thay kiểm thử thủ công |
+| Lint rule và dashboard Prometheus | thư mục rule/alert và metric mẫu → báo cáo rule sai cú pháp, thiếu runbook, metric lệch chuẩn | promtool check rules và check metrics | số rule hợp lệ; alert có runbook | Prometheus, OpenMetrics | khác phiên bản Prometheus |
+| Review migration CSDL | file migration và schema hiện tại → bản duyệt: thao tác phá hoại, khóa bảng, drift | atlas migrate lint, atlas schema diff exit code | số migration phá hoại bị chặn; drift phát hiện | [ariga/atlas](34-backend-data-identity-integration/README.md#n2-ariga-atlas), bytebase | bỏ sót ca phụ thuộc dữ liệu |
+| Test tích hợp bằng container thật | mã dịch vụ và phụ thuộc (Postgres, Redis) → bộ test dùng Testcontainers thay mock CSDL | test xanh, thời gian chạy dưới ngưỡng | độ phủ đường truy cập dữ liệu; thời gian CI | testcontainers-go, river | CI không có Docker |
+| Cổng ngân sách bundle và Web Vitals | build frontend → báo cáo kích thước và LCP/INP/CLS | size-limit và Lighthouse CI chạy xanh | chênh lệch so với baseline | size-limit, Core Web Vitals | số đo phòng thí nghiệm khác thực địa |
+| Kiểm bản dịch XLIFF | file XLIFF và glossary → danh sách lỗi: placeholder mất, MF2 sai cú pháp, ngữ pháp | validate theo schema XLIFF, LanguageTool JSON | tỷ lệ lỗi bắt được trên tập lỗi gieo | LanguageTool, XLIFF 2.2, MessageFormat 2 | ngôn ngữ ít tài nguyên |
+| Checklist tuân thủ EAA | mô tả sản phẩm và kết quả kiểm WCAG → hồ sơ tuân thủ theo yêu cầu EAA | axe/Lighthouse JSON, mọi mục bắt buộc có bằng chứng | số yêu cầu có bằng chứng/tổng | EAA 2019/882, WCAG 2.2 (đã có trong kho) | không phải tư vấn pháp lý |
+
+### 7.8 Tự động hóa và quy trình
+
+Đợt 2: kho đã nhận phần lớn ứng viên đợt 1 (Flowable, Activiti, zen, openrpa...). Điểm yếu còn lại nằm ở vận hành: hàng đợi nền, webhook, giám sát cron, bảo mật pipeline và đo chất lượng. Thiên lệch vẫn là sản phẩm lớn, ít thư viện nhỏ và công cụ kiểm.
+
+**Khoảng trống của kho:**
+
+- **Hàng đợi/scheduler nền trên DB (Postgres, Redis) với idempotency**: Đợt 1 chỉ nêu pg-boss/graphile; chưa có queue theo ngôn ngữ (Go, Elixir, Python) hay bàn về enqueue trong cùng transaction. *(gần nhất trong kho: celery/celery, hatchet-dev/hatchet)*
+- **Gửi và nhận webhook an toàn (ký, retry, replay)**: Chỉ có novu; không có hồ sơ về ký, retry, replay webhook. *(gần nhất trong kho: novuhq/novu)*
+- **Kết nối OAuth/tích hợp bên thứ ba cho agent (quản lý token)**: Tích hợp bên thứ ba cần quản lý token và OAuth; kho chưa có hạ tầng này.
+- **Runbook automation và remediation theo sự kiện (ITOps)**: Thiếu runbook/remediation theo sự kiện kiểu ITOps. *(gần nhất trong kho: dgtlmoon/changedetection.io)*
+- **Giám sát job định kỳ (dead-man's switch, SLO cho cron)**: Không hồ sơ giám sát job định kỳ (heartbeat, cảnh báo trễ).
+- **Task management cho agent coding (file markdown, MCP)**: Project-management thiên Kanban/Gantt, thiếu task dạng file cho agent coding. *(gần nhất trong kho: usekaneo/kaneo)*
+- **Workflow dữ liệu khoa học/pipeline dạng DAG khai báo**: Pipeline khoa học/dữ liệu khai báo (Nextflow, Snakemake, Luigi) không có mặt trong nhóm. *(gần nhất trong kho: apache/airflow, PrefectHQ/prefect)*
+- **Đo lường chất lượng: SLO, độ trễ hàng đợi, tỉ lệ job lỗi**: Không hồ sơ nào bàn chỉ số vận hành của workflow.
+- **Bảo mật CI/CD và danh tính phi người của workflow**: Nhóm chưa nối OWASP CI/CD và NHI vào workflow tự động.
+- **Trải nghiệm người dùng cuối của approval/form**: Thiếu hồ sơ về form, hộp duyệt, thông báo cho người duyệt. *(gần nhất trong kho: synergycodes/workflowbuilder)*
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Bộ kiểm webhook theo Standard Webhooks | Endpoint nhận webhook + khóa thử → Báo cáo ca đạt/trượt (chữ ký sai, timestamp cũ, trùng id) | Gửi request giả bằng thư viện tham chiếu, kỳ vọng 2xx/4xx cố định | Tỉ lệ ca đạt trên bộ ca có nhãn | standardwebhooks.com; [svix/svix-webhooks](34-backend-data-identity-integration/README.md#n2-svix-webhooks) | Spec chưa ghi phiên bản |
+| Kiểm vòng lặp lịch lặp qua múi giờ/DST | RRULE hoặc cron + múi giờ IANA → Danh sách lần chạy 2 năm và các lần bị nhảy/lặp quanh DST | So với thư viện chuẩn (APScheduler/croner) trên bộ ngày biên | Số khác biệt trên bộ ca DST có nhãn | RFC 9557; agronholm/apscheduler | Thư viện khác nhau định nghĩa khác |
+| Lint workflow CI theo OWASP CI/CD Top 10 | Thư mục .github/workflows → Báo cáo theo CICD-SEC-n kèm sửa gợi ý | Chạy actionlint + zizmor, ánh xạ mã luật vào CICD-SEC | Precision/recall trên mẫu workflow cài lỗi | OWASP CI/CD Top 10; [nektos/act](13-dev-stack-devops/README.md#ch-act) (đã có trong kho) | Danh sách OWASP không có phiên bản; ánh xạ chủ quan |
+| Kiểm kê danh tính phi người của workflow | Manifest workflow + biến bí mật → Bảng token: chủ, quyền, tuổi, dùng chung | Lint tĩnh: token sống quá ngưỡng, tái dùng giữa môi trường | Số vi phạm NHI bắt được trên mẫu cài sẵn | OWASP NHI Top 10 2025 | Cần dữ liệu từ nhà cung cấp, không có trong repo |
+| Cổng heartbeat cho job định kỳ | Danh sách job cron + ngưỡng trễ → Cấu hình ping/grace và bài kiểm job bị bỏ lỡ | Giả lập bỏ lỡ lần chạy, kỳ vọng cảnh báo trong grace | Thời gian phát hiện (giây) trên 20 ca | [healthchecks/healthchecks](33-reliability-observability-operations/README.md#n2-healthchecks); mcuadros/ofelia | Giả lập không phản ánh đúng sản xuất |
+| Hàng đợi enqueue-trong-transaction: kiểm tính atomic | Mã ghi DB + enqueue (River/Oban/Procrastinate) → Báo cáo ca mất/trùng job khi rollback hoặc crash | Chạy test kill-process giữa transaction, đếm job | Số job mất hoặc trùng trên 100 lần chạy | riverqueue/river; oban-bg/oban | Khác biệt giữa ngôn ngữ |
+| Chuẩn hóa lỗi workflow thành Problem Details | OpenAPI của dịch vụ workflow → Bản vá ánh xạ lỗi sang problem+json có phân loại retryable | Schema RFC 9457 + test hợp đồng | Tỉ lệ endpoint trả đúng định dạng | RFC 9457 | Mã lỗi nghiệp vụ không ánh xạ trọn |
+
+### 7.9 Video, motion và media
+
+Nhóm 135 hồ sơ: mạnh ở engine dựng, skill Remotion/GSAP/Manim, mô hình sinh. Đợt 2 nhìn từ vận hành và an toàn: chưa có lớp vận hành pipeline sinh ảnh cục bộ, huấn luyện LoRA, lip-sync, đóng gói phát trực tuyến, kiểm file media, an toàn quang kích thích trên video, tuân thủ nhãn AI theo luật, và đo hiệu năng render. Các ứng viên trên đa phần có số sao từ tìm kiếm GitHub; mục ghi chưa xác minh chỉ xác nhận repo tồn tại bằng ls-remote. Truy cập API repo từng cái bị chặn trong phiên này.
+
+**Khoảng trống của kho:**
+
+- **Vận hành pipeline tạo ảnh/video cục bộ**: Kho có ComfyUI/A1111/Invoke nhưng ít về vận hành: quản lý model có băm, cô lập môi trường, hàng đợi GPU, chuỗi cung ứng custom node. *(gần nhất trong kho: Comfy-Org/ComfyUI, invoke-ai/InvokeAI)*
+- **Huấn luyện LoRA và nhất quán nhân vật**: Thiếu hẳn quy trình dataset, huấn luyện, đánh giá LoRA; nhân vật nhất quán là nhu cầu chính của video dài. *(gần nhất trong kho: huggingface/diffusers)*
+- **Lip-sync và avatar nói**: Gần như chưa có; kèm rủi ro deepfake nên cần hồ sơ có cảnh báo. *(gần nhất trong kho: HKUDS/ViMax)*
+- **Đóng gói và phát trực tuyến (HLS/DASH/CMAF)**: Kho dừng ở bước xuất file, chưa tới giao hàng thích ứng băng thông và DRM. *(gần nhất trong kho: bluenviron/mediamtx, FFmpeg/FFmpeg)*
+- **An toàn quang kích thích và kiểm chuyển động ở mức video**: Đợt 1 có audit reduced-motion cho web; còn thiếu đo flash/pattern trên video đã render. *(gần nhất trong kho: lucasmarkes/hairline)*
+- **Kiểm định file media theo policy**: Chưa có công cụ kiểm conformance container/codec, chỉ có đo chất lượng. *(gần nhất trong kho: Breakthrough/PySceneDetect)*
+- **Nhãn AI và minh bạch nội dung theo luật**: Đợt 1 có C2PA; chưa có tầng pháp lý (EU AI Act Điều 50) và đo độ bền watermark. *(gần nhất trong kho: wiltodelta/remove-ai-watermarks (ứng viên))*
+- **Đồng bộ lồng tiếng với thời lượng phụ đề**: Công cụ GUI có sẵn nhưng chưa có kỹ thuật co giãn thời lượng và đo độ lệch. *(gần nhất trong kho: jianchang512/pyvideotrans, Huanshere/VideoLingo)*
+- **Hiệu năng và ngân sách tài nguyên khi render/playback**: Không có hồ sơ nào đo thời gian render, bộ nhớ, kích thước Lottie/JS bundle. *(gần nhất trong kho: remotion-dev/remotion)*
+- **Trải nghiệm người dùng cuối: tiếp cận nội dung video**: Thiếu audio description, chú thích cho người điếc, và kiểm đọc được của chữ trên video.
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Kiểm flash/pattern trên video đã render | File video (mp4/webm) và ngưỡng WCAG 2.3.1 cấu hình → Báo cáo JSON theo khung hình: số flash chung/đỏ trong 1 giây, vùng diện tích, kết luận pass/fail | Mã thoát khác 0 khi vượt ngưỡng; test bằng video mẫu đã biết (pass/fail) | Độ khớp với bộ clip dán nhãn tay; tỷ lệ sai âm trên clip vi phạm | W3C G15 (WCAG technique), epi-lens, Harding test (Wikipedia) | Không thay thế Harding FPA chứng nhận; sai âm gây hại thật, phải ghi rõ giới hạn |
+| Dò chuỗi cung ứng custom node ComfyUI | Thư mục workflow và danh sách node → Danh sách node/ phiên bản/ nguồn, cờ node chạy lệnh hoặc tải mã từ mạng | Quét tĩnh bằng AST và regex, snapshot đối chiếu, fail khi node chưa ghim commit | Tỷ lệ phát hiện trên tập node độc hại giả lập | [Comfy-Org/ComfyUI](19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026), ComfyUI-Manager (chưa xác minh) | Nhiều node viết động, quét tĩnh bỏ sót |
+| Bộ kiểm LoRA dataset | Thư mục ảnh + chú thích → Báo cáo trùng lặp, độ phân giải, chú thích thiếu, quyền sử dụng khuôn mặt | Băm cảm nhận (perceptual hash) và quy tắc cố định, CI chặn khi vi phạm | Tỷ lệ trùng phát hiện trên tập có nhúng bản sao | kohya-ss/sd-scripts (chưa xác minh), Fizgig | Không xác minh được quyền thật của ảnh |
+| Cổng đóng gói HLS/DASH | Bản dựng nhiều bitrate → Playlist/manifest hợp lệ, báo cáo khớp keyframe, độ dài segment, codec string | Trình kiểm manifest + ffprobe, fail khi lệch GOP giữa các rendition | Tỷ lệ phát thử thành công trên player mẫu | [gpac/gpac](19-agentic-video-media/README.md#n2-gpac), RFC 8216 | Khác biệt giữa player; DRM nằm ngoài phạm vi |
+| Đồng bộ lồng tiếng với dòng phụ đề | SRT/VTT gốc, âm thanh lồng tiếng → SRT mới theo thời lượng thật và báo cáo độ lệch từng dòng | Mã thoát khác 0 khi lệch quá N mili giây hoặc tốc độ nói vượt ngưỡng | Độ lệch trung vị/ p95 giữa dòng và giọng | Auto-Synced-Translated-Dubs, Pandrator, pyvideotrans | Co giãn giọng quá nhiều làm méo; tiếng Việt có dấu cần ngưỡng riêng |
+| Chấm độ bền watermark/C2PA | Ảnh/video có nhãn + bộ biến đổi (nén lại, cắt, resize) → Bảng tỷ lệ nhãn còn sống sau từng biến đổi | Chạy lại xác minh c2pa-rs sau mỗi biến đổi; fail nếu vượt ngưỡng | Tỷ lệ sống theo biến đổi | remove-ai-watermarks (làm kịch bản tấn công), C2PA | Dùng công cụ gỡ nhãn chỉ trong môi trường thử; rủi ro lạm dụng |
+| Ngân sách render và bundle cho animation | Dự án Remotion/Lottie/GSAP → Số liệu thời gian render, bộ nhớ đỉnh, kích thước Lottie/JS, so với ngân sách | Script đo trong CI, fail khi vượt ngân sách trong xt.yaml | Hệ số biến thiên giữa 5 lần chạy | [remotion-dev/remotion](19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026), thorvg | Máy CI khác máy người dùng; số đo nhiễu |
+| Kiểm đọc được chữ trên video | Video có phụ đề cứng/tiêu đề → Báo cáo tương phản, cỡ chữ, vùng an toàn, thời gian hiển thị tối thiểu | Lấy mẫu khung hình, đo tương phản vùng chữ, ngưỡng cố định | Độ khớp với đánh giá tay trên 50 clip | WCAG 2.2 (đã có trong kho), tscaps | OCR sai với tiếng Việt có dấu; ngưỡng tương phản video chưa có chuẩn WCAG chính thức |
+
+### 7.10 Tri thức, tài liệu và ứng dụng người dùng cuối
+
+Đợt 2 nhìn nhóm từ góc quy trình vận hành và đo lường: kho có nhiều công cụ docs và khóa học nhưng thiếu cổng máy cho vòng đời tài liệu (tìm kiếm, API drift, changelog, bản dịch, xuất bản có kiểm conformance) và gần như không có mảng học có khoa học (SRS, FSRS). Mảng tiện ích desktop thiên về liệt kê tính năng, ít đánh giá riêng tư (clipboard, quyền truy cập). Tiếng Việt có TTS/ASR nhưng thiếu bộ gõ Linux và chuỗi âm vị.
+
+**Khoảng trống của kho:**
+
+- **Tìm kiếm và điều hướng cho site tài liệu**: Site docs có nhiều nhưng không hồ sơ nào xét tìm kiếm tĩnh và chất lượng tìm tiếng Việt có/không dấu. *(gần nhất trong kho: fuma-nama/fumadocs, squidfunk/mkdocs-material)*
+- **Tài liệu sinh từ mã (API reference) và kiểm drift**: Đợt 1 nêu docs cho agent, chưa nêu sinh API reference và kiểm lệch chữ ký. *(gần nhất trong kho: simplistix/sybil, sphinx-doc/sphinx)*
+- **Changelog và ghi chú phát hành như tài liệu**: Changelog là tài liệu người dùng cuối đọc nhiều nhất; kho chưa có công cụ sinh/kiểm.
+- **Bản địa hóa tài liệu (i18n/l10n) và đồng bộ bản dịch**: Nhóm vietnam và docs cần bản dịch nhất quán; chưa có hồ sơ về nền tảng dịch hoặc đồng bộ nguồn-dịch.
+- **Học tập có khoa học: lặp lại ngắt quãng, đo nhớ**: Nhóm learning thiên về khóa học, thiếu mảng đo việc nhớ và lập lịch ôn.
+- **Tri thức đọc sau/bookmark tự host, xuất được**: Đã có omnivore (ngừng) nhưng thiếu lựa chọn đọc-sau và wiki tự host đang hoạt động. *(gần nhất trong kho: omnivore-app/omnivore, outline/outline)*
+- **Bộ gõ và TTS tiếng Việt: kiểm chất lượng và quyền riêng tư**: Thiếu bộ gõ Linux và các mắt xích tiền xử lý TTS tiếng Việt; chưa có tiêu chí quyền riêng tư của bộ gõ. *(gần nhất trong kho: tuyenvm/OpenKey, xmannv/xkey)*
+- **Tiện ích desktop: launcher, clipboard, cửa sổ, quyền truy cập**: Launcher, clipboard, quản lý cửa sổ là loại tiện ích chạm dữ liệu nhạy cảm nhưng chưa có hồ sơ nào. *(gần nhất trong kho: jordanbaird/Ice, MonitorControl/MonitorControl)*
+- **Tri thức local-first: đồng bộ CRDT, tệp văn bản thuần**: Đợt 1 nói về đồng bộ/xuất; chưa có hồ sơ về CRDT và tệp văn bản thuần dùng được với agent. *(gần nhất trong kho: silverbulletmd/silverbullet, logseq/logseq)*
+- **Xuất bản/giấy phép tài liệu: EPUB, REUSE, PDF/A kiểm máy**: STANDARDS có PDF/A và PDF/UA nhưng chưa có EPUB, REUSE hay công cụ kiểm tương ứng.
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| docs-search-index-audit | Site docs đã build (HTML) và danh sách truy vấn thật hoặc tổng hợp → Báo cáo: trang không lập chỉ mục, truy vấn trả 0 kết quả, tiếng Việt có dấu/không dấu có khớp không | Chạy Pagefind trên build; mỗi truy vấn mẫu phải có kết quả mong đợi top-5; fail nếu tỷ lệ không kết quả vượt ngưỡng | recall@5 trên bộ truy vấn vàng 30 mục; tỷ lệ truy vấn 0 kết quả | Pagefind (ứng viên), nhóm docs của kho | Bộ truy vấn vàng thiên lệch; tiếng Việt không dấu cần chuẩn hóa NFC và bỏ dấu |
+| api-docs-drift-gate | Mã nguồn có docstring/chú thích và trang tham chiếu đã sinh → Danh sách API công khai thiếu mô tả hoặc ví dụ lệch chữ ký | Chạy doxygen/mkdocstrings với cảnh báo thành lỗi; so tên tham số trong ví dụ với chữ ký | % ký hiệu công khai có doc; số ví dụ mã chạy được | doxygen, mkdocstrings (ứng viên), sybil (đã có trong kho) | Ví dụ mã có phụ thuộc môi trường làm cổng chập chờn |
+| changelog-from-commits-verifier | Lịch sử git, thẻ phát hành, CHANGELOG.md → Bản CHANGELOG sinh lại và bản lệch so với tệp trong repo | Sinh lại bằng git-cliff rồi diff; kiểm cấu trúc Keep a Changelog và SemVer tăng đúng với loại commit | % phiên bản có changelog khớp; số commit breaking không ghi | git-cliff, changesets (ứng viên), Keep a Changelog | Dự án không dùng Conventional Commits cho kết quả rỗng |
+| docs-translation-sync-check | Cây docs nguồn và các bản dịch (vi/en), tệp XLIFF hoặc PO → Bảng bản dịch cũ, thiếu, thẻ ngôn ngữ sai, thuật ngữ lệch bảng thuật ngữ | So băm đoạn nguồn với băm lúc dịch; kiểm BCP 47; kiểm lược đồ XLIFF; khớp thuật ngữ bắt buộc | % đoạn còn mới; số vi phạm thuật ngữ | XLIFF 2.1, BCP 47, Tolgee/lingo.dev (ứng viên) | Băm theo đoạn vỡ khi sửa nhỏ; dịch máy sai ngữ cảnh |
+| srs-schedule-conformance | Bộ review mẫu (thẻ, thời điểm, điểm) và cài đặt SRS → Báo cáo hai bộ lập lịch cho cùng đầu vào cho ra lịch ôn như nhau (hoặc lệch bao nhiêu) | Chạy cùng log trên ts-fsrs và py-fsrs với tham số cố định; so khoảng ôn từng bước, sai số dung sai | Số bước lệch quá dung sai; log-loss dự đoán nhớ trên tập giữ lại | ts-fsrs, py-fsrs, Anki (ứng viên) | Tham số mặc định đổi giữa bản; dữ liệu review thật có thông tin cá nhân |
+| epub-pdfa-publish-gate | Tài liệu nguồn Markdown hoặc HTML → EPUB/PDF kèm báo cáo conformance và danh sách lỗi truy cập | Xuất EPUB rồi chạy EPubCheck; xuất PDF/A rồi chạy veraPDF; fail nếu có lỗi mức fatal/error | Số lỗi mỗi tài liệu; thời gian chạy | EPUB 3.3, veraPDF (ứng viên), PDF/A-4 đã có trong STANDARDS | Công cụ kiểm có thể cũ so với bản chuẩn; không thay kiểm trình đọc thật |
+| reuse-license-lint-docs | Repo tài liệu hoặc catalog trộn nội dung nhiều nguồn → Báo cáo tệp thiếu SPDX/bản quyền, giấy phép không tương thích khi trộn | Chạy `reuse lint`; kiểm bảng tương thích giấy phép nội bộ | % tệp có SPDX; số xung đột giấy phép | REUSE 3.3, SPDX | Nội dung trích dẫn ngắn khó phân loại; không phải tư vấn pháp lý |
+| desktop-clipboard-privacy-probe | Ứng dụng clipboard/launcher cần đánh giá (bản build, mã nguồn) → Hồ sơ: có loại trừ ứng dụng mật khẩu, có mã hóa lịch sử, có gọi mạng không | Chạy ứng dụng trong sandbox, đặt mẫu giả vào clipboard, dò tệp lưu và kết nối ra ngoài, so với danh sách kiểm | Số mục kiểm đạt trên tổng; số kết nối ngoài không giải thích được | Maccy, Ditto, Flow.Launcher, Vicinae (ứng viên), keepassxc đã có trong kho | Cần hệ điều hành thật; kết quả thay đổi theo bản |
+
+### 7.11 Kỹ thuật công trình và chất lượng công nghiệp
+
+Đợt 2 nhìn từ góc vận hành xưởng và tuân thủ. Kho đã có OpenQMS, shewhart, OCA/manufacture; đợt 1 kết luận chưa có công cụ mã mở cho WPS/PQR, hiệu chuẩn, NDT. Đợt 2 tìm lại bằng truy vấn khác (gh search 'welding', 'calibration', 'CMMS'; WebSearch tiếng Anh về WPS/PQR và calibration management): vẫn KHÔNG thấy công cụ mã mở quản lý WPS/PQR hay quản lý hiệu chuẩn thiết bị đo đạt chất lượng; kết quả web toàn sản phẩm thương mại (WeldNote, TWI Welding Qualifier, Qualer, CalibrationOS...) và vài dự án SourceForge cũ (Kalibro, Metrus, Cali chưa rõ license). Điều tìm được là mảnh ghép lân cận: weldx (định dạng dữ liệu hàn), CMMS tự host mới hoạt động, EPCIS, MTConnect/OPC UA, SPC nhúng. Thiên lệch vẫn là thiếu lớp tuân thủ nghề (hồ sơ chứng chỉ, nhân sự NDT, chu kỳ kiểm định chai).
+
+**Khoảng trống của kho:**
+
+- **Truy xuất sự kiện chuỗi cung ứng EPCIS (serial/lô) cho chai khí**: Chai khí cần truy xuất serial -> lô -> kiểm định; EPCIS 2.0 (ISO/IEC 19987:2024) là mô hình sự kiện chuẩn, kho chưa có hồ sơ nào.
+- **Dữ liệu hàn có cấu trúc làm nền cho WPS/PQR**: Không có công cụ WPS/PQR mã mở; định dạng dữ liệu hàn (weldx) là điểm bắt đầu để tự xây sổ WPS có schema.
+- **Chu kỳ kiểm định định kỳ và bảo dưỡng chai (ISO 10462, kiểm tra định kỳ) như dữ liệu có lịch**: Nhà máy chai khí phải theo dõi hạn kiểm định từng chai; CMMS thường chỉ lo thiết bị, không lo tài sản là chai quay vòng. *(gần nhất trong kho: OCA/maintenance)*
+- **Đồng bộ dữ liệu máy: MTConnect, OPC UA, Unified Namespace**: Muốn đo OEE, thông số hàn, áp thử tự động cần lớp thu dữ liệu chuẩn; kho chỉ có MES cấp ứng dụng. *(gần nhất trong kho: factorysemantics/factorysemantics-mes)*
+- **Đo lường chất lượng chính hệ thống chất lượng (độ tin cậy của MSA, quyết định chấp nhận theo ISO 14253-1)**: Kho có SPC nhưng chưa có góc không chắc chắn đo và quy tắc quyết định chấp nhận/loại. *(gần nhất trong kho: huft-jonathan/pyshewhart)*
+- **Chứng nhận nhân sự NDT và thợ hàn: ma trận năng lực, hạn hiệu lực, phân quyền ký**: ISO 9712 và ISO 9606 đòi chứng nhận có hạn; không có mô hình dữ liệu hay công cụ nhắc hạn trong kho.
+- **Báo cáo chất lượng tự động (lô, COA, hồ sơ xuất xưởng) sinh từ dữ liệu**: Đầu ra cuối của nhà máy là hồ sơ chất lượng ký số, kho chưa có hồ sơ về sinh báo cáo từ dữ liệu có kiểm.
+- **Trải nghiệm xưởng: ứng dụng di động/QR cho CMMS và kiểm tra tại chỗ, chạy khi mất mạng**: Người dùng cuối là thợ và kiểm tra viên; kho thiếu góc offline-first và quét mã.
+- **Tích hợp liên nhóm: bản vẽ (cad-bim) -> kế hoạch kiểm tra (QIF) -> kết quả đo**: QIF (ISO 23952) nối mô hình CAD với kết quả đo; kho có CAD và SPC nhưng không có cầu nối. *(gần nhất trong kho: tpaviot/pythonocc-core, buildingSMART/validate)*
+- **Kỹ năng agent cho Six Sigma/MSA/Cp-Cpk**: Có skill R cho Six Sigma mới; kho chưa có hồ sơ skill nghề cho MSA/Cp-Cpk.
+
+**Ý tưởng skill/tính năng:**
+
+| Ý tưởng | Đầu vào → đầu ra | Cổng kiểm máy | Cách đo | Cơ sở | Rủi ro và lưu ý |
+|---|---|---|---|---|---|
+| Chu kỳ kiểm định chai: lịch và chặn nạp khi quá hạn | CSV/JSON chai (serial, loại, ngày kiểm định gần nhất, tiêu chuẩn áp dụng, chu kỳ theo quy định cấu hình) → Danh sách chai đến hạn/quá hạn và báo cáo chặn nạp | Schema JSON; test với tập chai tổng hợp có ca biên (đúng ngày, năm nhuận, thiếu ngày); không cho ngày tương lai | Tỷ lệ phát hiện đúng trên bộ ca gắn nhãn trước; số dương tính giả | ISO 10462 (qua AFNOR/law.resource.org, bản 2013); STANDARDS.md đã ghi QCVN 04 | Chu kỳ phụ thuộc quy định từng nước; ISO 10462 nói khoảng cách lấy từ quy định, nên cấu hình không được hard-code |
+| Sổ chứng chỉ NDT/thợ hàn có phân quyền ký | Bản ghi nhân sự: phương pháp, cấp, nơi cấp, ngày cấp/hết hạn → Ma trận năng lực và danh sách ai được ký loại báo cáo nào | Validator: báo cáo RT/UT chỉ hợp lệ khi người ký có chứng chỉ còn hạn đúng phương pháp | Độ bao phủ ca vi phạm (báo cáo ký bởi chứng chỉ hết hạn) trong bộ test tổng hợp | ISO 9712:2021 (committee.iso.org) | Cấp độ và quy tắc phụ thuộc thể chế chứng nhận (ISO 9712 cho phép cơ quan cấp quyết định); không thay luật |
+| Bộ tạo bản ghi NDT với bảng ngưỡng chấp nhận có nguồn | Kết quả đọc phim (loại, kích thước khuyết tật), mức chất lượng yêu cầu → Kết luận đạt/không đạt kèm trích dẫn điều khoản tham chiếu | Test bảng ngưỡng: mọi ngưỡng có cột nguồn; so với ví dụ đã công bố hợp pháp | Số ngưỡng có nguồn / tổng; khác biệt với bản chuẩn do người có bản quyền đối chiếu | ISO 5817:2023, ISO 10675-1:2021 (chỉ trạng thái) | Chuẩn trả phí, không được chép bảng; chỉ để người dùng tự nhập từ bản họ sở hữu |
+| Cầu QIF: kế hoạch đo từ mô hình CAD đến kết quả | Tệp QIF (XML) của kế hoạch và kết quả → Báo cáo đạt/không đạt theo đặc tính, xuất CSV cho SPC | Validate XSD QIF; so tổng số đặc tính giữa Plans và Results | Tỷ lệ tệp qua XSD; đặc tính không khớp | ISO 23952:2020 (committee.iso.org) | Tệp mẫu QIF công khai ít; cần kiểm lại nguồn schema trên qifstandards.org (chưa mở) |
+| Mô hình sự kiện EPCIS 2.0 cho vòng đời chai | Nhật ký nạp, kiểm tra, xuất, hồi (CSV) → Tệp JSON-LD EPCIS với định danh GS1 Digital Link | Validate theo JSON Schema EPCIS 2.0 công khai (chưa xác minh đường dẫn); test vòng tròn nạp đến nhận | Tỷ lệ sự kiện hợp lệ; chuỗi truy xuất từ serial lên lô có liền mạch | ISO/IEC 19987:2024; [FasTnT/epcis](38-industrial-quality-manufacturing/README.md#n2-fastnt-epcis), openepcis | Định danh GS1 cần tiền tố công ty có bản quyền; dùng giá trị giả trong test |
+| Quét biểu đồ kiểm soát: kiểm công thức SPC với dữ liệu chuẩn | Công cụ SPC (pyshewhart, ASPC) và bộ dữ liệu có đáp án → Báo cáo chênh lệch giới hạn kiểm soát và tín hiệu quy tắc | Test so sánh số học với dung sai; dữ liệu tổng hợp có điểm ngoài kiểm soát gài sẵn | Sai số tương đối giới hạn; số tín hiệu bỏ sót | ISO 7870-2:2023; [huft-jonathan/pyshewhart](38-industrial-quality-manufacturing/README.md#nt-huft-jonathan-pyshewhart), [M1ndSmith/ASPC](38-industrial-quality-manufacturing/README.md#n2-aspc) | Quy tắc dò khác nhau giữa trường phái (Western Electric vs Nelson); phải ghi rõ |
+| CMMS cho tài sản quay vòng (chai) thay vì thiết bị cố định | Danh sách tài sản có vòng đời (nạp/kiểm/sửa), mã hỏng hóc → Lệnh công việc và thống kê hỏng hóc theo mã | Test trạng thái: chuyển trạng thái không hợp lệ bị từ chối; mã hỏng hóc nằm trong danh mục | Tỷ lệ chuyển trạng thái đúng; thời gian truy vấn lịch sử một chai | [Grashjs/cmms](38-industrial-quality-manufacturing/README.md#n2-atlas-cmms), [OCA/maintenance](38-industrial-quality-manufacturing/README.md#nt-oca-maintenance), ISO 14224:2016 | Ánh xạ danh mục mã từ ISO 14224 viết cho dầu khí; cần chấp nhận sai khác |
+| Hồ sơ chất lượng lô sinh tự động (COA/xuất xưởng) có kiểm đủ trường | Dữ liệu lô: kết quả thử, hiệu chuẩn thiết bị liên quan, chứng chỉ người ký → PDF/HTML hồ sơ lô và bảng kê trường còn thiếu | Kiểm schema đầy đủ trường bắt buộc; hồ sơ thiếu một trường phải thất bại | Số lô bị chặn đúng / số lô thiếu trường trong bộ test | ISO 10012:2026 (trạng thái), kho OpenQMS | Mẫu COA do khách hàng/quy định quyết định, không có mẫu chung |
+
+### 7.12 Giới hạn của chương
+
+- Không có ý tưởng nào được xây hay chạy; "cổng kiểm máy" và "cách đo" là thiết kế đề xuất.
+- Danh sách khoảng trống và ý tưởng do các trinh sát tạo từ tìm kiếm web và GitHub; chỉ các repo có hồ sơ trong kho đã được đọc mã hoặc tài liệu tại một commit cố định.
+- Trạng thái chuẩn và luật (đặc biệt ISO, TCVN, luật Việt Nam) có nhiều dòng chỉ từ nguồn thứ cấp hoặc không đọc được: xem mức xác minh trong [STANDARDS.md](STANDARDS.md).
+- Số sao và ngày commit của một số ứng viên chưa đo được vì giới hạn API; xem từng hồ sơ.

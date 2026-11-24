@@ -340,3 +340,43 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 Thư viện tải, chia sẻ và tiền xử lý tập dữ liệu (từ Hugging Face Hub hoặc file cục bộ) dựa trên Apache Arrow. Tải dữ liệu một dòng với load_dataset() và hỗ trợ streaming; lưu trữ ánh xạ bộ nhớ zero-copy qua Apache Arrow kèm cache tự động; chuyển đổi qua lại NumPy, Pandas, Polars, PyTorch, TensorFlow, JAX, Spark. Điều kiện: Mỗi tập dữ liệu trên Hub có giấy phép riêng do chủ dữ liệu quy định; README khuyên ghim revision để tái lập. ★ 18/11/2026: 22.154 (GitHub search API), nhóm "Tài liệu, OCR & Thị giác máy tính" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
 
 **Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-bitsandbytes"></a>
+
+### bitsandbytes
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/bitsandbytes-foundation/bitsandbytes |
+| License | MIT |
+| Phiên bản đã đọc | `a616886cacf86701514f0cb1d6be760f967481c0` (commit 2026-10-27) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, NOTICE.md, pyproject.toml và một số file khác; chưa chạy upstream |
+| Khoảng trống lấp | Lượng tử 4/8-bit và optimizer 8-bit là lớp nền của QLoRA mà kho chưa có |
+| Cơ chế đáng học | • `quantize_4bit` chia tensor thành khối độc lập (blocksize mặc định 64, hợp lệ từ 32 đến 4096) với kiểu `nf4` hoặc `fp4`, tùy chọn lượng tử tiếp các absmax (`compress_statistics`) (`functional.py`).<br>• `Linear4bit`, `Linear8bitLt` và `Params4bit` thay lớp Linear của PyTorch (`nn/modules.py`); `bitsandbytes.optim` có optimizer 8-bit theo khối.<br>• Dispatch backend qua `torch.ops.bitsandbytes` với thư mục `backends/` cho cuda, cpu, xpu, hpu, mps, triton; mã native ở `csrc/`. |
+| Tiêu chí và cách kiểm | `tests/test_functional.py` đặt ngưỡng sai số trung bình tuyệt đối và tương đối khi lượng tử rồi dequantize (ví dụ abserr dưới 0.011 và relerr dưới 0.018 ở một ca). CI PR chạy ma trận CPU (linux x64/aarch64, macOS, windows-arm64; torch 2.4.1 và 2.13.0) và có job CUDA qua `test-runner.yml` với GPU T4/A10/L40S trên runner riêng. |
+| Giới hạn và rủi ro | License MIT (LICENSE ghi Copyright Facebook), NOTICE.md nói một phần dưới BSD của PyTorch; mô tả trinh sát ghi license trống là sai. Cần binary native biên dịch theo CUDA/CPU nên là bề mặt chuỗi cung ứng đáng lưu ý. Mặc định `quant_type` là fp4, không phải nf4 (QLoRA thường dùng nf4), và `compress_statistics` mặc định False ở hàm functional nhưng True ở `Params4bit`. README nói bản ổn định là tag 0.50.0, nhánh chính có thể khác. Có CLAUDE.md giao việc cho agent của chính repo (chỉ đọc, không áp dụng). Không thấy telemetry trong `bitsandbytes/` (grep). |
+| So với | peft, trl, unsloth (dùng bitsandbytes cho QLoRA), llm-compressor |
+| Nguồn | [README.md](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/README.md) · [LICENSE](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/LICENSE) · [NOTICE.md](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/NOTICE.md) · [pyproject.toml](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/pyproject.toml) · [functional.py](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/bitsandbytes/functional.py) · [modules.py](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/bitsandbytes/nn/modules.py) · [test_functional.py](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/tests/test_functional.py) · [tests-pr.yml](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/.github/workflows/tests-pr.yml) · [test-runner.yml](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/.github/workflows/test-runner.yml) |
+
+<a id="n2-openrlhf"></a>
+
+### OpenRLHF
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/OpenRLHF/OpenRLHF |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `26494490bc237f6c3af62dab6117e6bbb0a78dba` (commit 2026-11-03) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, version.txt, experience_maker.py, utils.py; chưa chạy upstream |
+| Khoảng trống lấp | Hậu huấn luyện RL quy mô lớn (PPO/GRPO/RLOO) và môi trường agent nhiều lượt; ghép LoRA vào mô hình gốc. Không có hợp nhất nhiều mô hình |
+| Cơ chế đáng học | • `experience_maker.py::compute_advantages_and_returns`: phạt độ dài, rồi theo `--algo.advantage.estimator` tính baseline: `rloo` (trung bình các mẫu còn lại), `reinforce_baseline`/`dr_grpo` (trừ trung bình nhóm), `group_norm` (chuẩn hóa theo độ lệch chuẩn nhóm), `flash_reinforce` (trừ trung bình cả batch); chuẩn hóa lợi thế toàn batch cho gae/reinforce/reinforce_baseline.<br>• `models/utils.py::compute_approx_kl` cài k1/k2/k3 của Schulman và tùy chọn `unbiased_gradient` (đảo gradient KL ngược có trọng số quan trọng); có test gradient riêng `tests/test_kl_estimator_gradient.py`.<br>• `utils/agent.py`: `AgentInstanceBase` (`reset`, `step`) và `MultiTurnAgentExecutor` dựng chuỗi quan sát/hành động, cắt prompt đầu để chừa chỗ sinh, từ chối cắt prompt VLM vì lệch token ảnh.<br>• `cli/serve_rm.py` dựng reward model thành HTTP (FastAPI/uvicorn) để `--reward.remote_url` gọi từ huấn luyện. |
+| Tiêu chí và cách kiểm | Có 15 file test_*.py trong `tests/` (loss, KL, reward shaping, dataset, agent, PPO trainer...), nhưng workflow duy nhất `python-package.yml` (đã đọc) chỉ build wheel và đẩy PyPI khi release, KHÔNG chạy test hay lint ở CI. Chưa chạy test (cần GPU/deps nặng). Tái lập: có `--train.seed` mặc định 42; không có bằng chứng đã đọc về tái lập bit-bit giữa lần chạy. Chất lượng mô hình/benchmark README: (chưa xác minh). |
+| Giới hạn và rủi ro | Apache-2.0. Không CI kiểm thử là điểm yếu về độ tin cậy khi nâng phiên bản (0.11.3). `serve_rm.py` mặc định `--host 0.0.0.0` nên phơi cổng 5000 nếu không bọc mạng; reward từ `remote_url` hoặc hàm Python của người dùng chạy mã tùy ý trong tiến trình huấn luyện. Phụ thuộc cứng Ray, vLLM, DeepSpeed, CUDA 12.x (workflow nhắc CUDA 12.8): rất nhạy phiên bản. Có tùy chọn W&B gửi log ra ngoài khi đặt khóa. README đề xuất khung kế nhiệm (Molt) nên cần cân nhắc vòng đời. |
+| So với | verl-hybridflow (cùng loại, kiến trúc HybridFlow); trl (nhẹ hơn, không Ray); torchtune và llamafactory (tinh chỉnh, ít RL phân tán) |
+| Nguồn | [README.md](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/README.md) · [LICENSE](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/LICENSE) · [version.txt](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/version.txt) · [experience_maker.py](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/openrlhf/trainer/ppo_utils/experience_maker.py) · [utils.py](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/openrlhf/models/utils.py) · [agent.py](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/openrlhf/utils/agent.py) · [lora_combiner.py](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/openrlhf/cli/lora_combiner.py) · [serve_rm.py](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/openrlhf/cli/serve_rm.py) · [test_kl_estimator_gradient.py](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/tests/test_kl_estimator_gradient.py) · [python-package.yml](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/.github/workflows/python-package.yml) |

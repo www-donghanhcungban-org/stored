@@ -2,7 +2,7 @@
 
 # backend — Kỹ thuật phần mềm & vận hành
 
-[← Mục lục catalog](../README.md) · 128 hồ sơ.
+[← Mục lục catalog](../README.md) · 138 hồ sơ.
 
 ## Web framework (`web-framework`, 26)
 
@@ -46,7 +46,7 @@
 | [Hasura GraphQL Engine](../../34-backend-data-identity-integration/README.md#anhkysuai-hasura-graphql-engine) | `hasura/graphql-engine` | Apache-2.0; LICENSE-community theo MIT | 32.127 | đọc tài liệu 2026-11-23 | 34 | Engine cung cấp API GraphQL thống nhất trên các nguồn dữ liệu. |
 | [Parse Server](../../34-backend-data-identity-integration/README.md#anhkysuai-parse-community-parse-server) | `parse-community/parse-server` | Apache-2.0 | 21.399 | đọc tài liệu 2026-11-23 | 34 | Backend tương thích Parse API chạy trên Node.js/Express, nhúng hoặc độc lập. |
 
-## Xác thực & danh tính (`auth-identity`, 7)
+## Xác thực & danh tính (`auth-identity`, 14)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -57,6 +57,13 @@
 | [Teleport Source](../../34-backend-data-identity-integration/README.md#anhkysuai-gravitational-teleport) | `gravitational/teleport` | AGPL-3.0-only cho source; api Apache-2.0; binary CE khác | 21.127 | đọc tài liệu 2026-11-23 | 34 | Lớp kết nối, xác thực, quyền và audit cho máy chủ, Kubernetes, database và ứng dụng. |
 | [Authlib](../../34-backend-data-identity-integration/README.md#nt-authlib) | `authlib/authlib` | BSD-3-Clause hoặc giấy phép thương mại (COMMERCIAL-LICENSE) | 5.462 | đọc mã 2026-11-23 | 34 | Thư viện Python OAuth/OIDC cho cả client và server, mỗi RFC một module cắm vào lõi bằng hook, tích hợp Flask, Django và các HTTP client. |
 | [node-oidc-provider](../../34-backend-data-identity-integration/README.md#nt-node-oidc-provider) | `panva/node-oidc-provider` | MIT | 3.861 | đọc mã 2026-11-23 | 34 | Authorization server OAuth 2.0 và OpenID Connect cho Node, cấu hình được từng tính năng, có chạy OpenID Conformance Suite trong CI. |
+| [Authgear Server](../../34-backend-data-identity-integration/README.md#n2-authgear-server) | `authgear/authgear-server` | Apache-2.0 | 2.160 | đọc mã 2026-11-23 | 34 | Máy chủ danh tính Apache-2.0 viết bằng Go, có passkey, TOTP/OTP, SSO OIDC/SAML và portal quản trị. |
+| [zitadel/oidc](../../34-backend-data-identity-integration/README.md#n2-zitadel-oidc) | `zitadel/oidc` | Apache-2.0 | 1.926 | đọc mã 2026-11-23 | 34 | Thư viện Go v3 cho cả bên phụ thuộc (RP) và nhà cung cấp (OP): luồng code, client credentials, refresh, discovery, JWT profile, PKCE, token exchange, device authorizatio… |
+| [Rauthy](../../34-backend-data-identity-integration/README.md#n2-rauthy) | `sebadob/rauthy` | Apache-2.0 | 1.474 | đọc mã 2026-11-23 | 34 | IdP viết bằng Rust, mặc định chạy trên cơ sở dữ liệu nhúng Hiqlite (Postgres là tùy chọn), có OIDC, OAuth 2, passkey hoặc tài khoản chỉ passkey, device_code, DPoP, SCIM… |
+| [webauthn-ruby](../../34-backend-data-identity-integration/README.md#n2-webauthn-ruby) | `cedarcode/webauthn-ruby` | MIT | 779 | đọc mã 2026-11-23 | 34 | Gem Ruby thực hiện phía server của đăng ký và đăng nhập WebAuthn, mặc định xác minh attestation, kèm `FakeClient` và `FakeAuthenticator` để test tích hợp không cần trình… |
+| [@passwordless-id/webauthn](../../34-backend-data-identity-integration/README.md#n2-passwordless-id-webauthn) | `passwordless-id/webauthn` | MIT | 621 | đọc mã 2026-11-23 | 34 | Thư viện TypeScript nhỏ bọc WebAuthn cho cả trình duyệt và server, xác minh chữ ký bằng WebCrypto thuần. |
+| [WebAuthn4J](../../34-backend-data-identity-integration/README.md#n2-webauthn4j) | `webauthn4j/webauthn4j` | Apache-2.0 | 600 | đọc mã 2026-11-23 | 34 | Thư viện Java xác minh đăng ký và đăng nhập WebAuthn ở server, hỗ trợ mọi định dạng attestation (packed, FIDO-U2F, Android Key, SafetyNet, TPM, Apple Anonymous, none, Ap… |
+| [java-webauthn-server (Yubico)](../../34-backend-data-identity-integration/README.md#n2-yubico-java-webauthn-server) | `Yubico/java-webauthn-server` | BSD-2-Clause AND BSD-3-Clause (file COPYING; GitHub SPDX là NOASSERTION) | 568 | đọc mã 2026-11-23 | 34 | Thư viện Java đăng ký và đăng nhập WebAuthn với đối tượng `RelyingParty` bậc cao, hỗ trợ passkey, tự động điền (conditional mediation), xác minh attestation tùy chọn qua… |
 
 ## API, RPC & client (`api-tooling`, 21)
 
@@ -84,7 +91,7 @@
 | [APIJSON](../../34-backend-data-identity-integration/README.md#chuyen-apijson) | `APIJSON/APIJSON` | Apache License 2.0 | 18.395 | đọc tài liệu 2026-11-18 | 34 | Giao thức truyền thông dựa trên JSON kèm thư viện ORM cho Java, cho phép client tự mô tả dữ liệu cần lấy để giảm việc viết API backend. |
 | [AsyncAPI Specification](../../29-software-architecture-api-contracts/README.md#nt-asyncapi-spec) | `asyncapi/spec` | Apache-2.0 | 5.345 | đọc tài liệu 2026-11-23 | 29 | Đặc tả AsyncAPI 3.1.0 cho API hướng thông điệp: channel, operation send/receive, message, reply và bindings theo giao thức. |
 
-## ORM, migration & công cụ CSDL (`orm-db-tooling`, 5)
+## ORM, migration & công cụ CSDL (`orm-db-tooling`, 7)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -92,7 +99,9 @@
 | [go-redis](../../34-backend-data-identity-integration/README.md#anhkysuai-redis-go-redis) | `redis/go-redis` | BSD-2-Clause | 22.293 | đọc tài liệu 2026-11-23 | 34 | Client Redis cho Go với connection pool, Pub/Sub, pipeline, transaction, Sentinel và Cluster. |
 | [Knex](../../34-backend-data-identity-integration/README.md#anhkysuai-knex-knex) | `knex/knex` | MIT | 20.338 | đọc tài liệu 2026-11-23 | 34 | Query và schema builder SQL cho Node.js với nhiều dialect, transaction, pool kết nối và stream. |
 | [sqlc](../../34-backend-data-identity-integration/README.md#sqlc) | `sqlc-dev/sqlc` | MIT | 18.487 | đọc mã 2026-11-04 | 34 | SQL compiler/codegen: compile/vet/diff khác compatibility; |
+| [Bytebase](../../34-backend-data-identity-integration/README.md#n2-bytebase) | `bytebase/bytebase` | Mixed: MIT cho phần ngoài thư mục `enterprise` và ngoài mã điều khiển tính năng/gói; LICENSE.enterprise (dùng sản xuất cần thỏa thuận và gói trả phí) cho thư mục có `enterprise` trong tên và mã bật tính năng, quyền, gói | 14.738 | đọc mã 2026-11-23 | 34 | Nền tảng kiểm soát thay đổi CSDL: thay đổi SQL qua issue, review tự động bằng advisor theo từng engine (`backend/plugin/advisor/\*`), rollout theo môi trường, kiểm backup… |
 | [goose (database migrations)](../../34-backend-data-identity-integration/README.md#goose-migrations) | `pressly/goose` | MIT | 11.752 | đọc mã 2026-11-04 | 34 | Migration SQL/Go của pressly, khác block/goose; |
+| [Atlas (ariga)](../../34-backend-data-identity-integration/README.md#n2-ariga-atlas) | `ariga/atlas` | Apache-2.0 | 8.840 | đọc mã 2026-11-23 | 34 | Lint migration phát mã DS/BC/MF/CD cho cổng CI và checksum `atlas.sum`; |
 
 ## CMS & thương mại điện tử (`cms-commerce`, 11)
 
@@ -174,7 +183,7 @@
 | [Navidrome](../../36-self-hosting-homelab/README.md#anhkysuai-navidrome-navidrome) | `navidrome/navidrome` | GPL-3.0 | 24.909 | đọc tài liệu 2026-11-23 | 36 | Máy chủ thư viện nhạc cá nhân và streaming qua trình duyệt/client. |
 | [LibreTranslate](../../36-self-hosting-homelab/README.md#chuyen-libretranslate) | `LibreTranslate/LibreTranslate` | GNU Affero General Public License v3 | 17.783 | đọc tài liệu 2026-11-18 | 36 | API dịch máy mã nguồn mở, tự host hoàn toàn, không phụ thuộc dịch vụ độc quyền như Google hay Azure. |
 
-## Realtime, bot & nhắn tin (`realtime-messaging`, 8)
+## Realtime, bot & nhắn tin (`realtime-messaging`, 9)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -186,3 +195,4 @@
 | [LiveKit Server](../../34-backend-data-identity-integration/README.md#anhkysuai-livekit-livekit) | `livekit/livekit` | Apache-2.0 | 22.348 | đọc tài liệu 2026-11-23 | 34 | Máy chủ WebRTC SFU truyền audio, video và dữ liệu giữa người, thiết bị và model. |
 | [NATS Server](../../34-backend-data-identity-integration/README.md#anhkysuai-nats-io-nats-server) | `nats-io/nats-server` | Apache-2.0 | 21.113 | đọc tài liệu 2026-11-23 | 34 | Máy chủ truyền thông cho dịch vụ, hệ thống và thiết bị từ cloud tới edge. |
 | [FastStream](../../34-backend-data-identity-integration/README.md#nt-faststream) | `ag2ai/faststream` | Apache-2.0 | 5.397 | đọc mã 2026-11-23 | 34 | Framework Python event-driven cho Kafka, RabbitMQ, NATS, Redis và MQTT, sinh tài liệu AsyncAPI trực tiếp từ khai báo subscriber/publisher. |
+| [Standard Webhooks](../../34-backend-data-identity-integration/README.md#n2-standard-webhooks) | `standard-webhooks/standard-webhooks` | Apache-2.0 | 1.814 | đọc mã 2026-11-23 | 34 | Đặc tả mở cho webhook gồm payload, chữ ký HMAC hoặc ed25519 phủ id và timestamp, xoay khóa, retry và vô hiệu hóa endpoint, kèm thư viện nhiều ngôn ngữ và một skill cho a… |

@@ -2,7 +2,7 @@
 
 # frontend — Kỹ thuật phần mềm & vận hành
 
-[← Mục lục catalog](../README.md) · 84 hồ sơ.
+[← Mục lục catalog](../README.md) · 86 hồ sơ.
 
 ## Framework UI (`framework`, 23)
 
@@ -46,7 +46,7 @@
 | [Angular CLI](../../13-dev-stack-devops/README.md#anhkysuai-angular-angular-cli) | `angular/angular-cli` | MIT | 27.024 | đọc tài liệu 2026-11-23 | 13 | CLI tạo workspace, scaffold, build và nâng cấp ứng dụng Angular. |
 | [Mitosis](../../06-ui-ux-design/README.md#ch-mitosis) | `BuilderIO/mitosis` | MIT | 14.480 | đọc tài liệu 2026-11-23 | 06 | Viết một lần biên dịch ra ~20 framework; |
 
-## State & data fetching (`state-data`, 7)
+## State & data fetching (`state-data`, 9)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -57,6 +57,8 @@
 | [React Redux](../../13-dev-stack-devops/README.md#anhkysuai-reduxjs-react-redux) | `reduxjs/react-redux` | MIT | 23.422 | đọc tài liệu 2026-11-23 | 13 | Binding chính thức kết nối Redux store với ứng dụng React. |
 | [Jotai](../../13-dev-stack-devops/README.md#anhkysuai-pmndrs-jotai) | `pmndrs/jotai` | MIT | 21.337 | đọc tài liệu 2026-11-23 | 13 | Quản lý state React bằng atom nhỏ có thể kết hợp thành trạng thái suy ra. |
 | [TinyBase](../../34-backend-data-identity-integration/README.md#nt-tinybase) | `tinyplex/tinybase` | MIT | 5.220 | đọc mã 2026-11-23 | 34 | Store reactive trong bộ nhớ cho ứng dụng local-first, có MergeableStore đồng bộ bằng HLC và hash theo cell. |
+| [Classic Jazz (CoJSON)](../../34-backend-data-identity-integration/README.md#n2-classic-jazz) | `garden-co/classic-jazz` | MIT | 2.534 | đọc mã 2026-11-23 | 34 | Đây là nhánh Jazz cũ (classic): CSDL phân tán chạy ở client, đồng bộ qua giao thức CoJSON, dữ liệu là CoMap/CoList/CoStream có chữ ký và quyền theo nhóm. |
+| [Evolu](../../34-backend-data-identity-integration/README.md#n2-evolu) | `evoluhq/evolu` | MIT | 1.921 | đọc mã 2026-11-23 | 34 | Nền tảng local-first TypeScript trên SQLite với đồng bộ mã hóa đầu cuối qua relay, giao thức RBSR, HLC và khóa dẫn xuất theo owner. |
 
 ## CSS & styling (`styling-css`, 6)
 

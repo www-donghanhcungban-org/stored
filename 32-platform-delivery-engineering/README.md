@@ -679,3 +679,43 @@ Hệ điều hành cloud xây trên Kubernetes, gom cloud IDE (DevBox), cơ sở
 Nền tảng container đa thuê bao dùng Kubernetes làm nhân, quản lý ứng dụng cloud-native đa cụm, datacenter và biên qua giao diện web, có kiến trúc mở rộng bằng plugin. Quản lý đa cụm Kubernetes từ một control plane tập trung; tích hợp DevOps (Argo CD, Jenkins), service mesh dựa Istio, App Store cho Helm và biên qua KubeEdge; hỗ trợ cài đặt air-gapped. Điều kiện: Cần cụm Kubernetes; giấy phép v4.x cấm dùng thương mại cho bên thứ ba, SaaS hoặc đổi thương hiệu nếu không có giấy phép thương mại (liên hệ kubesphere@yunify.com). ★ 18/11/2026: 17.083 (GitHub search API), nhóm "Container & DevOps" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
 
 **Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c55-container--devops) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-gatekeeper"></a>
+
+### OPA Gatekeeper
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/open-policy-agent/gatekeeper |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `a2bac802bc01a8a1a7639d7b52050ffa79fc785d` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, go.mod, example/templates/k8srequiredlabels_template.yaml, website/docs/gator.md, failing-closed.md, violations.md, pkg/webhook/policy.go (dòng kubebuilder webhook), .github/workflows/test-gator-policy.yaml và unit-test.yaml (đoạn run); chưa chạy upstream |
+| Khoảng trống lấp | Policy-as-code admission/runtime (admission controller dùng OPA) |
+| Cơ chế đáng học | - Hai CRD: `ConstraintTemplate` chứa Rego và schema tham số, `Constraint` là bản khởi tạo (example/templates/k8srequiredlabels_template.yaml: luật `violation` tính tập nhãn thiếu).<br>- `enforcementAction` mỗi constraint: mặc định `deny`, có `dryrun`, `warn` (website/docs/violations.md) để triển khai chính sách theo từng bước; audit định kỳ (cờ `--audit-interval` mặc định 60 giây trong pkg/audit/manager.go) quét tài nguyên có sẵn.<br>- `gator verify` chạy `Suite` (`test.gatekeeper.sh/v1alpha1`) với các `Case` khẳng định pass/fail; `gator test` thoát theo mã trạng thái (website/docs/gator.md). |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: gator verify trong CI, workflow test-gator-policy chạy e2e và unit-test chạy `make native-test`, race, benchmark. Chưa chạy. |
+| Giới hạn và rủi ro | Webhook mặc định `failurePolicy=ignore` (kubebuilder marker trong pkg/webhook/policy.go; trang failing-closed.md giải thích): khi webhook sập thì yêu cầu lọt qua, cần chủ động đổi sang `Fail`. Thư viện constraint template đã chuyển sang repo riêng (library/README.md chỉ còn liên kết), nên trinh sát nói có thư viện trong repo là không đúng. Badge OPA v0.60.0 trong README lỗi thời: go.mod dùng opa v1.22.4. Có driver k8scel cho ValidatingAdmissionPolicy (pkg/drivers/k8scel, chưa đọc sâu). |
+| So với | `kyverno` (chính sách YAML/CEL, không cần Rego); `open-policy-agent-opa` (engine lõi); `opa-conftest` (kiểm file ngoài cluster). |
+| Nguồn | [README](https://github.com/open-policy-agent/gatekeeper/blob/a2bac802bc01a8a1a7639d7b52050ffa79fc785d/README.md) · [LICENSE](https://github.com/open-policy-agent/gatekeeper/blob/a2bac802bc01a8a1a7639d7b52050ffa79fc785d/LICENSE) · [go.mod](https://github.com/open-policy-agent/gatekeeper/blob/a2bac802bc01a8a1a7639d7b52050ffa79fc785d/go.mod) · [k8srequiredlabels_template.yaml](https://github.com/open-policy-agent/gatekeeper/blob/a2bac802bc01a8a1a7639d7b52050ffa79fc785d/example/templates/k8srequiredlabels_template.yaml) · [website/docs/gator.md](https://github.com/open-policy-agent/gatekeeper/blob/a2bac802bc01a8a1a7639d7b52050ffa79fc785d/website/docs/gator.md) · [website/docs/failing-closed.md](https://github.com/open-policy-agent/gatekeeper/blob/a2bac802bc01a8a1a7639d7b52050ffa79fc785d/website/docs/failing-closed.md) · [website/docs/violations.md](https://github.com/open-policy-agent/gatekeeper/blob/a2bac802bc01a8a1a7639d7b52050ffa79fc785d/website/docs/violations.md) · [pkg/webhook/policy.go](https://github.com/open-policy-agent/gatekeeper/blob/a2bac802bc01a8a1a7639d7b52050ffa79fc785d/pkg/webhook/policy.go) · [.github/workflows/test-gator-policy.yaml](https://github.com/open-policy-agent/gatekeeper/blob/a2bac802bc01a8a1a7639d7b52050ffa79fc785d/.github/workflows/test-gator-policy.yaml) · [.github/workflows/unit-test.yaml](https://github.com/open-policy-agent/gatekeeper/blob/a2bac802bc01a8a1a7639d7b52050ffa79fc785d/.github/workflows/unit-test.yaml) |
+
+<a id="n2-changesets"></a>
+
+### Changesets
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/changesets/changesets |
+| License | MIT |
+| Phiên bản đã đọc | `4582bbc9b44411be7bc440fec6081e5f794a62e2` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, assemble-release-plan/src/index.ts, changelog-git/src/index.ts, ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Changelog và ghi chú phát hành như tài liệu: nguồn là file khai báo cấp PR, không phải commit message |
+| Cơ chế đáng học | - Mỗi PR thêm một file changeset (gói, mức bump, tóm tắt); `assembleReleasePlan` trong `packages/assemble-release-plan/src/index.ts` gộp thành kế hoạch, mỗi gói một release.<br>- Vòng `while` lặp `determineDependents`, `matchFixedConstraint`, `applyLinks` tới khi không còn thay đổi, nên bump lan qua gói phụ thuộc, nhóm `fixed` và `linked`.<br>- Snapshot release: hậu tố từ mẫu có chỗ giữ `{tag}`, `{commit}`, `{datetime}`; mặc định cơ sở `0.0.0` để không chen vào range prerelease thật.<br>- Định dạng changelog cắm được qua `ChangelogFunctions` (`packages/changelog-git/src/index.ts` là bản tối giản). |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: kiểm hợp lệ (gói không có trong workspace thì ném lỗi), test vitest có sẵn cạnh mã. CI (`ci.yml`) build, lint workflow bằng zizmor, kiểm khóa workflow, chạy test ma trận Node 22/24/26 và thêm macOS/Windows. Mã thoát của `changeset status` làm cổng bắt buộc có changeset là cách repo lingo.dev dùng trong CI của họ, còn bản thân lệnh chưa đọc đến mã thoát (chưa xác minh). |
+| Giới hạn và rủi ro | MIT. Nhánh mặc định là bản phát triển v3, v2 nằm nhánh bảo trì nên cần ghim phiên bản. Mô hình bắt người đóng góp viết changeset (kỷ luật con người, thiếu thì CI mới chặn). Changelog-github gọi API GitHub nên cần token (chưa đọc kỹ). Không thấy telemetry trong mã đã grep nhưng không quét toàn bộ. |
+| So với | release-please (sinh từ conventional commits, hồ sơ có sẵn), semantic-release (tự động hóa hoàn toàn từ commit): Changesets đắt giá khi muốn ghi chú viết tay cho người dùng và nhiều gói |
+| Nguồn | [LICENSE](https://github.com/changesets/changesets/blob/4582bbc9b44411be7bc440fec6081e5f794a62e2/LICENSE) · [README.md](https://github.com/changesets/changesets/blob/4582bbc9b44411be7bc440fec6081e5f794a62e2/README.md) · [index.ts](https://github.com/changesets/changesets/blob/4582bbc9b44411be7bc440fec6081e5f794a62e2/packages/assemble-release-plan/src/index.ts) · [index.ts](https://github.com/changesets/changesets/blob/4582bbc9b44411be7bc440fec6081e5f794a62e2/packages/changelog-git/src/index.ts) · [ci.yml](https://github.com/changesets/changesets/blob/4582bbc9b44411be7bc440fec6081e5f794a62e2/.github/workflows/ci.yml) |

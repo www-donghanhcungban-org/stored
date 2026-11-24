@@ -2,7 +2,7 @@
 
 # learning — Học tập, tài liệu & tri thức
 
-[← Mục lục catalog](../README.md) · 143 hồ sơ.
+[← Mục lục catalog](../README.md) · 146 hồ sơ.
 
 ## Khóa học LLM/GenAI & deep learning (`llm-genai-course`, 35)
 
@@ -170,12 +170,15 @@
 | [Material 3 canonical layouts](../../06-ui-ux-design/README.md#ch-material-3-canonical-layouts) |  | — | — | đọc tài liệu 2026-11-23 | 06 | Hướng dẫn chính thức: list-detail, supporting pane, feed; |
 | [Mobbin](../../06-ui-ux-design/README.md#ch-mobbin) |  | proprietary | — | đọc tài liệu 2026-11-23 | 06 | Thư viện ảnh chụp màn hình app thật, không có mã; |
 
-## Học bảo mật (`security-learning`, 4)
+## Học bảo mật (`security-learning`, 7)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [OWASP Juice Shop](../../08-awesome-lists-learning/README.md#nt-juice-shop) | `juice-shop/juice-shop` | MIT | 14.525 | đọc mã 2026-11-23 | 08 | Ứng dụng web cố ý có lỗ hổng (MIT), 118 thử thách ghi trong YAML, có hint, mitigation và kiểm drift bằng `rsn`. |
+| [Damn Vulnerable Web Application](../../12-ai-security-guardrails/README.md#n2-dvwa) | `digininja/DVWA` | GPL-3.0-or-later (COPYING.txt; README nêu GPL v3 hoặc mới hơn) | 14.076 | đọc mã 2026-11-23 | 12 | Ứng dụng PHP và MariaDB cố tình có lỗ hổng để luyện tập, mỗi mô-đun có bốn mức low, medium, high, impossible (19 thư mục trong vulnerabilities/, gồm sqli, xss, csrf, upl… |
 | [OWASP WebGoat](../../08-awesome-lists-learning/README.md#nt-webgoat) | `WebGoat/WebGoat` | GPL-2.0-or-later | 9.496 | đọc mã 2026-11-23 | 08 | Ứng dụng học bảo mật dạng bài học có chấm đạt (GPL-2.0-or-later), kèm WebWolf. |
+| [Kubernetes Goat](../../12-ai-security-guardrails/README.md#n2-kubernetes-goat) | `madhuakula/kubernetes-goat` | MIT | 5.963 | đọc mã 2026-11-23 | 12 | Cụm Kubernetes cố tình yếu để luyện tập tấn công và phòng thủ: README liệt kê 22 kịch bản (khóa lộ trong mã, DIND, SSRF, thoát container, RBAC thừa quyền, CIS benchmark,… |
+| [crAPI (OWASP)](../../12-ai-security-guardrails/README.md#n2-crapi) | `OWASP/crAPI` | Apache-2.0 | 1.644 | đọc mã 2026-11-23 | 12 | Ứng dụng API cố ý có lỗ hổng của OWASP, dùng để học và thực hành OWASP API Top 10 (18 thử thách có lời giải, gồm nhóm lỗ hổng chatbot LLM). |
 | [AI-Red-Teaming-Guide](../../12-ai-security-guardrails/README.md#ch-ai-red-teaming-guide) | `requie/AI-Red-Teaming-Guide` | — | 1.065 | đọc tài liệu 2026-11-23 | 12 | Guide red-team AI một người viết (README ~3.580 dòng + ES/ZH/FR, 8 template); |
 | [Cybersecurity Threats Guide](../../12-ai-security-guardrails/README.md#ch-cybersecurity-threats-guide) | `s4ntrx/Cybersecurity-Threats-Guide` | MIT | 223 | đọc tài liệu 2026-11-23 | 12 | Tài liệu + 56 script Python phát hiện/phòng ngừa (6 chuyên mục), một tác giả, chưa ai duyệt; |
 

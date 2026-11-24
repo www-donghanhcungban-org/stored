@@ -1466,3 +1466,111 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | MIT, Rust 2024, bản 0.4.0 và đặc tả được ghi là tạm thời trước 1.0.0, nên luật và mã có thể đổi. Chỉ kiểm cấu trúc và dấu hiệu, không đánh giá văn có 'giống máy viết' hay không (README nói rõ). Dự án mới, một tác giả chính; số sao 196 (chưa xác minh). |
 | So với | markdownlint và Vale (lint phong cách/cú pháp), lychee (liên kết), typos và CSpell (chính tả): seiso kiểm cấu trúc và sở hữu dữ kiện giữa các tệp thay vì cú pháp. |
 | Nguồn | [LICENSE](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/LICENSE) · [README.md](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/README.md) · [seiso.toml](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/seiso.toml) · [Cargo.toml](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/Cargo.toml) · [policy.md](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/docs/evaluation/policy.md) · [checking.md](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/docs/guides/checking.md) · [PTR001.md](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/docs/rules/PTR001.md) · [mod.rs](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/src/rules/mod.rs) · [ci.yml](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/.github/workflows/ci.yml) · [evaluation.yml](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/.github/workflows/evaluation.yml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-textlint"></a>
+
+### textlint
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/textlint/textlint |
+| License | MIT |
+| Phiên bản đã đọc | `356769ed579b998d73d05a4a55767dae15fdd288` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README.md, package.json, packages/textlint/package.json, packages/textlint/src/mcp/server.ts, packages/textlint/src/cli.ts; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm văn bản/tài liệu theo luật tự định nghĩa, bổ sung cho Vale và markdownlint |
+| Cơ chế đáng học | - @textlint/kernel: TextlintRuleContextImpl.ts đưa context.report(node, error) cho từng rule; severity lấy từ .textlintrc hoặc từ đối tượng báo lỗi; có gói textlint-tester để test rule (chưa mở nội dung).<br>- packages/textlint/src/mcp/server.ts: đăng ký 4 tool MCP (lintFile, lintText, fixFiles, fixText), trả JSON có cấu trúc và lỗi kiểu lintFile_error; cấu hình nạp từ .textlintrc.<br>- Chuỗi cung ứng của chính repo: action ghim SHA, check-provenance.yml kiểm provenance npm, automerge-gate. |
+| Tiêu chí và cách kiểm | CI ci.yml: ma trận Node 22/24 trên Ubuntu và Windows chạy pnpm build, pnpm test (oxlint, kiểm project references, test từng gói), test examples; còn sdev lint cho đặc tả, benchmark khi push. Chưa chạy; chỉ mở ba workflow ci, check-provenance, automerge-gate. |
+| Giới hạn và rủi ro | Không kèm rule nào: chất lượng phụ thuộc rule bên thứ ba (mã npm chạy trong tiến trình, cần xét như phụ thuộc); rule tiếng Việt không có sẵn (chưa xác minh); đã yêu cầu Node 22.12+; AGENTS.md và CLAUDE.md của repo chỉ đọc làm dữ liệu. |
+| So với | vale (rule YAML không cần Node), markdownlint (kiểm cấu trúc Markdown), lychee (kiểm link). |
+| Nguồn | [LICENSE](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/LICENSE) · [README.md](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/README.md) · [package.json](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/package.json) · [package.json](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/packages/textlint/package.json) · [server.ts](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/packages/textlint/src/mcp/server.ts) · [cli.ts](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/packages/textlint/src/cli.ts) · [TextlintRuleContextImpl.ts](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/packages/@textlint/kernel/src/context/TextlintRuleContextImpl.ts) · [CI ci.yml](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/.github/workflows/ci.yml) · [CI check-provenance.yml](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/.github/workflows/check-provenance.yml) · [CI automerge-gate.yml](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/.github/workflows/automerge-gate.yml) |
+
+<a id="n2-readthedocs-platform"></a>
+
+### Read the Docs (nền tảng)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/readthedocs/readthedocs.org |
+| License | MIT |
+| Phiên bản đã đọc | `8434e08eff38b0f8b045b42b0d574c18c9a7f378` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README.rst, AGENTS.md, .gitmodules, .circleci/config.yml, .github/workflows/main.yml; chưa chạy upstream |
+| Khoảng trống lấp | Docs-as-code: nền tảng build/host tài liệu với preview theo PR và đo thay đổi giữa các bản |
+| Cơ chế đáng học | - readthedocs/config/models.py: mô hình kiểu (ConfigBaseModel) cho cấu hình build; sphinx/mkdocs có fail_on_warning mặc định False, backend doc_builder áp dụng (sphinx.py, mkdocs.py).<br>- `readthedocs/filetreediff/__init__.py`: get_diff so manifest hai version, đánh dấu outdated khi build mới nhất lệch manifest; với bản PR dùng snapshot manifest nền để tránh dương tính giả (còn TODO làm mới khi rebase).<br>- .circleci/config.yml: các job checks (pre-commit, migrations), tests, tests-proxito, tests-search, tests-embedapi, coverage-report; .github/workflows/main.yml chỉ kích CI của hai repo riêng tư. |
+| Tiêu chí và cách kiểm | CI ở CircleCI: pre-commit, kiểm migration, pytest bằng tox trên Python 3.14, tổng hợp coverage gửi Codecov (không thấy ngưỡng fail trong phần đã đọc). Workflow GitHub chỉ gọi API CircleCI của các repo riêng. Chưa chạy. |
+| Giới hạn và rủi ro | Là ứng dụng web nhiều thành phần (Postgres, Elasticsearch, Redis, Docker), không phải thư viện nhẹ; tự host đầy đủ nặng và một phần mã thương mại ở repo riêng (readthedocs-corporate, readthedocs-ext, chưa xác minh phạm vi); common/ là submodule nên một số cấu hình dùng chung (pre-commit) không có ở đây; AGENTS.md của repo chỉ đọc làm dữ liệu. |
+| So với | docusaurus, sphinx, material-for-mkdocs (trình tạo site; repo này là dịch vụ host/build). |
+| Nguồn | [LICENSE](https://github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/LICENSE) · [README.rst](https://github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/README.rst) · [AGENTS.md](https://github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/AGENTS.md) · [.gitmodules](https://github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/.gitmodules) · [config.yml](https://github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/.circleci/config.yml) · [CI main.yml](https://github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/.github/workflows/main.yml) · [`__init__.py`](https:`//github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/readthedocs/filetreediff/__init__.py`) · [models.py](https://github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/readthedocs/config/models.py) · [SECURITY.md](https://github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/SECURITY.md) |
+
+<a id="n2-dprint"></a>
+
+### dprint
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/dprint/dprint |
+| License | MIT |
+| Phiên bản đã đọc | `bdfe393899b2c8e00e9b654c54b4d7a54e31d368` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README.md, dprint.json, crates/dprint/src/commands/formatting.rs, crates/dprint/src/run_cli.rs, crates/dprint/src/resolution.rs; chưa chạy upstream |
+| Khoảng trống lấp | Cổng format tài liệu (Markdown/JSON/YAML) trong CI qua một cấu hình duy nhất |
+| Cơ chế đáng học | - formatting.rs: check chạy format cho từng file song song, so bytes, in diff hoặc --list-different/--json, có --fail-fast; số file lệch thành CheckError và run_cli.rs ánh xạ lỗi sang exit code (1, 10-14, 20).<br>- resolution.rs: plugin process chỉ dùng cấu hình tin cậy (có chú thích NEVER CHANGE THIS), plugin chưa duyệt bị bỏ qua; plugin npm/URL có thể ghim checksum sha256 (dprint.json của repo ghim exec bằng sha256).<br>- docs/wasm-plugin-development.md: plugin Wasm chạy sandbox, ưu tiên hơn plugin process; dprint.json của repo dùng npm:@dprint/markdown@0.29.0. |
+| Tiêu chí và cách kiểm | CI ci.ts sinh workflow cho nhiều nền tảng (mac, Windows, Linux, ARM), chạy cargo clippy, test, và dprint check bằng binary vừa build (chạy chính cấu hình dprint.json của repo). Chưa chạy. Chỉ đọc ci.ts, không đọc các workflow đã sinh. |
+| Giới hạn và rủi ro | Chỉ kiểm định dạng, không kiểm nội dung văn bản; plugin Markdown ở repo khác nên cần đọc riêng trước khi tin; plugin process (như exec) chạy lệnh nên cần quản trị cấu hình và checksum; phiên bản và hành vi của plugin Markdown trong dprint.json chưa kiểm ở đây. |
+| So với | markdownlint (kiểm luật Markdown), vale (kiểm văn phong); dprint thay thế phần format, không thay phần lint nội dung. |
+| Nguồn | [LICENSE](https://github.com/dprint/dprint/blob/bdfe393899b2c8e00e9b654c54b4d7a54e31d368/LICENSE) · [README.md](https://github.com/dprint/dprint/blob/bdfe393899b2c8e00e9b654c54b4d7a54e31d368/README.md) · [dprint.json](https://github.com/dprint/dprint/blob/bdfe393899b2c8e00e9b654c54b4d7a54e31d368/dprint.json) · [formatting.rs](https://github.com/dprint/dprint/blob/bdfe393899b2c8e00e9b654c54b4d7a54e31d368/crates/dprint/src/commands/formatting.rs) · [run_cli.rs](https://github.com/dprint/dprint/blob/bdfe393899b2c8e00e9b654c54b4d7a54e31d368/crates/dprint/src/run_cli.rs) · [resolution.rs](https://github.com/dprint/dprint/blob/bdfe393899b2c8e00e9b654c54b4d7a54e31d368/crates/dprint/src/resolution.rs) · [wasm-plugin-development.md](https://github.com/dprint/dprint/blob/bdfe393899b2c8e00e9b654c54b4d7a54e31d368/docs/wasm-plugin-development.md) · [CI ci.ts](https://github.com/dprint/dprint/blob/bdfe393899b2c8e00e9b654c54b4d7a54e31d368/.github/workflows/ci.ts) |
+
+<a id="n2-woke"></a>
+
+### woke
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/get-woke/woke |
+| License | MIT |
+| Phiên bản đã đọc | `5d52c1541ab7b5823531dd48144197dda342042e` (commit 2022-08-14) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README.md, example.yaml, pkg/rule/default.yaml, pkg/rule/rule.go, cmd/root.go; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm ngôn ngữ không bao hàm trong tài liệu/mã, bổ sung cho kiểm chính tả và văn phong |
+| Cơ chế đáng học | - pkg/rule/default.yaml: luật mặc định (name, terms, alternatives, severity, note); rule.go ghép các term thành regex (?i) với tùy chọn ranh giới từ.<br>- cmd/root.go: cờ --exit-1-on-failure (mặc định false) quyết định mã thoát; printer có text, json, checkstyle, GitHub Actions, SonarQube.<br>- example.yaml cho thấy luật tùy biến (rules, ignore_files, success_exit_message); pkg/config có nạp cấu hình từ URL (đã đọc remote.go, chỉ phần kiểm URL hợp lệ). |
+| Tiêu chí và cách kiểm | CI go.yml chạy go test ./... trên Ubuntu và Windows với Go 1.18; workflow woke.yml tự kiểm testdata với định dạng github-actions. Không có ngưỡng độ phủ trong workflow đã đọc. Chưa chạy. |
+| Giới hạn và rủi ro | Commit cuối 2022-08-14 (hơn 4 năm), Go 1.18 đã hết hỗ trợ; luật mặc định mang quan điểm văn hóa và có thể gây dương tính giả (ví dụ từ sanity); nạp cấu hình từ xa là rủi ro nếu không ghim; tên và nhãn của công cụ gây tranh luận nên cần chọn bộ luật phù hợp tổ chức. |
+| So với | vale (rule YAML, đang hoạt động), lychee (kiểm link). |
+| Nguồn | [LICENSE](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/LICENSE) · [README.md](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/README.md) · [example.yaml](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/example.yaml) · [default.yaml](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/pkg/rule/default.yaml) · [rule.go](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/pkg/rule/rule.go) · [root.go](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/cmd/root.go) · [remote.go](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/pkg/config/remote.go) · [CI go.yml](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/.github/workflows/go.yml) · [CI woke.yml](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/.github/workflows/woke.yml) |
+
+<a id="n2-pagefind"></a>
+
+### Pagefind
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Pagefind/pagefind |
+| License | MIT (© 2022 Pagefind; `pagefind_web/LICENSE` cũng MIT) |
+| Phiên bản đã đọc | `a70317bb5ac5a23eb5b49a31fc8b64492337fddd` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, CHANGELOG.md, test.yml, pagefind/src/index/mod.rs, một file toolproof (background), pagefind_web/LICENSE; chưa chạy upstream |
+| Khoảng trống lấp | Tìm kiếm tĩnh cho site tài liệu, không cần máy chủ |
+| Cơ chế đáng học | - `pagefind/src/index/mod.rs`: gom từ vào bản đồ, cắt thành mảnh theo `index_chunk_size`, mã hoá delta và CBOR song song; ghi siêu dữ liệu mảnh để trình duyệt chỉ tải mảnh liên quan<br>- `pagefind_web` (WASM) + `pagefind_web_js`: phần tìm kiếm chạy ở trình duyệt; UI mặc định, UI modular, web component<br>- `pagefind/integration_tests/*/*.toolproof.yml`: hàng chục nhóm hành vi (lọc, sắp xếp, đa ngôn ngữ, dấu, stem, đánh dấu, gợi ý, đa site…) mô tả bằng bước ngôn ngữ tự nhiên |
+| Tiêu chí và cách kiểm | Workflow `test.yml` (đã mở) chạy trên Linux, macOS, Windows, Windows ARM64 và biên dịch chéo FreeBSD: build WASM, build UI, `cargo test`, rồi `npx toolproof` chạy test CLI/trình duyệt, thêm test Python; không thấy ngưỡng độ phủ hay ngưỡng hiệu năng cụ thể. Kiểm bằng máy, tôi chưa chạy. Một bài test đọc được ghi rõ là bỏ qua có chủ ý (TODO). |
+| Giới hạn và rủi ro | MIT; không telemetry trong phần đọc (grep mã nguồn Rust không thấy), thư viện chạy hoàn toàn cục bộ. Cần bước chạy lại khi nội dung đổi, chỉ mục tăng theo kích cỡ site. Bản 1.6.0 (01/11/2026) vừa đổi bộ tách từ CJK (ICU4X), nên kiểm lại nếu site đa ngôn ngữ. Chuẩn đo băng thông 'ít' là tuyên bố của tác giả (chưa xác minh). Bảo trì tích cực (commit 18/11/2026). |
+| So với | starlight, vitepress, meilisearch và typesense (máy chủ tìm kiếm, ngược với tĩnh) |
+| Nguồn | [README.md](https://github.com/Pagefind/pagefind/blob/a70317bb5ac5a23eb5b49a31fc8b64492337fddd/README.md) · [LICENSE](https://github.com/Pagefind/pagefind/blob/a70317bb5ac5a23eb5b49a31fc8b64492337fddd/LICENSE) · [CHANGELOG.md](https://github.com/Pagefind/pagefind/blob/a70317bb5ac5a23eb5b49a31fc8b64492337fddd/CHANGELOG.md) · [test.yml](https://github.com/Pagefind/pagefind/blob/a70317bb5ac5a23eb5b49a31fc8b64492337fddd/.github/workflows/test.yml) · [mod.rs](https://github.com/Pagefind/pagefind/blob/a70317bb5ac5a23eb5b49a31fc8b64492337fddd/pagefind/src/index/mod.rs) · [background.toolproof.yml](https://github.com/Pagefind/pagefind/blob/a70317bb5ac5a23eb5b49a31fc8b64492337fddd/pagefind/integration_tests/exact_phrase/background.toolproof.yml) · [LICENSE](https://github.com/Pagefind/pagefind/blob/a70317bb5ac5a23eb5b49a31fc8b64492337fddd/pagefind_web/LICENSE) |
+
+<a id="n2-doxygen"></a>
+
+### Doxygen
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/doxygen/doxygen |
+| License | GPL-2.0 (bản LICENSE là GNU GPL v2; đầu file mã ghi rõ tài liệu sinh ra không chịu license này) |
+| Phiên bản đã đọc | `482a3b7aa4097bf81b213671367fa339312c25bb` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, VERSION (1.19.0), src/config.xml, src/doxygen.cpp, doc/Doxyfile, build_cmake.yml, testing/001_a.dox; chưa chạy upstream |
+| Khoảng trống lấp | Tài liệu sinh từ mã (API reference) và kiểm drift bằng cảnh báo thiếu doc |
+| Cơ chế đáng học | - `src/config.xml`: định nghĩa mọi tuỳ chọn Doxyfile; nhóm cảnh báo `WARN_IF_UNDOCUMENTED` (mặc định bật), `WARN_IF_DOC_ERROR`, `WARN_IF_INCOMPLETE_DOC`, `WARN_NO_PARAMDOC` (mặc định tắt), và `WARN_AS_ERROR` có `YES`, `FAIL_ON_WARNINGS`, `FAIL_ON_WARNINGS_PRINT`<br>- `doc/Doxyfile` dòng 71: `WARN_AS_ERROR = FAIL_ON_WARNINGS`, nghĩa là tài liệu của chính Doxygen build lỗi khi có cảnh báo<br>- `testing/`: bộ test hồi quy nhỏ, mỗi file `.dox` khai `// objective:` và `// check:` so với XML kỳ vọng, chạy bằng `testing/runtests.py` |
+| Tiêu chí và cách kiểm | Cổng drift: đặt `WARN_AS_ERROR=FAIL_ON_WARNINGS` (chạy hết rồi trả mã khác 0) cùng `WARN_IF_UNDOCUMENTED=YES`; không thuộc chỉ tiêu độ phủ theo phần trăm. `EXTRACT_ALL=YES` sẽ vô hiệu cảnh báo thiếu doc (theo `config.xml`). CI `build_cmake.yml` (đã mở): ma trận GCC/Clang, Intel/Arm, Windows, chạy target `tests` kèm kiểm đầu ra xml, xhtml, qhp, docbook, rtf, man rồi build `docs`. Tôi chưa chạy. |
+| Giới hạn và rủi ro | GPL-2.0 (phần mềm); đầu file mã nêu tài liệu sinh ra là tác phẩm phái sinh của đầu vào, không chịu license. Không thấy telemetry. Vận hành cần Graphviz (dot) và LaTeX nếu muốn đồ thị/PDF (chưa kiểm trong lần đọc này). Kiểm drift chỉ phát hiện thiếu hoặc sai cú pháp chú thích, không biết nội dung chú thích còn đúng với hành vi mã hay không. Bảo trì tích cực (commit 23/11/2026, VERSION 1.19.0). |
+| So với | sphinx (autodoc Python), docusaurus, zensical; chưa có hồ sơ typedoc/rustdoc để so |
+| Nguồn | [README.md](https://github.com/doxygen/doxygen/blob/482a3b7aa4097bf81b213671367fa339312c25bb/README.md) · [LICENSE](https://github.com/doxygen/doxygen/blob/482a3b7aa4097bf81b213671367fa339312c25bb/LICENSE) · [VERSION](https://github.com/doxygen/doxygen/blob/482a3b7aa4097bf81b213671367fa339312c25bb/VERSION) · [config.xml](https://github.com/doxygen/doxygen/blob/482a3b7aa4097bf81b213671367fa339312c25bb/src/config.xml) · [doxygen.cpp](https://github.com/doxygen/doxygen/blob/482a3b7aa4097bf81b213671367fa339312c25bb/src/doxygen.cpp) · [Doxyfile](https://github.com/doxygen/doxygen/blob/482a3b7aa4097bf81b213671367fa339312c25bb/doc/Doxyfile) · [build_cmake.yml](https://github.com/doxygen/doxygen/blob/482a3b7aa4097bf81b213671367fa339312c25bb/.github/workflows/build_cmake.yml) · [001_a.dox](https://github.com/doxygen/doxygen/blob/482a3b7aa4097bf81b213671367fa339312c25bb/testing/001_a.dox) |

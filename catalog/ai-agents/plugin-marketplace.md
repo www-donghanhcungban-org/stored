@@ -2,7 +2,7 @@
 
 # plugin-marketplace — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 14 hồ sơ.
+[← Mục lục catalog](../README.md) · 16 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -19,4 +19,6 @@
 | [claude-plugins-community](../../20-claude-plugins-ecosystem/README.md#ch-claude-plugins-community) | `anthropics/claude-plugins-community` | Apache-2.0 | 4.945 | đọc tài liệu 2026-11-23 | 20 | Mirror read-only marketplace cộng đồng; |
 | [Agent Skills Platform](../../20-claude-plugins-ecosystem/README.md#nt-agent-skills-platform) | `FrancyJGLisboa/agent-skills-platform` | MIT | 2.416 | đọc mã 2026-11-23 | 20 | Bộ công cụ biến một quy trình làm việc thành skill có eval, kiểm bảo mật và bản ghi chạy đại diện, rồi đưa qua marketplace nhóm có máy trạng thái vòng đời (draft, in-rev… |
 | [Best Agent Skills (Linkly AI)](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-linklyai-best-skills) | `linklyai/best-skills` | CC-BY-4.0 | 797 | đọc mã 2026-11-23 | 20 | Dataset Top 100 skill agent hằng ngày (9 danh sách CSV, lịch sử từ 2026-08-16), gộp skills.sh/ClawHub/Tencent SkillHub/GitHub/mạng xã hội, không cộng chéo nền tảng; |
+| [SkillMD (registry và công cụ lint skill)](../../20-claude-plugins-ecosystem/README.md#n2-skillmd) | `skillmds/skillmd` | MIT (mã SkillMD); các skill trong plugins/ giữ license riêng của tác giả | 43 | đọc mã 2026-11-23 | 20 | Repo này là bộ công cụ mã nguồn mở của registry skillmd.com: CLI/MCP `get-skill`, thư viện lõi `@skillmds/core` (parser, 9 quy tắc lint SK001–SK040, bộ quét an toàn theo… |
+| [Sigistry Marketplace](../../20-claude-plugins-ecosystem/README.md#n2-sigistry-marketplace) | `sigistry/marketplace` | MIT | 3 | đọc mã 2026-11-23 | 20 | Marketplace plugin Claude Code cộng registry xác minh: 20 plugin vendor trong repo và các plugin ngoài chỉ lập chỉ mục theo tham chiếu, mỗi cái qua 8 kiểm tra tĩnh (mani… |
 | [Claude Code plugin validate + plugin eval](../../20-claude-plugins-ecosystem/README.md#ch-claude-code-plugin-validate-plugin-eval) |  | tài liệu sản phẩm | — | đọc tài liệu 2026-11-23 | 20 | Cổng chính thức: claude plugin validate --strict (manifest, path, .mcp.json, tên giả danh) và claude plugin eval (grader, baseline không plugin, --threshold, --max-cost-… |

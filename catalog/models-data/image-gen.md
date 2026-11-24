@@ -2,7 +2,7 @@
 
 # image-gen — Mô hình, dữ liệu & tài liệu
 
-[← Mục lục catalog](../README.md) · 11 hồ sơ.
+[← Mục lục catalog](../README.md) · 12 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -16,4 +16,5 @@
 | [InvokeAI](../../08-awesome-lists-learning/README.md#6c51-ai-ảnh-giọng-nói--deepfake) | `invoke-ai/InvokeAI` | Apache License 2.0 | 29.111 | đọc tài liệu 2026-11-18 | 08 | Công cụ sáng tạo hình ảnh bằng AI tự host, chạy web server cục bộ với giao diện React, có Unified Canvas, workflow dạng node và quản lý gallery. |
 | [Awesome-Nano-Banana-images](../../08-awesome-lists-learning/README.md#6c51-ai-ảnh-giọng-nói--deepfake) | `PicoTrex/Awesome-Nano-Banana-images` | Apache-2.0 | 24.080 | đọc tài liệu 2026-11-18 | 08 | Thư viện tuyển chọn ảnh do Nano-banana/Nano-banana-pro của Google tạo kèm prompt theo từng tình huống sử dụng. |
 | [ml-stable-diffusion](../../08-awesome-lists-learning/README.md#6c51-ai-ảnh-giọng-nói--deepfake) | `apple-aiml-research/ml-stable-diffusion` | MIT | 17.959 | đọc tài liệu 2026-11-18 | 08 | Chạy Stable Diffusion trên Apple Silicon bằng Core ML: gói Python chuyển model PyTorch sang Core ML và gói Swift tích hợp vào app. |
+| [remove-ai-watermarks](../../19-agentic-video-media/README.md#n2-remove-ai-watermarks) | `wiltodelta/remove-ai-watermarks` | Apache-2.0 | 6.490 | đọc mã 2026-11-23 | 19 | CLI và thư viện Python (v0.74.0) gỡ nhãn nguồn gốc AI khỏi ảnh, video, âm thanh, văn bản: nhãn nhìn thấy (sparkle Gemini, nhãn chữ), metadata C2PA/EXIF/XMP, và watermark… |
 | [FLUX.2](../../14-voice-multimodal/README.md#ch-flux-2) | `black-forest-labs/flux2` | Apache-2.0 (mã); trọng số: 4B Apache-2.0, 9B và dev FLUX Non | 2.826 | đọc tài liệu 2026-11-23 | 14 | Mã inference FLUX.2; |

@@ -2,7 +2,7 @@
 
 # cad-bim — Kỹ thuật công trình & không gian
 
-[← Mục lục catalog](../README.md) · 22 hồ sơ.
+[← Mục lục catalog](../README.md) · 23 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -28,3 +28,4 @@
 | [buildingSMART Validation Service](../../27-3d-cad-bim-engineering/README.md#nt-buildingsmart-validate) | `buildingSMART/validate` | MIT | 74 | đọc mã 2026-11-23 | 27 | Dịch vụ web (Django, Celery, Docker Compose) của buildingSMART để kiểm file IFC qua các tác vụ: cú pháp, schema, header, chữ ký số, ClamAV, quy tắc Gherkin và bSDD. |
 | [AutoCAD MCP Anh Kỹ Sư AI (fork)](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-anhkysuai-byte-autocad-mcp-anhkysuai) | `anhkysuai-byte/autocad-mcp-anhkysuai` | MIT | 1 | đọc tài liệu 2026-11-23 | 27 | Fork của tích hợp MCP AutoCAD LT/DXF trong hệ sinh thái Anh Kỹ Sư AI. |
 | [Dhcb-Tools](../../23-own-repos-lessons/README.md#ch-dhcb-tools) | `www-donghanhcungban-org/Dhcb-Tools` | Apache-2.0 | 0 | đọc tài liệu 2026-11-23 | 23 | Add-in Revit 2022–2027 + AutoCAD (68 lệnh), HTTP bridge loopback có token, MCP server + .mcpb, AI offline Ollama qwen3, kiểm IDS 1.0/BCF 2.1; |
+| [buildingSMART IFC 4.3.x (bản phát triển)](../../27-3d-cad-bim-engineering/README.md#n2-ifc43-spec-development) | `buildingSMART/IFC4.3.x-development` | Đặc tả: CC-BY-ND-4.0; thư mục code/: MIT | — | đọc mã 2026-11-23 | 27 | Đây là nguồn UML/Markdown của đặc tả IFC 4.3.x (nhánh ifc4.3-main, đang là IFC4.3.2.0 kèm sửa lỗi sau bản ISO), cùng bộ sinh EXPRESS, XSD, Pset XML, JSON và HTML; |

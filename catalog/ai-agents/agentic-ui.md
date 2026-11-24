@@ -2,7 +2,7 @@
 
 # agentic-ui — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 24 hồ sơ.
+[← Mục lục catalog](../README.md) · 25 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -30,3 +30,4 @@
 | [CopilotKit/generative-ui (hướng dẫn ba kiểu)](../../06-ui-ux-design/README.md#ux-copilotkit-generative-ui) | `CopilotKit/generative-ui` | — | 901 | đọc tài liệu 2026-11-23 | 06 | KHÔNG phải thư viện: repo chỉ có README, ảnh và một PDF hướng dẫn (11 file), nay đã gộp vào monorepo CopilotKit (`examples/showcases/generative-ui`). |
 | [shadcn-chatbot-kit (Blazity)](../../06-ui-ux-design/README.md#ux-shadcn-chatbot-kit) | `Blazity/shadcn-chatbot-kit` | MIT | 806 | đọc mã 2026-11-23 | 06 | Bộ component chat theo kiểu 'copy và sở hữu' tương thích shadcn CLI (Chat, MessageList, MessageInput, ChatMessage, MarkdownRenderer, PromptSuggestions, FilePreview, Inte… |
 | [affectUI](../../06-ui-ux-design/README.md#7za-kiểm-bài-8-kho-ui-sẵn-dùng-librariesdev-bencho-beui-arc-ui-boardui-kobra-affectui-watermelon-ui-bài-người-dùng-gửi-đọc-mã-8112026) | `flohoeller/affectui` | MIT | 523 | đọc tài liệu 2026-11-08 | 06 | Component React 19 cho việc agent làm (Tool Call Card, Decision Inbox, Change Summary, Thinking Loader…) và phần còn lại của app; |
+| [signoff-ui](../../06-ui-ux-design/README.md#n2-signoff-ui) | `dgesteves/signoff-ui` | MIT | 16 | đọc mã 2026-11-23 | 06 | Thư viện React duyệt diff nhiều file và duyệt lệnh agent với luật allow/deny có phạm vi, trả kết quả có kiểu cho agent. |

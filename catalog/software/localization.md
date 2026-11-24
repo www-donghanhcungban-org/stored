@@ -2,7 +2,7 @@
 
 # localization — Kỹ thuật phần mềm & vận hành
 
-[← Mục lục catalog](../README.md) · 8 hồ sơ.
+[← Mục lục catalog](../README.md) · 9 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -13,4 +13,5 @@
 | [i18next](../../06-ui-ux-design/README.md#i18n-lifecycle-2026-11-02) | `i18next/i18next` | MIT | 8.660 | đọc mã 2026-11-02 | 06 | Runtime i18n đa framework; |
 | [Weblate](../../06-ui-ux-design/README.md#i18n-lifecycle-2026-11-02) | `WeblateOrg/weblate` | GPL-3.0-or-later | 6.149 | đọc mã 2026-11-02 | 06 | Dịch có VCS/reviewer/glossary/memory/check placeholder. |
 | [Lingui](../../06-ui-ux-design/README.md#i18n-lifecycle-2026-11-02) | `lingui/js-lingui` | MIT | 5.934 | đọc mã 2026-11-02 | 06 | Extract/macro ICU/catalog compile và pseudolocalization. |
+| [Lingo.dev](../../06-ui-ux-design/README.md#n2-lingo-dev) | `lingodotdev/lingo.dev` | Apache-2.0 | 5.397 | đọc mã 2026-11-23 | 06 | CLI và CI dịch i18n bằng LLM: khai báo bucket (JSON, XLIFF, ARB, Markdown...) trong i18n.json, chỉ dịch phần khóa đổi nhờ i18n.lock chứa checksum MD5 từng khóa. |
 | [eo-locale](../../13-dev-stack-devops/README.md#nt-eo-locale) | `eotechlabs/eo-locale` | MIT (LICENSE) nhưng package.json khai ISC | 347 | đọc mã 2026-11-23 | 13 | Thư viện i18n rất nhỏ bám `Intl`, có plural/select/offset tự cài và đồng bộ lỗi thiếu khóa. |

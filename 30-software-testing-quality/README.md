@@ -661,3 +661,230 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | **Mô tả của trinh sát lệch:** là máy mô phỏng/emulator chạy trên Mac của bạn, không phải thiết bị thật, và không đo hiệu năng ứng dụng, chỉ đo độ trễ luồng hình. Agent chỉ chạy trên macOS 26/27 với Xcode 26/27; relay là ranh giới tin cậy, ai tới được relay là điều khiển được thiết bị và xem bản dựng. Dự án mới (v0.x, MIT 2026), phụ thuộc cấu hình bảo mật triển khai. |
 | So với | maestro (hồ sơ có sẵn, chạy flow YAML trên thiết bị/giả lập), appium-appium (điều khiển chuẩn WebDriver), genymobile-scrcpy (nguồn của luồng Android), docker-android. |
 | Nguồn | [README.md](https://github.com/jo-duchan/tapflow/blob/a09d6eeb78f1a0cef9bc80c37d0551c3d15b91ee/README.md) · [LICENSE](https://github.com/jo-duchan/tapflow/blob/a09d6eeb78f1a0cef9bc80c37d0551c3d15b91ee/LICENSE) · [NOTICE](https://github.com/jo-duchan/tapflow/blob/a09d6eeb78f1a0cef9bc80c37d0551c3d15b91ee/NOTICE) · [schema.ts](https://github.com/jo-duchan/tapflow/blob/a09d6eeb78f1a0cef9bc80c37d0551c3d15b91ee/packages/flow-runner/src/schema.ts) · [auth.ts](https://github.com/jo-duchan/tapflow/blob/a09d6eeb78f1a0cef9bc80c37d0551c3d15b91ee/packages/relay/src/middleware/auth.ts) · [performance.md](https://github.com/jo-duchan/tapflow/blob/a09d6eeb78f1a0cef9bc80c37d0551c3d15b91ee/docs/reference/performance.md) · [ci.yml](https://github.com/jo-duchan/tapflow/blob/a09d6eeb78f1a0cef9bc80c37d0551c3d15b91ee/.github/workflows/ci.yml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-flashlight"></a>
+
+### Flashlight
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/bamlab/flashlight |
+| License | MIT |
+| Phiên bản đã đọc | `5eeee8a8a8f64c06c707a214e2b572084201c64d` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, getScore.ts, cppProfiler.ts, tests.yml; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm thử mobile trên thiết bị và hiệu năng |
+| Cơ chế đáng học | - Điểm = trung bình điểm CPU (`-0.3167*x+116`, kẹp 0..100) và điểm FPS (`fps*100/refreshRate`), nhân (1 - tỉ lệ thời gian thread CPU cao) — `core/reporter/src/reporting/getScore.ts`.<br>- Đo bằng bộ đếm chạy trên thiết bị: nhị phân C++ trả chuỗi cpu/ram/atrace/timestamp được `parseCppMeasure` tách theo `=SEPARATOR=` — `platforms/android/src/commands/cppProfiler.ts`.<br>- `flashlight test` lặp nhiều iteration và ghi trạng thái FAILURE của từng vòng; plugin `appium-helper`, `aws-device-farm` cho test tự động trên cloud (chỉ thấy tên thư mục). |
+| Tiêu chí và cách kiểm | Điểm là số liên tục, không có ngưỡng đỗ/trượt tích hợp trong phần đã đọc (cờ ngưỡng chưa thấy ở `bin.ts`, chưa xác minh). Có test Jest chạy trong CI macOS (`yarn test`); không có benchmark độ chính xác của điểm. |
+| Giới hạn và rủi ro | MIT (BAM, 2022). Hệ số công thức CPU là hằng số nội suy từ 3 điểm, không chuẩn hoá theo thiết bị. Đo qua adb nên cần máy thật hoặc emulator; điểm phụ thuộc thiết bị. Chế độ upload ở app.flashlight.dev đưa APK ra ngoài máy (chưa xác minh điều khoản). Telemetry: không thấy trong phần đã đọc. |
+| So với | lighthouse-ci và googlechrome-lighthouse (web), maestro (luồng UI mobile) |
+| Nguồn | [README.md](https://github.com/bamlab/flashlight/blob/5eeee8a8a8f64c06c707a214e2b572084201c64d/README.md) · [LICENSE](https://github.com/bamlab/flashlight/blob/5eeee8a8a8f64c06c707a214e2b572084201c64d/LICENSE) · [getScore.ts](https://github.com/bamlab/flashlight/blob/5eeee8a8a8f64c06c707a214e2b572084201c64d/packages/core/reporter/src/reporting/getScore.ts) · [cppProfiler.ts](https://github.com/bamlab/flashlight/blob/5eeee8a8a8f64c06c707a214e2b572084201c64d/packages/platforms/android/src/commands/cppProfiler.ts) · [tests.yml](https://github.com/bamlab/flashlight/blob/5eeee8a8a8f64c06c707a214e2b572084201c64d/.github/workflows/tests.yml) |
+
+<a id="n2-patrol"></a>
+
+### Patrol
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/leancodepl/patrol |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `afd136cfd7f27458a5987b96f52711b3434a6f92` (commit 2026-11-10) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, Automator.kt, analytics.dart, patrol_command_runner.dart, SKILL.md, patrol_mcp README, 2 workflow; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm thử mobile trên thiết bị và hiệu năng |
+| Cơ chế đáng học | - `Automator.kt` bọc UiAutomator: `tap`, `tapOnNotification`, `allowPermissionWhileUsingApp/Once`, `denyPermission`, `enableWifi` (`svc wifi enable`) — thao tác ngoài cây widget Flutter.<br>- Hợp đồng giữa app Dart và máy chủ native sinh từ `schema.dart` bằng `patrol_gen` (thư mục `gen_from_schema`, chưa đọc nội dung).<br>- `packages/patrol_mcp` cho agent chạy/quản lý test; `skills/patrol-write-test/SKILL.md` quy định thứ tự viết test, khoá widget và chạy thường xuyên; workflow `check-skills.yaml` chạy `tool/check_skills.sh` kiểm skill. |
+| Tiêu chí và cách kiểm | Test E2E chạy trên ma trận API 32 đến 36 của emulator và máy thật theo lịch 12 giờ/lần (`test-android-emulator.yaml`), kèm workflow iOS, macOS, web. Kiểm bằng máy; đã mở workflow Android, chưa mở các workflow còn lại. |
+| Giới hạn và rủi ro | Apache-2.0 (mỗi gói con có LICENSE riêng, đọc LICENSE gốc và patrol_mcp, cùng nội dung Apache). CLI gửi dữ liệu dùng ẩn danh tới Google Analytics (`https://www.google-analytics.com/mp/collect`) mặc định bật; tắt bằng `PATROL_ANALYTICS_ENABLED=false`; `sendCommand` chỉ gửi khi đã có `clientId` trong file cấu hình (tạo ở lần chạy đầu), rồi dùng `envAnalyticsEnabled ?? config.enabled ?? true`; getter `enabled` trả false khi chạy CI (chưa chạy nên chưa xác nhận hành vi thực). Chỉ Flutter. Có dịch vụ trả phí của LeanCode bên cạnh bản mở. |
+| So với | maestro (flow YAML đa nền tảng), flutter (integration_test gốc), appium-appium |
+| Nguồn | [README.md](https://github.com/leancodepl/patrol/blob/afd136cfd7f27458a5987b96f52711b3434a6f92/README.md) · [LICENSE](https://github.com/leancodepl/patrol/blob/afd136cfd7f27458a5987b96f52711b3434a6f92/LICENSE) · [Automator.kt](https://github.com/leancodepl/patrol/blob/afd136cfd7f27458a5987b96f52711b3434a6f92/packages/patrol/android/src/main/kotlin/pl/leancode/patrol/Automator.kt) · [analytics.dart](https://github.com/leancodepl/patrol/blob/afd136cfd7f27458a5987b96f52711b3434a6f92/packages/patrol_cli/lib/src/analytics/analytics.dart) · [patrol_command_runner.dart](https://github.com/leancodepl/patrol/blob/afd136cfd7f27458a5987b96f52711b3434a6f92/packages/patrol_cli/lib/src/runner/patrol_command_runner.dart) · [SKILL.md](https://github.com/leancodepl/patrol/blob/afd136cfd7f27458a5987b96f52711b3434a6f92/skills/patrol-write-test/SKILL.md) · [README.md](https://github.com/leancodepl/patrol/blob/afd136cfd7f27458a5987b96f52711b3434a6f92/packages/patrol_mcp/README.md) · [test-android-emulator.yaml](https://github.com/leancodepl/patrol/blob/afd136cfd7f27458a5987b96f52711b3434a6f92/.github/workflows/test-android-emulator.yaml) · [check-skills.yaml](https://github.com/leancodepl/patrol/blob/afd136cfd7f27458a5987b96f52711b3434a6f92/.github/workflows/check-skills.yaml) |
+
+<a id="n2-maestro-runner"></a>
+
+### maestro-runner
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/devicelab-dev/maestro-runner |
+| License | Apache-2.0 (mã nguồn); driver APK/iOS agent của DeviceLab là proprietary |
+| Phiên bản đã đọc | `35748752544f9ac021156400e087e78e31cf9cda` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, LICENSE-BINARIES.md, telemetry.go, appium.go, retry.go, ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm thử mobile trên thiết bị và hiệu năng |
+| Cơ chế đáng học | - `pkg/executor/retry.go` (`flowRetries`) chạy lại flow thất bại trong cùng run, giữ driver và agent, báo cáo ghi từng lần thử, thay cho vòng lặp ngoài đọc report.json.<br>- Pha trộn driver: `--driver devicelab` dùng agent riêng, còn lại UIAutomator2/WDA/Appium; `pkg/validator` kiểm flow trước khi chạy (chỉ thấy tên).<br>- Telemetry thiết kế dè dặt: chỉ đếm, băm một chiều danh sách file flow, `pkg/telemetry/appium.go` chỉ gửi tên nhà cung cấp cloud từ danh sách cố định, không gửi host. |
+| Tiêu chí và cách kiểm | CI chạy `go test -race -timeout 25m` kèm coverage, `make fmt-check`, golangci-lint v2.13.2 (ghim), có `DO_NOT_TRACK=1` để test không gửi telemetry. Con số '~5x nhanh hơn, 14x ít bộ nhớ hơn Maestro' và '78% issue hàng đầu' là tuyên bố của tác giả (chưa xác minh); có `benchmarks/speed-baseline.json` chưa đọc. |
+| Giới hạn và rủi ro | Mã Apache-2.0 nhưng `drivers/LICENSE-BINARIES.md` nói rõ agent Android/iOS của DeviceLab là proprietary: dùng miễn phí cùng maestro-runner, không được sửa, không phân phối riêng; WDA và UIAutomator2 giữ license upstream. Telemetry bật mặc định (endpoint open.devicelab.dev), tắt bằng `MAESTRO_RUNNER_NO_TELEMETRY=1` hoặc `DO_NOT_TRACK=1`. Dự án mới, phụ thuộc một nhà cung cấp; cú pháp flow bám Maestro nên lệch phiên bản có thể gây khác biệt (chưa xác minh). |
+| So với | maestro (bản gốc Kotlin/JVM), appium-appium |
+| Nguồn | [README.md](https://github.com/devicelab-dev/maestro-runner/blob/35748752544f9ac021156400e087e78e31cf9cda/README.md) · [LICENSE](https://github.com/devicelab-dev/maestro-runner/blob/35748752544f9ac021156400e087e78e31cf9cda/LICENSE) · [LICENSE-BINARIES.md](https://github.com/devicelab-dev/maestro-runner/blob/35748752544f9ac021156400e087e78e31cf9cda/drivers/LICENSE-BINARIES.md) · [telemetry.go](https://github.com/devicelab-dev/maestro-runner/blob/35748752544f9ac021156400e087e78e31cf9cda/pkg/telemetry/telemetry.go) · [appium.go](https://github.com/devicelab-dev/maestro-runner/blob/35748752544f9ac021156400e087e78e31cf9cda/pkg/telemetry/appium.go) · [retry.go](https://github.com/devicelab-dev/maestro-runner/blob/35748752544f9ac021156400e087e78e31cf9cda/pkg/executor/retry.go) · [ci.yml](https://github.com/devicelab-dev/maestro-runner/blob/35748752544f9ac021156400e087e78e31cf9cda/.github/workflows/ci.yml) |
+
+<a id="n2-artillery"></a>
+
+### Artillery
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/artilleryio/artillery |
+| License | MPL-2.0 (đa số); BUSL-1.1 cho module Azure |
+| Phiên bản đã đọc | `664806bb60218c06c4fc34f49fdb8854de83b000` (commit 2026-10-20) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE.txt, LICENSE-BSL.txt, telemetry.ts, az/aci.ts, ensure plugin.ts và README, run-tests.yml; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm thử tải |
+| Cơ chế đáng học | - `artillery-plugin-ensure` (`plugin.ts`) đánh giá điều kiện biểu thức (`filtrex`) trên chỉ số tổng hợp, thất bại thì đặt `global.artillery.suggestedExitCode = 1`; chỉ chạy ở luồng chính, bỏ qua worker.<br>- Chạy phân tán không cần hạ tầng riêng: nền tảng `lib/platform/aws-lambda`, `aws-ecs`, `az`; worker đặt `ARTILLERY_DISABLE_ENSURE` để cổng chỉ chấm một lần.<br>- Tách engine và plugin thành gói riêng: `artillery-engine-playwright`, `artillery-plugin-expect`, `apdex`, `publish-metrics`, `slack`. |
+| Tiêu chí và cách kiểm | Cổng: điều kiện `ensure` trong script, mã thoát khác 0 khi trượt (theo README plugin và `plugin.ts`). CI: typecheck, ma trận test theo gói (`run-tests.yml`), job AWS riêng; chưa mở các workflow còn lại. |
+| Giới hạn và rủi ro | README nêu: phần lớn mã là MPL-2.0 (copyleft theo tệp), module Azure (`platform/az/aci.ts`, `aqs-queue-consumer.ts` mang `SPDX-License-Identifier: BUSL-1.1`) chỉ dùng cho đánh giá hoặc phi sản xuất, sản xuất cần giấy phép thương mại, đổi sang MPL-2.0 sau 4 năm. Telemetry ẩn danh gửi tới us.i.posthog.com mặc định (tắt bằng `ARTILLERY_DISABLE_TELEMETRY`; có khoá PostHog trong mã). Lần push gần nhất 2026-10-20, chậm hơn các repo cùng lô. Mô tả trinh sát ghi MPL-2.0 là chưa đủ. |
+| So với | grafana-k6, locustio-locust (cùng nhóm tải); gatling (hồ sơ này) |
+| Nguồn | [README.md](https://github.com/artilleryio/artillery/blob/664806bb60218c06c4fc34f49fdb8854de83b000/README.md) · [LICENSE.txt](https://github.com/artilleryio/artillery/blob/664806bb60218c06c4fc34f49fdb8854de83b000/LICENSE.txt) · [LICENSE-BSL.txt](https://github.com/artilleryio/artillery/blob/664806bb60218c06c4fc34f49fdb8854de83b000/LICENSE-BSL.txt) · [telemetry.ts](https://github.com/artilleryio/artillery/blob/664806bb60218c06c4fc34f49fdb8854de83b000/packages/artillery/lib/telemetry.ts) · [aci.ts](https://github.com/artilleryio/artillery/blob/664806bb60218c06c4fc34f49fdb8854de83b000/packages/artillery/lib/platform/az/aci.ts) · [plugin.ts](https://github.com/artilleryio/artillery/blob/664806bb60218c06c4fc34f49fdb8854de83b000/packages/artillery-plugin-ensure/plugin.ts) · [README.md](https://github.com/artilleryio/artillery/blob/664806bb60218c06c4fc34f49fdb8854de83b000/packages/artillery-plugin-ensure/README.md) · [run-tests.yml](https://github.com/artilleryio/artillery/blob/664806bb60218c06c4fc34f49fdb8854de83b000/.github/workflows/run-tests.yml) |
+
+<a id="n2-gatling"></a>
+
+### Gatling
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/gatling/gatling |
+| License | Apache-2.0 (Community); gRPC/MQTT/GraphQL/JDBC dưới Gatling Enterprise Component License |
+| Phiên bản đã đọc | `7ed10232bbbdc6ac15932a5ea4c28b170c68ad32` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE.txt, AssertionBuilders.scala, RunResultProcessor.scala, StatusCode.scala, build.yml; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm thử tải |
+| Cơ chế đáng học | - `AssertionBuilders.scala` dựng assertion có kiểu: min/max/mean/stdDev/percentile, đếm/phần trăm request lỗi, `requestsPerSec`; so sánh `lt/lte/gt/gte/between/around/deviatesAround/is/in`.<br>- `RunResultProcessor.runStatus` in từng assertion (kết quả và giá trị thực), gộp bằng AND, trả `StatusCode.AssertionsFailed` (mã 2, `StatusCode.scala`) khi trượt; `Gatling.scala` gọi `sys.exit`.<br>- Cùng một mô phỏng chạy qua plugin Maven, Gradle, sbt hoặc npm; kho chia module `gatling-core`, `-http`, `-jms`, `-redis`, `-recorder`, `-charts`. |
+| Tiêu chí và cách kiểm | Cổng là assertion trong mô phỏng, trượt thì mã thoát 2 (theo `StatusCode.scala`). CI `build.yml` dựng bằng sbt trên JDK 25, action ghim theo SHA; chưa mở workflow release. |
+| Giới hạn và rủi ro | Apache-2.0 cho mã Community (LICENSE.txt), nhưng README nói gRPC, MQTT, GraphQL, JDBC là phụ thuộc riêng dưới Gatling Enterprise Component License, Community bị giới hạn 5 người dùng đồng thời và 5 phút; báo cáo dùng Highcharts theo giấy phép Highsoft riêng. Mô tả trinh sát (Apache-2.0) thiếu các ngoại lệ này. Số '300.000 công ty, 30 triệu lượt tải' là tuyên bố tác giả (chưa xác minh). Phần tính năng doanh nghiệp (chạy phân tán, so sánh run) không nằm trong repo. |
+| So với | grafana-k6 (script JS, Go), locustio-locust (Python), artillery (hồ sơ này) |
+| Nguồn | [README.md](https://github.com/gatling/gatling/blob/7ed10232bbbdc6ac15932a5ea4c28b170c68ad32/README.md) · [LICENSE.txt](https://github.com/gatling/gatling/blob/7ed10232bbbdc6ac15932a5ea4c28b170c68ad32/LICENSE.txt) · [AssertionBuilders.scala](https://github.com/gatling/gatling/blob/7ed10232bbbdc6ac15932a5ea4c28b170c68ad32/gatling-core/src/main/scala/io/gatling/core/assertion/AssertionBuilders.scala) · [RunResultProcessor.scala](https://github.com/gatling/gatling/blob/7ed10232bbbdc6ac15932a5ea4c28b170c68ad32/gatling-app/src/main/scala/io/gatling/app/RunResultProcessor.scala) · [StatusCode.scala](https://github.com/gatling/gatling/blob/7ed10232bbbdc6ac15932a5ea4c28b170c68ad32/gatling-app/src/main/scala/io/gatling/app/cli/StatusCode.scala) · [build.yml](https://github.com/gatling/gatling/blob/7ed10232bbbdc6ac15932a5ea4c28b170c68ad32/.github/workflows/build.yml) |
+
+<a id="n2-atheris"></a>
+
+### Atheris
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/google/atheris |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `e36da74cf42b5834c4e31d7cabb58d796695d29f` (commit 2026-06-17) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, hooking.md, src/instrument_bytecode.py (đầu file), src/function_hooks.py (danh sách hàm), example_fuzzers/fuzzing_example.py, run_tests.sh, .github/workflows/builds.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Fuzz, mutation, chaos/resilience (fuzzer Python theo coverage) |
+| Cơ chế đáng học | - Dựa trên libFuzzer; `atheris.instrument_imports()`, `@atheris.instrument_func` hoặc instrument toàn bộ để chèn đo coverage vào bytecode Python (src/instrument_bytecode.py) và cả extension native.<br>- Hàm vào `TestOneInput(data)` gọi mã cần thử; ngoại lệ không bắt được tính là lỗi (README). Hook so sánh, nhánh, phương thức `str` và biểu thức chính quy (src/function_hooks.py sinh chuỗi khớp regex) giúp fuzzer vượt điều kiện so sánh.<br>- Hỗ trợ custom mutator/crossover và protobuf (contrib/libprotobuf_mutator) cho fuzz có cấu trúc; có `FuzzedDataProvider`. |
+| Tiêu chí và cách kiểm | Không có ngưỡng điểm: tiêu chí là phát hiện crash hay ngoại lệ trong thời gian chạy; README nói tích hợp OSS-Fuzz. CI chạy ruff, pytype và `run_tests.sh` (chạy từng `*_test.py`). |
+| Giới hạn và rủi ro | Hỗ trợ Linux và macOS, Python 3.11-3.14 theo README, không có Windows. Cần clang/libFuzzer khớp khi fuzz native. Commit cuối 2026-06-17, cách ngày kiểm khoảng 5 tháng; phải chú ý tương thích bản Python mới vì cơ chế phụ thuộc bytecode. Fuzz chạy mã mục tiêu nên cần cô lập. |
+| So với | `hypothesis` (property-based, thuần Python); `google-oss-fuzz` (hạ tầng chạy fuzz liên tục, Atheris là một engine). |
+| Nguồn | [README](https://github.com/google/atheris/blob/e36da74cf42b5834c4e31d7cabb58d796695d29f/README.md) · [LICENSE](https://github.com/google/atheris/blob/e36da74cf42b5834c4e31d7cabb58d796695d29f/LICENSE) · [hooking.md](https://github.com/google/atheris/blob/e36da74cf42b5834c4e31d7cabb58d796695d29f/hooking.md) · [src/instrument_bytecode.py](https://github.com/google/atheris/blob/e36da74cf42b5834c4e31d7cabb58d796695d29f/src/instrument_bytecode.py) · [src/function_hooks.py](https://github.com/google/atheris/blob/e36da74cf42b5834c4e31d7cabb58d796695d29f/src/function_hooks.py) · [example_fuzzers/fuzzing_example.py](https://github.com/google/atheris/blob/e36da74cf42b5834c4e31d7cabb58d796695d29f/example_fuzzers/fuzzing_example.py) · [run_tests.sh](https://github.com/google/atheris/blob/e36da74cf42b5834c4e31d7cabb58d796695d29f/run_tests.sh) · [.github/workflows/builds.yaml](https://github.com/google/atheris/blob/e36da74cf42b5834c4e31d7cabb58d796695d29f/.github/workflows/builds.yaml) |
+
+<a id="n2-mutmut"></a>
+
+### mutmut
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/boxed/mutmut |
+| License | BSD-3-Clause |
+| Phiên bản đã đọc | `2c034f20539ed7f460ea749db036e60a23f06b19` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.rst, LICENSE, ARCHITECTURE.rst, pyproject.toml (dòng version/license), src/mutmut/configuration.py, mutation/mutators.py, mutation/trampoline.py, `__main__.py` (đoạn export_cicd_stats, thoát mã), .github/workflows/tests.yml (đoạn đầu); chưa chạy upstream |
+| Khoảng trống lấp | Fuzz, mutation, chaos/resilience (mutation testing Python) |
+| Cơ chế đáng học | - Các bước của `mutmut run` (ARCHITECTURE.rst): sinh thư mục `mutants/`, thu thống kê test nào chạm mutant nào, chạy test sạch, chạy bước ép lỗi để chắc cơ chế mutant có hiệu lực, rồi từng mutant chạy trong tiến trình fork riêng.<br>- Mutant nằm trong cùng file mã, chọn bằng trạng thái tiến trình và biến môi trường `MUTANT_UNDER_TEST` (mutation/trampoline.py); nhờ đó chỉ chạy test có chạm tới mutant.<br>- Các toán tử trong mutation/mutators.py: số, chuỗi, lambda, bỏ đối số, đổi phép toán, đổi từ khóa, `if` biểu thức, `match`; cấu hình `do_not_mutate`, `mutate_only_covered_lines`, `type_check_command`. |
+| Tiêu chí và cách kiểm | Kết quả lưu trong `.meta`; `mutmut export-cicd-stats` ghi `mutants/mutmut-cicd-stats.json` (killed, survived, total, no_tests, timeout...) để chặn PR; không thấy ngưỡng điểm hay mã thoát theo mutant sống sót trong mã đã đọc, ngưỡng do CI tự so. CI chạy pre-commit và pytest trên Python 3.10-3.15. |
+| Giới hạn và rủi ro | Cần hệ có `fork` (Windows phải qua WSL, README). README nói không mutate mã ngoài hàm trong bản 3+ (muốn thế dùng mutmut 2). Chạy test nhiều lần nên tốn thời gian; test có tác dụng phụ ngoài có thể bị mutant kích hoạt. License BSD-3-Clause, không telemetry trong phần đã đọc. |
+| So với | `strykerjs` (mutation JS); `cargo-mutants` (Rust); `hypothesis` (bổ sung cho test). |
+| Nguồn | [README.rst](https://github.com/boxed/mutmut/blob/2c034f20539ed7f460ea749db036e60a23f06b19/README.rst) · [LICENSE](https://github.com/boxed/mutmut/blob/2c034f20539ed7f460ea749db036e60a23f06b19/LICENSE) · [ARCHITECTURE.rst](https://github.com/boxed/mutmut/blob/2c034f20539ed7f460ea749db036e60a23f06b19/ARCHITECTURE.rst) · [pyproject.toml](https://github.com/boxed/mutmut/blob/2c034f20539ed7f460ea749db036e60a23f06b19/pyproject.toml) · [src/mutmut/configuration.py](https://github.com/boxed/mutmut/blob/2c034f20539ed7f460ea749db036e60a23f06b19/src/mutmut/configuration.py) · [src/mutmut/mutation/mutators.py](https://github.com/boxed/mutmut/blob/2c034f20539ed7f460ea749db036e60a23f06b19/src/mutmut/mutation/mutators.py) · [src/mutmut/mutation/trampoline.py](https://github.com/boxed/mutmut/blob/2c034f20539ed7f460ea749db036e60a23f06b19/src/mutmut/mutation/trampoline.py) · [`src/mutmut/__main__.py`](https:`//github.com/boxed/mutmut/blob/2c034f20539ed7f460ea749db036e60a23f06b19/src/mutmut/__main__.py`) · [.github/workflows/tests.yml](https://github.com/boxed/mutmut/blob/2c034f20539ed7f460ea749db036e60a23f06b19/.github/workflows/tests.yml) |
+
+<a id="n2-cargo-mutants"></a>
+
+### cargo-mutants
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/sourcefrog/cargo-mutants |
+| License | MIT |
+| Phiên bản đã đọc | `6c720ae82a1784b84cfa06066f7b0d59ed1798d0` (commit 2026-10-19) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, Cargo.toml, src/exit_code.rs, book/src/exit-codes.md, how-it-works.md, mutants.md, ci.md, cautions.md, mutants-out.md, .github/workflows/tests.yml (các bước run); chưa chạy upstream |
+| Khoảng trống lấp | Fuzz, mutation, chaos/resilience (mutation testing Rust) |
+| Cơ chế đáng học | - Phân tích mã bằng `syn`, sinh mutant theo kiểu trả về (thay thân hàm bằng giá trị đoán), toán tử nhị phân, một ngôi, nhánh match, điều kiện match, trường struct (book/src/mutants.md); áp dụng bằng sửa văn bản để giữ nguyên định dạng.<br>- Chạy trong bản sao cây mã: kiểm baseline `cargo test`, với mỗi mutant `cargo test --no-run` (không biên dịch được thì bỏ), rồi `cargo test` (book/src/how-it-works.md).<br>- `--in-diff` chỉ thử mutant trong diff của PR; `--iterate`, `--shard`, `--jobs`, hỗ trợ nextest; kết quả máy đọc nằm ở `mutants.out` (mutants.json, outcomes.json, missed.txt). |
+| Tiêu chí và cách kiểm | Mã thoát cho CI định nghĩa trong src/exit_code.rs: 0 mọi mutant bị bắt, 2 có mutant sống sót, 3 timeout, 4 baseline hỏng, 5 và 6 lỗi diff, 70 lỗi nội bộ; không cần shell tự so điểm. CI repo chạy cargo fmt, test, build nhiều target (tests.yml). |
+| Giới hạn và rủi ro | Chỉ phủ kiểu mutant nêu trong tài liệu, hàm `unsafe`, hàm test và hàm có `#[mutants::skip]` bị loại; mutant tương đương gây dương tính giả. Rủi ro tác dụng phụ của test: tài liệu cautions.md khuyên chạy trong môi trường cô lập, nhất là khi dùng `--in-place`. Bảo trì tích cực (v27.1.0, MSRV Rust 1.88). Giới hạn Rust nên chỉ hợp với dự án Rust. |
+| So với | `mutmut` (Python); `strykerjs` (JS); `hypothesis` (property-based). |
+| Nguồn | [README](https://github.com/sourcefrog/cargo-mutants/blob/6c720ae82a1784b84cfa06066f7b0d59ed1798d0/README.md) · [LICENSE](https://github.com/sourcefrog/cargo-mutants/blob/6c720ae82a1784b84cfa06066f7b0d59ed1798d0/LICENSE) · [Cargo.toml](https://github.com/sourcefrog/cargo-mutants/blob/6c720ae82a1784b84cfa06066f7b0d59ed1798d0/Cargo.toml) · [src/exit_code.rs](https://github.com/sourcefrog/cargo-mutants/blob/6c720ae82a1784b84cfa06066f7b0d59ed1798d0/src/exit_code.rs) · [book/src/exit-codes.md](https://github.com/sourcefrog/cargo-mutants/blob/6c720ae82a1784b84cfa06066f7b0d59ed1798d0/book/src/exit-codes.md) · [book/src/how-it-works.md](https://github.com/sourcefrog/cargo-mutants/blob/6c720ae82a1784b84cfa06066f7b0d59ed1798d0/book/src/how-it-works.md) · [book/src/mutants.md](https://github.com/sourcefrog/cargo-mutants/blob/6c720ae82a1784b84cfa06066f7b0d59ed1798d0/book/src/mutants.md) · [book/src/ci.md](https://github.com/sourcefrog/cargo-mutants/blob/6c720ae82a1784b84cfa06066f7b0d59ed1798d0/book/src/ci.md) · [book/src/cautions.md](https://github.com/sourcefrog/cargo-mutants/blob/6c720ae82a1784b84cfa06066f7b0d59ed1798d0/book/src/cautions.md) · [book/src/mutants-out.md](https://github.com/sourcefrog/cargo-mutants/blob/6c720ae82a1784b84cfa06066f7b0d59ed1798d0/book/src/mutants-out.md) · [.github/workflows/tests.yml](https://github.com/sourcefrog/cargo-mutants/blob/6c720ae82a1784b84cfa06066f7b0d59ed1798d0/.github/workflows/tests.yml) |
+
+<a id="n2-msw"></a>
+
+### Mock Service Worker
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/mswjs/msw |
+| License | MIT |
+| Phiên bản đã đọc | `b3df8504adc30538e9634a46b7303a850a817928` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE.md, package.json, src/core/shared-options.ts, src/core/experimental/on-unhandled-frame.ts, test/memory/2735-memory-leak.memory.test.ts, decisions/jest-support.md, .github/workflows/ci.yml, .github/workflows/smoke-test.yml; chưa chạy upstream |
+| Khoảng trống lấp | Mock API và kiểm thử cho frontend; chặn gọi mạng ngoài ý muốn |
+| Cơ chế đáng học | - Tuỳ chọn `onUnhandledFrame: 'bypass' \| 'warn' \| 'error'` hoặc callback có `defaults` (`src/core/shared-options.ts`, `on-unhandled-frame.ts`); `server.listen({onUnhandledFrame: 'error'})` làm test hỏng khi có request chưa mock.<br>- Test bộ nhớ riêng (`test:memory`): bắn 5000 request, đo số listener và khẳng định delta dưới 5% (`test/memory/2735-memory-leak.memory.test.ts`).<br>- Thư mục `decisions/` ghi quyết định thiết kế (không hỗ trợ Jest chính thức, cách phát hành, phiên bản TypeScript).<br>- Dự án Playwright, test module Node/browser và `smoke-test.sh` chạy ví dụ sau CI (`ci.yml`, `smoke-test.yml`). |
+| Tiêu chí và cách kiểm | CI (ci.yml): ma trận Node 22/24/26, `oxlint`, build, vitest, Playwright; smoke-test ví dụ chạy sau khi CI trên main thành công. Kiểm bằng máy đầy đủ; không có ngưỡng coverage hoặc kích thước đã thấy. |
+| Giới hạn và rủi ro | MIT. Không hỗ trợ chính thức Jest, Deno, Bun (decisions/jest-support.md). Yêu cầu Node 22.12+. Bản 3.0.7; API đổi tên so với v2 (onUnhandledRequest thành onUnhandledFrame, theo mã đọc), cẩn thận khi theo tài liệu cũ. |
+| So với | `playwright`, `shopify-toxiproxy`, `hypothesis` |
+| Nguồn | [README.md](https://github.com/mswjs/msw/blob/b3df8504adc30538e9634a46b7303a850a817928/README.md) · [LICENSE.md](https://github.com/mswjs/msw/blob/b3df8504adc30538e9634a46b7303a850a817928/LICENSE.md) · [package.json](https://github.com/mswjs/msw/blob/b3df8504adc30538e9634a46b7303a850a817928/package.json) · [shared-options.ts](https://github.com/mswjs/msw/blob/b3df8504adc30538e9634a46b7303a850a817928/src/core/shared-options.ts) · [on-unhandled-frame.ts](https://github.com/mswjs/msw/blob/b3df8504adc30538e9634a46b7303a850a817928/src/core/experimental/on-unhandled-frame.ts) · [2735-memory-leak.memory.test.ts](https://github.com/mswjs/msw/blob/b3df8504adc30538e9634a46b7303a850a817928/test/memory/2735-memory-leak.memory.test.ts) · [jest-support.md](https://github.com/mswjs/msw/blob/b3df8504adc30538e9634a46b7303a850a817928/decisions/jest-support.md) · [ci.yml](https://github.com/mswjs/msw/blob/b3df8504adc30538e9634a46b7303a850a817928/.github/workflows/ci.yml) · [smoke-test.yml](https://github.com/mswjs/msw/blob/b3df8504adc30538e9634a46b7303a850a817928/.github/workflows/smoke-test.yml) |
+
+<a id="n2-detox"></a>
+
+### Detox
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/wix/Detox |
+| License | MIT |
+| Phiên bản đã đọc | `667efcb6e7dda59b390f1707ceeb546414869a97` (commit 2026-11-02) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, detox/LICENSE, docs/articles/how-detox-works.md, docs/articles/design-principles.md, detox/jest.config.js, detox/src/pilot/DetoxPilot.js, docs/pilot/testing-with-pilot.md, .github/workflows/rapid-test.yml, .github/workflows/release-checks.yml; chưa chạy upstream |
+| Khoảng trống lấp | Phát hành mobile: kiểm thử E2E trên thiết bị |
+| Cơ chế đáng học | - Đồng bộ tự động: Detox theo dõi request, main queue, layout, timer, animation, JS thread, bridge rồi mới chạy bước kế (`docs/articles/how-detox-works.md`).<br>- Kiến trúc hai phần: app có mã native Detox và test chạy trên Node, nói chuyện qua websocket qua một server trung gian (`detox/src/client`, `server`).<br>- Pilot: viết bước bằng ngôn ngữ tự nhiên qua LLM, bọc `@wix-pilot/core` với driver Detox (`detox/src/pilot/DetoxPilot.js`); tài liệu ghi rõ đang phát triển.<br>- Ngưỡng coverage toàn cục 100% cho statements/branches/functions/lines với `jest --coverage` (`detox/jest.config.js`). |
+| Tiêu chí và cách kiểm | Workflow rapid-test: lint mã nguồn và dự án test, test kiểu, unit, integration, generation test, trên Linux và Windows (đã mở). Không tìm thấy ktlint/detekt trong gradle/yml/json (đã grep), nên mô tả "lint Kotlin" của trinh sát chưa đúng. E2E trên thiết bị thật nằm ngoài rapid-test (chưa xác minh). |
+| Giới hạn và rủi ro | MIT. Pilot cần khoá LLM và gửi nội dung màn hình/bước đến nhà cung cấp mô hình (suy ra từ thiết kế, chưa xác minh). Cần Xcode/Android SDK, build native; bản 20.51.4. Chỉ phù hợp app có thể gắn mã native Detox (chủ yếu React Native). |
+| So với | `maestro`, `appium-appium`, `playwright` |
+| Nguồn | [README.md](https://github.com/wix/Detox/blob/667efcb6e7dda59b390f1707ceeb546414869a97/README.md) · [LICENSE](https://github.com/wix/Detox/blob/667efcb6e7dda59b390f1707ceeb546414869a97/detox/LICENSE) · [how-detox-works.md](https://github.com/wix/Detox/blob/667efcb6e7dda59b390f1707ceeb546414869a97/docs/articles/how-detox-works.md) · [design-principles.md](https://github.com/wix/Detox/blob/667efcb6e7dda59b390f1707ceeb546414869a97/docs/articles/design-principles.md) · [jest.config.js](https://github.com/wix/Detox/blob/667efcb6e7dda59b390f1707ceeb546414869a97/detox/jest.config.js) · [DetoxPilot.js](https://github.com/wix/Detox/blob/667efcb6e7dda59b390f1707ceeb546414869a97/detox/src/pilot/DetoxPilot.js) · [testing-with-pilot.md](https://github.com/wix/Detox/blob/667efcb6e7dda59b390f1707ceeb546414869a97/docs/pilot/testing-with-pilot.md) · [rapid-test.yml](https://github.com/wix/Detox/blob/667efcb6e7dda59b390f1707ceeb546414869a97/.github/workflows/rapid-test.yml) · [release-checks.yml](https://github.com/wix/Detox/blob/667efcb6e7dda59b390f1707ceeb546414869a97/.github/workflows/release-checks.yml) |
+
+<a id="n2-aflplusplus"></a>
+
+### AFL++
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/AFLplusplus/AFLplusplus |
+| License | AGPL-3.0-or-later (cả repo); nhiều file riêng Apache-2.0 theo SPDX; có giấy phép thương mại tuỳ chọn |
+| Phiên bản đã đọc | `d798677805de81b50aa8f45beb0342ae1617b9d8` (commit 2026-11-15) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, LICENSING.md, instrumentation/README.cmplog.md, src/afl-fuzz.c, src/afl-main.c, instrumentation/afl-compiler-rt.o.c, test/test-basic.sh, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Fuzz coverage-guided cho C/C++ và nhị phân; kiểm thử thuộc tính mức hệ thống |
+| Cơ chế đáng học | - Instrumentation bằng pass LLVM/GCC chèn bộ đếm cạnh; runtime nhẹ ở `instrumentation/afl-compiler-rt.o.c` (Apache-2.0).<br>- CmpLog: build thêm một bản có `AFL_LLVM_CMPLOG`, ghi toán hạng so sánh vào bộ nhớ chung cho mutator input-to-state (`instrumentation/README.cmplog.md`).<br>- Chế độ persistent, custom mutator, QEMU/Frida/Nyx/Unicorn cho nhị phân không có mã nguồn (thư mục gốc, README).<br>- Test hồi quy bằng shell: biên dịch ca thử với các cờ `AFL_*` rồi so bản đồ cạnh `afl-showmap` (`test/test-basic.sh`). |
+| Tiêu chí và cách kiểm | CI chạy build qua nhiều bản LLVM (14 đến 21), chạy `make tests` có ASAN, kiểm định dạng code (đã mở ci.yml; workflow khác chỉ biết tên). Không có ngưỡng; fuzz không chứng minh vắng lỗi. |
+| Giới hạn và rủi ro | LICENSE là AGPL-3.0. LICENSING.md và SPDX từng file: `afl-fuzz.c` và `afl-compiler-rt.o.c` ghi Apache-2.0, còn `afl-main.c`, `hashmap.c`, `afl-fuzz-mopt-adaptive.c` ghi AGPL, đếm 15 file AGPL và 129 file Apache ở thời điểm đọc, README nói bản nhị phân `afl-fuzz` là AGPL vì liên kết các file AGPL. Runtime liên kết vào mục tiêu là Apache-2.0 (tuyên bố tác giả). Nhúng/đổi và cung cấp qua mạng cần nghĩa vụ mã nguồn AGPL. Cần quyền cấu hình hệ thống (`afl-system-config`) để chạy nhanh. |
+| So với | `google-oss-fuzz`, `hypothesis`, `shopify-toxiproxy` |
+| Nguồn | [README.md](https://github.com/AFLplusplus/AFLplusplus/blob/d798677805de81b50aa8f45beb0342ae1617b9d8/README.md) · [LICENSE](https://github.com/AFLplusplus/AFLplusplus/blob/d798677805de81b50aa8f45beb0342ae1617b9d8/LICENSE) · [LICENSING.md](https://github.com/AFLplusplus/AFLplusplus/blob/d798677805de81b50aa8f45beb0342ae1617b9d8/LICENSING.md) · [README.cmplog.md](https://github.com/AFLplusplus/AFLplusplus/blob/d798677805de81b50aa8f45beb0342ae1617b9d8/instrumentation/README.cmplog.md) · [afl-fuzz.c](https://github.com/AFLplusplus/AFLplusplus/blob/d798677805de81b50aa8f45beb0342ae1617b9d8/src/afl-fuzz.c) · [afl-main.c](https://github.com/AFLplusplus/AFLplusplus/blob/d798677805de81b50aa8f45beb0342ae1617b9d8/src/afl-main.c) · [afl-compiler-rt.o.c](https://github.com/AFLplusplus/AFLplusplus/blob/d798677805de81b50aa8f45beb0342ae1617b9d8/instrumentation/afl-compiler-rt.o.c) · [test-basic.sh](https://github.com/AFLplusplus/AFLplusplus/blob/d798677805de81b50aa8f45beb0342ae1617b9d8/test/test-basic.sh) · [ci.yml](https://github.com/AFLplusplus/AFLplusplus/blob/d798677805de81b50aa8f45beb0342ae1617b9d8/.github/workflows/ci.yml) |
+
+<a id="n2-chaostoolkit"></a>
+
+### Chaos Toolkit
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/chaostoolkit/chaostoolkit |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `2ff559be6b378f83f0e9ddf951e577eb1e97cdcd` (commit 2026-10-05) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, pyproject.toml, CHANGELOG.md, chaostoolkit/check.py, chaostoolkit/commands/root.py, chaostoolkit/skills/chaostoolkit-experiment/SKILL.md, chaostoolkit/skills/chaostoolkit-network-faults/SKILL.md, tests/fixtures/check-file-exists.json, .github/workflows/build.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Chaos/lỗi giả lập có giả thuyết trạng thái ổn định máy kiểm được |
+| Cơ chế đáng học | - Tài liệu thí nghiệm gồm `steady-state-hypothesis` (probe với `tolerance`), `method`, `rollbacks`; provider kiểu `python` hoặc `process` (`tests/fixtures/check-file-exists.json`).<br>- Khai báo phụ thuộc Python trong thí nghiệm (`runtime.python.dependencies`), chạy trong môi trường `uv` tách, không sửa cài đặt hiện có (README, `commands/root.py`).<br>- Skill agent `chaostoolkit-experiment`: bắt hỏi câu có thể bị bác bỏ, steady state từ dữ liệu thật như SLO, không đụng production nếu người dùng chưa gọi tên và duyệt kế hoạch (`SKILL.md`, CHANGELOG 1.21.4).<br>- Skill `chaostoolkit-network-faults`: mọi lỗi mạng qua `fault`/`faultlib` (cần Python 3.14+), cấm `tc`, `iptables`, toxiproxy. |
+| Tiêu chí và cách kiểm | CI build.yaml: `pdm lock --check`, lint, `pytest` trên Python 3.12-3.14, Ubuntu và macOS (đã mở). Thí nghiệm tự nó cho kết quả đạt/lệch giả thuyết, có exit code theo journal (chưa kiểm chi tiết mã thoát). |
+| Giới hạn và rủi ro | Apache-2.0. Phone-home: `check_newer_version` gửi phiên bản hiện tại và tên lệnh tới `releases.chaostoolkit.org` mỗi lần chạy (timeout 2 giây), tắt bằng `--no-version-check` (`check.py`, `root.py`). Provider `process` chạy lệnh tuỳ ý: thí nghiệm là mã, phải review. Tần suất phát hành thấp (1.21.4 ngày 2026-10-05). Hệ sinh thái nằm ở extension riêng, chưa đọc. |
+| So với | `shopify-toxiproxy`, `hypothesis` |
+| Nguồn | [README.md](https://github.com/chaostoolkit/chaostoolkit/blob/2ff559be6b378f83f0e9ddf951e577eb1e97cdcd/README.md) · [LICENSE](https://github.com/chaostoolkit/chaostoolkit/blob/2ff559be6b378f83f0e9ddf951e577eb1e97cdcd/LICENSE) · [pyproject.toml](https://github.com/chaostoolkit/chaostoolkit/blob/2ff559be6b378f83f0e9ddf951e577eb1e97cdcd/pyproject.toml) · [CHANGELOG.md](https://github.com/chaostoolkit/chaostoolkit/blob/2ff559be6b378f83f0e9ddf951e577eb1e97cdcd/CHANGELOG.md) · [check.py](https://github.com/chaostoolkit/chaostoolkit/blob/2ff559be6b378f83f0e9ddf951e577eb1e97cdcd/chaostoolkit/check.py) · [root.py](https://github.com/chaostoolkit/chaostoolkit/blob/2ff559be6b378f83f0e9ddf951e577eb1e97cdcd/chaostoolkit/commands/root.py) · [SKILL.md](https://github.com/chaostoolkit/chaostoolkit/blob/2ff559be6b378f83f0e9ddf951e577eb1e97cdcd/chaostoolkit/skills/chaostoolkit-experiment/SKILL.md) · [SKILL.md](https://github.com/chaostoolkit/chaostoolkit/blob/2ff559be6b378f83f0e9ddf951e577eb1e97cdcd/chaostoolkit/skills/chaostoolkit-network-faults/SKILL.md) · [check-file-exists.json](https://github.com/chaostoolkit/chaostoolkit/blob/2ff559be6b378f83f0e9ddf951e577eb1e97cdcd/tests/fixtures/check-file-exists.json) · [build.yaml](https://github.com/chaostoolkit/chaostoolkit/blob/2ff559be6b378f83f0e9ddf951e577eb1e97cdcd/.github/workflows/build.yaml) |
+
+<a id="n2-stryker-net"></a>
+
+### Stryker.NET
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/stryker-mutator/stryker-net |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `8072f0c5cdbb64b35989102ebd45ffdb23f60eba` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, AGENTS.md, src/Stryker.Core/Stryker.Core/Mutators/BinaryExpressionMutator.cs, src/Stryker.Configuration/Options/Inputs/ThresholdBreakInput.cs, src/Stryker.Configuration/ExitCodes.cs, .github/workflows/stryker-on-stryker.yaml, .github/workflows/unit-test.yaml, .github/skills/run-stryker/SKILL.md; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm thử mutation cho hệ sinh thái .NET (không phải JVM) |
+| Cơ chế đáng học | - `src/Stryker.Core/Stryker.Core/Mutators/` có 26 mutator (ví dụ `BinaryExpressionMutator.cs` ánh xạ `SyntaxKind` sang các `SyntaxKind` thay thế theo nhóm Arithmetic, Equality, Logical, Bitwise; bỏ qua phép cộng chuỗi).<br>- `src/Stryker.Core/Stryker.Core/MutantFilters/` gồm lọc theo mã sinh tự động, khối bỏ qua, pattern file, `SinceMutantFilter` và `BaselineMutantFilter`.<br>- `src/Stryker.Core/Stryker.Core/Reporters/` có báo cáo HTML, JSON, markdown, GitLab quality và dashboard.<br>- `.github/skills/run-stryker/SKILL.md` là skill hướng dẫn agent chạy Stryker từ terminal. |
+| Tiêu chí và cách kiểm | `ThresholdHighInput` mặc định 80, `ThresholdLowInput` mặc định 60, `ThresholdBreakInput` mặc định 0 (break phải không lớn hơn low). Điểm dưới break làm tiến trình thoát mã 2 (`ExitCodes.BreakThresholdViolated`). CI: `unit-test.yaml` chạy trên ba hệ điều hành, `integration-test.yaml` theo ma trận, `stryker-on-stryker.yaml` chạy Stryker trên chính từng dự án mỗi đêm. Kiểm bằng máy. |
+| Giới hạn và rủi ro | Mặc định break bằng 0 nên cổng không chặn gì nếu chưa đặt ngưỡng. Mutation chậm trên solution lớn. Báo cáo lên Stryker Dashboard (https://dashboard.stryker-mutator.io) là tùy chọn, dữ liệu rời máy chỉ khi bật reporter dashboard. README ghi phiên bản .NET tối thiểu cũ (dotnet core 1.1) nhưng tested chỉ tới 3.1 (README lạc hậu so với CI dùng .NET 10; chưa xác minh phạm vi hỗ trợ thật). Bảo trì tích cực. |
+| So với | `strykerjs` (cùng họ, cho JS/TS; cũng đã có trong kho); khác ngôn ngữ nên cơ chế mutator khác (Roslyn so với AST JS). |
+| Nguồn | [README.md](https://github.com/stryker-mutator/stryker-net/blob/8072f0c5cdbb64b35989102ebd45ffdb23f60eba/README.md) · [LICENSE](https://github.com/stryker-mutator/stryker-net/blob/8072f0c5cdbb64b35989102ebd45ffdb23f60eba/LICENSE) · [AGENTS.md](https://github.com/stryker-mutator/stryker-net/blob/8072f0c5cdbb64b35989102ebd45ffdb23f60eba/AGENTS.md) · [BinaryExpressionMutator.cs](https://github.com/stryker-mutator/stryker-net/blob/8072f0c5cdbb64b35989102ebd45ffdb23f60eba/src/Stryker.Core/Stryker.Core/Mutators/BinaryExpressionMutator.cs) · [ThresholdBreakInput.cs](https://github.com/stryker-mutator/stryker-net/blob/8072f0c5cdbb64b35989102ebd45ffdb23f60eba/src/Stryker.Configuration/Options/Inputs/ThresholdBreakInput.cs) · [ExitCodes.cs](https://github.com/stryker-mutator/stryker-net/blob/8072f0c5cdbb64b35989102ebd45ffdb23f60eba/src/Stryker.Configuration/ExitCodes.cs) · [stryker-on-stryker.yaml](https://github.com/stryker-mutator/stryker-net/blob/8072f0c5cdbb64b35989102ebd45ffdb23f60eba/.github/workflows/stryker-on-stryker.yaml) · [unit-test.yaml](https://github.com/stryker-mutator/stryker-net/blob/8072f0c5cdbb64b35989102ebd45ffdb23f60eba/.github/workflows/unit-test.yaml) · [SKILL.md](https://github.com/stryker-mutator/stryker-net/blob/8072f0c5cdbb64b35989102ebd45ffdb23f60eba/.github/skills/run-stryker/SKILL.md) |

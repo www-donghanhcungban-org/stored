@@ -2,7 +2,7 @@
 
 # data-curation — Mô hình, dữ liệu & tài liệu
 
-[← Mục lục catalog](../README.md) · 15 hồ sơ.
+[← Mục lục catalog](../README.md) · 18 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -21,3 +21,6 @@
 | [datasketch](../../24-ai-data-engineering/README.md#nt-datasketch) | `ekzhu/datasketch` | MIT | 2.980 | đọc mã 2026-11-23 | 24 | Thư viện cấu trúc dữ liệu xác suất: MinHash, Weighted MinHash, HyperLogLog, cùng chỉ mục MinHash LSH, LSH Forest, LSH Ensemble, LSHBloom, HNSW, có backend Redis và Cassa… |
 | [NVIDIA NeMo Curator](../../24-ai-data-engineering/README.md#nt-nemo-curator) | `NVIDIA-NeMo/Curator` | Apache-2.0 | 1.868 | đọc mã 2026-11-23 | 24 | Thư viện curation đa phương thức chạy trên Ray, mạnh ở khử trùng lặp exact/fuzzy/semantic bằng GPU. |
 | [Bespoke Curator](../../24-ai-data-engineering/README.md#nt-bespoke-curator) | `bespokelabsai/curator` | Apache-2.0 | 1.766 | đọc mã 2026-11-23 | 24 | Thư viện Python sinh dữ liệu tổng hợp bằng LLM, cache theo vân tay và hỗ trợ API batch giảm chi phí. |
+| [Synthetic Data Kit](../../24-ai-data-engineering/README.md#n2-synthetic-data-kit) | `meta-llama/synthetic-data-kit` | MIT | 1.659 | đọc mã 2026-11-23 | 24 | Công cụ CLI của Meta biến tài liệu thành tập QA/CoT để fine-tune qua bốn bước, có lọc bằng LLM judge với ngưỡng. |
+| [Min-K% Prob (detect-pretrain-code)](../../24-ai-data-engineering/README.md#n2-detect-pretrain-code) | `swj0419/detect-pretrain-code` | Apache-2.0 | 243 | đọc mã 2026-11-23 | 24 | Mã tham chiếu của bài báo Min-K% Prob: chấm điểm một văn bản bằng trung bình log-xác suất của k% token kém khả năng nhất, kèm bốn baseline (PPL, hiệu chỉnh theo mô hình… |
+| [Deduplicate Text Datasets (ExactSubstr)](../../24-ai-data-engineering/README.md#n2-deduplicate-text-datasets) | `google-research/deduplicate-text-datasets` | Apache-2.0 | — | đọc mã 2026-11-23 | 24 | Bộ khử trùng lặp chính xác theo chuỗi con bằng suffix array từ bài báo của Lee và cộng sự, có `across-similar` để dò trùng giữa tập huấn luyện và kiểm tra. |

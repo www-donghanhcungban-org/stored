@@ -2,7 +2,7 @@
 
 # desktop-utility — Ứng dụng người dùng cuối
 
-[← Mục lục catalog](../README.md) · 34 hồ sơ.
+[← Mục lục catalog](../README.md) · 37 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -23,6 +23,7 @@
 | [koreader](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-koreader-koreader) | `koreader/koreader` | AGPL-3.0 | 31.280 | đọc tài liệu 2026-11-23 | 35 | Ứng dụng đọc tài liệu tối ưu thiết bị e-ink, hỗ trợ nhiều định dạng và nền tảng. |
 | [wttr.in](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-chubin-wttr.in) | `chubin/wttr.in` | Apache-2.0 | 30.812 | đọc tài liệu 2026-11-23 | 35 | Dịch vụ dự báo thời tiết hướng terminal, có nhiều dạng đầu ra như văn bản, hình và JSON. |
 | [ente](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-ente-ente) | `ente/ente` | AGPL-3.0 | 30.410 | đọc tài liệu 2026-11-23 | 35 | Nền tảng lưu trữ và ứng dụng có mã hóa đầu-cuối cho ảnh, xác thực và tài liệu. |
+| [KeePassXC](../../35-desktop-productivity-apps/README.md#n2-keepassxc) | `keepassxreboot/keepassxc` | GPL-2.0 hoặc GPL-3.0 cho mã; tài sản bên thứ ba theo COPYING (BSD, LGPL, MIT, CC0, OFL) | 30.118 | đọc mã 2026-11-23 | 35 | Trình quản lý mật khẩu C++/Qt định dạng KDBX4, offline là mặc định nhưng có tính năng mạng tùy chọn (kiểm cập nhật, tải biểu tượng, báo cáo HIBP, tích hợp trình duyệt, S… |
 | [Ice](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-jordanbaird-ice) | `jordanbaird/Ice` | GPL-3.0 | 30.088 | đọc tài liệu 2026-11-23 | 35 | Ứng dụng macOS để sắp xếp, ẩn và hiện các biểu tượng trên menu bar. |
 | [koodo-reader](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-koodo-reader-koodo-reader) | `koodo-reader/koodo-reader` | AGPL-3.0 | 28.951 | đọc tài liệu 2026-11-23 | 35 | Trình đọc và quản lý ebook đa nền tảng với đồng bộ, sao lưu và plugin. |
 | [ScreenToGif](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-nickemanarin-screentogif) | `NickeManarin/ScreenToGif` | MS-PL | 27.984 | đọc tài liệu 2026-11-23 | 35 | Ứng dụng Windows ghi vùng màn hình, chỉnh từng khung và xuất GIF hoặc video. |
@@ -33,10 +34,12 @@
 | [OpenLogi](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-aprilnea-openlogi) | `AprilNEA/OpenLogi` | MIT OR Apache-2.0 (mã); tài sản thương hiệu riêng | 26.065 | đọc tài liệu 2026-11-23 | 35 | Ứng dụng Rust cấu hình thiết bị Logitech qua HID++, có giao diện native và API tự động hóa JSON. |
 | [BongoCat](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-ayangweb-bongocat) | `ayangweb/BongoCat` | Apache-2.0 | 24.760 | đọc tài liệu 2026-11-23 | 35 | Thú cưng desktop Live2D phản ứng với phím, chuột và gamepad trên Windows/macOS. |
 | [MagicMirror](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-magicmirrororg-magicmirror) | `MagicMirrorOrg/MagicMirror` | MIT | 24.241 | đọc tài liệu 2026-11-23 | 35 | Nền tảng gương thông minh dạng mô-đun sử dụng Electron và hệ module mở rộng. |
+| [Maccy](../../35-desktop-productivity-apps/README.md#n2-maccy) | `p0deje/Maccy` | MIT | 22.434 | đọc mã 2026-11-23 | 35 | Trình quản lý lịch sử clipboard macOS bằng Swift: theo dõi NSPasteboard, lưu SQLite cục bộ, tìm kiếm, ghim, dán bằng phím tắt. |
 | [komi-store](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-komi-store-komi-store) | `komi-store/komi-store` | Apache-2.0 | 22.082 | đọc tài liệu 2026-11-23 | 35 | Kho ứng dụng đa nền tảng tìm và cài bản phát hành từ GitHub, Codeberg và Forgejo/Gitea. |
 | [Mos](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-caldis-mos) | `Caldis/Mos` | CC-BY-NC-4.0 | 21.981 | đọc tài liệu 2026-11-23 | 35 | Tiện ích macOS làm mượt cuộn chuột, đổi hướng theo trục và tùy chỉnh nút theo ứng dụng. |
 | [Obtainium](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-imranr98-obtainium) | `ImranR98/Obtainium` | GPL-3.0 | 21.828 | đọc tài liệu 2026-11-23 | 35 | Ứng dụng Android theo dõi, cài và cập nhật phần mềm trực tiếp từ trang phát hành gốc. |
 | [vlc](../../35-desktop-productivity-apps/README.md#anhkysuai-2026-11-23-videolan-vlc) | `videolan/vlc` | GPL-2.0-or-later (player); LGPL-2.1-or-later (libVLC) | 20.558 | đọc tài liệu 2026-11-23 | 35 | VLC media player và engine libVLC cho phát, chuyển đổi và xử lý luồng đa phương tiện. |
+| [Cryptomator](../../35-desktop-productivity-apps/README.md#n2-cryptomator) | `cryptomator/cryptomator` | GPL-3.0 (LICENSE.txt), song song giấy phép thương mại cho ISV và đại lý theo README | 16.579 | đọc mã 2026-11-23 | 35 | Ứng dụng desktop JavaFX mã hóa phía client thư mục trong bất kỳ ổ đồng bộ nào, mật mã nằm ở thư viện cryptolib và cryptofs (phiên bản 2.4.0 và 2.12.0 trong pom, không nằ… |
 | [electron-builder](../../35-desktop-productivity-apps/README.md#nt-electron-builder) | `electron-userland/electron-builder` | MIT | 14.726 | đọc mã 2026-11-23 | 35 | Công cụ đóng gói và tự cập nhật app Electron cho macOS, Windows, Linux (MIT). |
 | [Sparkle](../../35-desktop-productivity-apps/README.md#nt-sparkle) | `sparkle-project/Sparkle` | MIT (kèm license bên thứ ba cho bsdiff, sais-lite, ed25519) | 9.964 | đọc mã 2026-11-23 | 35 | Khung cập nhật macOS có chữ ký EdDSA và dự phòng Developer ID, installer tách đặc quyền, delta và kênh beta. |
 | [BetterCapture](../../35-desktop-productivity-apps/README.md#nt-bettercapture) | `jsattler/BetterCapture` | MIT | 1.736 | đọc mã 2026-11-23 | 35 | Ghi màn hình macOS gốc, có CLI và hướng dẫn skill cho agent, socket chỉ cho cùng user. |

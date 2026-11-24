@@ -402,3 +402,145 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | MIT (LICENSE đã đọc). Cần AWS CLI, kubectl, helm, gh; skill khuyến nghị quyền chỉ đọc (ReadOnlyAccess, ClusterRole view) nhưng cảnh báo rồi vẫn chạy khi thấy credential có quyền ghi (Constraint 7), nên an toàn dựa vào cấu hình của người dùng. Truy vấn CloudWatch Logs Insights, X-Ray tính tiền theo lượng quét. Tích hợp "Culibox" chưa có (SKILL.md ghi chưa sẵn sàng). Bản 0.20.0, chỉ AWS và Kubernetes; GCP và Azure đã bị gỡ ở v0.11.0. Bản clone nông chỉ có một commit nên không đánh giá được lịch sử bảo trì. |
 | So với | google-sre-workbook (tri thức SRE dạng checklist, không phải skill chạy được), kubernetes và các skill vận hành khác ở mục 33 |
 | Nguồn | [LICENSE](https://github.com/culiops/culiops-skills/blob/40d9310d51a6b43d6d78bb0928193b705bd1910a/LICENSE) · [README.md](https://github.com/culiops/culiops-skills/blob/40d9310d51a6b43d6d78bb0928193b705bd1910a/README.md) · [skills/sre-investigate/SKILL.md](https://github.com/culiops/culiops-skills/blob/40d9310d51a6b43d6d78bb0928193b705bd1910a/skills/sre-investigate/SKILL.md) · [.claude-plugin/plugin.json](https://github.com/culiops/culiops-skills/blob/40d9310d51a6b43d6d78bb0928193b705bd1910a/.claude-plugin/plugin.json) · [CHANGELOG.md](https://github.com/culiops/culiops-skills/blob/40d9310d51a6b43d6d78bb0928193b705bd1910a/CHANGELOG.md) · [tests/fixtures/sre-investigate/injection-in-logs/DRY-RUN-NOTES.md](https://github.com/culiops/culiops-skills/blob/40d9310d51a6b43d6d78bb0928193b705bd1910a/tests/fixtures/sre-investigate/injection-in-logs/DRY-RUN-NOTES.md) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-dress-rehearsal"></a>
+
+### dress-rehearsal
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ruinosus/dress-rehearsal |
+| License | MIT (ruinosus, 2026); `npm/LICENSE` cho gói npm |
+| Phiên bản đã đọc | `20d277084312e5c7d79a522dacb028a2c34c359a` (commit 2026-11-01) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README, CHANGELOG, SKILL.md, src/drill.ts, src/review.ts, src/play.ts, tools/check.mjs, một drill mẫu, một grader eval, npm/package.json; chưa chạy upstream |
+| Khoảng trống lấp | Skill vận hành SRE/incident/runbook (diễn tập runbook) |
+| Cơ chế đáng học | - `src/drill.ts` (`readDrill`): báo lỗi có số dòng cho cảnh dẫn tới id không tồn tại, cảnh kẹt không có lối ra, vai trò lạ, đồng hồ sai; không có kết thúc nào tới được từ điểm bắt đầu thì lỗi `noEnd`.<br>- `src/review.ts` (`reviewDrill`): cảnh không ai tới, cảnh không còn đường tới kết thúc, lựa chọn cần quyền mà không vai trò nào có, không lựa chọn nào báo người bị ảnh hưởng, 'escalate' không có người nhận.<br>- `SKILL.md`: mục `gaps` là sản phẩm thật (những gì runbook thiếu), tình huống và số liệu là hư cấu nhưng hệ thống/người của đội thì không được bịa.<br>- `src/play.ts` tính đồng hồ, tổn thất và debrief (Markdown và CSV cải tiến) thành hàm thuần để test chơi trọn ván. |
+| Tiêu chí và cách kiểm | `tools/check.mjs` chạy các check `checks/*.check.ts`, build từng ví dụ ra HTML và kịch bản, xác nhận file hỏng báo đúng dòng, trang game không tải gì từ internet và (khi có trình duyệt) chơi hết ván trong trình duyệt headless. Thư mục `evals/` có prompt và grader (ví dụ `no-build.md`: câu hỏi thường không được gọi `build.mjs`). Repo không có workflow CI (không thấy `.github/workflows`), nên check chạy cục bộ, và tôi chưa chạy. |
+| Giới hạn và rủi ro | Repo đã chuyển nơi ở (README trỏ sang house-lights) nên có thể không còn cập nhật; cần Node 18+ và agent chạy mã. Hậu quả từng lựa chọn trong drill là phỏng đoán của agent từ runbook, không phải mô phỏng hệ thống thật. Hai ví dụ đều hư cấu. 0 sao. |
+| So với | culiops-skills, claude-code-game-studios, academic-research-skills |
+| Nguồn | [README.md](https://github.com/ruinosus/dress-rehearsal/blob/20d277084312e5c7d79a522dacb028a2c34c359a/README.md) · [LICENSE](https://github.com/ruinosus/dress-rehearsal/blob/20d277084312e5c7d79a522dacb028a2c34c359a/LICENSE) · [CHANGELOG.md](https://github.com/ruinosus/dress-rehearsal/blob/20d277084312e5c7d79a522dacb028a2c34c359a/CHANGELOG.md) · [SKILL.md](https://github.com/ruinosus/dress-rehearsal/blob/20d277084312e5c7d79a522dacb028a2c34c359a/skills/dress-rehearsal/SKILL.md) · [drill.ts](https://github.com/ruinosus/dress-rehearsal/blob/20d277084312e5c7d79a522dacb028a2c34c359a/src/drill.ts) · [review.ts](https://github.com/ruinosus/dress-rehearsal/blob/20d277084312e5c7d79a522dacb028a2c34c359a/src/review.ts) · [play.ts](https://github.com/ruinosus/dress-rehearsal/blob/20d277084312e5c7d79a522dacb028a2c34c359a/src/play.ts) · [check.mjs](https://github.com/ruinosus/dress-rehearsal/blob/20d277084312e5c7d79a522dacb028a2c34c359a/tools/check.mjs) · [database-disk.drill.yaml](https://github.com/ruinosus/dress-rehearsal/blob/20d277084312e5c7d79a522dacb028a2c34c359a/docs/examples/database-disk.drill.yaml) · [no-build.md](https://github.com/ruinosus/dress-rehearsal/blob/20d277084312e5c7d79a522dacb028a2c34c359a/evals/not-a-drill-en/graders/no-build.md) · [package.json](https://github.com/ruinosus/dress-rehearsal/blob/20d277084312e5c7d79a522dacb028a2c34c359a/npm/package.json) |
+
+<a id="n2-chaos-mesh"></a>
+
+### Chaos Mesh
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/chaos-mesh/chaos-mesh |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `fdb9684b50c268b89c8007270f567df788913494` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, api/v1alpha1/podchaos_types.go, statuscheck_types.go, workflow_types.go, schedule_types.go, controllers/README.md, helm/chaos-mesh/values.yaml, .github/workflows/ci.yml (các bước run); chưa chạy upstream |
+| Khoảng trống lấp | Fuzz, mutation, chaos/resilience (chaos engineering cho Kubernetes) |
+| Cơ chế đáng học | - Mỗi loại lỗi là một CRD; `PodChaosSpec` có action `pod-kill`, `pod-failure`, `container-kill`, `duration`, `gracePeriod`; README liệt kê thêm mạng, DNS, HTTP, I/O, thời gian, stress, kernel, JVM, máy vật lý và lỗi cloud AWS, Azure, GCP.<br>- `StatusCheck` (api/v1alpha1/statuscheck_types.go) kiểm sức khỏe ứng dụng bằng HTTP với `mode` (Synchronous hoặc Continuous), `intervalSeconds` mặc định 10, `failureThreshold` mặc định 3, `successThreshold` mặc định 1; trong `Workflow`, `abortWithStatusCheck` hủy workflow khi vượt ngưỡng lỗi.<br>- `Schedule` có `concurrencyPolicy` (Forbid hoặc Allow) và `startingDeadlineSeconds`; `Workflow` điều phối tuần tự hay song song. Chaos Daemon chạy DaemonSet để thực hiện thao tác đặc quyền ở node. |
+| Tiêu chí và cách kiểm | Điều kiện dừng thử nghiệm là ngưỡng StatusCheck nêu trên; phần còn lại là kết quả điều kiện CRD. Kiểm máy: CI (ci.yml) chạy `make check`, `make test` hoặc `make test-pr` trong dev-env, kiểm sinh protobuf và Helm chart, cùng `pnpm build` và `pnpm test` cho dashboard; có workflow e2e riêng (chưa mở e2e_test.yml). Chưa chạy. |
+| Giới hạn và rủi ro | Chaos Daemon đặc quyền: helm values đặt `privileged: true` kèm capability SYS_PTRACE, NET_ADMIN, NET_RAW, và DaemonSet dùng `hostPID: true`; cần tách cluster thử nghiệm và quyền RBAC chặt (có `enableFilterNamespace` mặc định false). Mở rộng quy mô lỗi sai có thể gây sự cố thật. README nói đây là dự án CNCF incubating (tuyên bố của tác giả, chưa xác minh). Không thấy telemetry trong phần đã đọc, chưa rà toàn mã. Có CLAUDE.md và AGENTS.md trong repo, coi là nội dung đọc. |
+| So với | `shopify-toxiproxy` (proxy lỗi mạng cho test, nhẹ hơn nhiều, không cần Kubernetes); `google-oss-fuzz` (fuzz, khác lớp lỗi). |
+| Nguồn | [README](https://github.com/chaos-mesh/chaos-mesh/blob/fdb9684b50c268b89c8007270f567df788913494/README.md) · [LICENSE](https://github.com/chaos-mesh/chaos-mesh/blob/fdb9684b50c268b89c8007270f567df788913494/LICENSE) · [api/v1alpha1/podchaos_types.go](https://github.com/chaos-mesh/chaos-mesh/blob/fdb9684b50c268b89c8007270f567df788913494/api/v1alpha1/podchaos_types.go) · [api/v1alpha1/statuscheck_types.go](https://github.com/chaos-mesh/chaos-mesh/blob/fdb9684b50c268b89c8007270f567df788913494/api/v1alpha1/statuscheck_types.go) · [api/v1alpha1/workflow_types.go](https://github.com/chaos-mesh/chaos-mesh/blob/fdb9684b50c268b89c8007270f567df788913494/api/v1alpha1/workflow_types.go) · [api/v1alpha1/schedule_types.go](https://github.com/chaos-mesh/chaos-mesh/blob/fdb9684b50c268b89c8007270f567df788913494/api/v1alpha1/schedule_types.go) · [controllers/README.md](https://github.com/chaos-mesh/chaos-mesh/blob/fdb9684b50c268b89c8007270f567df788913494/controllers/README.md) · [helm/chaos-mesh/values.yaml](https://github.com/chaos-mesh/chaos-mesh/blob/fdb9684b50c268b89c8007270f567df788913494/helm/chaos-mesh/values.yaml) · [.github/workflows/ci.yml](https://github.com/chaos-mesh/chaos-mesh/blob/fdb9684b50c268b89c8007270f567df788913494/.github/workflows/ci.yml) |
+
+<a id="n2-litmuschaos"></a>
+
+### LitmusChaos
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/litmuschaos/litmus |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `97a397fb2e3cb3e3ab41e9bd301b9143da547b6f` (commit 2026-10-27) |
+| Kiểm chứng | 2026-11-24; docs-read; đã đọc README, LICENSE, NOTICE, tiêu chí trưởng thành thí nghiệm, schema probe của chaoscenter, workflow cifuzz và e2e; chưa chạy upstream |
+| Khoảng trống lấp | Chaos/resilience: chủ động gây lỗi có kiểm soát trên Kubernetes và chấm điểm khả năng chịu lỗi (khoảng trống Fuzz, mutation, chaos của kho) |
+| Cơ chế đáng học | • Chaos là tài nguyên Kubernetes: ChaosExperiment (mẫu cài đặt của một lỗi), ChaosEngine (gắn lỗi vào workload, kèm giả thuyết trạng thái ổn định), ChaosResult (kết quả) — README.md.<br>• Probe là phép kiểm giả thuyết ổn định: có loại HTTP, lệnh, Prometheus, k8s; mỗi probe có timeout, interval, retry, attempt và cờ `stop_on_failure`; chaoscenter lưu `average_success_percentage` mỗi probe — `probe/schema.go`.<br>• Mỗi lần chạy có `resiliency_score` (điểm khả năng chịu lỗi) lưu theo run và theo experiment — `chaos_experiment_run/schema.go` (đọc qua grep, không mở trọn).<br>• Thang trưởng thành Alpha/Beta/GA cho thí nghiệm (phải có tiêu chí vào/ra, hoàn tác sạch, không để rác, chạy được trên 2 rồi 4 nền k8s) — `CHAOS_EXPERIMENT_MATURITY.md`; dùng được làm checklist viết một thí nghiệm chaos. |
+| Tiêu chí và cách kiểm | Ngưỡng cụ thể nằm ở cấu hình từng probe và thang trưởng thành; test của chính repo: CIFuzz (oss-fuzz, sanitizer address, 120 giây, chỉ khi PR chạm authentication, graphql, subscriber) và workflow e2e kích bằng comment `/run-e2e` trên PR. Đã mở hai workflow; chưa xác minh kết quả chạy. |
+| Giới hạn và rủi ro | Phải chạy trên Kubernetes cùng control plane (GraphQL, MongoDB, auth) — nặng so với công cụ thư viện; thư mục `chaos-engineering/` chỉ có `.gitkeep` nên mã lỗi cụ thể nằm ở repo khác (chưa xác minh repo nào, README nhắc ChaosHub ở repo community-charts). Apache-2.0, NOTICE nói có thành phần bên thứ ba theo license riêng (xem báo cáo FOSSA). Quét từ khóa telemetry và analytics trong mã server không thấy gửi số liệu (grep, chưa chứng minh phủ hết). Dự án CNCF, đẩy mã gần đây (10/2026). |
+| So với | [Toxiproxy](30-software-testing-quality/README.md#nt-shopify-toxiproxy) (chèn lỗi mạng ở mức proxy, nhẹ hơn nhiều) · [Grafana k6](30-software-testing-quality/README.md) (tải, không phải chaos) · [OSS-Fuzz](30-software-testing-quality/README.md#nt-google-oss-fuzz) (fuzz mã, khác tầng) |
+| Nguồn | [README.md](https://github.com/litmuschaos/litmus/blob/97a397fb2e3cb3e3ab41e9bd301b9143da547b6f/README.md) · [LICENSE](https://github.com/litmuschaos/litmus/blob/97a397fb2e3cb3e3ab41e9bd301b9143da547b6f/LICENSE) · [NOTICE.md](https://github.com/litmuschaos/litmus/blob/97a397fb2e3cb3e3ab41e9bd301b9143da547b6f/NOTICE.md) · [CHAOS_EXPERIMENT_MATURITY.md](https://github.com/litmuschaos/litmus/blob/97a397fb2e3cb3e3ab41e9bd301b9143da547b6f/CHAOS_EXPERIMENT_MATURITY.md) · [schema.go](https://github.com/litmuschaos/litmus/blob/97a397fb2e3cb3e3ab41e9bd301b9143da547b6f/chaoscenter/graphql/server/pkg/database/mongodb/probe/schema.go) · [cifuzz.yml](https://github.com/litmuschaos/litmus/blob/97a397fb2e3cb3e3ab41e9bd301b9143da547b6f/.github/workflows/cifuzz.yml) · [e2e.yml](https://github.com/litmuschaos/litmus/blob/97a397fb2e3cb3e3ab41e9bd301b9143da547b6f/.github/workflows/e2e.yml) |
+
+<a id="n2-dash0-agent-skills"></a>
+
+### Dash0 OpenTelemetry skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/dash0hq/agent-skills |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `7bb506b71536fea51f08afa509bf198b42bae8b7` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, plugin.json, skills/otel-ottl/SKILL.md, evals/custom/README.md và evals-pr.yml; chưa chạy upstream |
+| Khoảng trống lấp | Skill dạy agent gắn OpenTelemetry vào ứng dụng, có eval chấm bằng telemetry thật; không phải quan sát hay phát lại phiên agent như trinh sát ghi |
+| Cơ chế đáng học | (1) Bốn skill vendor-neutral: otel-instrumentation, otel-collector, otel-ottl, otel-semantic-conventions, kèm thư mục `rules/` tách theo chủ đề (`skills/*/SKILL.md`). (2) Harness eval chạy Claude Code headless trên ứng dụng mẫu, thu telemetry OTLP qua relay và sink, kết luận bằng khẳng định tất định, không dùng LLM làm giám khảo (`evals/custom/README.md`). (3) Lớp lỗi của verdict tách `infra` (thử lại tối đa 3 lần) khỏi `agent-noskill`, `agent-build`, `agent-telemetry`. |
+| Tiêu chí và cách kiểm | Mọi khối mã trong `skills/` được trích và kiểm tất định; cổng `evals-gate` đặt đúng một tên job cho branch protection và thất bại khi job bị bỏ qua mà chưa chọn 0 kịch bản (đọc trong `evals-pr.yml`). Khoá API chỉ nằm ở environment secret `evals`, PR từ fork và Dependabot không chạy agent. Chưa chạy lại eval, kết quả tự công bố (chưa xác minh). |
+| Giới hạn và rủi ro | Cần ANTHROPIC_API_KEY, Docker và CLI Claude Code cố định phiên bản để chạy eval cục bộ. Skill là văn bản, không mã chạy; gói npm ship nguyên thư mục skills. Tác giả là hãng quan sát nên ví dụ có thể thiên về Dash0 (chưa xác minh mức độ). Số sao do trinh sát ghi (102) chưa tự kiểm. |
+| So với | OpenTelemetry Collector Contrib (thành phần được dạy), OpenTelemetry Weaver (kiểm quy ước ngữ nghĩa), CulIOps skills (skill vận hành khác) |
+| Nguồn | [README.md](https://github.com/dash0hq/agent-skills/blob/7bb506b71536fea51f08afa509bf198b42bae8b7/README.md) · [LICENSE](https://github.com/dash0hq/agent-skills/blob/7bb506b71536fea51f08afa509bf198b42bae8b7/LICENSE) · [plugin.json](https://github.com/dash0hq/agent-skills/blob/7bb506b71536fea51f08afa509bf198b42bae8b7/plugin.json) · [SKILL.md](https://github.com/dash0hq/agent-skills/blob/7bb506b71536fea51f08afa509bf198b42bae8b7/skills/otel-ottl/SKILL.md) · [README.md](https://github.com/dash0hq/agent-skills/blob/7bb506b71536fea51f08afa509bf198b42bae8b7/evals/custom/README.md) · [evals-pr.yml](https://github.com/dash0hq/agent-skills/blob/7bb506b71536fea51f08afa509bf198b42bae8b7/.github/workflows/evals-pr.yml) |
+
+<a id="n2-healthchecks"></a>
+
+### Healthchecks
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/healthchecks/healthchecks |
+| License | BSD-3-Clause |
+| Phiên bản đã đọc | `c1039ad23395162c5e2f17d324d8ccdaa60a1d14` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, hc/api/models.py, sendalerts.py, urls.py, settings.py, tests.yml, LICENSE; chưa chạy upstream |
+| Khoảng trống lấp | Giám sát job định kỳ (dead-man's switch, SLO cho cron) tự host được |
+| Cơ chế đáng học | - `Check.get_grace_start`, `going_down_after`, `get_status` tính thời điểm down từ `last_ping`, lịch và `grace`; có `last_start` để bắt job chạy quá lâu (`hc/api/models.py`).<br>- `sendalerts.handle_going_down`: chọn check có `alert_after` quá hạn, tính lại trạng thái, cập nhật nguyên tử, chỉ tạo `Flip` khi đúng một dòng được cập nhật.<br>- Ping qua HTTP hoặc email (`hc/api/management/commands/smtpd.py`), lưu thân ping tối đa `PING_BODY_LIMIT` (mặc định 10000 byte).<br>- Notification chạy trong ThreadPoolExecutor và có thống kê statsd. |
+| Tiêu chí và cách kiểm | CI `tests.yml` chạy `python manage.py test` trên ma trận 4 cơ sở dữ liệu (sqlite, postgres, mysql, mariadb) và Python 3.12–3.15; thêm workflow coverage và mypy. Khoảng 441 hàm test trong `hc/api/tests` (đếm bằng grep). |
+| Giới hạn và rủi ro | - BSD-3-Clause; bản hosted healthchecks.io tính phí, code payments nằm trong cùng repo.<br>- Mặc định `DEBUG=True` và `REGISTRATION_OPEN=True` trong `settings.py`: triển khai thật phải đổi.<br>- Cần `SECRET_KEY` thật, cơ sở dữ liệu và SMTP; ngoài ra có tích hợp gửi tới dịch vụ bên thứ ba do người dùng cấu hình.<br>- Chỉ cảnh báo khi job im lặng; không đảm bảo job chạy đúng kết quả nếu ping được gọi sai chỗ. |
+| So với | uptime-kuma (giám sát uptime chủ động, khác mô hình ping thụ động), celery-celery (lập lịch), bullmq (scheduler, không giám sát) |
+| Nguồn | [README.md](https://github.com/healthchecks/healthchecks/blob/c1039ad23395162c5e2f17d324d8ccdaa60a1d14/README.md) · [LICENSE](https://github.com/healthchecks/healthchecks/blob/c1039ad23395162c5e2f17d324d8ccdaa60a1d14/LICENSE) · [models.py](https://github.com/healthchecks/healthchecks/blob/c1039ad23395162c5e2f17d324d8ccdaa60a1d14/hc/api/models.py) · [sendalerts.py](https://github.com/healthchecks/healthchecks/blob/c1039ad23395162c5e2f17d324d8ccdaa60a1d14/hc/api/management/commands/sendalerts.py) · [urls.py](https://github.com/healthchecks/healthchecks/blob/c1039ad23395162c5e2f17d324d8ccdaa60a1d14/hc/api/urls.py) · [settings.py](https://github.com/healthchecks/healthchecks/blob/c1039ad23395162c5e2f17d324d8ccdaa60a1d14/hc/settings.py) · [tests.yml](https://github.com/healthchecks/healthchecks/blob/c1039ad23395162c5e2f17d324d8ccdaa60a1d14/.github/workflows/tests.yml) |
+
+<a id="n2-stackstorm-st2"></a>
+
+### StackStorm (st2)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/StackStorm/st2 |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `bb348ad74781e15a177b39a4d5e701fa395fa460` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, st2reactor/st2reactor/rules/filter.py, contrib/examples/rules/notify_inquiry.yaml, .github/workflows/ci.yaml, CHANGELOG.rst; chưa chạy upstream |
+| Khoảng trống lấp | Runbook automation và remediation theo sự kiện (ITOps): sensor, trigger, rule, action, kèm cổng duyệt người (Inquiry) |
+| Cơ chế đáng học | - Rule = trigger + criteria + action: `RuleFilter.filter()` trong `st2reactor/st2reactor/rules/filter.py` duyệt từng tiêu chí, render pattern bằng Jinja rồi gọi toán tử trong `st2common/st2common/operators.py` (equals, iequals, regex, match_wildcard, timediff_lt/gt, inside, exists, search lồng điều kiện); mọi lỗi render/so khớp tạo `RuleEnforcementDB` với `failure_reason` thay vì nuốt lỗi.<br>- Loại rule `standard` và `backstop` (`st2common/constants/rules.py`): backstop dùng làm lưới đỡ khi không rule nào khớp.<br>- Inquiry (`st2common/st2common/services/inquiry.py`): action chờ phản hồi người, kiểm quyền theo `roles` và `users`, kiểm phản hồi theo schema; ví dụ rule `contrib/examples/rules/notify_inquiry.yaml` đẩy thông báo Slack khi có Inquiry chờ duyệt (mẫu đang `enabled: false`).<br>- Có `garbage_collection/` dọn trigger instance, execution, inquiry, trace theo TTL (đọc tên file). |
+| Tiêu chí và cách kiểm | CI `.github/workflows/ci.yaml` chạy lint và test trên ma trận Python 3.10/3.11/3.12 (push master, PR, cron hằng đêm); đã mở file. Test unit/integration nằm ở `st2tests` và từng gói; kết quả chưa chạy lại. Rule có công cụ thử `st2reactor/rules/tester.py` (chỉ đọc tên). |
+| Giới hạn và rủi ro | Apache-2.0 sạch. Vận hành nặng (nhiều dịch vụ nền, cài bằng script `install.sh` tải từ stackstorm.com, nội dung README, chưa xác minh). Không thấy telemetry khi grep thô trong `st2common`; chưa xác minh toàn bộ. Badge Python trong README lỗi thời. Mô tả trinh sát đúng nhưng Inquiry/ChatOps là phần phụ, lõi là rule engine. |
+| So với | kestra, windmill, n8n, huginn |
+| Nguồn | [README.md](https://github.com/StackStorm/st2/blob/bb348ad74781e15a177b39a4d5e701fa395fa460/README.md) · [LICENSE](https://github.com/StackStorm/st2/blob/bb348ad74781e15a177b39a4d5e701fa395fa460/LICENSE) · [filter.py](https://github.com/StackStorm/st2/blob/bb348ad74781e15a177b39a4d5e701fa395fa460/st2reactor/st2reactor/rules/filter.py) · [notify_inquiry.yaml](https://github.com/StackStorm/st2/blob/bb348ad74781e15a177b39a4d5e701fa395fa460/contrib/examples/rules/notify_inquiry.yaml) · [ci.yaml](https://github.com/StackStorm/st2/blob/bb348ad74781e15a177b39a4d5e701fa395fa460/.github/workflows/ci.yaml) · [CHANGELOG.rst](https://github.com/StackStorm/st2/blob/bb348ad74781e15a177b39a4d5e701fa395fa460/CHANGELOG.rst) |
+
+<a id="n2-prometheus"></a>
+
+### Prometheus
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/prometheus/prometheus |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `a5022ef622b4718c3dda1291c1e641fbed44c607` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, AGENTS.md, cmd/promtool/unittest.go, cmd/promtool/testdata/unittest.yml, cmd/promtool/main.go, .github/workflows/ci.yml, .github/workflows/fuzzing.yml; chưa chạy upstream |
+| Khoảng trống lấp | Quan sát hệ thống: metric và cảnh báo; rule kiểm được bằng máy |
+| Cơ chế đáng học | - Unit test cho rule: file YAML khai `input_series` (cú pháp `1+1x2`, `stale`, `_`), `promql_expr_test` và `alert_rule_test`; `cmd/promtool/unittest.go` nạp rule, dựng bộ nhớ giả, chạy đúng `eval_time`, so kết quả, hỗ trợ `--diff`, `--run` và xuất JUnit XML (`unittest.go`, `testdata/unittest.yml`).<br>- Lint rule/cấu hình bằng cờ `--lint=all\|duplicate-rules\|none` và `--lint-fatal` (exit code 3 khi có vấn đề lint) tách biệt với exit code lỗi cú pháp (`cmd/promtool/main.go`).<br>- Fuzz parser và chunk bằng Go native fuzz trong CI, mỗi mục 4 phút, đẩy artifact crash khi hỏng (`.github/workflows/fuzzing.yml`).<br>- AGENTS.md ghi quy ước PR (tiêu đề `area: mô tả`) cho agent, rút từ review thật. |
+| Tiêu chí và cách kiểm | Test rule chạy bằng máy (`promtool test rules`), CI Go có ma trận race/386/dedupelabels/LTS, kiểm `git diff --exit-code` sau sinh proto, workflow fuzzing, govulncheck, scorecards, zizmor (đã mở ci.yml và fuzzing.yml; các workflow khác chỉ biết tên file). Ngưỡng alert do người viết rule tự đặt; Prometheus không đề xuất ngưỡng. |
+| Giới hạn và rủi ro | Apache-2.0, không thấy telemetry trong README (chưa dò mã). Bảo trì rất sôi động (commit 2026-11-23, VERSION 3.16.0). Lint mặc định hẹp (chỉ duplicate-rules). Lưu trữ đơn nút, không bền vững dài hạn khi mất đĩa; trinh sát gợi ý category devops/ci-cd-release là chưa đúng, đây là giám sát. |
+| So với | `grafana`, `opencost`, `vector`, `getsentry-sentry` |
+| Nguồn | [README.md](https://github.com/prometheus/prometheus/blob/a5022ef622b4718c3dda1291c1e641fbed44c607/README.md) · [LICENSE](https://github.com/prometheus/prometheus/blob/a5022ef622b4718c3dda1291c1e641fbed44c607/LICENSE) · [AGENTS.md](https://github.com/prometheus/prometheus/blob/a5022ef622b4718c3dda1291c1e641fbed44c607/AGENTS.md) · [unittest.go](https://github.com/prometheus/prometheus/blob/a5022ef622b4718c3dda1291c1e641fbed44c607/cmd/promtool/unittest.go) · [unittest.yml](https://github.com/prometheus/prometheus/blob/a5022ef622b4718c3dda1291c1e641fbed44c607/cmd/promtool/testdata/unittest.yml) · [main.go](https://github.com/prometheus/prometheus/blob/a5022ef622b4718c3dda1291c1e641fbed44c607/cmd/promtool/main.go) · [ci.yml](https://github.com/prometheus/prometheus/blob/a5022ef622b4718c3dda1291c1e641fbed44c607/.github/workflows/ci.yml) · [fuzzing.yml](https://github.com/prometheus/prometheus/blob/a5022ef622b4718c3dda1291c1e641fbed44c607/.github/workflows/fuzzing.yml) |
+
+<a id="n2-infracost"></a>
+
+### Infracost
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/infracost/infracost |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `b8c2bd6e345b30c2c88c36431bed78cfc13885a5` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, AGENTS.md, infracost-example.yml, internal/resources/aws/s3_bucket.go, internal/config/config.go, .github/workflows/go.yml; chưa chạy upstream |
+| Khoảng trống lấp | GitOps và FinOps: ước tính chi phí hạ tầng ngay trong PR |
+| Cơ chế đáng học | - Mỗi loại tài nguyên là một struct Go có 3 nhóm tham số: bắt buộc, tuỳ chọn, `infracost_usage` (khai báo mức dùng như số object tag); `UsageSchema()` công bố khoá và mặc định (`internal/resources/aws/s3_bucket.go`).<br>- File cấu hình dự án + file usage tách giả định mức dùng khỏi mã hạ tầng (`infracost-example.yml`, `infracost-usage-example.yml`).<br>- Đầu ra nhiều định dạng (table, json, markdown, html, slack) và lệnh `comment` cho GitHub/GitLab/Bitbucket/Azure Repos (`internal/output`, `cmd/infracost/comment_*.go`).<br>- Giá lấy từ API giá của hãng, không nhúng bảng giá trong mã (`internal/config/config.go`, `pricing.api.infracost.io`). |
+| Tiêu chí và cách kiểm | CI go.yml chạy golangci-lint, kiểm định dạng Terraform, `make test_shared_int`, benchmark parser (đã mở). Không có ngưỡng chi phí chặn merge trong mã đã đọc; chính sách ngân sách/tag nằm ở Infracost Cloud (tuyên bố trong README, chưa xác minh). |
+| Giới hạn và rủi ro | Apache-2.0 nhưng AGENTS.md ghi rõ repo EOL, không nhận PR/issue; phải có `INFRACOST_API_KEY` và mã gửi sự kiện (`AddEvent`, `EventsDisabled`) tới API của hãng, tắt được trong cấu hình (chưa kiểm chi tiết). Cloud/SaaS là phần có phí. README mô tả 1.100+ tài nguyên là tuyên bố tác giả (chưa xác minh). |
+| So với | `opencost` (chi phí Kubernetes thực tế), `terraform`, `opentofu` |
+| Nguồn | [README.md](https://github.com/infracost/infracost/blob/b8c2bd6e345b30c2c88c36431bed78cfc13885a5/README.md) · [LICENSE](https://github.com/infracost/infracost/blob/b8c2bd6e345b30c2c88c36431bed78cfc13885a5/LICENSE) · [AGENTS.md](https://github.com/infracost/infracost/blob/b8c2bd6e345b30c2c88c36431bed78cfc13885a5/AGENTS.md) · [infracost-example.yml](https://github.com/infracost/infracost/blob/b8c2bd6e345b30c2c88c36431bed78cfc13885a5/infracost-example.yml) · [s3_bucket.go](https://github.com/infracost/infracost/blob/b8c2bd6e345b30c2c88c36431bed78cfc13885a5/internal/resources/aws/s3_bucket.go) · [config.go](https://github.com/infracost/infracost/blob/b8c2bd6e345b30c2c88c36431bed78cfc13885a5/internal/config/config.go) · [go.yml](https://github.com/infracost/infracost/blob/b8c2bd6e345b30c2c88c36431bed78cfc13885a5/.github/workflows/go.yml) |
