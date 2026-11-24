@@ -1824,7 +1824,7 @@ npx @animate-ui/cli@latest animate all
 - **Lớp agent:** `init` ghi khối hướng dẫn có đánh dấu `ASTRYX:START/END` kèm sha256 vào `AGENTS.md`/`CLAUDE.md`; plugin Claude Code (`.claude-plugin/marketplace.json`, `plugins/astryx/skills/astryx/SKILL.md`) buộc agent chạy `astryx build "<ý tưởng>"` rồi `astryx template` trước khi viết trang, đọc `astryx component <Tên>` thay vì đọc file gói. Máy chủ MCP là lệnh `astryx mcp` (cục bộ, stdio); trang docs host bản `--docs-only` với các tool search, build, component, hook, docs, template, discover, theme list/targets, không nhận đầu vào trỏ tới thư mục hay file. Ghi chú cũ "MCP chỉ là dịch vụ 2 tool" là sai, đã đính chính ở §7p.3.
 - **Cổng máy:** `pnpm check:repo` gom hàng chục kiểm tra (`check:agent-plugin-skill`, `check:setup-contract`, `check:package-boundaries`, `check:use-client`, `check:i18n-catalog`, các bản `--check` sinh lại bảng palette), cộng hợp đồng a11y bằng Playwright, perf nightly, kiểm bundle theo consumer (Next.js/Turbopack). Đây là mức kỷ luật cao hơn hẳn đa số design system trong §1.
 - **Rủi ro cài đặt:** `postinstall` chỉ in lời nhắc `astryx init`, không gọi mạng, không làm hỏng cài đặt, im lặng khi chạy qua npx hoặc đã thiết lập. Tìm trong CLI không thấy telemetry (các lần khớp từ "analytics" nằm trong mẫu giao diện). CLI có ba chỗ gọi mạng, đều theo yêu cầu người dùng: tải bài blog (`blog`), tải gói theme từ URL https (`theme`), tải ảnh từ xa khi render.
-- **Bảo trì:** commit hằng ngày (24/11 có 3 người đóng góp trong ngày), 14 tác giả trong cửa sổ clone nông 50 commit; lỗi bảo mật báo qua Meta Bug Bounty, chỉ bản mới nhất được vá.
+- **Bảo trì:** 50 commit trong khoảng 19 giờ (23/11 06:11 đến 24/11 01:03 giờ Thái Bình Dương), 14 tác giả trong cửa sổ đó; lỗi bảo mật báo qua Meta Bug Bounty, chỉ bản mới nhất được vá.
 
 **So với lựa chọn cùng loại (số từ catalog, kiểm 23/11/2026):**
 
@@ -1844,6 +1844,8 @@ npx @animate-ui/cli@latest animate all
 - **Ba số đếm theme lệch nhau** (README: 7; repo: 8 thư mục gồm `probe`; BetterStack: 10).
 - `swizzle` đẩy mã vào repo của bạn: từ lúc đó bạn tự bảo trì. Cần React 19 và Node 22.13+, hạn chế với dự án cũ.
 - Chưa chạy: build, test, cài thử, MCP host; chưa đọc từng component.
+
+**Kiểm lại độc lập (24/11/2026, clone mới cùng commit `72d06aa`):** tìm toàn bộ `packages/` và `apps/` các dấu telemetry (posthog, sentry, sendBeacon, mixpanel, amplitude, gtag) chỉ khớp chữ "amplitude" trong công thức vật lý của `spring.ts` và hai story biểu đồ, không có SDK đo lường; trong `packages/core/src` chỉ `useImageMode.ts` gọi `fetch` (lấy ảnh của chính bạn để đo độ sáng, `mode: 'cors'`) và ví dụ trong chú thích `Typeahead/types.ts`. Xác nhận lại: lệnh `mcp` có trong CLI, `check:repo` gọi `check:agent-plugin-skill` và `check:setup-contract`, 125 thư mục trong `core/src`, 8 thư mục trong `packages/themes` (7 theme + `probe`), tên gói `@astryxdesign/core` 0.7.18. Một lỗi của chính hồ sơ được sửa: câu "24/11 có 3 người đóng góp trong ngày" đọc sai `git log --since`, đã thay bằng số đo của cửa sổ 50 commit.
 
 **Tích hợp tối thiểu:**
 

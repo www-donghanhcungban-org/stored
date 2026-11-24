@@ -1,8 +1,8 @@
 {
   "meta": {
     "description": "Bài học từ catalog stored đã đối chiếu với ID yêu cầu của www-donghanhcungban-org/X-Templates. Xem X-TEMPLATES.md.",
-    "xt_commit": "0b90230 (XT-H-001…018); a0f08cd (XT-H-019…051); ff23040 (XT-H-052…060); 1abbde2 (XT-H-061…093); 628e36caeb706001cf512787eba56bcfcb44f133 (XT-H-094…105); fb7b62c (XT-H-106); ccf980d (XT-H-107); 2049135 (XT-H-108); 2049135 (XT-H-109); 2049135 (XT-H-110); 5316026 (XT-H-111); 2049135 (XT-H-112); 23447d817d2bc8cf68093591177f85fd72a8a2f6 (XT-H-113…116); aeb195c2b6ae5074d70efe592d218e9c1147c05e (XT-H-117…125); efa521a64e2c2be2cdd596b7b8fd59bab8029cf0 (XT-H-126…131); 3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19 (XT-H-132…136); 3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19 (XT-H-137…139); fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb (XT-H-140…143); tái dùng đối chiếu trước (XT-H-144…147); 764566daf1072642ed5314bdc6b4d3c204a663b1 (XT-H-159…161); 764566d; 74d51d0e28b455ae7d893ea1d216cb533d8362d6 (XT-H-148…158); 2a35f68 (đối chiếu XT-H-162)",
-    "stored_range": "fa02a75..e3fdcb0 (XT-H-001…018); e3fdcb0..e8b3831 (XT-H-019…051); e8b3831..5f9e546 (XT-H-052…060); 5f9e546..b96e45c (XT-H-061…093); từ a1413e6 (XT-H-094…105, phạm vi PR mở rộng28mục); a1413e6.. (XT-H-106, kiểm infographic 12 §4e); d8b51bf.. (XT-H-107, đọc lại 20 §3f.5); 1857520.. (XT-H-108, kiểm bài đăng 22 §9i); 4983547.. (XT-H-109, 02 §4f + 20 §3x); 4983547.. (XT-H-110, 02 §4g); c77e1f9.. (XT-H-111, 18 §4e); 6d9e713.. (XT-H-112, 06 §7w); 79c8635.. (XT-H-113…116, xưởng34mục); 79c8635..4a45f00 (XT-H-117…125, đợt 5–8/11/2026); 82ab9b2..aad97cf (XT-H-126…131, đợt 11–16/11/2026); c607013..ff5f479 (XT-H-132…136, mốc 1150 hồ sơ); 5bb1381..16ff666 (XT-H-137…139, mốc 1550 hồ sơ); aaf3915.. (XT-H-140…143, 1.295 link Anh Kỹ Sư AI, mốc 2250 hồ sơ); 48ab93b.. (XT-H-144…147, bảng Top 100 GitHub AI Skills + chia lại catalog); 7d8754d.. (XT-H-148…155, đợt chuẩn hóa 838 hồ sơ cũ); ae33273.. (XT-H-156…158, đợt nâng trần UI/UX, mốc 2300 hồ sơ); sau #185.. (XT-H-159…161, đợt nâng trần các nhóm còn lại, mốc 2450 hồ sơ); đợt nâng trần thứ hai (XT-H-162, mốc 2700 hồ sơ)",
+    "xt_commit": "0b90230 (XT-H-001…018); a0f08cd (XT-H-019…051); ff23040 (XT-H-052…060); 1abbde2 (XT-H-061…093); 628e36caeb706001cf512787eba56bcfcb44f133 (XT-H-094…105); fb7b62c (XT-H-106); ccf980d (XT-H-107); 2049135 (XT-H-108); 2049135 (XT-H-109); 2049135 (XT-H-110); 5316026 (XT-H-111); 2049135 (XT-H-112); 23447d817d2bc8cf68093591177f85fd72a8a2f6 (XT-H-113…116); aeb195c2b6ae5074d70efe592d218e9c1147c05e (XT-H-117…125); efa521a64e2c2be2cdd596b7b8fd59bab8029cf0 (XT-H-126…131); 3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19 (XT-H-132…136); 3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19 (XT-H-137…139); fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb (XT-H-140…143); tái dùng đối chiếu trước (XT-H-144…147); 764566daf1072642ed5314bdc6b4d3c204a663b1 (XT-H-159…161); 764566d; 74d51d0e28b455ae7d893ea1d216cb533d8362d6 (XT-H-148…158); 2a35f68 (đối chiếu XT-H-162); 8201df2 (XT-H-163)",
+    "stored_range": "fa02a75..e3fdcb0 (XT-H-001…018); e3fdcb0..e8b3831 (XT-H-019…051); e8b3831..5f9e546 (XT-H-052…060); 5f9e546..b96e45c (XT-H-061…093); từ a1413e6 (XT-H-094…105, phạm vi PR mở rộng28mục); a1413e6.. (XT-H-106, kiểm infographic 12 §4e); d8b51bf.. (XT-H-107, đọc lại 20 §3f.5); 1857520.. (XT-H-108, kiểm bài đăng 22 §9i); 4983547.. (XT-H-109, 02 §4f + 20 §3x); 4983547.. (XT-H-110, 02 §4g); c77e1f9.. (XT-H-111, 18 §4e); 6d9e713.. (XT-H-112, 06 §7w); 79c8635.. (XT-H-113…116, xưởng34mục); 79c8635..4a45f00 (XT-H-117…125, đợt 5–8/11/2026); 82ab9b2..aad97cf (XT-H-126…131, đợt 11–16/11/2026); c607013..ff5f479 (XT-H-132…136, mốc 1150 hồ sơ); 5bb1381..16ff666 (XT-H-137…139, mốc 1550 hồ sơ); aaf3915.. (XT-H-140…143, 1.295 link Anh Kỹ Sư AI, mốc 2250 hồ sơ); 48ab93b.. (XT-H-144…147, bảng Top 100 GitHub AI Skills + chia lại catalog); 7d8754d.. (XT-H-148…155, đợt chuẩn hóa 838 hồ sơ cũ); ae33273.. (XT-H-156…158, đợt nâng trần UI/UX, mốc 2300 hồ sơ); sau #185.. (XT-H-159…161, đợt nâng trần các nhóm còn lại, mốc 2450 hồ sơ); đợt nâng trần thứ hai (XT-H-162, mốc 2700 hồ sơ); 6f55212..HEAD (XT-H-163)",
     "columns": [
       "deeper",
       "shallower",
@@ -10,19 +10,30 @@
       "not_adding"
     ],
     "updated": "2026-11-24",
-    "count": 162,
+    "count": 163,
     "current_batch": {
-      "stored_base": "đợt nâng trần thứ hai (24/11/2026)",
-      "xt_commit": "2a35f68",
+      "stored_base": "meta/astryx đọc mã (24/11/2026)",
+      "xt_commit": "8201df2",
       "ids": [
-        "XT-H-162",
-        "XT-H-162"
+        "XT-H-163"
       ],
       "status": "documented-in-stored",
-      "catalog_count": 2714,
+      "catalog_count": 2719,
       "suggest_milestone": 2700
     },
     "previous_batches": [
+      {
+        "stored_base": "đợt nâng trần thứ hai (24/11/2026)",
+        "xt_commit": "2a35f68",
+        "ids": [
+          "XT-H-162",
+          "XT-H-162"
+        ],
+        "status": "merged-in-x-templates",
+        "catalog_count": 2714,
+        "suggest_milestone": 2700,
+        "proposal_pr": "https://github.com/www-donghanhcungban-org/X-Templates/pull/769"
+      },
       {
         "stored_base": "origin/main sau PR #185",
         "xt_commit": "764566daf1072642ed5314bdc6b4d3c204a663b1",
@@ -4595,6 +4606,29 @@
       },
       "xt_evidence": [],
       "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/769 (squash 4bd1d6e, 24/11/2026): đã gộp vào `WF-CI-028` (SHOULD) cùng XT-H-113: fixture âm tính, cờ ép mã thoát và ngưỡng nằm trong cấu hình. Ghi chú đối chiếu: research/2026-11-24-stored-delta-xt-h-113-162.md ở X-Templates. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy."
+    },
+    {
+      "id": "XT-H-163",
+      "date": "2026-11-24",
+      "stored_ref": [
+        "06 · meta/astryx (24/11/2026)"
+      ],
+      "profile_anchors": [
+        "06-ui-ux-design/README.md#ch-astryx-meta"
+      ],
+      "lesson": "Design system phát hành kèm lớp cho agent: CLI `astryx init` ghi khối hướng dẫn có đánh dấu ASTRYX:START/END kèm sha256 vào AGENTS.md/CLAUDE.md, plugin skill buộc agent chạy `astryx build` rồi `astryx template` trước khi viết trang, máy chủ MCP cục bộ (`astryx mcp`) và bản host `--docs-only` chỉ trả lời theo bản công bố, không nhận đường dẫn thư mục hay file. Điểm đáng học là CI kiểm chính văn bản hướng dẫn được sinh ra: `check:agent-plugin-skill` và `check:setup-contract` chạy bản `--check` so với nguồn trong repo. Đọc mã ở commit 72d06aa, chưa chạy; hiệu quả với agent chưa có số đo công khai.",
+      "xt_ids": [
+        "XC-DOCAI-028",
+        "XC-DOCAI-016",
+        "XC-DOCAI-014"
+      ],
+      "column": "shallower",
+      "existing_coverage": "XC-DOCAI-028 đã đòi manifest phiên bản + sha256, chạy lại là no-op, không ghi đè mục người dùng sửa và `--check` cho CI; XC-DOCAI-016 đã đòi MCP tài liệu read-only, ít tool; XC-DOCAI-014 đòi quy tắc kiểm được thành cổng; UX-DS-001 đã kiểm đầu ra sinh của token (`diff = 0`). Chưa control nào đòi kiểm văn bản hướng dẫn do công cụ của chính dự án sinh ra so với nguồn, hay nói rõ bản MCP host trả theo bản công bố chứ không theo bản dự án. Đã đọc nguyên văn ở commit X-Templates 8201df2.",
+      "proposal": {
+        "text": "SHOULD: Dự án phát hành CLI/plugin sinh khối hướng dẫn cho agent (AGENTS.md, SKILL.md, khối đánh dấu) có lệnh sinh kèm chế độ `--check` chạy trong CI và đỏ khi văn bản đã commit lệch nguồn; khối ghi vào repo người dùng có đánh dấu bắt đầu/kết thúc và băm để cập nhật không đè phần người dùng viết ngoài khối. Bản MCP tài liệu đặt trên máy chủ chung ghi rõ nó trả lời theo bản đã công bố (không theo bản dự án đang dùng) và không nhận tham số tên thư mục, file hay gói. Kiểm: sửa một dòng trong khối sinh rồi chạy `--check` → thoát khác 0; chạy `init` hai lần → cây không đổi; gọi tool MCP host với đường dẫn → bị từ chối."
+      },
+      "xt_evidence": [],
+      "note": "Mở rộng XC-DOCAI-028 (thêm vế kiểm `--check` với văn bản sinh) và XC-DOCAI-016 (thêm vế phạm vi bản host). Các quan sát về Astryx là đọc mã ở một commit, chưa chạy. Phần còn lại của bài học (postinstall chỉ in lời nhắc, không làm hỏng cài đặt) là chi tiết nhỏ, không đề xuất control."
     }
   ]
 }

@@ -377,6 +377,14 @@ Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị t�
 |---|---|---|---|
 | XT-H-162 | Công cụ dùng làm cổng CI có thể thoát mã 0 trong đúng những trường hợp cần chặn. Quan sát đọc mã: cloudformation-guard cho nhánh SKIP và not applicable cùng thoát mã 0 nên luật hỏng vẫn xanh; woke mặc định thoát 0 dù có phát hiện (cần --exit-1-on-failure); Stryker.NET đặt ngưỡng break mặc định 0; mutmut không có ngưỡng dựng sẵn trong khi cargo-mutants thoát mã 2 khi còn mutant sống sót; specforce-kit để NOT-VERIFIABLE ra PASSED và chỉ cảnh báo khi thiếu báo cáo QA; context-ci giả bước ký số (authenticated luôn false). Chưa chạy. | LOOP-CI-001, WF-CI-001: LOOP-CI-001 cấm skip hay tắt test để cổng xanh và WF-CI-001 đòi job quality gom mọi cổng; đã đọc nguyên văn ở commit 2a35f68. Không control nào yêu cầu kiểm riêng mã thoát của công cụ bên thứ ba với đầu vào lỗi, nhánh SKIP hay not applicable. | missing: SHOULD: Mỗi công cụ bên thứ ba được đưa vào làm cổng CI có fixture âm tính được chạy trong chính CI: một đầu vào có vi phạm, một đầu vào hỏng cấu hình và một đầu vào khiến công cụ bỏ qua hoặc coi là không áp dụng; cổng phải đỏ (mã thoát khác 0) ở cả ba, hoặc ghi rõ ngoại lệ và lý do. Ghi cờ bắt buộc như --exit-1-on-failure vào cấu hình và ngưỡng như break của mutation testing phải khác 0. Kiểm fixture: luật không hợp lệ đưa vào công cụ kiểu cloudformation-guard làm job đỏ; mutant sống sót làm job đỏ. |
 
+## 4p. Bàn giao Astryx (24/11/2026)
+
+Đã đối chiếu ID ở commit X-Templates 8201df2 (đọc nguyên văn `XC-DOCAI-014`, `016`, `028`, `UX-DS-001`, `019`). Quan sát về Astryx là đọc mã ở commit 72d06aa, chưa chạy.
+
+| Handoff | Bài học và hồ sơ | Control đã đối chiếu | Cột và xử lý |
+|---|---|---|---|
+| XT-H-163 | Design system kèm lớp cho agent: khối hướng dẫn có đánh dấu và băm do CLI ghi, MCP cục bộ và bản host chỉ đọc không nhận đường dẫn, CI kiểm văn bản hướng dẫn sinh ra bằng `--check`. Hồ sơ: 06 §7zh, `ch-astryx-meta` | `XC-DOCAI-028`, `XC-DOCAI-016`, `XC-DOCAI-014`, `UX-DS-001` | shallower: đề xuất thêm vế `--check` cho văn bản hướng dẫn sinh ra vào `XC-DOCAI-028` và vế phạm vi bản host vào `XC-DOCAI-016`; không đổi mức |
+
 ## 5. Gợi ý tích hợp và nâng cấp X-Templates (theo thứ tự lợi ích / công sức)
 
 1. **Chặn Agent Teams ngoài ý muốn (XT-H-001)** — rủi ro cao nhất, sửa rẻ: thêm kiểm vào `xt.py doctor`/`harness-check` (biến `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` ≠ `1` trừ khi có ADR), vì teammate kế thừa quyền lead và phá giả định `LOOP-ORCH-001` "chỉ phiên chính điều phối". Nếu sau này muốn dùng: hook `TaskCompleted` của khung (đã có) là cổng đúng chỗ.
@@ -520,6 +528,8 @@ Cả ba mục chỉ là sửa chữ hoặc thêm ví dụ vào ID đã có, khô
 Các mục deeper chỉ thêm ví dụ/fixture cho yêu cầu hiện có. Phần SHOULD về danh tính cần X-Templates xem xét trước khi thành thay đổi chính thức; trong lúc chờ, dự án có thể ghi tiêu chí đối chiếu trong PR/PLAN của mình. Khi khung phát hành thay đổi, ghép lại blueprint theo §5e rồi liên kết bằng chứng vào công việc tương ứng. Không sửa mã X-Templates trong đợt cập nhật kho này.
 
 ## 6. Cách duy trì
+
+- **Bàn giao Astryx (24/11/2026):** XT-H-163 ở §4p, đối chiếu X-Templates `8201df2`, cột shallower. PR đề xuất sang X-Templates ghi ở dòng "Đã gửi đề xuất" bên dưới khi mở.
 
 - **Mốc 2250 (23/11/2026):** catalog 2.268 hồ sơ; XT-H-140…143 ở §4j, gợi ý và cách áp ở §5i. Đối chiếu X-Templates `fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb`: ba mục deeper, một shallower nối đề xuất cũ. Đã cập nhật `meta.suggest_milestone = 2250`; bàn giao được lưu trong stored, chưa mở PR sang X-Templates.
 
