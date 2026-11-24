@@ -2,7 +2,7 @@
 
 # video-engine — Thiết kế, giao diện & media
 
-[← Mục lục catalog](../README.md) · 38 hồ sơ.
+[← Mục lục catalog](../README.md) · 39 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -44,3 +44,4 @@
 | [Tscaps](../../22-motion-design-animation/README.md#n2-tscaps) | `francozanardi/tscaps` | AGPL-3.0 (apps/studio và gốc); MIT (packages/engine, presets, skills); CC0 (apps/studio/public/sounds) | 129 | đọc mã 2026-11-23 | 22 | Trình dựng video trong trình duyệt cho video dọc ngắn: phụ đề động bằng HTML/CSS qua foreignObject, Whisper trên máy, MCP cho agent chỉnh trực tiếp. |
 | [Dojo Video Engine](../../22-motion-design-animation/README.md#n2-dojo-video-engine) | `PansaLegrand/dojo-video-engine` | MIT | 53 | đọc mã 2026-11-23 | 22 | Engine video MIT trong trình duyệt: Scene JSON xác định, xem trước từng khung, xuất MP4 bằng WebCodecs và mediabunny, kèm bộ vàng điểm ảnh và lint tất định. |
 | [MediaConch (hồ sơ thiết kế và chính sách)](../../19-agentic-video-media/README.md#n2-mediaconch) | `MediaArea/MediaConch` | GPL-3.0-or-later hoặc MPL-2.0-or-later (mã); CC BY-SA 4.0 (tài sản mở); repo gốc không có file LICENSE ở thư mục gốc | 35 | đọc tài liệu 2026-11-23 | 19 | Repo này không phải mã nguồn hiện hành của MediaConch mà là kho tài liệu giai đoạn thiết kế PREFORMA (2021 là commit cuối) kèm bản chép cũ của mã nguồn trong `SourceCode… |
+| [Auto-Editor](../../19-agentic-video-media/README.md#n2-auto-editor) | `WyattBlue/auto-editor` | Unlicense | — | đọc mã 2026-11-24 | 19 | Công cụ dòng lệnh viết bằng Nim (gọi FFmpeg tự build) để cắt khoảng lặng và đoạn chết trong video/audio: phân tích theo ngưỡng âm lượng (audio mặc định 0.04, hoặc dB), c… |

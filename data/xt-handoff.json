@@ -2664,7 +2664,7 @@
         }
       ],
       "related_handoffs": [],
-      "note": "Đối chiếu framework/implementation tại 23447d817d2bc8cf68093591177f85fd72a8a2f6; bàn giao trong stored, chưa sửa/gửi PR sang X-Templates.",
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/769 (squash 4bd1d6e, 24/11/2026): đã thêm ID mới `WF-CI-028` (SHOULD, gộp với XT-H-162): công cụ bên thứ ba dùng làm cổng CI phải chứng minh đỏ đúng chỗ, báo cáo khai trạng thái hoàn tất và số test đã chạy. Ghi chú đối chiếu: research/2026-11-24-stored-delta-xt-h-113-162.md ở X-Templates. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy.",
       "proposal": {
         "level": "SHOULD",
         "text": "Cho cổng test/scan được dự án chọn, khai adapter/report format+version, target/config, trạng thái hoàn tất và số test/thực thể đã thực thi khi định dạng hỗ trợ. Thiếu report,0 test của suite bắt buộc, only-report hoặc unknown/infrastructure-error không được coi pass. Cổng tĩnh không có test count cần điều kiện riêng. Gắn SHA/run ID, kiểm exit semantics; fixture âm phải làm adapter chặn. Không đoán theo tên công cụ; unsupported parser báo chưa kết luận."
@@ -2705,7 +2705,7 @@
         }
       ],
       "related_handoffs": [],
-      "note": "Đối chiếu framework/implementation tại 23447d817d2bc8cf68093591177f85fd72a8a2f6; bàn giao trong stored, chưa sửa/gửi PR sang X-Templates."
+      "note": "Đã xét ở https://github.com/www-donghanhcungban-org/X-Templates/pull/769 (squash 4bd1d6e, 24/11/2026): khung đã bao phủ, không sửa. Bảng kết luận: research/2026-11-24-stored-delta-xt-h-113-162.md ở X-Templates. Ghi chú trước: Đối chiếu framework/implementation tại 23447d817d2bc8cf68093591177f85fd72a8a2f6; bàn giao trong stored, chưa sửa/gửi PR sang X-Templates."
     },
     {
       "id": "XT-H-115",
@@ -2741,7 +2741,7 @@
         }
       ],
       "related_handoffs": [],
-      "note": "Đối chiếu framework/implementation tại 23447d817d2bc8cf68093591177f85fd72a8a2f6; bàn giao trong stored, chưa sửa/gửi PR sang X-Templates."
+      "note": "Đã xét ở https://github.com/www-donghanhcungban-org/X-Templates/pull/769 (squash 4bd1d6e, 24/11/2026): khung đã bao phủ, không sửa. Bảng kết luận: research/2026-11-24-stored-delta-xt-h-113-162.md ở X-Templates. Ghi chú trước: Đối chiếu framework/implementation tại 23447d817d2bc8cf68093591177f85fd72a8a2f6; bàn giao trong stored, chưa sửa/gửi PR sang X-Templates."
     },
     {
       "id": "XT-H-116",
@@ -2781,7 +2781,7 @@
         "XT-H-072",
         "XT-H-086"
       ],
-      "note": "Đối chiếu framework/implementation tại 23447d817d2bc8cf68093591177f85fd72a8a2f6; bàn giao trong stored, chưa sửa/gửi PR sang X-Templates."
+      "note": "Đã xét ở https://github.com/www-donghanhcungban-org/X-Templates/pull/769 (squash 4bd1d6e, 24/11/2026): khung đã bao phủ, không sửa. Bảng kết luận: research/2026-11-24-stored-delta-xt-h-113-162.md ở X-Templates. Ghi chú trước: Đối chiếu framework/implementation tại 23447d817d2bc8cf68093591177f85fd72a8a2f6; bàn giao trong stored, chưa sửa/gửi PR sang X-Templates."
     },
     {
       "id": "XT-H-117",
@@ -3755,7 +3755,7 @@
           "url": "https://github.com/storytold/pdfcraft/blob/9b3e6d6f38de906c758d93e8ece45cbf105fd515/README.md"
         }
       ],
-      "note": "Đây là ghi nhận phạm vi giấy phép đã đọc, không phải quyết định cấp quyền sử dụng hay kết luận pháp lý cho một triển khai cụ thể."
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/769 (squash 4bd1d6e, 24/11/2026): đã mở rộng `CMP-LIC-020` (license tách theo artifact), không đổi mức. Ghi chú đối chiếu: research/2026-11-24-stored-delta-xt-h-113-162.md ở X-Templates. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy."
     },
     {
       "id": "XT-H-141",
@@ -3832,7 +3832,8 @@
         "https://api.github.com/repos/leon-ai/leon",
         "https://api.github.com/repos/SheetJS/sheetjs",
         "https://api.github.com/repos/RasaHQ/rasa"
-      ]
+      ],
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/769 (squash 4bd1d6e, 24/11/2026): đã mở rộng `OPS-MAINT-008` (chưa archive không chứng minh ổn định), không đổi mức. Ghi chú đối chiếu: research/2026-11-24-stored-delta-xt-h-113-162.md ở X-Templates. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy."
     },
     {
       "id": "XT-H-142",
@@ -3919,7 +3920,7 @@
           "url": "https://github.com/Fosowl/agenticSeek/blob/8f705be8ca625e9549389f188b1e37f700d3ed34/sources/router.py"
         }
       ],
-      "note": "Không thấy GitHub Actions trong tree không đồng nghĩa không có kiểm thử hoặc CI bên ngoài. Mức docs-read được giữ theo hợp đồng METHOD của stored; nhận định về mã chỉ giới hạn file/callsite đã đọc."
+      "note": "Đã xét ở https://github.com/www-donghanhcungban-org/X-Templates/pull/769 (squash 4bd1d6e, 24/11/2026): khung đã bao phủ, không sửa. Bảng kết luận: research/2026-11-24-stored-delta-xt-h-113-162.md ở X-Templates. Ghi chú trước: Không thấy GitHub Actions trong tree không đồng nghĩa không có kiểm thử hoặc CI bên ngoài. Mức docs-read được giữ theo hợp đồng METHOD của stored; nhận định về mã chỉ giới hạn file/callsite đã đọc."
     },
     {
       "id": "XT-H-143",
@@ -3989,7 +3990,7 @@
         "https://api.github.com/repos/OpenMontageInc/OpenMontage",
         "https://api.github.com/repos/jnMetaCode/agency-agents-zh"
       ],
-      "note": "Bằng chứng canonical của OpenMontage đã được đọc trực tiếp từ GitHub get_repo ngày 23/11/2026; không dựa riêng vào nội dung aggregator."
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/769 (squash 4bd1d6e, 24/11/2026): đã mở rộng `SEC-SUPPLY-025` (đối chiếu alias, fork, bản dịch bằng repository ID), không đổi mức. Ghi chú đối chiếu: research/2026-11-24-stored-delta-xt-h-113-162.md ở X-Templates. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy."
     },
     {
       "id": "XT-H-144",
@@ -4026,7 +4027,7 @@
           "url": "https://github.com/seeker19110/X-Templates/blob/3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19/framework/16-compliance-privacy/licensing-and-ip.md#L70"
         }
       ],
-      "note": "Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị từ chối); ID, file và dòng lấy từ các đối chiếu đã ghi trước đó trong data/xt-handoff.json, cần kiểm lại ở commit X-Templates hiện hành trước khi mở PR đề xuất."
+      "note": "Đã xét ở https://github.com/www-donghanhcungban-org/X-Templates/pull/769 (squash 4bd1d6e, 24/11/2026): khung đã bao phủ hoặc không thuộc khung, không sửa. Bảng kết luận: research/2026-11-24-stored-delta-xt-h-113-162.md ở X-Templates. Ghi chú trước: Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị từ chối); ID, file và dòng lấy từ các đối chiếu đã ghi trước đó trong data/xt-handoff.json, cần kiểm lại ở commit X-Templates hiện hành trước khi mở PR đề xuất."
     },
     {
       "id": "XT-H-145",
@@ -4058,7 +4059,7 @@
           "url": "https://github.com/seeker19110/X-Templates/blob/3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19/framework/12-security/infrastructure-and-network.md#L69"
         }
       ],
-      "note": "Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị từ chối); ID, file và dòng lấy từ các đối chiếu đã ghi trước đó trong data/xt-handoff.json, cần kiểm lại ở commit X-Templates hiện hành trước khi mở PR đề xuất."
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/769 (squash 4bd1d6e, 24/11/2026): đã mở rộng `SEC-INFRA-027` (kênh dữ liệu trong SKILL.md, mcp.json, hook), không đổi mức. Ghi chú đối chiếu: research/2026-11-24-stored-delta-xt-h-113-162.md ở X-Templates. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy."
     },
     {
       "id": "XT-H-146",
@@ -4084,7 +4085,7 @@
           "url": "https://github.com/www-donghanhcungban-org/X-Templates/blob/fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb/framework/15-operations/maintenance-and-lifecycle.md#L45"
         }
       ],
-      "note": "Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị từ chối); ID, file và dòng lấy từ các đối chiếu đã ghi trước đó trong data/xt-handoff.json, cần kiểm lại ở commit X-Templates hiện hành trước khi mở PR đề xuất."
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/769 (squash 4bd1d6e, 24/11/2026): đã gộp vào mở rộng `SEC-SUPPLY-025` (ví dụ đổi tên repo cùng repository ID), không đổi mức. Ghi chú đối chiếu: research/2026-11-24-stored-delta-xt-h-113-162.md ở X-Templates. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy."
     },
     {
       "id": "XT-H-147",
@@ -4110,7 +4111,7 @@
           "url": "https://github.com/www-donghanhcungban-org/X-Templates/blob/fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb/framework/01-baseline/quality-gates.md#L53"
         }
       ],
-      "note": "Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị từ chối); ID, file và dòng lấy từ các đối chiếu đã ghi trước đó trong data/xt-handoff.json, cần kiểm lại ở commit X-Templates hiện hành trước khi mở PR đề xuất."
+      "note": "Đã xét ở https://github.com/www-donghanhcungban-org/X-Templates/pull/769 (squash 4bd1d6e, 24/11/2026): thuộc cách vận hành kho stored, không thuộc khung, không sửa. Bảng kết luận: research/2026-11-24-stored-delta-xt-h-113-162.md ở X-Templates. Ghi chú trước: Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị từ chối); ID, file và dòng lấy từ các đối chiếu đã ghi trước đó trong data/xt-handoff.json, cần kiểm lại ở commit X-Templates hiện hành trước khi mở PR đề xuất."
     },
     {
       "id": "XT-H-148",
@@ -4593,7 +4594,7 @@
         "text": "SHOULD: Mỗi công cụ bên thứ ba được đưa vào làm cổng CI có fixture âm tính được chạy trong chính CI: một đầu vào có vi phạm, một đầu vào hỏng cấu hình và một đầu vào khiến công cụ bỏ qua hoặc coi là không áp dụng; cổng phải đỏ (mã thoát khác 0) ở cả ba, hoặc ghi rõ ngoại lệ và lý do. Ghi cờ bắt buộc như --exit-1-on-failure vào cấu hình và ngưỡng như break của mutation testing phải khác 0. Kiểm fixture: luật không hợp lệ đưa vào công cụ kiểu cloudformation-guard làm job đỏ; mutant sống sót làm job đỏ."
       },
       "xt_evidence": [],
-      "note": "Đã đối chiếu ID ở commit X-Templates 2a35f68 (đọc nguyên văn các control liên quan); nội dung đề xuất chưa được đưa vào. Các quan sát về repo bên thứ ba là đọc mã, chưa chạy."
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/769 (squash 4bd1d6e, 24/11/2026): đã gộp vào `WF-CI-028` (SHOULD) cùng XT-H-113: fixture âm tính, cờ ép mã thoát và ngưỡng nằm trong cấu hình. Ghi chú đối chiếu: research/2026-11-24-stored-delta-xt-h-113-162.md ở X-Templates. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy."
     }
   ]
 }
