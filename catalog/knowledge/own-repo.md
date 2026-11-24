@@ -6,6 +6,7 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
+| [X-Templates](../../23-own-repos-lessons/README.md#x-templates-factory-evidence) | `www-donghanhcungban-org/x-templates` | MIT | 9 | đọc mã 2026-11-04 | 23 | Factory harness evidence v2 binds command/scope/requirement revision/file digest; |
 | [xboss](../../23-own-repos-lessons/README.md#ch-xboss) | `www-donghanhcungban-org/xboss` | MIT | 1 | đọc tài liệu 2026-11-23 | 23 | Quản lý tiến độ MEP/ACMV (Next 16 + Postgres raw SQL): vendor ECC có lock (ADR-0013), 5 hook bash có test, OCR review theo đường dẫn, /hoc, AI Delivery Loop, 17+ cổng tĩ… |
 | [dhcb](../../23-own-repos-lessons/README.md#ch-dhcb) | `www-donghanhcungban-org/dhcb` | MIT | 0 | đọc tài liệu 2026-11-23 | 23 | Gia sư AI Việt⇄Anh production (Node 22, React 19, Postgres, Gemini Live): open-code-review rule.json, ECC chuyển thể chọn lọc, ProposedAction + safetyGuard, SePay; |
 | [Sales-Hunter](../../23-own-repos-lessons/README.md#ch-sales-hunter) | `www-donghanhcungban-org/Sales-Hunter` | Apache-2.0 | 0 | đọc tài liệu 2026-11-23 | 23 | Khung vận hành agent cho affiliate Shopee/TikTok (Python stdlib, uv/ruff/pyright): model_tier T0–T4, enum side-effect, nhánh A/B, durable publication outbox/lease/fencin… |
@@ -19,5 +20,4 @@
 | [Plugin-4-Hermes](../../23-own-repos-lessons/README.md#ch-plugin-4-hermes) | `seeker19110/Plugin-4-Hermes` | MIT | — | đọc tài liệu 2026-11-23 | 23 | Plugin model-provider cho Hermes Agent qua OAuth Google Antigravity; |
 | [projects-template](../../23-own-repos-lessons/README.md#ch-projects-template) | `seeker19110/projects-template` | MIT | — | đọc tài liệu 2026-11-23 | 23 | Khung drop-in cho Claude Code/Codex/Gemini/Cursor: hook lifecycle có test, ba cổng máy cho /auto-complete (PR #287), 3-tier orchestration 2 trục, adopt-from-outside 3 cộ… |
 | [qlkh](../../23-own-repos-lessons/README.md#ch-qlkh) | `donghanhcungban/qlkh` | MIT | — | đọc tài liệu 2026-11-23 | 23 | Quản lý khóa học (Python hexagonal + React): 14 job CI (OPA/conftest, syft SBOM, pip-audit, mutmut, import-linter, hash-lock), fitness function AST. |
-| [X-Templates](../../23-own-repos-lessons/README.md#x-templates-factory-evidence) | `www-donghanhcungban-org/x-templates` | MIT | — | đọc mã 2026-11-04 | 23 | Factory harness evidence v2 binds command/scope/requirement revision/file digest; |
 | [xboss-manager](../../23-own-repos-lessons/README.md#ch-xboss-manager) | `seeker19110/xboss-manager` | MIT | — | đọc tài liệu 2026-11-23 | 23 | Tiền thân khung; |

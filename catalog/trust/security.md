@@ -28,6 +28,7 @@
 | [dcg (Destructive Command Guard)](../../12-ai-security-guardrails/README.md#ch-dcg-destructive-command-guard) | `Dicklesworthstone/destructive_command_guard` | MIT kèm rider cấm OpenAI/Anthropic (không OSI) | 6.235 | đọc tài liệu 2026-11-23 | 12 | Hook Rust chặn lệnh phá huỷ cho 6+ coding agent; |
 | [PurpleLlama](../../12-ai-security-guardrails/README.md#ch-purplellama) | `meta-llama/PurpleLlama` | MIT (CodeShield, CyberSecEval, LlamaFirewall, SensitiveDocCl | 4.457 | đọc tài liệu 2026-11-23 | 12 | Llama Guard (4, 12B, phân loại 14 nhóm MLCommons), Prompt Guard 2 (injection/jailbreak), LlamaFirewall, CodeShield, CyberSecEval; |
 | [agent-scan](../../12-ai-security-guardrails/README.md#ch-agent-scan) | `snyk/agent-scan` | Apache-2.0 | 3.274 | đọc tài liệu 2026-11-23 | 12 | Trước là mcp-scan; |
+| [LLM Guard](../../12-ai-security-guardrails/README.md#ch-llm-guard) | `protectai/llm-guard` | MIT | 3.223 | đọc tài liệu 2026-11-23 | 12 | ~35 scanner; |
 | [skill-scanner (Cisco)](../../12-ai-security-guardrails/README.md#ch-skill-scanner-cisco) | `cisco-ai-defense/skill-scanner` | Apache-2.0 | 2.674 | đọc tài liệu 2026-11-23 | 12 | Quét skill best-effort; |
 | [AgentShield](../../12-ai-security-guardrails/README.md#nt-agentshield) | `affaan-m/agentshield` | MIT | 1.441 | đọc mã 2026-11-23 | 12 | Bộ quét tĩnh cấu hình agent (CLI/GitHub Action bằng TypeScript): đọc thư mục `.claude/`, settings, hook, MCP, agent, skill và áp luật regex để tìm bí mật cứng, quyền Bas… |
 | [Cisco MCP Scanner](../../04-protocols-standards/README.md#ch-cisco-mcp-scanner) | `cisco-ai-defense/mcp-scanner` | Apache-2.0 | 1.127 | đọc tài liệu 2026-11-23 | 04 | Quét tool MCP bằng YARA, LLM judge, API Cisco AI Defense, readiness tĩnh; |
@@ -36,16 +37,17 @@
 | [Cordum (agent control plane)](../../12-ai-security-guardrails/README.md#nt-cordum) | `cordum-io/cordum` | BUSL-1.1 (Business Source License 1.1; Change License Apache-2.0 từ 2029-01-01) | 508 | đọc mã 2026-11-23 | 12 | Control plane cho agent với safety kernel quyết định DENY, REQUIRE_HUMAN, THROTTLE, ALLOW trước khi chạy, audit chain ký HMAC và hook cho Claude Code. |
 | [YesWeHack claude-kit](../../12-ai-security-guardrails/README.md#ch-yeswehack-claude-kit) | `yeswehack/claude-kit` | GPL-3.0 | 357 | đọc tài liệu 2026-11-23 | 12 | Plugin Claude Code chính chủ YesWeHack: luật luôn bật qua hook SessionStart (chỉ cat file) + skill write/triage/gotchas (14 lớp lỗi) để báo cáo bug bounty chỉ từ bằng ch… |
 | [OWASP Agent Memory Guard](../../12-ai-security-guardrails/README.md#nt-owasp-agent-memory-guard) | `OWASP/www-project-agent-memory-guard` | Apache-2.0 | 211 | đọc mã 2026-11-23 | 12 | Thư viện Python (dự án OWASP Lab, gói `agent-memory-guard`) bọc kho nhớ của agent, mỗi lần đọc/ghi đi qua các detector và policy khai báo rồi cho phép, chặn, che hoặc cá… |
+| [OWASP MCP Top 10](../../12-ai-security-guardrails/README.md#ch-owasp-mcp-top-10) | `OWASP/www-project-mcp-top-10` | CC-BY-SA-4.0 | 140 | đọc tài liệu 2026-11-23 | 12 | . |
 | [SkillShield](../../12-ai-security-guardrails/README.md#nt-skillshield) | `obielin/skillshield` | MIT (khai ở pyproject.toml; file LICENSE chỉ có một dòng, thiếu văn bản cấp phép) | 72 | đọc mã 2026-11-23 | 12 | Trình quét tĩnh bằng regex, không phụ thuộc runtime, tìm prompt injection, exfiltration và payload độc trong skill, file rule (.cursorrules, AGENTS.md...) và danh sách t… |
-| [LLM Guard](../../12-ai-security-guardrails/README.md#ch-llm-guard) | `protectai/llm-guard` | MIT | — | đọc tài liệu 2026-11-23 | 12 | ~35 scanner; |
-| [OWASP MCP Top 10](../../12-ai-security-guardrails/README.md#ch-owasp-mcp-top-10) | `OWASP/www-project-mcp-top-10` | CC-BY-SA-4.0 | — | đọc tài liệu 2026-11-23 | 12 | . |
 
 ## Secret & chuỗi cung ứng (`secrets-supply-chain`, 24)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [Trivy](../../12-ai-security-guardrails/README.md#ch-trivy) | `aquasecurity/trivy` | Apache-2.0 | 38.881 | đọc tài liệu 2026-11-23 | 12 | Bị xâm nhập 3/2026 (CVE-2026-33634): ghim Action theo SHA; |
+| [gitleaks](../../12-ai-security-guardrails/README.md#ch-gitleaks) | `gitleaks/gitleaks` | MIT | 31.286 | đọc tài liệu 2026-11-23 | 12 | secret scan. |
 | [infisical](../../31-software-supply-chain-security/README.md#chuyen-infisical) | `Infisical/infisical` | MIT | 30.570 | đọc tài liệu 2026-11-18 | 31 | Nền tảng hạ tầng bảo mật mã nguồn mở để quản lý bí mật, chứng chỉ, khoá, truy cập đặc quyền và truy cập của AI agent; |
+| [trufflehog](../../12-ai-security-guardrails/README.md#ch-trufflehog) | `trufflesecurity/trufflehog` | AGPL-3.0 | 29.600 | đọc tài liệu 2026-11-23 | 12 | secret scan. |
 | [SOPS](../../31-software-supply-chain-security/README.md#anhkysuai-getsops-sops) | `getsops/sops` | MPL-2.0 | 23.807 | đọc tài liệu 2026-11-23 | 31 | Công cụ sửa tệp bí mật đã mã hóa theo YAML, JSON, ENV, INI hoặc binary. |
 | [Grype](../../13-dev-stack-devops/README.md#ch-grype) | `anchore/grype` | Apache-2.0 | 13.159 | đọc tài liệu 2026-11-23 | 13 | Quét lỗ hổng image/filesystem/SBOM syft, ưu tiên EPSS/KEV, OpenVEX; |
 | [OSV-Scanner](../../12-ai-security-guardrails/README.md#ch-osv-scanner) | `google/osv-scanner` | Apache-2.0 | 11.342 | đọc tài liệu 2026-11-23 | 12 | Quét dependency/container theo OSV.dev; |
@@ -55,19 +57,17 @@
 | [OpenSSF Scorecard](../../12-ai-security-guardrails/README.md#ch-openssf-scorecard) | `ossf/scorecard` | Apache-2.0 | 5.801 | đọc tài liệu 2026-11-23 | 12 | Điểm sức khoẻ bảo mật repo (heuristic); |
 | [Bumblebee (Perplexity)](../../12-ai-security-guardrails/README.md#ch-bumblebee-perplexity) | `perplexityai/bumblebee` | Apache-2.0 | 5.169 | đọc tài liệu 2026-11-23 | 12 | Trình quét chỉ đọc (Go, không dependency ngoài stdlib) lockfile, metadata package manager, extension, cấu hình MCP trên máy dev macOS/Linux để đối chiếu advisory chuỗi c… |
 | [Varlock](../../12-ai-security-guardrails/README.md#ch-varlock) | `dmno-dev/varlock` | MIT | 4.874 | đọc tài liệu 2026-11-23 | 12 | .env.schema cho agent đọc schema không đọc secret, quét rò rỉ, che log, plugin 1Password/Vault/cloud; |
+| [OWASP Dependency-Track](../../31-software-supply-chain-security/README.md#factory-2026-11-04-owasp-dependency-track) | `DependencyTrack/dependency-track` | Apache-2.0 | 4.511 | đọc mã 2026-11-04 | 31 | Quản trị rủi ro component theo SBOM, phân tích bất đồng bộ; |
 | [SBOM Tool (Microsoft)](../../31-software-supply-chain-security/README.md#nt-microsoft-sbom-tool) | `microsoft/sbom-tool` | MIT | 2.098 | đọc mã 2026-11-23 | 31 | CLI và thư viện .NET sinh SBOM chuẩn SPDX 2.2 và 3.0 cho artifact bất kỳ: liệt kê file kèm băm SHA1/SHA256 trong thư mục build, và gói phụ thuộc nhờ thư viện Component D… |
+| [GUAC](../../31-software-supply-chain-security/README.md#factory-2026-11-04-guac) | `guacsec/guac` | Apache-2.0 | 1.581 | đọc mã 2026-11-04 | 31 | Đồ thị metadata chuỗi cung ứng; |
 | [GuardDog](../../31-software-supply-chain-security/README.md#nt-guarddog) | `DataDog/guarddog` | Apache-2.0 | 1.270 | đọc mã 2026-11-23 | 31 | CLI quét gói theo quy tắc YARA và metadata, ghép capability với threat để chấm rủi ro theo chuỗi tấn công, có bộ eval recall/dương tính giả. |
 | [SafeDep vet](../../31-software-supply-chain-security/README.md#nt-safedep-vet) | `safedep/vet` | Apache-2.0 | 1.126 | đọc mã 2026-11-23 | 31 | CLI Go quét phụ thuộc, workflow GitHub Actions và config agent AI, có policy CEL và mã thoát cho CI. |
+| [in-toto](../../31-software-supply-chain-security/README.md#factory-2026-11-04-in-toto) | `in-toto/in-toto` | Apache-2.0 | 1.056 | đọc mã 2026-11-04 | 31 | Layout/link ký số và rules chuỗi cung ứng; |
 | [ModelScan](../../12-ai-security-guardrails/README.md#ch-modelscan) | `protectai/modelscan` | Apache-2.0 | 792 | đọc tài liệu 2026-11-23 | 12 | Quét file model (pickle, H5, Keras, SavedModel); |
 | [fickling](../../12-ai-security-guardrails/README.md#ch-fickling) | `trailofbits/fickling` | LGPL-3.0 | 676 | đọc tài liệu 2026-11-23 | 12 | Trail of Bits: phân tích pickle, hook allowlist import ML khi load; |
 | [Let's Seal (SEAL)](../../19-agentic-video-media/README.md#nt-letsseal) | `letsseal/letsseal` | Apache-2.0 | 379 | đọc mã 2026-11-23 | 19 | Đề xuất chuẩn mở SEAL kèm triển khai tham chiếu: niêm phong file bằng chữ ký đúng định dạng gốc (PAdES cho PDF, C2PA cho ảnh/video/âm thanh, XML-DSig, S/MIME, CAdES tách… |
 | [model-signing (Model Transparency)](../../12-ai-security-guardrails/README.md#ch-model-signing-model-transparency) | `sigstore/model-transparency` | Apache-2.0 | 249 | đọc tài liệu 2026-11-23 | 12 | Ký/xác minh thư mục model bằng Sigstore/khoá/PKCS#11, DSSE + in-toto; |
 | [agent-guard (elliottwaves-20)](../../12-ai-security-guardrails/README.md#nt-agent-guard-elliottwaves) | `elliottwaves-20/agent-guard` | MIT | 5 | đọc mã 2026-11-23 | 12 | Skill Python bọc các công cụ quét có sẵn (NVIDIA SkillSpector cho skill và nguồn MCP, Cisco mcp-scanner cho MCP chạy thật, GuardDog cho gói npm/PyPI/Go/cargo, OpenSSF pa… |
-| [gitleaks](../../12-ai-security-guardrails/README.md#ch-gitleaks) | `gitleaks/gitleaks` | MIT | — | đọc tài liệu 2026-11-23 | 12 | secret scan. |
-| [GUAC](../../31-software-supply-chain-security/README.md#factory-2026-11-04-guac) | `guacsec/guac` | Apache-2.0 | — | đọc mã 2026-11-04 | 31 | Đồ thị metadata chuỗi cung ứng; |
-| [in-toto](../../31-software-supply-chain-security/README.md#factory-2026-11-04-in-toto) | `in-toto/in-toto` | Apache-2.0 | — | đọc mã 2026-11-04 | 31 | Layout/link ký số và rules chuỗi cung ứng; |
-| [OWASP Dependency-Track](../../31-software-supply-chain-security/README.md#factory-2026-11-04-owasp-dependency-track) | `DependencyTrack/dependency-track` | Apache-2.0 | — | đọc mã 2026-11-04 | 31 | Quản trị rủi ro component theo SBOM, phân tích bất đồng bộ; |
-| [trufflehog](../../12-ai-security-guardrails/README.md#ch-trufflehog) | `trufflesecurity/trufflehog` | AGPL-3.0 | — | đọc tài liệu 2026-11-23 | 12 | secret scan. |
 
 ## Pentest & red team (`offensive-redteam`, 16)
 
@@ -94,6 +94,7 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
+| [Keycloak](../../34-backend-data-identity-integration/README.md#keycloak) | `keycloak/keycloak` | Apache-2.0 | 38.015 | đọc mã 2026-11-04 | 34 | OIDC/SSO; |
 | [jumpserver](../../34-backend-data-identity-integration/README.md#chuyen-jumpserver) | `jumpserver/jumpserver` | GPL-3.0 | 31.982 | đọc tài liệu 2026-11-18 | 34 | Nền tảng quản lý truy cập đặc quyền (PAM/bastion host) mã nguồn mở, có tính năng AI, cho phép truy cập an toàn tới SSH, RDP, Kubernetes, cơ sở dữ liệu, website, RemoteAp… |
 | [hydra](../../34-backend-data-identity-integration/README.md#chuyen-hydra) | `ory/hydra` | Apache License 2.0 | 17.671 | đọc tài liệu 2026-11-18 | 34 | Máy chủ OAuth 2.0 và nhà cung cấp OpenID Connect, kết nối với hệ thống định danh sẵn có qua ứng dụng login và consent riêng. |
 | [casdoor](../../34-backend-data-identity-integration/README.md#chuyen-casdoor) | `casdoor/casdoor` | Apache License 2.0 | 14.881 | đọc tài liệu 2026-11-18 | 34 | Máy chủ đăng nhập một lần (SSO) và xác thực có bảng điều khiển web, là nhà cung cấp định danh đầy đủ lưu người dùng và cấp token. |
@@ -101,7 +102,6 @@
 | [OpenFGA](../../12-ai-security-guardrails/README.md#openfga) | `openfga/openfga` | Apache-2.0 | 6.077 | đọc mã 2026-11-02 | 12 | ReBAC HTTP/gRPC; |
 | [SPIRE](../../12-ai-security-guardrails/README.md#spire) | `spiffe/spire` | Apache-2.0 | 2.602 | đọc mã 2026-11-02 | 12 | Workload identity SPIFFE/SVID; |
 | [ThunderID](../../34-backend-data-identity-integration/README.md#nt-thunderid) | `thunder-id/thunderid` | Apache-2.0 | 622 | đọc mã 2026-11-23 | 34 | Stack IAM Go (dự án LF Decentralized Trust) coi agent AI là một loại danh tính như người và máy: có kiểu agent riêng, cấp grant OAuth theo vai trò, RBAC, consent và máy… |
-| [Keycloak](../../34-backend-data-identity-integration/README.md#keycloak) | `keycloak/keycloak` | Apache-2.0 | — | đọc mã 2026-11-04 | 34 | OIDC/SSO; |
 
 ## Quyền riêng tư (`privacy`, 6)
 

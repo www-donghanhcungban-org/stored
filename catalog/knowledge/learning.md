@@ -81,7 +81,7 @@
 | [tips](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-git-tips-tips) | `git-tips/tips` | MIT | 21.725 | đọc tài liệu 2026-11-23 | 08 | Tập hợp mẹo và lệnh Git để tra cứu theo thao tác. |
 | [aima-python](../../08-awesome-lists-learning/README.md#ch-aima-python) | `aimacode/aima-python` | MIT | 8.884 | đọc tài liệu 2026-11-23 | 08 | Code Python cho giáo trình AIMA (Russell & Norvig): search, logic, planning, học máy, agent — thay thế đúng cấu trúc cho infographic 'Layers of AI'; |
 | [The Missing Semester of Your CS Education](../../08-awesome-lists-learning/README.md#learning-prerequisites-evidence) | `missing-semester/missing-semester` | CC-BY-NC-SA-4.0 | 6.152 | đọc mã 2026-11-02 | 08 | Bản 2026: shell/Git/debug/code quality/agentic coding; |
-| [Full Stack Open](../../08-awesome-lists-learning/README.md#full-stack-open-factory) | `fullstack-hy2020/fullstack-hy2020.github.io` | CC-BY-NC-SA-3.0 | — | đọc mã 2026-11-04 | 08 | Khóa Helsinki nối full-stack và CI/CD; |
+| [Full Stack Open](../../08-awesome-lists-learning/README.md#full-stack-open-factory) | `fullstack-hy2020/fullstack-hy2020.github.io` | CC-BY-NC-SA-3.0 | 2.255 | đọc mã 2026-11-04 | 08 | Khóa Helsinki nối full-stack và CI/CD; |
 
 ## Học ngôn ngữ lập trình (`programming-language`, 20)
 
@@ -106,7 +106,7 @@
 | [pytudes](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-norvig-pytudes) | `norvig/pytudes` | MIT | 24.430 | đọc tài liệu 2026-11-23 | 08 | Các bài luyện Python của Peter Norvig, thường dưới dạng notebook hoặc chương trình ngắn. |
 | [learn-go-with-tests](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-quii-learn-go-with-tests) | `quii/learn-go-with-tests` | MIT | 23.972 | đọc tài liệu 2026-11-23 | 08 | Giáo trình Go học qua test-driven development, từ ngôn ngữ cơ bản tới xây ứng dụng. |
 | [numpy-100](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-rougier-numpy-100) | `rougier/numpy-100` | MIT | 14.704 | đọc tài liệu 2026-11-23 | 08 | 100 bài tập NumPy có lời giải, sinh bản Markdown và notebook từ một nguồn dữ liệu. |
-| [Exercism Python Track](../../08-awesome-lists-learning/README.md#exercism-python-factory) | `exercism/python` | MIT | — | đọc mã 2026-11-04 | 08 | Bài tập Python có test và lời giải mẫu; |
+| [Exercism Python Track](../../08-awesome-lists-learning/README.md#exercism-python-factory) | `exercism/python` | MIT | 2.551 | đọc mã 2026-11-04 | 08 | Bài tập Python có test và lời giải mẫu; |
 
 ## Phỏng vấn & thuật toán (`interview-prep`, 20)
 

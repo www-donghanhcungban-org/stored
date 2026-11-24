@@ -27,4 +27,4 @@
 | [FlagEmbedding (BGE)](../../10-local-llm-rag-memory/README.md#ch-flagembedding-bge) | `FlagOpen/FlagEmbedding` | MIT | 12.355 | đọc tài liệu 2026-11-23 | 10 | BGE-M3 (100+ ngôn ngữ, 8192 token, dense+sparse+multi-vector) và bge-reranker, suy luận + finetune tự host; |
 | [Local Deep Research](../../10-local-llm-rag-memory/README.md#ch-local-deep-research) | `LearningCircuit/local-deep-research` | MIT | 9.631 | đọc tài liệu 2026-11-23 | 10 | Chủ đề → báo cáo nghiên cứu từ web + tài liệu cá nhân, model local/cloud; |
 | [Chonkie](../../10-local-llm-rag-memory/README.md#ch-chonkie) | `chonkie-inc/chonkie` | MIT | 4.854 | đọc tài liệu 2026-11-23 | 10 | Thư viện chunking: token/sentence/recursive/semantic/late/neural/code/table; |
-| [FastEmbed](../../10-local-llm-rag-memory/README.md#fastembed-factory) | `qdrant/fastembed` | Apache-2.0 | — | đọc mã 2026-11-04 | 10 | Embedding ONNX local, query/passage API; |
+| [FastEmbed](../../10-local-llm-rag-memory/README.md#fastembed-factory) | `qdrant/fastembed` | Apache-2.0 | 3.308 | đọc mã 2026-11-04 | 10 | Embedding ONNX local, query/passage API; |

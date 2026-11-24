@@ -8,6 +8,7 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
+| [Storybook Vitest addon](../../06-ui-ux-design/README.md#storybook-addon-vitest-factory) | `storybookjs/storybook` | MIT | 91.696 | đọc mã 2026-11-04 | 06 | Thực thể addon kiểm thử, khác Storybook thư viện; |
 | [Jest](../../30-software-testing-quality/README.md#anhkysuai-jestjs-jest) | `jestjs/jest` | MIT | 45.486 | đọc tài liệu 2026-11-23 | 30 | Bộ chạy kiểm thử JavaScript với matcher, watch mode và snapshot. |
 | [Testify](../../30-software-testing-quality/README.md#anhkysuai-stretchr-testify) | `stretchr/testify` | MIT | 26.261 | đọc mã 2026-11-23 | 30 | Bộ assertion, mock và test suite cho Go. |
 | [Mocha](../../30-software-testing-quality/README.md#anhkysuai-mochajs-mocha) | `mochajs/mocha` | MIT | 22.908 | đọc tài liệu 2026-11-23 | 30 | Test framework JavaScript cho Node.js và browser. |
@@ -15,16 +16,15 @@
 | [Catch2](../../30-software-testing-quality/README.md#anhkysuai-catchorg-catch2) | `catchorg/Catch2` | BSL-1.0 | 21.590 | đọc tài liệu 2026-11-23 | 30 | Framework unit test C++ với assertion tự nhiên, section chia sẻ setup, macro BDD và microbenchmark cơ bản. |
 | [AVA](../../30-software-testing-quality/README.md#anhkysuai-avajs-ava) | `avajs/ava` | MIT | 20.825 | đọc tài liệu 2026-11-23 | 30 | Test runner Node.js với cú pháp ngắn, assertion chi tiết và chạy đồng thời các test độc lập. |
 | [keploy](../../30-software-testing-quality/README.md#chuyen-keploy) | `keploy/keploy` | Apache License 2.0 | 19.881 | đọc tài liệu 2026-11-18 | 30 | Công cụ kiểm thử API và tích hợp, ghi lại lưu lượng thật (API, truy vấn DB, sự kiện streaming) bằng eBPF rồi phát lại thành test và mock. |
+| [Vitest](../../30-software-testing-quality/README.md#vitest-factory) | `vitest-dev/vitest` | MIT | 17.429 | đọc mã 2026-11-04 | 30 | Runner JS/TS Vite Node/browser; |
+| [pytest](../../30-software-testing-quality/README.md#pytest-factory) | `pytest-dev/pytest` | MIT | 14.740 | đọc mã 2026-11-04 | 30 | Runner Python fixture/parametrization; |
 | [OSS-Fuzz](../../30-software-testing-quality/README.md#nt-google-oss-fuzz) | `google/oss-fuzz` | Apache-2.0 | 12.982 | đọc mã 2026-11-23 | 30 | Dịch vụ fuzz liên tục do Google vận hành cho dự án mã nguồn mở được nhận, cũng là kho định dạng chuẩn: mỗi dự án có Dockerfile, build.sh và project.yaml (engine, sanitiz… |
 | [Toxiproxy](../../30-software-testing-quality/README.md#nt-shopify-toxiproxy) | `Shopify/toxiproxy` | MIT | 12.543 | đọc mã 2026-11-23 | 30 | Proxy TCP viết bằng Go để mô phỏng lỗi mạng trong test tích hợp: tạo proxy qua API HTTP hoặc client rồi gắn các toxic (latency, bandwidth, timeout, reset_peer, slicer, l… |
 | [Great Expectations (GX Core)](../../15-ai-for-data/README.md#ch-great-expectations-gx-core) | `fivetran/great_expectations` | Apache-2.0 | 11.945 | đọc tài liệu 2026-11-23 | 15 | Unit test cho dữ liệu (Expectation + Checkpoint), v1.24.1; |
+| [Hypothesis](../../30-software-testing-quality/README.md#hypothesis-factory) | `HypothesisWorks/hypothesis` | MPL-2.0 | 9.225 | đọc mã 2026-11-04 | 30 | Property-based Python và thu nhỏ phản ví dụ; |
 | [StrykerJS](../../13-dev-stack-devops/README.md#ch-strykerjs) | `stryker-mutator/stryker-js` | Apache-2.0 | 3.306 | đọc tài liệu 2026-11-23 | 13 | Mutation testing JS/TS; |
 | [Soda Core](../../15-ai-for-data/README.md#ch-soda-core) | `sodadata/soda-core` | Elastic-2.0 (ELv2; pyproject khai "Proprietary") | 2.463 | đọc tài liệu 2026-11-23 | 15 | Data contract YAML, 50+ check, CLI/Python trên Postgres/Snowflake/BigQuery/DuckDB…; |
-| [Hypothesis](../../30-software-testing-quality/README.md#hypothesis-factory) | `HypothesisWorks/hypothesis` | MPL-2.0 | — | đọc mã 2026-11-04 | 30 | Property-based Python và thu nhỏ phản ví dụ; |
-| [pytest](../../30-software-testing-quality/README.md#pytest-factory) | `pytest-dev/pytest` | MIT | — | đọc mã 2026-11-04 | 30 | Runner Python fixture/parametrization; |
-| [Storybook Vitest addon](../../06-ui-ux-design/README.md#storybook-addon-vitest-factory) | `storybookjs/storybook` | MIT | — | đọc mã 2026-11-04 | 06 | Thực thể addon kiểm thử, khác Storybook thư viện; |
-| [Testcontainers Python](../../30-software-testing-quality/README.md#testcontainers-python-factory) | `testcontainers/testcontainers-python` | Apache-2.0 | — | đọc mã 2026-11-04 | 30 | Dependency container thật và wait/cleanup; |
-| [Vitest](../../30-software-testing-quality/README.md#vitest-factory) | `vitest-dev/vitest` | MIT | — | đọc mã 2026-11-04 | 30 | Runner JS/TS Vite Node/browser; |
+| [Testcontainers Python](../../30-software-testing-quality/README.md#testcontainers-python-factory) | `testcontainers/testcontainers-python` | Apache-2.0 | 2.322 | đọc mã 2026-11-04 | 30 | Dependency container thật và wait/cleanup; |
 
 ## E2E & trình duyệt (`e2e-browser`, 6)
 
@@ -74,6 +74,7 @@
 | [knip](../../13-dev-stack-devops/README.md#ch-knip) | `webpro-nl/knip` | ISC | 12.560 | đọc tài liệu 2026-11-23 | 13 | Tìm file/export/dependency chết; |
 | [Stylelint](../../06-ui-ux-design/README.md#ch-stylelint) | `stylelint/stylelint` | MIT | 11.557 | đọc tài liệu 2026-11-23 | 06 | 154 luật lint CSS (color-no-hex, declaration-property-value-allowed-list, no-unknown-custom-properties) để cấm giá trị ngoài token; |
 | [SQLFluff](../../15-ai-for-data/README.md#ch-sqlfluff) | `sqlfluff/sqlfluff` | MIT | 10.035 | đọc tài liệu 2026-11-23 | 15 | Linter + auto-fix SQL, 28 file dialect, templater Jinja/dbt, lõi Rust sqlfluffrs; |
+| [dependency-cruiser](../../29-software-architecture-api-contracts/README.md#dependency-cruiser-architecture-gates) | `sverweij/dependency-cruiser` | MIT | 7.458 | đọc mã 2026-11-04 | 29 | Kiểm graph/rule dependency JS/TS; |
 | [zizmor](../../31-software-supply-chain-security/README.md#ch-zizmor) | `zizmorcore/zizmor` | MIT | 7.126 | đọc tài liệu 2026-11-23 | 31 | Phân tích tĩnh bảo mật GitHub Actions, 41 audit, SARIF, offline/online; |
 | [jscpd](../../13-dev-stack-devops/README.md#ch-jscpd) | `kucherenko/jscpd` | MIT | 6.472 | đọc tài liệu 2026-11-23 | 13 | Phát hiện code trùng lặp; |
 | [actionlint](../../13-dev-stack-devops/README.md#ch-actionlint) | `rhysd/actionlint` | MIT | 4.371 | đọc tài liệu 2026-11-23 | 13 | Lint workflow GitHub Actions: kiểm kiểu ${{ }}, shellcheck/pyflakes; |
@@ -82,7 +83,6 @@
 | [squirrelscan](../../06-ui-ux-design/README.md#ux-squirrelscan) | `squirrelscan/squirrelscan` | MIT (Copyright 2026 squirrelscan; tên và logo theo TRADEMARKS.md) | 334 | đọc mã 2026-11-23 | 06 | CLI/Bun audit website 350+ luật trong 22 nhóm (SEO, a11y 63 luật, mobile, content, performance, security, agent experience...), điểm 0-100 theo trọng số luật và xuất báo… |
 | [crapper / dryer / mutator (Uncle Bob)](../../20-claude-plugins-ecosystem/README.md#ch-crapper-dryer-mutator-uncle-bob) | `unclebob/crapper` | 0BSD | 243 | đọc tài liệu 2026-11-23 | 20 | Bộ cổng chất lượng Python của Robert C. |
 | [driftlint](../../20-claude-plugins-ecosystem/README.md#nt-driftlint) | `alifurkangokce/driftlint` | MIT | 61 | đọc mã 2026-11-23 | 20 | CLI Node/TypeScript (không phụ thuộc runtime) tìm điều CLAUDE.md, AGENTS.md, skill, rule Cursor khẳng định mà mã không còn ủng hộ: đường dẫn chết, lệnh npm/make đã xóa,… |
-| [dependency-cruiser](../../29-software-architecture-api-contracts/README.md#dependency-cruiser-architecture-gates) | `sverweij/dependency-cruiser` | MIT | — | đọc mã 2026-11-04 | 29 | Kiểm graph/rule dependency JS/TS; |
 
 ## Eval skill/agent (`ai-skill-eval`, 6)
 
@@ -103,18 +103,19 @@
 | [Zod](../../30-software-testing-quality/README.md#anhkysuai-colinhacks-zod) | `colinhacks/zod` | MIT | 44.394 | đọc mã 2026-11-23 | 30 | Schema validation JavaScript/TypeScript đồng thời suy luận kiểu dữ liệu. |
 | [Insomnia](../../30-software-testing-quality/README.md#anhkysuai-kong-insomnia) | `Kong/insomnia` | Apache-2.0 cho mã repo; tính năng dịch vụ theo gói riêng | 40.183 | đọc tài liệu 2026-11-23 | 30 | API client và bộ công cụ thiết kế, chạy thử REST, GraphQL, gRPC và WebSocket. |
 | [Pydantic](../../30-software-testing-quality/README.md#anhkysuai-pydantic-pydantic) | `pydantic/pydantic` | MIT | 29.634 | đọc tài liệu 2026-11-23 | 30 | Validation dữ liệu Python qua type hint và model. |
+| [Schemathesis](../../30-software-testing-quality/README.md#schemathesis-factory) | `schemathesis/schemathesis` | MIT | 3.808 | đọc mã 2026-11-04 | 30 | Schema-based OpenAPI/GraphQL/gRPC testing và stateful sequences; |
 | [Spectral](../../29-software-architecture-api-contracts/README.md#ch-spectral) | `stoplightio/spectral` | Apache-2.0 | 3.263 | đọc tài liệu 2026-11-23 | 29 | Linter JSON/YAML, ruleset sẵn OpenAPI/AsyncAPI/Arazzo v1 (hỗ trợ Arazzo 1.1 chưa xác minh); |
 | [Microcks](../../29-software-architecture-api-contracts/README.md#nt-microcks) | `microcks/microcks` | Apache-2.0 | 2.093 | đọc mã 2026-11-23 | 29 | Nền tảng mock và test hợp đồng đa giao thức từ cùng một tài sản đặc tả. |
+| [oasdiff](../../29-software-architecture-api-contracts/README.md#oasdiff-compatibility-gates) | `oasdiff/oasdiff` | Apache-2.0 | 1.473 | đọc mã 2026-11-04 | 29 | Breaking diff OpenAPI base/revision; |
 | [vacuum (OpenAPI, AsyncAPI, Arazzo linter)](../../29-software-architecture-api-contracts/README.md#nt-vacuum) | `daveshanley/vacuum` | MIT | 1.149 | đọc mã 2026-11-23 | 29 | Linter Go rất nhanh cho OpenAPI, AsyncAPI, JSON Schema và Arazzo; |
 | [Data Contract CLI](../../15-ai-for-data/README.md#nt-datacontract-cli) | `datacontract/datacontract-cli` | MIT | 1.116 | đọc mã 2026-11-23 | 15 | CLI Python MIT lint và test dữ liệu thật theo Open Data Contract Standard, có `ci --fail-on` và xuất JUnit. |
 | [OpenTelemetry Weaver](../../07-eval-observability/README.md#ch-opentelemetry-weaver) | `open-telemetry/weaver` | Apache-2.0 | 537 | đọc tài liệu 2026-11-23 | 07 | registry check/live-check OTLP so với semconv, GitHub Action fail theo severity; |
-| [oasdiff](../../29-software-architecture-api-contracts/README.md#oasdiff-compatibility-gates) | `oasdiff/oasdiff` | Apache-2.0 | — | đọc mã 2026-11-04 | 29 | Breaking diff OpenAPI base/revision; |
-| [Schemathesis](../../30-software-testing-quality/README.md#schemathesis-factory) | `schemathesis/schemathesis` | MIT | — | đọc mã 2026-11-04 | 30 | Schema-based OpenAPI/GraphQL/gRPC testing và stateful sequences; |
 
 ## Hiệu năng & tải (`perf-load`, 13)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
+| [Grafana k6](../../30-software-testing-quality/README.md#k6-factory) | `grafana/k6` | AGPL-3.0 | 32.385 | đọc mã 2026-11-04 | 30 | Load test runtime Go/JS; |
 | [Lighthouse](../../30-software-testing-quality/README.md#anhkysuai-googlechrome-lighthouse) | `GoogleChrome/lighthouse` | Apache-2.0 | 31.193 | đọc tài liệu 2026-11-23 | 30 | Audit trang web về hiệu năng và các thực hành phát triển. |
 | [LeakCanary](../../30-software-testing-quality/README.md#anhkysuai-square-leakcanary) | `square/leakcanary` | Apache-2.0 | 30.009 | đọc tài liệu 2026-11-23 | 30 | Phát hiện rò rỉ bộ nhớ trong ứng dụng Android. |
 | [Hyperfine](../../30-software-testing-quality/README.md#anhkysuai-sharkdp-hyperfine) | `sharkdp/hyperfine` | MIT OR Apache-2.0 | 29.338 | đọc tài liệu 2026-11-23 | 30 | Benchmark lệnh qua nhiều lần chạy và xuất thống kê. |
@@ -127,7 +128,6 @@
 | [Web Quality Skills](../../06-ui-ux-design/README.md#ch-web-quality-skills) | `addyosmani/web-quality-skills` | MIT | 3.122 | đọc tài liệu 2026-11-23 | 06 | 6 Agent Skills đo-trước (audit, performance, Core Web Vitals, a11y WCAG 2.2, SEO, best practices); |
 | [GuideLLM](../../10-local-llm-rag-memory/README.md#nt-guidellm) | `vllm-project/guidellm` | Apache-2.0 | 1.804 | đọc mã 2026-11-23 | 10 | Công cụ benchmark tải cho endpoint LLM, ra phân phối TTFT/ITL và tìm mức tải an toàn theo SLO. |
 | [AIPerf](../../10-local-llm-rag-memory/README.md#aiperf) | `ai-dynamo/aiperf` | Apache-2.0 | 842 | đọc mã 2026-11-02 | 10 | Load generator đo TTFT/ITL/throughput; |
-| [Grafana k6](../../30-software-testing-quality/README.md#k6-factory) | `grafana/k6` | AGPL-3.0 | — | đọc mã 2026-11-04 | 30 | Load test runtime Go/JS; |
 
 ## Cổng phát hành & review (`release-gate`, 7)
 
@@ -138,5 +138,5 @@
 | [pre-commit](../../13-dev-stack-devops/README.md#ch-pre-commit) | `pre-commit/pre-commit` | MIT | 15.674 | đọc tài liệu 2026-11-23 | 13 | Hook git đa ngôn ngữ; |
 | [reviewdog](../../13-dev-stack-devops/README.md#ch-reviewdog) | `reviewdog/reviewdog` | MIT | 9.712 | đọc tài liệu 2026-11-23 | 13 | Kết quả linter → comment review PR; |
 | [release-please](../../13-dev-stack-devops/README.md#ch-release-please) | `googleapis/release-please` | Apache-2.0 | 7.715 | đọc tài liệu 2026-11-23 | 13 | Conventional commits → changelog + release PR; |
+| [Sloth](../../33-reliability-observability-operations/README.md#sloth-slo-generator) | `slok/sloth` | Apache-2.0 | 2.576 | đọc mã 2026-11-04 | 33 | SLO-to-Prometheus rules; |
 | [OpenSSF Best Practices Badge](../../09-engineering-checklists/README.md#ch-openssf-best-practices-badge) | `ossf/best-practices-badge` | MIT | 1.377 | đọc tài liệu 2026-11-23 | 09 | App bestpractices.dev: tiêu chí Baseline 1–3 (64 control sinh từ OSPS 2026-08-28) + Metal passing/silver/gold; |
-| [Sloth](../../33-reliability-observability-operations/README.md#sloth-slo-generator) | `slok/sloth` | Apache-2.0 | — | đọc mã 2026-11-04 | 33 | SLO-to-Prometheus rules; |
