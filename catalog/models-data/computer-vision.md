@@ -2,7 +2,7 @@
 
 # computer-vision — Mô hình, dữ liệu & tài liệu
 
-[← Mục lục catalog](../README.md) · 25 hồ sơ.
+[← Mục lục catalog](../README.md) · 27 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -30,4 +30,6 @@
 | [PaddleDetection](../../14-voice-multimodal/README.md#anhkysuai-2026-11-23-paddledetection) | `PaddlePaddle/PaddleDetection` | Apache-2.0 cho mã; dataset/weights cần đối chiếu | 14.487 | đọc tài liệu 2026-11-23 | 14 | Bộ công cụ detection, segmentation, keypoint và tracking trên PaddlePaddle. |
 | [dlib](../../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính) | `davisking/dlib` | Boost Software License 1.0 | 14.477 | đọc tài liệu 2026-11-18 | 08 | Bộ công cụ C++ hiện đại chứa thuật toán học máy và công cụ xây dựng phần mềm C++ phức tạp, có API Python. |
 | [Kornia](../../14-voice-multimodal/README.md#5f-hồ-sơ-korniakornia-thư-viện-thị-giác-máy-tính-khả-vi-trên-pytorch-đang-chuyển-sang-làm-đặc-tả-thực-thi-được-ảnh-readme-người-dùng-gửi-đọc-mã-3112026) | `kornia/kornia` | Apache-2.0 | 12.188 | đọc mã 2026-11-03 | 14 | Thư viện thị giác máy tính khả vi trên PyTorch (epipolar, camera, RANSAC/minimal solver theo lô, augmentation); |
+| [FiftyOne](../../24-ai-data-engineering/README.md#n2-fiftyone) | `voxel51/fiftyone` | Apache-2.0 | 11.333 | đọc mã 2026-11-23 | 24 | Thư viện Python và App web để duyệt, lọc, gắn nhãn và đánh giá dataset thị giác (ảnh, video, 3D): mô hình dữ liệu Dataset/Sample/Label lưu trong MongoDB cục bộ, `evaluat… |
 | [LLaVA-NeXT](../../14-voice-multimodal/README.md#ch-llava-next) | `LLaVA-VL/LLaVA-NeXT` | Apache-2.0 | 4.732 | đọc tài liệu 2026-11-23 | 14 | ; |
+| [Industrial Calibration](../../38-industrial-quality-manufacturing/README.md#n2-industrial-calibration) | `ros-industrial/industrial_calibration` | Apache-2.0 | 166 | đọc mã 2026-11-23 | 38 | Thư viện C++ (ROS-Industrial) hiệu chuẩn camera nội tại, ngoại tại tay-mắt (camera gắn robot hoặc cố định), động học DH và PnP, kèm công cụ phân tích độ chính xác. |

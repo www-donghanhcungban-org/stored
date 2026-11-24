@@ -2,7 +2,7 @@
 
 # agent-workspace — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 33 hồ sơ.
+[← Mục lục catalog](../README.md) · 34 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -30,6 +30,7 @@
 | [agent-orchestrator](../../08-awesome-lists-learning/README.md#6c523-trợ-lý-lập-trình-ai) | `OrchestratorInc/agent-orchestrator` | Apache-2.0 | 14.860 | đọc tài liệu 2026-11-18 | 08 | Ứng dụng desktop chạy cục bộ để điều phối một đội agent lập trình: mỗi việc có agent, nhánh và worktree riêng, theo dõi PR, CI và review trên bảng Kanban. |
 | [claudecodeui](../../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) | `siteboon/claudecodeui` | AGPL-3.0-or-later kèm điều khoản bổ sung theo Mục 7 | 14.670 | đọc tài liệu 2026-11-18 | 08 | Giao diện web/desktop/di động (CloudCLI UI) cho Claude Code, Cursor CLI và Codex, xem và điều khiển phiên agent cục bộ hoặc từ xa. |
 | [hermes-desktop](../../08-awesome-lists-learning/README.md#6c523-trợ-lý-lập-trình-ai) | `fathah/hermes-desktop` | MIT | 14.591 | đọc tài liệu 2026-11-18 | 08 | Hermes One: ứng dụng desktop do cộng đồng duy trì để cài đặt, cấu hình và trò chuyện với Hermes Agent của Nous Research qua giao diện đồ họa thay cho CLI. |
+| [HumanLayer](../../01-ai-coding-agents/README.md#n2-humanlayer) | `humanlayer/humanlayer` | Apache-2.0 (một số thư mục vendored giữ MIT, liệt kê trong NOTICE) | 12.937 | đọc mã 2026-11-23 | 01 | Mô tả của trinh sát nay lỗi thời: repo không còn là SDK gửi yêu cầu duyệt qua Slack/email mà là monorepo Turborepo chạy coding agent (Claude Code, Codex, OpenCode, Pi) b… |
 | [Omnigent](../../01-ai-coding-agents/README.md#ch-omnigent) | `omnigent-ai/omnigent` | Apache-2.0 | 11.503 | đọc tài liệu 2026-11-23 | 01 | Meta-harness của Databricks bọc Claude Code/Codex/Cursor/OpenCode…; |
 | [Munder Difflin](../../02-agent-frameworks/README.md#ch-munder-difflin) | `HarnessMD/munder-difflin` | MIT | 9.701 | đọc tài liệu 2026-11-23 | 02 | Văn phòng agent CLI (PTY + avatar Pixi.js), agent điều phối Michael, hive bằng file + single-committer git; |
 | [Claude Squad](../../01-ai-coding-agents/README.md#ch-claude-squad) | `smtg-ai/claude-squad` | AGPL-3.0 | 8.855 | đọc tài liệu 2026-11-23 | 01 | TUI tmux + git worktree quản lý nhiều CLI agent; |

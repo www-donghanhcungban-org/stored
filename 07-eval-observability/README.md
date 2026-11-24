@@ -762,3 +762,179 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | Thư viện nghiên cứu, kết quả phụ thuộc mô hình giám sát và cấu hình; không phải bộ đo an toàn hoàn chỉnh. LGPL-3.0 chỉ ở phụ thuộc (đọc điều kiện khi đóng gói). README viết THIRD-PARTY-LICENSES nhưng tên file thật là THIRD_PARTY_LICENSES.md. Cần Docker (và Kubernetes cho setting infra) cùng khóa API nhiều nhà cung cấp. |
 | So với | inspect-ai (nền, hồ sơ có sẵn), inspect-evals (bộ benchmark thông thường, không có giao thức giám sát), agentdojo (tấn công prompt injection cho agent). |
 | Nguồn | [README.md](https://github.com/UKGovernmentBEIS/control-arena/blob/2c32268f8ea38eb94d66f61a83e0be01fd69c0c9/README.md) · [LICENSE](https://github.com/UKGovernmentBEIS/control-arena/blob/2c32268f8ea38eb94d66f61a83e0be01fd69c0c9/LICENSE) · [THIRD_PARTY_LICENSES.md](https://github.com/UKGovernmentBEIS/control-arena/blob/2c32268f8ea38eb94d66f61a83e0be01fd69c0c9/THIRD_PARTY_LICENSES.md) · [pyproject.toml](https://github.com/UKGovernmentBEIS/control-arena/blob/2c32268f8ea38eb94d66f61a83e0be01fd69c0c9/pyproject.toml) · [_metrics.py](https://github.com/UKGovernmentBEIS/control-arena/blob/2c32268f8ea38eb94d66f61a83e0be01fd69c0c9/control_arena/analysis/_metrics.py) · [checks.yml](https://github.com/UKGovernmentBEIS/control-arena/blob/2c32268f8ea38eb94d66f61a83e0be01fd69c0c9/.github/workflows/checks.yml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-reviewbench-kylesau"></a>
+
+### reviewbench (KyleSau)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/KyleSau/reviewbench |
+| License | MIT (Kyle Saunders, 2026) |
+| Phiên bản đã đọc | `71104b4a30010e05dd71cabcf724e006f52408e3` (commit 2026-10-13) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README, pyproject, ci.yml, gate.py, metrics.py, matching.py, rubric, một ca nhãn và baseline; chưa chạy upstream |
+| Khoảng trống lấp | Code review agent có đo precision/recall |
+| Cơ chế đáng học | - `matching.py`: khớp một-một theo file, khoảng dòng nới `--line-tolerance` (mặc định 3) và loại lỗi; comment thứ hai về cùng lỗi tính là false positive.<br>- `metrics.py`: TP/FP/FN tổng và theo loại lỗi, khoảng Wilson 95%, Cohen kappa giữa matcher và judge; chỉ chấm ca có trạng thái ok, mẫu số 0 hiện n/a.<br>- `gate.py`: so run với baseline, bắt buộc cùng dataset fingerprint và cùng line tolerance, giới hạn số ca không chấm được, rồi mới xét mức tụt recall/precision.<br>- Reviewer `oracle` (phải đạt 100%) và `null` (phải 0 recall) làm tự kiểm bộ đo. |
+| Tiêu chí và cách kiểm | Gate CI: `--max-recall-drop 0.05 --max-precision-drop 0.05`, exit 1 khi vi phạm. `ci.yml` chạy ruff, pytest ngoại tuyến (mock client Claude), chạy reviewer heuristic rồi gate với `baselines/heuristic.json`; job Claude chỉ chạy trên main hoặc thủ công khi có secret API. Kiểm bằng máy, nhưng chỉ có số heuristic (precision 92,3%, recall 57,1%, theo README) và chưa có số mô hình thật. |
+| Giới hạn và rủi ro | Quy mô nhỏ và tác giả viết cả luật heuristic lẫn dataset nên số optimistic (README tự nhận). Chạy reviewer/judge Claude gửi diff và nhãn ra API Anthropic bằng `ANTHROPIC_API_KEY` và tốn tiền. Dự án rất mới, 1 sao, một tác giả. Tên model mặc định trong README là tuyên bố của tác giả (chưa xác minh). |
+| So với | open-code-review-ocr, code-review-graph, inspect-ai |
+| Nguồn | [README.md](https://github.com/KyleSau/reviewbench/blob/71104b4a30010e05dd71cabcf724e006f52408e3/README.md) · [LICENSE](https://github.com/KyleSau/reviewbench/blob/71104b4a30010e05dd71cabcf724e006f52408e3/LICENSE) · [pyproject.toml](https://github.com/KyleSau/reviewbench/blob/71104b4a30010e05dd71cabcf724e006f52408e3/pyproject.toml) · [ci.yml](https://github.com/KyleSau/reviewbench/blob/71104b4a30010e05dd71cabcf724e006f52408e3/.github/workflows/ci.yml) · [gate.py](https://github.com/KyleSau/reviewbench/blob/71104b4a30010e05dd71cabcf724e006f52408e3/src/reviewbench/gate.py) · [metrics.py](https://github.com/KyleSau/reviewbench/blob/71104b4a30010e05dd71cabcf724e006f52408e3/src/reviewbench/metrics.py) · [matching.py](https://github.com/KyleSau/reviewbench/blob/71104b4a30010e05dd71cabcf724e006f52408e3/src/reviewbench/matching.py) · [match_rubric.md](https://github.com/KyleSau/reviewbench/blob/71104b4a30010e05dd71cabcf724e006f52408e3/rubrics/match_rubric.md) · [py-payment-webhook.json](https://github.com/KyleSau/reviewbench/blob/71104b4a30010e05dd71cabcf724e006f52408e3/datasets/v1/cases/py-payment-webhook.json) · [heuristic.json](https://github.com/KyleSau/reviewbench/blob/71104b4a30010e05dd71cabcf724e006f52408e3/baselines/heuristic.json) |
+
+<a id="n2-rbench-decadance"></a>
+
+### rbench (decadance-dance)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/decadance-dance/rbench |
+| License | Apache-2.0 (LICENSE đầy đủ); dữ liệu task nhập từ ReviewBench (MIT, theo design.md) và nguồn của các repo gốc, mỗi nguồn có license riêng |
+| Phiên bản đã đọc | `f423387ae98812e944dc19ef4a939d76adb89a2d` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README, ci.yml, bin/check, design.md (D1), spec review-scoring, cli.py, hermetic.py, tasks/reviewbench.py, tasks/license.py, proxy allowlist, engines/code-review.toml, matrices/smoke.toml, manifest task; chưa chạy upstream |
+| Khoảng trống lấp | Code review agent có đo precision/recall |
+| Cơ chế đáng học | - `design.md` D1: nhập 25 PR kiểm thử từ ReviewBench ghim ở commit cụ thể, ánh xạ finding `tp` thành ground truth với mức must/should/nit, bỏ `fp`; bộ khớp many-to-many do judge ghim model, effort, hash prompt.<br>- `trial/hermetic.py` và `images/proxy/allowlist`: container agent chỉ ra được host API/auth của nhà cung cấp qua squid (danh sách host chính xác, cờ `-n` chống CONNECT theo IP), policy CLI do managed settings áp.<br>- `tasks/license.py`: chỉ đóng gói nguồn khi license repo gốc tại head nằm trong danh sách cho phép (MIT, Apache-2.0, BSD, ISC, MPL, GPL, LGPL, AGPL); không nhận diện được thì từ chối.<br>- `bin/check` và pre-push: cấm id/canary của task ẩn lọt vào file, đường dẫn hay commit; `runs/` không được theo dõi. |
+| Tiêu chí và cách kiểm | Spec nêu metric theo trial: recall riêng must/should/nit, precision có nền và tăng cường, số false finding và nit, token từng model, thời gian; báo cáo có khoảng bootstrap 95% theo task. Cổng merge `ci-ok` chạy `bin/check` (guard công bố, ruff format, ruff check, pytest, 68 file trong `tests/`) bằng `uv --locked`. Mã thoát CLI: 0, 1, 2, 75 (dừng ở ngân sách vòng hoặc giới hạn). Chưa có kết quả benchmark công bố trong repo (chưa xác minh bất kỳ số đo nào). |
+| Giới hạn và rủi ro | Trạng thái thiết kế/khung: README nói lệnh còn là skeleton dù `src/` đã có executor, ledger và plan; một số lệnh in 'not implemented yet'. Chạy thật cần Docker, đăng nhập Claude/Codex và ngân sách giới hạn gói; task ẩn nằm ngoài repo. Độ chính xác của judge phụ thuộc model ghim; precision không so sánh được với ReviewBench vì bỏ mục `fp`. Rất mới, 0 sao. |
+| So với | reviewbench-kylesau, crbugbench, harbor-terminal-bench |
+| Nguồn | [README.md](https://github.com/decadance-dance/rbench/blob/f423387ae98812e944dc19ef4a939d76adb89a2d/README.md) · [LICENSE](https://github.com/decadance-dance/rbench/blob/f423387ae98812e944dc19ef4a939d76adb89a2d/LICENSE) · [ci.yml](https://github.com/decadance-dance/rbench/blob/f423387ae98812e944dc19ef4a939d76adb89a2d/.github/workflows/ci.yml) · [check](https://github.com/decadance-dance/rbench/blob/f423387ae98812e944dc19ef4a939d76adb89a2d/bin/check) · [design.md](https://github.com/decadance-dance/rbench/blob/f423387ae98812e944dc19ef4a939d76adb89a2d/openspec/changes/add-rbench-benchmark/design.md) · [spec.md](https://github.com/decadance-dance/rbench/blob/f423387ae98812e944dc19ef4a939d76adb89a2d/openspec/changes/add-rbench-benchmark/specs/review-scoring/spec.md) · [cli.py](https://github.com/decadance-dance/rbench/blob/f423387ae98812e944dc19ef4a939d76adb89a2d/src/rbench/cli.py) · [hermetic.py](https://github.com/decadance-dance/rbench/blob/f423387ae98812e944dc19ef4a939d76adb89a2d/src/rbench/trial/hermetic.py) · [reviewbench.py](https://github.com/decadance-dance/rbench/blob/f423387ae98812e944dc19ef4a939d76adb89a2d/src/rbench/tasks/reviewbench.py) · [license.py](https://github.com/decadance-dance/rbench/blob/f423387ae98812e944dc19ef4a939d76adb89a2d/src/rbench/tasks/license.py) · [allowlist](https://github.com/decadance-dance/rbench/blob/f423387ae98812e944dc19ef4a939d76adb89a2d/images/proxy/allowlist) · [code-review.toml](https://github.com/decadance-dance/rbench/blob/f423387ae98812e944dc19ef4a939d76adb89a2d/engines/code-review.toml) · [smoke.toml](https://github.com/decadance-dance/rbench/blob/f423387ae98812e944dc19ef4a939d76adb89a2d/matrices/smoke.toml) · [manifest.json](https://github.com/decadance-dance/rbench/blob/f423387ae98812e944dc19ef4a939d76adb89a2d/tasks/reviewbench/manifest.json) |
+
+<a id="n2-crbugbench"></a>
+
+### CRBugBench
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/malusamayo/CRBugBench |
+| License | Không có file LICENSE trong repo (license null); các diff và đề bài trích từ 98 repo bên thứ ba với license riêng, chưa kiểm từng cái |
+| Phiên bản đã đọc | `e8e585ee2a9bfa19002103d9a2bddaeb7aca49f8` (commit 2026-10-07) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, scripts/run.py, summarize.py, tasks/index.json, một task đủ bộ (task.toml, instruction.md, test.sh, llm_judge.py, judge_runtime.py, judge_common.py, ground_truth.json, Dockerfile); chưa chạy upstream |
+| Khoảng trống lấp | Code review agent có đo precision/recall (ở đây chỉ đo recall) |
+| Cơ chế đáng học | - `environment/Dockerfile`: checkout base commit, gỡ remote, xóa ref, bỏ `.promisor`, `git repack` và `prune`, rồi build fail nếu số commit mồ côi khác số commit tới được từ HEAD (cơ chế chống rò đáp án).<br>- `tests/llm_judge.py` + `judge_runtime.py`: mỗi ca ground truth được hỏi từng judge (mặc định gpt-5.5, claude-opus-4.8, gemini-3.5-flash qua Copilot CLI); `strict` là 1 khi verdict 'yes', `lenient` cộng 'partial'.<br>- Hai track: `fix` (PR gây lỗi, đáp án là issue của bản sửa sau) và `comments` (lỗi mà reviewer người đã chỉ ra).<br>- `scripts/summarize.py`: gom theo track gồm detected, lenient, và any (ít nhất một lần thử bắt được). |
+| Tiêu chí và cách kiểm | Reward = trung bình `strict` trên các ca của task; file test.sh chạy judge và ghi `reward.json`, `judge_details.json`. `judge_agreement` được báo cáo. Không có CI, không có test cho script (không thấy `.github`). Ca có review rỗng chấm 0; trả lời judge không parse được thành 'no'. |
+| Giới hạn và rủi ro | Không có license nên chưa rõ quyền dùng/phân phối lại; nội dung nhúng mã bên thứ ba. Cần Docker, Harbor, khoảng 650 GB đĩa cho toàn bộ và tới 19 GB mỗi repo. Review và ground truth được gửi tới model judge qua GitHub Copilot (cần `GITHUB_TOKEN`), nên dữ liệu rời máy. Không đo false positive nên reviewer nói thật nhiều vẫn điểm cao. Tên model trong README và tên 'gpt-6-luna' là cấu hình của tác giả (chưa xác minh tồn tại). |
+| So với | reviewbench-kylesau, rbench-decadance, swe-bench-harness |
+| Nguồn | [README.md](https://github.com/malusamayo/CRBugBench/blob/e8e585ee2a9bfa19002103d9a2bddaeb7aca49f8/README.md) · [run.py](https://github.com/malusamayo/CRBugBench/blob/e8e585ee2a9bfa19002103d9a2bddaeb7aca49f8/scripts/run.py) · [summarize.py](https://github.com/malusamayo/CRBugBench/blob/e8e585ee2a9bfa19002103d9a2bddaeb7aca49f8/scripts/summarize.py) · [index.json](https://github.com/malusamayo/CRBugBench/blob/e8e585ee2a9bfa19002103d9a2bddaeb7aca49f8/tasks/index.json) · [task.toml](https://github.com/malusamayo/CRBugBench/blob/e8e585ee2a9bfa19002103d9a2bddaeb7aca49f8/tasks/Files_comment10921/task.toml) · [instruction.md](https://github.com/malusamayo/CRBugBench/blob/e8e585ee2a9bfa19002103d9a2bddaeb7aca49f8/tasks/Files_comment10921/instruction.md) · [test.sh](https://github.com/malusamayo/CRBugBench/blob/e8e585ee2a9bfa19002103d9a2bddaeb7aca49f8/tasks/Files_comment10921/tests/test.sh) · [llm_judge.py](https://github.com/malusamayo/CRBugBench/blob/e8e585ee2a9bfa19002103d9a2bddaeb7aca49f8/tasks/Files_comment10921/tests/llm_judge.py) · [judge_runtime.py](https://github.com/malusamayo/CRBugBench/blob/e8e585ee2a9bfa19002103d9a2bddaeb7aca49f8/tasks/Files_comment10921/tests/judge_runtime.py) · [judge_common.py](https://github.com/malusamayo/CRBugBench/blob/e8e585ee2a9bfa19002103d9a2bddaeb7aca49f8/tasks/Files_comment10921/tests/judge_common.py) · [ground_truth.json](https://github.com/malusamayo/CRBugBench/blob/e8e585ee2a9bfa19002103d9a2bddaeb7aca49f8/tasks/Files_comment10921/tests/ground_truth.json) · [Dockerfile](https://github.com/malusamayo/CRBugBench/blob/e8e585ee2a9bfa19002103d9a2bddaeb7aca49f8/tasks/Files_comment10921/environment/Dockerfile) |
+
+<a id="n2-ares-rag-eval"></a>
+
+### ARES
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/stanford-futuredata/ARES |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `c7c9018a755faf8347c4da415632bae1593ef104` (commit 2025-03-28) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, pyproject.toml, CHANGELOG.md và một số file khác; chưa chạy upstream |
+| Khoảng trống lấp | Đánh giá RAG tách context relevance, answer faithfulness, answer relevance, có khoảng tin cậy thống kê |
+| Cơ chế đáng học | • Chấm ba tiêu chí tách riêng bằng judge: few-shot LLM (`ues_idp.py`, hàm `few_shot_*_scoring` cho OpenAI/Azure/Together/Claude/vLLM) hoặc bộ phân loại tinh chỉnh (`LLMJudge_RAG_Compared_Scoring.py`).<br>• Hiệu chuẩn bằng prediction-powered inference: `calculate_ppi` trộn tập nhãn người nhỏ với dự đoán judge trên tập lớn, trả khoảng tin cậy PPI so với khoảng cổ điển và khoảng chỉ-judge (`ppi.py`, `pp_mean_iid_asymptotic`, `binomial_iid`).<br>• Sinh truy vấn/đáp án tổng hợp từ tài liệu thật để huấn luyện judge (README, nhánh `synthetic_query_generator` trong `ares.py`). |
+| Tiêu chí và cách kiểm | Cần tập kiểm chứng có nhãn người (README: ít nhất 50 mẫu, nên vài trăm) và few-shot mẫu; mặc định `alpha` 0.05, `num_trials` 1000 (ares.py). Không có thư mục test và không có workflow CI trong repo, nên độ đúng của mã không có kiểm máy tại upstream. |
+| Giới hạn và rủi ro | Commit cuối 2025-03-28, không workflow, không test. Mâu thuẫn metadata: LICENSE là Apache-2.0 nhưng classifier trong `pyproject.toml` ghi MIT; badge README ghi v0.5.7 còn `pyproject.toml` ghi 0.6.6. Dùng judge API (OpenAI, Together, Anthropic, Azure) nghĩa là câu hỏi, tài liệu và câu trả lời rời máy. Số sao 739 trinh sát lấy từ web, chưa xác minh. Độ chính xác khẳng định trong paper (chưa xác minh). |
+| So với | ragas, ragas-rag-metrics (chấm điểm trực tiếp không hiệu chuẩn), deepeval, lm-evaluation-harness |
+| Nguồn | [README.md](https://github.com/stanford-futuredata/ARES/blob/c7c9018a755faf8347c4da415632bae1593ef104/README.md) · [LICENSE](https://github.com/stanford-futuredata/ARES/blob/c7c9018a755faf8347c4da415632bae1593ef104/LICENSE) · [pyproject.toml](https://github.com/stanford-futuredata/ARES/blob/c7c9018a755faf8347c4da415632bae1593ef104/pyproject.toml) · [CHANGELOG.md](https://github.com/stanford-futuredata/ARES/blob/c7c9018a755faf8347c4da415632bae1593ef104/CHANGELOG.md) · [ares.py](https://github.com/stanford-futuredata/ARES/blob/c7c9018a755faf8347c4da415632bae1593ef104/ares/ares.py) · [ues_idp.py](https://github.com/stanford-futuredata/ARES/blob/c7c9018a755faf8347c4da415632bae1593ef104/ares/ues_idp.py) · [rag_scoring.py](https://github.com/stanford-futuredata/ARES/blob/c7c9018a755faf8347c4da415632bae1593ef104/ares/rag_scoring.py) · [ppi.py](https://github.com/stanford-futuredata/ARES/blob/c7c9018a755faf8347c4da415632bae1593ef104/ares/RAG_Automatic_Evaluation/ppi.py) · [LLMJudge_RAG_Compared_Scoring.py](https://github.com/stanford-futuredata/ARES/blob/c7c9018a755faf8347c4da415632bae1593ef104/ares/RAG_Automatic_Evaluation/LLMJudge_RAG_Compared_Scoring.py) |
+
+<a id="n2-mlperf-inference"></a>
+
+### MLPerf Inference (reference và LoadGen)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/mlcommons/inference |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `3fbc329939999c13d0a7b5e67fb2092287e06047` (commit 2026-09-02) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE.md, loadgen/README.md, loadgen/test_settings.h và một số file khác; chưa chạy upstream |
+| Khoảng trống lấp | Benchmark tải và hiệu năng suy luận theo chuẩn công khai (LoadGen, kịch bản, bộ kiểm nộp bài) |
+| Cơ chế đáng học | • LoadGen là thư viện C++ có binding Python, không biết model hay dữ liệu, chỉ sinh lưu lượng theo bốn kịch bản `SingleStream`, `MultiStream`, `Server`, `Offline` và ghi log để kiểm (loadgen/README.md, test_settings.h).<br>• Ràng buộc hợp lệ nằm ở `mlperf.conf`: `target_latency_percentile` (90 hoặc 99), `min_duration` 600000 ms, `min_query_count` theo từng model; `early_stopping` tính số truy vấn tối thiểu cần qua.<br>• `tools/submission` có bộ kiểm bài nộp (log parser, truncate accuracy log, submission_checker) kiểm độ chính xác, ràng buộc độ trễ, cấu trúc thư mục. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: LoadGen tự báo kết quả có thỏa ràng buộc không; submission checker rà log. Workflow `test-loadgen.yml` build LoadGen qua mlc-scripts trên Python 3.8 đến 3.13 khi PR đổi `loadgen/`; `test-submission-checker.yml` nhắm nhánh `master_off` và `dev_off` nên trên thực tế đang tắt cho PR. Luật chính thức ở repo `inference_policies` riêng (README loadgen: lệch với policy là bug). |
+| Giới hạn và rủi ro | Mã tham chiếu không tối ưu và không đại diện hiệu năng nhà sản xuất; submitter không được sửa C++ của LoadGen. Chạy đầy đủ cần phần cứng, dataset lớn và nhiều model gated. Một số thư mục con có license riêng (language/gpt-j, retired_benchmarks). Mục tiêu hiện tại gồm cả model rất lớn (llama2-70b, deepseek-r1, qwen3-vl-235b). Mô tả trinh sát gọn đúng nhưng không nêu đây chủ yếu là bộ quy trình nộp bài. |
+| So với | guidellm (đo tải server LLM thực tế), mteb, lm-evaluation-harness |
+| Nguồn | [README.md](https://github.com/mlcommons/inference/blob/3fbc329939999c13d0a7b5e67fb2092287e06047/README.md) · [LICENSE.md](https://github.com/mlcommons/inference/blob/3fbc329939999c13d0a7b5e67fb2092287e06047/LICENSE.md) · [README.md](https://github.com/mlcommons/inference/blob/3fbc329939999c13d0a7b5e67fb2092287e06047/loadgen/README.md) · [test_settings.h](https://github.com/mlcommons/inference/blob/3fbc329939999c13d0a7b5e67fb2092287e06047/loadgen/test_settings.h) · [early_stopping.h](https://github.com/mlcommons/inference/blob/3fbc329939999c13d0a7b5e67fb2092287e06047/loadgen/early_stopping.h) · [mlperf.conf](https://github.com/mlcommons/inference/blob/3fbc329939999c13d0a7b5e67fb2092287e06047/mlperf.conf) · [README.md](https://github.com/mlcommons/inference/blob/3fbc329939999c13d0a7b5e67fb2092287e06047/tools/submission/README.md) · [test-loadgen.yml](https://github.com/mlcommons/inference/blob/3fbc329939999c13d0a7b5e67fb2092287e06047/.github/workflows/test-loadgen.yml) · [test-submission-checker.yml](https://github.com/mlcommons/inference/blob/3fbc329939999c13d0a7b5e67fb2092287e06047/.github/workflows/test-submission-checker.yml) |
+
+<a id="n2-ailuminate"></a>
+
+### AILuminate (bộ prompt demo)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/mlcommons/ailuminate |
+| License | Apache-2.0 (LICENSE.md); dữ liệu CC BY 4.0 theo README |
+| Phiên bản đã đọc | `769cc2be9d20c8d4fb26ce53b68865ed41dfb8e2` (commit 2025-06-11) |
+| Kiểm chứng | 2026-11-24; docs-read; đã đọc README.md, LICENSE.md, AILuminate Naming and Versioning.md, airr_official_1.0_demo_en_us_prompt_set_release.csv và một số file khác; chưa chạy upstream |
+| Khoảng trống lấp | Bộ dữ liệu benchmark an toàn LLM theo phân loại nguy cơ (không có mã chạy) |
+| Cơ chế đáng học | • Repo chỉ chứa dữ liệu và tài liệu: hai file CSV demo en_US và fr_FR, mỗi file 1200 prompt với cột `release_prompt_id`, `prompt_text`, `hazard`, `persona`, `locale`, `prompt_hash`.<br>• Phân loại nguy cơ theo mã `hazard` (vcr, src, cse, ssh, iwp, ipv, dfm, ncr, hte, prv, spc_*, sxc_prn); tôi đếm trong CSV có 15 mã, 100 prompt mỗi mã trong bản en_US.<br>• Quy ước đặt tên và đánh phiên bản benchmark (AILuminate Naming and Versioning.md): tên, ngôn ngữ BCP 47, semver, loại phát hành. |
+| Tiêu chí và cách kiểm | Không có script hay test trong repo; workflow duy nhất là CLA bot. Bộ prompt chính thức 12000 prompt thực hành chỉ cấp cho thành viên MLCommons và bộ evaluator ensemble không nằm trong repo; công cụ chạy là `modelbench` ở repo riêng (README, chưa mở). Demo là mẫu 10% của tập practice (README). |
+| Giới hạn và rủi ro | Mô tả trinh sát sai ở một điểm: không có mã Apache nào để dùng, chỉ có LICENSE.md Apache-2.0 cạnh dữ liệu CC BY 4.0 theo README, hai bên không khớp nên cần ghi rõ khi trích dữ liệu. README nói 12 nhóm hazard nhưng bảng của chính nó liệt kê 14 mã và CSV có 15 (thêm `spc_lgl`). Persona trong schema có normal nhưng demo en_US chỉ có skilled và unskilled (600 mỗi loại). Id trong file demo mang tiền tố `airr_practice_1_0_`. Dữ liệu chứa nội dung độc hại, gồm đề tài bóc lột trẻ em, cần cảnh báo và hạn chế người đọc. Chỉ có tiếng Anh và Pháp, không có tiếng Việt. |
+| So với | garak (red team tự động), inspect-evals, deepeval, nemo-guardrails |
+| Nguồn | [README.md](https://github.com/mlcommons/ailuminate/blob/769cc2be9d20c8d4fb26ce53b68865ed41dfb8e2/README.md) · [LICENSE.md](https://github.com/mlcommons/ailuminate/blob/769cc2be9d20c8d4fb26ce53b68865ed41dfb8e2/LICENSE.md) · [AILuminate Naming and Versioning.md](https://github.com/mlcommons/ailuminate/blob/769cc2be9d20c8d4fb26ce53b68865ed41dfb8e2/AILuminate%20Naming%20and%20Versioning.md) · [airr_official_1.0_demo_en_us_prompt_set_release.csv](https://github.com/mlcommons/ailuminate/blob/769cc2be9d20c8d4fb26ce53b68865ed41dfb8e2/airr_official_1.0_demo_en_us_prompt_set_release.csv) · [airr_official_1.0_demo_fr_fr_prompt_set_release.csv](https://github.com/mlcommons/ailuminate/blob/769cc2be9d20c8d4fb26ce53b68865ed41dfb8e2/airr_official_1.0_demo_fr_fr_prompt_set_release.csv) · [cla.yml](https://github.com/mlcommons/ailuminate/blob/769cc2be9d20c8d4fb26ce53b68865ed41dfb8e2/.github/workflows/cla.yml) |
+
+<a id="n2-evalview"></a>
+
+### EvalView
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/hidai25/eval-view |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ed2d312d812f4fd82bb7881b29432f752b02823e` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, pyproject, action.yml, `core/diff.py`, `core/config.py`, `core/chaos.py`, `telemetry/client.py`, skill run-eval, ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Eval trajectory và regression cho agent/skill: snapshot hành vi rồi diff (khoảng trống của kho) |
+| Cơ chế đáng học | • Vòng `evalview snapshot` rồi `evalview check`: ghi lại baseline (công cụ gọi, thứ tự, tham số, đầu ra) và diff toàn trajectory — README.md.<br>• `DiffEngine` trả bốn trạng thái PASSED, TOOLS_CHANGED, OUTPUT_CHANGED, REGRESSION; so tool theo ngưỡng tương đồng (mặc định 0.8), so đầu ra tương đồng từ vựng (cờ khi dưới 0.95), điểm tụt quá `score_regression_threshold` thì REGRESSION; có `forbidden_tool` — `core/diff.py`, `core/config.py`.<br>• Phần diff tool/thứ tự chạy offline, không cần khoá API; LLM judge chỉ bật khi muốn chấm chất lượng (README, cần lưu ý chạy agent vẫn tốn chi phí backend).<br>• `core/chaos.py`: chèn nhiễu có seed (tool_failure ở lần gọi thứ N, latency_spike, goal_interruption) để mô phỏng người dùng/công cụ thất thường, lặp lại được.<br>• GitHub Action `action.yml`: `fail-on` mặc định `REGRESSION`, `strict` đổi thành fail mọi thay đổi. |
+| Tiêu chí và cách kiểm | Ngưỡng cấu hình được trong `diff:` của config (ví dụ docstring: tool 0.85, output 0.92, score 3.0); kiểm bằng máy (diff xác định) cộng judge tùy chọn. CI của repo chạy pytest ma trận Python 3.9 đến 3.12 trừ test cần khoá API, có lint/typecheck; có workflow dogfood. Chưa chạy. |
+| Giới hạn và rủi ro | Telemetry mặc định BẬT: CLI gửi sự kiện ẩn danh tới PostHog (ID cài đặt ngẫu nhiên, phiên bản, lệnh, môi trường CI, kết quả gộp); tắt bằng `EVALVIEW_TELEMETRY_DISABLED=1` hoặc `evalview telemetry off` — `telemetry/client.py` có gửi thuộc tính hệ điều hành và Python. Số sao 142 là số web của trinh sát (chưa xác minh). Dự án trẻ (0.9.x), tuyên bố trong README về tác dụng phát hiện hồi quy là của tác giả (chưa xác minh bằng benchmark độc lập). |
+| So với | [AgentEvals](03-agentic-patterns-loops/README.md#factory-trajectory-oracles-2026-11-04) (so trajectory bằng LangChain) · [NVIDIA SkillEvaluator](20-claude-plugins-ecosystem/README.md#ch-nvidia-skillevaluator) · [agent-skills-eval](20-claude-plugins-ecosystem/README.md#ch-agent-skills-eval) |
+| Nguồn | [README.md](https://github.com/hidai25/eval-view/blob/ed2d312d812f4fd82bb7881b29432f752b02823e/README.md) · [LICENSE](https://github.com/hidai25/eval-view/blob/ed2d312d812f4fd82bb7881b29432f752b02823e/LICENSE) · [pyproject.toml](https://github.com/hidai25/eval-view/blob/ed2d312d812f4fd82bb7881b29432f752b02823e/pyproject.toml) · [action.yml](https://github.com/hidai25/eval-view/blob/ed2d312d812f4fd82bb7881b29432f752b02823e/action.yml) · [diff.py](https://github.com/hidai25/eval-view/blob/ed2d312d812f4fd82bb7881b29432f752b02823e/evalview/core/diff.py) · [config.py](https://github.com/hidai25/eval-view/blob/ed2d312d812f4fd82bb7881b29432f752b02823e/evalview/core/config.py) · [chaos.py](https://github.com/hidai25/eval-view/blob/ed2d312d812f4fd82bb7881b29432f752b02823e/evalview/core/chaos.py) · [client.py](https://github.com/hidai25/eval-view/blob/ed2d312d812f4fd82bb7881b29432f752b02823e/evalview/telemetry/client.py) · [SKILL.md](https://github.com/hidai25/eval-view/blob/ed2d312d812f4fd82bb7881b29432f752b02823e/skills/run-eval/SKILL.md) · [ci.yml](https://github.com/hidai25/eval-view/blob/ed2d312d812f4fd82bb7881b29432f752b02823e/.github/workflows/ci.yml) |
+
+<a id="n2-sanityharness"></a>
+
+### SanityHarness
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/lemon07r/SanityHarness |
+| License | không có file LICENSE |
+| Phiên bản đã đọc | `388b18dbeac8062e36fbae4d4d775c9f14fa9d7b` (commit 2026-10-17) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, go.mod, docs/SCORING.md, `internal/task/weight.go`, release.yml, docker.yml; chưa chạy upstream |
+| Khoảng trống lấp | Đánh giá coding agent bằng harness tái lập, chạy trong container |
+| Cơ chế đáng học | • Mỗi task chạy trong Docker riêng; 26 task, 6 ngôn ngữ (Go, Rust, TypeScript, Kotlin, Dart, Zig); 19 agent dựng sẵn; bubblewrap tùy chọn để giam agent trong workspace — README.md.<br>• Điểm có trọng số: weight = 1,0 cộng các hệ số độ khó (ngôn ngữ hiếm, tính năng đặc thù, thuật toán mới, mật độ ca biên, bài toán mới), trần 1,5 — `docs/SCORING.md`, `internal/task/weight.go`.<br>• Toàn vẹn: agent sửa file test hoặc file hỗ trợ thì status `integrity_violation` và bị trừ 0,25; kiểm bằng BLAKE3; test ẩn chỉ áp lúc chấm (có chế độ `--legacy` lộ test ẩn) — README, `docs/SCORING.md`, đoạn import `blake3` trong `internal/cli/eval.go` (xác nhận bằng grep).<br>• `sanity eval --resume` chạy tiếp đợt bị gián đoạn, `--parallel` chạy song song, có `verify` kiểm bằng chứng nộp. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: pass (kể cả partial_pass khi hết giờ nhưng test đã qua) cho 100% trọng số task, fail 0, integrity_violation -0,25; trọng số là hệ số kinh nghiệm do tác giả hiệu chỉnh, không có kiểm định độc lập (chưa xác minh). Repo có test Go; `release.yml` chạy build, `go test -race`, vet và lint chỉ khi đẩy tag `v*`, `docker.yml` dựng ảnh khi đổi `containers/**`; badge CI trong README trỏ `ci.yml` không có ở commit này. |
+| Giới hạn và rủi ro | Không có file LICENSE (kể cả go.mod không ghi): README chỉ ghi 'MIT License' nên về pháp lý chưa rõ, coi là chưa xác minh trước khi nhúng hoặc sao chép mã. Chạy agent thật cần Docker và khoá API của từng agent; cần cài Go, chưa chạy ở đây. Bộ chỉ 26 task nên độ phân biệt hạn chế; bubblewrap chỉ có trên Linux. Một tác giả, commit cuối 2026-10-17. |
+| So với | [SWE-bench](01-ai-coding-agents/README.md#ch-swe-bench-harness) · [Harbor / Terminal-Bench](07-eval-observability/README.md) · [mini-SWE-agent](01-ai-coding-agents/README.md) |
+| Nguồn | [README.md](https://github.com/lemon07r/SanityHarness/blob/388b18dbeac8062e36fbae4d4d775c9f14fa9d7b/README.md) · [go.mod](https://github.com/lemon07r/SanityHarness/blob/388b18dbeac8062e36fbae4d4d775c9f14fa9d7b/go.mod) · [SCORING.md](https://github.com/lemon07r/SanityHarness/blob/388b18dbeac8062e36fbae4d4d775c9f14fa9d7b/docs/SCORING.md) · [weight.go](https://github.com/lemon07r/SanityHarness/blob/388b18dbeac8062e36fbae4d4d775c9f14fa9d7b/internal/task/weight.go) · [release.yml](https://github.com/lemon07r/SanityHarness/blob/388b18dbeac8062e36fbae4d4d775c9f14fa9d7b/.github/workflows/release.yml) · [docker.yml](https://github.com/lemon07r/SanityHarness/blob/388b18dbeac8062e36fbae4d4d775c9f14fa9d7b/.github/workflows/docker.yml) |
+
+<a id="n2-code-review-benchmark"></a>
+
+### Code Review Bench (Martian)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/withmartian/code-review-benchmark |
+| License | MIT |
+| Phiên bản đã đọc | `23a35d0d64f7de5a68e5679da08414e0edacea9b` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, methodology/summary.md, offline/README.md, step3_judge_comments.py, golden_comments/sentry.json, LICENSE, tests.yml; chưa chạy upstream |
+| Khoảng trống lấp | Đo chất lượng review và so sánh khung SDD: nền precision/recall cho code review có thể tái chạy |
+| Cơ chế đáng học | - Golden comment có `severity` và `category` (bug, security, concurrency, perf, test_gap, style, speculative) trong `offline/golden_comments/*.json`; tổng 173 mục trên 50 PR (đếm bằng script tại commit này).<br>- Pipeline năm bước `step1_download_prs` đến `step3_judge_comments`: tải review của từng công cụ, tách ứng viên, dedup, rồi judge LLM trả JSON `match`/`confidence` cho từng cặp (`step3_judge_comments.py`).<br>- Precision = TP / số ứng viên, recall = TP / số golden (`step3_judge_comments.py`); README mô tả thêm profile Strict/Core/All và F-beta chỉnh được trong dashboard HTML.<br>- Nhánh online (`online/etl`): Discover, Enrich, Analyze rồi đối chiếu bot suggestion với commit sửa sau review để lấy precision/recall hành vi. |
+| Tiêu chí và cách kiểm | Số liệu máy tính: precision, recall, F-beta (mặc định F2 trong dashboard). CI chạy `ruff check` và `pytest` cho offline và online ETL (`tests.yml`); test không cần mạng theo README. Judge dùng temperature 0 và lưu kết quả theo từng model judge (Opus 4.5, Sonnet 4.5, GPT-5.2 theo README, chưa xác minh bảng kết quả). |
+| Giới hạn và rủi ro | - MIT. Judge gọi dịch vụ `api.withmartian.com` qua `MARTIAN_API_KEY` (diff và comment rời máy).<br>- Tuyên bố top 5 công cụ giống nhau giữa ba judge là của tác giả (chưa xác minh).<br>- Tập 50 PR cố định, dễ bị overfit; tiêu chí đưa công cụ lên bảng xếp hạng yêu cầu 600–1.000 PR công khai.<br>- Link `crb_full_methodology.md` trong `methodology/summary.md` không khớp tên file `full.md`. |
+| So với | open-code-review-ocr, code-review-graph (cùng category code-review); swe-bench-live (eval cho coding agent, không phải review) |
+| Nguồn | [README.md](https://github.com/withmartian/code-review-benchmark/blob/23a35d0d64f7de5a68e5679da08414e0edacea9b/README.md) · [LICENSE](https://github.com/withmartian/code-review-benchmark/blob/23a35d0d64f7de5a68e5679da08414e0edacea9b/LICENSE) · [summary.md](https://github.com/withmartian/code-review-benchmark/blob/23a35d0d64f7de5a68e5679da08414e0edacea9b/methodology/summary.md) · [README.md](https://github.com/withmartian/code-review-benchmark/blob/23a35d0d64f7de5a68e5679da08414e0edacea9b/offline/README.md) · [step3_judge_comments.py](https://github.com/withmartian/code-review-benchmark/blob/23a35d0d64f7de5a68e5679da08414e0edacea9b/offline/code_review_benchmark/step3_judge_comments.py) · [tests.yml](https://github.com/withmartian/code-review-benchmark/blob/23a35d0d64f7de5a68e5679da08414e0edacea9b/.github/workflows/tests.yml) · [sentry.json](https://github.com/withmartian/code-review-benchmark/blob/23a35d0d64f7de5a68e5679da08414e0edacea9b/offline/golden_comments/sentry.json) |
+
+<a id="n2-ccusage"></a>
+
+### ccusage
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ryoppippi/ccusage |
+| License | MIT |
+| Phiên bản đã đọc | `4c250b85befb657c024c55a1db7b846371639fcc` (commit 2026-11-24) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, docs/guide/telemetry.md, cost-modes.md, telemetry.rs, cost.rs, AGENTS.md, ci.yaml, update-pricing.yaml, LICENSE; chưa chạy upstream |
+| Khoảng trống lấp | Đo chi phí token/hạn mức của coding tool từ log cục bộ (mảng chi phí chưa có hồ sơ trong kho) |
+| Cơ chế đáng học | - Mỗi nguồn là một adapter Rust riêng (`rust/adapters/<agent>`), phần tính chung ở `ccusage-core`; Claude Code dedupe theo `message.id` và `requestId` (thấy qua grep trong `rust/adapters/claude/src/tests.rs`, chưa đọc đủ).<br>- `cost.rs`: tính từ token với giá input, output, cache 5 phút, cache 1 giờ, cache đọc, bậc long-context và hệ số fast; bản ghi cost bằng 0 của một số nguồn bị coi là chưa ghi để tính lại từ token.<br>- Chế độ `--mode auto/calculate/display` (`docs/guide/cost-modes.md`) phân biệt chi phí lưu trong log với chi phí ước tính; ghi rõ không phải hoá đơn.<br>- Bảng giá nhúng từ snapshot LiteLLM và models.dev, workflow `update-pricing.yaml` làm mới hằng ngày; cờ `--offline` dùng snapshot. |
+| Tiêu chí và cách kiểm | Kiểm bằng test Rust và workflow CI (`ci.yaml` có tirith scan và build đa nền tảng; chỉ đọc phần đầu file). Số liệu chi phí là ước tính từ log và bảng giá, không đối chiếu hoá đơn. Chưa chạy bản build nào. |
+| Giới hạn và rủi ro | - MIT (cả `apps/ccusage/LICENSE`). Bản release chính thức gửi ping `cli_daily_active` mỗi ngày UTC (anonymousId ngẫu nhiên, version, os, arch, lệnh đầu tiên trong ngày); không gửi token, chi phí hay đường dẫn theo tài liệu. Tắt bằng `ccusage telemetry disable`, `CCUSAGE_TELEMETRY_DISABLED` hoặc `DO_NOT_TRACK`; tự tắt khi `CI` đặt; tự build bằng cargo không có endpoint (`telemetry.rs`, `telemetry.md`).<br>- Chạy qua `npx ccusage@latest` kéo mã mới mỗi lần; nên ghim phiên bản.<br>- Số liệu chỉ phản ánh log trên máy, thiếu nếu log bị xoá hoặc agent không ghi usage. |
+| So với | opencost (chi phí hạ tầng, khác lớp), helicone và litellm (đo qua gateway thay vì log cục bộ), langfuse (tracing LLM) |
+| Nguồn | [README.md](https://github.com/ryoppippi/ccusage/blob/4c250b85befb657c024c55a1db7b846371639fcc/README.md) · [LICENSE](https://github.com/ryoppippi/ccusage/blob/4c250b85befb657c024c55a1db7b846371639fcc/LICENSE) · [AGENTS.md](https://github.com/ryoppippi/ccusage/blob/4c250b85befb657c024c55a1db7b846371639fcc/AGENTS.md) · [telemetry.md](https://github.com/ryoppippi/ccusage/blob/4c250b85befb657c024c55a1db7b846371639fcc/docs/guide/telemetry.md) · [cost-modes.md](https://github.com/ryoppippi/ccusage/blob/4c250b85befb657c024c55a1db7b846371639fcc/docs/guide/cost-modes.md) · [telemetry.rs](https://github.com/ryoppippi/ccusage/blob/4c250b85befb657c024c55a1db7b846371639fcc/rust/crates/ccusage/src/telemetry.rs) · [cost.rs](https://github.com/ryoppippi/ccusage/blob/4c250b85befb657c024c55a1db7b846371639fcc/rust/crates/ccusage-core/src/cost.rs) · [ci.yaml](https://github.com/ryoppippi/ccusage/blob/4c250b85befb657c024c55a1db7b846371639fcc/.github/workflows/ci.yaml) · [update-pricing.yaml](https://github.com/ryoppippi/ccusage/blob/4c250b85befb657c024c55a1db7b846371639fcc/.github/workflows/update-pricing.yaml) |

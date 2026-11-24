@@ -2,7 +2,7 @@
 
 # motion-design — Thiết kế, giao diện & media
 
-[← Mục lục catalog](../README.md) · 33 hồ sơ.
+[← Mục lục catalog](../README.md) · 34 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -36,6 +36,7 @@
 | [Anatomy Reveal](../../22-motion-design-animation/README.md#9m-kiểm-ảnh-20-repo--một-motion-studio-skill-3d-hiệu-ứng-chuyển-động-âm-thanh-xuất-video-ảnh-người-dùng-gửi-đọc-mã-19112026) | `annnguyentt/anatomy-reveal-skill` | MIT | 119 | đọc tài liệu 2026-11-19 | 22 | Skill cho agent dựng bất kỳ đồ vật nào thành hình giải phẫu isometric nhiều bộ phận, rồi xuất trang tách lớp tương tác và phim reveal MP4 30 fps (9:16, 4:5, 1:1, 16:9; |
 | [opus-sound-layer](../../22-motion-design-animation/README.md#9i-kiểm-bài-đăng-điền-form-nhận-4-thứ-agent-team-skill-motion-xưởng-repo-18-công-cụ-skill-sfx-585-âm-bài-người-dùng-gửi-2112026) | `Bodila51/opus-sound-layer` | MIT | 75 | đọc tài liệu 2026-11-02 | 22 | Lớp tiếng động cho video dựng bằng code: sfx.py kit tải lúc chạy 1.139 bản CC0 (Kenney, Freesound) 19 loại, browse xếp hạng theo tag/độ dài/độ sáng kèm waveform+spectrog… |
 | [one-studio-skill (hdduytran)](../../22-motion-design-animation/README.md#9i-kiểm-bài-đăng-điền-form-nhận-4-thứ-agent-team-skill-motion-xưởng-repo-18-công-cụ-skill-sfx-585-âm-bài-người-dùng-gửi-2112026) | `hdduytran/one-studio-skill` | — | 2 | đọc tài liệu 2026-11-02 | 22 | Plugin Claude Code tiếng Việt làm video trọn gói: brief → kịch bản → storyboard → ước tính credit → duyệt keyframe → scene (3d, character, diagram, explainer, lottie-riv… |
+| [EPI-LENS (kiểm nhấp nháy PSE)](../../22-motion-design-animation/README.md#n2-epi-lens) | `Pi-0r-Tau/epi-lens` | MIT | 1 | đọc mã 2026-11-23 | 22 | Công cụ JavaScript thuần (trang GitHub Pages và tiện ích Chrome cho YouTube) đo nhấp nháy, độ tương phản màu, đỏ bão hòa và tần số trên từng khung video để ước lượng ngu… |
 | [60fps](../../06-ui-ux-design/README.md#7zc-hai-mươi-trang-cảm-hứng-và-tài-nguyên-thiết-kế-gallery-từng-phần-giao-diện-chuyển-động-làm-web-bằng-ai-danh-sách-người-dùng-gửi-đọc-16112026) |  | — | — | đọc tài liệu 2026-11-16 | 06 | Chi tiết animation/tương tác app iOS và web: 2.140 shot, 499 app, storyboard, snippet; |
 | [Scroll Shaders](../../06-ui-ux-design/README.md#7zc-hai-mươi-trang-cảm-hứng-và-tài-nguyên-thiết-kế-gallery-từng-phần-giao-diện-chuyển-động-làm-web-bằng-ai-danh-sách-người-dùng-gửi-đọc-16112026) |  | — | — | đọc tài liệu 2026-11-16 | 06 | 117 shader WebGL lặp liền mạch 11 nhóm + component shader, copy React .tsx hoặc HTML/JS WebGL2; |
 | [Scrolltide](../../06-ui-ux-design/README.md#7zc-hai-mươi-trang-cảm-hứng-và-tài-nguyên-thiết-kế-gallery-từng-phần-giao-diện-chuyển-động-làm-web-bằng-ai-danh-sách-người-dùng-gửi-đọc-16112026) |  | — | — | đọc tài liệu 2026-11-16 | 06 | 149 template, 107 component, 55 shader, 24 section dạng prompt cho AI ra Next.js/React/Tailwind/GSAP/Three.js; |

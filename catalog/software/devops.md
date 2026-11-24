@@ -2,7 +2,7 @@
 
 # devops — Kỹ thuật phần mềm & vận hành
 
-[← Mục lục catalog](../README.md) · 163 hồ sơ.
+[← Mục lục catalog](../README.md) · 169 hồ sơ.
 
 ## Container & Kubernetes (`container-orchestration`, 17)
 
@@ -36,7 +36,7 @@
 | [OpenTofu](../../32-platform-delivery-engineering/README.md#factory-opentofu-2026-11-04) | `opentofu/opentofu` | MPL-2.0 | 30.973 | đọc mã 2026-11-04 | 13 | Fork Terraform Đọc sâu 4/11/2026: plan detailed-exitcode 0=no diff/1=error/2=changes; |
 | [Pulumi](../../32-platform-delivery-engineering/README.md#anhkysuai-pulumi-pulumi) | `pulumi/pulumi` | Apache-2.0 | 25.939 | đọc tài liệu 2026-11-23 | 32 | Infrastructure as Code dùng ngôn ngữ lập trình thông thường và Automation API. |
 
-## CI/CD & phát hành (`ci-cd-release`, 7)
+## CI/CD & phát hành (`ci-cd-release`, 8)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -47,6 +47,7 @@
 | [semantic-release](../../32-platform-delivery-engineering/README.md#anhkysuai-semantic-release-semantic-release) | `semantic-release/semantic-release` | MIT | 24.193 | đọc tài liệu 2026-11-23 | 32 | Tự động chọn version, tạo release notes và publish package theo commit. |
 | [Dagger](../../13-dev-stack-devops/README.md#ch-dagger) | `dagger/dagger` | Apache-2.0 | 16.643 | đọc tài liệu 2026-11-23 | 13 | . |
 | [GoReleaser](../../13-dev-stack-devops/README.md#goreleaser) | `goreleaser/goreleaser` | MIT | 16.131 | đọc mã 2026-11-02 | 13 | Release pipeline đa nền tảng; |
+| [Changesets](../../32-platform-delivery-engineering/README.md#n2-changesets) | `changesets/changesets` | MIT | 12.590 | đọc mã 2026-11-23 | 32 | Công cụ khai báo thay đổi theo từng PR (file changeset nêu gói nào, bump major/minor/patch, mô tả) rồi gộp thành kế hoạch phát hành, bump phiên bản và sinh CHANGELOG, tậ… |
 
 ## PaaS tự host & bảng điều khiển server (`paas-self-hosting`, 7)
 
@@ -73,7 +74,7 @@
 | [Certbot](../../32-platform-delivery-engineering/README.md#anhkysuai-certbot-certbot) | `certbot/certbot` | Apache-2.0; mã nginxparser theo MIT | 33.346 | đọc tài liệu 2026-11-23 | 32 | Client ACME của EFF để lấy, gia hạn và tùy chọn cài chứng chỉ HTTPS. |
 | [cilium](../../32-platform-delivery-engineering/README.md#chuyen-cilium) | `cilium/cilium` | Apache License 2.0 cho thành phần user space | 25.863 | đọc tài liệu 2026-11-18 | 32 | Giải pháp mạng, quan sát và bảo mật cho Kubernetes dựa trên eBPF: CNI, cân bằng tải, chính sách mạng L3-L7, service mesh. |
 
-## Sao lưu, chi phí & vận hành hạ tầng (`backup-cost-ops`, 6)
+## Sao lưu, chi phí & vận hành hạ tầng (`backup-cost-ops`, 7)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -81,6 +82,7 @@
 | [PM2](../../32-platform-delivery-engineering/README.md#anhkysuai-unitech-pm2) | `Unitech/pm2` | AGPL-3.0 | 43.342 | đọc tài liệu 2026-11-23 | 32 | Trình quản lý tiến trình cho Node.js/Bun và chương trình chạy lâu dài. |
 | [Arthas](../../33-reliability-observability-operations/README.md#anhkysuai-alibaba-arthas) | `alibaba/arthas` | Apache-2.0 | 37.630 | đọc tài liệu 2026-11-23 | 33 | Công cụ chẩn đoán Java đang chạy để tìm vấn đề mà không cần sửa mã ứng dụng. |
 | [restic](../../09-engineering-checklists/README.md#operations-recovery-cost-evidence) | `restic/restic` | BSD-2-Clause | 36.948 | đọc mã 2026-11-02 | 09 | Backup snapshot mã hóa/dedupe đa backend; |
+| [Infracost](../../33-reliability-observability-operations/README.md#n2-infracost) | `infracost/infracost` | Apache-2.0 | 12.631 | đọc mã 2026-11-23 | 33 | Ước tính chi phí đám mây cho Terraform/CloudFormation trước khi triển khai và đăng diff chi phí lên PR. |
 | [Velero](../../09-engineering-checklists/README.md#operations-recovery-cost-evidence) | `velero-io/velero` | Apache-2.0 | 10.365 | đọc mã 2026-11-02 | 09 | Canonical mới từ vmware-tanzu/velero; |
 | [OpenCost](../../09-engineering-checklists/README.md#operations-recovery-cost-evidence) | `opencost/opencost` | Apache-2.0 | 6.799 | đọc mã 2026-11-02 | 09 | Spec+implementation cost K8s; |
 
@@ -220,9 +222,13 @@
 | [dashy](../../36-self-hosting-homelab/README.md#chuyen-dashy) | `lissy93/dashy` | MIT | 27.015 | đọc tài liệu 2026-11-18 | 36 | Trang chủ/dashboard tự host cho homelab, tập hợp liên kết ứng dụng kèm widget và giám sát trạng thái. |
 | [seafile](../../36-self-hosting-homelab/README.md#chuyen-seafile) | `haiwen/seafile` | GPL v2 kèm ngoại lệ cho phép liên kết với OpenSSL | 15.468 | đọc tài liệu 2026-11-18 | 36 | Repo daemon client đồng bộ của Seafile, hệ thống lưu trữ đám mây mã nguồn mở có mã hoá thư viện và cộng tác nhóm. |
 
-## Bảo mật CI & chuỗi cung ứng (`supply-chain-ci-security`, 2)
+## Bảo mật CI & chuỗi cung ứng (`supply-chain-ci-security`, 6)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [Harden-Runner](../../13-dev-stack-devops/README.md#ch-harden-runner) | `step-security/harden-runner` | Apache-2.0 | 1.295 | đọc tài liệu 2026-11-23 | 13 | Giám sát egress/file/process runner GitHub Actions, egress-policy block; |
 | [gh-actions-lock](../../31-software-supply-chain-security/README.md#nt-gh-actions-lock) | `github/gh-actions-lock` | MIT | 401 | đọc mã 2026-11-23 | 31 | Công cụ chính chủ GitHub tạo và kiểm lockfile cho Actions, với kiểm tổ tiên commit chống giả mạo. |
+| [Secure-Repo (StepSecurity)](../../31-software-supply-chain-security/README.md#n2-step-security-secure-repo) | `step-security/secure-repo` | AGPL-3.0 | 335 | đọc mã 2026-11-23 | 31 | Dịch vụ tự sửa workflow GitHub Actions: tính quyền GITHUB_TOKEN tối thiểu từ kho tri thức theo action, ghim SHA và digest, thêm Harden-Runner, Dependabot, CodeQL. |
+| [cicd-sensor](../../31-software-supply-chain-security/README.md#n2-cicd-sensor) | `cicd-sensor/cicd-sensor` | Apache-2.0 | 268 | đọc mã 2026-11-23 | 31 | Cảm biến eBPF chạy như bước đầu của job CI, luật YAML/CEL theo tổ tiên tiến trình và tương quan, log về Manager tự host. |
+| [zanadir](../../31-software-supply-chain-security/README.md#n2-zanadir) | `MustacheCase/zanadir` | MIT | 186 | đọc mã 2026-11-23 | 31 | Công cụ Go đọc pipeline và chấm mỗi nhóm kiểm soát bảo mật là enforcing, partial, advisory hay unknown, tính cả trigger và yêu cầu branch protection. |
+| [Shai-Hulud 2.0 Detector](../../31-software-supply-chain-security/README.md#n2-shai-hulud-2-detector) | `gensecaihq/Shai-Hulud-2.0-Detector` | MIT | 152 | đọc mã 2026-11-23 | 31 | Action Node.js quét gói npm trong danh sách thỏa hiệp của hai đợt Shai-Hulud, script vòng đời đáng ngờ và workflow độc, phân mức critical/high theo ngữ cảnh. |

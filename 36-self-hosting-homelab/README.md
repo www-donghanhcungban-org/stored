@@ -554,3 +554,111 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | Apache-2.0. Repo nhiều module go.mod, nặng. Tin cậy phụ thuộc cấu hình ClusterSecretStore (phạm vi namespace) và quyền của operator, đọc bí mật từ kho ngoài bằng thông tin xác thực của chính nó. Không thấy telemetry trong phần đã đọc. |
 | So với | OpenBao (kho bí mật gốc, ESO chỉ là cầu nối), Infisical, SOPS |
 | Nguồn | [README.md](https://github.com/external-secrets/external-secrets/blob/9f8b5837188cf1e394b8e1f2dc0e9d63afe2aa68/README.md) · [LICENSE](https://github.com/external-secrets/external-secrets/blob/9f8b5837188cf1e394b8e1f2dc0e9d63afe2aa68/LICENSE) · [AGENTS.md](https://github.com/external-secrets/external-secrets/blob/9f8b5837188cf1e394b8e1f2dc0e9d63afe2aa68/AGENTS.md) · [externalsecret_types.go](https://github.com/external-secrets/external-secrets/blob/9f8b5837188cf1e394b8e1f2dc0e9d63afe2aa68/apis/externalsecrets/v1/externalsecret_types.go) · [generic_store.go](https://github.com/external-secrets/external-secrets/blob/9f8b5837188cf1e394b8e1f2dc0e9d63afe2aa68/apis/externalsecrets/v1/generic_store.go) · [zizmor.yml](https://github.com/external-secrets/external-secrets/blob/9f8b5837188cf1e394b8e1f2dc0e9d63afe2aa68/.github/workflows/zizmor.yml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-blinko"></a>
+
+### Blinko
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/blinko-space/blinko |
+| License | GPL-3.0 |
+| Phiên bản đã đọc | `a1c71e67f653f88aabee93c6e5dc433ef5780d18` (commit 2026-11-05) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, CLAUDE.md, security-checks.yml, test-security.ts, mcpStdioPolicy.ts, publicHttp.ts, aiModelFactory.ts, analytics.ts; chưa chạy upstream |
+| Khoảng trống lấp | Ghi chú nhanh self-host có AI/RAG |
+| Cơ chế đáng học | - Danh sách cho phép MCP stdio do người vận hành đặt trong biến BLINKO_MCP_STDIO_ALLOWLIST: lệnh, đối số và env phải khớp tuyệt đối, tiến trình con chỉ thừa kế PATH, HOME, TMPDIR (server/lib/mcpStdioPolicy.ts).<br>- Chặn SSRF: publicHttp.ts tự tính tiền tố IPv4/IPv6 để loại dải riêng, loopback, link-local trước khi gọi URL công khai (publicHttp.ts).<br>- RAG: nhúng ghi chú, truy vấn LibSQLVector với topK và ngưỡng điểm embeddingScore mặc định 0.4 (aiModelFactory.ts; có import rerank của Mastra nhưng chưa thấy lời gọi). |
+| Tiêu chí và cách kiểm | Workflow security-checks.yml chạy trên PR chạm app/server/shared/prisma: bun test:security (16 bộ test chạy từng tiến trình riêng, liệt kê trong test-security.ts), tsc strict cho các module chính sách, rồi build frontend và backend. Kiểm bằng máy; không đọc nội dung từng test, chưa chạy. |
+| Giới hạn và rủi ro | License GPL-3.0 (copyleft mạnh, nhúng vào sản phẩm đóng bị hạn chế). Dữ liệu rời máy phụ thuộc provider AI người dùng cấu hình (OpenAI, Anthropic, Ollama, v.v. theo CLAUDE.md, chưa kiểm từng provider). routerTrpc/analytics.ts chỉ là thống kê nội bộ (đếm ghi chú theo ngày), grep không thấy telemetry gửi ra ngoài trong server nhưng chưa quét toàn repo. README có demo công khai kèm tài khoản mẫu. install.sh kiểu curl chuyển thẳng sang bash là rủi ro chuỗi cung ứng khi cài. |
+| So với | memos (MIT), open-notebook (MIT), silverbullet (MIT); khác ở chỗ có RAG và lớp chính sách bảo mật có test riêng. |
+| Nguồn | [README.md](https://github.com/blinko-space/blinko/blob/a1c71e67f653f88aabee93c6e5dc433ef5780d18/README.md) · [LICENSE](https://github.com/blinko-space/blinko/blob/a1c71e67f653f88aabee93c6e5dc433ef5780d18/LICENSE) · [CLAUDE.md](https://github.com/blinko-space/blinko/blob/a1c71e67f653f88aabee93c6e5dc433ef5780d18/CLAUDE.md) · [security-checks.yml](https://github.com/blinko-space/blinko/blob/a1c71e67f653f88aabee93c6e5dc433ef5780d18/.github/workflows/security-checks.yml) · [test-security.ts](https://github.com/blinko-space/blinko/blob/a1c71e67f653f88aabee93c6e5dc433ef5780d18/server/scripts/test-security.ts) · [mcpStdioPolicy.ts](https://github.com/blinko-space/blinko/blob/a1c71e67f653f88aabee93c6e5dc433ef5780d18/server/lib/mcpStdioPolicy.ts) · [publicHttp.ts](https://github.com/blinko-space/blinko/blob/a1c71e67f653f88aabee93c6e5dc433ef5780d18/server/lib/publicHttp.ts) · [aiModelFactory.ts](https://github.com/blinko-space/blinko/blob/a1c71e67f653f88aabee93c6e5dc433ef5780d18/server/aiServer/aiModelFactory.ts) · [analytics.ts](https://github.com/blinko-space/blinko/blob/a1c71e67f653f88aabee93c6e5dc433ef5780d18/server/routerTrpc/analytics.ts) |
+
+<a id="n2-teedy"></a>
+
+### Teedy (Sismics Docs)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/sismics/docs |
+| License | GPL-2.0 (tệp COPYING; chưa thấy tiêu đề or-later trong mã) |
+| Phiên bản đã đọc | `3e2a968b698e2addc1cd56dc0f52e33d861cb4c4` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, COPYING, build-deploy.yml, EncryptionUtil.java, FileUtil.java, RouteStepType.java, RouteStepTransition.java; chưa chạy upstream |
+| Khoảng trống lấp | Quản lý tài liệu/hồ sơ tuân thủ (DMS, OCR) |
+| Cơ chế đáng học | - OCR: tiền xử lý ảnh (phóng 3500 px, xám, chỉnh nghiêng) rồi gọi tiến trình tesseract, đọc stdout (FileUtil.java).<br>- Workflow: RouteStepType có APPROVE và VALIDATE, RouteStepTransition có APPROVED, REJECTED, VALIDATED (hai file constant); các DAO và model Route, RouteModel, RouteStep có trong cây thư mục, chưa đọc.<br>- Mã hóa tệp: khóa riêng ngẫu nhiên 176 bit tạo khi tạo người dùng (UserDao.java dòng 86), dẫn khóa PBE SHA-256 2000 vòng, AES/CTR/NoPadding qua Bouncy Castle (EncryptionUtil.java); mật khẩu người dùng băm bcrypt (UserDao.java, chỉ grep). |
+| Tiêu chí và cách kiểm | CI build-deploy.yml chạy khi đẩy master hoặc tag: cài ffmpeg, mediainfo, tesseract, rồi mvn -Pprod clean install và đẩy Docker; có thư mục test REST (TestSecurity.java, TestFileResource.java, v.v. trong cây), chưa mở nội dung. Không thấy ngưỡng độ phủ. Kiểm bằng máy ở mức test tích hợp REST, chưa chạy. |
+| Giới hạn và rủi ro | EncryptionUtil.java có hằng SALT cố định trong mã nguồn, 2000 vòng lặp và AES/CTR không có MAC nên không phát hiện bị sửa bản mã; nên coi là mã hóa lưu trữ cơ bản, không phải bảo mật đối kháng. GPL-2.0 (COPYING). README nêu tài khoản demo và admin/admin phải đổi trước khi chạy thật. pom.xml ở 1.13-SNAPSHOT, CI dùng JDK 25. Không đọc tài liệu API. Cần kiểm hoạt động OCR thực tế (trinh sát đề nghị) thì phải chạy, hồ sơ này chưa làm. |
+| So với | ocrmypdf (MPL-2.0), tesseract (Apache-2.0), docmost (AGPL-3.0); khác ở chỗ là DMS trọn gói thay vì thư viện OCR. |
+| Nguồn | [README.md](https://github.com/sismics/docs/blob/3e2a968b698e2addc1cd56dc0f52e33d861cb4c4/README.md) · [COPYING](https://github.com/sismics/docs/blob/3e2a968b698e2addc1cd56dc0f52e33d861cb4c4/COPYING) · [build-deploy.yml](https://github.com/sismics/docs/blob/3e2a968b698e2addc1cd56dc0f52e33d861cb4c4/.github/workflows/build-deploy.yml) · [EncryptionUtil.java](https://github.com/sismics/docs/blob/3e2a968b698e2addc1cd56dc0f52e33d861cb4c4/docs-core/src/main/java/com/sismics/docs/core/util/EncryptionUtil.java) · [FileUtil.java](https://github.com/sismics/docs/blob/3e2a968b698e2addc1cd56dc0f52e33d861cb4c4/docs-core/src/main/java/com/sismics/docs/core/util/FileUtil.java) · [RouteStepType.java](https://github.com/sismics/docs/blob/3e2a968b698e2addc1cd56dc0f52e33d861cb4c4/docs-core/src/main/java/com/sismics/docs/core/constant/RouteStepType.java) · [RouteStepTransition.java](https://github.com/sismics/docs/blob/3e2a968b698e2addc1cd56dc0f52e33d861cb4c4/docs-core/src/main/java/com/sismics/docs/core/constant/RouteStepTransition.java) |
+
+<a id="n2-openkm-ce"></a>
+
+### OpenKM Community Edition
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/openkm/document-management-system |
+| License | GPL-2.0 (LICENSE.txt) cho nhánh 6.x trong repo; từ 7.0 chỉ phát hành nhị phân, không kèm mã nguồn |
+| Phiên bản đã đọc | `ce175be6e436a752e81ef68068e9f1acf2d28adb` (commit 2026-02-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE.txt, SECURITY.md, pom.xml (dòng version), MajorMinorVersionNumerationAdapter.java, TesseractTextExtractor.java; chưa chạy upstream |
+| Khoảng trống lấp | Quản lý tài liệu/hồ sơ tuân thủ (DMS, OCR, kiểm soát phiên bản) |
+| Cơ chế đáng học | - Trích xuất văn bản theo plugin theo MIME (extractor/): Word, Excel, PDF, OpenOffice, Outlook, ảnh qua Tesseract, mã vạch (cây thư mục); TesseractTextExtractor.java đăng ký image/tiff, gif, jpeg, png.<br>- Đánh số phiên bản qua adapter thay được: MajorMinorVersionNumerationAdapter bắt đầu 1.0, tăng major hoặc minor và vòng lặp tránh trùng tên phiên bản.<br>- Có gói automation (Action, Validation), workflow (DbWorkflowModule.java, chỉ liệt kê), REST và WebDAV theo cây thư mục; chưa đọc triển khai. |
+| Tiêu chí và cách kiểm | Không có thư mục .github hay CI trong repo. src/test có 10 file Java trên khoảng 1462 file Java (đếm bằng find), nên độ phủ thấp. Không thấy cổng kiểm máy nào. SECURITY.md chỉ hướng dẫn báo lỗ hổng qua biểu mẫu liên hệ, hứa phản hồi trong 72 giờ làm việc. |
+| Giới hạn và rủi ro | Rủi ro lớn nhất là mất nguồn: từ 7.0 chỉ có nhị phân (README tự công bố), nên repo này không phải đường nâng cấp nguồn mở; cần dùng 6.3.13 và tự chịu vá lỗi. License GPL-2.0, tiêu đề tệp nguồn ghi bản quyền 2006–2017 (đọc ở Config.java dòng đầu, không đọc từng tệp). Mô tả của trinh sát (bản cộng đồng có workflow) đúng cho 6.x nhưng cần ghi nhánh dừng. Không đọc cấu hình mã hóa hay phân quyền. |
+| So với | teedy (GPL-2.0, còn phát triển hơn), docmost, outline (cũng đổi license sang BSL 1.1: bài học mất nguồn mở). |
+| Nguồn | [README.md](https://github.com/openkm/document-management-system/blob/ce175be6e436a752e81ef68068e9f1acf2d28adb/README.md) · [LICENSE.txt](https://github.com/openkm/document-management-system/blob/ce175be6e436a752e81ef68068e9f1acf2d28adb/LICENSE.txt) · [SECURITY.md](https://github.com/openkm/document-management-system/blob/ce175be6e436a752e81ef68068e9f1acf2d28adb/SECURITY.md) · [pom.xml#L7](https://github.com/openkm/document-management-system/blob/ce175be6e436a752e81ef68068e9f1acf2d28adb/pom.xml#L7) · [MajorMinorVersionNumerationAdapter.java](https://github.com/openkm/document-management-system/blob/ce175be6e436a752e81ef68068e9f1acf2d28adb/src/main/java/com/openkm/vernum/MajorMinorVersionNumerationAdapter.java) · [TesseractTextExtractor.java](https://github.com/openkm/document-management-system/blob/ce175be6e436a752e81ef68068e9f1acf2d28adb/src/main/java/com/openkm/extractor/TesseractTextExtractor.java) |
+
+<a id="n2-mayan-edms"></a>
+
+### Mayan EDMS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/mayan-edms/mayan-edms |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `8da13ee7e49fa23d24ab49906bf9cf6bfe3f44e9` (commit 2026-05-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, `mayan/__init__.py`, .gitlab-ci.yml, tesseract.py, literals.py, workflow_transition_models.py, workflow_state_models.py, acls/models.py; chưa chạy upstream |
+| Khoảng trống lấp | Quản lý tài liệu/hồ sơ tuân thủ (DMS, OCR, workflow, kiểm soát truy cập) |
+| Cơ chế đáng học | - ACL theo mô hình hành động-quyền-đối tượng: một bản ghi cấp quyền X cho vai trò Y trên đối tượng Z qua content type chung (acls/models.py).<br>- Workflow: mỗi chuyển bước có trường condition (mẫu template), được đánh giá trên phiên bản workflow để bật/tắt chuyển bước; trạng thái có initial và completion để đo tiến độ (workflow_transition_models.py, workflow_state_models.py).<br>- OCR chạy Tesseract như tiến trình ngoài qua thư viện sh, có timeout mặc định 600 giây, kiểm ngôn ngữ đã cài (backends/tesseract.py, literals.py). |
+| Tiêu chí và cách kiểm | Cấu hình CI của GitLab (.gitlab-ci.yml) có stage test, build Python, Docker, tài liệu; job Docker chạy run_tests với PostgreSQL và job test theo nhánh tests/*. Đây là GitLab CI, không chạy trên GitHub mirror. Có thư mục tests trong từng app (ví dụ document_states/tests); chưa mở nội dung hay chạy. |
+| Giới hạn và rủi ro | Mirror lỗi thời: `__version__` 4.3.1, build 21/08/2022, Django 3.2 (hết hỗ trợ theo hiểu biết, chưa xác minh nguồn sống); commit cuối 2026-05-23 chỉ sửa README. Phụ thuộc cũ có nguy cơ lỗ hổng chưa vá. License Apache-2.0 thuận lợi cho nhúng. Sách và dịch vụ hỗ trợ trả phí được quảng bá trong README. Cần đọc repo GitLab chính thức trước khi kết luận về bản hiện hành (chưa làm). |
+| So với | teedy, docmost, tesseract (backend OCR), umi-ocr; khác ở ACL chi tiết và workflow có điều kiện, nhưng nguồn đã cũ. |
+| Nguồn | [README.md](https://github.com/mayan-edms/mayan-edms/blob/8da13ee7e49fa23d24ab49906bf9cf6bfe3f44e9/README.md) · [LICENSE](https://github.com/mayan-edms/mayan-edms/blob/8da13ee7e49fa23d24ab49906bf9cf6bfe3f44e9/LICENSE) · [`__init__.py`](https:`//github.com/mayan-edms/mayan-edms/blob/8da13ee7e49fa23d24ab49906bf9cf6bfe3f44e9/mayan/__init__.py`) · [.gitlab-ci.yml](https://github.com/mayan-edms/mayan-edms/blob/8da13ee7e49fa23d24ab49906bf9cf6bfe3f44e9/.gitlab-ci.yml) · [tesseract.py](https://github.com/mayan-edms/mayan-edms/blob/8da13ee7e49fa23d24ab49906bf9cf6bfe3f44e9/mayan/apps/ocr/backends/tesseract.py) · [literals.py](https://github.com/mayan-edms/mayan-edms/blob/8da13ee7e49fa23d24ab49906bf9cf6bfe3f44e9/mayan/apps/ocr/backends/literals.py) · [workflow_transition_models.py](https://github.com/mayan-edms/mayan-edms/blob/8da13ee7e49fa23d24ab49906bf9cf6bfe3f44e9/mayan/apps/document_states/models/workflow_transition_models.py) · [workflow_state_models.py](https://github.com/mayan-edms/mayan-edms/blob/8da13ee7e49fa23d24ab49906bf9cf6bfe3f44e9/mayan/apps/document_states/models/workflow_state_models.py) · [models.py](https://github.com/mayan-edms/mayan-edms/blob/8da13ee7e49fa23d24ab49906bf9cf6bfe3f44e9/mayan/apps/acls/models.py) |
+
+<a id="n2-octelium"></a>
+
+### Octelium
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/octelium/octelium |
+| License | Apache-2.0 cho client/, octelium-go/, apis/, pkg/; AGPL-3.0 cho cluster/ (kèm giấy phép thương mại thay thế); có tính năng enterprise đóng nguồn ngoài repo (theo README, chưa xác minh) |
+| Phiên bản đã đọc | `6c624d224271c7cabc343df83d2919f832c8efad` (commit 2026-11-24) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, hai file LICENSE gốc, cluster/octovigil/octovigil/policy.go, middlewares/llmctx.go và workflow test-unit.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Truy cập zero-trust tự host cho người và workload, gồm cổng LLM/MCP có chính sách; mô tả "môi trường dev từ xa cho agent" thực ra thuộc repo Cordium riêng, không nằm trong repo này |
+| Cơ chế đáng học | (1) Proxy nhận biết L7 (vigil) đứng trước dịch vụ; mỗi request được octovigil quyết định theo luật chính sách (`cluster/octovigil/octovigil/policy.go`). (2) Luật sắp theo priority, cùng priority thì DENY xét trước ALLOW; không luật nào khớp thì mặc định DENY (`doGetDecision`). (3) Với lưu lượng LLM, ngữ cảnh request đưa vào chính sách gồm model, số token ước tính, tên tool, có ảnh/âm thanh hay không (`middlewares/llmctx.go`); có middleware MCP tương tự (chỉ thấy tên file, chưa mở). Truy cập secretless và log OTLP theo README (chưa xác minh trong mã). |
+| Tiêu chí và cách kiểm | Quyết định tất định bằng CEL và OPA; có test đơn vị (`policy_test.go`, `opa_test.go`, `server_llm_test.go`, `server_mcp_test.go`). Workflow `test-unit.yaml` chạy `go test` trên toàn module với Postgres, MariaDB, Redis dịch vụ (đã mở). Workflow e2e có trong `.github/workflows` nhưng chưa mở. |
+| Giới hạn và rủi ro | Cluster-side là AGPL-3.0: tích hợp dạng dịch vụ mạng phải xét nghĩa vụ công bố mã; client và SDK Apache-2.0. Quy mô lớn (14 thư mục cluster, cần Kubernetes) nên vận hành nặng. Tuyên bố "không giới hạn giả" nhưng tự nêu bản enterprise có tính năng riêng (chưa xác minh). Đường telemetry: OTLP xuất ra receiver do người vận hành cấu hình; không thấy báo cáo về hãng trong các file đã đọc. |
+| So với | frp (tunnel), S-Remote (truy cập từ xa), LiteLLM và Portkey (cổng LLM không có lớp ZTNA) |
+| Nguồn | [README.md](https://github.com/octelium/octelium/blob/6c624d224271c7cabc343df83d2919f832c8efad/README.md) · [LICENSE-AGPL-3.0](https://github.com/octelium/octelium/blob/6c624d224271c7cabc343df83d2919f832c8efad/LICENSE-AGPL-3.0) · [LICENSE-APACHE](https://github.com/octelium/octelium/blob/6c624d224271c7cabc343df83d2919f832c8efad/LICENSE-APACHE) · [policy.go](https://github.com/octelium/octelium/blob/6c624d224271c7cabc343df83d2919f832c8efad/cluster/octovigil/octovigil/policy.go) · [llmctx.go](https://github.com/octelium/octelium/blob/6c624d224271c7cabc343df83d2919f832c8efad/cluster/vigil/vigil/modes/httpg/middlewares/llmctx.go) · [test-unit.yaml](https://github.com/octelium/octelium/blob/6c624d224271c7cabc343df83d2919f832c8efad/.github/workflows/test-unit.yaml) |
+
+<a id="n2-bookstack"></a>
+
+### BookStack
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/BookStackApp/BookStack |
+| License | MIT |
+| Phiên bản đã đọc | `0326409ecde003f63f4e15cceb880a1cc0f088b2` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc readme.md, composer.json, JointPermissionBuilder.php, PdfGenerator.php, .env.example.complete, test-php.yml; chưa chạy upstream |
+| Khoảng trống lấp | Wiki tự host theo mô hình sách-chương, phân quyền chi tiết, xuất được |
+| Cơ chế đáng học | - `JointPermissionBuilder.php` dựng trước bảng quyền xem cho mọi thực thể và mọi vai trò (`rebuildForAll`, `rebuildForEntity`), để truy vấn lọc bằng join thay vì tính quyền từng dòng.<br>- `PdfGenerator.php` chọn engine theo cấu hình: lệnh ngoài, wkhtmltopdf (chỉ khi cho phép tải tài nguyên không tin cậy) hoặc dompdf mặc định.<br>- Xuất/nhập ZIP có lớp kiểm hợp lệ riêng (`app/Exports/ZipExports/ZipExportValidator.php` có trong cây, chỉ đọc tên, chưa mở).<br>- Cấu hình an toàn đáng chú ý trong `.env.example.complete`: `ALLOW_UNTRUSTED_SERVER_FETCHING=false`, `ALLOWED_IFRAME_SOURCES`, `ALLOWED_SSR_HOSTS`. |
+| Tiêu chí và cách kiểm | Workflow Forgejo `test-php.yml` chạy phpunit trên ma trận PHP 8.3 đến 8.6; còn có analyse-php (phpstan), lint-php, test-js, test-migrations (chỉ liệt kê tên, chưa mở). Chạy trên Codeberg nên không thấy trạng thái từ GitHub. |
+| Giới hạn và rủi ro | MIT. Yêu cầu PHP 8.3+ và Laravel 13, cần MySQL/MariaDB. Mặc định `DISABLE_EXTERNAL_SERVICES=false` nên avatar và nhúng draw.io, YouTube dùng dịch vụ ngoài trừ khi tắt. README nói rõ không thiết kế làm nền tảng mở rộng cho mục đích khác. Mã trên GitHub là bản sao (kiểm lại nguồn chính trước khi đóng góp). |
+| So với | Outline (soạn thảo cộng tác thời gian thực, hồ sơ có sẵn), Wiki.js (requarks-wiki), Docmost: BookStack chọn cấu trúc cứng sách-chương và phân quyền theo thực thể |
+| Nguồn | [LICENSE](https://github.com/BookStackApp/BookStack/blob/0326409ecde003f63f4e15cceb880a1cc0f088b2/LICENSE) · [readme.md](https://github.com/BookStackApp/BookStack/blob/0326409ecde003f63f4e15cceb880a1cc0f088b2/readme.md) · [composer.json](https://github.com/BookStackApp/BookStack/blob/0326409ecde003f63f4e15cceb880a1cc0f088b2/composer.json) · [JointPermissionBuilder.php](https://github.com/BookStackApp/BookStack/blob/0326409ecde003f63f4e15cceb880a1cc0f088b2/app/Permissions/JointPermissionBuilder.php) · [PdfGenerator.php](https://github.com/BookStackApp/BookStack/blob/0326409ecde003f63f4e15cceb880a1cc0f088b2/app/Exports/PdfGenerator.php) · [.env.example.complete](https://github.com/BookStackApp/BookStack/blob/0326409ecde003f63f4e15cceb880a1cc0f088b2/.env.example.complete) · [test-php.yml](https://github.com/BookStackApp/BookStack/blob/0326409ecde003f63f4e15cceb880a1cc0f088b2/.forgejo/workflows/test-php.yml) |

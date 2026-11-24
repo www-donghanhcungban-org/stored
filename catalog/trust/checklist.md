@@ -2,7 +2,7 @@
 
 # checklist — Đánh giá, an toàn & chất lượng
 
-[← Mục lục catalog](../README.md) · 29 hồ sơ.
+[← Mục lục catalog](../README.md) · 30 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -20,6 +20,7 @@
 | [SLSA](../../13-dev-stack-devops/README.md#ch-slsa) | `slsa-framework/slsa` | Community Specification License 1.0 | 1.955 | đọc tài liệu 2026-11-23 | 13 | Đặc tả SLSA v1.2 (duyệt 24/11/2025: Build + Source track; |
 | [OpenSLO](../../09-engineering-checklists/README.md#ch-openslo) | `OpenSLO/OpenSLO` | Apache-2.0 | 1.545 | đọc tài liệu 2026-11-23 | 09 | Đặc tả YAML openslo/v1 cho SLO/SLI/AlertPolicy, không phụ thuộc nhà cung cấp; |
 | [Web Interface Guidelines (Vercel)](../../06-ui-ux-design/README.md#ch-web-interface-guidelines-vercel) | `vercel-labs/web-interface-guidelines` | MIT | 1.243 | đọc tài liệu 2026-11-23 | 06 | 130 quy tắc UI (vùng chạm ≥24/44px, focus-visible, không transition: all, URL as state…); |
+| [OWASP Agentic Skills Top 10 (AST10)](../../12-ai-security-guardrails/README.md#n2-owasp-agentic-skills-top-10) | `OWASP/www-project-agentic-skills-top-10` | CC-BY-SA-4.0 | 449 | đọc tài liệu 2026-11-23 | 12 | Dự án OWASP Incubator liệt kê 10 rủi ro của skill agent (AST01 skill độc hại, AST02 chuỗi cung ứng, AST03 quá quyền, AST04 metadata, AST05 chỉ dẫn ngoài không tin cậy, A… |
 | [owasp-asvs-checklist](../../09-engineering-checklists/README.md#ch-owasp-asvs-checklist) | `shenril/owasp-asvs-checklist` | MIT | 221 | đọc tài liệu 2026-11-23 | 09 | ASVS 5.0 audit checklist (xlsx/ods). |
 | [OpenSSF OSPS Baseline](../../09-engineering-checklists/README.md#ch-openssf-osps-baseline) | `ossf/security-baseline` | Apache-2.0 | 171 | đọc tài liệu 2026-11-23 | 09 | Chuẩn bảo mật cấp dự án dạng YAML (schema Gemara): 8 nhóm, 41 control, 67 yêu cầu ID OSPS-XX-NN.NN (2 retired), 3 mức; |
 | [vn-law-check](../../18-vietnam-community/README.md#4e-hồ-sơ-mhfedvn-law-check-skill-audit-pháp-lý-website-và-mobile-app-theo-luật-việt-nam-20252026-link-người-dùng-gửi-đọc-mã-3112026) | `mhfed/vn-law-check` | MIT | 126 | đọc mã 2026-11-03 | 18 | Skill/rules audit pháp lý website + mobile app theo luật VN 2025–2026 (BVDLCN 91/2025 + NĐ 356/2025, TMĐT 122/2025, ANM 116/2025, AI 134/2025) cho Claude Code/Cursor/Cop… |

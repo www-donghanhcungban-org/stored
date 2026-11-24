@@ -715,3 +715,26 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Bảo trì | Commit gần nhất 2025-07-25 (hơn 4 tháng trước ngày kiểm), mức hoạt động thấp. |
 | Nhận định | Khung "autograd bằng văn bản": LLM đưa phản hồi ngôn ngữ làm gradient để tối ưu prompt/lời giải; có bài Nature, thư mục evaluation và notebook ví dụ. Kết quả trong paper là tuyên bố tác giả **(chưa xác minh)**. |
 | Nguồn | [README](https://github.com/zou-group/textgrad/blob/75e912e210864b61999781778cdf756d4468120f/README.md) · [LICENSE](https://github.com/zou-group/textgrad/blob/75e912e210864b61999781778cdf756d4468120f/LICENSE) · [setup.py](https://github.com/zou-group/textgrad/blob/75e912e210864b61999781778cdf756d4468120f/setup.py) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-promptory"></a>
+
+### Promptory
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/hsanchez/promptory |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `10bea0a5be28aa95219c25fff33cf305749077ad` (commit 2026-05-29) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, pyproject.toml, gates.py, lint.py, metadata.py, evidence.py, serve.py, prek.toml, LICENSE; chưa chạy upstream |
+| Khoảng trống lấp | Prompt như mã: registry, lint, hồi quy CI và cổng phát hành có bằng chứng |
+| Cơ chế đáng học | - `metadata.py`: `write_metadata` ghi checksum SHA-256 từng file lúc release, `verify_metadata` báo `checksum mismatch`/`file missing`.<br>- `gates.py`: mỗi gate `(kind, name, required_status)` trong `promptspec.yaml` thất bại nếu thiếu bằng chứng, bị thu hồi hoặc sai trạng thái.<br>- `evidence.py`: bằng chứng JSON bất biến (kind, name, status, tool, created_at), so sánh metric giữa hai bản; `lifecycle.jsonl` ghi sự kiện chỉ thêm.<br>- `lint.py`: biến Jinja phải khớp `required_variables`, YAML hợp lệ, kích thước ≤ `max_file_bytes`. |
+| Tiêu chí và cách kiểm | `prompt check` (lint), `prompt verify` (checksum), `prompt gate --format github/json` cho CI. Kiểm trước khi commit bằng prek (ruff, ty, pytest, 130 hàm test đếm bằng grep). Không có `.github/workflows` tại commit này. Evidence do công cụ ngoài tạo, Promptory không xác thực nội dung. |
+| Giới hạn và rủi ro | - Apache-2.0, phụ thuộc jinja2, pyyaml, typer, rich; `serve` tuỳ chọn thêm FastAPI.<br>- Cổng chỉ tin file bằng chứng tự khai; ai ghi được file thì làm gate xanh.<br>- Sidecar `serve.py` không có xác thực, chỉ nên đặt nội bộ.<br>- Dự án mới, một commit, chưa có phát hành; thư mục `.claude/settings.local.json` bị commit (cho phép `gh api`). |
+| So với | promptfoo (chạy eval và red team, không quản lý phiên bản), dotprompt và prompty (định dạng file prompt), langfuse (prompt registry kèm tracing, dịch vụ) |
+| Nguồn | [README.md](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/README.md) · [LICENSE](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/LICENSE) · [pyproject.toml](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/pyproject.toml) · [gates.py](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/src/promptory/gates.py) · [lint.py](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/src/promptory/lint.py) · [metadata.py](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/src/promptory/metadata.py) · [evidence.py](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/src/promptory/evidence.py) · [serve.py](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/src/promptory/serve.py) · [prek.toml](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/prek.toml) |

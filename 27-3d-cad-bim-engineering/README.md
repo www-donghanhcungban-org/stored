@@ -1100,3 +1100,94 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | Open core: `MapPlate`, xuất vector và pipeline nhập tòa nhà là Pro, cần khóa thương mại (README); LICENSE là MIT còn LICENSE-APACHE riêng, Cargo.toml ghi `Apache-2.0 OR MIT`. `fetch_dem` tải dữ liệu độ cao từ mạng (README). Workflow `public-funnel-monitor.yml` chạy mỗi giờ để kiểm trang chủ/PyPI của chính dự án, không ảnh hưởng người dùng. AGENTS.md là nhật ký phản tư của agent, không phải hướng dẫn cho người dùng. Tính tất định chỉ chứng minh cho một cảnh tham chiếu, không cho mọi cảnh. Phiên bản 1.52.0. |
 | So với | CesiumJS, kepler.gl, GDAL (cùng nhóm địa không gian trong kho) |
 | Nguồn | [README.md](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/README.md) · [LICENSE](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/LICENSE) · [LICENSE-APACHE](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/LICENSE-APACHE) · [Cargo.toml](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/Cargo.toml) · [pyproject.toml](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/pyproject.toml) · [AGENTS.md](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/AGENTS.md) · [determinism.py](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/python/forge3d/determinism.py) · [_license.py](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/python/forge3d/_license.py) · [determinism-matrix.yml](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/.github/workflows/determinism-matrix.yml) · [public-funnel-monitor.yml](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/.github/workflows/public-funnel-monitor.yml) · [terra_determinata_v1.sha256](https://github.com/milos-agathon/forge3d/blob/6679f554fdfd859b8a8987f296a2600f8633e950/tests/goldens/determinism/terra_determinata_v1.sha256) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-ifc43-spec-development"></a>
+
+### buildingSMART IFC 4.3.x (bản phát triển)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/buildingSMART/IFC4.3.x-development |
+| License | Đặc tả: CC-BY-ND-4.0; thư mục code/: MIT |
+| Phiên bản đã đọc | `0f1c7acb287740d7d40e2d0021c216a9cdf638ab` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE.md, README.md, code/LICENSE, code/README.md, .github/workflows/pr-validation.yml, code/generators/express.py; chưa chạy upstream |
+| Khoảng trống lấp | Nguồn đặc tả IFC 4.3.x để đối chiếu phiên bản schema và cơ chế sinh/kiểm schema bằng máy (không phải IDS validator) |
+| Cơ chế đáng học | - Đặc tả viết bằng UML (schemas/*.uml, gộp ở ifc4x3_add2.uml) và Markdown (docs/); bộ sinh trong code/generators (express.py, xsd.py, pset.py, json.py, bsdd.py) tạo EXPRESS, XSD, Pset XML, JSON.<br>- Cổng PR pr-validation.yml: chạy pytest code/tests, sinh EXPRESS từ nhánh PR và nhánh nền rồi so dòng; từng Pset/Qto/entity mới thêm trong diff UML phải có file XML/mục JSON/tài liệu MD tương ứng.<br>- Có chế độ shadow_mode để thử cổng mà không làm hỏng job, và workflow cài SHACL validator (đã thấy bước cài, chưa đọc phần dùng shapes.ttl). |
+| Tiêu chí và cách kiểm | Kiểm bằng máy trong CI: cuối file EXPRESS là END_SCHEMA;, số dòng ≥ 10.000, tỷ lệ so baseline trong [0,5; 1,5], mỗi thực thể/Pset mới phải được generator phát ra. Chưa chạy, nên chưa biết các cổng có xanh ở HEAD. |
+| Giới hạn và rủi ro | License chia đôi: đặc tả CC-BY-ND 4.0 (chia sẻ nguyên bản được, phân phối bản đã sửa thì không), code/ MIT; mã IFC dev có thể đổi bất kỳ lúc nào, không thay cho bản ISO chính thức; ngưỡng 10.000 dòng và ±50% là heuristic thô. Phần khớp với IDS/chứng nhận phải tìm ở repo khác. |
+| So với | ifcopenshell (thư viện đọc/ghi IFC), buildingsmart-ids (đặc tả kiểm yêu cầu thông tin): repo này là nguồn schema, không phải bộ kiểm. |
+| Nguồn | [LICENSE.md](https://github.com/buildingSMART/IFC4.3.x-development/blob/0f1c7acb287740d7d40e2d0021c216a9cdf638ab/LICENSE.md) · [README.md](https://github.com/buildingSMART/IFC4.3.x-development/blob/0f1c7acb287740d7d40e2d0021c216a9cdf638ab/README.md) · [LICENSE](https://github.com/buildingSMART/IFC4.3.x-development/blob/0f1c7acb287740d7d40e2d0021c216a9cdf638ab/code/LICENSE) · [README.md](https://github.com/buildingSMART/IFC4.3.x-development/blob/0f1c7acb287740d7d40e2d0021c216a9cdf638ab/code/README.md) · [CI pr-validation.yml](https://github.com/buildingSMART/IFC4.3.x-development/blob/0f1c7acb287740d7d40e2d0021c216a9cdf638ab/.github/workflows/pr-validation.yml) · [express.py](https://github.com/buildingSMART/IFC4.3.x-development/blob/0f1c7acb287740d7d40e2d0021c216a9cdf638ab/code/generators/express.py) |
+
+<a id="n2-pystac"></a>
+
+### PySTAC
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/stac-utils/pystac |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `924560a62579c0e84584fab198f96bdb56ad2547` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README.md, pyproject.toml, `core/pystac/validation/__init__.py`, core/pystac/validation/stac_validator.py, core/pystac/validation/local_validator.py; chưa chạy upstream |
+| Khoảng trống lấp | Chuẩn cloud-native cho dữ liệu không gian: lớp tạo và kiểm catalog STAC bằng schema |
+| Cơ chế đáng học | - core/pystac/validation/stac_validator.py: JsonSchemaSTACValidator kiểm core rồi từng extension theo schema URI; schema lõi lấy từ cache cục bộ (local_validator.py, STAC 1.1.0), schema khác tải qua StacIO, có tham số allow_list giới hạn base URL.<br>- `validation/__init__.py`: validate (một đối tượng), validate_all và validate_all_dict (đệ quy theo link con/item), ném STACValidationError kèm best_match của jsonschema.<br>- Thay được validator qua STACValidator trừu tượng và set_validator; extension tách thành gói pystac-ext-* riêng. |
+| Tiêu chí và cách kiểm | CI chạy pre-commit lint rồi pytest tests --block-network --record-mode=none (ma trận Python 3.10-3.13 trên Linux/Windows/macOS); coverage fail_under = 65 trong pyproject. Chưa chạy lại. |
+| Giới hạn và rủi ro | Validation cần cài jsonschema (extra validation), nếu không thiếu thư viện thì không kiểm; schema extension mặc định tải từ mạng nên cần allow_list hoặc cache khi chạy trong CI cô lập; ngưỡng coverage 65% khá thấp; cassette HTTP ghi sẵn cho test. |
+| So với | stac-geoparquet (STAC dạng GeoParquet), opengeospatial-geoparquet (định dạng), geopandas-geopandas (dataframe không gian). |
+| Nguồn | [LICENSE](https://github.com/stac-utils/pystac/blob/924560a62579c0e84584fab198f96bdb56ad2547/LICENSE) · [README.md](https://github.com/stac-utils/pystac/blob/924560a62579c0e84584fab198f96bdb56ad2547/README.md) · [pyproject.toml](https://github.com/stac-utils/pystac/blob/924560a62579c0e84584fab198f96bdb56ad2547/pyproject.toml) · [`__init__.py`](https:`//github.com/stac-utils/pystac/blob/924560a62579c0e84584fab198f96bdb56ad2547/core/pystac/validation/__init__.py`) · [stac_validator.py](https://github.com/stac-utils/pystac/blob/924560a62579c0e84584fab198f96bdb56ad2547/core/pystac/validation/stac_validator.py) · [local_validator.py](https://github.com/stac-utils/pystac/blob/924560a62579c0e84584fab198f96bdb56ad2547/core/pystac/validation/local_validator.py) · [CI continuous-integration.yml](https://github.com/stac-utils/pystac/blob/924560a62579c0e84584fab198f96bdb56ad2547/.github/workflows/continuous-integration.yml) |
+
+<a id="n2-titiler"></a>
+
+### TiTiler
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/developmentseed/titiler |
+| License | MIT |
+| Phiên bản đã đọc | `92f9afbf614f190898d8a605433ffa5e877b15eb` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README.md, SECURITY.md, AGENT.md, src/titiler/core/titiler/core/factory.py, src/titiler/core/titiler/core/dependencies.py; chưa chạy upstream |
+| Khoảng trống lấp | Chuẩn cloud-native cho dữ liệu không gian: lớp phục vụ tile động từ COG/STAC |
+| Cơ chế đáng học | - factory.py: TilerFactory.tile đăng ký /tiles/{tileMatrixSetId}/{z}/{x}/{y}, mở dataset trong rasterio.Env(**env) bằng reader tiêm được; mọi tham số tách thành dependency thay thế được (path, reader, layer, colormap, render).<br>- dependencies.py: DatasetPathParams là điểm cắm để giới hạn nguồn; application/settings.py có biến TITILER_API_*, gồm disable_cog/stac/mosaic/zarr, global_access_token (query access_token), telemetry_enabled=false mặc định.<br>- core/telemetry.py: OpenTelemetry tùy chọn (no-op nếu không cài opentelemetry), SECURITY.md hướng dẫn tắt VRT driver và các tùy chọn GDAL_VRT_* (GDAL 3.12). |
+| Tiêu chí và cách kiểm | CI cicd.yml: ma trận Python 3.11-3.14, pre-commit và mypy ở bản mới nhất, rồi scripts/test chạy pytest từng module (core, xarray, mosaic, application, extensions) kèm coverage gửi Codecov; còn các workflow scorecard, zizmor, benchmark. Chỉ đọc cicd.yml, không đọc các workflow còn lại. |
+| Giới hạn và rủi ro | Mặc định nhận url tùy ý và CORS *, không có allowlist nguồn (nguy cơ SSRF/đọc file là suy luận của hồ sơ này); cần tự giới hạn khi mở ra Internet; global_access_token chỉ là một khoá chung trong query; phụ thuộc GDAL/rasterio (rủi ro I/O); AGENT.md là hướng dẫn cho agent của chính repo, chỉ đọc làm dữ liệu. |
+| So với | osgeo-gdal (thư viện I/O nền), geoparquet-io (công cụ GeoParquet), stac-geoparquet; chưa có tile server khác trong nhóm này của kho. |
+| Nguồn | [LICENSE](https://github.com/developmentseed/titiler/blob/92f9afbf614f190898d8a605433ffa5e877b15eb/LICENSE) · [README.md](https://github.com/developmentseed/titiler/blob/92f9afbf614f190898d8a605433ffa5e877b15eb/README.md) · [SECURITY.md](https://github.com/developmentseed/titiler/blob/92f9afbf614f190898d8a605433ffa5e877b15eb/SECURITY.md) · [AGENT.md](https://github.com/developmentseed/titiler/blob/92f9afbf614f190898d8a605433ffa5e877b15eb/AGENT.md) · [factory.py](https://github.com/developmentseed/titiler/blob/92f9afbf614f190898d8a605433ffa5e877b15eb/src/titiler/core/titiler/core/factory.py) · [dependencies.py](https://github.com/developmentseed/titiler/blob/92f9afbf614f190898d8a605433ffa5e877b15eb/src/titiler/core/titiler/core/dependencies.py) · [settings.py](https://github.com/developmentseed/titiler/blob/92f9afbf614f190898d8a605433ffa5e877b15eb/src/titiler/application/titiler/application/settings.py) · [telemetry.py](https://github.com/developmentseed/titiler/blob/92f9afbf614f190898d8a605433ffa5e877b15eb/src/titiler/core/titiler/core/telemetry.py) · [CI cicd.yml](https://github.com/developmentseed/titiler/blob/92f9afbf614f190898d8a605433ffa5e877b15eb/.github/workflows/cicd.yml) · [test](https://github.com/developmentseed/titiler/blob/92f9afbf614f190898d8a605433ffa5e877b15eb/scripts/test) |
+
+<a id="n2-ogcapi-features"></a>
+
+### OGC API - Features (đặc tả)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/opengeospatial/ogcapi-features |
+| License | OGC License (tùy biến, giống MIT nhưng bản sửa phải ghi chú chưa được OGC duyệt) |
+| Phiên bản đã đọc | `3c2c8dda19ad5287c6a021c73c925c430542ba04` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; docs-read; đã đọc LICENSE, README.md, core/standard/clause_2_conformance.adoc, core/standard/abstract_tests/ATS_class_core.adoc, core/standard/abstract_tests/core/ATS_api-definition-op.adoc, core/openapi/ogcapi-features-1.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Chuẩn cloud-native cho dữ liệu không gian: đặc tả API đặc trưng với test conformance dạng ATS |
+| Cơ chế đáng học | - core/standard/abstract_tests: ATS_class_core.adoc include từng test (mục đích, yêu cầu, phương pháp) cho mỗi conformance class; core/openapi/ogcapi-features-1.yaml là định nghĩa OpenAPI 3.0 dùng lại được.<br>- extensions/transactions/.../executable-tests: run_ats.py (chỉ stdlib) chạy ATS Part 4 với --landing-page, test không đủ điều kiện conformance thì SKIP kèm lý do; docker-compose dựng PostGIS và ldproxy.<br>- README liệt kê validator chính thức (TEAM Engine của OGC) và OGC Checker (Geonovum, kiểm bản 1.0.1 Part 1) để kiểm API thật. |
+| Tiêu chí và cách kiểm | ATS là văn bản, không tự chạy; riêng transactions có runner thử (exit code qua run-tests.sh, chưa chạy). Bộ kiểm chính thức và chương trình chứng nhận nằm ngoài repo (TEAM Engine). Không có workflow CI (git ls-files không có .github). |
+| Giới hạn và rủi ro | License OGC tùy biến (không phải SPDX chuẩn, bản sửa phải ghi chú chưa được OGC duyệt), nên không tính nguồn mở theo OSI; kho không tự kiểm đặc tả bằng CI; executable-tests là bản thử khi soạn ATS, tuyên bố đầy đủ phụ thuộc README tác giả (chưa xác minh). |
+| So với | opengeospatial-geoparquet (đặc tả OGC liên quan), spectral (kiểm OpenAPI cho hợp đồng API). |
+| Nguồn | [LICENSE](https://github.com/opengeospatial/ogcapi-features/blob/3c2c8dda19ad5287c6a021c73c925c430542ba04/LICENSE) · [README.md](https://github.com/opengeospatial/ogcapi-features/blob/3c2c8dda19ad5287c6a021c73c925c430542ba04/README.md) · [clause_2_conformance.adoc](https://github.com/opengeospatial/ogcapi-features/blob/3c2c8dda19ad5287c6a021c73c925c430542ba04/core/standard/clause_2_conformance.adoc) · [ATS_class_core.adoc](https://github.com/opengeospatial/ogcapi-features/blob/3c2c8dda19ad5287c6a021c73c925c430542ba04/core/standard/abstract_tests/ATS_class_core.adoc) · [ATS_api-definition-op.adoc](https://github.com/opengeospatial/ogcapi-features/blob/3c2c8dda19ad5287c6a021c73c925c430542ba04/core/standard/abstract_tests/core/ATS_api-definition-op.adoc) · [ogcapi-features-1.yaml](https://github.com/opengeospatial/ogcapi-features/blob/3c2c8dda19ad5287c6a021c73c925c430542ba04/core/openapi/ogcapi-features-1.yaml) · [README.md](https://github.com/opengeospatial/ogcapi-features/blob/3c2c8dda19ad5287c6a021c73c925c430542ba04/extensions/transactions/create-replace-update-delete/executable-tests/README.md) · [docker-compose.yml](https://github.com/opengeospatial/ogcapi-features/blob/3c2c8dda19ad5287c6a021c73c925c430542ba04/extensions/transactions/create-replace-update-delete/executable-tests/docker-compose.yml) |
+
+<a id="n2-fmpy"></a>
+
+### FMPy
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/CATIA-Systems/FMPy |
+| License | BSD-2-Clause (icon: CC-BY-4.0) |
+| Phiên bản đã đọc | `e42e288f448830c5f146ae334b38e91d17ff19fa` (commit 2026-09-09) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE.txt, README.md, pyproject.toml, src/fmpy/validation.py, src/fmpy/cli.py, src/fmpy/model_description.py; chưa chạy upstream |
+| Khoảng trống lấp | Đồng mô phỏng FMI/SSP: cổng kiểm FMU bằng máy |
+| Cơ chế đáng học | - validation.py: validate_fmu mở file/thư mục FMU, cảnh báo đường dẫn có dấu gạch ngược, rồi gọi read_model_description(validate=True, validate_variable_names=True, validate_model_structure=True) và trả danh sách vấn đề.<br>- model_description.py: kiểm XSD theo phiên bản (src/fmpy/schema/fmi1, fmi2, fmi3) bằng lxml, ném ValidationError kèm các lỗi.<br>- cli.py: lệnh fmpy validate in số vấn đề và thoát bằng sys.exit(len(problems)); tests/test_validation.py có các hàm test cho dẫn xuất, tên biến, giá trị bắt đầu (chỉ thấy tên hàm). |
+| Tiêu chí và cách kiểm | Cổng máy đọc được: XSD cộng các luật ngữ nghĩa trong validation.py; CI build.yml dựng binary và wheel ba nền tảng rồi chạy pytest tests (Python 3.10). Exit code = số lỗi nên giá trị lớn có thể bị cắt modulo 256 và không phân biệt loại lỗi; chưa chạy. |
+| Giới hạn và rủi ro | validate chỉ đọc modelDescription, không thực thi FMU; simulate nạp binary FMU (mã gốc, không sandbox) nên FMU lạ là mã không tin cậy; build kéo submodule Reference-FMUs và mpack, gói có binary dựng sẵn; tuyên bố hỗ trợ đầy đủ FMI 3.0 là của tác giả (chưa xác minh). |
+| So với | modelon-pyfmi (thư viện FMI khác), openmodelica-omsimulator (đồng mô phỏng/SSP). |
+| Nguồn | [LICENSE.txt](https://github.com/CATIA-Systems/FMPy/blob/e42e288f448830c5f146ae334b38e91d17ff19fa/LICENSE.txt) · [README.md](https://github.com/CATIA-Systems/FMPy/blob/e42e288f448830c5f146ae334b38e91d17ff19fa/README.md) · [pyproject.toml](https://github.com/CATIA-Systems/FMPy/blob/e42e288f448830c5f146ae334b38e91d17ff19fa/pyproject.toml) · [validation.py](https://github.com/CATIA-Systems/FMPy/blob/e42e288f448830c5f146ae334b38e91d17ff19fa/src/fmpy/validation.py) · [cli.py](https://github.com/CATIA-Systems/FMPy/blob/e42e288f448830c5f146ae334b38e91d17ff19fa/src/fmpy/cli.py) · [model_description.py](https://github.com/CATIA-Systems/FMPy/blob/e42e288f448830c5f146ae334b38e91d17ff19fa/src/fmpy/model_description.py) · [CI build.yml](https://github.com/CATIA-Systems/FMPy/blob/e42e288f448830c5f146ae334b38e91d17ff19fa/.github/workflows/build.yml) · [.gitmodules](https://github.com/CATIA-Systems/FMPy/blob/e42e288f448830c5f146ae334b38e91d17ff19fa/.gitmodules) |

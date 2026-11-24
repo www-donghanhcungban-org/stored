@@ -2,7 +2,7 @@
 
 # model-training — Mô hình, dữ liệu & tài liệu
 
-[← Mục lục catalog](../README.md) · 34 hồ sơ.
+[← Mục lục catalog](../README.md) · 36 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -39,4 +39,6 @@
 | [RWKV-LM](../../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện) | `BlinkDL/RWKV-LM` | Apache License 2.0 | 14.782 | đọc tài liệu 2026-11-18 | 08 | Mã tham chiếu kiến trúc RWKV (đến RWKV-7 "Goose" và nghiên cứu RWKV-8): mạng RNN song song hoá được với hiệu năng ngang Transformer, gồm mã huấn luyện và demo suy luận. |
 | [LitGPT](../../25-model-adaptation-post-training/README.md#anhkysuai-2026-11-23-litgpt) | `Lightning-AI/litgpt` | Apache-2.0 cho mã; weights theo model | 13.761 | đọc tài liệu 2026-11-23 | 25 | Các triển khai LLM và recipe pretrain, fine-tune, chuyển đổi và phục vụ model. |
 | [Axolotl](../../25-model-adaptation-post-training/README.md#axolotl) | `axolotl-ai-cloud/axolotl` | Apache-2.0 | 12.654 | đọc mã 2026-11-02 | 25 | Fine-tuning bằng config và backend phân tán; |
+| [OpenRLHF](../../25-model-adaptation-post-training/README.md#n2-openrlhf) | `OpenRLHF/OpenRLHF` | Apache-2.0 | 10.178 | đọc mã 2026-11-23 | 25 | Khung hậu huấn luyện RL cho LLM chạy Ray + vLLM + DeepSpeed, hỗ trợ PPO, REINFORCE++, RLOO, GRPO, Dr. |
+| [bitsandbytes](../../25-model-adaptation-post-training/README.md#n2-bitsandbytes) | `bitsandbytes-foundation/bitsandbytes` | MIT | 8.550 | đọc mã 2026-11-23 | 25 | Thư viện nền lượng tử 4/8-bit và optimizer 8-bit của PyTorch, nền kỹ thuật của QLoRA (NF4, double quantization). |
 | [torchtune](../../25-model-adaptation-post-training/README.md#torchtune-maintenance) | `pytorch/torchtune` | BSD-3-Clause | — | đọc mã 2026-11-04 | 25 | README thông báo không còn actively maintained, development thu hẹp trong 2025; |

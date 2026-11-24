@@ -5947,3 +5947,43 @@ Phần này có **39 hồ sơ** skill và công cụ cho thiết kế UX/UI mà 
 | Giới hạn và rủi ro | Bám `ai` 4.3.x và kiểu `toolInvocations`; AI SDK sau đó đổi mô hình message-part nên cần chuyển đổi khi nâng cấp (chưa kiểm). Một số tính năng ghi WIP. Không giải quyết sandbox hay danh mục component cho UI do model sinh. Chưa thấy chống chèn nội dung đặc biệt ngoài mặc định của react-markdown. Site docs `apps/www` có `analytics.tsx` (chưa mở), không thuộc phần component cài về. |
 | So với | assistant-ui và vercel-ai-sdk (hạ tầng chat), shadcn-ui (nền component), tambo (UI sinh động ở mức component dựng sẵn) |
 | Nguồn | [README.md](https://github.com/Blazity/shadcn-chatbot-kit/blob/fe32b9241dacbfe7b7149c7914812d35139a693f/README.md) · [LICENSE.md](https://github.com/Blazity/shadcn-chatbot-kit/blob/fe32b9241dacbfe7b7149c7914812d35139a693f/LICENSE.md) · [chat-message.tsx](https://github.com/Blazity/shadcn-chatbot-kit/blob/fe32b9241dacbfe7b7149c7914812d35139a693f/apps/www/registry/default/ui/chat-message.tsx) · [markdown-renderer.tsx](https://github.com/Blazity/shadcn-chatbot-kit/blob/fe32b9241dacbfe7b7149c7914812d35139a693f/apps/www/registry/default/ui/markdown-renderer.tsx) · [package.json](https://github.com/Blazity/shadcn-chatbot-kit/blob/fe32b9241dacbfe7b7149c7914812d35139a693f/apps/www/package.json) · [code-check.yml](https://github.com/Blazity/shadcn-chatbot-kit/blob/fe32b9241dacbfe7b7149c7914812d35139a693f/.github/workflows/code-check.yml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-signoff-ui"></a>
+
+### signoff-ui
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/dgesteves/signoff-ui |
+| License | MIT |
+| Phiên bản đã đọc | `de69d2ce5e0d928443c6eb9582cb36ab78366938` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, SECURITY.md, lib/policy.ts, lib/risk.ts, vitest.config.ts và ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | UI người-trong-vòng cho agent: duyệt diff nhiều file và duyệt lệnh, trả kết quả để agent hành động (AI SDK, AG-UI, ACP) |
+| Cơ chế đáng học | (1) Quy tắc duyệt có phạm vi: allow-once, allow-session, allow-always, deny-once, deny-always; luật deny thắng luật allow (`lib/policy.ts`). (2) Glob của luật allow dừng ở toán tử shell, nên `npm test*` cho `npm test -- --watch` nhưng không cho `npm test && rm -rf ~`; luật deny tách từng lệnh trong dòng shell, kể cả trong dấu nháy (`lib/policy.ts`). (3) Mức rủi ro từ chú thích MCP: destructive thành high, readOnly thành low, không đoán khi thiếu gợi ý, và nêu rõ đó chỉ là gợi ý không được dùng để tự duyệt (`lib/risk.ts`). |
+| Tiêu chí và cách kiểm | CI (đã mở) chạy format, lint không cảnh báo, typecheck, vitest với ngưỡng phủ statements 92, branches 87, functions 92, lines 94, ngân sách kích thước bundle, perf diff trên Chrome, axe a11y hai chủ đề, audit phụ thuộc mức moderate, smoke Next.js, assistant-ui, CopilotKit. 106 file trong thư mục test. Chưa chạy lại. |
+| Giới hạn và rủi ro | Phiên bản 0.14.1 nên API còn đổi. Yêu cầu Node 24 trở lên và pnpm; thành phần React nên cần Tailwind hoặc CSS đi kèm. Số sao do trinh sát ghi (16) chưa kiểm. Chỉ là lớp giao diện, hiệu lực chặn hành động phụ thuộc việc server của người dùng thực sự dừng chờ phản hồi. SECURITY.md liệt kê duyệt gửi không do người dùng bấm là lỗ hổng. |
+| So với | CopilotKit, assistant-ui (kit chat, chỉ diff từng file, không trả kết quả duyệt), json-render |
+| Nguồn | [README.md](https://github.com/dgesteves/signoff-ui/blob/de69d2ce5e0d928443c6eb9582cb36ab78366938/README.md) · [LICENSE](https://github.com/dgesteves/signoff-ui/blob/de69d2ce5e0d928443c6eb9582cb36ab78366938/LICENSE) · [SECURITY.md](https://github.com/dgesteves/signoff-ui/blob/de69d2ce5e0d928443c6eb9582cb36ab78366938/SECURITY.md) · [policy.ts](https://github.com/dgesteves/signoff-ui/blob/de69d2ce5e0d928443c6eb9582cb36ab78366938/packages/signoff-ui/src/lib/policy.ts) · [risk.ts](https://github.com/dgesteves/signoff-ui/blob/de69d2ce5e0d928443c6eb9582cb36ab78366938/packages/signoff-ui/src/lib/risk.ts) · [vitest.config.ts](https://github.com/dgesteves/signoff-ui/blob/de69d2ce5e0d928443c6eb9582cb36ab78366938/packages/signoff-ui/vitest.config.ts) · [ci.yml](https://github.com/dgesteves/signoff-ui/blob/de69d2ce5e0d928443c6eb9582cb36ab78366938/.github/workflows/ci.yml) |
+
+<a id="n2-lingo-dev"></a>
+
+### Lingo.dev
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/lingodotdev/lingo.dev |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `b3fba7d0272d139176064a9162a834bdace0712a` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc readme.md, packages/cli/package.json, lockfile.ts, observability.ts, settings.ts, pr-check.yml, i18n.json, i18n.lock; chưa chạy upstream |
+| Khoảng trống lấp | Bản địa hóa tài liệu (i18n/l10n) và đồng bộ bản dịch |
+| Cơ chế đáng học | - `lockfile.ts` băm MD5 từng giá trị nguồn theo mẫu đường dẫn; `extractUpdatedData` chỉ chọn khóa có checksum lệch, nên chỉ dịch lại phần đổi.<br>- `i18n.json` mô tả locale nguồn, đích và bucket kèm `lockedKeys` và `ignoredKeys` (xem `packages/cli/i18n.json`).<br>- Chính repo tự dùng: `pr-check.yml` chạy build, test và `pnpm changeset status --since origin/main` để bắt buộc có changeset.<br>- Readme mô tả lớp glossary, rules, brand voice, AI reviewer (GEMBA, BERTScore) là tính năng nền tảng đám mây (chưa xác minh trong mã, phần này không nằm trong packages đã mở). |
+| Tiêu chí và cách kiểm | Không có chấm điểm chất lượng thuật ngữ tiếng Việt nào trong repo đã đọc; điểm chặn duy nhất kiểm được bằng máy là checksum khóa và test spec cạnh mã. Chất lượng dịch phụ thuộc mô hình phía dịch vụ (chưa xác minh). Cần tự kiểm thuật ngữ tiếng Việt bằng glossary riêng. |
+| Giới hạn và rủi ro | Apache-2.0 cho mã. Telemetry: `observability.ts` gửi sự kiện tới PostHog (eu.i.posthog.com) kèm email khi đã đăng nhập, ID tổ chức git hoặc ID máy; tắt bằng DO_NOT_TRACK=1. Dịch cần LINGO_API_KEY tới api.lingo.dev nên nội dung nguồn rời máy. Repo đang chuyển trọng tâm sang nền tảng nên bề mặt CLI có thể đổi (cờ deprecated trong settings.ts). |
+| So với | Weblate (tự host, quản lý dịch có người), i18next (thư viện runtime, không dịch tự động), kiss-translator: Lingo.dev là lớp dịch tự động chạy trong CI |
+| Nguồn | [LICENSE.md](https://github.com/lingodotdev/lingo.dev/blob/b3fba7d0272d139176064a9162a834bdace0712a/LICENSE.md) · [readme.md](https://github.com/lingodotdev/lingo.dev/blob/b3fba7d0272d139176064a9162a834bdace0712a/readme.md) · [package.json](https://github.com/lingodotdev/lingo.dev/blob/b3fba7d0272d139176064a9162a834bdace0712a/packages/cli/package.json) · [lockfile.ts](https://github.com/lingodotdev/lingo.dev/blob/b3fba7d0272d139176064a9162a834bdace0712a/packages/cli/src/cli/utils/lockfile.ts) · [observability.ts](https://github.com/lingodotdev/lingo.dev/blob/b3fba7d0272d139176064a9162a834bdace0712a/packages/cli/src/cli/utils/observability.ts) · [settings.ts](https://github.com/lingodotdev/lingo.dev/blob/b3fba7d0272d139176064a9162a834bdace0712a/packages/cli/src/cli/utils/settings.ts) · [pr-check.yml](https://github.com/lingodotdev/lingo.dev/blob/b3fba7d0272d139176064a9162a834bdace0712a/.github/workflows/pr-check.yml) |

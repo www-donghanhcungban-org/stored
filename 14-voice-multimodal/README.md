@@ -1121,3 +1121,60 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | Cả hai file config đặt `authorized_ids = ["public_token"]`, một token công khai ví dụ: triển khai thật phải đổi. Trọng số STT theo CC-BY 4.0 (cần ghi công); README không nêu license trọng số TTS và voice embedding, cần đọc model card (chưa xác minh). Ngôn ngữ chỉ en và fr. Phần lõi nằm ở repo khác (`moshi`, `moshi-server`) nên không kiểm được ở đây. Commit cuối 2026-01-26, nhịp cập nhật chậm. |
 | So với | `whisper`, `faster-whisper`, `whisper-cpp`, `pipecat`, `livekit-agents`; tiếng Việt dùng `phowhisper`, `gipformer`. |
 | Nguồn | [README.md](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/README.md) · [LICENSE-MIT](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/LICENSE-MIT) · [LICENSE-APACHE](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/LICENSE-APACHE) · [FAQ.md](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/FAQ.md) · [config-tts.toml](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/configs/config-tts.toml) · [config-stt-en_fr-hf.toml](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/configs/config-stt-en_fr-hf.toml) · [Cargo.toml](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/stt-rs/Cargo.toml) · [precommit.yml](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/.github/workflows/precommit.yml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-viet-asr"></a>
+
+### VietASR (dangvansam)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/dangvansam/viet-asr |
+| License | Apache-2.0 (file LICENSE chỉ là phần đầu giấy phép kèm ghi chú, văn bản đầy đủ chưa chèn) |
+| Phiên bản đã đọc | `e580088c8bfd68dcbc321467489c125e8e3dabf3` (commit 2026-11-05) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, core/presets/transcribe.cc, core/src/modules/vietasr/README.md, core/tests/test_pipeline.cc, .github/workflows/release.yml; chưa chạy upstream |
+| Khoảng trống lấp | Tài nguyên tiếng Việt: ASR chạy cục bộ, đa nền tảng, ra thẳng văn bản đã viết hoa, chấm câu |
+| Cơ chế đáng học | • Một lõi C++ (`core/`) dạng pipeline gồm các mô-đun đăng ký tên (`vad`, `vietasr`, `punctuation`, `diarization`) ghép qua preset (`core/presets/transcribe.cc`: transcribe, transcribe-rich, stream, batch, meeting).<br>• Mô hình transducer 86M tham số int8 (78 MB), tải từ Hugging Face theo revision ghim; `models.json` ghim kích thước, SHA-256 và MD5 từng file, `model_fetcher.cc` kiểm MD5 khi tải (`core/src/modules/vietasr/README.md`).<br>• Nhiều binding (Python, Go, Rust, Node, Java, C#, Swift, WASM) bọc cùng lõi và tuyên bố cho ra bản chép giống hệt nhau (chưa xác minh); chạy ngoại tuyến được với `VIETASR_OFFLINE=1`. |
+| Tiêu chí và cách kiểm | README có bảng WER trên VIVOS, Bud500, VLSP 2018 đến 2023, chấm trên đầu ra thô so với tham chiếu viết đúng chính tả (viet-asr 15,97 đến 27,90 tuỳ bộ); số liệu do tác giả tự công bố, chưa xác minh. Kho có test gtest (`core/tests/`) nhưng `release.yml` (đã mở) chỉ build native và phát hành, còn `docker-publish.yml` và `pypi-publish.yml` mới chỉ grep, không thấy bước chạy test nào. Kiểm toàn vẹn mô hình bằng băm; kết quả WER không kiểm lại bằng máy trong kho. |
+| Giới hạn và rủi ro | File LICENSE chỉ có phần đầu Apache-2.0 kèm dòng 'Full Apache 2.0 license text to be inserted at release time', nên văn bản giấy phép chưa đầy đủ. Backend VAD `tenvad` mang Apache-2.0 kèm điều kiện thêm có điều khoản cấm cạnh tranh với Agora; README hướng dẫn tắt bằng `-DVIETASR_VAD_TENVAD=OFF`, trong khi preset `vad` và `batch` dùng đúng backend này. Bản 'Pro' có WER tốt nhất không công khai. Tải native lib và mô hình lần đầu khi cài (rời máy một lần). Phát hành v0.1.0, kho còn mới. |
+| So với | phowhisper, gipformer, sherpa-onnx (ASR cục bộ đã có trong kho) |
+| Nguồn | [README.md](https://github.com/dangvansam/viet-asr/blob/e580088c8bfd68dcbc321467489c125e8e3dabf3/README.md) · [LICENSE](https://github.com/dangvansam/viet-asr/blob/e580088c8bfd68dcbc321467489c125e8e3dabf3/LICENSE) · [transcribe.cc](https://github.com/dangvansam/viet-asr/blob/e580088c8bfd68dcbc321467489c125e8e3dabf3/core/presets/transcribe.cc) · [README.md](https://github.com/dangvansam/viet-asr/blob/e580088c8bfd68dcbc321467489c125e8e3dabf3/core/src/modules/vietasr/README.md) · [test_pipeline.cc](https://github.com/dangvansam/viet-asr/blob/e580088c8bfd68dcbc321467489c125e8e3dabf3/core/tests/test_pipeline.cc) · [release.yml](https://github.com/dangvansam/viet-asr/blob/e580088c8bfd68dcbc321467489c125e8e3dabf3/.github/workflows/release.yml) |
+
+<a id="n2-lemas-tts"></a>
+
+### LEMAS-TTS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/LEMAS-Project/LEMAS-TTS |
+| License | không có file LICENSE |
+| Phiên bản đã đọc | `305f7e31a874140d141987909a062e57f2807321` (commit 2026-03-31) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, requirements.txt, lemas_tts/infer/frontend.py, api.py, infer/utils_infer.py, scripts/tts_multilingual.sh; chưa chạy upstream |
+| Khoảng trống lấp | Tài nguyên tiếng Việt: TTS đa ngôn ngữ zero-shot, tiếng Việt chỉ là một trong 10 ngôn ngữ |
+| Cơ chế đáng học | • TTS zero-shot dạng flow-matching theo F5-TTS (`lemas_tts/model/cfm.py`, backbone DiT/UNetT/MMDiT) hỗ trợ 10 ngôn ngữ, có nhánh mã hoá ngữ điệu (`prosody_encoder.py`) và sửa giọng theo căn chỉnh từ (`speech_edit_multilingual.py`).<br>• Tiền xử lý văn bản đi qua `lemas_tts/infer/frontend.py`: nhận ngôn ngữ bằng `langid`, chuẩn hoá riêng cho Trung, Anh, Indonesia, rồi chuyển âm vị bằng backend espeak; tiếng Việt dùng cấu hình espeak `vi` chung, không có chuẩn hoá số hay viết tắt riêng cho tiếng Việt (đọc theo mã).<br>• Có bước tuỳ chọn lọc giọng tham chiếu bằng UVR5 (`uvr5/`). |
+| Tiêu chí và cách kiểm | Không có test, CI hay số đo chất lượng tiếng Việt trong kho; chỉ có trích dẫn bài báo arXiv 2601.04233 (chưa xác minh). Không có bộ kiểm cường độ hay độ dễ nghe nào kiểm bằng máy trong kho. |
+| Giới hạn và rủi ro | Kho không có file LICENSE (null); README ghi CC-BY-4.0 cho cả kho, loại giấy phép ít hợp với mã nguồn và khó khớp với phần mã gốc từ F5-TTS và UVR5; trọng số tải riêng từ Hugging Face nên license trọng số phải đọc ở đó (chưa xác minh). Trọng số và dữ liệu không nằm trong kho. `requirements.txt` ghim phiên bản nhiều gói và dùng chỉ mục PyTorch CUDA 12.1. `utils_infer.py` nạp checkpoint với `weights_only=True`, nhưng `cfm.py` và `prosody_encoder.py` gọi `torch.load` không đặt cờ này. Zero-shot nhân bản giọng nên có rủi ro mạo danh giọng, README không nêu biện pháp. Commit cuối 2026-03. |
+| So với | f5-tts-vietnamese, vieneu-tts, vixtts (TTS tiếng Việt đã có trong kho; LEMAS là mô hình đa ngôn ngữ, không chuyên tiếng Việt) |
+| Nguồn | [README.md](https://github.com/LEMAS-Project/LEMAS-TTS/blob/305f7e31a874140d141987909a062e57f2807321/README.md) · [requirements.txt](https://github.com/LEMAS-Project/LEMAS-TTS/blob/305f7e31a874140d141987909a062e57f2807321/requirements.txt) · [frontend.py](https://github.com/LEMAS-Project/LEMAS-TTS/blob/305f7e31a874140d141987909a062e57f2807321/lemas_tts/infer/frontend.py) · [api.py](https://github.com/LEMAS-Project/LEMAS-TTS/blob/305f7e31a874140d141987909a062e57f2807321/lemas_tts/api.py) · [utils_infer.py](https://github.com/LEMAS-Project/LEMAS-TTS/blob/305f7e31a874140d141987909a062e57f2807321/lemas_tts/infer/utils_infer.py) · [tts_multilingual.sh](https://github.com/LEMAS-Project/LEMAS-TTS/blob/305f7e31a874140d141987909a062e57f2807321/lemas_tts/scripts/tts_multilingual.sh) |
+
+<a id="n2-pyannote-metrics"></a>
+
+### pyannote.metrics
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/pyannote/pyannote-metrics |
+| License | MIT |
+| Phiên bản đã đọc | `2b02d04586bad4dedb7ad05ea01a987c7021bf12` (commit 2026-10-16) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, CHANGELOG.md, pyproject.toml, base.py; chưa chạy upstream |
+| Khoảng trống lấp | Đo chất lượng ASR đa người nói: DER và các độ đo phân tách người nói. Không phủ MOS hay chống giả mạo như trinh sát ghi |
+| Cơ chế đáng học | • `diarization.py::DiarizationErrorRate.compute_components`: cắt theo UEM, bỏ collar quanh biên tham chiếu và (tùy chọn) vùng chồng lấn, đổi nhãn tham chiếu thành chuỗi, nhãn giả thuyết thành số, tìm ánh xạ tối ưu rồi gọi lớp cha tính lỗi (nhầm, bỏ sót, báo động giả).<br>• `base.py::BaseMetric`: cộng dồn thành phần qua từng file, `report()` ra bảng pandas, `confidence_interval(alpha=0.9)` dùng `scipy.stats.bayes_mvs` (cảnh báo khi chỉ có một file).<br>• `cli.py` đọc giao thức `pyannote.database` và xuất báo cáo theo tập con; có đường DET/EER cho speaker spotting.<br>• Bản 4.2.0 thêm độ đo đếm số người nói và sửa hành vi với tham chiếu rỗng (CHANGELOG đã đọc). |
+| Tiêu chí và cách kiểm | Ngưỡng do người dùng đặt (`collar`, `skip_overlap`, `tolerance`); thư viện không có cổng đạt/trượt. CI (`test.yml` đã đọc) cài wheel đã build rồi pytest trên Python 3.11 đến 3.15 và `3.x`, thêm job tính năng tùy chọn; có `tests/test_diarization.py` kiểm ánh xạ tối ưu, purity, coverage, số người nói. Kiểm bằng máy, nhưng chưa chạy lại. Kết quả khớp với công cụ NIST md-eval (collar 0.25 s): (chưa xác minh), cần tự đối chiếu. |
+| Giới hạn và rủi ro | MIT (Hervé Bredin, CNRS). Bảo trì tốt: 4.2.0 phát hành 2026-10-16, yêu cầu Python >= 3.11. Chạy hoàn toàn cục bộ, không thấy telemetry trong phần đã đọc. Giới hạn: chỉ đo phân tách/phát hiện/phiên âm, không đo chất lượng tổng hợp (MOS) hay giả mạo; DER phụ thuộc lựa chọn collar và xử lý chồng lấn nên số liệu chỉ so được khi cùng thiết lập; ít sao (~260) nhưng là tham chiếu học thuật quen thuộc (Interspeech 2017, theo README). |
+| So với | whisperx (sinh diarization và phiên âm, đầu vào của độ đo); speechbrain-toolkit (bộ công cụ huấn luyện có độ đo riêng); lm-evaluation-harness (khác miền, cùng ý tưởng cổng đo) |
+| Nguồn | [README.md](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/README.md) · [LICENSE](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/LICENSE) · [CHANGELOG.md](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/CHANGELOG.md) · [pyproject.toml](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/pyproject.toml) · [base.py](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/src/pyannote/metrics/base.py) · [diarization.py](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/src/pyannote/metrics/diarization.py) · [cli.py](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/src/pyannote/metrics/cli.py) · [test_diarization.py](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/tests/test_diarization.py) · [test.yml](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/.github/workflows/test.yml) |

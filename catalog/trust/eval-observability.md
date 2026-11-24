@@ -2,9 +2,9 @@
 
 # eval-observability — Đánh giá, an toàn & chất lượng
 
-[← Mục lục catalog](../README.md) · 73 hồ sơ.
+[← Mục lục catalog](../README.md) · 79 hồ sơ.
 
-## Eval LLM/agent (`llm-eval`, 26)
+## Eval LLM/agent (`llm-eval`, 27)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -28,6 +28,7 @@
 | [JiWER](../../14-voice-multimodal/README.md#ch-jiwer) | `jitsi/jiwer` | Apache-2.0 | 942 | đọc tài liệu 2026-11-23 | 14 | Tính WER/MER/WIL/WIP/CER cho STT bằng RapidFuzz, v4.0.0; |
 | [agentevals](../../03-agentic-patterns-loops/README.md#factory-trajectory-oracles-2026-11-04) | `langchain-ai/agentevals` | MIT | 757 | đọc mã 2026-11-04 | 03 | Chấm trajectory: match strict/unordered/subset/superset + tool_args exact/ignore, LLM-judge, graph LangGraph; |
 | [Inspect Evals](../../07-eval-observability/README.md#ch-inspect-evals) | `UKGovernmentBEIS/inspect_evals` | MIT | 756 | đọc tài liệu 2026-11-23 | 07 | >200 task Inspect; |
+| [ARES](../../07-eval-observability/README.md#n2-ares-rag-eval) | `stanford-futuredata/ARES` | Apache-2.0 | 739 | đọc mã 2026-11-23 | 07 | Khung đánh giá RAG của Stanford: judge chấm riêng context relevance, answer faithfulness và answer relevance, rồi dùng PPI với một tập nhãn người nhỏ để ra khoảng tin cậ… |
 | [AgentLab](../../11-browser-computer-use-sandbox/README.md#agentlab) | `ServiceNow/AgentLab` | Apache-2.0 (notice) | 661 | đọc mã 2026-11-02 | 11 | Thí nghiệm BrowserGym; |
 | [chunking_evaluation (Chroma)](../../10-local-llm-rag-memory/README.md#ch-chunking-evaluation-chroma) | `brandonstarxel/chunking_evaluation` | MIT | 514 | đọc tài liệu 2026-11-23 | 10 | Đo chunking mức token: precision/recall/IoU so với đoạn trích chuẩn (báo cáo kỹ thuật Chroma), sinh câu hỏi tổng hợp; |
 | [UTMOSv2](../../14-voice-multimodal/README.md#ch-utmosv2) | `sarulab-speech/UTMOSv2` | MIT | 381 | đọc tài liệu 2026-11-23 | 14 | Dự đoán MOS độ tự nhiên giọng tổng hợp; |
@@ -35,7 +36,7 @@
 | [EVA (ServiceNow)](../../14-voice-multimodal/README.md#ch-eva-servicenow) | `ServiceNow/eva` | MIT | 235 | đọc tài liệu 2026-11-23 | 14 | Eval voice agent nhiều lượt bot-to-bot: EVA-A (đúng việc) + EVA-X (trải nghiệm); |
 | [Ragas (số liệu RAG tách retrieval và answer)](../../07-eval-observability/README.md#nt-ragas-rag-metrics) | `explodinggradients/ragas` | Apache-2.0 | — | đọc mã 2026-11-23 | 07 | Bộ metric chấm ứng dụng RAG/LLM, tách rõ phía truy xuất (context precision, context recall) và phía trả lời (faithfulness, answer relevancy). |
 
-## Tracing & observability LLM (`tracing`, 13)
+## Tracing & observability LLM (`tracing`, 14)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -52,8 +53,9 @@
 | [OpenInference](../../07-eval-observability/README.md#ch-openinference) | `Arize-ai/openinference` | Apache-2.0 | 1.333 | đọc mã 2026-11-23 | 07 | Đặc tả + instrument (~38 gói Python) cho Phoenix; |
 | [Overmind](../../07-eval-observability/README.md#ch-overmind) | `overmind-core/overmind` | AGPL-3.0 (platform) / MIT (SDK, thư mục overmind/) | 780 | đọc tài liệu 2026-11-23 | 07 | Trace → dataset → eval → fine-tune LoRA (Modal); |
 | [OpenTelemetry GenAI Semantic Conventions](../../07-eval-observability/README.md#ch-opentelemetry-genai-semantic-conventions) | `open-telemetry/semantic-conventions-genai` | Apache-2.0 | 560 | đọc tài liệu 2026-11-23 | 07 | Chuẩn gen_ai.\* đã tách khỏi open-telemetry/semantic-conventions; |
+| [ccusage](../../07-eval-observability/README.md#n2-ccusage) | `ryoppippi/ccusage` | MIT | — | đọc mã 2026-11-23 | 07 | CLI đọc log cục bộ của hơn 20 coding agent (Claude Code, Codex, OpenCode, Amp, Gemini CLI, Copilot CLI...) và lập báo cáo token và chi phí theo ngày, tuần, tháng, phiên,… |
 
-## Benchmark (`benchmark`, 17)
+## Benchmark (`benchmark`, 20)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -66,6 +68,7 @@
 | [BEIR](../../10-local-llm-rag-memory/README.md#ch-beir) | `beir-cellar/beir` | Apache-2.0 | 2.336 | đọc tài liệu 2026-11-23 | 10 | Chuẩn định dạng corpus/queries/qrels + nDCG@10/Recall@k cho retrieval zero-shot (NeurIPS 2021), 17 bộ dữ liệu tiền xử lý; |
 | [OmniDocBench](../../26-document-intelligence-ocr/README.md#omnidocbench) | `opendatalab/OmniDocBench` | Apache-2.0 (eval code); dataset kiểm riêng | 2.140 | đọc mã 2026-11-02 | 26 | Đọc mã/đặc tả 2/11/2026, ea2d138c7d2e; |
 | [VBench](../../19-agentic-video-media/README.md#ch-vbench) | `Vchitect/VBench` | Apache-2.0 | 1.851 | đọc tài liệu 2026-11-23 | 19 | Benchmark model sinh video: VBench 16 chiều T2V, VBench-2.0 18 chiều (vật lý, chuyển động người, thường thức), I2V, video dài; |
+| [MLPerf Inference (reference và LoadGen)](../../07-eval-observability/README.md#n2-mlperf-inference) | `mlcommons/inference` | Apache-2.0 | 1.659 | đọc mã 2026-11-23 | 07 | Bộ chuẩn đo suy luận của MLCommons: LoadGen sinh tải theo kịch bản với ràng buộc độ trễ/thời lượng trong `mlperf.conf`, cộng bộ kiểm bài nộp. |
 | [RewardBench](../../07-eval-observability/README.md#ch-rewardbench) | `allenai/reward-bench` | Apache-2.0 | 749 | đọc tài liệu 2026-11-23 | 07 | RewardBench 2 (arXiv 2506.01937) chấm reward model và judge sinh văn bản; |
 | [Picovoice Speech-to-Text Benchmark](../../14-voice-multimodal/README.md#ch-picovoice-speech-to-text-benchmark) | `Picovoice/speech-to-text-benchmark` | Apache-2.0 | 698 | đọc tài liệu 2026-11-23 | 14 | Khung đo WER + độ trễ trên LibriSpeech, TED-LIUM, Common Voice, MLS, VoxPopuli, FLEURS…; |
 | [SWE-bench Pro](../../01-ai-coding-agents/README.md#ch-swe-bench-pro) | `scaleapi/SWE-bench_Pro-os` | MIT | 570 | đọc tài liệu 2026-11-23 | 01 | V2 642 task định dạng Harbor, HARD-51, locked protocol (agent không mạng trừ endpoint model, verifier chấm `model.patch` ở image sạch (vẫn có mạng)), GATE.md oracle 642/… |
@@ -74,14 +77,17 @@
 | [Open ASR Leaderboard](../../14-voice-multimodal/README.md#ch-open-asr-leaderboard) | `huggingface/open_asr_leaderboard` | Apache-2.0 | 278 | đọc tài liệu 2026-11-23 | 14 | Mã leaderboard ASR của Hugging Face: short/long-form, multilingual (FLEURS/MCV/MLS), chạy HF Jobs cùng phần cứng, có tập riêng tư; |
 | [ControlArena](../../07-eval-observability/README.md#nt-control-arena) | `UKGovernmentBEIS/control-arena` | MIT (mã); phụ thuộc Apache-2.0, BSD-3-Clause và LGPL-3.0 | 271 | đọc mã 2026-11-23 | 07 | Thư viện nghiên cứu AI control trên Inspect: nhiều setting sabotage, micro-protocol giám sát và phân tích an toàn/hữu ích. |
 | [SWE-bench-Live](../../01-ai-coding-agents/README.md#ch-swe-bench-live) | `microsoft/SWE-bench-Live` | MIT | 264 | đọc tài liệu 2026-11-23 | 01 | Tập tự cập nhật chống nhiễm: Python +50 task/tháng, MultiLang 1.077 task, Windows; |
+| [SanityHarness](../../07-eval-observability/README.md#n2-sanityharness) | `lemon07r/SanityHarness` | — | 244 | đọc mã 2026-11-23 | 07 | Harness Go nhẹ chạy coding agent trên 26 task nhỏ trong Docker, chấm điểm có trọng số độ khó và phạt khi sửa test (kiểm BLAKE3). |
+| [AILuminate (bộ prompt demo)](../../07-eval-observability/README.md#n2-ailuminate) | `mlcommons/ailuminate` | Apache-2.0 (LICENSE.md); dữ liệu CC BY 4.0 theo README | 86 | đọc tài liệu 2026-11-23 | 07 | Bộ 1200 prompt demo mỗi ngôn ngữ (en_US, fr_FR) của benchmark an toàn AILuminate với phân loại hazard và persona. |
 
-## Giám sát hệ thống (`ops-monitoring`, 17)
+## Giám sát hệ thống (`ops-monitoring`, 18)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [uptime-kuma](../../36-self-hosting-homelab/README.md#chuyen-uptime-kuma) | `louislam/uptime-kuma` | MIT | 94.567 | đọc tài liệu 2026-11-18 | 36 | Công cụ giám sát uptime tự host, dễ dùng, theo dõi HTTP(s), TCP, ping, DNS, WebSocket, container Docker và có trang trạng thái. |
 | [netdata](../../33-reliability-observability-operations/README.md#chuyen-netdata) | `netdata/netdata` | GPL-3.0 | 81.458 | đọc tài liệu 2026-11-18 | 33 | Nền tảng quan sát full-stack thu thập metric theo từng giây, log, trace, luồng mạng, có cảnh báo và học máy, chạy trên Linux, macOS, FreeBSD, Windows, Kubernetes. |
 | [grafana](../../33-reliability-observability-operations/README.md#chuyen-grafana) | `grafana/grafana` | AGPL-3.0-only | 77.975 | đọc tài liệu 2026-11-18 | 33 | Nền tảng giám sát và quan sát mã nguồn mở để truy vấn, trực quan hoá, cảnh báo trên metric và log từ nhiều nguồn dữ liệu. |
+| [Prometheus](../../33-reliability-observability-operations/README.md#n2-prometheus) | `prometheus/prometheus` | Apache-2.0 | 67.787 | đọc mã 2026-11-23 | 33 | Hệ giám sát metric kiểu pull với PromQL và alert rule. |
 | [Sentry](../../33-reliability-observability-operations/README.md#anhkysuai-getsentry-sentry) | `getsentry/sentry` | FSL-1.1-Apache-2.0 | 45.868 | đọc tài liệu 2026-11-23 | 33 | Nền tảng thu thập lỗi và ngữ cảnh debug của ứng dụng. |
 | [Glances](../../33-reliability-observability-operations/README.md#anhkysuai-nicolargo-glances) | `nicolargo/glances` | LGPL-3.0 | 34.005 | đọc tài liệu 2026-11-23 | 33 | Công cụ Python quan sát hệ thống bằng terminal, WebUI và REST API. |
 | [signoz](../../33-reliability-observability-operations/README.md#chuyen-signoz) | `SigNoz/signoz` | MIT | 32.673 | đọc tài liệu 2026-11-18 | 33 | Nền tảng observability mã nguồn mở dựa trên OpenTelemetry, gộp logs, metrics, traces, cảnh báo và dashboard một chỗ. |

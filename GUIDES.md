@@ -1,6 +1,6 @@
 # Chọn công cụ theo bài toán
 
-**Tra nhanh:** [PLAYBOOK.md](PLAYBOOK.md) gom 98 skill/tính năng đã chắt lọc kèm các bước áp dụng cùng đề xuất mới cho UI/UX và mười nhóm khác; [STANDARDS.md](STANDARDS.md) ghi trạng thái chuẩn và quy định kèm mức xác minh; [catalog/](catalog/README.md) liệt kê mọi hồ sơ theo nhóm → danh mục → danh mục con.
+**Tra nhanh:** [PLAYBOOK.md](PLAYBOOK.md) gom 98 skill/tính năng đã chắt lọc kèm các bước áp dụng cùng đề xuất mới cho UI/UX và mười nhóm khác (hai đợt); [STANDARDS.md](STANDARDS.md) ghi trạng thái chuẩn và quy định kèm mức xác minh; [catalog/](catalog/README.md) liệt kê mọi hồ sơ theo nhóm → danh mục → danh mục con.
 
 Các tuyến đọc dưới đây ghép những hồ sơ đã có trong kho. Bắt đầu bằng ràng buộc, chọn 2–4 ứng viên để thử trên tác vụ thật, giữ baseline và kiểm lại ngày/license trong hồ sơ. Đây là bản đồ tham khảo, không phải cấu hình triển khai đã được kho chạy thử.
 

@@ -2,7 +2,7 @@
 
 # llm-gateway — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 18 hồ sơ.
+[← Mục lục catalog](../README.md) · 20 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -22,5 +22,7 @@
 | [CodexBar](../../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) | `steipete/CodexBar` | MIT | 23.202 | đọc tài liệu 2026-11-18 | 08 | Ứng dụng thanh menu macOS 14+ (kèm app desktop Linux Qt 6 và CLI) hiển thị hạn mức sử dụng của các nhà cung cấp AI lập trình cùng thời điểm đặt lại. |
 | [Apache APISIX](../../04-protocols-standards/README.md#anhkysuai-2026-11-23-apache-apisix) | `apache/apisix` | Apache-2.0; kèm notices thành phần thứ ba | 17.361 | đọc tài liệu 2026-11-23 | 04 | API gateway động cho định tuyến, kiểm soát lưu lượng và các API mô hình AI. |
 | [Portkey Gateway](../../10-local-llm-rag-memory/README.md#ch-portkey-gateway) | `Portkey-AI/gateway` | MIT | 13.433 | đọc tài liệu 2026-11-23 | 10 | Gateway nhanh, fallback/retry/load-balance. |
+| [vLLM Semantic Router](../../10-local-llm-rag-memory/README.md#n2-vllm-semantic-router) | `vllm-project/semantic-router` | Apache-2.0 (LICENSE gốc; thư mục con dữ liệu thử và vài tài sản website có license riêng) | 6.522 | đọc mã 2026-11-23 | 10 | Lớp quyết định đứng trước nhiều mô hình: cây luật AND/OR/NOT trên tín hiệu, recipe privacy giữ dữ liệu nhạy cảm ở mô hình cục bộ, và probe tất định với ngưỡng 100%. |
 | [Helicone](../../10-local-llm-rag-memory/README.md#ch-helicone) | `Helicone/helicone` | Apache-2.0 | 6.293 | đọc tài liệu 2026-11-23 | 10 | Proxy + observability. |
+| [AI Gateway Labs (Azure API Management)](../../04-protocols-standards/README.md#n2-azure-ai-gateway-labs) | `Azure-Samples/AI-Gateway` | MIT | 1.011 | đọc mã 2026-11-23 | 04 | Bộ công thức policy gateway AI trên APIM, không phải gateway mã nguồn tự host. |
 | [ai-gateway (seeker19110)](../../23-own-repos-lessons/README.md#ch-ai-gateway-seeker19110) | `seeker19110/x-shop` | MIT | — | đọc tài liệu 2026-11-23 | 23 | Gateway LLM Node 3 dep: pool đa tài khoản, cooldown theo lỗi, OpenAI-compatible, MCP Streamable HTTP /mcp, Prometheus; |

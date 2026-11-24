@@ -2,7 +2,7 @@
 
 # inference — Mô hình, dữ liệu & tài liệu
 
-[← Mục lục catalog](../README.md) · 36 hồ sơ.
+[← Mục lục catalog](../README.md) · 40 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -37,8 +37,12 @@
 | [cactus](../../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện) | `cactus-compute/cactus` | Apache License 2.0 | 14.802 | đọc tài liệu 2026-11-18 | 08 | Gói Python chạy cục bộ mô hình văn bản, giọng nói và thị giác (Needle, Whistle, Mirage) cho gọi công cụ, trích xuất có cấu trúc, phiên âm, hiểu ảnh và tinh chỉnh mô hình. |
 | [OpenLLM](../../10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23-openllm) | `bentoml/OpenLLM` | Apache-2.0 cho mã; model có license riêng | 12.612 | đọc tài liệu 2026-11-23 | 10 | Đóng gói và phục vụ LLM bằng API tương thích OpenAI cùng UI chat. |
 | [LMCache](../../10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23-lmcache) | `LMCache/LMCache` | Apache-2.0 | 12.446 | đọc tài liệu 2026-11-23 | 10 | Lớp quản lý KV cache cho hệ suy luận LLM, hỗ trợ chia sẻ/tái sử dụng cache. |
+| [NVIDIA Dynamo](../../10-local-llm-rag-memory/README.md#n2-nvidia-dynamo) | `ai-dynamo/dynamo` | Apache-2.0 | 8.557 | đọc mã 2026-11-23 | 10 | Tầng điều phối suy luận trên SGLang, TensorRT-LLM và vLLM: tách prefill/decode, router nhận biết KV-cache, Planner tự co giãn theo SLA TTFT/ITL, chịu lỗi bằng chuyển req… |
+| [GPTCache](../../10-local-llm-rag-memory/README.md#n2-gptcache) | `zilliztech/GPTCache` | MIT | 8.235 | đọc mã 2026-11-23 | 10 | Cache ngữ nghĩa cho lời gọi LLM: embedding câu hỏi, tìm vector gần nhất, một bộ chấm tương đồng quyết định có trả câu trả lời cũ hay không (mặc định ngưỡng 0.8). |
 | [MLX LM](../../10-local-llm-rag-memory/README.md#nt-mlx-lm) | `ml-explore/mlx-lm` | MIT (mã); license từng model theo model card (chưa xác minh) | 7.744 | đọc mã 2026-11-23 | 10 | Gói Python chạy, lượng tử hóa và tinh chỉnh LLM trên Apple silicon bằng MLX: CLI `mlx_lm.generate/chat/convert/lora/fuse/server`. |
 | [KServe](../../10-local-llm-rag-memory/README.md#kserve) | `kserve/kserve` | Apache-2.0 | 6.182 | đọc mã 2026-11-02 | 10 | Control plane Kubernetes cho model serving; |
 | [ExecuTorch](../../10-local-llm-rag-memory/README.md#executorch) | `pytorch/executorch` | BSD-3-Clause | 5.147 | đọc mã 2026-11-02 | 10 | Export/lowering PyTorch sang runtime edge; |
 | [llm-d](../../10-local-llm-rag-memory/README.md#llm-d) | `llm-d/llm-d` | Apache-2.0 | 5.126 | đọc mã 2026-11-02 | 10 | Orchestration/routing phân tán phía trên vLLM/SGLang; |
+| [LLM Compressor](../../10-local-llm-rag-memory/README.md#n2-llm-compressor) | `vllm-project/llm-compressor` | Apache-2.0 | 3.988 | đọc mã 2026-11-23 | 10 | Thư viện nén model chính thức của dự án vLLM: recipe gồm các modifier GPTQ/AWQ/SmoothQuant/FP8/NVFP4, xuất compressed-tensors chạy thẳng trong vLLM. |
+| [GPTQModel](../../10-local-llm-rag-memory/README.md#n2-gptqmodel) | `ModelCloud/GPTQModel` | Apache-2.0 (kernel Swordfish AGPL-3.0; một số model port theo license riêng) | 1.295 | đọc mã 2026-11-23 | 10 | Nền tảng lượng tử LLM đa thuật toán (GPTQ, AWQ, EXL3, GGUF, MXFP4) và đa phần cứng. |
 | [safetensors](../../10-local-llm-rag-memory/README.md#nt-safetensors) | `huggingface/safetensors` | Apache-2.0 | — | đọc mã 2026-11-23 | 10 | Định dạng lưu tensor đơn giản (8 byte độ dài header, JSON header, bộ đệm byte) để thay pickle: nạp không thực thi mã, ánh xạ bộ nhớ, tải lười. |

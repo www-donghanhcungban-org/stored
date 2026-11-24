@@ -1573,3 +1573,179 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | Nhiều keyword cần dịch vụ ngoài hoặc Windows/GUI (Desktop, Windows, SAP) nên không tái lập được trong container; `RobocorpAdapter` gắn với Control Room thương mại của Robocorp, bản tự host phải dùng `FileAdapter` hoặc viết adapter. README ghi tài trợ bởi Robocorp và tối ưu cho công cụ của họ. Nhận xét bảo trì chỉ dựa trên ngày commit gần nhất (2026-11-20, release 34.1.0); mô tả của trinh sát (license Apache-2.0) đúng. |
 | So với | n8n, activepieces, huginn, temporal |
 | Nguồn | [LICENSE](https://github.com/robocorp/rpaframework/blob/8cf9b90d15f4b6cbf2da3f5b0bdffaa488d43e15/LICENSE) · [README.rst](https://github.com/robocorp/rpaframework/blob/8cf9b90d15f4b6cbf2da3f5b0bdffaa488d43e15/README.rst) · [CLAUDE.md](https://github.com/robocorp/rpaframework/blob/8cf9b90d15f4b6cbf2da3f5b0bdffaa488d43e15/CLAUDE.md) · [main.yaml](https://github.com/robocorp/rpaframework/blob/8cf9b90d15f4b6cbf2da3f5b0bdffaa488d43e15/.github/workflows/main.yaml) · [pyproject.toml](https://github.com/robocorp/rpaframework/blob/8cf9b90d15f4b6cbf2da3f5b0bdffaa488d43e15/packages/main/pyproject.toml) · [WorkItems.py](https://github.com/robocorp/rpaframework/blob/8cf9b90d15f4b6cbf2da3f5b0bdffaa488d43e15/packages/main/src/RPA/Robocorp/WorkItems.py) · [test_robocorp_workitems.py](https://github.com/robocorp/rpaframework/blob/8cf9b90d15f4b6cbf2da3f5b0bdffaa488d43e15/packages/main/tests/python/test_robocorp_workitems.py) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-camunda-8-monorepo"></a>
+
+### Camunda 8 (Zeebe, Operate, Tasklist, Optimize)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/camunda/camunda |
+| License | Camunda License 1.0 (mã nguồn có sẵn nhưng chỉ dùng miễn phí cho môi trường phi sản xuất) cùng Apache-2.0 cho một số module client/protocol |
+| Phiên bản đã đọc | `fffa91ab81baa0302f4ff6d726d62fa842ec4185` (commit 2026-11-24) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, CAMUNDA-LICENSE-1.0.txt, pom.xml, AGENTS.md, ci-zeebe.yml, BpmnProcessors.java, AgentInstanceCreateProcessor.java, environment-config.yaml; chưa chạy upstream |
+| Khoảng trống lấp | BPMN/DMN engine cấp doanh nghiệp (khác Activiti/Flowable ở mô hình event-sourcing Zeebe và license thương mại) |
+| Cơ chế đáng học | - zeebe/engine/.../processing/BpmnProcessors.java đăng ký processor cho từng thao tác instance (tạm dừng, resume, migrate, modify, batch terminate) trên stream processor theo log sự kiện<br>- zeebe/engine/.../processing/agentinstance/AgentInstanceCreateProcessor.java: lệnh tạo agent instance đi qua cùng pipeline authorization và rejection như mọi record khác (AuthorizationResourceType, PermissionType)<br>- AGENTS.md ủy quyền lên file trung tâm của tổ chức qua URL rồi thêm luật riêng (ask first, never): mẫu cấu trúc AGENTS.md nhiều tầng<br>- .github/workflows/ci-zeebe.yml: trần timeout 30 phút cho job bắt buộc, matrix windows/linux/macos, rerun test chập chờn 3 lần ở PR và 7 lần ở nhánh khác |
+| Tiêu chí và cách kiểm | CI rất lớn (191 file workflow trong .github/workflows, chỉ mở ci-zeebe.yml): smoke, property, strace, kiểm docker; có kiểm license bằng plugin camunda-license-check trong parent/pom.xml. Bộ test engine nằm trong zeebe/engine/src/test. Không chạy được ở mức này; tuyên bố khả năng agent trong README là mô tả sản phẩm (chưa xác minh). |
+| Giới hạn và rủi ro | Rủi ro lớn nhất là license: dùng cho sản xuất cần thỏa thuận thương mại với Camunda; nhà phân phối lại phải kèm license và không được vô hiệu hóa chức năng khóa license. Optimize có khối telemetry (initializeTelemetry: false là giá trị khởi tạo trong environment-config.yaml); hành vi telemetry của các thành phần khác chưa xác minh. Repo khổng lồ, build Maven/Gradle nặng, CLA bắt buộc cho đóng góp. |
+| So với | Activiti và flowable-engine (BPMN engine Apache-2.0), spiffworkflow (nhúng Python, LGPL), temporal (durable execution bằng mã) |
+| Nguồn | [README.md](https://github.com/camunda/camunda/blob/fffa91ab81baa0302f4ff6d726d62fa842ec4185/README.md) · [CAMUNDA-LICENSE-1.0.txt](https://github.com/camunda/camunda/blob/fffa91ab81baa0302f4ff6d726d62fa842ec4185/licenses/CAMUNDA-LICENSE-1.0.txt) · [pom.xml](https://github.com/camunda/camunda/blob/fffa91ab81baa0302f4ff6d726d62fa842ec4185/parent/pom.xml) · [AGENTS.md](https://github.com/camunda/camunda/blob/fffa91ab81baa0302f4ff6d726d62fa842ec4185/AGENTS.md) · [ci-zeebe.yml](https://github.com/camunda/camunda/blob/fffa91ab81baa0302f4ff6d726d62fa842ec4185/.github/workflows/ci-zeebe.yml) · [BpmnProcessors.java](https://github.com/camunda/camunda/blob/fffa91ab81baa0302f4ff6d726d62fa842ec4185/zeebe/engine/src/main/java/io/camunda/zeebe/engine/processing/BpmnProcessors.java) · [AgentInstanceCreateProcessor.java](https://github.com/camunda/camunda/blob/fffa91ab81baa0302f4ff6d726d62fa842ec4185/zeebe/engine/src/main/java/io/camunda/zeebe/engine/processing/agentinstance/AgentInstanceCreateProcessor.java) · [environment-config.yaml](https://github.com/camunda/camunda/blob/fffa91ab81baa0302f4ff6d726d62fa842ec4185/optimize-distro/src/config/environment-config.yaml) |
+
+<a id="n2-spiffworkflow"></a>
+
+### SpiffWorkflow
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/sartography/SpiffWorkflow |
+| License | LGPL-3.0-or-later |
+| Phiên bản đã đọc | `8d1dd998510cb4e0cdda4d52c682dcae509cbfd9` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, COPYING, pyproject.toml, python_engine.py, python_environment.py, DMNEngine.py, tests.yaml; chưa chạy upstream |
+| Khoảng trống lấp | BPMN/DMN engine mã mở nhúng được trong Python (kho chưa có engine BPMN Python) |
+| Cơ chế đáng học | - SpiffWorkflow/bpmn/script_engine/python_engine.py: PythonScriptEngine.evaluate/execute/call_service, lớp cơ sở dành cho cả BPMN lẫn DMN; docstring tự khuyên thay bằng lớp con nếu không muốn eval/exec<br>- SpiffWorkflow/bpmn/script_engine/python_environment.py: TaskDataEnvironment gọi eval và exec với globals sao chép từ dữ liệu task, không có sandbox<br>- SpiffWorkflow/dmn/engine/DMNEngine.py: decide trả về ngay khi gặp rule đầu nếu hit policy UNIQUE (không kiểm có rule thứ hai trùng), COLLECT gom output thành danh sách; các policy khác lấy rule khớp đầu<br>- Tách thư mục spiff và camunda cho phần mở rộng theo từng nhà cung cấp, serializer riêng |
+| Tiêu chí và cách kiểm | tests.yaml chạy unittest discover trên Python 3.10 đến 3.14 mỗi lần push; bước ruff đang bị comment tắt trong workflow. Test nằm ở tests/SpiffWorkflow (BPMN, DMN, HitPolicyTest, CustomScriptTest...). Không có ngưỡng coverage đọc thấy. Không chạy được ở mức này. |
+| Giới hạn và rủi ro | LGPL-3.0 (file COPYING chứa văn bản LGPL v3 kèm GPL); dùng như thư viện dynamic thường ổn, nhưng sửa chính SpiffWorkflow phải công bố lại. Chạy sơ đồ do người ngoài viết đồng nghĩa chạy Python tùy ý: chỉ an toàn nếu tự viết lớp môi trường hạn chế. Trong python_engine.py hàm call_service ở nhánh except tham chiếu biến script không tồn tại ở phạm vi đó (có vẻ lỗi, chưa chạy để xác nhận). pyproject ghi Development Status Beta. DMN nằm ở mức baseline theo README, FEEL không được cài trọn vẹn (chưa xác minh bằng test). |
+| So với | bpmn-engine (JavaScript, MIT), Activiti và flowable-engine (Java, Apache-2.0), dsntk (DMN Rust có TCK) |
+| Nguồn | [README.md](https://github.com/sartography/SpiffWorkflow/blob/8d1dd998510cb4e0cdda4d52c682dcae509cbfd9/README.md) · [COPYING](https://github.com/sartography/SpiffWorkflow/blob/8d1dd998510cb4e0cdda4d52c682dcae509cbfd9/COPYING) · [pyproject.toml](https://github.com/sartography/SpiffWorkflow/blob/8d1dd998510cb4e0cdda4d52c682dcae509cbfd9/pyproject.toml) · [python_engine.py](https://github.com/sartography/SpiffWorkflow/blob/8d1dd998510cb4e0cdda4d52c682dcae509cbfd9/SpiffWorkflow/bpmn/script_engine/python_engine.py) · [python_environment.py](https://github.com/sartography/SpiffWorkflow/blob/8d1dd998510cb4e0cdda4d52c682dcae509cbfd9/SpiffWorkflow/bpmn/script_engine/python_environment.py) · [DMNEngine.py](https://github.com/sartography/SpiffWorkflow/blob/8d1dd998510cb4e0cdda4d52c682dcae509cbfd9/SpiffWorkflow/dmn/engine/DMNEngine.py) · [tests.yaml](https://github.com/sartography/SpiffWorkflow/blob/8d1dd998510cb4e0cdda4d52c682dcae509cbfd9/.github/workflows/tests.yaml) |
+
+<a id="n2-bpmn-engine"></a>
+
+### bpmn-engine
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/paed01/bpmn-engine |
+| License | MIT |
+| Phiên bản đã đọc | `60ea5566fae5da7b6762e0d3b7d05d6af0440afe` (commit 2026-11-06) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, package.json, AGENTS.md, JavaScripts.js, build.yaml, API.md; chưa chạy upstream |
+| Khoảng trống lấp | BPMN engine mã mở nhúng nhẹ trong hệ sinh thái Node (kho chưa có engine BPMN JavaScript) |
+| Cơ chế đáng học | - src/JavaScripts.js: biên dịch script và conditionExpression của sơ đồ thành new Script từ node:vm, chỉ nhận ngôn ngữ javascript hoặc js; có DummyScript cho phần tử thiếu thân script<br>- docs/API.md: Engine.getState() tuần tự hóa trạng thái, recover() và resume() nối lại, cho phép tiến trình sống qua khởi động lại<br>- Kiến trúc mỏng: engine chỉ là lớp điều phối trên bpmn-moddle (parse), moddle-context-serializer (JSON bền), bpmn-elements (hành vi từng phần tử), smqp (message broker) |
+| Tiêu chí và cách kiểm | build.yaml chạy trên Node 20, 22, 24 và latest cho mỗi PR và push master: npm run test:lcov (mocha song song kèm c8) rồi lint; script posttest còn chạy eslint, prettier, rollup và texample để kiểm ví dụ trong docs. Có test Gherkin (mocha-scenarios) ở test/feature. AGENTS.md của repo tự ghi ví dụ HTTP dùng nock đang fail với StatusError Not Found trên nhánh hiện tại, nên bước test:md không sạch. |
+| Giới hạn và rủi ro | MIT sạch, một tác giả chính nên bus factor thấp (đánh giá từ package.json, chưa đo). node:vm không chặn truy cập process hay require nếu environment cung cấp: không chạy sơ đồ không tin cậy. Không DMN, không form, không UI; phải tự ghép với bpmn-js nếu cần mô hình hóa. Phiên bản major cao (26) và peer dependency làm nâng cấp cần đọc docs/Upgrade.md. |
+| So với | spiffworkflow (Python, có DMN), Activiti và flowable-engine (Java), camunda-8-monorepo (cần license thương mại cho sản xuất) |
+| Nguồn | [README.md](https://github.com/paed01/bpmn-engine/blob/60ea5566fae5da7b6762e0d3b7d05d6af0440afe/README.md) · [LICENSE](https://github.com/paed01/bpmn-engine/blob/60ea5566fae5da7b6762e0d3b7d05d6af0440afe/LICENSE) · [package.json](https://github.com/paed01/bpmn-engine/blob/60ea5566fae5da7b6762e0d3b7d05d6af0440afe/package.json) · [AGENTS.md](https://github.com/paed01/bpmn-engine/blob/60ea5566fae5da7b6762e0d3b7d05d6af0440afe/AGENTS.md) · [JavaScripts.js](https://github.com/paed01/bpmn-engine/blob/60ea5566fae5da7b6762e0d3b7d05d6af0440afe/src/JavaScripts.js) · [build.yaml](https://github.com/paed01/bpmn-engine/blob/60ea5566fae5da7b6762e0d3b7d05d6af0440afe/.github/workflows/build.yaml) · [API.md](https://github.com/paed01/bpmn-engine/blob/60ea5566fae5da7b6762e0d3b7d05d6af0440afe/docs/API.md) |
+
+<a id="n2-camunda-modeler"></a>
+
+### Camunda Modeler
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/camunda/camunda-modeler |
+| License | MIT (mã ứng dụng); bpmn-js, dmn-js, form-js theo giấy phép bpmn.io |
+| Phiên bản đã đọc | `fca49ceae07404ea700e86a5bc0763ed444c94d6` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, NOTICE, AGENTS.md, CI.yml, package.json, TabsProvider.js, constants.js; chưa chạy upstream |
+| Khoảng trống lấp | Trình soạn và lint trực quan BPMN/DMN/Form mà người xem được mô hình do agent sinh (không phải engine, khác mô tả trinh sát về engine) |
+| Cơ chế đáng học | - client/src/app/TabsProvider.js: cấu hình lint mặc định cho tab, ví dụ tắt luật bpmnlint-plugin-camunda-compat/history-time-to-live; chứng tỏ luật lint Camunda gắn với trình soạn<br>- client/package.json: ghép bpmn-js 18, dmn-js 18, camunda-bpmn-js 5, form-js 2 và bpmnlint-loader<br>- client/src/plugins: mỗi tính năng là plugin tách (privacy-preferences, user-journey-statistics, error-tracking, update-checks, zeebe-plugin, template-updater)<br>- privacy-preferences/constants.js: DEFAULT_VALUES bật sẵn ENABLE_CRASH_REPORTS, ENABLE_USAGE_STATISTICS, ENABLE_UPDATE_CHECKS |
+| Tiêu chí và cách kiểm | CI.yml chạy npm run all (lint, test, build) trên ubuntu, macOS và Windows, có coverage lên Codecov (Linux). CHECK_LICENSES.yml quét phụ thuộc bằng FOSSA (bỏ qua với PR từ fork). Không thấy ngưỡng coverage trong file đã mở. Không chạy upstream. |
+| Giới hạn và rủi ro | License hai tầng: mã ứng dụng MIT nhưng NOTICE nói bpmn-js, dmn-js, form-js theo giấy phép bpmn.io (yêu cầu giữ watermark logo bpmn.io khi nhúng, theo mô tả chung của giấy phép đó, chưa đọc văn bản trong phiên này). Mặc định gửi báo lỗi và thống kê dùng nếu người dùng không tắt trong Privacy Preferences: cần tắt trong môi trường kín. Là công cụ GUI nên không chen được vào pipeline CI của agent; cần bpmnlint CLI riêng (chưa xác minh). |
+| So với | spiffworkflow và bpmn-engine (engine, không có editor), camunda-8-monorepo (nền tảng đầy đủ, license phi sản xuất), workflowbuilder (trình dựng workflow low-code) |
+| Nguồn | [README.md](https://github.com/camunda/camunda-modeler/blob/fca49ceae07404ea700e86a5bc0763ed444c94d6/README.md) · [LICENSE](https://github.com/camunda/camunda-modeler/blob/fca49ceae07404ea700e86a5bc0763ed444c94d6/LICENSE) · [NOTICE](https://github.com/camunda/camunda-modeler/blob/fca49ceae07404ea700e86a5bc0763ed444c94d6/NOTICE) · [AGENTS.md](https://github.com/camunda/camunda-modeler/blob/fca49ceae07404ea700e86a5bc0763ed444c94d6/AGENTS.md) · [CI.yml](https://github.com/camunda/camunda-modeler/blob/fca49ceae07404ea700e86a5bc0763ed444c94d6/.github/workflows/CI.yml) · [package.json](https://github.com/camunda/camunda-modeler/blob/fca49ceae07404ea700e86a5bc0763ed444c94d6/client/package.json) · [TabsProvider.js](https://github.com/camunda/camunda-modeler/blob/fca49ceae07404ea700e86a5bc0763ed444c94d6/client/src/app/TabsProvider.js) · [constants.js](https://github.com/camunda/camunda-modeler/blob/fca49ceae07404ea700e86a5bc0763ed444c94d6/client/src/plugins/privacy-preferences/constants.js) |
+
+<a id="n2-dsntk"></a>
+
+### DecisionToolkit (dsntk)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/DecisionToolkit/dsntk |
+| License | MIT OR Apache-2.0 |
+| Phiên bản đã đọc | `c76aee02187183b3659a9051f3ebb283630066f7` (commit 2026-07-01) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, LICENSE-MIT, Cargo.toml, Taskfile.yml, build-linux-gnu.yml, decision_table.rs, mod.rs; chưa chạy upstream |
+| Khoảng trống lấp | Decision/rules engine theo chuẩn DMN (FEEL) viết bằng Rust, bổ sung cho Zen và engine BPMN |
+| Cơ chế đáng học | - model-evaluator/src/decision_table.rs: ánh xạ HitPolicy Unique, Any, Priority, First, RuleOrder, OutputOrder, Collect(aggregator) sang hàm đánh giá riêng<br>- server/src/tck/mod.rs: module bật bằng feature tck cung cấp endpoint đánh giá theo giao thức TCK; Taskfile.yml có tác vụ tck chạy srv với thư mục ../tck/TestCases ngoài repo<br>- Tách nhiều crate (feel-parser, feel-evaluator, feel-temporal, model-evaluator, server) và bbt/ chứa bộ black-box test chạy CLI thật |
+| Tiêu chí và cách kiểm | Taskfile.yml định nghĩa bbt, tck, clippy (cả nightly với feature tck), bench và cov. Các workflow đã mở (build-linux-gnu.yml cùng bốn file build cùng khuôn) chỉ chạy cargo build --release và upload binary, không có bước test hay clippy trên CI (xác nhận bằng grep cargo). Mã đếm được khoảng 3700 hàm #[test] trong model-evaluator (đếm, chưa chạy). Không có tỷ lệ pass TCK nào được công bố trong file đã đọc; thư mục TCK nằm ngoài repo nên không tái lập được ở đây. |
+| Giới hạn và rủi ro | License kép MIT hoặc Apache-2.0 sạch. Tác giả gần như đơn lẻ, phiên bản 0.3.x. Kiểm thử chất lượng phụ thuộc người chạy task cục bộ chứ CI không cưỡng chế. Badge coverage ghi 0% trong README. Nếu cần chạy DMN trong sản xuất, nên tự chạy TCK và công bố kết quả trước khi tin. |
+| So với | gorules-zen (rules engine, JDM thay vì DMN chuẩn), spiffworkflow (DMN baseline trong Python), flowable-engine (DMN trong engine Java) |
+| Nguồn | [README.md](https://github.com/DecisionToolkit/dsntk/blob/c76aee02187183b3659a9051f3ebb283630066f7/dsntk/README.md) · [LICENSE](https://github.com/DecisionToolkit/dsntk/blob/c76aee02187183b3659a9051f3ebb283630066f7/LICENSE) · [LICENSE-MIT](https://github.com/DecisionToolkit/dsntk/blob/c76aee02187183b3659a9051f3ebb283630066f7/LICENSE-MIT) · [Cargo.toml](https://github.com/DecisionToolkit/dsntk/blob/c76aee02187183b3659a9051f3ebb283630066f7/Cargo.toml) · [Taskfile.yml](https://github.com/DecisionToolkit/dsntk/blob/c76aee02187183b3659a9051f3ebb283630066f7/Taskfile.yml) · [build-linux-gnu.yml](https://github.com/DecisionToolkit/dsntk/blob/c76aee02187183b3659a9051f3ebb283630066f7/.github/workflows/build-linux-gnu.yml) · [decision_table.rs](https://github.com/DecisionToolkit/dsntk/blob/c76aee02187183b3659a9051f3ebb283630066f7/model-evaluator/src/decision_table.rs) · [mod.rs](https://github.com/DecisionToolkit/dsntk/blob/c76aee02187183b3659a9051f3ebb283630066f7/server/src/tck/mod.rs) |
+
+<a id="n2-timgit-pg-boss"></a>
+
+### pg-boss
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/timgit/pg-boss |
+| License | MIT |
+| Phiên bản đã đọc | `f9915311ea010434d1192659de76e4f469201fdd` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc src/plans.ts, docs/api/queues.md, package.json, workflow ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Scheduler/queue có idempotency và retry |
+| Cơ chế đáng học | • Hàng đợi trong Postgres, nhận việc bằng `FOR UPDATE SKIP LOCKED`; tạo job được trong cùng giao dịch DB của ứng dụng (adapter Drizzle, Knex, Kysely, Prisma).<br>• Idempotency theo chính sách hàng đợi: `short`, `singleton`, `stately`, `exclusive`, `key_strict_fifo` cài bằng chỉ mục UNIQUE từng phần theo (name, singleton_key, state) trong src/plans.ts; gửi trùng trả `null`; `singletonSeconds` làm throttle bằng chỉ mục riêng.<br>• Retry: `retry_limit`, `retry_delay`, `retry_backoff` (lũy thừa 2 có jitter ngẫu nhiên, trần `retry_delay_max`) tính ngay trong SQL; có dead letter queue, redrive, cron/RRULE, phụ thuộc job, pub/sub. |
+| Tiêu chí và cách kiểm | Không có ngưỡng chất lượng riêng; hành vi do test vitest kiểm (có retryTest, queuePolicyTest, settleRetryTest). CI chạy hai chế độ standard và distributed trên Postgres thật, coverage lên Coveralls, action ghim SHA. |
+| Giới hạn và rủi ro | Chỉ Node.js (>=22.12) và Postgres (có tùy chọn CockroachDB, Citus, PGlite); mặc định `retry_limit` là 2. Chính sách `stately` bỏ qua retry khi đã có job ở trạng thái retry (docs nêu rõ). OpenTelemetry là tùy chọn qua peer dependency, không thấy gửi dữ liệu ra ngoài mặc định (không quét toàn bộ). Gói con dashboard và proxy cũng MIT. Số sao trinh sát chưa lấy được, ở đây cũng để chưa xác minh. |
+| So với | absurd, hatchet, celery-celery, temporal |
+| Nguồn | [LICENSE](https://github.com/timgit/pg-boss/blob/f9915311ea010434d1192659de76e4f469201fdd/LICENSE) · [README.md](https://github.com/timgit/pg-boss/blob/f9915311ea010434d1192659de76e4f469201fdd/README.md) · [package.json](https://github.com/timgit/pg-boss/blob/f9915311ea010434d1192659de76e4f469201fdd/package.json) · [queues.md](https://github.com/timgit/pg-boss/blob/f9915311ea010434d1192659de76e4f469201fdd/docs/api/queues.md) · [plans.ts](https://github.com/timgit/pg-boss/blob/f9915311ea010434d1192659de76e4f469201fdd/src/plans.ts) · [ci.yml](https://github.com/timgit/pg-boss/blob/f9915311ea010434d1192659de76e4f469201fdd/.github/workflows/ci.yml) |
+
+<a id="n2-graphile-worker"></a>
+
+### Graphile Worker
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/graphile/worker |
+| License | MIT |
+| Phiên bản đã đọc | `b4f1b41c7abd747586879bf68a46a5a22897fa96` (commit 2026-11-05) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc website/docs/job-key.md, src/sql/getJobs.ts, src/sql/failJobs.ts, website/docs/pro/index.md, workflow ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Scheduler/queue có idempotency và retry |
+| Cơ chế đáng học | • `job_key` + `job_key_mode` (website/docs/job-key.md): replace (debounce), preserve_run_at (throttle), unsafe_dedupe; job đang khóa thì khóa cũ bị vô hiệu và tạo job mới.<br>• Lấy việc bằng truy vấn SQL có `skip locked` (src/sql/getJobs.ts); thất bại dời `run_at` theo `exp(least(attempts, 10))` giây, mặc định `max_attempts` 25 (failJobs.ts, docs exponential-backoff).<br>• Hàm SQL `add_job` gọi từ trigger/giao dịch Postgres; có cron trong crontab, nhóm hàng đợi theo `queue_name`, cờ bỏ qua (`flags`), sự kiện worker. |
+| Tiêu chí và cách kiểm | Test jest chạy trên Postgres thật; CI ma trận Postgres 14 đến 18, Node 22/24/26, job lint và job schema tùy biến (altschema). Kiểm bằng máy. |
+| Giới hạn và rủi ro | MIT, nhưng khôi phục tự động worker chết và migration không cần tắt hết worker là Worker Pro (độc quyền, không mở nguồn, theo docs/pro). Số phiên bản 0.x, tác giả cảnh báo nâng minor có thể phải sửa mã; migration schema có thể buộc scale về 0 (CHANGELOG). Chỉ Node.js (>=22.18) và Postgres. Trinh sát chưa đọc được thông số, nay đã đọc: MIT, commit cuối 2026-11-05. |
+| So với | timgit-pg-boss, absurd, celery-celery, hatchet |
+| Nguồn | [LICENSE.md](https://github.com/graphile/worker/blob/b4f1b41c7abd747586879bf68a46a5a22897fa96/LICENSE.md) · [README.md](https://github.com/graphile/worker/blob/b4f1b41c7abd747586879bf68a46a5a22897fa96/README.md) · [package.json](https://github.com/graphile/worker/blob/b4f1b41c7abd747586879bf68a46a5a22897fa96/package.json) · [job-key.md](https://github.com/graphile/worker/blob/b4f1b41c7abd747586879bf68a46a5a22897fa96/website/docs/job-key.md) · [exponential-backoff.md](https://github.com/graphile/worker/blob/b4f1b41c7abd747586879bf68a46a5a22897fa96/website/docs/exponential-backoff.md) · [index.md](https://github.com/graphile/worker/blob/b4f1b41c7abd747586879bf68a46a5a22897fa96/website/docs/pro/index.md) · [getJobs.ts](https://github.com/graphile/worker/blob/b4f1b41c7abd747586879bf68a46a5a22897fa96/src/sql/getJobs.ts) · [failJobs.ts](https://github.com/graphile/worker/blob/b4f1b41c7abd747586879bf68a46a5a22897fa96/src/sql/failJobs.ts) · [ci.yml](https://github.com/graphile/worker/blob/b4f1b41c7abd747586879bf68a46a5a22897fa96/.github/workflows/ci.yml) |
+
+<a id="n2-bullmq"></a>
+
+### BullMQ
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/taskforcesh/bullmq |
+| License | MIT |
+| Phiên bản đã đọc | `d7bd760bcdc599f349072dc002ff55c4bc49600b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, postgresql.md, deduplication.md, job-schedulers/README.md, get_deduplication_job_id.sql, 0002_functions.sql, worker.ts, test.yml, LICENSE; chưa chạy upstream |
+| Khoảng trống lấp | Hàng đợi/scheduler nền trên Postgres hoặc Redis với deduplication và scheduler có cron |
+| Cơ chế đáng học | - Lua script trong `src/commands/*.lua` làm mỗi chuyển trạng thái job nguyên tử trên Redis; bản Postgres thay bằng hàm SQL (`src/postgres/migrations/0002_functions.sql`) với `SKIP LOCKED`.<br>- Deduplication: bảng `dedup(queue, dedup_id, expire_at_ms)` và chế độ simple, throttle, debounce và keep-last-if-active (`deduplication.md`, `get_deduplication_job_id.sql`).<br>- `worker.ts`: khoá job, gia hạn lock, đưa job treo về hàng chờ sau `stalledInterval`; ngữ nghĩa giao hàng là ít nhất một lần nên handler phải lũy đẳng.<br>- Migration Postgres đánh số `0001`–`0010`, không hỗ trợ hạ schema (`postgresql.md`). |
+| Tiêu chí và cách kiểm | CI `test.yml` lọc theo đường dẫn thay đổi, chạy bộ test Node trên Redis và job riêng `postgres` (Postgres 16); có CodeQL và osv-scanner. Bảng thông lượng trong tài liệu đo trên laptop Apple Silicon, tác giả tự ghi là không phải benchmark chính thức. |
+| Giới hạn và rủi ro | - MIT; BullMQ Pro là sản phẩm thương mại riêng (docs/gitbook/bullmq-pro), không nằm trong LICENSE này.<br>- Backend Postgres cần `pg`, PG 13+, một kết nối `LISTEN` riêng cho mỗi backend; cỡ `max_connections` phải tính theo số worker.<br>- Giao hàng at-least-once: job có thể chạy lại sau khi bị đánh dấu treo.<br>- Số sao ~9,6 nghìn do trinh sát ghi, chưa xác minh trong phiên này. |
+| So với | temporal, inngest, hatchet, trigger-dev (durable execution, nặng hơn), celery-celery (hàng đợi Python) |
+| Nguồn | [README.md](https://github.com/taskforcesh/bullmq/blob/d7bd760bcdc599f349072dc002ff55c4bc49600b/README.md) · [LICENSE](https://github.com/taskforcesh/bullmq/blob/d7bd760bcdc599f349072dc002ff55c4bc49600b/LICENSE) · [postgresql.md](https://github.com/taskforcesh/bullmq/blob/d7bd760bcdc599f349072dc002ff55c4bc49600b/docs/gitbook/guide/postgresql.md) · [deduplication.md](https://github.com/taskforcesh/bullmq/blob/d7bd760bcdc599f349072dc002ff55c4bc49600b/docs/gitbook/guide/jobs/deduplication.md) · [README.md](https://github.com/taskforcesh/bullmq/blob/d7bd760bcdc599f349072dc002ff55c4bc49600b/docs/gitbook/guide/job-schedulers/README.md) · [get_deduplication_job_id.sql](https://github.com/taskforcesh/bullmq/blob/d7bd760bcdc599f349072dc002ff55c4bc49600b/src/postgres/commands/get_deduplication_job_id.sql) · [0002_functions.sql](https://github.com/taskforcesh/bullmq/blob/d7bd760bcdc599f349072dc002ff55c4bc49600b/src/postgres/migrations/0002_functions.sql) · [worker.ts](https://github.com/taskforcesh/bullmq/blob/d7bd760bcdc599f349072dc002ff55c4bc49600b/src/classes/worker.ts) · [test.yml](https://github.com/taskforcesh/bullmq/blob/d7bd760bcdc599f349072dc002ff55c4bc49600b/.github/workflows/test.yml) |
+
+<a id="n2-backlog-md"></a>
+
+### Backlog.md
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/MrLesk/Backlog.md |
+| License | MIT |
+| Phiên bản đã đọc | `416cdffe595f5bcd2ddf076ca4159ac483c63aaa` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, package.json, src/mcp/tools/tasks/index.ts, backlog/config.yml, .github/workflows/ci.yml, backlog/tasks/back-200 - Add-Claude-Code-integration-with-workflow-commands-during-init.md; chưa chạy upstream |
+| Khoảng trống lấp | Task management cho agent coding: task là file markdown trong git, CLI và MCP |
+| Cơ chế đáng học | - Task dạng file markdown với frontmatter YAML (`backlog/tasks/*.md`), tiêu chí chấp nhận giữa cặp `<!-- AC:BEGIN -->`; danh sách trạng thái và `definition_of_done` đặt trong `backlog/config.yml`.<br>- MCP server `src/mcp/tools/tasks/index.ts` đăng ký công cụ task_create, task_list, task_search, task_edit, task_view, task_archive; schema sinh từ cấu hình thật của dự án (`generateTaskCreateSchema(config)`).<br>- Quy ước làm việc cho agent: ba điểm duyệt spec, kế hoạch, code; một task một PR (README).<br>- Kiểm nhánh khác và nhánh remote (`check_active_branches`, `remote_operations` trong config) để task không trùng id. |
+| Tiêu chí và cách kiểm | CI `.github/workflows/ci.yml` chạy lint và unit test trên ubuntu (full) và macOS/Windows (platform), Bun 1.4.4; có bước loại chứng chỉ TLS bị lộ trước khi nối mạng (đã mở file). `bun test` nằm trong package.json. Definition of Done của repo là dòng chữ trong config, không có máy kiểm. |
+| Giới hạn và rủi ro | MIT sạch. Một người duy trì chính (rủi ro bus factor, suy luận từ license/tên chủ repo, chưa xác minh). Không có cưỡng chế: agent có thể đánh dấu Done mà không chạy DoD. Số liệu pull/sao trong README không kiểm. |
+| So với | vibe-kanban, beads, openspec |
+| Nguồn | [README.md](https://github.com/MrLesk/Backlog.md/blob/416cdffe595f5bcd2ddf076ca4159ac483c63aaa/README.md) · [LICENSE](https://github.com/MrLesk/Backlog.md/blob/416cdffe595f5bcd2ddf076ca4159ac483c63aaa/LICENSE) · [package.json](https://github.com/MrLesk/Backlog.md/blob/416cdffe595f5bcd2ddf076ca4159ac483c63aaa/package.json) · [index.ts](https://github.com/MrLesk/Backlog.md/blob/416cdffe595f5bcd2ddf076ca4159ac483c63aaa/src/mcp/tools/tasks/index.ts) · [config.yml](https://github.com/MrLesk/Backlog.md/blob/416cdffe595f5bcd2ddf076ca4159ac483c63aaa/backlog/config.yml) · [ci.yml](https://github.com/MrLesk/Backlog.md/blob/416cdffe595f5bcd2ddf076ca4159ac483c63aaa/.github/workflows/ci.yml) · [back-200 - Add-Claude-Code-integration-with-workflow-commands-during-init.md](https://github.com/MrLesk/Backlog.md/blob/416cdffe595f5bcd2ddf076ca4159ac483c63aaa/backlog/tasks/back-200%20-%20Add-Claude-Code-integration-with-workflow-commands-during-init.md) |
+
+<a id="n2-dagu"></a>
+
+### Dagu
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/dagu-org/dagu |
+| License | GPL-3.0-or-later (LICENSE là văn bản GPLv3; `LICENSING.md` và header nguồn ghi or-later); nhúng API Go vào nhị phân phân phối chịu GPL, bản nhúng thương mại cần thỏa thuận riêng |
+| Phiên bản đã đọc | `2fbd206eed169911fe0a964439ecd754f35c74bc` (commit 2026-11-24) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, LICENSING.md, internal/license/entitlement.go, internal/cloudreport/monitoring.go, internal/telemetry/collector.go, conformance/harness/runner.go, specs/013-step-run.md, ci.yaml, conformance.yml; chưa chạy upstream |
+| Khoảng trống lấp | Thực thi workflow nhẹ tự host: DAG khai báo bằng YAML, trạng thái lưu file, không cần DB hay broker |
+| Cơ chế đáng học | - Workflow là một file YAML cạnh script; engine là một tiến trình, lưu lịch sử chạy trong file (`internal/persis/`), kèm hàng đợi, cron có chính sách chồng lấn, retry, sub-DAG.<br>- Thư mục `specs/` giữ đặc tả hành vi từng trường YAML (ví dụ `013-step-run.md`, tự ghi trạng thái 'Partially implemented') và `conformance/` chạy nhị phân thật với runner cô lập (`conformance/harness/runner.go`) để kiểm đặc tả.<br>- `internal/humantask/` thêm bước chờ người duyệt (approval, pushback, resume) vào luồng; MCP server tích hợp để agent xem và điều khiển run (theo README).<br>- Giám sát ra ngoài (`internal/cloudreport/monitoring.go`) có ba mức off, health, runs; theo comment mã, server chưa cấu hình hoặc chưa chọn mức thì không gửi gì. |
+| Tiêu chí và cách kiểm | Hai workflow đã mở: `ci.yaml` (lọc theo path, test Go và UI) và `conformance.yml` (chạy bộ conformance khi đổi `conformance/**`, `cmd/**`, `internal/**`). Makefile có target `conformance` chạy test cấp nhị phân. Kiểm bằng máy; chưa chạy. Số liệu thông lượng 'hàng nghìn run mỗi ngày' trong README là tuyên bố (chưa xác minh). |
+| Giới hạn và rủi ro | GPL-3.0-or-later: nhúng API Go `github.com/dagucloud/dagu/v2` vào nhị phân phân phối phải theo GPL; `LICENSING.md` nói muốn nhúng độc quyền thì cần thỏa thuận thương mại riêng với chủ bản quyền. Có hệ giấy phép trả phí (`internal/license/`, gói free và gói có entitlement) nên một số tính năng nhóm có thể bị khóa theo license (chưa liệt kê tính năng nào). Cơ chế báo cáo lên Dagu Console tắt mặc định theo mã nhưng là đường dữ liệu rời máy nếu bật. Đặc tả còn ghi 'một phần được hiện thực'. Không có đảm bảo durable execution kiểu replay như Temporal; bền ở mức trạng thái run ghi file (chưa kiểm khôi phục sau crash). |
+| So với | Kestra (`kestra`) cũng khai báo bằng YAML nhưng nặng hơn; Temporal (`temporal`) là durable execution trong mã; Airflow (`airflow`) và Prefect (`prefect`) viết workflow bằng Python. |
+| Nguồn | [README](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/README.md) · [LICENSE](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/LICENSE) · [LICENSING](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/LICENSING.md) · [entitlement.go](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/internal/license/entitlement.go) · [monitoring.go](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/internal/cloudreport/monitoring.go) · [collector.go](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/internal/telemetry/collector.go) · [runner.go](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/conformance/harness/runner.go) · [spec 013](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/specs/013-step-run.md) · [ci.yaml](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/.github/workflows/ci.yaml) · [conformance.yml](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/.github/workflows/conformance.yml) |

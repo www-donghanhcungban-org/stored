@@ -2,7 +2,7 @@
 
 # spec-driven — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 9 hồ sơ.
+[← Mục lục catalog](../README.md) · 11 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -14,4 +14,6 @@
 | [Doorstop](../../29-software-architecture-api-contracts/README.md#doorstop-requirements-traceability) | `doorstop-dev/doorstop` | LGPL-3.0-only | 700 | đọc mã 2026-11-04 | 29 | Yêu cầu YAML trong git, stamp review/suspect links; |
 | [SpecDD](../../13-dev-stack-devops/README.md#nt-specdd) | `specdd/specdd` | Apache-2.0 | 45 | đọc mã 2026-11-23 | 13 | Khung spec-driven dùng tệp `.sdd` đặt cạnh mã (cú pháp dòng, các mục Must, scenario, task, tham chiếu) kèm `bootstrap.md` ép agent theo vòng Resolve, Read, Authorize, Ch… |
 | [reverse-spec-flow](../../13-dev-stack-devops/README.md#nt-reverse-spec-flow) | `aws-samples/sample-reverse-spec-flow` | MIT-0 | 36 | đọc mã 2026-11-23 | 13 | Quy trình 5 pha (nạp, đồ thị mã, phân tích, viết spec, kiểm toán) dựng spec cho agent đọc ngược từ mã nguồn cũ; |
+| [SpecD](../../13-dev-stack-devops/README.md#n2-specd-sdd) | `specd-sdd/SpecD` | MIT | 20 | đọc mã 2026-11-23 | 13 | Spec-driven development kiểu monorepo TypeScript (core, CLI, code-graph, skill, plugin cho Claude/Codex/Copilot/OpenCode) coi spec, change, schema, hook là khái niệm miề… |
+| [Specforce Kit](../../13-dev-stack-devops/README.md#n2-specforce-kit) | `jeancodogno/specforce-kit` | MIT | 6 | đọc mã 2026-11-23 | 13 | Một binary Go cài skill `spf.\*` cho nhiều agent, giữ 'hiến chương' (constitution) tách thành nhiều tài liệu chuyên đề trong `.specforce/docs/` để agent chỉ nạp phần cần,… |
 | [Kiro](../../13-dev-stack-devops/README.md#ch-kiro) |  | proprietary (theo catalog; chưa xác minh) | — | đọc tài liệu 2026-11-23 | 13 | AWS IDE. |

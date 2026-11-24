@@ -2,9 +2,9 @@
 
 # quality-gate — Đánh giá, an toàn & chất lượng
 
-[← Mục lục catalog](../README.md) · 97 hồ sơ.
+[← Mục lục catalog](../README.md) · 123 hồ sơ.
 
-## Test unit/integration (`unit-integration`, 17)
+## Test unit/integration (`unit-integration`, 28)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -16,15 +16,26 @@
 | [Catch2](../../30-software-testing-quality/README.md#anhkysuai-catchorg-catch2) | `catchorg/Catch2` | BSL-1.0 | 21.590 | đọc tài liệu 2026-11-23 | 30 | Framework unit test C++ với assertion tự nhiên, section chia sẻ setup, macro BDD và microbenchmark cơ bản. |
 | [AVA](../../30-software-testing-quality/README.md#anhkysuai-avajs-ava) | `avajs/ava` | MIT | 20.825 | đọc tài liệu 2026-11-23 | 30 | Test runner Node.js với cú pháp ngắn, assertion chi tiết và chạy đồng thời các test độc lập. |
 | [keploy](../../30-software-testing-quality/README.md#chuyen-keploy) | `keploy/keploy` | Apache License 2.0 | 19.881 | đọc tài liệu 2026-11-18 | 30 | Công cụ kiểm thử API và tích hợp, ghi lại lưu lượng thật (API, truy vấn DB, sự kiện streaming) bằng eBPF rồi phát lại thành test và mock. |
+| [Mock Service Worker](../../30-software-testing-quality/README.md#n2-msw) | `mswjs/msw` | MIT | 18.359 | đọc mã 2026-11-23 | 30 | Mock API ở tầng mạng cho Node và trình duyệt, dùng chung cho dev và test, viết handler kiểu Express. |
 | [Vitest](../../30-software-testing-quality/README.md#vitest-factory) | `vitest-dev/vitest` | MIT | 17.429 | đọc mã 2026-11-04 | 30 | Runner JS/TS Vite Node/browser; |
 | [pytest](../../30-software-testing-quality/README.md#pytest-factory) | `pytest-dev/pytest` | MIT | 14.740 | đọc mã 2026-11-04 | 30 | Runner Python fixture/parametrization; |
 | [OSS-Fuzz](../../30-software-testing-quality/README.md#nt-google-oss-fuzz) | `google/oss-fuzz` | Apache-2.0 | 12.982 | đọc mã 2026-11-23 | 30 | Dịch vụ fuzz liên tục do Google vận hành cho dự án mã nguồn mở được nhận, cũng là kho định dạng chuẩn: mỗi dự án có Dockerfile, build.sh và project.yaml (engine, sanitiz… |
 | [Toxiproxy](../../30-software-testing-quality/README.md#nt-shopify-toxiproxy) | `Shopify/toxiproxy` | MIT | 12.543 | đọc mã 2026-11-23 | 30 | Proxy TCP viết bằng Go để mô phỏng lỗi mạng trong test tích hợp: tạo proxy qua API HTTP hoặc client rồi gắn các toxic (latency, bandwidth, timeout, reset_peer, slicer, l… |
 | [Great Expectations (GX Core)](../../15-ai-for-data/README.md#ch-great-expectations-gx-core) | `fivetran/great_expectations` | Apache-2.0 | 11.945 | đọc tài liệu 2026-11-23 | 15 | Unit test cho dữ liệu (Expectation + Checkpoint), v1.24.1; |
 | [Hypothesis](../../30-software-testing-quality/README.md#hypothesis-factory) | `HypothesisWorks/hypothesis` | MPL-2.0 | 9.225 | đọc mã 2026-11-04 | 30 | Property-based Python và thu nhỏ phản ví dụ; |
+| [Chaos Mesh](../../33-reliability-observability-operations/README.md#n2-chaos-mesh) | `chaos-mesh/chaos-mesh` | Apache-2.0 | 7.994 | đọc mã 2026-11-23 | 33 | Nền tảng chaos engineering CNCF cho Kubernetes khai báo bằng CRD, có StatusCheck làm điều kiện hủy. |
+| [AFL++](../../30-software-testing-quality/README.md#n2-aflplusplus) | `AFLplusplus/AFLplusplus` | AGPL-3.0-or-later (cả repo); nhiều file riêng Apache-2.0 theo SPDX; có giấy phép thương mại tuỳ chọn | 6.905 | đọc mã 2026-11-23 | 30 | Fuzzer coverage-guided: biên dịch mã mục tiêu với instrumentation (LLVM/GCC/QEMU/Frida), rồi đột biến đầu vào theo độ phủ cạnh. |
+| [Pandera](../../15-ai-for-data/README.md#n2-pandera) | `unionai-oss/pandera` | MIT | 4.536 | đọc mã 2026-11-23 | 15 | Thư viện Python kiểm schema và ràng buộc dữ liệu cho dataframe (pandas, Polars, PySpark, Ibis và khác), dùng được như test trong pipeline hoặc hàm decorator. |
 | [StrykerJS](../../13-dev-stack-devops/README.md#ch-strykerjs) | `stryker-mutator/stryker-js` | Apache-2.0 | 3.306 | đọc tài liệu 2026-11-23 | 13 | Mutation testing JS/TS; |
+| [data-diff](../../15-ai-for-data/README.md#n2-datafold-data-diff) | `datafold/data-diff` | MIT | 2.985 | đọc mã 2026-11-23 | 15 | Công cụ Python so sánh hàng giữa hai bảng SQL (cùng hoặc khác database) bằng checksum chia đôi đệ quy, hữu ích kiểm migration. |
 | [Soda Core](../../15-ai-for-data/README.md#ch-soda-core) | `sodadata/soda-core` | Elastic-2.0 (ELv2; pyproject khai "Proprietary") | 2.463 | đọc tài liệu 2026-11-23 | 15 | Data contract YAML, 50+ check, CLI/Python trên Postgres/Snowflake/BigQuery/DuckDB…; |
+| [Elementary (OSS CLI)](../../15-ai-for-data/README.md#n2-elementary-data) | `elementary-data/elementary` | Apache-2.0 | 2.435 | đọc mã 2026-11-23 | 15 | CLI Python đọc kết quả test và artifact dbt mà gói dbt `elementary` (repo dbt-data-reliability) đã ghi vào kho dữ liệu, rồi dựng báo cáo quan sát dữ liệu và gửi cảnh báo… |
 | [Testcontainers Python](../../30-software-testing-quality/README.md#testcontainers-python-factory) | `testcontainers/testcontainers-python` | Apache-2.0 | 2.322 | đọc mã 2026-11-04 | 30 | Dependency container thật và wait/cleanup; |
+| [Stryker.NET](../../30-software-testing-quality/README.md#n2-stryker-net) | `stryker-mutator/stryker-net` | Apache-2.0 | 2.145 | đọc mã 2026-11-23 | 30 | Mutation testing cho C#/.NET: chèn lỗi (đổi toán tử, điều kiện, chuỗi, LINQ, regex) rồi chạy lại test, mutant sống nghĩa là test chưa bắt được. |
+| [Chaos Toolkit](../../30-software-testing-quality/README.md#n2-chaostoolkit) | `chaostoolkit/chaostoolkit` | Apache-2.0 | 2.034 | đọc mã 2026-11-23 | 30 | CLI chạy thí nghiệm chaos khai báo (JSON/YAML): giả thuyết trạng thái ổn định, phương pháp (action/probe), phần rollback, nhật ký journal. |
+| [Atheris](../../30-software-testing-quality/README.md#n2-atheris) | `google/atheris` | Apache-2.0 | 1.706 | đọc mã 2026-11-23 | 30 | Fuzzer Python theo coverage trên libFuzzer, chèn đo vào bytecode. |
+| [mutmut](../../30-software-testing-quality/README.md#n2-mutmut) | `boxed/mutmut` | BSD-3-Clause | 1.567 | đọc mã 2026-11-23 | 30 | Mutation testing Python bù cho Stryker (JS) trong kho. |
+| [cargo-mutants](../../30-software-testing-quality/README.md#n2-cargo-mutants) | `sourcefrog/cargo-mutants` | MIT | 1.412 | đọc mã 2026-11-23 | 30 | Mutation testing Rust ít cấu hình với mã thoát phân biệt từng trạng thái cho CI. |
 
 ## E2E & trình duyệt (`e2e-browser`, 6)
 
@@ -37,7 +48,7 @@
 | [Harness (user-test agent)](../../06-ui-ux-design/README.md#ux-awizemann-harness) | `awizemann/harness` | MIT | 366 | đọc mã 2026-11-23 | 06 | Ứng dụng macOS (alpha) cho agent LLM đóng vai người dùng thật với persona và mục tiêu, lái iOS Simulator, app macOS hoặc web (WKWebView) qua ảnh chụp màn hình có đánh số… |
 | [WebQA Agent](../../06-ui-ux-design/README.md#ux-webqa-agent) | `MigoXLab/webqa-agent` | Apache-2.0 | 240 | đọc mã 2026-11-23 | 06 | Agent kiểm thử web đa phương thức với ba chế độ (Flash qua chrome-devtools-mcp, Standard Generate, Run YAML) và MCP server cho Cursor/Claude Code. |
 
-## Visual regression & accessibility (`visual-a11y`, 15)
+## Visual regression & accessibility (`visual-a11y`, 19)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -55,9 +66,13 @@
 | [HappyHands](../../06-ui-ux-design/README.md#ux-happyhands) | `ShuaiMXu/happyhands` | MIT (Copyright 2026 HappyHands contributors; kèm vendor MIT/Apache-2.0 trong THIRD_PARTY_NOTICES.md) | 537 | đọc tài liệu 2026-11-23 | 06 | Harness cục bộ cho coding agent: chụp trang thật ở nhiều viewport/trạng thái, chẩn đoán, sửa trong git worktree cô lập, chụp lại và nhờ reviewer độc lập chấm trên bằng c… |
 | [Happo (client)](../../06-ui-ux-design/README.md#ux-happo) | `happo/happo` | — | 515 | đọc mã 2026-11-23 | 06 | Thư viện/CLI client của dịch vụ happo.io: chụp snapshot DOM và tài sản (Storybook, Cypress, Playwright, custom), tải lên SaaS để so ảnh trên Chrome/Firefox/Safari/iOS và… |
 | [Accessibility Agents (Community-Access)](../../06-ui-ux-design/README.md#ux-accessibility-agents-community-access) | `Community-Access/accessibility-agents` | MIT | 456 | đọc mã 2026-11-23 | 06 | Gói 113 skill WCAG 2.2 AA (6 router + chuyên gia + kb-\*) chạy trên nhiều client, kèm hook chặn sửa file UI cho đến khi `accessibility-lead` hoàn tất và MCP server 39 too… |
+| [Video Quality Metrics (VQM)](../../19-agentic-video-media/README.md#n2-video-quality-metrics-vqm) | `CrypticSignal/video-quality-metrics` | MIT | 144 | đọc mã 2026-11-23 | 19 | Công cụ Python nhỏ so VMAF/SSIM/PSNR giữa các giá trị tham số encoder bằng FFmpeg libvmaf, xuất báo cáo HTML. |
 | [a11y-specialist-skills (masuP9)](../../06-ui-ux-design/README.md#ux-a11y-specialist-skills) | `masup9/a11y-specialist-skills` | MIT | 61 | đọc mã 2026-11-23 | 06 | Sáu skill WCAG 2.2 A/AA cho Claude Code và Codex, nổi bật là `auditing-wcag`: quy trình 6 bước gán Pass/Fail/NT/NA cho từng tiêu chí kèm bằng chứng, chạy CLI `@a11y-skil… |
+| [VMAFx](../../19-agentic-video-media/README.md#n2-vmafx) | `vidiko/vmafx` | EUPL-1.2 (mã do fork viết) + BSD-2-Clause-Patent (mã kế thừa Netflix) + giấy phép riêng từng file | 6 | đọc mã 2026-11-23 | 19 | Fork Netflix/vmaf (EUPL-1.2 cho mã mới, giữ BSD-2-Clause-Patent cho mã Netflix) với backend GPU và SIMD. |
+| [MotionSpec](../../22-motion-design-animation/README.md#n2-motionspec) | `MasterPlayspots/motionspec` | MIT | 2 | đọc mã 2026-11-23 | 22 | MCP và CLI web animation: biên dịch spec thành GSAP và CSS tất định có reduced-motion mặc định, và kiểm tĩnh CSS của URL theo WCAG 2.2.2 và 2.3.3. |
+| [Motion Reduction Auditor](../../22-motion-design-animation/README.md#n2-motion-reduction-auditor) | `edilec/motion-reduction-auditor` | MIT | 0 | đọc mã 2026-11-23 | 22 | CLI Node đọc kiểm kê hoạt ảnh dạng JSON và kiểm đường reduced-motion theo vai trò, với trạng thái bằng chứng thiếu là kết quả hạng nhất (exit 2). |
 
-## Phân tích tĩnh & lint (`static-analysis`, 22)
+## Phân tích tĩnh & lint (`static-analysis`, 23)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -83,8 +98,9 @@
 | [squirrelscan](../../06-ui-ux-design/README.md#ux-squirrelscan) | `squirrelscan/squirrelscan` | MIT (Copyright 2026 squirrelscan; tên và logo theo TRADEMARKS.md) | 334 | đọc mã 2026-11-23 | 06 | CLI/Bun audit website 350+ luật trong 22 nhóm (SEO, a11y 63 luật, mobile, content, performance, security, agent experience...), điểm 0-100 theo trọng số luật và xuất báo… |
 | [crapper / dryer / mutator (Uncle Bob)](../../20-claude-plugins-ecosystem/README.md#ch-crapper-dryer-mutator-uncle-bob) | `unclebob/crapper` | 0BSD | 243 | đọc tài liệu 2026-11-23 | 20 | Bộ cổng chất lượng Python của Robert C. |
 | [driftlint](../../20-claude-plugins-ecosystem/README.md#nt-driftlint) | `alifurkangokce/driftlint` | MIT | 61 | đọc mã 2026-11-23 | 20 | CLI Node/TypeScript (không phụ thuộc runtime) tìm điều CLAUDE.md, AGENTS.md, skill, rule Cursor khẳng định mà mã không còn ủng hộ: đường dẫn chết, lệnh npm/make đã xóa,… |
+| [agents-md-kit](../../20-claude-plugins-ecosystem/README.md#n2-agents-md-kit) | `reaatech/agents-md-kit` | MIT | 2 | đọc mã 2026-11-23 | 20 | Monorepo TypeScript gồm parser, validator, linter, scaffold, reporter và MCP server cho AGENTS.md và SKILL.md. |
 
-## Eval skill/agent (`ai-skill-eval`, 6)
+## Eval skill/agent (`ai-skill-eval`, 10)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -93,9 +109,13 @@
 | [agent-skills-eval](../../20-claude-plugins-ecosystem/README.md#ch-agent-skills-eval) | `darkrishabh/agent-skills-eval` | MIT | 821 | đọc tài liệu 2026-11-23 | 20 | Test runner skill with_skill vs without_skill có judge, báo cáo HTML; |
 | [skillgrade](../../20-claude-plugins-ecosystem/README.md#ch-skillgrade) | `mgechev/skillgrade` | MIT | 737 | đọc tài liệu 2026-11-23 | 20 | Unit test cho skill: eval.yaml, chạy nhiều harness trong Docker, grader tất định/LLM/người, --ci --threshold, JUnit; |
 | [agnix](../../20-claude-plugins-ecosystem/README.md#factory-skill-admission-2026-11-04) | `agent-sh/agnix` | MIT OR Apache-2.0 | 465 | đọc mã 2026-11-04 | 20 | Linter 757 luật cho CLAUDE.md, SKILL.md, hooks, MCP, plugin của nhiều harness; |
+| [Caliper](../../20-claude-plugins-ecosystem/README.md#n2-caliper) | `edonadei/caliper` | MIT | 238 | đọc mã 2026-11-23 | 20 | Công cụ Python đánh giá một skill bằng cách chạy chính agent (Claude Code, Codex, Pi, Hermes, Antigravity, OpenCode) k lần trên mỗi tác vụ, tách riêng tỷ lệ thành công,… |
 | [Coder Eval](../../20-claude-plugins-ecosystem/README.md#ch-coder-eval) | `UiPath/coder_eval` | Apache-2.0 | 159 | đọc tài liệu 2026-11-23 | 20 | Eval coding agent trong sandbox, kiểm skill_triggered theo harness, A/B, GitHub Action; |
+| [EvalView](../../07-eval-observability/README.md#n2-evalview) | `hidai25/eval-view` | Apache-2.0 | 142 | đọc mã 2026-11-23 | 07 | Snapshot testing cho agent: ghi baseline hành vi (tool, thứ tự, tham số, đầu ra) rồi diff từng thay đổi, có GitHub Action và MCP/skill. |
+| [SQS (Skill Quality Suite)](../../20-claude-plugins-ecosystem/README.md#n2-sqs-skills) | `letsloose501/sqs-skills` | Apache-2.0 | 4 | đọc mã 2026-11-23 | 20 | Bộ công cụ Python chỉ dùng thư viện chuẩn cho skill SKILL.md: lint, kiểm theo spec, quét bảo mật, tương thích 10 agent, đề xuất skill nên sửa từ bản ghi phiên Claude Cod… |
+| [Agent Skills Eval Playbook](../../20-claude-plugins-ecosystem/README.md#n2-agent-skills-eval-playbook) | `M2LabOrg/agent-skills-eval-playbook` | MIT | 2 | đọc mã 2026-11-23 | 20 | Bài hướng dẫn nhỏ kèm bộ chạy chuẩn chỉ dùng thư viện chuẩn Python, điều khiển claude -p để đo hai thứ: skill có kích hoạt đúng lúc (precision, recall) và skill có làm o… |
 
-## Hợp đồng API & schema (`api-contract`, 11)
+## Hợp đồng API & schema (`api-contract`, 14)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -106,12 +126,15 @@
 | [Schemathesis](../../30-software-testing-quality/README.md#schemathesis-factory) | `schemathesis/schemathesis` | MIT | 3.808 | đọc mã 2026-11-04 | 30 | Schema-based OpenAPI/GraphQL/gRPC testing và stateful sequences; |
 | [Spectral](../../29-software-architecture-api-contracts/README.md#ch-spectral) | `stoplightio/spectral` | Apache-2.0 | 3.263 | đọc tài liệu 2026-11-23 | 29 | Linter JSON/YAML, ruleset sẵn OpenAPI/AsyncAPI/Arazzo v1 (hỗ trợ Arazzo 1.1 chưa xác minh); |
 | [Microcks](../../29-software-architecture-api-contracts/README.md#nt-microcks) | `microcks/microcks` | Apache-2.0 | 2.093 | đọc mã 2026-11-23 | 29 | Nền tảng mock và test hợp đồng đa giao thức từ cùng một tài sản đặc tả. |
+| [Redocly CLI](../../29-software-architecture-api-contracts/README.md#n2-redocly-cli) | `Redocly/redocly-cli` | MIT | 1.563 | đọc mã 2026-11-23 | 29 | CLI lint, bundle và dựng tài liệu cho OpenAPI 3.2/3.1/3.0, Swagger 2.0, AsyncAPI và Arazzo; |
 | [oasdiff](../../29-software-architecture-api-contracts/README.md#oasdiff-compatibility-gates) | `oasdiff/oasdiff` | Apache-2.0 | 1.473 | đọc mã 2026-11-04 | 29 | Breaking diff OpenAPI base/revision; |
 | [vacuum (OpenAPI, AsyncAPI, Arazzo linter)](../../29-software-architecture-api-contracts/README.md#nt-vacuum) | `daveshanley/vacuum` | MIT | 1.149 | đọc mã 2026-11-23 | 29 | Linter Go rất nhanh cho OpenAPI, AsyncAPI, JSON Schema và Arazzo; |
 | [Data Contract CLI](../../15-ai-for-data/README.md#nt-datacontract-cli) | `datacontract/datacontract-cli` | MIT | 1.116 | đọc mã 2026-11-23 | 15 | CLI Python MIT lint và test dữ liệu thật theo Open Data Contract Standard, có `ci --fail-on` và xuất JUnit. |
+| [Zally](../../29-software-architecture-api-contracts/README.md#n2-zalando-zally) | `zalando/zally` | MIT | 948 | đọc mã 2026-11-23 | 29 | Linter OpenAPI của Zalando, rule viết bằng Kotlin gắn số điều guideline và severity, cấu hình HOCON, bỏ qua bằng x-zally-ignore. |
 | [OpenTelemetry Weaver](../../07-eval-observability/README.md#ch-opentelemetry-weaver) | `open-telemetry/weaver` | Apache-2.0 | 537 | đọc tài liệu 2026-11-23 | 07 | registry check/live-check OTLP so với semconv, GitHub Action fail theo severity; |
+| [JSON Schema CLI (Sourcemeta)](../../29-software-architecture-api-contracts/README.md#n2-sourcemeta-jsonschema) | `sourcemeta/jsonschema` | AGPL-3.0 | 319 | đọc tài liệu 2026-11-23 | 29 | CLI C++ cho JSON Schema: lint có fix, bộ test schema xuất CTRF, fmt, bundle (cả OpenAPI), upgrade giữa dialect. |
 
-## Hiệu năng & tải (`perf-load`, 13)
+## Hiệu năng & tải (`perf-load`, 16)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -123,8 +146,11 @@
 | [Vegeta](../../30-software-testing-quality/README.md#nt-vegeta) | `tsenart/vegeta` | MIT | 25.256 | đọc mã 2026-11-23 | 30 | Công cụ tải HTTP bằng Go, điều khiển theo tốc độ cố định, dùng được như dòng lệnh hoặc thư viện. |
 | [React Scan](../../30-software-testing-quality/README.md#anhkysuai-aidenybai-react-scan) | `aidenybai/react-scan` | MIT | 21.882 | đọc tài liệu 2026-11-23 | 30 | Công cụ hiển thị component và điểm nóng hiệu năng khi quan sát ứng dụng React đang chạy. |
 | [oha](../../30-software-testing-quality/README.md#nt-oha) | `hatoo/oha` | MIT | 10.722 | đọc mã 2026-11-23 | 30 | Bộ sinh tải HTTP Rust có TUI, đọc nhanh, ghi kết quả vào SQLite. |
+| [Artillery](../../30-software-testing-quality/README.md#n2-artillery) | `artilleryio/artillery` | MPL-2.0 (đa số); BUSL-1.1 cho module Azure | 9.124 | đọc mã 2026-11-23 | 30 | Công cụ test tải khai báo bằng YAML (HTTP, WebSocket, Socket.io, gRPC, Playwright) chạy cục bộ hoặc phân tán trên AWS Lambda/Fargate, có plugin `ensure` đặt SLO làm cổng… |
 | [web-vitals](../../30-software-testing-quality/README.md#ch-web-vitals) | `GoogleChrome/web-vitals` | Apache-2.0 | 8.700 | đọc tài liệu 2026-11-23 | 30 | Thư viện chính thức đo LCP/INP/CLS ở người dùng thật, build attribution chỉ ra nguyên nhân; |
 | [Lighthouse CI](../../13-dev-stack-devops/README.md#ch-lighthouse-ci) | `GoogleChrome/lighthouse-ci` | Apache-2.0 | 7.122 | đọc tài liệu 2026-11-23 | 13 | Commit cuối 26/6/2025 (đứng yên); |
+| [Gatling](../../30-software-testing-quality/README.md#n2-gatling) | `gatling/gatling` | Apache-2.0 (Community); gRPC/MQTT/GraphQL/JDBC dưới Gatling Enterprise Component License | 6.965 | đọc mã 2026-11-23 | 30 | Engine test tải viết dưới dạng mã (Java/Kotlin/Scala/JS/TS), người dùng ảo là thông điệp trên Netty không dùng thread hệ điều hành, sinh báo cáo HTML. |
+| [LitmusChaos](../../33-reliability-observability-operations/README.md#n2-litmuschaos) | `litmuschaos/litmus` | Apache-2.0 | 5.745 | đọc tài liệu 2026-11-23 | 33 | Nền tảng chaos engineering CNCF chạy trên Kubernetes: định nghĩa lỗi bằng CRD (ChaosExperiment/ChaosEngine/ChaosResult), kiểm giả thuyết ổn định bằng probe và ra điểm kh… |
 | [Web Quality Skills](../../06-ui-ux-design/README.md#ch-web-quality-skills) | `addyosmani/web-quality-skills` | MIT | 3.122 | đọc tài liệu 2026-11-23 | 06 | 6 Agent Skills đo-trước (audit, performance, Core Web Vitals, a11y WCAG 2.2, SEO, best practices); |
 | [GuideLLM](../../10-local-llm-rag-memory/README.md#nt-guidellm) | `vllm-project/guidellm` | Apache-2.0 | 1.804 | đọc mã 2026-11-23 | 10 | Công cụ benchmark tải cho endpoint LLM, ra phân phối TTFT/ITL và tìm mức tải an toàn theo SLO. |
 | [AIPerf](../../10-local-llm-rag-memory/README.md#aiperf) | `ai-dynamo/aiperf` | Apache-2.0 | 842 | đọc mã 2026-11-02 | 10 | Load generator đo TTFT/ITL/throughput; |

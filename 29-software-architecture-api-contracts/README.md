@@ -271,3 +271,60 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | Mô tả của trinh sát hơi lệch: repo này là máy chủ/nền tảng; phần CI gate là CLI và action ở repo khác. Triển khai nặng (Java, MongoDB, Keycloak, tùy chọn Kafka). Có dòng chính sách dùng AI khi đóng góp (`AI-POLICY.md`) và `AICopilotRunnerService` sinh mẫu bằng AI **(chưa xác minh hành vi)**. Có badge CNCF Landscape trong README; bảo trì hoạt động (commit 2026-11-13). |
 | So với | schemathesis (hồ sơ có sẵn, sinh ca kiểm tự động từ OpenAPI, không mock), spectral (lint spec, không gọi API), openapitools-openapi-generator (sinh code/stub). |
 | Nguồn | [README.md](https://github.com/microcks/microcks/blob/1c38f795e1a9c45024faa0f527c4986931ff47f3/README.md) · [LICENSE](https://github.com/microcks/microcks/blob/1c38f795e1a9c45024faa0f527c4986931ff47f3/LICENSE) · [ARCHITECTURE.md](https://github.com/microcks/microcks/blob/1c38f795e1a9c45024faa0f527c4986931ff47f3/ARCHITECTURE.md) · [TestRunnerType.java](https://github.com/microcks/microcks/blob/1c38f795e1a9c45024faa0f527c4986931ff47f3/commons/model/src/main/java/io/github/microcks/domain/TestRunnerType.java) · [OpenAPITestRunner.java](https://github.com/microcks/microcks/blob/1c38f795e1a9c45024faa0f527c4986931ff47f3/webapp/src/main/java/io/github/microcks/util/openapi/OpenAPITestRunner.java) · [api-check.yml](https://github.com/microcks/microcks/blob/1c38f795e1a9c45024faa0f527c4986931ff47f3/.github/workflows/api-check.yml) · [build-verify.yml](https://github.com/microcks/microcks/blob/1c38f795e1a9c45024faa0f527c4986931ff47f3/.github/workflows/build-verify.yml) · [AI-POLICY.md](https://github.com/microcks/microcks/blob/1c38f795e1a9c45024faa0f527c4986931ff47f3/AI-POLICY.md) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-redocly-cli"></a>
+
+### Redocly CLI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Redocly/redocly-cli |
+| License | MIT |
+| Phiên bản đã đọc | `d75ae35df6ff8f8c6433fe61441b7357e51c6813` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE.md, README.md, package.json, vitest.config.ts, .github/workflows/tests.yaml, packages/core/src/rules/common/operation-operationId-unique.ts; chưa chạy upstream |
+| Khoảng trống lấp | Tài liệu kỹ thuật docs-as-code: lint/bundle OpenAPI và dựng tài liệu API từ một mô tả |
+| Cơ chế đáng học | - packages/core/src/rules: luật chia theo oas2/oas3/common/async/arazzo, mỗi luật là hàm trả visitor (ví dụ common/operation-operationId-unique.ts báo trùng operationId kèm đường dẫn vị trí và link tài liệu).<br>- Luật tự khai báo trong redocly.yaml (subject + assertions như casing) không cần viết mã; plugin tự viết bằng JS.<br>- respect-core + generate-arazzo: chạy luồng gọi API thật theo Arazzo và kiểm phản hồi so với OpenAPI. |
+| Tiêu chí và cách kiểm | CI tests.yaml: typecheck, unit (vitest, ngưỡng coverage lines/functions/statements 80%, branches 75%), unit:types, e2e, và nhiều workflow smoke; REDOCLY_TELEMETRY=off trong CI. Đường mã thoát của lint chưa đọc, chưa chạy. |
+| Giới hạn và rủi ro | Telemetry mặc định bật, gửi tới otel.cloud.redocly.com (thấy các trường lệnh, mã thoát, tên luật có lỗi/cảnh báo, phiên bản spec; payload đầy đủ chưa xác minh); generate-client và diff là thử nghiệm; đã đưa vào section 29 (hợp đồng API) vì gần spectral hơn là công cụ lint văn xuôi. |
+| So với | spectral (lint OpenAPI bằng JSONPath), openapitools-openapi-generator (sinh client), docusaurus/sphinx cho dựng trang tài liệu. |
+| Nguồn | [LICENSE.md](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/LICENSE.md) · [README.md](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/README.md) · [package.json](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/package.json) · [vitest.config.ts](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/vitest.config.ts) · [CI tests.yaml](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/.github/workflows/tests.yaml) · [operation-operationId-unique.ts](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/packages/core/src/rules/common/operation-operationId-unique.ts) · [telemetry.ts](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/packages/cli/src/utils/telemetry.ts) · [otel.ts](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/packages/cli/src/utils/otel.ts) · [constants.ts](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/packages/cli/src/utils/constants.ts) |
+
+<a id="n2-zalando-zally"></a>
+
+### Zally
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/zalando/zally |
+| License | MIT (LICENSE, © Zalando SE) |
+| Phiên bản đã đọc | `6846db565d5d7508754516b3aad7a25aa603a9f5` (commit 2026-10-19) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README, server/rules.md, NoVersionInUriRule.kt, reference.conf và build-zally.yml; chưa chạy upstream |
+| Khoảng trống lấp | API design và kiểm hợp đồng: linter OpenAPI 2/3 theo guideline cấp tổ chức (Zalando RESTful API Guidelines) |
+| Cơ chế đáng học | - Mỗi quy tắc là một lớp Kotlin có chú thích `@Rule(id, severity, title)` và hàm `@Check` trả danh sách `Violation` (ví dụ `NoVersionInUriRule.kt`, rule 115 mức MUST), nên ID quy tắc bám số điều của guideline.<br>- Ba mức severity (MUST/SHOULD/MAY) và ngưỡng cấu hình bằng HOCON (`reference.conf`: giới hạn tài nguyên 8, tiểu tài nguyên 3, whitelist header).<br>- Gỡ cảnh báo từng chỗ bằng extension `x-zally-ignore` ngay trong spec (README); có CLI, server REST, web UI.<br>- Thư mục test của `zally-ruleset-zalando` có 36 mục, phần lớn mỗi rule một file `*RuleTest.kt`. |
+| Tiêu chí và cách kiểm | Workflow `build-zally.yml` đã mở: JDK 17, `./gradlew build` cho server rồi build CLI, gửi coverage jacoco lên Codecov; không thấy ngưỡng coverage bắt buộc trong workflow. Linter tự chấm spec bằng máy, nhưng chất lượng từng rule phụ thuộc test của rule đó. |
+| Giới hạn và rủi ro | MIT; hỗ trợ OpenAPI 2 và 3 (README), không có AsyncAPI như trinh sát ghi (chưa thấy rule cho AsyncAPI). Server viết bằng Kotlin/JVM, build bằng Gradle và có Docker Compose, nặng hơn linter dạng CLI độc lập. Ví dụ `NoVersionInUriRule` dùng regex `(.*)v[0-9]+(.*)` nên khớp mọi chuỗi con `v<số>` trong đường dẫn hay URL server, có thể báo nhầm (suy ra từ mã, chưa chạy). Bộ rule gắn chặt guideline Zalando, dùng ngoài phải tự tắt hoặc viết rule. Người duy trì liệt kê trong MAINTAINERS là cá nhân, commit gần nhất 2026-10-19. |
+| So với | Spectral, Vacuum, Schemathesis. Spectral/Vacuum dùng ruleset khai báo; Zally viết rule bằng mã JVM nên mạnh hơn khi cần logic nhưng khó sửa nhanh. |
+| Nguồn | [LICENSE](https://github.com/zalando/zally/blob/6846db565d5d7508754516b3aad7a25aa603a9f5/LICENSE) · [README.md](https://github.com/zalando/zally/blob/6846db565d5d7508754516b3aad7a25aa603a9f5/README.md) · [server/rules.md](https://github.com/zalando/zally/blob/6846db565d5d7508754516b3aad7a25aa603a9f5/server/rules.md) · [server/zally-ruleset-zalando/src/main/kotlin/org/zalando/zally/ruleset/zalando/NoVersionInUriRule.kt](https://github.com/zalando/zally/blob/6846db565d5d7508754516b3aad7a25aa603a9f5/server/zally-ruleset-zalando/src/main/kotlin/org/zalando/zally/ruleset/zalando/NoVersionInUriRule.kt) · [server/zally-ruleset-zalando/src/main/resources/reference.conf](https://github.com/zalando/zally/blob/6846db565d5d7508754516b3aad7a25aa603a9f5/server/zally-ruleset-zalando/src/main/resources/reference.conf) · [.github/workflows/build-zally.yml](https://github.com/zalando/zally/blob/6846db565d5d7508754516b3aad7a25aa603a9f5/.github/workflows/build-zally.yml) |
+
+<a id="n2-sourcemeta-jsonschema"></a>
+
+### JSON Schema CLI (Sourcemeta)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/sourcemeta/jsonschema |
+| License | AGPL-3.0 (LICENSE; README nêu dùng làm công cụ dev/CI không kích hoạt copyleft, có giấy phép thương mại riêng) |
+| Phiên bản đã đọc | `3b0c4fdd55be8a7c8f6a556938e794089a1a9809` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-24; docs-read; đã đọc LICENSE, README, docs lint/test/llm, exit_code.h và test.yml; chưa chạy upstream |
+| Khoảng trống lấp | API design và kiểm hợp đồng: CLI JSON Schema (lint, test, fmt, bundle) làm tầng dưới cho hợp đồng OpenAPI/AsyncAPI |
+| Cơ chế đáng học | - `jsonschema test` chạy bộ test của schema (file JSON `target` + `tests` với instance hợp lệ/không hợp lệ), song song theo CPU, xuất CTRF cho CI (`docs/test.markdown`).<br>- `jsonschema lint` có luật chống anti-pattern, `--fix`, `--exclude/--only`, luật tự viết bằng schema (`--rule`) (`docs/lint.markdown`); `fmt --check` để chặn định dạng lệch trong CI.<br>- Mã thoát phân biệt lỗi (1 bất ngờ, 2 thất bại dự kiến, 3 chưa hỗ trợ, 4 sai schema, 5 sai tham số, 6 sai đầu vào khác) trong `src/exit_code.h`.<br>- `bundle` nhận cả mô tả OpenAPI 3.0/3.1/3.2 để gộp tham chiếu; `llm` ép mô hình trả JSON theo schema rồi kiểm lại bằng schema gốc (`docs/llm.markdown`). |
+| Tiêu chí và cách kiểm | CI `test.yml` đã mở: codespell cho docs, ma trận Linux/macOS/Windows/Alpine/WSL (gcc-14, clang), x64 và arm64. Có hơn 200 file test dưới `test/lint` (đếm file, chưa chạy). Kiểm bằng máy mạnh; mức đọc ở đây là tài liệu và một header mã nên đặt docs-read. |
+| Giới hạn và rủi ro | AGPL-3.0: README tự cam kết dùng làm công cụ không kéo copyleft vào schema/mã của bạn, nhưng đó là diễn giải của tác giả, hãy để pháp chế duyệt trước khi nhúng thư viện hay chạy như dịch vụ. Viết bằng C++/CMake, có hỗ trợ một phần cho Draft 0-3. Lệnh `llm` gửi schema và prompt tới URL hoàn thành do người dùng chỉ định (dữ liệu rời máy nếu trỏ tới dịch vụ ngoài). Cấu hình `jsonschema.json` ghi là thử nghiệm. Chỉ lint schema nhúng trong OpenAPI, không lint cả mô tả API (docs/lint nói nên dùng cùng Spectral). Mô tả trinh sát đúng, nhưng thiếu: đây là công cụ JSON Schema, không phải OpenAPI/AsyncAPI. |
+| So với | Spectral, Vacuum, Schemathesis. Bổ sung cho Spectral thay vì thay thế: sâu về JSON Schema, không kiểm luật API cấp tổ chức. |
+| Nguồn | [LICENSE](https://github.com/sourcemeta/jsonschema/blob/3b0c4fdd55be8a7c8f6a556938e794089a1a9809/LICENSE) · [README.markdown](https://github.com/sourcemeta/jsonschema/blob/3b0c4fdd55be8a7c8f6a556938e794089a1a9809/README.markdown) · [docs/lint.markdown](https://github.com/sourcemeta/jsonschema/blob/3b0c4fdd55be8a7c8f6a556938e794089a1a9809/docs/lint.markdown) · [docs/test.markdown](https://github.com/sourcemeta/jsonschema/blob/3b0c4fdd55be8a7c8f6a556938e794089a1a9809/docs/test.markdown) · [docs/llm.markdown](https://github.com/sourcemeta/jsonschema/blob/3b0c4fdd55be8a7c8f6a556938e794089a1a9809/docs/llm.markdown) · [src/exit_code.h](https://github.com/sourcemeta/jsonschema/blob/3b0c4fdd55be8a7c8f6a556938e794089a1a9809/src/exit_code.h) · [.github/workflows/test.yml](https://github.com/sourcemeta/jsonschema/blob/3b0c4fdd55be8a7c8f6a556938e794089a1a9809/.github/workflows/test.yml) |

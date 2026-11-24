@@ -2,7 +2,7 @@
 
 # document-intelligence — Mô hình, dữ liệu & tài liệu
 
-[← Mục lục catalog](../README.md) · 21 hồ sơ.
+[← Mục lục catalog](../README.md) · 25 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -25,5 +25,9 @@
 | [unstructured](../../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính) | `Unstructured-IO/unstructured` | Apache License 2.0 | 15.762 | đọc tài liệu 2026-11-18 | 08 | Thư viện Python mã nguồn mở để nạp và tiền xử lý tài liệu (PDF, HTML, Word, ảnh…) thành dữ liệu có cấu trúc cho quy trình LLM. |
 | [Chandra OCR 2](../../26-document-intelligence-ocr/README.md#nt-chandra-ocr) | `datalab-to/chandra` | Mã Apache-2.0; trọng số OpenRAIL-M sửa đổi (MODEL_LICENSE) | 12.744 | đọc mã 2026-11-23 | 26 | OCR tài liệu thành Markdown/HTML/JSON giữ layout, chạy qua Hugging Face cục bộ hoặc máy chủ vLLM. |
 | [PDF-Extract-Kit](../../26-document-intelligence-ocr/README.md#nt-pdf-extract-kit) | `opendatalab/PDF-Extract-Kit` | AGPL-3.0 | 10.081 | đọc mã 2026-11-23 | 26 | Hộp công cụ mô-đun cho PDF: phát hiện layout (DocLayout-YOLO), công thức (YOLOv8), nhận dạng công thức (UniMERNet), OCR (PaddleOCR) và bảng (StructEqTable). |
+| [Camelot](../../26-document-intelligence-ocr/README.md#n2-camelot) | `camelot-dev/camelot` | MIT | 3.859 | đọc mã 2026-11-23 | 26 | Thư viện Python trích bảng từ PDF có lớp văn bản, ra pandas DataFrame, với năm parser (lattice, stream, network, hybrid, và ml dùng Table Transformer) cùng chỉ số chất l… |
 | [Table Transformer (TATR)](../../26-document-intelligence-ocr/README.md#nt-table-transformer) | `microsoft/table-transformer` | MIT (mã gốc); detr/ Apache-2.0; trọng số: chưa xác minh | 2.946 | đọc mã 2026-11-23 | 26 | Mô hình DETR nhận diện bảng và cấu trúc bảng từ ảnh (PubTables-1M), kèm hậu xử lý ngưỡng/NMS và thước đo GriTS. |
+| [ColPali (colpali-engine)](../../26-document-intelligence-ocr/README.md#n2-colpali) | `illuin-tech/colpali` | MIT (code); trọng số model theo license riêng từng checkpoint | 2.860 | đọc mã 2026-11-23 | 26 | Bộ mã huấn luyện và chạy retriever thị giác ColPali/ColQwen: mỗi trang thành nhiều vector, chấm bằng late interaction nên bỏ pipeline OCR rồi cắt khối. |
+| [VietOCR](../../26-document-intelligence-ocr/README.md#n2-vietocr) | `pbcquoc/vietocr` | Apache-2.0 | 833 | đọc mã 2026-11-23 | 26 | Thư viện PyTorch nhận dạng một dòng chữ tiếng Việt từ ảnh, kiến trúc CNN (VGG hoặc ResNet) cộng Transformer hoặc Seq2Seq, có sẵn bộ ký tự Việt và trọng số huấn luyện trê… |
+| [veraPDF-library](../../26-document-intelligence-ocr/README.md#n2-verapdf-library) | `veraPDF/veraPDF-library` | GPL-3.0-or-later OR MPL-2.0 | 352 | đọc mã 2026-11-23 | 26 | Thư viện Java lõi của veraPDF: nạp "profile" luật (dữ liệu XML) cho từng flavour PDF/A-1 đến 4, PDF/UA-1 và 2, WTPDF, rồi chạy từng luật trên mô hình đối tượng PDF và tr… |
 | [dots.ocr (dots.mocr)](../../26-document-intelligence-ocr/README.md#nt-dots-ocr) | `rednote-hilab/dots.ocr` | MIT (LICENSE) kèm thỏa thuận riêng dots.mocr LICENSE AGREEMENT | — | đọc mã 2026-11-23 | 26 | Parser tài liệu một mô hình VLM (nay đổi tên thành dots.mocr, README nói 3B tham số) xuất layout JSON kèm bbox, văn bản Markdown, bảng HTML, công thức LaTeX, và thêm đọc… |

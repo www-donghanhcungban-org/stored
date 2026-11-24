@@ -1362,3 +1362,43 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | MIT. Đang chuyển hướng lớn nên cấu trúc có thể đổi. Tuyên bố 'luôn xin duyệt' dựa vào tuân thủ prompt của mô hình. Đã đọc README nhưng không có chứng cứ eval chạy với mô hình thật; số liệu trong báo cáo eval là của tác giả. Cài qua install.sh nên cần đọc script trước khi chạy. |
 | So với | LoopForge (tencent-loopforge, cổng duyệt do engine cưỡng chế), Superpowers (superpowers), Agent OS (agent-os) |
 | Nguồn | [README.md](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/README.md) · [LICENSE](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/LICENSE) · [openagent.md](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/.opencode/agent/core/openagent.md) · [approval-gate-evaluator.ts](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/evals/framework/src/evaluators/approval-gate-evaluator.ts) · [pr-checks.yml](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/.github/workflows/pr-checks.yml) · [PRODUCTION_READINESS_ASSESSMENT.md](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/evals/PRODUCTION_READINESS_ASSESSMENT.md) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-claude-remote-hub"></a>
+
+### Claude Remote Hub
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/orseni/claude-remote-hub |
+| License | MIT |
+| Phiên bản đã đọc | `14dfb46a3e7e42c9bfa46a90fdf01c8edda763fb` (commit 2026-05-04) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, SECURITY.md, claude-remote-hub.py (khởi tạo ttyd, CSRF, bind), tests/test_server_helpers.py (chỉ đếm hàm test) và ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Giám sát và điều khiển phiên Claude Code từ điện thoại qua trình duyệt, nhưng chỉ là terminal web chứ không có luồng duyệt hành động |
+| Cơ chế đáng học | (1) Máy chủ HTTP stdlib mở mỗi phiên bằng `tmux` chạy `claude`, rồi `ttyd` phát terminal ra web (`start_session`, `_start_ttyd`). (2) Chống CSRF cho API tạo phiên: token ngẫu nhiên mỗi lần chạy và kiểm Origin trùng Host (`_csrf_ok`). (3) Tùy chọn HTTPS qua chứng chỉ có sẵn, TLS tối thiểu 1.2; ghi chú "bắt" phiên đang chạy trong terminal để tiếp tục từ điện thoại. |
+| Tiêu chí và cách kiểm | CI (đã mở) chạy `py_compile`, `bash -n install.sh`, `ruff check` và `python -m unittest discover`; có 7 hàm test trong `tests/test_server_helpers.py` (chỉ hàm trợ giúp). Không kiểm bảo mật tự động. |
+| Giới hạn và rủi ro | Máy chủ gắn `0.0.0.0` và lệnh ttyd không có `-i` hay thông tin xác thực; SECURITY.md nói rõ không có xác thực riêng, dựa hoàn toàn vào Tailscale. Trên mạng LAN không dùng Tailscale, bất kỳ máy nào cũng có thể vào terminal. Tuỳ chọn tạo phiên với `--dangerously-skip-permissions` có trong API. Tuyên bố "zero dependencies" chỉ đúng cho Python, vẫn cần ttyd, tmux, Tailscale. Cập nhật cuối 2026-05-04 (một commit đã đọc, chưa kết luận về bảo trì). |
+| So với | S-Remote (truy cập từ xa), RustDesk (điều khiển máy từ xa tổng quát) |
+| Nguồn | [README.md](https://github.com/orseni/claude-remote-hub/blob/14dfb46a3e7e42c9bfa46a90fdf01c8edda763fb/README.md) · [LICENSE](https://github.com/orseni/claude-remote-hub/blob/14dfb46a3e7e42c9bfa46a90fdf01c8edda763fb/LICENSE) · [SECURITY.md](https://github.com/orseni/claude-remote-hub/blob/14dfb46a3e7e42c9bfa46a90fdf01c8edda763fb/SECURITY.md) · [claude-remote-hub.py](https://github.com/orseni/claude-remote-hub/blob/14dfb46a3e7e42c9bfa46a90fdf01c8edda763fb/claude-remote-hub.py) · [test_server_helpers.py](https://github.com/orseni/claude-remote-hub/blob/14dfb46a3e7e42c9bfa46a90fdf01c8edda763fb/tests/test_server_helpers.py) · [ci.yml](https://github.com/orseni/claude-remote-hub/blob/14dfb46a3e7e42c9bfa46a90fdf01c8edda763fb/.github/workflows/ci.yml) |
+
+<a id="n2-humanlayer"></a>
+
+### HumanLayer
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/humanlayer/humanlayer |
+| License | Apache-2.0 (một số thư mục vendored giữ MIT, liệt kê trong NOTICE) |
+| Phiên bản đã đọc | `fb899cd8cba767f0392708efc20d00938dec6a87` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, NOTICE, apps/riptide-daemon/src/agents/claudecode/approvals.ts, apps/riptide-claude-code-plugin/hooks/hooks.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Người-trong-vòng cho agent và điều phối coding agent chạy trên nhiều máy, có duyệt quyền tập trung |
+| Cơ chế đáng học | - Phê duyệt quyền công cụ lưu trong bảng `approvals` (`apps/riptide-daemon/src/agents/claudecode/approvals.ts`): `isApprovalResolvedEvent` nhận biết chuyển pending sang approved/denied, `isAllowedByAppliedSuggestions` cho phép tự động khi một lần duyệt trước đã thêm luật allow khớp tên công cụ và lệnh (so khớp wildcard).<br>- Workflow duyệt phía daemon `apps/riptide-daemon/src/effects/services/claude-sessions/workflows/approvals.ts` trả `behavior: 'deny'` ở nhiều nhánh lỗi (đọc theo grep, chưa đọc hết).<br>- Plugin phản chiếu phiên Claude Code vào HumanLayer qua hook (`apps/riptide-claude-code-plugin/hooks/hooks.json`, `mod.ts`).<br>- Có skill tự host bằng Pulumi tham chiếu trong `.claude/skills/self-host-humanlayer/` (chỉ thấy đường dẫn trong README). |
+| Tiêu chí và cách kiểm | CI `.github/workflows/ci.yml` chạy typecheck, kiểm phiên bản Zod và `bun run quality` (oxlint + format); đã mở file, không dùng secret, fork PR cũng chạy đủ. Test chạy bằng `bun run test`, chưa chạy. |
+| Giới hạn và rủi ro | README nói bản build từ nguồn không gửi gì về tác giả, Sentry/PostHog/WorkOS chỉ bật khi có env (chưa xác minh); tuy vậy mã daemon import `@sentry/bun` nên cần để biến rỗng. HumanLayer Cloud là dịch vụ thương mại chạy cùng mã. Docker compose dùng mật khẩu mặc định. Sao 12.9k phần lớn đến từ SDK cũ, không phản ánh sản phẩm hiện tại. |
+| So với | 12-factor-agents, vibe-kanban, claude-squad |
+| Nguồn | [README.md](https://github.com/humanlayer/humanlayer/blob/fb899cd8cba767f0392708efc20d00938dec6a87/README.md) · [LICENSE](https://github.com/humanlayer/humanlayer/blob/fb899cd8cba767f0392708efc20d00938dec6a87/LICENSE) · [NOTICE](https://github.com/humanlayer/humanlayer/blob/fb899cd8cba767f0392708efc20d00938dec6a87/NOTICE) · [approvals.ts](https://github.com/humanlayer/humanlayer/blob/fb899cd8cba767f0392708efc20d00938dec6a87/apps/riptide-daemon/src/agents/claudecode/approvals.ts) · [hooks.json](https://github.com/humanlayer/humanlayer/blob/fb899cd8cba767f0392708efc20d00938dec6a87/apps/riptide-claude-code-plugin/hooks/hooks.json) · [ci.yml](https://github.com/humanlayer/humanlayer/blob/fb899cd8cba767f0392708efc20d00938dec6a87/.github/workflows/ci.yml) |

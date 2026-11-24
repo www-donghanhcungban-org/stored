@@ -2,7 +2,7 @@
 
 # speech — Mô hình, dữ liệu & tài liệu
 
-[← Mục lục catalog](../README.md) · 51 hồ sơ.
+[← Mục lục catalog](../README.md) · 54 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -54,6 +54,9 @@
 | [ZeroTTS](../../18-vietnam-community/README.md#ch-zerotts) | `zeroweight-ai/ZeroTTS` | MIT | 346 | đọc tài liệu 2026-11-23 | 18 | TTS tiếng Việt zero-shot 202M tham số chạy ONNX trên CPU, code + weights MIT; |
 | [PhoWhisper](../../18-vietnam-community/README.md#ch-phowhisper) | `VinAIResearch/PhoWhisper` | BSD-3-Clause | 271 | đọc tài liệu 2026-11-23 | 18 | Whisper tiếng Việt 844h, WER 4,67 VIVOS; |
 | [CIT Voice Studio](../../19-agentic-video-media/README.md#ch-cit-voice-studio) | `Cuongyd196/cit-voice-studio` | Apache-2.0 | 262 | đọc tài liệu 2026-11-23 | 19 | App TTS tiếng Việt cục bộ, ĐÓNG MÃ (repo chỉ 5 file tài liệu, README ghi Apache-2.0 nhưng không có LICENSE); |
+| [pyannote.metrics](../../14-voice-multimodal/README.md#n2-pyannote-metrics) | `pyannote/pyannote-metrics` | MIT | 260 | đọc mã 2026-11-23 | 14 | Bộ độ đo đánh giá phân tách người nói và phát hiện/phân đoạn giọng nói: DER (ánh xạ nhãn tối ưu bằng thuật toán Hungary rồi tính identification error), DER tham lam, pur… |
+| [VietASR (dangvansam)](../../14-voice-multimodal/README.md#n2-viet-asr) | `dangvansam/viet-asr` | Apache-2.0 (file LICENSE chỉ là phần đầu giấy phép kèm ghi chú, văn bản đầy đủ chưa chèn) | 182 | đọc mã 2026-11-23 | 14 | ASR tiếng Việt 86M chạy cục bộ, kèm SDK đa ngôn ngữ và bảng WER trên bộ thử công khai. |
 | [F5-TTS-Vietnamese](../../18-vietnam-community/README.md#ch-f5-tts-vietnamese) | `nguyenthienhy/F5-TTS-Vietnamese` | MIT (mã nguồn; không thấy tuyên bố license weights trong rep | 181 | đọc tài liệu 2026-11-23 | 18 | Weights cấm thương mại; |
 | [Gipformer](../../18-vietnam-community/README.md#ch-gipformer) | `ggroup-ai-lab/gipformer` | — | 161 | đọc tài liệu 2026-11-23 | 18 | ASR tiếng Việt Zipformer RNN-T 68M tham số, mạnh trên tập tổng đài riêng tư; |
+| [LEMAS-TTS](../../14-voice-multimodal/README.md#n2-lemas-tts) | `LEMAS-Project/LEMAS-TTS` | — | 104 | đọc mã 2026-11-23 | 14 | TTS zero-shot 10 ngôn ngữ dựa trên F5-TTS, có tiếng Việt qua espeak, không chuyên tiếng Việt. |
 | [LiveAvatar Agent Skills](../../14-voice-multimodal/README.md#xlsx-2026-11-23-liveavatar-agent-skills) | `heygen-com/liveavatar-agent-skills` | MIT | 17 | đọc mã 2026-11-23 | 14 | 4 skill văn bản (liveavatar-demo, integrate, debug, feedback) cho agent tích hợp avatar hội thoại thời gian thực của LiveAvatar (HeyGen): tách backend X-API-KEY và front… |

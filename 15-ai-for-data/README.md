@@ -987,3 +987,196 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | Repo hiện nay là bản mirror chỉ-đọc của repo nội bộ qua Copybara (`copy.bara.sky`, AGENTS.md): cấu trúc là `cli/`, `core/`, `docs/`, không còn monorepo `packages/` cũ, nên tài liệu cũ về Evidence có thể không khớp. Trinh sát ghi "chạy trong Git/CI": đúng ở mức file và validate, nhưng hướng chính được đẩy sang Evidence Studio (dịch vụ thương mại) và cài bằng `curl ... \| sh` từ evidence.studio. Telemetry mặc định bật: một sự kiện mỗi lệnh kèm machineId ngẫu nhiên lưu ở `~/.evd/machine-id`, heartbeat 24h cho `serve`; tắt bằng `evidence telemetry disable`, `EVIDENCE_TELEMETRY_DISABLED` hoặc `DO_NOT_TRACK`, và tự bỏ qua trên CI (docs/cli/index.mdx và `telemetry.ts`). |
 | So với | metabase, apache-superset, cube-core |
 | Nguồn | [LICENSE](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/LICENSE) · [README.md](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/README.md) · [AGENTS.md](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/AGENTS.md) · [copy.bara.sky](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/copy.bara.sky) · [metrics.mdx](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/docs/core-concepts/metrics.mdx) · [telemetry.ts](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/cli/cli/telemetry.ts) · [index.mdx](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/docs/cli/index.mdx) · [validate.ts](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/cli/cli/validate.ts) · [test.yml](https://github.com/evidence-dev/evidence/blob/b9ef1307328db7f47860a63d80947c0f9ba74063/.github/workflows/test.yml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-apache-parquet-format"></a>
+
+### Apache Parquet Format
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/apache/parquet-format |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `6f879257c76e61f05fb4d97da952fae452cb858a` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc src/main/thrift/parquet.thrift, CONTRIBUTING.md, proposals/README.md, Encryption.md, workflow test.yml; chưa chạy upstream |
+| Khoảng trống lấp | Định dạng bảng mở: đặc tả file Parquet gốc mà các định dạng bảng (Iceberg, Delta, DuckLake) dùng làm lớp dữ liệu |
+| Cơ chế đáng học | • Đặc tả bằng văn bản và Thrift (`src/main/thrift/parquet.thrift`): `FileMetaData` đặt cuối file với magic `PAR1`, lược đồ phẳng theo duyệt sâu, row group, column chunk, page; thống kê và chỉ mục trang cho lọc đẩy xuống.<br>• Quy trình thay đổi định dạng (CONTRIBUTING.md, proposals/README.md): thảo luận, bản nháp/POC, bắt buộc hai bản cài đặt tương tác được (một bản trong dự án Parquet) trước khi bỏ phiếu PMC.<br>• Mô-đun mã hóa Parquet (Encryption.md) mã hóa và xác thực dữ liệu lẫn metadata mà vẫn đọc theo cột; thêm kiểu mới như Geospatial, Variant, ALP. |
+| Tiêu chí và cách kiểm | Không có bộ test hành vi trong repo: CI (test.yml) chỉ chạy mvn verify trên JDK 8, 11, 17, 21 để sinh mã Thrift và javadoc. Kiểm tương tác nằm ở parquet-testing, repo khác (README chỉ dẫn, không đọc). Tức là đặc tả đúng đến mức đọc được, không có kiểm máy ngữ nghĩa ở đây. |
+| Giới hạn và rủi ro | Không có mã đọc ghi dùng được: cần parquet-java, arrow hoặc engine khác. Nhiều tính năng mới (page index, bloom filter, mã hóa, Variant) hỗ trợ không đều giữa thư viện; trường `version` file ghi chú chưa có đồng thuận về phiên bản 2 (chú thích trong parquet.thrift). Apache-2.0, không telemetry (là đặc tả). Số sao không dùng được vì là repo đặc tả (chưa xác minh). |
+| So với | apache-iceberg, duckdb, opengeospatial-geoparquet, geoparquet-io |
+| Nguồn | [LICENSE](https://github.com/apache/parquet-format/blob/6f879257c76e61f05fb4d97da952fae452cb858a/LICENSE) · [README.md](https://github.com/apache/parquet-format/blob/6f879257c76e61f05fb4d97da952fae452cb858a/README.md) · [parquet.thrift](https://github.com/apache/parquet-format/blob/6f879257c76e61f05fb4d97da952fae452cb858a/src/main/thrift/parquet.thrift) · [CONTRIBUTING.md](https://github.com/apache/parquet-format/blob/6f879257c76e61f05fb4d97da952fae452cb858a/CONTRIBUTING.md) · [README.md](https://github.com/apache/parquet-format/blob/6f879257c76e61f05fb4d97da952fae452cb858a/proposals/README.md) · [Encryption.md](https://github.com/apache/parquet-format/blob/6f879257c76e61f05fb4d97da952fae452cb858a/Encryption.md) · [CHANGES.md](https://github.com/apache/parquet-format/blob/6f879257c76e61f05fb4d97da952fae452cb858a/CHANGES.md) · [test.yml](https://github.com/apache/parquet-format/blob/6f879257c76e61f05fb4d97da952fae452cb858a/.github/workflows/test.yml) |
+
+<a id="n2-duckdb-ducklake"></a>
+
+### DuckLake
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/duckdb/ducklake |
+| License | MIT |
+| Phiên bản đã đọc | `fc1dc5ac65251a25a664b12da719e7ec0cc9f9b1` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc src/storage/ducklake_metadata_manager.cpp, src/storage/ducklake_transaction.cpp, src/ducklake_extension.cpp, src/common/ducklake_version.cpp, workflow MainDistributionPipeline.yml; chưa chạy upstream |
+| Khoảng trống lấp | Định dạng bảng mở và catalog lakehouse: metadata trong cơ sở dữ liệu SQL thay cho tệp manifest |
+| Cơ chế đáng học | • Metadata nằm trong một catalog DB SQL (DuckDB, Postgres, SQLite...) với các bảng `ducklake_snapshot`, `ducklake_snapshot_changes`, `ducklake_table`, `ducklake_data_file`, `ducklake_delete_file`... (ducklake_metadata_manager.cpp); dữ liệu là tệp Parquet.<br>• Commit là giao dịch trên catalog DB; xung đột thì thử lại có backoff theo `ducklake_max_retry_count` (mặc định 10), `ducklake_retry_wait_ms`, `ducklake_retry_backoff` (ducklake_extension.cpp, ducklake_transaction.cpp); cắt giao dịch báo "Transaction conflict" khi không thể lặp lại an toàn.<br>• Hàm quản trị: hết hạn snapshot, dọn tệp, gộp (compaction), inline dữ liệu nhỏ vào catalog, vector xóa (deletion vector), nhánh và tag snapshot; có phiên bản định dạng (0.1 đến 1.1) và kiểm tương thích. |
+| Tiêu chí và cách kiểm | Test sqllogictest rất rộng (test/sql: concurrent, compaction, encryption, add_files...); CI qua extension-ci-tools của DuckDB, có coverage, build GCC 12 và test với SeaweedFS, định dạng clang. Chưa đọc bản đặc tả chính thức vì README trỏ sang website riêng (ducklake.select), không có trong repo (chưa xác minh). |
+| Giới hạn và rủi ro | MIT (Stichting DuckDB Foundation), nhưng repo đòi submodule duckdb khi build nên bản clone nông không dựng được. Gắn chặt với DuckDB (và phần mở rộng của nó) nên hỗ trợ engine khác như Spark, Trino còn phụ thuộc hệ sinh thái (chưa xác minh). Thông số của trinh sát (sao, license) chưa xác minh nay đã bổ sung license MIT. Catalog DB là điểm nghẽn ghi nếu dùng DuckDB file; cần Postgres khi nhiều client. |
+| So với | apache-iceberg, duckdb, apache-gravitino, apache-parquet-format |
+| Nguồn | [LICENSE](https://github.com/duckdb/ducklake/blob/fc1dc5ac65251a25a664b12da719e7ec0cc9f9b1/LICENSE) · [README.md](https://github.com/duckdb/ducklake/blob/fc1dc5ac65251a25a664b12da719e7ec0cc9f9b1/docs/README.md) · [AGENTS.md](https://github.com/duckdb/ducklake/blob/fc1dc5ac65251a25a664b12da719e7ec0cc9f9b1/AGENTS.md) · [ducklake_extension.cpp](https://github.com/duckdb/ducklake/blob/fc1dc5ac65251a25a664b12da719e7ec0cc9f9b1/src/ducklake_extension.cpp) · [ducklake_metadata_manager.cpp](https://github.com/duckdb/ducklake/blob/fc1dc5ac65251a25a664b12da719e7ec0cc9f9b1/src/storage/ducklake_metadata_manager.cpp) · [ducklake_transaction.cpp](https://github.com/duckdb/ducklake/blob/fc1dc5ac65251a25a664b12da719e7ec0cc9f9b1/src/storage/ducklake_transaction.cpp) · [ducklake_version.cpp](https://github.com/duckdb/ducklake/blob/fc1dc5ac65251a25a664b12da719e7ec0cc9f9b1/src/common/ducklake_version.cpp) · [MainDistributionPipeline.yml](https://github.com/duckdb/ducklake/blob/fc1dc5ac65251a25a664b12da719e7ec0cc9f9b1/.github/workflows/MainDistributionPipeline.yml) |
+
+<a id="n2-lightdash-lightdash"></a>
+
+### Lightdash
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/lightdash/lightdash |
+| License | MIT (ngoài packages/backend/src/ee); ee theo Lightdash Source Available License |
+| Phiên bản đã đọc | `02924878213b147a80c8d954c141eee1be0c52c3` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE và packages/backend/src/ee/LICENSE, packages/cli/src/handlers/compile.ts và validate.ts, packages/backend/src/config/parseConfig.ts, workflow pr.yml; chưa chạy upstream |
+| Khoảng trống lấp | BI as code và semantic layer dạng khai báo (metric trong YAML dbt, dashboard nằm trong Git) |
+| Cơ chế đáng học | • CLI `lightdash` biên dịch mô hình dbt thành explore (compile.ts, dùng manifest dbt và `@lightdash/common`), `preview` dựng môi trường tạm cho nhánh, `deploy` đẩy lên.<br>• `lightdash validate` (validate.ts) gửi explore lên server tạo job kiểm, báo biểu đồ, dashboard, bảng hỏng sau khi metric đổi; dùng làm bước CI trước khi merge.<br>• Nội dung dạng mã (contentAsCode): tải về và đưa lên biểu đồ, dashboard dưới dạng tệp để review qua pull request; có MCP server và skill cho agent. |
+| Tiêu chí và cách kiểm | CI pr.yml chạy ép phiên bản phụ thuộc chính xác, build và lint, unit test chia nhóm (backend, frontend, cli, common...), kiểm SDK an toàn CSP và vẽ mọi loại biểu đồ trong Chromium; CLI có test (validate.test.ts, compile.test.ts). validate cần máy chủ Lightdash và kho dữ liệu thật nên không kiểm được tách biệt. |
+| Giới hạn và rủi ro | License hỗn hợp: ngoài thư mục `packages/backend/src/ee` là MIT, thư mục ee theo Source Available License (dùng production phải có Enterprise Subscription và Terms of Service); `open_source: true` chỉ đúng cho phần ngoài ee. Telemetry: Rudderstack bật theo mặc định với write key và dataPlaneUrl `analytics.lightdash.com` cố định, tắt bằng `RUDDERSTACK_ANALYTICS_DISABLED=true` (parseConfig.ts), còn có cấu hình Sentry (DSN theo biến môi trường) và PostHog. README đẩy mạnh Lightdash Cloud và AI agent; phần tự host phải tự lo. Sao trinh sát để 0 (chưa xác minh). |
+| So với | metabase, evidence, apache-superset, metricflow, cube-core |
+| Nguồn | [LICENSE](https://github.com/lightdash/lightdash/blob/02924878213b147a80c8d954c141eee1be0c52c3/LICENSE) · [README.md](https://github.com/lightdash/lightdash/blob/02924878213b147a80c8d954c141eee1be0c52c3/README.md) · [LICENSE](https://github.com/lightdash/lightdash/blob/02924878213b147a80c8d954c141eee1be0c52c3/packages/backend/src/ee/LICENSE) · [compile.ts](https://github.com/lightdash/lightdash/blob/02924878213b147a80c8d954c141eee1be0c52c3/packages/cli/src/handlers/compile.ts) · [validate.ts](https://github.com/lightdash/lightdash/blob/02924878213b147a80c8d954c141eee1be0c52c3/packages/cli/src/handlers/validate.ts) · [parseConfig.ts](https://github.com/lightdash/lightdash/blob/02924878213b147a80c8d954c141eee1be0c52c3/packages/backend/src/config/parseConfig.ts) · [pr.yml](https://github.com/lightdash/lightdash/blob/02924878213b147a80c8d954c141eee1be0c52c3/.github/workflows/pr.yml) |
+
+<a id="n2-rill"></a>
+
+### Rill
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/rilldata/rill |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `a7668005714ff45edd94a4977893014eecfea48a` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE.md, runtime/parser/parse_metrics_view.go, runtime/metricsview/README.md, go-test.yml, helper.go; chưa chạy upstream |
+| Khoảng trống lấp | BI as code và semantic layer dạng khai báo |
+| Cơ chế đáng học | - Metrics view là tài nguyên YAML có kiểu: `MetricsViewYAML` (dimensions, measures, timeseries, smallest_time_grain, ai_instructions, window, per, requires) trong `runtime/parser/parse_metrics_view.go`.<br>- `parseMetricsView` kiểm tra khi parse: chỉ một trong model/table/parent, grain tối thiểu từ `second`, mỗi dimension đúng một của column hoặc expression, trường lookup phải đủ bộ; view dẫn xuất (`parent`) cấm khai dimension/measure/nguồn dữ liệu riêng.<br>- `runtime/metricsview/` sinh SQL lúc truy vấn từ định nghĩa semantic (README nêu việc validate view và sinh query); README gốc nói MCP server nối agent vào lớp semantic. |
+| Tiêu chí và cách kiểm | Có `go test -short ./...` và gofmt trong go-test.yml, cộng 16 workflow khác (lint, e2e web, codeql); test parser theo từng tính năng (`parse_metrics_view_test.go`). Kiểm bằng máy ở CI, nhưng một số test cần secret kết nối (BigQuery, Snowflake, S3) nên không tái lập đủ khi fork. Số liệu hiệu năng sub-second trong README là tuyên bố (chưa xác minh). |
+| Giới hạn và rủi ro | License Apache-2.0 cho repo (LICENSE.md). CLI có analytics: `helper.go` dùng client telemetry thật khi `analyticsEnabled`, và cho tắt qua cấu hình dotrill (chưa đọc đường tắt cụ thể ở CLI). Cloud, chat AI và triển khai là dịch vụ thương mại riêng. Repo lớn (Go + Svelte), nhiều kết nối nguồn. |
+| So với | Evidence (BI as code), Metabase, Cube (semantic layer), MetricFlow. |
+| Nguồn | [README.md](https://github.com/rilldata/rill/blob/a7668005714ff45edd94a4977893014eecfea48a/README.md) · [LICENSE.md](https://github.com/rilldata/rill/blob/a7668005714ff45edd94a4977893014eecfea48a/LICENSE.md) · [parse_metrics_view.go](https://github.com/rilldata/rill/blob/a7668005714ff45edd94a4977893014eecfea48a/runtime/parser/parse_metrics_view.go) · [README.md](https://github.com/rilldata/rill/blob/a7668005714ff45edd94a4977893014eecfea48a/runtime/metricsview/README.md) · [go-test.yml](https://github.com/rilldata/rill/blob/a7668005714ff45edd94a4977893014eecfea48a/.github/workflows/go-test.yml) · [helper.go](https://github.com/rilldata/rill/blob/a7668005714ff45edd94a4977893014eecfea48a/cli/pkg/cmdutil/helper.go) |
+
+<a id="n2-elementary-data"></a>
+
+### Elementary (OSS CLI)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/elementary-data/elementary |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `84aae621e724b8611d5793d3f243c8ab5f8dfafc` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, pyproject.toml, anonymous_tracking.py, config.py, utils.py, packages.yml, test-warehouse.yml; chưa chạy upstream |
+| Khoảng trống lấp | Chất lượng dữ liệu: quan sát và cảnh báo dựa trên test dbt (phần CLI) |
+| Cơ chế đáng học | - `elementary/monitor/api/tests/utils.py` đọc tham số test (`sensitivity`, `timestamp_column`, `time_bucket`) để đưa vào báo cáo; phát hiện bất thường thật nằm ở gói dbt (phụ thuộc cục bộ trong `tests/e2e_dbt_project/packages.yml`).<br>- `elementary/monitor/alerts/` mô hình cảnh báo (test, model, source freshness) và gom nhóm theo trường; cấu hình Slack/Teams/S3/GCS/Azure trong `config/config.py`.<br>- `.github/workflows/test-warehouse.yml` chạy e2e trên 14 loại warehouse (postgres, snowflake, bigquery, databricks, duckdb, trino, ...), có đầu vào chọn nhánh của `dbt-data-reliability`. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: test unit/tích hợp ở `tests/`, e2e trên nhiều warehouse bằng dự án dbt mẫu `tests/e2e_dbt_project` (có model anomalies, dữ liệu sinh sẵn). Nhiều bước cần thông tin đăng nhập warehouse nên khó tái lập khi fork. Chất lượng thuật toán anomaly: chưa xác minh vì mã ở repo khác. |
+| Giới hạn và rủi ro | Apache-2.0. Telemetry ẩn danh bật mặc định: `anonymous_usage_tracking` mặc định True trong `config.py`, `AnonymousTracking` tạo `.user_id` cục bộ và gửi sự kiện (import log của posthog bị tắt; đích gửi chưa đọc hết); tắt bằng cấu hình. Tính năng nâng cao (column-level lineage, ML monitor, AI agent) thuộc Elementary Cloud thương mại theo README. Yêu cầu `dbt-core` 1.8 đến dưới 2.0 (chưa xác minh trên dbt mới hơn). |
+| So với | Soda Core, Great Expectations (GX Core), dbt (dbt-v2-rust). |
+| Nguồn | [README.md](https://github.com/elementary-data/elementary/blob/84aae621e724b8611d5793d3f243c8ab5f8dfafc/README.md) · [LICENSE](https://github.com/elementary-data/elementary/blob/84aae621e724b8611d5793d3f243c8ab5f8dfafc/LICENSE) · [pyproject.toml](https://github.com/elementary-data/elementary/blob/84aae621e724b8611d5793d3f243c8ab5f8dfafc/pyproject.toml) · [anonymous_tracking.py](https://github.com/elementary-data/elementary/blob/84aae621e724b8611d5793d3f243c8ab5f8dfafc/elementary/tracking/anonymous_tracking.py) · [config.py](https://github.com/elementary-data/elementary/blob/84aae621e724b8611d5793d3f243c8ab5f8dfafc/elementary/config/config.py) · [utils.py](https://github.com/elementary-data/elementary/blob/84aae621e724b8611d5793d3f243c8ab5f8dfafc/elementary/monitor/api/tests/utils.py) · [packages.yml](https://github.com/elementary-data/elementary/blob/84aae621e724b8611d5793d3f243c8ab5f8dfafc/tests/e2e_dbt_project/packages.yml) · [test-warehouse.yml](https://github.com/elementary-data/elementary/blob/84aae621e724b8611d5793d3f243c8ab5f8dfafc/.github/workflows/test-warehouse.yml) |
+
+<a id="n2-pandera"></a>
+
+### Pandera
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/unionai-oss/pandera |
+| License | MIT |
+| Phiên bản đã đọc | `29486d19a612e6bc018c32ff3e44d76b571a9895` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE.txt, AGENTS.md, validation_depth.py, container.py, hypotheses.py, ci-tests.yml; chưa chạy upstream |
+| Khoảng trống lấp | Chất lượng dữ liệu: schema validation trong pipeline (không phải drift) |
+| Cơ chế đáng học | - `api/` định nghĩa schema và `DataFrameModel` theo từng backend; `backends/<engine>/` chứa logic kiểm, `engines/` chứa hệ kiểu; `adrs/` và `decisions/` ghi quyết định thiết kế.<br>- `pandera/validation_depth.py` ánh xạ `SchemaErrorReason` sang phạm vi SCHEMA hoặc DATA để bật `PANDERA_VALIDATION_DEPTH=DATA_ONLY` bỏ kiểm cấp schema; `PANDERA_VALIDATION_ENABLED=False` tắt hẳn (đọc trong `config.py`).<br>- `backends/polars/container.py`: kiểm trên LazyFrame, hỗ trợ `head`, `tail`, `sample`, và `lazy=True` gom nhiều lỗi (`SchemaErrors`), cần `lazy=True` khi `drop_invalid_rows`. |
+| Tiêu chí và cách kiểm | CI (`ci-tests.yml`) có lint ruff và mypy qua `prek`, ma trận Python 3.10-3.14 và nhiều phiên bản polars, test import polars khi không có pandas, bộ test từng backend. Có benchmark asv (theo README, chưa xác minh). Kiểm bằng máy đầy đủ, chạy được khi fork. |
+| Giới hạn và rủi ro | MIT. Tắt validation bằng biến môi trường có thể làm cổng chất lượng im lặng trong production nếu cấu hình nhầm. Kiểm trên mẫu (`sample`) không bảo đảm bắt hết dòng sai. Backend narwhals và nhiều engine còn mới, độ chín khác nhau (chưa xác minh). |
+| So với | Great Expectations (GX Core), Soda Core, Elementary (bổ sung quan sát). |
+| Nguồn | [README.md](https://github.com/unionai-oss/pandera/blob/29486d19a612e6bc018c32ff3e44d76b571a9895/README.md) · [LICENSE.txt](https://github.com/unionai-oss/pandera/blob/29486d19a612e6bc018c32ff3e44d76b571a9895/LICENSE.txt) · [AGENTS.md](https://github.com/unionai-oss/pandera/blob/29486d19a612e6bc018c32ff3e44d76b571a9895/AGENTS.md) · [validation_depth.py](https://github.com/unionai-oss/pandera/blob/29486d19a612e6bc018c32ff3e44d76b571a9895/pandera/validation_depth.py) · [container.py](https://github.com/unionai-oss/pandera/blob/29486d19a612e6bc018c32ff3e44d76b571a9895/pandera/backends/polars/container.py) · [hypotheses.py](https://github.com/unionai-oss/pandera/blob/29486d19a612e6bc018c32ff3e44d76b571a9895/pandera/api/hypotheses.py) · [ci-tests.yml](https://github.com/unionai-oss/pandera/blob/29486d19a612e6bc018c32ff3e44d76b571a9895/.github/workflows/ci-tests.yml) |
+
+<a id="n2-risingwave"></a>
+
+### RisingWave
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/risingwavelabs/risingwave |
+| License | Apache-2.0 (một số tính năng khoá theo license key thương mại) |
+| Phiên bản đã đọc | `6c258d07f7e4ca04f9e74a8198658840ff7218c7` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, AGENTS.md, feature.json, feature.rs, server.rs, report.rs, cdc_backfill.rs, cdc/mod.rs; chưa chạy upstream |
+| Khoảng trống lấp | CDC, streaming và ELT nhẹ (lưu ý: là cơ sở dữ liệu streaming, không phải ELT nhẹ) |
+| Cơ chế đáng học | - `src/stream/src/executor/backfill/cdc/cdc_backfill.rs`: executor backfill CDC giữ trạng thái (`split_id`, `is_finished`, `row_count`, `cdc_offset`), lọc thay đổi upstream so với con trỏ snapshot theo khoá chính, giới hạn tốc độ (rows/s).<br>- `src/connector/src/source/cdc/mod.rs`: hằng số chế độ `rw_cdc_backfill`, chia sẻ source (`rw.sharing.mode.enable`), `snapshot.batch_size`, `backfill.parallelism`.<br>- `src/license/src/feature.rs` và `feature.json`: danh sách tính năng khoá theo tier; license mặc định là Free và chặn mọi tính năng có khoá. |
+| Tiêu chí và cách kiểm | AGENTS.md hướng dẫn cargo fmt/test; `.github/workflows` có nhiều workflow (license header, protobuf breaking, nightly...) và thư mục `e2e_test`, `ci/scripts`. Tôi chỉ liệt kê workflow, chưa mở nội dung nên chưa đánh giá ngưỡng cụ thể. Số liệu độ trễ (dưới 100 ms, p99 10-20 ms) là tuyên bố của README (chưa xác minh). |
+| Giới hạn và rủi ro | License mã là Apache-2.0 nhưng một số tính năng cần license key trả phí (feature.json liệt kê OracleCdcSource, SqlServerCdcSource, CdcAutoSchemaChange, nhiều sink). Telemetry: `telemetry_enabled` mặc định `true` trong `config/server.rs`, báo cáo định kỳ tới URL cố định (cho tắt bằng cấu hình). Vận hành nặng (meta, compute, compactor, object store), repo rất lớn. |
+| So với | Debezium, Airbyte, dlt, Apache Iceberg. |
+| Nguồn | [README.md](https://github.com/risingwavelabs/risingwave/blob/6c258d07f7e4ca04f9e74a8198658840ff7218c7/README.md) · [LICENSE](https://github.com/risingwavelabs/risingwave/blob/6c258d07f7e4ca04f9e74a8198658840ff7218c7/LICENSE) · [AGENTS.md](https://github.com/risingwavelabs/risingwave/blob/6c258d07f7e4ca04f9e74a8198658840ff7218c7/AGENTS.md) · [feature.json](https://github.com/risingwavelabs/risingwave/blob/6c258d07f7e4ca04f9e74a8198658840ff7218c7/src/license/src/feature.json) · [feature.rs](https://github.com/risingwavelabs/risingwave/blob/6c258d07f7e4ca04f9e74a8198658840ff7218c7/src/license/src/feature.rs) · [server.rs](https://github.com/risingwavelabs/risingwave/blob/6c258d07f7e4ca04f9e74a8198658840ff7218c7/src/common/src/config/server.rs) · [report.rs](https://github.com/risingwavelabs/risingwave/blob/6c258d07f7e4ca04f9e74a8198658840ff7218c7/src/common/src/telemetry/report.rs) · [cdc_backfill.rs](https://github.com/risingwavelabs/risingwave/blob/6c258d07f7e4ca04f9e74a8198658840ff7218c7/src/stream/src/executor/backfill/cdc/cdc_backfill.rs) · [mod.rs](https://github.com/risingwavelabs/risingwave/blob/6c258d07f7e4ca04f9e74a8198658840ff7218c7/src/connector/src/source/cdc/mod.rs) |
+
+<a id="n2-sling-cli"></a>
+
+### Sling CLI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/slingdata-io/sling-cli |
+| License | GPL-3.0 |
+| Phiên bản đã đọc | `08ca73fe194a74e4da505b021b848eac5b083887` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, config.go, task.go, sling_cli.go, sling_run.go, build-test.yml, justfile; chưa chạy upstream |
+| Khoảng trống lấp | CDC, streaming và ELT nhẹ |
+| Cơ chế đáng học | - `core/sling/config.go`: kiểu `Mode` (full-refresh, incremental, truncate, snapshot, backfill, definition-only, change-capture) và kiểm cấu hình; change-capture đòi nguồn và đích đều là database.<br>- `core/sling/task.go`: ở change-capture thêm cột metadata synced_at, synced_op và số thứ tự CDC (tên từ `env.ReservedFields`); `task_run_write.go` gộp thay đổi từ bảng tạm (chỉ thấy qua grep).<br>- `cmd/sling/sling_run.go`: chạy từ replication YAML, ghi sự kiện telemetry `run` kèm task và tuỳ chọn. |
+| Tiêu chí và cách kiểm | `justfile` có các nhóm test (cli, connections, dbio, core, python, cdc). Workflow `build-test.yml` chạy trên runner tự host và nạp secret từ Infisical nên người ngoài không tái lập được CI; kiểm bằng máy nhưng không công khai kết quả cho fork. |
+| Giới hạn và rủi ro | GPL-3.0: nhúng hoặc phân phối kèm có điều kiện copyleft, cần đánh giá pháp lý; chạy như tiến trình riêng thì khác với liên kết thư viện (không phải tư vấn pháp lý). Telemetry: hàm `Track` gửi sự kiện kèm machine ID và `setSentry` gửi lỗi, tắt bằng `SLING_DISABLE_TELEMETRY`. Một số tính năng nền tảng cloud nằm ngoài CLI (README, chưa xác minh). Connector API/CDC mới, độ chín chưa rõ. |
+| So với | dlt (dlt-data-load-tool), Airbyte, Debezium. |
+| Nguồn | [README.md](https://github.com/slingdata-io/sling-cli/blob/08ca73fe194a74e4da505b021b848eac5b083887/README.md) · [LICENSE](https://github.com/slingdata-io/sling-cli/blob/08ca73fe194a74e4da505b021b848eac5b083887/LICENSE) · [config.go](https://github.com/slingdata-io/sling-cli/blob/08ca73fe194a74e4da505b021b848eac5b083887/core/sling/config.go) · [task.go](https://github.com/slingdata-io/sling-cli/blob/08ca73fe194a74e4da505b021b848eac5b083887/core/sling/task.go) · [sling_cli.go](https://github.com/slingdata-io/sling-cli/blob/08ca73fe194a74e4da505b021b848eac5b083887/cmd/sling/sling_cli.go) · [sling_run.go](https://github.com/slingdata-io/sling-cli/blob/08ca73fe194a74e4da505b021b848eac5b083887/cmd/sling/sling_run.go) · [build-test.yml](https://github.com/slingdata-io/sling-cli/blob/08ca73fe194a74e4da505b021b848eac5b083887/.github/workflows/build-test.yml) · [justfile](https://github.com/slingdata-io/sling-cli/blob/08ca73fe194a74e4da505b021b848eac5b083887/justfile) |
+
+<a id="n2-apache-hudi"></a>
+
+### Apache Hudi
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/apache/hudi |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `2b3586c7cf010f6d3fe874e734ca2dc08b3b780d` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, HoodieTableVersion.java, hudi-ai-operator README và SKILL.md, hudi-agent-gateway README và guardrails.py, bot.yml, agent_gateway_ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Định dạng bảng mở và catalog lakehouse; thêm skill vận hành và cổng agent |
+| Cơ chế đáng học | - `HoodieTableVersion.java`: bảng phiên bản (ZERO đến TEN, 1.3.0 là TEN) gắn với layout timeline, chặn đọc bảng ghi bằng phiên bản mới hơn.<br>- `hudi-ai-operator/skills/*`: 7 skill (health, mdt-health, layout, rca, config-consultant, optimizer, architect); skill `hudi-table-health` chạy tiện ích Java chỉ-đọc rồi diễn giải báo cáo JSON (HEALTHY, UNHEALTHY, SKIPPED), nhấn mạnh SKIPPED không phải pass.<br>- `hudi-agent-gateway/.../guardrails.py`: AST bằng sqlglot, chỉ một câu SELECT, cấm Insert, Update, Delete, Merge, DDL, Command, chèn `LIMIT` thật, danh sách hàm bảng cho phép riêng cho Spark; lỗi parse thì từ chối. |
+| Tiêu chí và cách kiểm | `bot.yml` là CI chính (push, PR, merge queue, bộ lọc test Java theo nhóm lớp, chú thích về hàng đợi merge); thêm nhiều workflow Trino, Spark Connect và `agent_gateway_ci.yml` (pytest và lint trên Python 3.11, 3.12; thư mục tests có test_guardrails). Kiểm bằng máy. Chưa chạy upstream. |
+| Giới hạn và rủi ro | Apache-2.0 (ASF), nhiều mô-đun Java/Scala nặng, cấu hình Spark/Flink phức tạp. `hudi-agent-gateway` tự ghi chưa có xác thực (v1): `/v1/chat`, `/mcp` mở, phải đặt sau proxy xác thực. Guardrail dựa trên sqlglot, không thay quyền hạn ở lớp Trino/Spark. Hai mô-đun AI còn mới (chưa xác minh độ ổn định). |
+| So với | Apache Iceberg (apache-iceberg), lakeFS, Delta (chưa có hồ sơ), Cube/Evidence không cùng loại. |
+| Nguồn | [README.md](https://github.com/apache/hudi/blob/2b3586c7cf010f6d3fe874e734ca2dc08b3b780d/README.md) · [LICENSE](https://github.com/apache/hudi/blob/2b3586c7cf010f6d3fe874e734ca2dc08b3b780d/LICENSE) · [HoodieTableVersion.java](https://github.com/apache/hudi/blob/2b3586c7cf010f6d3fe874e734ca2dc08b3b780d/hudi-common/src/main/java/org/apache/hudi/common/table/HoodieTableVersion.java) · [README.md](https://github.com/apache/hudi/blob/2b3586c7cf010f6d3fe874e734ca2dc08b3b780d/hudi-ai-operator/README.md) · [SKILL.md](https://github.com/apache/hudi/blob/2b3586c7cf010f6d3fe874e734ca2dc08b3b780d/hudi-ai-operator/skills/hudi-table-health/SKILL.md) · [README.md](https://github.com/apache/hudi/blob/2b3586c7cf010f6d3fe874e734ca2dc08b3b780d/hudi-agent-gateway/README.md) · [guardrails.py](https://github.com/apache/hudi/blob/2b3586c7cf010f6d3fe874e734ca2dc08b3b780d/hudi-agent-gateway/src/hudi_agent_gateway/tools/guardrails.py) · [bot.yml](https://github.com/apache/hudi/blob/2b3586c7cf010f6d3fe874e734ca2dc08b3b780d/.github/workflows/bot.yml) · [agent_gateway_ci.yml](https://github.com/apache/hudi/blob/2b3586c7cf010f6d3fe874e734ca2dc08b3b780d/.github/workflows/agent_gateway_ci.yml) |
+
+<a id="n2-datafold-data-diff"></a>
+
+### data-diff
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/datafold/data-diff |
+| License | MIT |
+| Phiên bản đã đọc | `1410c6cd0b915ae24a15e03a7de15ff41beebaf0` (commit 2024-05-17) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, hashdiff_tables.py, joindiff_tables.py, tracking.py, ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Chất lượng dữ liệu: đối chiếu bảng khi migration (đã ngừng phát triển) |
+| Cơ chế đáng học | - `hashdiff_tables.py`: `HashDiffer` chia đoạn khoá thành `bisection_factor`=32 phần, so checksum từng đoạn, dừng chia khi dưới `bisection_threshold`=16384 hàng rồi tải hàng so cục bộ (`diff_sets`); thu hẹp độ chính xác kiểu để khớp giữa hai DB.<br>- `joindiff_tables.py`: `JoinDiffer` dùng OUTER JOIN khi hai bảng cùng DB, đòi khoá chính duy nhất và không null.<br>- `tracking.py`: sự kiện `os_diff_run_start` và `os_diff_run_end` gửi tới `hosted.rudderlabs.com`. |
+| Tiêu chí và cách kiểm | CI (`ci.yml`) dựng docker-compose (mysql, postgres, presto, trino, clickhouse, vertica) và chạy `unittest-parallel`, kèm secret Snowflake, Redshift, MotherDuck. Kiểm bằng máy nhưng không còn bảo trì; lần commit cuối 2024-05-17. |
+| Giới hạn và rủi ro | MIT. Dự án đã ngừng (README), không có bản vá bảo mật mới, driver DB cũ dần. Telemetry mặc định bật, kể cả hỏi email (có hàm `bool_ask_for_email`), tắt bằng `--no-tracking`. Cần quyền đọc cả hai DB; so sánh chéo DB dễ cho dương tính giả nếu định dạng khác (log cảnh báo trong mã). |
+| So với | Great Expectations (GX Core), Soda Core, dlt (bổ sung kiểm sau tải). |
+| Nguồn | [README.md](https://github.com/datafold/data-diff/blob/1410c6cd0b915ae24a15e03a7de15ff41beebaf0/README.md) · [LICENSE](https://github.com/datafold/data-diff/blob/1410c6cd0b915ae24a15e03a7de15ff41beebaf0/LICENSE) · [hashdiff_tables.py](https://github.com/datafold/data-diff/blob/1410c6cd0b915ae24a15e03a7de15ff41beebaf0/data_diff/hashdiff_tables.py) · [joindiff_tables.py](https://github.com/datafold/data-diff/blob/1410c6cd0b915ae24a15e03a7de15ff41beebaf0/data_diff/joindiff_tables.py) · [tracking.py](https://github.com/datafold/data-diff/blob/1410c6cd0b915ae24a15e03a7de15ff41beebaf0/data_diff/tracking.py) · [ci.yml](https://github.com/datafold/data-diff/blob/1410c6cd0b915ae24a15e03a7de15ff41beebaf0/.github/workflows/ci.yml) |
+
+<a id="n2-pm4py"></a>
+
+### PM4Py
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/process-intelligence-solutions/pm4py |
+| License | AGPL-3.0-or-later (LICENSE là AGPL-3.0; pyproject.toml ghi AGPL-3.0-or-later; có bản thương mại riêng) |
+| Phiên bản đã đọc | `c1b37193092bf160f2f615856039d90664723098` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, pyproject.toml, pm4py/privacy.py, pm4py/algo/conformance/alignments/petri_net/algorithm.py, COVERAGE.md, .github/workflows/codeql-analysis.yml; chưa chạy upstream |
+| Khoảng trống lấp | Process mining và phân tích nhật ký sự kiện quy trình bằng số đo (discovery, conformance, hiệu năng) |
+| Cơ chế đáng học | - Khám phá mô hình: `pm4py/algo/discovery/` (alpha, inductive, heuristics, dfg, split_miner, powl, declare, log_skeleton, ocel...); mặt tiền `pm4py/discovery.py` như `discover_petri_net_inductive`.<br>- Đối chiếu tuân thủ: `pm4py/algo/conformance/` gồm tokenreplay, alignments (biến thể `state_equation_a_star`, `dijkstra_*`, xấp xỉ `approx_*`), footprints, temporal_profile, ocel; mặt tiền `pm4py/conformance.py` (fitness_token_based_replay, fitness_alignments).<br>- Ẩn danh hóa log sự kiện: `anonymize_differential_privacy` (SaCoFa cho luồng điều khiển, PRIPEL cho thuộc tính ngữ cảnh) trong `pm4py/privacy.py`.<br>- Hỗ trợ object-centric event log (OCEL) và Polars qua extras trong `pyproject.toml`. |
+| Tiêu chí và cách kiểm | COVERAGE.md tự báo (đo 2026-07-17): 929 test trong runner riêng, 926 qua, 3 bỏ qua, độ phủ câu lệnh 90.22%, 139 ví dụ chạy (chưa xác minh, chưa chạy lại). `.github/workflows/` chỉ có CodeQL (mở file), không thấy workflow test. |
+| Giới hạn và rủi ro | AGPL-3.0: dùng nội bộ ổn, nhúng thành dịch vụ mạng cho bên khác thì phải công bố mã. Phụ thuộc mặc định `cvxopt` (GPL) ghi trong pyproject và third_party. README chỉ dẫn sang website ngoài cho tài liệu. Thư mục `safety_checks` chứa nhiều thư mục theo ngày (một cái ghi 20270524), mục đích chưa xác minh. |
+| So với | prefect, airflow, presidio |
+| Nguồn | [README.md](https://github.com/process-intelligence-solutions/pm4py/blob/c1b37193092bf160f2f615856039d90664723098/README.md) · [LICENSE](https://github.com/process-intelligence-solutions/pm4py/blob/c1b37193092bf160f2f615856039d90664723098/LICENSE) · [pyproject.toml](https://github.com/process-intelligence-solutions/pm4py/blob/c1b37193092bf160f2f615856039d90664723098/pyproject.toml) · [privacy.py](https://github.com/process-intelligence-solutions/pm4py/blob/c1b37193092bf160f2f615856039d90664723098/pm4py/privacy.py) · [algorithm.py](https://github.com/process-intelligence-solutions/pm4py/blob/c1b37193092bf160f2f615856039d90664723098/pm4py/algo/conformance/alignments/petri_net/algorithm.py) · [COVERAGE.md](https://github.com/process-intelligence-solutions/pm4py/blob/c1b37193092bf160f2f615856039d90664723098/COVERAGE.md) · [codeql-analysis.yml](https://github.com/process-intelligence-solutions/pm4py/blob/c1b37193092bf160f2f615856039d90664723098/.github/workflows/codeql-analysis.yml) |

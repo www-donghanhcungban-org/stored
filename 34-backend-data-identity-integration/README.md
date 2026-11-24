@@ -2405,3 +2405,366 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | Apache-2.0 (LICENSE đã đọc). Telemetry: có bộ OpenTelemetry nhưng chỉ bật khi cấu hình `enabled` (provider.go, chỉ grep, chưa đọc kỹ). Cần vận hành CSDL, khóa và control plane riêng. Tuyên bố hậu lượng tử, VC/DID, OpenID4VCI/VP chỉ là tuyên bố trong README **(chưa xác minh)**. Repo lớn (khoảng 290 MB clone), nhiều gói, nên mang cơ chế sang dự án khác cần chọn đúng module. |
 | So với | keycloak, casdoor, hydra, goauthentik-authentik (IAM tổng quát, chưa coi agent là danh tính hạng nhất); spire (danh tính workload) |
 | Nguồn | [LICENSE](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/LICENSE) · [README.md](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/README.md) · [backend/internal/agent/delegation.go](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/backend/internal/agent/delegation.go) · [backend/internal/agent/constants.go](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/backend/internal/agent/constants.go) · [backend/internal/system/mcp/auth/token_verifier.go](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/backend/internal/system/mcp/auth/token_verifier.go) · [backend/internal/system/mcp/tool/model.go](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/backend/internal/system/mcp/tool/model.go) · [.github/workflows/oidc-conformance-test.yml](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/.github/workflows/oidc-conformance-test.yml) · [tests/oidc-conformance/plan-config.json](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/tests/oidc-conformance/plan-config.json) · [docs/content/use-cases/ai-agents/mcp-authorization/try-it-out/connect-via-inspector.mdx](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/docs/content/use-cases/ai-agents/mcp-authorization/try-it-out/connect-via-inspector.mdx) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-ms-365-mcp-server"></a>
+
+### Microsoft 365 MCP Server (Softeria)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Softeria/ms-365-mcp-server |
+| License | MIT |
+| Phiên bản đã đọc | `7af5a157e3dee57d21850b56bfbb334b08c0f950` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, package.json, endpoints.json, audit-log.ts, cloud-config.ts, cache-encryption.ts, build.yml; chưa chạy upstream |
+| Khoảng trống lấp | Tích hợp email, lịch, tài liệu Microsoft 365 qua Graph với phạm vi OAuth tối thiểu |
+| Cơ chế đáng học | - src/endpoints.json: 363 mục, mỗi mục có pathPattern, method, toolName, scopes, appScopes, llmTip; tool sinh từ dữ liệu khai báo thay vì viết tay<br>- README mục Allowed Scopes: tính bề mặt tool bình thường rồi ẩn tool có scope ngoài allowlist; scope phân cấp (Mail.ReadWrite phủ Mail.Read); hỗ trợ Sites.Selected thay cho Sites.*.All; giá trị rỗng làm server lỗi khi khởi động thay vì mở rộng quyền<br>- src/audit-log.ts: log JSON riêng, chỉ ghi UPN, tài nguyên đích, mã lỗi, số và tên miền người nhận; không ghi nội dung thư<br>- src/lib/cache-encryption.ts: AES-256-GCM, chỉ khóa 32 byte nằm trong keychain (keytar), file cache mã hóa |
+| Tiêu chí và cách kiểm | build.yml (chỉ chạy trên pull_request và dispatch) chạy matrix Node 20, 22, 24: npm ci, generate rồi git diff --exit-code (chống artefact sinh lệch), lint, format, typecheck, build, npm test (vitest). Kiểm bằng máy khá đầy đủ. Test nằm trong `src/__tests__` và test/. |
+| Giới hạn và rủi ro | MIT sạch. Client ID đăng ký sẵn cho cloud global và china (cloud-config.ts): quyền truy cập đi qua ứng dụng của bên thứ ba, doanh nghiệp nên tự đăng ký app và đặt MS365_MCP_CLIENT_ID (GCC High bắt buộc). Chế độ org-mode xin scope SharePoint rộng theo mặc định. Bao phủ tool lớn làm tăng token nếu không dùng preset. Ghi log ở mức shape nhưng MS365_MCP_REDACT_PII=false sẽ ghi nội dung. Không có CalDAV, JMAP hay Google (khác mô tả khoảng trống của trinh sát). |
+| So với | googleworkspace/cli (Google Workspace, hồ sơ cli), mail-0-zero (client mail mã mở), n8n-mcp (MCP cho n8n) |
+| Nguồn | [README.md](https://github.com/Softeria/ms-365-mcp-server/blob/7af5a157e3dee57d21850b56bfbb334b08c0f950/README.md) · [LICENSE](https://github.com/Softeria/ms-365-mcp-server/blob/7af5a157e3dee57d21850b56bfbb334b08c0f950/LICENSE) · [package.json](https://github.com/Softeria/ms-365-mcp-server/blob/7af5a157e3dee57d21850b56bfbb334b08c0f950/package.json) · [endpoints.json](https://github.com/Softeria/ms-365-mcp-server/blob/7af5a157e3dee57d21850b56bfbb334b08c0f950/src/endpoints.json) · [audit-log.ts](https://github.com/Softeria/ms-365-mcp-server/blob/7af5a157e3dee57d21850b56bfbb334b08c0f950/src/audit-log.ts) · [cloud-config.ts](https://github.com/Softeria/ms-365-mcp-server/blob/7af5a157e3dee57d21850b56bfbb334b08c0f950/src/cloud-config.ts) · [cache-encryption.ts](https://github.com/Softeria/ms-365-mcp-server/blob/7af5a157e3dee57d21850b56bfbb334b08c0f950/src/lib/cache-encryption.ts) · [build.yml](https://github.com/Softeria/ms-365-mcp-server/blob/7af5a157e3dee57d21850b56bfbb334b08c0f950/.github/workflows/build.yml) |
+
+<a id="n2-mail-mcp"></a>
+
+### mail-mcp
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/tecnologicachile/mail-mcp |
+| License | MIT |
+| Phiên bản đã đọc | `7fb72674adcc418122727bc01478b18a83e6f7e7` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, Cargo.toml, AGENTS.md, drafts.rs, ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Tích hợp email đa giao thức cho agent (IMAP/SMTP/EWS/Graph); không phủ lịch hay tài liệu |
+| Cơ chế đáng học | - src/server/drafts.rs: test every_send_path_requires_smtp_write_enabled dựng cấu hình có token Graph, OAuth2, EWS rồi khẳng định mọi đường gửi đều từ chối khi MAIL_SMTP_WRITE_ENABLED tắt (hồi quy từ issue #45)<br>- Tool gửi, di chuyển, xóa gắn chú thích MCP (readOnlyHint, destructiveHint, idempotentHint, openWorldHint); 14 tool chỉ đọc theo README<br>- Quy tắc xem trước rồi xác nhận gửi được nhắc cả trong mô tả tool để gateway MCP không chuyển chỉ dẫn server vẫn giữ được<br>- README v0.6.1: hạ log rmcp xuống warn khi RUST_LOG=info để thân thư không rơi vào log |
+| Tiêu chí và cách kiểm | ci.yml chạy cargo fmt --check, clippy -D warnings và cargo test cho mỗi PR và push main; bộ test tích hợp IMAP với GreenMail chạy tay trong imap-integration-tests.yml (chưa mở). Không có ngưỡng coverage. Kiểm bằng máy cho phần cổng ghi, nhưng không chạy ở mức này. |
+| Giới hạn và rủi ro | MIT sạch (file LICENSE chỉ ghi Copyright 2025, không nêu tên chủ). Lịch sử cho thấy lỗi bỏ qua cổng gửi từng tồn tại ở bản 0.7.0 và lộ thư qua log ở bản 0.6.x qua HTTP: dùng bản mới và tự kiểm. Cổng ghi là biến môi trường chứ không phải quyền theo từng tool. Có file BUG_GRAPH_ATTACHMENTS.md trong repo cho thấy lỗi đang mở với tệp đính kèm Graph (chưa đọc). Dự án nhỏ, tác giả đơn lẻ, phiên bản 0.x. |
+| So với | ms-365-mcp-server (Graph theo scope), googleworkspace/cli (Google), mail-0-zero (client mail) |
+| Nguồn | [README.md](https://github.com/tecnologicachile/mail-mcp/blob/7fb72674adcc418122727bc01478b18a83e6f7e7/README.md) · [LICENSE](https://github.com/tecnologicachile/mail-mcp/blob/7fb72674adcc418122727bc01478b18a83e6f7e7/LICENSE) · [Cargo.toml](https://github.com/tecnologicachile/mail-mcp/blob/7fb72674adcc418122727bc01478b18a83e6f7e7/Cargo.toml) · [AGENTS.md](https://github.com/tecnologicachile/mail-mcp/blob/7fb72674adcc418122727bc01478b18a83e6f7e7/AGENTS.md) · [drafts.rs](https://github.com/tecnologicachile/mail-mcp/blob/7fb72674adcc418122727bc01478b18a83e6f7e7/src/server/drafts.rs) · [ci.yml](https://github.com/tecnologicachile/mail-mcp/blob/7fb72674adcc418122727bc01478b18a83e6f7e7/.github/workflows/ci.yml) |
+
+<a id="n2-open-agent-email"></a>
+
+### Open Agent Email
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Anil-matcha/open-agent-email |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `0f307a6bf0341c8ff5b950a6dfa4aa23b919d079` (commit 2026-10-22) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, reference.md, threat_scanner.py, hitl_service.py, models.py, ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Hạ tầng email cho agent: hộp thư riêng, nhận gửi, duyệt người (không phải tích hợp lịch/tài liệu) |
+| Cơ chế đáng học | - server/app/services/threat_scanner.py: danh sách regex chia nhóm (ghi đè chỉ dẫn, ChatML, rò rỉ qua ảnh markdown, CSS ẩn, ký tự zero-width, blob base64), mỗi mẫu có trọng số; điểm cuối quy ra allow, review hoặc block theo sensitivity (medium: review từ 0.50, block từ 0.85)<br>- server/app/services/hitl_service.py và models.py: Agent có cột hitl_enabled mặc định True; thư đi đang chờ duyệt, phê duyệt xong mới vào hàng đợi gửi; tài liệu nói đổi mức bảo vệ chỉ admin được, khóa agent không tự nới được<br>- docs/reference.md: sổ vòng đời append-only với mã cố định (created, review_requested, accepted_by_relay, provider_bounced, ...), webhook chỉ mang metadata chứ không mang nội dung<br>- ClamAV quét tệp đính kèm tùy chọn, mặc định tắt, lỗi quét thì từ chối tạm thời (fail closed) |
+| Tiêu chí và cách kiểm | ci.yml chạy pytest trên SQLite và PostgreSQL 16 (kèm drill sao lưu và xoay khóa), cộng job client Next.js. Có khoảng 410 hàm `test_` trong server/tests (đếm, chưa chạy), gồm test_reviews và test_review_links. Không có ngưỡng coverage đọc thấy. Bộ quét là heuristic và tài liệu nói không quét byte tệp đính kèm trừ khi bật ClamAV. |
+| Giới hạn và rủi ro | Apache-2.0 sạch. Regex chống prompt injection dễ bị né (đổi cách diễn đạt, ngôn ngữ khác) nên chỉ là một lớp, không thay cho cách ly quyền của agent. Tự host nghĩa là phải vận hành MX, SPF/DKIM/DMARC, relay gửi và khóa bí mật; mở cổng 25 ra Internet là rủi ro vận hành. Thư đến vẫn là đầu vào không tin cậy cho model. Dự án mới, nhánh mặc định cuối cùng commit 2026-10-22. |
+| So với | mail-mcp (kết nối hộp thư có sẵn qua IMAP/Graph), mail-0-zero (client mail mã mở), wirken (cổng quyền cho agent) |
+| Nguồn | [README.md](https://github.com/Anil-matcha/open-agent-email/blob/0f307a6bf0341c8ff5b950a6dfa4aa23b919d079/README.md) · [LICENSE](https://github.com/Anil-matcha/open-agent-email/blob/0f307a6bf0341c8ff5b950a6dfa4aa23b919d079/LICENSE) · [reference.md](https://github.com/Anil-matcha/open-agent-email/blob/0f307a6bf0341c8ff5b950a6dfa4aa23b919d079/docs/reference.md) · [threat_scanner.py](https://github.com/Anil-matcha/open-agent-email/blob/0f307a6bf0341c8ff5b950a6dfa4aa23b919d079/server/app/services/threat_scanner.py) · [hitl_service.py](https://github.com/Anil-matcha/open-agent-email/blob/0f307a6bf0341c8ff5b950a6dfa4aa23b919d079/server/app/services/hitl_service.py) · [models.py](https://github.com/Anil-matcha/open-agent-email/blob/0f307a6bf0341c8ff5b950a6dfa4aa23b919d079/server/app/models.py) · [ci.yml](https://github.com/Anil-matcha/open-agent-email/blob/0f307a6bf0341c8ff5b950a6dfa4aa23b919d079/.github/workflows/ci.yml) |
+
+<a id="n2-frappe-helpdesk"></a>
+
+### Frappe Helpdesk
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/frappe/helpdesk |
+| License | AGPL-3.0 |
+| Phiên bản đã đọc | `bc810df3184a49593a313ca7f58f973ad43137b7` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc hd_service_level_agreement.py, hd_ticket.py (phần SLA), hooks.py, skills/frappe-helpdesk/SKILL.md và reference/sla.md, workflow server-tests.yml; chưa chạy upstream |
+| Khoảng trống lấp | Quản lý ticket/helpdesk có API (kèm SLA tính theo giờ làm việc) |
+| Cơ chế đáng học | • SLA là DocType riêng (`HD Service Level Agreement`): mục tiêu phản hồi và xử lý theo từng mức ưu tiên, tính chỉ trong giờ làm việc có nghỉ trưa và danh sách ngày lễ (`calc_time`, `iter_working_spans`), điều kiện chọn SLA là biểu thức Python trên ticket.<br>• Trạng thái SLA tính theo thứ tự cố định Failed, Paused, First Response Due, Resolution Due, Fulfilled; tạm dừng cộng `total_hold_time` đẩy hạn xử lý; job `hourly_long` (`update_sla_status_in_ticket`) cập nhật lại ticket mở.<br>• Thư mục skills/frappe-helpdesk là skill cho agent điều khiển site qua `frappectl`, kèm tài liệu SLA, ticket, báo cáo; AGENTS.md hướng dẫn agent phát triển. |
+| Tiêu chí và cách kiểm | Test Python (server-tests.yml chạy trên MariaDB 10.6, Python 3.14, kiểm biên dịch và xung đột merge) và Playwright e2e/UI tests; riêng SLA có test_hd_service_level_agreement.py (14 hàm test theo đếm). Kiểm bằng máy, chưa chạy ở đây. |
+| Giới hạn và rủi ro | AGPL-3.0: dùng làm dịch vụ qua mạng phải công khai mã đã sửa. Phụ thuộc Frappe Framework và MariaDB, nặng hơn công cụ độc lập. Telemetry: mã gọi `frappe.utils.telemetry.capture` của framework và có cờ `enable_telemetry` (hành vi mặc định phụ thuộc Frappe, chưa xác minh). Tuyên bố có API: có nhiều endpoint `@frappe.whitelist` trong helpdesk/api (đã thấy danh sách tệp, chỉ đọc sâu phần SLA). |
+| So với | zammad, glpi, chatwoot-chatwoot, hcengineering-platform |
+| Nguồn | [LICENSE](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/LICENSE) · [README.md](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/README.md) · [AGENTS.md](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/AGENTS.md) · [hooks.py](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/helpdesk/hooks.py) · [hd_service_level_agreement.py](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/helpdesk/helpdesk/doctype/hd_service_level_agreement/hd_service_level_agreement.py) · [hd_ticket.py](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/helpdesk/helpdesk/doctype/hd_ticket/hd_ticket.py) · [SKILL.md](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/skills/frappe-helpdesk/SKILL.md) · [sla.md](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/skills/frappe-helpdesk/reference/sla.md) · [server-tests.yml](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/.github/workflows/server-tests.yml) |
+
+<a id="n2-rauthy"></a>
+
+### Rauthy
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/sebadob/rauthy |
+| License | Apache-2.0 (file LICENSE; Cargo.toml workspace khai Apache-2.0); module PAM/NSS ở repo riêng vì phụ thuộc GPLv3 |
+| Phiên bản đã đọc | `5e62dfafb772d2bdcb4601114dbef366c7865192` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, Cargo.toml, .github/workflows/code_style.yaml, src/data/src/entity/clients.rs, src/data/src/entity/app_version.rs, justfile, SECURITY.md, config.toml (grep); chưa chạy upstream |
+| Khoảng trống lấp | Máy chủ danh tính OIDC/OAuth 2 gọn cho tự host, ưu tiên passkey (kho mới có Authelia, Authentik, Better Auth, Keycloak) |
+| Cơ chế đáng học | - `validate_code_challenge` buộc client có cấu hình `challenge` gửi `code_challenge` cộng phương thức thuộc danh sách cho phép; client động chỉ được gửi S256 như tùy chọn (`src/data/src/entity/clients.rs`). <br>- Passkey qua `webauthn-rs 0.5` (`Cargo.toml`, `src/data`); README mô tả hai đường: mật khẩu cộng khoá bảo mật, hoặc tài khoản chỉ passkey bắt buộc User Verification. <br>- Phòng thủ đăng nhập: bộ đếm lần sai, phát hiện credential stuffing (`cred_stuff_detect.rs`, `ip_blacklist.rs`, `ip_rate_limit.rs`, mới thấy tên file), geo-block tùy chọn bằng Maxmind. <br>- Kiểm tra bản phát hành: gọi API GitHub `releases/latest` định kỳ để báo có bản mới (`app_version.rs`). |
+| Tiêu chí và cách kiểm | CI `code_style.yaml` chạy trong PR không phải draft: `cargo fmt --check`, `cargo clippy --all-targets`, kiểm định dạng/kiểu giao diện, hai test hợp đồng frontend (`test:webauthn`, `test:webauthn-reg`) và test tích hợp với Hiqlite (`just test-hiqlite`). Bản Postgres chỉ chạy tay (`just test-postgres` có trong `publish`, không trong workflow). Test Chromium cho đổi mật khẩu và MFA không nằm trong CI (chú thích trong workflow). Thư mục `src/bin/tests/integration` có test theo luồng (auth_flow, token_exchange, backchannel_logout...). Báo cáo kiểm toán độc lập (Radically Open Security) do README dẫn: **(chưa xác minh)** nội dung, chưa mở PDF. |
+| Giới hạn và rủi ro | Mô tả của trinh sát sai ở một điểm: README không nói OAuth 2.1; chỉ nói OIDC, OAuth 2 và PAM. Phiên bản 0.38.0 theo mẫu có hậu tố ngày, SECURITY.md nói dưới v1, không backport vá lỗi: phải theo dõi bản mới. Mặc định bật kiểm bản mới qua api.github.com (`disable_app_version_check = false`) và có nhắc tài trợ hằng năm (mục `[sponsor]` trong config; tên biến `SPONSOR_EMAIL_REMINDER_DISABLE` cho thấy là email). IP geo qua Maxmind chỉ khi cấu hình. Repo chứa `AGENTS.md`, `CLAUDE.md` và mục "If you are an AI Agent" trong SECURITY.md: chỉ dẫn cho người đóng góp bằng AI, không áp dụng cho người dùng thư viện. Cargo.toml chỉ ghi một tác giả, nên rủi ro phụ thuộc người duy trì (suy luận). |
+| So với | Authelia (portal xác thực cho reverse proxy), Authentik (IdP đầy đủ, Python), Keycloak (Java, rộng nhất, nặng), node-oidc-provider (thư viện OIDC Node chứ không phải sản phẩm), Better Auth (thư viện TypeScript). |
+| Nguồn | [README](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/README.md) · [LICENSE](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/LICENSE) · [Cargo.toml](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/Cargo.toml) · [code_style.yaml](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/.github/workflows/code_style.yaml) · [clients.rs](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/src/data/src/entity/clients.rs) · [app_version.rs](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/src/data/src/entity/app_version.rs) · [justfile](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/justfile) · [config.toml](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/config.toml) · [SECURITY.md](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/SECURITY.md) |
+
+<a id="n2-zitadel-oidc"></a>
+
+### zitadel/oidc
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/zitadel/oidc |
+| License | Apache-2.0 (file LICENSE, có NOTICE) |
+| Phiên bản đã đọc | `842e2a4f9b11c5ac8ef984ae6595ca08004585bb` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, go.mod, .github/workflows/release.yml, .github/workflows/otel-k6-compat.yml, pkg/op/auth_request.go, pkg/op/authorize_parity_test.go, SECURITY.md; chưa chạy upstream |
+| Khoảng trống lấp | Thư viện OIDC client (RP) và server (OP) bằng Go, bám chuẩn, để học cách kiểm tra tuân chuẩn bằng máy |
+| Cơ chế đáng học | - `ValidateAuthReqRedirectURI` và `validateAuthReqRedirectURINative`: https hợp lệ nếu khớp đăng ký; http chỉ cho DevMode, client bí mật với response_type code, hoặc loopback của app native bỏ qua cổng theo RFC 8252 §7.3 (`pkg/op/auth_request.go`). <br>- `ValidateAuthReqCodeChallengeMethod` từ chối phương thức PKCE không hỗ trợ khi có `code_challenge`; phương thức rỗng được coi là `plain` theo RFC 7636 (`auth_request.go`). <br>- `authorize_parity_test.go` chạy cùng một bộ kịch bản qua `Provider` và `op.Server` (hai cài đặt `/authorize` trong thư viện) để chúng không lệch nhau. <br>- Ví dụ chạy được ở `example/server` (OP thử với người dùng mẫu) và `example/client/app` (RP); đây là mã mẫu, không dùng làm sản phẩm. |
+| Tiêu chí và cách kiểm | CI `release.yml`: `go test -race -v -coverprofile ... ./pkg/...` trên Go 1.26 và 1.27, đẩy độ phủ Codecov, rồi semantic-release khi push nhánh main hoặc next; `otel-k6-compat.yml` chạy script kiểm không để OpenTelemetry vượt phiên bản k6. Repo có 122 hàm `Test*` trong `pkg/op` (đếm bằng grep). Bộ kiểm tuân chuẩn OpenID **không nằm trong repo**: chứng nhận RP (profile basic và config) là tuyên bố trong README, dẫn tới trang plan của OpenID, **chưa xác minh**. |
+| Giới hạn và rủi ro | Mô tả của trinh sát chưa chính xác: README chỉ nói RP được chứng nhận (basic, config); không nói OP được chứng nhận. README tự ghi giới hạn: Hybrid Flow chưa có ở OP, Implicit không có ở RP, mTLS chưa có, OAuth Metadata (RFC 8414) chưa có ở RP. Không nói OAuth 2.1; chú thích mã nói phương thức PKCE rỗng được coi là `plain`. Người duy trì báo "hạn chế thời gian review tính năng" (README). Tên module v3, nhánh `next` là v4 đang phát triển. Phụ thuộc `github.com/golang/mock v1.6.0` (kho gốc đã lưu trữ, chưa xác minh) trong go.mod. Mã ví dụ dùng mật khẩu mặc định `verysecure`: không triển khai thật. Có OpenTelemetry bật mặc định (tắt bằng build tag `no_otel`); log ra `slog` toàn cục. Chính sách bảo mật trỏ về repo zitadel/zitadel. |
+| So với | node-oidc-provider (OP bằng Node), Authlib (Python), Keycloak, Rauthy trong cùng nhóm (sản phẩm IdP đầy đủ, không phải thư viện). |
+| Nguồn | [README](https://github.com/zitadel/oidc/blob/842e2a4f9b11c5ac8ef984ae6595ca08004585bb/README.md) · [LICENSE](https://github.com/zitadel/oidc/blob/842e2a4f9b11c5ac8ef984ae6595ca08004585bb/LICENSE) · [go.mod](https://github.com/zitadel/oidc/blob/842e2a4f9b11c5ac8ef984ae6595ca08004585bb/go.mod) · [release.yml](https://github.com/zitadel/oidc/blob/842e2a4f9b11c5ac8ef984ae6595ca08004585bb/.github/workflows/release.yml) · [otel-k6-compat.yml](https://github.com/zitadel/oidc/blob/842e2a4f9b11c5ac8ef984ae6595ca08004585bb/.github/workflows/otel-k6-compat.yml) · [auth_request.go](https://github.com/zitadel/oidc/blob/842e2a4f9b11c5ac8ef984ae6595ca08004585bb/pkg/op/auth_request.go) · [authorize_parity_test.go](https://github.com/zitadel/oidc/blob/842e2a4f9b11c5ac8ef984ae6595ca08004585bb/pkg/op/authorize_parity_test.go) · [SECURITY.md](https://github.com/zitadel/oidc/blob/842e2a4f9b11c5ac8ef984ae6595ca08004585bb/SECURITY.md) |
+
+<a id="n2-webauthn4j"></a>
+
+### WebAuthn4J
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/webauthn4j/webauthn4j |
+| License | Apache-2.0 (file LICENSE.txt) |
+| Phiên bản đã đọc | `b33c6fb6bc542968193779f3fbe4e23828b07bf3` (commit 2026-11-02) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE.txt, gradle.properties, .github/workflows/ci.yml, docs/.../introduction.adoc, CoreAuthenticationDataVerifier.java, DefaultCoreMaliciousCounterValueHandler.java; chưa chạy upstream |
+| Khoảng trống lấp | Thư viện xác minh WebAuthn/passkey phía server bằng Java, bám từng bước đặc tả |
+| Cơ chế đáng học | - `CoreAuthenticationDataVerifier.verify` làm tuần tự: kiểm credentialId thuộc `allowCredentials`, `RpIdHashVerifier`, cờ UP và UV theo cấu hình, ràng buộc BE/BS, chữ ký qua `assertionSignatureVerifier` (dẫn WebAuthn Level 3 §7.2, `verifier/CoreAuthenticationDataVerifier.java`). <br>- Bộ đếm chữ ký: nếu số trình bày hoặc số đã lưu khác 0 mà số trình bày không lớn hơn thì gọi `maliciousCounterValueDetected`; mặc định ném `MaliciousCounterValueException` (cloned authenticator), có thể thay bằng handler riêng. <br>- Challenge không do thư viện tự giữ: mã ghi rõ người gọi phải tự đưa challenge và so với giá trị lưu ở server (chú thích trong `verify`). <br>- Có module `webauthn4j-metadata` (FIDO MDS), `webauthn4j-appattest`, `webauthn4j-core-async`. |
+| Tiêu chí và cách kiểm | CI `ci.yml`: `./gradlew build javadoc asciidoc` trên JDK 25 và `./gradlew check` trên ma trận JDK 17/21/25 (Ubuntu) cộng JDK 25 trên Windows và macOS, chạy hằng ngày theo cron; có job `fido-mds-integration-test` riêng (chỉ thấy tên, chưa đọc nội dung), nên bước build chính loại nó. README tuyên bố qua mọi ca bắt buộc của FIDO2 Test Tools: **(chưa xác minh)**, không thấy kết quả trong repo. Thư mục `integration-tests` có bản mẫu cho Spring Security, Quarkus (đã thấy cây thư mục). |
+| Giới hạn và rủi ro | Mô tả của trinh sát là "bám Level 2/3": tài liệu nói passkeys là tên gọi thương mại của WebAuthn Level 3 và mã dẫn Level 3 §7.2; cụ thể mức hỗ trợ từng tính năng L3 chưa kiểm. `gradle.properties` ghi `isSnapshot=true` ở nhánh chính (bản phát hành 0.32.x, dưới 1.0: API còn có thể đổi). SafetyNet là định dạng Google đã ngừng khuyến nghị (chưa xác minh trạng thái hiện nay). Thư viện không lưu trạng thái: lộ rủi ro nếu tích hợp sai (tái dùng challenge, quên cập nhật counter). Tải MDS (nếu dùng module metadata) là dữ liệu rời máy tới dịch vụ FIDO. Không telemetry thấy trong file đã đọc. |
+| So với | Yubico java-webauthn-server (cùng nhiệm vụ Java, cung cấp đối tượng RelyingParty bậc cao), webauthn-ruby (Ruby), Rauthy dùng webauthn-rs thay vì thư viện này. |
+| Nguồn | [README](https://github.com/webauthn4j/webauthn4j/blob/b33c6fb6bc542968193779f3fbe4e23828b07bf3/README.md) · [LICENSE.txt](https://github.com/webauthn4j/webauthn4j/blob/b33c6fb6bc542968193779f3fbe4e23828b07bf3/LICENSE.txt) · [gradle.properties](https://github.com/webauthn4j/webauthn4j/blob/b33c6fb6bc542968193779f3fbe4e23828b07bf3/gradle.properties) · [ci.yml](https://github.com/webauthn4j/webauthn4j/blob/b33c6fb6bc542968193779f3fbe4e23828b07bf3/.github/workflows/ci.yml) · [introduction.adoc](https://github.com/webauthn4j/webauthn4j/blob/b33c6fb6bc542968193779f3fbe4e23828b07bf3/docs/src/reference/asciidoc/en/introduction.adoc) · [CoreAuthenticationDataVerifier.java](https://github.com/webauthn4j/webauthn4j/blob/b33c6fb6bc542968193779f3fbe4e23828b07bf3/webauthn4j-core/src/main/java/com/webauthn4j/verifier/CoreAuthenticationDataVerifier.java) · [DefaultCoreMaliciousCounterValueHandler.java](https://github.com/webauthn4j/webauthn4j/blob/b33c6fb6bc542968193779f3fbe4e23828b07bf3/webauthn4j-core/src/main/java/com/webauthn4j/verifier/DefaultCoreMaliciousCounterValueHandler.java) |
+
+<a id="n2-yubico-java-webauthn-server"></a>
+
+### java-webauthn-server (Yubico)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Yubico/java-webauthn-server |
+| License | BSD-2-Clause (phần Yubico) cộng BSD-3-Clause (phần mã gốc của Google), cùng nằm trong file COPYING; không có file LICENSE nên SPDX báo NOASSERTION |
+| Phiên bản đã đọc | `3a7edfb2609696808e8daad2508115bd43d88d3f` (commit 2026-11-09) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.adoc, COPYING, NEWS, .github/workflows/build.yml, FinishAssertionSteps.java, RelyingParty.java, FidoMetadataDownloader.java (grep), SECURITY.md; chưa chạy upstream |
+| Khoảng trống lấp | Thư viện WebAuthn server do Yubico duy trì, đáng đọc license vì SPDX báo NOASSERTION |
+| Cơ chế đáng học | - `FinishAssertionSteps` mô hình hóa quy trình xác minh đăng nhập thành chuỗi `Step5` đến `Step21`, mỗi bước `validate()` rồi `nextStep()`; bước 21 kiểm bộ đếm chữ ký nếu `validateSignatureCounter` bật. <br>- `RelyingParty` có mặc định: `allowOriginPort = false`, `allowOriginSubdomain = false`, `validateSignatureCounter = true`, `allowUntrustedAttestation = true` (mặc định chấp nhận attestation không tin cậy). <br>- `CredentialRepositoryV2` và `RelyingPartyV2` thêm giao diện hiện đại; NEWS 2.10.0 thêm ML-DSA-44/65/87 (cần JRE 24 trở lên hoặc provider ngoài). <br>- `FidoMetadataDownloader` tải và xác minh BLOB metadata FIDO theo chuỗi tin cậy GlobalSign R46, thử lại khi chuỗi chéo chuyển giao. |
+| Tiêu chí và cách kiểm | CI `build.yml`: `./gradlew clean test` trên JDK 17, 21, 25 (Temurin) cộng Zulu và Microsoft cho 25, cron hằng tuần; có workflow riêng về độ phủ, định dạng mã, CodeQL, kiểm chữ ký bản phát hành (mới thấy tên file). Kiểm bằng máy ở mức đơn vị; mức tuân chuẩn FIDO không khai trong các file đã đọc. |
+| Giới hạn và rủi ro | License: SPDX NOASSERTION là vì `COPYING` gộp hai điều khoản BSD (Yubico 2-clause 2014-2018 và Google 3-clause 2014, có điều khoản không dùng tên), không phải thiếu license; `project-convention-publish.gradle` ghi "Revised 2-clause BSD" cho gói công bố (đã grep) nên nhãn publish không nêu phần Google: cần ghi cả hai khi phân phối lại. README cảnh báo CVE-2022-21449 (JVM chấp nhận chữ ký ECDSA sai): phải dùng bản JDK đã vá. `allowUntrustedAttestation` mặc định `true`: nếu cần xác thực thiết bị thì phải đặt chủ động cùng nguồn tin cậy. Dùng MDS thì gọi mds.fidoalliance.org (dữ liệu rời máy, điều khoản pháp lý nằm trong chú thích mã). Phiên bản 2.10.1 theo semver (README cảnh báo một số phần không tính vào semver). |
+| So với | WebAuthn4J (cùng Java, lõi tách khỏi flow), webauthn-ruby, Rauthy (webauthn-rs). |
+| Nguồn | [README.adoc](https://github.com/Yubico/java-webauthn-server/blob/3a7edfb2609696808e8daad2508115bd43d88d3f/README.adoc) · [COPYING](https://github.com/Yubico/java-webauthn-server/blob/3a7edfb2609696808e8daad2508115bd43d88d3f/COPYING) · [NEWS](https://github.com/Yubico/java-webauthn-server/blob/3a7edfb2609696808e8daad2508115bd43d88d3f/NEWS) · [build.yml](https://github.com/Yubico/java-webauthn-server/blob/3a7edfb2609696808e8daad2508115bd43d88d3f/.github/workflows/build.yml) · [FinishAssertionSteps.java](https://github.com/Yubico/java-webauthn-server/blob/3a7edfb2609696808e8daad2508115bd43d88d3f/webauthn-server-core/src/main/java/com/yubico/webauthn/FinishAssertionSteps.java) · [RelyingParty.java](https://github.com/Yubico/java-webauthn-server/blob/3a7edfb2609696808e8daad2508115bd43d88d3f/webauthn-server-core/src/main/java/com/yubico/webauthn/RelyingParty.java) · [FidoMetadataDownloader.java](https://github.com/Yubico/java-webauthn-server/blob/3a7edfb2609696808e8daad2508115bd43d88d3f/webauthn-server-attestation/src/main/java/com/yubico/fido/metadata/FidoMetadataDownloader.java) · [SECURITY.md](https://github.com/Yubico/java-webauthn-server/blob/3a7edfb2609696808e8daad2508115bd43d88d3f/SECURITY.md) |
+
+<a id="n2-webauthn-ruby"></a>
+
+### webauthn-ruby
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/cedarcode/webauthn-ruby |
+| License | MIT (file LICENSE.txt, © 2018 Gonzalo; gemspec khai MIT) |
+| Phiên bản đã đọc | `87c67953e13fcb611fd0e0259d798b7668772350` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE.txt, webauthn.gemspec, .github/workflows/build.yml, lib/webauthn/authenticator_assertion_response.rb, lib/webauthn/configuration.rb, lib/webauthn/version.rb, CHANGELOG.md, spec/conformance/README.md; chưa chạy upstream |
+| Khoảng trống lấp | Thư viện WebAuthn/passkey cho Ruby và Rails, có test theo đặc tả và máy chủ phục vụ bộ kiểm tuân chuẩn FIDO |
+| Cơ chế đáng học | - `AuthenticatorAssertionResponse#verify` gọi lớp cha (challenge, origin, UP, UV, rp_id) rồi `verify_item(:signature, ...)` và `verify_item(:sign_count, ...)` (`authenticator_assertion_response.rb`). <br>- `valid_sign_count?`: nếu một trong hai số khác 0 thì bắt buộc số trình bày lớn hơn số đã lưu, nếu cả hai bằng 0 thì chấp nhận; nên `SignCountVerificationError` có thể ném khi số đếm không tăng, kể cả do đồng bộ passkey hoặc chạy song song (suy từ mã). <br>- `RelyingParty` mặc định thuật toán `ES256`, `PS256`, `RS256`, `verify_attestation_statement: true`, `silent_authentication: false`. <br>- v3.5.0 thêm kiểm crossOrigin/topOrigin, từ chối BS đặt mà BE không đặt, từ chối credential ID dài quá 1023 byte, bỏ kiểm TokenBinding (`CHANGELOG.md`). <br>- `spec/conformance/server.rb` là máy chủ REST cho FIDO2 Conformance Test Tool; README của thư mục nói rõ không phải mã production. |
+| Tiêu chí và cách kiểm | CI `build.yml` chạy rspec trên Ruby 3.1 đến 4.0 cộng truffleruby và Ruby 2.5 đến 3.0 với OpenSSL 1.1.1w; ma trận OpenSSL từ 1.1.1w đến 4.1.0, một số tổ hợp loại trừ có ghi lý do. Có rubocop trong gemspec dev. Chưa chạy bộ FIDO Conformance (phải đăng ký lấy công cụ): kết quả chứng nhận **chưa xác minh**. |
+| Giới hạn và rủi ro | Gem chỉ MIT nhưng kéo `android_key_attestation`, `safety_net_attestation`, `tpm-key_attestation`, `cbor`, `cose` (license từng gem chưa xác minh); `safety_net_attestation` gắn định dạng SafetyNet mà Google đã ngừng khuyến nghị (chưa xác minh). Phiên bản 3.5.1 (2026-11-10), người duy trì là công ty Cedarcode (hai tác giả ghi trong gemspec). Cấu hình toàn cục `WebAuthn.configure` dễ gây lẫn nếu nhiều RP trong một tiến trình (dùng `RelyingParty` riêng, chưa kiểm). Không telemetry thấy trong file đã đọc. |
+| So với | WebAuthn4J và Yubico java-webauthn-server (Java), Rauthy (webauthn-rs), Better Auth (plugin passkey phía TypeScript). |
+| Nguồn | [README](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/README.md) · [LICENSE.txt](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/LICENSE.txt) · [webauthn.gemspec](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/webauthn.gemspec) · [build.yml](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/.github/workflows/build.yml) · [authenticator_assertion_response.rb](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/lib/webauthn/authenticator_assertion_response.rb) · [configuration.rb](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/lib/webauthn/configuration.rb) · [version.rb](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/lib/webauthn/version.rb) · [CHANGELOG.md](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/CHANGELOG.md) · [conformance README](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/spec/conformance/README.md) |
+
+<a id="n2-passwordless-id-webauthn"></a>
+
+### @passwordless-id/webauthn
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/passwordless-id/webauthn |
+| License | MIT (LICENSE, © Arnaud Dagnelies) |
+| Phiên bản đã đọc | `41842c401f8dd8cb40b53be6eef4bb9ee30913ee` (commit 2026-11-04) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README, src/server.ts, src/client.ts, package.json và workflow node.js.yml; chưa chạy upstream |
+| Khoảng trống lấp | Xác thực hiện đại: passkey/WebAuthn (chỉ phần passkey; không có OAuth 2.1/OIDC như trinh sát gợi ý) |
+| Cơ chế đáng học | - Hai module nhỏ trong một gói: `client.register/authenticate` bọc `navigator.credentials` (`src/client.ts`, 255 dòng) và `server.verifyRegistration/verifyAuthentication` (`src/server.ts`, 260 dòng).<br>- Xác minh phía server bằng WebCrypto thuần, không phụ thuộc runtime: kiểm type, origin, challenge, hash rpId, cờ userPresent/userVerified, signCount tăng dần, rồi `crypto.subtle.verify` (RS256, ES256) trong `src/server.ts`.<br>- Chuyển chữ ký ES256 từ DER sang dạng raw và từ chối mọi DER không chuẩn tắc (số 0 đầu thừa, số âm, dài quá) để mỗi cặp (r, s) chỉ có đúng một chữ ký chấp nhận được.<br>- `challenge` và `origin` nhận giá trị hoặc hàm kiểm (có thể async), để ứng dụng tự tra challenge một lần dùng trong kho của mình. |
+| Tiêu chí và cách kiểm | Có bộ test jest (`src/__test__`: client 18, server 28, parsers 6, utils 6 ca theo đếm test/it) và workflow Node.js CI chạy `npm run build` rồi `npm test` trên Node 24; không có ngưỡng coverage trong workflow. Kiểm bằng máy là test đơn vị, không phải kiểm tuân thủ FIDO (chưa xác minh). |
+| Giới hạn và rủi ro | MIT, nhưng chỉ 1 người duy trì (chưa xác minh số người đóng góp). `verifyRegistration` chỉ rút thông tin credential từ `authenticatorData`, không thấy kiểm chuỗi attestation trong `server.ts` (grep chỉ thấy mã dùng `attestationObject` để chuyển dữ liệu). Chỉ hỗ trợ RS256 và ES256 (EdDSA ghi chú là trình duyệt chưa hỗ trợ). `src/authenticators.ts` có `fetch` tới mds.fidoalliance.org, chỉ khi người dùng gọi. `verbose: true` ghi log khóa và chữ ký ra console. Không cung cấp phiên, lưu credential, khôi phục tài khoản: đó là việc của ứng dụng. Cần Node 19+ (README). |
+| So với | Better Auth, Authlib, node-oidc-provider (những cái này là cả hệ danh tính; đây chỉ là helper passkey nhỏ). Chọn khi chỉ cần passkey và tự quản người dùng. |
+| Nguồn | [LICENSE](https://github.com/passwordless-id/webauthn/blob/41842c401f8dd8cb40b53be6eef4bb9ee30913ee/LICENSE) · [README.md](https://github.com/passwordless-id/webauthn/blob/41842c401f8dd8cb40b53be6eef4bb9ee30913ee/README.md) · [src/server.ts](https://github.com/passwordless-id/webauthn/blob/41842c401f8dd8cb40b53be6eef4bb9ee30913ee/src/server.ts) · [src/client.ts](https://github.com/passwordless-id/webauthn/blob/41842c401f8dd8cb40b53be6eef4bb9ee30913ee/src/client.ts) · [package.json](https://github.com/passwordless-id/webauthn/blob/41842c401f8dd8cb40b53be6eef4bb9ee30913ee/package.json) · [.github/workflows/node.js.yml](https://github.com/passwordless-id/webauthn/blob/41842c401f8dd8cb40b53be6eef4bb9ee30913ee/.github/workflows/node.js.yml) |
+
+<a id="n2-authgear-server"></a>
+
+### Authgear Server
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/authgear/authgear-server |
+| License | Apache-2.0 (LICENSE.txt) |
+| Phiên bản đã đọc | `26f7897178e00e83814b6e2bed6a8f0789746bce` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE.txt, README, AGENTS.md, gcra.go, lockout.go, hook_web.go, account-lockout.md, run-checks.yaml và Makefile; chưa chạy upstream |
+| Khoảng trống lấp | Xác thực hiện đại: máy chủ danh tính tự host thay Auth0/Clerk với passkey, MFA, SSO (OIDC/OAuth 2.0/SAML) |
+| Cơ chế đáng học | - Rate limit kiểu GCRA chạy trong Redis bằng script Lua (`pkg/lib/ratelimit/gcra.go`, có `gcra_test.go`): tính theo thời gian của Redis nên các node không lệch đồng hồ.<br>- Khóa tài khoản có lùi mũ (`docs/specs/account-lockout.md`: `max_attempts`, `minimum_duration`, `maximum_duration`, `backoff_factor`, kiểu `per_user` hoặc `per_user_per_ip`), cài ở `pkg/lib/authn/mfa/lockout.go` cho cả mã khôi phục.<br>- Webhook ký HMAC-SHA256 trên thân JSON, gửi ở header `x-authgear-body-signature` (`pkg/lib/hook/hook_web.go`, `http.go`), chỉ ký thân, không ký timestamp hay id.<br>- Repo có `AGENTS.md` mô tả bố cục và thư mục skill `.claude/skills` (add-go-test, api-design, review-pr...): mẫu hướng dẫn agent cho một monorepo Go lớn. |
+| Tiêu chí và cách kiểm | CI (`run-checks.yaml`) đã mở: chạy make check-tidy, vendor, govulncheck, lint, test, fmt; `make test` là `go test ./devtools/goanalysis/... ./cmd/... ./pkg/... -timeout 1m30s`. Có thư mục e2e và k6 (chưa mở). Kiểm bằng máy rộng, nhưng chưa chạy. |
+| Giới hạn và rủi ro | Apache-2.0 nhưng đây là hệ nhiều thành phần (Go server, portal, authui React; thư mục gốc có cấu hình Postgres, Redis, pgbouncer, nginx) nên vận hành nặng; bản SaaS Authgear Cloud đi kèm và README quảng bá. Có mã PostHog trong `cmd/portal/analytic` (lệnh đồng bộ nhóm, cấu hình tùy chọn; mặc định bật hay không: chưa xác minh) và OpenTelemetry. Danh sách khách hàng trong README là tuyên bố tác giả (chưa xác minh). Bảo trì tích cực (commit 2026-11-23). |
+| So với | Keycloak, authentik, Authelia, Ory Hydra, Better Auth. Gần Keycloak/authentik nhất về phạm vi; khác ở chỗ viết bằng Go và có portal quản trị riêng. |
+| Nguồn | [LICENSE.txt](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/LICENSE.txt) · [README.md](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/README.md) · [AGENTS.md](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/AGENTS.md) · [pkg/lib/ratelimit/gcra.go](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/pkg/lib/ratelimit/gcra.go) · [pkg/lib/authn/mfa/lockout.go](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/pkg/lib/authn/mfa/lockout.go) · [pkg/lib/hook/hook_web.go](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/pkg/lib/hook/hook_web.go) · [docs/specs/account-lockout.md](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/docs/specs/account-lockout.md) · [.github/workflows/run-checks.yaml](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/.github/workflows/run-checks.yaml) · [Makefile](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/Makefile) |
+
+<a id="n2-standard-webhooks"></a>
+
+### Standard Webhooks
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/standard-webhooks/standard-webhooks |
+| License | Apache-2.0 cho đặc tả (LICENSE); thư mục libraries/ có LICENSE MIT riêng (© Svix) |
+| Phiên bản đã đọc | `4a8ee40c5bcb6157f856905cc8871040d41a78ce` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, libraries/LICENSE, spec/standard-webhooks.md, extension endpoint-verification, libraries/javascript/src/index.ts, skill receiving-webhooks và javascript-lint.yml; chưa chạy upstream |
+| Khoảng trống lấp | Kiến trúc event-driven và webhook: đặc tả ký, kiểm timestamp, retry cho webhook |
+| Cơ chế đáng học | - Chữ ký phủ cả metadata: ký `msg_id.timestamp.payload` bằng HMAC-SHA256 (tiền tố `v1`, secret `whsec_`, 24-64 byte) hoặc ed25519 (`v2a`, thêm endpoint id) (`spec/standard-webhooks.md`).<br>- Header `webhook-id`, `webhook-timestamp`, `webhook-signature` (danh sách cách nhau bằng dấu cách để xoay khóa không gián đoạn); `webhook-id` làm khóa idempotency.<br>- Thư viện JS hằng số dung sai 5 phút, từ chối timestamp quá cũ hoặc quá mới, so sánh chữ ký thời gian hằng, ký trên byte thô của thân (`libraries/javascript/src/index.ts`).<br>- Phụ lục retry: lịch lùi mũ nhiều ngày có jitter, 2xx là thành công, 3xx là lỗi, 410 thì tắt endpoint, 429/502/504 thì giảm tải, tôn trọng `retry-after`; extension xác minh endpoint bằng thử thách HMAC khóa dẫn xuất (`spec/extensions/endpoint-verification.md`).<br>- `skills/receiving-webhooks/SKILL.md` là skill hướng dẫn agent viết bộ nhận webhook (xác minh thân thô, trả 2xx nhanh, xử lý bất đồng bộ). |
+| Tiêu chí và cách kiểm | CI theo từng ngôn ngữ (lint/release cho C#, Elixir, Go, Java, JS, PHP, Python, Ruby, Rust; mở `javascript-lint.yml`: `npm ci`, `npm run check`, `npm test` trên Node 24). Có test ở các thư viện (đã thấy `webhook.test.ts`, `tests/test_webhooks.py`, chưa chạy). Không có bộ test-vector dùng chung giữa các ngôn ngữ mà tôi thấy (chưa xác minh). |
+| Giới hạn và rủi ro | Đặc tả phiên bản 1.0.0, nhiều chỗ chỉ là khuyến nghị (should) nên khả năng tương thích phụ thuộc từng nhà cung cấp; thư viện do Svix duy trì (README thư viện và LICENSE nêu Svix). Chữ ký đối xứng cần giữ secret ở cả hai phía, spec tự khuyến nghị ed25519 khi không kiểm soát cả hai. Spec không quy định dạng payload. Không có telemetry thấy trong thư viện JS đã đọc. |
+| So với | Svix (dịch vụ webhook, không có hồ sơ riêng), AsyncAPI Spec, FastStream; trong chính lô này Authgear ký webhook HMAC theo header riêng, không theo chuẩn này. |
+| Nguồn | [LICENSE](https://github.com/standard-webhooks/standard-webhooks/blob/4a8ee40c5bcb6157f856905cc8871040d41a78ce/LICENSE) · [libraries/LICENSE](https://github.com/standard-webhooks/standard-webhooks/blob/4a8ee40c5bcb6157f856905cc8871040d41a78ce/libraries/LICENSE) · [spec/standard-webhooks.md](https://github.com/standard-webhooks/standard-webhooks/blob/4a8ee40c5bcb6157f856905cc8871040d41a78ce/spec/standard-webhooks.md) · [spec/extensions/endpoint-verification.md](https://github.com/standard-webhooks/standard-webhooks/blob/4a8ee40c5bcb6157f856905cc8871040d41a78ce/spec/extensions/endpoint-verification.md) · [libraries/javascript/src/index.ts](https://github.com/standard-webhooks/standard-webhooks/blob/4a8ee40c5bcb6157f856905cc8871040d41a78ce/libraries/javascript/src/index.ts) · [skills/receiving-webhooks/SKILL.md](https://github.com/standard-webhooks/standard-webhooks/blob/4a8ee40c5bcb6157f856905cc8871040d41a78ce/skills/receiving-webhooks/SKILL.md) · [.github/workflows/javascript-lint.yml](https://github.com/standard-webhooks/standard-webhooks/blob/4a8ee40c5bcb6157f856905cc8871040d41a78ce/.github/workflows/javascript-lint.yml) |
+
+<a id="n2-evolu"></a>
+
+### Evolu
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/evoluhq/evolu |
+| License | MIT (LICENSE gốc; packages/*/package.json đều MIT, riêng apps/web/LICENSE.md là Tailwind UI License, không mở) |
+| Phiên bản đã đọc | `4eedb2272841bdeb2d7c3387784ba157d2f33f1c` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README, AGENTS.md, Protocol.ts, Timestamp.ts, Owner.ts, Crypto.ts, ADR WebSocket, ci.yaml và apps/web/LICENSE.md; chưa chạy upstream |
+| Khoảng trống lấp | Local-first / CRDT: SQLite cục bộ, đồng bộ mã hóa đầu cuối qua relay |
+| Cơ chế đáng học | - Giao thức đồng bộ nhị phân dùng Range-Based Set Reconciliation (như Negentropy), có header owner, request/response/broadcast và mã lỗi (`packages/common/src/local-first/Protocol.ts`).<br>- Sắp xếp xung đột bằng đồng hồ logic lai (HLC) và last-writer-wins theo cột; kiểm lệch đồng hồ `maxDrift` 5 phút, cách ly thông điệp quá xa tương lai (`Timestamp.ts`).<br>- Khóa dẫn xuất từ một `OwnerSecret` bằng SLIP-21 thành `OwnerId`, `OwnerEncryptionKey`, `OwnerWriteKey`; dữ liệu mã hóa XChaCha20-Poly1305 và đệm PADMÉ, relay chỉ thấy byte mã hóa (`Owner.ts`, `Crypto.ts`).<br>- Quyết định kiến trúc ghi thành ADR (`docs/adr/`), ví dụ chọn WebSocket thay WebTransport vì lỗi WebKit; `AGENTS.md` dài chỉ dẫn quy ước cho agent. |
+| Tiêu chí và cách kiểm | CI `ci.yaml` đã mở: gọi `checks.yaml`, workflow ghim SHA, `permissions: {}` mặc định; `pnpm verify` gồm format, typecheck, lint, build, test, bench giao thức. Gần mọi module có file `.test.ts` cạnh (Protocol, Timestamp, Owner, Crypto). Kiểm bằng máy mạnh nhưng chưa chạy. |
+| Giới hạn và rủi ro | MIT cho mã thư viện, nhưng `apps/web` (website tài liệu) mang Tailwind UI License, không phải mã mở: đừng sao chép phần đó. Relay mặc định của client là `wss://free.evoluhq.com/` (`Evolu.ts`): dữ liệu mã hóa vẫn rời máy tới máy chủ của tác giả nếu không đổi, cần tự host relay (`apps/relay`) nếu muốn kiểm soát. Quyền xóa dữ liệu thật chưa có (ghi rõ trong `Owner.ts`: chưa cài đặt xóa owner). Dùng TypeScript 6/7 và Node LTS mới nhất, chỉ hỗ trợ bản chính hiện tại của công cụ (AGENTS.md). Tuyên bố bảo mật là của tác giả, chưa được kiểm toán độc lập (chưa xác minh). |
+| So với | TinyBase, TanStack Query. TinyBase cũng có đồng bộ; TanStack Query là bộ nhớ đệm phía server chứ không phải local-first. |
+| Nguồn | [LICENSE](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/LICENSE) · [README.md](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/README.md) · [AGENTS.md](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/AGENTS.md) · [packages/common/src/local-first/Protocol.ts](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/packages/common/src/local-first/Protocol.ts) · [packages/common/src/local-first/Timestamp.ts](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/packages/common/src/local-first/Timestamp.ts) · [packages/common/src/local-first/Owner.ts](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/packages/common/src/local-first/Owner.ts) · [packages/common/src/Crypto.ts](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/packages/common/src/Crypto.ts) · [docs/adr/sync-uses-websocket-not-webtransport.md](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/docs/adr/sync-uses-websocket-not-webtransport.md) · [.github/workflows/ci.yaml](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/.github/workflows/ci.yaml) · [apps/web/LICENSE.md](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/apps/web/LICENSE.md) |
+
+<a id="n2-classic-jazz"></a>
+
+### Classic Jazz (CoJSON)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/garden-co/classic-jazz |
+| License | MIT |
+| Phiên bản đã đọc | `e51832fd1f495a771d89f9c26aa9f6a62c3e0690` (commit 2026-11-02) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE.txt, permissions.ts, coMap.ts, package.json, 2 workflow; chưa chạy upstream |
+| Khoảng trống lấp | Local-first / CRDT |
+| Cơ chế đáng học | - Mỗi giao dịch của `ownedByGroup` được kiểm vai trò tác giả (reader/writer/manager/admin/writeOnly) tại thời điểm tạo (`groupContent.atTime(tx.currentMadeAt)`), giao dịch sai quyền bị `markInvalid` — `packages/cojson/src/permissions.ts`.<br>- CoMap lưu chuỗi thao tác set/del có `madeAt` và sắp xếp bằng `compareTransactions`, đọc được trạng thái tại một thời điểm (`atTime`) nên có lịch sử và hoàn nguyên — `coValues/coMap.ts`.<br>- Lõi giao thức tách khỏi lưu trữ: các gói `cojson-storage-indexeddb/sqlite/do-sqlite`, `cojson-transport-ws`, cùng lõi Rust (`crates/cojson-core*`, napi/wasm/rn). |
+| Tiêu chí và cách kiểm | CI chạy unit test (`pnpm test:ci`, build napi, Playwright), Biome `biome ci`, workflow e2e React Native; chưa xác minh độ phủ hay chạy được cục bộ. Kiểm bằng máy có (test + lint), không có ngưỡng điểm. |
+| Giới hạn và rủi ro | MIT (LICENSE.txt, Garden Computing 2025). Bản classic được duy trì thấp hơn v2 (README khuyên v2; chưa xác minh chính sách bảo trì). Tuyên bố 'built-in auth, orgs, multiplayer, encryption' chưa kiểm từng mục; mã hoá/khoá nằm ở `crypto/` dùng blake3, chưa đọc kỹ. Jazz Cloud là dịch vụ tuỳ chọn, tự host được theo README (chưa xác minh). |
+| So với | loro (CRDT thư viện), tinybase (store local-first) |
+| Nguồn | [README.md](https://github.com/garden-co/classic-jazz/blob/e51832fd1f495a771d89f9c26aa9f6a62c3e0690/README.md) · [LICENSE.txt](https://github.com/garden-co/classic-jazz/blob/e51832fd1f495a771d89f9c26aa9f6a62c3e0690/LICENSE.txt) · [permissions.ts](https://github.com/garden-co/classic-jazz/blob/e51832fd1f495a771d89f9c26aa9f6a62c3e0690/packages/cojson/src/permissions.ts) · [coMap.ts](https://github.com/garden-co/classic-jazz/blob/e51832fd1f495a771d89f9c26aa9f6a62c3e0690/packages/cojson/src/coValues/coMap.ts) · [package.json](https://github.com/garden-co/classic-jazz/blob/e51832fd1f495a771d89f9c26aa9f6a62c3e0690/packages/cojson/package.json) · [unit-test.yml](https://github.com/garden-co/classic-jazz/blob/e51832fd1f495a771d89f9c26aa9f6a62c3e0690/.github/workflows/unit-test.yml) · [code-quality.yml](https://github.com/garden-co/classic-jazz/blob/e51832fd1f495a771d89f9c26aa9f6a62c3e0690/.github/workflows/code-quality.yml) |
+
+<a id="n2-svix-webhooks"></a>
+
+### Svix Webhooks
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/svix/svix-webhooks |
+| License | MIT |
+| Phiên bản đã đọc | `fadf10aabf831d564cd943483b68cd2f4923db29` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, worker.rs, retry.rs, idempotency.rs, config.default.toml, recovery.rs, rust/src/webhooks.rs, server-ci.yml, LICENSE; chưa chạy upstream |
+| Khoảng trống lấp | Gửi và nhận webhook an toàn: ký, retry, replay, idempotency |
+| Cơ chế đáng học | - `worker.rs::sign_msg` ký `{msg_id}.{timestamp}.{body}` bằng từng khoá của endpoint, nối nhiều chữ ký bằng dấu cách để xoay khoá không gián đoạn.<br>- `config.default.toml`: `retry_schedule = [5,300,1800,7200,18000,36000,36000]`; `cfg.rs` có `endpoint_failure_disable_after` và giới hạn timeout 1–30 giây.<br>- `recovery.rs`: tải lại tin lỗi của một endpoint theo khoảng thời gian, bỏ qua tin đã thành công, giới hạn 10.000.<br>- `rust/src/webhooks.rs::verify_inner`: kiểm timestamp trong 5 phút và so khớp chữ ký không rò thời gian. |
+| Tiêu chí và cách kiểm | Server CI chạy fmt, cargo-machete, cargo-sort, clippy `-D warnings`, kiểm OpenAPI không đổi và `./run-tests.sh` với Docker Compose (Postgres, Redis); có workflow riêng cho SDK và bảo mật. Chưa mở các test cụ thể. |
+| Giới hạn và rủi ro | - MIT cho server và SDK; thư mục `bridge/` có LICENSE riêng (đã thấy tệp, chưa đọc nội dung).<br>- Cờ `dangerous_disable_tls_verification` tồn tại trong cấu hình (`cfg.rs`), mặc định tắt; `sentry_dsn` tuỳ chọn.<br>- Dispatch ra URL do khách hàng cấu hình nên cần chặn SSRF ở tầng mạng (chưa kiểm cơ chế chặn trong mã).<br>- Dịch vụ cloud Svix là sản phẩm riêng; bản tự host thiếu một số tính năng của cloud (chưa xác minh). |
+| So với | hookdeck và convoy chưa có hồ sơ trong kho; n8n và activepieces (nhận webhook trong luồng, không phải máy chủ gửi); temporal (retry ở mức workflow) |
+| Nguồn | [README.md](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/README.md) · [LICENSE](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/LICENSE) · [worker.rs](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/server/svix-server/src/worker.rs) · [retry.rs](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/server/svix-server/src/core/retry.rs) · [idempotency.rs](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/server/svix-server/src/core/idempotency.rs) · [config.default.toml](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/server/svix-server/config.default.toml) · [recovery.rs](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/server/svix-server/src/v1/endpoints/endpoint/recovery.rs) · [webhooks.rs](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/rust/src/webhooks.rs) · [server-ci.yml](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/.github/workflows/server-ci.yml) |
+
+<a id="n2-nango"></a>
+
+### Nango
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/NangoHQ/nango |
+| License | Elastic License 2.0 (ELv2); không phải giấy phép mã nguồn mở theo OSI |
+| Phiên bản đã đọc | `510abbf332e83e7c28f44f16b07880aec3540944` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, LICENSE_SHORT, self-hosting.mdx, self-managed.mdx, refresh.ts, connections/utils.ts, license.ts (hai file), productTracking.ts, tests.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Kết nối OAuth/tích hợp bên thứ ba cho agent, quản lý và làm mới token (gói tự host có giới hạn) |
+| Cơ chế đáng học | - `refresh.ts`: `inFlightRefreshes` gộp các yêu cầu làm mới đồng thời trong một tiến trình, `getLocking()` khoá phân tán giữa các tiến trình (Redis), hook `onRefreshFailed` ghi lỗi.<br>- `connections/utils.ts`: `REFRESH_MARGIN_MS` 15 phút, `REFRESH_FAILURE_COOLDOWN_MS` 30 giây.<br>- `packages/license`: license Enterprise là JWS ES256 chứa `installation_id`, hạn dùng, `grace_until`, cờ `telemetry`; `packages/server/lib/license.ts` mới chỉ cảnh báo khi hết hạn theo `packages/self-hosting/README.md`.<br>- Mã hoá khoá: chỉ grep `encryption.manager.ts` (chưa đọc đủ), thấy báo lỗi không hỗ trợ xoay `NANGO_ENCRYPTION_KEY`. |
+| Tiêu chí và cách kiểm | CI `tests.yaml` chạy unit và integration test (phần đọc: kiểm bỏ qua, checkout, `npm ci`, build); có nhiều workflow khác (lint, validation, CLI). Chưa chạy gì. Số 1.300+ API và 10.000+ tool là tuyên bố trong README (chưa xác minh). |
+| Giới hạn và rủi ro | - Elastic License 2.0 áp cho toàn repo; "Copyright Nango Inc, all rights reserved" trong `LICENSE_SHORT`. Mang cơ chế vào dự án khác cần đọc kỹ hạn chế dịch vụ host.<br>- Tự host Enterprise (BYOC hoặc Self-Managed) có hosted telemetry mặc định bật (số liệu sử dụng ẩn danh ghi vào schema `hosted_telemetry`); BYOC gửi telemetry Datadog; mã có PostHog khi đặt `PUBLIC_POSTHOG_KEY`.<br>- Free self-hosting: một tổ chức, đăng ký mở theo mặc định, không phải ranh giới bảo mật giữa người dùng.<br>- Stack nặng: năm dịch vụ Node, Postgres, Redis, Elasticsearch, object storage (tài liệu). |
+| So với | composio (kết nối công cụ cho agent), authentik và keycloak (nhà cung cấp danh tính, khác chiều: Nango là client OAuth), activepieces (có license MIT trừ ee) |
+| Nguồn | [README.md](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/README.md) · [LICENSE](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/LICENSE) · [LICENSE_SHORT](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/LICENSE_SHORT) · [self-hosting.mdx](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/docs/guides/platform/self-hosting/self-hosting.mdx) · [self-managed.mdx](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/docs/guides/platform/self-hosting/self-managed.mdx) · [refresh.ts](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/packages/shared/lib/services/connections/credentials/refresh.ts) · [utils.ts](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/packages/shared/lib/services/connections/utils.ts) · [license.ts](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/packages/license/lib/license.ts) · [license.ts](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/packages/server/lib/license.ts) · [productTracking.ts](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/packages/shared/lib/utils/productTracking.ts) · [tests.yaml](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/.github/workflows/tests.yaml) |
+
+<a id="n2-immudb"></a>
+
+### immudb
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/codenotary/immudb |
+| License | BUSL-1.1 (Business Source License 1.1; Change License Apache-2.0; ngoại lệ chỉ cho dùng nội bộ hoặc sản phẩm không cạnh tranh gói trả phí của Codenotary) |
+| Phiên bản đã đọc | `971e7d34b50bcbfe8fd3a2fcf0f1efcf87b3376b` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, embedded/htree/htree.go, pkg/client/client.go, .github/workflows/push.yml, CHANGELOG.md; chưa chạy upstream |
+| Khoảng trống lấp | Nhật ký chống sửa (tamper-evident) cho workflow: audit log có bằng chứng mật mã phía client |
+| Cơ chế đáng học | - Cây Merkle trong `embedded/htree/htree.go` (tiền tố lá 0, tiền tố nút 1, SHA-256, `InclusionProof` gồm Leaf/Width/Terms) và cây nối thêm `embedded/ahtree` cho chứng minh nhất quán giữa hai trạng thái.<br>- Client kiểm bằng chứng khi đọc/ghi có xác minh: `store.VerifyInclusion(...)` được gọi ở nhiều chỗ trong `pkg/client/client.go` (và `sql.go` cho `VerifyRow`).<br>- Auditor và cờ `--audit-verify-values` (CHANGELOG v1.11.1) đọc lại từng giá trị đã commit và kiểm SHA-256 để phát hiện sửa trên đĩa.<br>- Chữ ký trạng thái phía server qua `pkg/signer` (ECDSA); dùng được nhúng như thư viện Go hoặc dịch vụ. |
+| Tiêu chí và cách kiểm | CI `.github/workflows/push.yml` chạy kiểm biên dịch với Go tối thiểu, gosec (`-no-fail`, chỉ báo cáo) và dựng binary có công chứng nguồn; đã mở file. Có test cho htree/ahtree/verification (thấy file `_test.go`), chưa chạy. |
+| Giới hạn và rủi ro | LICENSE là BUSL-1.1: dùng sản xuất nội bộ được, bán dạng dịch vụ cạnh tranh gói trả phí của Codenotary thì không; tự chuyển sang Apache-2.0 sau bốn năm cho từng phiên bản. Phiên bản trước 1.9DOM.2 dưới Apache-2.0 theo tuyên bố trong LICENSE (chưa xác minh từng tag). Không thấy telemetry khi grep `Telemetry` trong mã Go. Tuyên bố ``157M pulls`` của README là số tự báo (chưa xác minh). Chống sửa phụ thuộc client giữ trạng thái kiểm tin cậy. |
+| So với | dolt, cosign, presidio |
+| Nguồn | [README.md](https://github.com/codenotary/immudb/blob/971e7d34b50bcbfe8fd3a2fcf0f1efcf87b3376b/README.md) · [LICENSE](https://github.com/codenotary/immudb/blob/971e7d34b50bcbfe8fd3a2fcf0f1efcf87b3376b/LICENSE) · [htree.go](https://github.com/codenotary/immudb/blob/971e7d34b50bcbfe8fd3a2fcf0f1efcf87b3376b/embedded/htree/htree.go) · [client.go](https://github.com/codenotary/immudb/blob/971e7d34b50bcbfe8fd3a2fcf0f1efcf87b3376b/pkg/client/client.go) · [push.yml](https://github.com/codenotary/immudb/blob/971e7d34b50bcbfe8fd3a2fcf0f1efcf87b3376b/.github/workflows/push.yml) · [CHANGELOG.md](https://github.com/codenotary/immudb/blob/971e7d34b50bcbfe8fd3a2fcf0f1efcf87b3376b/CHANGELOG.md) |
+
+<a id="n2-databunker"></a>
+
+### Databunker
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/securitybunker/databunker |
+| License | MIT |
+| Phiên bản đã đọc | `9dbf1667d520458c1dc0c50019433ba0eb43f5ba` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, src/requests_api.go, src/utils/cryptor.go, .github/workflows/cy.yml, .github/workflows/semgrep.yml, version.txt; chưa chạy upstream |
+| Khoảng trống lấp | Két PII dạng token hóa và quyền chủ thể dữ liệu (DSAR): yêu cầu xóa/sửa/rút đồng ý có quy trình duyệt |
+| Cơ chế đáng học | - Hàng đợi yêu cầu chủ thể dữ liệu `src/requests_api.go`: liệt kê, xem, duyệt, hủy; `userReqApprove` rẽ nhánh theo `action` (forget-me xóa bản ghi, change-profile, change-app-data, agreement-withdraw) rồi đặt trạng thái approved kèm lý do; mọi thao tác ghi `CreateAuditEvent`.<br>- Mã hóa `src/utils/cryptor.go`: AES-256-GCM (nonce ngẫu nhiên), có tham chiếu cách chia khóa Shamir của Vault cho khóa chủ (đọc đầu file).<br>- Token hóa: người dùng và bản ghi được tham chiếu bằng UUID, lưu trữ qua `src/storage/` hỗ trợ SQLite, MySQL, PostgreSQL.<br>- Mô-đun đồng ý, cơ sở pháp lý, hoạt động xử lý, bản ghi chia sẻ: các file `agreements_*`, `lbasis_*`, `pactivities_*`, `sharedrecords_*` trong `src/` (đọc tên file). |
+| Tiêu chí và cách kiểm | CI `.github/workflows/cy.yml` chạy golint, go vet, go test (Go 1.22) mỗi lần push; `semgrep.yml` quét SAST hằng tuần và trên PR (cả hai đã mở). Có 10 file test trong `src/`, chưa chạy. |
+| Giới hạn và rủi ro | MIT. Gửi SMS qua Twilio khi bật, GeoIP và captcha là tùy chọn cấu hình (đọc `src/sms.go`, `geoip.go` ở mức tên/URL). Không đọc kỹ phần quản lý khóa chủ và chế độ demo (token `DEMO` trong README chỉ dùng thử). Cổng cập nhật chậm và phạm vi nhỏ nên cần kiểm thử bảo mật riêng trước khi chứa PII thật. Tính năng doanh nghiệp bị chuyển sang bản Pro. |
+| So với | presidio, infisical, openfga |
+| Nguồn | [README.md](https://github.com/securitybunker/databunker/blob/9dbf1667d520458c1dc0c50019433ba0eb43f5ba/README.md) · [LICENSE](https://github.com/securitybunker/databunker/blob/9dbf1667d520458c1dc0c50019433ba0eb43f5ba/LICENSE) · [requests_api.go](https://github.com/securitybunker/databunker/blob/9dbf1667d520458c1dc0c50019433ba0eb43f5ba/src/requests_api.go) · [cryptor.go](https://github.com/securitybunker/databunker/blob/9dbf1667d520458c1dc0c50019433ba0eb43f5ba/src/utils/cryptor.go) · [cy.yml](https://github.com/securitybunker/databunker/blob/9dbf1667d520458c1dc0c50019433ba0eb43f5ba/.github/workflows/cy.yml) · [semgrep.yml](https://github.com/securitybunker/databunker/blob/9dbf1667d520458c1dc0c50019433ba0eb43f5ba/.github/workflows/semgrep.yml) · [version.txt](https://github.com/securitybunker/databunker/blob/9dbf1667d520458c1dc0c50019433ba0eb43f5ba/version.txt) |
+
+<a id="n2-bytebase"></a>
+
+### Bytebase
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/bytebase/bytebase |
+| License | Mixed: MIT cho phần ngoài thư mục `enterprise` và ngoài mã điều khiển tính năng/gói; LICENSE.enterprise (dùng sản xuất cần thỏa thuận và gói trả phí) cho thư mục có `enterprise` trong tên và mã bật tính năng, quyền, gói |
+| Phiên bản đã đọc | `abfa69f897ae26fba91046dbef7d9c799fdb97d2` (commit 2026-11-24) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, LICENSE.enterprise, backend/enterprise/plan.yaml, backend/plugin/advisor/pg/rules.go, backend/server/server.go, backend/server/sql_review_telemetry.go, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Quản trị thay đổi schema CSDL: review SQL bằng luật, duyệt, rollout theo môi trường, sao lưu trước khi đổi dữ liệu |
+| Cơ chế đáng học | - Advisor SQL theo engine: `backend/plugin/advisor/pg/rules.go` đăng ký luật qua `advisor.RegisterRules(storepb.Engine_POSTGRES, ...)`, mỗi engine có thư mục riêng (mysql, mssql, oracle, snowflake, tidb, ...); `BUILTIN_PRIOR_BACKUP_CHECK` yêu cầu dữ liệu thay đổi chỉ DML và có schema backup.<br>- Bậc tính năng khai báo trong `backend/enterprise/plan.yaml` (FREE, TEAM, ENTERPRISE) và giới hạn số instance/seat (FREE: 10 instance, 20 seat); kiểm bằng `licenseService.IsFeatureEnabled`.<br>- Rollout theo môi trường và tác vụ có lịch (cờ tính năng PROGRESSIVE_ENVIRONMENT_DEPLOYMENT, SCHEDULED_ROLLOUT_TIME, ONLINE_SCHEMA_CHANGE trong plan FREE).<br>- Có MCP server để agent truy cập Bytebase (README), chưa đọc mã. |
+| Tiêu chí và cách kiểm | CI `.github/workflows/ci.yml` chạy `go test ./...` (cả `backend/tests`), kiểm go.mod gọn, golangci-lint, pnpm test frontend và kiểm liên kết tài liệu; đã mở file. Advisor PG có test `_test.go` (thấy tên), chưa chạy. |
+| Giới hạn và rủi ro | License nhiều lớp: thư mục `enterprise` và mã điều khiển gói dưới LICENSE.enterprise, dùng sản xuất cần thỏa thuận; mang cơ chế ra dự án khác cần chọn đúng file MIT. Telemetry: `server.go` khởi tạo `EnableMetricCollection: true` mặc định và `sql_review_telemetry.go` báo snapshot cấu hình SQL review kèm email và tên miền người dùng; tắt qua workspace setting (chưa xác minh đường tắt). Số sao 14.7k lấy từ web, chưa kiểm bằng API. |
+| So với | goose-database-migrations, dbhub, prisma-orm |
+| Nguồn | [README.md](https://github.com/bytebase/bytebase/blob/abfa69f897ae26fba91046dbef7d9c799fdb97d2/README.md) · [LICENSE](https://github.com/bytebase/bytebase/blob/abfa69f897ae26fba91046dbef7d9c799fdb97d2/LICENSE) · [LICENSE.enterprise](https://github.com/bytebase/bytebase/blob/abfa69f897ae26fba91046dbef7d9c799fdb97d2/LICENSE.enterprise) · [plan.yaml](https://github.com/bytebase/bytebase/blob/abfa69f897ae26fba91046dbef7d9c799fdb97d2/backend/enterprise/plan.yaml) · [rules.go](https://github.com/bytebase/bytebase/blob/abfa69f897ae26fba91046dbef7d9c799fdb97d2/backend/plugin/advisor/pg/rules.go) · [server.go](https://github.com/bytebase/bytebase/blob/abfa69f897ae26fba91046dbef7d9c799fdb97d2/backend/server/server.go) · [sql_review_telemetry.go](https://github.com/bytebase/bytebase/blob/abfa69f897ae26fba91046dbef7d9c799fdb97d2/backend/server/sql_review_telemetry.go) · [ci.yml](https://github.com/bytebase/bytebase/blob/abfa69f897ae26fba91046dbef7d9c799fdb97d2/.github/workflows/ci.yml) |
+
+<a id="n2-ariga-atlas"></a>
+
+### Atlas (ariga)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ariga/atlas |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `e933d0b70620e67e8e0972e47f2c03a1dc38d333` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, sql/sqlcheck/destructive/destructive.go, sql/sqlcheck/sqlcheck.go, sql/migrate/dir.go, cmd/atlas/internal/cmdapi/cmdapi.go, skills/atlas/SKILL.md, ci-go_oss.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Quản trị thay đổi schema CSDL: migration có lint và checksum, so khác biệt theo trạng thái mong muốn |
+| Cơ chế đáng học | - `sql/sqlcheck/`: giao diện `Analyzer` chạy trên từng file migration; analyzer `destructive` phát mã DS101 (drop schema), DS102 (drop table), DS103 (drop column) và mặc định coi là lỗi (`az.Error = true`); bỏ qua bảng tạm hoặc bảng được kiểm rỗng trước.<br>- Các analyzer khác trong repo: `datadepend` (MF101-MF104, sửa phụ thuộc dữ liệu), `incompatible` (BC101, BC102 đổi tên), `condrop` (CD101), cộng LT101 và MY101/MY102 (đếm mã trong mã nguồn; chưa mở từng file).<br>- `sql/migrate/dir.go`: thư mục migration có file `atlas.sum` (HashFile) làm checksum toàn vẹn; đổi file đã áp làm checksum sai, chặn drift.<br>- Hai quy trình: declarative (`schema apply` so với đích HCL/SQL, cần `--dev-url`) và versioned (`migrate diff/lint/apply`). |
+| Tiêu chí và cách kiểm | Lint chạy được như cổng CI: analyzer lỗi trả exit khác 0 (theo cấu hình `error`, chưa chạy). `ci-go_oss.yaml` (đã mở) chạy golangci-lint, kiểm `go generate` không lệch, rồi unit test và test theo dialect; matrix Go 1.22. Kiểm bằng máy cho phần lint; chưa chạy. |
+| Giới hạn và rủi ro | Repo này là bản Community (Apache-2.0): chỉ có driver `mysql`, `postgres`, `sqlite` trong `sql/`, 13 mã analyzer; `cmdapi.go` in thông báo định kỳ (mỗi tuần, tắt bằng `ATLAS_NO_UPGRADE_SUGGESTIONS`) rằng bản này thiếu checkpoint, testing, down migration, view, trigger, stored procedure. README nêu 15 CSDL, '50+ safety analyzers', testing framework và drift detection: phần lớn không có trong mã ở repo (chưa xác minh phần ở bản không-community, cài bằng `atlasgo.sh`, giấy phép bản đó chưa đọc). Repo không nhận pull request từ bên ngoài. Có tích hợp Atlas Cloud (`cloudapi`) báo cáo migration khi cấu hình. Thư mục `skills/` là bản sao định kỳ từ website. |
+| So với | goose (`goose-database-migrations`) là migration theo file SQL tuần tự, không có lint; Prisma ORM (`prisma-orm`) có migrate gắn ORM. |
+| Nguồn | [README](https://github.com/ariga/atlas/blob/e933d0b70620e67e8e0972e47f2c03a1dc38d333/README.md) · [LICENSE](https://github.com/ariga/atlas/blob/e933d0b70620e67e8e0972e47f2c03a1dc38d333/LICENSE) · [destructive.go](https://github.com/ariga/atlas/blob/e933d0b70620e67e8e0972e47f2c03a1dc38d333/sql/sqlcheck/destructive/destructive.go) · [sqlcheck.go](https://github.com/ariga/atlas/blob/e933d0b70620e67e8e0972e47f2c03a1dc38d333/sql/sqlcheck/sqlcheck.go) · [dir.go](https://github.com/ariga/atlas/blob/e933d0b70620e67e8e0972e47f2c03a1dc38d333/sql/migrate/dir.go) · [cmdapi.go](https://github.com/ariga/atlas/blob/e933d0b70620e67e8e0972e47f2c03a1dc38d333/cmd/atlas/internal/cmdapi/cmdapi.go) · [SKILL.md](https://github.com/ariga/atlas/blob/e933d0b70620e67e8e0972e47f2c03a1dc38d333/skills/atlas/SKILL.md) · [ci-go_oss.yaml](https://github.com/ariga/atlas/blob/e933d0b70620e67e8e0972e47f2c03a1dc38d333/.github/workflows/ci-go_oss.yaml) |
+
+<a id="n2-opal"></a>
+
+### OPAL (Open Policy Administration Layer)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/permitio/opal |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ddfbf26eaf6e2fca403f85f910e45c651f93de05` (commit 2026-11-10) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, packages/opal-client/opal_client/policy/updater.py, packages/opal-server/opal_server/policy/watcher/task.py, packages/opal-common/opal_common/config.py, packages/opal-common/opal_common/authentication/deps.py, .github/workflows/tests.yml; chưa chạy upstream |
+| Khoảng trống lấp | Quản trị phân quyền thời gian thực (policy engine xuống ứng dụng) |
+| Cơ chế đáng học | - `opal_server/policy/watcher/task.py` lắng nghe webhook và kích hoạt nguồn chính sách khi có thay đổi.<br>- `opal_client/policy/updater.py` (`update_policy`) lấy bundle đầy đủ hoặc delta theo `base_hash`, rồi ghi vào policy store trong `transaction_context` và đánh dấu giao dịch lỗi nếu ghi thất bại.<br>- Subscriber theo chủ đề thư mục chính sách, nên mỗi client chỉ nhận phần mình cần.<br>- Xác thực JWT giữa server và client (`opal_common/authentication/deps.py`). |
+| Tiêu chí và cách kiểm | `tests.yml` chạy flake8 (chặn lỗi cú pháp, phần còn lại exit-zero), pytest trên ma trận, job e2e dựng docker compose rồi truy vấn OPA, và job quét bí mật bằng gitleaks với phạm vi commit mới; có kiểm tương thích dây truyền (wire_compat) theo comment trong workflow. Kiểm bằng máy, nhưng ngưỡng chất lượng chủ yếu là test đạt. |
+| Giới hạn và rủi ro | Xác thực JWT chỉ bật khi cấu hình khóa công khai: mặc định `AUTH_PUBLIC_KEY` là None và `verify_logged_in` trả `{}` khi verifier tắt, tức mặc định không xác thực; cấu hình CORS mặc định cho phép mọi nguồn (`ALLOWED_ORIGINS` là `*`). `STATISTICS_ENABLED` mặc định tắt. Cần Redis khi chạy nhiều bản sao server (chưa xác minh chi tiết). Thư mục `cedar-agent` trong repo rỗng (chỉ là tham chiếu bên ngoài). Bảo trì tích cực. |
+| So với | `opa-conftest` và `cedar` (là engine/kiểm tra chính sách, OPAL là lớp phân phối); `toolhive` (cùng nhóm bài toán phân quyền nhưng cho MCP). |
+| Nguồn | [README.md](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/README.md) · [LICENSE](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/LICENSE) · [updater.py](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/packages/opal-client/opal_client/policy/updater.py) · [task.py](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/packages/opal-server/opal_server/policy/watcher/task.py) · [config.py](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/packages/opal-common/opal_common/config.py) · [deps.py](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/packages/opal-common/opal_common/authentication/deps.py) · [tests.yml](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/.github/workflows/tests.yml) |

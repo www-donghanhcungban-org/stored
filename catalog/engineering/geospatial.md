@@ -2,7 +2,7 @@
 
 # geospatial — Kỹ thuật công trình & không gian
 
-[← Mục lục catalog](../README.md) · 19 hồ sơ.
+[← Mục lục catalog](../README.md) · 22 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -20,8 +20,11 @@
 | [meshlab](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-cnr-isti-vclab-meshlab) | `cnr-isti-vclab/meshlab` | GPL-3.0 | 5.931 | đọc tài liệu 2026-11-23 | 27 | Ứng dụng xử lý mesh tam giác 3D để chỉnh, làm sạch, kiểm tra, render và chuyển đổi. |
 | [osmnx](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-gboeing-osmnx) | `gboeing/osmnx` | MIT | 5.908 | đọc tài liệu 2026-11-23 | 27 | Gói Python tải, mô hình hóa và phân tích mạng đường phố cùng dữ liệu OpenStreetMap. |
 | [geopandas](../../27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23-geopandas-geopandas) | `geopandas/geopandas` | BSD-3-Clause | 5.308 | đọc tài liệu 2026-11-23 | 27 | Mở rộng pandas với GeoSeries/GeoDataFrame và phép toán hình học qua Shapely. |
+| [TiTiler](../../27-3d-cad-bim-engineering/README.md#n2-titiler) | `developmentseed/titiler` | MIT | 1.210 | đọc mã 2026-11-23 | 27 | Bộ module FastAPI dựng tile server động cho COG, STAC và Zarr (qua rasterio/GDAL), hỗ trợ TileMatrixSet, OGC Tiles/WMTS và một phần OGC Maps. |
 | [GeoParquet (đặc tả)](../../27-3d-cad-bim-engineering/README.md#nt-opengeospatial-geoparquet) | `opengeospatial/geoparquet` | Apache-2.0 | 1.111 | đọc tài liệu 2026-11-23 | 27 | Đặc tả cách lưu dữ liệu vector địa lý trong Apache Parquet, kèm JSON Schema cho khóa metadata geo. |
 | [forge3d](../../27-3d-cad-bim-engineering/README.md#nt-forge3d) | `milos-agathon/forge3d` | Apache-2.0 OR MIT (lõi); tính năng Pro cần khóa thương mại | 864 | đọc mã 2026-11-23 | 27 | Bộ render Rust + wgpu có gói Python, thiên về địa hình và bản đồ: dựng từ DEM/GeoTIFF/điểm đám mây, path tracing, nhãn, chú giải, xuất PNG/SVG/PDF. |
+| [PySTAC](../../27-3d-cad-bim-engineering/README.md#n2-pystac) | `stac-utils/pystac` | Apache-2.0 | 469 | đọc mã 2026-11-23 | 27 | Thư viện Python để tạo, đọc, ghi và duyệt catalog STAC (SpatioTemporal Asset Catalog); |
+| [OGC API - Features (đặc tả)](../../27-3d-cad-bim-engineering/README.md#n2-ogcapi-features) | `opengeospatial/ogcapi-features` | OGC License (tùy biến, giống MIT nhưng bản sửa phải ghi chú chưa được OGC duyệt) | 387 | đọc tài liệu 2026-11-23 | 27 | Kho đặc tả của OGC API - Features (Part 1 Core đang là 1.1 trong thư mục, bản duyệt 1.0.1) cùng các phần mở rộng (CRS, CQL2 filtering, transactions...). |
 | [gpq](../../27-3d-cad-bim-engineering/README.md#nt-planetlabs-gpq) | `planetlabs/gpq` | Apache-2.0 | 249 | đọc mã 2026-11-23 | 27 | CLI Go (kèm bản WebAssembly) để validate và chuyển đổi GeoParquet với GeoJSON; |
 | [geoparquet-io (gpio)](../../27-3d-cad-bim-engineering/README.md#nt-geoparquet-io) | `geoparquet/geoparquet-io` | Apache-2.0 | 177 | đọc mã 2026-11-23 | 27 | CLI và thư viện (bản 1.8.0) dùng DuckDB và PyArrow để chuyển đổi, sắp Hilbert, nén ZSTD, thêm bbox và chỉ mục không gian cho GeoParquet 1.0, 1.1, 2.0, kèm gpio check và… |
 | [stac-geoparquet](../../27-3d-cad-bim-engineering/README.md#nt-stac-geoparquet) | `stac-utils/stac-geoparquet` | MIT | 159 | đọc mã 2026-11-23 | 27 | Thư viện Python chuyển STAC Item giữa JSON, Arrow, GeoParquet, pgstac và Delta Lake (hai loại sau là extras). |

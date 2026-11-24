@@ -2,9 +2,9 @@
 
 # docs — Học tập, tài liệu & tri thức
 
-[← Mục lục catalog](../README.md) · 88 hồ sơ.
+[← Mục lục catalog](../README.md) · 102 hồ sơ.
 
-## Site tài liệu (`docs-site`, 17)
+## Site tài liệu (`docs-site`, 20)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -23,10 +23,13 @@
 | [Scalar](../../16-docs-tools/README.md#ch-scalar) | `scalar/scalar` | MIT | 16.451 | đọc tài liệu 2026-11-23 | 16 | API reference từ OpenAPI + API client offline + gói openapi-to-markdown cho LLM; |
 | [Fumadocs](../../16-docs-tools/README.md#ch-fumadocs) | `fuma-nama/fumadocs` | MIT | 13.697 | đọc tài liệu 2026-11-23 | 16 | . |
 | [Starlight](../../16-docs-tools/README.md#ch-starlight) | `withastro/starlight` | MIT | 9.643 | đọc tài liệu 2026-11-23 | 16 | . |
+| [Read the Docs (nền tảng)](../../16-docs-tools/README.md#n2-readthedocs-platform) | `readthedocs/readthedocs.org` | MIT | 8.410 | đọc mã 2026-11-23 | 16 | Mã nguồn nền tảng Django/Celery build và host tài liệu Sphinx/MkDocs từ Git, có preview theo pull request. |
 | [Sphinx](../../16-docs-tools/README.md#ch-sphinx) | `sphinx-doc/sphinx` | BSD-2-Clause | 8.104 | đọc tài liệu 2026-11-23 | 16 | Docs Python; |
+| [Doxygen](../../16-docs-tools/README.md#n2-doxygen) | `doxygen/doxygen` | GPL-2.0 | 6.625 | đọc mã 2026-11-23 | 16 | Bộ sinh tài liệu từ mã chú thích cho C/C++, Java, Python, C#, PHP, Fortran, VHDL…, xuất HTML, LaTeX/PDF, XML, man, DocBook, RTF. |
 | [Zensical](../../16-docs-tools/README.md#ch-zensical) | `zensical/zensical` | MIT | 6.249 | đọc tài liệu 2026-11-23 | 16 | Kế nhiệm Material for MkDocs; |
+| [Pagefind](../../16-docs-tools/README.md#n2-pagefind) | `Pagefind/pagefind` | MIT | 5.575 | đọc mã 2026-11-23 | 16 | Công cụ Rust chạy sau bước build site: quét HTML, dựng chỉ mục chia mảnh (chunk) kèm WASM tìm kiếm phía trình duyệt, nên trình duyệt chỉ tải các mảnh cần cho từ khóa. |
 
-## Kiểm tài liệu (lint, link, chính tả) (`docs-quality`, 7)
+## Kiểm tài liệu (lint, link, chính tả) (`docs-quality`, 10)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -34,7 +37,10 @@
 | [Vale](../../16-docs-tools/README.md#factory-docs-executable-2026-11-04) | `vale-cli/vale` | MIT | 6.313 | đọc mã 2026-11-04 | 16 | Linter văn xuôi hiểu markup, style Microsoft/Google/Red Hat qua Packages; |
 | [typos](../../16-docs-tools/README.md#ch-typos) | `crate-ci/typos` | MIT OR Apache-2.0 | 4.232 | đọc tài liệu 2026-11-23 | 16 | Bắt lỗi gõ ít false positive, chạy được trên PR; |
 | [lychee](../../16-docs-tools/README.md#ch-lychee) | `lycheeverse/lychee` | MIT OR Apache-2.0 | 4.156 | đọc tài liệu 2026-11-23 | 16 | Kiểm link Rust bất đồng bộ, cache, kiểm anchor, lychee-action; |
+| [dprint](../../16-docs-tools/README.md#n2-dprint) | `dprint/dprint` | MIT | 4.148 | đọc mã 2026-11-23 | 16 | Nền tảng format mã đa ngôn ngữ viết bằng Rust, plugin chủ yếu là Wasm chạy sandbox (Markdown là plugin riêng dprint-plugin-markdown, không nằm trong repo này). |
+| [textlint](../../16-docs-tools/README.md#n2-textlint) | `textlint/textlint` | MIT | 3.218 | đọc mã 2026-11-23 | 16 | Linter văn bản tự nhiên theo kiểu ESLint: lõi (@textlint/kernel) không có rule sẵn, rule và plugin định dạng (Markdown, text mặc định) là gói npm cài riêng, hỗ trợ cả fi… |
 | [CSpell](../../16-docs-tools/README.md#ch-cspell) | `streetsidesoftware/cspell` | MIT | 1.709 | đọc tài liệu 2026-11-23 | 16 | Spell check cho code và docs; |
+| [woke](../../16-docs-tools/README.md#n2-woke) | `get-woke/woke` | MIT | 514 | đọc mã 2026-11-23 | 16 | Công cụ Go quét file văn bản tìm thuật ngữ không bao hàm (whitelist, blacklist, master/slave...) theo bộ luật YAML kèm gợi ý thay thế và ghi chú. |
 | [seiso](../../16-docs-tools/README.md#nt-seiso) | `scarletkc/seiso` | MIT | 196 | đọc mã 2026-11-23 | 16 | Linter cho quy ước tài liệu mà agent đọc lại làm ngữ cảnh: kind, một nơi sở hữu cho mỗi dữ kiện, con trỏ cụ thể, có exit code 0/1/2 dùng làm cổng CI. |
 | [Sybil](../../16-docs-tools/README.md#factory-docs-executable-2026-11-04) | `simplistix/sybil` | MIT | 91 | đọc mã 2026-11-04 | 16 | Đọc mã 4/11/2026: parser ví dụ reST/Markdown/MyST đưa vào pytest; |
 
@@ -71,7 +77,7 @@
 | [Presenton](../../16-docs-tools/README.md#anhkysuai-2026-11-23-presenton) | `presenton/presenton` | Apache-2.0 | 12.025 | đọc tài liệu 2026-11-23 | 16 | Sinh, chỉnh sửa và xuất thuyết trình bằng AI qua web, desktop hoặc API. |
 | [Slides](../../16-docs-tools/README.md#anhkysuai-2026-11-23-slides) | `maaslalani/slides` | MIT | 11.712 | đọc tài liệu 2026-11-23 | 16 | Thuyết trình Markdown ngay trong terminal với phím điều hướng và code block. |
 
-## Ghi chú & knowledge base (`notes-knowledge-base`, 16)
+## Ghi chú & knowledge base (`notes-knowledge-base`, 20)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -86,13 +92,17 @@
 | [Trilium](../../35-desktop-productivity-apps/README.md#chuyen-trilium) | `TriliumNext/Trilium` | AGPL-3.0 | 38.981 | đọc tài liệu 2026-11-18 | 35 | Ứng dụng ghi chú phân cấp đa nền tảng, mã nguồn mở, hướng tới xây dựng cơ sở tri thức cá nhân lớn; |
 | [Wiki.js](../../36-self-hosting-homelab/README.md#anhkysuai-requarks-wiki) | `requarks/wiki` | AGPL-3.0 | 29.362 | đọc tài liệu 2026-11-23 | 36 | Ứng dụng wiki tự host cho tài liệu và kiến thức của nhóm. |
 | [docmost](../../36-self-hosting-homelab/README.md#chuyen-docmost) | `docmost/docmost` | AGPL-3.0 cho phần lõi | 22.367 | đọc tài liệu 2026-11-18 | 36 | Phần mềm wiki và tài liệu cộng tác mã nguồn mở, tự host được. |
+| [BookStack](../../36-self-hosting-homelab/README.md#n2-bookstack) | `BookStackApp/BookStack` | MIT | 19.150 | đọc mã 2026-11-23 | 36 | Wiki tự host bằng PHP/Laravel với mô hình Kệ, Sách, Chương, Trang, phân quyền theo vai trò và theo thực thể, API có token, xuất PDF/HTML/ZIP. |
 | [docs](../../36-self-hosting-homelab/README.md#chuyen-docs) | `suitenumerique/docs` | MIT | 16.995 | đọc tài liệu 2026-11-18 | 36 | Trình soạn thảo cộng tác thời gian thực mã nguồn mở (La Suite Docs của chính phủ Pháp), thay thế Notion/Google Docs, hỗ trợ tự host. |
 | [xournalpp](../../35-desktop-productivity-apps/README.md#chuyen-xournalpp) | `xournalpp/xournalpp` | GPL-2.0 | 15.687 | đọc tài liệu 2026-11-18 | 35 | Phần mềm ghi chú viết tay viết bằng C++, hỗ trợ bút cảm ứng lực và chú thích lên PDF. |
 | [notesnook](../../35-desktop-productivity-apps/README.md#chuyen-notesnook) | `streetwriters/notesnook` | GPL-3.0 | 14.952 | đọc tài liệu 2026-11-18 | 35 | Ứng dụng ghi chú mã hoá đầu-cuối, thay thế Evernote, có bản web, desktop và di động. |
+| [Anytype Desktop](../../35-desktop-productivity-apps/README.md#n2-anytype-ts) | `anyproto/anytype-ts` | Any Source Available License 1.0 (mã nguồn mở rộng, không phải OSI: chỉ phi thương mại hoặc thương mại trên Allowed Networks) | 9.137 | đọc mã 2026-11-23 | 35 | Client desktop Electron/React/MobX của Anytype, PKM local-first nói chuyện với lõi Go (anytype-heart) qua gRPC. |
+| [Standard Notes](../../35-desktop-productivity-apps/README.md#n2-standard-notes) | `standardnotes/app` | AGPL-3.0 | 6.733 | đọc mã 2026-11-23 | 35 | Monorepo client (web, desktop Electron, mobile) của ghi chú mã hóa đầu-cuối có đồng bộ; |
 | [SilverBullet](../../35-desktop-productivity-apps/README.md#nt-silverbullet) | `silverbulletmd/silverbullet` | MIT | 6.585 | đọc mã 2026-11-23 | 35 | Wiki Markdown có tập lệnh Lua, dữ liệu là file thường (xuất dễ), gộp diff3 và MCP có OAuth và chọn space. |
 | [EdgeEver](../../35-desktop-productivity-apps/README.md#nt-edgeever) | `tianma-if/edgeever` | AGPL-3.0 | 3.524 | đọc mã 2026-11-23 | 35 | Ghi chú ba panel kiểu Evernote, đồng bộ theo cursor, xuất Markdown thuần và MCP; |
+| [Blinko](../../36-self-hosting-homelab/README.md#n2-blinko) | `blinko-space/blinko` | GPL-3.0 | — | đọc mã 2026-11-23 | 36 | Ghi chú dạng thẻ tự host (Bun, tRPC, Prisma, PostgreSQL), RAG qua Mastra với LibSQLVector và công cụ agent đọc/ghi ghi chú. |
 
-## Office, bảng tính & PDF (`office-pdf`, 8)
+## Office, bảng tính & PDF (`office-pdf`, 11)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -104,6 +114,9 @@
 | [bentopdf](../../16-docs-tools/README.md#chuyen-bentopdf) | `alam00000/bentopdf` | AGPL-3.0 | 16.388 | đọc tài liệu 2026-11-18 | 16 | Bộ công cụ PDF chạy hoàn toàn phía trình duyệt, tự host được: gộp, tách, sửa, chuyển đổi, bảo mật PDF mà không tải tệp lên máy chủ. |
 | [documenso](../../36-self-hosting-homelab/README.md#chuyen-documenso) | `documenso/documenso` | AGPL-3.0 | 15.813 | đọc tài liệu 2026-11-18 | 36 | Nền tảng ký tài liệu điện tử mã nguồn mở, thay thế DocuSign, có thể tự host. |
 | [GenOffice](../../16-docs-tools/README.md#anhkysuai-2026-11-23-genoffice) | `genspark-ai/genoffice` | Apache-2.0; kèm Unicode License V3 | 12.798 | đọc tài liệu 2026-11-23 | 16 | Bộ soạn thảo tài liệu, bảng tính, slide và PDF có agent AI, CLI và MCP. |
+| [Teedy (Sismics Docs)](../../36-self-hosting-homelab/README.md#n2-teedy) | `sismics/docs` | GPL-2.0 (tệp COPYING; chưa thấy tiêu đề or-later trong mã) | 2.573 | đọc mã 2026-11-23 | 36 | DMS Java nhẹ (Teedy, tên repo sismics/docs) có OCR bằng Tesseract, workflow phê duyệt theo bước, tìm kiếm toàn văn, 2FA, nhật ký kiểm toán và mã hóa AES tệp lưu trữ. |
+| [Mayan EDMS](../../36-self-hosting-homelab/README.md#n2-mayan-edms) | `mayan-edms/mayan-edms` | Apache-2.0 | 851 | đọc mã 2026-11-23 | 36 | EDMS Django với ACL theo bộ ba vai trò-quyền-đối tượng, workflow có trạng thái, điều kiện chuyển bước viết bằng mẫu, OCR Tesseract có timeout, chữ ký PGP cho tệp. |
+| [OpenKM Community Edition](../../36-self-hosting-homelab/README.md#n2-openkm-ce) | `openkm/document-management-system` | GPL-2.0 (LICENSE.txt) cho nhánh 6.x trong repo; từ 7.0 chỉ phát hành nhị phân, không kèm mã nguồn | 843 | đọc mã 2026-11-23 | 36 | DMS Java lâu năm (Lucene, Hibernate, workflow jBPM, WebDAV, CMIS). |
 
 ## Soạn thảo & xuất bản (Markdown, Typst) (`writing-publishing`, 11)
 
@@ -121,7 +134,7 @@
 | [quarkdown](../../16-docs-tools/README.md#chuyen-quarkdown) | `iamgio/quarkdown` | GPL-3.0 | 16.396 | đọc tài liệu 2026-11-18 | 16 | Hệ thống dàn trang dựa trên Markdown mở rộng có hàm (Turing-complete), biên dịch một nguồn thành sách in, bài báo, cơ sở tri thức hoặc trình chiếu. |
 | [Diátaxis](../../16-docs-tools/README.md#ch-diataxis) | `evildmp/diataxis-documentation-framework` | CC-BY-SA-4.0 | 1.285 | đọc tài liệu 2026-11-23 | 16 | Khung tài liệu 4 loại (tutorial, how-to, reference, explanation); |
 
-## Ứng dụng năng suất (`productivity-app`, 11)
+## Ứng dụng năng suất (`productivity-app`, 12)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -129,6 +142,7 @@
 | [TrendRadar](../../36-self-hosting-homelab/README.md#chuyen-trendradar) | `sansan0/TrendRadar` | GPL-3.0 | 63.705 | đọc tài liệu 2026-11-18 | 36 | Trợ lý theo dõi tin nóng: gom bảng xếp hạng thịnh hành từ nhiều nền tảng (Trung Quốc) và RSS, lọc theo từ khoá, phân tích bằng AI và đẩy thông báo qua nhiều kênh. |
 | [paperless-ngx](../../36-self-hosting-homelab/README.md#chuyen-paperless-ngx) | `paperless-ngx/paperless-ngx` | GPL-3.0 | 48.232 | đọc tài liệu 2026-11-18 | 36 | Hệ thống quản lý tài liệu tự host, biến giấy tờ quét thành kho lưu trữ trực tuyến tìm kiếm được. |
 | [reactive-resume](../../36-self-hosting-homelab/README.md#chuyen-reactive-resume) | `reactive-resume/reactive-resume` | MIT | 45.869 | đọc tài liệu 2026-11-18 | 36 | Trình tạo CV và thư xin việc miễn phí, mã nguồn mở, có kiểm tra CV và theo dõi hồ sơ ứng tuyển, dùng bản host sẵn hoặc tự host. |
+| [Anki](../../35-desktop-productivity-apps/README.md#n2-anki) | `ankitects/anki` | AGPL-3.0-or-later (kèm BSD-3 cho phần đóng góp, một số thư mục con dùng license khác) | 32.995 | đọc mã 2026-11-23 | 35 | Chương trình lặp lại ngắt quãng với lõi Rust (rslib) cho lịch ôn, tìm kiếm, đồng bộ, nhập xuất gói apkg/colpkg. |
 | [super-productivity](../../35-desktop-productivity-apps/README.md#chuyen-super-productivity) | `super-productivity/super-productivity` | MIT | 23.776 | đọc tài liệu 2026-11-18 | 35 | Ứng dụng to-do, theo dõi thời gian và lập kế hoạch ngày cho công việc cá nhân, ưu tiên offline và quyền riêng tư. |
 | [activitywatch](../../35-desktop-productivity-apps/README.md#chuyen-activitywatch) | `ActivityWatch/activitywatch` | MPL-2.0 | 19.697 | đọc tài liệu 2026-11-18 | 35 | Trình theo dõi thời gian sử dụng máy tính mã nguồn mở, ghi lại ứng dụng, cửa sổ, tab trình duyệt và trạng thái AFK, lưu dữ liệu cục bộ trên máy người dùng. |
 | [omnivore](../../36-self-hosting-homelab/README.md#chuyen-omnivore) | `omnivore-app/omnivore` | AGPL-3.0 | 16.420 | đọc tài liệu 2026-11-18 | 36 | Ứng dụng đọc-để-sau (read-it-later) mã nguồn mở, lưu bài viết, PDF, newsletter để đọc, tô sáng và ghi chú; |

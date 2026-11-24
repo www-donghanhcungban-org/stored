@@ -2,7 +2,7 @@
 
 # prompt — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 30 hồ sơ.
+[← Mục lục catalog](../README.md) · 31 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -35,4 +35,5 @@
 | [AnyJev](../../17-prompt-engineering/README.md#ch-anyjev) | `nokia-applied-research/AnyJev` | Apache-2.0 | 1.637 | đọc tài liệu 2026-11-23 | 17 | Quyết định có kiểu (choice/yes-no/score) kèm xác suất từ LLM mở, không huấn luyện: L0 = trung bình log-prob qua các phép xoay thứ tự + chia prior nhãn (Zheng 2024, Zhou… |
 | [Prompty](../../17-prompt-engineering/README.md#ch-prompty) | `microsoft/prompty` | MIT | 1.288 | đọc tài liệu 2026-11-23 | 17 | Định dạng file .prompty có spec + conformance vectors cho runtime Python/TS/Rust/C#; |
 | [Dotprompt](../../17-prompt-engineering/README.md#ch-dotprompt) | `google/dotprompt` | Apache-2.0 | 578 | đọc tài liệu 2026-11-23 | 17 | Định dạng prompt thực thi được (Handlebars) của Genkit; |
+| [Promptory](../../17-prompt-engineering/README.md#n2-promptory) | `hsanchez/promptory` | Apache-2.0 | 0 | đọc mã 2026-11-23 | 17 | Công cụ Python quản lý prompt như mã trong git: bản nháp Jinja trong `drafts/`, lint, render ra YAML bất biến trong `versions/vX.Y.Z/` kèm `metadata.json` chứa SHA-256,… |
 | [RCCOF Framework (Danh Nolan)](../../17-prompt-engineering/README.md#4e-kiểm-khung-rccof-của-danh-nolan-role-context-constraint-output-format-few-shot-đặc-tả-mở-có-doi-nhưng-không-có-dữ-liệu-đo-link-người-dùng-gửi-3112026) |  | CC-BY-4.0 | — | đọc tài liệu 2026-11-03 | 17 | Khung prompt 5 lớp Role-Context-Constraint-Output format-Few-shot cho nội dung marketing/AEO, Zenodo Report tự nộp 20/9/2026 (DOI 10.5281/zenodo.22856974, PDF 2 trang); |

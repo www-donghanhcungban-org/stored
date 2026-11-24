@@ -2,7 +2,7 @@
 
 # sandbox — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 24 hồ sơ.
+[← Mục lục catalog](../README.md) · 29 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -27,6 +27,11 @@
 | [Agent Sandbox (Kubernetes SIG Apps)](../../11-browser-computer-use-sandbox/README.md#ch-agent-sandbox-kubernetes-sig-apps) | `kubernetes-sigs/agent-sandbox` | Apache-2.0 | 4.692 | đọc tài liệu 2026-11-23 | 11 | CRD Sandbox/Template/Claim/WarmPool, cách ly giao cho gVisor/Kata qua RuntimeClass; |
 | [ArcBox](../../11-browser-computer-use-sandbox/README.md#nt-arcbox) | `arcboxlabs/arcbox` | Apache-2.0 OR MIT (hai file LICENSE-APACHE và LICENSE-MIT) | 4.232 | đọc mã 2026-11-23 | 11 | Không chỉ sandbox: ArcBox là runtime container/VM cho macOS viết bằng Rust (thay Docker Desktop/OrbStack) với một tầng sandbox microVM cho agent. |
 | [nsjail](../../11-browser-computer-use-sandbox/README.md#ch-nsjail) | `google/nsjail` | Apache-2.0 | 4.202 | đọc tài liệu 2026-11-23 | 11 | Jail tiến trình Linux: namespace, cgroup v1/v2, rlimit, seccomp-bpf (Kafel), config protobuf, mẫu chromium/firefox; |
+| [Agent Vault (Infisical)](../../11-browser-computer-use-sandbox/README.md#n2-agent-vault-infisical) | `Infisical/agent-vault` | MIT (Infisical, ngoại trừ thư mục ee/ nếu có; không thấy thư mục ee/ ở commit này) | 2.525 | đọc mã 2026-11-23 | 11 | Credential broker dạng proxy MITM bằng Go: agent chỉ giữ giá trị giả, proxy gắn khoá thật theo dịch vụ và bề mặt khai báo, kèm egress filtering và log. |
 | [SPACE (Perplexity)](../../11-browser-computer-use-sandbox/README.md#nt-perplexity-space) | `perplexityai/SPACE` | Apache-2.0 | 2.153 | đọc mã 2026-11-23 | 11 | Nền tảng sandbox (viết bằng Rust, API HTTP) chạy mã trong microVM Firecracker; |
+| [SWE-ReX](../../11-browser-computer-use-sandbox/README.md#n2-swe-rex-runtime) | `SWE-agent/SWE-ReX` | MIT | 657 | đọc mã 2026-11-23 | 11 | Lớp trừu tượng thực thi cho agent coding, không tự cô lập. |
 | [Modal](../../11-browser-computer-use-sandbox/README.md#ch-modal) | `modal-labs/modal-client` | Apache-2.0 (SDK) | 539 | đọc tài liệu 2026-11-23 | 11 | gVisor; |
+| [Capsule (capsulerun)](../../11-browser-computer-use-sandbox/README.md#n2-capsulerun-capsule-wasm) | `capsulerun/runtime` | Apache-2.0 | 303 | đọc mã 2026-11-23 | 11 | Sandbox nhẹ dựa Wasm, hợp tác vụ nhỏ và chạy mã do agent sinh với quyền khai báo rõ; |
+| [pctx (Port of Context)](../../11-browser-computer-use-sandbox/README.md#n2-pctx) | `portofcontext/pctx` | MIT | 289 | đọc mã 2026-11-23 | 11 | Máy chủ Rust cho "code mode": agent viết TypeScript, pctx kiểm kiểu rồi chạy trong isolate V8 (deno_core), gọi công cụ và MCP upstream qua registry thay vì đẩy từng kết… |
+| [Pullrun](../../11-browser-computer-use-sandbox/README.md#n2-pullrun-agent-sandbox) | `pullrun/pullrun` | Apache-2.0 | 135 | đọc mã 2026-11-23 | 11 | Runtime sandbox tự host đặt cược vào microVM và snapshot; |
 | [Docker Sandboxes](../../12-ai-security-guardrails/README.md#4e-kiểm-infographic-5-vị-trí-cần-đặt-guardrails-trong-ai-agent-ảnh-người-dùng-gửi-2026-11-02) |  | — | — | đọc tài liệu 2026-11-02 | 11 | Sản phẩm Docker (CLI sbx): microVM mỗi sandbox có daemon riêng, credential proxy giữ khoá API ngoài VM, egress qua proxy host có policy, MCP gateway; |

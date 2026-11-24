@@ -266,3 +266,77 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | Apache-2.0. Đây là đặc tả, không phải triển khai: SDK không tự đánh giá cờ (README). TCK ghi rõ là thử nghiệm, tập scenario là tập con đại diện, từ vựng có thể đổi, và việc không khai báo một thẻ không phải vi phạm đặc tả. Mô tả trinh sát đúng về 0.1.0 ngày 2026-10-16 nhưng làm TCK nghe như đã hoàn chỉnh. |
 | So với | flagd (triển khai tham chiếu, mục 28), Unleash, GO Feature Flag (provider OpenFeature, hồ sơ đợt này) |
 | Nguồn | [LICENSE](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/LICENSE) · [README.md](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/README.md) · [version.txt](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/version.txt) · [02-providers.md](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/specification/sections/02-providers.md) · [README.md](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/specification/assets/provider-tck/README.md) · [evaluation.feature](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/specification/assets/provider-tck/gherkin/evaluation.feature) · [CHANGELOG.md](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/specification/assets/provider-tck/CHANGELOG.md) · [pr-checks.yaml](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/.github/workflows/pr-checks.yaml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-superposition"></a>
+
+### Superposition
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/juspay/superposition |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `cbde69e1fe49832387a3f98364b9f4cb85fee031` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, config.rs, experiment.rs, validation_functions.rs, ci_check_pr.yaml, makefile; chưa chạy upstream |
+| Khoảng trống lấp | Feature flag an toàn: chuẩn OpenFeature và cấu hình theo ngữ cảnh |
+| Cơ chế đáng học | - `superposition_core/src/config.rs`: `eval_config` lọc theo prefix, tính cohort cục bộ, áp overrides lên default với `MergeStrategy`; mô hình dimension, context, override.<br>- `experiment.rs`: chọn variant theo `traffic_percentage` và `calculate_bucket_index(identifier, group_id)` băm ra 0-99; nhóm thử nghiệm có điều kiện context.<br>- `context_aware_config/src/validation_functions.rs`: chạy hàm kiểm định do người dùng viết trong runtime JS (`rustyscript`) với `console` bị thay để gom log; crate `superposition_provider` cài `FeatureProvider` của OpenFeature (`local_provider.rs`, chỉ thấy qua grep). |
+| Tiêu chí và cách kiểm | CI (`ci_check_pr.yaml`) có job format và lint (`make check`: fmt, leptosfmt, clippy `-Dwarnings`), kiểm conventional commit, test (`make test` gồm `cargo test` và khởi chạy dịch vụ), build Java, test provider đa ngôn ngữ. Kiểm bằng máy nhưng test cần Postgres và nhiều toolchain (Bun, JDK, Haskell). Tuyên bố an toàn (staggered rollout, revert) của README: chưa xác minh từng cái. |
+| Giới hạn và rủi ro | Apache-2.0. Nhấn mạnh feature flag chỉ là phụ; thực chất là cấu hình có phiên bản. `std DefaultHasher` không bảo đảm ổn định giữa các bản Rust (theo tài liệu thư viện chuẩn), nên bucket có thể đổi khi nâng toolchain nếu mỗi client tự build khác nhau: nên kiểm chéo ngôn ngữ (chưa xác minh). Có crate quan sát (observability) nhưng chưa đọc telemetry rời máy. Dự án hoạt động, commit 2026-11-23. |
+| So với | OpenFeature spec, flagd, Unleash, GrowthBook (thí nghiệm). |
+| Nguồn | [README.md](https://github.com/juspay/superposition/blob/cbde69e1fe49832387a3f98364b9f4cb85fee031/README.md) · [LICENSE](https://github.com/juspay/superposition/blob/cbde69e1fe49832387a3f98364b9f4cb85fee031/LICENSE) · [config.rs](https://github.com/juspay/superposition/blob/cbde69e1fe49832387a3f98364b9f4cb85fee031/crates/superposition_core/src/config.rs) · [experiment.rs](https://github.com/juspay/superposition/blob/cbde69e1fe49832387a3f98364b9f4cb85fee031/crates/superposition_core/src/experiment.rs) · [validation_functions.rs](https://github.com/juspay/superposition/blob/cbde69e1fe49832387a3f98364b9f4cb85fee031/crates/context_aware_config/src/validation_functions.rs) · [ci_check_pr.yaml](https://github.com/juspay/superposition/blob/cbde69e1fe49832387a3f98364b9f4cb85fee031/.github/workflows/ci_check_pr.yaml) · [makefile](https://github.com/juspay/superposition/blob/cbde69e1fe49832387a3f98364b9f4cb85fee031/makefile) |
+
+<a id="n2-confseq"></a>
+
+### ConfSeq
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/gostevehoward/confseq |
+| License | MIT |
+| Phiên bản đã đọc | `c08c6a66f77fbb2797c4d54e8b226fe8c42a5b67` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, pyproject.toml, check-python-package.yml, betting.py, uniform_boundaries.h, test_boundaries.py; chưa chạy upstream |
+| Khoảng trống lấp | Thí nghiệm A/B: thống kê tuần tự (chỉ phần này; không có SRM, CUPED) |
+| Cơ chế đáng học | - `src/confseq/uniform_boundaries.h`: thư viện header-only C++ cài các biên mixture (normal, gamma-exponential, gamma-Poisson, beta-binomial) và polynomial stitching; `boundaries.cpp` là lớp pybind11.<br>- `src/confseq/betting.py`: martingale cược (`betting_mart`, `betting_cs`, `hedged_cs`, `dKelly_cs`) cho trung bình biến bị chặn, có nhánh lấy mẫu không hoàn lại (tham số N).<br>- `test_boundaries.py` ghim giá trị số tham chiếu và việc từ chối `s` âm. |
+| Tiêu chí và cách kiểm | CI chạy flake8, test C++ (googletest, `make -C test runtests`) và `pytest -m "not random"` trên Python 3.10-3.14, Ubuntu và macOS. Test ngẫu nhiên gắn nhãn `random` bị loại khỏi CI. Kiểm bằng máy, nhưng độ phủ thống kê thực tế (tỷ lệ phủ nominal) chưa được tự chạy. |
+| Giới hạn và rủi ro | MIT. README tự nói `early-stage development` và không ổn định; số bản 0.0.11. Cần Boost headers để build. Không có tích hợp nền tảng thí nghiệm, SRM, CUPED hay cảnh báo; chỉ là khối thống kê tuần tự nên cần tự ghép vào pipeline. Giao diện R chỉ phủ một phần. |
+| So với | GrowthBook, Statsig/Eppo (nếu có hồ sơ); xem PostHog trong chuyên mục 28. |
+| Nguồn | [README.md](https://github.com/gostevehoward/confseq/blob/c08c6a66f77fbb2797c4d54e8b226fe8c42a5b67/README.md) · [LICENSE](https://github.com/gostevehoward/confseq/blob/c08c6a66f77fbb2797c4d54e8b226fe8c42a5b67/LICENSE) · [pyproject.toml](https://github.com/gostevehoward/confseq/blob/c08c6a66f77fbb2797c4d54e8b226fe8c42a5b67/pyproject.toml) · [check-python-package.yml](https://github.com/gostevehoward/confseq/blob/c08c6a66f77fbb2797c4d54e8b226fe8c42a5b67/.github/workflows/check-python-package.yml) · [betting.py](https://github.com/gostevehoward/confseq/blob/c08c6a66f77fbb2797c4d54e8b226fe8c42a5b67/src/confseq/betting.py) · [uniform_boundaries.h](https://github.com/gostevehoward/confseq/blob/c08c6a66f77fbb2797c4d54e8b226fe8c42a5b67/src/confseq/uniform_boundaries.h) · [test_boundaries.py](https://github.com/gostevehoward/confseq/blob/c08c6a66f77fbb2797c4d54e8b226fe8c42a5b67/test/python_tests/test_boundaries.py) |
+
+<a id="n2-openpanel"></a>
+
+### OpenPanel
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/openpanel-dev/openpanel |
+| License | AGPL-3.0 |
+| Phiên bản đã đọc | `a5a6eb7d62c9579620ec5e3fbfd4ce760f3d8073` (commit 2026-11-06) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE.md, packages/core/src/modules/ai/src/self-tracking.ts, packages/core/src/buffers/event-buffer.ts, docs/SCALING.md, .github/workflows/docker-build.yml; chưa chạy upstream |
+| Khoảng trống lấp | Theo dõi sự kiện và product analytics tự host (event, funnel, cohort, session replay); không phải CDP hay tracking plan |
+| Cơ chế đáng học | - Đường ghi sự kiện qua bộ đệm: `packages/core/src/buffers/event-buffer.ts` (trích `project_id` không cần parse JSON đầy đủ, publish sự kiện qua Redis), cùng session-buffer, profile-buffer, replay-buffer; có test failover ClickHouse (`clickhouse-failover.test.ts`).<br>- Tự quan sát lời gọi LLM: `packages/core/src/modules/ai/src/self-tracking.ts` bọc model bằng middleware của chính SDK, chỉ bật khi cấu hình `OP_CLIENT_ID`, nếu không trả model nguyên bản.<br>- Tài liệu quy mô `docs/SCALING.md`: bảng sự kiện/giây trên một máy đo ngày 2026-09-12, nói rõ không ngoại suy.<br>- SDK web trong `packages/sdks/web` (tracker.ts và test), cookieless theo README (chưa xác minh). |
+| Tiêu chí và cách kiểm | Workflow `.github/workflows/docker-build.yml` dựng ảnh Docker và smoke test khi push (đã mở); nhiều file `*.test.ts` trong packages/core. Số đo hiệu năng trong SCALING.md là tự báo, chưa chạy lại. |
+| Giới hạn và rủi ro | AGPL-3.0: dịch vụ mạng sửa đổi phải công bố mã. TRADEMARK.md hạn chế dùng tên và logo. Tự host cần ClickHouse và Redis. Tuyên bố ``GDPR-compliant`` và ``cookieless`` là tự báo. Không đọc phần billing/payments. Thư mục `justfuckinguseopenpanel` và file `bklit-issues.md` là nội dung phụ trong repo. |
+| So với | posthog, plausible-analytics, umami, growthbook |
+| Nguồn | [README.md](https://github.com/openpanel-dev/openpanel/blob/a5a6eb7d62c9579620ec5e3fbfd4ce760f3d8073/README.md) · [LICENSE.md](https://github.com/openpanel-dev/openpanel/blob/a5a6eb7d62c9579620ec5e3fbfd4ce760f3d8073/LICENSE.md) · [self-tracking.ts](https://github.com/openpanel-dev/openpanel/blob/a5a6eb7d62c9579620ec5e3fbfd4ce760f3d8073/packages/core/src/modules/ai/src/self-tracking.ts) · [event-buffer.ts](https://github.com/openpanel-dev/openpanel/blob/a5a6eb7d62c9579620ec5e3fbfd4ce760f3d8073/packages/core/src/buffers/event-buffer.ts) · [SCALING.md](https://github.com/openpanel-dev/openpanel/blob/a5a6eb7d62c9579620ec5e3fbfd4ce760f3d8073/docs/SCALING.md) · [docker-build.yml](https://github.com/openpanel-dev/openpanel/blob/a5a6eb7d62c9579620ec5e3fbfd4ce760f3d8073/.github/workflows/docker-build.yml) |
+
+<a id="n2-flipt-v2"></a>
+
+### Flipt v2
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/flipt-io/flipt |
+| License | FCL-1.0-MIT (Fair Core License, chuyển sang MIT sau 2 năm; chưa phải OSI); `errors/`, `rpc/flipt`, `sdk/go` có LICENSE MIT riêng; `internal/coss/` mang header giấy phép trả phí |
+| Phiên bản đã đọc | `e98febd579aeeced549ae812fccd0064ac8811d7` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, errors/LICENSE, internal/coss/signing/gpg.go, internal/coss/license/license.go, internal/telemetry/telemetry.go, cmd/flipt/main.go, internal/storage/git/repository.go, test.yml, integration-test.yml; chưa chạy upstream |
+| Khoảng trống lấp | Feature flag GitOps và quản trị vòng đời flag |
+| Cơ chế đáng học | - Cờ và namespace nằm trong kho Git của chính chủ; `internal/storage/git/repository.go` bọc go-git với `UpdateAndPush` tạo commit từ thay đổi ghi vào filesystem ảo, có `UpdateIfHeadMatches` để từ chối ghi khi HEAD đã đổi (trả lỗi xung đột thay vì chạy lại).<br>- Mỗi môi trường ánh xạ tới nhánh, thư mục hoặc kho riêng (theo README); thay đổi cờ đi qua nhánh và diff như mã.<br>- Lõi nằm trong `internal/`; phần trả phí tách riêng ở `internal/coss/` (ký commit GPG, webhook, secrets Vault/AWS/GCP/Azure), kiểm khoá bằng Keygen trong `internal/coss/license/license.go`.<br>- Snapshot đọc cờ từ cây Git (`internal/storage/fs/snapshot.go` theo tên hàm; chưa đọc thân) và có schema cấu hình `config/flipt.schema.json`. |
+| Tiêu chí và cách kiểm | CI `test.yml` chạy unit test Go qua Dagger kèm Codecov (`fail_ci_if_error: true`) và job riêng cho macOS; `integration-test.yml` chạy kiểm tích hợp. Có `config/schema_test.go` kiểm schema cấu hình. Đã mở hai workflow; chưa chạy. Kiểm bằng máy, không có ngưỡng độ phủ ghi trong workflow đã đọc. |
+| Giới hạn và rủi ro | License lõi là Fair Core License (FCL-1.0-MIT): không phải OSI ngay, cấm Competing Use (bán sản phẩm/dịch vụ thay thế hoặc cùng chức năng), chuyển sang MIT sau 2 năm theo điều khoản FCL. Chỉ `errors/`, `rpc/flipt`, `sdk/go` có LICENSE MIT riêng. File trong `internal/coss/` mang header nói không được dùng nếu không có giấy phép trả phí (chặt hơn phần Limitations của FCL, chỉ cấm vượt khoá). Usage ping (UUID, phiên bản, OS, kiến trúc) qua Segment bật mặc định (`TelemetryEnabled: true`), tắt khi có `DO_NOT_TRACK`, `CI` hoặc bản không phải release. Nhánh mặc định là `v2`, bản v1 ở `main`. Tuyên bố 'zero dependencies' và SSE là của README (chưa xác minh). |
+| So với | Unleash (`unleash`) và flagd (`flagd`) cùng nhóm feature flag; GO Feature Flag (`go-feature-flag`) cũng đọc cờ từ file/Git; chuẩn client là OpenFeature (`openfeature-spec`). Flipt khác ở chỗ ghi ngược về Git có kiểm HEAD. |
+| Nguồn | [README](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/README.md) · [LICENSE](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/LICENSE) · [errors/LICENSE](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/errors/LICENSE) · [gpg.go](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/internal/coss/signing/gpg.go) · [license.go](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/internal/coss/license/license.go) · [telemetry.go](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/internal/telemetry/telemetry.go) · [main.go](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/cmd/flipt/main.go) · [repository.go](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/internal/storage/git/repository.go) · [test.yml](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/.github/workflows/test.yml) · [integration-test.yml](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/.github/workflows/integration-test.yml) |
