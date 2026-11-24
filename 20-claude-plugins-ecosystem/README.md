@@ -1436,7 +1436,7 @@ Các số đo hữu ích gồm tỷ lệ kích hoạt sai trên bộ ca âm, ch�
 
 | Thuộc tính | Giá trị (7/11/2026) |
 |---|---|
-| Repo | https://github.com/garrytan/gstack · **140.570★, 20.749 fork** (GitHub search API), tạo 11/3/2026 · MIT |
+| Repo | https://github.com/garrytan/gstack · **140.570★, 20.749 fork** (GitHub search API, 7/11/2026; ảnh thẻ người dùng gửi 24/11/2026 ghi 142.236★, 21k fork, 280 contributor, 82 issue, chưa đối chiếu API), tạo 11/3/2026 · MIT |
 | Tác giả | Garry Tan (Chủ tịch kiêm CEO Y Combinator); 1.077 commit, 1.031 của tác giả; `VERSION` 1.97.0.0 (tag mới nhất v1.96.0.0) |
 | Thành phần | 71 file `SKILL.md`: quy trình (`/office-hours`, `/plan-ceo-review`, `/plan-eng-review`, `/plan-design-review`, `/plan-devex-review`, `/autoplan`, `/spec`), review và QA (`/review`, `/design-review`, `/qa`, `/qa-only`, `/cso`, `/test-audit`, `/verify`), phát hành (`/ship`, `/land-and-deploy`, `/canary`, `/benchmark`, `/document-release`), an toàn (`/careful`, `/freeze`, `/guard`), trình duyệt (`/browse`, `/scrape`, `/open-gstack-browser`), iOS (`/ios-qa`, `/ios-design-review`…), ghi nhớ (`/learn`, GBrain) |
 | Kiểm thử | 1.741 file `.test.ts`; khoảng 34 workflow CI (evals, quality-gate, release-gate, test trên Windows, OSV-Scanner, OpenSSF Scorecard, dependency-review) |
