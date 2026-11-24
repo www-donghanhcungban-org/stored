@@ -349,6 +349,8 @@ Ba cột: `deeper` 6 dòng (148, 151–155), `shallower` 1 dòng (149), `missing
 
 Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị từ chối): ID, file và dòng lấy từ các đối chiếu đã ghi trước đó trong data/xt-handoff.json, chưa kiểm ở commit X-Templates hiện hành; đề xuất chỉ có hiệu lực sau khi đối chiếu lại.
 
+**Cập nhật 24/11/2026:** XT-H-113, 140, 141, 143, 145, 146 và 162 đã được xử lý ở [PR 769](https://github.com/www-donghanhcungban-org/X-Templates/pull/769) (squash `4bd1d6e`): ID mới `WF-CI-028` (SHOULD, gộp XT-H-113 và XT-H-162), mở rộng `SEC-SUPPLY-025`, `OPS-MAINT-008`, `SEC-INFRA-027`, `CMP-LIC-020`, không đổi mức. XT-H-114, 115, 116, 142, 144 và 147 đã được xét: khung đã bao phủ hoặc không thuộc khung nên không sửa. Bảng kết luận ở `research/2026-11-24-stored-delta-xt-h-113-162.md` bên X-Templates.
+
 **Cập nhật 24/11/2026:** XT-H-156…158 đã được xử lý ở [PR 762](https://github.com/www-donghanhcungban-org/X-Templates/pull/762) (squash `74d51d0`): mở rộng ID hiện có, riêng XT-H-150 thêm ID mới `SEC-SUPPLY-035`; XT-H-152 khung đã bao phủ nên chỉ thêm ví dụ. Chi tiết từng mục và đính chính các ghi chú "đã có" dựa trên XT-H-142…146 (các ID đó không có trong X-Templates) ở `research/2026-11-23-stored-delta-xt-h-148-158.md` bên X-Templates. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy.
 
 | Handoff | Bài học và hồ sơ | Control đã đối chiếu | Cột và xử lý |
