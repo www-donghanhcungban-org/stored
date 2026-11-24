@@ -529,7 +529,7 @@ Các mục deeper chỉ thêm ví dụ/fixture cho yêu cầu hiện có. Phần
 
 ## 6. Cách duy trì
 
-- **Bàn giao Astryx (24/11/2026):** XT-H-163 ở §4p, đối chiếu X-Templates `8201df2`, cột shallower. PR đề xuất sang X-Templates ghi ở dòng "Đã gửi đề xuất" bên dưới khi mở.
+- **Bàn giao Astryx (24/11/2026):** XT-H-163 ở §4p, đối chiếu X-Templates `8201df2`, cột shallower. **Đã gửi đề xuất (24/11/2026):** X-Templates PR [#782](https://github.com/www-donghanhcungban-org/X-Templates/pull/782) (`research/2026-11-24-stored-delta-xt-h-163.md`, chỉ đề xuất, không đổi `framework/`).
 
 - **Mốc 2250 (23/11/2026):** catalog 2.268 hồ sơ; XT-H-140…143 ở §4j, gợi ý và cách áp ở §5i. Đối chiếu X-Templates `fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb`: ba mục deeper, một shallower nối đề xuất cũ. Đã cập nhật `meta.suggest_milestone = 2250`; bàn giao được lưu trong stored, chưa mở PR sang X-Templates.
 
