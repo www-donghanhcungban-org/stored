@@ -2,7 +2,7 @@
 
 # Catalog theo nhóm, danh mục và danh mục con
 
-Sinh từ `data/projects.json` (2480 hồ sơ) theo `data/taxonomy.json`. Mỗi dòng dẫn về hồ sơ gốc trong README chuyên mục; số sao và mức bằng chứng chỉ đúng tại ngày ghi trong hồ sơ. Sắp xếp theo ★ giảm dần; ★ để trống là chưa có số tin cậy.
+Sinh từ `data/projects.json` (2481 hồ sơ) theo `data/taxonomy.json`. Mỗi dòng dẫn về hồ sơ gốc trong README chuyên mục; số sao và mức bằng chứng chỉ đúng tại ngày ghi trong hồ sơ. Sắp xếp theo ★ giảm dần; ★ để trống là chưa có số tin cậy.
 
 Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính năng đã chắt lọc kèm cách áp dụng) và [GUIDES.md](../GUIDES.md).
 
@@ -68,7 +68,7 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [image-gen](models-data/image-gen.md) | 11 | — |
 | [speech](models-data/speech.md) | 51 | — |
 
-## Thiết kế, giao diện & media (382)
+## Thiết kế, giao diện & media (383)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
@@ -80,7 +80,7 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [animation-library](design-media/animation-library.md) | 26 | — |
 | [motion-design](design-media/motion-design.md) | 33 | — |
 | [video-engine](design-media/video-engine.md) | 31 | — |
-| [agentic-video](design-media/agentic-video.md) | 45 | — |
+| [agentic-video](design-media/agentic-video.md) | 46 | — |
 
 ## Kỹ thuật phần mềm & vận hành (442)
 

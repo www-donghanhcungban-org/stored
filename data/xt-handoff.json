@@ -1,7 +1,7 @@
 {
   "meta": {
     "description": "Bài học từ catalog stored đã đối chiếu với ID yêu cầu của www-donghanhcungban-org/X-Templates. Xem X-TEMPLATES.md.",
-    "xt_commit": "0b90230 (XT-H-001…018); a0f08cd (XT-H-019…051); ff23040 (XT-H-052…060); 1abbde2 (XT-H-061…093); 628e36caeb706001cf512787eba56bcfcb44f133 (XT-H-094…105); fb7b62c (XT-H-106); ccf980d (XT-H-107); 2049135 (XT-H-108); 2049135 (XT-H-109); 2049135 (XT-H-110); 5316026 (XT-H-111); 2049135 (XT-H-112); 23447d817d2bc8cf68093591177f85fd72a8a2f6 (XT-H-113…116); aeb195c2b6ae5074d70efe592d218e9c1147c05e (XT-H-117…125); efa521a64e2c2be2cdd596b7b8fd59bab8029cf0 (XT-H-126…131); 3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19 (XT-H-132…136); 3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19 (XT-H-137…139); fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb (XT-H-140…143); tái dùng đối chiếu trước (XT-H-144…147); 764566daf1072642ed5314bdc6b4d3c204a663b1 (XT-H-159…161); 764566d (đối chiếu lại ID XT-H-148…158)",
+    "xt_commit": "0b90230 (XT-H-001…018); a0f08cd (XT-H-019…051); ff23040 (XT-H-052…060); 1abbde2 (XT-H-061…093); 628e36caeb706001cf512787eba56bcfcb44f133 (XT-H-094…105); fb7b62c (XT-H-106); ccf980d (XT-H-107); 2049135 (XT-H-108); 2049135 (XT-H-109); 2049135 (XT-H-110); 5316026 (XT-H-111); 2049135 (XT-H-112); 23447d817d2bc8cf68093591177f85fd72a8a2f6 (XT-H-113…116); aeb195c2b6ae5074d70efe592d218e9c1147c05e (XT-H-117…125); efa521a64e2c2be2cdd596b7b8fd59bab8029cf0 (XT-H-126…131); 3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19 (XT-H-132…136); 3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19 (XT-H-137…139); fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb (XT-H-140…143); tái dùng đối chiếu trước (XT-H-144…147); 764566daf1072642ed5314bdc6b4d3c204a663b1 (XT-H-159…161); 764566d; 74d51d0e28b455ae7d893ea1d216cb533d8362d6 (XT-H-148…158)",
     "stored_range": "fa02a75..e3fdcb0 (XT-H-001…018); e3fdcb0..e8b3831 (XT-H-019…051); e8b3831..5f9e546 (XT-H-052…060); 5f9e546..b96e45c (XT-H-061…093); từ a1413e6 (XT-H-094…105, phạm vi PR mở rộng28mục); a1413e6.. (XT-H-106, kiểm infographic 12 §4e); d8b51bf.. (XT-H-107, đọc lại 20 §3f.5); 1857520.. (XT-H-108, kiểm bài đăng 22 §9i); 4983547.. (XT-H-109, 02 §4f + 20 §3x); 4983547.. (XT-H-110, 02 §4g); c77e1f9.. (XT-H-111, 18 §4e); 6d9e713.. (XT-H-112, 06 §7w); 79c8635.. (XT-H-113…116, xưởng34mục); 79c8635..4a45f00 (XT-H-117…125, đợt 5–8/11/2026); 82ab9b2..aad97cf (XT-H-126…131, đợt 11–16/11/2026); c607013..ff5f479 (XT-H-132…136, mốc 1150 hồ sơ); 5bb1381..16ff666 (XT-H-137…139, mốc 1550 hồ sơ); aaf3915.. (XT-H-140…143, 1.295 link Anh Kỹ Sư AI, mốc 2250 hồ sơ); 48ab93b.. (XT-H-144…147, bảng Top 100 GitHub AI Skills + chia lại catalog); 7d8754d.. (XT-H-148…155, đợt chuẩn hóa 838 hồ sơ cũ); ae33273.. (XT-H-156…158, đợt nâng trần UI/UX, mốc 2300 hồ sơ); sau #185.. (XT-H-159…161, đợt nâng trần các nhóm còn lại, mốc 2450 hồ sơ)",
     "columns": [
       "deeper",
@@ -9,7 +9,7 @@
       "missing",
       "not_adding"
     ],
-    "updated": "2026-11-23",
+    "updated": "2026-11-24",
     "count": 161,
     "current_batch": {
       "stored_base": "origin/main sau PR #185",
@@ -26,25 +26,27 @@
     "previous_batches": [
       {
         "stored_base": "ae33273",
-        "xt_commit": "764566d (đối chiếu lại ID 23/11/2026; đề xuất chưa đưa vào X-Templates)",
+        "xt_commit": "74d51d0e28b455ae7d893ea1d216cb533d8362d6",
         "ids": [
           "XT-H-156",
           "XT-H-158"
         ],
-        "status": "documented-in-stored",
+        "status": "merged-in-x-templates",
         "catalog_count": 2330,
-        "suggest_milestone": 2300
+        "suggest_milestone": 2300,
+        "proposal_pr": "https://github.com/www-donghanhcungban-org/X-Templates/pull/762"
       },
       {
         "stored_base": "7d8754d",
-        "xt_commit": "764566d (đối chiếu lại ID 23/11/2026; đề xuất chưa đưa vào X-Templates)",
+        "xt_commit": "74d51d0e28b455ae7d893ea1d216cb533d8362d6",
         "ids": [
           "XT-H-148",
           "XT-H-155"
         ],
-        "status": "documented-in-stored",
+        "status": "merged-in-x-templates",
         "catalog_count": 2291,
-        "suggest_milestone": 2250
+        "suggest_milestone": 2250,
+        "proposal_pr": "https://github.com/www-donghanhcungban-org/X-Templates/pull/762"
       },
       {
         "stored_base": "48ab93b",
@@ -4124,7 +4126,7 @@
         "CMP-LIC-022"
       ],
       "column": "deeper",
-      "existing_coverage": "CMP-LIC-004 yêu cầu đọc LICENSE theo thư mục/phạm vi; CMP-LIC-022 xếp giấy phép chỉ ghi trong README là chưa rõ (đã mở rộng ở XT-H-134, XT-H-144).",
+      "existing_coverage": "CMP-LIC-004 yêu cầu đọc LICENSE theo thư mục/phạm vi; CMP-LIC-022 xếp giấy phép chỉ ghi trong README là chưa rõ. Mở rộng trước đó chỉ truy được ở XT-H-134 (research 18/11); XT-H-144 không có dấu vết trong X-Templates.",
       "delta": "Chỉ thêm ví dụ và một phép kiểm: LICENSE ở commit đã ghim là nguồn đúng; trường license trong package.json/pyproject/README lệch LICENSE thì xếp \"chưa rõ, hỏi tác giả\" chứ không chọn một bên. Fixture: so SPDX suy từ LICENSE với trường license của manifest, báo lệch. Không cần ID mới.",
       "xt_evidence": [
         {
@@ -4140,7 +4142,7 @@
           "url": "https://github.com/seeker19110/X-Templates/blob/3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19/framework/16-compliance-privacy/licensing-and-ip.md#L70"
         }
       ],
-      "note": "Đối chiếu lại ngày 23/11/2026 ở commit X-Templates 764566d: mọi ID trong xt_ids vẫn còn và đúng mức ghi; XT-H-148 chưa xuất hiện ở X-Templates và nội dung đề xuất chưa được đưa vào. Việc còn mở; chưa kiểm sâu nội dung từng ID ngoài sự tồn tại và mức."
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/762 (squash 74d51d0, 24/11/2026): đã mở rộng `CMP-LIC-004`: LICENSE mâu thuẫn manifest hoặc bảng README thì ghi cả hai và lấy cách hiểu chặt hơn. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy. Ghi chú đối chiếu và đính chính: research/2026-11-23-stored-delta-xt-h-148-158.md ở X-Templates."
     },
     {
       "id": "XT-H-149",
@@ -4188,7 +4190,7 @@
           "url": "https://github.com/www-donghanhcungban-org/X-Templates/blob/fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb/framework/12-security/supply-chain.md#L73"
         }
       ],
-      "note": "Đối chiếu lại ngày 23/11/2026 ở commit X-Templates 764566d: mọi ID trong xt_ids vẫn còn và đúng mức ghi; XT-H-149 chưa xuất hiện ở X-Templates và nội dung đề xuất chưa được đưa vào. Việc còn mở; chưa kiểm sâu nội dung từng ID ngoài sự tồn tại và mức."
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/762 (squash 74d51d0, 24/11/2026): đã thêm vào `SEC-SUPPLY-027`: ghi {giá trị, file nguồn, commit ghim, ngày đọc}, đọc lại LICENSE tại commit sắp ghim, kết luận cũ hơn 30 ngày phải đọc lại. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy. Ghi chú đối chiếu và đính chính: research/2026-11-23-stored-delta-xt-h-148-158.md ở X-Templates."
     },
     {
       "id": "XT-H-150",
@@ -4200,7 +4202,8 @@
       "lesson": "Workflow của repo bên thứ ba có thể là kênh lấy khóa. Một repo nguồn mở tiếng Việt (đã gỡ khỏi kho) có ba workflow quét cây mã, lịch sử git và wiki tìm mẫu khóa (AWS, khóa API, token GitHub), rồi gửi kết quả bằng curl tới một địa chỉ IP trần, với đường dự phòng đẩy lên gist bằng GITHUB_TOKEN. Hồ sơ cũ từng coi các commit gần đây \"chỉ là CI, font và README\" là vô hại và chỉ dùng chúng để kết luận repo không thực sự hoạt động; thực ra chính các commit đó mang workflow.",
       "xt_ids": [
         "SEC-SUPPLY-027",
-        "SEC-SUPPLY-008"
+        "SEC-SUPPLY-008",
+        "SEC-SUPPLY-035"
       ],
       "column": "missing",
       "existing_coverage": "XT-H-030 (OPS-MAINT-008) yêu cầu loại commit chỉ chạm workflow/README khi đo mức hoạt động: đúng cho \"còn sống hay không\" nhưng không bảo ai phải đọc nội dung các commit đó. Chưa có control nào yêu cầu đọc workflow và script của repo bên thứ ba trước khi clone, fork, dùng làm template hay vendor (chưa đối chiếu lại ở commit X-Templates hiện hành).",
@@ -4215,7 +4218,7 @@
           "url": "https://github.com/www-donghanhcungban-org/X-Templates/blob/fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb/framework/12-security/supply-chain.md#L73"
         }
       ],
-      "note": "Đối chiếu lại ngày 23/11/2026 ở commit X-Templates 764566d: mọi ID trong xt_ids vẫn còn và đúng mức ghi; XT-H-150 chưa xuất hiện ở X-Templates và nội dung đề xuất chưa được đưa vào. Việc còn mở; chưa kiểm sâu nội dung từng ID ngoài sự tồn tại và mức."
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/762 (squash 74d51d0, 24/11/2026): khoảng trống thật, đã thêm ID mới `SEC-SUPPLY-035` (SHOULD): đọc workflow và script CI của repo bên thứ ba trước khi clone, fork hoặc vendor. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy. Ghi chú đối chiếu và đính chính: research/2026-11-23-stored-delta-xt-h-148-158.md ở X-Templates."
     },
     {
       "id": "XT-H-151",
@@ -4258,7 +4261,7 @@
           "url": "https://github.com/seeker19110/X-Templates/blob/3cd50cb2e1b1c673ded8a2de6e45c7a093f9dd19/framework/01-baseline/dependencies.md#L43"
         }
       ],
-      "note": "Đối chiếu lại ngày 23/11/2026 ở commit X-Templates 764566d: mọi ID trong xt_ids vẫn còn và đúng mức ghi; XT-H-151 chưa xuất hiện ở X-Templates và nội dung đề xuất chưa được đưa vào. Việc còn mở; chưa kiểm sâu nội dung từng ID ngoài sự tồn tại và mức."
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/762 (squash 74d51d0, 24/11/2026): đã thêm vào `SEC-INFRA-027`: bảng ghi công cụ thu nội dung hay chỉ số đếm, TLS của endpoint, hành vi khác nhau theo ngôn ngữ và bản. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy. Ghi chú đối chiếu và đính chính: research/2026-11-23-stored-delta-xt-h-148-158.md ở X-Templates."
     },
     {
       "id": "XT-H-152",
@@ -4291,7 +4294,7 @@
           "url": "https://github.com/www-donghanhcungban-org/X-Templates/blob/fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb/framework/01-baseline/documentation-minimum.md#L55"
         }
       ],
-      "note": "Đối chiếu lại ngày 23/11/2026 ở commit X-Templates 764566d: mọi ID trong xt_ids vẫn còn và đúng mức ghi; XT-H-152 chưa xuất hiện ở X-Templates và nội dung đề xuất chưa được đưa vào. Việc còn mở; chưa kiểm sâu nội dung từng ID ngoài sự tồn tại và mức."
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/762 (squash 74d51d0, 24/11/2026): khung đã bao phủ (`BASE-DOC-017`, `BASE-SEC-010`); chỉ thêm ví dụ Pencil và vế `auth_basic off` theo `location` vào `BASE-SEC-010`. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy. Ghi chú đối chiếu và đính chính: research/2026-11-23-stored-delta-xt-h-148-158.md ở X-Templates."
     },
     {
       "id": "XT-H-153",
@@ -4318,7 +4321,7 @@
         "SEC-SUPPLY-025"
       ],
       "column": "deeper",
-      "existing_coverage": "XT-H-143 và XT-H-146 (OPS-MAINT-008, SEC-SUPPLY-025) yêu cầu dùng stable repository ID cho alias/canonical.",
+      "existing_coverage": "OPS-MAINT-008 bắt đổi tên bằng `full_name` khác manifest; SEC-SUPPLY-025 yêu cầu đánh giá trên repo gốc. Không có yêu cầu repository ID ổn định: ghi trước đó dẫn XT-H-143 và XT-H-146 nhưng hai ID này không có trong X-Templates.",
       "delta": "Thêm một vế vào control hiện có, không cần ID mới: ghim bằng ID repo theo kịp việc đổi tên nhưng không theo kịp việc đổi mục đích; sau đổi tên phải đọc lại README, LICENSE và mô tả chức năng tại HEAD mới trước khi giữ nguyên quyết định cũ. Ghi giới hạn phát hiện: không thấy chuyển hướng thì không suy ra repo chưa đổi tên.",
       "xt_evidence": [
         {
@@ -4334,7 +4337,7 @@
           "url": "https://github.com/www-donghanhcungban-org/X-Templates/blob/fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb/framework/12-security/supply-chain.md#L71"
         }
       ],
-      "note": "Đối chiếu lại ngày 23/11/2026 ở commit X-Templates 764566d: mọi ID trong xt_ids vẫn còn và đúng mức ghi; XT-H-153 chưa xuất hiện ở X-Templates và nội dung đề xuất chưa được đưa vào. Việc còn mở; chưa kiểm sâu nội dung từng ID ngoài sự tồn tại và mức."
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/762 (squash 74d51d0, 24/11/2026): đã thêm vào `SEC-SUPPLY-025`: ghi repository ID ổn định và so mô tả sản phẩm ở commit ghim với HEAD. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy. Ghi chú đối chiếu và đính chính: research/2026-11-23-stored-delta-xt-h-148-158.md ở X-Templates."
     },
     {
       "id": "XT-H-154",
@@ -4355,7 +4358,7 @@
         "BASE-DOC-017"
       ],
       "column": "deeper",
-      "existing_coverage": "SEC-SUPPLY-027 và BASE-DOC-017 (XT-H-142) yêu cầu verification_level, files_read, full SHA và phạm vi kết luận.",
+      "existing_coverage": "SEC-SUPPLY-027 yêu cầu SHA đã đọc và BASE-DOC-017 yêu cầu bằng chứng cho con số; không có `files_read`, `verification_level` hay kiểu đọc trong khung: ghi trước đó dẫn XT-H-142 nhưng ID này không có trong X-Templates.",
       "delta": "Chỉ thêm một cột vào hồ sơ mẫu, không cần ID mới: kiểu đọc của từng file (mở toàn bộ, grep dòng, chỉ liệt kê tên, bản dịch) và ghi rõ nguồn không có SHA (trang web, model card). Không nâng mức kiểm chỉ vì đã clone đủ file.",
       "xt_evidence": [
         {
@@ -4371,7 +4374,7 @@
           "url": "https://github.com/www-donghanhcungban-org/X-Templates/blob/fae1ca30fdba7aaf14656051a6b87d5df3e1f6bb/framework/01-baseline/documentation-minimum.md#L55"
         }
       ],
-      "note": "Đối chiếu lại ngày 23/11/2026 ở commit X-Templates 764566d: mọi ID trong xt_ids vẫn còn và đúng mức ghi; XT-H-154 chưa xuất hiện ở X-Templates và nội dung đề xuất chưa được đưa vào. Việc còn mở; chưa kiểm sâu nội dung từng ID ngoài sự tồn tại và mức."
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/762 (squash 74d51d0, 24/11/2026): đã thêm vào `SEC-SUPPLY-027`: ghi kiểu đọc của từng kết luận (mở nội dung, chỉ tên file, grep, bản dịch, không có SHA). Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy. Ghi chú đối chiếu và đính chính: research/2026-11-23-stored-delta-xt-h-148-158.md ở X-Templates."
     },
     {
       "id": "XT-H-155",
@@ -4391,7 +4394,7 @@
       "existing_coverage": "BASE-SEC-005 yêu cầu bí mật trong .env.example để trống và khởi động từ chối giá trị mẫu (XT-H-019); BASE-SEC-010 liên quan phơi cổng và bind (XT-H-020).",
       "delta": "Thêm hai ví dụ vào control hiện có, không cần ID mới: biến có tiền tố mà bundler đẩy xuống phía trình duyệt (VITE_*) không được chứa khóa dịch vụ; script cấu hình không được in giá trị biến bí mật ra log. Fixture: tìm biến VITE_* có tên chứa KEY, SECRET hoặc TOKEN trong tệp env và compose; kiểm log khởi động không chứa giá trị khóa.",
       "xt_evidence": [],
-      "note": "Đối chiếu lại ngày 23/11/2026 ở commit X-Templates 764566d: mọi ID trong xt_ids vẫn còn và đúng mức ghi; XT-H-155 chưa xuất hiện ở X-Templates và nội dung đề xuất chưa được đưa vào. Việc còn mở; chưa kiểm sâu nội dung từng ID ngoài sự tồn tại và mức."
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/762 (squash 74d51d0, 24/11/2026): đã thêm vào `BASE-SEC-010`: proxy không tắt xác thực theo đường dẫn, kèm lệnh `rg` kiểm `auth_basic off`; mật khẩu mặc định và `VITE_*` đã có ở `BASE-SEC-005` và `BASE-CFG-008`. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy. Ghi chú đối chiếu và đính chính: research/2026-11-23-stored-delta-xt-h-148-158.md ở X-Templates."
     },
     {
       "id": "XT-H-156",
@@ -4419,7 +4422,7 @@
       "existing_coverage": "UX-A11Y-001 yêu cầu cổng máy (jsx-a11y, axe-core chặn lỗi serious/critical, visual regression) chạy trước skill \"gu\", và XT-H-077 đã ghi axe chỉ bắt khoảng 57% lỗi WCAG nên phần incomplete cần người duyệt. STD-A11Y-007 liên quan thuật toán tương phản (XT-H-079).",
       "delta": "Thêm ba điểm vào control hiện có, không cần ID mới: (1) tài liệu cổng kiểm phải liệt kê tag axe đang bật và có `wcag22aa` khi tuyên bố 2.2; (2) kết quả phải có trạng thái Not Tested, và Not Tested không bao giờ được hiển thị là đạt; (3) tính riêng số tiêu chí mức A và AA khi nói \"đủ WCAG 2.2 AA\" (6 trong 9 tiêu chí mới). Fixture: cấu hình chạy axe thiếu `wcag22aa` mà báo cáo ghi \"2.2\" thì cổng đỏ.",
       "xt_evidence": [],
-      "note": "Đối chiếu lại ngày 23/11/2026 ở commit X-Templates 764566d: mọi ID trong xt_ids vẫn còn và đúng mức ghi; XT-H-156 chưa xuất hiện ở X-Templates và nội dung đề xuất chưa được đưa vào. Việc còn mở; chưa kiểm sâu nội dung từng ID ngoài sự tồn tại và mức."
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/762 (squash 74d51d0, 24/11/2026): đã thêm vào `UX-A11Y-001`: bộ tag thực chạy của công cụ bên thứ ba và báo cáo Pass/Fail/Not Tested/Not Applicable. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy. Ghi chú đối chiếu và đính chính: research/2026-11-23-stored-delta-xt-h-148-158.md ở X-Templates."
     },
     {
       "id": "XT-H-157",
@@ -4440,8 +4443,7 @@
       ],
       "lesson": "Kết quả do model chấm trong skill UX không được dùng làm cổng chặn, và độ nhất quán phải được đo: ui-craft tách điểm tất định (cổng CI) khỏi điểm do model chấm (nhãn judged, cấm làm cổng); shadscan cho luật độ tin thấp chỉ là advisory không trừ điểm; happyhands chỉ nhận lỗi có quan sát tái lập. Nghiên cứu đã đọc (chỉ tóm tắt arXiv 2512.04262) đo GPT-4o trên 30 website: phát hiện vấn đề có kappa trung bình 0,50, nhưng mức nghiêm trọng có khớp chính xác 56% và Krippendorff alpha gần 0. UXAgent và TinyTroupe tự ghi dữ liệu người dùng giả lập chưa thay được người.",
       "xt_ids": [
-        "AI-EVAL-008",
-        "AI-EVAL-020"
+        "AI-EVAL-004"
       ],
       "column": "shallower",
       "existing_coverage": "AI-EVAL-008 và AI-EVAL-020 đã được dùng cho cổng eval và benchmark agent (XT-H-073, 085, 089, 092). Chưa đọc lại để biết control nào đã yêu cầu tách điểm tất định khỏi điểm do model chấm hoặc đo độ nhất quán giữa các lần chạy.",
@@ -4449,7 +4451,7 @@
         "text": "SHOULD: Với kết quả đánh giá do model sinh (review UI, chấm chất lượng), tách trường tất định (do mã tính) khỏi trường judged; chỉ trường tất định được dùng làm cổng chặn. Chạy mỗi mục ít nhất ba lần trên bộ ca có lỗi gieo sẵn và công bố kappa của phát hiện và độ khớp của mức nghiêm trọng riêng rẽ; đo thêm \"repair-lift\" (agent sửa cố định có làm giảm lỗi gieo sau khi áp dụng phê bình không). Kiểm fixture: bộ ca gồm trang sạch để đo báo động giả; mức nghiêm trọng do model gán đổi giữa hai lần chạy thì không được làm đổi kết quả cổng."
       },
       "xt_evidence": [],
-      "note": "Đối chiếu lại ngày 23/11/2026 ở commit X-Templates 764566d: mọi ID trong xt_ids vẫn còn và đúng mức ghi; XT-H-157 chưa xuất hiện ở X-Templates và nội dung đề xuất chưa được đưa vào. Việc còn mở; chưa kiểm sâu nội dung từng ID ngoài sự tồn tại và mức."
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/762 (squash 74d51d0, 24/11/2026): đã thêm vào `AI-EVAL-004`: kết quả do judge sinh không làm cổng chặn, đo riêng agreement của phát hiện và mức nghiêm trọng, chạy ≥ 3 lần; hai ID ghi trước (`AI-EVAL-008`, `AI-EVAL-020`) không đúng nhà. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy. Ghi chú đối chiếu và đính chính: research/2026-11-23-stored-delta-xt-h-148-158.md ở X-Templates."
     },
     {
       "id": "XT-H-158",
@@ -4470,12 +4472,12 @@
         "FE-SEC-001"
       ],
       "column": "missing",
-      "existing_coverage": "UX-AI-004 và FE-SEC-001 được dùng trong XT-H-058 (máy chủ MCP cục bộ) và XT-H-035; chưa đọc lại để biết control nào đã bao phủ UI sinh động. Chưa thấy control nào yêu cầu cổng riêng cho giao diện do model sinh (ID còn ở commit 764566d; nội dung chưa kiểm sâu).",
+      "existing_coverage": "UX-AI-004 và FE-SEC-001 được dùng trong XT-H-058 (máy chủ MCP cục bộ) và XT-H-035; chưa đọc lại để biết control nào đã bao phủ UI sinh động. Chưa thấy control nào yêu cầu cổng riêng cho giao diện do model sinh (đã đọc nguyên văn các control liên quan ở commit 764566d: không có control nào về giao diện do model sinh lúc chạy).",
       "proposal": {
         "text": "SHOULD: Khi agent hiển thị giao diện do model sinh lúc chạy, khai báo mức kiểm soát (cố định, khai báo hoặc mở) và áp cổng tương ứng: mức khai báo cần danh mục component và hành động được phép, kiểm schema đầu ra, CSP không dùng `https:` cho mọi host, liên kết do model sinh qua danh sách cho phép; mức mở chỉ dùng trong sandbox có CSP chặt. Công cụ kiểm tra spec không được tự truy cập URL do model sinh. Kiểm fixture: spec chứa `href` tới `javascript:` hoặc host ngoài danh sách thì bị từ chối; trình xác thực chạy với URL nội bộ trong spec không phát sinh lời gọi mạng."
       },
       "xt_evidence": [],
-      "note": "Đối chiếu lại ngày 23/11/2026 ở commit X-Templates 764566d: mọi ID trong xt_ids vẫn còn và đúng mức ghi; XT-H-158 chưa xuất hiện ở X-Templates và nội dung đề xuất chưa được đưa vào. Việc còn mở; chưa kiểm sâu nội dung từng ID ngoài sự tồn tại và mức."
+      "note": "Đã xử lý ở https://github.com/www-donghanhcungban-org/X-Templates/pull/762 (squash 74d51d0, 24/11/2026): đã thêm vào `FE-SEC-001`: giao diện do model sinh lúc chạy là dữ liệu không tin cậy (CSP không `https:`, danh sách cho phép liên kết, công cụ kiểm không truy cập URL trong spec). Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy. Ghi chú đối chiếu và đính chính: research/2026-11-23-stored-delta-xt-h-148-158.md ở X-Templates."
     },
     {
       "id": "XT-H-159",

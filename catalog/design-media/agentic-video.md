@@ -2,7 +2,7 @@
 
 # agentic-video — Thiết kế, giao diện & media
 
-[← Mục lục catalog](../README.md) · 45 hồ sơ.
+[← Mục lục catalog](../README.md) · 46 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -28,6 +28,7 @@
 | [AI YouTube Shorts Generator](../../19-agentic-video-media/README.md#ch-ai-youtube-shorts-generator) | `Anil-matcha/AI-Youtube-Shorts-Generator` | MIT | 6.506 | đọc tài liệu 2026-11-23 | 19 | Video dài → Shorts 9:16 (chọn đoạn bằng LLM, Whisper, crop theo mặt); |
 | [Short Video Factory](../../19-agentic-video-media/README.md#ch-short-video-factory) | `YILS-LIN/short-video-factory` | AGPL-3.0 | 6.264 | đọc tài liệu 2026-11-23 | 19 | App Electron 22 (hết hỗ trợ 2/2024) tự động viết nội dung (API tương thích OpenAI) + EdgeTTS + ghép video/phụ đề, chạy hàng loạt; |
 | [PySceneDetect](../../19-agentic-video-media/README.md#3e-reproducible-media-pipelines) | `Breakthrough/PySceneDetect` | BSD-3-Clause | 5.315 | đọc mã 2026-11-02 | 19 | Scene detection theo content/adaptive threshold; |
+| [drama-skills](../../19-agentic-video-media/README.md#dr-drama-skills) | `zenstory-ai/drama-skills` | MIT | 4.850 | đọc mã 2026-11-23 | 19 | Bộ 12 skill cho quy trình phim ngắn AI (kịch bản, storyboard, prompt ảnh/video, sản xuất, dựng). |
 | [awesome-claude-video-skills](../../19-agentic-video-media/README.md#ch-awesome-claude-video-skills) | `zhuyansen/awesome-claude-video-skills` | CC0-1.0 | 2.606 | đọc tài liệu 2026-11-23 | 19 | Số từ trendshift, chưa xác minh; |
 | [LocalMiniDrama](../../19-agentic-video-media/README.md#ch-localminidrama) | `xuanyustudio/LocalMiniDrama` | MIT | 2.530 | đọc tài liệu 2026-11-23 | 19 | Phim ngắn/truyện tranh động chạy offline, Vue3 + Node + SQLite, hỗ trợ Ollama; |
 | [OpenTimelineIO](../../19-agentic-video-media/README.md#3e-reproducible-media-pipelines) | `AcademySoftwareFoundation/OpenTimelineIO` | Apache-2.0 | 2.052 | đọc mã 2026-11-02 | 19 | Timeline interchange dùng RationalTime/external media; |

@@ -330,7 +330,7 @@ Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị t�
 
 Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị từ chối): ID, file và dòng lấy từ các đối chiếu đã ghi trước đó trong data/xt-handoff.json, chưa kiểm ở commit X-Templates hiện hành; đề xuất chỉ có hiệu lực sau khi đối chiếu lại.
 
-**Cập nhật 23/11/2026:** đã đọc lại X-Templates ở commit `764566d`: cả 12 ID control của XT-H-148…155 vẫn còn và đúng mức ghi; không có XT-H-148…155 nào xuất hiện trong X-Templates, nên các đề xuất **chưa được đưa vào** và còn mở. Mới kiểm ID còn tồn tại và mức, chưa kiểm sâu nội dung từng control.
+**Cập nhật 24/11/2026:** XT-H-148…155 đã được xử lý ở [PR 762](https://github.com/www-donghanhcungban-org/X-Templates/pull/762) (squash `74d51d0`): mở rộng ID hiện có, riêng XT-H-150 thêm ID mới `SEC-SUPPLY-035`; XT-H-152 khung đã bao phủ nên chỉ thêm ví dụ. Chi tiết từng mục và đính chính các ghi chú "đã có" dựa trên XT-H-142…146 (các ID đó không có trong X-Templates) ở `research/2026-11-23-stored-delta-xt-h-148-158.md` bên X-Templates. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy.
 
 | Handoff | Bài học và hồ sơ | Control đã đối chiếu | Cột và xử lý |
 |---|---|---|---|
@@ -349,7 +349,7 @@ Ba cột: `deeper` 6 dòng (148, 151–155), `shallower` 1 dòng (149), `missing
 
 Không đọc lại X-Templates trong phiên này (yêu cầu thêm repo bị từ chối): ID, file và dòng lấy từ các đối chiếu đã ghi trước đó trong data/xt-handoff.json, chưa kiểm ở commit X-Templates hiện hành; đề xuất chỉ có hiệu lực sau khi đối chiếu lại.
 
-**Cập nhật 23/11/2026:** đã đọc lại X-Templates ở commit `764566d`: cả 6 ID control của XT-H-156…158 vẫn còn và đúng mức ghi; không có XT-H-156…158 nào xuất hiện trong X-Templates, nên các đề xuất **chưa được đưa vào** và còn mở. Mới kiểm ID còn tồn tại và mức, chưa kiểm sâu nội dung từng control.
+**Cập nhật 24/11/2026:** XT-H-156…158 đã được xử lý ở [PR 762](https://github.com/www-donghanhcungban-org/X-Templates/pull/762) (squash `74d51d0`): mở rộng ID hiện có, riêng XT-H-150 thêm ID mới `SEC-SUPPLY-035`; XT-H-152 khung đã bao phủ nên chỉ thêm ví dụ. Chi tiết từng mục và đính chính các ghi chú "đã có" dựa trên XT-H-142…146 (các ID đó không có trong X-Templates) ở `research/2026-11-23-stored-delta-xt-h-148-158.md` bên X-Templates. Ví dụ về repo bên thứ ba là quan sát đọc mã, chưa chạy.
 
 | Handoff | Bài học và hồ sơ | Control đã đối chiếu | Cột và xử lý |
 |---|---|---|---|

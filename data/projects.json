@@ -76,7 +76,7 @@
       "quality-mgmt",
       "manufacturing"
     ],
-    "count": 2480,
+    "count": 2481,
     "schema_version": 2
   },
   "projects": [
@@ -55401,6 +55401,31 @@
         "https://github.com/UKGovernmentBEIS/control-arena/blob/2c32268f8ea38eb94d66f61a83e0be01fd69c0c9/.github/workflows/checks.yml"
       ],
       "verified_ref": "2c32268f8ea38eb94d66f61a83e0be01fd69c0c9"
+    },
+    {
+      "id": "drama-skills",
+      "name": "drama-skills",
+      "repo": "zenstory-ai/drama-skills",
+      "category": "agentic-video",
+      "license": "MIT",
+      "stars": 4850,
+      "open_source": true,
+      "notes": "Bộ 12 skill cho quy trình phim ngắn AI (kịch bản, storyboard, prompt ảnh/video, sản xuất, dựng). Đã đọc mã: cổng xác nhận gắn dấu vân tay job và băm đầu vào (đổi đầu vào thì phải xác nhận lại), dashboard cục bộ bind 127.0.0.1 có token mỗi lần chạy. Dữ liệu gửi tới nhà cung cấp bên thứ ba; không dùng cho nội dung nhạy cảm. Cảnh báo preview chỉ là soft gate. ★ 4.850 (GitHub API, 2026-11-24).",
+      "section": "19",
+      "profile_path": "19-agentic-video-media/README.md",
+      "profile_anchor": "19-agentic-video-media/README.md#dr-drama-skills",
+      "last_verified_at": "2026-11-23",
+      "verification_level": "code-read",
+      "sources": [
+        "https://github.com/zenstory-ai/drama-skills/blob/7fed9dfcd33c5a3134ff1b51709dd826488b5aab/LICENSE",
+        "https://github.com/zenstory-ai/drama-skills/blob/7fed9dfcd33c5a3134ff1b51709dd826488b5aab/README_EN.md",
+        "https://github.com/zenstory-ai/drama-skills/blob/7fed9dfcd33c5a3134ff1b51709dd826488b5aab/pyproject.toml",
+        "https://github.com/zenstory-ai/drama-skills/blob/7fed9dfcd33c5a3134ff1b51709dd826488b5aab/skills/short-drama-produce/scripts/production_tool.py",
+        "https://github.com/zenstory-ai/drama-skills/blob/7fed9dfcd33c5a3134ff1b51709dd826488b5aab/skills/short-drama-produce/scripts/provider_adapters.py",
+        "https://github.com/zenstory-ai/drama-skills/blob/7fed9dfcd33c5a3134ff1b51709dd826488b5aab/skills/short-drama/scripts/dashboard_server.py",
+        "https://api.github.com/repos/zenstory-ai/drama-skills"
+      ],
+      "verified_ref": "7fed9dfcd33c5a3134ff1b51709dd826488b5aab"
     }
   ]
 }
