@@ -6,9 +6,11 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
+| [Flutter](../../13-dev-stack-devops/README.md#ch-flutter) | `flutter/flutter` | BSD-3-Clause | 181.401 | đọc tài liệu 2026-11-23 | 13 | . |
 | [React Native](../../13-dev-stack-devops/README.md#anhkysuai-2026-11-23-identity-react-native) | `react/react-native` | MIT | 126.999 | đọc tài liệu 2026-11-23 | 13 | + Expo Đối chiếu 2026-11-23: facebook/react-native → react/react-native, cùng GitHub repository ID 29028775; |
 | [Tauri](../../13-dev-stack-devops/README.md#ch-tauri) | `tauri-apps/tauri` | MIT OR Apache-2.0 | 112.380 | đọc tài liệu 2026-11-23 | 13 | App desktop/mobile với frontend web + lõi Rust; |
 | [Expo](../../13-dev-stack-devops/README.md#anhkysuai-expo-expo) | `expo/expo` | MIT cho mã Expo; phụ thuộc có giấy phép riêng | 53.736 | đọc tài liệu 2026-11-23 | 13 | Nền tảng React Native cho ứng dụng Android, iOS và web. |
+| [Kotlin Multiplatform](../../13-dev-stack-devops/README.md#ch-kotlin-multiplatform) | `JetBrains/kotlin` | Apache-2.0 | 53.632 | đọc tài liệu 2026-11-23 | 13 | . |
 | [Alamofire](../../13-dev-stack-devops/README.md#anhkysuai-alamofire-alamofire) | `Alamofire/Alamofire` | MIT | 42.397 | đọc tài liệu 2026-11-23 | 13 | Thư viện HTTP Swift cho ứng dụng trên nền tảng Apple. |
 | [uni-app](../../13-dev-stack-devops/README.md#anhkysuai-dcloudio-uni-app) | `dcloudio/uni-app` | Apache-2.0 cho mã repo; license.md dẫn điều khoản DCloud riêng cần kiểm tra | 41.699 | đọc tài liệu 2026-11-23 | 13 | Framework Vue phát triển web, ứng dụng và mini-program nhiều nền tảng. |
 | [Taro](../../13-dev-stack-devops/README.md#anhkysuai-nervjs-taro) | `NervJS/taro` | MIT | 37.768 | đọc tài liệu 2026-11-23 | 13 | Biên dịch ứng dụng React/Vue/Nerv sang nhiều nền mini-program, Web và React Native. |
@@ -32,5 +34,3 @@
 | [gluestack-ui](../../06-ui-ux-design/README.md#ch-gluestack-ui) | `gluestack/gluestack-ui` | MIT | 5.359 | đọc tài liệu 2026-11-23 | 06 | v3: 61 component RN + web trên NativeWind, 4 starter kit; |
 | [Taro UI](../../06-ui-ux-design/README.md#ch-taro-ui) | `jd-opensource/taro-ui` | MIT | 4.729 | đọc tài liệu 2026-11-23 | 06 | UI đa nền mini-program cho Taro 3; |
 | [tapflow](../../30-software-testing-quality/README.md#nt-tapflow) | `jo-duchan/tapflow` | MIT (kèm thành phần bên thứ ba Apache-2.0 trong NOTICE) | 2.292 | đọc mã 2026-11-23 | 30 | Ứng dụng tự host stream iOS Simulator và Android emulator ra trình duyệt cho QA không cần Xcode, kèm flow runner YAML và MCP. |
-| [Flutter](../../13-dev-stack-devops/README.md#ch-flutter) | `flutter/flutter` | BSD-3-Clause | — | đọc tài liệu 2026-11-23 | 13 | . |
-| [Kotlin Multiplatform](../../13-dev-stack-devops/README.md#ch-kotlin-multiplatform) | `JetBrains/kotlin` | Apache-2.0 | — | đọc tài liệu 2026-11-23 | 13 | . |

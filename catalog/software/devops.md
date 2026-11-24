@@ -8,6 +8,7 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
+| [Kubernetes](../../13-dev-stack-devops/README.md#ch-kubernetes) | `kubernetes/kubernetes` | Apache-2.0 | 129.254 | đọc tài liệu 2026-11-23 | 13 | . |
 | [moby](../../32-platform-delivery-engineering/README.md#chuyen-moby) | `moby/moby` | Apache License 2.0 | 72.275 | đọc tài liệu 2026-11-18 | 32 | Dự án mã nguồn mở do Docker tạo, cung cấp bộ thành phần để lắp ráp hệ thống container; |
 | [dive](../../32-platform-delivery-engineering/README.md#anhkysuai-wagoodman-dive) | `wagoodman/dive` | MIT | 54.755 | đọc tài liệu 2026-11-23 | 32 | Xem layer Docker/OCI image và tìm dung lượng bị lãng phí. |
 | [Docker Compose](../../32-platform-delivery-engineering/README.md#anhkysuai-docker-compose) | `docker/compose` | Apache-2.0 | 39.135 | đọc tài liệu 2026-11-23 | 32 | CLI định nghĩa và chạy ứng dụng nhiều container bằng Compose file. |
@@ -24,17 +25,16 @@
 | [containerd](../../32-platform-delivery-engineering/README.md#anhkysuai-containerd-containerd) | `containerd/containerd` | Apache-2.0 | 21.527 | đọc tài liệu 2026-11-23 | 32 | Runtime daemon quản lý image và vòng đời container trên Linux/Windows. |
 | [kubectx và kubens](../../32-platform-delivery-engineering/README.md#anhkysuai-ahmetb-kubectx) | `ahmetb/kubectx` | Apache-2.0 | 20.130 | đọc tài liệu 2026-11-23 | 32 | CLI chuyển context/namespace Kubernetes nhanh, có tích hợp tìm kiếm tương tác. |
 | [kubesphere](../../32-platform-delivery-engineering/README.md#chuyen-kubesphere) | `kubesphere/kubesphere` | Apache License 2.0 kèm điều kiện bổ sung | 17.083 | đọc tài liệu 2026-11-18 | 32 | Nền tảng container đa thuê bao dùng Kubernetes làm nhân, quản lý ứng dụng cloud-native đa cụm, datacenter và biên qua giao diện web, có kiến trúc mở rộng bằng plugin. |
-| [Kubernetes](../../13-dev-stack-devops/README.md#ch-kubernetes) | `kubernetes/kubernetes` | Apache-2.0 | — | đọc tài liệu 2026-11-23 | 13 | . |
 
 ## IaC & quản lý cấu hình (`iac-config`, 5)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [ansible](../../32-platform-delivery-engineering/README.md#chuyen-ansible) | `ansible/ansible` | GNU General Public License v3.0 | 71.623 | đọc tài liệu 2026-11-18 | 32 | Hệ thống tự động hoá hạ tầng IT (ansible-core): quản lý cấu hình, triển khai ứng dụng, cấp phát cloud, thực thi tác vụ ad-hoc và tự động hoá mạng. |
+| [Terraform](../../13-dev-stack-devops/README.md#ch-terraform) | `hashicorp/terraform` | BSL-1.1 (Business Source License 1.1, licensor IBM) | 50.316 | đọc tài liệu 2026-11-23 | 13 | . |
 | [nacos](../../34-backend-data-identity-integration/README.md#chuyen-nacos) | `alibaba/nacos` | Apache License 2.0 | 33.525 | đọc tài liệu 2026-11-18 | 34 | Nền tảng khám phá dịch vụ, quản lý cấu hình động và quản lý dịch vụ cho ứng dụng cloud-native và microservice. |
+| [OpenTofu](../../32-platform-delivery-engineering/README.md#factory-opentofu-2026-11-04) | `opentofu/opentofu` | MPL-2.0 | 30.973 | đọc mã 2026-11-04 | 13 | Fork Terraform Đọc sâu 4/11/2026: plan detailed-exitcode 0=no diff/1=error/2=changes; |
 | [Pulumi](../../32-platform-delivery-engineering/README.md#anhkysuai-pulumi-pulumi) | `pulumi/pulumi` | Apache-2.0 | 25.939 | đọc tài liệu 2026-11-23 | 32 | Infrastructure as Code dùng ngôn ngữ lập trình thông thường và Automation API. |
-| [OpenTofu](../../32-platform-delivery-engineering/README.md#factory-opentofu-2026-11-04) | `opentofu/opentofu` | MPL-2.0 | — | đọc mã 2026-11-04 | 13 | Fork Terraform Đọc sâu 4/11/2026: plan detailed-exitcode 0=no diff/1=error/2=changes; |
-| [Terraform](../../13-dev-stack-devops/README.md#ch-terraform) | `hashicorp/terraform` | BSL-1.1 (Business Source License 1.1, licensor IBM) | — | đọc tài liệu 2026-11-23 | 13 | . |
 
 ## CI/CD & phát hành (`ci-cd-release`, 7)
 
@@ -43,10 +43,10 @@
 | [act](../../13-dev-stack-devops/README.md#ch-act) | `nektos/act` | MIT | 72.504 | đọc tài liệu 2026-11-23 | 13 | Chạy GitHub Actions cục bộ; |
 | [Harness Open Source](../../32-platform-delivery-engineering/README.md#anhkysuai-harness-harness) | `harness/harness` | Apache-2.0 | 38.955 | đọc tài liệu 2026-11-23 | 32 | Nền tảng tự host code, pipeline DevOps, Gitspaces và artifact registry. |
 | [Jenkins](../../32-platform-delivery-engineering/README.md#anhkysuai-jenkinsci-jenkins) | `jenkinsci/jenkins` | MIT | 26.804 | đọc tài liệu 2026-11-23 | 32 | Máy chủ tự động hóa build, kiểm thử và triển khai với hệ plugin. |
+| [Argo CD](../../32-platform-delivery-engineering/README.md#factory-argocd-2026-11-04) | `argoproj/argo-cd` | Apache-2.0 | 24.678 | đọc mã 2026-11-04 | 13 | CNCF graduated Đọc sâu 4/11/2026: Server.Rollback từ chối khi automated sync bật; |
 | [semantic-release](../../32-platform-delivery-engineering/README.md#anhkysuai-semantic-release-semantic-release) | `semantic-release/semantic-release` | MIT | 24.193 | đọc tài liệu 2026-11-23 | 32 | Tự động chọn version, tạo release notes và publish package theo commit. |
+| [Dagger](../../13-dev-stack-devops/README.md#ch-dagger) | `dagger/dagger` | Apache-2.0 | 16.643 | đọc tài liệu 2026-11-23 | 13 | . |
 | [GoReleaser](../../13-dev-stack-devops/README.md#goreleaser) | `goreleaser/goreleaser` | MIT | 16.131 | đọc mã 2026-11-02 | 13 | Release pipeline đa nền tảng; |
-| [Argo CD](../../32-platform-delivery-engineering/README.md#factory-argocd-2026-11-04) | `argoproj/argo-cd` | Apache-2.0 | — | đọc mã 2026-11-04 | 13 | CNCF graduated Đọc sâu 4/11/2026: Server.Rollback từ chối khi automated sync bật; |
-| [Dagger](../../13-dev-stack-devops/README.md#ch-dagger) | `dagger/dagger` | Apache-2.0 | — | đọc tài liệu 2026-11-23 | 13 | . |
 
 ## PaaS tự host & bảng điều khiển server (`paas-self-hosting`, 7)
 
@@ -163,6 +163,7 @@
 | [pyenv](../../13-dev-stack-devops/README.md#anhkysuai-pyenv-pyenv) | `pyenv/pyenv` | MIT | 45.183 | đọc tài liệu 2026-11-23 | 13 | Chuyển phiên bản Python theo người dùng, thư mục dự án hoặc biến môi trường. |
 | [V](../../37-programming-languages-runtimes/README.md#anhkysuai-vlang-v) | `vlang/v` | MIT | 38.124 | đọc tài liệu 2026-11-23 | 37 | Ngôn ngữ và compiler hướng cú pháp gọn, backend C/JavaScript. |
 | [pnpm](../../13-dev-stack-devops/README.md#anhkysuai-pnpm-pnpm) | `pnpm/pnpm` | MIT; pnpr/ là PolyForm Shield 1.0.0 source-available | 37.156 | đọc tài liệu 2026-11-23 | 13 | Quản lý package JavaScript với content-addressable store và workspace. |
+| [mise](../../13-dev-stack-devops/README.md#factory-2026-11-04-mise) | `jdx/mise` | MIT | 36.429 | đọc mã 2026-11-04 | 13 | Khóa toolchain và task/env; |
 | [Poetry](../../13-dev-stack-devops/README.md#anhkysuai-python-poetry-poetry) | `python-poetry/poetry` | MIT | 34.324 | đọc tài liệu 2026-11-23 | 13 | Quản lý dependency và đóng gói dự án Python dựa trên pyproject.toml. |
 | [Carbon Language](../../37-programming-languages-runtimes/README.md#anhkysuai-carbon-language-carbon-lang) | `carbon-language/carbon-lang` | Apache-2.0 WITH LLVM-exception | 33.969 | đọc tài liệu 2026-11-23 | 37 | Nghiên cứu ngôn ngữ kế nhiệm C++ với hướng tương tác hai chiều. |
 | [Composer](../../13-dev-stack-devops/README.md#anhkysuai-composer-composer) | `composer/composer` | MIT | 29.589 | đọc tài liệu 2026-11-23 | 13 | Quản lý dependency dự án PHP. |
@@ -181,8 +182,7 @@
 | [GitButler](../../13-dev-stack-devops/README.md#anhkysuai-gitbutlerapp-gitbutler) | `gitbutlerapp/gitbutler` | FSL-1.1-MIT; MIT có hiệu lực sau hai năm cho từng phiên bản | 22.010 | đọc tài liệu 2026-11-23 | 13 | Ứng dụng và CLI quản lý Git với stacked branch, parallel branch, chỉnh commit và khả năng hoàn tác. |
 | [Nix](../../13-dev-stack-devops/README.md#nix) | `NixOS/nix` | LGPL-2.1 | 17.960 | đọc mã 2026-11-02 | 13 | Package/build manager Unix; |
 | [devenv](../../13-dev-stack-devops/README.md#devenv) | `cachix/devenv` | Apache-2.0 | 7.794 | đọc mã 2026-11-02 | 13 | Môi trường dev khai báo trên Nix với lock/packages/services/tests; |
-| [Development Container Specification](../../32-platform-delivery-engineering/README.md#factory-devcontainers-2026-11-04) | `devcontainers/spec` | CC-BY-4.0 (spec); MIT (code) | — | đọc tài liệu 2026-11-04 | 32 | Đặc tả môi trường dev/CI: initializeCommand chạy host; |
-| [mise](../../13-dev-stack-devops/README.md#factory-2026-11-04-mise) | `jdx/mise` | MIT | — | đọc mã 2026-11-04 | 13 | Khóa toolchain và task/env; |
+| [Development Container Specification](../../32-platform-delivery-engineering/README.md#factory-devcontainers-2026-11-04) | `devcontainers/spec` | CC-BY-4.0 (spec); MIT (code) | 5.842 | đọc tài liệu 2026-11-04 | 32 | Đặc tả môi trường dev/CI: initializeCommand chạy host; |
 
 ## Hệ điều hành & công cụ hệ thống (`os-system`, 17)
 

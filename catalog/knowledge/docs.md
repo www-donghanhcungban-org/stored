@@ -36,7 +36,7 @@
 | [lychee](../../16-docs-tools/README.md#ch-lychee) | `lycheeverse/lychee` | MIT OR Apache-2.0 | 4.156 | đọc tài liệu 2026-11-23 | 16 | Kiểm link Rust bất đồng bộ, cache, kiểm anchor, lychee-action; |
 | [CSpell](../../16-docs-tools/README.md#ch-cspell) | `streetsidesoftware/cspell` | MIT | 1.709 | đọc tài liệu 2026-11-23 | 16 | Spell check cho code và docs; |
 | [seiso](../../16-docs-tools/README.md#nt-seiso) | `scarletkc/seiso` | MIT | 196 | đọc mã 2026-11-23 | 16 | Linter cho quy ước tài liệu mà agent đọc lại làm ngữ cảnh: kind, một nơi sở hữu cho mỗi dữ kiện, con trỏ cụ thể, có exit code 0/1/2 dùng làm cổng CI. |
-| [Sybil](../../16-docs-tools/README.md#factory-docs-executable-2026-11-04) | `simplistix/sybil` | MIT | — | đọc mã 2026-11-04 | 16 | Đọc mã 4/11/2026: parser ví dụ reST/Markdown/MyST đưa vào pytest; |
+| [Sybil](../../16-docs-tools/README.md#factory-docs-executable-2026-11-04) | `simplistix/sybil` | MIT | 91 | đọc mã 2026-11-04 | 16 | Đọc mã 4/11/2026: parser ví dụ reST/Markdown/MyST đưa vào pytest; |
 
 ## Tài liệu cho agent (llms.txt, context) (`docs-for-agents`, 6)
 

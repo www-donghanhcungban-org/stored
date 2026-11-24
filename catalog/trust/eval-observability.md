@@ -23,6 +23,7 @@
 | [Inspect AI](../../07-eval-observability/README.md#core-eval-validity) | `UKGovernmentBEIS/inspect_ai` | MIT | 3.153 | đọc mã 2026-11-02 | 07 | UK AISI; |
 | [Lighteval](../../07-eval-observability/README.md#ch-lighteval) | `huggingface/lighteval` | MIT | 2.589 | đọc tài liệu 2026-11-23 | 07 | Hugging Face; |
 | [Evals Skills (Parlance Labs)](../../07-eval-observability/README.md#nt-evals-skills) | `ai-evals-course/evals-skills` | Apache-2.0 | 1.838 | đọc mã 2026-11-23 | 07 | Chín skill hướng dẫn agent dựng eval theo sản phẩm LLM (phân tích lỗi trên trace, dữ liệu tổng hợp, judge prompt, hiệu chuẩn judge, đánh giá RAG). |
+| [OpenEvals](../../07-eval-observability/README.md#openevals-factory) | `langchain-ai/openevals` | MIT | 1.262 | đọc mã 2026-11-04 | 07 | Scorer exact/JSON và LLM judge Python/JS; |
 | [Autoevals](../../07-eval-observability/README.md#nt-autoevals) | `braintrustdata/autoevals` | MIT | 1.087 | đọc mã 2026-11-23 | 07 | Thư viện scorer LLM-as-judge dựa trên template YAML với bảng điểm cố định, kèm scorer heuristic và biến trajectory. |
 | [JiWER](../../14-voice-multimodal/README.md#ch-jiwer) | `jitsi/jiwer` | Apache-2.0 | 942 | đọc tài liệu 2026-11-23 | 14 | Tính WER/MER/WIL/WIP/CER cho STT bằng RapidFuzz, v4.0.0; |
 | [agentevals](../../03-agentic-patterns-loops/README.md#factory-trajectory-oracles-2026-11-04) | `langchain-ai/agentevals` | MIT | 757 | đọc mã 2026-11-04 | 03 | Chấm trajectory: match strict/unordered/subset/superset + tool_args exact/ignore, LLM-judge, graph LangGraph; |
@@ -32,7 +33,6 @@
 | [UTMOSv2](../../14-voice-multimodal/README.md#ch-utmosv2) | `sarulab-speech/UTMOSv2` | MIT | 381 | đọc tài liệu 2026-11-23 | 14 | Dự đoán MOS độ tự nhiên giọng tổng hợp; |
 | [UltraEval-Audio](../../14-voice-multimodal/README.md#ch-ultraeval-audio) | `OpenBMB/UltraEval-Audio` | Apache-2.0 | 333 | đọc tài liệu 2026-11-23 | 14 | Khung eval audio foundation model: 34 benchmark, 10 ngôn ngữ, hiểu + sinh giọng, lệnh tái lập kết quả (ACL 2026 demo); |
 | [EVA (ServiceNow)](../../14-voice-multimodal/README.md#ch-eva-servicenow) | `ServiceNow/eva` | MIT | 235 | đọc tài liệu 2026-11-23 | 14 | Eval voice agent nhiều lượt bot-to-bot: EVA-A (đúng việc) + EVA-X (trải nghiệm); |
-| [OpenEvals](../../07-eval-observability/README.md#openevals-factory) | `langchain-ai/openevals` | MIT | — | đọc mã 2026-11-04 | 07 | Scorer exact/JSON và LLM judge Python/JS; |
 | [Ragas (số liệu RAG tách retrieval và answer)](../../07-eval-observability/README.md#nt-ragas-rag-metrics) | `explodinggradients/ragas` | Apache-2.0 | — | đọc mã 2026-11-23 | 07 | Bộ metric chấm ứng dụng RAG/LLM, tách rõ phía truy xuất (context precision, context recall) và phía trả lời (faithfulness, answer relevancy). |
 
 ## Tracing & observability LLM (`tracing`, 13)
@@ -94,5 +94,5 @@
 | [GoAccess](../../33-reliability-observability-operations/README.md#anhkysuai-allinurl-goaccess) | `allinurl/goaccess` | MIT | 21.150 | đọc tài liệu 2026-11-23 | 33 | Công cụ phân tích access log web, hiển thị terminal hoặc dashboard HTML thời gian thực. |
 | [VictoriaMetrics](../../33-reliability-observability-operations/README.md#chuyen-victoriametrics) | `VictoriaMetrics/VictoriaMetrics` | Apache-2.0 | 18.126 | đọc tài liệu 2026-11-18 | 33 | Cơ sở dữ liệu chuỗi thời gian và giải pháp giám sát nhanh, tiết kiệm, mở rộng được; |
 | [zipkin](../../33-reliability-observability-operations/README.md#chuyen-zipkin) | `openzipkin/zipkin` | Apache-2.0 | 17.475 | đọc tài liệu 2026-11-18 | 33 | Hệ thống truy vết phân tán, thu thập và tra cứu dữ liệu thời gian để gỡ lỗi độ trễ trong kiến trúc dịch vụ, kèm giao diện web và sơ đồ phụ thuộc. |
-| [OpenTelemetry Collector Contrib](../../33-reliability-observability-operations/README.md#otel-collector-egress) | `open-telemetry/opentelemetry-collector-contrib` | Apache-2.0 | — | đọc mã 2026-11-04 | 33 | Scoped redaction processor: allowlist, ignored keys bypass, allowed values precedence; |
+| [OpenTelemetry Collector Contrib](../../33-reliability-observability-operations/README.md#otel-collector-egress) | `open-telemetry/opentelemetry-collector-contrib` | Apache-2.0 | 5.064 | đọc mã 2026-11-04 | 33 | Scoped redaction processor: allowlist, ignored keys bypass, allowed values precedence; |
 | [Pyrra](../../33-reliability-observability-operations/README.md#pyrra-slo-operations) | `pyrra-dev/pyrra` | Apache-2.0 | — | đọc mã 2026-11-04 | 33 | SLO UI/operator+filesystem modes; |

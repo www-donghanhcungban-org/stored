@@ -9,8 +9,10 @@
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [FastAPI](../../13-dev-stack-devops/README.md#ch-fastapi) | `fastapi/fastapi` | MIT | 104.390 | đọc tài liệu 2026-11-23 | 13 | ; |
+| [Django](../../13-dev-stack-devops/README.md#ch-django) | `django/django` | BSD-3-Clause | 91.831 | đọc tài liệu 2026-11-23 | 13 | . |
 | [gin](../../34-backend-data-identity-integration/README.md#chuyen-gin) | `gin-gonic/gin` | MIT | 89.531 | đọc tài liệu 2026-11-18 | 34 | Framework web HTTP hiệu năng cao cho Go, API kiểu Martini dựa trên httprouter. |
 | [Laravel application skeleton](../../34-backend-data-identity-integration/README.md#anhkysuai-2026-11-23-laravel-laravel) | `laravel/laravel` | MIT (composer.json và README) | 85.489 | đọc tài liệu 2026-11-23 | 34 | Bộ khung ứng dụng khởi tạo Laravel với cấu hình và phụ thuộc cho dự án PHP. |
+| [Spring Boot](../../13-dev-stack-devops/README.md#ch-spring-boot) | `spring-projects/spring-boot` | Apache-2.0 | 81.934 | đọc tài liệu 2026-11-23 | 13 | . |
 | [NestJS](../../13-dev-stack-devops/README.md#ch-nestjs) | `nestjs/nest` | MIT | 76.957 | đọc tài liệu 2026-11-23 | 13 | 10/2026; |
 | [flask](../../34-backend-data-identity-integration/README.md#chuyen-flask) | `pallets/flask` | BSD-3-Clause | 75.381 | đọc tài liệu 2026-11-18 | 34 | Framework ứng dụng web WSGI gọn nhẹ cho Python, xây quanh Werkzeug và Jinja. |
 | [express](../../34-backend-data-identity-integration/README.md#chuyen-express) | `expressjs/express` | MIT | 69.801 | đọc tài liệu 2026-11-18 | 34 | Framework web tối giản, không áp đặt cấu trúc cho Node.js, cung cấp định tuyến và tiện ích HTTP. |
@@ -32,8 +34,6 @@
 | [Tornado](../../34-backend-data-identity-integration/README.md#anhkysuai-tornadoweb-tornado) | `tornadoweb/tornado` | Apache-2.0 | 22.175 | đọc tài liệu 2026-11-23 | 34 | Framework web và thư viện mạng async Python cho kết nối dài. |
 | [Clean Architecture ASP.NET Template](../../34-backend-data-identity-integration/README.md#anhkysuai-jasontaylordev-cleanarchitecture) | `jasontaylordev/CleanArchitecture` | MIT | 20.735 | đọc tài liệu 2026-11-23 | 34 | Template ASP.NET Core/Aspire cho Angular, React hoặc Web API riêng. |
 | [The $12 Server Challenge](../../34-backend-data-identity-integration/README.md#6-kỹ-thuật-đáng-học-từ-nhóm-dẫn-đầu-the-12-server-challenge-twelve-dollar-server-challenge-đọc-readme-bài-dự-thi-4112026) | `arjaythedev/twelve-dollar-server-challenge` | MIT | 660 | đọc tài liệu 2026-11-04 | 34 | Cuộc thi hiệu năng Social Media API trên SQLite in-process, 1 vCPU/2 GB; |
-| [Django](../../13-dev-stack-devops/README.md#ch-django) | `django/django` | BSD-3-Clause | — | đọc tài liệu 2026-11-23 | 13 | . |
-| [Spring Boot](../../13-dev-stack-devops/README.md#ch-spring-boot) | `spring-projects/spring-boot` | Apache-2.0 | — | đọc tài liệu 2026-11-23 | 13 | . |
 
 ## BaaS & nền tảng backend (`baas-platform`, 6)
 
@@ -91,8 +91,8 @@
 | [Prisma ORM 8](../../34-backend-data-identity-integration/README.md#anhkysuai-prisma-orm) | `prisma/orm` | Apache-2.0 | 47.694 | đọc tài liệu 2026-11-23 | 34 | ORM viết lại bằng TypeScript, nhấn mạnh khả năng mở rộng và kết hợp cho ứng dụng dữ liệu. |
 | [go-redis](../../34-backend-data-identity-integration/README.md#anhkysuai-redis-go-redis) | `redis/go-redis` | BSD-2-Clause | 22.293 | đọc tài liệu 2026-11-23 | 34 | Client Redis cho Go với connection pool, Pub/Sub, pipeline, transaction, Sentinel và Cluster. |
 | [Knex](../../34-backend-data-identity-integration/README.md#anhkysuai-knex-knex) | `knex/knex` | MIT | 20.338 | đọc tài liệu 2026-11-23 | 34 | Query và schema builder SQL cho Node.js với nhiều dialect, transaction, pool kết nối và stream. |
-| [goose (database migrations)](../../34-backend-data-identity-integration/README.md#goose-migrations) | `pressly/goose` | MIT | — | đọc mã 2026-11-04 | 34 | Migration SQL/Go của pressly, khác block/goose; |
-| [sqlc](../../34-backend-data-identity-integration/README.md#sqlc) | `sqlc-dev/sqlc` | MIT | — | đọc mã 2026-11-04 | 34 | SQL compiler/codegen: compile/vet/diff khác compatibility; |
+| [sqlc](../../34-backend-data-identity-integration/README.md#sqlc) | `sqlc-dev/sqlc` | MIT | 18.487 | đọc mã 2026-11-04 | 34 | SQL compiler/codegen: compile/vet/diff khác compatibility; |
+| [goose (database migrations)](../../34-backend-data-identity-integration/README.md#goose-migrations) | `pressly/goose` | MIT | 11.752 | đọc mã 2026-11-04 | 34 | Migration SQL/Go của pressly, khác block/goose; |
 
 ## CMS & thương mại điện tử (`cms-commerce`, 11)
 

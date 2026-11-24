@@ -6,6 +6,7 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
+| [libphonenumber](../../18-vietnam-community/README.md#factory-vietnam-product-2026-11-04) | `google/libphonenumber` | Apache-2.0 | 18.363 | đọc mã 2026-11-04 | 18 | Thư viện phone Java/C++/JS cho sản phẩm đa quốc gia, áp dụng VN; |
 | [Vietnamese Provinces Database](../../18-vietnam-community/README.md#ch-vietnamese-provinces-database) | `thanglequoc/vietnamese-provinces-database` | MIT | 1.869 | đọc tài liệu 2026-11-23 | 18 | 34 tỉnh, 3.321 xã/phường sau sáp nhập (v5.2.0 theo 388/NQ-UBTVQH16); |
 | [underthesea](../../18-vietnam-community/README.md#ch-underthesea) | `undertheseanlp/underthesea` | Apache-2.0 | 1.819 | đọc tài liệu 2026-11-23 | 18 | v9.5.0 5/2026; |
 | [OpenKey](../../18-vietnam-community/README.md#nt-openkey) | `tuyenvm/OpenKey` | GPL-3.0 | 982 | đọc mã 2026-11-23 | 18 | Bộ gõ tiếng Việt mã nguồn mở cho macOS và Windows, engine C++ dùng chung, có chuyển mã và gõ tắt; |
@@ -23,7 +24,6 @@
 | [VNHSGE](../../18-vietnam-community/README.md#ch-vnhsge) | `Xdao85/VNHSGE` | — | 31 | đọc tài liệu 2026-11-23 | 18 | Đề thi tốt nghiệp THPT 9 môn, 19.000 câu trắc nghiệm + 300 tự luận, song ngữ (arXiv 2305.12199); |
 | [DESIGN:OS Vietnamese](../../18-vietnam-community/README.md#5d-hồ-sơ-jangtrinhdesign-os-vietnamese-16-skill-viết-tiếng-việt-theo-ngành-linter-tất-định-và-kho-tri-thức-có-neo-sha-256-link-người-dùng-gửi-đọc-mã-3112026) | `jangtrinh/design-os-vietnamese` | PolyForm-Shield-1.0.0 | 10 | đọc mã 2026-11-03 | 18 | Linter văn bản tiếng Việt offline (NFC, kiểu dấu, câu dịch máy, luật theo ngành) + kiểm parity i18n + 16 skill agent; |
 | [ViRE (Vietnamese retrieval evaluation)](../../18-vietnam-community/README.md#5c-vietnamese-domain-evaluation) | `longstnguyen/ViRE` | MIT | 7 | đọc mã 2026-11-02 | 18 | Retrieval đa domain tiếng Việt, EACL2026; |
-| [libphonenumber](../../18-vietnam-community/README.md#factory-vietnam-product-2026-11-04) | `google/libphonenumber` | Apache-2.0 | — | đọc mã 2026-11-04 | 18 | Thư viện phone Java/C++/JS cho sản phẩm đa quốc gia, áp dụng VN; |
 | [vietnamese-bi-encoder (BKAI)](../../18-vietnam-community/README.md#ch-vietnamese-bi-encoder-bkai) |  | Apache-2.0 | — | đọc tài liệu 2026-11-23 | 18 | Embedding RAG tiếng Việt, ~485k tải/tháng HF; |
 | [Vietnamese_Embedding (AITeamVN)](../../18-vietnam-community/README.md#ch-vietnamese-embedding-aiteamvn) |  | Apache-2.0 | — | đọc tài liệu 2026-11-23 | 18 | BGE-M3 tinh chỉnh tiếng Việt, ~21,7k tải/tháng; |
 | [Vistral](../../18-vietnam-community/README.md#ch-vistral) |  | AFL-3.0 | — | đọc tài liệu 2026-11-23 | 18 | HF; |
