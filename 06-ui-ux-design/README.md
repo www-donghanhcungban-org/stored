@@ -976,7 +976,7 @@ Các repo khác dao động dưới 5%. GitHub báo `NOASSERTION` với Vuetify,
 
 ### 7p.3 Design system và lint "sẵn cho agent"
 
-- **Astryx (Meta).** pnpm monorepo, 5.788 commit, 124 tác giả, 4.511 commit từ 1/5/2026. Có `AGENTS.md` 241 dòng; lệnh CLI ghi một khối hướng dẫn được quản lý vào `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `.cursorrules`. MCP **không nằm trong gói npm** mà là dịch vụ `astryx.atmeta.com/mcp` (2 tool `search`, `get`). Lời "dùng cho 13.000 ứng dụng nội bộ trong 8 năm" không kiểm được: lịch sử công khai bắt đầu 9/1/2026. Cần React 19; postinstall chỉ in lời nhắc, không gọi mạng. Cài: `npm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex` rồi `npx astryx init`.
+- **Astryx (Meta).** pnpm monorepo, 5.788 commit, 124 tác giả, 4.511 commit từ 1/5/2026. Có `AGENTS.md` 241 dòng; lệnh CLI ghi một khối hướng dẫn được quản lý vào `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `.cursorrules`. MCP: gói CLI có lệnh `astryx mcp` chạy máy chủ cục bộ; trang docs host thêm bản `--docs-only` tại `astryx.atmeta.com/mcp` (đợt đọc mã 24/11/2026 sửa ghi chú cũ "2 tool `search`, `get`", xem §7zh). Lời "dùng cho 13.000 ứng dụng nội bộ trong 8 năm" không kiểm được: lịch sử công khai bắt đầu 9/1/2026. Cần React 19; postinstall chỉ in lời nhắc, không gọi mạng. Cài: `npm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex` rồi `npx astryx init`.
 - **`@shadcn/lint`.** Đúng 6 luật (`no-restyle`, `no-raw-colors`, `no-arbitrary-values`, `no-inline-styles`, `no-unknown-classes`, `require-static-classes`), mỗi luật một file và một trang docs. Đây là **cổng máy đúng nghĩa cho "taste"**: thay vì dặn agent "dùng token", lint báo lỗi kèm cách sửa. Số liệu "mọi model về 0 lỗi" là eval tự chạy, thư mục kết quả bị gitignore nên không tái lập được. Oxlint chỉ đọc khối script trong `.vue`/`.svelte`. Không telemetry. README trỏ `LICENSE.md` nhưng file tên `LICENSE`.
 - **Semi Design (ByteDance).** Thư viện trưởng thành (từ 2021, 467 tag, 10 workflow gồm Cypress, Chromatic, Lighthouse). Lớp agent: MCP 5 tool (skill chỉ mô tả 4), skill `semi-design-guide` tiếng Trung, `DESIGN.md`. MCP tải docs lúc chạy từ unpkg và npm mirror. 626 issue/PR mở. Cài MCP: `claude mcp add semi-mcp -- npx -y @douyinfe/semi-mcp`.
 - **tweakcn.** Không phải thư viện mà là mã nguồn một SaaS (Next.js, Neon, Polar, Gemini). Nút "MCP" chỉ sinh cấu hình cho registry MCP của shadcn, không có server riêng. AI sinh theme giới hạn 5 lượt miễn phí; PostHog chỉ bật khi đặt key. Nhịp chậm lại: 2 commit từ 1/8/2026. Dùng tốt nhất qua web, xuất biến CSS.
@@ -1810,6 +1810,54 @@ npx @animate-ui/cli@latest animate all
 **Điều kiện:** MPL-2.0, giấy phép copyleft theo từng file: sửa file của Penpot thì phải công khai file đó, mã của mình ghép bên cạnh không bị ràng buộc. Penpot Enterprise là gói trả phí cho quản trị nhiều đội. MCP cho LLM viết và chạy đoạn mã tuỳ ý trong môi trường plugin của file đang mở: nên dùng trên file có bản sao lưu và với LLM được tin cậy.
 
 **Dùng khi:** cần công cụ thiết kế tự host, giữ dữ liệu thiết kế trong hạ tầng của mình, hoặc muốn agent đọc và sửa thiết kế qua MCP. Liên quan: §1 (bảng công cụ thiết kế), §7ze (skill Figma cho Claude, so khớp token thiết kế và code).
+
+## 7zh. Đọc mã meta/astryx: design system của Meta "sẵn cho agent", 32,7k★ sau 5 tháng (ảnh thẻ người dùng gửi, đọc mã 24/11/2026)
+
+> **Nguồn:** ảnh thẻ GitHub của `meta/astryx` kèm biểu đồ star-history (27,2k★ ngày 13/11/2026). Clone nông `72d06aa618b001c09970756b19890bb157be100d` (commit 24/11/2026), đọc README, LICENSE, `package.json` (gốc, core, cli), `postinstall.mjs`, lệnh `mcp`, `docs` của MCP host, skill trong `plugins/astryx`, CI, SECURITY. GitHub search API 24/11/2026: ★ 32.703, fork 2.567, MIT, không archive. Hồ sơ gốc ở §7p.3 và `ch-astryx-meta`; mục này đọc lại sâu hơn và đính chính tại chỗ.
+
+**Đường tăng sao.** 13,8k (31/10, §7p) → 15,08k (8/11, blockchain.news) → 27,2k (13/11, ảnh) → 30,56k (18/11, GitRanks) → 32,45k (23/11) → 32,70k (24/11). Từ 8/11 đến 13/11 sao tăng gần gấp đôi; kho chưa tìm được một sự kiện duy nhất giải thích **(chưa xác minh)**. Meta for Developers đăng đã qua 24k★ và hạng 1 trending; số nguồn blog (28.571★) lệch nhau theo ngày chụp nên chỉ dùng số từ API. Beta ra ngày 28/6/2026 theo BetterStack (OpenReplay ghi bài blog 18/6).
+
+**Đọc mã cho thấy:**
+
+- **Cấu trúc:** pnpm monorepo gồm `core`, `cli`, `build`, `themes` (7 theme công bố: neutral, butter, chocolate, matcha, stone, gothic, y2k; thêm `probe` chỉ để kiểm thử), `charts`, `richtext`, `vega`, `native`, `lab` (thử nghiệm, không lên npm). `packages/core/src` có 125 thư mục con, `packages/lab/src` có 32. README nói "150+ component"; số đếm thư mục không khớp hẳn vì gồm cả thư mục tiện ích, nên kho giữ cả hai số và không tự chọn một.
+- **Gói và phiên bản:** tên đúng là `@astryxdesign/core` (peer: React ≥ 19, `@stylexjs/stylex` ^0.19); repo ghi 0.7.18, npm latest 0.7.17 (22/11). Hồ sơ cũ viết `@astryx/core` là **sai tên gói**, đã sửa. CLI `@astryxdesign/cli` cần Node ≥ 22.13.
+- **Lớp agent:** `init` ghi khối hướng dẫn có đánh dấu `ASTRYX:START/END` kèm sha256 vào `AGENTS.md`/`CLAUDE.md`; plugin Claude Code (`.claude-plugin/marketplace.json`, `plugins/astryx/skills/astryx/SKILL.md`) buộc agent chạy `astryx build "<ý tưởng>"` rồi `astryx template` trước khi viết trang, đọc `astryx component <Tên>` thay vì đọc file gói. Máy chủ MCP là lệnh `astryx mcp` (cục bộ, stdio); trang docs host bản `--docs-only` với các tool search, build, component, hook, docs, template, discover, theme list/targets, không nhận đầu vào trỏ tới thư mục hay file. Ghi chú cũ "MCP chỉ là dịch vụ 2 tool" là sai, đã đính chính ở §7p.3.
+- **Cổng máy:** `pnpm check:repo` gom hàng chục kiểm tra (`check:agent-plugin-skill`, `check:setup-contract`, `check:package-boundaries`, `check:use-client`, `check:i18n-catalog`, các bản `--check` sinh lại bảng palette), cộng hợp đồng a11y bằng Playwright, perf nightly, kiểm bundle theo consumer (Next.js/Turbopack). Đây là mức kỷ luật cao hơn hẳn đa số design system trong §1.
+- **Rủi ro cài đặt:** `postinstall` chỉ in lời nhắc `astryx init`, không gọi mạng, không làm hỏng cài đặt, im lặng khi chạy qua npx hoặc đã thiết lập. Tìm trong CLI không thấy telemetry (các lần khớp từ "analytics" nằm trong mẫu giao diện). CLI có ba chỗ gọi mạng, đều theo yêu cầu người dùng: tải bài blog (`blog`), tải gói theme từ URL https (`theme`), tải ảnh từ xa khi render.
+- **Bảo trì:** commit hằng ngày (24/11 có 3 người đóng góp trong ngày), 14 tác giả trong cửa sổ clone nông 50 commit; lỗi bảo mật báo qua Meta Bug Bounty, chỉ bản mới nhất được vá.
+
+**So với lựa chọn cùng loại (số từ catalog, kiểm 23/11/2026):**
+
+| Hướng | Đại diện | ★ · license | Khác biệt chính |
+|---|---|---|---|
+| Gói versioned + lớp token + CLI cho agent | **Astryx** | 32,7k · MIT | Nâng cấp qua dependency; `swizzle` đẩy mã component vào repo khi cần; agent hỏi CLI/MCP thay vì scrape docs |
+| Sao chép mã vào repo | shadcn/ui | 128,8k · MIT | Sở hữu mã hoàn toàn; mỗi dự án tự nâng cấp; hệ agent hiện nằm ở lint và registry |
+| Thư viện trọn gói có bản sắc riêng | MUI, Ant Design, Chakra | 99k, 100k, 40,7k · MIT | Hệ sinh thái và độ chín cao hơn; tuỳ biến thường qua ghi đè CSS |
+| Design system có lớp agent | Semi Design | 10,5k · MIT | MCP 5 tool, `DESIGN.md`, tài liệu agent tiếng Trung |
+| Primitive không style | Radix, React Aria | 19,6k, 16,1k | Chỉ hành vi và a11y; phải tự dựng giao diện |
+
+**Hạn chế và rủi ro:**
+
+- **Beta, API còn đổi** (README và bài ngoài đều nói vậy); bản `0.x` nâng cấp liên tục (50 commit trong khoảng một ngày nhìn thấy trong clone nông).
+- **Lời "13.000+ app, 8 năm" không kiểm được** từ mã; lịch sử công khai bắt đầu muộn hơn nhiều **(chưa xác minh)**. Một số người trên Reddit lo về bảo trì dài hạn của framework do Meta dẫn dắt, theo InfoQ (13/9/2026).
+- **Mức độ "agent-ready" chưa có đo đạc công khai:** BetterStack không đưa số liệu; chưa thấy benchmark so với shadcn hay MUI.
+- **Ba số đếm theme lệch nhau** (README: 7; repo: 8 thư mục gồm `probe`; BetterStack: 10).
+- `swizzle` đẩy mã vào repo của bạn: từ lúc đó bạn tự bảo trì. Cần React 19 và Node 22.13+, hạn chế với dự án cũ.
+- Chưa chạy: build, test, cài thử, MCP host; chưa đọc từng component.
+
+**Tích hợp tối thiểu:**
+
+```bash
+npm install @astryxdesign/core @astryxdesign/theme-neutral @stylexjs/stylex
+npm install -D @astryxdesign/cli
+npx @astryxdesign/cli init
+```
+
+Trước khi dùng cho dự án thật: ghim phiên bản `0.7.x`, đọc `astryx docs` về nâng cấp, chạy `astryx doctor`, và coi `swizzle` là quyết định có chi phí bảo trì.
+
+**Bài học cho kho:** mẫu "gói versioned + CLI/MCP tra cứu + khối hướng dẫn có đánh dấu và băm" cho design system là cách làm agent hiểu thư viện mà không scrape docs; điểm đáng học nhất là **cổng máy kiểm chính khối hướng dẫn được sinh ra** (`check:agent-plugin-skill`, `check:setup-contract`), không chỉ dặn. Liên quan: §7p.3 (so với `@shadcn/lint`, Semi), §1 (bảng design system), §7y (component là hợp đồng có kiểm thử).
+
+**Nguồn §7zh:** ảnh người dùng gửi · GitHub search API 24/11/2026 · clone nông `72d06aa` · npm registry (`npm view @astryxdesign/core version`) · [BetterStack](https://betterstack.com/community/guides/ai/astryx-meta-design-system/) (cập nhật 27/7/2026) · [InfoQ 13/9/2026](https://infoq.com/news/2026/09/meta-astryx-design-system) · web search kết quả: Meta for Developers (X), GitRanks, blockchain.news, OpenReplay, Product Hunt; blog chưa mở trực tiếp (dev.to trả 404).
 
 ## 8. Nguồn (mục 1–6)
 
@@ -3305,12 +3353,12 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 |---|---|
 | Repo / URL | https://github.com/meta/astryx |
 | License | MIT |
-| Phiên bản đã đọc | `fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360` (commit 2026-11-23) |
-| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, packages/core/package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Phiên bản đã đọc | `72d06aa618b001c09970756b19890bb157be100d` (commit 2026-11-24) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, package.json (gốc, core, cli), postinstall, lệnh `mcp`, skill của plugin, CI; chưa cài, chưa build, chưa chạy test upstream. Chi tiết ở §7zh |
 | Bảo trì | Hoạt động (commit 23/11/2026), Beta |
 | ★ (ngày) | 32.703 ★, 2.567 fork (2026-11-24, nguồn: GitHub search API). Đường tăng: 13,8k (31/10) → 27,2k (13/11, theo ảnh thẻ star-history, **chưa xác minh độc lập**) → 32,451 (23/11); gấp đôi trong khoảng 2 tuần, chưa rõ nguyên nhân |
-| Nhận định | Design system React 19 + StyleX của Meta, đang Beta; `@astryx/core` hiện 0.7.18. README tự nhận "150+ component" và dùng cho 13.000+ app nội bộ **(chưa xác minh)**; có CLI, plugin agent (`.claude-plugin`, `plugins/`). |
-| Nguồn | [README](https://github.com/meta/astryx/blob/fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360/README.md) · [LICENSE](https://github.com/meta/astryx/blob/fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360/LICENSE) · [package.json](https://github.com/meta/astryx/blob/fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360/package.json) · [packages/core/package.json](https://github.com/meta/astryx/blob/fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360/packages/core/package.json) · [.github/workflows/ci.yml](https://github.com/meta/astryx/blob/fc0ea5c022af5e20b46e7c6ab74e8bb4c29fc360/.github/workflows/ci.yml) |
+| Nhận định | Design system React 19 + StyleX của Meta, Beta; gói `@astryxdesign/core` 0.7.18 trong repo (npm latest 0.7.17 ngày 22/11). Không thấy telemetry trong CLI; CLI có máy chủ MCP cục bộ (`astryx mcp`) và bản host trên trang docs. README tự nhận "150+ component" và "13.000+ app nội bộ" **(chưa xác minh)**; đọc mã thấy 125 thư mục trong `packages/core/src`. Xem §7zh. |
+| Nguồn | [README.md](https://github.com/meta/astryx/blob/72d06aa618b001c09970756b19890bb157be100d/README.md) · [LICENSE](https://github.com/meta/astryx/blob/72d06aa618b001c09970756b19890bb157be100d/LICENSE) · [package.json](https://github.com/meta/astryx/blob/72d06aa618b001c09970756b19890bb157be100d/package.json) · [package.json](https://github.com/meta/astryx/blob/72d06aa618b001c09970756b19890bb157be100d/packages/core/package.json) · [package.json](https://github.com/meta/astryx/blob/72d06aa618b001c09970756b19890bb157be100d/packages/cli/package.json) · [postinstall.mjs](https://github.com/meta/astryx/blob/72d06aa618b001c09970756b19890bb157be100d/packages/cli/scripts/postinstall.mjs) · [mcp.mjs](https://github.com/meta/astryx/blob/72d06aa618b001c09970756b19890bb157be100d/packages/cli/clients/cli/commands/mcp.mjs) · [SKILL.md](https://github.com/meta/astryx/blob/72d06aa618b001c09970756b19890bb157be100d/plugins/astryx/skills/astryx/SKILL.md) · [ci.yml](https://github.com/meta/astryx/blob/72d06aa618b001c09970756b19890bb157be100d/.github/workflows/ci.yml) |
 
 <a id="ch-awesome-ai-tools-for-ui"></a>
 

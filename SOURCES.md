@@ -2125,3 +2125,10 @@ Nguồn gốc: file xlsx người dùng gửi (tab "Kho Skill Thực Chiến"); 
 - [Android Developers: MotionScheme](https://developer.android.com/reference/kotlin/androidx/compose/material3/MotionScheme): API Compose standard/expressive và các spec; không xác nhận giá trị token trên web.
 - [Microsoft Learn: Agent Framework](https://learn.microsoft.com/en-us/agent-framework/overview/): mô tả nền tảng và quan hệ với AutoGen, Semantic Kernel; chưa đọc repo ở commit xác định.
 - Các repo `Autumn-27/ARTEX`, `seeker19110/design-os-3d-blender` và `seeker19110/system-design-notes` chưa truy cập được để đối chiếu commit; không khẳng định nguyên nhân.
+
+## Bổ sung 2026-11-24b (Astryx → mục 06 §7zh)
+
+- Ảnh thẻ GitHub người dùng gửi (`meta/astryx`, 27,2k★ ngày 13/11/2026). Clone nông `72d06aa618b001c09970756b19890bb157be100d` (commit 24/11/2026); GitHub search API 24/11/2026: ★ 32.703, fork 2.567, MIT; npm registry `@astryxdesign/core` 0.7.17.
+- [BetterStack: Astryx](https://betterstack.com/community/guides/ai/astryx-meta-design-system/): bài ngoài, cập nhật 27/7/2026, không có số đo.
+- [InfoQ: Meta Astryx](https://infoq.com/news/2026/09/meta-astryx-design-system): tin ngày 13/9/2026; nêu ý kiến Reddit về bảo trì dài hạn.
+- Kết quả tìm web (chưa mở trực tiếp): Meta for Developers (X), GitRanks, blockchain.news, OpenReplay, Product Hunt; dev.to trả 404.

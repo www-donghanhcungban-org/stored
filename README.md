@@ -585,6 +585,10 @@ Sau UI/UX, cùng cách làm được áp cho mười nhóm khác: mười trinh 
 
 Cùng cách làm của đợt trước, lần này cho cả mười nhóm: mười trinh sát tìm khoảng trống KHÁC với đợt 1, 26 lô đọc mã thật 233 repo (154 ứng viên đã qua sàng lọc từ đợt 1 nhưng chưa có hồ sơ, cộng 82 ứng viên mới của trinh sát đợt hai), rồi gộp vào kho. Kết quả: [chương 7 của PLAYBOOK](PLAYBOOK.md#7-đề-xuất-đợt-hai-skill-và-tính-năng-cho-các-nhóm) với 79 ý tưởng skill mới, 84 dòng chuẩn mới trong [STANDARDS.md](STANDARDS.md) (mức xác minh ghi từng dòng) và bàn giao XT-H-162 cho X-Templates. Điều đáng nhớ: mô tả của trinh sát lại sai ở nhiều repo, giấy phép "mã nguồn mở" thường có điều kiện đi kèm (Camunda, Nango, repo-forensics, Gatling, immudb), telemetry mặc định bật khá phổ biến, và nhiều công cụ dùng làm cổng thoát mã 0 trong đúng những trường hợp cần chặn. Mảng quản lý quy trình hàn, hiệu chuẩn và NDT mã nguồn mở vẫn không có công cụ đạt chất lượng. Một repo có workflow gửi khóa API tới IP trần đã bị loại khỏi kho theo yêu cầu.
 
+### 97. Astryx của Meta (24/11/2026): đọc mã design system "sẵn cho agent", 32,7k★
+
+Mục 06 §7zh đọc mã `meta/astryx` (MIT, Beta 0.7.x) theo ảnh thẻ người dùng gửi (27,2k★ ngày 13/11, nay 32,7k★). Gói đúng tên là `@astryxdesign/core` (hồ sơ cũ ghi sai `@astryx/core`); CLI có máy chủ MCP cục bộ chứ không chỉ dịch vụ host; không thấy telemetry; `check:repo` và `check:agent-plugin-skill` kiểm chính khối hướng dẫn cho agent. Lời "13.000+ app nội bộ" và "150+ component" chưa kiểm được.
+
 ## 🧭 Cách dùng kho này
 
 1. Đọc README của chuyên mục để nắm bối cảnh, bảng so sánh và điều kiện tích hợp (license, rủi ro, phương án thay thế).
