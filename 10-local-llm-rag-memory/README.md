@@ -638,21 +638,21 @@ Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ s�
 
 ### FreeLLMAPI
 
-**Repo:** [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) · **License:** MIT · **★ 56,915 (GitHub API, 2026-11-23)**
+**Repo:** [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) · **License:** MIT (gốc và `cli/`) · **★ 57,302 (GitHub API, 2026-11-24)**
 
-**Mục đích:** Gateway gom API của các nhà cung cấp mô hình sau endpoint tương thích OpenAI.
+**Mục đích:** Gateway gom API của các nhà cung cấp mô hình, gồm cả gói miễn phí, sau một endpoint `/v1` tương thích OpenAI; có dashboard quản trị, CLI và ứng dụng desktop.
 
-**Giá trị và cơ chế:** README mô tả định tuyến, fallback và theo dõi hạn mức theo khóa; monorepo có server, client và CLI, hữu ích để nghiên cứu cách thống nhất nhiều endpoint.
+**Giá trị và cơ chế:** Router chọn mô hình theo thứ tự ưu tiên, trừ hạn mức theo từng khóa và chuyển sang mô hình kế khi gặp 429/5xx. Khóa nhà cung cấp lưu trong SQLite bằng AES-256-GCM (IV ngẫu nhiên 16 byte, có authTag); ứng dụng chỉ nhận một bearer token chung. Bề mặt `/api/*` đứng sau phiên dashboard, còn `/v1` dùng khóa riêng; mật khẩu băm bằng scrypt. Docker compose mặc định chỉ publish `127.0.0.1`, muốn mở LAN phải đặt `HOST_BIND=0.0.0.0`.
 
-**Giới hạn:** Số token miễn phí và số nhà cung cấp chỉ là tuyên bố của README; hạn mức phụ thuộc từng bên. Feed miễn phí có độ trễ so với gói trả phí; chưa kiểm mã mã hóa khóa hay cách tính quota.
+**Giới hạn:** (1) Mặc định máy chủ **tự lấy catalog đã ký** từ `api.freellmapi.co` (đổi bằng `CATALOG_BASE_URL`, tắt bằng `CATALOG_SYNC_DISABLED=1`): chữ ký Ed25519 được kiểm bằng khóa công khai ghim sẵn, nhưng catalog quyết định danh sách mô hình, có thể vô hiệu hóa mô hình và bật sẵn các nhà cung cấp không cần khóa trên cài đặt mới; khóa giấy phép Premium (nếu có) gửi lên dưới dạng Bearer. (2) Ngoài production, khóa mã hóa tự sinh được lưu trong file `.encryption-key` cạnh DB (chmod 0600), nên sao chép cả thư mục dữ liệu là lấy được khóa; production phải đặt `ENCRYPTION_KEY`. (3) README ghi rõ dự án "cho thử nghiệm và học tập, không dành cho production" và người dùng tự chịu điều khoản của từng nhà cung cấp; tài liệu có mục rà soát ToS theo từng nhà cung cấp (tháng 5/2026) nhưng chưa đọc nội dung đó. (4) Số token miễn phí, số nhà cung cấp và độ chính xác của bộ đếm hạn mức chỉ là tuyên bố của README; chưa kiểm cách tính quota. (5) Cách cài một dòng qua `curl | bash` từ `freellmapi.co` chưa đọc.
 
-**Cách tham khảo/tích hợp:** Chỉ dùng khóa được phép, kiểm chính sách nhà cung cấp và thử failover với ngân sách giới hạn.
+**Cách tham khảo/tích hợp:** Chỉ dùng khóa được phép và kiểm chính sách từng nhà cung cấp trước khi gom nhiều khóa. Nếu chạy thử: đặt `CATALOG_SYNC_DISABLED=1` và `ENCRYPTION_KEY` rõ ràng, giữ bind loopback, thử failover với ngân sách giới hạn. Với dữ liệu nhạy cảm của nhà máy, không đưa qua gói miễn phí vì điều khoản của nhiều nhà cung cấp cho phép dùng dữ liệu (chưa xác minh).
 
 **Thay thế:** [LiteLLM](https://github.com/BerriAI/litellm), [one-api](https://github.com/songquanpeng/one-api), [Apache APISIX](../04-protocols-standards/README.md#anhkysuai-2026-11-23-apache-apisix).
 
-**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`ef97f50501e6`](https://github.com/tashfeenahmed/freellmapi/commit/ef97f50501e6dd959b41275b453e56113fa225a0). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+**Bằng chứng:** `code-read`, ngày 2026-11-24, commit [`62526e02f587`](https://github.com/tashfeenahmed/freellmapi/commit/62526e02f5875efbf75183704b5002d02beedf36). Đã đọc LICENSE (gốc và `cli/`), README, SECURITY.md, `docker-compose.yml`, `server/src/lib/crypto.ts`, `server/src/middleware/requireAuth.ts`, `server/src/services/catalog-sync.ts` (đoạn tải, kiểm chữ ký và biến môi trường) và `server/src/index.ts` (phần bind). Chưa đọc router, bộ đếm quota, adapter từng nhà cung cấp hay mã desktop. Chưa cài/chạy upstream. Hồ sơ trước ở mức `docs-read` (commit `ef97f50501e6`).
 
-**Nguồn:** [README.md](https://github.com/tashfeenahmed/freellmapi/blob/ef97f50501e6dd959b41275b453e56113fa225a0/README.md) · [LICENSE](https://github.com/tashfeenahmed/freellmapi/blob/ef97f50501e6dd959b41275b453e56113fa225a0/LICENSE) · [metadata GitHub](https://api.github.com/repos/tashfeenahmed/freellmapi).
+**Nguồn:** [README.md](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/README.md) · [LICENSE](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/LICENSE) · [cli/LICENSE](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/cli/LICENSE) · [SECURITY.md](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/SECURITY.md) · [docker-compose.yml](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/docker-compose.yml) · [server/src/lib/crypto.ts](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/server/src/lib/crypto.ts) · [server/src/middleware/requireAuth.ts](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/server/src/middleware/requireAuth.ts) · [server/src/services/catalog-sync.ts](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/server/src/services/catalog-sync.ts) · [server/src/index.ts](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/server/src/index.ts) · [metadata GitHub](https://api.github.com/repos/tashfeenahmed/freellmapi).
 
 <a id="anhkysuai-2026-11-23-supermemory"></a>
 
