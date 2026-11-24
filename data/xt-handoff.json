@@ -4472,7 +4472,7 @@
         "FE-SEC-001"
       ],
       "column": "missing",
-      "existing_coverage": "UX-AI-004 và FE-SEC-001 được dùng trong XT-H-058 (máy chủ MCP cục bộ) và XT-H-035; chưa đọc lại để biết control nào đã bao phủ UI sinh động. Chưa thấy control nào yêu cầu cổng riêng cho giao diện do model sinh (ID còn ở commit 764566d; nội dung chưa kiểm sâu).",
+      "existing_coverage": "UX-AI-004 và FE-SEC-001 được dùng trong XT-H-058 (máy chủ MCP cục bộ) và XT-H-035; chưa đọc lại để biết control nào đã bao phủ UI sinh động. Chưa thấy control nào yêu cầu cổng riêng cho giao diện do model sinh (đã đọc nguyên văn các control liên quan ở commit 764566d: không có control nào về giao diện do model sinh lúc chạy).",
       "proposal": {
         "text": "SHOULD: Khi agent hiển thị giao diện do model sinh lúc chạy, khai báo mức kiểm soát (cố định, khai báo hoặc mở) và áp cổng tương ứng: mức khai báo cần danh mục component và hành động được phép, kiểm schema đầu ra, CSP không dùng `https:` cho mọi host, liên kết do model sinh qua danh sách cho phép; mức mở chỉ dùng trong sandbox có CSP chặt. Công cụ kiểm tra spec không được tự truy cập URL do model sinh. Kiểm fixture: spec chứa `href` tới `javascript:` hoặc host ngoài danh sách thì bị từ chối; trình xác thực chạy với URL nội bộ trong spec không phát sinh lời gọi mạng."
       },
