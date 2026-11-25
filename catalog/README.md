@@ -2,7 +2,7 @@
 
 # Catalog theo nhóm, danh mục và danh mục con
 
-Sinh từ `data/projects.json` (2720 hồ sơ) theo `data/taxonomy.json`. Mỗi dòng dẫn về hồ sơ gốc trong README chuyên mục; số sao và mức bằng chứng chỉ đúng tại ngày ghi trong hồ sơ. Sắp xếp theo ★ giảm dần; ★ để trống là chưa có số tin cậy.
+Sinh từ `data/projects.json` (2771 hồ sơ) theo `data/taxonomy.json`. Mỗi dòng dẫn về hồ sơ gốc trong README chuyên mục; số sao và mức bằng chứng chỉ đúng tại ngày ghi trong hồ sơ. Sắp xếp theo ★ giảm dần; ★ để trống là chưa có số tin cậy.
 
 Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính năng đã chắt lọc kèm cách áp dụng) và [GUIDES.md](../GUIDES.md).
 
@@ -82,13 +82,13 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [video-engine](design-media/video-engine.md) | 39 | — |
 | [agentic-video](design-media/agentic-video.md) | 55 | — |
 
-## Kỹ thuật phần mềm & vận hành (472)
+## Kỹ thuật phần mềm & vận hành (501)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
-| [frontend](software/frontend.md) | 86 | Framework UI (23), Build, bundler & monorepo (9), State & data fetching (9), CSS & styling (6), Ngôn ngữ & runtime JS/TS (4), App desktop/đa nền tảng (6), Game engine & đồ họa (4), Thư viện tiện ích (23), Template & starter (2) |
-| [backend](software/backend.md) | 139 | Web framework (26), BaaS & nền tảng backend (6), Xác thực & danh tính (14), API, RPC & client (21), ORM, migration & công cụ CSDL (7), CMS & thương mại điện tử (12), Ứng dụng doanh nghiệp (ERP/CRM) (12), Ngôn ngữ & runtime (14), Microservice, cấu hình & service mesh (10), Ứng dụng tự host (8), Realtime, bot & nhắn tin (9) |
-| [mobile](software/mobile.md) | 33 | — |
+| [frontend](software/frontend.md) | 89 | Framework UI (23), Build, bundler & monorepo (9), State & data fetching (9), CSS & styling (6), Ngôn ngữ & runtime JS/TS (4), App desktop/đa nền tảng (6), Game engine & đồ họa (4), Thư viện tiện ích (23), Template & starter (5) |
+| [backend](software/backend.md) | 159 | Web framework (30), BaaS & nền tảng backend (6), Xác thực & danh tính (20), API, RPC & client (22), ORM, migration & công cụ CSDL (7), CMS & thương mại điện tử (16), Ứng dụng doanh nghiệp (ERP/CRM) (12), Ngôn ngữ & runtime (14), Microservice, cấu hình & service mesh (13), Ứng dụng tự host (8), Realtime, bot & nhắn tin (11) |
+| [mobile](software/mobile.md) | 39 | — |
 | [devops](software/devops.md) | 169 | Container & Kubernetes (17), IaC & quản lý cấu hình (5), CI/CD & phát hành (8), PaaS tự host & bảng điều khiển server (7), Mạng, proxy, DNS & chứng chỉ (8), Sao lưu, chi phí & vận hành hạ tầng (7), Terminal, shell & công cụ dòng lệnh (43), Editor & IDE (16), Môi trường dev & quản lý toolchain (26), Hệ điều hành & công cụ hệ thống (17), Ứng dụng tự host (ảnh, git, file...) (9), Bảo mật CI & chuỗi cung ứng (6) |
 | [localization](software/localization.md) | 9 | — |
 | [reverse-engineering](software/reverse-engineering.md) | 8 | — |
@@ -97,13 +97,13 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [product-analytics](software/product-analytics.md) | 10 | — |
 | [product-research](software/product-research.md) | 7 | — |
 
-## Học tập, tài liệu & tri thức (375)
+## Học tập, tài liệu & tri thức (397)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
-| [learning](knowledge/learning.md) | 146 | Khóa học LLM/GenAI & deep learning (35), Khóa học/hướng dẫn agent & Claude Code (15), Nền tảng khoa học máy tính (14), Học ngôn ngữ lập trình (20), Phỏng vấn & thuật toán (20), Thiết kế hệ thống & kiến trúc (6), Dự án mẫu & cookbook (13), Tham chiếu thiết kế UI/UX (3), Học bảo mật (7), Lộ trình, sách & tài liệu tổng hợp (13) |
+| [learning](knowledge/learning.md) | 166 | Khóa học LLM/GenAI & deep learning (35), Khóa học/hướng dẫn agent & Claude Code (15), Nền tảng khoa học máy tính (17), Học ngôn ngữ lập trình (29), Phỏng vấn & thuật toán (25), Thiết kế hệ thống & kiến trúc (6), Dự án mẫu & cookbook (15), Tham chiếu thiết kế UI/UX (3), Học bảo mật (7), Lộ trình, sách & tài liệu tổng hợp (14) |
 | [awesome-list](knowledge/awesome-list.md) | 85 | Skill, plugin & agent (15), MCP server (3), Thiết kế & UI (12), Hệ sinh thái ngôn ngữ/framework (13), Dữ liệu & ML (10), DevOps & sysadmin (5), Bảo mật (4), Marketing & tăng trưởng (4), Tài nguyên chung & xếp hạng (19) |
-| [docs](knowledge/docs.md) | 102 | Site tài liệu (20), Kiểm tài liệu (lint, link, chính tả) (10), Tài liệu cho agent (llms.txt, context) (6), Sơ đồ & hình vẽ (5), Slide & trình chiếu (7), Ghi chú & knowledge base (20), Office, bảng tính & PDF (11), Soạn thảo & xuất bản (Markdown, Typst) (11), Ứng dụng năng suất (12) |
+| [docs](knowledge/docs.md) | 104 | Site tài liệu (21), Kiểm tài liệu (lint, link, chính tả) (10), Tài liệu cho agent (llms.txt, context) (6), Sơ đồ & hình vẽ (5), Slide & trình chiếu (7), Ghi chú & knowledge base (21), Office, bảng tính & PDF (11), Soạn thảo & xuất bản (Markdown, Typst) (11), Ứng dụng năng suất (12) |
 | [vietnam](knowledge/vietnam.md) | 27 | — |
 | [own-repo](knowledge/own-repo.md) | 15 | — |
 

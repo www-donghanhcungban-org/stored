@@ -2,7 +2,7 @@
 
 # learning — Học tập, tài liệu & tri thức
 
-[← Mục lục catalog](../README.md) · 146 hồ sơ.
+[← Mục lục catalog](../README.md) · 166 hồ sơ.
 
 ## Khóa học LLM/GenAI & deep learning (`llm-genai-course`, 35)
 
@@ -64,7 +64,7 @@
 | [MCP for Beginners](../../08-awesome-lists-learning/README.md#ch-mcp-for-beginners) | `microsoft/mcp-for-beginners` | MIT | 17.703 | đọc tài liệu 2026-11-23 | 08 | 13 module MCP theo spec 2026-07-28, 54 bản dịch (có vi, chậm hơn bản gốc); |
 | [claude-code-ultimate-guide](../../03-agentic-patterns-loops/README.md#ch-claude-code-ultimate-guide) | `FlorianBruniaux/claude-code-ultimate-guide` | CC-BY-SA-4.0 | 7.195 | đọc tài liệu 2026-11-23 | 03 | agent teams, workflows. |
 
-## Nền tảng khoa học máy tính (`cs-fundamentals`, 14)
+## Nền tảng khoa học máy tính (`cs-fundamentals`, 17)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -82,8 +82,11 @@
 | [aima-python](../../08-awesome-lists-learning/README.md#ch-aima-python) | `aimacode/aima-python` | MIT | 8.884 | đọc tài liệu 2026-11-23 | 08 | Code Python cho giáo trình AIMA (Russell & Norvig): search, logic, planning, học máy, agent — thay thế đúng cấu trúc cho infographic 'Layers of AI'; |
 | [The Missing Semester of Your CS Education](../../08-awesome-lists-learning/README.md#learning-prerequisites-evidence) | `missing-semester/missing-semester` | CC-BY-NC-SA-4.0 | 6.152 | đọc mã 2026-11-02 | 08 | Bản 2026: shell/Git/debug/code quality/agentic coding; |
 | [Full Stack Open](../../08-awesome-lists-learning/README.md#full-stack-open-factory) | `fullstack-hy2020/fullstack-hy2020.github.io` | CC-BY-NC-SA-3.0 | 2.255 | đọc mã 2026-11-04 | 08 | Khóa Helsinki nối full-stack và CI/CD; |
+| [design-pattern](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-design-pattern) | `hoangtien2k3/design-pattern` | MIT (file LICENSE ghi hoangtien2k3qx1; GitHub báo NOASSERTION) | 10 | đọc tài liệu 2026-11-25 | 34 | Ví dụ Java cho ba nhóm Creational/Structural/Behavioral (76 file Java), dẫn sourcemaking và blog tvd12. |
+| [CodeUTT](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-codeutt) | `hoangtien2k3/CodeUTT` | Không có LICENSE (mặc định giữ mọi quyền) | 5 | đọc tài liệu 2026-11-25 | 34 | Bài tập trường UTT (OOP, Java, bài tập hỗn tạp), mã nộp bài cá nhân, 717 file gồm cả file IDE. |
+| [bai-toan-qua-song](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-bai-toan-qua-song) | `hoangtien2k3/bai-toan-qua-song` | MIT | 0 | đọc tài liệu 2026-11-25 | 34 | Bài toán qua sông bằng BFS/DFS (môn Trí tuệ nhân tạo), 5 file Java. |
 
-## Học ngôn ngữ lập trình (`programming-language`, 20)
+## Học ngôn ngữ lập trình (`programming-language`, 29)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -107,8 +110,17 @@
 | [learn-go-with-tests](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-quii-learn-go-with-tests) | `quii/learn-go-with-tests` | MIT | 23.972 | đọc tài liệu 2026-11-23 | 08 | Giáo trình Go học qua test-driven development, từ ngôn ngữ cơ bản tới xây ứng dụng. |
 | [numpy-100](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-rougier-numpy-100) | `rougier/numpy-100` | MIT | 14.704 | đọc tài liệu 2026-11-23 | 08 | 100 bài tập NumPy có lời giải, sinh bản Markdown và notebook từ một nguồn dữ liệu. |
 | [Exercism Python Track](../../08-awesome-lists-learning/README.md#exercism-python-factory) | `exercism/python` | MIT | 2.551 | đọc mã 2026-11-04 | 08 | Bài tập Python có test và lời giải mẫu; |
+| [learn-spring-boot](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-learn-spring-boot) | `hoangtien2k3/learn-spring-boot` | Không có LICENSE (mặc định giữ mọi quyền) | 24 | đọc tài liệu 2026-11-25 | 34 | Bộ bài học Spring Boot: ~270 file Java và ~80 file test theo từng chủ đề (JPA/JPQL, Exception handling/Validation, JPA testing, các HTTP method). |
+| [Java (hoangtien2k3)](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-java) | `hoangtien2k3/Java` | MIT | 12 | đọc tài liệu 2026-11-25 | 34 | Tập bài tập và ví dụ Java (660 file Java, 31 file test) theo DIRECTORY.md, dùng cho học tập; |
+| [golang-tutorials](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-golang-tutorials) | `hoangtien2k3/golang-tutorials` | MIT | 9 | đọc tài liệu 2026-11-25 | 34 | Bài học Go từ cơ bản đến concurrency (9 chương, 56 file), có cheatsheet; |
+| [Code-C-plus-plus](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-code-c-plus-plus) | `hoangtien2k3/Code-C-plus-plus` | Không có LICENSE (mặc định giữ mọi quyền) | 4 | đọc tài liệu 2026-11-25 | 34 | Bài tập C++ (OOP, STL, 300 bài code thiếu nhi) kèm PDF; |
+| [100-days](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-100-days) | `hoangtien2k3/100-days` | Không có LICENSE (mặc định giữ mọi quyền) | 3 | đọc tài liệu 2026-11-25 | 34 | Thử thách code C 100 ngày (nhật ký bài tập). |
+| [Code](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-code) | `hoangtien2k3/Code` | Không có LICENSE (mặc định giữ mọi quyền) | 3 | đọc tài liệu 2026-11-25 | 34 | Bài tập C/C++ (1000 bài code thiếu nhi), không license. |
+| [Programming](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-programming) | `hoangtien2k3/Programming` | Không có LICENSE (mặc định giữ mọi quyền) | 3 | đọc tài liệu 2026-11-25 | 34 | Mã nguồn C/C++ theo chủ đề (OOP, vùng nhớ). |
+| [SQL-Server](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-sql-server) | `hoangtien2k3/SQL-Server` | Không có LICENSE (mặc định giữ mọi quyền) | 3 | đọc tài liệu 2026-11-25 | 34 | Ghi chú SQL Server (join, union, select into…) từ hoc.tv. |
+| [annotation-spring-boot](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-annotation-spring-boot) | `hoangtien2k3/annotation-spring-boot` | MIT | 0 | đọc tài liệu 2026-11-25 | 34 | Danh mục annotation hay dùng trong Spring Boot (Core, Boot, Test, Transactions, JPA/Hibernate) kèm ví dụ nhỏ (37 file Java); |
 
-## Phỏng vấn & thuật toán (`interview-prep`, 20)
+## Phỏng vấn & thuật toán (`interview-prep`, 25)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -132,6 +144,11 @@
 | [data-science-interviews](../../08-awesome-lists-learning/README.md#ch-data-science-interviews) | `alexeygrigorev/data-science-interviews` | CC-BY-4.0 | 10.248 | đọc tài liệu 2026-11-23 | 08 | Câu hỏi + đáp án DS/ML cổ điển, ít LLM; |
 | [ai-engineering-interview-questions](../../08-awesome-lists-learning/README.md#ch-ai-engineering-interview-questions) | `amitshekhariitbhu/ai-engineering-interview-questions` | Apache-2.0 | 3.737 | đọc tài liệu 2026-11-23 | 08 | Danh sách câu hỏi AI engineering (RAG, agent, MCP, LLMOps, eval, safety), chủ yếu link ra ngoài; |
 | [LLM Interview Questions and Answers Hub](../../08-awesome-lists-learning/README.md#ch-llm-interview-questions-and-answers-hub) | `KalyanKS-NLP/LLM-Interview-Questions-and-Answers-Hub` | Apache-2.0 | 1.113 | đọc tài liệu 2026-11-23 | 08 | 115 câu hỏi phỏng vấn LLM có câu trả lời viết sẵn; |
+| [leetcode-solutions](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-leetcode-solutions) | `hoangtien2k3/leetcode-solutions` | Không có LICENSE (mặc định giữ mọi quyền) | 5 | đọc tài liệu 2026-11-25 | 34 | Lời giải LeetCode (Java/C++/SQL, 117 file Java). |
+| [Algorithms](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-algorithms) | `hoangtien2k3/Algorithms` | Không có LICENSE (mặc định giữ mọi quyền) | 4 | đọc tài liệu 2026-11-25 | 34 | Thuật toán C/C++ theo chủ đề (backtracking, DP, binary search…); |
+| [Data-Structure-And-Algorithm](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-data-structure-and-algorithm) | `hoangtien2k3/Data-Structure-And-Algorithm` | MIT | 4 | đọc tài liệu 2026-11-25 | 34 | Cấu trúc dữ liệu và thuật toán bằng C/C++/Java (127 file Java, 26 file test); |
+| [Codesignal](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-codesignal) | `hoangtien2k3/Codesignal` | Không có LICENSE (mặc định giữ mọi quyền) | 3 | đọc tài liệu 2026-11-25 | 34 | Lời giải CodeSignal Arcade bằng C/C++. |
+| [HackerRank-Solution](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-hackerrank-solution) | `hoangtien2k3/HackerRank-Solution` | Không có LICENSE (mặc định giữ mọi quyền) | 3 | đọc tài liệu 2026-11-25 | 34 | Lời giải HackerRank C++. |
 
 ## Thiết kế hệ thống & kiến trúc (`system-design`, 6)
 
@@ -144,7 +161,7 @@
 | [system-design-academy](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-systemdesign42-system-design-academy) | `systemdesign42/system-design-academy` | CC-BY-NC-ND-4.0 | 29.830 | đọc tài liệu 2026-11-23 | 08 | Chỉ mục bài học và case study về thiết kế hệ thống, được chia theo công ty và công nghệ. |
 | [ddia](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-vonng-ddia) | `Vonng/ddia` | CC-BY-4.0 (tuyên bố repo); quyền nguyên tác cần đối chiếu | 23.989 | đọc tài liệu 2026-11-23 | 08 | Bản dịch tiếng Trung của Designing Data-Intensive Applications, gồm nội dung cho các ấn bản. |
 
-## Dự án mẫu & cookbook (`project-cookbook`, 13)
+## Dự án mẫu & cookbook (`project-cookbook`, 15)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -161,6 +178,8 @@
 | [generative-ai](../../08-awesome-lists-learning/README.md#6c512-học-ai--machine-learning) | `GoogleCloudPlatform/generative-ai` | Apache License 2.0 | 17.955 | đọc tài liệu 2026-11-18 | 08 | Kho notebook, mã mẫu và ứng dụng mẫu minh hoạ cách dùng Gemini, tìm kiếm, RAG, thị giác, giọng nói trên Google Cloud. |
 | [awesome-ai-apps](../../08-awesome-lists-learning/README.md#6c512-học-ai--machine-learning) | `Arindam200/awesome-ai-apps` | MIT | 16.758 | đọc tài liệu 2026-11-18 | 08 | Bộ sưu tập 144 ứng dụng LLM và agent chạy được: agent văn bản, trợ lý giọng nói, RAG, công cụ MCP, fine-tune. |
 | [automate-for-growth](../../08-awesome-lists-learning/README.md#ch-automate-for-growth) | `cporter202/automate-for-growth` | — | 951 | đọc tài liệu 2026-11-23 | 08 | 'Khoá học' tự động hoá mạng xã hội thực chất là phễu quảng cáo ViralWave Studio; |
+| [C-Sharp-GUI-Programming](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-c-sharp-gui-programming) | `hoangtien2k3/C-Sharp-GUI-Programming` | Không có LICENSE (mặc định giữ mọi quyền) | 1 | đọc tài liệu 2026-11-25 | 34 | Bài tập lớn C# WinForms (quản lý bệnh nhân, nhân viên…), 1.008 file gồm tệp IDE/thư viện. |
+| [QuanLyKhoDienThoai](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-quanlykhodienthoai) | `hoangtien2k3/QuanLyKhoDienThoai` | Không có LICENSE (mặc định giữ mọi quyền) | 0 | đọc tài liệu 2026-11-25 | 34 | Đồ án phân tích thiết kế HTTT: quản lý kho điện thoại theo IMEI (Java Swing/NetBeans, 181 file Java, kèm báo cáo). |
 
 ## Tham chiếu thiết kế UI/UX (`design-reference`, 3)
 
@@ -182,7 +201,7 @@
 | [AI-Red-Teaming-Guide](../../12-ai-security-guardrails/README.md#ch-ai-red-teaming-guide) | `requie/AI-Red-Teaming-Guide` | — | 1.065 | đọc tài liệu 2026-11-23 | 12 | Guide red-team AI một người viết (README ~3.580 dòng + ES/ZH/FR, 8 template); |
 | [Cybersecurity Threats Guide](../../12-ai-security-guardrails/README.md#ch-cybersecurity-threats-guide) | `s4ntrx/Cybersecurity-Threats-Guide` | MIT | 223 | đọc tài liệu 2026-11-23 | 12 | Tài liệu + 56 script Python phát hiện/phòng ngừa (6 chuyên mục), một tác giả, chưa ai duyệt; |
 
-## Lộ trình, sách & tài liệu tổng hợp (`roadmap-book`, 13)
+## Lộ trình, sách & tài liệu tổng hợp (`roadmap-book`, 14)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -199,3 +218,4 @@
 | [DevOps-Roadmap](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-milanm-devops-roadmap) | `milanm/DevOps-Roadmap` | Apache-2.0 | 21.026 | đọc tài liệu 2026-11-23 | 08 | Lộ trình DevOps 2026 với tài nguyên học Git, Linux, mạng, container, IaC và vận hành. |
 | [opensource.guide](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-github-opensource.guide) | `github/opensource.guide` | CC-BY-4.0 | 15.815 | đọc tài liệu 2026-11-23 | 08 | Hướng dẫn xây dựng, đóng góp và duy trì cộng đồng dự án nguồn mở. |
 | [BibliotecaDev](../../08-awesome-lists-learning/README.md#6c519-sách-khóa-học--lộ-trình) | `KAYOKG/BibliotecaDev` | MIT | 15.364 | đọc tài liệu 2026-11-18 | 08 | Danh mục sách cho lập trình viên bằng tiếng Bồ Đào Nha, chia theo chủ đề (thuật toán, kiến trúc, DevOps, Agile, sự nghiệp…), kèm thư mục LivrosDev chứa file PDF. |
+| [programming-books](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-programming-books) | `hoangtien2k3/programming-books` | MIT (chỉ áp cho phần tác giả; các PDF sách/đề chưa rõ quyền) | 1 | đọc tài liệu 2026-11-25 | 34 | Kho PDF giáo trình thuật toán và đề contest. |
