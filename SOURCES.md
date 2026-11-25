@@ -2142,3 +2142,8 @@ Nguồn gốc: file xlsx người dùng gửi (tab "Kho Skill Thực Chiến"); 
 
 - Danh sách 52 repo không fork: GitHub search API `user:hoangtien2k3 fork:false` (2026-11-25); 51 repo mới đọc README/LICENSE/cây thư mục tại commit ghim trong từng hồ sơ (`data/projects.json`).
 - Phụ thuộc/nguồn gốc cần xác minh thêm: zukahai/Confess-Crush, saadpasta/developer-portfolio, tác giả Murat ÖZTÜRK (app Mova), tác giả Tuan Nguyen (saga pattern); chưa đối chiếu upstream.
+
+## Bổ sung 2026-11-25c (Claude Skills Hub → mục 20)
+
+- Ảnh chụp trang chủ claudeskills.info do người dùng gửi (25/11/2026); trang đọc trực tiếp sau khi môi trường mở mạng: `/`, `/about/`, `/editorial-methodology/`, `/ranking-methodology/`, `/official/anthropic/`, `/llms.txt`. `/api/v1/meta` bị Cloudflare chặn nên không dùng.
+- Kết quả tìm kiếm web đối chiếu: producthunt.com/products/claudeskillshq (bình luận người dùng).
