@@ -2,11 +2,11 @@
 
 # Catalog theo nhóm, danh mục và danh mục con
 
-Sinh từ `data/projects.json` (2777 hồ sơ) theo `data/taxonomy.json`. Mỗi dòng dẫn về hồ sơ gốc trong README chuyên mục; số sao và mức bằng chứng chỉ đúng tại ngày ghi trong hồ sơ. Sắp xếp theo ★ giảm dần; ★ để trống là chưa có số tin cậy.
+Sinh từ `data/projects.json` (2776 hồ sơ) theo `data/taxonomy.json`. Mỗi dòng dẫn về hồ sơ gốc trong README chuyên mục; số sao và mức bằng chứng chỉ đúng tại ngày ghi trong hồ sơ. Sắp xếp theo ★ giảm dần; ★ để trống là chưa có số tin cậy.
 
 Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính năng đã chắt lọc kèm cách áp dụng) và [GUIDES.md](../GUIDES.md).
 
-## AI agent, skill & điều phối (521)
+## AI agent, skill & điều phối (520)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
@@ -20,7 +20,7 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [reasoning-skill](ai-agents/reasoning-skill.md) | 2 | — |
 | [context-optimization](ai-agents/context-optimization.md) | 7 | — |
 | [agent-memory](ai-agents/agent-memory.md) | 20 | — |
-| [harness-pack](ai-agents/harness-pack.md) | 70 | Quy trình coding/TDD/review (15), Điều phối nhiều agent (9), Văn phòng & tài liệu (2), Marketing, bán hàng & kinh doanh (16), Media & sáng tạo (5), Chuyên ngành (20), Tạo/quản lý skill (3) |
+| [harness-pack](ai-agents/harness-pack.md) | 69 | Quy trình coding/TDD/review (15), Điều phối nhiều agent (9), Văn phòng & tài liệu (2), Marketing, bán hàng & kinh doanh (16), Media & sáng tạo (5), Chuyên ngành (19), Tạo/quản lý skill (3) |
 | [plugin-marketplace](ai-agents/plugin-marketplace.md) | 17 | — |
 | [protocol](ai-agents/protocol.md) | 56 | — |
 | [llm-gateway](ai-agents/llm-gateway.md) | 20 | — |

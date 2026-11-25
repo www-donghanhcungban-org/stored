@@ -2679,7 +2679,7 @@ Người dùng yêu cầu tìm và cập nhật skill cho các ngành nghề, k�
 | Nhân sự / tuyển dụng | `human-resources` plugin: draft-offer, interview-prep, performance-review, comp-analysis, onboarding, policy-lookup, recruiting-pipeline, org-planning (knowledge-work-plugins); `team-composition-analysis` (wshobson/agents) | [EEOC](https://www.eeoc.gov/) (đã mở); GDPR cho dữ liệu nhân viên; Bộ luật Lao động 2019 số 45/2019/QH14 (chưa xác minh) | Chưa thấy skill kiểm bias hay đánh giá tác động khi dùng AI sàng lọc hồ sơ; không đọc nội dung từng skill |
 | Chăm sóc khách hàng | `customer-support` plugin: ticket-triage, draft-response, kb-article, customer-escalation (knowledge-work-plugins); `persona-customer-support` (googleworkspace/cli · 32,5k★ · Apache-2.0) | ISO 18295-1 (trung tâm liên hệ, chưa mở); SOC 2 ([AICPA](https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-greater-than-soc-2), đã mở); GDPR/CCPA cho dữ liệu khách hàng | Ticket chứa dữ liệu cá nhân: cần chính sách lưu giữ và che thông tin trước khi gửi cho mô hình |
 | Giáo dục | `teach`, `scaffold-exercises` (mattpocock/skills); `gws-classroom` (googleworkspace/cli) | [FERPA](https://studentprivacy.ed.gov/ferpa) (đã mở), [1EdTech (LTI/QTI)](https://www.1edtech.org/standards) (đã mở), [WCAG 2.2](https://www.w3.org/TR/WCAG22/) (đã mở) | Skill hạng đầu phục vụ dạy lập trình, không phải giáo dục phổ thông; FERPA/COPPA chưa thấy tự nhắc |
-| Bán hàng / marketing | `social-media-research-skills` (ScrapeCreators · 7,9k★ · MIT, 13 skill nghiên cứu mạng xã hội, [hồ sơ](#ch-scrapecreators-social-media-research-skills)); `cold-email`, `sales-enablement`, `revops`, `prospecting`, `copywriting`, `ad-creative` (coreyhaines31/marketingskills · 62,6k★ · MIT); `sales` plugin 36 skill (knowledge-work-plugins) | CAN-SPAM, GDPR/ePrivacy, TCPA, hướng dẫn quảng cáo của FTC (chưa mở trang chính thức); Nghị định 91/2020/NĐ-CP về tin nhắn rác (chưa xác minh) | `cold-email` và `prospecting` dễ chạm quy định gửi thư rác và dữ liệu cá nhân; chưa thấy tự nhắc chuẩn |
+| Bán hàng / marketing | `social-media-research-skills` (ScrapeCreators · 7,9k★ · MIT, 13 skill nghiên cứu mạng xã hội, [hồ sơ](../19-agentic-video-media/README.md#ch-social-media-research-skills)); `cold-email`, `sales-enablement`, `revops`, `prospecting`, `copywriting`, `ad-creative` (coreyhaines31/marketingskills · 62,6k★ · MIT); `sales` plugin 36 skill (knowledge-work-plugins) | CAN-SPAM, GDPR/ePrivacy, TCPA, hướng dẫn quảng cáo của FTC (chưa mở trang chính thức); Nghị định 91/2020/NĐ-CP về tin nhắn rác (chưa xác minh) | `cold-email` và `prospecting` dễ chạm quy định gửi thư rác và dữ liệu cá nhân; chưa thấy tự nhắc chuẩn |
 | Bất động sản | `real-estate-search`, `housing-official-price`, `building-register-search` (k-skill, dữ liệu MOLIT/Hàn Quốc); `real-estate-expert` (personamanagmentlayer/pcl · 46★ · Apache-2.0); `idx-broker` | [RESO Data Dictionary](https://www.reso.org/data-dictionary/) (đã mở); Fair Housing Act (chưa mở) | Skill tốt nhất theo lượt cài là Hàn Quốc; skill chung ít sao (≤ 834 lượt cài) và chưa đọc |
 | Du lịch | `pricewin-hotel-deal-finder`, `travel-planner`, `ktx-booking` | IATA NDC/PCI DSS (chưa mở IATA) | Skill đặt vé tự động có thể vi phạm điều khoản nhà cung cấp; chưa đọc |
 
@@ -2692,9 +2692,11 @@ Người dùng yêu cầu tìm và cập nhật skill cho các ngành nghề, k�
 
 **Nguồn:** https://claudeskills.info/skills/category/{legal,healthcare,accounting,finance,education,customer-support,human-resources,sales,real-estate,marketing,travel}/ (đọc 25/11/2026); SKILL.md tại `anthropics/knowledge-work-plugins@5e504ae`, `affaan-m/ecc@4adeee6`, `NomaDamas/k-skill@c41a117`, `tradermonty/claude-trading-skills@4080042`, `Yuan1z0825/nature-skills@c300047`, `microsoft/azure-skills@7847020`; các trang chuẩn ghi trong bảng (đã mở: HTTP 200/202 ngày 25/11/2026).
 
-<a id="ch-scrapecreators-social-media-research-skills"></a>
+<a id="reread-scrapecreators-social-media-research-skills"></a>
 
-### social-media-research-skills (ScrapeCreators)
+### social-media-research-skills (ScrapeCreators) — đọc lại 25/11/2026
+
+Hồ sơ gốc ở [mục 19](../19-agentic-video-media/README.md#ch-social-media-research-skills) (đọc 23/11); phần dưới là đọc lại và bổ sung, không thay hồ sơ gốc.
 
 | Thuộc tính | Giá trị |
 |---|---|

@@ -76,7 +76,7 @@
       "quality-mgmt",
       "manufacturing"
     ],
-    "count": 2777,
+    "count": 2776,
     "schema_version": 2
   },
   "projects": [
@@ -11944,14 +11944,14 @@
       "repo": "ScrapeCreators/social-media-research-skills",
       "category": "plugin-marketplace",
       "license": "MIT",
-      "stars": 7325,
+      "stars": 7926,
       "open_source": true,
-      "notes": "13 skill nghiên cứu mạng xã hội (outlier post, comment mining, transcript, đối thủ, ad library) cho Claude Code/Codex; BẮT BUỘC API key ScrapeCreators (trả phí, của chính tác giả); 7 commit, cuối 26/8/2026; ★ 19/10/2026 (shields), mục 19 §1e; ★ 31/10/2026: 5.195 (GitHub API). Xác nhận MIT (ScrapeCreators); LICENSE mới được thêm qua PR gần đây (commit cuối là \"docs/add-mit-license\"). docs-read; đọc README, LICENSE, chưa chạy upstream. Kiểm 2026-11-23; commit 64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2.; ★ 2026-11-23: 7.325 (GitHub search API)",
+      "notes": "13 skill nghiên cứu mạng xã hội (outlier post, comment mining, transcript, đối thủ, ad library) cho Claude Code/Codex; BẮT BUỘC API key ScrapeCreators (trả phí, của chính tác giả); 7 commit, cuối 26/8/2026; ★ 19/10/2026 (shields), mục 19 §1e; ★ 31/10/2026: 5.195 (GitHub API). Xác nhận MIT (ScrapeCreators); LICENSE mới được thêm qua PR gần đây (commit cuối là \"docs/add-mit-license\"). docs-read; đọc README, LICENSE, chưa chạy upstream. Kiểm 2026-11-23; commit 64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2.; ★ 2026-11-23: 7.325 (GitHub search API) ★ 2026-11-25: 7.926, 303 fork (GitHub search API). Đọc lại 25/11/2026 (HEAD vẫn 64ba7b4): AGENTS.md, plugin.json, validate-skills.py, scrapecreators-api/SKILL.md; không có CI Actions, skill định tuyến cho phép Bash/Read/Write/WebFetch, dữ liệu rời máy tới api.scrapecreators.com; mục 20 (đọc lại).",
       "section": "19",
       "id": "social-media-research-skills",
       "profile_path": "19-agentic-video-media/README.md",
       "verification_level": "docs-read",
-      "last_verified_at": "2026-11-23",
+      "last_verified_at": "2026-11-25",
       "verified_ref": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
       "sources": [
         "https://github.com/ScrapeCreators/social-media-research-skills/blob/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/README.md",
@@ -62833,29 +62833,6 @@
         "https://claudeskills.info/ranking-methodology/",
         "https://claudeskills.info/official/anthropic/",
         "https://claudeskills.info/llms.txt"
-      ]
-    },
-    {
-      "name": "social-media-research-skills",
-      "repo": "ScrapeCreators/social-media-research-skills",
-      "category": "harness-pack",
-      "license": "MIT",
-      "stars": 7926,
-      "open_source": true,
-      "notes": "13 skill nghiên cứu mạng xã hội (outlier, comment mining, transcript, competitor, ad library, trend, influencer) cộng skill định tuyến 110 endpoint ScrapeCreators. Cần khóa API trả phí, dữ liệu rời máy; không có CI Actions; dữ liệu cào có thể trái điều khoản nền tảng/chứa dữ liệu cá nhân; xung đột lợi ích thương mại của hãng. docs-read; đọc các file nguồn đã dẫn, chưa chạy upstream. Kiểm 2026-11-25; commit 64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2 (2026-08-26); ★ 7926 (GitHub search API, 2026-11-25).",
-      "section": "20",
-      "id": "scrapecreators-social-media-research-skills",
-      "profile_path": "20-claude-plugins-ecosystem/README.md",
-      "profile_anchor": "20-claude-plugins-ecosystem/README.md#ch-scrapecreators-social-media-research-skills",
-      "subcategory": "domain-specialist",
-      "last_verified_at": "2026-11-25",
-      "verified_ref": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
-      "verification_level": "docs-read",
-      "sources": [
-        "https://github.com/ScrapeCreators/social-media-research-skills/blob/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/README.md",
-        "https://github.com/ScrapeCreators/social-media-research-skills/blob/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/LICENSE",
-        "https://github.com/ScrapeCreators/social-media-research-skills/blob/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/AGENTS.md",
-        "https://github.com/ScrapeCreators/social-media-research-skills/blob/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/scrapecreators-api/SKILL.md"
       ]
     },
     {
