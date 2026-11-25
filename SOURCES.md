@@ -2137,3 +2137,8 @@ Nguồn gốc: file xlsx người dùng gửi (tab "Kho Skill Thực Chiến"); 
 
 - Trang gitranks.com/profile/hoangtien2k3/repositories: proxy phiên chặn, chưa đọc được (chưa xác minh); danh sách repo lấy từ GitHub search API (`user:hoangtien2k3`, 2026-11-25).
 - https://github.com/hoangtien2k3/ecommerce-microservices, commit `2d687821f8246f426e536641cd0503cb15465275`: LICENSE, `pom.xml`, `auth-service/src/main/resources/application.yml`, `.github/workflows/ci.yml`, `payment-service/.../event/EventProducer.java`.
+
+## Bổ sung 2026-11-25b (toàn bộ repo hoangtien2k3 → mục 34)
+
+- Danh sách 52 repo không fork: GitHub search API `user:hoangtien2k3 fork:false` (2026-11-25); 51 repo mới đọc README/LICENSE/cây thư mục tại commit ghim trong từng hồ sơ (`data/projects.json`).
+- Phụ thuộc/nguồn gốc cần xác minh thêm: zukahai/Confess-Crush, saadpasta/developer-portfolio, tác giả Murat ÖZTÜRK (app Mova), tác giả Tuan Nguyen (saga pattern); chưa đối chiếu upstream.

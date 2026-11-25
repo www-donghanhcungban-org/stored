@@ -2,7 +2,7 @@
 
 # frontend — Kỹ thuật phần mềm & vận hành
 
-[← Mục lục catalog](../README.md) · 86 hồ sơ.
+[← Mục lục catalog](../README.md) · 89 hồ sơ.
 
 ## Framework UI (`framework`, 23)
 
@@ -128,9 +128,12 @@
 | [Golden Layout](../../06-ui-ux-design/README.md#ch-golden-layout) | `golden-layout/golden-layout` | MIT | 6.722 | đọc tài liệu 2026-11-23 | 06 | Docking layout; |
 | [Loro](../../34-backend-data-identity-integration/README.md#nt-loro) | `loro-dev/loro` | MIT (lõi); skills/moonbit dưới Apache-2.0 | 6.317 | đọc mã 2026-11-23 | 34 | Thư viện CRDT (Rust, WASM, Swift) cho dữ liệu JSON, giữ đầy đủ lịch sử để checkout, fork và hoàn tác. |
 
-## Template & starter (`starter-template`, 2)
+## Template & starter (`starter-template`, 5)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [React Starter Kit](../../13-dev-stack-devops/README.md#anhkysuai-kriasoft-react-starter-kit) | `kriasoft/react-starter-kit` | MIT | 23.726 | đọc tài liệu 2026-11-23 | 13 | Template SaaS monorepo React/tRPC chạy trên Cloudflare Workers. |
 | [open-saas](../../13-dev-stack-devops/README.md#chuyen-open-saas) | `wasp-lang/open-saas` | MIT | 16.350 | đọc tài liệu 2026-11-18 | 13 | Mẫu khởi đầu SaaS miễn phí dựng trên Wasp (React, Node.js, Prisma), kèm xác thực, thanh toán, trang quản trị, blog/tài liệu Astro. |
+| [crush (hoangtien2k3)](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-crush) | `hoangtien2k3/crush` | MIT (file LICENSE ghi hoangtien2k3qx1) | 3 | đọc tài liệu 2026-11-25 | 34 | Trang web tỏ tình tĩnh (HTML/JS/âm thanh). |
+| [hoangtien2k3.github.io](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-hoangtien2k3-github-io) | `hoangtien2k3/hoangtien2k3.github.io` | MIT (file LICENSE ghi gatsbyjs, 2015) | 0 | đọc tài liệu 2026-11-25 | 34 | Portfolio/blog Gatsby của tác giả, dựng từ starter Gatsby (LICENSE vẫn ghi gatsbyjs). |
+| [profilePro](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-profilepro) | `hoangtien2k3/profilePro` | GPL-3.0 | 0 | đọc tài liệu 2026-11-25 | 34 | Template portfolio React lấy từ saadpasta/developer-portfolio (README còn badge của repo gốc). |

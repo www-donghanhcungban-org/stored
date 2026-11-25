@@ -2,9 +2,9 @@
 
 # docs — Học tập, tài liệu & tri thức
 
-[← Mục lục catalog](../README.md) · 102 hồ sơ.
+[← Mục lục catalog](../README.md) · 104 hồ sơ.
 
-## Site tài liệu (`docs-site`, 20)
+## Site tài liệu (`docs-site`, 21)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -28,6 +28,7 @@
 | [Doxygen](../../16-docs-tools/README.md#n2-doxygen) | `doxygen/doxygen` | GPL-2.0 | 6.625 | đọc mã 2026-11-23 | 16 | Bộ sinh tài liệu từ mã chú thích cho C/C++, Java, Python, C#, PHP, Fortran, VHDL…, xuất HTML, LaTeX/PDF, XML, man, DocBook, RTF. |
 | [Zensical](../../16-docs-tools/README.md#ch-zensical) | `zensical/zensical` | MIT | 6.249 | đọc tài liệu 2026-11-23 | 16 | Kế nhiệm Material for MkDocs; |
 | [Pagefind](../../16-docs-tools/README.md#n2-pagefind) | `Pagefind/pagefind` | MIT | 5.575 | đọc mã 2026-11-23 | 16 | Công cụ Rust chạy sau bước build site: quét HTML, dựng chỉ mục chia mảnh (chunk) kèm WASM tìm kiếm phía trình duyệt, nên trình duyệt chỉ tải các mảnh cần cho từ khóa. |
+| [reactify-docs](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-reactify-docs) | `hoangtien2k3/reactify-docs` | Không có LICENSE (mặc định giữ mọi quyền) | 0 | đọc tài liệu 2026-11-25 | 34 | Trang tài liệu tĩnh của reactify-core (blog, codegen, async-io, boot); |
 
 ## Kiểm tài liệu (lint, link, chính tả) (`docs-quality`, 10)
 
@@ -77,7 +78,7 @@
 | [Presenton](../../16-docs-tools/README.md#anhkysuai-2026-11-23-presenton) | `presenton/presenton` | Apache-2.0 | 12.025 | đọc tài liệu 2026-11-23 | 16 | Sinh, chỉnh sửa và xuất thuyết trình bằng AI qua web, desktop hoặc API. |
 | [Slides](../../16-docs-tools/README.md#anhkysuai-2026-11-23-slides) | `maaslalani/slides` | MIT | 11.712 | đọc tài liệu 2026-11-23 | 16 | Thuyết trình Markdown ngay trong terminal với phím điều hướng và code block. |
 
-## Ghi chú & knowledge base (`notes-knowledge-base`, 20)
+## Ghi chú & knowledge base (`notes-knowledge-base`, 21)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -100,6 +101,7 @@
 | [Standard Notes](../../35-desktop-productivity-apps/README.md#n2-standard-notes) | `standardnotes/app` | AGPL-3.0 | 6.733 | đọc mã 2026-11-23 | 35 | Monorepo client (web, desktop Electron, mobile) của ghi chú mã hóa đầu-cuối có đồng bộ; |
 | [SilverBullet](../../35-desktop-productivity-apps/README.md#nt-silverbullet) | `silverbulletmd/silverbullet` | MIT | 6.585 | đọc mã 2026-11-23 | 35 | Wiki Markdown có tập lệnh Lua, dữ liệu là file thường (xuất dễ), gộp diff3 và MCP có OAuth và chọn space. |
 | [EdgeEver](../../35-desktop-productivity-apps/README.md#nt-edgeever) | `tianma-if/edgeever` | AGPL-3.0 | 3.524 | đọc mã 2026-11-23 | 35 | Ghi chú ba panel kiểu Evernote, đồng bộ theo cursor, xuất Markdown thuần và MCP; |
+| [hoangtien2k3](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-hoangtien2k3) | `hoangtien2k3/hoangtien2k3` | MIT (file LICENSE; GitHub báo NOASSERTION) | 9 | đọc tài liệu 2026-11-25 | 34 | Repo README hồ sơ cá nhân (có profile-3d-contrib, ảnh, workflow cập nhật, 1.693 file chủ yếu là tài sản sinh tự động). |
 | [Blinko](../../36-self-hosting-homelab/README.md#n2-blinko) | `blinko-space/blinko` | GPL-3.0 | — | đọc mã 2026-11-23 | 36 | Ghi chú dạng thẻ tự host (Bun, tRPC, Prisma, PostgreSQL), RAG qua Mastra với LibSQLVector và công cụ agent đọc/ghi ghi chú. |
 
 ## Office, bảng tính & PDF (`office-pdf`, 11)

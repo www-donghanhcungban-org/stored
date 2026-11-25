@@ -2,7 +2,7 @@
 
 # mobile — Kỹ thuật phần mềm & vận hành
 
-[← Mục lục catalog](../README.md) · 33 hồ sơ.
+[← Mục lục catalog](../README.md) · 39 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -39,3 +39,9 @@
 | [Flashlight](../../30-software-testing-quality/README.md#n2-flashlight) | `bamlab/flashlight` | MIT | 1.614 | đọc mã 2026-11-23 | 30 | Công cụ chấm điểm hiệu năng app Android (CPU, FPS, RAM, luồng CPU cao) qua adb, không cần cài gì vào app, xuất báo cáo HTML; |
 | [Patrol](../../30-software-testing-quality/README.md#n2-patrol) | `leancodepl/patrol` | Apache-2.0 | 1.459 | đọc mã 2026-11-23 | 30 | Framework E2E cho Flutter vượt giới hạn integration_test bằng cách gọi UI native (quyền, thông báo, wifi, WebView) qua UiAutomator trên Android, kèm finders cú pháp gọn,… |
 | [maestro-runner](../../30-software-testing-quality/README.md#n2-maestro-runner) | `devicelab-dev/maestro-runner` | Apache-2.0 (mã nguồn); driver APK/iOS agent của DeviceLab là proprietary | 535 | đọc mã 2026-11-23 | 30 | Runner Go một file nhị phân chạy flow YAML của Maestro trên Android (UIAutomator2), iOS (WebDriverAgent), web (Chrome CDP) và cloud Appium, có chạy song song, retry nguy… |
+| [news-app](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-news-app) | `hoangtien2k3/news-app` | Không có LICENSE (mặc định giữ mọi quyền) | 2 | đọc tài liệu 2026-11-25 | 34 | App Android tin tức Kotlin (Gradle KTS, 359 file) ghép với news-backend; |
+| [money-detection-android-app](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-money-detection-android-app) | `hoangtien2k3/money-detection-android-app` | Không có LICENSE (mặc định giữ mọi quyền) | 1 | đọc tài liệu 2026-11-25 | 34 | Mã decompile của VoidMoney-Final.apk (9.316 file Java), kèm file APK và SDK nhận dạng tiền của bên thứ ba (cashreader), cùng mã kiểm tra bản quyền Google Play (pairip). |
+| [alarm-ht21](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-alarm-ht21) | `hoangtien2k3/alarm-ht21` | Không có LICENSE (mặc định giữ mọi quyền) | 0 | đọc tài liệu 2026-11-25 | 34 | App báo thức Android, kiến trúc nhiều module (app, core, feature, build-logic), có 43 file test và CI; |
+| [ezbuy-android](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-ezbuy-android) | `hoangtien2k3/ezbuy-android` | Không có LICENSE (mặc định giữ mọi quyền) | 0 | đọc tài liệu 2026-11-25 | 34 | App Android cho ezbuy: Kotlin, MVVM, Room, Retrofit, Coroutines/Flow, tách module common/data/domain; |
+| [movie](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-movie) | `hoangtien2k3/movie` | MIT (file License.md ghi Murat ÖZTÜRK, 2023) | 0 | đọc tài liệu 2026-11-25 | 34 | App Mova - Movie & Trailers Kotlin dựa trên TMDb; |
+| [movie-app](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-movie-app) | `hoangtien2k3/movie-app` | Không có LICENSE (mặc định giữ mọi quyền) | 0 | đọc tài liệu 2026-11-25 | 34 | App phim Android Kotlin (MVP, Room, Retrofit) dùng API TMDb; |

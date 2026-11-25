@@ -2791,3 +2791,339 @@ Người dùng gửi trang xếp hạng repo của tác giả `hoangtien2k3` tr�
 | Lựa chọn đối chiếu | [GoogleCloudPlatform/microservices-demo](../29-software-architecture-api-contracts/README.md#anhkysuai-2026-11-23-googlecloudplatform-microservices-demo) (đa ngôn ngữ, gRPC); [macrozheng/mall](../34-backend-data-identity-integration/README.md#chuyen-mall) (nguyên khối Spring, quy mô lớn hơn nhiều); [Medusa](../34-backend-data-identity-integration/README.md#chuyen-medusa) (headless commerce thay vì tự dựng). |
 
 **Phạm vi bằng chứng:** đã clone, đọc LICENSE, pom, cấu hình auth, CI và một lớp Kafka producer; chưa chạy hay build. Số liệu từ trang gitranks chưa xác minh.
+
+<a id="hoangtien2k3-toan-bo"></a>
+
+## Toàn bộ repo của hoangtien2k3 — 25/11/2026
+
+Người dùng yêu cầu lập hết các repo của tác giả `hoangtien2k3` (Hoàng Anh Tiến) và ghi chú cái nào hay. GitHub search API trả 52 repo không phải fork (thêm 5 fork chưa lập hồ sơ); ecommerce-microservices đã có hồ sơ riêng ở trên, còn 51 repo ghi dưới đây. Mỗi repo được clone nông không checkout, đọc cây thư mục, LICENSE, README và manifest; mức kiểm là `docs-read`, chưa build hay chạy. Trang gitranks bị proxy chặn nên chỉ tham chiếu qua API (chưa xác minh).
+
+### Nhận định chung
+
+- **Hay nhất:** nhóm backend Java reactive liên kết với nhau: `reactify-core` (thư viện dùng chung) → `ezbuy` (12 service WebFlux/R2DBC, CI riêng từng service) → `ecommerce-microservices` (13 service Spring Boot 3, APISIX, Keycloak, Kafka, k3d/ArgoCD). Cộng `keycloak-auth-service` (xác thực Keycloak) và `saga-pattern-microservice` (Saga + Outbox/Debezium, nhưng mã gốc của tác giả khác).
+- **Học tập tốt:** `learn-spring-boot` (~80 file test theo chủ đề), `rabbitmq-demo` (5 kiểu exchange), `keycloak-sso-saml` (SAML hiếm gặp), `grpc-demo`, `base-auth-jwt-springboot`, `alarm-ht21` (Android nhiều module, 43 file test).
+- **Điểm yếu chung:** test rất ít (ecommerce-microservices 8 file/373 file Java; ezbuy 0 thư mục test), nhiều repo không có LICENSE, hai repo trùng (`shopapp-backend`, `web-app-backend-springboot`), phần lớn nhóm bài tập C/C++/Java là mã nộp bài.
+- **Rủi ro bản quyền (không dùng lại khi chưa gỡ):** `money-detection-android-app` (mã decompile + APK của app khác), `movie`, `crush`, `profilePro` (GPL-3.0), `saga-pattern-microservice`, `programming-books`: mã hoặc tài liệu có nguồn gốc ngoài tác giả; LICENSE MIT của repo không cấp quyền thay cho tác giả gốc.
+- **Chưa xác minh:** quan hệ upstream cụ thể của các repo trên, bản phát hành Maven Central của reactify-core, và nội dung trang gitranks.
+
+#### Đáng chú ý
+
+Repo có cơ chế hoặc giá trị tái sử dụng rõ.
+
+<a id="ch-hoangtien2k3-reactify-core"></a>
+
+**[reactify-core](https://github.com/hoangtien2k3/reactify-core/tree/564e2da98e8b299ba66b85876f1c480b15369dc2)** · backend · 30 ★ · Apache-2.0 · commit cuối 2026-10-18
+
+Thư viện Java cho Spring WebFlux/Reactor, 9 module (core, client, cache, keycloak, r2dbc, minio, logging, exception, utils), groupId io.github.hoangtien2k3, bản 1.2.0, Java 21. Giá trị: gom phần lặp của microservice reactive (client HTTP, cache, Keycloak, MinIO) vào một thư viện dùng lại được, kèm trang docs riêng. Giới hạn: chỉ thấy 1 file test (reactify-test), README mượn badge build của repo khác (ponfee/commons-core); chưa kiểm bản phát hành trên Maven Central.
+
+<a id="ch-hoangtien2k3-learn-spring-boot"></a>
+
+**[learn-spring-boot](https://github.com/hoangtien2k3/learn-spring-boot/tree/74d616fbde7b17f5b68ebc41b974bad765d552ca)** · learning · 24 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2026-01-03
+
+Bộ bài học Spring Boot: ~270 file Java và ~80 file test theo từng chủ đề (JPA/JPQL, Exception handling/Validation, JPA testing, các HTTP method). Số test cao so với các repo khác của tác giả nên hợp làm tài liệu thực hành. Không có LICENSE nên không được sao chép ra ngoài việc đọc.
+
+<a id="ch-hoangtien2k3-ezbuy"></a>
+
+**[ezbuy](https://github.com/hoangtien2k3/ezbuy/tree/aa1795e0fa64a39002ffa45589cdb45c57a5901f)** · backend · 15 ★ · Apache-2.0 · commit cuối 2026-10-18
+
+Backend thương mại điện tử Java 21/Gradle: 12 service (auth, core, cart, order, payment, product, rating, noti, search, trigger, setting, gateway), Spring WebFlux + R2DBC, Liquibase, Kafka; mỗi service có workflow GitHub Actions riêng. Giá trị: mẫu reactive đầy đủ nhất của tác giả, dùng thư viện reactify. Giới hạn: không thấy thư mục src/test trong cây; README ghi cả Zookeeper lẫn WebFlux nên có phần mô tả chưa khớp mã; chưa chạy.
+
+<a id="ch-hoangtien2k3-keycloak-auth-service"></a>
+
+**[keycloak-auth-service](https://github.com/hoangtien2k3/keycloak-auth-service/tree/c21d29e8c4bf01a07c5836ae6399f9deae25f990)** · backend · 7 ★ · Apache-2.0 · commit cuối 2025-01-10
+
+Dịch vụ xác thực dùng Keycloak (auth-model, auth-service, noti-model, noti-send) bằng WebFlux/functional style, Liquibase, gửi email/tin nhắn qua noti-service; 91 file Java. Là nền cho auth-service trong ecommerce-microservices. Không có test.
+
+<a id="ch-hoangtien2k3-saga-pattern-microservice"></a>
+
+**[saga-pattern-microservice](https://github.com/hoangtien2k3/saga-pattern-microservice/tree/ada110a4aa6987ed463f637d08927490fa34f041)** · backend · 7 ★ · MIT (file LICENSE ghi Tuan Nguyen, 2021) · commit cuối 2024-04-28
+
+Demo Saga orchestration và Outbox pattern với Kafka, Kafka Connect, Debezium Outbox Event Router, Spring Cloud Stream, PostgreSQL mỗi service. Chủ đề rất hay vì ecommerce-microservices thiếu đúng phần này. Lưu ý: LICENSE ghi tác giả Tuan Nguyen (2021), tức mã có nguồn gốc từ repo khác; upstream chưa xác minh. Dùng bản gốc nếu cần trích.
+
+#### Tham khảo
+
+Dùng để đọc hoặc học; không phải nền tảng.
+
+<a id="ch-hoangtien2k3-shopapp-backend"></a>
+
+**[shopapp-backend](https://github.com/hoangtien2k3/shopapp-backend/tree/a427288fd722d8379f8d7fd20cf65252cc6886ff)** · backend · 71 ★ · MIT · commit cuối 2026-10-18
+
+Backend thương mại điện tử Spring Boot (112 file Java, 1 file test), Docker, CircleCI và GitHub Actions. Gần như trùng README với web-app-backend-springboot; ecommerce-microservices là bản phát triển tiếp, nên đọc bản đó thay vì hai repo này.
+
+<a id="ch-hoangtien2k3-java"></a>
+
+**[Java (hoangtien2k3)](https://github.com/hoangtien2k3/Java/tree/f7bd433eddfff26163a64eab61acd5927a003a8c)** · learning · 12 ★ · MIT · commit cuối 2024-01-28
+
+Tập bài tập và ví dụ Java (660 file Java, 31 file test) theo DIRECTORY.md, dùng cho học tập; README tự ghi có thể kém hiệu quả hơn thư viện chuẩn. Không cập nhật từ 28/1/2024. Cấu trúc giống TheAlgorithms/Java nhưng chưa xác minh quan hệ upstream.
+
+<a id="ch-hoangtien2k3-design-pattern"></a>
+
+**[design-pattern](https://github.com/hoangtien2k3/design-pattern/tree/24f5f439aac0c502f0004d83cb04045ec0b0b8b5)** · learning · 10 ★ · MIT (file LICENSE ghi hoangtien2k3qx1; GitHub báo NOASSERTION) · commit cuối 2024-01-28
+
+Ví dụ Java cho ba nhóm Creational/Structural/Behavioral (76 file Java), dẫn sourcemaking và blog tvd12. Hữu ích để ôn nhanh; không có test đáng kể.
+
+<a id="ch-hoangtien2k3-golang-tutorials"></a>
+
+**[golang-tutorials](https://github.com/hoangtien2k3/golang-tutorials/tree/8bb8751e6f2f2c80ba3569ce3a916e418a852383)** · learning · 9 ★ · MIT · commit cuối 2026-10-18
+
+Bài học Go từ cơ bản đến concurrency (9 chương, 56 file), có cheatsheet; nhỏ, dễ đọc, nhưng không có test hay CI.
+
+<a id="ch-hoangtien2k3-microservice-webflux"></a>
+
+**[microservice-webflux](https://github.com/hoangtien2k3/microservice-webflux/tree/df8f9295f51076f25d77b594bef3e912ca1f4f4e)** · backend · 7 ★ · MIT · commit cuối 2024-03-16
+
+Demo microservice WebFlux (account, payment, profile, api-gateway, eureka) trên Spring Boot 3.0.1, Liquibase, Kafka; 43 file Java. Là bản đầu của hướng reactive rồi được thay bằng ezbuy; Eureka/Boot 3.0 đã cũ.
+
+<a id="ch-hoangtien2k3-data-structure-and-algorithm"></a>
+
+**[Data-Structure-And-Algorithm](https://github.com/hoangtien2k3/Data-Structure-And-Algorithm/tree/0291a4aa31160373cd0bf411d6730638767a0a35)** · learning · 4 ★ · MIT · commit cuối 2024-02-21
+
+Cấu trúc dữ liệu và thuật toán bằng C/C++/Java (127 file Java, 26 file test); đủ chủ đề để ôn nhưng chưa chuẩn hóa.
+
+<a id="ch-hoangtien2k3-news-backend"></a>
+
+**[news-backend](https://github.com/hoangtien2k3/news-backend/tree/2c4cbf3b8fd9a4c12dc1bc64d73308448909ef9d)** · backend · 3 ★ · MIT · commit cuối 2024-06-09
+
+Backend tin tức dạng microservice (api-gateway, config-server, discovery-server) 78 file Java, docker-compose dev/prod, 7 file test; kiến trúc Spring Cloud kiểu cũ (Eureka/Config Server).
+
+<a id="ch-hoangtien2k3-web-app-backend-springboot"></a>
+
+**[web-app-backend-springboot](https://github.com/hoangtien2k3/web-app-backend-springboot/tree/ef47c7e6dc51971a0d4a7f716abb590570046a84)** · backend · 3 ★ · MIT · commit cuối 2024-10-14
+
+Bản lớn hơn của shopapp-backend (149 file Java, 1 test), cùng README; cập nhật 14/10/2024. Gần như trùng lặp với shopapp-backend.
+
+<a id="ch-hoangtien2k3-news-app"></a>
+
+**[news-app](https://github.com/hoangtien2k3/news-app/tree/0bbb60595090331eabb6c91bda8b5b1cbedb3e20)** · mobile · 2 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-06-09
+
+App Android tin tức Kotlin (Gradle KTS, 359 file) ghép với news-backend; có ảnh chụp màn hình.
+
+<a id="ch-hoangtien2k3-base-auth-jwt-springboot"></a>
+
+**[base-auth-jwt-springboot](https://github.com/hoangtien2k3/base-auth-jwt-springboot/tree/e7a4eddf329f923905af5a0479015478d27393ca)** · backend · 1 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2026-01-25
+
+Khung xác thực Spring Boot 3.2/Spring Security 6 với JWT access/refresh token, RBAC, khóa tài khoản, xác minh email, PostgreSQL + Flyway; 40 file Java, 1 test. Gọn, hợp làm điểm bắt đầu cho auth nội bộ; cần review bảo mật trước khi dùng.
+
+<a id="ch-hoangtien2k3-vnpay-demo"></a>
+
+**[VNPAY-DEMO](https://github.com/hoangtien2k3/VNPAY-DEMO/tree/c5c8dd68492506474c889cf34df3bbf1ea9359fc)** · backend · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-10-15
+
+Demo tích hợp cổng thanh toán VNPAY bằng Spring Boot (25 file Java, 1 test); hữu ích cho thị trường Việt Nam, kiểm lại chữ ký/secret khi dùng thật.
+
+<a id="ch-hoangtien2k3-alarm-ht21"></a>
+
+**[alarm-ht21](https://github.com/hoangtien2k3/alarm-ht21/tree/4dbe570aa023d2695fbe58fa99a7882147ca1459)** · mobile · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2025-05-20
+
+App báo thức Android, kiến trúc nhiều module (app, core, feature, build-logic), có 43 file test và CI; sạch nhất trong nhóm mobile của tác giả.
+
+<a id="ch-hoangtien2k3-annotation-spring-boot"></a>
+
+**[annotation-spring-boot](https://github.com/hoangtien2k3/annotation-spring-boot/tree/a9cba3239bfdd028fac8d38ecbfa30e0f075ba50)** · learning · 0 ★ · MIT · commit cuối 2024-06-07
+
+Danh mục annotation hay dùng trong Spring Boot (Core, Boot, Test, Transactions, JPA/Hibernate) kèm ví dụ nhỏ (37 file Java); tra cứu nhanh.
+
+<a id="ch-hoangtien2k3-ezbuy-android"></a>
+
+**[ezbuy-android](https://github.com/hoangtien2k3/ezbuy-android/tree/13ec9b3ad3770fa77deacd5ed98e74d5c9a4cced)** · mobile · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2025-11-29
+
+App Android cho ezbuy: Kotlin, MVVM, Room, Retrofit, Coroutines/Flow, tách module common/data/domain; cập nhật 29/11/2025 (ngày commit trên HEAD).
+
+<a id="ch-hoangtien2k3-grpc-demo"></a>
+
+**[grpc-demo](https://github.com/hoangtien2k3/grpc-demo/tree/40d19162273e8dca3b31d73945c2c95948c979af)** · backend · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2026-01-02
+
+Demo gRPC CRUD với Spring Boot 4.0.1, Protocol Buffers 3, JPA và PostgreSQL 16 (6 file Java); nhỏ nhưng dùng Boot 4 mới.
+
+<a id="ch-hoangtien2k3-keycloak-sso-saml"></a>
+
+**[keycloak-sso-saml](https://github.com/hoangtien2k3/keycloak-sso-saml/tree/5f0c649a9c3bf0ea49611218ee0a0cc530967a61)** · backend · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2025-11-28
+
+Demo SSO SAML 2.0 với Keycloak làm IdP (Spring Boot, docker-compose, sơ đồ tuần tự, tài liệu setup .docx); mẫu hiếm so với các demo OIDC; chưa có test.
+
+<a id="ch-hoangtien2k3-rabbitmq-demo"></a>
+
+**[rabbitmq-demo](https://github.com/hoangtien2k3/rabbitmq-demo/tree/e2823e57a455b08f5f483161f77feb4fba30d048)** · backend · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2026-01-04
+
+Demo RabbitMQ với Spring Boot 4.0.1/Java 17, đủ 5 kiểu exchange (simple queue, direct, fanout, topic, headers); 15 file Java. Ngắn và đủ ý để học routing.
+
+<a id="ch-hoangtien2k3-reactify-docs"></a>
+
+**[reactify-docs](https://github.com/hoangtien2k3/reactify-docs/tree/7e3228400038a4928fe9a8bbd45d5d6b28cad049)** · docs · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2025-01-21
+
+Trang tài liệu tĩnh của reactify-core (blog, codegen, async-io, boot); phục vụ thư viện, không phải sản phẩm độc lập.
+
+#### Cẩn trọng
+
+Có vấn đề nguồn gốc, bản quyền hoặc quyền sử dụng tài liệu.
+
+<a id="ch-hoangtien2k3-crush"></a>
+
+**[crush (hoangtien2k3)](https://github.com/hoangtien2k3/crush/tree/2bd211f349994223138778ce298031fd1a232fb4)** · frontend · 3 ★ · MIT (file LICENSE ghi hoangtien2k3qx1) · commit cuối 2024-03-16
+
+Trang web tỏ tình tĩnh (HTML/JS/âm thanh). README trỏ issue của zukahai/Confess-Crush nên là bản chép/chuyển thể từ repo đó; upstream và quyền tài sản (hình, âm thanh) chưa xác minh.
+
+<a id="ch-hoangtien2k3-money-detection-android-app"></a>
+
+**[money-detection-android-app](https://github.com/hoangtien2k3/money-detection-android-app/tree/3a9b04aac6f1317055640771bddc30c94458c009)** · mobile · 1 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2026-05-31
+
+Mã decompile của VoidMoney-Final.apk (9.316 file Java), kèm file APK và SDK nhận dạng tiền của bên thứ ba (cashreader), cùng mã kiểm tra bản quyền Google Play (pairip). Đây là mã dịch ngược của ứng dụng người khác, không có quyền tái sử dụng; không dùng và không tích hợp.
+
+<a id="ch-hoangtien2k3-programming-books"></a>
+
+**[programming-books](https://github.com/hoangtien2k3/programming-books/tree/101b8676ecb4c2a32cb4f2301c6dfeb76472dce3)** · learning · 1 ★ · MIT (chỉ áp cho phần tác giả; các PDF sách/đề chưa rõ quyền) · commit cuối 2025-03-14
+
+Kho PDF giáo trình thuật toán và đề contest. LICENSE MIT của repo không cấp quyền với tài liệu của bên khác trong PDF.
+
+<a id="ch-hoangtien2k3-movie"></a>
+
+**[movie](https://github.com/hoangtien2k3/movie/tree/ffda2a81d8acca64c41e57ed53153882a45981e2)** · mobile · 0 ★ · MIT (file License.md ghi Murat ÖZTÜRK, 2023) · commit cuối 2024-09-22
+
+App Mova - Movie & Trailers Kotlin dựa trên TMDb; License.md ghi tác giả khác, nên đây là bản sao/chuyển thể từ repo của họ; hình và UI kit Figma có thể có điều khoản riêng.
+
+<a id="ch-hoangtien2k3-profilepro"></a>
+
+**[profilePro](https://github.com/hoangtien2k3/profilePro/tree/ecff0a00ae24017227a893458767c7efe3c0fe8b)** · frontend · 0 ★ · GPL-3.0 · commit cuối 2024-09-28
+
+Template portfolio React lấy từ saadpasta/developer-portfolio (README còn badge của repo gốc). GPL-3.0 là copyleft: dùng lại phải giữ GPL và ghi gốc.
+
+#### Bỏ qua
+
+Bài tập cá nhân, bản cũ hoặc trùng lặp; giá trị tích hợp thấp.
+
+<a id="ch-hoangtien2k3-hoangtien2k3"></a>
+
+**[hoangtien2k3](https://github.com/hoangtien2k3/hoangtien2k3/tree/d3307438466ae7e36fc99340aecaed81f81ebd26)** · docs · 9 ★ · MIT (file LICENSE; GitHub báo NOASSERTION) · commit cuối 2026-11-25
+
+Repo README hồ sơ cá nhân (có profile-3d-contrib, ảnh, workflow cập nhật, 1.693 file chủ yếu là tài sản sinh tự động). Dùng để biết kênh của tác giả (TikTok ctdl.gt), không có giá trị tích hợp.
+
+<a id="ch-hoangtien2k3-codeutt"></a>
+
+**[CodeUTT](https://github.com/hoangtien2k3/CodeUTT/tree/396b42e3ac220fa553dd7eb4468ec51ae2584b33)** · learning · 5 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-11-14
+
+Bài tập trường UTT (OOP, Java, bài tập hỗn tạp), mã nộp bài cá nhân, 717 file gồm cả file IDE.
+
+<a id="ch-hoangtien2k3-leetcode-solutions"></a>
+
+**[leetcode-solutions](https://github.com/hoangtien2k3/leetcode-solutions/tree/f97e9f8073477ed4cd9d1600cc681f3d2ffa7baf)** · learning · 5 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-03-30
+
+Lời giải LeetCode (Java/C++/SQL, 117 file Java). Không có test và không có LICENSE; nên dùng nguồn LeetCode/NeetCode chuẩn.
+
+<a id="ch-hoangtien2k3-algorithms"></a>
+
+**[Algorithms](https://github.com/hoangtien2k3/Algorithms/tree/b74c3d16c978c027ce7fde30a1902d12d6a4097d)** · learning · 4 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-02-23
+
+Thuật toán C/C++ theo chủ đề (backtracking, DP, binary search…); không license.
+
+<a id="ch-hoangtien2k3-code-c-plus-plus"></a>
+
+**[Code-C-plus-plus](https://github.com/hoangtien2k3/Code-C-plus-plus/tree/74c7a9816feb4e81704d98d466151ba8ea9059c1)** · learning · 4 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-04-24
+
+Bài tập C++ (OOP, STL, 300 bài code thiếu nhi) kèm PDF; không license.
+
+<a id="ch-hoangtien2k3-ticket-booking-api"></a>
+
+**[ticket-booking-api](https://github.com/hoangtien2k3/ticket-booking-api/tree/42570d754f06ae85743bbe7204c0fff41ca55088)** · backend · 4 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-12-15
+
+REST API đặt vé xem phim bằng Spring Boot 3/JDK 17, MySQL, Docker; 46 file Java, 1 test; đồ án nhỏ.
+
+<a id="ch-hoangtien2k3-100-days"></a>
+
+**[100-days](https://github.com/hoangtien2k3/100-days/tree/045a964695e0a0aaa692e720f083bf8f3dd2c72d)** · learning · 3 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2020-09-09
+
+Thử thách code C 100 ngày (nhật ký bài tập).
+
+<a id="ch-hoangtien2k3-code"></a>
+
+**[Code](https://github.com/hoangtien2k3/Code/tree/f90bc4f68adc066ebc8b3758f6c73df578f7dec5)** · learning · 3 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-01-16
+
+Bài tập C/C++ (1000 bài code thiếu nhi), không license.
+
+<a id="ch-hoangtien2k3-codesignal"></a>
+
+**[Codesignal](https://github.com/hoangtien2k3/Codesignal/tree/d15f1c32f356390df5c2a3161e98720e8edf5e92)** · learning · 3 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-01-16
+
+Lời giải CodeSignal Arcade bằng C/C++.
+
+<a id="ch-hoangtien2k3-hackerrank-solution"></a>
+
+**[HackerRank-Solution](https://github.com/hoangtien2k3/HackerRank-Solution/tree/1c8386691b6df94dfbcd7d662de49af5cb573c94)** · learning · 3 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-01-16
+
+Lời giải HackerRank C++.
+
+<a id="ch-hoangtien2k3-programming"></a>
+
+**[Programming](https://github.com/hoangtien2k3/Programming/tree/e4763ab5913e44b662a2ee3d4c54f9b99fa9b26c)** · learning · 3 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-01-16
+
+Mã nguồn C/C++ theo chủ đề (OOP, vùng nhớ).
+
+<a id="ch-hoangtien2k3-sql-server"></a>
+
+**[SQL-Server](https://github.com/hoangtien2k3/SQL-Server/tree/3c9cdf0a0401d3fb25f51978bd68551d92b5a88c)** · learning · 3 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-04-14
+
+Ghi chú SQL Server (join, union, select into…) từ hoc.tv.
+
+<a id="ch-hoangtien2k3-c-sharp-gui-programming"></a>
+
+**[C-Sharp-GUI-Programming](https://github.com/hoangtien2k3/C-Sharp-GUI-Programming/tree/a0e81ea74066e90699e60d74cf3997fad158e4bb)** · learning · 1 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-12-09
+
+Bài tập lớn C# WinForms (quản lý bệnh nhân, nhân viên…), 1.008 file gồm tệp IDE/thư viện.
+
+<a id="ch-hoangtien2k3-movie-api"></a>
+
+**[movie-api](https://github.com/hoangtien2k3/movie-api/tree/9ea964794d7a0f9ba264b886f3432821ae47de2f)** · backend · 1 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-06-01
+
+REST API phim bằng Spring Boot với Swagger/SLF4J, MySQL.
+
+<a id="ch-hoangtien2k3-websocket-chat-message"></a>
+
+**[websocket-chat-message](https://github.com/hoangtien2k3/websocket-chat-message/tree/e07b9470c7bdd9cd7cf672f86eabd4048d358937)** · backend · 1 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-03-16
+
+Demo chat WebSocket Spring Boot (6 file Java).
+
+<a id="ch-hoangtien2k3-quanlykhodienthoai"></a>
+
+**[QuanLyKhoDienThoai](https://github.com/hoangtien2k3/QuanLyKhoDienThoai/tree/2ef3c26c786cacf97b8b318f6de03b2fca4996cd)** · learning · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-10-07
+
+Đồ án phân tích thiết kế HTTT: quản lý kho điện thoại theo IMEI (Java Swing/NetBeans, 181 file Java, kèm báo cáo).
+
+<a id="ch-hoangtien2k3-bai-toan-qua-song"></a>
+
+**[bai-toan-qua-song](https://github.com/hoangtien2k3/bai-toan-qua-song/tree/9fa8a230880273f6a37880bacc5af231b0f2329b)** · learning · 0 ★ · MIT · commit cuối 2023-12-31
+
+Bài toán qua sông bằng BFS/DFS (môn Trí tuệ nhân tạo), 5 file Java.
+
+<a id="ch-hoangtien2k3-hoangtien2k3-github-io"></a>
+
+**[hoangtien2k3.github.io](https://github.com/hoangtien2k3/hoangtien2k3.github.io/tree/25f2a849338b47fda8336e5ba47fe0678cc7697c)** · frontend · 0 ★ · MIT (file LICENSE ghi gatsbyjs, 2015) · commit cuối 2026-04-04
+
+Portfolio/blog Gatsby của tác giả, dựng từ starter Gatsby (LICENSE vẫn ghi gatsbyjs).
+
+<a id="ch-hoangtien2k3-identity-service"></a>
+
+**[identity-service](https://github.com/hoangtien2k3/identity-service/tree/fffb5228dc496cad4c1d4da5f7080fc406710f99)** · backend · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-05-10
+
+Dịch vụ identity Spring Boot (47 file Java, 1 test), bản cũ trước keycloak-auth-service.
+
+<a id="ch-hoangtien2k3-micronaut-micrometer-rxjava3"></a>
+
+**[micronaut-micrometer-rxjava3](https://github.com/hoangtien2k3/micronaut-micrometer-rxjava3/tree/032a5b6a2551c29d6ebb8a462c91317c3bf7b092)** · backend · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2025-04-24
+
+Mẫu Micronaut + Micrometer + RxJava3 bằng Kotlin, README rỗng.
+
+<a id="ch-hoangtien2k3-movie-app"></a>
+
+**[movie-app](https://github.com/hoangtien2k3/movie-app/tree/999ade31c488753ef381028b639fc764aecf65ce)** · mobile · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-03-30
+
+App phim Android Kotlin (MVP, Room, Retrofit) dùng API TMDb; 129 file.
+
+<a id="ch-hoangtien2k3-oauth2-login-google"></a>
+
+**[oauth2-login-google](https://github.com/hoangtien2k3/oauth2-login-google/tree/0fcdd9cdf22cadfbae209b31e2e4070a6a5c39bd)** · backend · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-10-15
+
+Demo đăng nhập Google OAuth2 bằng Spring Boot/Gradle (5 file Java), không có README.
+
+<a id="ch-hoangtien2k3-webflux-jwt-security"></a>
+
+**[webflux-jwt-security](https://github.com/hoangtien2k3/webflux-jwt-security/tree/8bb6397a2a1f8033db30f14bd4702152d198f531)** · backend · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-07-25
+
+Demo Spring Boot 3.2.5 WebFlux Security với JWT (21 file Java).

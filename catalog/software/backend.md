@@ -2,9 +2,9 @@
 
 # backend — Kỹ thuật phần mềm & vận hành
 
-[← Mục lục catalog](../README.md) · 139 hồ sơ.
+[← Mục lục catalog](../README.md) · 159 hồ sơ.
 
-## Web framework (`web-framework`, 26)
+## Web framework (`web-framework`, 30)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -34,6 +34,10 @@
 | [Tornado](../../34-backend-data-identity-integration/README.md#anhkysuai-tornadoweb-tornado) | `tornadoweb/tornado` | Apache-2.0 | 22.175 | đọc tài liệu 2026-11-23 | 34 | Framework web và thư viện mạng async Python cho kết nối dài. |
 | [Clean Architecture ASP.NET Template](../../34-backend-data-identity-integration/README.md#anhkysuai-jasontaylordev-cleanarchitecture) | `jasontaylordev/CleanArchitecture` | MIT | 20.735 | đọc tài liệu 2026-11-23 | 34 | Template ASP.NET Core/Aspire cho Angular, React hoặc Web API riêng. |
 | [The $12 Server Challenge](../../34-backend-data-identity-integration/README.md#6-kỹ-thuật-đáng-học-từ-nhóm-dẫn-đầu-the-12-server-challenge-twelve-dollar-server-challenge-đọc-readme-bài-dự-thi-4112026) | `arjaythedev/twelve-dollar-server-challenge` | MIT | 660 | đọc tài liệu 2026-11-04 | 34 | Cuộc thi hiệu năng Social Media API trên SQLite in-process, 1 vCPU/2 GB; |
+| [reactify-core](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-reactify-core) | `hoangtien2k3/reactify-core` | Apache-2.0 | 30 | đọc tài liệu 2026-11-25 | 34 | Thư viện Java cho Spring WebFlux/Reactor, 9 module (core, client, cache, keycloak, r2dbc, minio, logging, exception, utils), groupId io.github.hoangtien2k3, bản 1.2.0, J… |
+| [ticket-booking-api](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-ticket-booking-api) | `hoangtien2k3/ticket-booking-api` | Không có LICENSE (mặc định giữ mọi quyền) | 4 | đọc tài liệu 2026-11-25 | 34 | REST API đặt vé xem phim bằng Spring Boot 3/JDK 17, MySQL, Docker; |
+| [movie-api](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-movie-api) | `hoangtien2k3/movie-api` | Không có LICENSE (mặc định giữ mọi quyền) | 1 | đọc tài liệu 2026-11-25 | 34 | REST API phim bằng Spring Boot với Swagger/SLF4J, MySQL. |
+| [micronaut-micrometer-rxjava3](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-micronaut-micrometer-rxjava3) | `hoangtien2k3/micronaut-micrometer-rxjava3` | Không có LICENSE (mặc định giữ mọi quyền) | 0 | đọc tài liệu 2026-11-25 | 34 | Mẫu Micronaut + Micrometer + RxJava3 bằng Kotlin, README rỗng. |
 
 ## BaaS & nền tảng backend (`baas-platform`, 6)
 
@@ -46,7 +50,7 @@
 | [Hasura GraphQL Engine](../../34-backend-data-identity-integration/README.md#anhkysuai-hasura-graphql-engine) | `hasura/graphql-engine` | Apache-2.0; LICENSE-community theo MIT | 32.127 | đọc tài liệu 2026-11-23 | 34 | Engine cung cấp API GraphQL thống nhất trên các nguồn dữ liệu. |
 | [Parse Server](../../34-backend-data-identity-integration/README.md#anhkysuai-parse-community-parse-server) | `parse-community/parse-server` | Apache-2.0 | 21.399 | đọc tài liệu 2026-11-23 | 34 | Backend tương thích Parse API chạy trên Node.js/Express, nhúng hoặc độc lập. |
 
-## Xác thực & danh tính (`auth-identity`, 14)
+## Xác thực & danh tính (`auth-identity`, 20)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -64,8 +68,14 @@
 | [@passwordless-id/webauthn](../../34-backend-data-identity-integration/README.md#n2-passwordless-id-webauthn) | `passwordless-id/webauthn` | MIT | 621 | đọc mã 2026-11-23 | 34 | Thư viện TypeScript nhỏ bọc WebAuthn cho cả trình duyệt và server, xác minh chữ ký bằng WebCrypto thuần. |
 | [WebAuthn4J](../../34-backend-data-identity-integration/README.md#n2-webauthn4j) | `webauthn4j/webauthn4j` | Apache-2.0 | 600 | đọc mã 2026-11-23 | 34 | Thư viện Java xác minh đăng ký và đăng nhập WebAuthn ở server, hỗ trợ mọi định dạng attestation (packed, FIDO-U2F, Android Key, SafetyNet, TPM, Apple Anonymous, none, Ap… |
 | [java-webauthn-server (Yubico)](../../34-backend-data-identity-integration/README.md#n2-yubico-java-webauthn-server) | `Yubico/java-webauthn-server` | BSD-2-Clause AND BSD-3-Clause (file COPYING; GitHub SPDX là NOASSERTION) | 568 | đọc mã 2026-11-23 | 34 | Thư viện Java đăng ký và đăng nhập WebAuthn với đối tượng `RelyingParty` bậc cao, hỗ trợ passkey, tự động điền (conditional mediation), xác minh attestation tùy chọn qua… |
+| [keycloak-auth-service](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-keycloak-auth-service) | `hoangtien2k3/keycloak-auth-service` | Apache-2.0 | 7 | đọc tài liệu 2026-11-25 | 34 | Dịch vụ xác thực dùng Keycloak (auth-model, auth-service, noti-model, noti-send) bằng WebFlux/functional style, Liquibase, gửi email/tin nhắn qua noti-service; |
+| [base-auth-jwt-springboot](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-base-auth-jwt-springboot) | `hoangtien2k3/base-auth-jwt-springboot` | Không có LICENSE (mặc định giữ mọi quyền) | 1 | đọc tài liệu 2026-11-25 | 34 | Khung xác thực Spring Boot 3.2/Spring Security 6 với JWT access/refresh token, RBAC, khóa tài khoản, xác minh email, PostgreSQL + Flyway; |
+| [identity-service](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-identity-service) | `hoangtien2k3/identity-service` | Không có LICENSE (mặc định giữ mọi quyền) | 0 | đọc tài liệu 2026-11-25 | 34 | Dịch vụ identity Spring Boot (47 file Java, 1 test), bản cũ trước keycloak-auth-service. |
+| [keycloak-sso-saml](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-keycloak-sso-saml) | `hoangtien2k3/keycloak-sso-saml` | Không có LICENSE (mặc định giữ mọi quyền) | 0 | đọc tài liệu 2026-11-25 | 34 | Demo SSO SAML 2.0 với Keycloak làm IdP (Spring Boot, docker-compose, sơ đồ tuần tự, tài liệu setup .docx); |
+| [oauth2-login-google](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-oauth2-login-google) | `hoangtien2k3/oauth2-login-google` | Không có LICENSE (mặc định giữ mọi quyền) | 0 | đọc tài liệu 2026-11-25 | 34 | Demo đăng nhập Google OAuth2 bằng Spring Boot/Gradle (5 file Java), không có README. |
+| [webflux-jwt-security](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-webflux-jwt-security) | `hoangtien2k3/webflux-jwt-security` | Không có LICENSE (mặc định giữ mọi quyền) | 0 | đọc tài liệu 2026-11-25 | 34 | Demo Spring Boot 3.2.5 WebFlux Security với JWT (21 file Java). |
 
-## API, RPC & client (`api-tooling`, 21)
+## API, RPC & client (`api-tooling`, 22)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -90,6 +100,7 @@
 | [gRPC-Gateway](../../34-backend-data-identity-integration/README.md#anhkysuai-grpc-ecosystem-grpc-gateway) | `grpc-ecosystem/grpc-gateway` | BSD-3-Clause | 20.016 | đọc tài liệu 2026-11-23 | 34 | Plugin protoc sinh reverse proxy dịch HTTP/JSON sang gRPC theo annotation. |
 | [APIJSON](../../34-backend-data-identity-integration/README.md#chuyen-apijson) | `APIJSON/APIJSON` | Apache License 2.0 | 18.395 | đọc tài liệu 2026-11-18 | 34 | Giao thức truyền thông dựa trên JSON kèm thư viện ORM cho Java, cho phép client tự mô tả dữ liệu cần lấy để giảm việc viết API backend. |
 | [AsyncAPI Specification](../../29-software-architecture-api-contracts/README.md#nt-asyncapi-spec) | `asyncapi/spec` | Apache-2.0 | 5.345 | đọc tài liệu 2026-11-23 | 29 | Đặc tả AsyncAPI 3.1.0 cho API hướng thông điệp: channel, operation send/receive, message, reply và bindings theo giao thức. |
+| [grpc-demo](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-grpc-demo) | `hoangtien2k3/grpc-demo` | Không có LICENSE (mặc định giữ mọi quyền) | 0 | đọc tài liệu 2026-11-25 | 34 | Demo gRPC CRUD với Spring Boot 4.0.1, Protocol Buffers 3, JPA và PostgreSQL 16 (6 file Java); |
 
 ## ORM, migration & công cụ CSDL (`orm-db-tooling`, 7)
 
@@ -103,7 +114,7 @@
 | [goose (database migrations)](../../34-backend-data-identity-integration/README.md#goose-migrations) | `pressly/goose` | MIT | 11.752 | đọc mã 2026-11-04 | 34 | Migration SQL/Go của pressly, khác block/goose; |
 | [Atlas (ariga)](../../34-backend-data-identity-integration/README.md#n2-ariga-atlas) | `ariga/atlas` | Apache-2.0 | 8.840 | đọc mã 2026-11-23 | 34 | Lint migration phát mã DS/BC/MF/CD cho cổng CI và checksum `atlas.sum`; |
 
-## CMS & thương mại điện tử (`cms-commerce`, 12)
+## CMS & thương mại điện tử (`cms-commerce`, 16)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -119,6 +130,10 @@
 | [Wagtail](../../34-backend-data-identity-integration/README.md#anhkysuai-wagtail-wagtail) | `wagtail/wagtail` | BSD-3-Clause | 20.826 | đọc tài liệu 2026-11-23 | 34 | CMS Django cho nội dung có cấu trúc và trải nghiệm biên tập tùy chỉnh. |
 | [litemall](../../34-backend-data-identity-integration/README.md#anhkysuai-linlinjava-litemall) | `linlinjava/litemall` | MIT | 20.412 | đọc tài liệu 2026-11-23 | 34 | Mẫu cửa hàng nhỏ với backend Spring Boot, admin Vue, WeChat mini-program và web mobile. |
 | [ecommerce-microservices](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-ecommerce-microservices) | `hoangtien2k3/ecommerce-microservices` | MIT | 393 | đọc mã 2026-11-25 | 34 | Mẫu thương mại điện tử 13 microservice Spring Boot 3.3.5/Java 21 + APISIX + Keycloak + Kafka + Next.js, triển khai Docker Compose hoặc k3d/ArgoCD. |
+| [shopapp-backend](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-shopapp-backend) | `hoangtien2k3/shopapp-backend` | MIT | 71 | đọc tài liệu 2026-11-25 | 34 | Backend thương mại điện tử Spring Boot (112 file Java, 1 file test), Docker, CircleCI và GitHub Actions. |
+| [ezbuy](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-ezbuy) | `hoangtien2k3/ezbuy` | Apache-2.0 | 15 | đọc tài liệu 2026-11-25 | 34 | Backend thương mại điện tử Java 21/Gradle: 12 service (auth, core, cart, order, payment, product, rating, noti, search, trigger, setting, gateway), Spring WebFlux + R2DB… |
+| [web-app-backend-springboot](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-web-app-backend-springboot) | `hoangtien2k3/web-app-backend-springboot` | MIT | 3 | đọc tài liệu 2026-11-25 | 34 | Bản lớn hơn của shopapp-backend (149 file Java, 1 test), cùng README; |
+| [VNPAY-DEMO](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-vnpay-demo) | `hoangtien2k3/VNPAY-DEMO` | Không có LICENSE (mặc định giữ mọi quyền) | 0 | đọc tài liệu 2026-11-25 | 34 | Demo tích hợp cổng thanh toán VNPAY bằng Spring Boot (25 file Java, 1 test); |
 
 ## Ứng dụng doanh nghiệp (ERP/CRM) (`business-app`, 12)
 
@@ -156,7 +171,7 @@
 | [GraalVM Community Edition](../../37-programming-languages-runtimes/README.md#anhkysuai-oracle-graal) | `oracle/graal` | GPL-2.0 với Classpath Exception cho bản CE; thành phần GPL-2.0, UPL và BSD riêng | 21.757 | đọc tài liệu 2026-11-23 | 37 | Bộ compiler và runtime hỗ trợ Java cùng biên dịch ahead-of-time thành chương trình native. |
 | [Crystal](../../37-programming-languages-runtimes/README.md#anhkysuai-crystal-lang-crystal) | `crystal-lang/crystal` | Apache-2.0 với ngoại lệ attribution cho phần compiler nhúng vào binary đầu ra | 20.518 | đọc tài liệu 2026-11-23 | 37 | Ngôn ngữ biên dịch native có cú pháp gần Ruby, kiểm kiểu tĩnh và suy luận kiểu. |
 
-## Microservice, cấu hình & service mesh (`microservice-infra`, 10)
+## Microservice, cấu hình & service mesh (`microservice-infra`, 13)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -170,6 +185,9 @@
 | [Go Micro](../../34-backend-data-identity-integration/README.md#anhkysuai-micro-go-micro) | `micro/go-micro` | Apache-2.0 | 23.077 | đọc tài liệu 2026-11-23 | 34 | Framework Go cho dịch vụ phân tán và agent dùng dịch vụ làm tool. |
 | [GoFr](../../34-backend-data-identity-integration/README.md#anhkysuai-gofr-dev-gofr) | `gofr-dev/gofr` | Apache-2.0 | 20.785 | đọc tài liệu 2026-11-23 | 34 | Framework Go hướng microservice/Kubernetes, gắn database và observability sẵn. |
 | [EventCatalog](../../29-software-architecture-api-contracts/README.md#nt-eventcatalog) | `event-catalog/eventcatalog` | BUSL-1.1 cho packages/core (chuyển MIT sau 4 năm); sdk, linter, fitness, cli, visualiser, exporters, connectors MIT | 2.977 | đọc mã 2026-11-23 | 29 | Công cụ tài liệu kiến trúc event-driven dựng từ Markdown, kèm linter, fitness function bằng TypeScript và SDK. |
+| [microservice-webflux](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-microservice-webflux) | `hoangtien2k3/microservice-webflux` | MIT | 7 | đọc tài liệu 2026-11-25 | 34 | Demo microservice WebFlux (account, payment, profile, api-gateway, eureka) trên Spring Boot 3.0.1, Liquibase, Kafka; |
+| [saga-pattern-microservice](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-saga-pattern-microservice) | `hoangtien2k3/saga-pattern-microservice` | MIT (file LICENSE ghi Tuan Nguyen, 2021) | 7 | đọc tài liệu 2026-11-25 | 34 | Demo Saga orchestration và Outbox pattern với Kafka, Kafka Connect, Debezium Outbox Event Router, Spring Cloud Stream, PostgreSQL mỗi service. |
+| [news-backend](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-news-backend) | `hoangtien2k3/news-backend` | MIT | 3 | đọc tài liệu 2026-11-25 | 34 | Backend tin tức dạng microservice (api-gateway, config-server, discovery-server) 78 file Java, docker-compose dev/prod, 7 file test; |
 
 ## Ứng dụng tự host (`self-hosted-app`, 8)
 
@@ -184,7 +202,7 @@
 | [Navidrome](../../36-self-hosting-homelab/README.md#anhkysuai-navidrome-navidrome) | `navidrome/navidrome` | GPL-3.0 | 24.909 | đọc tài liệu 2026-11-23 | 36 | Máy chủ thư viện nhạc cá nhân và streaming qua trình duyệt/client. |
 | [LibreTranslate](../../36-self-hosting-homelab/README.md#chuyen-libretranslate) | `LibreTranslate/LibreTranslate` | GNU Affero General Public License v3 | 17.783 | đọc tài liệu 2026-11-18 | 36 | API dịch máy mã nguồn mở, tự host hoàn toàn, không phụ thuộc dịch vụ độc quyền như Google hay Azure. |
 
-## Realtime, bot & nhắn tin (`realtime-messaging`, 9)
+## Realtime, bot & nhắn tin (`realtime-messaging`, 11)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -197,3 +215,5 @@
 | [NATS Server](../../34-backend-data-identity-integration/README.md#anhkysuai-nats-io-nats-server) | `nats-io/nats-server` | Apache-2.0 | 21.113 | đọc tài liệu 2026-11-23 | 34 | Máy chủ truyền thông cho dịch vụ, hệ thống và thiết bị từ cloud tới edge. |
 | [FastStream](../../34-backend-data-identity-integration/README.md#nt-faststream) | `ag2ai/faststream` | Apache-2.0 | 5.397 | đọc mã 2026-11-23 | 34 | Framework Python event-driven cho Kafka, RabbitMQ, NATS, Redis và MQTT, sinh tài liệu AsyncAPI trực tiếp từ khai báo subscriber/publisher. |
 | [Standard Webhooks](../../34-backend-data-identity-integration/README.md#n2-standard-webhooks) | `standard-webhooks/standard-webhooks` | Apache-2.0 | 1.814 | đọc mã 2026-11-23 | 34 | Đặc tả mở cho webhook gồm payload, chữ ký HMAC hoặc ed25519 phủ id và timestamp, xoay khóa, retry và vô hiệu hóa endpoint, kèm thư viện nhiều ngôn ngữ và một skill cho a… |
+| [websocket-chat-message](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-websocket-chat-message) | `hoangtien2k3/websocket-chat-message` | Không có LICENSE (mặc định giữ mọi quyền) | 1 | đọc tài liệu 2026-11-25 | 34 | Demo chat WebSocket Spring Boot (6 file Java). |
+| [rabbitmq-demo](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-rabbitmq-demo) | `hoangtien2k3/rabbitmq-demo` | Không có LICENSE (mặc định giữ mọi quyền) | 0 | đọc tài liệu 2026-11-25 | 34 | Demo RabbitMQ với Spring Boot 4.0.1/Java 17, đủ 5 kiểu exchange (simple queue, direct, fanout, topic, headers); |
