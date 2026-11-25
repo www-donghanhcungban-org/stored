@@ -76,7 +76,7 @@
       "quality-mgmt",
       "manufacturing"
     ],
-    "count": 2772,
+    "count": 2777,
     "schema_version": 2
   },
   "projects": [
@@ -62833,6 +62833,113 @@
         "https://claudeskills.info/ranking-methodology/",
         "https://claudeskills.info/official/anthropic/",
         "https://claudeskills.info/llms.txt"
+      ]
+    },
+    {
+      "name": "social-media-research-skills",
+      "repo": "ScrapeCreators/social-media-research-skills",
+      "category": "harness-pack",
+      "license": "MIT",
+      "stars": 7926,
+      "open_source": true,
+      "notes": "13 skill nghiên cứu mạng xã hội (outlier, comment mining, transcript, competitor, ad library, trend, influencer) cộng skill định tuyến 110 endpoint ScrapeCreators. Cần khóa API trả phí, dữ liệu rời máy; không có CI Actions; dữ liệu cào có thể trái điều khoản nền tảng/chứa dữ liệu cá nhân; xung đột lợi ích thương mại của hãng. docs-read; đọc các file nguồn đã dẫn, chưa chạy upstream. Kiểm 2026-11-25; commit 64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2 (2026-08-26); ★ 7926 (GitHub search API, 2026-11-25).",
+      "section": "20",
+      "id": "scrapecreators-social-media-research-skills",
+      "profile_path": "20-claude-plugins-ecosystem/README.md",
+      "profile_anchor": "20-claude-plugins-ecosystem/README.md#ch-scrapecreators-social-media-research-skills",
+      "subcategory": "domain-specialist",
+      "last_verified_at": "2026-11-25",
+      "verified_ref": "64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2",
+      "verification_level": "docs-read",
+      "sources": [
+        "https://github.com/ScrapeCreators/social-media-research-skills/blob/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/README.md",
+        "https://github.com/ScrapeCreators/social-media-research-skills/blob/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/LICENSE",
+        "https://github.com/ScrapeCreators/social-media-research-skills/blob/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/AGENTS.md",
+        "https://github.com/ScrapeCreators/social-media-research-skills/blob/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/scrapecreators-api/SKILL.md"
+      ]
+    },
+    {
+      "name": "k-skill",
+      "repo": "NomaDamas/k-skill",
+      "category": "harness-pack",
+      "license": "MIT (thư mục packages/k-skill-proxy là AGPL-3.0-only)",
+      "stars": 8517,
+      "open_source": true,
+      "notes": "Hơn 130 SKILL.md cho dịch vụ và dữ liệu công Hàn Quốc: luật (korean-law-search), sáng chế KIPRIS, bất động sản MOLIT, thuốc MFDS, thuế NTS, giao thông, đặt vé; một số gọi qua k-skill-proxy (có chính sách riêng tư). Giá trị tham khảo cho thị trường Hàn; dữ liệu rời máy qua proxy và thư mục proxy là AGPL. docs-read; đọc các file nguồn đã dẫn, chưa chạy upstream. Kiểm 2026-11-25; commit c41a11703b0ea25b8c5c3c62bd0f06f31997f7f8 (2026-11-16); ★ 8517 (GitHub search API, 2026-11-25).",
+      "section": "20",
+      "id": "nomadamas-k-skill",
+      "profile_path": "20-claude-plugins-ecosystem/README.md",
+      "profile_anchor": "20-claude-plugins-ecosystem/README.md#skill-nganh-nghe-tieu-chuan",
+      "subcategory": "domain-specialist",
+      "last_verified_at": "2026-11-25",
+      "verified_ref": "c41a11703b0ea25b8c5c3c62bd0f06f31997f7f8",
+      "verification_level": "docs-read",
+      "sources": [
+        "https://github.com/NomaDamas/k-skill/blob/c41a11703b0ea25b8c5c3c62bd0f06f31997f7f8/README.md",
+        "https://github.com/NomaDamas/k-skill/blob/c41a11703b0ea25b8c5c3c62bd0f06f31997f7f8/LICENSE"
+      ]
+    },
+    {
+      "name": "claude-trading-skills",
+      "repo": "tradermonty/claude-trading-skills",
+      "category": "harness-pack",
+      "license": "MIT",
+      "stars": 8416,
+      "open_source": true,
+      "notes": "94 SKILL.md cho nghiên cứu giao dịch/đầu tư; README tự ghi chỉ cho mục đích giáo dục, không phải tư vấn tài chính hay tín hiệu giao dịch. Dùng làm mẫu miễn trừ, không dùng để ra quyết định đầu tư. docs-read; đọc các file nguồn đã dẫn, chưa chạy upstream. Kiểm 2026-11-25; commit 4080042a7863f5eeb48aabeaf60bd547efb99949 (2026-11-22); ★ 8416 (GitHub search API, 2026-11-25).",
+      "section": "20",
+      "id": "tradermonty-claude-trading-skills",
+      "profile_path": "20-claude-plugins-ecosystem/README.md",
+      "profile_anchor": "20-claude-plugins-ecosystem/README.md#skill-nganh-nghe-tieu-chuan",
+      "subcategory": "domain-specialist",
+      "last_verified_at": "2026-11-25",
+      "verified_ref": "4080042a7863f5eeb48aabeaf60bd547efb99949",
+      "verification_level": "docs-read",
+      "sources": [
+        "https://github.com/tradermonty/claude-trading-skills/blob/4080042a7863f5eeb48aabeaf60bd547efb99949/README.md",
+        "https://github.com/tradermonty/claude-trading-skills/blob/4080042a7863f5eeb48aabeaf60bd547efb99949/LICENSE"
+      ]
+    },
+    {
+      "name": "nature-skills",
+      "repo": "Yuan1z0825/nature-skills",
+      "category": "harness-pack",
+      "license": "Apache-2.0",
+      "stars": 55036,
+      "open_source": true,
+      "notes": "24 SKILL.md cho nghiên cứu khoa học và sáng chế, trong đó nature-paper-to-patent soạn bản mô tả sáng chế Trung Quốc; chỉ là bản nháp cho luật sư/đại diện sở hữu trí tuệ. Chỉ đọc README, LICENSE và danh mục; chưa đọc sâu từng skill. docs-read; đọc các file nguồn đã dẫn, chưa chạy upstream. Kiểm 2026-11-25; commit c300047218d1015f3edeeea33a72cd298a7e9de5 (2026-11-25); ★ 55036 (GitHub search API, 2026-11-25).",
+      "section": "20",
+      "id": "yuan1z0825-nature-skills",
+      "profile_path": "20-claude-plugins-ecosystem/README.md",
+      "profile_anchor": "20-claude-plugins-ecosystem/README.md#skill-nganh-nghe-tieu-chuan",
+      "subcategory": "domain-specialist",
+      "last_verified_at": "2026-11-25",
+      "verified_ref": "c300047218d1015f3edeeea33a72cd298a7e9de5",
+      "verification_level": "docs-read",
+      "sources": [
+        "https://github.com/Yuan1z0825/nature-skills/blob/c300047218d1015f3edeeea33a72cd298a7e9de5/README_EN.md",
+        "https://github.com/Yuan1z0825/nature-skills/blob/c300047218d1015f3edeeea33a72cd298a7e9de5/LICENSE"
+      ]
+    },
+    {
+      "name": "azure-skills",
+      "repo": "microsoft/azure-skills",
+      "category": "harness-pack",
+      "license": "MIT",
+      "stars": 1674,
+      "open_source": true,
+      "notes": "93 SKILL.md cho Azure, kèm Azure MCP Server (200+ công cụ, 40+ dịch vụ); azure-cost truy vấn chi phí, dự báo và tìm lãng phí (FinOps). Chỉ đọc README, LICENSE; chưa kiểm quyền của MCP server. docs-read; đọc các file nguồn đã dẫn, chưa chạy upstream. Kiểm 2026-11-25; commit 7847020998043c6231929b364c35393b7cdab270 (2026-11-20); ★ 1674 (GitHub search API, 2026-11-25).",
+      "section": "20",
+      "id": "microsoft-azure-skills",
+      "profile_path": "20-claude-plugins-ecosystem/README.md",
+      "profile_anchor": "20-claude-plugins-ecosystem/README.md#skill-nganh-nghe-tieu-chuan",
+      "subcategory": "domain-specialist",
+      "last_verified_at": "2026-11-25",
+      "verified_ref": "7847020998043c6231929b364c35393b7cdab270",
+      "verification_level": "docs-read",
+      "sources": [
+        "https://github.com/microsoft/azure-skills/blob/7847020998043c6231929b364c35393b7cdab270/README.md",
+        "https://github.com/microsoft/azure-skills/blob/7847020998043c6231929b364c35393b7cdab270/LICENSE"
       ]
     }
   ]

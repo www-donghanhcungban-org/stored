@@ -2,7 +2,7 @@
 
 # harness-pack — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 65 hồ sơ.
+[← Mục lục catalog](../README.md) · 70 hồ sơ.
 
 ## Quy trình coding/TDD/review (`coding-workflow`, 15)
 
@@ -76,16 +76,21 @@
 | [Craft Skills (ZSeven-W)](../../20-claude-plugins-ecosystem/README.md#nt-craft-skills) | `ZSeven-W/craft-skills` | Apache-2.0 | 242 | đọc mã 2026-11-23 | 20 | Năm skill sinh ảnh (Qwen-Image, logo, truyện tranh nhân vật, PNG trong suốt gốc, diorama quy trình), mỗi skill kèm thư mục `evals/` gồm `cases.yaml` với route trigger ho… |
 | [Agent Video Editing Skills](../../20-claude-plugins-ecosystem/README.md#n2-agents-video-editing-skills) | `iamaanahmad/agents-video-editing-skills` | MIT | 4 | đọc mã 2026-11-23 | 20 | Bộ 14 skill `SKILL.md` (router, planning, FFmpeg, export nền tảng, Remotion, moviepy, caption, TTS, trộn âm, quay demo, vertical shorts, motion, thumbnail, QA) cộng một… |
 
-## Chuyên ngành (`domain-specialist`, 15)
+## Chuyên ngành (`domain-specialist`, 20)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
 | [academic-research-skills](../../20-claude-plugins-ecosystem/README.md#chuyen-academic-research-skills) | `Imbad0202/academic-research-skills` | CC-BY-NC-4.0 | 57.341 | đọc tài liệu 2026-11-18 | 20 | Bộ skill Claude Code cho nghiên cứu học thuật: pipeline 10 giai đoạn từ nghiên cứu tài liệu, viết, phản biện tới xuất bản, dừng xin xác nhận ở từng giai đoạn và có cổng… |
+| [nature-skills](../../20-claude-plugins-ecosystem/README.md#skill-nganh-nghe-tieu-chuan) | `Yuan1z0825/nature-skills` | Apache-2.0 | 55.036 | đọc tài liệu 2026-11-25 | 20 | 24 SKILL.md cho nghiên cứu khoa học và sáng chế, trong đó nature-paper-to-patent soạn bản mô tả sáng chế Trung Quốc; |
 | [Claude for Financial Services](../../20-claude-plugins-ecosystem/README.md#3zb-kiểm-ảnh-8-plugin-8-kỹ-năng-8-mcp-bộ-cài-sẵn-cho-claude-ảnh-phandonggiang-người-dùng-gửi-đọc-mã-8112026) | `anthropics/financial-services` | Apache-2.0 | 41.115 | đọc tài liệu 2026-11-08 | 20 | Plugin Cowork/Claude Code và template Managed Agents của Anthropic cho IB, equity research, PE, wealth: 10 agent (Pitch, Earnings Reviewer, Model Builder DCF/LBO trong E… |
 | [Claude Code Game Studios](../../20-claude-plugins-ecosystem/README.md#3x-kiểm-ảnh-donchitosclaude-code-game-studios-49-agent--74-skill--15-hook-làm-xưởng-game-trong-một-phiên-claude-code-ảnh-người-dùng-gửi-clone-2112026) | `Donchitos/Claude-Code-Game-Studios` | MIT | 33.171 | đọc mã 2026-11-02 | 20 | Template Claude Code cho xưởng game: 49 agent (cả 49 khai tools/model), 74 skill (About ghi 72 cũ) đều khai allowed-tools hẹp, 15 hook bash ở 8 sự kiện (validate commit/… |
 | [text-to-cad](../../20-claude-plugins-ecosystem/README.md#ch-text-to-cad) | `earthtojake/text-to-cad` | MIT | 27.212 | đọc tài liệu 2026-11-23 | 20 | Plugin CAD: 12 skill + MCP cadgen (build123d/OCP), STEP/STL/3MF, DFM/DfAM; |
 | [AI-Research-SKILLs](../../20-claude-plugins-ecosystem/README.md#chuyen-ai-research-skills) | `Orchestra-Research/AI-Research-SKILLs` | MIT | 14.630 | đọc tài liệu 2026-11-18 | 20 | Thư viện 98 Agent Skill giúp agent AI tự làm nghiên cứu AI trọn vòng đời: từ ý tưởng, khảo sát tài liệu, huấn luyện/tinh chỉnh/đánh giá/triển khai mô hình đến viết bài b… |
 | [Claude for Legal](../../20-claude-plugins-ecosystem/README.md#3zb-kiểm-ảnh-8-plugin-8-kỹ-năng-8-mcp-bộ-cài-sẵn-cho-claude-ảnh-phandonggiang-người-dùng-gửi-đọc-mã-8112026) | `anthropics/claude-for-legal` | Apache-2.0 | 9.930 | đọc tài liệu 2026-11-08 | 20 | Plugin pháp lý của Anthropic theo mảng hành nghề (thương mại, privacy, sản phẩm, doanh nghiệp, lao động, tranh tụng, AI governance, IP, sinh viên luật); |
+| [k-skill](../../20-claude-plugins-ecosystem/README.md#skill-nganh-nghe-tieu-chuan) | `NomaDamas/k-skill` | MIT (thư mục packages/k-skill-proxy là AGPL-3.0-only) | 8.517 | đọc tài liệu 2026-11-25 | 20 | Hơn 130 SKILL.md cho dịch vụ và dữ liệu công Hàn Quốc: luật (korean-law-search), sáng chế KIPRIS, bất động sản MOLIT, thuốc MFDS, thuế NTS, giao thông, đặt vé; |
+| [claude-trading-skills](../../20-claude-plugins-ecosystem/README.md#skill-nganh-nghe-tieu-chuan) | `tradermonty/claude-trading-skills` | MIT | 8.416 | đọc tài liệu 2026-11-25 | 20 | 94 SKILL.md cho nghiên cứu giao dịch/đầu tư; |
+| [social-media-research-skills](../../20-claude-plugins-ecosystem/README.md#ch-scrapecreators-social-media-research-skills) | `ScrapeCreators/social-media-research-skills` | MIT | 7.926 | đọc tài liệu 2026-11-25 | 20 | 13 skill nghiên cứu mạng xã hội (outlier, comment mining, transcript, competitor, ad library, trend, influencer) cộng skill định tuyến 110 endpoint ScrapeCreators. |
+| [azure-skills](../../20-claude-plugins-ecosystem/README.md#skill-nganh-nghe-tieu-chuan) | `microsoft/azure-skills` | MIT | 1.674 | đọc tài liệu 2026-11-25 | 20 | 93 SKILL.md cho Azure, kèm Azure MCP Server (200+ công cụ, 40+ dịch vụ); |
 | [Legal Skills (Open)](../../20-claude-plugins-ecosystem/README.md#nt-legal-skills-open) | `ThomasMoreAI/legal-skills-open` | Apache-2.0 | 143 | đọc mã 2026-11-23 | 20 | Thư viện thật sự có 20.294 file SKILL.md (con số "18.000+" đúng) xếp theo `{quốc gia}/{lĩnh vực}/skills/{slug}`. |
 | [Dash0 OpenTelemetry skills](../../33-reliability-observability-operations/README.md#n2-dash0-agent-skills) | `dash0hq/agent-skills` | Apache-2.0 | 102 | đọc mã 2026-11-23 | 33 | Bộ skill Apache-2.0 dạy agent dùng OpenTelemetry, kèm harness eval đáng học: chạy agent thật trên ứng dụng mẫu rồi chấm bằng telemetry nhận được, không dùng LLM-judge, c… |
 | [Mobile Security Skill](../../12-ai-security-guardrails/README.md#n2-mobile-security-skill) | `harshdhamaniya/mobile-security-skill` | MIT | 24 | đọc mã 2026-11-23 | 12 | Skill và 18 subagent rà an ninh app di động, kết thúc bằng hội đồng công tố và hoài nghi để không gắn Confirmed khi chưa có bằng chứng. |
