@@ -2768,3 +2768,26 @@ Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệ
 | Giới hạn và rủi ro | Xác thực JWT chỉ bật khi cấu hình khóa công khai: mặc định `AUTH_PUBLIC_KEY` là None và `verify_logged_in` trả `{}` khi verifier tắt, tức mặc định không xác thực; cấu hình CORS mặc định cho phép mọi nguồn (`ALLOWED_ORIGINS` là `*`). `STATISTICS_ENABLED` mặc định tắt. Cần Redis khi chạy nhiều bản sao server (chưa xác minh chi tiết). Thư mục `cedar-agent` trong repo rỗng (chỉ là tham chiếu bên ngoài). Bảo trì tích cực. |
 | So với | `opa-conftest` và `cedar` (là engine/kiểm tra chính sách, OPAL là lớp phân phối); `toolhive` (cùng nhóm bài toán phân quyền nhưng cho MCP). |
 | Nguồn | [README.md](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/README.md) · [LICENSE](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/LICENSE) · [updater.py](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/packages/opal-client/opal_client/policy/updater.py) · [task.py](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/packages/opal-server/opal_server/policy/watcher/task.py) · [config.py](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/packages/opal-common/opal_common/config.py) · [deps.py](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/packages/opal-common/opal_common/authentication/deps.py) · [tests.yml](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/.github/workflows/tests.yml) |
+
+<a id="bs-2026-11-25"></a>
+
+## Bổ sung 25/11/2026 (link gitranks của hoangtien2k3)
+
+Người dùng gửi trang xếp hạng repo của tác giả `hoangtien2k3` trên gitranks.com. Trang này bị proxy của phiên chặn nên **không đọc được (chưa xác minh)**; danh sách repo lấy bằng GitHub search API. Repo nổi nhất là ecommerce-microservices; các repo còn lại có ≤ 71 sao (shopapp-backend, reactify-core, ezbuy…) nên chưa lập hồ sơ.
+
+<a id="ch-hoangtien2k3-ecommerce-microservices"></a>
+
+### ecommerce-microservices (hoangtien2k3)
+
+**Repo:** [hoangtien2k3/ecommerce-microservices](https://github.com/hoangtien2k3/ecommerce-microservices) · **License:** MIT (LICENSE ghi tác giả Hoàng Anh Tiến, 2026) · **Kiểm:** 2026-11-25, `code-read`, [`2d68782`](https://github.com/hoangtien2k3/ecommerce-microservices/tree/2d687821f8246f426e536641cd0503cb15465275) (commit 2026-10-18). **Sao:** 393 ★, 194 fork, không archive, push cuối 2026-11-22 (GitHub search API, 2026-11-25).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Mẫu thương mại điện tử microservice: 13 service Spring Boot 3.3.5/Java 21 trong một Maven reactor, gateway Apache APISIX, frontend Next.js, triển khai Docker Compose hoặc k3d/ArgoCD. |
+| Đã đọc | [pom.xml](https://github.com/hoangtien2k3/ecommerce-microservices/blob/2d687821f8246f426e536641cd0503cb15465275/pom.xml) (13 module), [auth-service application.yml](https://github.com/hoangtien2k3/ecommerce-microservices/blob/2d687821f8246f426e536641cd0503cb15465275/auth-service/src/main/resources/application.yml) (Keycloak, issuer JWT cấu hình qua biến môi trường, virtual threads), [ci.yml](https://github.com/hoangtien2k3/ecommerce-microservices/blob/2d687821f8246f426e536641cd0503cb15465275/.github/workflows/ci.yml) (lọc theo đường dẫn để chỉ build service đổi), [EventProducer của payment-service](https://github.com/hoangtien2k3/ecommerce-microservices/blob/2d687821f8246f426e536641cd0503cb15465275/payment-service/src/main/java/com/ecommerce/paymentservice/event/EventProducer.java), [LICENSE](https://github.com/hoangtien2k3/ecommerce-microservices/blob/2d687821f8246f426e536641cd0503cb15465275/LICENSE). |
+| Giá trị | Một mẫu đủ rộng (auth, đơn hàng, thanh toán, tồn kho, giao hàng, tìm kiếm) để học cách chia ranh giới service; CI chỉ build phần thay đổi; có workflow phân tích kiến trúc tự động (arcade-agent) chạy ở chế độ tư vấn. |
+| Mâu thuẫn và giới hạn | Mô tả repo nhắc WebFlux và Saga, nhưng tại commit này pom và mã không dùng WebFlux (có virtual threads) và tìm `saga`/`outbox` trong mã Java không ra kết quả; Saga nằm ở repo riêng `saga-pattern-microservice` (chưa đọc). `EventProducer` gửi Kafka theo kiểu bắn rồi ghi log, không có outbox/retry nên mất sự kiện khi broker lỗi. Chỉ 8 file test trên 373 file Java. Mã đọc không chứng minh chạy được; chưa build, chưa chạy compose/k3d. |
+| Điều kiện tích hợp | Dùng làm tài liệu tham khảo cấu trúc, không phải nền tảng sản xuất: tự bổ sung outbox hoặc giao dịch bù, test hợp đồng giữa service, và xem lại cấu hình Keycloak mặc định (`localhost`, host `.local`) trước khi triển khai. MIT cho phép nhúng kèm thông báo bản quyền. |
+| Lựa chọn đối chiếu | [GoogleCloudPlatform/microservices-demo](../29-software-architecture-api-contracts/README.md#anhkysuai-2026-11-23-googlecloudplatform-microservices-demo) (đa ngôn ngữ, gRPC); [macrozheng/mall](../34-backend-data-identity-integration/README.md#chuyen-mall) (nguyên khối Spring, quy mô lớn hơn nhiều); [Medusa](../34-backend-data-identity-integration/README.md#chuyen-medusa) (headless commerce thay vì tự dựng). |
+
+**Phạm vi bằng chứng:** đã clone, đọc LICENSE, pom, cấu hình auth, CI và một lớp Kafka producer; chưa chạy hay build. Số liệu từ trang gitranks chưa xác minh.

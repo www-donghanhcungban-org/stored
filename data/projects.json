@@ -76,7 +76,7 @@
       "quality-mgmt",
       "manufacturing"
     ],
-    "count": 2719,
+    "count": 2720,
     "schema_version": 2
   },
   "projects": [
@@ -61753,6 +61753,30 @@
         "https://github.com/WyattBlue/auto-editor/blob/76ce61fcef30e7e3fcd8d031842cc74422c80425/docs/src/installing.md"
       ],
       "verified_ref": "76ce61fcef30e7e3fcd8d031842cc74422c80425"
+    },
+    {
+      "name": "ecommerce-microservices",
+      "repo": "hoangtien2k3/ecommerce-microservices",
+      "category": "backend",
+      "license": "MIT",
+      "stars": 393,
+      "open_source": true,
+      "notes": "Mẫu thương mại điện tử 13 microservice Spring Boot 3.3.5/Java 21 + APISIX + Keycloak + Kafka + Next.js, triển khai Docker Compose hoặc k3d/ArgoCD. Mô tả repo nhắc WebFlux/Saga nhưng mã tại commit này không dùng WebFlux và không có saga/outbox; Kafka producer bắn rồi ghi log; 8 file test/373 file Java. Điều kiện: dùng làm mẫu cấu trúc, tự bổ sung outbox và test hợp đồng. code-read; đọc LICENSE, pom.xml, auth-service application.yml, ci.yml, payment EventProducer, chưa chạy upstream. Kiểm 2026-11-25; commit 2d687821f8246f426e536641cd0503cb15465275; ★ 2026-11-25: 393, 194 fork (GitHub search API); nguồn gợi ý: gitranks.com (chưa đọc được, proxy chặn), mục 34.",
+      "section": "34",
+      "id": "hoangtien2k3-ecommerce-microservices",
+      "profile_path": "34-backend-data-identity-integration/README.md",
+      "profile_anchor": "34-backend-data-identity-integration/README.md#ch-hoangtien2k3-ecommerce-microservices",
+      "subcategory": "cms-commerce",
+      "verification_level": "code-read",
+      "last_verified_at": "2026-11-25",
+      "verified_ref": "2d687821f8246f426e536641cd0503cb15465275",
+      "sources": [
+        "https://github.com/hoangtien2k3/ecommerce-microservices/blob/2d687821f8246f426e536641cd0503cb15465275/LICENSE",
+        "https://github.com/hoangtien2k3/ecommerce-microservices/blob/2d687821f8246f426e536641cd0503cb15465275/pom.xml",
+        "https://github.com/hoangtien2k3/ecommerce-microservices/blob/2d687821f8246f426e536641cd0503cb15465275/auth-service/src/main/resources/application.yml",
+        "https://github.com/hoangtien2k3/ecommerce-microservices/blob/2d687821f8246f426e536641cd0503cb15465275/.github/workflows/ci.yml",
+        "https://github.com/hoangtien2k3/ecommerce-microservices/blob/2d687821f8246f426e536641cd0503cb15465275/payment-service/src/main/java/com/ecommerce/paymentservice/event/EventProducer.java"
+      ]
     }
   ]
 }
