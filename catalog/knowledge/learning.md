@@ -137,7 +137,7 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [system-design-primer](../../08-awesome-lists-learning/README.md#ch-system-design-primer) | `donnemartin/system-design-primer` | CC-BY-4.0 | 378.904 | đọc tài liệu 2026-11-23 | 08 | ; |
+| [system-design-primer](../../08-awesome-lists-learning/README.md#ch-system-design-primer) | `donnemartin/system-design-primer` | CC-BY-4.0 | 379.184 | đọc tài liệu 2026-11-23 | 08 | ; |
 | [java-design-patterns](../../08-awesome-lists-learning/README.md#6c521-thuật-toán--phỏng-vấn) | `iluwatar/java-design-patterns` | MIT License | 94.884 | đọc tài liệu 2026-11-18 | 08 | Kho cài đặt minh hoạ các mẫu thiết kế (design pattern) bằng Java, có chú thích như bài hướng dẫn. |
 | [advanced-java](../../08-awesome-lists-learning/README.md#6c521-thuật-toán--phỏng-vấn) | `doocs/advanced-java` | Creative Commons Attribution-ShareAlike 4.0 International | 79.182 | đọc tài liệu 2026-11-18 | 08 | Tài liệu tiếng Trung tổng hợp kiến thức Java nâng cao: tải cao, phân tán, sẵn sàng cao, microservice, xử lý dữ liệu lớn, dạng câu hỏi phỏng vấn. |
 | [system-design](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-karanpratapsingh-system-design) | `karanpratapsingh/system-design` | CC BY-NC-ND 4.0 | 46.996 | đọc tài liệu 2026-11-23 | 08 | Tài liệu thiết kế hệ thống, bao quát mạng, lưu trữ, phân phối và các bài toán phỏng vấn. |

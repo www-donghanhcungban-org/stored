@@ -3851,6 +3851,7 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 | Phiên bản đã đọc | `ae9bbd7b02d90b9866215de185217d33f39ab733` (commit 2026-03-19) |
 | Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE.txt, README.md; chưa chạy upstream |
 | Bảo trì | low-activity: Commit cuối 2026-03-19 |
+| Quy mô (25/11/2026) | 379.184 ★, 59.358 fork, 646 issue mở (GitHub search API); thẻ repo theo ảnh người dùng gửi (chưa xác minh độc lập): 128 contributor, 21 "Used by". Clone nông lại cùng ngày: HEAD vẫn `ae9bbd7`, LICENSE.txt vẫn CC BY 4.0 (GitHub báo `NOASSERTION`) |
 | Nhận định | Tài liệu học thiết kế hệ thống kèm đề mẫu và lời giải trong solutions/, bản dịch ngôn ngữ khác trong repo. Nền tảng tốt nhưng nội dung cập nhật chậm; chưa đối chiếu với thực tế công nghệ hiện tại. |
 | Nguồn | [LICENSE.txt](https://github.com/donnemartin/system-design-primer/blob/ae9bbd7b02d90b9866215de185217d33f39ab733/LICENSE.txt) · [README.md](https://github.com/donnemartin/system-design-primer/blob/ae9bbd7b02d90b9866215de185217d33f39ab733/README.md) |
 
