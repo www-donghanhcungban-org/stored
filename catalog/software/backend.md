@@ -2,7 +2,7 @@
 
 # backend — Kỹ thuật phần mềm & vận hành
 
-[← Mục lục catalog](../README.md) · 138 hồ sơ.
+[← Mục lục catalog](../README.md) · 139 hồ sơ.
 
 ## Web framework (`web-framework`, 26)
 
@@ -103,7 +103,7 @@
 | [goose (database migrations)](../../34-backend-data-identity-integration/README.md#goose-migrations) | `pressly/goose` | MIT | 11.752 | đọc mã 2026-11-04 | 34 | Migration SQL/Go của pressly, khác block/goose; |
 | [Atlas (ariga)](../../34-backend-data-identity-integration/README.md#n2-ariga-atlas) | `ariga/atlas` | Apache-2.0 | 8.840 | đọc mã 2026-11-23 | 34 | Lint migration phát mã DS/BC/MF/CD cho cổng CI và checksum `atlas.sum`; |
 
-## CMS & thương mại điện tử (`cms-commerce`, 11)
+## CMS & thương mại điện tử (`cms-commerce`, 12)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -118,6 +118,7 @@
 | [Saleor Core](../../34-backend-data-identity-integration/README.md#anhkysuai-saleor-saleor) | `saleor/saleor` | BSD-3-Clause | 23.595 | đọc tài liệu 2026-11-23 | 34 | Backend thương mại điện tử headless chỉ giao tiếp qua GraphQL. |
 | [Wagtail](../../34-backend-data-identity-integration/README.md#anhkysuai-wagtail-wagtail) | `wagtail/wagtail` | BSD-3-Clause | 20.826 | đọc tài liệu 2026-11-23 | 34 | CMS Django cho nội dung có cấu trúc và trải nghiệm biên tập tùy chỉnh. |
 | [litemall](../../34-backend-data-identity-integration/README.md#anhkysuai-linlinjava-litemall) | `linlinjava/litemall` | MIT | 20.412 | đọc tài liệu 2026-11-23 | 34 | Mẫu cửa hàng nhỏ với backend Spring Boot, admin Vue, WeChat mini-program và web mobile. |
+| [ecommerce-microservices](../../34-backend-data-identity-integration/README.md#ch-hoangtien2k3-ecommerce-microservices) | `hoangtien2k3/ecommerce-microservices` | MIT | 393 | đọc mã 2026-11-25 | 34 | Mẫu thương mại điện tử 13 microservice Spring Boot 3.3.5/Java 21 + APISIX + Keycloak + Kafka + Next.js, triển khai Docker Compose hoặc k3d/ArgoCD. |
 
 ## Ứng dụng doanh nghiệp (ERP/CRM) (`business-app`, 12)
 

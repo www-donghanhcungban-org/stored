@@ -2132,3 +2132,8 @@ Nguồn gốc: file xlsx người dùng gửi (tab "Kho Skill Thực Chiến"); 
 - [BetterStack: Astryx](https://betterstack.com/community/guides/ai/astryx-meta-design-system/): bài ngoài, cập nhật 27/7/2026, không có số đo.
 - [InfoQ: Meta Astryx](https://infoq.com/news/2026/09/meta-astryx-design-system): tin ngày 13/9/2026; nêu ý kiến Reddit về bảo trì dài hạn.
 - Kết quả tìm web (chưa mở trực tiếp): Meta for Developers (X), GitRanks, blockchain.news, OpenReplay, Product Hunt; dev.to trả 404.
+
+## Bổ sung 2026-11-25 (gitranks hoangtien2k3 → mục 34)
+
+- Trang gitranks.com/profile/hoangtien2k3/repositories: proxy phiên chặn, chưa đọc được (chưa xác minh); danh sách repo lấy từ GitHub search API (`user:hoangtien2k3`, 2026-11-25).
+- https://github.com/hoangtien2k3/ecommerce-microservices, commit `2d687821f8246f426e536641cd0503cb15465275`: LICENSE, `pom.xml`, `auth-service/src/main/resources/application.yml`, `.github/workflows/ci.yml`, `payment-service/.../event/EventProducer.java`.
