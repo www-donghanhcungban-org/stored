@@ -76,7 +76,7 @@
       "quality-mgmt",
       "manufacturing"
     ],
-    "count": 2771,
+    "count": 2772,
     "schema_version": 2
   },
   "projects": [
@@ -62811,6 +62811,19 @@
         "https://github.com/hoangtien2k3/VNPAY-DEMO/blob/c5c8dd68492506474c889cf34df3bbf1ea9359fc/README.md"
       ],
       "subcategory": "cms-commerce"
+    },
+    {
+      "name": "Claude Skills Hub",
+      "url": "https://claudeskills.info",
+      "category": "plugin-marketplace",
+      "license": null,
+      "stars": null,
+      "open_source": false,
+      "notes": "Danh bạ skill bên thứ ba (claudeskills.info), ảnh người dùng gửi 25/11/2026 ghi 42.828+ skill; bộ sưu tập Anthropic 462, Microsoft 338, GitHub 210, PostHog 170, Google Workspace 78, Trail of Bits 61; danh mục DevOps 2.957, Security 2.339, Frontend 2.216, Workflow 1.952. Chưa đọc được trang (host ngoài mạng cho phép) nên mọi số liệu chưa xác minh; chỉ mục, không phải cổng chất lượng, chưa thấy quét an toàn công khai. Điều kiện: lọc ứng viên rồi lint và đọc mã từng skill ở repo gốc. Mục 20, bổ sung 25/11/2026.",
+      "section": "20",
+      "id": "claude-skills-hub",
+      "profile_path": "20-claude-plugins-ecosystem/README.md",
+      "profile_anchor": "20-claude-plugins-ecosystem/README.md#ch-claude-skills-hub"
     }
   ]
 }

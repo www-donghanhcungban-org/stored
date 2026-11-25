@@ -2628,3 +2628,25 @@ Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệ
 | Giới hạn và rủi ro | - MIT cho mã; thư mục `plugins/` chứa nhiều skill của bên thứ ba với 65 file LICENSE riêng, phải đọc từng cái trước khi tái dùng.<br>- Khi cài từ registry, CLI gửi ping `POST /api/skills/<owner>/<name>/install` (via cli) tới API SkillMD, tắt bằng `SKILLMD_NO_TELEMETRY` hoặc `DO_NOT_TRACK` (`config.ts`, `add.ts`).<br>- Con số 1.000.000+ skill và 30.000+ publisher là tuyên bố của tác giả (chưa xác minh).<br>- README ghi chín quy tắc: khớp chín ID SK001–SK040 trong `docs/rules.md`. |
 | So với | agent-skills-spec (đặc tả định dạng), awesome-agent-skills (danh sách, không có lint), mcp-registry (registry giao thức) |
 | Nguồn | [README.md](https://github.com/skillmds/skillmd/blob/9789d77c3df942dacd4a7b7dcf7ea97e3e8af6b9/README.md) · [LICENSE](https://github.com/skillmds/skillmd/blob/9789d77c3df942dacd4a7b7dcf7ea97e3e8af6b9/LICENSE) · [rules.md](https://github.com/skillmds/skillmd/blob/9789d77c3df942dacd4a7b7dcf7ea97e3e8af6b9/docs/rules.md) · [rules.ts](https://github.com/skillmds/skillmd/blob/9789d77c3df942dacd4a7b7dcf7ea97e3e8af6b9/packages/core/src/rules.ts) · [security.ts](https://github.com/skillmds/skillmd/blob/9789d77c3df942dacd4a7b7dcf7ea97e3e8af6b9/packages/core/src/security.ts) · [quality.ts](https://github.com/skillmds/skillmd/blob/9789d77c3df942dacd4a7b7dcf7ea97e3e8af6b9/packages/core/src/quality.ts) · [config.ts](https://github.com/skillmds/skillmd/blob/9789d77c3df942dacd4a7b7dcf7ea97e3e8af6b9/packages/skillmds/src/config.ts) · [add.ts](https://github.com/skillmds/skillmd/blob/9789d77c3df942dacd4a7b7dcf7ea97e3e8af6b9/packages/skillmds/src/commands/add.ts) · [ci.yml](https://github.com/skillmds/skillmd/blob/9789d77c3df942dacd4a7b7dcf7ea97e3e8af6b9/.github/workflows/ci.yml) · [SKILL.md](https://github.com/skillmds/skillmd/blob/9789d77c3df942dacd4a7b7dcf7ea97e3e8af6b9/skills/find-a-skill/SKILL.md) |
+
+<a id="bs-2026-11-25-claudeskills-info"></a>
+
+## Bổ sung 25/11/2026 (ảnh Claude Skills Hub)
+
+<a id="ch-claude-skills-hub"></a>
+
+### Claude Skills Hub (claudeskills.info)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| URL | https://claudeskills.info |
+| Loại | Danh bạ/marketplace skill bên thứ ba (không phải sản phẩm của Anthropic); không có repo mã nguồn công khai được xác định |
+| License | Không áp dụng cho danh bạ; mỗi skill giữ license riêng của repo gốc |
+| Kiểm chứng | 2026-11-25; **chưa đọc trực tiếp**: host `claudeskills.info` nằm ngoài mạng cho phép của phiên (curl và WebFetch đều lỗi). Số liệu dưới đây lấy từ ảnh chụp người dùng gửi và kết quả tìm kiếm web, chưa xác minh |
+| Số liệu trong ảnh | "42.828+ Skills collected". Bộ sưu tập chính thức: Anthropic 462, Microsoft 338, GitHub 210, PostHog 170, Google Workspace 78, Trail of Bits 61. Danh mục: DevOps 2.957, Security 2.339, Frontend 2.216, Workflow 1.952 (ảnh chỉ đóng khung bốn mục này) |
+| Từ tìm kiếm web | Tự mô tả là "third-party Claude Skills Marketplace"; một bản cache cũ ghi 658+ skill, bản sau 42.828+, nên con số tăng rất nhanh hoặc đổi cách đếm. Nộp skill bằng repo GitHub theo định dạng SKILL.md. Một bình luận Product Hunt báo tìm kiếm và lọc danh mục từng lỗi (có thể đã cũ). Chưa rõ người vận hành và quy trình kiểm duyệt |
+| Nhận định | Hữu ích để tìm ứng viên nhanh theo nhà xuất bản và danh mục, nhưng đây là chỉ mục, không phải cổng chất lượng: số đếm không cho biết skill nào đã được đọc mã. "Anthropic 462 skills" lớn hơn nhiều so với số skill trong kho chính thức nên có thể gồm bản sao, plugin hoặc fork (chưa đối chiếu). |
+| Rủi ro | Skill chạy trong ngữ cảnh agent nên có thể mang chỉ dẫn độc hại; không thấy dấu hiệu quét an toàn công khai (chưa xác minh). Đọc SKILL.md và license ở repo gốc trước khi cài. Trang cũng ghi dùng skill có thể cần gói trả phí hoặc dịch vụ bên thứ ba. |
+| So với | `skills.sh` và `clawskills.sh` (cùng dạng chỉ mục; xem các mục trước trong kho), [SkillMD](../20-claude-plugins-ecosystem/README.md) (lint và quét SKILL.md, có kiểm bằng máy), `agent-skills-spec` (định dạng gốc ở mục 04) |
+| Tích hợp | Dùng làm chỉ mục tìm kiếm; lọc rồi kiểm từng skill bằng lint (skillmd) và đọc mã trước khi nhúng. Không dùng số đếm của trang làm số liệu hệ sinh thái. |
+| Nguồn | Ảnh người dùng gửi 25/11/2026; kết quả tìm kiếm web (claudeskills.info, Product Hunt, jc-aiwiki.pages.dev, neura.market): chưa mở được trang nào |

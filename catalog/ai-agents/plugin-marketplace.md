@@ -2,7 +2,7 @@
 
 # plugin-marketplace — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 16 hồ sơ.
+[← Mục lục catalog](../README.md) · 17 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -22,3 +22,4 @@
 | [SkillMD (registry và công cụ lint skill)](../../20-claude-plugins-ecosystem/README.md#n2-skillmd) | `skillmds/skillmd` | MIT (mã SkillMD); các skill trong plugins/ giữ license riêng của tác giả | 43 | đọc mã 2026-11-23 | 20 | Repo này là bộ công cụ mã nguồn mở của registry skillmd.com: CLI/MCP `get-skill`, thư viện lõi `@skillmds/core` (parser, 9 quy tắc lint SK001–SK040, bộ quét an toàn theo… |
 | [Sigistry Marketplace](../../20-claude-plugins-ecosystem/README.md#n2-sigistry-marketplace) | `sigistry/marketplace` | MIT | 3 | đọc mã 2026-11-23 | 20 | Marketplace plugin Claude Code cộng registry xác minh: 20 plugin vendor trong repo và các plugin ngoài chỉ lập chỉ mục theo tham chiếu, mỗi cái qua 8 kiểm tra tĩnh (mani… |
 | [Claude Code plugin validate + plugin eval](../../20-claude-plugins-ecosystem/README.md#ch-claude-code-plugin-validate-plugin-eval) |  | tài liệu sản phẩm | — | đọc tài liệu 2026-11-23 | 20 | Cổng chính thức: claude plugin validate --strict (manifest, path, .mcp.json, tên giả danh) và claude plugin eval (grader, baseline không plugin, --threshold, --max-cost-… |
+| [Claude Skills Hub](../../20-claude-plugins-ecosystem/README.md#ch-claude-skills-hub) |  | — | — | chưa chuẩn hóa | 20 | Danh bạ skill bên thứ ba (claudeskills.info), ảnh người dùng gửi 25/11/2026 ghi 42.828+ skill; |
