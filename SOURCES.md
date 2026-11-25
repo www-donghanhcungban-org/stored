@@ -2147,3 +2147,9 @@ Nguồn gốc: file xlsx người dùng gửi (tab "Kho Skill Thực Chiến"); 
 
 - Ảnh chụp trang chủ claudeskills.info do người dùng gửi (25/11/2026); trang đọc trực tiếp sau khi môi trường mở mạng: `/`, `/about/`, `/editorial-methodology/`, `/ranking-methodology/`, `/official/anthropic/`, `/llms.txt`. `/api/v1/meta` bị Cloudflare chặn nên không dùng.
 - Kết quả tìm kiếm web đối chiếu: producthunt.com/products/claudeskillshq (bình luận người dùng).
+
+## Bổ sung 2026-11-25d (skill theo ngành nghề + ScrapeCreators → mục 20)
+
+- Danh bạ: claudeskills.info/skills/category/{legal,healthcare,accounting,finance,education,customer-support,human-resources,sales,real-estate,marketing,travel}/ (đọc 25/11/2026).
+- Repo đọc SKILL.md/README/LICENSE: anthropics/knowledge-work-plugins@5e504ae, affaan-m/ecc@4adeee6, NomaDamas/k-skill@c41a117, tradermonty/claude-trading-skills@4080042, Yuan1z0825/nature-skills@c300047, microsoft/azure-skills@7847020, ScrapeCreators/social-media-research-skills@64ba7b4.
+- Trang tiêu chuẩn mở được (HTTP 200/202, 25/11/2026): hl7.org/fhir, fda.gov (21 CFR Part 11), ifrs.org, eur-lex.europa.eu (GDPR), coso.org, eeoc.gov, studentprivacy.ed.gov (FERPA), reso.org, 1edtech.org, pcisecuritystandards.org, nf-co.re, wipo.int/standards, aicpa-cima.com (SOC 2), w3.org (WCAG 2.2). Trả 403 cho bot (chưa xác minh nội dung): hhs.gov (HIPAA), fasb.org, pcaobus.org, iso.org, allotrope.org.
