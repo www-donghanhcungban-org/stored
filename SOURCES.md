@@ -2145,5 +2145,5 @@ Nguồn gốc: file xlsx người dùng gửi (tab "Kho Skill Thực Chiến"); 
 
 ## Bổ sung 2026-11-25c (Claude Skills Hub → mục 20)
 
-- Ảnh chụp trang chủ claudeskills.info do người dùng gửi (25/11/2026). Trang và jc-aiwiki.pages.dev không mở được từ phiên (ngoài mạng cho phép) nên chưa đọc trực tiếp.
-- Kết quả tìm kiếm web: claudeskills.info, producthunt.com/products/claudeskillshq, neura.market/ai-tools-directory/new-ai-tools/claude-skills-hub, jc-aiwiki.pages.dev/claude-ai/claudeskills-info-directory (chỉ đọc tiêu đề/đoạn trích).
+- Ảnh chụp trang chủ claudeskills.info do người dùng gửi (25/11/2026); trang đọc trực tiếp sau khi môi trường mở mạng: `/`, `/about/`, `/editorial-methodology/`, `/ranking-methodology/`, `/official/anthropic/`, `/llms.txt`. `/api/v1/meta` bị Cloudflare chặn nên không dùng.
+- Kết quả tìm kiếm web đối chiếu: producthunt.com/products/claudeskillshq (bình luận người dùng).
