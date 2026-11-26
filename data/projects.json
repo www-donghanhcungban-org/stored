@@ -796,12 +796,24 @@
       "repo": "nexu-io/open-design",
       "category": "design-tool",
       "license": "Apache-2.0",
-      "stars": 105186,
+      "stars": 109533,
       "open_source": true,
-      "notes": "\"Workspace agent thiết kế\" local-first (Apache-2.0): brief → prototype/slides/ảnh/HyperFrames motion; nối coding agent qua skills/CLI/MCP + runtime adapter; 151 gói design-system (manifest+DESIGN.md+tokens.css, có evidence provenance); telemetry opt-out + safety luôn bật (PRIVACY.md), fork không gửi; tên đổi từ \"Open Claude Design\"; Cloud/Go trả phí; 3.764 commit từ 28/4/2026, nhiều bot/agent; chưa audit mã sâu; ★ 19/10/2026 (trang GitHub ~102k; aggregator 76–91k); hồ sơ mục 06 §7k; ★ 31/10/2026: 105.187 (GitHub API); đọc mã 31/10/2026 (mục 06 §7q.0): telemetry nội dung (prompt/phản hồi) bật mặc định, chẩn đoán tự tải log ~/.claude và ~/.codex, mọi agent chạy cờ bỏ kiểm quyền (claude bypassPermissions…), updater chỉ so hash + gỡ quarantine macOS, prompt gốc tự ghi \"Adapted from claude.ai/design\"",
+      "notes": "\"Workspace agent thiết kế\" local-first (Apache-2.0): brief → prototype/slides/ảnh/HyperFrames motion; nối coding agent qua skills/CLI/MCP + runtime adapter; 151 gói design-system (manifest+DESIGN.md+tokens.css, có evidence provenance); telemetry opt-out + safety luôn bật (PRIVACY.md), fork không gửi; tên đổi từ \"Open Claude Design\"; Cloud/Go trả phí; 3.764 commit từ 28/4/2026, nhiều bot/agent; chưa audit mã sâu; ★ 19/10/2026 (trang GitHub ~102k; aggregator 76–91k); hồ sơ mục 06 §7k; ★ 31/10/2026: 105.187 (GitHub API); đọc mã 31/10/2026 (mục 06 §7q.0): telemetry nội dung (prompt/phản hồi) bật mặc định, chẩn đoán tự tải log ~/.claude và ~/.codex, mọi agent chạy cờ bỏ kiểm quyền (claude bypassPermissions…), updater chỉ so hash + gỡ quarantine macOS, prompt gốc tự ghi \"Adapted from claude.ai/design\" Đọc lại 26/11/2026 (06 §7q.0b, docs-read + grep): v0.27.3, 3.878 commit; PRIVACY.md rõ hơn (banner Share/Don't share, công tắc metrics/content) nhưng mặc định mã vẫn {metrics:true, content:true}; chẩn đoán vẫn đọc log ~/.claude, ~/.codex; agent vẫn bypassPermissions; banner '100K stars/OpenDesign Go' là khuyến mãi dịch vụ trả phí. ★ 26/11/2026: 109.533 (GitHub search API).",
       "section": "06",
       "id": "opendesign",
-      "profile_path": "06-ui-ux-design/README.md"
+      "profile_path": "06-ui-ux-design/README.md",
+      "last_verified_at": "2026-11-26",
+      "verified_ref": "5fdcc3db1e31bd4fa70f673041b78e87977507c3",
+      "verification_level": "docs-read",
+      "sources": [
+        "https://github.com/nexu-io/open-design/blob/5fdcc3db1e31bd4fa70f673041b78e87977507c3/README.md",
+        "https://github.com/nexu-io/open-design/blob/5fdcc3db1e31bd4fa70f673041b78e87977507c3/PRIVACY.md",
+        "https://github.com/nexu-io/open-design/blob/5fdcc3db1e31bd4fa70f673041b78e87977507c3/LICENSE",
+        "https://github.com/nexu-io/open-design/blob/5fdcc3db1e31bd4fa70f673041b78e87977507c3/apps/daemon/src/app-config.ts",
+        "https://github.com/nexu-io/open-design/blob/5fdcc3db1e31bd4fa70f673041b78e87977507c3/apps/daemon/src/runtimes/defs/claude.ts",
+        "https://github.com/nexu-io/open-design/blob/5fdcc3db1e31bd4fa70f673041b78e87977507c3/packages/diagnostics/src/agent-logs.ts"
+      ],
+      "profile_anchor": "06-ui-ux-design/README.md#opendesign-reread-2026-11-26"
     },
     {
       "name": "awesome-ai-tools-for-ui",

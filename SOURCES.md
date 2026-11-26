@@ -2072,3 +2072,7 @@ Kiểm đối kháng: mỗi nhóm chọn bốn nhóm claim làm đổi quyết �
 ## Bổ sung 2026-11-21d (agent-browser v0.43.0, ảnh README)
 
 - `vercel-labs/agent-browser`: clone 21/11/2026 (blob:none, 870 commit, HEAD 1fde6b9); 53.133★/3.717 fork (GitHub search API), v0.43.0, Apache-2.0; đọc CHANGELOG 0.42–0.43, grep cờ an toàn và telemetry. Mục 11 §1i.2c; sửa `open_source` false→true; catalog vẫn 1578. Chưa cài/chạy.
+
+## Bổ sung 2026-11-26 (OpenDesign v0.27.3, ảnh README)
+
+- `nexu-io/open-design`: clone 26/11/2026 (blob:none, 3.878 commit, HEAD 5fdcc3d); 109.533★/12.372 fork (GitHub search API), Apache-2.0, `package.json` 0.27.3, tag v0.27.2. Đọc PRIVACY.md (banner Share/Don't share), grep `applyTelemetryDefaults`, `agent-logs.ts`, `claude.ts:116`. Mục 06 §7q.0b; catalog vẫn 1578. Chưa cài/chạy.

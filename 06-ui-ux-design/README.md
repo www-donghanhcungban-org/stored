@@ -1058,6 +1058,33 @@ Nhận định: "chuẩn mở" của OpenUI do một công ty kiểm soát; bả
 
 **Kết luận:** đánh giá §7k ("local-first thật, PRIVACY rõ") cần sửa: lõi chạy cục bộ nhưng **mặc định gửi cả nội dung prompt và log agent ra ngoài**, và mọi agent chạy không kiểm quyền. Nếu dùng: tắt cả hai lớp telemetry trong Settings ngay lần đầu (lớp safety vẫn gửi), chạy trong máy ảo/container riêng không có thư mục `~/.claude`, `~/.codex` thật, không mở brief/skill từ nguồn lạ, ưu tiên đường BYOK; không dùng bản Docker trên mạng chung khi chưa đặt token.
 
+<a id="opendesign-reread-2026-11-26"></a>
+### 7q.0b Đọc lại `nexu-io/open-design` (26/11/2026, từ ảnh README do người dùng gửi)
+
+> Ảnh chụp trang repo: dòng `mise.toml`, `package.json` ("bump main to 0.27.3"), `pnpm-lock.yaml`, `vercel.json`; README "OpenDesign: The 1st Collaborative AI Design Agent Workspace", banner "Celebrating 100K GitHub stars with OpenDesign Go" (credit gấp đôi, $8 tháng đầu, tối đa $120/tháng cho model gói Design, 10+ model gồm GPT-6 Luna, DeepSeek V4.1 Flash, GLM-5.3 Flash-X, MiMo V2.6 Flash), huy hiệu Apache-2.0. Đối chiếu với clone `blob:none` tại `5fdcc3db1e31bd4fa70f673041b78e87977507c3` (commit 23/11/2026). Mức `docs-read` kèm grep mã; không cài, không chạy.
+
+| Mục | 30–31/10/2026 (§7q.0) | 26/11/2026 |
+|---|---|---|
+| Sao / fork | 105.186 / 11.992 | **109.533 / 12.372** (GitHub search API) |
+| Issue + PR mở | 572 + 759 | 1.467 (`open_issues_count`, gộp issue và PR) |
+| Phiên bản | tag mới nhất v0.26.1 | `package.json` **0.27.3**; tag mới nhất `open-design-v0.27.2` (khớp ảnh "bump main to 0.27.3") |
+| Commit | 3.831 | **3.878** (47 commit từ 30/10); lefarcen 557, `open-design-crew[bot]` 247, PerishFire 206; 413 trailer Claude |
+| CI | 55 workflow | **55 workflow, 0 action ghim SHA** |
+
+**Đối chiếu ảnh:** banner "100K stars" và "OpenDesign Go" ✅ có trong README ở HEAD; Apache-2.0 ✅. Banner là **khuyến mãi dịch vụ trả phí** của chính dự án (Go/Cloud), không phải tính năng của bản mã nguồn mở; mức giá và danh sách model là tuyên bố tiếp thị, **chưa kiểm**. "100K sao" là mốc cũ (nay ~109,5k).
+
+**Điều thay đổi, điều không (đọc `PRIVACY.md` và grep mã):**
+- ✅ **`PRIVACY.md` đã viết lại rõ hơn:** lần chạy đầu hiện banner **Share / Don't share**; Settings → Privacy có hai công tắc ("Anonymous metrics", "Conversation and tool content"); nêu IP nguồn vẫn lộ qua HTTPS và "anonymous" không có nghĩa là không thấy IP; có "Delete my data" (xoay ID, không xóa dữ liệu đã nhận). Kênh **safety/reliability vẫn luôn bật**, không có công tắc (khi bản build có đích telemetry).
+- ❌ **Mặc định mã vẫn là bật cả hai:** `applyTelemetryDefaults` (`apps/daemon/src/app-config.ts:732-738`) vẫn đặt `{metrics: true, content: true}` khi chưa có cấu hình; PRIVACY.md cũng ghi "Usage telemetry is on by default". Nội dung gồm prompt, phản hồi, input/output tool (đã cắt và che), đi qua relay tới Langfuse; sự kiện và replay đã che chữ qua PostHog. Banner chỉ cho phép chọn lại, không đổi mặc định. Chưa xác minh banner chặn việc gửi trước khi người dùng chọn.
+- ❌ **Chẩn đoán vẫn đọc `*.log` trong `~/.claude` và `~/.codex`** (`packages/diagnostics/src/agent-logs.ts:147-148`; chú thích nói không lấy `auth.json`/`config.json`); PRIVACY.md tôi đọc không nhắc việc tải log CLI bên thứ ba (chưa kiểm hết file).
+- ❌ **Agent vẫn chạy với kiểm quyền tắt, gắn cứng:** `--permission-mode bypassPermissions` ở `runtimes/defs/claude.ts:116` (và `codebuddy.ts:115`). Chưa đọc lại các agent khác.
+- **Mới:** tính năng **chia sẻ file thành link công khai** có dừng/tiếp tục và đồng bộ comment (commit `2b41bc5c3`, 19/10/2026; PRIVACY.md nêu metrics cho share/comment chỉ dùng ID mờ, không gồm nội dung comment, tên tác giả hay URL đầy đủ). Chưa đọc mã máy chủ chia sẻ nên chưa đánh giá quyền truy cập link.
+- **Mới:** `CHANGELOG.md` vẫn dừng ở mục `[Unreleased]` / 0.9.0 (5/2026) và gỡ Nix flake; phiên bản thật nằm ở tag và `package.json`.
+
+**Đánh giá cập nhật:** kết luận §7q.0 giữ nguyên. Tài liệu minh bạch hơn trước, nhưng **mặc định vẫn gửi cả nội dung prompt** và agent chạy không kiểm quyền. Nếu dùng: chọn **Don't share** ngay lần đầu và tắt cả hai công tắc, chỉ cho chạy trong thư mục dự án thử, không dùng với mã bí mật; kênh safety vẫn gửi chẩn đoán đã che. Hạ mức tin cậy với các con số tiếp thị (sao 100K, credit Go).
+
+**Nguồn §7q.0b:** clone github.com/nexu-io/open-design 26/11/2026 (blob:none, 3.878 commit, HEAD 5fdcc3d; README.md, PRIVACY.md, CHANGELOG.md, package.json, `apps/daemon/src/app-config.ts`, `apps/daemon/src/runtimes/defs/claude.ts`, `packages/diagnostics/src/agent-logs.ts`, `.github/workflows/`, `git shortlog`/`tag`) · GitHub search API 26/11/2026 · ảnh trang repo do người dùng cung cấp
+
 ### 7q.1 `open-pencil/open-pencil` (OpenPencil, TypeScript): khác hẳn `ZSeven-W/openpencil` ở §7p.4
 
 | Mục | Thông tin |
