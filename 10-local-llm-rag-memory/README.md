@@ -606,6 +606,274 @@ ai-memory setup
 
 **Nguồn §6h:** ảnh README người dùng gửi 8/11/2026 · clone https://github.com/akitaonrails/ai-memory HEAD `fec76f18c15835bb2dc5c2be3081ce4db0c1270e`: https://github.com/akitaonrails/ai-memory/blob/fec76f18c15835bb2dc5c2be3081ce4db0c1270e/README.md · https://github.com/akitaonrails/ai-memory/blob/fec76f18c15835bb2dc5c2be3081ce4db0c1270e/DATA_HANDLING.md · https://github.com/akitaonrails/ai-memory/blob/fec76f18c15835bb2dc5c2be3081ce4db0c1270e/evals/README.md · https://github.com/akitaonrails/ai-memory/blob/fec76f18c15835bb2dc5c2be3081ce4db0c1270e/LICENSE · GitHub search API 8/11/2026.
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **13 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-privategpt"></a>
+
+### PrivateGPT
+
+**Repo:** [zylon-ai/private-gpt](https://github.com/zylon-ai/private-gpt) · **License:** Apache-2.0 · **★ 57,643 (GitHub API, 2026-11-23)**
+
+**Mục đích:** API phục vụ tài liệu, truy xuất và hội thoại trên backend mô hình tương thích OpenAI.
+
+**Giá trị và cơ chế:** Đã đọc dependency authenticated gắn tại router /v1/artifacts: cơ chế so sánh secret thực sự được gọi khi auth bật. API và máy chạy mô hình được tách thành hai lớp.
+
+**Giới hạn:** settings.yaml đặt auth.enabled=false, endpoint mặc định OpenAI và trust_remote_code=true. Tên PrivateGPT không tự bảo đảm cấu hình chạy ngoại tuyến; chưa vận hành ingestion hay thử quyền nhiều tenant.
+
+**Cách tham khảo/tích hợp:** Bật xác thực, chọn endpoint nội bộ và kiểm từng quyền tải/chạy model trước triển khai.
+
+**Thay thế:** [Dify](https://github.com/langgenius/dify), [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm), [LlamaIndex](https://github.com/run-llama/llama_index).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`2373cc7b9120`](https://github.com/zylon-ai/private-gpt/commit/2373cc7b912019c9b8fdb8907b2c256799b2adcb). Auth dependency, router ingest, cấu hình mặc định và workflow tests; không kiểm toàn pipeline RAG. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/zylon-ai/private-gpt/blob/2373cc7b912019c9b8fdb8907b2c256799b2adcb/README.md) · [LICENSE](https://github.com/zylon-ai/private-gpt/blob/2373cc7b912019c9b8fdb8907b2c256799b2adcb/LICENSE) · [.github/workflows/tests.yml](https://github.com/zylon-ai/private-gpt/blob/2373cc7b912019c9b8fdb8907b2c256799b2adcb/.github/workflows/tests.yml) · [private_gpt/server/utils/auth.py](https://github.com/zylon-ai/private-gpt/blob/2373cc7b912019c9b8fdb8907b2c256799b2adcb/private_gpt/server/utils/auth.py) · [private_gpt/server/ingest/ingest_router.py](https://github.com/zylon-ai/private-gpt/blob/2373cc7b912019c9b8fdb8907b2c256799b2adcb/private_gpt/server/ingest/ingest_router.py) · [settings.yaml](https://github.com/zylon-ai/private-gpt/blob/2373cc7b912019c9b8fdb8907b2c256799b2adcb/settings.yaml) · [metadata GitHub](https://api.github.com/repos/zylon-ai/private-gpt).
+
+<a id="anhkysuai-2026-11-23-freellmapi"></a>
+
+### FreeLLMAPI
+
+**Repo:** [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) · **License:** MIT (gốc và `cli/`) · **★ 57,302 (GitHub API, 2026-11-24)**
+
+**Mục đích:** Gateway gom API của các nhà cung cấp mô hình, gồm cả gói miễn phí, sau một endpoint `/v1` tương thích OpenAI; có dashboard quản trị, CLI và ứng dụng desktop.
+
+**Giá trị và cơ chế:** Router chọn mô hình theo thứ tự ưu tiên, trừ hạn mức theo từng khóa và chuyển sang mô hình kế khi gặp 429/5xx. Khóa nhà cung cấp lưu trong SQLite bằng AES-256-GCM (IV ngẫu nhiên 16 byte, có authTag); ứng dụng chỉ nhận một bearer token chung. Bề mặt `/api/*` đứng sau phiên dashboard, còn `/v1` dùng khóa riêng; mật khẩu băm bằng scrypt. Docker compose mặc định chỉ publish `127.0.0.1`, muốn mở LAN phải đặt `HOST_BIND=0.0.0.0`.
+
+**Giới hạn:** (1) Mặc định máy chủ **tự lấy catalog đã ký** từ `api.freellmapi.co` (đổi bằng `CATALOG_BASE_URL`, tắt bằng `CATALOG_SYNC_DISABLED=1`): chữ ký Ed25519 được kiểm bằng khóa công khai ghim sẵn, nhưng catalog quyết định danh sách mô hình, có thể vô hiệu hóa mô hình và bật sẵn các nhà cung cấp không cần khóa trên cài đặt mới; khóa giấy phép Premium (nếu có) gửi lên dưới dạng Bearer. (2) Ngoài production, khóa mã hóa tự sinh được lưu trong file `.encryption-key` cạnh DB (chmod 0600), nên sao chép cả thư mục dữ liệu là lấy được khóa; production phải đặt `ENCRYPTION_KEY`. (3) README ghi rõ dự án "cho thử nghiệm và học tập, không dành cho production" và người dùng tự chịu điều khoản của từng nhà cung cấp; tài liệu có mục rà soát ToS theo từng nhà cung cấp (tháng 5/2026) nhưng chưa đọc nội dung đó. (4) Số token miễn phí, số nhà cung cấp và độ chính xác của bộ đếm hạn mức chỉ là tuyên bố của README; chưa kiểm cách tính quota. (5) Cách cài một dòng qua `curl | bash` từ `freellmapi.co` chưa đọc.
+
+**Cách tham khảo/tích hợp:** Chỉ dùng khóa được phép và kiểm chính sách từng nhà cung cấp trước khi gom nhiều khóa. Nếu chạy thử: đặt `CATALOG_SYNC_DISABLED=1` và `ENCRYPTION_KEY` rõ ràng, giữ bind loopback, thử failover với ngân sách giới hạn. Với dữ liệu nhạy cảm của nhà máy, không đưa qua gói miễn phí vì điều khoản của nhiều nhà cung cấp cho phép dùng dữ liệu (chưa xác minh).
+
+**Thay thế:** [LiteLLM](https://github.com/BerriAI/litellm), [one-api](https://github.com/songquanpeng/one-api), [Apache APISIX](../04-protocols-standards/README.md#anhkysuai-2026-11-23-apache-apisix).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-24, commit [`62526e02f587`](https://github.com/tashfeenahmed/freellmapi/commit/62526e02f5875efbf75183704b5002d02beedf36). Đã đọc LICENSE (gốc và `cli/`), README, SECURITY.md, `docker-compose.yml`, `server/src/lib/crypto.ts`, `server/src/middleware/requireAuth.ts`, `server/src/services/catalog-sync.ts` (đoạn tải, kiểm chữ ký và biến môi trường) và `server/src/index.ts` (phần bind). Chưa đọc router, bộ đếm quota, adapter từng nhà cung cấp hay mã desktop. Chưa cài/chạy upstream. Hồ sơ trước ở mức `docs-read` (commit `ef97f50501e6`).
+
+**Nguồn:** [README.md](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/README.md) · [LICENSE](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/LICENSE) · [cli/LICENSE](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/cli/LICENSE) · [SECURITY.md](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/SECURITY.md) · [docker-compose.yml](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/docker-compose.yml) · [server/src/lib/crypto.ts](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/server/src/lib/crypto.ts) · [server/src/middleware/requireAuth.ts](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/server/src/middleware/requireAuth.ts) · [server/src/services/catalog-sync.ts](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/server/src/services/catalog-sync.ts) · [server/src/index.ts](https://github.com/tashfeenahmed/freellmapi/blob/62526e02f5875efbf75183704b5002d02beedf36/server/src/index.ts) · [metadata GitHub](https://api.github.com/repos/tashfeenahmed/freellmapi).
+
+<a id="anhkysuai-2026-11-23-supermemory"></a>
+
+### Supermemory
+
+**Repo:** [supermemoryai/supermemory](https://github.com/supermemoryai/supermemory) · **License:** MIT cho mã công khai; server local/Enterprise có giấy phép riêng · **★ 31,690 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ tích hợp bộ nhớ dài hạn cho ứng dụng AI qua API, SDK và MCP.
+
+**Giá trị và cơ chế:** memory-client gọi profile/search theo namespace song song, khử trùng lặp rồi dựng đoạn prompt; công cụ MCP save-memory bắt buộc namespace trước gọi createMemory. Đây là cơ chế client đã đọc, không phải engine đồ thị.
+
+**Giới hạn:** Tài liệu xác nhận server local không có mã trong repo, bản lite giới hạn 10.000 tài liệu; ingest web qua Firecrawl. MIT không bao phủ engine nguồn đóng. Chưa đo chất lượng nhớ.
+
+**Cách tham khảo/tích hợp:** Tham khảo lớp ghép bộ nhớ, phân namespace và xác định endpoint/lưu lượng dữ liệu trước triển khai.
+
+**Thay thế:** [Mem0](https://github.com/mem0ai/mem0), [Letta](https://github.com/letta-ai/letta), zep.
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`fa2af930dd78`](https://github.com/supermemoryai/supermemory/commit/fa2af930dd78ba5504d7f35875d57f62084fdb5a). Client profile/search và công cụ MCP lưu memory; server/engine không có nguồn công khai ở repo này. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/supermemoryai/supermemory/blob/fa2af930dd78ba5504d7f35875d57f62084fdb5a/README.md) · [LICENSE](https://github.com/supermemoryai/supermemory/blob/fa2af930dd78ba5504d7f35875d57f62084fdb5a/LICENSE) · [packages/tools/src/shared/memory-client.ts](https://github.com/supermemoryai/supermemory/blob/fa2af930dd78ba5504d7f35875d57f62084fdb5a/packages/tools/src/shared/memory-client.ts) · [apps/mcp/src/server/tools/save-memory.ts](https://github.com/supermemoryai/supermemory/blob/fa2af930dd78ba5504d7f35875d57f62084fdb5a/apps/mcp/src/server/tools/save-memory.ts) · [apps/docs/self-hosting/local-vs-enterprise.mdx](https://github.com/supermemoryai/supermemory/blob/fa2af930dd78ba5504d7f35875d57f62084fdb5a/apps/docs/self-hosting/local-vs-enterprise.mdx) · [metadata GitHub](https://api.github.com/repos/supermemoryai/supermemory).
+
+<a id="anhkysuai-2026-11-23-modular-max-mojo"></a>
+
+### Modular: MAX và Mojo
+
+**Repo:** [modular/modular](https://github.com/modular/modular) · **License:** Apache-2.0 WITH LLVM-exception theo thành phần; MAX License · **★ 30,189 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Hệ công cụ Mojo và MAX để xây dựng kernel, biên dịch và phục vụ suy luận AI.
+
+**Giá trị và cơ chế:** README và cấu trúc workspace cho thấy cách nối ngôn ngữ hiệu năng cao với graph/runtime suy luận; hữu ích tham khảo triển khai đa phần cứng.
+
+**Giới hạn:** LICENSE gốc chia phạm vi: Mojo/thành phần riêng theo Apache với ngoại lệ LLVM, MAX có điều kiện phân phối, thương hiệu và cấm dùng AI tạo phần mềm thay thế MAX. Không gắn nhãn toàn bộ Apache. Chưa build hoặc benchmark.
+
+**Cách tham khảo/tích hợp:** Xác định đúng thư mục và license trước tái sử dụng; thử workload mục tiêu với bản phát hành ghim.
+
+**Thay thế:** [vLLM](https://github.com/vllm-project/vllm), triton, [llama.cpp](https://github.com/ggml-org/llama.cpp).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`4224c14a822b`](https://github.com/modular/modular/commit/4224c14a822b5fd5438b23a40d4ab0b822d1cc17). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/modular/modular/blob/4224c14a822b5fd5438b23a40d4ab0b822d1cc17/README.md) · [LICENSE](https://github.com/modular/modular/blob/4224c14a822b5fd5438b23a40d4ab0b822d1cc17/LICENSE) · [Licenses/MAX_LICENSE](https://github.com/modular/modular/blob/4224c14a822b5fd5438b23a40d4ab0b822d1cc17/Licenses/MAX_LICENSE) · [metadata GitHub](https://api.github.com/repos/modular/modular).
+
+<a id="anhkysuai-2026-11-23-semantica"></a>
+
+### Semantica
+
+**Repo:** [semantica-agi/semantica](https://github.com/semantica-agi/semantica) · **License:** MIT · **★ 14,742 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Hạ tầng knowledge/context graph, provenance và suy luận cho ứng dụng AI.
+
+**Giá trị và cơ chế:** Đọc ReteEngine thấy alpha node so arity rồi regex có biến, beta join từ chối binding xung đột và lan truyền token tới terminal. Có cơ chế cụ thể cho rule matching bên cạnh các tuyên bố graph lớn hơn.
+
+**Giới hạn:** Chỉ đọc nhánh Rete, chưa kiểm các connector hoặc provenance đầu-cuối. README vẫn cảnh báo matcher đơn giản; không coi các nhãn regulated/trustworthy là chứng nhận.
+
+**Cách tham khảo/tích hợp:** Bắt đầu bằng bộ fact/rule nhỏ có kết quả chuẩn, kiểm suy luận và xuất dấu vết trước nối dữ liệu nghiệp vụ.
+
+**Thay thế:** [Graphiti (Zep)](https://github.com/getzep/graphiti), [cognee](https://github.com/topoteretes/cognee), [LlamaIndex](https://github.com/run-llama/llama_index).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`63eabcc2d78d`](https://github.com/semantica-agi/semantica/commit/63eabcc2d78dac933bc143307155d2ed118dbc73). Alpha/beta matching và propagation trong ReteEngine, cùng CI reasoning; không rà toàn bộ graph/connector. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/semantica-agi/semantica/blob/63eabcc2d78dac933bc143307155d2ed118dbc73/README.md) · [LICENSE](https://github.com/semantica-agi/semantica/blob/63eabcc2d78dac933bc143307155d2ed118dbc73/LICENSE) · [semantica/reasoning/rete_engine.py](https://github.com/semantica-agi/semantica/blob/63eabcc2d78dac933bc143307155d2ed118dbc73/semantica/reasoning/rete_engine.py) · [metadata GitHub](https://api.github.com/repos/semantica-agi/semantica).
+
+<a id="anhkysuai-2026-11-23-leann"></a>
+
+### LEANN
+
+**Repo:** [StarTrail-org/LEANN](https://github.com/StarTrail-org/LEANN) · **License:** MIT · **★ 13,811 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Chỉ mục tìm kiếm vector nhằm giảm dung lượng lưu embedding cho RAG cá nhân.
+
+**Giá trị và cơ chế:** Đọc wrapper HNSW thấy mặc định compact/recompute, chuyển graph sang CSR và bỏ embedding; tìm kiếm chỉ mục đã prune yêu cầu recompute và cổng ZMQ. Đây là bằng chứng cơ chế adapter, chưa đọc hết thuật toán C++.
+
+**Giới hạn:** Tiết kiệm 97% và không giảm độ chính xác là số upstream chưa tái hiện. Đổi dung lượng lấy tính toán/network với embedding server; CI đọc chưa chứng minh mọi tổ hợp model.
+
+**Cách tham khảo/tích hợp:** Đo recall, độ trễ và dung lượng trên corpus riêng, ghim model trước chọn chế độ compact.
+
+**Thay thế:** faiss, [Qdrant](https://github.com/qdrant/qdrant), [LanceDB](https://github.com/lancedb/lancedb).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`dd64641ce7d1`](https://github.com/StarTrail-org/LEANN/commit/dd64641ce7d148ef57d453abdd3eff25638b071f). Wrapper HNSW build/search, CSR/pruned flags, yêu cầu recompute/ZMQ và workflow build; chưa đọc hết backend C++. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/StarTrail-org/LEANN/blob/dd64641ce7d148ef57d453abdd3eff25638b071f/README.md) · [LICENSE](https://github.com/StarTrail-org/LEANN/blob/dd64641ce7d148ef57d453abdd3eff25638b071f/LICENSE) · [packages/leann-backend-hnsw/leann_backend_hnsw/hnsw_backend.py](https://github.com/StarTrail-org/LEANN/blob/dd64641ce7d148ef57d453abdd3eff25638b071f/packages/leann-backend-hnsw/leann_backend_hnsw/hnsw_backend.py) · [.github/workflows/build-reusable.yml](https://github.com/StarTrail-org/LEANN/blob/dd64641ce7d148ef57d453abdd3eff25638b071f/.github/workflows/build-reusable.yml) · [metadata GitHub](https://api.github.com/repos/StarTrail-org/LEANN).
+
+<a id="anhkysuai-2026-11-23-openllm"></a>
+
+### OpenLLM
+
+**Repo:** [bentoml/OpenLLM](https://github.com/bentoml/OpenLLM) · **License:** Apache-2.0 cho mã; model có license riêng · **★ 12,612 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Đóng gói và phục vụ LLM bằng API tương thích OpenAI cùng UI chat.
+
+**Giá trị và cơ chế:** README mô tả lệnh serve, kho cấu hình model và đường triển khai Docker/Kubernetes qua hệ BentoML; thuận tiện chuẩn hóa serving cho nhóm ứng dụng.
+
+**Giới hạn:** Repo không chứa weights; model gated cần quyền riêng. API key cho client là tùy chọn theo tài liệu, cần cấu hình khi mở mạng. Chưa đo throughput, VRAM hay tính tương thích mọi model.
+
+**Cách tham khảo/tích hợp:** Ghim model repository và backend, thử streaming/healthcheck rồi đặt auth và giới hạn tài nguyên trước triển khai.
+
+**Thay thế:** [vLLM](https://github.com/vllm-project/vllm), [Ollama](https://github.com/ollama/ollama), [llama.cpp](https://github.com/ggml-org/llama.cpp).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`200b37fbf6f7`](https://github.com/bentoml/OpenLLM/commit/200b37fbf6f75b174e0737b937b886af460495e9). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/bentoml/OpenLLM/blob/200b37fbf6f75b174e0737b937b886af460495e9/README.md) · [LICENSE](https://github.com/bentoml/OpenLLM/blob/200b37fbf6f75b174e0737b937b886af460495e9/LICENSE) · [metadata GitHub](https://api.github.com/repos/bentoml/OpenLLM).
+
+<a id="anhkysuai-2026-11-23-lmcache"></a>
+
+### LMCache
+
+**Repo:** [LMCache/LMCache](https://github.com/LMCache/LMCache) · **License:** Apache-2.0 · **★ 12,446 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Lớp quản lý KV cache cho hệ suy luận LLM, hỗ trợ chia sẻ/tái sử dụng cache.
+
+**Giá trị và cơ chế:** README mô tả kiến trúc multiprocess, offload và chỉ số cache hit theo request/token; hữu ích tham khảo cách giảm phần prefill lặp trong workload agent nhiều lượt.
+
+**Giới hạn:** Đánh giá mới đọc tài liệu, manifest và CI, chưa đọc engine hay chạy GPU. Hiệu quả phụ thuộc mức lặp prefix, băng thông và tương thích phiên bản serving; số tăng tốc upstream chưa tái hiện.
+
+**Cách tham khảo/tích hợp:** Đo workload có prefix lặp, kiểm hit rate và latency với cấu hình cache tắt/bật trước mở rộng.
+
+**Thay thế:** [vLLM](https://github.com/vllm-project/vllm), [SGLang](https://github.com/sgl-project/sglang), dynamo.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`ae31b644ff6b`](https://github.com/LMCache/LMCache/commit/ae31b644ff6b702d6daaa96c35bcc2f9f4b2a1d1). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/LMCache/LMCache/blob/ae31b644ff6b702d6daaa96c35bcc2f9f4b2a1d1/README.md) · [LICENSE](https://github.com/LMCache/LMCache/blob/ae31b644ff6b702d6daaa96c35bcc2f9f4b2a1d1/LICENSE) · [metadata GitHub](https://api.github.com/repos/LMCache/LMCache).
+
+<a id="anhkysuai-2026-11-23-deepseek-v3"></a>
+
+### DeepSeek-V3
+
+**Repo:** [deepseek-ai/DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3) · **License:** MIT cho mã; DeepSeek License Agreement cho model · **★ 104,893 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Kho công bố mô hình ngôn ngữ MoE DeepSeek-V3 và hướng dẫn suy luận.
+
+**Giá trị và cơ chế:** README giải thích 671B tham số tổng/37B hoạt động, MLA, cân bằng expert không auxiliary loss và multi-token prediction; hữu ích tham khảo thiết kế model lớn và cách bố trí weights.
+
+**Giới hạn:** Chỉ đọc tài liệu, license và cấu trúc mã tham chiếu; chưa tải weights hay tái hiện benchmark. Model có hạn chế mục đích sử dụng riêng; MIT không bao phủ toàn bộ model. Workflow đã đọc chỉ đóng issue cũ.
+
+**Cách tham khảo/tích hợp:** Chọn checkpoint và runtime hỗ trợ, tính ngân sách bộ nhớ và kiểm điều khoản model trước thử serving.
+
+**Thay thế:** qwen, [DeepSeek-R1](../10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23-deepseek-r1), llama.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`9b4e9788e4a3`](https://github.com/deepseek-ai/DeepSeek-V3/commit/9b4e9788e4a3a731f7567338ed15d3ec549ce03b). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/deepseek-ai/DeepSeek-V3/blob/9b4e9788e4a3a731f7567338ed15d3ec549ce03b/README.md) · [LICENSE-CODE](https://github.com/deepseek-ai/DeepSeek-V3/blob/9b4e9788e4a3a731f7567338ed15d3ec549ce03b/LICENSE-CODE) · [LICENSE-MODEL](https://github.com/deepseek-ai/DeepSeek-V3/blob/9b4e9788e4a3a731f7567338ed15d3ec549ce03b/LICENSE-MODEL) · [metadata GitHub](https://api.github.com/repos/deepseek-ai/DeepSeek-V3).
+
+<a id="anhkysuai-2026-11-23-deepseek-r1"></a>
+
+### DeepSeek-R1
+
+**Repo:** [deepseek-ai/DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1) · **License:** MIT cho R1; model distilled còn điều khoản model gốc · **★ 92,062 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Kho tài liệu và liên kết weights cho họ mô hình suy luận R1/R1-Zero và bản distilled.
+
+**Giá trị và cơ chế:** README đối chiếu RL không SFT ban đầu với hướng thêm cold-start, mô tả hạn chế lặp/ngôn ngữ và công bố các checkpoint; hữu ích làm nguồn gốc khi lựa chọn model reasoning.
+
+**Giới hạn:** Tree chủ yếu README, paper và license, không phải toàn mã huấn luyện. Chưa đọc paper hay chạy benchmark. Distill-Llama còn license Llama, không quy mọi checkpoint thành MIT thuần.
+
+**Cách tham khảo/tích hợp:** Ghim model revision, kiểm độ đúng và token reasoning trên tác vụ riêng; lưu điều khoản checkpoint được chọn.
+
+**Thay thế:** [DeepSeek-V3](../10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23-deepseek-v3), qwen, olmo.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`0cf78561f1d5`](https://github.com/deepseek-ai/DeepSeek-R1/commit/0cf78561f1d51c84a21b2190626b21116d5c68bb). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/deepseek-ai/DeepSeek-R1/blob/0cf78561f1d51c84a21b2190626b21116d5c68bb/README.md) · [LICENSE](https://github.com/deepseek-ai/DeepSeek-R1/blob/0cf78561f1d51c84a21b2190626b21116d5c68bb/LICENSE) · [metadata GitHub](https://api.github.com/repos/deepseek-ai/DeepSeek-R1).
+
+<a id="anhkysuai-2026-11-23-gpt4all"></a>
+
+### GPT4All
+
+**Repo:** [nomic-ai/gpt4all](https://github.com/nomic-ai/gpt4all) · **License:** MIT cho mã; weights theo từng model · **★ 77,328 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng desktop và Python client chạy LLM trên máy cá nhân.
+
+**Giá trị và cơ chế:** README mô tả client bọc các triển khai llama.cpp, lựa chọn CPU và platform desktop; phù hợp tham khảo trải nghiệm tải model và chat local.
+
+**Giới hạn:** Chưa chạy ứng dụng hoặc kiểm telemetry/lưu lượng, nên riêng tư là phạm vi cấu hình cần xác nhận. Weights có giấy phép riêng; HEAD lấy được ở 2025 không chứng minh trạng thái mọi bản phát hành hiện tại.
+
+**Cách tham khảo/tích hợp:** Chọn model nhỏ phù hợp RAM, ghim revision và kiểm chất lượng với tài liệu/tác vụ thật trước chuẩn hóa ứng dụng.
+
+**Thay thế:** [Ollama](https://github.com/ollama/ollama), [jan](../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện), [llama.cpp](https://github.com/ggml-org/llama.cpp).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`b666d16db5ae`](https://github.com/nomic-ai/gpt4all/commit/b666d16db5aeab8b91aaf7963adcee9c643734d7). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/nomic-ai/gpt4all/blob/b666d16db5aeab8b91aaf7963adcee9c643734d7/README.md) · [LICENSE.txt](https://github.com/nomic-ai/gpt4all/blob/b666d16db5aeab8b91aaf7963adcee9c643734d7/LICENSE.txt) · [metadata GitHub](https://api.github.com/repos/nomic-ai/gpt4all).
+
+<a id="anhkysuai-2026-11-23-chatglm-6b"></a>
+
+### ChatGLM-6B
+
+**Repo:** [zai-org/ChatGLM-6B](https://github.com/zai-org/ChatGLM-6B) · **License:** Apache-2.0 cho mã; ChatGLM-6B Model License · **★ 40,843 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Model đối thoại Trung–Anh khoảng 6,2B tham số cùng demo CLI/web/API.
+
+**Giá trị và cơ chế:** README mô tả quantization để chạy trên GPU cá nhân và pipeline chat; hữu ích làm nguồn tham chiếu cho thế hệ model song ngữ này.
+
+**Giới hạn:** Model license có hạn chế mục đích và quyền chuyển giao/cấp lại; README nêu đăng ký dùng thương mại. Đây là ChatGLM-6B đời đầu, không gán tính năng GLM-4 quảng bá trong README cho nó. Chưa tải weights hay đo VRAM.
+
+**Cách tham khảo/tích hợp:** Ghim checkpoint/tokenizer và kiểm nhu cầu Trung–Anh; đối chiếu license riêng trước xây dịch vụ.
+
+**Thay thế:** qwen, [DeepSeek-R1](../10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23-deepseek-r1), [GPT4All](../10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23-gpt4all).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`401bf3a8a7dd`](https://github.com/zai-org/ChatGLM-6B/commit/401bf3a8a7dd8a26fba189551dccfc61a7079b4e). Đọc README, Apache-2.0 cho mã và MODEL_LICENSE riêng; chưa kiểm implementation hoặc chạy weights. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/zai-org/ChatGLM-6B/blob/401bf3a8a7dd8a26fba189551dccfc61a7079b4e/README.md) · [LICENSE](https://github.com/zai-org/ChatGLM-6B/blob/401bf3a8a7dd8a26fba189551dccfc61a7079b4e/LICENSE) · [MODEL_LICENSE](https://github.com/zai-org/ChatGLM-6B/blob/401bf3a8a7dd8a26fba189551dccfc61a7079b4e/MODEL_LICENSE) · [metadata GitHub](https://api.github.com/repos/zai-org/ChatGLM-6B).
+
+<a id="anhkysuai-2026-11-23-fastchat"></a>
+
+### FastChat
+
+**Repo:** [lm-sys/FastChat](https://github.com/lm-sys/FastChat) · **License:** Apache-2.0 cho mã; model/dataset có license riêng · **★ 39,552 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Nền tảng huấn luyện, phục vụ và đánh giá chatbot LLM.
+
+**Giá trị và cơ chế:** README mô tả multi-model serving, web UI, API tương thích OpenAI và MT-Bench; hữu ích tham khảo cách tách model worker khỏi bề mặt ứng dụng và đánh giá.
+
+**Giới hạn:** Không xem số lượt/vote Arena trong README là số liệu hiện tại. Vicuna dựa Llama có license riêng; chưa chạy API hoặc tái hiện đánh giá. Workflow đã đọc chủ yếu lint, không xác nhận serving hoạt động.
+
+**Cách tham khảo/tích hợp:** Ghim backend/model, kiểm chat template và tool/API tương thích trước dùng làm serving; giữ eval set độc lập.
+
+**Thay thế:** [vLLM](https://github.com/vllm-project/vllm), openllm, [SGLang](https://github.com/sgl-project/sglang).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`587d5cfa1609`](https://github.com/lm-sys/FastChat/commit/587d5cfa1609a43d192cedb8441cac3c17db105d). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/lm-sys/FastChat/blob/587d5cfa1609a43d192cedb8441cac3c17db105d/README.md) · [LICENSE](https://github.com/lm-sys/FastChat/blob/587d5cfa1609a43d192cedb8441cac3c17db105d/LICENSE) · [metadata GitHub](https://api.github.com/repos/lm-sys/FastChat).
+
 ## 7. Nguồn
 
 - https://dev.to/sreeraj-sreenivasan/the-complete-guide-to-local-llm-inference-tools-in-july-2026-llamacpp-ollama-vllm-sglang-and-4mh1 · https://blog.starmorph.com/blog/local-llm-inference-tools-guide · https://openalternative.co/blog/best-local-llm-tools · https://www.storagereview.com/best/local-llm-tools · https://deepresearch.ninja/2026/06/Open-Source-LLM-Inference-Projects-A-Comprehensive-Comparative-Analysis/ · https://www.digitalapplied.com/blog/run-local-llms-ollama-vs-lm-studio-vs-vllm-2026-guide
@@ -613,3 +881,802 @@ ai-memory setup
 - https://github.com/BerriAI/litellm · https://github.com/Portkey-AI/gateway · https://github.com/songquanpeng/one-api · https://github.com/Helicone/helicone · mục 23 §5 (đọc 2026-10-12)
 - https://atlan.com/know/best-ai-agent-memory-frameworks-2026/ · https://dev.to/plur9/mem0-vs-letta-vs-zep-which-should-you-use-for-agent-memory-1n8m · https://www.developersdigest.tech/blog/best-ai-agent-memory-providers-2026 · https://thegenios.com/blog/open-source-memory-layers-2026/ · https://niteagent.com/blog/ai-agent-memory-comparison-2026/ · https://medium.com/@wasowski.jarek/i-compared-5-ai-agent-memory-systems-across-6-dimensions-none-wins-6a658335ed0a
 - §3b ảnh của Brij Kishore Pandey (13/10/2026): https://code.claude.com/docs/en/setup (mục Authenticate: không có gói free) · https://vercel.com/docs/plans/hobby (phi thương mại, trần dùng) · https://supabase.com/docs/guides/platform/billing-on-supabase (2 project, 500 MB) · https://microsoft.github.io/graphrag/ (index vs query) · https://blog.dailydoseofds.com/p/rag-vs-graph-rag-vs-agentic-rag · https://blog.premai.io/advanced-rag-methods-simple-hybrid-agentic-graph-explained · https://www.besthub.dev/articles/high-concurrency-rag-when-to-use-classic-graph-or-agentic-architecture-2ab88f96c9dd
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-agentmemory"></a>
+
+### agentmemory
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/rohitg00/agentmemory |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `5c9e2e698bda138dcb7de50ee4dd3260ee4fb8eb` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json (dòng license); chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-18; có workflow ci, release-gate, publish (chỉ liệt kê tên) |
+| Nhận định | Bộ nhớ dài hạn cho coding agent qua hook và MCP; phụ thuộc iii-engine có engine theo ELv2, nên không hoàn toàn mã mở. Số liệu benchmark/test trong catalog là tự chạy hoặc tuyên bố **(chưa xác minh)** lại. |
+| Nguồn | [README](https://github.com/rohitg00/agentmemory/blob/5c9e2e698bda138dcb7de50ee4dd3260ee4fb8eb/README.md) · [LICENSE](https://github.com/rohitg00/agentmemory/blob/5c9e2e698bda138dcb7de50ee4dd3260ee4fb8eb/LICENSE) · [package.json](https://github.com/rohitg00/agentmemory/blob/5c9e2e698bda138dcb7de50ee4dd3260ee4fb8eb/package.json) |
+
+<a id="ch-beir"></a>
+
+### BEIR
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/beir-cellar/beir |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ef83d29307061c65d04b035b4f4e7c18bd8374af` (commit 2025-10-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, manifest chỉ liệt kê tên, chưa đọc nội dung; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2025-10-16, khớp ghi chú; không thấy thư mục .github/workflows trong clone |
+| Nhận định | Chuẩn định dạng và bộ dữ liệu cho đánh giá retrieval zero-shot; dùng như định dạng tham chiếu. Ít cập nhật gần đây. |
+| Nguồn | [README](https://github.com/beir-cellar/beir/blob/ef83d29307061c65d04b035b4f4e7c18bd8374af/README.md) · [LICENSE](https://github.com/beir-cellar/beir/blob/ef83d29307061c65d04b035b4f4e7c18bd8374af/LICENSE) |
+
+<a id="ch-chonkie"></a>
+
+### Chonkie
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/chonkie-inc/chonkie (trước đây feyninc/chonkie) |
+| License | MIT |
+| Phiên bản đã đọc | `664454b689d68614bcfc0b1d57fc2a28b5862825` (commit 2026-08-26) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (dòng homepage/license); chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-08-26 (khớp ghi chú); có workflow lint, test, trufflehog, pyodide (chỉ liệt kê tên) |
+| Nhận định | Thư viện chunking nhẹ cho pipeline RAG với nhiều kiểu chunker. Nên đổi repo trong catalog sang chonkie-inc/chonkie. |
+| Nguồn | [README](https://github.com/chonkie-inc/chonkie/blob/664454b689d68614bcfc0b1d57fc2a28b5862825/README.md) · [LICENSE](https://github.com/chonkie-inc/chonkie/blob/664454b689d68614bcfc0b1d57fc2a28b5862825/LICENSE) · [pyproject.toml](https://github.com/chonkie-inc/chonkie/blob/664454b689d68614bcfc0b1d57fc2a28b5862825/pyproject.toml) |
+
+<a id="ch-chroma"></a>
+
+### Chroma
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/chroma-core/chroma |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `1a3ac2c7c623adbd03ed2508dc27b98cdf26016d` (commit 2026-11-06) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, manifest chỉ liệt kê tên, chưa đọc nội dung; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-06; CI nhiều workflow (Python/Rust/Go/JS) (chỉ liệt kê tên) |
+| Nhận định | Vector DB dễ nhúng (API lõi 4 hàm) và chạy client-server. Có dịch vụ cloud trả phí song song bản mã mở. |
+| Nguồn | [README](https://github.com/chroma-core/chroma/blob/1a3ac2c7c623adbd03ed2508dc27b98cdf26016d/README.md) · [LICENSE](https://github.com/chroma-core/chroma/blob/1a3ac2c7c623adbd03ed2508dc27b98cdf26016d/LICENSE) |
+
+<a id="ch-chunking-evaluation-chroma"></a>
+
+### chunking_evaluation (Chroma)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/brandonstarxel/chunking_evaluation |
+| License | MIT |
+| Phiên bản đã đọc | `e708410d1c61cb76a85cd9d433630ef89b9c6b85` (commit 2025-12-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2025-12-13, khớp ghi chú |
+| Nhận định | Khung đánh giá chunking bằng IoU/recall và tạo dữ liệu tổng hợp; ví dụ mặc định cần API key OpenAI. Số liệu mẫu trong README là của tác giả **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/brandonstarxel/chunking_evaluation/blob/e708410d1c61cb76a85cd9d433630ef89b9c6b85/README.md) · [LICENSE](https://github.com/brandonstarxel/chunking_evaluation/blob/e708410d1c61cb76a85cd9d433630ef89b9c6b85/LICENSE) |
+
+<a id="ch-claude-mem"></a>
+
+### claude-mem
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/thedotmack/claude-mem |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `29bc1cdf32aca60b3bfeec3b718d4ed6614b4f97` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, NOTICE; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-22; nhiều workflow ci/npm-publish (chỉ liệt kê tên) |
+| Nhận định | Plugin ghi phiên Claude Code rồi nén thành observation để truy xuất lại. Cần lưu ý telemetry mặc định bật và việc gọi model để nén **(chưa xác minh)** chi tiết hook/worker. |
+| Nguồn | [README](https://github.com/thedotmack/claude-mem/blob/29bc1cdf32aca60b3bfeec3b718d4ed6614b4f97/README.md) · [LICENSE](https://github.com/thedotmack/claude-mem/blob/29bc1cdf32aca60b3bfeec3b718d4ed6614b4f97/LICENSE) · [NOTICE](https://github.com/thedotmack/claude-mem/blob/29bc1cdf32aca60b3bfeec3b718d4ed6614b4f97/NOTICE) |
+
+<a id="ch-cognee"></a>
+
+### cognee
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/topoteretes/cognee |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `1961133d0c68b450fe8e71941a756371e94f7c04` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, NOTICE.md; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-20; nhiều workflow test/release (chỉ liệt kê tên) |
+| Nhận định | Nền tảng bộ nhớ dạng knowledge graph cho agent, chạy cục bộ được. Đặc tính "không cần API key" là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/topoteretes/cognee/blob/1961133d0c68b450fe8e71941a756371e94f7c04/README.md) · [LICENSE](https://github.com/topoteretes/cognee/blob/1961133d0c68b450fe8e71941a756371e94f7c04/LICENSE) · [NOTICE.md](https://github.com/topoteretes/cognee/blob/1961133d0c68b450fe8e71941a756371e94f7c04/NOTICE.md) |
+
+<a id="ch-engram"></a>
+
+### engram
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Gentleman-Programming/engram |
+| License | MIT |
+| Phiên bản đã đọc | `10a3ca3164bebc4acb66b0b6558031071377df7a` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, manifest chỉ liệt kê tên, chưa đọc nội dung; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-23; nhiều workflow CI/release (chỉ liệt kê tên) |
+| Nhận định | Bộ nhớ agent gọn (Go, SQLite theo catalog). Các số tool/agent trong catalog **(chưa xác minh)** từng mục. |
+| Nguồn | [README](https://github.com/Gentleman-Programming/engram/blob/10a3ca3164bebc4acb66b0b6558031071377df7a/README.md) · [LICENSE](https://github.com/Gentleman-Programming/engram/blob/10a3ca3164bebc4acb66b0b6558031071377df7a/LICENSE) |
+
+<a id="ch-exo"></a>
+
+### exo
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/exo-explore/exo |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `a60b95698ca81737d367443674dd5563cbc9559b` (commit 2026-11-06) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, PLATFORMS.md; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-06; có workflow build-app, pipeline (chỉ liệt kê tên) |
+| Nhận định | Ghép nhiều thiết bị thành cụm chạy model lớn, có RDMA qua Thunderbolt 5 trên macOS mới. Hỗ trợ Linux còn kém. |
+| Nguồn | [README](https://github.com/exo-explore/exo/blob/a60b95698ca81737d367443674dd5563cbc9559b/README.md) · [LICENSE](https://github.com/exo-explore/exo/blob/a60b95698ca81737d367443674dd5563cbc9559b/LICENSE) · [PLATFORMS.md](https://github.com/exo-explore/exo/blob/a60b95698ca81737d367443674dd5563cbc9559b/PLATFORMS.md) |
+
+<a id="ch-flagembedding-bge"></a>
+
+### FlagEmbedding (BGE)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/FlagOpen/FlagEmbedding |
+| License | MIT (mã); license model HF chưa kiểm |
+| Phiên bản đã đọc | `897baa67c0ffddbfccf4e6776ff55310d67809d4` (commit 2026-10-27) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, manifest chỉ liệt kê tên, chưa đọc nội dung; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-10-27 |
+| Nhận định | Toolkit embedding/reranker BGE tự host. Mã MIT nhưng điều khoản của trọng số model cần kiểm riêng **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/FlagOpen/FlagEmbedding/blob/897baa67c0ffddbfccf4e6776ff55310d67809d4/README.md) · [LICENSE](https://github.com/FlagOpen/FlagEmbedding/blob/897baa67c0ffddbfccf4e6776ff55310d67809d4/LICENSE) |
+
+<a id="ch-graphiti-zep"></a>
+
+### Graphiti (Zep)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/getzep/graphiti |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `45fdf546c74da5586e8242fd6588a0801e641e16` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, manifest chỉ liệt kê tên, chưa đọc nội dung; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-22; nhiều workflow test/release (chỉ liệt kê tên) |
+| Nhận định | Framework đồ thị tri thức theo thời gian cho agent, có MCP server và server container trong repo. |
+| Nguồn | [README](https://github.com/getzep/graphiti/blob/45fdf546c74da5586e8242fd6588a0801e641e16/README.md) · [LICENSE](https://github.com/getzep/graphiti/blob/45fdf546c74da5586e8242fd6588a0801e641e16/LICENSE) |
+
+<a id="ch-graphrag"></a>
+
+### GraphRAG
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/graphrag |
+| License | MIT |
+| Phiên bản đã đọc | `34b2b67ae4601ad0b47bcd179fbe3f2a23aa0857` (commit 2026-11-01) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, manifest chỉ liệt kê tên, chưa đọc nội dung; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-01; README tự nói chủ yếu ở chế độ maintenance, không nhận PR mới |
+| Nhận định | Pipeline GraphRAG của Microsoft Research, nay chỉ bảo trì. Phù hợp để tham khảo ý tưởng, không nên kỳ vọng tính năng mới. |
+| Nguồn | [README](https://github.com/microsoft/graphrag/blob/34b2b67ae4601ad0b47bcd179fbe3f2a23aa0857/README.md) · [LICENSE](https://github.com/microsoft/graphrag/blob/34b2b67ae4601ad0b47bcd179fbe3f2a23aa0857/LICENSE) |
+
+<a id="ch-helicone"></a>
+
+### Helicone
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Helicone/helicone |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `9254d10e5f11af76912f050e6198f274abc2f005` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, manifest chỉ liệt kê tên, chưa đọc nội dung; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-17; nhiều workflow (chỉ liệt kê tên) |
+| Nhận định | Gateway và observability cho LLM, có bản cloud và tự host. Chưa kiểm phần nào chỉ có ở bản cloud. |
+| Nguồn | [README](https://github.com/Helicone/helicone/blob/9254d10e5f11af76912f050e6198f274abc2f005/README.md) · [LICENSE](https://github.com/Helicone/helicone/blob/9254d10e5f11af76912f050e6198f274abc2f005/LICENSE) |
+
+<a id="ch-hindsight"></a>
+
+### Hindsight
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vectorize-io/hindsight |
+| License | MIT |
+| Phiên bản đã đọc | `cb54db32884dc07dc64f2e369d3aa9fde5347644` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, manifest chỉ liệt kê tên, chưa đọc nội dung; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-23; có workflow test, security-scan, release (chỉ liệt kê tên) |
+| Nhận định | Hệ thống bộ nhớ agent hướng học theo thời gian. Số benchmark và kết quả tự chạy trong catalog **(chưa xác minh)** lại. |
+| Nguồn | [README](https://github.com/vectorize-io/hindsight/blob/cb54db32884dc07dc64f2e369d3aa9fde5347644/README.md) · [LICENSE](https://github.com/vectorize-io/hindsight/blob/cb54db32884dc07dc64f2e369d3aa9fde5347644/LICENSE) |
+
+<a id="ch-iii-engine"></a>
+
+### iii engine
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/iii-hq/iii |
+| License | Elastic-2.0 (engine/) và Apache-2.0 (SDK, docs, workers) |
+| Phiên bản đã đọc | `57348449bab172fd1b134d3d960940fe3fd1740a` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.spdx, LICENSE.spdx; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-23; nhiều workflow (chỉ liệt kê tên) |
+| Nhận định | Runtime function/trigger làm nền cho agentmemory. Thư mục engine/ theo ELv2 nên không phải mã mở theo OSI; chỉ SDK/docs là Apache-2.0. |
+| Nguồn | [README](https://github.com/iii-hq/iii/blob/57348449bab172fd1b134d3d960940fe3fd1740a/README.md) · [LICENSE.spdx](https://github.com/iii-hq/iii/blob/57348449bab172fd1b134d3d960940fe3fd1740a/LICENSE.spdx) |
+
+<a id="ch-lancedb"></a>
+
+### LanceDB
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/lancedb/lancedb |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `de81c35ba09eee802b2e916800e6d61c75b714e2` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, manifest chỉ liệt kê tên, chưa đọc nội dung; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-23; nhiều workflow build/publish (chỉ liệt kê tên) |
+| Nhận định | Vector DB nhúng được, có SDK Rust/Python/JS/Java. Có dịch vụ cloud thương mại kèm theo. |
+| Nguồn | [README](https://github.com/lancedb/lancedb/blob/de81c35ba09eee802b2e916800e6d61c75b714e2/README.md) · [LICENSE](https://github.com/lancedb/lancedb/blob/de81c35ba09eee802b2e916800e6d61c75b714e2/LICENSE) |
+
+<a id="ch-letta"></a>
+
+### Letta
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/letta-ai/letta |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `8816d3a8516893bfdc0fa14bfb1235226012e295` (commit 2026-10-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, AGENTS.md; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-10-18; main chỉ còn trang giới thiệu, server V1 đã retire |
+| Nhận định | Repo này không còn là mã Letta/MemGPT đang phát triển; muốn tham khảo hiện hành phải xem letta-ai/letta-code (chưa đọc). Không nên dùng nhánh archive, image letta/letta hay package Python cũ. |
+| Nguồn | [README](https://github.com/letta-ai/letta/blob/8816d3a8516893bfdc0fa14bfb1235226012e295/README.md) · [LICENSE](https://github.com/letta-ai/letta/blob/8816d3a8516893bfdc0fa14bfb1235226012e295/LICENSE) · [AGENTS.md](https://github.com/letta-ai/letta/blob/8816d3a8516893bfdc0fa14bfb1235226012e295/AGENTS.md) |
+
+<a id="ch-lightrag"></a>
+
+### LightRAG
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/HKUDS/LightRAG |
+| License | MIT |
+| Phiên bản đã đọc | `1ac49a0c9725cd87dfa95abb11fd83a909d2eb91` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, manifest chỉ liệt kê tên, chưa đọc nội dung; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-23; có workflow tests, docker, pypi (chỉ liệt kê tên) |
+| Nhận định | Framework RAG dựa trên đồ thị, đơn giản và nhanh theo tuyên bố của tác giả **(chưa xác minh)**; có web UI và nhiều backend lưu trữ. |
+| Nguồn | [README](https://github.com/HKUDS/LightRAG/blob/1ac49a0c9725cd87dfa95abb11fd83a909d2eb91/README.md) · [LICENSE](https://github.com/HKUDS/LightRAG/blob/1ac49a0c9725cd87dfa95abb11fd83a909d2eb91/LICENSE) |
+
+<a id="ch-litellm"></a>
+
+### LiteLLM
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/BerriAI/litellm |
+| License | MIT (ngoài thư mục enterprise); litellm/enterprise theo Enterprise License (khác catalog cũ: MIT) |
+| Phiên bản đã đọc | `3e27fc2a88d2545a706fb9cc1a85ea99e474f18c` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, litellm/enterprise/LICENSE.md; manifest chỉ liệt kê tên, chưa đọc nội dung; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-23; nhiều workflow (chỉ liệt kê tên) |
+| Nhận định | AI Gateway/SDK gọi 100+ LLM theo định dạng OpenAI. Phần enterprise không phải mã mở; cần tránh phụ thuộc vào đó. Số sao trong notes là từ docs nội bộ **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/BerriAI/litellm/blob/3e27fc2a88d2545a706fb9cc1a85ea99e474f18c/README.md) · [LICENSE](https://github.com/BerriAI/litellm/blob/3e27fc2a88d2545a706fb9cc1a85ea99e474f18c/LICENSE) · [litellm/enterprise/LICENSE.md](https://github.com/BerriAI/litellm/blob/3e27fc2a88d2545a706fb9cc1a85ea99e474f18c/litellm/enterprise/LICENSE.md) |
+
+<a id="ch-llama-cpp"></a>
+
+### llama.cpp
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ggml-org/llama.cpp |
+| License | MIT |
+| Phiên bản đã đọc | `1094646c1fb706b0bc7cf3569c707a173032a01d` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, CMakeLists.txt (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Engine suy luận C/C++ nền cho GGUF; có hàng chục workflow CI. License MIT khớp catalog. |
+| Nguồn | [README.md](https://github.com/ggml-org/llama.cpp/blob/1094646c1fb706b0bc7cf3569c707a173032a01d/README.md) · [LICENSE](https://github.com/ggml-org/llama.cpp/blob/1094646c1fb706b0bc7cf3569c707a173032a01d/LICENSE) · [CMakeLists.txt](https://github.com/ggml-org/llama.cpp/blob/1094646c1fb706b0bc7cf3569c707a173032a01d/CMakeLists.txt) |
+
+<a id="ch-local-deep-research"></a>
+
+### Local Deep Research
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/LearningCircuit/local-deep-research |
+| License | MIT |
+| Phiên bản đã đọc | `32b50c96f316e9025341fbf569c9381b8c9f351b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Công cụ nghiên cứu sâu chạy local/cloud; `__version__` hiện là 2.0.3, lệch ghi chú cũ (v1.10.7); license MIT khớp. Số liệu SimpleQA là tự đo (chưa xác minh). |
+| Nguồn | [README.md](https://github.com/LearningCircuit/local-deep-research/blob/32b50c96f316e9025341fbf569c9381b8c9f351b/README.md) · [LICENSE](https://github.com/LearningCircuit/local-deep-research/blob/32b50c96f316e9025341fbf569c9381b8c9f351b/LICENSE) · [pyproject.toml](https://github.com/LearningCircuit/local-deep-research/blob/32b50c96f316e9025341fbf569c9381b8c9f351b/pyproject.toml) |
+
+<a id="ch-localai"></a>
+
+### LocalAI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mudler/LocalAI |
+| License | MIT |
+| Phiên bản đã đọc | `83d36f88ab43e2ab44f4c0c69fa1e22527f0710e` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Dockerfile (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Runtime API tương thích OpenAI chạy local; README hướng dẫn mở cổng 8080 (docker -p 8080:8080); khuyến nghị bind 127.0.0.1/đặt API key là nhận định của kho, README đọc chưa xác nhận chi tiết. License MIT khớp. |
+| Nguồn | [README.md](https://github.com/mudler/LocalAI/blob/83d36f88ab43e2ab44f4c0c69fa1e22527f0710e/README.md) · [LICENSE](https://github.com/mudler/LocalAI/blob/83d36f88ab43e2ab44f4c0c69fa1e22527f0710e/LICENSE) · [Dockerfile](https://github.com/mudler/LocalAI/blob/83d36f88ab43e2ab44f4c0c69fa1e22527f0710e/Dockerfile) |
+
+<a id="ch-locomo"></a>
+
+### LoCoMo
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/snap-research/locomo |
+| License | CC-BY-NC-4.0 (LICENSE.txt) |
+| Phiên bản đã đọc | `3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376` (commit 2024-08-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.MD, LICENSE.txt, requirements.txt (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | low-activity (commit cuối 2024-08-12) |
+| Nhận định | Benchmark LoCoMo (ACL 2024), 10 hội thoại trong data/locomo10.json; LICENSE.txt đúng là CC BY-NC 4.0 nên cấm thương mại; commit cuối 2024-08-12, không có CI. |
+| Nguồn | [README.MD](https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/README.MD) · [LICENSE.txt](https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/LICENSE.txt) · [requirements.txt](https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/requirements.txt) |
+
+<a id="ch-longmemeval"></a>
+
+### LongMemEval
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/xiaowu0162/LongMemEval |
+| License | MIT |
+| Phiên bản đã đọc | `9e0b455f4ef0e2ab8f2e582289761153549043fc` (commit 2026-05-11) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, requirements-lite.txt (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | low-activity (commit cuối 2026-05-11) |
+| Nhận định | Benchmark bộ nhớ dài hạn; README xác nhận bản dữ liệu cleaned (9/2025) và các bản oracle/S/M; license MIT khớp; commit cuối 2026-05-11, không có CI. |
+| Nguồn | [README.md](https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/README.md) · [LICENSE](https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/LICENSE) · [requirements-lite.txt](https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/requirements-lite.txt) |
+
+<a id="ch-mem0"></a>
+
+### Mem0
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mem0ai/mem0 |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `f93aba4b53241ccd9db32903cd19d1ff7f0066f0` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Lớp bộ nhớ cho agent; gói Python mem0ai hiện 2.2.1; license Apache-2.0 khớp; kho có thư mục evaluation và nhiều plugin tích hợp. |
+| Nguồn | [README.md](https://github.com/mem0ai/mem0/blob/f93aba4b53241ccd9db32903cd19d1ff7f0066f0/README.md) · [LICENSE](https://github.com/mem0ai/mem0/blob/f93aba4b53241ccd9db32903cd19d1ff7f0066f0/LICENSE) · [pyproject.toml](https://github.com/mem0ai/mem0/blob/f93aba4b53241ccd9db32903cd19d1ff7f0066f0/pyproject.toml) |
+
+<a id="ch-mempalace"></a>
+
+### MemPalace
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/MemPalace/mempalace |
+| License | MIT |
+| Phiên bản đã đọc | `dfa318af2d41ad6c64fc3b08c28d16410c9b634b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Bộ nhớ local lưu nguyên văn; README tự công bố 96.6% R@5 raw trên LongMemEval, đây là số tự báo cáo (chưa xác minh), kèm thư mục benchmarks; license MIT khớp. |
+| Nguồn | [README.md](https://github.com/MemPalace/mempalace/blob/dfa318af2d41ad6c64fc3b08c28d16410c9b634b/README.md) · [LICENSE](https://github.com/MemPalace/mempalace/blob/dfa318af2d41ad6c64fc3b08c28d16410c9b634b/LICENSE) · [pyproject.toml](https://github.com/MemPalace/mempalace/blob/dfa318af2d41ad6c64fc3b08c28d16410c9b634b/pyproject.toml) |
+
+<a id="ch-milvus"></a>
+
+### Milvus
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/milvus-io/milvus |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `548817d224dc80a8a4de939362473835d26da79d` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, go.mod (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Vector DB phân tán viết Go/C++; license Apache-2.0 khớp; nhiều workflow CI, có README_CN. |
+| Nguồn | [README.md](https://github.com/milvus-io/milvus/blob/548817d224dc80a8a4de939362473835d26da79d/README.md) · [LICENSE](https://github.com/milvus-io/milvus/blob/548817d224dc80a8a4de939362473835d26da79d/LICENSE) · [go.mod](https://github.com/milvus-io/milvus/blob/548817d224dc80a8a4de939362473835d26da79d/go.mod) |
+
+<a id="ch-mteb"></a>
+
+### MTEB
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/embeddings-benchmark/mteb |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `86d02b557aad1edfd2f10324a68273999155b8b6` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Benchmark embedding/reranker; version trong pyproject 2.27.22 (ghi chú cũ v2.26.31); 16 workflow CI; license Apache-2.0 khớp. |
+| Nguồn | [README.md](https://github.com/embeddings-benchmark/mteb/blob/86d02b557aad1edfd2f10324a68273999155b8b6/README.md) · [LICENSE](https://github.com/embeddings-benchmark/mteb/blob/86d02b557aad1edfd2f10324a68273999155b8b6/LICENSE) · [pyproject.toml](https://github.com/embeddings-benchmark/mteb/blob/86d02b557aad1edfd2f10324a68273999155b8b6/pyproject.toml) |
+
+<a id="ch-new-api"></a>
+
+### new-api
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/QuantumNous/new-api |
+| License | AGPL-3.0 + điều khoản bổ sung §7 trong NOTICE |
+| Phiên bản đã đọc | `51a1ceeaec14ede2130ade924dcc46a6316a49a5` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.en.md (bản dịch/phụ), LICENSE, go.mod (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Gateway LLM phái sinh từ One API; LICENSE là AGPL-3.0 và NOTICE thêm điều khoản §7 buộc giữ dòng ghi công và link repo trên UI bản sửa đổi, khớp catalog. README.en.md là bản tiếng Anh, README gốc tiếng Trung chưa đọc. |
+| Nguồn | [README.en.md](https://github.com/QuantumNous/new-api/blob/51a1ceeaec14ede2130ade924dcc46a6316a49a5/README.en.md) · [LICENSE](https://github.com/QuantumNous/new-api/blob/51a1ceeaec14ede2130ade924dcc46a6316a49a5/LICENSE) · [go.mod](https://github.com/QuantumNous/new-api/blob/51a1ceeaec14ede2130ade924dcc46a6316a49a5/go.mod) · [NOTICE](https://github.com/QuantumNous/new-api/blob/51a1ceeaec14ede2130ade924dcc46a6316a49a5/NOTICE) |
+
+<a id="ch-ollama"></a>
+
+### Ollama
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ollama/ollama |
+| License | MIT |
+| Phiên bản đã đọc | `318ee284aa3b5558de57efefff730ea33c4a9bef` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, go.mod (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-22) |
+| Nhận định | Runtime/CLI chạy model local, API tương thích OpenAI/Anthropic; có file LLAMA_CPP_VERSION ghim phiên bản llama.cpp; license MIT khớp. |
+| Nguồn | [README.md](https://github.com/ollama/ollama/blob/318ee284aa3b5558de57efefff730ea33c4a9bef/README.md) · [LICENSE](https://github.com/ollama/ollama/blob/318ee284aa3b5558de57efefff730ea33c4a9bef/LICENSE) · [go.mod](https://github.com/ollama/ollama/blob/318ee284aa3b5558de57efefff730ea33c4a9bef/go.mod) |
+
+<a id="ch-one-api"></a>
+
+### one-api
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/songquanpeng/one-api |
+| License | MIT (README thêm yêu cầu ghi công) |
+| Phiên bản đã đọc | `8df4a2670b98266bd287c698243fff327d9748cf` (commit 2025-02-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.en.md (bản dịch/phụ), LICENSE, go.mod (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | low-activity (commit cuối 2025-02-21) |
+| Nhận định | Gateway quản lý key/quota nhiều kênh; LICENSE MIT, README yêu cầu giữ ghi công và link ở cuối trang (điều kiện ngoài văn bản MIT); commit cuối 2025-02-21 nên ít hoạt động. README.en.md ghi rõ là bản dịch bằng ChatGPT. |
+| Nguồn | [README.en.md](https://github.com/songquanpeng/one-api/blob/8df4a2670b98266bd287c698243fff327d9748cf/README.en.md) · [LICENSE](https://github.com/songquanpeng/one-api/blob/8df4a2670b98266bd287c698243fff327d9748cf/LICENSE) · [go.mod](https://github.com/songquanpeng/one-api/blob/8df4a2670b98266bd287c698243fff327d9748cf/go.mod) |
+
+<a id="ch-openviking"></a>
+
+### OpenViking
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/volcengine/OpenViking |
+| License | AGPL-3.0 (crates/ov_cli và examples: Apache-2.0) |
+| Phiên bản đã đọc | `300ab8eb0746d917b7b968b7f739a28a5a5c04b5` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Context DB cho agent; mục License của README khớp catalog: dự án chính AGPLv3, crates/ov_cli và examples Apache-2.0 (hermes-plugin MIT); có bản BYOC trả phí theo license key. |
+| Nguồn | [README.md](https://github.com/volcengine/OpenViking/blob/300ab8eb0746d917b7b968b7f739a28a5a5c04b5/README.md) · [LICENSE](https://github.com/volcengine/OpenViking/blob/300ab8eb0746d917b7b968b7f739a28a5a5c04b5/LICENSE) · [pyproject.toml](https://github.com/volcengine/OpenViking/blob/300ab8eb0746d917b7b968b7f739a28a5a5c04b5/pyproject.toml) · [LICENSE](https://github.com/volcengine/OpenViking/blob/300ab8eb0746d917b7b968b7f739a28a5a5c04b5/crates/LICENSE) |
+
+<a id="ch-pageindex"></a>
+
+### PageIndex
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/VectifyAI/PageIndex |
+| License | MIT |
+| Phiên bản đã đọc | `add6b17cebff528612748ede3fed565b5f726c6b` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-21) |
+| Nhận định | RAG không vector dựng cây mục lục; README nói local mode dùng API key LLM của người dùng hoặc đăng ký Claude qua gói pageindex[claude]; license MIT khớp. |
+| Nguồn | [README.md](https://github.com/VectifyAI/PageIndex/blob/add6b17cebff528612748ede3fed565b5f726c6b/README.md) · [LICENSE](https://github.com/VectifyAI/PageIndex/blob/add6b17cebff528612748ede3fed565b5f726c6b/LICENSE) · [pyproject.toml](https://github.com/VectifyAI/PageIndex/blob/add6b17cebff528612748ede3fed565b5f726c6b/pyproject.toml) |
+
+<a id="ch-pgvector"></a>
+
+### pgvector
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/pgvector/pgvector |
+| License | PostgreSQL License |
+| Phiên bản đã đọc | `305e756a31e467fb5741ec997882c0f623300dce` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, vector.control (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-22) |
+| Nhận định | Extension vector cho PostgreSQL; default_version 0.8.7; license PostgreSQL khớp. |
+| Nguồn | [README.md](https://github.com/pgvector/pgvector/blob/305e756a31e467fb5741ec997882c0f623300dce/README.md) · [LICENSE](https://github.com/pgvector/pgvector/blob/305e756a31e467fb5741ec997882c0f623300dce/LICENSE) · [vector.control](https://github.com/pgvector/pgvector/blob/305e756a31e467fb5741ec997882c0f623300dce/vector.control) |
+
+<a id="ch-portkey-gateway"></a>
+
+### Portkey Gateway
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Portkey-AI/gateway |
+| License | MIT |
+| Phiên bản đã đọc | `669825cbe89ee51569918b8f78a9db486fd69dd4` (commit 2026-05-25) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | low-activity (commit cuối 2026-05-25) |
+| Nhận định | AI gateway TypeScript (package 1.15.2), fallback/retry/load-balance; license MIT khớp; commit cuối 2026-05-25. |
+| Nguồn | [README.md](https://github.com/Portkey-AI/gateway/blob/669825cbe89ee51569918b8f78a9db486fd69dd4/README.md) · [LICENSE](https://github.com/Portkey-AI/gateway/blob/669825cbe89ee51569918b8f78a9db486fd69dd4/LICENSE) · [package.json](https://github.com/Portkey-AI/gateway/blob/669825cbe89ee51569918b8f78a9db486fd69dd4/package.json) |
+
+<a id="ch-qdrant"></a>
+
+### Qdrant
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/qdrant/qdrant |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `23065a0bf6857c3e5da45f6c8939cc746cc0580e` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Cargo.toml (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-16) |
+| Nhận định | Vector DB viết Rust; license Apache-2.0 khớp; nhiều workflow CI Rust/GPU. |
+| Nguồn | [README.md](https://github.com/qdrant/qdrant/blob/23065a0bf6857c3e5da45f6c8939cc746cc0580e/README.md) · [LICENSE](https://github.com/qdrant/qdrant/blob/23065a0bf6857c3e5da45f6c8939cc746cc0580e/LICENSE) · [Cargo.toml](https://github.com/qdrant/qdrant/blob/23065a0bf6857c3e5da45f6c8939cc746cc0580e/Cargo.toml) |
+
+<a id="ch-ragflow"></a>
+
+### RAGFlow
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/infiniflow/ragflow |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `da4a1556a33b345d0233c2fd4888424cebf9ccfd` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Engine RAG dựa hiểu tài liệu sâu, nhiều bản README dịch; license Apache-2.0 khớp. |
+| Nguồn | [README.md](https://github.com/infiniflow/ragflow/blob/da4a1556a33b345d0233c2fd4888424cebf9ccfd/README.md) · [LICENSE](https://github.com/infiniflow/ragflow/blob/da4a1556a33b345d0233c2fd4888424cebf9ccfd/LICENSE) · [pyproject.toml](https://github.com/infiniflow/ragflow/blob/da4a1556a33b345d0233c2fd4888424cebf9ccfd/pyproject.toml) |
+
+<a id="ch-sglang"></a>
+
+### SGLang
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/sgl-project/sglang |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ac0243723b0dcba177f8792979daaa2f8d6ee6ea` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, python/pyproject.toml (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Framework serving LLM; license Apache-2.0 khớp; hơn 100 workflow CI. |
+| Nguồn | [README.md](https://github.com/sgl-project/sglang/blob/ac0243723b0dcba177f8792979daaa2f8d6ee6ea/README.md) · [LICENSE](https://github.com/sgl-project/sglang/blob/ac0243723b0dcba177f8792979daaa2f8d6ee6ea/LICENSE) · [pyproject.toml](https://github.com/sgl-project/sglang/blob/ac0243723b0dcba177f8792979daaa2f8d6ee6ea/python/pyproject.toml) |
+
+<a id="ch-vllm"></a>
+
+### vLLM
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vllm-project/vllm |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `6aeedab553dd85d6bc3f9f4deb3bb264bce0cb7c` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Engine serving LLM throughput cao; license Apache-2.0 khớp. |
+| Nguồn | [README.md](https://github.com/vllm-project/vllm/blob/6aeedab553dd85d6bc3f9f4deb3bb264bce0cb7c/README.md) · [LICENSE](https://github.com/vllm-project/vllm/blob/6aeedab553dd85d6bc3f9f4deb3bb264bce0cb7c/LICENSE) · [pyproject.toml](https://github.com/vllm-project/vllm/blob/6aeedab553dd85d6bc3f9f4deb3bb264bce0cb7c/pyproject.toml) |
+
+<a id="ch-weaviate"></a>
+
+### Weaviate
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/weaviate/weaviate |
+| License | BSD-3-Clause (ngoài thư mục wl); thư mục wl: license doanh nghiệp độc quyền (khác catalog cũ: cần bổ sung phần độc quyền) |
+| Phiên bản đã đọc | `5852883ddc1a420e0a3df38572bcc93dce5e6ee8` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, go.mod (chỉ đối chiếu số phiên bản/cấu hình); chưa chạy upstream |
+| Bảo trì | active (commit cuối 2026-11-23) |
+| Nhận định | Vector DB; LICENSE nêu rõ: mã ngoài thư mục wl là BSD-3-Clause (LICENSE-BSD), mã trong wl là license doanh nghiệp độc quyền cần license key; catalog chỉ ghi BSD-3 nên cần bổ sung. |
+| Nguồn | [README.md](https://github.com/weaviate/weaviate/blob/5852883ddc1a420e0a3df38572bcc93dce5e6ee8/README.md) · [LICENSE](https://github.com/weaviate/weaviate/blob/5852883ddc1a420e0a3df38572bcc93dce5e6ee8/LICENSE) · [go.mod](https://github.com/weaviate/weaviate/blob/5852883ddc1a420e0a3df38572bcc93dce5e6ee8/go.mod) · [LICENSE-BSD](https://github.com/weaviate/weaviate/blob/5852883ddc1a420e0a3df38572bcc93dce5e6ee8/LICENSE-BSD) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-bitnet-cpp"></a>
+
+### bitnet.cpp (BitNet)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/microsoft/BitNet |
+| License | MIT (mã); trọng số theo từng model card trên Hugging Face (chưa xác minh) |
+| Phiên bản đã đọc | `0b341e582afbf9e1011f24744b554c96a3477eb5` (commit 2026-07-27) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, setup_env.py, src/README.md; chưa chạy upstream |
+| Khoảng trống lấp | Serving/quantization trên phần cứng nhỏ |
+| Cơ chế đáng học | - `setup_env.py`: bảng `SUPPORTED_HF_MODELS` (BitNet-b1.58-2B-4T, Falcon3/Falcon-E 1.58bit, Llama3-8B-1.58, embedding 0.6B/270M) và `SUPPORTED_QUANT_TYPES` (arm64: i2_s, tl1; x86_64: i2_s, tl2); tải model bằng `huggingface-cli download`, convert sang GGUF rồi gọi `llama-quantize ... I2_S`.<br>- `src/ggml-bitnet-mad.cpp` và `include/gemm-config.h`: kernel I2_S (2 bit mỗi trọng số, kích hoạt 8 bit) có nhánh AVX2/SSSE3, NEON, LoongArch; kích thước khối và mức song song cấu hình được (`ROW_BLOCK_SIZE`, `COL_BLOCK_SIZE`, `PARALLEL_SIZE`) theo `src/README.md`.<br>- `utils/codegen_tl1.py`, `utils/codegen_tl2.py`, `preset_kernels/`: sinh hoặc dùng sẵn header kernel LUT theo từng model; `utils/e2e_benchmark.py`, `test_perplexity.py`, `test_power.sh` để đo tốc độ, perplexity, năng lượng. |
+| Tiêu chí và cách kiểm | Không có CI trong repo (không có thư mục `.github/workflows`). Có script đo (`utils/e2e_benchmark.py`, `utils/test_perplexity.py`, `utils/test_gemm_kernel.sh`) chạy bằng tay, kiểm bằng máy nhưng không tự động. Tuyên bố tăng tốc 1.37x–5.07x trên ARM, 2.37x–6.17x trên x86 và giảm năng lượng 55.4–70.0% (ARM) và 71.9–82.2% (x86) chỉ là số của tác giả, chưa tái lập. |
+| Giới hạn và rủi ro | Lõi `3rdparty/llama.cpp` là submodule trỏ `isHuangXin/llama.cpp` (nhánh `release-bitnet-embedding-0.6b-270m`), thư mục rỗng trong clone nông nên phần tích hợp ggml chưa đọc. Chỉ chạy tốt với model được huấn luyện 1.58-bit sẵn; không nén được model thường. Hỗ trợ model là danh sách cố định trong `setup_env.py`. License MIT áp cho mã; license trọng số nằm ở model card Hugging Face, chưa xác minh. Build cần clang/cmake và có chỉ dẫn riêng cho Windows. |
+| So với | llama.cpp (`llama-cpp`), `mlc-llm`, `llamafile`, `cactus`, `executorch` đều đã có hồ sơ; bitnet.cpp khác ở chỗ cần model 1.58-bit sẵn, không phải GGUF Q4/Q8 thường. |
+| Nguồn | [README.md](https://github.com/microsoft/BitNet/blob/0b341e582afbf9e1011f24744b554c96a3477eb5/README.md) · [LICENSE](https://github.com/microsoft/BitNet/blob/0b341e582afbf9e1011f24744b554c96a3477eb5/LICENSE) · [setup_env.py](https://github.com/microsoft/BitNet/blob/0b341e582afbf9e1011f24744b554c96a3477eb5/setup_env.py) · [README.md](https://github.com/microsoft/BitNet/blob/0b341e582afbf9e1011f24744b554c96a3477eb5/src/README.md) · [ggml-bitnet-mad.cpp](https://github.com/microsoft/BitNet/blob/0b341e582afbf9e1011f24744b554c96a3477eb5/src/ggml-bitnet-mad.cpp) · [.gitmodules](https://github.com/microsoft/BitNet/blob/0b341e582afbf9e1011f24744b554c96a3477eb5/.gitmodules) · [e2e_benchmark.py](https://github.com/microsoft/BitNet/blob/0b341e582afbf9e1011f24744b554c96a3477eb5/utils/e2e_benchmark.py) |
+
+<a id="nt-mlx-lm"></a>
+
+### MLX LM
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ml-explore/mlx-lm |
+| License | MIT (mã); license từng model theo model card (chưa xác minh) |
+| Phiên bản đã đọc | `1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, pyproject.toml, mlx_lm/convert.py; chưa chạy upstream |
+| Khoảng trống lấp | Serving/quantization trên phần cứng nhỏ |
+| Cơ chế đáng học | - `mlx_lm/convert.py`: `mixed_quant_predicate_builder` với công thức `mixed_2_6`, `mixed_3_4`, `mixed_3_6`, `mixed_4_6`; lớp đầu và cuối, `v_proj`, `down_proj`, `lm_head` dùng nhiều bit hơn (6), phần còn lại ít bit, nhóm 64, tham khảo cách chọn của llama.cpp Q4_K_M.<br>- `mlx_lm/lora.py` và `LORA.md`: `fine_tune_type` là lora, dora hoặc full; mặc định `rank 8`, `scale 20.0`, `num_layers 16`; nếu `--model` là model đã lượng tử thì tự dùng QLoRA.<br>- `mlx_lm/models/` có hàng chục kiến trúc (kể cả `bitnet`), `fuse.py` gộp adapter, `upload.py` đẩy lên Hugging Face, `mx.distributed` cho suy luận và tinh chỉnh phân tán.<br>- `mlx_lm/SERVER.md`: máy chủ tương thích kiểu OpenAI, kèm cảnh báo không khuyến nghị production. |
+| Tiêu chí và cách kiểm | Workflow `pull_request.yml` (đã mở): lint bằng pre-commit và chạy `unittest discover tests` cùng `mlx.launch -n 2` trên runner `[self-hosted, macos]` (chỉ chạy khi repo là `ml-explore/mlx-lm`), tải `test_data.zip` từ release. Thư mục `tests/` có test cho generate, quantize/awq, server, tuner, tokenizer. Không có ngưỡng chất lượng sau lượng tử hóa; có `perplexity.py` và `evaluate.py` để tự đo. |
+| Giới hạn và rủi ro | Chỉ chạy được trên Apple silicon (`mlx` ràng buộc `platform_system == 'Darwin'`; có tag Linux nhưng chưa xác minh mức hỗ trợ). `SERVER.md` ghi rõ server chỉ có kiểm tra bảo mật cơ bản. Tùy chọn `--trust-remote-code` cho tokenizer tồn tại trong CLI (mặc định tắt). CLI tự tải model từ Hugging Face (mặc định `mlx-community/Llama-3.2-3B-Instruct-4bit`) nên có truy cập mạng và license model là của từng model. `AGENTS.md` trong repo là quy tắc cho contributor dùng agent, chỉ là nội dung để đọc. |
+| So với | `omlx`, `mlc-llm`, `llama-cpp`, `ollama`, `unsloth` (tinh chỉnh trên GPU NVIDIA). |
+| Nguồn | [README.md](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/README.md) · [LICENSE](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/LICENSE) · [pyproject.toml](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/pyproject.toml) · [convert.py](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/mlx_lm/convert.py) · [LORA.md](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/mlx_lm/LORA.md) · [SERVER.md](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/mlx_lm/SERVER.md) · [lora.py](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/mlx_lm/lora.py) · [generate.py](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/mlx_lm/generate.py) · [pull_request.yml](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/.github/workflows/pull_request.yml) · [AGENTS.md](https://github.com/ml-explore/mlx-lm/blob/1bf8da05a1ef30a3eb2e8a634180be6557fd3ca0/AGENTS.md) |
+
+<a id="nt-safetensors"></a>
+
+### safetensors
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/huggingface/safetensors |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `11319d360db5170565db914601fbf375762bf8eb` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, safetensors/src/tensor.rs, attacks/README.md; chưa chạy upstream |
+| Khoảng trống lấp | Định dạng model an toàn (safetensors/GGUF/ONNX) |
+| Cơ chế đáng học | - README mô tả định dạng: 8 byte `N` little-endian, `N` byte header JSON UTF-8 bắt đầu bằng `{`, mỗi tensor có `dtype`, `shape`, `data_offsets`, khóa đặc biệt `__metadata__` chỉ chứa chuỗi; cấm khóa trùng; bộ đệm phải được lập chỉ mục toàn bộ, không có lỗ hổng nên không tạo được file polyglot.<br>- `safetensors/src/tensor.rs`: `MAX_HEADER_SIZE = 100_000_000` (lỗi `HeaderTooLarge`), `validate()` đòi `data_offsets` bắt đầu đúng chỗ tensor trước kết thúc, tính kích thước bằng `checked_mul` (lỗi `ValidationOverflow`), đòi `e - s` bằng đúng kích thước tính từ shape và dtype, lỗi `MetadataIncompleteBuffer` nếu file không được phủ hết.<br>- `attacks/`: kịch bản minh họa thực thi mã tùy ý qua torch, paddle, tensorflow (h5) và DoS qua numpy, torch; và các thử lạm dụng safetensors để đối chiếu.<br>- Thư mục `safetensors/fuzz/fuzz_targets/` có `fuzz_target_1.rs` và `bindings/python/tests/` có test so sánh torch, tf, flax, mlx, paddle (mới liệt kê tên, chưa mở nội dung). |
+| Tiêu chí và cách kiểm | Kiểm bằng máy trong repo: workflow `rust.yml` (build đa hệ điều hành), `trufflehog.yml` quét secret (`python.yml` có trong thư mục nhưng chưa mở), các test trong `tensor.rs` cho trường hợp HeaderTooLarge, InvalidOffset, MetadataIncompleteBuffer. Bảo đảm chỉ nằm ở tầng định dạng: số liệu tốc độ tải trong README (ví dụ BLOOM 10 phút xuống 45 giây) là của tác giả, chưa tái lập. |
+| Giới hạn và rủi ro | An toàn chỉ về thực thi mã khi nạp tensor; không bảo đảm trọng số sạch về nội dung, không chống NaN hoặc backdoor (README ghi giá trị tensor không được kiểm). Nhiều model vẫn chỉ có .bin pickle. Workflow `security-audit.yml` gửi diff mỗi lần push vào `main` tới Claude (`claude -p`) bằng secret của CI và thông báo Slack: dữ liệu diff rời máy nhưng chỉ ở CI của dự án, không ảnh hưởng người dùng thư viện. Quản trị đã chuyển sang LF Projects. Với GGUF và ONNX phải đọc repo khác. |
+| So với | `llama-cpp` (định dạng GGUF), `onnx`, `llmfit`; đối chiếu pickle `.pt` của PyTorch trong `attacks/`. |
+| Nguồn | [README.md](https://github.com/huggingface/safetensors/blob/11319d360db5170565db914601fbf375762bf8eb/README.md) · [LICENSE](https://github.com/huggingface/safetensors/blob/11319d360db5170565db914601fbf375762bf8eb/LICENSE) · [tensor.rs](https://github.com/huggingface/safetensors/blob/11319d360db5170565db914601fbf375762bf8eb/safetensors/src/tensor.rs) · [README.md](https://github.com/huggingface/safetensors/blob/11319d360db5170565db914601fbf375762bf8eb/attacks/README.md) · [security-audit.yml](https://github.com/huggingface/safetensors/blob/11319d360db5170565db914601fbf375762bf8eb/.github/workflows/security-audit.yml) · [trufflehog.yml](https://github.com/huggingface/safetensors/blob/11319d360db5170565db914601fbf375762bf8eb/.github/workflows/trufflehog.yml) · [rust.yml](https://github.com/huggingface/safetensors/blob/11319d360db5170565db914601fbf375762bf8eb/.github/workflows/rust.yml) · [TECHNICAL_CHARTER.md](https://github.com/huggingface/safetensors/blob/11319d360db5170565db914601fbf375762bf8eb/TECHNICAL_CHARTER.md) |
+
+<a id="nt-guidellm"></a>
+
+### GuideLLM
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/vllm-project/guidellm |
+| License | Apache-2.0 (LICENSE; `pyproject.toml` khai Apache-2.0). Không có trọng số mô hình đi kèm |
+| Phiên bản đã đọc | `f4084406776b9d2b20916e7bb3cd97f2bd5385dc` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc `README.md`, `LICENSE`, `pyproject.toml`, `src/guidellm/benchmark/profiles/sweep.py`, `src/guidellm/benchmark/profiles/goodput.py`, `src/guidellm/scheduler/constraints/saturation.py`, `.github/workflows/testing.yml`; chưa chạy upstream |
+| Khoảng trống lấp | Benchmark tải và hiệu năng suy luận cho endpoint tương thích OpenAI (TTFT, ITL, thông lượng) |
+| Cơ chế đáng học | - Hồ sơ tải (`benchmark/profiles/`): synchronous, throughput, concurrent, async (constant/poisson), `sweep`, `goodput`, `knee`, `replay`.<br>- `sweep.py`: chạy synchronous và throughput trước để biết biên, rồi nội suy các mức tốc độ async giữa hai biên.<br>- `goodput.py`: tìm mức đồng thời lớn nhất mà tỉ lệ yêu cầu đạt mọi mục tiêu SLO, dùng khoảng tin cậy Wilson; mỗi lần thử ghi `passed` và `resolved` (khoảng nằm hẳn một phía ngưỡng) nên không kết luận khi mẫu quá ít.<br>- `saturation.py`: ràng buộc dừng theo phát hiện quá tải bằng độ dốc thống kê, tối thiểu 30 giây trước khi kiểm. |
+| Tiêu chí và cách kiểm | Mục tiêu là SLO (TTFT, ITL, độ trễ đầu-cuối) và phân phối đầy đủ, không chỉ trung bình. CI `testing.yml` chạy unit, integration và e2e (e2e dùng MockServer trong repo, đã mở workflow); kiểm bằng máy cho logic công cụ, không kiểm độ đúng của số đo trên phần cứng thật. |
+| Giới hạn và rủi ro | Mô tả của trinh sát nhắc MLPerf nhưng repo không tuyên bố tương thích MLPerf (README không có). Dải Python 3.11 đến 3.15, chỉ Linux/macOS. Kết quả phụ thuộc server, tokenizer và dữ liệu sinh; chưa chạy nên số đo thuộc về tuyên bố của tác giả. Cần tải tokenizer/dataset từ Hugging Face khi dùng dữ liệu thật. |
+| So với | aiperf (hồ sơ có sẵn, cùng nhóm perf-load cho suy luận), locust, grafana-k6 (tải tổng quát, không biết token). |
+| Nguồn | [README.md](https://github.com/vllm-project/guidellm/blob/f4084406776b9d2b20916e7bb3cd97f2bd5385dc/README.md) · [LICENSE](https://github.com/vllm-project/guidellm/blob/f4084406776b9d2b20916e7bb3cd97f2bd5385dc/LICENSE) · [pyproject.toml](https://github.com/vllm-project/guidellm/blob/f4084406776b9d2b20916e7bb3cd97f2bd5385dc/pyproject.toml) · [sweep.py](https://github.com/vllm-project/guidellm/blob/f4084406776b9d2b20916e7bb3cd97f2bd5385dc/src/guidellm/benchmark/profiles/sweep.py) · [goodput.py](https://github.com/vllm-project/guidellm/blob/f4084406776b9d2b20916e7bb3cd97f2bd5385dc/src/guidellm/benchmark/profiles/goodput.py) · [saturation.py](https://github.com/vllm-project/guidellm/blob/f4084406776b9d2b20916e7bb3cd97f2bd5385dc/src/guidellm/scheduler/constraints/saturation.py) · [testing.yml](https://github.com/vllm-project/guidellm/blob/f4084406776b9d2b20916e7bb3cd97f2bd5385dc/.github/workflows/testing.yml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-llm-compressor"></a>
+
+### LLM Compressor
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/vllm-project/llm-compressor |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `e8bcf5f2a9971efedb87b0fd50599a664ecf15f5` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, setup.py, Makefile và một số file khác; chưa chạy upstream |
+| Khoảng trống lấp | Lượng tử hóa/nén sau huấn luyện, xuất định dạng chạy thẳng trong vLLM |
+| Cơ chế đáng học | • Mỗi thuật toán là một `Modifier` có vòng đời (initialize, on_start, on_sequential_epoch_end, on_end, finalize) ghép thành recipe (`modifiers/modifier.py`; có GPTQ, AWQ, SmoothQuant, AutoRound, QAD, các modifier pruning).<br>• Gọi `oneshot(model, dataset, recipe, num_calibration_samples)` rồi `save_pretrained(save_compressed=True)` ra định dạng compressed-tensors cho vLLM (examples/quantization_w4a16/llama3_example.py).<br>• Pipeline tuần tự từng lớp và offload để nén model rất lớn; README nêu DDP và disk offloading. |
+| Tiêu chí và cách kiểm | Có kiểm hồi quy chất lượng: `tests/lmeval` chạy lm-eval (gsm8k, 5-shot, limit 1000) trên model gốc và model nén, đòi `recovery_threshold` mặc định 0.95, có thể đặt theo từng metric (test_lmeval.py, configs/*.yaml, ví dụ 0.94 cho AWQ NVFP4). Test cần GPU và vLLM, gắn nhãn cadence nightly/weekly; workflow trong `.github/workflows` chỉ chạy `make quality` nên nơi chạy các test GPU là (chưa xác minh). |
+| Giới hạn và rủi ro | Apache-2.0, có NOTICE. Cần GPU để hiệu chuẩn. Một số ví dụ tải model gated của Meta từ Hub. Không thấy telemetry; `trust_remote_code` mặc định False trong công cụ debug tracing. Nhiều tính năng mới (HIGGS, QAD, REAP) ghi trong README mục What's New, chưa kiểm độc lập. Số sao 4000 trinh sát lấy từ web. |
+| So với | gptqmodel, llama-cpp (GGUF cho CPU/nhỏ), vllm, peft |
+| Nguồn | [README.md](https://github.com/vllm-project/llm-compressor/blob/e8bcf5f2a9971efedb87b0fd50599a664ecf15f5/README.md) · [LICENSE](https://github.com/vllm-project/llm-compressor/blob/e8bcf5f2a9971efedb87b0fd50599a664ecf15f5/LICENSE) · [setup.py](https://github.com/vllm-project/llm-compressor/blob/e8bcf5f2a9971efedb87b0fd50599a664ecf15f5/setup.py) · [Makefile](https://github.com/vllm-project/llm-compressor/blob/e8bcf5f2a9971efedb87b0fd50599a664ecf15f5/Makefile) · [quality-check.yaml](https://github.com/vllm-project/llm-compressor/blob/e8bcf5f2a9971efedb87b0fd50599a664ecf15f5/.github/workflows/quality-check.yaml) · [modifier.py](https://github.com/vllm-project/llm-compressor/blob/e8bcf5f2a9971efedb87b0fd50599a664ecf15f5/src/llmcompressor/modifiers/modifier.py) · [gptq_quantize.py](https://github.com/vllm-project/llm-compressor/blob/e8bcf5f2a9971efedb87b0fd50599a664ecf15f5/src/llmcompressor/modifiers/gptq/gptq_quantize.py) · [llama3_example.py](https://github.com/vllm-project/llm-compressor/blob/e8bcf5f2a9971efedb87b0fd50599a664ecf15f5/examples/quantization_w4a16/llama3_example.py) · [test_lmeval.py](https://github.com/vllm-project/llm-compressor/blob/e8bcf5f2a9971efedb87b0fd50599a664ecf15f5/tests/lmeval/test_lmeval.py) · [awq_nvfp4.yaml](https://github.com/vllm-project/llm-compressor/blob/e8bcf5f2a9971efedb87b0fd50599a664ecf15f5/tests/lmeval/configs/awq_nvfp4.yaml) |
+
+<a id="n2-gptqmodel"></a>
+
+### GPTQModel
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ModelCloud/GPTQModel |
+| License | Apache-2.0 (kernel Swordfish AGPL-3.0; một số model port theo license riêng) |
+| Phiên bản đã đọc | `de6b171bd0132b7a526f24bd083eaab8376e94ea` (commit 2026-11-24) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, pyproject.toml, gptqmodel_ext/swordfish/LICENSE và một số file khác; chưa chạy upstream |
+| Khoảng trống lấp | Công cụ lượng tử nhiều thuật toán và nhiều backend cho phần cứng nhỏ |
+| Cơ chế đáng học | • Nền tảng lượng tử rộng hơn GPTQ thuần: GPTQ, AWQ, EXL3, QQQ, GGUF, MXFP4 (MACaQ), NF12 và nhiều biến thể khác trong `gptqmodel/quantization/` (README nêu cả MLX, ROCm, Tenstorrent).<br>• `gptq.py` dựa trên mã GPTQ gốc của IST-DASLab (ghi trong header), cộng cơ chế fallback `SmoothMSE` và `FallbackStrategy` khi Hessian xấu (`config.py`).<br>• Cấu hình kiểu dữ liệu: `QuantizeConfig`, `CalibrationConfig`, cấu hình backend/kernel tách khỏi biến môi trường (README, config.py). |
+| Tiêu chí và cách kiểm | CI công khai gồm ruff (code_quality.yml) và `unit_tests.yml` chỉ chạy theo `workflow_dispatch`/`repository_dispatch` trên runner self-hosted (đã mở file), nên không có cổng test tự động công khai cho mỗi PR; `tests/` rất lớn (khoảng 1420 mục) và gồm nhiều benchmark. Kết quả độ chính xác trong README (ví dụ giảm perplexity 30% của SmoothMSE) là tuyên bố của tác giả (chưa xác minh). |
+| Giới hạn và rủi ro | License lẫn: LICENSE gốc Apache-2.0 nhưng kernel Swordfish (`gptqmodel_ext/swordfish`) là AGPL-3.0, README nói tùy chọn và JIT-load; thư mục `gptqmodel/models/ports/` chứa file license khác như Tongyi Qianwen (cả bản RESEARCH cho 1.8B), LLAMA2, Modified MIT của Moonshot; ext hadamard BSD-3, exllamav3 MIT. Phải rà license từng thành phần trước khi nhúng hay phân phối. Có `TelemetryConfig.device` chỉ là chẩn đoán cục bộ, mặc định tắt, không thấy gửi ra ngoài. Phát hành rất nhanh nên API đổi nhiều (README ghi `GPTQModel.export()` đã bị gỡ). Mô tả trinh sát đúng về AGPL nhưng thiếu các license của model port. |
+| So với | llm-compressor, llama-cpp, vllm |
+| Nguồn | [README.md](https://github.com/ModelCloud/GPTQModel/blob/de6b171bd0132b7a526f24bd083eaab8376e94ea/README.md) · [LICENSE](https://github.com/ModelCloud/GPTQModel/blob/de6b171bd0132b7a526f24bd083eaab8376e94ea/LICENSE) · [pyproject.toml](https://github.com/ModelCloud/GPTQModel/blob/de6b171bd0132b7a526f24bd083eaab8376e94ea/pyproject.toml) · [LICENSE](https://github.com/ModelCloud/GPTQModel/blob/de6b171bd0132b7a526f24bd083eaab8376e94ea/gptqmodel_ext/swordfish/LICENSE) · [LICENSE-1.8B-RESEARCH](https://github.com/ModelCloud/GPTQModel/blob/de6b171bd0132b7a526f24bd083eaab8376e94ea/gptqmodel/models/ports/qwen/LICENSE-1.8B-RESEARCH) · [gptq.py](https://github.com/ModelCloud/GPTQModel/blob/de6b171bd0132b7a526f24bd083eaab8376e94ea/gptqmodel/quantization/gptq.py) · [config.py](https://github.com/ModelCloud/GPTQModel/blob/de6b171bd0132b7a526f24bd083eaab8376e94ea/gptqmodel/quantization/config.py) · [unit_tests.yml](https://github.com/ModelCloud/GPTQModel/blob/de6b171bd0132b7a526f24bd083eaab8376e94ea/.github/workflows/unit_tests.yml) · [code_quality.yml](https://github.com/ModelCloud/GPTQModel/blob/de6b171bd0132b7a526f24bd083eaab8376e94ea/.github/workflows/code_quality.yml) |
+
+<a id="n2-memoryagentbench"></a>
+
+### MemoryAgentBench
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/HUST-AI-HYZ/MemoryAgentBench |
+| License | MIT (file LICENSE gốc; thư mục cognee/ và letta/ là bản chép của dự án khác, không có file LICENSE riêng trong cây) |
+| Phiên bản đã đọc | `538026089d1a8a8eff05121d0db89b388f360eba` (commit 2026-09-25) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, utils/templates.py, utils/eval_other_utils.py, một cấu hình dữ liệu FactConsolidation và script chạy; chưa chạy upstream |
+| Khoảng trống lấp | Đo trí nhớ agent theo bốn năng lực (truy hồi, học lúc chạy, hiểu tầm xa, giải xung đột); trinh sát ghi "quên chọn lọc, riêng tư, đa chủ thể" nhưng repo không đo ba điều đó |
+| Cơ chế đáng học | (1) Bốn năng lực AR, TTL, LRU, CR; văn bản dài cắt thành đoạn đưa dần như hội thoại nhiều lượt, một ngữ cảnh ứng với nhiều câu hỏi (README). (2) Bộ FactConsolidation: mỗi sự kiện có số thứ tự, sự kiện mới hơn (số lớn hơn) phải thắng khi mâu thuẫn; prompt riêng cho long-context, RAG và agentic memory (`utils/templates.py`). (3) Cấu hình dữ liệu theo độ dài ngữ cảnh 6k đến 262k (`configs/data_conf/Conflict_Resolution/`), chạy cùng bộ tác tử RAG/graph/agentic (`methods/`). |
+| Tiêu chí và cách kiểm | Chấm tất định: `substring_exact_match` cho AR và CR, `exact_match` cho LRU và ICL, Recall@5 cho gợi ý phim; LongMemEval và tóm tắt InfBench chấm bằng LLM-judge (README, `utils/eval_other_utils.py`). Không thấy workflow CI hay test của repo; README tự nhắc `exact_match` rất chặt ("label: 43" tính sai). Kết quả bài báo chưa tự chạy (chưa xác minh). |
+| Giới hạn và rủi ro | Mô tả của trinh sát sai: cơ chế CR chỉ là "fact mới thắng" theo số thứ tự, không có quên chủ động, không có riêng tư hay đa chủ thể. Có thư mục cognee/ và letta/ chép từ dự án khác không kèm license riêng, nên ranh giới MIT của phần đó chưa rõ. Cần OPENAI/Anthropic/Google key, GPU cho vài phương pháp; hipporag xung đột phiên bản phụ thuộc; không CI. |
+| So với | LongMemEval, LoCoMo (benchmark trí nhớ đơn năng lực), Mem0 và Letta (hệ thống được đo) |
+| Nguồn | [README.md](https://github.com/HUST-AI-HYZ/MemoryAgentBench/blob/538026089d1a8a8eff05121d0db89b388f360eba/README.md) · [LICENSE](https://github.com/HUST-AI-HYZ/MemoryAgentBench/blob/538026089d1a8a8eff05121d0db89b388f360eba/LICENSE) · [templates.py](https://github.com/HUST-AI-HYZ/MemoryAgentBench/blob/538026089d1a8a8eff05121d0db89b388f360eba/utils/templates.py) · [eval_other_utils.py](https://github.com/HUST-AI-HYZ/MemoryAgentBench/blob/538026089d1a8a8eff05121d0db89b388f360eba/utils/eval_other_utils.py) · [Factconsolidation_mh_32k.yaml](https://github.com/HUST-AI-HYZ/MemoryAgentBench/blob/538026089d1a8a8eff05121d0db89b388f360eba/configs/data_conf/Conflict_Resolution/Factconsolidation_mh_32k.yaml) · [run_memagent_longcontext.sh](https://github.com/HUST-AI-HYZ/MemoryAgentBench/blob/538026089d1a8a8eff05121d0db89b388f360eba/bash_files/sh/run_memagent_longcontext.sh) |
+
+<a id="n2-vllm-semantic-router"></a>
+
+### vLLM Semantic Router
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/vllm-project/semantic-router |
+| License | Apache-2.0 (LICENSE gốc; thư mục con dữ liệu thử và vài tài sản website có license riêng) |
+| Phiên bản đã đọc | `394b1490f972f4297604a125a08b40b115da090a` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, SECURITY.md, decision/engine.go, config/config.yaml, recipe privacy (recipe.dsl, probes.yaml), CONFORMANCE.md và ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Định tuyến mô hình tự host: một API cho nhiều mô hình, chọn theo chính sách; trinh sát ghi bản mới nhất v0.3 là sai, README nêu v0.4 và config mẫu ghi v0.5 |
+| Cơ chế đáng học | (1) Bộ máy quyết định đánh giá cây luật AND/OR/NOT trên tín hiệu (từ khoá, modality, câu hỏi do mô hình quyết định…) để chọn mô hình (`pkg/decision/engine.go`). (2) Recipe privacy: yêu cầu nhạy cảm hoặc đáng ngờ giữ trên mô hình cục bộ, chỉ yêu cầu không nhạy cảm cần suy luận sâu mới được ra mô hình đám mây (`config/recipes/privacy/recipe.dsl`). (3) Mỗi recipe bắt buộc có đủ config.yaml, metadata.yaml, recipe.dsl, probes.yaml, README.md; CI tự phát hiện và chạy (`CONFORMANCE.md`). |
+| Tiêu chí và cách kiểm | `probes.yaml` đặt ngưỡng chấp nhận: tỉ lệ probe đạt tối thiểu 100%, tỉ lệ quyết định đạt 100%, kèm ngưỡng phủ tín hiệu 21,2% và thuật toán 100%, gọi endpoint xem trước định tuyến. Có hàng chục workflow; đã mở `ci.yml` (kế hoạch theo profile, chạy kiểm theo verification_catalog). Hiệu quả định tuyến theo blog/bài báo của chính dự án (chưa xác minh). |
+| Giới hạn và rủi ro | Listener mẫu gắn 0.0.0.0, danh sách `api_keys` mặc định trống nên không có xác thực nếu không cấu hình. README hướng dẫn cài bằng cách tải script bằng curl rồi chuyển thẳng vào bash. Các tín hiệu then chốt dựa trên mô hình phân loại riêng của dự án nên bị đối nghịch nhắm tới (SECURITY.md tự nêu). Recipe privacy tự ghi không chứng minh được backend riêng tư. Đây là dự án rất lớn và đổi nhanh; cần kiểm lại phiên bản trước khi dùng. |
+| So với | LiteLLM, Portkey Gateway (cổng thống nhất, ít định tuyến theo nội dung), Claude Code Router (định tuyến cho CLI) |
+| Nguồn | [README.md](https://github.com/vllm-project/semantic-router/blob/394b1490f972f4297604a125a08b40b115da090a/README.md) · [LICENSE](https://github.com/vllm-project/semantic-router/blob/394b1490f972f4297604a125a08b40b115da090a/LICENSE) · [SECURITY.md](https://github.com/vllm-project/semantic-router/blob/394b1490f972f4297604a125a08b40b115da090a/SECURITY.md) · [engine.go](https://github.com/vllm-project/semantic-router/blob/394b1490f972f4297604a125a08b40b115da090a/src/semantic-router/pkg/decision/engine.go) · [config.yaml](https://github.com/vllm-project/semantic-router/blob/394b1490f972f4297604a125a08b40b115da090a/config/config.yaml) · [recipe.dsl](https://github.com/vllm-project/semantic-router/blob/394b1490f972f4297604a125a08b40b115da090a/config/recipes/privacy/recipe.dsl) · [probes.yaml](https://github.com/vllm-project/semantic-router/blob/394b1490f972f4297604a125a08b40b115da090a/config/recipes/privacy/probes.yaml) · [CONFORMANCE.md](https://github.com/vllm-project/semantic-router/blob/394b1490f972f4297604a125a08b40b115da090a/config/recipes/CONFORMANCE.md) · [ci.yml](https://github.com/vllm-project/semantic-router/blob/394b1490f972f4297604a125a08b40b115da090a/.github/workflows/ci.yml) |
+
+<a id="n2-ann-benchmarks"></a>
+
+### ANN-Benchmarks
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/erikbern/ann-benchmarks |
+| License | MIT |
+| Phiên bản đã đọc | `2e081ad32c1eccab72dcb739ad886c310b90f715` (commit 2026-07-10) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README, `runner.py`, `plotting/metrics.py`, cấu hình và module Vespa, `datasets.py` (URL), workflow benchmarks; chưa chạy upstream |
+| Khoảng trống lấp | Benchmark vector DB và ANN có thể tái lập |
+| Cơ chế đáng học | - `ann_benchmarks/runner.py`: chạy từng thuật toán trong container (`network_mode=host`, `cpuset_cpus`, `mem_limit`), thử `run_count` lần lấy thời gian tốt nhất, kiểm kết quả không trùng ID, tính khoảng cách thật tới từng ứng viên.<br>- `ann_benchmarks/plotting/metrics.py`: recall là số ứng viên có khoảng cách không vượt `data[count-1] + epsilon` (mặc định 1e-3) chia `count`; thêm biến thể epsilon tương đối, p50/p95/p99/p999 độ trễ, kích thước chỉ mục, thời gian dựng.<br>- Mỗi thuật toán là một thư mục (`algorithms/<tên>/` có Dockerfile và `config.yml` khai báo lưới tham số); lớp bọc Vespa chỉ gọi chỉ mục HNSW (`vespa_ann_benchmark.HnswIndex`), không phải toàn bộ công cụ tìm kiếm. |
+| Tiêu chí và cách kiểm | Bảng kết quả trong README ghi "as of April 2025", một CPU, r6i.16xlarge, `--parallelism 31`, tắt hyperthreading (tuyên bố của tác giả, chưa tái lập). CI `benchmarks.yml`: pytest và smoke test từng thư viện trên tập `random-xs-20-angular` (`--max-n-algorithms 3 --runs 2 --timeout 300`) rồi dựng biểu đồ và trang web; kiểm bằng máy cho khung chạy, không cho chất lượng kết quả. |
+| Giới hạn và rủi ro | Không còn bảo trì tích cực theo README (commit cuối 2026-07-10; chỉ một commit trong bản clone nông); dữ liệu kết quả ngưng ở 2025-04 nên phiên bản thư viện đã cũ, không dùng để chọn chỉ mục hôm nay mà phải chạy lại. Runner gắn `/var/run/docker.sock` vào container và dùng mạng host nên chỉ chạy trên máy cô lập; tải dataset qua HTTP từ ann-benchmarks.com. Chỉ đo ANN thuần trong bộ nhớ, đơn CPU, không có lọc metadata, cập nhật hay vòng đời chỉ mục. Mô tả trinh sát "chuẩn de facto" là quan điểm, README tự khuyên dùng VIBE. License MIT khớp. |
+| So với | MTEB (đo embedding, không đo chỉ mục), pgvector, Qdrant, Milvus (các engine được ann-benchmarks đo, không phải benchmark). |
+| Nguồn | [LICENSE](https://github.com/erikbern/ann-benchmarks/blob/2e081ad32c1eccab72dcb739ad886c310b90f715/LICENSE) · [README.md](https://github.com/erikbern/ann-benchmarks/blob/2e081ad32c1eccab72dcb739ad886c310b90f715/README.md) · [runner.py](https://github.com/erikbern/ann-benchmarks/blob/2e081ad32c1eccab72dcb739ad886c310b90f715/ann_benchmarks/runner.py) · [metrics.py](https://github.com/erikbern/ann-benchmarks/blob/2e081ad32c1eccab72dcb739ad886c310b90f715/ann_benchmarks/plotting/metrics.py) · [config.yml](https://github.com/erikbern/ann-benchmarks/blob/2e081ad32c1eccab72dcb739ad886c310b90f715/ann_benchmarks/algorithms/vespa/config.yml) · [module.py](https://github.com/erikbern/ann-benchmarks/blob/2e081ad32c1eccab72dcb739ad886c310b90f715/ann_benchmarks/algorithms/vespa/module.py) · [datasets.py](https://github.com/erikbern/ann-benchmarks/blob/2e081ad32c1eccab72dcb739ad886c310b90f715/ann_benchmarks/datasets.py) · [benchmarks.yml](https://github.com/erikbern/ann-benchmarks/blob/2e081ad32c1eccab72dcb739ad886c310b90f715/.github/workflows/benchmarks.yml) |
+
+<a id="n2-vespa"></a>
+
+### Vespa
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/vespa-engine/vespa |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `86a76a60d710aa41ac660763435cf82c13775f04` (commit 2026-11-24) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README, AI_POLICY, ERRATA, `Reindexer.java`, hai validator đổi cấu hình, `hnsw_index.h`, workflow extended-pr-build (phần đầu); chưa chạy upstream |
+| Khoảng trống lấp | Vòng đời chỉ mục vector (di trú, đổi embedding, reindex, xóa dữ liệu) |
+| Cơ chế đáng học | - `clustercontroller-reindexer/.../Reindexer.java`: với từng loại tài liệu "ready", mở visitor session chống lại cụm nội dung, lưu `ProgressToken` mỗi 60 giây qua `ReindexingCurator`, trạng thái READY/RUNNING/FAILED/SUCCESSFUL, thử lại sau thời gian chờ 10 phút khi lỗi, tốc độ cấu hình được.<br>- `IndexingScriptChangeValidator.java`: so script lập chỉ mục cũ và mới của từng trường; khác nhau thì phát `VespaReindexAction` kèm thông điệp mô tả (thêm trường ngoài tài liệu cũng vậy), tức việc đổi embedding hay tiền xử lý buộc reindex được phát hiện lúc deploy.<br>- `AttributeChangeValidator.java`: đổi `distance-metric`, bật/tắt `indexing: index` (HNSW), `max-links-per-node`, `neighbors-to-explore-at-insert` được phân loại thành restart hoặc hành động tương ứng; `hnsw_index.h` ghi HNSW một luồng ghi nhiều luồng đọc không khóa và có "điều chỉnh để hỗ trợ xóa đúng" (TODO chưa mô tả chi tiết). |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: các test đơn vị cạnh mã (`ReindexerTest`, `ReindexingMaintainerTest`, `AttributeChangeValidatorTest`, `IndexingScriptChangeValidatorTest`, chỉ thấy tên tệp, chưa đọc ca thử). Workflow GitHub chỉ là phụ (link checker, bats cho shell, build mở rộng cho PR); build chính theo badge README là Buildkite và factory.vespa.ai (chưa xác minh). Chưa có tiêu chí recall hay độ trễ từ repo này; số hiệu năng chỉ là tuyên bố trong tài liệu ngoài. |
+| Giới hạn và rủi ro | License: Apache-2.0 toàn repo (NOTICES liệt kê thành phần bên thứ ba). `ERRATA.md` ghi lỗi hỏng bộ nhớ hiếm khi truy vấn HNSW kết hợp trường chỉ mục và nhiều luồng mỗi truy vấn (8.78.54 đến 8.116.25 chưa vá), cho thấy cần giữ phiên bản mới. Số `VERSION` ghi 8.0.0 chỉ là giá trị giữ chỗ, bản phát hành thật tạo từ master mỗi sáng. `AI_POLICY.md` yêu cầu con người mở issue/PR. Triển khai thật cần JVM, cụm nhiều nút, đội vận hành; có dịch vụ đám mây trả phí tách biệt. Mô tả trinh sát "tìm kiếm lai có cập nhật thời gian thực" đúng ở mức README; phần di trú giữa hai engine hay xóa dữ liệu sạch chưa kiểm ở đây (chưa xác minh). |
+| So với | Qdrant, Milvus, Weaviate (chỉ mục vector chuyên dụng, nhẹ vận hành hơn), Elasticsearch (tìm kiếm văn bản kèm vector), pgvector (mở rộng PostgreSQL). |
+| Nguồn | [LICENSE](https://github.com/vespa-engine/vespa/blob/86a76a60d710aa41ac660763435cf82c13775f04/LICENSE) · [README.md](https://github.com/vespa-engine/vespa/blob/86a76a60d710aa41ac660763435cf82c13775f04/README.md) · [AI_POLICY.md](https://github.com/vespa-engine/vespa/blob/86a76a60d710aa41ac660763435cf82c13775f04/AI_POLICY.md) · [ERRATA.md](https://github.com/vespa-engine/vespa/blob/86a76a60d710aa41ac660763435cf82c13775f04/ERRATA.md) · [Reindexer.java](https://github.com/vespa-engine/vespa/blob/86a76a60d710aa41ac660763435cf82c13775f04/clustercontroller-reindexer/src/main/java/ai/vespa/reindexing/Reindexer.java) · [IndexingScriptChangeValidator.java](https://github.com/vespa-engine/vespa/blob/86a76a60d710aa41ac660763435cf82c13775f04/config-model/src/main/java/com/yahoo/vespa/model/application/validation/change/search/IndexingScriptChangeValidator.java) · [AttributeChangeValidator.java](https://github.com/vespa-engine/vespa/blob/86a76a60d710aa41ac660763435cf82c13775f04/config-model/src/main/java/com/yahoo/vespa/model/application/validation/change/search/AttributeChangeValidator.java) · [hnsw_index.h](https://github.com/vespa-engine/vespa/blob/86a76a60d710aa41ac660763435cf82c13775f04/searchlib/src/vespa/searchlib/tensor/hnsw_index.h) · [extended-pr-build.yml](https://github.com/vespa-engine/vespa/blob/86a76a60d710aa41ac660763435cf82c13775f04/.github/workflows/extended-pr-build.yml) |
+
+<a id="n2-ultrarag"></a>
+
+### UltraRAG
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/OpenBMB/UltraRAG |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `5f48fff03c749c04b804cd2b0505836b03ca1a1d` (commit 2026-11-07) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE.txt, pyproject.toml, AGENTS.md, ci-smoke.yml; chưa chạy upstream |
+| Khoảng trống lấp | Tái lập thí nghiệm RAG bằng cấu hình và so hai run truy hồi có p-value. Không lấp được khoảng trống đo hallucination/groundedness như trinh sát gợi ý |
+| Cơ chế đáng học | • Pipeline là YAML (`examples/experiments/*.yaml`: danh sách `servers` và `pipeline`), `ultrarag build` sinh tham số/cấu hình server rồi `run` thực thi (AGENTS.md, `src/ultrarag/client.py` chỉ đọc qua AGENTS.md).<br>• `servers/evaluation/src/evaluation.py` cài độ đo QA (acc, em, coverem, stringem, f1, rouge-1/2/L) và truy hồi qua pytrec_eval (mrr, map, recall, ndcg, precision tại ks cấu hình trong `parameter.yaml`).<br>• `evaluate_trec_pvalue` dùng kiểm định hoán vị dấu hai phía (`_permutation_test_two_sided`, mặc định 10000 lần, không đặt seed trong hàm) trên chênh lệch theo truy vấn giữa `run_new` và `run_old`.<br>• Chế độ `--no-mcp` gọi trực tiếp đăng ký cục bộ; CI xác minh lõi cài đặt không kéo gói `fastmcp`/`mcp`. |
+| Tiêu chí và cách kiểm | CI `ci-smoke.yml` (đã mở): `uv lock --check`, build và chạy pipeline sayhello cả có và không MCP, pytest `tests` + `servers/generation/tests` + `servers/retriever/tests`, ruff check và format --check trên `src/ultrarag`; chạy trên Python 3.11 và 3.12. Không có ngưỡng chất lượng RAG trong CI; các độ đo là công cụ để người dùng tự chạy. |
+| Giới hạn và rủi ro | Apache-2.0 (LICENSE.txt, đã đọc). Không thấy độ đo groundedness/faithfulness/hallucination: grep không ra trong mã và YAML (kết luận phạm vi grep, không chứng minh toàn repo). Python giới hạn `>=3.11,<3.13`. Phụ thuộc retriever nặng (faiss-gpu, infinity-emb) và có đường gọi dịch vụ ngoài (exa_py, mô hình qua API) tùy cấu hình. README tuyên bố UI/IDE và AI assistant: (chưa xác minh). Chưa kiểm telemetry của UI frontend. |
+| So với | ragas-rag-metrics và ragas (đo faithfulness dùng LLM, thứ UltraRAG không có); ragflow (sản phẩm RAG đóng gói, ít tái lập thí nghiệm hơn); lightrag và graphrag (RAG đồ thị, không phải khung đo) |
+| Nguồn | [README.md](https://github.com/OpenBMB/UltraRAG/blob/5f48fff03c749c04b804cd2b0505836b03ca1a1d/README.md) · [LICENSE.txt](https://github.com/OpenBMB/UltraRAG/blob/5f48fff03c749c04b804cd2b0505836b03ca1a1d/LICENSE.txt) · [pyproject.toml](https://github.com/OpenBMB/UltraRAG/blob/5f48fff03c749c04b804cd2b0505836b03ca1a1d/pyproject.toml) · [AGENTS.md](https://github.com/OpenBMB/UltraRAG/blob/5f48fff03c749c04b804cd2b0505836b03ca1a1d/AGENTS.md) · [ci-smoke.yml](https://github.com/OpenBMB/UltraRAG/blob/5f48fff03c749c04b804cd2b0505836b03ca1a1d/.github/workflows/ci-smoke.yml) · [evaluation.py](https://github.com/OpenBMB/UltraRAG/blob/5f48fff03c749c04b804cd2b0505836b03ca1a1d/servers/evaluation/src/evaluation.py) · [parameter.yaml](https://github.com/OpenBMB/UltraRAG/blob/5f48fff03c749c04b804cd2b0505836b03ca1a1d/servers/evaluation/parameter.yaml) · [eval_trec_pvalue.yaml](https://github.com/OpenBMB/UltraRAG/blob/5f48fff03c749c04b804cd2b0505836b03ca1a1d/examples/experiments/eval_trec_pvalue.yaml) · [test_citation_pipeline.py](https://github.com/OpenBMB/UltraRAG/blob/5f48fff03c749c04b804cd2b0505836b03ca1a1d/tests/test_citation_pipeline.py) |
+
+<a id="n2-nvidia-dynamo"></a>
+
+### NVIDIA Dynamo
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ai-dynamo/dynamo |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `28697ef5c4115d2fd5793b8f1065ed711e5459cc` (commit 2026-11-24) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, scorer.rs, default.rs, throughput_scaling.py; chưa chạy upstream |
+| Khoảng trống lấp | Vận hành suy luận cấp cụm: định tuyến theo KV, autoscaling theo SLA, phục vụ tách prefill/decode |
+| Cơ chế đáng học | • `default/scorer.rs`: logit mỗi worker = `prefill_load_scale` nhân khối prefill còn lại (sau khi trừ credit từ overlap device/host/disk/shared-cache) cộng chi phí decode và số request đang chạy; chọn worker chi phí thấp, có nhiệt độ lấy mẫu `router_temperature`.<br>• Chính sách chọn worker là plugin (`lib/router-plugins/builtin`, `default.rs` dựng từ scorer + picker; tham số vá lúc chạy qua `PATCH /router_policy` theo chú thích trong `default.rs`).<br>• `planner/core/throughput_scaling.py`: quyết định replica theo nhu cầu rps/isl/osl dự đoán, kẹp bước tăng giảm bằng `max_throughput_scaling_replicas` và cảnh báo khi bị kẹp.<br>• `container/compliance`: sinh NOTICES và đối chiếu license các phụ thuộc (có `license_overrides.yaml`), một mẫu cổng tuân thủ cho image phân phối. |
+| Tiêu chí và cách kiểm | CI rất lớn (hàng chục workflow đã liệt kê; mở `pre-merge.yml` đọc cấu hình, các job còn lại chưa mở): pre-merge, nightly, đo hiệu năng recipe, kiểm tuân thủ license, CodeQL. Các con số README (7x, 750x, 2x TTFT, 80% ít vi phạm SLA) là tuyên bố của NVIDIA/đối tác, dẫn nguồn ngoài **(chưa xác minh)**; chưa chạy benchmark nào. Việc test Rust/Python có chạy ở GPU thật hay mocker: chưa đọc. |
+| Giới hạn và rủi ro | License: LICENSE gốc Apache-2.0 nhưng bốn dòng đầu là NOTICE về dữ liệu test DeepSeek-V3.2 (có LICENSE riêng trong `lib/llm/tests/data/deepseek-v3.2`), nên công cụ quét tự động ra NOASSERTION. Có thư mục con có LICENSE riêng (`lib/runtime`, `lib/bindings/python`, `deploy/operator`, `gyms/planner-gym`) và danh mục tuân thủ có mục `LicenseRef-NVIDIA-Proprietary` cho phụ thuộc image (CUDA): đọc kỹ trước khi phân phối image. Nặng vận hành: cần cụm GPU, K8s operator, etcd/NATS (chưa xác minh). Có xuất metric OTLP/Prometheus cục bộ theo cấu hình; chưa tìm thấy telemetry phone-home trong phần đã đọc. Repo thay đổi hàng ngày (commit 2026-11-24), API còn biến động. |
+| So với | vllm, sglang (engine mà Dynamo bọc phía trên); llm-d và kserve (cùng nhiệm vụ điều phối trên K8s, router/EPP khác); lmcache (tầng KV-cache dùng chung, bổ sung) |
+| Nguồn | [README.md](https://github.com/ai-dynamo/dynamo/blob/28697ef5c4115d2fd5793b8f1065ed711e5459cc/README.md) · [LICENSE](https://github.com/ai-dynamo/dynamo/blob/28697ef5c4115d2fd5793b8f1065ed711e5459cc/LICENSE) · [scorer.rs](https://github.com/ai-dynamo/dynamo/blob/28697ef5c4115d2fd5793b8f1065ed711e5459cc/lib/router-plugins/builtin/src/default/scorer.rs) · [default.rs](https://github.com/ai-dynamo/dynamo/blob/28697ef5c4115d2fd5793b8f1065ed711e5459cc/lib/router-plugins/builtin/src/default.rs) · [throughput_scaling.py](https://github.com/ai-dynamo/dynamo/blob/28697ef5c4115d2fd5793b8f1065ed711e5459cc/components/src/dynamo/planner/core/throughput_scaling.py) · [license_overrides.yaml](https://github.com/ai-dynamo/dynamo/blob/28697ef5c4115d2fd5793b8f1065ed711e5459cc/container/compliance/license_overrides.yaml) · [pre-merge.yml](https://github.com/ai-dynamo/dynamo/blob/28697ef5c4115d2fd5793b8f1065ed711e5459cc/.github/workflows/pre-merge.yml) · [SECURITY.md](https://github.com/ai-dynamo/dynamo/blob/28697ef5c4115d2fd5793b8f1065ed711e5459cc/SECURITY.md) |
+
+<a id="n2-gptcache"></a>
+
+### GPTCache
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/zilliztech/GPTCache |
+| License | MIT |
+| Phiên bản đã đọc | `a74ac654473f7bf4109118e8576945161616e17a` (commit 2026-09-22) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, adapter.py, config.py, post.py; chưa chạy upstream |
+| Khoảng trống lấp | Rủi ro trúng cache sai và đo chi phí/độ chính xác của cache ngữ nghĩa (khoảng trống trinh sát gọi là đa phương thức/VLM chưa đúng: repo là cache văn bản cho LLM và có adapter ảnh phụ) |
+| Cơ chế đáng học | • `adapter/adapter.py::adapt`: tiền xử lý, embedding, `data_manager.search(top_k)`, chấm từng ứng viên bằng `similarity_evaluation.evaluation`, giữ ứng viên có điểm đạt `rank_threshold`, rồi hậu xử lý; `cache_skip`/`temperature` để bỏ qua cache nhưng vẫn ghi.<br>• Điểm khoảng cách của `SearchDistanceEvaluation` (`max_distance=4.0` mặc định) chỉ phản ánh khoảng cách embedding, không xét thực thể, con số hay ràng buộc của yêu cầu mới; đây là nguồn lỗi trúng sai.<br>• `processor/post.py::LlmVerifier` (và `llm_semantic_verification`): hỏi LLM "có khớp hoàn toàn không, chỉ trả yes/no, không chắc thì no", chỉ `yes` mới trả cache, mọi lỗi gọi thì coi như miss.<br>• `reuse_compatibility`: dữ liệu 1.536 bộ ba (yêu cầu hiện tại, yêu cầu cache, câu trả lời), nhãn reuse/reject do mô hình gán rồi mô hình thứ hai duyệt lại các ca lệch, kèm `benchmark.py validate/score` chấm lại nhãn, kèm baseline JEV và SBERT cross-encoder. |
+| Tiêu chí và cách kiểm | `benchmark.py score` tính hệ thống-hit, đúng/sai-reuse, precision/recall theo `--threshold` (mặc định 0.70) từ file dự đoán; `validate` kiểm dữ liệu. Nhãn là mô hình gán, README nói rõ không phải vàng do người (đã đọc); số liệu JEV/SBERT là kết quả tác giả công bố, chưa chạy lại **(chưa xác minh)**. Benchmark loại trừ lỗi đúng/sai của nội dung câu trả lời. CI `unit_test_main.yaml` (đã đọc) chạy pytest với Postgres, Redis, DynamoDB local, Mongo trên Python 3.8, ubuntu-20.04, bỏ qua test embedding và processor; không có CI cho benchmark. |
+| Giới hạn và rủi ro | MIT (LICENSE đã đọc). Phần JEV phụ thuộc dịch vụ trả phí/khóa `TYPESAFE_API_KEY` và gửi nội dung yêu cầu, yêu cầu cache, câu trả lời (kèm ngày) ra ngoài máy: không dùng cho dữ liệu nhạy cảm; lỗi mạng trả điểm 0.0 (miss, an toàn). Bản phát hành 0.1.44, CI cũ (Python 3.8, ubuntu-20.04), commit cuối 2026-09-22 nên bảo trì chậm. Mặc định ngưỡng 0.8 với bộ chấm khoảng cách có thể trả lời sai cho câu hỏi gần nghĩa nhưng khác thực thể. Dữ liệu benchmark lấy từ vCache (SemBenchmark), điều khoản dataset chưa đọc. |
+| So với | lmcache (cache KV tầng engine, không cache câu trả lời); litellm (gateway có cache, cần đối chiếu cơ chế); ragas-rag-metrics (đo chất lượng, không phải cache) |
+| Nguồn | [README.md](https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/README.md) · [LICENSE](https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/LICENSE) · [adapter.py](https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/gptcache/adapter/adapter.py) · [config.py](https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/gptcache/config.py) · [post.py](https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/gptcache/processor/post.py) · [distance.py](https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/gptcache/similarity_evaluation/distance.py) · [jev.py](https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/gptcache/similarity_evaluation/jev.py) · [report.py](https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/gptcache/report.py) · [unit_test_main.yaml](https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/.github/workflows/unit_test_main.yaml) · [README.md](https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/examples/benchmark/reuse_compatibility/README.md) · [RERANKER_COMPARISON.md](https://github.com/zilliztech/GPTCache/blob/a74ac654473f7bf4109118e8576945161616e17a/examples/benchmark/reuse_compatibility/RERANKER_COMPARISON.md) |

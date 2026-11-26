@@ -276,6 +276,394 @@
 
 **Nguồn §5g:** [LICENSE](https://github.com/m-bain/whisperX/blob/5d3678b8535698a2826a5db9eb3e4105aef85dd9/LICENSE) · [README/limits](https://github.com/m-bain/whisperX/blob/5d3678b8535698a2826a5db9eb3e4105aef85dd9/README.md) · [pipeline callsite](https://github.com/m-bain/whisperX/blob/5d3678b8535698a2826a5db9eb3e4105aef85dd9/whisperx/transcribe.py) · [language alignment](https://github.com/m-bain/whisperX/blob/5d3678b8535698a2826a5db9eb3e4105aef85dd9/whisperx/alignment.py) · [diarization load](https://github.com/m-bain/whisperX/blob/5d3678b8535698a2826a5db9eb3e4105aef85dd9/whisperx/diarize.py) · [CI](https://github.com/m-bain/whisperX/blob/5d3678b8535698a2826a5db9eb3e4105aef85dd9/.github/workflows/tests.yml).
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **19 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-upscayl"></a>
+
+### Upscayl
+
+**Repo:** [upscayl/upscayl](https://github.com/upscayl/upscayl) · **License:** AGPL-3.0 · **★ 53,098 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng tăng độ phân giải ảnh bằng mô hình AI trên desktop.
+
+**Giá trị và cơ chế:** README xác định backend Real-ESRGAN/Vulkan và gói cho nhiều hệ điều hành; hữu ích cho luồng xử lý ảnh cần giao diện thay vì viết pipeline từ đầu.
+
+**Giới hạn:** Cần GPU tương thích Vulkan; nhiều GPU tích hợp không được bảo đảm. Chi tiết do mô hình suy diễn không phải thông tin phục hồi được chứng minh; commit HEAD đã đọc là 27/3/2026.
+
+**Cách tham khảo/tích hợp:** Thử ảnh đại diện và quyền weights/backend riêng; lưu ảnh gốc cùng tham số để kiểm lại kết quả.
+
+**Thay thế:** real-esrgan, chaiNNer, [ImageMagick](../06-ui-ux-design/README.md#anhkysuai-2026-11-23-imagemagick).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a00d55fee90e`](https://github.com/upscayl/upscayl/commit/a00d55fee90e0f9435d5eaa86e76700df8199af8). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/README.md) · [LICENSE](https://github.com/upscayl/upscayl/blob/a00d55fee90e0f9435d5eaa86e76700df8199af8/LICENSE) · [metadata GitHub](https://api.github.com/repos/upscayl/upscayl).
+
+<a id="anhkysuai-2026-11-23-rembg"></a>
+
+### rembg
+
+**Repo:** [danielgatis/rembg](https://github.com/danielgatis/rembg) · **License:** MIT cho mã; BRIA RMBG 2.0 và weights khác có license riêng · **★ 25,642 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tách nền ảnh bằng Python, CLI hoặc HTTP với các model phân đoạn.
+
+**Giá trị và cơ chế:** README chia chế độ ảnh, thư mục, server và byte stream; ONNX Runtime có lựa chọn CPU/CUDA/ROCm, thuận tiện ghép vào pipeline xử lý ảnh.
+
+**Giới hạn:** Model mặc định BRIA RMBG 2.0 yêu cầu thỏa thuận trả phí khi thương mại; MIT chỉ áp dụng mã. Một số backend cloud tùy chọn gửi ảnh ra ngoài. Chưa đánh giá tóc, cạnh mờ hay throughput.
+
+**Cách tham khảo/tích hợp:** Chọn model có quyền phù hợp, kiểm chất lượng alpha trên corpus của mình và ghim weights riêng.
+
+**Thay thế:** [HivisionIDPhotos](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-hivision-id-photos), backgroundremover, sam2.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`991927b77667`](https://github.com/danielgatis/rembg/commit/991927b77667946dab59c50df31f7d4640e80457). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/danielgatis/rembg/blob/991927b77667946dab59c50df31f7d4640e80457/README.md) · [LICENSE.txt](https://github.com/danielgatis/rembg/blob/991927b77667946dab59c50df31f7d4640e80457/LICENSE.txt) · [metadata GitHub](https://api.github.com/repos/danielgatis/rembg).
+
+<a id="anhkysuai-2026-11-23-hivision-id-photos"></a>
+
+### HivisionIDPhotos
+
+**Repo:** [Zeyi-Lin/HivisionIDPhotos](https://github.com/Zeyi-Lin/HivisionIDPhotos) · **License:** Apache-2.0 cho mã; weights tải riêng cần đối chiếu · **★ 21,758 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tạo ảnh thẻ bằng tách nền, căn chỉnh khuôn mặt và bố trí theo kích thước yêu cầu.
+
+**Giá trị và cơ chế:** README trình bày đường dùng Gradio, Python và API, nhiều kiểu nền và layout in; có thể chọn suy luận CPU offline hoặc thành phần đám mây.
+
+**Giới hạn:** Mã Apache không tự xác nhận quyền tất cả weights tải về. Chưa thử ảnh hoặc đo nhận diện; tính năng đổi trang phục còn ghi chờ, không coi đã hoàn thành.
+
+**Cách tham khảo/tích hợp:** Chọn bộ model có giấy phép rõ, kiểm tỷ lệ khuôn mặt và DPI theo yêu cầu nơi tiếp nhận ảnh.
+
+**Thay thế:** [rembg](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-rembg), [opencv](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính), [ImageMagick](../06-ui-ux-design/README.md#anhkysuai-2026-11-23-imagemagick).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`5c191e2577f1`](https://github.com/Zeyi-Lin/HivisionIDPhotos/commit/5c191e2577f14755a69d9df6db415fab23aca484). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/Zeyi-Lin/HivisionIDPhotos/blob/5c191e2577f14755a69d9df6db415fab23aca484/README.md) · [LICENSE](https://github.com/Zeyi-Lin/HivisionIDPhotos/blob/5c191e2577f14755a69d9df6db415fab23aca484/LICENSE) · [metadata GitHub](https://api.github.com/repos/Zeyi-Lin/HivisionIDPhotos).
+
+<a id="anhkysuai-2026-11-23-videocaptioner"></a>
+
+### VideoCaptioner
+
+**Repo:** [WEIFENG2333/VideoCaptioner](https://github.com/WEIFENG2333/VideoCaptioner) · **License:** GPL-3.0 · **★ 16,612 (GitHub API, 2026-11-23)**
+
+**Mục đích:** CLI và ứng dụng desktop tạo, tối ưu, dịch và ghép phụ đề video.
+
+**Giá trị và cơ chế:** README tách transcribe, subtitle, dub, synthesize và process; hỗ trợ nhiều backend ASR cùng dịch truyền thống/LLM, thuận tiện ghép chuỗi xử lý media.
+
+**Giới hạn:** Manifest ghi beta; dịch vụ miễn phí/phụ thuộc bên ngoài có thể thay đổi. Chưa kiểm độ đúng bản dịch, timestamp hay chất lượng lồng tiếng; một số chế độ cần API key và gửi nội dung ra ngoài.
+
+**Cách tham khảo/tích hợp:** Chọn backend theo ngôn ngữ, duyệt SRT trước burn-in và giữ file gốc để sửa.
+
+**Thay thế:** subtitle-edit, [WhisperX](../14-voice-multimodal/README.md#factory-2026-11-04-whisperx), [buzz](../08-awesome-lists-learning/README.md#6c51-ai-ảnh-giọng-nói--deepfake).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`95842ecb5618`](https://github.com/WEIFENG2333/VideoCaptioner/commit/95842ecb5618c0b6a548a336bdfb0eb859bdb501). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/WEIFENG2333/VideoCaptioner/blob/95842ecb5618c0b6a548a336bdfb0eb859bdb501/README.md) · [LICENSE](https://github.com/WEIFENG2333/VideoCaptioner/blob/95842ecb5618c0b6a548a336bdfb0eb859bdb501/LICENSE) · [metadata GitHub](https://api.github.com/repos/WEIFENG2333/VideoCaptioner).
+
+<a id="anhkysuai-2026-11-23-paddledetection"></a>
+
+### PaddleDetection
+
+**Repo:** [PaddlePaddle/PaddleDetection](https://github.com/PaddlePaddle/PaddleDetection) · **License:** Apache-2.0 cho mã; dataset/weights cần đối chiếu · **★ 14,487 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ công cụ detection, segmentation, keypoint và tracking trên PaddlePaddle.
+
+**Giá trị và cơ chế:** README tiếng Anh cùng cấu trúc cấu hình trình bày nhiều họ model, data augmentation và đường triển khai server/edge; hữu ích tham khảo pipeline vision có cấu hình rõ.
+
+**Giới hạn:** README gốc chỉ trỏ README_cn; bản tiếng Anh chứa nhiều thông tin lịch sử, chưa xác minh toàn model zoo tại HEAD. Chưa chạy huấn luyện hoặc tái hiện mAP/FPS; quyền từng dữ liệu và weight tách riêng.
+
+**Cách tham khảo/tích hợp:** Chọn một cấu hình hỗ trợ phần cứng mục tiêu, kiểm tập ảnh thực và export runtime trước mở rộng.
+
+**Thay thế:** mmdetection, [ultralytics](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính), [detectron2](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`b25522a0f4bd`](https://github.com/PaddlePaddle/PaddleDetection/commit/b25522a0f4bde8c80603f3ba5e3472059972e3b5). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/PaddlePaddle/PaddleDetection/blob/b25522a0f4bde8c80603f3ba5e3472059972e3b5/README.md) · [LICENSE](https://github.com/PaddlePaddle/PaddleDetection/blob/b25522a0f4bde8c80603f3ba5e3472059972e3b5/LICENSE) · [README_en.md](https://github.com/PaddlePaddle/PaddleDetection/blob/b25522a0f4bde8c80603f3ba5e3472059972e3b5/README_en.md) · [metadata GitHub](https://api.github.com/repos/PaddlePaddle/PaddleDetection).
+
+<a id="anhkysuai-2026-11-23-fluidvoice"></a>
+
+### FluidVoice
+
+**Repo:** [altic-dev/FluidVoice](https://github.com/altic-dev/FluidVoice) · **License:** GPL-3.0 cho app macOS; runtime Fluid Intelligence nguồn đóng · **★ 13,212 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng macOS nhập văn bản bằng giọng nói và lưu nội dung cuộc họp.
+
+**Giá trị và cơ chế:** README mô tả speech model chạy trên thiết bị, cleanup tùy chọn và tích hợp vào ứng dụng đang dùng; đáng tham khảo luồng dictation desktop.
+
+**Giới hạn:** Repo chỉ là macOS app; iOS/Windows/Linux có trạng thái beta riêng. Fluid Intelligence đi kèm binary chính thức không có mã trong source build. Chưa đo WER, độ trễ hay xác minh toàn luồng dữ liệu.
+
+**Cách tham khảo/tích hợp:** Thử microphone, tiếng Việt và quyền Accessibility với model phù hợp; phân biệt app GPL với runtime/weights đi kèm.
+
+**Thay thế:** [Whisper](https://github.com/openai/whisper), [buzz](../08-awesome-lists-learning/README.md#6c51-ai-ảnh-giọng-nói--deepfake), whisper-typing.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`80ba776b8b07`](https://github.com/altic-dev/FluidVoice/commit/80ba776b8b07f052e8279a4f57161696112d32e5). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/altic-dev/FluidVoice/blob/80ba776b8b07f052e8279a4f57161696112d32e5/README.md) · [LICENSE](https://github.com/altic-dev/FluidVoice/blob/80ba776b8b07f052e8279a4f57161696112d32e5/LICENSE) · [metadata GitHub](https://api.github.com/repos/altic-dev/FluidVoice).
+
+<a id="anhkysuai-2026-11-23-deep-live-cam"></a>
+
+### Deep-Live-Cam
+
+**Repo:** [hacksider/Deep-Live-Cam](https://github.com/hacksider/Deep-Live-Cam) · **License:** AGPL-3.0 cho mã; InsightFace models phi thương mại/nghiên cứu · **★ 98,767 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ứng dụng thay khuôn mặt trong ảnh, video và camera thời gian thực.
+
+**Giá trị và cơ chế:** README trình bày đầu vào một ảnh và pipeline sử dụng model InsightFace/ONNX; phù hợp tham khảo ghép luồng camera với inference media.
+
+**Giới hạn:** License model được README giới hạn nghiên cứu phi thương mại, tách khỏi AGPL của mã. Chưa đo latency, độ ổn định hay kiểm bộ lọc nội dung; CLI được ghi không duy trì. Không suy quyền dùng khuôn mặt từ license phần mềm.
+
+**Cách tham khảo/tích hợp:** Chỉ thử bằng người/tài sản đã cho phép, giữ dấu nguồn ảnh và kiểm quyền weights cùng khả năng GPU.
+
+**Thay thế:** [FaceSwap](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-faceswap), facefusion, [InsightFace](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-insightface).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`08896a51c9a6`](https://github.com/hacksider/Deep-Live-Cam/commit/08896a51c9a6198f50dc9f7508acf39fc460c8f1). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/hacksider/Deep-Live-Cam/blob/08896a51c9a6198f50dc9f7508acf39fc460c8f1/README.md) · [LICENSE](https://github.com/hacksider/Deep-Live-Cam/blob/08896a51c9a6198f50dc9f7508acf39fc460c8f1/LICENSE) · [metadata GitHub](https://api.github.com/repos/hacksider/Deep-Live-Cam).
+
+<a id="anhkysuai-2026-11-23-stable-diffusion-v1-compvis"></a>
+
+### Stable Diffusion v1 — CompVis
+
+**Repo:** [CompVis/stable-diffusion](https://github.com/CompVis/stable-diffusion) · **License:** CreativeML Open RAIL-M · **★ 73,598 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Triển khai và tài liệu tham chiếu cho Stable Diffusion v1 tạo ảnh từ văn bản trong latent space.
+
+**Giá trị và cơ chế:** README giải thích UNet kết hợp text encoder CLIP đóng băng, ảnh huấn luyện 512×512 và cơ chế điều kiện prompt; hữu ích học kiến trúc diffusion gốc.
+
+**Giới hạn:** Đây là repo v1 lịch sử, HEAD 2022; không đại diện mọi biến thể Stable Diffusion mới. License có hạn chế cách dùng, weights được mô tả là nghiên cứu; chưa tải/chạy model hay tái hiện kết quả.
+
+**Cách tham khảo/tích hợp:** Dùng làm nguồn học, đối chiếu checkpoint/model card và thử với tài sản có quyền trong môi trường ghim.
+
+**Thay thế:** [diffusers](../08-awesome-lists-learning/README.md#6c51-ai-ảnh-giọng-nói--deepfake), [ComfyUI](../19-agentic-video-media/README.md#3h-kiểm-ảnh-ai-video-stack-remotion-skills-blender-và-blender-mcp-faster-whisper-chatterbox-gsap-ảnh-người-dùng-gửi-đọc-mã-8112026), [InvokeAI](../08-awesome-lists-learning/README.md#6c51-ai-ảnh-giọng-nói--deepfake).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`21f890f9da3c`](https://github.com/CompVis/stable-diffusion/commit/21f890f9da3cfbeaba8e2ac3c425ee9e998d5229). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/CompVis/stable-diffusion/blob/21f890f9da3cfbeaba8e2ac3c425ee9e998d5229/README.md) · [LICENSE](https://github.com/CompVis/stable-diffusion/blob/21f890f9da3cfbeaba8e2ac3c425ee9e998d5229/LICENSE) · [metadata GitHub](https://api.github.com/repos/CompVis/stable-diffusion).
+
+<a id="anhkysuai-2026-11-23-real-time-voice-cloning"></a>
+
+### Real-Time Voice Cloning
+
+**Repo:** [CorentinJ/Real-Time-Voice-Cloning](https://github.com/CorentinJ/Real-Time-Voice-Cloning) · **License:** MIT cho mã; dữ liệu/weights cần đối chiếu · **★ 60,247 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Triển khai SV2TTS để tổng hợp giọng từ mẫu âm thanh tham chiếu.
+
+**Giá trị và cơ chế:** README chia ba tầng speaker encoder, synthesizer và vocoder, chỉ rõ nguồn Tacotron/WaveRNN kế thừa; phù hợp học cách tách biểu diễn người nói khỏi sinh âm thanh.
+
+**Giới hạn:** Chưa nghe hoặc đo đầu ra; real-time trong tên không bảo đảm toàn pipeline nhanh trên mọi máy. Manifest giới hạn Python 3.9 và nhiều phụ thuộc cũ, cần môi trường riêng. Quyền giọng/weights tách khỏi MIT.
+
+**Cách tham khảo/tích hợp:** Dùng giọng được cho phép, kiểm pronunciation và độ giống trước tích hợp; giữ baseline audio để so sánh.
+
+**Thay thế:** [OpenVoice](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-openvoice), [Coqui TTS](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-coqui-tts), [MockingBird](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-mockingbird).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`890f3a031871`](https://github.com/CorentinJ/Real-Time-Voice-Cloning/commit/890f3a03187195b9829db2079b75c2ba2ab0405c). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/CorentinJ/Real-Time-Voice-Cloning/blob/890f3a03187195b9829db2079b75c2ba2ab0405c/README.md) · [LICENSE](https://github.com/CorentinJ/Real-Time-Voice-Cloning/blob/890f3a03187195b9829db2079b75c2ba2ab0405c/LICENSE) · [metadata GitHub](https://api.github.com/repos/CorentinJ/Real-Time-Voice-Cloning).
+
+<a id="anhkysuai-2026-11-23-yolov5"></a>
+
+### YOLOv5
+
+**Repo:** [ultralytics/yolov5](https://github.com/ultralytics/yolov5) · **License:** AGPL-3.0; Enterprise License tùy chọn · **★ 58,302 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Họ model và công cụ PyTorch cho detection, segmentation và classification.
+
+**Giá trị và cơ chế:** README cùng train/detect/export entrypoints cho thấy pipeline từ huấn luyện đến triển khai; phù hợp baseline vision và hệ thống cần mô hình đã có nhiều cấu hình.
+
+**Giới hạn:** Chưa huấn luyện hoặc tái hiện mAP/FPS; README phân biệt YOLOv5 với package ultralytics mới hơn. AGPL và lựa chọn thương mại là hai chế độ khác nhau, không suy quyền weights/dataset từ nhãn repo.
+
+**Cách tham khảo/tích hợp:** Chốt dataset, metric và format export; kiểm false positives/negatives trên dữ liệu đích trước đưa vào sản phẩm.
+
+**Thay thế:** [MMDetection](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-mmdetection), paddledetection, [detectron2](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`1e7cf74cb64d`](https://github.com/ultralytics/yolov5/commit/1e7cf74cb64d719b34f7315aa13eab9e32cde672). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/ultralytics/yolov5/blob/1e7cf74cb64d719b34f7315aa13eab9e32cde672/README.md) · [LICENSE](https://github.com/ultralytics/yolov5/blob/1e7cf74cb64d719b34f7315aa13eab9e32cde672/LICENSE) · [metadata GitHub](https://api.github.com/repos/ultralytics/yolov5).
+
+<a id="anhkysuai-2026-11-23-faceswap"></a>
+
+### FaceSwap
+
+**Repo:** [deepfakes/faceswap](https://github.com/deepfakes/faceswap) · **License:** GPL-3.0 · **★ 57,629 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Pipeline xử lý khuôn mặt với các giai đoạn trích xuất, huấn luyện và chuyển đổi media.
+
+**Giá trị và cơ chế:** README nêu rõ entrypoint Extract–Train–Convert cùng GUI; phù hợp học cách tổ chức dữ liệu huấn luyện và tách thao tác xử lý ảnh/video.
+
+**Giới hạn:** Chưa tải weights, huấn luyện hoặc kiểm chất lượng ghép. Bộ dữ liệu, góc mặt và ánh sáng ảnh hưởng mạnh kết quả; GPL chỉ cấp quyền phần mềm, không thay quyền sử dụng hình ảnh con người.
+
+**Cách tham khảo/tích hợp:** Thử bằng dữ liệu có sự cho phép, lưu nguyên bản và xem từng đoạn video trước công bố kết quả.
+
+**Thay thế:** facefusion, [Deep-Live-Cam](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-deep-live-cam), [InsightFace](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-insightface).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f530cb7508ae`](https://github.com/deepfakes/faceswap/commit/f530cb7508ae670f6474f8a7d9c4df94705cf96b). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/deepfakes/faceswap/blob/f530cb7508ae670f6474f8a7d9c4df94705cf96b/README.md) · [LICENSE](https://github.com/deepfakes/faceswap/blob/f530cb7508ae670f6474f8a7d9c4df94705cf96b/LICENSE) · [metadata GitHub](https://api.github.com/repos/deepfakes/faceswap).
+
+<a id="anhkysuai-2026-11-23-coqui-tts"></a>
+
+### Coqui TTS
+
+**Repo:** [coqui-ai/TTS](https://github.com/coqui-ai/TTS) · **License:** MPL-2.0 cho mã; XTTS dùng CPML, model khác theo manifest · **★ 46,270 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện tổng hợp giọng nói với recipe huấn luyện, fine-tune và model có sẵn.
+
+**Giá trị và cơ chế:** README trình bày Trainer API, phân tích dataset và nhiều họ TTS/vocoder; manifest model ghi riêng license và yêu cầu chấp nhận điều khoản, hữu ích quản lý vòng đời speech model.
+
+**Giới hạn:** HEAD lấy được ở 2024, chưa kiểm hoạt động release/hosting hiện nay. XTTS trong .models.json ghi CPML/tos_required, không dùng MPL để suy quyền weights. Chưa đo WER, chất lượng hay streaming latency.
+
+**Cách tham khảo/tích hợp:** Chọn model có điều khoản phù hợp, dùng giọng được cho phép và kiểm phát âm/ngôn ngữ trên audio thật.
+
+**Thay thế:** [OpenVoice](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-openvoice), piper, [Kokoro TTS](https://github.com/hexgrad/kokoro).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`dbf1a08a0d4e`](https://github.com/coqui-ai/TTS/commit/dbf1a08a0d4e47fdad6172e433eeb34bc6b13b4e). Đọc README, MPL-2.0, manifest model và tài liệu XTTS; ghi rõ nhãn CPML nhưng chưa đọc toàn bộ điều khoản CPML bên ngoài. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/coqui-ai/TTS/blob/dbf1a08a0d4e47fdad6172e433eeb34bc6b13b4e/README.md) · [LICENSE.txt](https://github.com/coqui-ai/TTS/blob/dbf1a08a0d4e47fdad6172e433eeb34bc6b13b4e/LICENSE.txt) · [TTS/.models.json](https://github.com/coqui-ai/TTS/blob/dbf1a08a0d4e47fdad6172e433eeb34bc6b13b4e/TTS/.models.json) · [docs/source/models/xtts.md](https://github.com/coqui-ai/TTS/blob/dbf1a08a0d4e47fdad6172e433eeb34bc6b13b4e/docs/source/models/xtts.md) · [metadata GitHub](https://api.github.com/repos/coqui-ai/TTS).
+
+<a id="anhkysuai-2026-11-23-chattts"></a>
+
+### ChatTTS
+
+**Repo:** [2noise/ChatTTS](https://github.com/2noise/ChatTTS) · **License:** AGPL-3.0-or-later cho mã; CC-BY-NC-4.0 cho model · **★ 40,036 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Model tổng hợp giọng đối thoại với điều khiển nhịp, khoảng ngừng và biểu cảm.
+
+**Giá trị và cơ chế:** README phân biệt hạ tầng thuật toán với sản phẩm cộng đồng, mô tả multi-speaker và prosody cho tiếng Anh/Trung; hữu ích thử giọng hội thoại cho trợ lý.
+
+**Giới hạn:** Weights được công bố cho học thuật/nghiên cứu và phi thương mại; không thể coi toàn pipeline AGPL mở cho mọi mục đích. Tiếng Việt chưa nằm trong danh sách hỗ trợ đã đọc. Chưa nghe/đo chất lượng.
+
+**Cách tham khảo/tích hợp:** Thử corpus đối thoại được phép sử dụng, kiểm phát âm/pauses và quyền model trước ghép thành sản phẩm.
+
+**Thay thế:** [Kokoro TTS](https://github.com/hexgrad/kokoro), [OpenVoice](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-openvoice), [Coqui TTS](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-coqui-tts).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`77b89ee281cd`](https://github.com/2noise/ChatTTS/commit/77b89ee281cd479f5b1a787ada330dc975ca1f2a). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/2noise/ChatTTS/blob/77b89ee281cd479f5b1a787ada330dc975ca1f2a/README.md) · [LICENSE](https://github.com/2noise/ChatTTS/blob/77b89ee281cd479f5b1a787ada330dc975ca1f2a/LICENSE) · [metadata GitHub](https://api.github.com/repos/2noise/ChatTTS).
+
+<a id="anhkysuai-2026-11-23-openvoice"></a>
+
+### OpenVoice
+
+**Repo:** [myshell-ai/OpenVoice](https://github.com/myshell-ai/OpenVoice) · **License:** MIT cho V1/V2 theo LICENSE và README · **★ 38,308 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tạo giọng theo mẫu tham chiếu với điều khiển phong cách và chuyển ngôn ngữ.
+
+**Giá trị và cơ chế:** README phân tách màu giọng, biểu cảm/nhịp và zero-shot cross-lingual; V2 liệt kê sáu ngôn ngữ gốc, phù hợp học cách kết hợp TTS với tone-color conversion.
+
+**Giới hạn:** Chưa chạy notebook hoặc nghe kết quả. Tuyên bố chất lượng/clone chính xác là từ tác giả; tiếng Việt không nằm trong danh sách native đã đọc. License phần mềm không thay sự cho phép dùng giọng của người khác.
+
+**Cách tham khảo/tích hợp:** Dùng mẫu có quyền, kiểm pronunciation và chất lượng qua từng ngôn ngữ trước tích hợp dịch vụ.
+
+**Thay thế:** [Coqui TTS](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-coqui-tts), [Real-Time Voice Cloning](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-real-time-voice-cloning), [Kokoro TTS](https://github.com/hexgrad/kokoro).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`74a1d147b17a`](https://github.com/myshell-ai/OpenVoice/commit/74a1d147b17a8c3092dd5430504bd83ef6c7eb23). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/myshell-ai/OpenVoice/blob/74a1d147b17a8c3092dd5430504bd83ef6c7eb23/README.md) · [LICENSE](https://github.com/myshell-ai/OpenVoice/blob/74a1d147b17a8c3092dd5430504bd83ef6c7eb23/LICENSE) · [metadata GitHub](https://api.github.com/repos/myshell-ai/OpenVoice).
+
+<a id="anhkysuai-2026-11-23-real-esrgan"></a>
+
+### Real-ESRGAN
+
+**Repo:** [xinntao/Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) · **License:** BSD-3-Clause (mã); kiểm riêng điều khoản weights · **★ 37,617 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Khôi phục và tăng độ phân giải ảnh, với các model dành cho ảnh thực và anime.
+
+**Giá trị và cơ chế:** README phân biệt model theo nội dung, cung cấp luồng suy luận Python và bản NCNN/Vulkan; hữu ích để khảo sát pipeline phục hồi ảnh/video.
+
+**Giới hạn:** Chưa chạy suy luận hoặc đo chất lượng. Kết quả phụ thuộc loại suy giảm ảnh và weights; chi tiết được tái tạo có thể không phản ánh ảnh gốc.
+
+**Cách tham khảo/tích hợp:** Thử một tập ảnh có bản đối chiếu, chọn model phù hợp và kiểm quyền phân phối weights trước khi đóng gói.
+
+**Thay thế:** Upscayl, waifu2x, [Anime4K](../19-agentic-video-media/README.md#anhkysuai-2026-11-23-anime4k).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a4abfb2979a7`](https://github.com/xinntao/Real-ESRGAN/commit/a4abfb2979a7bbff3f69f58f58ae324608821e27). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/xinntao/Real-ESRGAN/blob/a4abfb2979a7bbff3f69f58f58ae324608821e27/README.md) · [LICENSE](https://github.com/xinntao/Real-ESRGAN/blob/a4abfb2979a7bbff3f69f58f58ae324608821e27/LICENSE) · [metadata GitHub](https://api.github.com/repos/xinntao/Real-ESRGAN).
+
+<a id="anhkysuai-2026-11-23-mockingbird"></a>
+
+### MockingBird
+
+**Repo:** [babysor/MockingBird](https://github.com/babysor/MockingBird) · **License:** MIT · **★ 36,856 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tham khảo tổng hợp giọng nói tiếng Quan thoại từ mẫu giọng ngắn.
+
+**Giá trị và cơ chế:** Dự án kế thừa hướng SV2TTS, tách encoder, synthesizer và vocoder, kèm giao diện web và cấu hình huấn luyện/suy luận.
+
+**Giới hạn:** README thông báo không còn cập nhật tích cực; sản phẩm Noiz được giới thiệu riêng. Chưa tạo audio, kiểm chất lượng hay khả năng tiếng Việt; dependency cũ cần đánh giá lại.
+
+**Cách tham khảo/tích hợp:** Dùng để học cấu trúc pipeline và thử với giọng đã có quyền sử dụng, đồng thời kiểm điều khoản từng bộ weights.
+
+**Thay thế:** [OpenVoice](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-openvoice), [Real-Time Voice Cloning](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-real-time-voice-cloning), [Coqui TTS](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-coqui-tts).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`28dc5e14f12d`](https://github.com/babysor/MockingBird/commit/28dc5e14f12d7c754612af2fde8e78a4b03f8616). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/babysor/MockingBird/blob/28dc5e14f12d7c754612af2fde8e78a4b03f8616/README.md) · [LICENSE.txt](https://github.com/babysor/MockingBird/blob/28dc5e14f12d7c754612af2fde8e78a4b03f8616/LICENSE.txt) · [metadata GitHub](https://api.github.com/repos/babysor/MockingBird).
+
+<a id="anhkysuai-2026-11-23-openpose"></a>
+
+### OpenPose
+
+**Repo:** [CMU-Perceptual-Computing-Lab/openpose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) · **License:** Giấy phép OpenPose tùy chỉnh, nghiên cứu phi thương mại; thương mại cần thỏa thuận · **★ 34,610 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ước lượng keypoint cơ thể, bàn tay, khuôn mặt và bàn chân cho nhiều người trong ảnh hoặc video.
+
+**Giá trị và cơ chế:** README mô tả pipeline hợp nhất các vùng cơ thể, cung cấp ví dụ và cấu hình build để nghiên cứu pose estimation.
+
+**Giới hạn:** LICENSE cấp quyền nghiên cứu phi thương mại với điều kiện cụ thể; không thể suy từ mã công khai rằng được dùng thương mại. Chưa build hoặc kiểm độ chính xác và tốc độ.
+
+**Cách tham khảo/tích hợp:** Đối chiếu giấy phép với mục đích sử dụng, kiểm toolchain và dữ liệu thử nghiệm trước khi chọn làm thành phần sản phẩm.
+
+**Thay thế:** [mediapipe](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính), MMPose, Ultralytics YOLO.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`5c5d96523ef9`](https://github.com/CMU-Perceptual-Computing-Lab/openpose/commit/5c5d96523ef917bd30301245fdc8343937cae48d). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/5c5d96523ef917bd30301245fdc8343937cae48d/README.md) · [LICENSE](https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/5c5d96523ef917bd30301245fdc8343937cae48d/LICENSE) · [metadata GitHub](https://api.github.com/repos/CMU-Perceptual-Computing-Lab/openpose).
+
+<a id="anhkysuai-2026-11-23-mmdetection"></a>
+
+### MMDetection
+
+**Repo:** [open-mmlab/mmdetection](https://github.com/open-mmlab/mmdetection) · **License:** Apache-2.0 · **★ 33,052 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Huấn luyện và đánh giá các mô hình phát hiện vật thể, phân đoạn instance và các bài toán liên quan.
+
+**Giá trị và cơ chế:** README trình bày thư viện PyTorch theo module, cấu hình và model zoo; phù hợp so sánh nhiều kiến trúc trong cùng hệ sinh thái OpenMMLab.
+
+**Giới hạn:** Chưa chạy model hoặc kiểm tổ hợp phiên bản CUDA, PyTorch và các operator. License mã không tự xác nhận quyền của mọi dataset/weights trong model zoo.
+
+**Cách tham khảo/tích hợp:** Ghim cấu hình và checkpoint, dựng môi trường tương thích rồi kiểm metric trên dữ liệu đại diện của dự án.
+
+**Thay thế:** PaddleDetection, [YOLOv5](../14-voice-multimodal/README.md#anhkysuai-2026-11-23-yolov5), [detectron2](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`cfd5d3a985b0`](https://github.com/open-mmlab/mmdetection/commit/cfd5d3a985b0249de009b67d04f37263e11cdf3d). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/open-mmlab/mmdetection/blob/cfd5d3a985b0249de009b67d04f37263e11cdf3d/README.md) · [LICENSE](https://github.com/open-mmlab/mmdetection/blob/cfd5d3a985b0249de009b67d04f37263e11cdf3d/LICENSE) · [metadata GitHub](https://api.github.com/repos/open-mmlab/mmdetection).
+
+<a id="anhkysuai-2026-11-23-insightface"></a>
+
+### InsightFace
+
+**Repo:** [deepinsight/insightface](https://github.com/deepinsight/insightface) · **License:** MIT theo README cho SDK; SCRFD Apache-2.0; pretrained models phi thương mại · **★ 30,285 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ công cụ phân tích khuôn mặt với detection, alignment, recognition và các thành phần liên quan.
+
+**Giá trị và cơ chế:** README SDK tách rõ license mã và model tải sẵn; MODEL.LICENSE của buffalo_l ghi grant non-commercial. Bản nguồn còn mô tả dịch vụ và công cụ xử lý riêng tư.
+
+**Giới hạn:** Không lấy LICENSE Apache của thư mục SCRFD làm license toàn repo. Chưa chạy nhận diện hoặc đánh giá sai lệch; quyền dùng weights và dữ liệu khuôn mặt cần kiểm riêng.
+
+**Cách tham khảo/tích hợp:** Chọn module và model theo đúng phạm vi giấy phép, xác định mục đích cùng quyền xử lý dữ liệu trước khi thử nghiệm.
+
+**Thay thế:** [deepface](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính), [opencv](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính), face_recognition.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`c6c3af7bd2d0`](https://github.com/deepinsight/insightface/commit/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52). Đọc README gốc và SDK, license nested SCRFD và MODEL.LICENSE buffalo_l; chưa kiểm implementation hay độ chính xác model. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/deepinsight/insightface/blob/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/README.md) · [detection/scrfd/LICENSE](https://github.com/deepinsight/insightface/blob/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/detection/scrfd/LICENSE) · [python-package/README.md](https://github.com/deepinsight/insightface/blob/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/python-package/README.md) · [server/backend/insightface_server/licensing/defaults/buffalo_l/MODEL.LICENSE](https://github.com/deepinsight/insightface/blob/c6c3af7bd2d0a0bf4b78c78437357f3521aa5d52/server/backend/insightface_server/licensing/defaults/buffalo_l/MODEL.LICENSE) · [metadata GitHub](https://api.github.com/repos/deepinsight/insightface).
+
 ## 6. Nguồn
 
 - https://micdrop.dev/blog/open-source-voice-agent-frameworks · https://livekit.com/blog/best-open-source-voice-and-video-ai-agent-frameworks · https://www.forasoft.com/blog/article/pipecat-vs-livekit-agents · https://github.com/pipecat-ai/pipecat · https://techsy.io/en/blog/best-open-source-voice-agent-frameworks · https://grokipedia.com/page/List_of_open-source_voice_AI_frameworks
@@ -283,3 +671,510 @@
 - https://github.com/QwenLM/Qwen3-VL · https://github.com/LLaVA-VL/LLaVA-NeXT · https://github.com/EvolvingLMMs-Lab/LLaVA-OneVision-2
 - https://en.wikipedia.org/wiki/ComfyUI · https://en.wikipedia.org/wiki/Automatic1111 · https://github.com/lllyasviel/Fooocus · https://insiderllm.com/guides/comfyui-vs-automatic1111-vs-fooocus/ · https://meetrix.io/blogs/fooocus-vs-automatic1111-vs-comfyui/
 - Audio8 TTS (2026-10-12): https://github.com/edge0-ai/audio8_tts (clone đầy đủ) · https://huggingface.co/Audio8/Audio8-TTS-Preview-0.6b · https://huggingface.co/Audio8/Audio8-TTS-Preview-0.1b · https://audio8-ai.github.io/Audio8_TTS/ · https://deepinfra.com/Audio8/Audio8-TTS-Preview-0.6b · https://github.com/john-rocky/coreai-model-zoo/pull/47 · https://github.com/0xShug0/audio.cpp/blob/main/docs/community_models/audio8_tts.md · https://hackernoon.com/audio8-tts-preview-06b-compact-multilingual-voice-cloning · https://creativeaishow.com/audio8-tts-preview-the-free-0-6b-ai-voice-cloning-model-that-runs-on-your-cpu/ · https://huggingface.co/fishaudio/s2-pro/blob/main/LICENSE.md · https://fish.audio/fr/blog/what-we-mean-by-open-source-for-s2/
+
+<a id="xlsx-2026-11-23"></a>
+
+## Đánh giá bổ sung từ bảng "Top 100 GitHub AI Skills" — 23/11/2026
+
+Phần này có **1 hồ sơ** từ bảng xlsx người dùng gửi ngày 2026-11-23; đọc bằng `git clone --depth 1`, không cài hay chạy mã upstream. Lúc đọc, REST API của GitHub bị chặn nên trong hồ sơ ★ và `pushed_at` ghi **(chưa xác minh)**; số sao lấy lại cùng ngày qua GitHub search API nằm trong `data/projects.json` và [catalog/](../catalog/README.md), `pushed_at` vẫn chưa xác minh.
+
+<a id="xlsx-2026-11-23-liveavatar-agent-skills"></a>
+
+### heygen-com/liveavatar-agent-skills
+
+**Repo:** [heygen-com/liveavatar-agent-skills](https://github.com/heygen-com/liveavatar-agent-skills) · **License:** MIT (LICENSE, © 2026 HeyGen; chỉ áp cho 4 file skill, dịch vụ LiveAvatar là sản phẩm thương mại cần API key) · **★ (chưa xác minh; GitHub API bị chặn ngày 2026-11-23)**
+
+**Mục đích:** 4 skill cho agent lập trình tích hợp avatar hội thoại thời gian thực của LiveAvatar (HeyGen): `liveavatar-demo` (dựng demo từ danh mục 4 repo mẫu), `liveavatar-integrate` (chọn lối Embed / FULL / LITE rồi hướng dẫn từng bước), `liveavatar-debug` (triệu chứng: avatar câm, âm thanh vỡ, lỗi auth), `liveavatar-feedback` (gửi góp ý cho đội LiveAvatar).
+
+**Giá trị và cơ chế:** repo chỉ là tri thức dạng văn bản (không có mã chạy, `package.json` không có dependency). Điểm đáng học: `liveavatar-integrate` ép tách backend/frontend (`X-API-KEY` chỉ ở backend, frontend chỉ nhận `livekit_client_token`) và khuyến nghị bắt đầu bằng sandbox (`is_sandbox: true`, phiên khoảng 1 phút). `liveavatar-demo` ghi thẳng điều agent **không** làm được (không nghe được avatar nói, không tự nhập key). `liveavatar-feedback` có cổng đồng ý đúng nghĩa: SKILL.md bắt buộc trình bản tóm tắt cho người dùng, "Nothing is sent until you say yes", từ chối thì bỏ.
+
+**Giới hạn:** phụ thuộc dịch vụ trả phí và API `api.liveavatar.com`; `liveavatar-demo` clone và cài repo bên thứ ba (4 demo, trong đó có demo dùng GPT-Live) rồi chạy `npm install`/`uv` trên máy bạn, tức là thực thi mã ngoài repo này. Không có CI, không có test, không có kiểm schema skill. Dữ liệu rời máy: lưu lượng hội thoại qua LiveAvatar/LiveKit; feedback chỉ gửi sau khi người dùng đồng ý (theo văn bản SKILL.md, chưa kiểm hành vi thực).
+
+**Cách tham khảo/tích hợp:** dùng làm mẫu cho skill tích hợp API thương mại: lead bằng "gotcha", nhãn rõ chỗ chạy (backend/frontend) và loại auth, cổng đồng ý trước khi gửi dữ liệu. Nếu dùng thật, giữ key trong biến môi trường backend và dùng sandbox trước; kiểm từng repo demo trước khi để agent chạy `npm install`.
+
+**Thay thế:** [LiveKit Agents](../14-voice-multimodal/README.md) (id `livekit-agents`, tự dựng pipeline STT-LLM-TTS), [Pipecat](../14-voice-multimodal/README.md) (id `pipecat`), skill video không thời gian thực của cùng hãng ở [heygen-com/skills](../19-agentic-video-media/README.md#xlsx-2026-11-23-heygen-skills).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`88960dc00ebb`](https://github.com/heygen-com/liveavatar-agent-skills/commit/88960dc00ebb35c128b15345a97c5aebcd89a676) (2026-09-10). Đọc README, LICENSE, package.json, `liveavatar-feedback/SKILL.md` toàn bộ, đầu `liveavatar-demo/SKILL.md` và `liveavatar-integrate/SKILL.md`; không có `.github/` nên không có CI để đọc. Chưa cài, chưa gọi API, chưa kiểm 4 repo demo.
+
+**Nguồn:** [README.md](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/README.md) · [LICENSE](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/LICENSE) · [package.json](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/package.json) · [skills/liveavatar-feedback/SKILL.md](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/skills/liveavatar-feedback/SKILL.md) · [skills/liveavatar-demo/SKILL.md](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/skills/liveavatar-demo/SKILL.md) · [skills/liveavatar-integrate/SKILL.md](https://github.com/heygen-com/liveavatar-agent-skills/blob/88960dc00ebb35c128b15345a97c5aebcd89a676/skills/liveavatar-integrate/SKILL.md) · [metadata GitHub](https://api.github.com/repos/heygen-com/liveavatar-agent-skills) (không đọc được, 403).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-ace-step-1-5"></a>
+
+### ACE-Step 1.5
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ace-step/ACE-Step-1.5 |
+| License | MIT (mã); trọng số chưa kiểm |
+| Phiên bản đã đọc | `ca1e85fe9430179831e6bc6be790c332190a3866` (commit 2026-08-29) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-08-29) |
+| Nhận định | Mô hình sinh nhạc mã nguồn mở có CLI, API server, Gradio UI và Docker (kể cả Jetson, XPU, ROCm). Giấy phép trọng số trên Hugging Face **(chưa xác minh)** vì chưa đọc model card. |
+| Nguồn | [README.md](https://github.com/ace-step/ACE-Step-1.5/blob/ca1e85fe9430179831e6bc6be790c332190a3866/README.md) · [LICENSE](https://github.com/ace-step/ACE-Step-1.5/blob/ca1e85fe9430179831e6bc6be790c332190a3866/LICENSE) · [pyproject.toml](https://github.com/ace-step/ACE-Step-1.5/blob/ca1e85fe9430179831e6bc6be790c332190a3866/pyproject.toml) |
+
+<a id="ch-audio8-tts"></a>
+
+### Audio8 TTS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Edge0-AI/Audio8_TTS |
+| License | Apache-2.0 (mã và hai bản 0.6B); 0.1B dùng Audio8 Community License v1.0 |
+| Phiên bản đã đọc | `aef426db7229b93c8cb9a00c7c054b2b234e2979` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, NOTICE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-16) |
+| Nhận định | TTS gọn cho voice cloning zero-shot, kèm ONNX INT8 cho CPU và llama.cpp/GGUF. Chất lượng từng ngôn ngữ khác nhau theo chính README; không có ONNX cho Realistic Air; số liệu chất lượng là của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/Edge0-AI/Audio8_TTS/blob/aef426db7229b93c8cb9a00c7c054b2b234e2979/README.md) · [LICENSE](https://github.com/Edge0-AI/Audio8_TTS/blob/aef426db7229b93c8cb9a00c7c054b2b234e2979/LICENSE) · [NOTICE](https://github.com/Edge0-AI/Audio8_TTS/blob/aef426db7229b93c8cb9a00c7c054b2b234e2979/NOTICE) · [pyproject.toml](https://github.com/Edge0-AI/Audio8_TTS/blob/aef426db7229b93c8cb9a00c7c054b2b234e2979/pyproject.toml) |
+
+<a id="ch-audioseal"></a>
+
+### AudioSeal
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/facebookresearch/audioseal |
+| License | MIT |
+| Phiên bản đã đọc | `1496f7662d6aa625602bb0dcd1b4997b63b47609` (commit 2026-11-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-03) |
+| Nhận định | Watermark âm thanh định vị theo đoạn gồm generator và detector, có mã huấn luyện. Khả năng chống tấn công gỡ watermark là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/facebookresearch/audioseal/blob/1496f7662d6aa625602bb0dcd1b4997b63b47609/README.md) · [LICENSE](https://github.com/facebookresearch/audioseal/blob/1496f7662d6aa625602bb0dcd1b4997b63b47609/LICENSE) · [pyproject.toml](https://github.com/facebookresearch/audioseal/blob/1496f7662d6aa625602bb0dcd1b4997b63b47609/pyproject.toml) |
+
+<a id="ch-eva-servicenow"></a>
+
+### EVA (ServiceNow)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ServiceNow/eva |
+| License | MIT |
+| Phiên bản đã đọc | `5a79590f3fc68f5c27a844729ca5160c54e3526b` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, THIRD_PARTY_NOTICES; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-18) |
+| Nhận định | Khung đánh giá voice agent hội thoại nhiều lượt theo hai trục Accuracy và Experience, kiến trúc bot-to-bot, kèm bộ nhiễu/accent/kết nối kém (accent cần ElevenLabs caller). Kết quả 12 hệ thống là số của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/ServiceNow/eva/blob/5a79590f3fc68f5c27a844729ca5160c54e3526b/README.md) · [LICENSE](https://github.com/ServiceNow/eva/blob/5a79590f3fc68f5c27a844729ca5160c54e3526b/LICENSE) · [pyproject.toml](https://github.com/ServiceNow/eva/blob/5a79590f3fc68f5c27a844729ca5160c54e3526b/pyproject.toml) · [THIRD_PARTY_NOTICES](https://github.com/ServiceNow/eva/blob/5a79590f3fc68f5c27a844729ca5160c54e3526b/THIRD_PARTY_NOTICES) |
+
+<a id="ch-fish-audio-s2-pro"></a>
+
+### Fish Audio S2 Pro
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/fishaudio/fish-speech |
+| License | Fish Audio Community License v1.0 (mã và Drama 3; trọng số S2-Pro vẫn Research License) — khác catalog cũ "Fish Audio Research License" |
+| Phiên bản đã đọc | `0f8a12e8a651062fdee9c33a894bdccd3a8513f1` (commit 2026-10-30) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-10-30) |
+| Nhận định | Mã và model TTS Fish Audio; README khuyên dùng SGLang-Omni/vLLM-Omni để suy luận hiệu quả. Không phải mã nguồn mở theo OSI; mọi dùng thương mại phải đọc điều kiện doanh thu và cấm dịch vụ hosted. Hồ sơ cũ ghi S2 Pro là trọng tâm, nay đã lỗi thời. |
+| Nguồn | [README.md](https://github.com/fishaudio/fish-speech/blob/0f8a12e8a651062fdee9c33a894bdccd3a8513f1/README.md) · [LICENSE](https://github.com/fishaudio/fish-speech/blob/0f8a12e8a651062fdee9c33a894bdccd3a8513f1/LICENSE) · [pyproject.toml](https://github.com/fishaudio/fish-speech/blob/0f8a12e8a651062fdee9c33a894bdccd3a8513f1/pyproject.toml) |
+
+<a id="ch-flux-2"></a>
+
+### FLUX.2
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/black-forest-labs/flux2 |
+| License | Apache-2.0 (mã); trọng số tùy bản (4B Apache-2.0; 9B/dev FLUX Non-Commercial) |
+| Phiên bản đã đọc | `50fe5162777813d869182b139e83b10743caef15` (commit 2026-03-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, pyproject.toml, model_licenses/LICENSE-FLUX-NON-COMMERICAL; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-03-12) |
+| Nhận định | Mã suy luận tối thiểu cho tạo/sửa ảnh của FLUX.2 (family klein và dev). Chỉ bản 4B dùng thương mại được theo README; 9B/dev cấm thương mại và sản xuất. Commit cuối 2026-03-12 nên coi là ít hoạt động. |
+| Nguồn | [README.md](https://github.com/black-forest-labs/flux2/blob/50fe5162777813d869182b139e83b10743caef15/README.md) · [LICENSE.md](https://github.com/black-forest-labs/flux2/blob/50fe5162777813d869182b139e83b10743caef15/LICENSE.md) · [pyproject.toml](https://github.com/black-forest-labs/flux2/blob/50fe5162777813d869182b139e83b10743caef15/pyproject.toml) · [LICENSE-FLUX-NON-COMMERICAL](https://github.com/black-forest-labs/flux2/blob/50fe5162777813d869182b139e83b10743caef15/model_licenses/LICENSE-FLUX-NON-COMMERICAL) |
+
+<a id="ch-fooocus"></a>
+
+### Fooocus
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/lllyasviel/Fooocus |
+| License | GPL-3.0 |
+| Phiên bản đã đọc | `ae05379cc97bc4361ec8b4ec90193dab21be763f` (commit 2025-09-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc readme.md, LICENSE, fooocus_version.py; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2025-09-02) |
+| Nhận định | Phần mềm tạo ảnh offline dựa trên SDXL với Gradio UI. GPL-3.0 là copyleft nên cần cân nhắc khi nhúng; chỉ sửa lỗi nên không phù hợp để theo kịp model mới (README tự giới thiệu WebUI Forge, ComfyUI). |
+| Nguồn | [readme.md](https://github.com/lllyasviel/Fooocus/blob/ae05379cc97bc4361ec8b4ec90193dab21be763f/readme.md) · [LICENSE](https://github.com/lllyasviel/Fooocus/blob/ae05379cc97bc4361ec8b4ec90193dab21be763f/LICENSE) · [fooocus_version.py](https://github.com/lllyasviel/Fooocus/blob/ae05379cc97bc4361ec8b4ec90193dab21be763f/fooocus_version.py) |
+
+<a id="ch-gpt-sovits"></a>
+
+### GPT-SoVITS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/RVC-Boss/GPT-SoVITS |
+| License | MIT |
+| Phiên bản đã đọc | `6d51ffceafbf240145619af4c92408a6e54b7924` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-12) |
+| Nhận định | WebUI TTS/voice conversion few-shot (1 phút dữ liệu) kèm công cụ tách giọng, cắt dữ liệu, ASR tiếng Trung. Chưa kiểm giấy phép các model tiền huấn luyện đi kèm **(chưa xác minh)**; công nghệ nhân bản giọng cần cơ chế đồng ý và gắn nhãn. |
+| Nguồn | [README.md](https://github.com/RVC-Boss/GPT-SoVITS/blob/6d51ffceafbf240145619af4c92408a6e54b7924/README.md) · [LICENSE](https://github.com/RVC-Boss/GPT-SoVITS/blob/6d51ffceafbf240145619af4c92408a6e54b7924/LICENSE) |
+
+<a id="ch-handy"></a>
+
+### Handy
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/cjpais/Handy |
+| License | MIT |
+| Phiên bản đã đọc | `939c9573a346859016de1f9d87369a9765af1671` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-21) |
+| Nhận định | Ứng dụng desktop Tauri chuyển giọng thành văn bản hoàn toàn offline (Whisper) và dán vào ô đang chọn. Tuyên bố riêng tư/không gửi dữ liệu là của tác giả **(chưa xác minh)**; chưa đọc mã mạng. |
+| Nguồn | [README.md](https://github.com/cjpais/Handy/blob/939c9573a346859016de1f9d87369a9765af1671/README.md) · [LICENSE](https://github.com/cjpais/Handy/blob/939c9573a346859016de1f9d87369a9765af1671/LICENSE) · [package.json](https://github.com/cjpais/Handy/blob/939c9573a346859016de1f9d87369a9765af1671/package.json) |
+
+<a id="ch-jiwer"></a>
+
+### JiWER
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/jitsi/jiwer |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `2227002889f20f3fb19d523eeb322732cb67b431` (commit 2026-04-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-04-16) |
+| Nhận định | Thư viện Python nhỏ tính WER, MER, WIL, WIP, CER qua RapidFuzz. Kết quả phụ thuộc bước chuẩn hóa văn bản do người dùng định nghĩa; phù hợp cổng CI vì nhẹ. |
+| Nguồn | [README.md](https://github.com/jitsi/jiwer/blob/2227002889f20f3fb19d523eeb322732cb67b431/README.md) · [LICENSE](https://github.com/jitsi/jiwer/blob/2227002889f20f3fb19d523eeb322732cb67b431/LICENSE) · [pyproject.toml](https://github.com/jitsi/jiwer/blob/2227002889f20f3fb19d523eeb322732cb67b431/pyproject.toml) |
+
+<a id="ch-kokoro-tts"></a>
+
+### Kokoro TTS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/hexgrad/kokoro |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `dfb907a02bba8152ca444717ca5d78747ccb4bec` (commit 2025-08-06) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2025-08-06) |
+| Nhận định | Thư viện suy luận cho model TTS Kokoro-82M (open-weight, README nói trọng số Apache). Giấy phép trọng số trên Hugging Face **(chưa xác minh)**; repo đứng yên, không có CI. |
+| Nguồn | [README.md](https://github.com/hexgrad/kokoro/blob/dfb907a02bba8152ca444717ca5d78747ccb4bec/README.md) · [LICENSE](https://github.com/hexgrad/kokoro/blob/dfb907a02bba8152ca444717ca5d78747ccb4bec/LICENSE) · [pyproject.toml](https://github.com/hexgrad/kokoro/blob/dfb907a02bba8152ca444717ca5d78747ccb4bec/pyproject.toml) |
+
+<a id="ch-livekit-agents"></a>
+
+### LiveKit Agents
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/livekit/agents |
+| License | Apache-2.0 (mã); model turn detection: LiveKit Model License |
+| Phiên bản đã đọc | `8b202a2abc49db9339b2e4ae3639293e58aeabfc` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, MODEL_LICENSE, NOTICE; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-23) |
+| Nhận định | Framework Python dựng agent thời gian thực (STT-LLM-TTS/Realtime API, WebRTC, telephony, MCP, test framework). Model turn detection bị ràng buộc dùng với framework này; nhiều workflow (tests, evals, release-gate) chỉ biết tên. |
+| Nguồn | [README.md](https://github.com/livekit/agents/blob/8b202a2abc49db9339b2e4ae3639293e58aeabfc/README.md) · [LICENSE](https://github.com/livekit/agents/blob/8b202a2abc49db9339b2e4ae3639293e58aeabfc/LICENSE) · [MODEL_LICENSE](https://github.com/livekit/agents/blob/8b202a2abc49db9339b2e4ae3639293e58aeabfc/MODEL_LICENSE) · [NOTICE](https://github.com/livekit/agents/blob/8b202a2abc49db9339b2e4ae3639293e58aeabfc/NOTICE) |
+
+<a id="ch-llava-next"></a>
+
+### LLaVA-NeXT
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/LLaVA-VL/LLaVA-NeXT |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `bce12e479bc4dfee2b9c50c88137b01ff51bd483` (commit 2026-06-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-06-15) |
+| Nhận định | Mã LLaVA-NeXT/Video/Critic cho mô hình đa phương thức. Pipeline huấn luyện đã chuyển sang repo khác; dữ liệu và checkpoint chịu license gốc riêng theo README nên phải kiểm từng checkpoint. |
+| Nguồn | [README.md](https://github.com/LLaVA-VL/LLaVA-NeXT/blob/bce12e479bc4dfee2b9c50c88137b01ff51bd483/README.md) · [LICENSE](https://github.com/LLaVA-VL/LLaVA-NeXT/blob/bce12e479bc4dfee2b9c50c88137b01ff51bd483/LICENSE) · [pyproject.toml](https://github.com/LLaVA-VL/LLaVA-NeXT/blob/bce12e479bc4dfee2b9c50c88137b01ff51bd483/pyproject.toml) |
+
+<a id="ch-open-asr-leaderboard"></a>
+
+### Open ASR Leaderboard
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/huggingface/open_asr_leaderboard |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `c4696193a333f7948cb113dc93bb54f661bd9a0b` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-20) |
+| Nhận định | Khung đo ASR trung lập (short-form, long-form, multilingual) với bộ dữ liệu công khai trên Hugging Face. Tập riêng tư không công khai nên không tự tái lập được phần đó; kết quả bảng xếp hạng **(chưa xác minh)** ở đây. |
+| Nguồn | [README.md](https://github.com/huggingface/open_asr_leaderboard/blob/c4696193a333f7948cb113dc93bb54f661bd9a0b/README.md) · [LICENSE](https://github.com/huggingface/open_asr_leaderboard/blob/c4696193a333f7948cb113dc93bb54f661bd9a0b/LICENSE) |
+
+<a id="ch-picovoice-speech-to-text-benchmark"></a>
+
+### Picovoice Speech-to-Text Benchmark
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Picovoice/speech-to-text-benchmark |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `272be8f2244c10dfb2994f192bd6390982b17a5d` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-16) |
+| Nhận định | Khung nhỏ đo WER, độ trễ, bộ nhớ trên LibriSpeech, TED-LIUM, Common Voice, MLS... Dùng khung đo được, nhưng bảng kết quả trong repo là số của nhà bán **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/Picovoice/speech-to-text-benchmark/blob/272be8f2244c10dfb2994f192bd6390982b17a5d/README.md) · [LICENSE](https://github.com/Picovoice/speech-to-text-benchmark/blob/272be8f2244c10dfb2994f192bd6390982b17a5d/LICENSE) |
+
+<a id="ch-pipecat"></a>
+
+### Pipecat
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/pipecat-ai/pipecat |
+| License | BSD-2-Clause |
+| Phiên bản đã đọc | `218a7f83635639c6a36ed45747a6644fdc1eeeff` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit 2026-11-22) |
+| Nhận định | Framework Python dựng agent thoại và đa phương thức với pipeline plugin (hơn 70 mục trong services), có thư mục evals. Rủi ro ở cấp tích hợp: mỗi provider có license/điều khoản riêng. |
+| Nguồn | [README.md](https://github.com/pipecat-ai/pipecat/blob/218a7f83635639c6a36ed45747a6644fdc1eeeff/README.md) · [LICENSE](https://github.com/pipecat-ai/pipecat/blob/218a7f83635639c6a36ed45747a6644fdc1eeeff/LICENSE) · [pyproject.toml](https://github.com/pipecat-ai/pipecat/blob/218a7f83635639c6a36ed45747a6644fdc1eeeff/pyproject.toml) |
+
+<a id="ch-qwen3-vl"></a>
+
+### Qwen3-VL
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/QwenLM/Qwen3-VL |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `96588727e44c78b25ba03ea03b8e12f7e64fd0da` (commit 2026-01-30) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-01-30) |
+| Nhận định | Repo mã, cookbook, evaluation, finetune cho Qwen3-VL (agent GUI, 2D/3D grounding, video dài). License từng checkpoint trên Hugging Face chưa đọc **(chưa xác minh)**; theo dõi model card thay vì repo. |
+| Nguồn | [README.md](https://github.com/QwenLM/Qwen3-VL/blob/96588727e44c78b25ba03ea03b8e12f7e64fd0da/README.md) · [LICENSE](https://github.com/QwenLM/Qwen3-VL/blob/96588727e44c78b25ba03ea03b8e12f7e64fd0da/LICENSE) |
+
+<a id="ch-stable-diffusion-webui"></a>
+
+### Stable Diffusion WebUI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/AUTOMATIC1111/stable-diffusion-webui |
+| License | AGPL-3.0 (khớp catalog) |
+| Phiên bản đã đọc | `82a973c04367123ae98bd9abdf80d9eda9b910e2` (commit 2024-07-27) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.txt, package.json (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối trên nhánh mặc định 2024-07-27; README không tự tuyên bố ngừng. Chỉ kiểm nhánh mặc định. |
+| Nhận định | Giao diện web Gradio cho Stable Diffusion (txt2img, img2img, inpaint, textual inversion, extras). Nhánh mặc định không có commit nào từ 2024-07-27, khớp nhận định "dừng phát triển" của catalog; hệ sinh thái extension vẫn là lý do tham khảo. |
+| Nguồn | [README](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/82a973c04367123ae98bd9abdf80d9eda9b910e2/README.md) · [LICENSE](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/82a973c04367123ae98bd9abdf80d9eda9b910e2/LICENSE.txt) · [package.json](https://github.com/AUTOMATIC1111/stable-diffusion-webui/blob/82a973c04367123ae98bd9abdf80d9eda9b910e2/package.json) |
+
+<a id="ch-ten-framework"></a>
+
+### TEN Framework
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/TEN-framework/ten-framework |
+| License | Apache-2.0 kèm điều kiện bổ sung của Agora (KHÁC catalog ghi Apache-2.0 thuần) |
+| Phiên bản đã đọc | `60020b9d97940fbdb137635cc81c946ae910d127` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-23; có nhiều workflow CI (chỉ xem tên file). |
+| Nhận định | Framework dựng agent hội thoại giọng nói thời gian thực nhiều module, có nhiều ví dụ trong ai_agents. Giấy phép là Apache-2.0 kèm điều kiện: cấm host trên thiết bị đầu cuối người dùng và cấm triển khai cạnh tranh với dịch vụ của Agora; không nên coi là Apache thuần. |
+| Nguồn | [README](https://github.com/TEN-framework/ten-framework/blob/60020b9d97940fbdb137635cc81c946ae910d127/README.md) · [LICENSE](https://github.com/TEN-framework/ten-framework/blob/60020b9d97940fbdb137635cc81c946ae910d127/LICENSE) · [package.json](https://github.com/TEN-framework/ten-framework/blob/60020b9d97940fbdb137635cc81c946ae910d127/package.json) |
+
+<a id="ch-ultraeval-audio"></a>
+
+### UltraEval-Audio
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/OpenBMB/UltraEval-Audio |
+| License | Apache-2.0 (khớp catalog) |
+| Phiên bản đã đọc | `6e842c974ffc4d154eb910435872577735726320` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-19, mới hơn mốc 28/10/2026 trong catalog. |
+| Nhận định | Khung đánh giá audio foundation model: README nêu 34 benchmark, 10 ngôn ngữ, 12 nhóm tác vụ, có thư mục replication với lệnh tái lập (các con số là tuyên bố của tác giả, chưa xác minh). Runtime cô lập qua IPC để tránh xung đột phụ thuộc. |
+| Nguồn | [README](https://github.com/OpenBMB/UltraEval-Audio/blob/6e842c974ffc4d154eb910435872577735726320/README.md) · [LICENSE](https://github.com/OpenBMB/UltraEval-Audio/blob/6e842c974ffc4d154eb910435872577735726320/LICENSE) · [pyproject.toml](https://github.com/OpenBMB/UltraEval-Audio/blob/6e842c974ffc4d154eb910435872577735726320/pyproject.toml) |
+
+<a id="ch-utmosv2"></a>
+
+### UTMOSv2
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/sarulab-speech/UTMOSv2 |
+| License | MIT (khớp catalog) |
+| Phiên bản đã đọc | `cc2700db57bb83ee13dc31ebe1b868c254e15d09` (commit 2026-04-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-04-02 (khoảng 7,5 tháng trước thời điểm kiểm). |
+| Nhận định | Triển khai chính thức hệ T05 dự đoán MOS độ tự nhiên giọng tổng hợp (VoiceMOS 2024 Track 1, SLT 2024); thành tích hạng 1/2 là tuyên bố của tác giả **(chưa xác minh)**. Có test, CI lint/mypy; độ chính xác với tiếng Việt chưa được nêu trong README. |
+| Nguồn | [README](https://github.com/sarulab-speech/UTMOSv2/blob/cc2700db57bb83ee13dc31ebe1b868c254e15d09/README.md) · [LICENSE](https://github.com/sarulab-speech/UTMOSv2/blob/cc2700db57bb83ee13dc31ebe1b868c254e15d09/LICENSE) · [pyproject.toml](https://github.com/sarulab-speech/UTMOSv2/blob/cc2700db57bb83ee13dc31ebe1b868c254e15d09/pyproject.toml) |
+
+<a id="ch-vibevoice"></a>
+
+### VibeVoice
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/VibeVoice |
+| License | MIT (khớp catalog) |
+| Phiên bản đã đọc | `16fb2cb1217c9934a886e1948ffb06120caa2df5` (commit 2026-10-08) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-10-08; không có thư mục .github. |
+| Nhận định | Họ mô hình giọng của Microsoft: ASR 7B, ASR streaming (tin tức 2026-09-03), có thư mục finetuning-asr và vllm_plugin. README ghi 2025-09-05 đã gỡ mã VibeVoice-TTS vì bị dùng sai mục đích; không có .github nên không có CI, khớp catalog. |
+| Nguồn | [README](https://github.com/microsoft/VibeVoice/blob/16fb2cb1217c9934a886e1948ffb06120caa2df5/README.md) · [LICENSE](https://github.com/microsoft/VibeVoice/blob/16fb2cb1217c9934a886e1948ffb06120caa2df5/LICENSE) · [pyproject.toml](https://github.com/microsoft/VibeVoice/blob/16fb2cb1217c9934a886e1948ffb06120caa2df5/pyproject.toml) |
+
+<a id="ch-voicebox"></a>
+
+### Voicebox
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/jamiepine/voicebox |
+| License | MIT (khớp catalog) |
+| Phiên bản đã đọc | `8af7efe62fab8d33e2a5dfbedabaa45f68a5184f` (commit 2026-10-07) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-10-07; package.json 0.6.0 (catalog nhắc tag v0.5.0, chưa kiểm tag). Có CI (ci.yml, release.yml; chỉ xem tên). |
+| Nhận định | Voice studio chạy cục bộ: nhân bản giọng, TTS nhiều engine, dictation, tích hợp agent; README nói do luồng Capy điều phối bảo trì. README xác nhận chưa có binary dựng sẵn cho Linux (build từ nguồn). Có RESPONSIBLE_USE.md. |
+| Nguồn | [README](https://github.com/jamiepine/voicebox/blob/8af7efe62fab8d33e2a5dfbedabaa45f68a5184f/README.md) · [LICENSE](https://github.com/jamiepine/voicebox/blob/8af7efe62fab8d33e2a5dfbedabaa45f68a5184f/LICENSE) · [package.json](https://github.com/jamiepine/voicebox/blob/8af7efe62fab8d33e2a5dfbedabaa45f68a5184f/package.json) |
+
+<a id="ch-voicestudio"></a>
+
+### VoiceStudio
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/debpalash/VoiceStudio |
+| License | AGPL-3.0-only, có bản license thương mại và CLA (khớp catalog) |
+| Phiên bản đã đọc | `1214e264d9e4facef560e1583370edbc7a6beff7` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, pyproject.toml, LICENSE-NOTICE.md (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-23; có nhiều workflow CI (chỉ xem tên). |
+| Nhận định | Studio giọng chạy cục bộ (nhân bản, dubbing, dictation, transcribe). AGPL cho mã ứng dụng, cho phép dùng thương mại theo AGPL; bản license thương mại và tính năng Pro bán riêng. Trọng số mặc định OmniVoice là CC-BY-NC (không thương mại) theo README: phải kiểm license từng model. |
+| Nguồn | [README](https://github.com/debpalash/VoiceStudio/blob/1214e264d9e4facef560e1583370edbc7a6beff7/README.md) · [LICENSE](https://github.com/debpalash/VoiceStudio/blob/1214e264d9e4facef560e1583370edbc7a6beff7/LICENSE) · [package.json](https://github.com/debpalash/VoiceStudio/blob/1214e264d9e4facef560e1583370edbc7a6beff7/package.json) · [pyproject.toml](https://github.com/debpalash/VoiceStudio/blob/1214e264d9e4facef560e1583370edbc7a6beff7/pyproject.toml) · [LICENSE-NOTICE.md](https://github.com/debpalash/VoiceStudio/blob/1214e264d9e4facef560e1583370edbc7a6beff7/LICENSE-NOTICE.md) |
+
+<a id="ch-voxcpm"></a>
+
+### VoxCPM
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/OpenBMB/VoxCPM |
+| License | Apache-2.0 (khớp catalog; README nói cả weights) |
+| Phiên bản đã đọc | `300e4260b509066151d623dc9c0aa922cf82232b` (commit 2026-11-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-09. |
+| Nhận định | TTS không tokenizer (VoxCPM2): đa ngôn ngữ, thiết kế giọng, nhân bản giọng, có WebUI và LoRA fine-tune. README khẳng định weights và code đều Apache-2.0 (phần weights chỉ là tuyên bố trong README, chưa đối chiếu trang model). |
+| Nguồn | [README](https://github.com/OpenBMB/VoxCPM/blob/300e4260b509066151d623dc9c0aa922cf82232b/README.md) · [LICENSE](https://github.com/OpenBMB/VoxCPM/blob/300e4260b509066151d623dc9c0aa922cf82232b/LICENSE) · [pyproject.toml](https://github.com/OpenBMB/VoxCPM/blob/300e4260b509066151d623dc9c0aa922cf82232b/pyproject.toml) |
+
+<a id="ch-whisper"></a>
+
+### Whisper
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/openai/whisper |
+| License | MIT (khớp catalog) |
+| Phiên bản đã đọc | `86098128c0b4f24f0e2aa2994de830614b474227` (commit 2026-08-31) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-08-31. |
+| Nhận định | Mô hình nhận dạng giọng nói đa tác vụ của OpenAI (ASR, dịch, nhận diện ngôn ngữ), gói PyPI openai-whisper. Mã và weights phát hành MIT theo README/LICENSE; nhịp commit thưa, repo chủ yếu ổn định. |
+| Nguồn | [README](https://github.com/openai/whisper/blob/86098128c0b4f24f0e2aa2994de830614b474227/README.md) · [LICENSE](https://github.com/openai/whisper/blob/86098128c0b4f24f0e2aa2994de830614b474227/LICENSE) · [pyproject.toml](https://github.com/openai/whisper/blob/86098128c0b4f24f0e2aa2994de830614b474227/pyproject.toml) |
+
+<a id="ch-whisper-cpp"></a>
+
+### whisper.cpp
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ggml-org/whisper.cpp |
+| License | MIT (khớp catalog) |
+| Phiên bản đã đọc | `96ec4d9823e9d0211944172da35f9f29134af990` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE (manifest chỉ trích dòng name/version/license); chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-11-23; nhiều workflow CI (chỉ xem tên file). |
+| Nhận định | Suy luận Whisper bằng C/C++ thuần, không phụ thuộc, tối ưu Apple Silicon, có binding nhiều ngôn ngữ và nhiều backend phần cứng (xem thư mục ggml, bindings). |
+| Nguồn | [README](https://github.com/ggml-org/whisper.cpp/blob/96ec4d9823e9d0211944172da35f9f29134af990/README.md) · [LICENSE](https://github.com/ggml-org/whisper.cpp/blob/96ec4d9823e9d0211944172da35f9f29134af990/LICENSE) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-speechbrain-toolkit"></a>
+
+### SpeechBrain
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/speechbrain/speechbrain |
+| License | Apache-2.0 (mã); license từng model pretrained trên Hugging Face khác nhau (chưa xác minh) |
+| Phiên bản đã đọc | `c0241278f93ef02cd5191f03caf4e5f8e1292bf6` (commit 2026-10-14) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, speechbrain/inference/interfaces.py, recipes/CommonVoice/common_voice_prepare.py; chưa chạy upstream |
+| Khoảng trống lấp | ASR/TTS tiếng Việt (chỉ là nền huấn luyện, không có recipe tiếng Việt sẵn) |
+| Cơ chế đáng học | - Tách dữ liệu, mô hình, siêu tham số: mỗi recipe là `train.py` cộng `hparams/train.yaml` (HyperPyYAML), lớp `Brain` trong `speechbrain/core.py` có `compute_objectives`, `fit`, `evaluate` làm khung huấn luyện chung.<br>- `recipes/CommonVoice/common_voice_prepare.py`: `prepare_common_voice(language=...)` và `language_specific_preprocess` chuẩn hóa văn bản riêng cho en, fr, it, rw, de, ar; ja và zh-CN đếm theo ký tự khi lọc câu quá ngắn; không có nhánh riêng cho `vi` (tiếng Việt chỉ đi qua phần lọc chung, cần tự thêm chuẩn hóa dấu).<br>- `recipes/CommonVoice/ASR/transformer/hparams/train_hf_whisper.yaml`: tinh chỉnh Whisper (`openai/whisper-medium`) với `language` chọn theo mã CommonVoice, cho thấy đường fine-tune Whisper ngôn ngữ mới.<br>- `PERFORMANCE.md` và `.github/workflows/pythonapp.yml`: bảng kết quả theo recipe kèm link checkpoint; CI chạy `tests/consistency`, `tests/unittests`, doctest và `tests/integration`. |
+| Tiêu chí và cách kiểm | CI (`pythonapp.yml`, đã mở) chạy Python 3.11 và 3.14 trên CPU: consistency, unit, doctest, integration; không huấn luyện đủ recipe nên số trong `PERFORMANCE.md` là kết quả do tác giả báo (chưa xác minh). `tests/consistency` kiểm tính nhất quán yaml/recipe/docstring bằng máy. |
+| Giới hạn và rủi ro | `speechbrain/inference/interfaces.py` `foreign_class` tải `custom.py` từ nguồn model rồi import: docstring tự cảnh báo có thể chạy mã tùy ý, chỉ dùng với nguồn tin cậy. Không có recipe hay hparams tiếng Việt; ASR tiếng Việt còn phải kiểm dữ liệu và license (license dữ liệu CommonVoice và các tập khác phải kiểm riêng, repo không cấp). License model pretrained tách khỏi mã Apache-2.0. Dự án lớn, nhiều phụ thuộc và nặng cho việc chỉ cần suy luận. |
+| So với | `whisper`, `faster-whisper`, `funasr`, `sherpa-onnx`, `speech` (NVIDIA-NeMo/Speech): SpeechBrain mạnh ở huấn luyện từ đầu và nghiên cứu; Whisper và FunASR mạnh hơn khi cần dùng ngay. Tiếng Việt đã có `phowhisper`, `gipformer`. |
+| Nguồn | [README.md](https://github.com/speechbrain/speechbrain/blob/c0241278f93ef02cd5191f03caf4e5f8e1292bf6/README.md) · [LICENSE](https://github.com/speechbrain/speechbrain/blob/c0241278f93ef02cd5191f03caf4e5f8e1292bf6/LICENSE) · [interfaces.py](https://github.com/speechbrain/speechbrain/blob/c0241278f93ef02cd5191f03caf4e5f8e1292bf6/speechbrain/inference/interfaces.py) · [common_voice_prepare.py](https://github.com/speechbrain/speechbrain/blob/c0241278f93ef02cd5191f03caf4e5f8e1292bf6/recipes/CommonVoice/common_voice_prepare.py) · [train_hf_whisper.yaml](https://github.com/speechbrain/speechbrain/blob/c0241278f93ef02cd5191f03caf4e5f8e1292bf6/recipes/CommonVoice/ASR/transformer/hparams/train_hf_whisper.yaml) · [pythonapp.yml](https://github.com/speechbrain/speechbrain/blob/c0241278f93ef02cd5191f03caf4e5f8e1292bf6/.github/workflows/pythonapp.yml) · [README.md](https://github.com/speechbrain/speechbrain/blob/c0241278f93ef02cd5191f03caf4e5f8e1292bf6/tests/README.md) · [PERFORMANCE.md](https://github.com/speechbrain/speechbrain/blob/c0241278f93ef02cd5191f03caf4e5f8e1292bf6/PERFORMANCE.md) |
+
+<a id="nt-kyutai-delayed-streams"></a>
+
+### Kyutai Delayed Streams Modeling (STT/TTS)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/kyutai-labs/delayed-streams-modeling |
+| License | Mã MIT (Python, web client) và Apache-2.0 (Rust); trọng số STT CC-BY 4.0; trọng số TTS không nêu trong repo |
+| Phiên bản đã đọc | `4c4f65e147df056adf3346290d64c7b9649b18c9` (commit 2026-01-26) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE-MIT, LICENSE-APACHE, FAQ.md; chưa chạy upstream |
+| Khoảng trống lấp | ASR/TTS tiếng Việt (kết quả: không hỗ trợ tiếng Việt) |
+| Cơ chế đáng học | - `configs/config-stt-en_fr-hf.toml`: khai báo mô-đun `BatchedAsr` với `batch_size = 64`, `asr_delay_in_tokens = 6`, transformer causal 16 lớp `d_model 2048`, tải trọng số `hf://kyutai/stt-1b-en_fr-candle/...safetensors`; độ trễ cố định theo token là cốt lõi của DSM.<br>- `configs/config-tts.toml`: `batch_size = 8`, `cfg_coef = 2.0` vì model `tts-1.6b-en_fr` được chưng cất CFG (chỉ dùng hệ số đã huấn luyện), giọng lấy từ `hf-snapshot://kyutai/tts-voices/**/*.safetensors`.<br>- `scripts/`: `stt_from_file_pytorch.py` (mốc thời gian từng từ), `stt_evaluate_on_dataset.py` (đo trên dataset HF), `stt_from_mic_rust_server.py`, `tts_mlx_streaming.py`.<br>- README nêu số: H100 xử lý 400 luồng thời gian thực, L40S phục vụ 64 kết nối ở RTF 3x (chưa xác minh). |
+| Tiêu chí và cách kiểm | CI duy nhất là `precommit.yml` (đã mở): chạy pre-commit, không chạy suy luận hay test. Có script đánh giá trên dataset nhưng chạy bằng tay. Số liệu thông lượng chỉ là tuyên bố của tác giả. |
+| Giới hạn và rủi ro | Cả hai file config đặt `authorized_ids = ["public_token"]`, một token công khai ví dụ: triển khai thật phải đổi. Trọng số STT theo CC-BY 4.0 (cần ghi công); README không nêu license trọng số TTS và voice embedding, cần đọc model card (chưa xác minh). Ngôn ngữ chỉ en và fr. Phần lõi nằm ở repo khác (`moshi`, `moshi-server`) nên không kiểm được ở đây. Commit cuối 2026-01-26, nhịp cập nhật chậm. |
+| So với | `whisper`, `faster-whisper`, `whisper-cpp`, `pipecat`, `livekit-agents`; tiếng Việt dùng `phowhisper`, `gipformer`. |
+| Nguồn | [README.md](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/README.md) · [LICENSE-MIT](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/LICENSE-MIT) · [LICENSE-APACHE](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/LICENSE-APACHE) · [FAQ.md](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/FAQ.md) · [config-tts.toml](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/configs/config-tts.toml) · [config-stt-en_fr-hf.toml](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/configs/config-stt-en_fr-hf.toml) · [Cargo.toml](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/stt-rs/Cargo.toml) · [precommit.yml](https://github.com/kyutai-labs/delayed-streams-modeling/blob/4c4f65e147df056adf3346290d64c7b9649b18c9/.github/workflows/precommit.yml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-viet-asr"></a>
+
+### VietASR (dangvansam)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/dangvansam/viet-asr |
+| License | Apache-2.0 (file LICENSE chỉ là phần đầu giấy phép kèm ghi chú, văn bản đầy đủ chưa chèn) |
+| Phiên bản đã đọc | `e580088c8bfd68dcbc321467489c125e8e3dabf3` (commit 2026-11-05) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, core/presets/transcribe.cc, core/src/modules/vietasr/README.md, core/tests/test_pipeline.cc, .github/workflows/release.yml; chưa chạy upstream |
+| Khoảng trống lấp | Tài nguyên tiếng Việt: ASR chạy cục bộ, đa nền tảng, ra thẳng văn bản đã viết hoa, chấm câu |
+| Cơ chế đáng học | • Một lõi C++ (`core/`) dạng pipeline gồm các mô-đun đăng ký tên (`vad`, `vietasr`, `punctuation`, `diarization`) ghép qua preset (`core/presets/transcribe.cc`: transcribe, transcribe-rich, stream, batch, meeting).<br>• Mô hình transducer 86M tham số int8 (78 MB), tải từ Hugging Face theo revision ghim; `models.json` ghim kích thước, SHA-256 và MD5 từng file, `model_fetcher.cc` kiểm MD5 khi tải (`core/src/modules/vietasr/README.md`).<br>• Nhiều binding (Python, Go, Rust, Node, Java, C#, Swift, WASM) bọc cùng lõi và tuyên bố cho ra bản chép giống hệt nhau (chưa xác minh); chạy ngoại tuyến được với `VIETASR_OFFLINE=1`. |
+| Tiêu chí và cách kiểm | README có bảng WER trên VIVOS, Bud500, VLSP 2018 đến 2023, chấm trên đầu ra thô so với tham chiếu viết đúng chính tả (viet-asr 15,97 đến 27,90 tuỳ bộ); số liệu do tác giả tự công bố, chưa xác minh. Kho có test gtest (`core/tests/`) nhưng `release.yml` (đã mở) chỉ build native và phát hành, còn `docker-publish.yml` và `pypi-publish.yml` mới chỉ grep, không thấy bước chạy test nào. Kiểm toàn vẹn mô hình bằng băm; kết quả WER không kiểm lại bằng máy trong kho. |
+| Giới hạn và rủi ro | File LICENSE chỉ có phần đầu Apache-2.0 kèm dòng 'Full Apache 2.0 license text to be inserted at release time', nên văn bản giấy phép chưa đầy đủ. Backend VAD `tenvad` mang Apache-2.0 kèm điều kiện thêm có điều khoản cấm cạnh tranh với Agora; README hướng dẫn tắt bằng `-DVIETASR_VAD_TENVAD=OFF`, trong khi preset `vad` và `batch` dùng đúng backend này. Bản 'Pro' có WER tốt nhất không công khai. Tải native lib và mô hình lần đầu khi cài (rời máy một lần). Phát hành v0.1.0, kho còn mới. |
+| So với | phowhisper, gipformer, sherpa-onnx (ASR cục bộ đã có trong kho) |
+| Nguồn | [README.md](https://github.com/dangvansam/viet-asr/blob/e580088c8bfd68dcbc321467489c125e8e3dabf3/README.md) · [LICENSE](https://github.com/dangvansam/viet-asr/blob/e580088c8bfd68dcbc321467489c125e8e3dabf3/LICENSE) · [transcribe.cc](https://github.com/dangvansam/viet-asr/blob/e580088c8bfd68dcbc321467489c125e8e3dabf3/core/presets/transcribe.cc) · [README.md](https://github.com/dangvansam/viet-asr/blob/e580088c8bfd68dcbc321467489c125e8e3dabf3/core/src/modules/vietasr/README.md) · [test_pipeline.cc](https://github.com/dangvansam/viet-asr/blob/e580088c8bfd68dcbc321467489c125e8e3dabf3/core/tests/test_pipeline.cc) · [release.yml](https://github.com/dangvansam/viet-asr/blob/e580088c8bfd68dcbc321467489c125e8e3dabf3/.github/workflows/release.yml) |
+
+<a id="n2-lemas-tts"></a>
+
+### LEMAS-TTS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/LEMAS-Project/LEMAS-TTS |
+| License | không có file LICENSE |
+| Phiên bản đã đọc | `305f7e31a874140d141987909a062e57f2807321` (commit 2026-03-31) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, requirements.txt, lemas_tts/infer/frontend.py, api.py, infer/utils_infer.py, scripts/tts_multilingual.sh; chưa chạy upstream |
+| Khoảng trống lấp | Tài nguyên tiếng Việt: TTS đa ngôn ngữ zero-shot, tiếng Việt chỉ là một trong 10 ngôn ngữ |
+| Cơ chế đáng học | • TTS zero-shot dạng flow-matching theo F5-TTS (`lemas_tts/model/cfm.py`, backbone DiT/UNetT/MMDiT) hỗ trợ 10 ngôn ngữ, có nhánh mã hoá ngữ điệu (`prosody_encoder.py`) và sửa giọng theo căn chỉnh từ (`speech_edit_multilingual.py`).<br>• Tiền xử lý văn bản đi qua `lemas_tts/infer/frontend.py`: nhận ngôn ngữ bằng `langid`, chuẩn hoá riêng cho Trung, Anh, Indonesia, rồi chuyển âm vị bằng backend espeak; tiếng Việt dùng cấu hình espeak `vi` chung, không có chuẩn hoá số hay viết tắt riêng cho tiếng Việt (đọc theo mã).<br>• Có bước tuỳ chọn lọc giọng tham chiếu bằng UVR5 (`uvr5/`). |
+| Tiêu chí và cách kiểm | Không có test, CI hay số đo chất lượng tiếng Việt trong kho; chỉ có trích dẫn bài báo arXiv 2601.04233 (chưa xác minh). Không có bộ kiểm cường độ hay độ dễ nghe nào kiểm bằng máy trong kho. |
+| Giới hạn và rủi ro | Kho không có file LICENSE (null); README ghi CC-BY-4.0 cho cả kho, loại giấy phép ít hợp với mã nguồn và khó khớp với phần mã gốc từ F5-TTS và UVR5; trọng số tải riêng từ Hugging Face nên license trọng số phải đọc ở đó (chưa xác minh). Trọng số và dữ liệu không nằm trong kho. `requirements.txt` ghim phiên bản nhiều gói và dùng chỉ mục PyTorch CUDA 12.1. `utils_infer.py` nạp checkpoint với `weights_only=True`, nhưng `cfm.py` và `prosody_encoder.py` gọi `torch.load` không đặt cờ này. Zero-shot nhân bản giọng nên có rủi ro mạo danh giọng, README không nêu biện pháp. Commit cuối 2026-03. |
+| So với | f5-tts-vietnamese, vieneu-tts, vixtts (TTS tiếng Việt đã có trong kho; LEMAS là mô hình đa ngôn ngữ, không chuyên tiếng Việt) |
+| Nguồn | [README.md](https://github.com/LEMAS-Project/LEMAS-TTS/blob/305f7e31a874140d141987909a062e57f2807321/README.md) · [requirements.txt](https://github.com/LEMAS-Project/LEMAS-TTS/blob/305f7e31a874140d141987909a062e57f2807321/requirements.txt) · [frontend.py](https://github.com/LEMAS-Project/LEMAS-TTS/blob/305f7e31a874140d141987909a062e57f2807321/lemas_tts/infer/frontend.py) · [api.py](https://github.com/LEMAS-Project/LEMAS-TTS/blob/305f7e31a874140d141987909a062e57f2807321/lemas_tts/api.py) · [utils_infer.py](https://github.com/LEMAS-Project/LEMAS-TTS/blob/305f7e31a874140d141987909a062e57f2807321/lemas_tts/infer/utils_infer.py) · [tts_multilingual.sh](https://github.com/LEMAS-Project/LEMAS-TTS/blob/305f7e31a874140d141987909a062e57f2807321/lemas_tts/scripts/tts_multilingual.sh) |
+
+<a id="n2-pyannote-metrics"></a>
+
+### pyannote.metrics
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/pyannote/pyannote-metrics |
+| License | MIT |
+| Phiên bản đã đọc | `2b02d04586bad4dedb7ad05ea01a987c7021bf12` (commit 2026-10-16) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, CHANGELOG.md, pyproject.toml, base.py; chưa chạy upstream |
+| Khoảng trống lấp | Đo chất lượng ASR đa người nói: DER và các độ đo phân tách người nói. Không phủ MOS hay chống giả mạo như trinh sát ghi |
+| Cơ chế đáng học | • `diarization.py::DiarizationErrorRate.compute_components`: cắt theo UEM, bỏ collar quanh biên tham chiếu và (tùy chọn) vùng chồng lấn, đổi nhãn tham chiếu thành chuỗi, nhãn giả thuyết thành số, tìm ánh xạ tối ưu rồi gọi lớp cha tính lỗi (nhầm, bỏ sót, báo động giả).<br>• `base.py::BaseMetric`: cộng dồn thành phần qua từng file, `report()` ra bảng pandas, `confidence_interval(alpha=0.9)` dùng `scipy.stats.bayes_mvs` (cảnh báo khi chỉ có một file).<br>• `cli.py` đọc giao thức `pyannote.database` và xuất báo cáo theo tập con; có đường DET/EER cho speaker spotting.<br>• Bản 4.2.0 thêm độ đo đếm số người nói và sửa hành vi với tham chiếu rỗng (CHANGELOG đã đọc). |
+| Tiêu chí và cách kiểm | Ngưỡng do người dùng đặt (`collar`, `skip_overlap`, `tolerance`); thư viện không có cổng đạt/trượt. CI (`test.yml` đã đọc) cài wheel đã build rồi pytest trên Python 3.11 đến 3.15 và `3.x`, thêm job tính năng tùy chọn; có `tests/test_diarization.py` kiểm ánh xạ tối ưu, purity, coverage, số người nói. Kiểm bằng máy, nhưng chưa chạy lại. Kết quả khớp với công cụ NIST md-eval (collar 0.25 s): (chưa xác minh), cần tự đối chiếu. |
+| Giới hạn và rủi ro | MIT (Hervé Bredin, CNRS). Bảo trì tốt: 4.2.0 phát hành 2026-10-16, yêu cầu Python >= 3.11. Chạy hoàn toàn cục bộ, không thấy telemetry trong phần đã đọc. Giới hạn: chỉ đo phân tách/phát hiện/phiên âm, không đo chất lượng tổng hợp (MOS) hay giả mạo; DER phụ thuộc lựa chọn collar và xử lý chồng lấn nên số liệu chỉ so được khi cùng thiết lập; ít sao (~260) nhưng là tham chiếu học thuật quen thuộc (Interspeech 2017, theo README). |
+| So với | whisperx (sinh diarization và phiên âm, đầu vào của độ đo); speechbrain-toolkit (bộ công cụ huấn luyện có độ đo riêng); lm-evaluation-harness (khác miền, cùng ý tưởng cổng đo) |
+| Nguồn | [README.md](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/README.md) · [LICENSE](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/LICENSE) · [CHANGELOG.md](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/CHANGELOG.md) · [pyproject.toml](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/pyproject.toml) · [base.py](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/src/pyannote/metrics/base.py) · [diarization.py](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/src/pyannote/metrics/diarization.py) · [cli.py](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/src/pyannote/metrics/cli.py) · [test_diarization.py](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/tests/test_diarization.py) · [test.yml](https://github.com/pyannote/pyannote-metrics/blob/2b02d04586bad4dedb7ad05ea01a987c7021bf12/.github/workflows/test.yml) |

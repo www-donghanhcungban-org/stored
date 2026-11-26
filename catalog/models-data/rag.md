@@ -1,0 +1,31 @@
+<!-- File sinh tự động bởi scripts/build_catalog_views.py; sửa data/projects.json hoặc data/taxonomy.json rồi chạy lại. -->
+
+# rag — Mô hình, dữ liệu & tài liệu
+
+[← Mục lục catalog](../README.md) · 23 hồ sơ.
+
+| Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
+|---|---|---|---|---|---|---|
+| [RAGFlow](../../10-local-llm-rag-memory/README.md#ch-ragflow) | `infiniflow/ragflow` | Apache-2.0 | 94.592 | đọc tài liệu 2026-11-23 | 10 | . |
+| [Docling](../../26-document-intelligence-ocr/README.md#docling-factory) | `docling-project/docling` | MIT | 69.929 | đọc mã 2026-11-04 | 10 | Parse PDF/Office/HTML/EPUB/email/audio sang Markdown/JSON cho RAG, có OCR, VLM, MCP, docling-serve; |
+| [serviette](../../08-awesome-lists-learning/README.md#6c516-nền-tảng-ai-rag--workflow) | `pathwaycom/serviette` | MIT | 58.709 | đọc tài liệu 2026-11-18 | 08 | Máy chủ RAG không cần code trên Pathway: trỏ vào thư mục tài liệu, chọn vector database và embedder trong một file YAML, có chat và REST API trích dẫn nguồn, cập nhật tr… |
+| [PrivateGPT](../../10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23-privategpt) | `zylon-ai/private-gpt` | Apache-2.0 | 57.643 | đọc mã 2026-11-23 | 10 | API phục vụ tài liệu, truy xuất và hội thoại trên backend mô hình tương thích OpenAI. |
+| [LightRAG](../../10-local-llm-rag-memory/README.md#ch-lightrag) | `HKUDS/LightRAG` | MIT | 40.832 | đọc tài liệu 2026-11-23 | 10 | . |
+| [PageIndex](../../10-local-llm-rag-memory/README.md#ch-pageindex) | `VectifyAI/PageIndex` | MIT | 40.761 | đọc tài liệu 2026-11-23 | 10 | RAG không vector: dựng cây mục lục tài liệu dài, LLM duyệt cây để chọn trang; |
+| [quivr](../../08-awesome-lists-learning/README.md#6c516-nền-tảng-ai-rag--workflow) | `The-Vibe-Company/quivr` | MIT | 39.657 | đọc tài liệu 2026-11-18 | 08 | Engine mã nguồn mở (Go) lưu trữ, tìm kiếm và cảnh báo trên nội dung liên tục đổ về (bài báo, email, PDF, RSS) qua HTTP API, không có giao diện riêng. |
+| [Vane](../../08-awesome-lists-learning/README.md#6c516-nền-tảng-ai-rag--workflow) | `ItzCrazyKns/Vane` | MIT | 38.240 | đọc tài liệu 2026-11-18 | 08 | Công cụ trả lời bằng AI tự host, chú trọng riêng tư, kết hợp tìm kiếm web qua SearxNG với LLM cục bộ (Ollama) hoặc đám mây và trích dẫn nguồn. |
+| [WeKnora](../../08-awesome-lists-learning/README.md#6c516-nền-tảng-ai-rag--workflow) | `Tencent/WeKnora` | MIT | 37.678 | đọc tài liệu 2026-11-18 | 08 | Khung quản lý tri thức doanh nghiệp dựa trên LLM của Tencent: RAG có trích dẫn, agent nhiều bước và wiki trên cùng kho tri thức. |
+| [GraphRAG](../../10-local-llm-rag-memory/README.md#ch-graphrag) | `microsoft/graphrag` | MIT | 36.726 | đọc tài liệu 2026-11-23 | 10 | . |
+| [onyx](../../08-awesome-lists-learning/README.md#6c516-nền-tảng-ai-rag--workflow) | `onyx-dot-app/onyx` | MIT Expat cho phần ngoài thư mục ee | 33.445 | đọc tài liệu 2026-11-18 | 08 | Lớp tri thức và ngữ cảnh cho đội nhóm và agent AI: index dữ liệu từ hơn 50 ứng dụng, agentic RAG, deep research, agent tuỳ biến, tự host được. |
+| [kotaemon](../../08-awesome-lists-learning/README.md#6c516-nền-tảng-ai-rag--workflow) | `Cinnamon/kotaemon` | Apache License 2.0 | 25.914 | đọc tài liệu 2026-11-18 | 08 | Giao diện web RAG mã nguồn mở để hỏi đáp trên tài liệu, kiêm khung dựng pipeline RAG cho nhà phát triển (xây trên Gradio). |
+| [RAG-Anything](../../08-awesome-lists-learning/README.md#6c516-nền-tảng-ai-rag--workflow) | `HKUDS/RAG-Anything` | MIT License | 24.604 | đọc tài liệu 2026-11-18 | 08 | Khung RAG đa phương thức xây trên LightRAG, xử lý tài liệu có văn bản, ảnh, bảng, công thức từ khâu phân tích đến truy vấn. |
+| [MaxKB](../../08-awesome-lists-learning/README.md#6c516-nền-tảng-ai-rag--workflow) | `1Panel-dev/MaxKB` | GNU GPL v3 | 23.169 | đọc tài liệu 2026-11-18 | 08 | Nền tảng mã nguồn mở xây agent cấp doanh nghiệp: pipeline RAG, workflow agentic, gọi công cụ MCP, nhúng vào hệ thống bên thứ ba. |
+| [DocsGPT](../../08-awesome-lists-learning/README.md#6c516-nền-tảng-ai-rag--workflow) | `arc53/DocsGPT` | MIT | 18.375 | đọc tài liệu 2026-11-18 | 08 | Nền tảng tự host xây agent AI trả lời dựa trên tài liệu có trích nguồn, kèm workflow trực quan, công cụ, widget, API tương thích OpenAI và máy chủ MCP. |
+| [SurfSense](../../08-awesome-lists-learning/README.md#6c516-nền-tảng-ai-rag--workflow) | `MODSetter/SurfSense` | Apache-2.0 | 16.893 | đọc tài liệu 2026-11-18 | 08 | Ứng dụng desktop mã nguồn mở kiểu NotebookLM chạy trên máy, có agent nghiên cứu, chuyển đổi và chỉnh sửa tài liệu cục bộ, chạy được không mạng. |
+| [llmware](../../08-awesome-lists-learning/README.md#6c516-nền-tảng-ai-rag--workflow) | `llmware-ai/llmware` | Apache-2.0 | 14.820 | đọc tài liệu 2026-11-18 | 08 | Framework Python xây ứng dụng LLM dựa trên tri thức chạy cục bộ, riêng tư, gồm danh mục mô hình và pipeline RAG. |
+| [Semantica](../../10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23-semantica) | `semantica-agi/semantica` | MIT | 14.742 | đọc mã 2026-11-23 | 10 | Hạ tầng knowledge/context graph, provenance và suy luận cho ứng dụng AI. |
+| [FlagEmbedding (BGE)](../../10-local-llm-rag-memory/README.md#ch-flagembedding-bge) | `FlagOpen/FlagEmbedding` | MIT | 12.355 | đọc tài liệu 2026-11-23 | 10 | BGE-M3 (100+ ngôn ngữ, 8192 token, dense+sparse+multi-vector) và bge-reranker, suy luận + finetune tự host; |
+| [Local Deep Research](../../10-local-llm-rag-memory/README.md#ch-local-deep-research) | `LearningCircuit/local-deep-research` | MIT | 9.631 | đọc tài liệu 2026-11-23 | 10 | Chủ đề → báo cáo nghiên cứu từ web + tài liệu cá nhân, model local/cloud; |
+| [UltraRAG](../../10-local-llm-rag-memory/README.md#n2-ultrarag) | `OpenBMB/UltraRAG` | Apache-2.0 | 5.753 | đọc mã 2026-11-23 | 10 | Khung RAG của OpenBMB/Tsinghua: mỗi thành phần (retriever, generation, prompt, router, memory, evaluation) là một server đăng ký công cụ, pipeline khai báo bằng YAML và… |
+| [Chonkie](../../10-local-llm-rag-memory/README.md#ch-chonkie) | `chonkie-inc/chonkie` | MIT | 4.854 | đọc tài liệu 2026-11-23 | 10 | Thư viện chunking: token/sentence/recursive/semantic/late/neural/code/table; |
+| [FastEmbed](../../10-local-llm-rag-memory/README.md#fastembed-factory) | `qdrant/fastembed` | Apache-2.0 | 3.308 | đọc mã 2026-11-04 | 10 | Embedding ONNX local, query/passage API; |

@@ -274,6 +274,7 @@ README có ví dụ 30 dòng: server FastAPI phát `RUN_STARTED`, `TEXT_MESSAGE_
 **Dùng khi:** cần đưa agent vào giao diện người dùng (web, mobile, Slack/Teams, terminal) mà không viết giao thức stream riêng cho từng framework; cần shared state hai chiều, tool chạy phía app hoặc duyệt của người giữa lượt chạy. Liên quan: §1 (bản đồ giao thức), §4b.3 (A2UI), §4c (bộ conformance của MCP/A2A), mục 06 §7p (OpenUI, Tambo dùng sự kiện AG-UI).
 
 <a id="awesome-mcp-servers-reread-2026-11-21"></a>
+
 ## 4h. Kiểm ảnh trang repo `punkpeye/awesome-mcp-servers` (ảnh người dùng gửi, đọc 21/11/2026)
 
 > Ảnh chụp trang GitHub: 97,8k★, 20,2k fork, 15.249 commit, 3.940 contributor, commit gần nhất `5fb385c` (14 giờ trước), MIT. Đối chiếu với clone `blob:none` tại `5fb385c3c56a004eacad6a21cb446205c787926b` (commit 16/11/2026) và GitHub search API 21/11/2026. Mức `docs-read`; không kiểm từng server trong danh sách.
@@ -287,6 +288,7 @@ README có ví dụ 30 dòng: server FastAPI phát `RUN_STARTED`, `TEXT_MESSAGE_
 | "A collection of MCP servers" | ✅ | Mô tả repo |
 
 **Cấu trúc và đặc điểm (đọc `README.md`, `CONTRIBUTING.md`, workflow):**
+
 - `README.md` 5.450 dòng, **4.982 dòng mục server**, 10 mục `##`; thêm bản dịch (fa, ja, ko, pt-BR, th, zh, zh-TW). Khoảng **521** dòng gắn 🎖️ (server chính chủ). Không có mã thực thi nào của danh sách ngoài workflow.
 - **Phạm vi:** chỉ server có **repo GitHub công khai tự cài/chạy**; server chỉ-từ-xa (URL hosted) thuộc `awesome-remote-mcp-servers`. Dùng bảng này cùng `modelcontextprotocol/servers` (mục này) và `VoltAgent/official-mcp-servers` (§2c) để chọn.
 - **Một người chi phối:** Frank Fiegel (`punkpeye`) **6.252/15.249 commit (~41%)**; người kế tiếp 96 commit. Bus factor cao, nhưng nhiều contributor chỉ thêm một dòng.
@@ -297,6 +299,94 @@ README có ví dụ 30 dòng: server FastAPI phát `RUN_STARTED`, `TEXT_MESSAGE_
 
 **Nguồn §4h:** clone github.com/punkpeye/awesome-mcp-servers 21/11/2026 (blob:none, 15.249 commit, HEAD 5fb385c; `README.md`, `CONTRIBUTING.md`, `LICENSE`, `.github/workflows/check-glama.yml`, `git shortlog`) · GitHub search API (số sao/fork) 21/11/2026 · ảnh trang repo do người dùng cung cấp
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **4 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-apache-apisix"></a>
+
+### Apache APISIX
+
+**Repo:** [apache/apisix](https://github.com/apache/apisix) · **License:** Apache-2.0; kèm notices thành phần thứ ba · **★ 17,361 (GitHub API, 2026-11-23)**
+
+**Mục đích:** API gateway động cho định tuyến, kiểm soát lưu lượng và các API mô hình AI.
+
+**Giá trị và cơ chế:** README mô tả lớp NGINX/OpenResty, plugin xác thực, canary, circuit breaker và observability; phù hợp điểm vào chung cho dịch vụ truyền thống lẫn LLM.
+
+**Giới hạn:** Chưa đọc triển khai plugin hoặc đo benchmark. Gateway không tự giải quyết quyền dữ liệu trong ứng dụng; cấu hình plugin, upstream và control plane quyết định vận hành.
+
+**Cách tham khảo/tích hợp:** Dùng route thử với retry/rate limit rõ ràng, đo streaming và xử lý lỗi trước chuyển lưu lượng thật.
+
+**Thay thế:** [kong](../08-awesome-lists-learning/README.md#6c55-container--devops), [LiteLLM](https://github.com/BerriAI/litellm), envoy.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`bd310c5782e4`](https://github.com/apache/apisix/commit/bd310c5782e46fed758582a184fe387cf5df8d39). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/apache/apisix/blob/bd310c5782e46fed758582a184fe387cf5df8d39/README.md) · [LICENSE](https://github.com/apache/apisix/blob/bd310c5782e46fed758582a184fe387cf5df8d39/LICENSE) · [metadata GitHub](https://api.github.com/repos/apache/apisix).
+
+<a id="anhkysuai-2026-11-23-dsh-our-free-model"></a>
+
+### dsh-our-free-model
+
+**Repo:** [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model) · **License:** MIT và notices thành phần; Qoder auth WASM chưa rõ quyền phân phối · **★ 84,542 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Plugin và proxy local tập hợp nhiều đường truy cập mô hình qua gateway/nhà cung cấp.
+
+**Giá trị và cơ chế:** README mô tả catalog cập nhật từ upstream, kiểm khả dụng theo mạng và chuyển tiếp API tương thích OpenAI; hữu ích tham khảo quản lý provider và chẩn đoán lỗi route.
+
+**Giới hạn:** LICENSE tự ghi Qoder auth WASM chưa xác định cơ sở phân phối; không gọi cả gói MIT. Cam kết miễn phí/không giới hạn chưa kiểm; README thừa nhận quota, chặn vùng và upstream có thể lưu prompt.
+
+**Cách tham khảo/tích hợp:** Đánh giá adapter với tài khoản được phép, tránh nội dung bí mật và kiểm điều khoản từng upstream trước dùng.
+
+**Thay thế:** [LiteLLM](https://github.com/BerriAI/litellm), [CLIProxyAPI](../04-protocols-standards/README.md#anhkysuai-2026-11-23-cliproxyapi), [one-api](https://github.com/songquanpeng/one-api).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`f111941c46bb`](https://github.com/Ebony-Vinyl/dsh-our-free-model/commit/f111941c46bb6789b236d858ed85edbe41c89bfc). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f111941c46bb6789b236d858ed85edbe41c89bfc/README.md) · [LICENSE](https://github.com/Ebony-Vinyl/dsh-our-free-model/blob/f111941c46bb6789b236d858ed85edbe41c89bfc/LICENSE) · [metadata GitHub](https://api.github.com/repos/Ebony-Vinyl/dsh-our-free-model).
+
+<a id="anhkysuai-2026-11-23-gpt4free"></a>
+
+### GPT4Free
+
+**Repo:** [xtekky/gpt4free](https://github.com/xtekky/gpt4free) · **License:** GPL-3.0 · **★ 67,099 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tập hợp adapter nhiều nhà cung cấp LLM/media với GUI và REST API tương thích OpenAI.
+
+**Giá trị và cơ chế:** README mô tả client Python/JavaScript, chế độ synchronous/async và Docker; hữu ích tham khảo chuẩn hóa bề mặt provider cho thử nghiệm.
+
+**Giới hạn:** Tên gpt4free không bảo đảm quyền truy cập, miễn phí hoặc ổn định; provider có thể cần token và đổi giao diện. Chưa kiểm đường truyền, đăng nhập hay toàn adapter. README yêu cầu auth/HTTPS khi đưa server ra mạng.
+
+**Cách tham khảo/tích hợp:** Chỉ cấu hình provider được phép sử dụng, lưu lỗi/quota rõ ràng và tách thử nghiệm khỏi dịch vụ sản xuất.
+
+**Thay thế:** [LiteLLM](https://github.com/BerriAI/litellm), [CLIProxyAPI](../04-protocols-standards/README.md#anhkysuai-2026-11-23-cliproxyapi), openrouter.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`9059e300bdd7`](https://github.com/xtekky/gpt4free/commit/9059e300bdd71a02973107805933cd882040de4b). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/xtekky/gpt4free/blob/9059e300bdd71a02973107805933cd882040de4b/README.md) · [LICENSE](https://github.com/xtekky/gpt4free/blob/9059e300bdd71a02973107805933cd882040de4b/LICENSE) · [metadata GitHub](https://api.github.com/repos/xtekky/gpt4free).
+
+<a id="anhkysuai-2026-11-23-cliproxyapi"></a>
+
+### CLIProxyAPI
+
+**Repo:** [router-for-me/CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI) · **License:** MIT · **★ 59,282 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Proxy Go đưa nhiều provider/CLI account về API tương thích OpenAI, Gemini hoặc Claude.
+
+**Giá trị và cơ chế:** README và go.mod thể hiện adapter giao thức, model alias và các dự án quản lý liên quan; hữu ích tham khảo cách đồng nhất nhiều bề mặt API cho client.
+
+**Giới hạn:** Chưa đọc adapter xác thực hoặc xác minh mọi endpoint đang hoạt động. Điều khoản tài khoản và quota upstream độc lập MIT; workflow được xem chỉ build/cross-build, không xác nhận tính tương đương giao thức.
+
+**Cách tham khảo/tích hợp:** Dùng credential được phép, kiểm streaming/tool-call và thông báo lỗi theo từng provider trước thay endpoint.
+
+**Thay thế:** [LiteLLM](https://github.com/BerriAI/litellm), [one-api](https://github.com/songquanpeng/one-api), apisix.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`6eb8554f0ede`](https://github.com/router-for-me/CLIProxyAPI/commit/6eb8554f0ede597b2aa3e508ffb3f111d3c2b9e6). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/router-for-me/CLIProxyAPI/blob/6eb8554f0ede597b2aa3e508ffb3f111d3c2b9e6/README.md) · [LICENSE](https://github.com/router-for-me/CLIProxyAPI/blob/6eb8554f0ede597b2aa3e508ffb3f111d3c2b9e6/LICENSE) · [metadata GitHub](https://api.github.com/repos/router-for-me/CLIProxyAPI).
+
 ## 5. Nguồn
 
 - https://en.wikipedia.org/wiki/Model_Context_Protocol · https://github.com/wong2/awesome-mcp-servers · https://github.com/sadekxD/Awesome-MCP · https://uibakery.io/blog/best-mcp-servers
@@ -305,3 +395,516 @@ README có ví dụ 30 dòng: server FastAPI phát `RUN_STARTED`, `TEXT_MESSAGE_
 - https://blog.buildbetter.ai/agents-md-vs-cursorrules-vs-claude-skills-2026-comparison/ · https://meshlaunch.com/en/blog/2026-cursor-agent-skills-complete-guide.html · https://codersera.com/blog/agents-md-vs-claude-md-vs-cursor-rules-comparison-2026/ · https://dev.to/creeta/one-skillmd-replaces-claudemd-agentsmd-and-cursorrules-5a70
 - §2b (12/10/2026): https://github.com/modelcontextprotocol/python-sdk · https://github.com/modelcontextprotocol/typescript-sdk · https://github.com/modelcontextprotocol/inspector · https://github.com/modelcontextprotocol/registry · https://github.com/modelcontextprotocol/ext-apps · https://github.com/MCP-UI-Org/mcp-ui · https://github.com/agentclientprotocol/agent-client-protocol · https://agentclientprotocol.com/get-started/clients · https://github.com/agentsmd/agents.md · https://agents.md/ · https://github.com/i-am-bee/acp · https://github.com/agntcy
 - §2c (12/10/2026): https://github.com/VoltAgent/official-mcp-servers · https://raw.githubusercontent.com/VoltAgent/official-mcp-servers/main/CONTRIBUTING.md · https://repos.ecosyste.ms/api/v1/hosts/GitHub/repositories/VoltAgent%2Fofficial-mcp-servers · https://github.com/orgs/VoltAgent/repositories · https://github.com/VoltAgent/voltagent · https://github.com/PostHog/mcp · https://github.com/semgrep/mcp · https://github.com/browserbase/mcp-server-browserbase · https://github.com/elevenlabs/elevenlabs-mcp · https://github.com/JetBrains/mcp-jetbrains · https://github.com/langfuse/mcp-server-langfuse · https://github.com/ahujasid/mcp-for-blender · https://github.com/google/mcp · https://github.com/modelcontextprotocol/servers · https://github.com/punkpeye/awesome-mcp-servers · https://github.com/wong2/awesome-mcp-servers · https://glama.ai/mcp/servers · https://smithery.ai
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-a2a"></a>
+
+### A2A
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/a2aproject/A2A |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `5f931b8a25fe66789f987ec4a55fc16ee9fe41ee` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, CHANGELOG.md, GOVERNANCE.md; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Repo đặc tả A2A (giao tiếp agent ↔ agent giữa các hệ thống "opaque"): spec, ADR, docs mkdocs, CI kiểm link/chính tả. Bản hiện hành v1.0.1; v1.0 đổi tên/gộp cấu hình push notification nên client v0.3 cần nâng cấp. |
+| Nguồn | [README.md](https://github.com/a2aproject/A2A/blob/5f931b8a25fe66789f987ec4a55fc16ee9fe41ee/README.md) · [LICENSE](https://github.com/a2aproject/A2A/blob/5f931b8a25fe66789f987ec4a55fc16ee9fe41ee/LICENSE) · [CHANGELOG.md](https://github.com/a2aproject/A2A/blob/5f931b8a25fe66789f987ec4a55fc16ee9fe41ee/CHANGELOG.md) · [GOVERNANCE.md](https://github.com/a2aproject/A2A/blob/5f931b8a25fe66789f987ec4a55fc16ee9fe41ee/GOVERNANCE.md) |
+
+<a id="ch-a2a-inspector"></a>
+
+### A2A Inspector
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/a2aproject/a2a-inspector |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `832545784c9dd4928af1337e80e5293bc282b6ae` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, go.mod; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Công cụ debug thủ công cho agent A2A qua JSON-RPC, HTTP+JSON, gRPC; mặc định bind 127.0.0.1 với token theo lần chạy. Lưu ý: host agent tự bật khi có `GOOGLE_API_KEY`/`GEMINI_API_KEY`, trên instance dùng chung thì mọi người dùng chạy trên khóa của operator. Không phải bộ test cho CI. |
+| Nguồn | [README.md](https://github.com/a2aproject/a2a-inspector/blob/832545784c9dd4928af1337e80e5293bc282b6ae/README.md) · [LICENSE](https://github.com/a2aproject/a2a-inspector/blob/832545784c9dd4928af1337e80e5293bc282b6ae/LICENSE) · [go.mod](https://github.com/a2aproject/a2a-inspector/blob/832545784c9dd4928af1337e80e5293bc282b6ae/go.mod) |
+
+<a id="ch-a2a-tck"></a>
+
+### A2A TCK
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/a2aproject/a2a-tck |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `5e6f37c2d38eb3d7684686243c34d365c83df49b` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Bộ test tương thích A2A dựa trên pytest, chạy `run_tck.py --sut-host` vào agent đang chạy, lọc theo transport hoặc mức RFC 2119, xuất báo cáo vào `reports/`. Dùng được làm cổng CI cho bản cài A2A; còn ít người dùng. |
+| Nguồn | [README.md](https://github.com/a2aproject/a2a-tck/blob/5e6f37c2d38eb3d7684686243c34d365c83df49b/README.md) · [LICENSE](https://github.com/a2aproject/a2a-tck/blob/5e6f37c2d38eb3d7684686243c34d365c83df49b/LICENSE) · [pyproject.toml](https://github.com/a2aproject/a2a-tck/blob/5e6f37c2d38eb3d7684686243c34d365c83df49b/pyproject.toml) |
+
+<a id="ch-a2ui"></a>
+
+### A2UI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/a2ui-project/a2ui |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `5ff1b05f02d39f969b52a942e78e864ef3ac01fa` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, specification/versions.json, package.json; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Framework UI sinh động cho agent: UI biểu diễn bằng dữ liệu JSON theo schema thay vì mã, renderer gốc cho web/Flutter/SwiftUI/Compose, SDK agent nhiều ngôn ngữ và thư mục `conformance/`. Ranh giới an toàn dựa vào catalog component phía host; host vẫn phải lọc hành động gọi tool. |
+| Nguồn | [README.md](https://github.com/a2ui-project/a2ui/blob/5ff1b05f02d39f969b52a942e78e864ef3ac01fa/README.md) · [LICENSE](https://github.com/a2ui-project/a2ui/blob/5ff1b05f02d39f969b52a942e78e864ef3ac01fa/LICENSE) · [versions.json](https://github.com/a2ui-project/a2ui/blob/5ff1b05f02d39f969b52a942e78e864ef3ac01fa/specification/versions.json) · [package.json](https://github.com/a2ui-project/a2ui/blob/5ff1b05f02d39f969b52a942e78e864ef3ac01fa/package.json) |
+
+<a id="ch-agent-client-protocol"></a>
+
+### Agent Client Protocol
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/agentclientprotocol/agent-client-protocol |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `5bba73da3d72eb83ef0ace43ca7346d0864a2446` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, MAINTAINERS.md, package.json; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Repo chứa crate Rust `agent-client-protocol-schema` và JSON Schema của ACP; SDK chính thức Kotlin, Java, Python, Rust, TypeScript ở repo riêng. README nhấn mạnh tương thích wire xác định bằng `protocolVersion` trong `initialize`, không theo số phiên bản crate/schema. |
+| Nguồn | [README.md](https://github.com/agentclientprotocol/agent-client-protocol/blob/5bba73da3d72eb83ef0ace43ca7346d0864a2446/README.md) · [LICENSE](https://github.com/agentclientprotocol/agent-client-protocol/blob/5bba73da3d72eb83ef0ace43ca7346d0864a2446/LICENSE) · [MAINTAINERS.md](https://github.com/agentclientprotocol/agent-client-protocol/blob/5bba73da3d72eb83ef0ace43ca7346d0864a2446/MAINTAINERS.md) · [package.json](https://github.com/agentclientprotocol/agent-client-protocol/blob/5bba73da3d72eb83ef0ace43ca7346d0864a2446/package.json) |
+
+<a id="ch-agent-skills-spec"></a>
+
+### Agent Skills spec
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://agentskills.io (repo nguồn: https://github.com/agentskills/agentskills) |
+| License | Chuẩn mở; trang không nêu license cụ thể |
+| Phiên bản đã đọc | Trang web tại ngày 2026-11-23 (không có SHA) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang chủ và /specification; chưa chạy upstream |
+| Bảo trì | active (có Discord chính thức, trang cập nhật) |
+| Nhận định | Một skill là thư mục có `SKILL.md` (YAML frontmatter + Markdown) cùng `scripts/`, `references/`, `assets/` tùy chọn; agent nạp theo ba bước discovery → activation → execution để tiết kiệm context. Trang ghi chuẩn do Anthropic phát triển rồi mở; mốc 18/12/2025 **(chưa xác minh)** trên trang. `allowed-tools` vẫn là trường thử nghiệm. |
+| Nguồn | [Trang chủ](https://agentskills.io/home) · [Specification](https://agentskills.io/specification) |
+
+<a id="ch-agents-md"></a>
+
+### AGENTS.md
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/agentsmd/agents.md |
+| License | MIT |
+| Phiên bản đã đọc | `d001185d792eb6402a58e4cbef1c228b309ec25d` (commit 2026-09-10) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, components/AboutSection.tsx; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Repo của định dạng AGENTS.md và trang Next.js agents.md: chỉ là quy ước một file Markdown hướng dẫn agent, không có schema bắt buộc hay công cụ kiểm. Con số 60k dự án dùng là lời trang **(chưa xác minh)**. Commit cuối 10/9/2026, ít thay đổi vì định dạng đơn giản. |
+| Nguồn | [README.md](https://github.com/agentsmd/agents.md/blob/d001185d792eb6402a58e4cbef1c228b309ec25d/README.md) · [LICENSE](https://github.com/agentsmd/agents.md/blob/d001185d792eb6402a58e4cbef1c228b309ec25d/LICENSE) · [package.json](https://github.com/agentsmd/agents.md/blob/d001185d792eb6402a58e4cbef1c228b309ec25d/package.json) · [AboutSection.tsx](https://github.com/agentsmd/agents.md/blob/d001185d792eb6402a58e4cbef1c228b309ec25d/components/AboutSection.tsx) |
+
+<a id="ch-awesome-agent-skills"></a>
+
+### awesome-agent-skills
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/VoltAgent/awesome-agent-skills |
+| License | MIT (catalog cũ để trống) |
+| Phiên bản đã đọc | `20c57162c790d59d35e47c1538dc534c5c59e60d` (commit 2026-11-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Danh sách skill chính chủ và cộng đồng, chia theo tổ chức phát hành, có bảng đường dẫn cài cho nhiều agent. Không có CI kiểm link hay nội dung; nhãn "hand-picked" là tuyên bố của người duy trì **(chưa xác minh)**. Skill bên thứ ba có thể kèm script, cần đọc trước khi cài. |
+| Nguồn | [README.md](https://github.com/VoltAgent/awesome-agent-skills/blob/20c57162c790d59d35e47c1538dc534c5c59e60d/README.md) · [LICENSE](https://github.com/VoltAgent/awesome-agent-skills/blob/20c57162c790d59d35e47c1538dc534c5c59e60d/LICENSE) |
+
+<a id="ch-awesome-mcp-servers-punkpeye"></a>
+
+### awesome-mcp-servers (punkpeye)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/punkpeye/awesome-mcp-servers |
+| License | MIT |
+| Phiên bản đã đọc | `9dbadb400a592289ec0f0dd97ee44632840c3c2b` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, .github/workflows/check-glama.yml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Danh sách MCP server lớn nhất (khoảng 5.000 dòng mục, 8 bản dịch). Cổng PR duy nhất là badge điểm của Glama (dịch vụ liên quan tới người duy trì), nên danh sách nghiêng về khối lượng hơn chọn lọc; nhãn chính chủ không được xác minh. |
+| Nguồn | [README.md](https://github.com/punkpeye/awesome-mcp-servers/blob/9dbadb400a592289ec0f0dd97ee44632840c3c2b/README.md) · [LICENSE](https://github.com/punkpeye/awesome-mcp-servers/blob/9dbadb400a592289ec0f0dd97ee44632840c3c2b/LICENSE) · [check-glama.yml](https://github.com/punkpeye/awesome-mcp-servers/blob/9dbadb400a592289ec0f0dd97ee44632840c3c2b/.github/workflows/check-glama.yml) |
+
+<a id="ch-cisco-mcp-scanner"></a>
+
+### Cisco MCP Scanner
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/cisco-ai-defense/mcp-scanner |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `8c3cae130a12afb7b3abfe9c8a4e2a5e2b103735` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Quét tool/prompt/resource của MCP server bằng nhiều engine dùng riêng hoặc kết hợp, có chế độ tĩnh cho CI và REST API. Chú ý: chế độ `stdio` chạy chính server cần quét trên máy, VirusTotal và AI Defense gửi dữ liệu ra dịch vụ ngoài khi bật. Độ phủ phát hiện là tuyên bố của Cisco **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/cisco-ai-defense/mcp-scanner/blob/8c3cae130a12afb7b3abfe9c8a4e2a5e2b103735/README.md) · [LICENSE](https://github.com/cisco-ai-defense/mcp-scanner/blob/8c3cae130a12afb7b3abfe9c8a4e2a5e2b103735/LICENSE) · [pyproject.toml](https://github.com/cisco-ai-defense/mcp-scanner/blob/8c3cae130a12afb7b3abfe9c8a4e2a5e2b103735/pyproject.toml) |
+
+<a id="ch-fastmcp"></a>
+
+### FastMCP
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/prefecthq/fastmcp |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `33c7401f7e4fa716b1d5731e9f6105d711c3ac43` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Framework Python sinh schema và validation từ hàm, quản lý transport, auth, vòng đời; FastMCP 1.0 đã nhập vào SDK Python chính thức năm 2024. Các con số "1 triệu lượt tải/ngày", "70% MCP server" là tuyên bố của README **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/prefecthq/fastmcp/blob/33c7401f7e4fa716b1d5731e9f6105d711c3ac43/README.md) · [LICENSE](https://github.com/prefecthq/fastmcp/blob/33c7401f7e4fa716b1d5731e9f6105d711c3ac43/LICENSE) · [pyproject.toml](https://github.com/prefecthq/fastmcp/blob/33c7401f7e4fa716b1d5731e9f6105d711c3ac43/pyproject.toml) |
+
+<a id="ch-github-mcp-server"></a>
+
+### GitHub MCP Server
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/github/github-mcp-server |
+| License | MIT |
+| Phiên bản đã đọc | `9a72d8d38fec18c207cd924b33aa0eb3e186252c` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, go.mod, server.json; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | MCP server chính chủ (Go) cho repo, issue, PR, Actions, bảo mật; có bản hosted và bản local, giới hạn bằng `--toolsets`, read-only, exclude-tools. Lockdown chỉ giảm prompt injection từ nội dung công khai, quyền thật vẫn do token quyết định. |
+| Nguồn | [README.md](https://github.com/github/github-mcp-server/blob/9a72d8d38fec18c207cd924b33aa0eb3e186252c/README.md) · [LICENSE](https://github.com/github/github-mcp-server/blob/9a72d8d38fec18c207cd924b33aa0eb3e186252c/LICENSE) · [go.mod](https://github.com/github/github-mcp-server/blob/9a72d8d38fec18c207cd924b33aa0eb3e186252c/go.mod) · [server.json](https://github.com/github/github-mcp-server/blob/9a72d8d38fec18c207cd924b33aa0eb3e186252c/server.json) |
+
+<a id="ch-mcp-apps-ext-apps"></a>
+
+### MCP Apps (ext-apps)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/modelcontextprotocol/ext-apps |
+| License | MIT → Apache-2.0 (đang chuyển; tài liệu CC-BY-4.0); package.json ghi MIT. Khác catalog cũ (Apache-2.0) |
+| Phiên bản đã đọc | `ea3e9d0e624a20bc1c51310292f09d9b8ed17161` (commit 2026-11-10) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Extension UI chính thức của MCP: spec 2026-01-26 (và bản draft) cùng SDK để tool trả UI tương tác hiển thị trong host. Repo không có host được hỗ trợ ngoài ví dụ `basic-host`; MCP-UI là framework client hiện thực chuẩn này, nên ghi "thay mcp-ui" trong catalog cũ là không chính xác. |
+| Nguồn | [README.md](https://github.com/modelcontextprotocol/ext-apps/blob/ea3e9d0e624a20bc1c51310292f09d9b8ed17161/README.md) · [LICENSE](https://github.com/modelcontextprotocol/ext-apps/blob/ea3e9d0e624a20bc1c51310292f09d9b8ed17161/LICENSE) · [package.json](https://github.com/modelcontextprotocol/ext-apps/blob/ea3e9d0e624a20bc1c51310292f09d9b8ed17161/package.json) |
+
+<a id="ch-mcp-bundles-mcpb"></a>
+
+### MCP Bundles (MCPB)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/modelcontextprotocol/mcpb |
+| License | MIT → Apache-2.0 (đang chuyển; tài liệu CC-BY-4.0) |
+| Phiên bản đã đọc | `70fe3b34cd6dff1b3bba046638edc72a6467a4fb` (commit 2026-04-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, CLI.md, package.json; chưa chạy upstream |
+| Bảo trì | low-activity (main đứng từ 2026-04-22) |
+| Nhận định | Định dạng zip `.mcpb` chứa MCP server cục bộ và `manifest.json`, kèm CLI đóng gói, ký và mã nạp bundle mà Claude desktop dùng. Main đứng yên 7 tháng tính tới ngày kiểm. |
+| Nguồn | [README.md](https://github.com/modelcontextprotocol/mcpb/blob/70fe3b34cd6dff1b3bba046638edc72a6467a4fb/README.md) · [LICENSE](https://github.com/modelcontextprotocol/mcpb/blob/70fe3b34cd6dff1b3bba046638edc72a6467a4fb/LICENSE) · [CLI.md](https://github.com/modelcontextprotocol/mcpb/blob/70fe3b34cd6dff1b3bba046638edc72a6467a4fb/CLI.md) · [package.json](https://github.com/modelcontextprotocol/mcpb/blob/70fe3b34cd6dff1b3bba046638edc72a6467a4fb/package.json) |
+
+<a id="ch-mcp-inspector"></a>
+
+### MCP Inspector
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/modelcontextprotocol/inspector |
+| License | MIT → Apache-2.0 (đang chuyển; tài liệu CC-BY-4.0) |
+| Phiên bản đã đọc | `eb54b447e5377a7a18acaea9602fced5cb4c5b9f` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Công cụ kiểm MCP server qua web UI, CLI (hợp cho CI), TUI. Rủi ro thực tế: trên Linux headless/container token OAuth và biến `env:` của stdio có thể nằm plaintext trên đĩa nếu không cấu hình khóa. |
+| Nguồn | [README.md](https://github.com/modelcontextprotocol/inspector/blob/eb54b447e5377a7a18acaea9602fced5cb4c5b9f/README.md) · [LICENSE](https://github.com/modelcontextprotocol/inspector/blob/eb54b447e5377a7a18acaea9602fced5cb4c5b9f/LICENSE) · [package.json](https://github.com/modelcontextprotocol/inspector/blob/eb54b447e5377a7a18acaea9602fced5cb4c5b9f/package.json) |
+
+<a id="ch-mcp-registry"></a>
+
+### MCP Registry
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/modelcontextprotocol/registry |
+| License | MIT → Apache-2.0 (đang chuyển; tài liệu CC-BY-4.0). Khác catalog cũ (Apache-2.0) |
+| Phiên bản đã đọc | `9b093df6b9f196875626dac9f6060b03c732e799` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, go.mod; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Registry chính thức (Go, PostgreSQL) liệt kê MCP server như một app store, do working group nhiều công ty duy trì. Vẫn là preview nên có thể breaking change hoặc reset dữ liệu; registry chỉ lưu metadata, không kiểm an toàn server. |
+| Nguồn | [README.md](https://github.com/modelcontextprotocol/registry/blob/9b093df6b9f196875626dac9f6060b03c732e799/README.md) · [LICENSE](https://github.com/modelcontextprotocol/registry/blob/9b093df6b9f196875626dac9f6060b03c732e799/LICENSE) · [go.mod](https://github.com/modelcontextprotocol/registry/blob/9b093df6b9f196875626dac9f6060b03c732e799/go.mod) |
+
+<a id="ch-mcp-servers-reference"></a>
+
+### MCP servers (reference)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/modelcontextprotocol/servers |
+| License | MIT → Apache-2.0 (đang chuyển; tài liệu CC-BY-4.0). Khác catalog cũ (MIT) |
+| Phiên bản đã đọc | `c799c8552b0f27b7a33a7b9233773da144dddcf5` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Bảy server mẫu để minh họa SDK, README tự cảnh báo không dành cho production; các server cũ đã chuyển sang `servers-archived`. Danh sách server cộng đồng nay nằm ở Registry. |
+| Nguồn | [README.md](https://github.com/modelcontextprotocol/servers/blob/c799c8552b0f27b7a33a7b9233773da144dddcf5/README.md) · [LICENSE](https://github.com/modelcontextprotocol/servers/blob/c799c8552b0f27b7a33a7b9233773da144dddcf5/LICENSE) |
+
+<a id="ch-mcp-specification"></a>
+
+### MCP Specification
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/modelcontextprotocol/modelcontextprotocol |
+| License | MIT → Apache-2.0 (đang chuyển; tài liệu CC-BY-4.0) |
+| Phiên bản đã đọc | `1c5f400671ba9ac6d558de907b815be4d2c37548` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, AI_POLICY.md; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Nguồn của spec, schema TypeScript/JSON và tài liệu modelcontextprotocol.io. Chỉ thành viên tổ chức được mở PR, thay đổi spec đi qua working group và SEP. Mâu thuẫn nhỏ: README ghi MIT, LICENSE ghi chuyển sang Apache-2.0. |
+| Nguồn | [README.md](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/1c5f400671ba9ac6d558de907b815be4d2c37548/README.md) · [LICENSE](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/1c5f400671ba9ac6d558de907b815be4d2c37548/LICENSE) · [AI_POLICY.md](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/1c5f400671ba9ac6d558de907b815be4d2c37548/AI_POLICY.md) |
+
+<a id="ch-mcp-typescript-sdk"></a>
+
+### MCP TypeScript SDK
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/modelcontextprotocol/typescript-sdk |
+| License | MIT → Apache-2.0 (đang chuyển; tài liệu CC-BY-4.0) |
+| Phiên bản đã đọc | `5ee54ee30ddc00a914a3d981880f87fdce0e6246` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, packages/server/package.json; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | SDK chính thức chạy trên Node, Bun, Deno, có middleware Express/Fastify/Hono và codemod nâng cấp v1 → v2. Người ngoài chỉ được mở một PR cùng lúc. |
+| Nguồn | [README.md](https://github.com/modelcontextprotocol/typescript-sdk/blob/5ee54ee30ddc00a914a3d981880f87fdce0e6246/README.md) · [LICENSE](https://github.com/modelcontextprotocol/typescript-sdk/blob/5ee54ee30ddc00a914a3d981880f87fdce0e6246/LICENSE) · [package.json](https://github.com/modelcontextprotocol/typescript-sdk/blob/5ee54ee30ddc00a914a3d981880f87fdce0e6246/packages/server/package.json) |
+
+<a id="ch-mcp-use"></a>
+
+### mcp-use
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mcp-use/mcp-use |
+| License | MIT |
+| Phiên bản đã đọc | `8ff4b865e0e5712c66d5077e93392807daca9354` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, libraries/python/mcp_use/telemetry/telemetry.py, libraries/python/mcp_use/telemetry/events.py, libraries/typescript/packages/client/src/telemetry/telemetry.ts, libraries/typescript/packages/client/src/telemetry/events.ts, .github/workflows/close-python-prs.yml; chưa chạy upstream |
+| Bảo trì | active (TypeScript); Python chỉ nhận sửa lỗi có tái hiện |
+| Nhận định | Framework TypeScript dựng MCP server, MCP Apps, inspector và agent client; thư viện Python vẫn phát hành nhưng ưu tiên thấp. Rủi ro dữ liệu: agent Python gửi nội dung hội thoại lên PostHog nếu không tắt biến môi trường. |
+| Nguồn | [README.md](https://github.com/mcp-use/mcp-use/blob/8ff4b865e0e5712c66d5077e93392807daca9354/README.md) · [LICENSE](https://github.com/mcp-use/mcp-use/blob/8ff4b865e0e5712c66d5077e93392807daca9354/LICENSE) · [telemetry.py](https://github.com/mcp-use/mcp-use/blob/8ff4b865e0e5712c66d5077e93392807daca9354/libraries/python/mcp_use/telemetry/telemetry.py) · [events.py](https://github.com/mcp-use/mcp-use/blob/8ff4b865e0e5712c66d5077e93392807daca9354/libraries/python/mcp_use/telemetry/events.py) · [telemetry.ts](https://github.com/mcp-use/mcp-use/blob/8ff4b865e0e5712c66d5077e93392807daca9354/libraries/typescript/packages/client/src/telemetry/telemetry.ts) · [events.ts](https://github.com/mcp-use/mcp-use/blob/8ff4b865e0e5712c66d5077e93392807daca9354/libraries/typescript/packages/client/src/telemetry/events.ts) · [close-python-prs.yml](https://github.com/mcp-use/mcp-use/blob/8ff4b865e0e5712c66d5077e93392807daca9354/.github/workflows/close-python-prs.yml) |
+
+<a id="ch-mcpjam-inspector"></a>
+
+### MCPJam Inspector
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/MCPJam/inspector |
+| License | Apache-2.0; phần eval (`mcpjam-inspector/server/services`, `server/evals`) theo MCPJam EE License; LICENSE gốc vẫn ghi đường dẫn cũ `/server/services` |
+| Phiên bản đã đọc | `0ec2456f1ebd5dff92a212f5faaead6224196551` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, mcpjam-inspector/server/evals/LICENSE, mcpjam-inspector/package.json, mcpjam-inspector/docs/server-error-reporting.md; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Inspector và nền tảng eval cho MCP server: playground đa client, OAuth debugger, CLI cho CI, bản hosted app.mcpjam.com. Rủi ro license: phần eval theo EE License và đường dẫn carve-out trong LICENSE đã lệch sau khi tái cấu trúc repo. Lời "bản browser vẫn gửi usage event khi DO_NOT_TRACK=1" từ lần kiểm trước chưa đọc lại lần này **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/MCPJam/inspector/blob/0ec2456f1ebd5dff92a212f5faaead6224196551/README.md) · [LICENSE](https://github.com/MCPJam/inspector/blob/0ec2456f1ebd5dff92a212f5faaead6224196551/LICENSE) · [LICENSE](https://github.com/MCPJam/inspector/blob/0ec2456f1ebd5dff92a212f5faaead6224196551/mcpjam-inspector/server/evals/LICENSE) · [package.json](https://github.com/MCPJam/inspector/blob/0ec2456f1ebd5dff92a212f5faaead6224196551/mcpjam-inspector/package.json) · [server-error-reporting.md](https://github.com/MCPJam/inspector/blob/0ec2456f1ebd5dff92a212f5faaead6224196551/mcpjam-inspector/docs/server-error-reporting.md) |
+
+<a id="ch-official-mcp-servers-voltagent"></a>
+
+### official-mcp-servers (VoltAgent)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/VoltAgent/official-mcp-servers |
+| License | MIT |
+| Phiên bản đã đọc | `e71f99b3e8c5283ca729c9716cd0b4cbbb7098e3` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | active |
+| Nhận định | Danh mục MCP server chính chủ chia theo lĩnh vực, ưu tiên server của chính hãng sản phẩm, link docs của nhà cung cấp khi không có repo. Không có kiểm tự động link hay trạng thái archive, nên mục có thể lỗi thời; "chỉ server tin được" là tuyên bố của người duy trì **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/VoltAgent/official-mcp-servers/blob/e71f99b3e8c5283ca729c9716cd0b4cbbb7098e3/README.md) · [LICENSE](https://github.com/VoltAgent/official-mcp-servers/blob/e71f99b3e8c5283ca729c9716cd0b4cbbb7098e3/LICENSE) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-archestra"></a>
+
+### Archestra
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/archestra-ai/archestra |
+| License | LICENSE.md điều phối song license: AGPL-3.0-only (mặc định, LICENSE_AGPL) và LicenseRef-Archestra-Enterprise (LICENSE_ENTERPRISE) cho file/vùng đánh dấu; Dagger SDK vendor MIT |
+| Phiên bản đã đọc | `47d935ff4f6435d3f6a843b036a6f786cbc27d97` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, LICENSE.md, LICENSE_ENTERPRISE, guardrails/index.md, openappa-architecture.md, enterprise-tier.ts, guardrails-policy.ts, config.ts và on-pull-requests.yml; chưa chạy upstream |
+| Khoảng trống lấp | MCP gateway/registry/bảo mật: gateway kèm guardrail theo phiên chống lethal trifecta |
+| Cơ chế đáng học | - Mỗi phiên qua LLM proxy mang nhãn (trust, audience) chỉ chặt thêm; mỗi tool khai báo `delta` và `requires`, gọi không đủ nhãn thì bị chặn kèm các remedy: duyệt người, sanitizer, `attest-schema`, chấp nhận hạ nhãn (docs/pages/agents/guardrails/index.md).<br>- Danh tính thực thi lấy từ metadata client, không từ tham số do model viết; kết quả tool ngoài coi là không tin cậy (docs/openappa-architecture.md).<br>- Chính sách lưu theo revision trong PostgreSQL với kiểm expectedRevision và khóa giao dịch (models/guardrails-policy.ts).<br>- MCP gateway dùng OAuth và On-Behalf-Of để tool chạy với danh nghĩa người dùng (README, chưa đọc mã triển khai phần này). |
+| Tiêu chí và cách kiểm | Có workflow on-pull-requests.yml với license-check (`pnpm license-check --ci`), test đơn vị backend, e2e, openappa-native-tests, helm lint; tôi chỉ đọc danh sách job và vài bước, chưa đọc từng job. Hiệu quả chặn của guardrail chưa tự kiểm. |
+| Giới hạn và rủi ro | License song song: LICENSE.md quy định thứ tự (header SPDX, vùng snippet, đường dẫn `ee/` hoặc `*.ee.*`, mặc định AGPL); tôi đếm 483 file trong platform/backend/src mang header Enterprise. AGPL có điều khoản mạng; Enterprise cấm sao chép, phân phối, và điều khoản Small Team Clause dưới 30 người dùng toàn công ty (chưa đọc hết điều khoản). Guardrail mặc định tắt (`guardrails_deployment.enabled`) và ghi beta. Analytics (PostHog) và báo lỗi (Sentry) mặc định bật trên image production, tắt bằng `ARCHESTRA_ANALYTICS=disabled` hoặc khi kích hoạt license Enterprise (config.ts, docs cấu hình). Chạy cần mount docker.sock trong quickstart. |
+| So với | agentgateway, cisco-mcp-scanner, agent-scan, portkey-gateway |
+| Nguồn | [README.md](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/README.md) · [LICENSE.md](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/LICENSE.md) · [LICENSE_ENTERPRISE](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/LICENSE_ENTERPRISE) · [openappa-architecture.md](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/docs/openappa-architecture.md) · [index.md](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/docs/pages/agents/guardrails/index.md) · [enterprise-tier.ts](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/platform/backend/src/enterprise-tier.ts) · [guardrails-policy.ts](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/platform/backend/src/models/guardrails-policy.ts) · [config.ts](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/platform/backend/src/config.ts) · [on-pull-requests.yml](https://github.com/archestra-ai/archestra/blob/47d935ff4f6435d3f6a843b036a6f786cbc27d97/.github/workflows/on-pull-requests.yml) |
+
+<a id="nt-mcphub"></a>
+
+### MCPHub
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/samanhappy/mcphub |
+| License | Apache-2.0 (LICENSE) |
+| Phiên bản đã đọc | `73217631986397af317b09a61985f4c685155a85` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, toolPolicy.ts, toolPolicyService.ts, authorizationService.ts, mcpTools.ts (callsite), User.ts và ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | MCP gateway/registry/bảo mật: một endpoint cho nhiều MCP server, kèm phân quyền theo người và theo khóa |
+| Cơ chế đáng học | - `evaluateToolPolicy`: deny khớp thì chặn; nếu có rule allow áp dụng cho chủ thể mà không rule nào khớp thì chặn; nếu không có rule áp dụng thì cho phép (src/utils/toolPolicy.ts).<br>- Callsite thật: `mcpTools.ts` gọi `getToolPolicy` rồi `policy.authorize(serverName, toolName)` khi gọi tool; smart routing và OpenAPI cũng lọc theo cùng policy (grep callsite).<br>- Quyền dùng server (discover, invoke) tách khỏi quyền đọc cấu hình, dùng chung luật visibility (authorizationService.ts).<br>- Mật khẩu admin: lấy từ `ADMIN_PASSWORD`, nếu không thì sinh ngẫu nhiên và in log; chỉ ở NODE_ENV=development mới là `admin123` (src/models/User.ts). |
+| Tiêu chí và cách kiểm | ci.yml chạy `pnpm docs:validate`, lint, build backend, typecheck frontend và `pnpm test:ci` (đã đọc); có test toolCallGuard. Tôi chưa đọc nội dung các test đó. |
+| Giới hạn và rủi ro | Mặc định mở: người dùng chưa có luật thì mọi tool được phép (toolPolicy.ts); phải tự viết luật deny/allow. Phiên bản package ghi `dev`. Có chế độ hosted và client tới dịch vụ ngoài (cloudService, market) nhưng tôi chưa đọc xem dữ liệu nào rời máy. Rủi ro chung của gateway gộp: một token mở nhiều server, cần kiểm scope. README mô tả smart routing dùng embedding (chưa xác minh nhà cung cấp embedding mặc định). |
+| So với | agentgateway, archestra, fastmcp, cisco-mcp-scanner |
+| Nguồn | [README.md](https://github.com/samanhappy/mcphub/blob/73217631986397af317b09a61985f4c685155a85/README.md) · [LICENSE](https://github.com/samanhappy/mcphub/blob/73217631986397af317b09a61985f4c685155a85/LICENSE) · [toolPolicy.ts](https://github.com/samanhappy/mcphub/blob/73217631986397af317b09a61985f4c685155a85/src/utils/toolPolicy.ts) · [toolPolicyService.ts](https://github.com/samanhappy/mcphub/blob/73217631986397af317b09a61985f4c685155a85/src/services/toolPolicyService.ts) · [authorizationService.ts](https://github.com/samanhappy/mcphub/blob/73217631986397af317b09a61985f4c685155a85/src/services/authorizationService.ts) · [mcpTools.ts](https://github.com/samanhappy/mcphub/blob/73217631986397af317b09a61985f4c685155a85/src/services/mcpTools.ts) · [User.ts](https://github.com/samanhappy/mcphub/blob/73217631986397af317b09a61985f4c685155a85/src/models/User.ts) · [ci.yml](https://github.com/samanhappy/mcphub/blob/73217631986397af317b09a61985f4c685155a85/.github/workflows/ci.yml) |
+
+<a id="nt-a2a-python"></a>
+
+### A2A Python SDK
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/a2aproject/a2a-python |
+| License | Apache-2.0 (LICENSE) |
+| Phiên bản đã đọc | `eaa71bcaffaae8b6cb3606b797ece4f7ae0dd554` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, agent_executor.py, auth/user.py, pyproject.toml, run-tck.yaml và unit-tests.yml; chưa chạy upstream |
+| Khoảng trống lấp | A2A và interop: SDK phía triển khai còn thiếu cạnh a2a, a2a-tck, a2a-inspector đã có |
+| Cơ chế đáng học | - `AgentExecutor.execute/cancel`: framework bảo đảm không gọi đồng thời cho một request, exception thành TASK_STATE_ERROR, executor phát TaskStatusUpdateEvent tới trạng thái cuối hoặc bị gián đoạn (agent_execution/agent_executor.py).<br>- Hai mô hình auth-required: trong băng (execute trả về, framework gọi lại khi có phản hồi) và ngoài băng (giữ execute chờ nhà cung cấp xác thực) (agent_executor.py).<br>- Tách transport, task store (in-memory, SQL), push notification store; compat 0.3 nằm trong `src/a2a/compat`.<br>- `a2a.auth.user.User` trừu tượng (is_authenticated, user_name) cho tích hợp middleware của ứng dụng. |
+| Tiêu chí và cách kiểm | run-tck.yaml chạy a2a-tck bản 0.3.0.beta3 trên Python 3.10 và 3.13 với SUT cục bộ; unit-tests.yml chạy pytest kèm `--cov-fail-under=88` (đã mở đọc). Chuẩn do TCK quyết định, tôi chưa chạy. |
+| Giới hạn và rủi ro | Cần chọn đúng phiên bản: README nói spec 1.0 và có hướng dẫn nâng từ 0.3 lên 1.0, các mẫu a2a-samples ghim a2a-sdk từ >=0.3.0 đến >=1.1.0 nên không đồng đều. TCK ghim beta, không phải bản chính thức (theo tên biến). Việc ủy quyền theo skill hay theo task không có trong SDK. License Apache-2.0. |
+| So với | a2a (chuẩn), a2a-tck, a2a-inspector, fastmcp (SDK phía MCP) |
+| Nguồn | [README.md](https://github.com/a2aproject/a2a-python/blob/eaa71bcaffaae8b6cb3606b797ece4f7ae0dd554/README.md) · [LICENSE](https://github.com/a2aproject/a2a-python/blob/eaa71bcaffaae8b6cb3606b797ece4f7ae0dd554/LICENSE) · [agent_executor.py](https://github.com/a2aproject/a2a-python/blob/eaa71bcaffaae8b6cb3606b797ece4f7ae0dd554/src/a2a/server/agent_execution/agent_executor.py) · [user.py](https://github.com/a2aproject/a2a-python/blob/eaa71bcaffaae8b6cb3606b797ece4f7ae0dd554/src/a2a/auth/user.py) · [pyproject.toml](https://github.com/a2aproject/a2a-python/blob/eaa71bcaffaae8b6cb3606b797ece4f7ae0dd554/pyproject.toml) · [run-tck.yaml](https://github.com/a2aproject/a2a-python/blob/eaa71bcaffaae8b6cb3606b797ece4f7ae0dd554/.github/workflows/run-tck.yaml) · [unit-tests.yml](https://github.com/a2aproject/a2a-python/blob/eaa71bcaffaae8b6cb3606b797ece4f7ae0dd554/.github/workflows/unit-tests.yml) |
+
+<a id="nt-a2a-samples"></a>
+
+### A2A Samples
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/a2aproject/a2a-samples |
+| License | Apache-2.0 (LICENSE) |
+| Phiên bản đã đọc | `b7a2a689ff3a86e756386aa488e3f7b02a355590` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, sign_and_verify_agent_card/`__main__`.py, headless_agent_auth/oauth2_middleware.py, pyproject.toml và linter.yaml; chưa chạy upstream |
+| Khoảng trống lấp | A2A và interop: ví dụ chạy được nhiều framework và mẫu bảo mật cho agent card |
+| Cơ chế đáng học | - Ký agent card: sinh cặp khóa EC P-256, xuất `public_keys.json`, dùng `create_agent_card_signer` của SDK (sign_and_verify_agent_card/`__main__`.py).<br>- Middleware Starlette đọc `security` trong AgentCard, lấy scope của yêu cầu đầu tiên, xác thực bearer token qua Auth0 (`verify_access_token`, domain và audience từ biến môi trường) (headless_agent_auth/oauth2_middleware.py).<br>- Tách extension A2A thành thư mục riêng: agp, secure-passport (có test_secure_passport.py), timestamp, traceability. |
+| Tiêu chí và cách kiểm | Workflow duy nhất là linter.yaml (Super-Linter slim, nhiều linter Python tắt, chỉ lint file đổi). Không có test chung cho mẫu; chỉ vài extension có test riêng (agp, secure-passport; chưa đọc). |
+| Giới hạn và rủi ro | Mã mẫu, không phải thư viện: sample auth tự ghi chú chỉ minh họa (scheme trong `security_schemes` không được xác thực), middleware cho qua khi agent card không khai security. Ghim a2a-sdk không đồng đều (>=0.3.0, >=1.0.0a1, >=1.1.0), nên nhiều mẫu có thể chưa chạy với SDK 1.x (chưa kiểm). Khóa ký sinh mới mỗi lần chạy, chỉ phù hợp demo. |
+| So với | a2a-python (SDK), a2a-inspector, a2a-tck |
+| Nguồn | [README.md](https://github.com/a2aproject/a2a-samples/blob/b7a2a689ff3a86e756386aa488e3f7b02a355590/README.md) · [LICENSE](https://github.com/a2aproject/a2a-samples/blob/b7a2a689ff3a86e756386aa488e3f7b02a355590/LICENSE) · [\_\_main\_\_.py](https://github.com/a2aproject/a2a-samples/blob/b7a2a689ff3a86e756386aa488e3f7b02a355590/samples/python/agents/sign_and_verify_agent_card/`__main__`.py) · [oauth2_middleware.py](https://github.com/a2aproject/a2a-samples/blob/b7a2a689ff3a86e756386aa488e3f7b02a355590/samples/python/agents/headless_agent_auth/oauth2_middleware.py) · [pyproject.toml](https://github.com/a2aproject/a2a-samples/blob/b7a2a689ff3a86e756386aa488e3f7b02a355590/samples/python/pyproject.toml) · [linter.yaml](https://github.com/a2aproject/a2a-samples/blob/b7a2a689ff3a86e756386aa488e3f7b02a355590/.github/workflows/linter.yaml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-mcp-gateway-registry-agentic-community"></a>
+
+### MCP Gateway & Registry (agentic-community)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/agentic-community/mcp-gateway-registry |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `3b37ee2941ac5bbab23e012ea4d1885a69a4ea3e` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, auth_server/egress_obo.py, registry/core/config.py, .env.example, .github/workflows/registry-test.yml, terraform/telemetry-collector/README.md; chưa chạy upstream |
+| Khoảng trống lấp | MCP gateway, registry và bảo mật: mặt phẳng điều khiển tự host cho MCP server, agent và skill |
+| Cơ chế đáng học | - Tách data plane (nginx reverse proxy, TLS, xác thực) khỏi control plane (dịch vụ FastAPI giữ kho đăng ký, mô hình quyền, nhật ký kiểm toán): `README.md`.<br>- Egress OBO: trao đổi lại token đăng nhập của người dùng thành token có audience là app của MCP server (RFC 8693 hoặc jwt-bearer của Entra), trao đổi theo từng request, không cache chéo người dùng, và từ chối token nếu chính gateway cũng chấp nhận nó: `auth_server/egress_obo.py`.<br>- Kho đăng ký không chỉ cho MCP server mà cả agent (A2A), skill và thực thể tùy ý, tìm theo ngôn ngữ tự nhiên; có `AGENTS.md`/`CLAUDE.md` và skill cài đặt trong `.claude/skills/`. |
+| Tiêu chí và cách kiểm | CI nhiều workflow riêng cho từng thành phần (registry-test chạy bộ test đầy đủ kèm coverage trên Python 3.14 với MongoDB 8.2, auth-server-test, helm-test, lua-test, terraform-test). Đã mở `registry-test.yml`, chưa thấy ngưỡng coverage cứng trong file này. Kiểm bằng máy có, kết quả chưa chạy lại. |
+| Giới hạn và rủi ro | Telemetry **bật mặc định**: `telemetry_enabled` mặc định `True` (ping khởi động) cộng heartbeat 24 giờ, tắt bằng `MCP_TELEMETRY_DISABLED=1` hoặc chỉ heartbeat bằng `MCP_TELEMETRY_OPT_OUT=1`; điểm thu là Lambda và DocumentDB do dự án vận hành (`terraform/telemetry-collector`). Tác giả nói ẩn danh, không IP (chưa xác minh phía thu). Bề mặt rất lớn (Keycloak, MongoDB, nhiều IdP, Terraform AWS) nên chi phí vận hành cao; README ghi 350 dòng tối đa do CI cưỡng chế (chưa xác minh). |
+| So với | `agentgateway` (data plane Rust), `mcp-registry` (registry chuẩn), `litellm` |
+| Nguồn | [README.md](https://github.com/agentic-community/mcp-gateway-registry/blob/3b37ee2941ac5bbab23e012ea4d1885a69a4ea3e/README.md) · [LICENSE](https://github.com/agentic-community/mcp-gateway-registry/blob/3b37ee2941ac5bbab23e012ea4d1885a69a4ea3e/LICENSE) · [egress_obo.py](https://github.com/agentic-community/mcp-gateway-registry/blob/3b37ee2941ac5bbab23e012ea4d1885a69a4ea3e/auth_server/egress_obo.py) · [config.py](https://github.com/agentic-community/mcp-gateway-registry/blob/3b37ee2941ac5bbab23e012ea4d1885a69a4ea3e/registry/core/config.py) · [.env.example](https://github.com/agentic-community/mcp-gateway-registry/blob/3b37ee2941ac5bbab23e012ea4d1885a69a4ea3e/.env.example) · [registry-test.yml](https://github.com/agentic-community/mcp-gateway-registry/blob/3b37ee2941ac5bbab23e012ea4d1885a69a4ea3e/.github/workflows/registry-test.yml) · [README.md](https://github.com/agentic-community/mcp-gateway-registry/blob/3b37ee2941ac5bbab23e012ea4d1885a69a4ea3e/terraform/telemetry-collector/README.md) |
+
+<a id="n2-docker-mcp-gateway-cli"></a>
+
+### Docker MCP Gateway
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/docker/mcp-gateway |
+| License | MIT |
+| Phiên bản đã đọc | `4b5180c5ba8e1b456c53b36b7f90f17964131a16` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, docs/security.md, pkg/interceptors/block_secrets.go, pkg/secretsscan/rules.go, pkg/gateway/clientpool.go, docs/telemetry/README.md, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | MCP gateway bảo mật: chạy MCP server trong container cô lập, chặn secret ở tool call |
+| Cơ chế đáng học | - Mỗi MCP server chạy bằng `docker run --rm -i --init --security-opt no-new-privileges` kèm giới hạn `--cpus`/`--memory`: `pkg/gateway/clientpool.go`.<br>- Middleware `block-secrets` (bật mặc định) quét tham số tool call và nội dung text trả về bằng bộ rule sao chép từ Trivy, chặn nếu thấy khóa: `pkg/interceptors/block_secrets.go`, `pkg/secretsscan/rules.go`.<br>- `docs/security.md` nêu mô hình tin cậy rõ: transport HTTP đòi Bearer token mặc định, URL từ xa chỉ chấp nhận HTTPS công khai (chặn loopback, link-local, metadata), bind mount mặc định chỉ đọc và phải nằm trong danh sách cho phép, xác minh chữ ký image `mcp/` mặc định bật.<br>- Hồ sơ (profile) gom server, đẩy/kéo qua OCI registry; ghi đè tên tool trùng bị từ chối. |
+| Tiêu chí và cách kiểm | CI chạy lint trên ba nền, `make test` trên Linux, build ba nền (đã mở `ci.yml`); có test Go cho interceptor, secretsscan, clientpool. Quét secret là regex theo từ khóa nên không thay cho kiểm soát egress. Chưa chạy. |
+| Giới hạn và rủi ro | Mặc định không chặn egress mạng (`--block-network` và `allowHosts` là tùy chọn, theo chính `docs/security.md`). Telemetry OpenTelemetry nối vào collector cục bộ của Docker Desktop qua unix socket; khi không có cấu hình thì không xuất (theo `docs/telemetry/README.md`, chưa xác minh điểm đến cuối). Gắn chặt Docker Desktop 4.59+ hoặc cờ `DOCKER_MCP_IN_CONTAINER`; catalog và việc quét malware ở hệ thống riêng của Docker, ngoài repo. |
+| So với | `agentgateway`, `mcp-registry`, `docker-sandboxes` |
+| Nguồn | [README.md](https://github.com/docker/mcp-gateway/blob/4b5180c5ba8e1b456c53b36b7f90f17964131a16/README.md) · [LICENSE](https://github.com/docker/mcp-gateway/blob/4b5180c5ba8e1b456c53b36b7f90f17964131a16/LICENSE) · [security.md](https://github.com/docker/mcp-gateway/blob/4b5180c5ba8e1b456c53b36b7f90f17964131a16/docs/security.md) · [block_secrets.go](https://github.com/docker/mcp-gateway/blob/4b5180c5ba8e1b456c53b36b7f90f17964131a16/pkg/interceptors/block_secrets.go) · [rules.go](https://github.com/docker/mcp-gateway/blob/4b5180c5ba8e1b456c53b36b7f90f17964131a16/pkg/secretsscan/rules.go) · [clientpool.go](https://github.com/docker/mcp-gateway/blob/4b5180c5ba8e1b456c53b36b7f90f17964131a16/pkg/gateway/clientpool.go) · [README.md](https://github.com/docker/mcp-gateway/blob/4b5180c5ba8e1b456c53b36b7f90f17964131a16/docs/telemetry/README.md) · [ci.yml](https://github.com/docker/mcp-gateway/blob/4b5180c5ba8e1b456c53b36b7f90f17964131a16/.github/workflows/ci.yml) |
+
+<a id="n2-microsoft-mcp-gateway-k8s"></a>
+
+### Microsoft MCP Gateway
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/microsoft/mcp-gateway |
+| License | MIT |
+| Phiên bản đã đọc | `0d24d9952de17563f231b7b0501ed595a98f7de9` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, dotnet/Microsoft.McpGateway.Management/src/Authorization/SimplePermissionProvider.cs, dotnet/Microsoft.McpGateway.Management/src/Authorization/BuiltinToolAuthorizer.cs, dotnet/Microsoft.McpGateway.Management/src/Contracts/ResourcePermission.cs, .github/workflows/main.yml; chưa chạy upstream |
+| Khoảng trống lấp | MCP gateway trên Kubernetes: định tuyến không trạng thái và quản lý vòng đời server |
+| Cơ chế đáng học | - Adapter (một MCP server) và Tool được quản lý qua API CRUD; Deployment Manager tạo workload trên Kubernetes, định tuyến `/adapters/{name}/mcp` và một tool router chung `/mcp`: `README.md`.<br>- Mô hình quyền gọn: đọc cho người tạo, vai trò trong `requiredRoles` hoặc `mcp.admin`; ghi chỉ cho người tạo hoặc `mcp.admin`; đóng khi rỗng: `SimplePermissionProvider.cs`, `ResourcePermission.cs`.<br>- Tool dựng sẵn `builtin:bash`, `builtin:read_file`, `builtin:write_file` bị vô hiệu cho mọi người gọi kể cả admin (README), còn `BuiltinToolAuthorizer` ghi fail-closed: cũng là ví dụ gỡ năng lực nguy hiểm thay vì chỉ gác quyền.<br>- Phiên bản này bỏ phiên giao vận cũ, chỉ nhận máy khách MCP `2026-07-28`, định tuyến từng request độc lập. |
+| Tiêu chí và cách kiểm | CI: build Release và `dotnet test` trên .NET 8 cho toàn solution, thêm job test mcp-proxy (đã mở `main.yml`). Có test cho authorizer, executor, deployment manager. Chưa chạy. |
+| Giới hạn và rủi ro | README ghi đây là thay đổi phá vỡ, không tương thích ngược, nên máy khách cũ không dùng được. Xác thực gắn Entra ID; lưu trữ Cosmos hoặc Redis; phần Agent và Session là bản xem trước (Preview) dựa trên Foundry. Quyền chỉ ở mức vai trò đơn giản, không có chính sách theo tool hay kiểm tra nội dung. License MIT, tác giả là Microsoft nhưng đây là mẫu gateway, mức hỗ trợ (chưa xác minh). |
+| So với | `agentgateway`, `mcp-registry`, `kong` |
+| Nguồn | [README.md](https://github.com/microsoft/mcp-gateway/blob/0d24d9952de17563f231b7b0501ed595a98f7de9/README.md) · [LICENSE](https://github.com/microsoft/mcp-gateway/blob/0d24d9952de17563f231b7b0501ed595a98f7de9/LICENSE) · [SimplePermissionProvider.cs](https://github.com/microsoft/mcp-gateway/blob/0d24d9952de17563f231b7b0501ed595a98f7de9/dotnet/Microsoft.McpGateway.Management/src/Authorization/SimplePermissionProvider.cs) · [BuiltinToolAuthorizer.cs](https://github.com/microsoft/mcp-gateway/blob/0d24d9952de17563f231b7b0501ed595a98f7de9/dotnet/Microsoft.McpGateway.Management/src/Authorization/BuiltinToolAuthorizer.cs) · [ResourcePermission.cs](https://github.com/microsoft/mcp-gateway/blob/0d24d9952de17563f231b7b0501ed595a98f7de9/dotnet/Microsoft.McpGateway.Management/src/Contracts/ResourcePermission.cs) · [main.yml](https://github.com/microsoft/mcp-gateway/blob/0d24d9952de17563f231b7b0501ed595a98f7de9/.github/workflows/main.yml) |
+
+<a id="n2-kuadrant-mcp-gateway-envoy"></a>
+
+### Kuadrant MCP Gateway
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Kuadrant/mcp-gateway |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `e98a736d59f2b22f2ce2d7201faf5bf5d43cd6cb` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, VISION.md, docs/design/security-architecture.md, docs/design/guardrails/README.md, internal/guardrails/checker.go, .github/workflows/tests.yaml; chưa chạy upstream |
+| Khoảng trống lấp | MCP gateway cloud-native dựa trên Envoy ext_proc và Gateway API, có guardrail và RBAC theo tool |
+| Cơ chế đáng học | - Router chạy như ext_proc của Envoy: đọc thân JSON-RPC để lấy method và tên tool, bỏ tiền tố tool, gắn header định tuyến; broker gom tool từ nhiều server: `docs/design/security-architecture.md`.<br>- RBAC theo tool: AuthPolicy (Authorino) khớp claim JWT với header `x-mcp-toolname`/`x-mcp-servername` rồi ký header `x-mcp-authorized` bằng ECDSA; broker kiểm chữ ký, header chưa ký hoặc bị sửa bị từ chối.<br>- Guardrails: lớp dịch `tools/call` (cả request và response) sang kiểm tra của NeMo Guardrails, mặc định fail-closed, `failMode: allow` tùy chọn theo server; timeout 8 giây, dial 1 giây: `internal/guardrails/checker.go`.<br>- Đứng ngoài phạm vi có chủ ý: không biến đổi nội dung tool, không tự ánh xạ OpenAPI sang MCP (`VISION.md`). |
+| Tiêu chí và cách kiểm | CI có workflow unit test (`make test-unit`, kiểm e2e biên dịch được), e2e nightly và theo yêu cầu, conformance, performance-benchmark, helm-install-test, ratchet cho ghim action (đã mở `tests.yaml`, chưa mở các workflow khác). Chưa chạy. |
+| Giới hạn và rủi ro | Sao thấp hơn nhiều gateway khác (lượng người dùng nhỏ, hướng nền tảng). Ghi thẳng rằng header `Authorization` gốc được chuyển nguyên tới upstream MCP server (theo `security-architecture.md`) nên server upstream phải đáng tin. Phụ thuộc Istio/Envoy, Authorino, Keycloak; không vận hành server guardrail hộ. Tác giả nói sẽ nhường chỗ cho chuẩn Envoy/Gateway API khi chín (`VISION.md`, tuyên bố). |
+| So với | `agentgateway`, `kong`, `mcp-registry` |
+| Nguồn | [README.md](https://github.com/Kuadrant/mcp-gateway/blob/e98a736d59f2b22f2ce2d7201faf5bf5d43cd6cb/README.md) · [LICENSE](https://github.com/Kuadrant/mcp-gateway/blob/e98a736d59f2b22f2ce2d7201faf5bf5d43cd6cb/LICENSE) · [VISION.md](https://github.com/Kuadrant/mcp-gateway/blob/e98a736d59f2b22f2ce2d7201faf5bf5d43cd6cb/VISION.md) · [security-architecture.md](https://github.com/Kuadrant/mcp-gateway/blob/e98a736d59f2b22f2ce2d7201faf5bf5d43cd6cb/docs/design/security-architecture.md) · [README.md](https://github.com/Kuadrant/mcp-gateway/blob/e98a736d59f2b22f2ce2d7201faf5bf5d43cd6cb/docs/design/guardrails/README.md) · [checker.go](https://github.com/Kuadrant/mcp-gateway/blob/e98a736d59f2b22f2ce2d7201faf5bf5d43cd6cb/internal/guardrails/checker.go) · [tests.yaml](https://github.com/Kuadrant/mcp-gateway/blob/e98a736d59f2b22f2ce2d7201faf5bf5d43cd6cb/.github/workflows/tests.yaml) |
+
+<a id="n2-azure-ai-gateway-labs"></a>
+
+### AI Gateway Labs (Azure API Management)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Azure-Samples/AI-Gateway |
+| License | MIT |
+| Phiên bản đã đọc | `98c242510ba53f4e83e5f4f19595907c8e0b36bc` (commit 2026-11-05) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE.md, AGENTS.md, labs/token-rate-limiting/policy.xml, labs/semantic-caching/policy.xml, labs/mcp-client-authorization/README.MD, .github/workflows/nbchecks.py, .github/workflows/nbchecks.yaml; chưa chạy upstream |
+| Khoảng trống lấp | AI gateway mẫu trên Azure API Management: giới hạn token, cache ngữ nghĩa, MCP và agent |
+| Cơ chế đáng học | - Khoảng 50 lab (Jupyter + Bicep + policy APIM), mỗi lab một khả năng: giới hạn token, cache ngữ nghĩa, cân bằng tải backend pool, an toàn nội dung, MCP, A2A, đăng ký MCP: `AGENTS.md`, `labs/`.<br>- Giới hạn token chỉ là một dòng policy `llm-token-limit` (đếm theo subscription, tokens-per-minute): `labs/token-rate-limiting/policy.xml`.<br>- Cache ngữ nghĩa bằng `azure-openai-semantic-cache-lookup` với `score-threshold="0.8"` và lưu 120 giây ở Redis: `labs/semantic-caching/policy.xml`.<br>- Lab MCP client authorization cho APIM vừa là OAuth client (tới Entra ID) vừa là authorization server cho máy khách MCP. |
+| Tiêu chí và cách kiểm | Chỉ một kiểm máy: `nbchecks.py` thất bại nếu notebook còn output lưu sẵn. Không có test hành vi cho policy; các lab cần tài khoản Azure thật nên không tái hiện cục bộ. Chưa chạy. |
+| Giới hạn và rủi ro | Là mẫu thử nghiệm của Microsoft, chính `AGENTS.md` gọi là experimental; lab MCP authorization tự ghi chưa khuyến nghị dùng production do đặc tả đổi nhanh. Khóa chặt vào Azure APIM (không chạy ở nơi khác), tạo tài nguyên tính phí nên phải chạy bước dọn dẹp. Không phải sản phẩm gateway dùng ngay mà là kho công thức policy. |
+| So với | `litellm`, `portkey-gateway`, `kong` |
+| Nguồn | [README.md](https://github.com/Azure-Samples/AI-Gateway/blob/98c242510ba53f4e83e5f4f19595907c8e0b36bc/README.md) · [LICENSE.md](https://github.com/Azure-Samples/AI-Gateway/blob/98c242510ba53f4e83e5f4f19595907c8e0b36bc/LICENSE.md) · [AGENTS.md](https://github.com/Azure-Samples/AI-Gateway/blob/98c242510ba53f4e83e5f4f19595907c8e0b36bc/AGENTS.md) · [policy.xml](https://github.com/Azure-Samples/AI-Gateway/blob/98c242510ba53f4e83e5f4f19595907c8e0b36bc/labs/token-rate-limiting/policy.xml) · [policy.xml](https://github.com/Azure-Samples/AI-Gateway/blob/98c242510ba53f4e83e5f4f19595907c8e0b36bc/labs/semantic-caching/policy.xml) · [README.MD](https://github.com/Azure-Samples/AI-Gateway/blob/98c242510ba53f4e83e5f4f19595907c8e0b36bc/labs/mcp-client-authorization/README.MD) · [nbchecks.py](https://github.com/Azure-Samples/AI-Gateway/blob/98c242510ba53f4e83e5f4f19595907c8e0b36bc/.github/workflows/nbchecks.py) · [nbchecks.yaml](https://github.com/Azure-Samples/AI-Gateway/blob/98c242510ba53f4e83e5f4f19595907c8e0b36bc/.github/workflows/nbchecks.yaml) |
+
+<a id="n2-agent-passport-system-aps"></a>
+
+### Agent Passport System (APS)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/agent-passport-system/agent-passport-system |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `638ac267b15d290ae5dbbd79ecdd2b5af7170512` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, PRIVACY.md, REUSE.toml, src/core/delegation.ts, package.json, .github/workflows/tests.yml; chưa chạy upstream |
+| Khoảng trống lấp | Agent định danh và ủy quyền: giao thức hộ chiếu, ủy quyền thu hẹp dần và biên nhận hành động có chữ ký |
+| Cơ chế đáng học | - Ủy quyền chỉ được thu hẹp: `subDelegate` từ chối phạm vi con không nằm trong phạm vi cha (`scopeCovers`), ràng buộc đơn vị chi tiêu và thời hạn không được nới: `src/core/delegation.ts`.<br>- Chuỗi 3 chữ ký cho hành động: agent ký ý định, engine chính sách ký đánh giá, agent ký biên nhận thực thi; thu hồi lan tỏa theo chuỗi (README).<br>- Cổng thương mại 5 bước (hộ chiếu hợp lệ, phạm vi, hạn mức, danh sách người bán, tính lũy đẳng); xác minh biên nhận ngay trên trình duyệt.<br>- Triển khai chéo TypeScript, Python, Go, Rust, đối chiếu bằng bộ conformance và fixture; ghi trạng thái từng module (Canonical, Production-Extension, Experimental). |
+| Tiêu chí và cách kiểm | Rất nhiều test: `npm test` liệt kê hàng trăm file (test tính chất, đối kháng, vector chéo ngôn ngữ), cộng typecheck fixtures; có workflow conformance, cross-impl JCS, scorecard, CodeQL, fuzz; README ghi coverage 97% dòng (chưa xác minh). Đã mở `tests.yml`, chưa mở các workflow khác. |
+| Giới hạn và rủi ro | Gateway thực thi đã tách khỏi gói này sang `@aeoess/gateway` (kho khác), nên repo chỉ chứa nguyên thủy; `delegation.ts` cho biết các hàm trạng thái ném lỗi chỉ sang `DelegationStore`. Bề mặt tính năng rất rộng (thương mại, dữ liệu, hành vi, thanh toán) và nhiều phần Experimental nên khó đánh giá; một tác giả chính, IETF draft cá nhân (`draft-pidlisnyi-aps-03`) chưa phải chuẩn. License: Apache-2.0, riêng danh sách từ vựng dùng CC-BY-3.0 và MIT, bản thảo IETF dưới Trust TLP (theo `REUSE.toml`). `PRIVACY.md` nói không telemetry. |
+| So với | `a2a`, `agent-client-protocol`, `mcp-registry` |
+| Nguồn | [README.md](https://github.com/agent-passport-system/agent-passport-system/blob/638ac267b15d290ae5dbbd79ecdd2b5af7170512/README.md) · [LICENSE](https://github.com/agent-passport-system/agent-passport-system/blob/638ac267b15d290ae5dbbd79ecdd2b5af7170512/LICENSE) · [PRIVACY.md](https://github.com/agent-passport-system/agent-passport-system/blob/638ac267b15d290ae5dbbd79ecdd2b5af7170512/PRIVACY.md) · [REUSE.toml](https://github.com/agent-passport-system/agent-passport-system/blob/638ac267b15d290ae5dbbd79ecdd2b5af7170512/REUSE.toml) · [delegation.ts](https://github.com/agent-passport-system/agent-passport-system/blob/638ac267b15d290ae5dbbd79ecdd2b5af7170512/src/core/delegation.ts) · [package.json](https://github.com/agent-passport-system/agent-passport-system/blob/638ac267b15d290ae5dbbd79ecdd2b5af7170512/package.json) · [tests.yml](https://github.com/agent-passport-system/agent-passport-system/blob/638ac267b15d290ae5dbbd79ecdd2b5af7170512/.github/workflows/tests.yml) |
+
+<a id="n2-toolhive"></a>
+
+### ToolHive
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/stacklok/toolhive |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ae8b232db4282180e9c5decf08a68062ea12622a` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, docs/authz.md, pkg/authz/tool_filter.go, pkg/authz/authorizers/cedar/core.go, pkg/runner/middleware.go, pkg/usagemetrics/collector.go, pkg/sentry/sentry.go, .github/workflows/lint.yml; chưa chạy upstream |
+| Khoảng trống lấp | Cổng gateway và proxy cho MCP có kiểm soát chính sách |
+| Cơ chế đáng học | - `docs/authz.md` mô tả giao diện `Authorizer` có đăng ký factory; có hai loại `cedarv1` và `httpv1`.<br>- `pkg/authz/authorizers/cedar/core.go` dùng cedar-go, chính sách dạng `permit(principal, action == Action::"call_tool", resource == Tool::"weather")`.<br>- `pkg/authz/tool_filter.go` lọc danh sách tool theo quyền, truyền annotation (ví dụ readOnlyHint) vào ngữ cảnh Cedar.<br>- Phân tích MCP từ chối JSON-RPC lỗi, gộp, mơ hồ trước khi phân quyền (docs/authz.md). |
+| Tiêu chí và cách kiểm | Có nhiều test đơn vị và tích hợp trong `pkg/authz` (ví dụ `case_smuggling_test.go`, `resource_uri_test.go`); CI có lint (golangci-lint), e2e, operator-ci, kiểm API tương thích, kiểm license header (chỉ đọc `lint.yml`, các workflow khác chỉ biết tên). Phân quyền được kiểm bằng máy; hiệu quả cô lập container chưa được kiểm trong phiên này. |
+| Giới hạn và rủi ro | Usage metrics mặc định BẬT (`pkg/usagemetrics/collector.go`): tắt khi CI, khi cấu hình `disable_usage_metrics` hoặc biến môi trường; endpoint mặc định https://updates.stacklok.com/api/v1/toolcount, nội dung gửi chưa xác minh. Sentry chỉ chạy khi có DSN cấu hình. README ghi enforcement chỉ có "khi cấu hình nguồn xác thực", tức mặc định không buộc danh tính. Tuyên bố tiết kiệm token tới 85% (chưa xác minh). Có bản Stacklok Enterprise trả phí tách riêng. Phát hành nhanh (VERSION 0.68.0), API còn đổi. |
+| So với | `agentgateway` (gateway MCP/agent, cùng nhóm); `cisco-mcp-scanner` (quét máy chủ MCP, không chạy runtime); `portkey-gateway` (gateway LLM). |
+| Nguồn | [README.md](https://github.com/stacklok/toolhive/blob/ae8b232db4282180e9c5decf08a68062ea12622a/README.md) · [LICENSE](https://github.com/stacklok/toolhive/blob/ae8b232db4282180e9c5decf08a68062ea12622a/LICENSE) · [authz.md](https://github.com/stacklok/toolhive/blob/ae8b232db4282180e9c5decf08a68062ea12622a/docs/authz.md) · [tool_filter.go](https://github.com/stacklok/toolhive/blob/ae8b232db4282180e9c5decf08a68062ea12622a/pkg/authz/tool_filter.go) · [core.go](https://github.com/stacklok/toolhive/blob/ae8b232db4282180e9c5decf08a68062ea12622a/pkg/authz/authorizers/cedar/core.go) · [middleware.go](https://github.com/stacklok/toolhive/blob/ae8b232db4282180e9c5decf08a68062ea12622a/pkg/runner/middleware.go) · [collector.go](https://github.com/stacklok/toolhive/blob/ae8b232db4282180e9c5decf08a68062ea12622a/pkg/usagemetrics/collector.go) · [sentry.go](https://github.com/stacklok/toolhive/blob/ae8b232db4282180e9c5decf08a68062ea12622a/pkg/sentry/sentry.go) · [lint.yml](https://github.com/stacklok/toolhive/blob/ae8b232db4282180e9c5decf08a68062ea12622a/.github/workflows/lint.yml) |

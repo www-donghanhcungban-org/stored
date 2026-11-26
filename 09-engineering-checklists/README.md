@@ -363,3 +363,298 @@ Bắt đầu bằng ASVS/OSPS control áp dụng và mức SAMM mục tiêu theo
 - https://github.com/shenril/owasp-asvs-checklist · https://github.com/D1X7R4/owasp-asvs-checklist · https://github.com/jeremychoi/owasp-asvs-wstg-checklist · https://github.com/nicoSWD/asvs-checklist · https://github.com/OWASP/DevGuide/blob/main/docs/en/04-design/03-mas-checklist.md · https://owasp.org/www-project-application-security-verification-standard
 - https://futureagi.com/blog/self-improving-ai-agents-pre-deployment-checklist-2026/ · https://dev.to/techsavant_lab/should-this-ai-agent-go-live-a-10-question-gono-go-check-ckg · https://www.akto.io/blog/ai-agent-guardrails-checklist · https://aona.ai/resources/templates/ai-agent-deployment-checklist/ · https://www.alliancetek.com/blog/post/2026/08/31/secure-ai-agents-enterprise-deployment.aspx
 - arXiv 2603.20953 (pre-action authorization) · 2606.04037 (pre-deployment assurance) · 2608.16411 (risk-free agent deployment)
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-api-security-checklist"></a>
+
+### API Security Checklist
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/shieldfy/API-Security-Checklist |
+| License | MIT |
+| Phiên bản đã đọc | `bd7a7d5d39cd807dec640046c0ada7c3f07663b5` (commit 2026-07-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md; chưa chạy upstream |
+| Bảo trì | low-activity: Commit cuối 2026-07-21 (dịch tiếng Ba Tư) |
+| Nhận định | Checklist ngắn các biện pháp bảo mật API (xác thực, truy cập, OAuth, đầu vào/ra, CI/CD, giám sát). Gọn và dễ dùng nhưng thiếu các rủi ro như BOLA/SSRF (đã grep README.md); không thay thế OWASP API Top 10. |
+| Nguồn | [LICENSE](https://github.com/shieldfy/API-Security-Checklist/blob/bd7a7d5d39cd807dec640046c0ada7c3f07663b5/LICENSE) · [README.md](https://github.com/shieldfy/API-Security-Checklist/blob/bd7a7d5d39cd807dec640046c0ada7c3f07663b5/README.md) |
+
+<a id="ch-claude-code-best-practice"></a>
+
+### Claude Code Best Practice
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/shanraisshan/claude-code-best-practice |
+| License | MIT |
+| Phiên bản đã đọc | `e7367a6a6471dc3f5d77314ea0ea0c3acde5e837` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, .claude/settings.json; chưa chạy upstream |
+| Bảo trì | active: Commit cuối 2026-11-23; commit gần nhất do tác giả "Claude" tạo (badge cập nhật) |
+| Nhận định | Tài liệu thực hành Claude Code (settings, skills, subagent, memory) kèm cấu hình .claude/ mẫu. Cấu hình mẫu rất rộng quyền nên không sao chép nguyên cho môi trường cần an toàn; không có CI. |
+| Nguồn | [LICENSE](https://github.com/shanraisshan/claude-code-best-practice/blob/e7367a6a6471dc3f5d77314ea0ea0c3acde5e837/LICENSE) · [README.md](https://github.com/shanraisshan/claude-code-best-practice/blob/e7367a6a6471dc3f5d77314ea0ea0c3acde5e837/README.md) · [settings.json](https://github.com/shanraisshan/claude-code-best-practice/blob/e7367a6a6471dc3f5d77314ea0ea0c3acde5e837/.claude/settings.json) |
+
+<a id="ch-deployment-checklist"></a>
+
+### deployment-checklist
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/PinoyFreeCoder/deployment-checklist |
+| License | Không có file LICENSE; README mục "License / reuse" cho phép copy/fork/adapt (không phải license pháp lý chuẩn) |
+| Phiên bản đã đọc | `7b598fcb98035e2753f3130fb3295a5bf25e026f` (commit 2026-10-06) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, agent.md, checklists/base.md; chưa chạy upstream |
+| Bảo trì | low-activity: Commit cuối 2026-10-06; không có workflow CI |
+| Nhận định | Checklist trước khi deploy (web/mobile, nhiều mục bảo mật) kèm hợp đồng đầu ra cho agent AI. Phù hợp làm mẫu; thiếu license chính thức nên quyền tái sử dụng chỉ dựa vào câu trong README, và mục liệt kê trong README chưa khớp cây thư mục. |
+| Nguồn | [README.md](https://github.com/PinoyFreeCoder/deployment-checklist/blob/7b598fcb98035e2753f3130fb3295a5bf25e026f/README.md) · [agent.md](https://github.com/PinoyFreeCoder/deployment-checklist/blob/7b598fcb98035e2753f3130fb3295a5bf25e026f/agent.md) · [base.md](https://github.com/PinoyFreeCoder/deployment-checklist/blob/7b598fcb98035e2753f3130fb3295a5bf25e026f/checklists/base.md) |
+
+<a id="ch-front-end-checklist"></a>
+
+### Front-End-Checklist
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/thedaviddias/Front-End-Checklist |
+| License | MIT |
+| Phiên bản đã đọc | `e8d14d049010e2ce25afcd5e8609dfcbbe63e47e` (commit 2026-10-06) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | low-activity: Commit cuối 2026-10-06 |
+| Nhận định | Từ danh sách checklist front-end thành hệ thống quy tắc có site, CLI và MCP server cho cả người và agent. Số rule là tuyên bố của README (chưa xác minh); chưa chạy CLI/MCP. |
+| Nguồn | [LICENSE](https://github.com/thedaviddias/Front-End-Checklist/blob/e8d14d049010e2ce25afcd5e8609dfcbbe63e47e/LICENSE) · [README.md](https://github.com/thedaviddias/Front-End-Checklist/blob/e8d14d049010e2ce25afcd5e8609dfcbbe63e47e/README.md) · [package.json](https://github.com/thedaviddias/Front-End-Checklist/blob/e8d14d049010e2ce25afcd5e8609dfcbbe63e47e/package.json) · [ci.yml](https://github.com/thedaviddias/Front-End-Checklist/blob/e8d14d049010e2ce25afcd5e8609dfcbbe63e47e/.github/workflows/ci.yml) |
+
+<a id="ch-gesf"></a>
+
+### GESF
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/greenarmor/GESF |
+| License | MIT |
+| Phiên bản đã đọc | `6819ec63618cd5fbffa7950dffbbef482ca5e387` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, package.json, .github/workflows/compliance.yml; chưa chạy upstream |
+| Bảo trì | active: Commit cuối 2026-11-19; một tác giả duy nhất |
+| Nhận định | CLI compliance-as-code (ges) chấm control GDPR/OWASP/CIS/NIST và sinh tài liệu mẫu (DPIA, risk register). Điểm 100% không phải chứng nhận độc lập; quét tĩnh mang tính heuristic, cần người duyệt (chưa xác minh); chưa chạy công cụ. |
+| Nguồn | [LICENSE](https://github.com/greenarmor/GESF/blob/6819ec63618cd5fbffa7950dffbbef482ca5e387/LICENSE) · [README.md](https://github.com/greenarmor/GESF/blob/6819ec63618cd5fbffa7950dffbbef482ca5e387/README.md) · [package.json](https://github.com/greenarmor/GESF/blob/6819ec63618cd5fbffa7950dffbbef482ca5e387/package.json) · [compliance.yml](https://github.com/greenarmor/GESF/blob/6819ec63618cd5fbffa7950dffbbef482ca5e387/.github/workflows/compliance.yml) |
+
+<a id="ch-google-sre-workbook"></a>
+
+### Google SRE Workbook
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://sre.google/workbook/table-of-contents/ |
+| License | CC BY-NC-ND 4.0 (trang ghi Copyright © 2018 Google, O'Reilly; khớp catalog) |
+| Phiên bản đã đọc | Không áp dụng (trang web, không có SHA) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc mục lục trang chính thức; chưa đọc từng chương |
+| Bảo trì | unknown: sách xuất bản 2018, không có dấu hiệu cập nhật trong trang mục lục |
+| Nhận định | Sách SRE của Google với phần SLO (chương 2, 3, 5) và hai phụ lục mẫu tài liệu SLO và chính sách error budget. License CC BY-NC-ND cấm thương mại và cấm tạo bản phái sinh, nên chỉ dẫn link, không chép mẫu. |
+| Nguồn | [Mục lục](https://sre.google/workbook/table-of-contents/) |
+
+<a id="ch-madr-markdown-adr"></a>
+
+### MADR (Markdown ADR)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/adr/madr |
+| License | MIT OR CC0-1.0 |
+| Phiên bản đã đọc | `ba75bb1b20d42af5746b246ad348c202419ae681` (commit 2026-08-28) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, LICENSE.MIT, LICENSE.CC0-1.0, README.md, package.json, CHANGELOG.md; chưa chạy upstream |
+| Bảo trì | low-activity: Commit cuối 2026-08-28 |
+| Nhận định | Mẫu Markdown cho Architectural Decision Record (bản 4.0.0) với các biến thể đủ/tối giản và mục Confirmation. Dual license rất thoáng nên dễ chép mẫu vào dự án; không có mã thực thi đáng kể. |
+| Nguồn | [LICENSE](https://github.com/adr/madr/blob/ba75bb1b20d42af5746b246ad348c202419ae681/LICENSE) · [LICENSE.MIT](https://github.com/adr/madr/blob/ba75bb1b20d42af5746b246ad348c202419ae681/LICENSE.MIT) · [LICENSE.CC0-1.0](https://github.com/adr/madr/blob/ba75bb1b20d42af5746b246ad348c202419ae681/LICENSE.CC0-1.0) · [README.md](https://github.com/adr/madr/blob/ba75bb1b20d42af5746b246ad348c202419ae681/README.md) · [package.json](https://github.com/adr/madr/blob/ba75bb1b20d42af5746b246ad348c202419ae681/package.json) · [CHANGELOG.md](https://github.com/adr/madr/blob/ba75bb1b20d42af5746b246ad348c202419ae681/CHANGELOG.md) |
+
+<a id="ch-mcp-project-planner"></a>
+
+### mcp-project-planner
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/PinoyFreeCoder/mcp-project-planner |
+| License | Không có file LICENSE |
+| Phiên bản đã đọc | `c47da4119d81723ea1c0f142b8410b0bbee7c602` (commit 2026-09-14) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc readme.md; chưa chạy upstream |
+| Bảo trì | low-activity: Commit cuối 2026-09-14; repo chỉ có readme.md |
+| Nhận định | Hướng dẫn kết nối MCP server từ xa (Streamable HTTP) gợi ý repo/API/tech stack từ catalog của PinoyFreeCoder. Chỉ kiểm được tài liệu; mã, dữ liệu và hành vi ghi log ở phía máy chủ ngoài tầm kiểm chứng, nên coi là dịch vụ bên thứ ba. |
+| Nguồn | [readme.md](https://github.com/PinoyFreeCoder/mcp-project-planner/blob/c47da4119d81723ea1c0f142b8410b0bbee7c602/readme.md) |
+
+<a id="ch-node-js-best-practices"></a>
+
+### Node.js Best Practices
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/goldbergyoni/nodebestpractices |
+| License | CC-BY-SA-4.0 |
+| Phiên bản đã đọc | `dc3d60c29d5483d9ea99cf261bbd6203516a2ba7` (commit 2026-06-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md; chưa chạy upstream |
+| Bảo trì | low-activity: Commit cuối 2026-06-15 (clone nông, không xem được lịch sử cũ) |
+| Nhận định | Tuyển tập 108 best practice Node.js trong 8 nhóm, kèm bản dịch. Nội dung 2026 edition do tác giả tự mô tả (chưa xác minh mức mới thực sự); copyleft ShareAlike khi tái phân phối. |
+| Nguồn | [LICENSE](https://github.com/goldbergyoni/nodebestpractices/blob/dc3d60c29d5483d9ea99cf261bbd6203516a2ba7/LICENSE) · [README.md](https://github.com/goldbergyoni/nodebestpractices/blob/dc3d60c29d5483d9ea99cf261bbd6203516a2ba7/README.md) |
+
+<a id="ch-openslo"></a>
+
+### OpenSLO
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/OpenSLO/OpenSLO |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `e0259752f252276485cfa2708dac2db00c2f3464` (commit 2026-09-25) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, website/docs/specification.md, enhancements/v2alpha.md, .github/workflows/checks.yml; chưa chạy upstream |
+| Bảo trì | low-activity: Commit cuối 2026-09-25 |
+| Nhận định | Đặc tả YAML mở, không phụ thuộc nhà cung cấp, để định nghĩa SLO/SLI/AlertPolicy/DataSource. Hữu ích làm định dạng trao đổi; hiện chỉ có đặc tả và ví dụ, công cụ triển khai nằm ngoài repo. |
+| Nguồn | [LICENSE](https://github.com/OpenSLO/OpenSLO/blob/e0259752f252276485cfa2708dac2db00c2f3464/LICENSE) · [README.md](https://github.com/OpenSLO/OpenSLO/blob/e0259752f252276485cfa2708dac2db00c2f3464/README.md) · [specification.md](https://github.com/OpenSLO/OpenSLO/blob/e0259752f252276485cfa2708dac2db00c2f3464/website/docs/specification.md) · [v2alpha.md](https://github.com/OpenSLO/OpenSLO/blob/e0259752f252276485cfa2708dac2db00c2f3464/enhancements/v2alpha.md) · [checks.yml](https://github.com/OpenSLO/OpenSLO/blob/e0259752f252276485cfa2708dac2db00c2f3464/.github/workflows/checks.yml) |
+
+<a id="ch-openssf-best-practices-badge"></a>
+
+### OpenSSF Best Practices Badge
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ossf/best-practices-badge |
+| License | MIT |
+| Phiên bản đã đọc | `32447ea1c63d44c6b8bb749779979d5781d5a773` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, LICENSE.spdx; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-19; có CircleCI và nhiều workflow bảo mật (chỉ liệt kê tên) |
+| Nhận định | Ứng dụng Rails cho phép dự án tự khai tiêu chí best practices để nhận huy hiệu; đáng tham khảo làm bộ tiêu chí passing/silver/gold. Phần lớn là tự khai nên giá trị bảo đảm hạn chế. Con số 64 control Baseline trong catalog **(chưa xác minh)** từ repo này. |
+| Nguồn | [README](https://github.com/ossf/best-practices-badge/blob/32447ea1c63d44c6b8bb749779979d5781d5a773/README.md) · [LICENSE](https://github.com/ossf/best-practices-badge/blob/32447ea1c63d44c6b8bb749779979d5781d5a773/LICENSE) · [LICENSE.spdx](https://github.com/ossf/best-practices-badge/blob/32447ea1c63d44c6b8bb749779979d5781d5a773/LICENSE.spdx) |
+
+<a id="ch-openssf-osps-baseline"></a>
+
+### OpenSSF OSPS Baseline
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ossf/security-baseline |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `c62696c17f4086bb1aed51cfa594dee00e9d8a91` (commit 2026-10-29) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, baseline/*.yaml (đếm ID); chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-10-29; có workflow baseline-scanner, cue-validate, oscal-check (chỉ liệt kê tên) |
+| Nhận định | Định nghĩa baseline bảo mật tối thiểu theo mức trưởng thành dưới dạng YAML, kèm công cụ Go compile/validate; hợp để làm gate tự động hóa. Số control 41 và 14 mapping trong catalog **(chưa xác minh)** từng mục. |
+| Nguồn | [README](https://github.com/ossf/security-baseline/blob/c62696c17f4086bb1aed51cfa594dee00e9d8a91/README.md) · [LICENSE](https://github.com/ossf/security-baseline/blob/c62696c17f4086bb1aed51cfa594dee00e9d8a91/LICENSE) · [baseline/OSPS-AC.yaml](https://github.com/ossf/security-baseline/blob/c62696c17f4086bb1aed51cfa594dee00e9d8a91/baseline/OSPS-AC.yaml) |
+
+<a id="ch-owasp-asvs"></a>
+
+### OWASP ASVS
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/OWASP/ASVS |
+| License | CC-BY-SA-4.0 |
+| Phiên bản đã đọc | `6e40a85b553d2da9dba533c614de14f5ed79c20f` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-22; có workflow build tài liệu 5.0 (chỉ liệt kê tên) |
+| Nhận định | Chuẩn xác minh bảo mật ứng dụng web, nguồn gốc cho các checklist ASVS khác trong kho. Là nội dung CC BY-SA nên dùng lại phải giữ ShareAlike. |
+| Nguồn | [README](https://github.com/OWASP/ASVS/blob/6e40a85b553d2da9dba533c614de14f5ed79c20f/README.md) · [LICENSE.md](https://github.com/OWASP/ASVS/blob/6e40a85b553d2da9dba533c614de14f5ed79c20f/LICENSE.md) |
+
+<a id="ch-owasp-asvs-checklist"></a>
+
+### owasp-asvs-checklist
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/shenril/owasp-asvs-checklist |
+| License | MIT |
+| Phiên bản đã đọc | `a9711e7f51a7ddb8f9ff74d749c76d461752ae76` (commit 2026-09-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-09-03; repo nhỏ gồm xlsx/ods và thư mục tools |
+| Nhận định | Bảng tính audit ASVS 5.0.0 dạng xlsx/ods dễ dùng ngay. Cột CWE/NIST được tác giả khôi phục từ file mapping của bản 5.0.0 **(chưa xác minh)**; chưa mở file xlsx để đối chiếu. |
+| Nguồn | [README](https://github.com/shenril/owasp-asvs-checklist/blob/a9711e7f51a7ddb8f9ff74d749c76d461752ae76/README.md) · [LICENSE](https://github.com/shenril/owasp-asvs-checklist/blob/a9711e7f51a7ddb8f9ff74d749c76d461752ae76/LICENSE) |
+
+<a id="ch-owasp-asvs-wstg-checklist"></a>
+
+### owasp-asvs-wstg-checklist
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/jeremychoi/owasp-asvs-wstg-checklist |
+| License | Không có file LICENSE |
+| Phiên bản đã đọc | `09cd5a521908f7c6cd86daf2620684275a32b34a` (commit 2020-08-11) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, không có file LICENSE; chưa chạy upstream |
+| Bảo trì | Commit duy nhất đọc được 2020-08-11; không có CI; repo gồm xlsx/ods và README |
+| Nhận định | Bảng map ASVS 4.0.1 với WSTG 4.1, hữu ích về ý tưởng ánh xạ nhưng lỗi thời so với ASVS 5.0. Không có license nên cần thận trọng khi tái sử dụng. |
+| Nguồn | [README](https://github.com/jeremychoi/owasp-asvs-wstg-checklist/blob/09cd5a521908f7c6cd86daf2620684275a32b34a/README.md) |
+
+<a id="ch-owasp-cheatsheetseries"></a>
+
+### OWASP CheatSheetSeries
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/OWASP/CheatSheetSeries |
+| License | CC-BY-SA-4.0 |
+| Phiên bản đã đọc | `ac9fd32a0a54f4c8e485ce1784e73032694897a3` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-23; có workflow kiểm link, markdownlint, kiểm drift chỉ mục (chỉ liệt kê tên) |
+| Nhận định | Bộ cheat sheet thực hành bảo mật cho builder, có chỉ mục theo ASVS/MASVS/Top Ten. Nên trích dẫn qua website chính thức; nội dung CC BY-SA. |
+| Nguồn | [README](https://github.com/OWASP/CheatSheetSeries/blob/ac9fd32a0a54f4c8e485ce1784e73032694897a3/README.md) · [LICENSE.md](https://github.com/OWASP/CheatSheetSeries/blob/ac9fd32a0a54f4c8e485ce1784e73032694897a3/LICENSE.md) |
+
+<a id="ch-owasp-web-security-testing-guide"></a>
+
+### OWASP Web Security Testing Guide
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/OWASP/wstg |
+| License | CC-BY-SA-4.0 |
+| Phiên bản đã đọc | `f5f317ebb410666eb65edff469c3a380d55d2af3` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, liệt kê checklists/; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-11-23; có workflow build-checklists, deploy-website (chỉ liệt kê tên) |
+| Nhận định | Hướng dẫn kiểm thử bảo mật web, có checklist máy đọc được trong checklists/. Đánh số chương đang đổi ở 5.0 nên link kiểu latest có thể gãy. |
+| Nguồn | [README](https://github.com/OWASP/wstg/blob/f5f317ebb410666eb65edff469c3a380d55d2af3/README.md) · [LICENSE](https://github.com/OWASP/wstg/blob/f5f317ebb410666eb65edff469c3a380d55d2af3/LICENSE) · [checklists/ (liệt kê)](https://github.com/OWASP/wstg/tree/f5f317ebb410666eb65edff469c3a380d55d2af3/checklists) |
+
+<a id="ch-production-readiness-checklist"></a>
+
+### production-readiness-checklist
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/MarinJursic/production-readiness-checklist |
+| License | MIT |
+| Phiên bản đã đọc | `69cb8a63fd33608edf45c60f4bc3a0aef55b1ccc` (commit 2026-09-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, manifest chỉ liệt kê tên, chưa đọc nội dung; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-09-03 (clone nông, chưa đo nhịp commit); có workflow validate, codeql, scorecard (chỉ liệt kê tên) |
+| Nhận định | Bộ checklist rất lớn gộp từ nhiều nguồn kèm scanner Go; quy mô khó dùng trọn vẹn, nên chọn tập con. Việc phân loại và rà soát từng control là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/MarinJursic/production-readiness-checklist/blob/69cb8a63fd33608edf45c60f4bc3a0aef55b1ccc/README.md) · [LICENSE](https://github.com/MarinJursic/production-readiness-checklist/blob/69cb8a63fd33608edf45c60f4bc3a0aef55b1ccc/LICENSE) |
+
+<a id="ch-the-twelve-factor-app"></a>
+
+### The Twelve-Factor App
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/twelve-factor/twelve-factor |
+| License | CC-BY-4.0 |
+| Phiên bản đã đọc | `3ad5a5f36312cc8ad876abae1bd691acd790d4d1` (commit 2025-07-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2025-07-09, khớp ghi chú HEAD 9/7/2025; có VISION/GOVERNANCE |
+| Nhận định | Bản hiện đại hóa của 12-factor đang trong quá trình soạn; nội dung nằm ở thư mục content, thay đổi chính ở nhánh `next` (chưa đọc nhánh đó). |
+| Nguồn | [README](https://github.com/twelve-factor/twelve-factor/blob/3ad5a5f36312cc8ad876abae1bd691acd790d4d1/README.md) · [LICENSE](https://github.com/twelve-factor/twelve-factor/blob/3ad5a5f36312cc8ad876abae1bd691acd790d4d1/LICENSE) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-open-policy-agent-opa"></a>
+
+### Open Policy Agent (OPA)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/open-policy-agent/opa |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `7b037a97dd9b465dedb1c565f778ea06ac5569ea` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, AGENTS.md, cmd/test.go, cmd/run.go, .github/workflows/pull-request.yaml, v1/tester/runner.go; chưa chạy upstream |
+| Khoảng trống lấp | Policy-as-code admission/runtime: lõi Rego, kho mới có conftest (bọc OPA cho file cấu hình) |
+| Cơ chế đáng học | - Hệ thống test luật ngay trong CLI: `cmd/test.go` có `--coverage`, `--threshold` (thoát khác 0 nếu độ phủ thấp hơn), `--timeout` (mặc định 5 giây), `--exit-zero-on-skipped`.<br>- `capabilities/` chứa JSON khả năng theo từng phiên bản (v0.17.0...), dùng để kiểm luật có dùng hàm ngoài phạm vi cho phép hay không.<br>- Kiến trúc chạy được dạng server, thư viện Go (`v1/sdk`), WASM (`wasm/`) và bundle (`bundle/`), tách việc quyết định khỏi việc thực thi.<br>- `v1/topdown` chứa hơn 130 file hàm dựng sẵn; `v1/tester/runner.go` là bộ chạy test Rego. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: ngưỡng độ phủ đặt tay qua `--threshold` (không có giá trị mặc định). Repo tự kiểm bằng pull-request.yaml (đã đọc) phát hiện loại file đổi rồi chạy lần lượt kiểm tra Go, WASM, docs, Rego, YAML, proto, cùng nightly và benchmark; CI còn có test tích hợp với Envoy và Regal. |
+| Giới hạn và rủi ro | Apache-2.0. `opa run` mặc định kiểm phiên bản bản mới qua GitHub (cờ `--skip-version-check`, cờ cũ `--disable-telemetry` đã deprecate), dữ liệu rời máy chỉ là kiểm phiên bản (theo mô tả cờ, trang privacy chưa mở). Bảo trì rất tích cực, repo lớn. Dùng làm lõi cho policy cho agent cần tự dựng input và luật, không có bộ luật agent sẵn. |
+| So với | conftest (opa-conftest, cùng lõi Rego cho file cấu hình), Syft (policy-as-code nhóm SBOM), Semgrep (luật quét mã, không phải ngôn ngữ chính sách tổng quát) |
+| Nguồn | [README.md](https://github.com/open-policy-agent/opa/blob/7b037a97dd9b465dedb1c565f778ea06ac5569ea/README.md) · [LICENSE](https://github.com/open-policy-agent/opa/blob/7b037a97dd9b465dedb1c565f778ea06ac5569ea/LICENSE) · [AGENTS.md](https://github.com/open-policy-agent/opa/blob/7b037a97dd9b465dedb1c565f778ea06ac5569ea/AGENTS.md) · [test.go](https://github.com/open-policy-agent/opa/blob/7b037a97dd9b465dedb1c565f778ea06ac5569ea/cmd/test.go) · [run.go](https://github.com/open-policy-agent/opa/blob/7b037a97dd9b465dedb1c565f778ea06ac5569ea/cmd/run.go) · [pull-request.yaml](https://github.com/open-policy-agent/opa/blob/7b037a97dd9b465dedb1c565f778ea06ac5569ea/.github/workflows/pull-request.yaml) · [runner.go](https://github.com/open-policy-agent/opa/blob/7b037a97dd9b465dedb1c565f778ea06ac5569ea/v1/tester/runner.go) |

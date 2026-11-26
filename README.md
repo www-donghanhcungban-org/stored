@@ -4,7 +4,7 @@
 >
 > **Phạm vi:** kho chỉ lưu hồ sơ repo và đánh giá để các dự án khác tham khảo và tích hợp; không chứa code hay công cụ để dùng (xem [WORKFLOW.md](WORKFLOW.md)).
 >
-> **Khảo sát ban đầu:** 2026-10-12 · **Catalog cập nhật:** 2026-11-04 · **Phương pháp:** tìm kiếm web + đối chiếu nhiều nguồn (blog so sánh, trang GitHub, tài liệu chính thức, bài báo học thuật). Số sao GitHub là **ước lượng tại thời điểm khảo sát** (Q3–Q4/2026) và sai lệch giữa các nguồn; xem từng mục để biết nguồn.
+> **Khảo sát ban đầu:** 2026-10-12 · **Catalog cập nhật:** 2026-11-23 · **Phương pháp:** tìm kiếm web + đối chiếu nhiều nguồn (blog so sánh, trang GitHub, tài liệu chính thức, bài báo học thuật). Số sao GitHub là **ước lượng tại thời điểm khảo sát** (Q3–Q4/2026) và sai lệch giữa các nguồn; xem từng mục để biết nguồn.
 
 ---
 
@@ -12,9 +12,11 @@
 
 **Dùng kho cho xưởng phát triển phần mềm:** đọc [FACTORY.md](FACTORY.md) để ghép các chuyên mục thành chín cổng từ nhu cầu → kiến trúc → lập trình → kiểm chứng → phát hành → vận hành. Đợt 2026-11-04 đào sâu 28 mục hiện có và bổ sung sáu mục 29–34 cho các lớp kỹ thuật sản phẩm còn thiếu; hồ sơ mới/đọc lại ghi phạm vi bằng chứng riêng.
 
-Kho hiện có **34 chuyên mục, 1.040 hồ sơ, 69 category**. Chọn tuyến đọc ở [GUIDES.md](GUIDES.md); xem [METHOD.md](METHOD.md) để hiểu mức bằng chứng và giới hạn kiểm. Catalog [JSON](data/projects.json) / [CSV](data/projects.csv) có [schema](data/projects.schema.json); cách đóng góp ở [CONTRIBUTING.md](CONTRIBUTING.md).
+Kho hiện có **38 chuyên mục, 2.719 hồ sơ, 72 category trong 9 nhóm**; 13 category lớn chia tiếp thành danh mục con. Xem bảng theo nhóm → danh mục → danh mục con ở [catalog/](catalog/README.md) (sinh tự động từ dữ liệu) các skill/tính năng đã chắt lọc kèm cách áp dụng và đề xuất ở [PLAYBOOK.md](PLAYBOOK.md), và trạng thái các chuẩn và quy định kèm mức xác minh ở [STANDARDS.md](STANDARDS.md). Chọn tuyến đọc ở [GUIDES.md](GUIDES.md); xem [METHOD.md](METHOD.md) để hiểu mức bằng chứng và giới hạn kiểm. Catalog [JSON](data/projects.json) / [CSV](data/projects.csv) có [schema](data/projects.schema.json); cách đóng góp ở [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Chuỗi dữ liệu đến sản phẩm: **[dữ liệu AI](24-ai-data-engineering/README.md) → [model adaptation](25-model-adaptation-post-training/README.md) → [inference](10-local-llm-rag-memory/README.md) → [eval](07-eval-observability/README.md) → [hiệu quả sản phẩm](28-product-discovery-experimentation/README.md)**. Nhánh [OCR/tài liệu](26-document-intelligence-ocr/README.md) và [CAD/BIM](27-3d-cad-bim-engineering/README.md) nối trực tiếp các case study đã có ở mục 23.
+
+**Nguồn Anh Kỹ Sư AI (23/11/2026):** đã đối chiếu đủ [1.295 link](data/collections/anhkysuai-kho-links.txt); [snapshot đầy đủ](data/collections/anhkysuai-kho.json) ghi 600 repo đã có, 691 hồ sơ mới và 4 repo đổi tên được cập nhật vào ID cũ. Các đánh giá mới nằm tại phần “Đánh giá từ kho Anh Kỹ Sư AI” của chuyên mục tương ứng, với SHA/ngày/mức kiểm và giấy phép theo phạm vi.
 
 ## 🗂️ Mục lục
 
@@ -54,7 +56,11 @@ Chuỗi dữ liệu đến sản phẩm: **[dữ liệu AI](24-ai-data-engineeri
 | 32 | [Platform & Delivery Engineering](32-platform-delivery-engineering/README.md) | Toolchain/devcontainers, OpenTofu, GitOps/Argo CD, IaC plan, promote artifact và rollback |
 | 33 | [Reliability, Observability & Operations](33-reliability-observability-operations/README.md) | OTel Collector, Sloth/Pyrra, SLO/error budget, alert/incident và diễn tập phục hồi |
 | 34 | [Backend, Data, Identity & Integration](34-backend-data-identity-integration/README.md) | Migration, SQL/code generation, SSO, phân quyền và tenant isolation; tích hợp có idempotency/đối soát |
-| — | [FACTORY.md](FACTORY.md) | Bản đồ 34 mục, vai trò/cổng giao hàng, manifest bằng chứng, mức áp dụng, chi phí và vòng học của xưởng |
+| 35 | [Desktop & năng suất cá nhân](35-desktop-productivity-apps/README.md) | Tiện ích macOS/Windows/Linux, quản lý file/media, đọc sách, ghi chú và knowledge base cá nhân (Joplin, Logseq, AFFiNE, AppFlowy…); lập 23/11/2026 khi chia lại catalog |
+| 36 | [Tự host & homelab](36-self-hosting-homelab/README.md) | PaaS/bảng điều khiển (Coolify, Dokploy, 1Panel…), ứng dụng tự host (ảnh, file, tài liệu, chữ ký số), Pi-hole/AdGuard, uptime; trách nhiệm sao lưu và cập nhật thuộc người vận hành |
+| 37 | [Ngôn ngữ & runtime](37-programming-languages-runtimes/README.md) | Repo gốc ngôn ngữ/runtime và trình quản lý phiên bản; chọn theo chính sách phát hành/LTS và tương thích ngược |
+| 38 | [Chất lượng và sản xuất công nghiệp](38-industrial-quality-manufacturing/README.md) | Quản lý chất lượng ISO 9001/14001/45001, SPC, hàn và NDT, hiệu chuẩn, truy xuất serial, MES/ERP nhẹ (OpenQMS, Carbon, OpenMES, OCA...); lập 23/11/2026 cho nhà máy chế tạo thiết bị áp lực và chai khí; nêu rõ mảng chưa có công cụ mã mở |
+| — | [FACTORY.md](FACTORY.md) | Bản đồ 37 mục, vai trò/cổng giao hàng, manifest bằng chứng, mức áp dụng, chi phí và vòng học của xưởng |
 | — | [data/projects.json](data/projects.json) · [data/projects.csv](data/projects.csv) | Catalog máy-đọc-được (tên, repo, loại, license, sao ước lượng, ghi chú) |
 | — | [X-TEMPLATES.md](X-TEMPLATES.md) · [data/xt-handoff.json](data/xt-handoff.json) | **Thư viện cho X-Templates**: hợp đồng đọc kho, tổng hợp chéo telemetry + cổng CI của công cụ agent, bàn giao bài học → ID yêu cầu (ba cột), đề xuất nâng cấp |
 | — | [SOURCES.md](SOURCES.md) | Toàn bộ URL nguồn đã dùng |
@@ -65,6 +71,14 @@ Chuỗi dữ liệu đến sản phẩm: **[dữ liệu AI](24-ai-data-engineeri
 ---
 
 ## 🔭 Bức tranh tổng thể (tóm tắt phân tích)
+
+### Đối chiếu nguồn tuyển chọn với repo gốc — 23/11/2026
+
+Đợt này bổ sung toàn bộ repo thiếu từ 1.295 link, gồm cả những mục trước đây chỉ được ghi trong danh sách tuyển chọn. Kết quả là **691 hồ sơ mới**, **4 hồ sơ giữ ID và đổi đường dẫn chuẩn**, cùng 600 repo đã có giữ phạm vi đánh giá cũ. Xem [bảng trạng thái từng link](data/collections/anhkysuai-kho.json) và [nguồn theo chuyên mục](SOURCES.md#bổ-sung-2026-11-23--đủ-1295-link-từ-kho-anh-kỹ-sư-ai).
+
+Các hồ sơ cho thấy cần tách bốn quyết định khi chọn repo: giấy phép code/model/nội dung/asset; nhánh đang đọc với bản ổn định; trạng thái hỗ trợ được công bố với cờ archive; và repo chuyển tên với fork độc lập. Ví dụ [Huly](21-autonomous-workflows/README.md#anhkysuai-2026-11-23-hcengineering-platform) công bố đóng băng/ngừng hosted, [PLANKA](21-autonomous-workflows/README.md#anhkysuai-2026-11-23-plankanban-planka) có giới hạn hosting thương mại, [Awesome Mac](08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-jaywcjlove-awesome-mac) có nhãn giấy phép mâu thuẫn. Chi tiết và permalink nằm tại hồ sơ.
+
+**Giới hạn bằng chứng:** đa số hồ sơ là `docs-read`, một số `code-read` có phạm vi file/đường gọi cụ thể. Đã clone và đọc, chưa cài/chạy upstream hoặc tái lập benchmark; test của chính kho chỉ kiểm tính nhất quán dữ liệu và liên kết. Việc có mặt trong kho là kết quả đánh giá để tham khảo, không phải xác nhận phù hợp production.
 
 ### 1. Coding agent đã trở thành "mặt tiền" của AI cho lập trình viên
 
@@ -550,6 +564,30 @@ Mục này còn có sơ đồ ghép cả 20 mục thành một quy trình làm m
 ### 91. "7 plugin thay 7 vị trí" (20/11/2026): QuickBooks, Stripe, Shopify, Canva, HubSpot, LegalZoom, Zapier
 
 Mục 20 §3zd đọc mã cả bảy plugin ở đúng SHA mà marketplace chính thức ghim. Cả bảy làm thay một phần việc chứ không thay cả vị trí. QuickBooks đọc báo cáo và nhắc nợ, HubSpot chuẩn bị cuộc gọi; skill nào ghi dữ liệu hay chuyển tiền (Stripe `stripe-pay`) đều hỏi xác nhận trước. Hai điểm trong danh sách đã sai. Shopify AI Toolkit là công cụ cho lập trình viên, nay chỉ còn 2 skill thay vì 18, và mặc định gửi telemetry kèm nguyên văn prompt. LegalZoom không thay luật sư mà chuyển người dùng sang luật sư thật khi rủi ro cao. Mục §3zd.3 cập nhật `claude-plugins-official` theo ảnh người dùng gửi: 47,8k★, plugin bên thứ ba nay nộp ở `claude.ai/directory/manage`, repo không còn nhận PR.
+
+### 92. Bảng "Top 100 GitHub AI Skills" (23/11/2026): 28 hồ sơ mới
+
+Đối chiếu 42 repo trong bảng xlsx người dùng gửi: 15 repo đã có hồ sơ, 27 repo được đọc bằng clone nông và thêm 28 hồ sơ vào mục 05, 08, 14, 16, 19, 20, 22 (fal-ai-community/skills có 36 skill chứ không phải 15). Số sao của bảng là nguồn dựng; lấy lại qua GitHub search API cùng ngày, các repo đầu bảng đúng trong khoảng 0,5%, còn catalog cũ lệch tới 5% (firecrawl 197k → 207k, anthropics/skills 189k → 199k). Rủi ro đáng ghi: super-video-maker-skill không có LICENSE và upload S3 `public-read`; louisblythe/sales-skills chỉ ghi MIT trong README; heygen skills bật feedback và kiểm cập nhật mặc định; 44/45 skill của ericosiu chèn CTA của tác giả; n8n-mcp mặc định gửi workflow lên server tác giả; herk-edit-kit là tên mới của hyperframes-student-kit.
+
+### 93. Chia lại catalog 3 cấp (23/11/2026): 70 catalog con, mục 35–37 và PLAYBOOK
+
+Mục 08 từng giữ 590/2.268 hồ sơ (26%), 359 trong số đó không phải khóa học hay danh sách; README lớn xếp theo đợt nhập thay vì chủ đề. `data/taxonomy.json` nay chia 70 category vào 9 nhóm và 13 category lớn có danh mục con bắt buộc; `scripts/build_catalog_views.py` sinh 70 bảng trong [catalog/](catalog/README.md), CI kiểm bảng không cũ. Ba mục mới 35 (desktop & năng suất), 36 (tự host & homelab), 37 (ngôn ngữ & runtime) nhận 251 hồ sơ chuyển về đúng chủ đề; neo cũ giữ đoạn dẫn nên link ngoài không gãy. [PLAYBOOK.md](PLAYBOOK.md) chắt lọc 98 skill/tính năng theo bốn mảng, mỗi mục có cơ chế, các bước áp dụng, khi không nên dùng, rủi ro và hồ sơ gốc. Giới hạn: danh mục con do agent gán theo tên và ghi chú, chưa duyệt từng dòng; các bước áp dụng chưa được kho chạy thử.
+
+### 94. Nâng trần UI/UX (23/11/2026): 39 hồ sơ mới và đặc tả skill kiểm chứng được
+
+Kho đã có hơn 300 hồ sơ UI/UX nhưng thiên về thẩm mỹ ("chống giao diện kiểu AI làm", gu, token); bảy mảng UX gần như trống: nghiên cứu người dùng, đánh giá heuristic, kiến trúc thông tin, kiểm thử khả dụng, nội dung UX, design critique và đo UX. Đợt này tìm cả trên internet lẫn GitHub, đọc kỹ 39 repo mới ([phần bổ sung mục 06](06-ui-ux-design/README.md#ux-2026-11-23)) và viết [chương 5 của PLAYBOOK](PLAYBOOK.md#5-đề-xuất-skill-và-tính-năng-uiux-tốt-nhất-có-thể): mười nguyên tắc rút từ bằng chứng, bản đồ 12 giai đoạn, đặc tả 9 skill và giao thức đánh giá skill. Điều đáng nhớ: các nghiên cứu về đánh giá UX bằng LLM (chỉ đọc được tóm tắt) cho thấy độ nhất quán về mức nghiêm trọng gần như bằng 0, nên mức nghiêm trọng do model gán không được làm cổng chặn; Pa11y và Pa11y CI thực tế chỉ kiểm WCAG 2.1 dù nhiều nơi gọi là "kiểm accessibility"; ba trong chín tiêu chí mới của WCAG 2.2 là mức AAA. Giới hạn: đề xuất chưa được xây hay đo; bảy bài nghiên cứu chỉ đọc tóm tắt; Google PAIR Guidebook chưa đọc được.
+
+### 95. Nâng trần các nhóm còn lại (23/11/2026): 150 hồ sơ, STANDARDS.md và 87 đề xuất
+
+Sau UI/UX, cùng cách làm được áp cho mười nhóm khác: mười trinh sát tìm khoảng trống trên internet và GitHub, 150 repo mới được đọc kỹ (phần "Nâng trần" của các README chuyên mục), năm agent đọc lại nguồn chính thức của 70 chuẩn, và viết hai tài liệu mới: [STANDARDS.md](STANDARDS.md) ghi trạng thái từng chuẩn kèm mức xác minh, và [chương 6 của PLAYBOOK](PLAYBOOK.md#6-đề-xuất-skill-và-tính-năng-cho-các-nhóm-còn-lại) với 87 ý tưởng skill. Mục 38 mới cho chất lượng và sản xuất công nghiệp (nhà máy chế tạo thiết bị áp lực): kho gần như chưa có công cụ nào, và đợt này không tìm được công cụ mã mở đạt chất lượng cho quản lý quy trình hàn WPS/PQR, hiệu chuẩn thiết bị đo hay NDT. Điều đáng nhớ: mô tả của trinh sát sai ở hàng chục repo (license, tính năng, kiến trúc), nên mọi mô tả đều phải đọc lại mã; nhiều công cụ là open-core hoặc license kép; telemetry mặc định bật khá phổ biến và `autoevals` có thể gửi khóa OpenAI qua gateway mặc định; cổng "duyệt" thường chỉ nằm trong prompt. Về chuẩn: iso.org, thuvienphapluat.vn và vbpl.vn chặn công cụ đọc (403). Ngày 24/11/2026 trạng thái các chuẩn ISO (9001, 14001, 45001, 4706, 9809-1, 22991, 15614-1, 9606-1, 17636, 17640, 17025, 3834-2) được đọc lại qua bản sao `committee.iso.org` của chính ISO, cùng BSI, AFNOR, EVS và EUR-Lex; còn quy chuẩn chai LPG Việt Nam được đọc từ văn bản hợp nhất chính thức 120/VBHN-TT-BCT trên moit.gov.vn (PDF quét, nhận dạng bằng OCR): xác nhận QCVN 04:2013/BCT được Thông tư 46/2026/TT-BCT sửa đổi từ 15/11/2026, nhưng nội dung Điều 13a và hiệu lực từng TCVN vẫn chỉ có nguồn thứ cấp hoặc chưa xác minh; xem danh sách cần tự kiểm trong STANDARDS.md.
+
+### 96. Nâng trần đợt hai (24/11/2026): 233 hồ sơ, 84 chuẩn và 79 ý tưởng
+
+Cùng cách làm của đợt trước, lần này cho cả mười nhóm: mười trinh sát tìm khoảng trống KHÁC với đợt 1, 26 lô đọc mã thật 233 repo (154 ứng viên đã qua sàng lọc từ đợt 1 nhưng chưa có hồ sơ, cộng 82 ứng viên mới của trinh sát đợt hai), rồi gộp vào kho. Kết quả: [chương 7 của PLAYBOOK](PLAYBOOK.md#7-đề-xuất-đợt-hai-skill-và-tính-năng-cho-các-nhóm) với 79 ý tưởng skill mới, 84 dòng chuẩn mới trong [STANDARDS.md](STANDARDS.md) (mức xác minh ghi từng dòng) và bàn giao XT-H-162 cho X-Templates. Điều đáng nhớ: mô tả của trinh sát lại sai ở nhiều repo, giấy phép "mã nguồn mở" thường có điều kiện đi kèm (Camunda, Nango, repo-forensics, Gatling, immudb), telemetry mặc định bật khá phổ biến, và nhiều công cụ dùng làm cổng thoát mã 0 trong đúng những trường hợp cần chặn. Mảng quản lý quy trình hàn, hiệu chuẩn và NDT mã nguồn mở vẫn không có công cụ đạt chất lượng. Một repo có workflow gửi khóa API tới IP trần đã bị loại khỏi kho theo yêu cầu.
+
+### 97. Astryx của Meta (24/11/2026): đọc mã design system "sẵn cho agent", 32,7k★
+
+Mục 06 §7zh đọc mã `meta/astryx` (MIT, Beta 0.7.x) theo ảnh thẻ người dùng gửi (27,2k★ ngày 13/11, nay 32,7k★). Gói đúng tên là `@astryxdesign/core` (hồ sơ cũ ghi sai `@astryx/core`); CLI có máy chủ MCP cục bộ chứ không chỉ dịch vụ host; không thấy telemetry; `check:repo` và `check:agent-plugin-skill` kiểm chính khối hướng dẫn cho agent. Lời "13.000+ app nội bộ" và "150+ component" chưa kiểm được.
 
 ## 🧭 Cách dùng kho này
 

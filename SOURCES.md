@@ -2050,7 +2050,7 @@ Kiểm đối kháng: mỗi nhóm chọn bốn nhóm claim làm đổi quyết �
 
 ## Bổ sung 2026-11-20b (kỹ năng Figma từ ảnh bài đăng tìm việc)
 
-- Mục 06 §7zh: đối chiếu 4 bài help.figma.com (auto layout, components, variants, prototyping), docs-read 20/11/2026; bài đăng cá nhân trong ảnh không được lưu vào kho. Catalog không đổi.
+- Mục 06 §7zi: đối chiếu 4 bài help.figma.com (auto layout, components, variants, prototyping), docs-read 20/11/2026; bài đăng cá nhân trong ảnh không được lưu vào kho. Catalog không đổi.
 
 ## Bổ sung 2026-11-20c (Modern Web Guidance: kho phân phối và kho nguồn)
 
@@ -2080,3 +2080,113 @@ Kiểm đối kháng: mỗi nhóm chọn bốn nhóm claim làm đổi quyết �
 ## Bổ sung 2026-11-26b (diagram-design, ảnh trang repo)
 
 - `cathrynlavery/diagram-design`: clone 26/11/2026 (blob:none, 495 commit, HEAD b228c5d); 73.446★/4.887 fork (GitHub search API), MIT, plugin 2.6.179; 52 file `type-*.md`; đọc PRIVACY.md, CHANGELOG [Unreleased], workflow. Mục 06 §7b.4; catalog vẫn 1578. Chưa cài/chạy.
+
+## Bổ sung 2026-11-23 — đủ 1.295 link từ kho Anh Kỹ Sư AI
+
+- Nguồn phát hiện: <https://anhkysuai.com/kho/> và 42 trang chuyên mục. Đã đối chiếu đủ 1.295 owner/repo duy nhất; giữ [snapshot và disposition từng link](data/collections/anhkysuai-kho.json) cùng [1.295 URL GitHub](data/collections/anhkysuai-kho-links.txt).
+- Catalog trước đợt: 1,577 hồ sơ. 600 repo đã có được dẫn lại theo phạm vi cũ; 695 repo chưa khớp tên đều đã clone và đọc: 691 hồ sơ mới, 4 URL đổi tên khớp GitHub repository ID nên cập nhật hồ sơ cũ. Catalog sau đợt: 2,268 hồ sơ.
+- Nguồn chính: README, LICENSE/COPYING/EULA/model license, manifest, CI và các file triển khai thực sự được dẫn trong hồ sơ tại full commit SHA. Metadata tên chuẩn, stable ID, sao, archive và push lấy từ GitHub API ngày 2026-11-23; sao của nguồn tuyển chọn được giữ riêng, không dùng thay xác minh.
+- Phạm vi trong 691 hồ sơ mới: 15 hồ sơ `code-read`; 676 hồ sơ `docs-read`; 4 đối chiếu nhận diện ở mức docs-read. Không cài/chạy upstream, chưa tái lập benchmark. Không có kiểm toán độc lập cho toàn bộ tính năng của từng dự án; giới hạn và mâu thuẫn được ghi trong mỗi đánh giá.
+- Đối chiếu tên: React (`facebook/react` → `react/react`, ID 10270250), React Native (`facebook/react-native` → `react/react-native`, ID 29028775), OpenMontage (`calesthio/OpenMontage` → `OpenMontageInc/OpenMontage`, ID 1195360525), gVisor (`google/gvisor` → `gvisor/gvisor`, ID 131212638). Mỗi hồ sơ có link API cũ/mới và permalink clone.
+
+| Chuyên mục chứa đánh giá | Số phạm vi thêm/đối chiếu |
+|---|---:|
+| [01-ai-coding-agents](01-ai-coding-agents/README.md#anhkysuai-2026-11-23) | 1 |
+| [02-agent-frameworks](02-agent-frameworks/README.md#anhkysuai-2026-11-23) | 7 |
+| [04-protocols-standards](04-protocols-standards/README.md#anhkysuai-2026-11-23) | 4 |
+| [06-ui-ux-design](06-ui-ux-design/README.md#anhkysuai-2026-11-23) | 74 |
+| [08-awesome-lists-learning](08-awesome-lists-learning/README.md#anhkysuai-2026-11-23) | 92 |
+| [10-local-llm-rag-memory](10-local-llm-rag-memory/README.md#anhkysuai-2026-11-23) | 13 |
+| [11-browser-computer-use-sandbox](11-browser-computer-use-sandbox/README.md#anhkysuai-2026-11-23) | 13 |
+| [13-dev-stack-devops](13-dev-stack-devops/README.md#anhkysuai-2026-11-23) | 167 |
+| [14-voice-multimodal](14-voice-multimodal/README.md#anhkysuai-2026-11-23) | 19 |
+| [15-ai-for-data](15-ai-for-data/README.md#anhkysuai-2026-11-23) | 8 |
+| [16-docs-tools](16-docs-tools/README.md#anhkysuai-2026-11-23) | 22 |
+| [17-prompt-engineering](17-prompt-engineering/README.md#anhkysuai-2026-11-23) | 3 |
+| [19-agentic-video-media](19-agentic-video-media/README.md#anhkysuai-2026-11-23) | 10 |
+| [21-autonomous-workflows](21-autonomous-workflows/README.md#anhkysuai-2026-11-23) | 28 |
+| [22-motion-design-animation](22-motion-design-animation/README.md#anhkysuai-2026-11-23) | 5 |
+| [24-ai-data-engineering](24-ai-data-engineering/README.md#anhkysuai-2026-11-23) | 13 |
+| [25-model-adaptation-post-training](25-model-adaptation-post-training/README.md#anhkysuai-2026-11-23) | 4 |
+| [26-document-intelligence-ocr](26-document-intelligence-ocr/README.md#anhkysuai-2026-11-23) | 3 |
+| [27-3d-cad-bim-engineering](27-3d-cad-bim-engineering/README.md#anhkysuai-2026-11-23) | 34 |
+| [28-product-discovery-experimentation](28-product-discovery-experimentation/README.md#anhkysuai-2026-11-23) | 4 |
+| [29-software-architecture-api-contracts](29-software-architecture-api-contracts/README.md#anhkysuai-2026-11-23) | 2 |
+| [30-software-testing-quality](30-software-testing-quality/README.md#anhkysuai-2026-11-23) | 23 |
+| [31-software-supply-chain-security](31-software-supply-chain-security/README.md#anhkysuai-2026-11-23) | 1 |
+| [32-platform-delivery-engineering](32-platform-delivery-engineering/README.md#anhkysuai-2026-11-23) | 35 |
+| [33-reliability-observability-operations](33-reliability-observability-operations/README.md#anhkysuai-2026-11-23) | 10 |
+| [34-backend-data-identity-integration](34-backend-data-identity-integration/README.md#anhkysuai-2026-11-23) | 100 |
+
+Các `sources` trong JSON và mục **Nguồn** tại từng hồ sơ là danh sách chi tiết để kiểm lại; snapshot nguồn không được coi là chứng cứ về chất lượng hay quyền tái sử dụng.
+
+**Kiểm đọc độc lập:** [Năm kết luận quan trọng](data/collections/anhkysuai-kho-review-checks.json) về thông báo Huly, điều khoản PLANKA/Surya, thực thể OpenMontage và mâu thuẫn giấy phép Awesome Mac đã được đối chiếu với cùng SHA. Kết quả xác nhận mô tả tài liệu trong cả năm trường hợp; giới hạn và những điều không thể suy ra được ghi riêng.
+
+## Bổ sung 2026-11-23 (bảng xlsx "Top 100 GitHub AI Skills Hằng Ngày" → mục 05, 08, 14, 16, 19, 20, 22)
+
+Nguồn gốc: file xlsx người dùng gửi (tab "Kho Skill Thực Chiến"); 27 repo chưa có hồ sơ được đọc trực tiếp bằng clone nông. Số sao của bảng là nguồn dựng **(chưa xác minh)**; GitHub API không dùng được trong phiên nên ★ để trống khi chưa có nguồn khác. Các nguồn đã đọc:
+
+- Marketing Skills (kostja94): https://github.com/kostja94/marketing-skills
+- AI Marketing Skills (Single Grain): https://github.com/ericosiu/ai-marketing-skills
+- E-Commerce Skills (Nexscope): https://github.com/nexscope-ai/ecommerce-skills
+- Sales Skills (Apparate): https://github.com/louisblythe/sales-skills
+- GTM Skills (LeadMagic): https://github.com/leadmagic/gtm-skills
+- Best Agent Skills (Linkly AI): https://github.com/linklyai/best-skills
+- fal.ai Skills (fal-ai-community/skills): https://github.com/fal-ai-community/skills
+- Super Video Maker Skill: https://github.com/bomx/super-video-maker-skill
+- Visual Skills (smixs): https://github.com/smixs/visual-skills
+- HeyGen Skills: https://github.com/heygen-com/skills
+- HyperFrames Motion Reel Skill: https://github.com/sunwood-ai-labs/hyperframes-motion-reel-skill
+- Herk Edit Kit: https://github.com/nateherkai/herk-edit-kit
+- LiveAvatar Agent Skills: https://github.com/heygen-com/liveavatar-agent-skills
+- runway-studio-skills: https://github.com/runwayml/runway-studio-skills
+- Runway Dev (runwayml/skills): https://github.com/runwayml/skills
+- ffmpeg-skill (kajisho5): https://github.com/kajisho5/ffmpeg-skill
+- ffmpeg-skill (n0an, FFmpeg Recipes): https://github.com/n0an/ffmpeg-skill
+- comfyui-agent-skill (MieMieeeee): https://github.com/MieMieeeee/comfyui-agent-skill
+- youtube-agent-skill (Jake Schincariol): https://github.com/Jakeschincariol/youtube-agent-skill
+- claude-youtube (AgriciDaniel): https://github.com/AgriciDaniel/claude-youtube
+- BrowserAct youtube-api-skill (browser-act/skills): https://github.com/browser-act/skills
+- SkillsBench: https://github.com/benchflow-ai/skillsbench
+- n8n-skills (czlonkowski): https://github.com/czlonkowski/n8n-skills
+- n8n-agent-skills (tmolavi): https://github.com/tmolavi/n8n-agent-skills
+- awesome-agent-skills (jqueryscript): https://github.com/jqueryscript/awesome-agent-skills
+- agent-notion-template-docs (notion-doc): https://github.com/heyman333/agent-notion-template-docs
+- WordPress agent-skills: https://github.com/WordPress/agent-skills
+- MiniMax skills: https://github.com/MiniMax-AI/skills
+
+## Đối chiếu bảy hồ sơ còn thiếu — 23/11/2026
+
+- [GitHub Docs: About Copilot](https://docs.github.com/en/copilot/get-started/about-github-copilot): tính năng Copilot; chưa thử sản phẩm hoặc kiểm giá.
+- [Lovable: AI app & website builder](https://lovable.dev/build): mô tả sản phẩm của nhà cung cấp; chưa thử sản phẩm.
+- [Android Developers: MotionScheme](https://developer.android.com/reference/kotlin/androidx/compose/material3/MotionScheme): API Compose standard/expressive và các spec; không xác nhận giá trị token trên web.
+- [Microsoft Learn: Agent Framework](https://learn.microsoft.com/en-us/agent-framework/overview/): mô tả nền tảng và quan hệ với AutoGen, Semantic Kernel; chưa đọc repo ở commit xác định.
+- Các repo `Autumn-27/ARTEX`, `seeker19110/design-os-3d-blender` và `seeker19110/system-design-notes` chưa truy cập được để đối chiếu commit; không khẳng định nguyên nhân.
+
+## Bổ sung 2026-11-24b (Astryx → mục 06 §7zh)
+
+- Ảnh thẻ GitHub người dùng gửi (`meta/astryx`, 27,2k★ ngày 13/11/2026). Clone nông `72d06aa618b001c09970756b19890bb157be100d` (commit 24/11/2026); GitHub search API 24/11/2026: ★ 32.703, fork 2.567, MIT; npm registry `@astryxdesign/core` 0.7.17.
+- [BetterStack: Astryx](https://betterstack.com/community/guides/ai/astryx-meta-design-system/): bài ngoài, cập nhật 27/7/2026, không có số đo.
+- [InfoQ: Meta Astryx](https://infoq.com/news/2026/09/meta-astryx-design-system): tin ngày 13/9/2026; nêu ý kiến Reddit về bảo trì dài hạn.
+- Kết quả tìm web (chưa mở trực tiếp): Meta for Developers (X), GitRanks, blockchain.news, OpenReplay, Product Hunt; dev.to trả 404.
+
+## Bổ sung 2026-11-25 (gitranks hoangtien2k3 → mục 34)
+
+- Trang gitranks.com/profile/hoangtien2k3/repositories: proxy phiên chặn, chưa đọc được (chưa xác minh); danh sách repo lấy từ GitHub search API (`user:hoangtien2k3`, 2026-11-25).
+- https://github.com/hoangtien2k3/ecommerce-microservices, commit `2d687821f8246f426e536641cd0503cb15465275`: LICENSE, `pom.xml`, `auth-service/src/main/resources/application.yml`, `.github/workflows/ci.yml`, `payment-service/.../event/EventProducer.java`.
+
+## Bổ sung 2026-11-25b (toàn bộ repo hoangtien2k3 → mục 34)
+
+- Danh sách 52 repo không fork: GitHub search API `user:hoangtien2k3 fork:false` (2026-11-25); 51 repo mới đọc README/LICENSE/cây thư mục tại commit ghim trong từng hồ sơ (`data/projects.json`).
+- Phụ thuộc/nguồn gốc cần xác minh thêm: zukahai/Confess-Crush, saadpasta/developer-portfolio, tác giả Murat ÖZTÜRK (app Mova), tác giả Tuan Nguyen (saga pattern); chưa đối chiếu upstream.
+
+## Bổ sung 2026-11-25c (Claude Skills Hub → mục 20)
+
+- Ảnh chụp trang chủ claudeskills.info do người dùng gửi (25/11/2026); trang đọc trực tiếp sau khi môi trường mở mạng: `/`, `/about/`, `/editorial-methodology/`, `/ranking-methodology/`, `/official/anthropic/`, `/llms.txt`. `/api/v1/meta` bị Cloudflare chặn nên không dùng.
+- Kết quả tìm kiếm web đối chiếu: producthunt.com/products/claudeskillshq (bình luận người dùng).
+
+## Bổ sung 2026-11-25d (skill theo ngành nghề + ScrapeCreators → mục 20)
+
+- Danh bạ: claudeskills.info/skills/category/{legal,healthcare,accounting,finance,education,customer-support,human-resources,sales,real-estate,marketing,travel}/ (đọc 25/11/2026).
+- Repo đọc SKILL.md/README/LICENSE: anthropics/knowledge-work-plugins@5e504ae, affaan-m/ecc@4adeee6, NomaDamas/k-skill@c41a117, tradermonty/claude-trading-skills@4080042, Yuan1z0825/nature-skills@c300047, microsoft/azure-skills@7847020, ScrapeCreators/social-media-research-skills@64ba7b4.
+- Trang tiêu chuẩn mở được (HTTP 200/202, 25/11/2026): hl7.org/fhir, fda.gov (21 CFR Part 11), ifrs.org, eur-lex.europa.eu (GDPR), coso.org, eeoc.gov, studentprivacy.ed.gov (FERPA), reso.org, 1edtech.org, pcisecuritystandards.org, nf-co.re, wipo.int/standards, aicpa-cima.com (SOC 2), w3.org (WCAG 2.2). Trả 403 cho bot (chưa xác minh nội dung): hhs.gov (HIPAA), fasb.org, pcaobus.org, iso.org, allotrope.org.

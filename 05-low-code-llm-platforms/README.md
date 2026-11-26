@@ -279,3 +279,384 @@ Khi đánh giá nền tảng, thử xuất gói, nhập vào một instance sạ
 
 - https://www.knowlee.ai/blog/dify-alternatives-2026 · https://toolhalla.ai/blog/dify-vs-flowise-vs-langflow-2026 · https://www.jahanzaib.ai/blog/flowise-vs-dify-vs-n8n-ai-agents · https://rapidclaw.dev/blog/low-code-ai-agent-platforms-compared-2026 · https://makerstack.co/reviews/langflow-review/ · https://enterprisedna.co/directories/compare/dify-vs-flowise-vs-langflow/
 - Bổ sung (12/10/2026): https://github.com/open-webui/open-webui · https://github.com/danny-avila/LibreChat · https://github.com/lobehub/lobehub · https://github.com/Mintplex-Labs/anything-llm · https://github.com/CherryHQ/cherry-studio · https://github.com/simstudioai/sim · https://github.com/labring/FastGPT · https://github.com/coze-dev/coze-studio · https://github.com/node-red/node-red · https://github.com/janhq/jan
+
+<a id="xlsx-2026-11-23"></a>
+
+## Đánh giá bổ sung từ bảng "Top 100 GitHub AI Skills" — 23/11/2026
+
+Phần này có **2 hồ sơ** từ bảng xlsx người dùng gửi ngày 2026-11-23; đọc bằng `git clone --depth 1`, không cài hay chạy mã upstream. Lúc đọc, REST API của GitHub bị chặn nên trong hồ sơ ★ và `pushed_at` ghi **(chưa xác minh)**; số sao lấy lại cùng ngày qua GitHub search API nằm trong `data/projects.json` và [catalog/](../catalog/README.md), `pushed_at` vẫn chưa xác minh.
+
+<a id="xlsx-2026-11-23-n8n-skills-czlonkowski"></a>
+
+### n8n-skills (czlonkowski)
+
+**Repo:** [czlonkowski/n8n-skills](https://github.com/czlonkowski/n8n-skills) · **License:** MIT (Copyright 2025 Romuald Członkowski); phần hook điều chỉnh từ `n8n-io/skills` (Apache-2.0, có `NOTICES` + `NOTICES-APACHE-2.0.txt`) · **★ 6.700 (GitHub search API, 2026-11-23)**
+
+**Mục đích:** Bộ 14 skill + 1 skill router (`using-n8n-mcp-skills`) và lớp hook dạy coding agent dựng, kiểm, vận hành workflow n8n qua MCP server `n8n-mcp` (cùng tác giả, đã có hồ sơ ở mục 05).
+
+**Giá trị và cơ chế:** Thư mục thật có đúng 15 thư mục `skills/` (khớp README "14 + router"). `hooks/hooks.json` gắn `SessionStart` (nạp skill router, tự xóa dấu "đã nhắc" khi `clear`/`compact`), 7 `PreToolUse` (`get_node`, `n8n_create_workflow`, `n8n_update_*`, `validate_workflow`, `n8n_test_workflow`, `n8n_instances`, `n8n_manage_credentials`) và 1 `PostToolUse` sau `validate_workflow`. Các hook chỉ chèn `additionalContext` nhắc skill, không chặn lệnh (README: "fails open"). `create-workflow.sh` còn quét payload tìm node Code/HTTP Request thiếu ghi chú `Why Code:`/`Why HTTP:`. Có 68 file JSON dưới `evaluations/` (phần lớn là hỏi đáp một lượt) và `evaluations/build-tasks/` (5 ca dựng workflow, `score.py` chấm JSON: loại node, trần phân trang, ghi chú Why, nối dây; chạy tay, mỗi lần là phiên agent tính phí, không chạy trong CI). Skill `n8n-self-hosting` kèm `assets/` (docker-compose single/queue, Caddyfile, `.env` mẫu) với mặc định an toàn ghi trong README: khóa mã hóa tường minh, không mở cổng nội bộ, tắt telemetry n8n.
+
+**Giới hạn:** Không có `.github/` nên không có CI; `build.sh` chỉ dựng zip và so version hai manifest (`plugin.json` và `.claude-plugin/plugin.json` đều 1.38.0 khi đọc). `mcp.json` ở gốc trỏ `streamable-http` tới `https://api.n8n-mcp.com/mcp` (dịch vụ hosted của tác giả, không phải server tự lưu trữ); `.mcp.json.example` mới là bản `npx n8n-mcp` chạy cục bộ. Dùng bản hosted là gửi cấu trúc workflow tới bên thứ ba; telemetry của `n8n-mcp` xem hồ sơ n8n-MCP. Hook là shell, cần `jq` để đầy đủ (không có `jq` chỉ còn nhắc một lần). Gần như một tác giả (88 + 14 commit trên 107; 1 commit tên Claude), 107 commit từ 2025-10-20. README quảng bá dịch vụ tư vấn AiAdvisors (chỉ ở README). Chưa chạy hook, eval hay `n8n-mcp`.
+
+**Cách tham khảo/tích hợp:** Mẫu "skill + hook nhắc đúng lúc + eval build-task chấm bằng script" đáng chép cho bộ skill riêng; ghim SHA khi cài plugin, dùng `.mcp.json.example` (stdio, cục bộ) thay vì endpoint hosted khi workflow chứa dữ liệu khách hàng, và đọc `hooks/` trước khi bật. Ghép với [n8n-MCP](../05-low-code-llm-platforms/README.md) (server) và mục 20 về vòng đời skill.
+
+**Thay thế:** [n8n-MCP](../05-low-code-llm-platforms/README.md) (server, không phải skill), [tmolavi/n8n-agent-skills](#xlsx-2026-11-23-n8n-agent-skills-tmolavi) (16 skill, trung lập server, 1 tháng tuổi), `n8n-io/skills` (Apache-2.0, bản chính thức của n8n GmbH theo NOTICES của hai repo; chưa đọc, chưa xác minh số sao).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`ecdeca6f760b`](https://github.com/czlonkowski/n8n-skills/commit/ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5) (2026-11-18). Đọc LICENSE, NOTICES, 2 manifest, `mcp.json`, `hooks.json`, `session-start.sh`, `create-workflow.sh`, `build.sh`, SKILL.md `n8n-self-hosting`, README build-tasks. Chưa chạy mã, chưa đọc từng SKILL còn lại.
+
+**Nguồn:** [README.md](https://github.com/czlonkowski/n8n-skills/blob/ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5/README.md) · [LICENSE](https://github.com/czlonkowski/n8n-skills/blob/ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5/LICENSE) · [NOTICES](https://github.com/czlonkowski/n8n-skills/blob/ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5/NOTICES) · [hooks.json](https://github.com/czlonkowski/n8n-skills/blob/ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5/hooks/hooks.json) · [mcp.json](https://github.com/czlonkowski/n8n-skills/blob/ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5/mcp.json) · [plugin.json](https://github.com/czlonkowski/n8n-skills/blob/ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5/.claude-plugin/plugin.json) · [build-tasks](https://github.com/czlonkowski/n8n-skills/blob/ecdeca6f760b56bb1b11c0a7c961f11b69cb87d5/evaluations/build-tasks/README.md) · [metadata GitHub](https://api.github.com/search/repositories?q=repo:czlonkowski/n8n-skills).
+
+<a id="xlsx-2026-11-23-n8n-agent-skills-tmolavi"></a>
+
+### n8n-agent-skills (tmolavi)
+
+**Repo:** [tmolavi/n8n-agent-skills](https://github.com/tmolavi/n8n-agent-skills) · **License:** MIT (Copyright 2026 Taghi Molavi) · **★ 2 (GitHub search API, 2026-11-23)**
+
+**Mục đích:** Bộ 16 skill n8n "trung lập server MCP" (router, lifecycle, MCP tooling, expressions, node, code, loop, agent, lỗi, credential, sub-workflow, binary, data table, debug, SEO/GEO, production ops) kèm manifest Claude Code/Codex, plugin OpenCode và cấu hình MCP mẫu.
+
+**Giá trị và cơ chế:** `skills/` có đúng 16 thư mục, khớp README. Hook (`SessionStart` + 4 `PreToolUse` gate + `PostToolUse` nhắc) chỉ chèn nhắc nhở; `side-effects-gate.sh` nhắc hỏi người dùng trước khi `test_workflow`/`execute_workflow` có thể gây tác dụng phụ thật (Slack, DB, thanh toán). `configs/mcp.multi.example.json` gom ví dụ cho server chính thức và các server cộng đồng. `.claude-plugin/plugin.json` khai `userConfig` (URL n8n) và MCP `${user_config.n8n_url}/mcp-server/http`.
+
+**Giới hạn:** Repo mới (2026-08-27), 2 commit, 2 sao, một tác giả; không có `.github/workflows` (không CI). `scripts/validate-skills.sh` chỉ kiểm có `name:`/`description:` và **cảnh báo khi thiếu link `molavi.pro`**; cả 16 SKILL.md đều chứa link quảng bá tác giả, mọi hook nhắc đều in `Repo/Author` vào ngữ cảnh agent, và skill `n8n-ai-seo-geo-automation` đẩy sang công cụ riêng của tác giả (`geo-scope`, `mcp-geo-server`). `NOTICE` ghi cảm hứng từ `n8n-io/skills` (Apache-2.0) và `n8n-mcp` nhưng không có file giấy phép Apache kèm theo như repo czlonkowski (mức sao chép chưa so, chưa xác minh). Tên tác giả hiện hai dạng (Taghi/Taqi Molavi). Chưa chạy hook hay installer; `scripts/install.sh` ghi đè thư mục skill đích (`rm -rf` rồi `cp -R`), nên dùng `--dry-run` trước.
+
+**Cách tham khảo/tích hợp:** Chỉ nên lấy ý tưởng bảng chọn server MCP (`n8n-mcp-tooling/references/SERVER_MATRIX.md`) hoặc đọc làm đối chiếu; nếu dùng thật, tách link/quảng bá khỏi hook và ghim SHA. Với dự án nghiêm túc ưu tiên bộ czlonkowski hoặc `n8n-io/skills`.
+
+**Thay thế:** [n8n-skills (czlonkowski)](#xlsx-2026-11-23-n8n-skills-czlonkowski), [n8n-MCP](../05-low-code-llm-platforms/README.md), `n8n-io/skills` (chưa đọc).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`868436013817`](https://github.com/tmolavi/n8n-agent-skills/commit/868436013817a5f62a917aa6c6cb93881945c9be) (2026-09-18). Đọc LICENSE, NOTICE, package.json, plugin.json, hooks.json, `side-effects-gate.sh`, `validate-skills.sh`, `install.sh` (đầu file), CHANGELOG, SECURITY, SKILL credentials và SEO/GEO. Chưa chạy mã.
+
+**Nguồn:** [README.md](https://github.com/tmolavi/n8n-agent-skills/blob/868436013817a5f62a917aa6c6cb93881945c9be/README.md) · [LICENSE](https://github.com/tmolavi/n8n-agent-skills/blob/868436013817a5f62a917aa6c6cb93881945c9be/LICENSE) · [NOTICE](https://github.com/tmolavi/n8n-agent-skills/blob/868436013817a5f62a917aa6c6cb93881945c9be/NOTICE) · [hooks.json](https://github.com/tmolavi/n8n-agent-skills/blob/868436013817a5f62a917aa6c6cb93881945c9be/hooks/hooks.json) · [validate-skills.sh](https://github.com/tmolavi/n8n-agent-skills/blob/868436013817a5f62a917aa6c6cb93881945c9be/scripts/validate-skills.sh) · [side-effects-gate.sh](https://github.com/tmolavi/n8n-agent-skills/blob/868436013817a5f62a917aa6c6cb93881945c9be/hooks/pre-tool-use/side-effects-gate.sh) · [plugin.json](https://github.com/tmolavi/n8n-agent-skills/blob/868436013817a5f62a917aa6c6cb93881945c9be/.claude-plugin/plugin.json) · [metadata GitHub](https://api.github.com/search/repositories?q=repo:tmolavi/n8n-agent-skills).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-ai-agents-a-z-n8n-templates"></a>
+
+### AI Agents A-Z (n8n templates)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/gyoridavid/ai_agents_az |
+| License | Không có file LICENSE (khớp catalog) |
+| Phiên bản đã đọc | `764fac221bf6f1dba94d016e2e4e0d450e3cba51` (commit 2025-12-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2025-12-19) |
+| Nhận định | Kho template n8n đi kèm video YouTube (agent, video faceless qua dịch vụ trả phí bên thứ ba). Tham khảo cấu trúc workflow được; không có LICENSE nên không có quyền tái sử dụng rõ ràng, đã ngừng cập nhật từ 12/2025. |
+| Nguồn | [README.md](https://github.com/gyoridavid/ai_agents_az/blob/764fac221bf6f1dba94d016e2e4e0d450e3cba51/README.md) |
+
+<a id="ch-anythingllm"></a>
+
+### AnythingLLM
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Mintplex-Labs/anything-llm |
+| License | MIT |
+| Phiên bản đã đọc | `472b1e3f4715c6ccd38a099aecd4651a449188aa` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/run-tests.yaml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-20) |
+| Nhận định | App RAG + agent local-first (desktop/Docker) gồm server, collector, frontend, embed, browser-extension. Telemetry bật mặc định theo catalog cũ (chưa xác minh lại trong lần đọc này). |
+| Nguồn | [README.md](https://github.com/Mintplex-Labs/anything-llm/blob/472b1e3f4715c6ccd38a099aecd4651a449188aa/README.md) · [LICENSE](https://github.com/Mintplex-Labs/anything-llm/blob/472b1e3f4715c6ccd38a099aecd4651a449188aa/LICENSE) · [package.json](https://github.com/Mintplex-Labs/anything-llm/blob/472b1e3f4715c6ccd38a099aecd4651a449188aa/package.json) · [.github/workflows/run-tests.yaml](https://github.com/Mintplex-Labs/anything-llm/blob/472b1e3f4715c6ccd38a099aecd4651a449188aa/.github/workflows/run-tests.yaml) |
+
+<a id="ch-arazzo-specification"></a>
+
+### Arazzo Specification
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/OAI/Arazzo-Specification |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `12f619ecd85e79fb67ce0610b85926ca3cfd9c79` (commit 2026-11-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/schema-tests.yaml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-09) |
+| Nhận định | Chuẩn OpenAPI Initiative mô tả chuỗi gọi API (workflow, bước, điều kiện) dạng máy đọc; repo chứa spec theo phiên bản, schema và ví dụ, CI kiểm schema và markdown. |
+| Nguồn | [README.md](https://github.com/OAI/Arazzo-Specification/blob/12f619ecd85e79fb67ce0610b85926ca3cfd9c79/README.md) · [LICENSE](https://github.com/OAI/Arazzo-Specification/blob/12f619ecd85e79fb67ce0610b85926ca3cfd9c79/LICENSE) · [package.json](https://github.com/OAI/Arazzo-Specification/blob/12f619ecd85e79fb67ce0610b85926ca3cfd9c79/package.json) · [.github/workflows/schema-tests.yaml](https://github.com/OAI/Arazzo-Specification/blob/12f619ecd85e79fb67ce0610b85926ca3cfd9c79/.github/workflows/schema-tests.yaml) |
+
+<a id="ch-astron-agent"></a>
+
+### Astron Agent
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/iflytek/astron-agent |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `831e7b1628cdf8f117dfe0d2249c9fb05cabb4be` (commit 2026-11-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Makefile, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-03) |
+| Nhận định | Nền tảng agentic workflow + RPA + MCP của iFlytek, đa ngôn ngữ (console/core), triển khai Docker/Helm. Rủi ro mật khẩu mặc định yếu và endpoint mặc định của iFlytek theo catalog cũ (chưa xác minh lại). |
+| Nguồn | [README.md](https://github.com/iflytek/astron-agent/blob/831e7b1628cdf8f117dfe0d2249c9fb05cabb4be/README.md) · [LICENSE](https://github.com/iflytek/astron-agent/blob/831e7b1628cdf8f117dfe0d2249c9fb05cabb4be/LICENSE) · [Makefile](https://github.com/iflytek/astron-agent/blob/831e7b1628cdf8f117dfe0d2249c9fb05cabb4be/Makefile) · [.github/workflows/ci.yml](https://github.com/iflytek/astron-agent/blob/831e7b1628cdf8f117dfe0d2249c9fb05cabb4be/.github/workflows/ci.yml) |
+
+<a id="ch-budibase"></a>
+
+### Budibase
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Budibase/budibase |
+| License | GPL-3.0 / MPL-2.0 / BSL (packages/pro), kèm SQS_LICENSE bên thứ ba |
+| Phiên bản đã đọc | `f29a398e324efa0fcc766851aad1f5810e39ccfb` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/budibase_ci.yml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-23) |
+| Nhận định | Nền tảng app nội bộ + automation + agent AI, monorepo nhiều license. Phải đọc license từng package trước khi tái sử dụng; packages/pro là BSL nên không gỡ kiểm license khi chạy production. |
+| Nguồn | [README.md](https://github.com/Budibase/budibase/blob/f29a398e324efa0fcc766851aad1f5810e39ccfb/README.md) · [LICENSE](https://github.com/Budibase/budibase/blob/f29a398e324efa0fcc766851aad1f5810e39ccfb/LICENSE) · [package.json](https://github.com/Budibase/budibase/blob/f29a398e324efa0fcc766851aad1f5810e39ccfb/package.json) · [.github/workflows/budibase_ci.yml](https://github.com/Budibase/budibase/blob/f29a398e324efa0fcc766851aad1f5810e39ccfb/.github/workflows/budibase_ci.yml) |
+
+<a id="ch-cherry-studio"></a>
+
+### Cherry Studio
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/CherryHQ/cherry-studio |
+| License | AGPL-3.0 |
+| Phiên bản đã đọc | `cc24ac0445071fc848f678dc9e975efeac4faea0` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-23) |
+| Nhận định | Client desktop (Electron) đa nhà cung cấp LLM, có agent và trợ lý dựng sẵn. AGPL ràng buộc khi phân phối bản sửa; bản Enterprise đóng theo catalog cũ (chưa xác minh). |
+| Nguồn | [README.md](https://github.com/CherryHQ/cherry-studio/blob/cc24ac0445071fc848f678dc9e975efeac4faea0/README.md) · [LICENSE](https://github.com/CherryHQ/cherry-studio/blob/cc24ac0445071fc848f678dc9e975efeac4faea0/LICENSE) · [package.json](https://github.com/CherryHQ/cherry-studio/blob/cc24ac0445071fc848f678dc9e975efeac4faea0/package.json) · [.github/workflows/ci.yml](https://github.com/CherryHQ/cherry-studio/blob/cc24ac0445071fc848f678dc9e975efeac4faea0/.github/workflows/ci.yml) |
+
+<a id="ch-coze-studio"></a>
+
+### Coze Studio
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/coze-dev/coze-studio |
+| License | Apache-2.0 (file LICENSE-APACHE) |
+| Phiên bản đã đọc | `fefb05ff27be1da939612fbf9faf5db62583b8ae` (commit 2026-07-29) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE-APACHE, rush.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit cuối 2026-07-29) |
+| Nhận định | Bản mở của nền tảng agent/workflow Coze (ByteDance), backend Go + frontend monorepo Rush, triển khai Docker/Helm. Hoạt động gần như dừng từ 7/2026 nên rủi ro bảo trì cao. |
+| Nguồn | [README.md](https://github.com/coze-dev/coze-studio/blob/fefb05ff27be1da939612fbf9faf5db62583b8ae/README.md) · [LICENSE-APACHE](https://github.com/coze-dev/coze-studio/blob/fefb05ff27be1da939612fbf9faf5db62583b8ae/LICENSE-APACHE) · [rush.json](https://github.com/coze-dev/coze-studio/blob/fefb05ff27be1da939612fbf9faf5db62583b8ae/rush.json) · [.github/workflows/ci.yml](https://github.com/coze-dev/coze-studio/blob/fefb05ff27be1da939612fbf9faf5db62583b8ae/.github/workflows/ci.yml) |
+
+<a id="ch-dify"></a>
+
+### Dify
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/langgenius/dify |
+| License | Apache-2.0 sửa đổi (thêm điều kiện multi-tenant/thương hiệu) |
+| Phiên bản đã đọc | `e62d1e37a523dc1ce42c56b7100380022291c598` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/main-ci.yml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-23) |
+| Nhận định | Nền tảng LLM app/workflow/RAG lớn (api Python, web, CLI, dify-agent). License không phải Apache thuần: chạy SaaS nhiều tenant hoặc gỡ thương hiệu cần license thương mại. |
+| Nguồn | [README.md](https://github.com/langgenius/dify/blob/e62d1e37a523dc1ce42c56b7100380022291c598/README.md) · [LICENSE](https://github.com/langgenius/dify/blob/e62d1e37a523dc1ce42c56b7100380022291c598/LICENSE) · [package.json](https://github.com/langgenius/dify/blob/e62d1e37a523dc1ce42c56b7100380022291c598/package.json) · [.github/workflows/main-ci.yml](https://github.com/langgenius/dify/blob/e62d1e37a523dc1ce42c56b7100380022291c598/.github/workflows/main-ci.yml) |
+
+<a id="ch-fastgpt"></a>
+
+### FastGPT
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/labring/FastGPT |
+| License | FastGPT Open Source License (Apache-2.0 + điều kiện) |
+| Phiên bản đã đọc | `9aea02765a34642e0ed1dcb88f0168bf9e607211` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/test-fastgpt.yaml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-23) |
+| Nhận định | Nền tảng RAG + workflow (monorepo pnpm, sandbox code/browser, MCP server). License riêng không OSI: cung cấp dịch vụ nhiều tenant hoặc gỡ thương hiệu cần license thương mại theo LICENSE. |
+| Nguồn | [README.md](https://github.com/labring/FastGPT/blob/9aea02765a34642e0ed1dcb88f0168bf9e607211/README.md) · [LICENSE](https://github.com/labring/FastGPT/blob/9aea02765a34642e0ed1dcb88f0168bf9e607211/LICENSE) · [package.json](https://github.com/labring/FastGPT/blob/9aea02765a34642e0ed1dcb88f0168bf9e607211/package.json) · [.github/workflows/test-fastgpt.yaml](https://github.com/labring/FastGPT/blob/9aea02765a34642e0ed1dcb88f0168bf9e607211/.github/workflows/test-fastgpt.yaml) |
+
+<a id="ch-flowise"></a>
+
+### Flowise
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/FlowiseAI/Flowise |
+| License | Apache-2.0 trừ thư mục enterprise (thương mại); catalog JSON chỉ ghi Apache-2.0 |
+| Phiên bản đã đọc | `9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb` (commit 2026-08-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, package.json, .github/workflows/main.yml; chưa chạy upstream |
+| Bảo trì | Đã archive (commit cuối 2026-08-13) |
+| Nhận định | Builder kéo-thả LangChain/agentflow, bản cuối 3.1.4. Đã archive nên không nhận bản vá; phần enterprise không thuộc Apache-2.0. Không nên chọn cho dự án mới. |
+| Nguồn | [README.md](https://github.com/FlowiseAI/Flowise/blob/9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb/README.md) · [LICENSE.md](https://github.com/FlowiseAI/Flowise/blob/9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb/LICENSE.md) · [package.json](https://github.com/FlowiseAI/Flowise/blob/9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb/package.json) · [.github/workflows/main.yml](https://github.com/FlowiseAI/Flowise/blob/9291856d1ea4a4ceea9f8fef8ce14f4f6c81e8eb/.github/workflows/main.yml) |
+
+<a id="ch-langflow"></a>
+
+### Langflow
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/langflow-ai/langflow |
+| License | MIT |
+| Phiên bản đã đọc | `21381e5b2964fb4c714dc91fcd5187d4cfc2a67f` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-17) |
+| Nhận định | Builder visual cho agent/RAG bằng Python, CI rất dày. Điểm đáng chú ý: bản phát hành mặc định tắt auto-login, phải đặt mật khẩu superuser trước khi chạy. |
+| Nguồn | [README.md](https://github.com/langflow-ai/langflow/blob/21381e5b2964fb4c714dc91fcd5187d4cfc2a67f/README.md) · [LICENSE](https://github.com/langflow-ai/langflow/blob/21381e5b2964fb4c714dc91fcd5187d4cfc2a67f/LICENSE) · [pyproject.toml](https://github.com/langflow-ai/langflow/blob/21381e5b2964fb4c714dc91fcd5187d4cfc2a67f/pyproject.toml) · [.github/workflows/ci.yml](https://github.com/langflow-ai/langflow/blob/21381e5b2964fb4c714dc91fcd5187d4cfc2a67f/.github/workflows/ci.yml) |
+
+<a id="ch-librechat"></a>
+
+### LibreChat
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/LibreChat-AI/LibreChat |
+| License | MIT |
+| Phiên bản đã đọc | `4700c44eb77c142b4f9f8b87476924f22890eb39` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/backend-review.yml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-19) |
+| Nhận định | Chat UI tự host đa nhà cung cấp, agent, MCP, OAuth2/LDAP; MIT thuần. Repo đã chuyển sang org LibreChat-AI, cần cập nhật link cũ danny-avila trong catalog. |
+| Nguồn | [README.md](https://github.com/LibreChat-AI/LibreChat/blob/4700c44eb77c142b4f9f8b87476924f22890eb39/README.md) · [LICENSE](https://github.com/LibreChat-AI/LibreChat/blob/4700c44eb77c142b4f9f8b87476924f22890eb39/LICENSE) · [package.json](https://github.com/LibreChat-AI/LibreChat/blob/4700c44eb77c142b4f9f8b87476924f22890eb39/package.json) · [.github/workflows/backend-review.yml](https://github.com/LibreChat-AI/LibreChat/blob/4700c44eb77c142b4f9f8b87476924f22890eb39/.github/workflows/backend-review.yml) |
+
+<a id="ch-lobehub"></a>
+
+### LobeHub
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/lobehub/lobehub |
+| License | LobeHub Community License (package.json ghi MIT, mâu thuẫn) |
+| Phiên bản đã đọc | `18ff6aead33b35bfb8b6a4566ffa66578f81041e` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/test.yml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-23) |
+| Nhận định | Workspace agent + chat web/desktop, phát hành rất dày (v2.3.4). License riêng không OSI; trường license MIT trong package.json gây hiểu nhầm, căn cứ vào file LICENSE. |
+| Nguồn | [README.md](https://github.com/lobehub/lobehub/blob/18ff6aead33b35bfb8b6a4566ffa66578f81041e/README.md) · [LICENSE](https://github.com/lobehub/lobehub/blob/18ff6aead33b35bfb8b6a4566ffa66578f81041e/LICENSE) · [package.json](https://github.com/lobehub/lobehub/blob/18ff6aead33b35bfb8b6a4566ffa66578f81041e/package.json) · [.github/workflows/test.yml](https://github.com/lobehub/lobehub/blob/18ff6aead33b35bfb8b6a4566ffa66578f81041e/.github/workflows/test.yml) |
+
+<a id="ch-n8n"></a>
+
+### n8n
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/n8n-io/n8n |
+| License | Sustainable Use + Enterprise (.ee) — khớp catalog, bổ sung phần EE |
+| Phiên bản đã đọc | `dc913a32da41ea52e1aa6c82e79e767569ce0ef3` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, LICENSE_EE.md, package.json, .github/workflows/ci-master.yml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-23) |
+| Nhận định | Nền tảng workflow automation có node AI/agent. Không phải mã mở OSI: cấm cung cấp lại như dịch vụ thương mại; tính năng .ee cần license Enterprise. |
+| Nguồn | [README.md](https://github.com/n8n-io/n8n/blob/dc913a32da41ea52e1aa6c82e79e767569ce0ef3/README.md) · [LICENSE.md](https://github.com/n8n-io/n8n/blob/dc913a32da41ea52e1aa6c82e79e767569ce0ef3/LICENSE.md) · [LICENSE_EE.md](https://github.com/n8n-io/n8n/blob/dc913a32da41ea52e1aa6c82e79e767569ce0ef3/LICENSE_EE.md) · [package.json](https://github.com/n8n-io/n8n/blob/dc913a32da41ea52e1aa6c82e79e767569ce0ef3/package.json) · [.github/workflows/ci-master.yml](https://github.com/n8n-io/n8n/blob/dc913a32da41ea52e1aa6c82e79e767569ce0ef3/.github/workflows/ci-master.yml) |
+
+<a id="ch-n8n-mcp"></a>
+
+### n8n-MCP
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/czlonkowski/n8n-mcp |
+| License | MIT |
+| Phiên bản đã đọc | `a816db89fd6180f9b2b56c1935ea8078c8d27104` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/test.yml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-19) |
+| Nhận định | MCP server cho coding agent tra cứu node và quản lý workflow n8n. Telemetry mặc định gửi workflow đã làm sạch theo catalog cũ (chưa xác minh lại lần này). |
+| Nguồn | [README.md](https://github.com/czlonkowski/n8n-mcp/blob/a816db89fd6180f9b2b56c1935ea8078c8d27104/README.md) · [LICENSE](https://github.com/czlonkowski/n8n-mcp/blob/a816db89fd6180f9b2b56c1935ea8078c8d27104/LICENSE) · [package.json](https://github.com/czlonkowski/n8n-mcp/blob/a816db89fd6180f9b2b56c1935ea8078c8d27104/package.json) · [.github/workflows/test.yml](https://github.com/czlonkowski/n8n-mcp/blob/a816db89fd6180f9b2b56c1935ea8078c8d27104/.github/workflows/test.yml) |
+
+<a id="ch-open-webui"></a>
+
+### Open WebUI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/open-webui/open-webui |
+| License | Open WebUI License (BSD-3 + branding), kèm LICENSE_HISTORY |
+| Phiên bản đã đọc | `0666e59d26a4d056e0bacee41742486badd71cf8` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, LICENSE_HISTORY, LICENSE_NOTICE, package.json, .github/workflows/backend.yaml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-17) |
+| Nhận định | Chat UI tự host phổ biến (SvelteKit + backend Python). Không được gỡ branding ngoài các ngoại lệ trong LICENSE; repo đa license theo thời điểm đóng góp. |
+| Nguồn | [README.md](https://github.com/open-webui/open-webui/blob/0666e59d26a4d056e0bacee41742486badd71cf8/README.md) · [LICENSE](https://github.com/open-webui/open-webui/blob/0666e59d26a4d056e0bacee41742486badd71cf8/LICENSE) · [LICENSE_HISTORY](https://github.com/open-webui/open-webui/blob/0666e59d26a4d056e0bacee41742486badd71cf8/LICENSE_HISTORY) · [LICENSE_NOTICE](https://github.com/open-webui/open-webui/blob/0666e59d26a4d056e0bacee41742486badd71cf8/LICENSE_NOTICE) · [package.json](https://github.com/open-webui/open-webui/blob/0666e59d26a4d056e0bacee41742486badd71cf8/package.json) · [.github/workflows/backend.yaml](https://github.com/open-webui/open-webui/blob/0666e59d26a4d056e0bacee41742486badd71cf8/.github/workflows/backend.yaml) |
+
+<a id="ch-open-workflow-specification"></a>
+
+### Open Workflow Specification
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/open-workflow-specification/specification |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `09ad1deea8a8bb9d34bfded261b14c054dcf92c7` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, .github/workflows/schema-check.yaml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-12) |
+| Nhận định | DSL workflow trung lập nhà cung cấp (trước là Serverless Workflow, CNCF) với schema YAML và bộ test tuân thủ (ctk). Hữu ích làm tham chiếu định dạng workflow. |
+| Nguồn | [README.md](https://github.com/open-workflow-specification/specification/blob/09ad1deea8a8bb9d34bfded261b14c054dcf92c7/README.md) · [LICENSE](https://github.com/open-workflow-specification/specification/blob/09ad1deea8a8bb9d34bfded261b14c054dcf92c7/LICENSE) · [.github/workflows/schema-check.yaml](https://github.com/open-workflow-specification/specification/blob/09ad1deea8a8bb9d34bfded261b14c054dcf92c7/.github/workflows/schema-check.yaml) |
+
+<a id="ch-sim"></a>
+
+### Sim
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/simstudioai/sim |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `1814ccd70e21906216bca2a08f95d6a2841db406` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-22) |
+| Nhận định | Canvas dựng và triển khai workflow agent, hỗ trợ model local qua Ollama. Số tích hợp 1.000+ là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/simstudioai/sim/blob/1814ccd70e21906216bca2a08f95d6a2841db406/README.md) · [LICENSE](https://github.com/simstudioai/sim/blob/1814ccd70e21906216bca2a08f95d6a2841db406/LICENSE) · [package.json](https://github.com/simstudioai/sim/blob/1814ccd70e21906216bca2a08f95d6a2841db406/package.json) · [.github/workflows/ci.yml](https://github.com/simstudioai/sim/blob/1814ccd70e21906216bca2a08f95d6a2841db406/.github/workflows/ci.yml) |
+
+<a id="ch-tooljet"></a>
+
+### ToolJet
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ToolJet/ToolJet |
+| License | AGPL-3.0; EE là submodule riêng |
+| Phiên bản đã đọc | `e921d9a9558cb065cfbb1db733fbc7e6a7fd5683` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, .gitmodules, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Đang hoạt động (commit cuối 2026-11-23) |
+| Nhận định | Nền tảng internal tool dựng bằng prompt/MCP. Bản mở AGPL nhưng phần EE là submodule riêng, quickstart dùng image EE theo catalog cũ. |
+| Nguồn | [README.md](https://github.com/ToolJet/ToolJet/blob/e921d9a9558cb065cfbb1db733fbc7e6a7fd5683/README.md) · [LICENSE](https://github.com/ToolJet/ToolJet/blob/e921d9a9558cb065cfbb1db733fbc7e6a7fd5683/LICENSE) · [.gitmodules](https://github.com/ToolJet/ToolJet/blob/e921d9a9558cb065cfbb1db733fbc7e6a7fd5683/.gitmodules) · [.github/workflows/ci.yml](https://github.com/ToolJet/ToolJet/blob/e921d9a9558cb065cfbb1db733fbc7e6a7fd5683/.github/workflows/ci.yml) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-workflowbuilder"></a>
+
+### Workflow Builder (Synergy Codes)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/synergycodes/workflowbuilder |
+| License | Apache-2.0 (LICENSE gốc và từng gói ui, sdk, temporal, mcp-server) |
+| Phiên bản đã đọc | `9b6e3b01066967b94346aa66db0cd4b75dc78d05` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, packages/temporal/src/workflow/durable-pause.decision-log.md, packages/temporal/src/workflow/verdict-validation.ts, apps/backend/README.md, .github/workflows/pr-check.yml; chưa chạy upstream |
+| Khoảng trống lấp | Human-in-the-loop và phê duyệt (trình dựng workflow nhúng cộng thực thi bền trên Temporal) |
+| Cơ chế đáng học | - Editor React (`packages/sdk`, `packages/ui`) xuất workflow JSON; backend và plugin Temporal chạy một workflow tổng quát cho mọi sơ đồ, mỗi node một Activity (`packages/temporal`).<br>- Bước chờ người: node trả `{ waiting: true }`, workflow đợi bằng Temporal Update `resolveNode` chứ không dùng signal, để quyết định đến muộn nhận câu trả lời đồng bộ thay vì mất im lặng (`durable-pause.decision-log.md`).<br>- `verdict-validation.ts` chỉ kiểm tính toàn vẹn của engine: verdict sai định dạng, node lạ, đã có verdict (first-write-wins) hoặc node không đang chờ đều bị từ chối trước khi vào lịch sử. |
+| Tiêu chí và cách kiểm | Có test determinism/replay cho execution-core và lịch sử replay ghim (decision log nêu thư mục `test/replay/`; mình chưa mở). `pr-check.yml` kiểm format, lint, test của các gói đã phát hành và cổng air-gap cho Dockerfile; mình chỉ đọc phần đầu, chưa chạy. |
+| Giới hạn và rủi ro | Backend không có xác thực thật: `AllowAllAuthPort` bắt buộc đặt `WB_AUTH_PORT=allow-all` mới chạy, không có cô lập tenant; README cảnh báo không mở ra mạng chung, và compose deploy ai-studio publish cổng 8080 trên mọi interface. Tuyên bố của README về "approve with corrections" chỉ đúng một nửa: apps/backend/README.md ghi các chỉnh sửa (`edits`) được lưu nhưng chưa được áp vào bước sau (follow-up decision-settled-values). Chưa thấy phê duyệt nhiều cấp có sẵn: node phê duyệt là từng bước riêng, ghép nhiều cấp là việc của người dùng; trinh sát ghi "nhiều cấp" là chưa xác minh. Cần Temporal và Postgres tự vận hành. |
+| So với | temporal, n8n, langgraph |
+| Nguồn | [LICENSE](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/LICENSE) · [README.md](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/README.md) · [durable-pause.decision-log.md](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/packages/temporal/src/workflow/durable-pause.decision-log.md) · [verdict-validation.ts](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/packages/temporal/src/workflow/verdict-validation.ts) · [README.md](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/apps/backend/README.md) · [pr-check.yml](https://github.com/synergycodes/workflowbuilder/blob/9b6e3b01066967b94346aa66db0cd4b75dc78d05/.github/workflows/pr-check.yml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-speakeasy-api-openapi"></a>
+
+### Speakeasy OpenAPI (Go)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/speakeasy-api/openapi |
+| License | MIT |
+| Phiên bản đã đọc | `c9d1c24238dc7dbff4bd3a7d25955e096ea3382c` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc arazzo/arazzo.go, arazzo/linter/rules/dependency_cycle.go, arazzo/linter/README.md, workflow ci.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Đặc tả workflow API (Arazzo) và công cụ: bộ phân tích, kiểm hợp lệ và lint Arazzo 1.0/1.1 bằng Go |
+| Cơ chế đáng học | • `arazzo.Validate` (arazzo/arazzo.go) kiểm phiên bản được hỗ trợ, tên sourceDescription và workflowId không trùng, `$self` hợp lệ, rồi `validateReferences` trả danh sách lỗi có vị trí trong cây YAML.<br>• Linter Arazzo tách luật ngữ nghĩa khỏi kiểm schema: ví dụ `semantic-dependency-cycle` (dependency_cycle.go) dựng đồ thị dependsOn của workflow và step rồi báo chu trình; còn có luật bước không chạy tới, output/input không dùng, retry-after, nguồn không HTTPS.<br>• CLI `openapi arazzo` có validate, lint (kèm `--fix` và `--dry-run`), graph (xuất Mermaid hoặc DOT), bootstrap từ OpenAPI và upgrade lên 1.1; cùng engine linter dùng cho OpenAPI, Overlay, AsyncAPI. |
+| Tiêu chí và cách kiểm | Luật lint có mức nghiêm trọng mặc định (chu trình dependsOn là error) và cấu hình ruleset; CI chạy fmt-check, mod-check, lint, kiểm ví dụ cập nhật, rồi test có cờ race trên ubuntu và windows kèm coverage. Kiểm bằng máy, nhưng chỉ kiểm tài liệu, không gọi API thật. |
+| Giới hạn và rủi ro | Không có bộ thực thi: đây là thư viện phân tích và kiểm, không chạy workflow (trinh sát ghi chung chung là bộ công cụ có validate, đúng nhưng không nên hiểu là engine). MIT, không thấy telemetry trong CLI (tìm theo từ khóa, chưa quét toàn bộ). Do Speakeasy duy trì và dùng cho sản phẩm SDK của họ nên lộ trình có thể theo nhu cầu thương mại; số sao 279 do trinh sát ghi (chưa xác minh). |
+| So với | arazzo-specification (đặc tả gốc), jentic-arazzo-engine (bộ chạy), open-workflow-specification, spectral (lint OpenAPI), openapitools-openapi-generator |
+| Nguồn | [LICENSE](https://github.com/speakeasy-api/openapi/blob/c9d1c24238dc7dbff4bd3a7d25955e096ea3382c/LICENSE) · [README.md](https://github.com/speakeasy-api/openapi/blob/c9d1c24238dc7dbff4bd3a7d25955e096ea3382c/README.md) · [arazzo.go](https://github.com/speakeasy-api/openapi/blob/c9d1c24238dc7dbff4bd3a7d25955e096ea3382c/arazzo/arazzo.go) · [dependency_cycle.go](https://github.com/speakeasy-api/openapi/blob/c9d1c24238dc7dbff4bd3a7d25955e096ea3382c/arazzo/linter/rules/dependency_cycle.go) · [README.md](https://github.com/speakeasy-api/openapi/blob/c9d1c24238dc7dbff4bd3a7d25955e096ea3382c/arazzo/linter/README.md) · [ci.yaml](https://github.com/speakeasy-api/openapi/blob/c9d1c24238dc7dbff4bd3a7d25955e096ea3382c/.github/workflows/ci.yaml) |
+
+<a id="n2-jentic-arazzo-engine"></a>
+
+### Jentic Arazzo Engine
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/jentic/arazzo-engine |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ba7f19e5d40693a433f48df41a914789584ec293` (commit 2026-06-12) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc runner/README.md, runner/arazzo_runner/executor/action_handler.py, runner.py, success_criteria.py, generator/arazzo_validator.py, workflow arazzo-engine.yml; chưa chạy upstream |
+| Khoảng trống lấp | Đặc tả workflow API (Arazzo): bộ chạy workflow và bộ sinh workflow từ OpenAPI |
+| Cơ chế đáng học | • Runner (runner/arazzo_runner) thực thi workflow Arazzo: `ArazzoRunner.execute_workflow`, ánh xạ biến môi trường cho xác thực API key, OAuth2 client-credentials/password, HTTP basic/bearer; một số luồng (authorization code, OpenID) ghi rõ chưa hỗ trợ.<br>• `SuccessCriteriaChecker` (executor/success_criteria.py): không khai successCriteria thì mặc định mã 2xx; `ActionHandler` chọn hành động goto, end, retry theo onSuccess/onFailure.<br>• Generator dùng LLM qua litellm để đề xuất chuỗi gọi từ OpenAPI rồi kiểm bằng schema Arazzo 1.0.1 đóng gói sẵn (arazzo_validator.py). |
+| Tiêu chí và cách kiểm | Runner có bộ test pytest lớn (thư mục tests với fixture, mock HTTP) và CI chia theo runner/generator, Python 3.11 đến 3.13, kèm phân tích tĩnh. Generator chỉ kiểm bằng schema, không chạy thử workflow sinh ra. |
+| Giới hạn và rủi ro | Runner ghi Beta. Điểm lệch tuyên bố: trong runner chỉ thấy `retryLimit` được đọc rồi trả về trong kết quả (action_handler.py), còn runner.py chỉ chuyển `retry_after` và đặt bước về PENDING, tìm toàn runner không thấy chỗ đếm số lần hay ngủ chờ (có thể do lớp gọi ngoài chịu trách nhiệm, chưa xác minh). Generator gửi mô tả OpenAPI tới nhà cung cấp LLM do người dùng chọn. Push cuối 2026-06-12, cũ hơn các repo cùng lô; Apache-2.0 cho cả runner và generator. |
+| So với | arazzo-specification, speakeasy-api-openapi (chỉ kiểm, không chạy), kestra, windmill |
+| Nguồn | [LICENSE](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/LICENSE) · [README.md](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/README.md) · [README.md](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/runner/README.md) · [pyproject.toml](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/runner/pyproject.toml) · [action_handler.py](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/runner/arazzo_runner/executor/action_handler.py) · [runner.py](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/runner/arazzo_runner/runner.py) · [pyproject.toml](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/generator/pyproject.toml) · [arazzo_validator.py](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/generator/arazzo_generator/validator/arazzo_validator.py) · [arazzo-engine.yml](https://github.com/jentic/arazzo-engine/blob/ba7f19e5d40693a433f48df41a914789584ec293/.github/workflows/arazzo-engine.yml) |

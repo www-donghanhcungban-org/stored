@@ -113,3 +113,218 @@ Không chọn cả bốn công cụ cho mọi dự án. Một service nhỏ có 
 - [Mục 04](../04-protocols-standards/README.md): phiên bản wire/conformance cho MCP/A2A; khác compatibility của API nghiệp vụ.
 - [Mục 09](../09-engineering-checklists/README.md): checklist quyết định; [mục 13](../13-dev-stack-devops/README.md): toolchain; [mục 23](../23-own-repos-lessons/README.md): bài học repo chủ kho.
 - [Mục 28](../28-product-discovery-experimentation/README.md): nhu cầu và phép đo sản phẩm; mục 30/34 bổ sung nghiệm thu runtime và data/identity.
+
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **2 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-microsoft-api-guidelines"></a>
+
+### api-guidelines
+
+**Repo:** [microsoft/api-guidelines](https://github.com/microsoft/api-guidelines) · **License:** CC-BY-4.0 · **★ 23,353 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Hướng dẫn thiết kế REST API của Microsoft, có nhánh hướng dẫn riêng cho Azure và Microsoft Graph.
+
+**Giá trị:** Tham khảo cách thống nhất quy ước API và tách yêu cầu chung khỏi bối cảnh dịch vụ cụ thể.
+
+**Giới hạn:** Đây là tài liệu định hướng của một tổ chức; cần chọn quy tắc phù hợp với hệ thống đang xây, không áp nguyên bộ Azure/Graph cho mọi API.
+
+**Cách tham khảo/tích hợp:** Chọn quy tắc phù hợp bối cảnh API, chuyển thành hợp đồng có ví dụ và kiểm tương thích trước áp dụng cho dịch vụ.
+
+**Lựa chọn để đối chiếu:** [zalando/restful-api-guidelines](https://github.com/zalando/restful-api-guidelines) · [microsoft/cloud-design-patterns](https://github.com/microsoft/cloud-design-patterns). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`1c58ca7f1eb51768cb4e21facd6ce0154ee4db64`](https://github.com/microsoft/api-guidelines/commit/1c58ca7f1eb51768cb4e21facd6ce0154ee4db64), ngày commit 2026-10-30. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/microsoft/api-guidelines/blob/1c58ca7f1eb51768cb4e21facd6ce0154ee4db64/README.md) · [license.txt](https://github.com/microsoft/api-guidelines/blob/1c58ca7f1eb51768cb4e21facd6ce0154ee4db64/license.txt) · [metadata GitHub](https://api.github.com/repos/microsoft/api-guidelines).
+
+<a id="anhkysuai-2026-11-23-googlecloudplatform-microservices-demo"></a>
+
+### microservices-demo
+
+**Repo:** [GoogleCloudPlatform/microservices-demo](https://github.com/GoogleCloudPlatform/microservices-demo) · **License:** Apache-2.0 · **★ 21,208 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Online Boutique: ứng dụng thương mại điện tử mẫu minh họa microservices trên Kubernetes.
+
+**Giá trị:** Có thể học cách nối nhiều dịch vụ, gRPC và quan sát hệ thống qua một luồng mua hàng giả lập.
+
+**Giới hạn:** Đây là demo và nhiều hướng dẫn gắn sản phẩm Google Cloud; cần đánh giá chi phí, tài khoản, dữ liệu và cấu hình triển khai riêng trước dùng ngoài môi trường học.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [docker/awesome-compose](https://github.com/docker/awesome-compose) · [microsoft/eShop](https://github.com/microsoft/eShop). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712`](https://github.com/GoogleCloudPlatform/microservices-demo/commit/c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712), ngày commit 2026-10-27. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/GoogleCloudPlatform/microservices-demo/blob/c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712/README.md) · [LICENSE](https://github.com/GoogleCloudPlatform/microservices-demo/blob/c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712/LICENSE) · [.github/workflows/ci-pr.yaml](https://github.com/GoogleCloudPlatform/microservices-demo/blob/c7cb6d5bfd6ea3aed768634ebbcb98cb7a523712/.github/workflows/ci-pr.yaml) · [metadata GitHub](https://api.github.com/repos/GoogleCloudPlatform/microservices-demo).
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+1 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-spectral"></a>
+
+### Spectral
+
+`stoplightio/spectral` · License: Apache-2.0 · ★ 3.247
+
+Linter JSON/YAML, ruleset sẵn OpenAPI/AsyncAPI/Arazzo v1 (hỗ trợ Arazzo 1.1 chưa xác minh); CLI 6.17.0; ★ 2/11/2026 (GitHub search API), mục 05 §Nâng trần 2/11
+
+**Hồ sơ gốc:** [mục 05](../05-low-code-llm-platforms/README.md) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-spectral"></a>
+
+### Spectral
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/stoplightio/spectral |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `16aae2b6f4448e9bf1a5bbb093601149f0ae0ac2` (commit 2026-11-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/commit.yml; chưa chạy upstream |
+| Bảo trì | active (commit mới nhất 2026-11-13) |
+| Nhận định | Linter JSON/YAML theo ruleset tùy chỉnh, có ruleset dựng sẵn cho OpenAPI v2/3.0/3.1/3.2, AsyncAPI, Arazzo v1; monorepo yarn. |
+| Nguồn | [README](https://github.com/stoplightio/spectral/blob/16aae2b6f4448e9bf1a5bbb093601149f0ae0ac2/README.md) · [LICENSE](https://github.com/stoplightio/spectral/blob/16aae2b6f4448e9bf1a5bbb093601149f0ae0ac2/LICENSE) · [manifest](https://github.com/stoplightio/spectral/blob/16aae2b6f4448e9bf1a5bbb093601149f0ae0ac2/package.json) · [workflow](https://github.com/stoplightio/spectral/blob/16aae2b6f4448e9bf1a5bbb093601149f0ae0ac2/.github/workflows/commit.yml) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-asyncapi-spec"></a>
+
+### AsyncAPI Specification
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/asyncapi/spec |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `41662743fe64189858f4076f27d2b1d9da6b3093` (commit 2026-10-27) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, NOTICE, spec/asyncapi.md (đầu file và mục Operation), embedded-examples-validation.js, ba workflow validate-examples, validate-embedded-examples, lint; chưa chạy upstream |
+| Khoảng trống lấp | API design và kiểm hợp đồng (nửa event-driven: AsyncAPI) |
+| Cơ chế đáng học | - Mô hình tách `channels` (nơi thông điệp đi qua), `operations` (action `send` hoặc `receive` trên channel) và `messages`, nên một tài liệu mô tả ứng dụng theo góc nhìn của chính nó (spec/asyncapi.md, mục Operation Object).<br>- Request-reply là phần của đặc tả: Operation Reply Object và Reply Address Object; kèm security scheme, traits và bindings theo giao thức (Kafka, MQTT, AMQP, WebSocket...).<br>- Ví dụ trong đặc tả được kiểm bằng máy: chú thích `asyncapi-example-tester` trước mỗi khối mã, script `embedded-examples-validation.js` phân tích bằng `@asyncapi/parser`.<br>- Thư mục `examples/` chứa tài liệu mẫu (Streetlights Kafka/MQTT, RPC, request-reply). |
+| Tiêu chí và cách kiểm | CI (đã mở) kiểm ba thứ: `asyncapi validate` cho mọi file YAML trong examples (trừ social-media/common), kiểm ví dụ nhúng trong asyncapi.md bằng parser, và markdownlint cho asyncapi.md. Repo này không chứa JSON Schema hay bộ test conformance cho công cụ; schema nằm ở repo khác (chưa xác minh vì chưa mở). |
+| Giới hạn và rủi ro | Đây là đặc tả chữ, không phải công cụ: cần parser, CLI hoặc generator khác để dùng. Nhánh đã đọc ghi phiên bản 3.1.0, nhiều hệ sinh thái vẫn dùng 2.6 hoặc 3.0 (chưa xác minh mức hỗ trợ của từng công cụ). Giữ ý rằng tài liệu AsyncAPI mô tả chứ không ép hợp đồng lúc chạy. Phần dùng ví dụ trong workflow `pull_request_target` là chi tiết CI của upstream, không ảnh hưởng người dùng. Trinh sát ghi Apache-2.0: đúng. |
+| So với | openapitools-openapi-generator và spectral (phía OpenAPI), faststream (cùng lô) |
+| Nguồn | [LICENSE](https://github.com/asyncapi/spec/blob/41662743fe64189858f4076f27d2b1d9da6b3093/LICENSE) · [NOTICE](https://github.com/asyncapi/spec/blob/41662743fe64189858f4076f27d2b1d9da6b3093/NOTICE) · [spec/asyncapi.md](https://github.com/asyncapi/spec/blob/41662743fe64189858f4076f27d2b1d9da6b3093/spec/asyncapi.md) · [scripts/validation/embedded-examples-validation.js](https://github.com/asyncapi/spec/blob/41662743fe64189858f4076f27d2b1d9da6b3093/scripts/validation/embedded-examples-validation.js) · [.github/workflows/validate-examples.yml](https://github.com/asyncapi/spec/blob/41662743fe64189858f4076f27d2b1d9da6b3093/.github/workflows/validate-examples.yml) · [.github/workflows/validate-embedded-examples.yml](https://github.com/asyncapi/spec/blob/41662743fe64189858f4076f27d2b1d9da6b3093/.github/workflows/validate-embedded-examples.yml) · [.github/workflows/lint.yml](https://github.com/asyncapi/spec/blob/41662743fe64189858f4076f27d2b1d9da6b3093/.github/workflows/lint.yml) |
+
+<a id="nt-eventcatalog"></a>
+
+### EventCatalog
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/event-catalog/eventcatalog |
+| License | BUSL-1.1 cho packages/core (chuyển MIT sau 4 năm); sdk, linter, fitness, cli, visualiser, exporters, connectors MIT |
+| Phiên bản đã đọc | `ae660c8d15a78bc11e8e20eda72b181e6b528730` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README, AGENTS.md, packages/core/package.json, LICENSE của sdk, linter/src/rules.ts, fitness/README.md, analytics/telemetry.ts và analytics.js, verify-build.yml; chưa chạy upstream |
+| Khoảng trống lấp | Kiến trúc event-driven: catalog tài liệu domain, service, message, schema |
+| Cơ chế đáng học | - Catalog là thư mục Markdown và frontmatter mô tả domain, service, event, command, query, channel, flow; công cụ dựng site Astro/React có trực quan hoá quan hệ (README, AGENTS.md).<br>- `@eventcatalog/linter` có registry quy tắc (`packages/linter/src/rules.ts`): schema/required-fields, valid-semver, unknown-field... mỗi quy tắc có mức mặc định error hoặc warn.<br>- `@eventcatalog/fitness`: viết fitness function kiểu kiến trúc bằng TypeScript (`defineFitnessFunction`, ví dụ mọi event phải có owner), chạy qua `eventcatalog fitness check`; README nói rõ chỉ kiểm kiến trúc được tài liệu hoá, không kiểm hệ thống đang chạy.<br>- `@eventcatalog/sdk` (MIT) đọc ghi catalog bằng mã; có máy chủ MCP và `llms.txt` tuỳ chọn. |
+| Tiêu chí và cách kiểm | verify-build.yml (đã mở) chạy `pnpm test:ci`, `pnpm run check`, đóng gói các package, cài vào catalog ví dụ rồi `eventcatalog generate` và `build`, kiểm SSR smoke và kích thước build. Chưa chạy lại; fitness và linter là kiểm bằng máy khi người dùng đưa vào CI. |
+| Giới hạn và rủi ro | License: trinh sát ghi NOASSERTION, thực tế là Business Source License 1.1 tuỳ biến cho `packages/core` (bản 5.0 trở lên), không phải mã nguồn mở theo OSI, nên `open_source` đặt false. Dùng sản xuất miễn phí chỉ khi thuộc nhóm Free Use: cá nhân dùng riêng, tổ chức doanh thu dưới 10 triệu USD và vốn huy động dưới 10 triệu USD, tài liệu hoá dự án mã nguồn mở công khai, trường học, hoặc trong 60 ngày đánh giá; dùng trong CI cho catalog nội bộ và cho AI agent cũng tính là dùng sản xuất; Hosted Offering bị hạn chế. Change License MIT sau 4 năm kể từ bản phát hành đầu của dòng phiên bản. Telemetry bật mặc định cho `dev` và `build` (gửi lệnh, mã catalog, số lượng tài nguyên, hash nội dung và cờ tính năng tới dịch vụ phân tích); tắt bằng `telemetry: false`, `EVENTCATALOG_TELEMETRY_DISABLED` hoặc `DO_NOT_TRACK`; có thêm phân tích tuỳ chọn cho EventCatalog Cloud. Cần đọc LICENSE đầy đủ và FAQ của tác giả trước khi dùng trong công ty. |
+| So với | structurizr, backstage-techdocs, asyncapi-spec và faststream (cùng lô) |
+| Nguồn | [LICENSE](https://github.com/event-catalog/eventcatalog/blob/ae660c8d15a78bc11e8e20eda72b181e6b528730/LICENSE) · [README.md](https://github.com/event-catalog/eventcatalog/blob/ae660c8d15a78bc11e8e20eda72b181e6b528730/README.md) · [AGENTS.md](https://github.com/event-catalog/eventcatalog/blob/ae660c8d15a78bc11e8e20eda72b181e6b528730/AGENTS.md) · [packages/core/package.json](https://github.com/event-catalog/eventcatalog/blob/ae660c8d15a78bc11e8e20eda72b181e6b528730/packages/core/package.json) · [packages/sdk/LICENSE](https://github.com/event-catalog/eventcatalog/blob/ae660c8d15a78bc11e8e20eda72b181e6b528730/packages/sdk/LICENSE) · [packages/linter/src/rules.ts](https://github.com/event-catalog/eventcatalog/blob/ae660c8d15a78bc11e8e20eda72b181e6b528730/packages/linter/src/rules.ts) · [packages/fitness/README.md](https://github.com/event-catalog/eventcatalog/blob/ae660c8d15a78bc11e8e20eda72b181e6b528730/packages/fitness/README.md) · [packages/core/src/analytics/telemetry.ts](https://github.com/event-catalog/eventcatalog/blob/ae660c8d15a78bc11e8e20eda72b181e6b528730/packages/core/src/analytics/telemetry.ts) · [packages/core/src/analytics/analytics.js](https://github.com/event-catalog/eventcatalog/blob/ae660c8d15a78bc11e8e20eda72b181e6b528730/packages/core/src/analytics/analytics.js) · [.github/workflows/verify-build.yml](https://github.com/event-catalog/eventcatalog/blob/ae660c8d15a78bc11e8e20eda72b181e6b528730/.github/workflows/verify-build.yml) |
+
+<a id="nt-vacuum"></a>
+
+### vacuum (OpenAPI, AsyncAPI, Arazzo linter)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/daveshanley/vacuum |
+| License | MIT |
+| Phiên bản đã đọc | `5954963af688f1a7095e7df09acec0ca8c46a2b8` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, ARAZZO.md, cmd/exit_codes.go, cmd/update_check.go, rulesets/arazzo_rules.go, .github/workflows/build.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Đặc tả workflow API (Arazzo) và cổng kiểm máy cho hợp đồng API |
+| Cơ chế đáng học | - Linter Go một binary cho OpenAPI, AsyncAPI, JSON Schema và Arazzo 1.0/1.1; tự nhận dạng tài liệu Arazzo và chọn ruleset `arazzo-recommended` (`ARAZZO.md`).<br>- `rulesets/arazzo_rules.go` gói kết quả của `libopenapi-validator` thành các rule thường (structure, duplicate-id, reference, parameter, expression, selector, dependency chu trình, input schema, source type) với vị trí và JSONPath; chỉ validate, không thực thi workflow.<br>- Mã thoát cố định cho CI trong `cmd/exit_codes.go`: 0 sạch, 1 có vi phạm tới ngưỡng, 2 lỗi đầu vào/công cụ; cờ `--fail-severity` chọn ngưỡng (error, warn, info, hint, none). |
+| Tiêu chí và cách kiểm | Cổng kiểm bằng mã thoát và ngưỡng severity, tất định, chạy offline (README). `build.yaml` chạy `go test` với coverage và build, dùng `-tags html_report_ui`, kiểm `go mod tidy` sạch; mình chưa chạy. |
+| Giới hạn và rủi ro | MIT (dòng bản quyền 2022-2023 trong LICENSE nhưng header file 2026, không ảnh hưởng điều khoản). Có kiểm tra bản cập nhật qua mạng (`cmd/update_check.go`, cache cục bộ); mình không đọc kỹ điều kiện tắt, nên cần kiểm trước khi chạy trong môi trường cô lập. Arazzo mặc định cho phép tra cứu nguồn qua file và HTTP(S) (ARAZZO.md), cần cân nhắc khi lint tài liệu không tin cậy. Khoảng trống trinh sát nêu có "Serverless Workflow" nhưng mình không thấy hỗ trợ nó trong các file đã đọc: chỉ Arazzo, OpenAPI, AsyncAPI, JSON Schema. |
+| So với | spectral, arazzo-specification, schemathesis |
+| Nguồn | [LICENSE](https://github.com/daveshanley/vacuum/blob/5954963af688f1a7095e7df09acec0ca8c46a2b8/LICENSE) · [README.md](https://github.com/daveshanley/vacuum/blob/5954963af688f1a7095e7df09acec0ca8c46a2b8/README.md) · [ARAZZO.md](https://github.com/daveshanley/vacuum/blob/5954963af688f1a7095e7df09acec0ca8c46a2b8/ARAZZO.md) · [exit_codes.go](https://github.com/daveshanley/vacuum/blob/5954963af688f1a7095e7df09acec0ca8c46a2b8/cmd/exit_codes.go) · [update_check.go](https://github.com/daveshanley/vacuum/blob/5954963af688f1a7095e7df09acec0ca8c46a2b8/cmd/update_check.go) · [arazzo_rules.go](https://github.com/daveshanley/vacuum/blob/5954963af688f1a7095e7df09acec0ca8c46a2b8/rulesets/arazzo_rules.go) · [build.yaml](https://github.com/daveshanley/vacuum/blob/5954963af688f1a7095e7df09acec0ca8c46a2b8/.github/workflows/build.yaml) |
+
+<a id="nt-microcks"></a>
+
+### Microcks
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/microcks/microcks |
+| License | Apache-2.0 (LICENSE). Không có trọng số |
+| Phiên bản đã đọc | `1c38f795e1a9c45024faa0f527c4986931ff47f3` (commit 2026-11-13) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc `README.md`, `LICENSE`, `ARCHITECTURE.md`, `commons/model/src/main/java/io/github/microcks/domain/TestRunnerType.java`, `webapp/src/main/java/io/github/microcks/util/openapi/OpenAPITestRunner.java`, `.github/workflows/api-check.yml`, `.github/workflows/build-verify.yml`, `AI-POLICY.md`; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm hợp đồng API: mock và test conformance từ OpenAPI, AsyncAPI, gRPC, GraphQL, Postman, SoapUI |
+| Cơ chế đáng học | - Một tài sản (spec/collection) sinh cả mock sống và bộ test; `TestRunnerType` có HTTP, SOAP_HTTP, SOAP_UI, POSTMAN, OPEN_API_SCHEMA, ASYNC_API_SCHEMA, GRPC_PROTOBUF, GRAPHQL_SCHEMA.<br>- `OpenAPITestRunner.java`: gọi endpoint thật, so mã trạng thái và content-type với phản hồi mẫu khi `validateResponseCode`, rồi kiểm thân JSON theo JSON Schema của spec; lỗi vào `lastValidationErrors`, kết quả SUCCESS hoặc FAILURE.<br>- Kiến trúc (`ARCHITECTURE.md`): Spring Boot, MongoDB, Keycloak, Angular, các minion bất đồng bộ cho Kafka và giao thức tin nhắn.<br>- CLI/GitHub Action để nhúng vào CI nằm repo khác, không đọc trong lô này. |
+| Tiêu chí và cách kiểm | Mỗi test trả cổng nhị phân SUCCESS/FAILURE theo runner; workflow `api-check.yml` chạy hằng ngày bộ test API với ảnh uber (JVM và native) và `build-verify.yml` build với JDK 25 (đã mở đầu hai file). Cổng conformance trong CI của người dùng cần CLI ở repo microcks-cli **(chưa xác minh)**. |
+| Giới hạn và rủi ro | Mô tả của trinh sát hơi lệch: repo này là máy chủ/nền tảng; phần CI gate là CLI và action ở repo khác. Triển khai nặng (Java, MongoDB, Keycloak, tùy chọn Kafka). Có dòng chính sách dùng AI khi đóng góp (`AI-POLICY.md`) và `AICopilotRunnerService` sinh mẫu bằng AI **(chưa xác minh hành vi)**. Có badge CNCF Landscape trong README; bảo trì hoạt động (commit 2026-11-13). |
+| So với | schemathesis (hồ sơ có sẵn, sinh ca kiểm tự động từ OpenAPI, không mock), spectral (lint spec, không gọi API), openapitools-openapi-generator (sinh code/stub). |
+| Nguồn | [README.md](https://github.com/microcks/microcks/blob/1c38f795e1a9c45024faa0f527c4986931ff47f3/README.md) · [LICENSE](https://github.com/microcks/microcks/blob/1c38f795e1a9c45024faa0f527c4986931ff47f3/LICENSE) · [ARCHITECTURE.md](https://github.com/microcks/microcks/blob/1c38f795e1a9c45024faa0f527c4986931ff47f3/ARCHITECTURE.md) · [TestRunnerType.java](https://github.com/microcks/microcks/blob/1c38f795e1a9c45024faa0f527c4986931ff47f3/commons/model/src/main/java/io/github/microcks/domain/TestRunnerType.java) · [OpenAPITestRunner.java](https://github.com/microcks/microcks/blob/1c38f795e1a9c45024faa0f527c4986931ff47f3/webapp/src/main/java/io/github/microcks/util/openapi/OpenAPITestRunner.java) · [api-check.yml](https://github.com/microcks/microcks/blob/1c38f795e1a9c45024faa0f527c4986931ff47f3/.github/workflows/api-check.yml) · [build-verify.yml](https://github.com/microcks/microcks/blob/1c38f795e1a9c45024faa0f527c4986931ff47f3/.github/workflows/build-verify.yml) · [AI-POLICY.md](https://github.com/microcks/microcks/blob/1c38f795e1a9c45024faa0f527c4986931ff47f3/AI-POLICY.md) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-redocly-cli"></a>
+
+### Redocly CLI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Redocly/redocly-cli |
+| License | MIT |
+| Phiên bản đã đọc | `d75ae35df6ff8f8c6433fe61441b7357e51c6813` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE.md, README.md, package.json, vitest.config.ts, .github/workflows/tests.yaml, packages/core/src/rules/common/operation-operationId-unique.ts; chưa chạy upstream |
+| Khoảng trống lấp | Tài liệu kỹ thuật docs-as-code: lint/bundle OpenAPI và dựng tài liệu API từ một mô tả |
+| Cơ chế đáng học | - packages/core/src/rules: luật chia theo oas2/oas3/common/async/arazzo, mỗi luật là hàm trả visitor (ví dụ common/operation-operationId-unique.ts báo trùng operationId kèm đường dẫn vị trí và link tài liệu).<br>- Luật tự khai báo trong redocly.yaml (subject + assertions như casing) không cần viết mã; plugin tự viết bằng JS.<br>- respect-core + generate-arazzo: chạy luồng gọi API thật theo Arazzo và kiểm phản hồi so với OpenAPI. |
+| Tiêu chí và cách kiểm | CI tests.yaml: typecheck, unit (vitest, ngưỡng coverage lines/functions/statements 80%, branches 75%), unit:types, e2e, và nhiều workflow smoke; REDOCLY_TELEMETRY=off trong CI. Đường mã thoát của lint chưa đọc, chưa chạy. |
+| Giới hạn và rủi ro | Telemetry mặc định bật, gửi tới otel.cloud.redocly.com (thấy các trường lệnh, mã thoát, tên luật có lỗi/cảnh báo, phiên bản spec; payload đầy đủ chưa xác minh); generate-client và diff là thử nghiệm; đã đưa vào section 29 (hợp đồng API) vì gần spectral hơn là công cụ lint văn xuôi. |
+| So với | spectral (lint OpenAPI bằng JSONPath), openapitools-openapi-generator (sinh client), docusaurus/sphinx cho dựng trang tài liệu. |
+| Nguồn | [LICENSE.md](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/LICENSE.md) · [README.md](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/README.md) · [package.json](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/package.json) · [vitest.config.ts](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/vitest.config.ts) · [CI tests.yaml](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/.github/workflows/tests.yaml) · [operation-operationId-unique.ts](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/packages/core/src/rules/common/operation-operationId-unique.ts) · [telemetry.ts](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/packages/cli/src/utils/telemetry.ts) · [otel.ts](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/packages/cli/src/utils/otel.ts) · [constants.ts](https://github.com/Redocly/redocly-cli/blob/d75ae35df6ff8f8c6433fe61441b7357e51c6813/packages/cli/src/utils/constants.ts) |
+
+<a id="n2-zalando-zally"></a>
+
+### Zally
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/zalando/zally |
+| License | MIT (LICENSE, © Zalando SE) |
+| Phiên bản đã đọc | `6846db565d5d7508754516b3aad7a25aa603a9f5` (commit 2026-10-19) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README, server/rules.md, NoVersionInUriRule.kt, reference.conf và build-zally.yml; chưa chạy upstream |
+| Khoảng trống lấp | API design và kiểm hợp đồng: linter OpenAPI 2/3 theo guideline cấp tổ chức (Zalando RESTful API Guidelines) |
+| Cơ chế đáng học | - Mỗi quy tắc là một lớp Kotlin có chú thích `@Rule(id, severity, title)` và hàm `@Check` trả danh sách `Violation` (ví dụ `NoVersionInUriRule.kt`, rule 115 mức MUST), nên ID quy tắc bám số điều của guideline.<br>- Ba mức severity (MUST/SHOULD/MAY) và ngưỡng cấu hình bằng HOCON (`reference.conf`: giới hạn tài nguyên 8, tiểu tài nguyên 3, whitelist header).<br>- Gỡ cảnh báo từng chỗ bằng extension `x-zally-ignore` ngay trong spec (README); có CLI, server REST, web UI.<br>- Thư mục test của `zally-ruleset-zalando` có 36 mục, phần lớn mỗi rule một file `*RuleTest.kt`. |
+| Tiêu chí và cách kiểm | Workflow `build-zally.yml` đã mở: JDK 17, `./gradlew build` cho server rồi build CLI, gửi coverage jacoco lên Codecov; không thấy ngưỡng coverage bắt buộc trong workflow. Linter tự chấm spec bằng máy, nhưng chất lượng từng rule phụ thuộc test của rule đó. |
+| Giới hạn và rủi ro | MIT; hỗ trợ OpenAPI 2 và 3 (README), không có AsyncAPI như trinh sát ghi (chưa thấy rule cho AsyncAPI). Server viết bằng Kotlin/JVM, build bằng Gradle và có Docker Compose, nặng hơn linter dạng CLI độc lập. Ví dụ `NoVersionInUriRule` dùng regex `(.*)v[0-9]+(.*)` nên khớp mọi chuỗi con `v<số>` trong đường dẫn hay URL server, có thể báo nhầm (suy ra từ mã, chưa chạy). Bộ rule gắn chặt guideline Zalando, dùng ngoài phải tự tắt hoặc viết rule. Người duy trì liệt kê trong MAINTAINERS là cá nhân, commit gần nhất 2026-10-19. |
+| So với | Spectral, Vacuum, Schemathesis. Spectral/Vacuum dùng ruleset khai báo; Zally viết rule bằng mã JVM nên mạnh hơn khi cần logic nhưng khó sửa nhanh. |
+| Nguồn | [LICENSE](https://github.com/zalando/zally/blob/6846db565d5d7508754516b3aad7a25aa603a9f5/LICENSE) · [README.md](https://github.com/zalando/zally/blob/6846db565d5d7508754516b3aad7a25aa603a9f5/README.md) · [server/rules.md](https://github.com/zalando/zally/blob/6846db565d5d7508754516b3aad7a25aa603a9f5/server/rules.md) · [server/zally-ruleset-zalando/src/main/kotlin/org/zalando/zally/ruleset/zalando/NoVersionInUriRule.kt](https://github.com/zalando/zally/blob/6846db565d5d7508754516b3aad7a25aa603a9f5/server/zally-ruleset-zalando/src/main/kotlin/org/zalando/zally/ruleset/zalando/NoVersionInUriRule.kt) · [server/zally-ruleset-zalando/src/main/resources/reference.conf](https://github.com/zalando/zally/blob/6846db565d5d7508754516b3aad7a25aa603a9f5/server/zally-ruleset-zalando/src/main/resources/reference.conf) · [.github/workflows/build-zally.yml](https://github.com/zalando/zally/blob/6846db565d5d7508754516b3aad7a25aa603a9f5/.github/workflows/build-zally.yml) |
+
+<a id="n2-sourcemeta-jsonschema"></a>
+
+### JSON Schema CLI (Sourcemeta)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/sourcemeta/jsonschema |
+| License | AGPL-3.0 (LICENSE; README nêu dùng làm công cụ dev/CI không kích hoạt copyleft, có giấy phép thương mại riêng) |
+| Phiên bản đã đọc | `3b0c4fdd55be8a7c8f6a556938e794089a1a9809` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-24; docs-read; đã đọc LICENSE, README, docs lint/test/llm, exit_code.h và test.yml; chưa chạy upstream |
+| Khoảng trống lấp | API design và kiểm hợp đồng: CLI JSON Schema (lint, test, fmt, bundle) làm tầng dưới cho hợp đồng OpenAPI/AsyncAPI |
+| Cơ chế đáng học | - `jsonschema test` chạy bộ test của schema (file JSON `target` + `tests` với instance hợp lệ/không hợp lệ), song song theo CPU, xuất CTRF cho CI (`docs/test.markdown`).<br>- `jsonschema lint` có luật chống anti-pattern, `--fix`, `--exclude/--only`, luật tự viết bằng schema (`--rule`) (`docs/lint.markdown`); `fmt --check` để chặn định dạng lệch trong CI.<br>- Mã thoát phân biệt lỗi (1 bất ngờ, 2 thất bại dự kiến, 3 chưa hỗ trợ, 4 sai schema, 5 sai tham số, 6 sai đầu vào khác) trong `src/exit_code.h`.<br>- `bundle` nhận cả mô tả OpenAPI 3.0/3.1/3.2 để gộp tham chiếu; `llm` ép mô hình trả JSON theo schema rồi kiểm lại bằng schema gốc (`docs/llm.markdown`). |
+| Tiêu chí và cách kiểm | CI `test.yml` đã mở: codespell cho docs, ma trận Linux/macOS/Windows/Alpine/WSL (gcc-14, clang), x64 và arm64. Có hơn 200 file test dưới `test/lint` (đếm file, chưa chạy). Kiểm bằng máy mạnh; mức đọc ở đây là tài liệu và một header mã nên đặt docs-read. |
+| Giới hạn và rủi ro | AGPL-3.0: README tự cam kết dùng làm công cụ không kéo copyleft vào schema/mã của bạn, nhưng đó là diễn giải của tác giả, hãy để pháp chế duyệt trước khi nhúng thư viện hay chạy như dịch vụ. Viết bằng C++/CMake, có hỗ trợ một phần cho Draft 0-3. Lệnh `llm` gửi schema và prompt tới URL hoàn thành do người dùng chỉ định (dữ liệu rời máy nếu trỏ tới dịch vụ ngoài). Cấu hình `jsonschema.json` ghi là thử nghiệm. Chỉ lint schema nhúng trong OpenAPI, không lint cả mô tả API (docs/lint nói nên dùng cùng Spectral). Mô tả trinh sát đúng, nhưng thiếu: đây là công cụ JSON Schema, không phải OpenAPI/AsyncAPI. |
+| So với | Spectral, Vacuum, Schemathesis. Bổ sung cho Spectral thay vì thay thế: sâu về JSON Schema, không kiểm luật API cấp tổ chức. |
+| Nguồn | [LICENSE](https://github.com/sourcemeta/jsonschema/blob/3b0c4fdd55be8a7c8f6a556938e794089a1a9809/LICENSE) · [README.markdown](https://github.com/sourcemeta/jsonschema/blob/3b0c4fdd55be8a7c8f6a556938e794089a1a9809/README.markdown) · [docs/lint.markdown](https://github.com/sourcemeta/jsonschema/blob/3b0c4fdd55be8a7c8f6a556938e794089a1a9809/docs/lint.markdown) · [docs/test.markdown](https://github.com/sourcemeta/jsonschema/blob/3b0c4fdd55be8a7c8f6a556938e794089a1a9809/docs/test.markdown) · [docs/llm.markdown](https://github.com/sourcemeta/jsonschema/blob/3b0c4fdd55be8a7c8f6a556938e794089a1a9809/docs/llm.markdown) · [src/exit_code.h](https://github.com/sourcemeta/jsonschema/blob/3b0c4fdd55be8a7c8f6a556938e794089a1a9809/src/exit_code.h) · [.github/workflows/test.yml](https://github.com/sourcemeta/jsonschema/blob/3b0c4fdd55be8a7c8f6a556938e794089a1a9809/.github/workflows/test.yml) |

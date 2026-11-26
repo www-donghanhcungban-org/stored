@@ -313,9 +313,428 @@ Loader so dependency versions với metadata đã lưu và **cảnh báo** khi l
 
 **Nguồn §4f:** permalink implementation/LICENSE/CI DSPy trên; đối chiếu cơ chế optimizer, spec và eval ở §4c–§4d. Không tuyên bố tái lập chất lượng/chi phí hay chạy model upstream trong đợt đọc này.
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **3 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-awesome-gpt-image-2-prompts-evolink"></a>
+
+### Awesome GPT Image 2 Prompts — EvoLink
+
+**Repo:** [Evolink-AI/awesome-gpt-image-2-API-Prompts](https://github.com/Evolink-AI/awesome-gpt-image-2-API-Prompts) · **License:** CC0-1.0 cho nội dung được cấp quyền; nguồn bên thứ ba cần đối chiếu · **★ 17,430 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư mục prompt và ví dụ tạo/chỉnh sửa ảnh được tuyển chọn theo tình huống thiết kế.
+
+**Giá trị và cơ chế:** README tổ chức prompt đầy đủ, nguồn và tác giả để người đọc điều chỉnh yêu cầu bố cục, phong cách và đầu ra; hữu ích làm bộ tham chiếu kỹ thuật viết prompt.
+
+**Giới hạn:** Đã đọc phần giới thiệu và mẫu chọn lọc, không rà hết README hơn một triệu ký tự. Không xác nhận chất lượng mọi ví dụ hay quyền của ảnh gốc. API/skill automation là repo riêng.
+
+**Cách tham khảo/tích hợp:** Lấy cấu trúc yêu cầu và viết lại bằng tài sản có quyền; lưu kết quả thử theo model/phiên bản.
+
+**Thay thế:** [Awesome Nano Banana Pro Prompts](../17-prompt-engineering/README.md#anhkysuai-2026-11-23-awesome-nano-banana-pro-prompts), awesome-gpt4o-images, [Promptfoo](../07-eval-observability/README.md#core-eval-validity).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`e2a269ad1a05`](https://github.com/Evolink-AI/awesome-gpt-image-2-API-Prompts/commit/e2a269ad1a055a0b4f6c1e170341c6c1aba30faa). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/Evolink-AI/awesome-gpt-image-2-API-Prompts/blob/e2a269ad1a055a0b4f6c1e170341c6c1aba30faa/README.md) · [LICENSE](https://github.com/Evolink-AI/awesome-gpt-image-2-API-Prompts/blob/e2a269ad1a055a0b4f6c1e170341c6c1aba30faa/LICENSE) · [metadata GitHub](https://api.github.com/repos/Evolink-AI/awesome-gpt-image-2-API-Prompts).
+
+<a id="anhkysuai-2026-11-23-awesome-nano-banana-pro-prompts"></a>
+
+### Awesome Nano Banana Pro Prompts
+
+**Repo:** [YouMind-OpenLab/awesome-nano-banana-pro-prompts](https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts) · **License:** CC-BY-4.0; quyền tác giả bên thứ ba được lưu ý riêng · **★ 13,854 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ prompt cộng đồng theo các tình huống avatar, infographic, quảng cáo và storyboard.
+
+**Giá trị và cơ chế:** README tổ chức mẫu có tham chiếu và gallery riêng; phù hợp học cách mô tả bố cục, chữ và điều kiện hình ảnh cho công cụ tạo ảnh.
+
+**Giới hạn:** Chỉ đọc cấu trúc và mẫu chọn lọc, chưa thử toàn bộ prompt. Tuyên bố license của bộ sưu tập không tự chứng minh quyền mọi ảnh/mẫu cộng đồng; README có thông báo bản quyền và cơ chế gỡ.
+
+**Cách tham khảo/tích hợp:** Dùng làm nguồn ý tưởng, viết lại prompt với tài sản có quyền và giữ attribution khi tái sử dụng nội dung.
+
+**Thay thế:** [Awesome GPT Image 2 Prompts — EvoLink](../17-prompt-engineering/README.md#anhkysuai-2026-11-23-awesome-gpt-image-2-prompts-evolink), awesome-gpt4o-images, [Promptfoo](../07-eval-observability/README.md#core-eval-validity).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`445f95a70ec7`](https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts/commit/445f95a70ec77ab56a93e76055054bd257fad467). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts/blob/445f95a70ec77ab56a93e76055054bd257fad467/README.md) · [LICENSE](https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts/blob/445f95a70ec77ab56a93e76055054bd257fad467/LICENSE) · [metadata GitHub](https://api.github.com/repos/YouMind-OpenLab/awesome-nano-banana-pro-prompts).
+
+<a id="anhkysuai-2026-11-23-agency-agents-zh"></a>
+
+### Agency Agents 中文
+
+**Repo:** [jnMetaCode/agency-agents-zh](https://github.com/jnMetaCode/agency-agents-zh) · **License:** MIT · **★ 22,271 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ mô tả vai trò agent bằng tiếng Trung, mở rộng từ Agency Agents cho nhiều quy trình và nền tảng.
+
+**Giá trị và cơ chế:** README trình bày bản dịch cộng đồng cùng vai trò bổ sung, gợi ý đầu vào, cách phối hợp và đầu ra theo chuyên môn; license ghi công tác giả gốc và người chuyển ngữ.
+
+**Giới hạn:** Đây là tập hướng dẫn/prompt, chưa chứng minh năng lực chuyên gia hoặc độ tin cậy. Các sản phẩm desktop và memory được quảng bá là repo riêng; chưa đọc toàn bộ vai trò.
+
+**Cách tham khảo/tích hợp:** Chọn vài vai trò đúng việc, sửa tiêu chí đầu ra và kiểm kết quả trên tác vụ mẫu trước khi đưa vào workflow.
+
+**Thay thế:** [Agency Agents 中文](../17-prompt-engineering/README.md#anhkysuai-2026-11-23-agency-agents-zh), awesome-claude-skills, [anthropics/skills](https://github.com/anthropics/skills).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`6b22c1e651ed`](https://github.com/jnMetaCode/agency-agents-zh/commit/6b22c1e651eded6d1b6bf553d3f0903c1b18e99f). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/jnMetaCode/agency-agents-zh/blob/6b22c1e651eded6d1b6bf553d3f0903c1b18e99f/README.md) · [LICENSE](https://github.com/jnMetaCode/agency-agents-zh/blob/6b22c1e651eded6d1b6bf553d3f0903c1b18e99f/LICENSE) · [metadata GitHub](https://api.github.com/repos/jnMetaCode/agency-agents-zh).
+
 ## 5. Nguồn
 
 - https://github.com/dair-ai/Prompt-Engineering-Guide · https://www.star-history.com/dair-ai/prompt-engineering-guide/ · https://dev.to/web_dev-usman/10-github-repos-every-serious-prompt-writer-should-be-using-21jk
 - https://github.com/stanfordnlp/dspy · https://futureagi.com/blog/what-is-dspy-2026/ · https://www.promptquorum.com/power-local-llm/dspy-review · https://github.com/ganarajpr/awesome-dspy · https://github.com/dx-corp/dspy-0to1-guide
 - https://en.wikipedia.org/wiki/Fatih_Kadir_Akin
 - §2b (12/10/2026): https://github.com/567-labs/instructor · https://github.com/dottxt-ai/outlines · https://github.com/guidance-ai/guidance · https://github.com/BoundaryML/baml · https://github.com/anthropics/claude-cookbooks · https://github.com/openai/openai-cookbook · https://github.com/anthropics/courses · https://github.com/anthropics/prompt-eng-interactive-tutorial · https://github.com/microsoft/promptflow · https://github.com/microsoft/promptflow/tree/main/migration-guide/PromptFlow-to-MAF · https://github.com/microsoft/LLMLingua · https://github.com/microsoft/poml · https://github.com/MadcowD/ell
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-anyjev"></a>
+
+### AnyJev
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/nokia-applied-research/AnyJev |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `35311c58955716cb8955ce1368a665988bc63735` (commit 2026-10-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, pyproject.toml, ci.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 21/10/2026; v0.3.0. |
+| Nhận định | Thư viện quyết định có kiểu (choice/yes-no/score) kèm xác suất từ LLM, kèm mô hình Tacit riêng. Các tuyên bố hiệu năng/leaderboard trong README là của tác giả **(chưa xác minh)**. |
+| Nguồn | [LICENSE](https://github.com/nokia-applied-research/AnyJev/blob/35311c58955716cb8955ce1368a665988bc63735/LICENSE) · [README.md](https://github.com/nokia-applied-research/AnyJev/blob/35311c58955716cb8955ce1368a665988bc63735/README.md) · [pyproject.toml](https://github.com/nokia-applied-research/AnyJev/blob/35311c58955716cb8955ce1368a665988bc63735/pyproject.toml) · [ci.yml](https://github.com/nokia-applied-research/AnyJev/blob/35311c58955716cb8955ce1368a665988bc63735/.github/workflows/ci.yml) |
+
+<a id="ch-awesome-chatgpt-prompts"></a>
+
+### awesome-chatgpt-prompts
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/f/prompts.chat |
+| License | MIT (mã) + CC0-1.0 (prompt) (khác catalog cũ: CC0) |
+| Phiên bản đã đọc | `32bbb1576e999fe57dc57d18eca9370e7ac46e24` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, LICENSE-MIT, LICENSE-CC0, README.md, package.json, ci.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 23/11/2026. |
+| Nhận định | Thư viện prompt lớn nhất, nay là ứng dụng Next.js tự host (prompts.chat) kèm dữ liệu prompts.csv. Nội dung prompt CC0 dùng tự do, mã MIT. Số sao 143k+ trong README là tuyên bố tác giả **(chưa xác minh)**. |
+| Nguồn | [LICENSE](https://github.com/f/prompts.chat/blob/32bbb1576e999fe57dc57d18eca9370e7ac46e24/LICENSE) · [LICENSE-MIT](https://github.com/f/prompts.chat/blob/32bbb1576e999fe57dc57d18eca9370e7ac46e24/LICENSE-MIT) · [LICENSE-CC0](https://github.com/f/prompts.chat/blob/32bbb1576e999fe57dc57d18eca9370e7ac46e24/LICENSE-CC0) · [README.md](https://github.com/f/prompts.chat/blob/32bbb1576e999fe57dc57d18eca9370e7ac46e24/README.md) · [package.json](https://github.com/f/prompts.chat/blob/32bbb1576e999fe57dc57d18eca9370e7ac46e24/package.json) · [ci.yml](https://github.com/f/prompts.chat/blob/32bbb1576e999fe57dc57d18eca9370e7ac46e24/.github/workflows/ci.yml) |
+
+<a id="ch-baml"></a>
+
+### BAML
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/BoundaryML/baml |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ae11385a781c2b61a13fde186962132bbf1835fc` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, package.json, go.mod, atb2-deploy.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 21/11/2026. |
+| Nhận định | Ngôn ngữ/toolchain có kiểu để viết hàm prompt và agent, codegen SDK nhiều ngôn ngữ, nhiều build workflow. Có telemetry CLI ẩn danh có thể tắt (TELEMETRY.md, đã đọc đầu file); định vị đã mở rộng từ DSL prompt sang ngôn ngữ cho agent. |
+| Nguồn | [LICENSE](https://github.com/BoundaryML/baml/blob/ae11385a781c2b61a13fde186962132bbf1835fc/LICENSE) · [README.md](https://github.com/BoundaryML/baml/blob/ae11385a781c2b61a13fde186962132bbf1835fc/README.md) · [package.json](https://github.com/BoundaryML/baml/blob/ae11385a781c2b61a13fde186962132bbf1835fc/package.json) · [go.mod](https://github.com/BoundaryML/baml/blob/ae11385a781c2b61a13fde186962132bbf1835fc/go.mod) · [atb2-deploy.yml](https://github.com/BoundaryML/baml/blob/ae11385a781c2b61a13fde186962132bbf1835fc/.github/workflows/atb2-deploy.yml) |
+
+<a id="ch-chainforge"></a>
+
+### ChainForge
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ianarawjo/ChainForge |
+| License | MIT |
+| Phiên bản đã đọc | `22af5549a3c154505ab92880fb7be9753c67ed4f` (commit 2026-10-29) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE.md, README.md, docker-build.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 29/10/2026. |
+| Nhận định | Môi trường luồng dữ liệu trực quan để so sánh prompt x model và đo chất lượng bằng node đánh giá; chạy local (Flask) hoặc Docker. Con số 188 trong catalog chưa kiểm lại **(chưa xác minh)**. |
+| Nguồn | [LICENSE.md](https://github.com/ianarawjo/ChainForge/blob/22af5549a3c154505ab92880fb7be9753c67ed4f/LICENSE.md) · [README.md](https://github.com/ianarawjo/ChainForge/blob/22af5549a3c154505ab92880fb7be9753c67ed4f/README.md) · [docker-build.yml](https://github.com/ianarawjo/ChainForge/blob/22af5549a3c154505ab92880fb7be9753c67ed4f/.github/workflows/docker-build.yml) |
+
+<a id="ch-cl4r1t4s"></a>
+
+### CL4R1T4S
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/elder-plinius/CL4R1T4S |
+| License | AGPL-3.0 (file LICENSE) |
+| Phiên bản đã đọc | `93a584765460c2fb0ad58380bba476f2149df138` (commit 2026-11-09) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 09/11/2026; một người duy trì. |
+| Nhận định | Kho prompt hệ thống "trích xuất" của nhiều hãng/agent theo thư mục từng hãng. Tính xác thực của prompt là tuyên bố của người đóng góp **(chưa xác minh)**; AGPL chỉ chắc chắn cho phần biên soạn, bản quyền nội dung prompt thuộc hãng gốc. |
+| Nguồn | [LICENSE](https://github.com/elder-plinius/CL4R1T4S/blob/93a584765460c2fb0ad58380bba476f2149df138/LICENSE) · [README.md](https://github.com/elder-plinius/CL4R1T4S/blob/93a584765460c2fb0ad58380bba476f2149df138/README.md) |
+
+<a id="ch-claude-code-system-prompts"></a>
+
+### Claude Code System Prompts
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Piebald-AI/claude-code-system-prompts |
+| License | MIT |
+| Phiên bản đã đọc | `659d9f4cff186a44099048926a695647c0ba1814` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 20/11/2026; bám phiên bản Claude Code v2.1.330. |
+| Nhận định | Danh mục prompt/tool/agent/skill của Claude Code theo từng phiên bản, kèm số token và changelog. Giấy phép MIT chỉ áp cho phần biên soạn; prompt gốc thuộc Anthropic. |
+| Nguồn | [LICENSE](https://github.com/Piebald-AI/claude-code-system-prompts/blob/659d9f4cff186a44099048926a695647c0ba1814/LICENSE) · [README.md](https://github.com/Piebald-AI/claude-code-system-prompts/blob/659d9f4cff186a44099048926a695647c0ba1814/README.md) |
+
+<a id="ch-claude-cookbooks"></a>
+
+### Claude Cookbooks
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anthropics/claude-cookbooks |
+| License | MIT |
+| Phiên bản đã đọc | `8ad5de647d4f0f50c95d74aabc8aa20a3f70cdd3` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, pyproject.toml, claude-link-review.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 20/11/2026. |
+| Nhận định | Tập notebook/hướng dẫn chính thức dựng ứng dụng với Claude, có registry.yaml/authors.yaml và CI kiểm notebook. Ví dụ phụ thuộc API Claude có phí. |
+| Nguồn | [LICENSE](https://github.com/anthropics/claude-cookbooks/blob/8ad5de647d4f0f50c95d74aabc8aa20a3f70cdd3/LICENSE) · [README.md](https://github.com/anthropics/claude-cookbooks/blob/8ad5de647d4f0f50c95d74aabc8aa20a3f70cdd3/README.md) · [pyproject.toml](https://github.com/anthropics/claude-cookbooks/blob/8ad5de647d4f0f50c95d74aabc8aa20a3f70cdd3/pyproject.toml) · [claude-link-review.yml](https://github.com/anthropics/claude-cookbooks/blob/8ad5de647d4f0f50c95d74aabc8aa20a3f70cdd3/.github/workflows/claude-link-review.yml) |
+
+<a id="ch-deepteam"></a>
+
+### DeepTeam
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/confident-ai/deepteam |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `6306f0ff319a932955399405af82f78ee91e9370` (commit 2026-10-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE.md, README.md, pyproject.toml, test_core.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 23/10/2026; v1.0.10. |
+| Nhận định | Khung red-team LLM/agent mô phỏng jailbreak, prompt injection, kèm guardrail, xây trên DeepEval. Telemetry bật trừ khi đặt DEEPTEAM_TELEMETRY_OPT_OUT=YES, cần tắt khi dùng với dữ liệu nhạy cảm. |
+| Nguồn | [LICENSE.md](https://github.com/confident-ai/deepteam/blob/6306f0ff319a932955399405af82f78ee91e9370/LICENSE.md) · [README.md](https://github.com/confident-ai/deepteam/blob/6306f0ff319a932955399405af82f78ee91e9370/README.md) · [pyproject.toml](https://github.com/confident-ai/deepteam/blob/6306f0ff319a932955399405af82f78ee91e9370/pyproject.toml) · [test_core.yml](https://github.com/confident-ai/deepteam/blob/6306f0ff319a932955399405af82f78ee91e9370/.github/workflows/test_core.yml) |
+
+<a id="ch-dotprompt"></a>
+
+### Dotprompt
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/google/dotprompt |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `97751971e864662d67bc329911cce9f4dfab378c` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, package.json, bazel.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 18/11/2026. |
+| Nhận định | Định dạng file prompt thực thi (Handlebars) trung lập ngôn ngữ/nhà cung cấp, có nhiều thư viện runtime song song. Mức hoàn thiện từng ngôn ngữ khác nhau, chưa kiểm. |
+| Nguồn | [LICENSE](https://github.com/google/dotprompt/blob/97751971e864662d67bc329911cce9f4dfab378c/LICENSE) · [README.md](https://github.com/google/dotprompt/blob/97751971e864662d67bc329911cce9f4dfab378c/README.md) · [package.json](https://github.com/google/dotprompt/blob/97751971e864662d67bc329911cce9f4dfab378c/package.json) · [bazel.yml](https://github.com/google/dotprompt/blob/97751971e864662d67bc329911cce9f4dfab378c/.github/workflows/bazel.yml) |
+
+<a id="ch-fabric"></a>
+
+### Fabric
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/danielmiessler/Fabric |
+| License | MIT |
+| Phiên bản đã đọc | `9a906e7c7fb81a25885c41d3eb7ba1b0e2f9a98a` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, go.mod, ci.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 22/11/2026. |
+| Nhận định | CLI Go và thư viện pattern system.md theo tác vụ thực tế, dùng nhiều nhà cung cấp LLM. Số pattern hiện 268 thư mục; chưa đánh giá chất lượng pattern. |
+| Nguồn | [LICENSE](https://github.com/danielmiessler/Fabric/blob/9a906e7c7fb81a25885c41d3eb7ba1b0e2f9a98a/LICENSE) · [README.md](https://github.com/danielmiessler/Fabric/blob/9a906e7c7fb81a25885c41d3eb7ba1b0e2f9a98a/README.md) · [go.mod](https://github.com/danielmiessler/Fabric/blob/9a906e7c7fb81a25885c41d3eb7ba1b0e2f9a98a/go.mod) · [ci.yml](https://github.com/danielmiessler/Fabric/blob/9a906e7c7fb81a25885c41d3eb7ba1b0e2f9a98a/.github/workflows/ci.yml) |
+
+<a id="ch-guidance"></a>
+
+### Guidance
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/guidance-ai/guidance |
+| License | MIT |
+| Phiên bản đã đọc | `21b1d90dfbebff4b141df70c714c8af15aa5f4af` (commit 2026-05-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE.md, README.md, pyproject.toml, call_cpu_tests.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 21/05/2026, gần 6 tháng không commit. |
+| Nhận định | Mô hình lập trình điều khiển sinh có ràng buộc, nhiều backend (Transformers, llama.cpp, OpenAI). Hoạt động chậm lại rõ rệt từ 5/2026, cân nhắc khi chọn dài hạn. |
+| Nguồn | [LICENSE.md](https://github.com/guidance-ai/guidance/blob/21b1d90dfbebff4b141df70c714c8af15aa5f4af/LICENSE.md) · [README.md](https://github.com/guidance-ai/guidance/blob/21b1d90dfbebff4b141df70c714c8af15aa5f4af/README.md) · [pyproject.toml](https://github.com/guidance-ai/guidance/blob/21b1d90dfbebff4b141df70c714c8af15aa5f4af/pyproject.toml) · [call_cpu_tests.yml](https://github.com/guidance-ai/guidance/blob/21b1d90dfbebff4b141df70c714c8af15aa5f4af/.github/workflows/call_cpu_tests.yml) |
+
+<a id="ch-instructor"></a>
+
+### Instructor
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/567-labs/instructor |
+| License | MIT |
+| Phiên bản đã đọc | `0acb3a19c3ec6f89c6a204340c52a30ee33fa04b` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, pyproject.toml, evals.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 18/11/2026; v1.18.0. |
+| Nhận định | Structured output kiểm bằng Pydantic, đa nhà cung cấp LLM, có evals chạy hằng tuần. Repo thuộc tổ chức 567-labs, tên cũ của tác giả cá nhân có thể còn xuất hiện ở tài liệu cũ. |
+| Nguồn | [LICENSE](https://github.com/567-labs/instructor/blob/0acb3a19c3ec6f89c6a204340c52a30ee33fa04b/LICENSE) · [README.md](https://github.com/567-labs/instructor/blob/0acb3a19c3ec6f89c6a204340c52a30ee33fa04b/README.md) · [pyproject.toml](https://github.com/567-labs/instructor/blob/0acb3a19c3ec6f89c6a204340c52a30ee33fa04b/pyproject.toml) · [evals.yml](https://github.com/567-labs/instructor/blob/0acb3a19c3ec6f89c6a204340c52a30ee33fa04b/.github/workflows/evals.yml) |
+
+<a id="ch-open-prompt-injection"></a>
+
+### Open-Prompt-Injection
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/liu00222/Open-Prompt-Injection |
+| License | MIT |
+| Phiên bản đã đọc | `fbed5cca347488f88363790ae3ae97c56116da6a` (commit 2026-09-27) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 27/09/2026. |
+| Nhận định | Bộ công cụ nghiên cứu để cài đặt và đánh giá tấn công/phòng thủ prompt injection. Mã học thuật, không có workflow CI, chưa chạy nên chưa rõ độ tái lập. |
+| Nguồn | [LICENSE](https://github.com/liu00222/Open-Prompt-Injection/blob/fbed5cca347488f88363790ae3ae97c56116da6a/LICENSE) · [README.md](https://github.com/liu00222/Open-Prompt-Injection/blob/fbed5cca347488f88363790ae3ae97c56116da6a/README.md) |
+
+<a id="ch-openai-cookbook"></a>
+
+### OpenAI Cookbook
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/openai/openai-cookbook |
+| License | MIT |
+| Phiên bản đã đọc | `dfd760b4de0bd175b51ad05b9b5260c36dfea09c` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, stale.yaml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 16/11/2026. |
+| Nhận định | Ví dụ và bài viết chính thức về OpenAI API, đọc trên cookbook.openai.com. Ví dụ phụ thuộc API OpenAI có phí. |
+| Nguồn | [LICENSE](https://github.com/openai/openai-cookbook/blob/dfd760b4de0bd175b51ad05b9b5260c36dfea09c/LICENSE) · [README.md](https://github.com/openai/openai-cookbook/blob/dfd760b4de0bd175b51ad05b9b5260c36dfea09c/README.md) · [stale.yaml](https://github.com/openai/openai-cookbook/blob/dfd760b4de0bd175b51ad05b9b5260c36dfea09c/.github/workflows/stale.yaml) |
+
+<a id="ch-outlines"></a>
+
+### Outlines
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/dottxt-ai/outlines |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `c52af8472c6fe8a607a733ec11b709476af77a96` (commit 2026-08-24) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, pyproject.toml, build_documentation.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 24/08/2026, khoảng 3 tháng trước ngày kiểm. |
+| Nhận định | Thư viện structured generation ràng buộc lúc decode (JSON Schema/regex/grammar). Tốc độ commit chậm hơn các repo cùng nhóm; README có phần chào mời dịch vụ thương mại. |
+| Nguồn | [LICENSE](https://github.com/dottxt-ai/outlines/blob/c52af8472c6fe8a607a733ec11b709476af77a96/LICENSE) · [README.md](https://github.com/dottxt-ai/outlines/blob/c52af8472c6fe8a607a733ec11b709476af77a96/README.md) · [pyproject.toml](https://github.com/dottxt-ai/outlines/blob/c52af8472c6fe8a607a733ec11b709476af77a96/pyproject.toml) · [build_documentation.yml](https://github.com/dottxt-ai/outlines/blob/c52af8472c6fe8a607a733ec11b709476af77a96/.github/workflows/build_documentation.yml) |
+
+<a id="ch-prompt-engineering-guide"></a>
+
+### Prompt Engineering Guide
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/dair-ai/Prompt-Engineering-Guide |
+| License | MIT |
+| Phiên bản đã đọc | `57673726396dd94acb23bdb1e67f27c78ee85a8e` (commit 2026-03-11) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE.md, README.md, package.json, claude-code-review.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 11/03/2026, hơn 8 tháng trước. |
+| Nhận định | Tập hướng dẫn, bài báo, notebook về prompt engineering và web promptingguide.ai. Nội dung đứng yên từ 3/2026, README quảng bá khoá học của DAIR.AI Academy. |
+| Nguồn | [LICENSE.md](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/57673726396dd94acb23bdb1e67f27c78ee85a8e/LICENSE.md) · [README.md](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/57673726396dd94acb23bdb1e67f27c78ee85a8e/README.md) · [package.json](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/57673726396dd94acb23bdb1e67f27c78ee85a8e/package.json) · [claude-code-review.yml](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/57673726396dd94acb23bdb1e67f27c78ee85a8e/.github/workflows/claude-code-review.yml) |
+
+<a id="ch-prompt-engineering-interactive-tutorial"></a>
+
+### Prompt Engineering Interactive Tutorial
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anthropics/prompt-eng-interactive-tutorial |
+| License | không có file LICENSE |
+| Phiên bản đã đọc | `0d277542e927652da25b0014c9b346723af55881` (commit 2024-04-07) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 07/04/2024, gần như bỏ ngỏ. |
+| Nhận định | Khoá thực hành prompt cho Claude bằng notebook, có bản 1P và Bedrock. Không có giấy phép nên chưa rõ quyền tái sử dụng; nội dung đứng yên từ 4/2024. |
+| Nguồn | [README.md](https://github.com/anthropics/prompt-eng-interactive-tutorial/blob/0d277542e927652da25b0014c9b346723af55881/README.md) |
+
+<a id="ch-prompt-optimizer"></a>
+
+### Prompt Optimizer
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/linshenkx/prompt-optimizer |
+| License | AGPL-3.0-only |
+| Phiên bản đã đọc | `5ae83f476bfd8704308a4bbeee65dcd5860b0f47` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README, LICENSE, package.json, docker-compose.yml, generate-auth.sh, generate-config.sh, nginx.conf, docker.yml, CHANGELOG; chưa chạy upstream |
+| Bảo trì | Hoạt động tích cực: commit 2026-11-23, bản 2.16.2 cùng ngày. |
+| Nhận định | Công cụ tối ưu prompt chạy dạng web, desktop, extension Chrome, Docker và MCP server (monorepo pnpm). Đã đọc docker/*.sh, compose và nginx.conf: mật khẩu mặc định 123456, khóa API đặt qua VITE_* bị chép vào config.js phía client và in ra log khởi động, /mcp không qua Basic auth; chỉ đọc cấu hình, chưa chạy. |
+| Nguồn | [README](https://github.com/linshenkx/prompt-optimizer/blob/5ae83f476bfd8704308a4bbeee65dcd5860b0f47/README.md) · [LICENSE](https://github.com/linshenkx/prompt-optimizer/blob/5ae83f476bfd8704308a4bbeee65dcd5860b0f47/LICENSE) · [package.json](https://github.com/linshenkx/prompt-optimizer/blob/5ae83f476bfd8704308a4bbeee65dcd5860b0f47/package.json) · [docker-compose.yml](https://github.com/linshenkx/prompt-optimizer/blob/5ae83f476bfd8704308a4bbeee65dcd5860b0f47/docker/docker-compose.yml) · [generate-auth.sh](https://github.com/linshenkx/prompt-optimizer/blob/5ae83f476bfd8704308a4bbeee65dcd5860b0f47/docker/generate-auth.sh) · [generate-config.sh](https://github.com/linshenkx/prompt-optimizer/blob/5ae83f476bfd8704308a4bbeee65dcd5860b0f47/docker/generate-config.sh) · [nginx.conf](https://github.com/linshenkx/prompt-optimizer/blob/5ae83f476bfd8704308a4bbeee65dcd5860b0f47/docker/nginx.conf) · [docker.yml](https://github.com/linshenkx/prompt-optimizer/blob/5ae83f476bfd8704308a4bbeee65dcd5860b0f47/.github/workflows/docker.yml) · [CHANGELOG](https://github.com/linshenkx/prompt-optimizer/blob/5ae83f476bfd8704308a4bbeee65dcd5860b0f47/CHANGELOG.md) |
+
+<a id="ch-prompty"></a>
+
+### Prompty
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/prompty |
+| License | MIT |
+| Phiên bản đã đọc | `a4e8dcd2d79d641bb6bb52eb3177777fc55129cb` (commit 2026-10-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-10-21; nhiều workflow CI theo từng runtime (chỉ đọc danh sách, chưa mở nội dung). |
+| Nhận định | Định dạng file .prompty (markdown + YAML) cho prompt LLM, có spec/, schema/ và fixtures đối chiếu giữa các runtime; extension VS Code. Mức trưởng thành từng runtime là tuyên bố của README **(chưa xác minh)**; thư mục go/java/swift có mặt nhưng README không liệt kê là gói phát hành. |
+| Nguồn | [README](https://github.com/microsoft/prompty/blob/a4e8dcd2d79d641bb6bb52eb3177777fc55129cb/README.md) · [LICENSE](https://github.com/microsoft/prompty/blob/a4e8dcd2d79d641bb6bb52eb3177777fc55129cb/LICENSE) |
+
+<a id="ch-skillopt"></a>
+
+### SkillOpt
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/SkillOpt |
+| License | MIT |
+| Phiên bản đã đọc | `dc0b5e654cafa1073a2819086151c1e0d13012f0` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, pyproject.toml, ci.yml; chưa chạy upstream |
+| Bảo trì | Hoạt động tích cực: commit 2026-11-23; pyproject 0.2.0 (Alpha). |
+| Nhận định | Khung "huấn luyện" skill/prompt của agent bằng vòng phản chiếu có cổng validation held-out (epoch, batch, learning rate); có skillopt_sleep đọc transcript agent và plugin cho nhiều agent. Số liệu paper/benchmark là tự công bố **(chưa xác minh)**; pyproject ghi Development Status Alpha. |
+| Nguồn | [README](https://github.com/microsoft/SkillOpt/blob/dc0b5e654cafa1073a2819086151c1e0d13012f0/README.md) · [LICENSE](https://github.com/microsoft/SkillOpt/blob/dc0b5e654cafa1073a2819086151c1e0d13012f0/LICENSE) · [pyproject.toml](https://github.com/microsoft/SkillOpt/blob/dc0b5e654cafa1073a2819086151c1e0d13012f0/pyproject.toml) · [ci.yml](https://github.com/microsoft/SkillOpt/blob/dc0b5e654cafa1073a2819086151c1e0d13012f0/.github/workflows/ci.yml) |
+
+<a id="ch-system-prompts-and-models-of-ai-tools"></a>
+
+### system-prompts-and-models-of-ai-tools
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools |
+| License | GPL-3.0 (LICENSE.md) (khác catalog cũ) |
+| Phiên bản đã đọc | `162db92f54d717d8ebd12292e155aeef32bb4b3c` (commit 2026-10-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE.md; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2026-10-12; còn cập nhật. |
+| Nhận định | Bộ sưu tập system prompt và định nghĩa tool của nhiều sản phẩm AI, tổ chức theo thư mục từng hãng; README chủ yếu là quảng bá, tài trợ và ví crypto, không mô tả cách thu thập hay kiểm chứng tính xác thực **(chưa xác minh)**. GPL-3.0 chỉ áp cho phần tác giả repo; bản quyền văn bản prompt thuộc các hãng, nên chỉ dùng để học cấu trúc. |
+| Nguồn | [README](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/162db92f54d717d8ebd12292e155aeef32bb4b3c/README.md) · [LICENSE.md](https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools/blob/162db92f54d717d8ebd12292e155aeef32bb4b3c/LICENSE.md) |
+
+<a id="ch-system-prompts-leaks"></a>
+
+### System Prompts Leaks
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/asgeirtj/system_prompts_leaks |
+| License | CC0-1.0 (phần biên soạn) |
+| Phiên bản đã đọc | `8c615a1387fec799b96f28d30617aab98d196afd` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE; chưa chạy upstream |
+| Bảo trì | Hoạt động tích cực: commit 2026-11-23. |
+| Nhận định | Kho sao chép system prompt công khai/rò rỉ của nhiều chatbot, tổ chức theo hãng (Anthropic, OpenAI, Google, xAI...), cập nhật liên tục. README không nêu cách trích xuất hay kiểm chứng tính chân thực **(chưa xác minh)**; CC0 không chuyển quyền của chủ sở hữu văn bản gốc. |
+| Nguồn | [README](https://github.com/asgeirtj/system_prompts_leaks/blob/8c615a1387fec799b96f28d30617aab98d196afd/README.md) · [LICENSE](https://github.com/asgeirtj/system_prompts_leaks/blob/8c615a1387fec799b96f28d30617aab98d196afd/LICENSE) |
+
+<a id="ch-textgrad"></a>
+
+### TextGrad
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/zou-group/textgrad |
+| License | MIT |
+| Phiên bản đã đọc | `75e912e210864b61999781778cdf756d4468120f` (commit 2025-07-25) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README, LICENSE, setup.py; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 2025-07-25 (hơn 4 tháng trước ngày kiểm), mức hoạt động thấp. |
+| Nhận định | Khung "autograd bằng văn bản": LLM đưa phản hồi ngôn ngữ làm gradient để tối ưu prompt/lời giải; có bài Nature, thư mục evaluation và notebook ví dụ. Kết quả trong paper là tuyên bố tác giả **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/zou-group/textgrad/blob/75e912e210864b61999781778cdf756d4468120f/README.md) · [LICENSE](https://github.com/zou-group/textgrad/blob/75e912e210864b61999781778cdf756d4468120f/LICENSE) · [setup.py](https://github.com/zou-group/textgrad/blob/75e912e210864b61999781778cdf756d4468120f/setup.py) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-promptory"></a>
+
+### Promptory
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/hsanchez/promptory |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `10bea0a5be28aa95219c25fff33cf305749077ad` (commit 2026-05-29) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, pyproject.toml, gates.py, lint.py, metadata.py, evidence.py, serve.py, prek.toml, LICENSE; chưa chạy upstream |
+| Khoảng trống lấp | Prompt như mã: registry, lint, hồi quy CI và cổng phát hành có bằng chứng |
+| Cơ chế đáng học | - `metadata.py`: `write_metadata` ghi checksum SHA-256 từng file lúc release, `verify_metadata` báo `checksum mismatch`/`file missing`.<br>- `gates.py`: mỗi gate `(kind, name, required_status)` trong `promptspec.yaml` thất bại nếu thiếu bằng chứng, bị thu hồi hoặc sai trạng thái.<br>- `evidence.py`: bằng chứng JSON bất biến (kind, name, status, tool, created_at), so sánh metric giữa hai bản; `lifecycle.jsonl` ghi sự kiện chỉ thêm.<br>- `lint.py`: biến Jinja phải khớp `required_variables`, YAML hợp lệ, kích thước ≤ `max_file_bytes`. |
+| Tiêu chí và cách kiểm | `prompt check` (lint), `prompt verify` (checksum), `prompt gate --format github/json` cho CI. Kiểm trước khi commit bằng prek (ruff, ty, pytest, 130 hàm test đếm bằng grep). Không có `.github/workflows` tại commit này. Evidence do công cụ ngoài tạo, Promptory không xác thực nội dung. |
+| Giới hạn và rủi ro | - Apache-2.0, phụ thuộc jinja2, pyyaml, typer, rich; `serve` tuỳ chọn thêm FastAPI.<br>- Cổng chỉ tin file bằng chứng tự khai; ai ghi được file thì làm gate xanh.<br>- Sidecar `serve.py` không có xác thực, chỉ nên đặt nội bộ.<br>- Dự án mới, một commit, chưa có phát hành; thư mục `.claude/settings.local.json` bị commit (cho phép `gh api`). |
+| So với | promptfoo (chạy eval và red team, không quản lý phiên bản), dotprompt và prompty (định dạng file prompt), langfuse (prompt registry kèm tracing, dịch vụ) |
+| Nguồn | [README.md](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/README.md) · [LICENSE](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/LICENSE) · [pyproject.toml](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/pyproject.toml) · [gates.py](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/src/promptory/gates.py) · [lint.py](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/src/promptory/lint.py) · [metadata.py](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/src/promptory/metadata.py) · [evidence.py](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/src/promptory/evidence.py) · [serve.py](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/src/promptory/serve.py) · [prek.toml](https://github.com/hsanchez/promptory/blob/10bea0a5be28aa95219c25fff33cf305749077ad/prek.toml) |

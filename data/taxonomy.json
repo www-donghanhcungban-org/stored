@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "note": "Taxonomy 3 cấp: group → category → subcategory. subcategory bắt buộc khi category có danh sách con.",
+  "merged_categories": {
+    "voice": "speech",
+    "aec-bim": "cad-bim",
+    "vlm": "computer-vision"
+  },
+  "groups": {
+    "ai-agents": {
+      "label": "AI agent, skill & điều phối",
+      "categories": {
+        "coding-agent": {},
+        "coding-tool-commercial": {},
+        "agent-framework": {},
+        "agent-workspace": {},
+        "personal-agent": {},
+        "autonomous-agent-history": {},
+        "pattern-loop": {},
+        "reasoning-skill": {},
+        "context-optimization": {},
+        "agent-memory": {},
+        "harness-pack": {
+          "subcategories": {
+            "coding-workflow": "Quy trình coding/TDD/review",
+            "multi-agent-orchestration": "Điều phối nhiều agent",
+            "office-docs": "Văn phòng & tài liệu",
+            "marketing-business": "Marketing, bán hàng & kinh doanh",
+            "media-creative": "Media & sáng tạo",
+            "domain-specialist": "Chuyên ngành",
+            "skill-meta": "Tạo/quản lý skill"
+          }
+        },
+        "plugin-marketplace": {},
+        "protocol": {},
+        "llm-gateway": {},
+        "prompt": {},
+        "browser-agent": {},
+        "sandbox": {},
+        "remote-access": {},
+        "agentic-ui": {},
+        "codebase-knowledge": {},
+        "spec-driven": {},
+        "code-review": {}
+      }
+    },
+    "automation": {
+      "label": "Tự động hóa & quy trình",
+      "categories": {
+        "workflow-automation": {},
+        "durable-execution": {},
+        "low-code": {},
+        "scheduling": {},
+        "project-management": {}
+      }
+    },
+    "trust": {
+      "label": "Đánh giá, an toàn & chất lượng",
+      "categories": {
+        "eval-observability": {
+          "subcategories": {
+            "llm-eval": "Eval LLM/agent",
+            "tracing": "Tracing & observability LLM",
+            "benchmark": "Benchmark",
+            "ops-monitoring": "Giám sát hệ thống"
+          }
+        },
+        "security": {
+          "subcategories": {
+            "appsec-scanner": "Quét lỗ hổng ứng dụng",
+            "agent-guardrails": "Guardrail & an toàn agent",
+            "secrets-supply-chain": "Secret & chuỗi cung ứng",
+            "offensive-redteam": "Pentest & red team",
+            "identity-access": "Danh tính & truy cập",
+            "privacy": "Quyền riêng tư"
+          }
+        },
+        "policy-as-code": {},
+        "quality-gate": {
+          "subcategories": {
+            "unit-integration": "Test unit/integration",
+            "e2e-browser": "E2E & trình duyệt",
+            "visual-a11y": "Visual regression & accessibility",
+            "static-analysis": "Phân tích tĩnh & lint",
+            "ai-skill-eval": "Eval skill/agent",
+            "api-contract": "Hợp đồng API & schema",
+            "perf-load": "Hiệu năng & tải",
+            "release-gate": "Cổng phát hành & review"
+          }
+        },
+        "checklist": {}
+      }
+    },
+    "models-data": {
+      "label": "Mô hình, dữ liệu & tài liệu",
+      "categories": {
+        "inference": {},
+        "rag": {},
+        "vector-db": {},
+        "model-training": {},
+        "data-curation": {},
+        "data": {
+          "subcategories": {
+            "database-engine": "Cơ sở dữ liệu & lưu trữ",
+            "analytics-bi": "BI & dashboard",
+            "dataframe-compute": "Dataframe, notebook & xử lý",
+            "pipeline-orchestration": "Pipeline, ETL & CDC",
+            "semantic-lineage": "Lineage, metric & ontology",
+            "text-to-sql-agent": "Text-to-SQL & agent dữ liệu",
+            "scraping": "Thu thập dữ liệu web",
+            "finance-quant": "Tài chính & định lượng",
+            "ml-library": "Thư viện ML & NLP",
+            "visualization": "Thư viện trực quan hóa",
+            "search-engine": "Tìm kiếm & cache"
+          }
+        },
+        "document-intelligence": {},
+        "computer-vision": {},
+        "image-gen": {},
+        "speech": {}
+      }
+    },
+    "design-media": {
+      "label": "Thiết kế, giao diện & media",
+      "categories": {
+        "ui-library": {
+          "subcategories": {
+            "component-react": "Component React",
+            "component-other": "Component Vue/Svelte/Angular/khác",
+            "design-system-official": "Design system chính thức của tổ chức",
+            "headless-primitive": "Primitive headless & accessibility",
+            "animated-components": "Component có animation",
+            "css-framework": "CSS framework",
+            "chart-dataviz": "Biểu đồ & bản đồ",
+            "editor-rich-text": "Editor & nhập liệu phong phú",
+            "icons-assets": "Icon, font & tài sản",
+            "tui-native-gui": "TUI & GUI native",
+            "media-player": "Media player & upload"
+          }
+        },
+        "design-tool": {
+          "subcategories": {
+            "canvas-editor": "Canvas & editor thiết kế",
+            "design-to-code": "Design-to-code & MCP thiết kế",
+            "inspiration-gallery": "Gallery cảm hứng",
+            "tokens-color-type": "Token, màu & chữ",
+            "diagram-illustration": "Minh họa & sơ đồ"
+          }
+        },
+        "design-skill": {},
+        "layout-template": {},
+        "ai-ui-generator": {},
+        "animation-library": {},
+        "motion-design": {},
+        "video-engine": {},
+        "agentic-video": {}
+      }
+    },
+    "software": {
+      "label": "Kỹ thuật phần mềm & vận hành",
+      "categories": {
+        "frontend": {
+          "subcategories": {
+            "framework": "Framework UI",
+            "build-tooling": "Build, bundler & monorepo",
+            "state-data": "State & data fetching",
+            "styling-css": "CSS & styling",
+            "language-runtime": "Ngôn ngữ & runtime JS/TS",
+            "desktop-cross-platform": "App desktop/đa nền tảng",
+            "game-engine": "Game engine & đồ họa",
+            "utility-library": "Thư viện tiện ích",
+            "starter-template": "Template & starter"
+          }
+        },
+        "backend": {
+          "subcategories": {
+            "web-framework": "Web framework",
+            "baas-platform": "BaaS & nền tảng backend",
+            "auth-identity": "Xác thực & danh tính",
+            "api-tooling": "API, RPC & client",
+            "orm-db-tooling": "ORM, migration & công cụ CSDL",
+            "cms-commerce": "CMS & thương mại điện tử",
+            "business-app": "Ứng dụng doanh nghiệp (ERP/CRM)",
+            "language-runtime": "Ngôn ngữ & runtime",
+            "microservice-infra": "Microservice, cấu hình & service mesh",
+            "self-hosted-app": "Ứng dụng tự host",
+            "realtime-messaging": "Realtime, bot & nhắn tin"
+          }
+        },
+        "mobile": {},
+        "devops": {
+          "subcategories": {
+            "container-orchestration": "Container & Kubernetes",
+            "iac-config": "IaC & quản lý cấu hình",
+            "ci-cd-release": "CI/CD & phát hành",
+            "paas-self-hosting": "PaaS tự host & bảng điều khiển server",
+            "networking-proxy": "Mạng, proxy, DNS & chứng chỉ",
+            "backup-cost-ops": "Sao lưu, chi phí & vận hành hạ tầng",
+            "terminal-cli": "Terminal, shell & công cụ dòng lệnh",
+            "editor-ide": "Editor & IDE",
+            "dev-env": "Môi trường dev & quản lý toolchain",
+            "os-system": "Hệ điều hành & công cụ hệ thống",
+            "self-hosted-app": "Ứng dụng tự host (ảnh, git, file...)",
+            "supply-chain-ci-security": "Bảo mật CI & chuỗi cung ứng"
+          }
+        },
+        "localization": {},
+        "reverse-engineering": {},
+        "app-launcher": {},
+        "feature-management": {},
+        "product-analytics": {},
+        "product-research": {}
+      }
+    },
+    "knowledge": {
+      "label": "Học tập, tài liệu & tri thức",
+      "categories": {
+        "learning": {
+          "subcategories": {
+            "llm-genai-course": "Khóa học LLM/GenAI & deep learning",
+            "agent-course": "Khóa học/hướng dẫn agent & Claude Code",
+            "cs-fundamentals": "Nền tảng khoa học máy tính",
+            "programming-language": "Học ngôn ngữ lập trình",
+            "interview-prep": "Phỏng vấn & thuật toán",
+            "system-design": "Thiết kế hệ thống & kiến trúc",
+            "project-cookbook": "Dự án mẫu & cookbook",
+            "design-reference": "Tham chiếu thiết kế UI/UX",
+            "security-learning": "Học bảo mật",
+            "roadmap-book": "Lộ trình, sách & tài liệu tổng hợp"
+          }
+        },
+        "awesome-list": {
+          "subcategories": {
+            "ai-agent-skills": "Skill, plugin & agent",
+            "mcp": "MCP server",
+            "design-ui": "Thiết kế & UI",
+            "language-ecosystem": "Hệ sinh thái ngôn ngữ/framework",
+            "data-ml": "Dữ liệu & ML",
+            "devops-sysadmin": "DevOps & sysadmin",
+            "security": "Bảo mật",
+            "growth-marketing": "Marketing & tăng trưởng",
+            "general-resources": "Tài nguyên chung & xếp hạng"
+          }
+        },
+        "docs": {
+          "subcategories": {
+            "docs-site": "Site tài liệu",
+            "docs-quality": "Kiểm tài liệu (lint, link, chính tả)",
+            "docs-for-agents": "Tài liệu cho agent (llms.txt, context)",
+            "diagram": "Sơ đồ & hình vẽ",
+            "slides-presentation": "Slide & trình chiếu",
+            "notes-knowledge-base": "Ghi chú & knowledge base",
+            "office-pdf": "Office, bảng tính & PDF",
+            "writing-publishing": "Soạn thảo & xuất bản (Markdown, Typst)",
+            "productivity-app": "Ứng dụng năng suất"
+          }
+        },
+        "vietnam": {},
+        "own-repo": {}
+      }
+    },
+    "engineering": {
+      "label": "Kỹ thuật công trình & không gian",
+      "categories": {
+        "cad-bim": {},
+        "geospatial": {},
+        "simulation": {},
+        "quality-mgmt": {
+          "subcategories": {
+            "qms-iso": "Hệ thống quản lý chất lượng ISO (đánh giá, CAPA, rủi ro)",
+            "spc-msa": "SPC, MSA và kiểm soát quá trình",
+            "welding-ndt": "Hàn, NDT và hồ sơ chứng nhận",
+            "calibration-traceability": "Hiệu chuẩn và truy xuất nguồn gốc"
+          }
+        },
+        "manufacturing": {
+          "subcategories": {
+            "mes-erp": "MES/ERP cho xưởng sản xuất",
+            "maintenance-cmms": "Bảo trì thiết bị (CMMS)"
+          }
+        }
+      }
+    },
+    "end-user": {
+      "label": "Ứng dụng người dùng cuối",
+      "categories": {
+        "desktop-utility": {}
+      }
+    }
+  }
+}

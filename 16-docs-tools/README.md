@@ -440,6 +440,435 @@ Chi tiết Vale được đọc lại ở HEAD `0d9e80234ba63323fefa027b5698467c
 
 **Nguồn §2k:** các permalink trên; [README Sybil]( https://github.com/simplistix/sybil/blob/de4cdc5a24d5c8879bf3db1089924f51bd25c972/README.rst ), [manifest]( https://github.com/simplistix/sybil/blob/de4cdc5a24d5c8879bf3db1089924f51bd25c972/pyproject.toml ), [Vale LICENSE]( https://github.com/vale-cli/vale/blob/0d9e80234ba63323fefa027b5698467cf477c46d/LICENSE ). Đã đọc mã/LICENSE/CI tại SHA ghi trong hồ sơ; chưa chạy upstream.
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **22 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-marktext"></a>
+
+### MarkText
+
+**Repo:** [marktext/marktext](https://github.com/marktext/marktext) · **License:** MIT · **★ 64,293 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Trình soạn Markdown desktop với xem trước trực tiếp và xuất HTML/PDF.
+
+**Giá trị và cơ chế:** README có CommonMark, GFM, công thức KaTeX và nhiều chế độ soạn; monorepo tách quy trình build theo nền tảng và kiểm xuất bản qua bộ test.
+
+**Giới hạn:** Manifest hiện là bản phát triển 0.24.0-dev; chưa chạy đóng gói hoặc kiểm xuất PDF. Tương thích Pandoc chỉ được mô tả là có chọn lọc.
+
+**Cách tham khảo/tích hợp:** Dùng như trình soạn cá nhân; kiểm font, công thức và nội dung HTML khi đưa vào quy trình xuất tài liệu.
+
+**Thay thế:** [joplin](../08-awesome-lists-learning/README.md#6c515-năng-suất-ghi-chú--việc-làm), [logseq](../08-awesome-lists-learning/README.md#6c515-năng-suất-ghi-chú--việc-làm), [vscode](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`95a14e5c9b30`](https://github.com/marktext/marktext/commit/95a14e5c9b3049c465eeb8b01ac94bb7678cc845). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/marktext/marktext/blob/95a14e5c9b3049c465eeb8b01ac94bb7678cc845/README.md) · [LICENSE](https://github.com/marktext/marktext/blob/95a14e5c9b3049c465eeb8b01ac94bb7678cc845/LICENSE) · [metadata GitHub](https://api.github.com/repos/marktext/marktext).
+
+<a id="anhkysuai-2026-11-23-typst"></a>
+
+### Typst
+
+**Repo:** [typst/typst](https://github.com/typst/typst) · **License:** Apache-2.0 · **★ 57,375 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Compiler và CLI dàn trang tài liệu từ markup, có toán học và tài liệu tham khảo.
+
+**Giá trị và cơ chế:** README mô tả set/show rules và scripting tích hợp; workspace Rust chứa compiler, CLI và bộ tests, thuận tiện giữ nguồn tài liệu cùng phiên bản dự án.
+
+**Giới hạn:** Đã đọc tài liệu và cấu hình, chưa biên dịch corpus. Giao diện cộng tác trực tuyến là dịch vụ khác với compiler trong repo; font và gói bổ sung cần quản lý riêng.
+
+**Cách tham khảo/tích hợp:** Ghim compiler, font và template; so sánh PDF xuất ra bằng fixture trước khi thay quy trình tài liệu hiện tại.
+
+**Thay thế:** tectonic, [pandoc](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh), quarto.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a6dcd82927b2`](https://github.com/typst/typst/commit/a6dcd82927b2a44bb089bc9151e29566e84e7d5a). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/typst/typst/blob/a6dcd82927b2a44bb089bc9151e29566e84e7d5a/README.md) · [LICENSE](https://github.com/typst/typst/blob/a6dcd82927b2a44bb089bc9151e29566e84e7d5a/LICENSE) · [metadata GitHub](https://api.github.com/repos/typst/typst).
+
+<a id="anhkysuai-2026-11-23-diagrams"></a>
+
+### Diagrams
+
+**Repo:** [mingrammer/diagrams](https://github.com/mingrammer/diagrams) · **License:** MIT · **★ 42,828 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Vẽ sơ đồ kiến trúc hệ thống bằng mã Python.
+
+**Giá trị và cơ chế:** Các provider node và Graphviz tách mô tả kiến trúc khỏi hình xuất; nguồn sơ đồ có thể review bằng Git như tài liệu kỹ thuật thông thường.
+
+**Giới hạn:** README nói rõ công cụ chỉ vẽ sơ đồ, không tạo Terraform hay điều khiển tài nguyên cloud. Cần Graphviz ngoài gói Python; chưa render kiểm bố cục hoặc font.
+
+**Cách tham khảo/tích hợp:** Ghim Graphviz cùng package, giữ script và đầu ra để review; không dùng sơ đồ như bằng chứng hạ tầng đã triển khai.
+
+**Thay thế:** [Mermaid](https://github.com/mermaid-js/mermaid), [D2](../16-docs-tools/README.md#anhkysuai-2026-11-23-d2), plantuml.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`5a9e8af2d4e4`](https://github.com/mingrammer/diagrams/commit/5a9e8af2d4e48ae2bbd002a4c0ca714d5b9219e1). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/mingrammer/diagrams/blob/5a9e8af2d4e48ae2bbd002a4c0ca714d5b9219e1/README.md) · [LICENSE](https://github.com/mingrammer/diagrams/blob/5a9e8af2d4e48ae2bbd002a4c0ca714d5b9219e1/LICENSE) · [metadata GitHub](https://api.github.com/repos/mingrammer/diagrams).
+
+<a id="anhkysuai-2026-11-23-marked"></a>
+
+### Marked
+
+**Repo:** [markedjs/marked](https://github.com/markedjs/marked) · **License:** MIT; thông báo nguồn phụ trong LICENSE · **★ 37,324 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Parser/ compiler Markdown cho browser, Node.js và CLI.
+
+**Giá trị và cơ chế:** README nêu khả năng mở rộng qua extension và cùng một API cho nhiều môi trường; phù hợp đưa Markdown vào trình biên tập hoặc cổng tài liệu.
+
+**Giới hạn:** Tác giả cảnh báo đầu ra HTML không được sanitize. Chưa chạy parser hoặc kiểm extension; tốc độ được mô tả nhưng chưa benchmark trong phiên này.
+
+**Cách tham khảo/tích hợp:** Sanitize HTML đầu ra bằng công cụ phù hợp và giới hạn plugin, đặc biệt khi hiển thị nội dung người dùng.
+
+**Thay thế:** [markdown-it](../16-docs-tools/README.md#anhkysuai-2026-11-23-markdown-it), remark, commonmark.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`283f74f24bc6`](https://github.com/markedjs/marked/commit/283f74f24bc6df1c39c4b2a74ef923a68752e6e5). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/markedjs/marked/blob/283f74f24bc6df1c39c4b2a74ef923a68752e6e5/README.md) · [LICENSE](https://github.com/markedjs/marked/blob/283f74f24bc6df1c39c4b2a74ef923a68752e6e5/LICENSE) · [metadata GitHub](https://api.github.com/repos/markedjs/marked).
+
+<a id="anhkysuai-2026-11-23-glow"></a>
+
+### Glow
+
+**Repo:** [charmbracelet/glow](https://github.com/charmbracelet/glow) · **License:** MIT · **★ 28,150 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Đọc Markdown có định dạng ngay trong terminal.
+
+**Giá trị và cơ chế:** README và go.mod thể hiện ứng dụng TUI dựa trên hệ Charm, khám phá tài liệu trong thư mục/repository và hiển thị theo giao diện terminal.
+
+**Giới hạn:** Không thay trình soạn thảo hay render HTML đầy đủ. Chưa kiểm độ trung thực với bảng rộng, Unicode hoặc terminal cụ thể; workflow được đọc chỉ cho biết cấu hình CI.
+
+**Cách tham khảo/tích hợp:** Dùng để duyệt README trong quy trình CLI; kiểm một bộ tài liệu có bảng và mã trước chuẩn hóa hướng dẫn nhóm.
+
+**Thay thế:** [Slides](../16-docs-tools/README.md#anhkysuai-2026-11-23-slides), mdcat, bat.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`8b0600fa4455`](https://github.com/charmbracelet/glow/commit/8b0600fa445535b9c53194c0d4f7fe3cf700ef3e). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/charmbracelet/glow/blob/8b0600fa445535b9c53194c0d4f7fe3cf700ef3e/README.md) · [LICENSE](https://github.com/charmbracelet/glow/blob/8b0600fa445535b9c53194c0d4f7fe3cf700ef3e/LICENSE) · [metadata GitHub](https://api.github.com/repos/charmbracelet/glow).
+
+<a id="anhkysuai-2026-11-23-d2"></a>
+
+### D2
+
+**Repo:** [d2lang/d2](https://github.com/d2lang/d2) · **License:** MPL-2.0 · **★ 25,899 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Ngôn ngữ và công cụ CLI tạo sơ đồ từ văn bản khai báo.
+
+**Giá trị và cơ chế:** README cho thấy mô tả node/edge, định dạng và engine layout; phù hợp đưa kiến trúc, sơ đồ hệ thống vào Git cùng tài liệu.
+
+**Giới hạn:** Chưa render hoặc so sánh độ ổn định layout giữa phiên bản; tính năng/giấy phép engine bổ sung cần kiểm riêng. Mã Go trong repo không đồng nghĩa mọi dịch vụ đi kèm đều mở.
+
+**Cách tham khảo/tích hợp:** Ghim compiler và engine, xuất SVG trong pipeline tài liệu, duyệt thay đổi ảnh cùng nguồn sơ đồ.
+
+**Thay thế:** [Mermaid](https://github.com/mermaid-js/mermaid), plantuml, [Diagrams](../16-docs-tools/README.md#anhkysuai-2026-11-23-diagrams).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`adad39654a0c`](https://github.com/d2lang/d2/commit/adad39654a0cd616f7769007b11b736ae6017aae). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/d2lang/d2/blob/adad39654a0cd616f7769007b11b736ae6017aae/README.md) · [LICENSE.txt](https://github.com/d2lang/d2/blob/adad39654a0cd616f7769007b11b736ae6017aae/LICENSE.txt) · [metadata GitHub](https://api.github.com/repos/d2lang/d2).
+
+<a id="anhkysuai-2026-11-23-markdown-it"></a>
+
+### markdown-it
+
+**Repo:** [markdown-it/markdown-it](https://github.com/markdown-it/markdown-it) · **License:** MIT · **★ 22,056 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Parser Markdown JavaScript với hệ rule và plugin mở rộng.
+
+**Giá trị và cơ chế:** README mô tả hỗ trợ CommonMark và pipeline tùy chỉnh; phù hợp ứng dụng cần kiểm soát cách biến Markdown thành token/HTML.
+
+**Giới hạn:** Tuyên bố an toàn mặc định không thay kiểm tra tùy chọn raw HTML hay plugin. Chưa chạy corpus CommonMark và benchmark; tài liệu có hướng dẫn migration phiên bản lớn.
+
+**Cách tham khảo/tích hợp:** Chốt preset và plugin, kiểm fixture HTML đầu ra; thêm lớp làm sạch phù hợp nếu cho phép HTML người dùng.
+
+**Thay thế:** [Marked](../16-docs-tools/README.md#anhkysuai-2026-11-23-marked), remark, commonmark-js.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a8c00d474ec9`](https://github.com/markdown-it/markdown-it/commit/a8c00d474ec9b304fad9b71c16d6fa8b4909279e). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/markdown-it/markdown-it/blob/a8c00d474ec9b304fad9b71c16d6fa8b4909279e/README.md) · [LICENSE](https://github.com/markdown-it/markdown-it/blob/a8c00d474ec9b304fad9b71c16d6fa8b4909279e/LICENSE) · [metadata GitHub](https://api.github.com/repos/markdown-it/markdown-it).
+
+<a id="anhkysuai-2026-11-23-marp"></a>
+
+### Marp — kho đầu mối
+
+**Repo:** [marp-team/marp](https://github.com/marp-team/marp) · **License:** MIT · **★ 12,782 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Kho đầu mối và website cho hệ sinh thái thuyết trình bằng Markdown.
+
+**Giá trị và cơ chế:** README phân tách Marpit framework, Marp Core, CLI và editor integration; hữu ích tìm đúng công cụ để sinh slide theo nguồn văn bản có thể review bằng Git.
+
+**Giới hạn:** Repo này chứa website, không phải toàn compiler/CLI; không gộp thành đã đọc mã render. Chưa xuất PDF/PPTX hay kiểm theme và font; từng repo con có release riêng.
+
+**Cách tham khảo/tích hợp:** Chọn Marp CLI/Core đúng nhu cầu, ghim phiên bản và render slide mẫu trước xây pipeline tài liệu.
+
+**Thay thế:** [slidev](../08-awesome-lists-learning/README.md#6c57-dựng-video--slide-tự-động), [reveal.js](../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ), [Slides](../16-docs-tools/README.md#anhkysuai-2026-11-23-slides).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`95263d5a0df5`](https://github.com/marp-team/marp/commit/95263d5a0df563633ef6611c986b34b55f936eaa). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/marp-team/marp/blob/95263d5a0df563633ef6611c986b34b55f936eaa/README.md) · [LICENSE](https://github.com/marp-team/marp/blob/95263d5a0df563633ef6611c986b34b55f936eaa/LICENSE) · [metadata GitHub](https://api.github.com/repos/marp-team/marp).
+
+<a id="anhkysuai-2026-11-23-genoffice"></a>
+
+### GenOffice
+
+**Repo:** [genspark-ai/genoffice](https://github.com/genspark-ai/genoffice) · **License:** Apache-2.0; kèm Unicode License V3 · **★ 12,798 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ soạn thảo tài liệu, bảng tính, slide và PDF có agent AI, CLI và MCP.
+
+**Giá trị và cơ chế:** README mô tả chỉnh sửa OOXML, tracked changes/diff và export định dạng gốc; monorepo tách ứng dụng và engine, hữu ích tham khảo AI tác động lên tài liệu có cấu trúc.
+
+**Giới hạn:** Cam kết giữ byte không đổi và tương thích Office chưa kiểm bằng file thật. Tính năng ẩn nội dung chỉ áp dụng AI trong app; CLI/MCP/headless vẫn đọc file trực tiếp theo README.
+
+**Cách tham khảo/tích hợp:** Dùng bản sao tài liệu, so sánh round-trip trong Office và kiểm endpoint AI trước ghép vào quy trình.
+
+**Thay thế:** onlyoffice, libreoffice, [Presenton](../16-docs-tools/README.md#anhkysuai-2026-11-23-presenton).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`004b8224ee1b`](https://github.com/genspark-ai/genoffice/commit/004b8224ee1b378a11f3fd588018545e9bcf79af). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/genspark-ai/genoffice/blob/004b8224ee1b378a11f3fd588018545e9bcf79af/README.md) · [LICENSE](https://github.com/genspark-ai/genoffice/blob/004b8224ee1b378a11f3fd588018545e9bcf79af/LICENSE) · [LICENSE-UNICODE.txt](https://github.com/genspark-ai/genoffice/blob/004b8224ee1b378a11f3fd588018545e9bcf79af/LICENSE-UNICODE.txt) · [metadata GitHub](https://api.github.com/repos/genspark-ai/genoffice).
+
+<a id="anhkysuai-2026-11-23-zotero-pdf-translate"></a>
+
+### Translate for Zotero
+
+**Repo:** [windingwind/zotero-pdf-translate](https://github.com/windingwind/zotero-pdf-translate) · **License:** AGPL-3.0 · **★ 12,329 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Plugin dịch văn bản, PDF/EPUB, metadata, annotation và note trong Zotero.
+
+**Giá trị và cơ chế:** README gắn kết quả dịch vào selection, chú thích và cửa sổ đối chiếu; hỗ trợ nhiều dịch vụ, phù hợp đọc tài liệu nghiên cứu ngay tại thư viện tham khảo.
+
+**Giới hạn:** Manifest tại SHA là beta. Chưa thử tương thích Zotero hoặc chất lượng dịch; mỗi provider có quota, ngôn ngữ và chi phí riêng, có thể gửi nội dung tài liệu ra ngoài.
+
+**Cách tham khảo/tích hợp:** Chọn engine theo dữ liệu được phép gửi, giữ văn bản nguồn và kiểm annotation trước đồng bộ thư viện.
+
+**Thay thế:** [KISS Translator](../13-dev-stack-devops/README.md#anhkysuai-2026-11-23-kiss-translator), easydict, immersive-translate.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`4e3edb955fe2`](https://github.com/windingwind/zotero-pdf-translate/commit/4e3edb955fe20ff7a2f9a7595cd0264e39b13a29). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/windingwind/zotero-pdf-translate/blob/4e3edb955fe20ff7a2f9a7595cd0264e39b13a29/README.md) · [LICENSE](https://github.com/windingwind/zotero-pdf-translate/blob/4e3edb955fe20ff7a2f9a7595cd0264e39b13a29/LICENSE) · [metadata GitHub](https://api.github.com/repos/windingwind/zotero-pdf-translate).
+
+<a id="anhkysuai-2026-11-23-presenton"></a>
+
+### Presenton
+
+**Repo:** [presenton/presenton](https://github.com/presenton/presenton) · **License:** Apache-2.0 · **★ 12,025 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Sinh, chỉnh sửa và xuất thuyết trình bằng AI qua web, desktop hoặc API.
+
+**Giá trị và cơ chế:** README mô tả prompt/tài liệu đầu vào, template và model tự chọn; ứng dụng hướng tới PPTX còn chỉnh sửa được, hữu ích làm điểm khởi đầu cho quy trình tạo deck.
+
+**Giới hạn:** Manifest ghi beta; chưa kiểm độ trung thực export, font hay round-trip PowerPoint. Self-hosted không có nghĩa mọi model/image provider đều local, cần xét cấu hình và quyền template.
+
+**Cách tham khảo/tích hợp:** Dùng một deck mẫu có bảng/hình, duyệt nội dung và render từng trang trước chia sẻ đầu ra.
+
+**Thay thế:** [slidev](../08-awesome-lists-learning/README.md#6c57-dựng-video--slide-tự-động), [Marp — kho đầu mối](../16-docs-tools/README.md#anhkysuai-2026-11-23-marp), [GenOffice](../16-docs-tools/README.md#anhkysuai-2026-11-23-genoffice).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`ac708abeb2ef`](https://github.com/presenton/presenton/commit/ac708abeb2ef9ffaad8aaae6d57589a1db2b192d). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/presenton/presenton/blob/ac708abeb2ef9ffaad8aaae6d57589a1db2b192d/README.md) · [LICENSE](https://github.com/presenton/presenton/blob/ac708abeb2ef9ffaad8aaae6d57589a1db2b192d/LICENSE) · [metadata GitHub](https://api.github.com/repos/presenton/presenton).
+
+<a id="anhkysuai-2026-11-23-slides"></a>
+
+### Slides
+
+**Repo:** [maaslalani/slides](https://github.com/maaslalani/slides) · **License:** MIT · **★ 11,712 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thuyết trình Markdown ngay trong terminal với phím điều hướng và code block.
+
+**Giá trị và cơ chế:** README mô tả phân slide bằng dấu phân cách, chạy đoạn code và tiền xử lý nội dung; tiện cho bài trình bày kỹ thuật trực tiếp trong CLI.
+
+**Giới hạn:** Code execution/preprocess có thể chạy lệnh; chỉ dùng slide tin cậy. Go trong manifest mới hơn phiên bản workflow test đã đọc, nên không suy CI bảo đảm HEAD. Chưa trình chiếu thực.
+
+**Cách tham khảo/tích hợp:** Dùng nội dung đã duyệt, kiểm font/kích thước terminal và vô hiệu hóa phần thực thi không cần thiết.
+
+**Thay thế:** [Marp — kho đầu mối](../16-docs-tools/README.md#anhkysuai-2026-11-23-marp), [slidev](../08-awesome-lists-learning/README.md#6c57-dựng-video--slide-tự-động), [Glow](../16-docs-tools/README.md#anhkysuai-2026-11-23-glow).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`92af1ef1f33a`](https://github.com/maaslalani/slides/commit/92af1ef1f33a75bd51db9842a760bd228f3b1a61). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/maaslalani/slides/blob/92af1ef1f33a75bd51db9842a760bd228f3b1a61/README.md) · [LICENSE](https://github.com/maaslalani/slides/blob/92af1ef1f33a75bd51db9842a760bd228f3b1a61/LICENSE) · [metadata GitHub](https://api.github.com/repos/maaslalani/slides).
+
+<a id="anhkysuai-2026-11-23-gpt-academic"></a>
+
+### GPT Academic
+
+**Repo:** [binary-husky/gpt_academic](https://github.com/binary-husky/gpt_academic) · **License:** GPL-3.0 · **★ 71,715 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Giao diện và hệ plugin hỗ trợ đọc, dịch, hiệu đính tài liệu học thuật và giải thích mã.
+
+**Giá trị và cơ chế:** README mô tả plugin LaTeX/PDF/arXiv, ghi lịch sử và gọi plugin bằng ngôn ngữ tự nhiên; hữu ích tham khảo chuỗi chia tài liệu–gọi model–tổng hợp kết quả.
+
+**Giới hạn:** Chưa kiểm dịch thuật hoặc giữ cấu trúc LaTeX; một số tính năng GUI mới còn ở trạng thái đang thử. Chất lượng và dữ liệu gửi ngoài phụ thuộc model/Doc2x/provider đã cấu hình.
+
+**Cách tham khảo/tích hợp:** Thử tài liệu công khai, đối chiếu công thức và trích dẫn với bản gốc trước dùng kết quả cho nghiên cứu.
+
+**Thay thế:** zotero-pdf-translate, [Docling](../26-document-intelligence-ocr/README.md#docling-factory), [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`d6bde0fa5437`](https://github.com/binary-husky/gpt_academic/commit/d6bde0fa54373309bd05823a49bda8da019d2c77). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/binary-husky/gpt_academic/blob/d6bde0fa54373309bd05823a49bda8da019d2c77/README.md) · [LICENSE](https://github.com/binary-husky/gpt_academic/blob/d6bde0fa54373309bd05823a49bda8da019d2c77/LICENSE) · [metadata GitHub](https://api.github.com/repos/binary-husky/gpt_academic).
+
+<a id="anhkysuai-2026-11-23-sheetjs-community-edition"></a>
+
+### SheetJS Community Edition
+
+**Repo:** [SheetJS/sheetjs](https://github.com/SheetJS/sheetjs) · **License:** Apache-2.0 · **★ 36,337 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Đọc và ghi nhiều định dạng bảng tính trong ứng dụng JavaScript.
+
+**Giá trị và cơ chế:** Bản Community Edition tập trung chuyển đổi dữ liệu workbook; README phân biệt rõ một số khả năng nâng cao thuộc SheetJS Pro.
+
+**Giới hạn:** Snapshot GitHub đã chuyển vai trò sang hướng dẫn tới git.sheetjs.com; mã và phiên bản ở đây không đại diện bản phát hành mới nhất. Chưa kiểm round-trip công thức, định dạng hay file lớn.
+
+**Cách tham khảo/tích hợp:** Theo liên kết nguồn chính thức mới trong README, ghim phiên bản và thử các workbook thực tế trước khi đưa vào luồng xuất nhập dữ liệu.
+
+**Thay thế:** ExcelJS, openpyxl, LibreOffice.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`3f44ddd99c70`](https://github.com/SheetJS/sheetjs/commit/3f44ddd99c704d7ca35ea76fef7b8af2d2d435cb). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/SheetJS/sheetjs/blob/3f44ddd99c704d7ca35ea76fef7b8af2d2d435cb/README.md) · [LICENSE](https://github.com/SheetJS/sheetjs/blob/3f44ddd99c704d7ca35ea76fef7b8af2d2d435cb/LICENSE) · [metadata GitHub](https://api.github.com/repos/SheetJS/sheetjs).
+
+<a id="anhkysuai-2026-11-23-pdfcraft"></a>
+
+### PDFCraft
+
+**Repo:** [storytold/pdfcraft](https://github.com/storytold/pdfcraft) · **License:** MIT OR Apache-2.0 cho mã; tài sản thương hiệu có điều khoản riêng · **★ 21,518 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Đọc, tổ chức và chỉnh sửa PDF bằng ứng dụng native cùng engine và CLI Rust.
+
+**Giá trị và cơ chế:** README mô tả tách, ghép, thay đổi trang, mã hóa và cơ chế ghi file có bảo toàn; Cargo xác nhận lựa chọn giấy phép MIT hoặc Apache-2.0.
+
+**Giới hạn:** Chưa kiểm độ trung thực kết xuất, round-trip hoặc xử lý file hỏng. README yêu cầu fork thay thương hiệu; không suy quyền dùng logo từ license mã.
+
+**Cách tham khảo/tích hợp:** Thử trên bản sao PDF có font, biểu mẫu và chữ ký cần giữ, kiểm khác biệt trước khi thay công cụ hiện tại.
+
+**Thay thế:** PDF Arranger, [Stirling-PDF](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính), MuPDF.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`9b3e6d6f38de`](https://github.com/storytold/pdfcraft/commit/9b3e6d6f38de906c758d93e8ece45cbf105fd515). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/storytold/pdfcraft/blob/9b3e6d6f38de906c758d93e8ece45cbf105fd515/README.md) · [LICENSE-APACHE](https://github.com/storytold/pdfcraft/blob/9b3e6d6f38de906c758d93e8ece45cbf105fd515/LICENSE-APACHE) · [LICENSE-MIT](https://github.com/storytold/pdfcraft/blob/9b3e6d6f38de906c758d93e8ece45cbf105fd515/LICENSE-MIT) · [metadata GitHub](https://api.github.com/repos/storytold/pdfcraft).
+
+<a id="anhkysuai-2026-11-23-easydict"></a>
+
+### Easydict
+
+**Repo:** [tisfeng/Easydict](https://github.com/tisfeng/Easydict) · **License:** GPL-3.0; README có tuyên bố mục đích sử dụng không nhất quán cần làm rõ · **★ 15,402 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tra từ, dịch văn bản và OCR ảnh chụp màn hình trên macOS.
+
+**Giá trị và cơ chế:** README mô tả nhiều nhà cung cấp dịch/model, thao tác từ lựa chọn văn bản và công cụ dòng lệnh; phù hợp khảo sát trải nghiệm dịch tích hợp desktop.
+
+**Giới hạn:** LICENSE là GPL-3.0 nhưng README thêm câu chỉ dành cho học tập/giao lưu; cần hỏi rõ khi tái phân phối. Chưa kiểm chất lượng OCR, dịch hay luồng dữ liệu tới provider.
+
+**Cách tham khảo/tích hợp:** Cấu hình dịch vụ phù hợp, kiểm quyền macOS và dữ liệu gửi ra ngoài, rồi thử ngôn ngữ/tài liệu thực tế trước khi sử dụng rộng.
+
+**Thay thế:** KISS Translator, zotero-pdf-translate, Pot.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`1613c54e15fe`](https://github.com/tisfeng/Easydict/commit/1613c54e15fef7e53818ebca2bcd0a50eb86110b). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/tisfeng/Easydict/blob/1613c54e15fef7e53818ebca2bcd0a50eb86110b/README.md) · [LICENSE](https://github.com/tisfeng/Easydict/blob/1613c54e15fef7e53818ebca2bcd0a50eb86110b/LICENSE) · [metadata GitHub](https://api.github.com/repos/tisfeng/Easydict).
+
+<a id="anhkysuai-jekyll-jekyll"></a>
+
+### Jekyll
+
+- **Repo:** [jekyll/jekyll](https://github.com/jekyll/jekyll).
+- **Mục đích:** Sinh website tĩnh từ Markdown và template Liquid, phù hợp blog và tài liệu.
+- **Điểm đáng dùng:** README nêu front matter, permalink và plugin, còn workflow kiểm Minitest/Cucumber trên Ruby; hữu ích cho kho nội dung quản lý bằng Git.
+- **License:** MIT.
+- **Giới hạn:** Plugin chạy trong môi trường build, cần tin nguồn và ghim dependency; nội dung tĩnh không tự cung cấp chức năng server hay kiểm toàn bộ link.
+- **Tích hợp:** Cài gem hoặc dùng môi trường Pages tương thích, khóa dependency và tách nội dung khỏi plugin không cần thiết.
+- **Đối chiếu:** [Hugo](../08-awesome-lists-learning/README.md#6c59-framework-backend) cho build Go; [Astro](../13-dev-stack-devops/README.md) cho component hiện đại; MkDocs cho tài liệu kỹ thuật.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `97c3bdc822df9d5bea4c269b29a28de5a5e29d70` (2026-10-13T13:43:37-05:00); 51,793 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.markdown](https://github.com/jekyll/jekyll/blob/97c3bdc822df9d5bea4c269b29a28de5a5e29d70/README.markdown) · [LICENSE](https://github.com/jekyll/jekyll/blob/97c3bdc822df9d5bea4c269b29a28de5a5e29d70/LICENSE) · [.github/workflows/ci.yml](https://github.com/jekyll/jekyll/blob/97c3bdc822df9d5bea4c269b29a28de5a5e29d70/.github/workflows/ci.yml) · [GitHub API](https://api.github.com/repos/jekyll/jekyll).
+
+<a id="anhkysuai-hexojs-hexo"></a>
+
+### Hexo
+
+- **Repo:** [hexojs/hexo](https://github.com/hexojs/hexo).
+- **Mục đích:** Sinh blog tĩnh từ nội dung Markdown trên Node.js.
+- **Điểm đáng dùng:** CLI tạo bài, chạy server và xuất tệp tĩnh; API plugin/theme phục vụ tùy biến pipeline, manifest hiện yêu cầu Node >=20.19.
+- **License:** MIT.
+- **Giới hạn:** Theme, plugin và lệnh deploy là dependency riêng cần kiểm tra; site tĩnh không tự có dữ liệu động hoặc quyền truy cập.
+- **Tích hợp:** Dựng mẫu blog có nội dung và theme được khóa, xuất artifact tĩnh qua CI và kiểm tra liên kết.
+- **Đối chiếu:** [Hugo](../08-awesome-lists-learning/README.md#6c59-framework-backend) cho build Go; [Jekyll](../16-docs-tools/README.md#anhkysuai-jekyll-jekyll) cho Ruby; [Astro](../13-dev-stack-devops/README.md) cho trang nội dung có component.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `36e6a73058cef7502291a69171f052b83eae42dd` (2026-10-27T00:27:57+09:00); 41,782 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/hexojs/hexo/blob/36e6a73058cef7502291a69171f052b83eae42dd/README.md) · [LICENSE](https://github.com/hexojs/hexo/blob/36e6a73058cef7502291a69171f052b83eae42dd/LICENSE) · [package.json](https://github.com/hexojs/hexo/blob/36e6a73058cef7502291a69171f052b83eae42dd/package.json) · [.github/workflows/tester.yml](https://github.com/hexojs/hexo/blob/36e6a73058cef7502291a69171f052b83eae42dd/.github/workflows/tester.yml) · [GitHub API](https://api.github.com/repos/hexojs/hexo).
+
+<a id="anhkysuai-freecodecamp-devdocs"></a>
+
+### DevDocs
+
+- **Repo:** [freeCodeCamp/devdocs](https://github.com/freeCodeCamp/devdocs).
+- **Mục đích:** Trình duyệt nhiều bộ tài liệu API có tìm kiếm và chế độ offline.
+- **Điểm đáng dùng:** Kiến trúc tài liệu nêu scraper Ruby tạo nội dung/metadata, app JavaScript dùng Sinatra; có lệnh tải theo bộ và phiên bản.
+- **License:** MPL-2.0 cho phần mềm; tài liệu nhập có license riêng.
+- **Giới hạn:** Repo đang tìm maintainer; mỗi nguồn tài liệu có độ mới và quyền tái phân phối riêng, không áp MPL cho toàn nội dung tải về.
+- **Tích hợp:** Dùng bộ docs theo đúng runtime của template, ghi phiên bản và kiểm tra attribution trước khi chia sẻ bản offline.
+- **Đối chiếu:** Zeal cho desktop offline; Dash cho macOS; tài liệu upstream theo phiên bản.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `e6ee9b5673346e73962e037146de2b4f5109ae0f` (2026-11-20T11:15:00+01:00); 39,658 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/freeCodeCamp/devdocs/blob/e6ee9b5673346e73962e037146de2b4f5109ae0f/README.md) · [COPYRIGHT](https://github.com/freeCodeCamp/devdocs/blob/e6ee9b5673346e73962e037146de2b4f5109ae0f/COPYRIGHT) · [LICENSE](https://github.com/freeCodeCamp/devdocs/blob/e6ee9b5673346e73962e037146de2b4f5109ae0f/LICENSE) · [package.json](https://github.com/freeCodeCamp/devdocs/blob/e6ee9b5673346e73962e037146de2b4f5109ae0f/package.json) · [.github/workflows/test.yml](https://github.com/freeCodeCamp/devdocs/blob/e6ee9b5673346e73962e037146de2b4f5109ae0f/.github/workflows/test.yml) · [GitHub API](https://api.github.com/repos/freeCodeCamp/devdocs).
+
+<a id="anhkysuai-charmbracelet-vhs"></a>
+
+### VHS
+
+**Repo:** [charmbracelet/vhs](https://github.com/charmbracelet/vhs) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`24fa2254a980`](https://github.com/charmbracelet/vhs/tree/24fa2254a9806091e6ee6a980e9f3bcfe0a9ba53) (commit 2026-09-24). **Sao:** 21,386 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/charmbracelet/vhs).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Ghi demo terminal thành GIF bằng tệp kịch bản .tape để dùng trong tài liệu và minh họa CLI. |
+| Giá trị và cơ chế theo tài liệu | README trình bày lệnh Output, Set, Type, Sleep và Enter; cho phép lưu kích thước, font và nhịp thao tác cùng mã nguồn. Go module và workflow build dùng chung cung cấp dấu vết đóng gói. |
+| Giới hạn | Cần ttyd và ffmpeg trên PATH hoặc môi trường container tương ứng. Tape có thể chạy lệnh thật; ảnh động không tự chứng minh CLI đúng, ổn định hoặc vượt kiểm thử. |
+| Điều kiện tích hợp | Ghi bằng dữ liệu mẫu trong môi trường tách biệt, cố định font/theme và kích thước; kiểm khung hình, nội dung nhạy cảm và dung lượng trước đưa vào tài liệu. |
+| Lựa chọn đối chiếu | Asciinema; Terminalizer; ttyd. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/charmbracelet/vhs/blob/24fa2254a9806091e6ee6a980e9f3bcfe0a9ba53/README.md) · [LICENSE](https://github.com/charmbracelet/vhs/blob/24fa2254a9806091e6ee6a980e9f3bcfe0a9ba53/LICENSE) · [go.mod](https://github.com/charmbracelet/vhs/blob/24fa2254a9806091e6ee6a980e9f3bcfe0a9ba53/go.mod) · [.github/workflows/build.yml](https://github.com/charmbracelet/vhs/blob/24fa2254a9806091e6ee6a980e9f3bcfe0a9ba53/.github/workflows/build.yml).
+
+<a id="anhkysuai-katex-katex"></a>
+
+### KaTeX
+
+**Repo:** [KaTeX/KaTeX](https://github.com/KaTeX/KaTeX) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`9b2280dee4ac`](https://github.com/KaTeX/KaTeX/tree/9b2280dee4acb4da7d866dbaccad120b00949c27) (commit 2026-11-03). **Sao:** 20,534 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/KaTeX/KaTeX).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Thư viện dựng công thức TeX trên web, hỗ trợ xuất HTML phía server để dùng trong tài liệu và nội dung giáo dục. |
+| Giá trị và cơ chế theo tài liệu | README có render trực tiếp và auto-render, nêu khả năng pre-render Node; manifest 0.19.1 có Jest, kiểm TypeScript và screenshot test. Có thể tích hợp vào Markdown hoặc hệ thống xuất bản. |
+| Giới hạn | Chỉ hỗ trợ một phần LaTeX và các package; chưa xác minh mọi công thức, tốc độ hay khả năng đọc bằng công nghệ hỗ trợ. Dữ liệu công thức không tin cậy cần giới hạn cấu hình và tài nguyên. |
+| Điều kiện tích hợp | Kiểm bộ công thức thực tế, phân phối CSS/font đúng phiên bản và xử lý lỗi cú pháp; chọn cách render server hoặc client, thử copy, in ấn và accessibility. |
+| Lựa chọn đối chiếu | MathJax; Temml; MathLive. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/KaTeX/KaTeX/blob/9b2280dee4acb4da7d866dbaccad120b00949c27/README.md) · [LICENSE](https://github.com/KaTeX/KaTeX/blob/9b2280dee4acb4da7d866dbaccad120b00949c27/LICENSE) · [package.json](https://github.com/KaTeX/KaTeX/blob/9b2280dee4acb4da7d866dbaccad120b00949c27/package.json) · [.github/workflows/ci.yml](https://github.com/KaTeX/KaTeX/blob/9b2280dee4acb4da7d866dbaccad120b00949c27/.github/workflows/ci.yml).
+
+<a id="anhkysuai-2026-11-23-obsidianmd-obsidian-releases"></a>
+
+### Obsidian releases and community directories
+
+**Repo:** [obsidianmd/obsidian-releases](https://github.com/obsidianmd/obsidian-releases) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 23,476 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Kho phát hành và danh mục plugin/theme cộng đồng của Obsidian.
+
+**Giá trị:** Hữu ích để tìm repo plugin, theo dõi metadata phát hành và tham khảo quy trình tiếp nhận phần mở rộng.
+
+**Giới hạn:** README nêu rõ không chứa mã nguồn Obsidian và Obsidian không phải phần mềm nguồn mở; từng plugin/theme cần đánh giá và kiểm quyền riêng. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Đối chiếu phạm vi và giấy phép, thử một ca nhỏ có kết quả mong đợi trước khi nhúng vào dự án.
+
+**Lựa chọn để đối chiếu:** [logseq/logseq](https://github.com/logseq/logseq) · [laurent22/joplin](https://github.com/laurent22/joplin). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`19aeb423bf6627cd2a01eb1ab91070763c7016b3`](https://github.com/obsidianmd/obsidian-releases/commit/19aeb423bf6627cd2a01eb1ab91070763c7016b3), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/obsidianmd/obsidian-releases/blob/19aeb423bf6627cd2a01eb1ab91070763c7016b3/README.md) · [package.json](https://github.com/obsidianmd/obsidian-releases/blob/19aeb423bf6627cd2a01eb1ab91070763c7016b3/package.json) · [.github/workflows/plugin-stat.yml](https://github.com/obsidianmd/obsidian-releases/blob/19aeb423bf6627cd2a01eb1ab91070763c7016b3/.github/workflows/plugin-stat.yml) · [metadata GitHub](https://api.github.com/repos/obsidianmd/obsidian-releases).
+
 ## 3. Nguồn
 
 - https://www.mintlify.com/library/best-llms-txt-platforms · https://dupple.com/learn/best-documentation-tools · https://ekline.io/blog/docusaurus-alternatives · https://www.pkgpulse.com/guides/best-documentation-frameworks-2026 · https://docsalot.dev/blog/best-mintlify-alternatives · https://affine.pro/blog/best-technical-documentation-software-tools-for-developers
@@ -447,3 +876,701 @@ Chi tiết Vale được đọc lại ở HEAD `0d9e80234ba63323fefa027b5698467c
 - https://codersera.com/blog/llms-txt-complete-guide-2026/ · https://limy.ai/blog/llms-txt-in-2026-the-full-guide · https://aisaasradar.com/article/llms-txt-adoption-data-2026 · https://seeklab.io/blog/what-is-llmstxt-the-honest-2026-guide/
 - §2b (12/10/2026): https://github.com/vuejs/vitepress · https://github.com/rust-lang/mdBook · https://github.com/sphinx-doc/sphinx · https://github.com/zensical/zensical · https://github.com/docsifyjs/docsify · https://github.com/yamadashy/repomix · https://github.com/AsyncFuncAI/deepwiki-open · https://github.com/coderamp-labs/gitingest · https://github.com/shuding/nextra · https://github.com/mintlify/starter
 - §2c (12/10/2026): https://github.com/braedonsaunders/codeflow (clone đầy đủ, HEAD `b0e82d1`: README.md, index.html, cli/codeflow.mjs, card/action.yml, card/lib/analyzer.js, card/README.md, .github/workflows/, tests/) · https://codeflow-five.vercel.app/ · https://github.com/braedonsaunders · https://themenonlab.blog/blog/codeflow-github-architecture-visualizer · https://www.skills.sh/akillness/jeo-skills/codeflow · https://github.com/ahmedkhaleel2004/gitdiagram · https://github.com/sverweij/dependency-cruiser · https://github.com/MaibornWolff/codecharta
+
+<a id="xlsx-2026-11-23"></a>
+
+## Đánh giá bổ sung từ bảng "Top 100 GitHub AI Skills" — 23/11/2026
+
+Phần này có **1 hồ sơ** từ bảng xlsx người dùng gửi ngày 2026-11-23; đọc bằng `git clone --depth 1`, không cài hay chạy mã upstream. Lúc đọc, REST API của GitHub bị chặn nên trong hồ sơ ★ và `pushed_at` ghi **(chưa xác minh)**; số sao lấy lại cùng ngày qua GitHub search API nằm trong `data/projects.json` và [catalog/](../catalog/README.md), `pushed_at` vẫn chưa xác minh.
+
+<a id="xlsx-2026-11-23-agent-notion-template-docs"></a>
+
+### agent-notion-template-docs (notion-doc)
+
+**Repo:** [heyman333/agent-notion-template-docs](https://github.com/heyman333/agent-notion-template-docs) · **License:** MIT (Copyright 2026 heyman333, Yeongsu Han) · **★ 106 (GitHub search API, 2026-11-23)**
+
+**Mục đích:** Skill `notion-doc` bắt agent xuất tài liệu HTML có giao diện kiểu Notion (callout 5 màu, toggle, checklist, bookmark, code Prism, sáng/tối, in PDF). **Chỉ quyết định hình thức**, không lấy dữ liệu hay template từ Notion; tên repo dễ gây hiểu nhầm là kho template/API Notion.
+
+**Giá trị và cơ chế:** Một tệp chuẩn `skills/notion-doc/template.html` (CSS token, nội dung 720px) thay cho việc agent tự sinh CSS. Hook `PostToolUse` (`Write|Edit|MultiEdit|apply_patch`) chạy `notion-doc-lint.py`: nếu file có dấu vân tay canon thì gọi `lint.py` bắt CSS/class tự chế; nếu là HTML dạng tài liệu mà thiếu dấu vân tay thì nhắc nạp skill; bỏ qua `node_modules`, `dist`, `build`...; lỗi ngoại lệ thì fail-open. CI `lint.yml` chạy lint 3 ví dụ so với template, test gating hook, test diff token, kiểm manifest Codex/Claude Code cùng version. `notion-sync.yml` (thứ Hai hằng tuần, Playwright) so token màu và loại block với ảnh chụp `sync/notion-snapshot.json` (2026-09-01) của một trang tham chiếu công khai của bên thứ ba, trôi lệch thì mở issue.
+
+**Giới hạn:** Mô phỏng thị giác Notion; README không có tuyên bố "không liên kết với Notion" mà tôi đọc thấy (grep `affiliat|trademark|unofficial` không khớp), nên dùng tên/màu Notion trong sản phẩm công khai cần xem thêm điều khoản Notion (chưa xác minh). Tham chiếu trang `thomasfrank.notion.site` là nội dung bên thứ ba, chỉ để đo, không nhúng. Template nạp Prism từ cdnjs (script ngoài, `prism 1.29.0`). Skill ghi `MUST be used whenever creating documents` nên sẽ giành quyền với skill tài liệu khác. 31 commit trong 2 tháng, một tác giả. Chưa chạy lint, hook hay Playwright.
+
+**Cách tham khảo/tích hợp:** Mẫu "một template chuẩn + lint chặn lệch + hook nhắc + theo dõi drift hằng tuần" áp được cho mọi skill định dạng đầu ra (báo cáo, email). Khi nhúng: ghim SHA, đổi mô tả skill để không "MUST" mọi tài liệu, tự lưu Prism nếu cần chạy offline.
+
+**Thay thế:** [obsidian-skills](../16-docs-tools/README.md) (obsidianmd, định dạng đầu ra Obsidian), [canva-skills](../20-claude-plugins-ecosystem/README.md) (đầu ra thiết kế qua MCP), `canvas-design` trong [anthropics/skills](../22-motion-design-animation/README.md) (thiết kế tĩnh, không có lint).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`9f809554231f`](https://github.com/heyman333/agent-notion-template-docs/commit/9f809554231fc9782f1af3c1c9bf6ae4242df72d) (2026-10-26). Đọc README, LICENSE, SKILL.md, `hooks.json`, đầu `notion-doc-lint.py`, `lint.yml`, `notion-sync.yml`, `template.html` (chỗ script ngoài). Chưa đọc hết `lint.py` và scripts; chưa chạy.
+
+**Nguồn:** [README.md](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/README.md) · [LICENSE](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/LICENSE) · [SKILL.md](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/skills/notion-doc/SKILL.md) · [hooks.json](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/hooks/hooks.json) · [lint.yml](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/.github/workflows/lint.yml) · [notion-sync.yml](https://github.com/heyman333/agent-notion-template-docs/blob/9f809554231fc9782f1af3c1c9bf6ae4242df72d/.github/workflows/notion-sync.yml) · [metadata GitHub](https://api.github.com/search/repositories?q=repo:heyman333/agent-notion-template-docs).
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+12 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-book-to-skill"></a>
+
+### book-to-skill
+
+`virgiliojr94/book-to-skill` · License: MIT · ★ 38.301 · docs-read · 2026-11-18
+
+Biến sách kỹ thuật hoặc thư mục tài liệu (PDF, EPUB, DOCX, MD, HTML…) thành agent skill có cấu trúc: SKILL.md, file theo chương, glossary, để agent nạp khi cần. Trích xuất tất định bằng Python, lùi về stdlib khi thiếu công cụ; mỗi chương một file nạp theo nhu cầu (README đo tốn ít token hơn 24–51 lần); xử lý cục bộ; đẩy lên GitHub mặc định tạo repo private. Điều kiện: Chỉ dùng tài liệu mình có quyền đọc. skill từ sách có bản quyền giữ private; chỉ cài từ repo chính thức (SECURITY-NOTICE.md cảnh báo bản re-upload). ★ 18/11/2026: 38.301 (GitHub search API), nhóm "Skill, Prompt & Mẫu cho AI" trong kho-repo của Phan Đông Giang, mục 08 §6c
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c-kho-repo-của-phan-đông-giang-phandonggiangcomkho-repo-694-repo-32-nhóm-và-24-repo-aiagent-đọc-mã-bảng-người-dùng-dán-kiểm-18112026) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-archify"></a>
+
+### archify
+
+`tt-a1i/archify` · License: Apache-2.0 · ★ 97.508 · docs-read · 2026-11-18
+
+Skill biến mô tả, câu hỏi hoặc repo thành một file HTML tương tác tự chứa: sơ đồ kiến trúc, workflow, ERD, timeline, waterfall hoặc trang giải thích. Mỗi chế độ có JSON IR có schema; validator kiểm schema, layout, HTML/SVG, khoảng cách nhãn trước khi giao, lỗi trả mã luật và cách sửa; node sơ đồ dẫn chứng file và dòng ghim theo commit; xuất PNG/PDF, theme sáng/tối, nhiều ngôn ngữ. Điều kiện: Node.js 18+; mã trước một commit mốc vẫn theo MIT (ghi trong NOTICE); kênh chính thức chỉ có archify.si và GitHub. ★ 18/11/2026: 97.508 (GitHub search API), nhóm "Đồ họa, 3D & Sơ đồ" trong kho-repo của Phan Đông Giang, mục 08 §6c
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c-kho-repo-của-phan-đông-giang-phandonggiangcomkho-repo-694-repo-32-nhóm-và-24-repo-aiagent-đọc-mã-bảng-người-dùng-dán-kiểm-18112026) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-ppt-master"></a>
+
+### ppt-master
+
+`hugohe3/ppt-master` · License: MIT · ★ 77.973 · docs-read · 2026-11-18
+
+Quy trình cho agent tạo file PowerPoint sửa được từ PDF, DOCX, trang web hoặc văn bản: phân tích, thiết kế từng trang, xuất PPTX cục bộ; chiết template từ mẫu, điền vào .pptx có sẵn, thêm chuyển cảnh và thuyết minh. Xuất shape native và slide master thật, chart/table có Edit Data; công thức thành OMML sửa được; chế độ sửa .pptx giữ nguyên các trang không đổi; tìm ảnh web và tự chèn credit. Điều kiện: Python 3.10–3.14; tốn nhiều token. nên dùng model ngữ cảnh dài; sinh ảnh cần khóa nhà cung cấp. ★ 18/11/2026: 77.973 (GitHub search API), nhóm "Dựng video & Slide tự động" trong kho-repo của Phan Đông Giang, mục 08 §6c
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c-kho-repo-của-phan-đông-giang-phandonggiangcomkho-repo-694-repo-32-nhóm-và-24-repo-aiagent-đọc-mã-bảng-người-dùng-dán-kiểm-18112026) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-slidev"></a>
+
+### slidev
+
+`slidevjs/slidev` · License: MIT · ★ 49.543 · docs-read · 2026-11-18
+
+Công cụ tạo slide thuyết trình cho lập trình viên từ Markdown, chạy trên Vite và Vue 3. Hỗ trợ code highlight, live coding (Shiki, Monaco), LaTeX (KaTeX), sơ đồ Mermaid, chế độ người trình bày, vẽ chú thích, ghi hình; xuất PDF, PNG, PPTX; monorepo nhiều gói (cli, parser, client, create-app, create-theme, extension VS Code). Điều kiện: Cần Node.js >= 22.12.0. ★ 18/11/2026: 49.543 (GitHub search API), nhóm "Dựng video & Slide tự động" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c57-dựng-video--slide-tự-động) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-banana-slides"></a>
+
+### banana-slides
+
+`Anionex/banana-slides` · License: AGPL-3.0 · ★ 16.025 · docs-read · 2026-11-18
+
+Ứng dụng tạo slide AI-native dựa trên mô hình sinh ảnh, tạo bài trình chiếu từ ý tưởng, dàn ý, tài liệu hoặc mẫu và sửa bằng ngôn ngữ tự nhiên. Ba điểm bắt đầu: ý tưởng, dàn ý, mô tả từng trang; phân tích tài liệu PDF, Docx, MD, Txt làm nguồn; xuất PPTX hoặc PDF và PPTX chỉnh sửa được (đang beta), có Docker Compose, bản desktop và CLI. Điều kiện: Cần khoá API mô hình văn bản và sinh ảnh (Google, OpenAI, Volcengine… hoặc OAuth OpenAI); xuất PPTX chỉnh sửa tốt hơn cần khoá Baidu AI Cloud; bản phát hành mới nhất là v0.9.0-rc.8; AGPL và dùng thương mại mã đóng cần xin phép. ★ 18/11/2026: 16.025 (GitHub search API), nhóm "Dựng video & Slide tự động" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c57-dựng-video--slide-tự-động) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-pandoc"></a>
+
+### pandoc
+
+`jgm/pandoc` · License: GPL-2.0-or-later · ★ 46.954 · docs-read · 2026-11-18
+
+Thư viện Haskell và công cụ dòng lệnh chuyển đổi tài liệu giữa rất nhiều định dạng markup (Markdown, HTML, LaTeX, docx, EPUB, JATS…). Hỗ trợ hàng chục định dạng đầu vào và đầu ra (README liệt kê từ asciidoc, docx, epub, ipynb tới jira, latex); có pandoc-lua-engine cho filter Lua, pandoc-server và bản wasm trong repo; phát hành qua Hackage, Homebrew, Chocolatey và bộ cài cho Windows/macOS/Linux. Điều kiện: Giấy phép GPL-2.0-or-later (copyleft) khi phân phối hoặc nhúng thư viện. ★ 18/11/2026: 46.954 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-quarkdown"></a>
+
+### quarkdown
+
+`iamgio/quarkdown` · License: GPL-3.0 · ★ 16.396 · docs-read · 2026-11-18
+
+Hệ thống dàn trang dựa trên Markdown mở rộng có hàm (Turing-complete), biên dịch một nguồn thành sách in, bài báo, cơ sở tri thức hoặc trình chiếu. Hỗ trợ đích HTML dạng liền mạch và dạng trang qua paged.js; định nghĩa hàm, biến và thư viện ngay trong Markdown kèm hệ quyền hạn chế truy cập tài nguyên; cài qua script, Homebrew hoặc Scoop. Điều kiện: Xuất PDF cần trình duyệt (script cài tự cài kèm); copyleft GPL-3.0. ★ 18/11/2026: 16.396 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-bentopdf"></a>
+
+### bentopdf
+
+`alam00000/bentopdf` · License: AGPL-3.0 · ★ 16.388 · docs-read · 2026-11-18
+
+Bộ công cụ PDF chạy hoàn toàn phía trình duyệt, tự host được: gộp, tách, sửa, chuyển đổi, bảo mật PDF mà không tải tệp lên máy chủ. Tài liệu nêu hơn 50 công cụ PDF theo nhóm (sắp xếp, sửa, chuyển đổi, bảo mật); có ảnh Docker ghcr.io và hướng dẫn tự host gồm Docker Compose, Podman, hosting tĩnh và triển khai air-gapped; xử lý trong trình duyệt bằng WASM, tệp không rời máy người dùng. Điều kiện: AGPL-3.0: dùng trong sản phẩm đóng nguồn phải mua giấy phép thương mại; các thư viện AGPL (PyMuPDF, Ghostscript, CPDF) tải từ CDN jsDelivr lúc chạy, môi trường offline phải tự cấu hình; Hyper Compress và Kura cấp phép riêng. ★ 18/11/2026: 16.388 (GitHub search API), nhóm "Editor, Terminal & Dòng lệnh" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c58-editor-terminal--dòng-lệnh) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-officecli"></a>
+
+### OfficeCLI
+
+`iOfficeAI/OfficeCLI` · License: Apache-2.0 · ★ 33.400 · docs-read · 2026-11-18
+
+Công cụ dòng lệnh cho AI agent tạo, đọc, sửa tài liệu Word, Excel, PowerPoint mà không cần cài Office; có bộ dựng HTML/PNG để xem trước tài liệu. Một file nhị phân tự chứa, nhúng sẵn runtime .NET; lệnh watch xem trước trực tiếp trên trình duyệt; xuất JSON có cấu trúc cho từng phần tử tài liệu. Điều kiện: Lệnh officecli install tự cài skill vào các AI coding agent phát hiện được trên máy; build từ nguồn cần .NET 10 SDK. ★ 18/11/2026: 33.400 (GitHub search API), nhóm "Năng suất, Ghi chú & Việc làm" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c515-năng-suất-ghi-chú--việc-làm) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-awesome-cv"></a>
+
+### Awesome-CV
+
+`posquit0/Awesome-CV` · License: LaTeX Project Public License · ★ 28.975 · docs-read · 2026-11-18
+
+Mẫu LaTeX cho CV, résumé và thư xin việc, dễ tuỳ biến. Build bằng LuaLaTeX qua latexmk, có Dockerfile ghim digest làm môi trường chuẩn; có bộ test make test kiểm số trang, liên kết, font nhúng; có mẫu trên Overleaf. Điều kiện: Cần TeX Live đầy đủ (khuyến nghị 2026) với lualatex, latexmk, fontawesome6 và font Source Sans 3, Roboto; không hỗ trợ XeLaTeX và pdfLaTeX. ★ 18/11/2026: 28.975 (GitHub search API), nhóm "Năng suất, Ghi chú & Việc làm" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c515-năng-suất-ghi-chú--việc-làm) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-univer"></a>
+
+### univer
+
+`dream-num/univer` · License: Apache-2.0 · ★ 28.964 · docs-read · 2026-11-18
+
+Office SDK để nhúng bảng tính và tài liệu soạn thảo vào ứng dụng của bạn; repo chứa lõi Web SDK (mô hình nội dung, engine công thức và render, Facade API). Lõi Sheets và Docs mở theo Apache-2.0, dùng được trong ứng dụng thương mại; kiến trúc plugin với hệ lệnh hỗ trợ undo/redo; có Facade API cho ứng dụng và agent. Điều kiện: Plugin Web SDK thương mại, Server SDK (cộng tác thời gian thực, nhập/xuất file Office) và AI SDK thương mại được cấp phép riêng. ★ 18/11/2026: 28.964 (GitHub search API), nhóm "Năng suất, Ghi chú & Việc làm" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c515-năng-suất-ghi-chú--việc-làm) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-reveal-js"></a>
+
+### reveal.js
+
+`hakimel/reveal.js` · License: MIT · ★ 72.597 · docs-read · 2026-11-18
+
+Framework trình chiếu HTML mã nguồn mở, tạo slide chạy trên trình duyệt. Hỗ trợ slide lồng dọc, Markdown, Auto-Animate, xuất PDF, ghi chú người nói; phiên bản 6.0.2 trong package.json; có trình chỉnh sửa trực quan Slides.com cùng tác giả. Điều kiện: Khoá học video reveal.js là trả phí; Slides.com là dịch vụ riêng. ★ 18/11/2026: 72.597 (GitHub search API), nhóm "Đồ họa, 3D & Sơ đồ" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c527-đồ-họa-3d--sơ-đồ) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-code2prompt"></a>
+
+### code2prompt
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mufeedvh/code2prompt |
+| License | MIT |
+| Phiên bản đã đọc | `d762d9bbd0b837b8217329e12b36f1df9bfdbf5f` (commit 2026-11-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Cargo.toml, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-03 |
+| Nhận định | CLI Rust gói codebase thành một prompt LLM, có crate core và binding Python, kèm skills/ và llms-install.md. Chưa đọc mã nên chưa kiểm claim không quét secret. |
+| Nguồn | [README.md](https://github.com/mufeedvh/code2prompt/blob/d762d9bbd0b837b8217329e12b36f1df9bfdbf5f/README.md) · [LICENSE](https://github.com/mufeedvh/code2prompt/blob/d762d9bbd0b837b8217329e12b36f1df9bfdbf5f/LICENSE) · [Cargo.toml](https://github.com/mufeedvh/code2prompt/blob/d762d9bbd0b837b8217329e12b36f1df9bfdbf5f/Cargo.toml) · [ci.yml](https://github.com/mufeedvh/code2prompt/blob/d762d9bbd0b837b8217329e12b36f1df9bfdbf5f/.github/workflows/ci.yml) |
+
+<a id="ch-codebase-memory-mcp"></a>
+
+### codebase-memory-mcp
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/DeusData/codebase-memory-mcp |
+| License | MIT |
+| Phiên bản đã đọc | `1111d9a9e1380a0429ef2250f63223706af6289a` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, .github/workflows/_build.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-19; nhiều workflow CI (build, security, soak...) |
+| Nhận định | MCP server viết bằng C, dựng đồ thị tri thức code + tài liệu + hạ tầng, xử lý cục bộ; README nay có CBM Lens (beta) để xem đồ thị trên trình duyệt. Workflow _build.yml có tùy chọn attest provenance; claim sha256/SBOM/cosign chưa kiểm sâu. |
+| Nguồn | [README.md](https://github.com/DeusData/codebase-memory-mcp/blob/1111d9a9e1380a0429ef2250f63223706af6289a/README.md) · [LICENSE](https://github.com/DeusData/codebase-memory-mcp/blob/1111d9a9e1380a0429ef2250f63223706af6289a/LICENSE) · [_build.yml](https://github.com/DeusData/codebase-memory-mcp/blob/1111d9a9e1380a0429ef2250f63223706af6289a/.github/workflows/_build.yml) |
+
+<a id="ch-codeflow"></a>
+
+### CodeFlow
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/braedonsaunders/codeflow |
+| License | MIT |
+| Phiên bản đã đọc | `b70af01cfd1a1cec4b02075b124fdd1ec8cc33be` (commit 2026-10-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/codeql.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-10-20 |
+| Nhận định | Công cụ trực quan hóa kiến trúc codebase chạy trong trình duyệt (index.html), có CLI mỏng mở cùng UI và thư mục card/; README nói không thu thập dữ liệu **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/braedonsaunders/codeflow/blob/b70af01cfd1a1cec4b02075b124fdd1ec8cc33be/README.md) · [LICENSE](https://github.com/braedonsaunders/codeflow/blob/b70af01cfd1a1cec4b02075b124fdd1ec8cc33be/LICENSE) · [package.json](https://github.com/braedonsaunders/codeflow/blob/b70af01cfd1a1cec4b02075b124fdd1ec8cc33be/package.json) · [codeql.yml](https://github.com/braedonsaunders/codeflow/blob/b70af01cfd1a1cec4b02075b124fdd1ec8cc33be/.github/workflows/codeql.yml) |
+
+<a id="ch-codegraph"></a>
+
+### codegraph
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/colbymchenry/codegraph |
+| License | MIT |
+| Phiên bản đã đọc | `66d42a563e8d9c85c9eb95c61b7f33641d456a37` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/deploy-site.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-23; package v1.6.4 |
+| Nhận định | Đồ thị tri thức code cục bộ cho agent (npm @colbymchenry/codegraph v1.6.4, kernel Rust theo README), có TELEMETRY.md riêng. Chưa kiểm claim provenance/installer. |
+| Nguồn | [README.md](https://github.com/colbymchenry/codegraph/blob/66d42a563e8d9c85c9eb95c61b7f33641d456a37/README.md) · [LICENSE](https://github.com/colbymchenry/codegraph/blob/66d42a563e8d9c85c9eb95c61b7f33641d456a37/LICENSE) · [package.json](https://github.com/colbymchenry/codegraph/blob/66d42a563e8d9c85c9eb95c61b7f33641d456a37/package.json) · [deploy-site.yml](https://github.com/colbymchenry/codegraph/blob/66d42a563e8d9c85c9eb95c61b7f33641d456a37/.github/workflows/deploy-site.yml) |
+
+<a id="ch-cspell"></a>
+
+### CSpell
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/streetsidesoftware/cspell |
+| License | MIT |
+| Phiên bản đã đọc | `2121f74a016be60493b6bd757d24162105734589` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/autofix.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-23 |
+| Nhận định | Monorepo trình kiểm chính tả cho code (CLI cspell, cspell-tools), tài liệu ở cspell.org. Từ điển vi_VN nằm ở kho cspell-dicts, không kiểm trong kho này. |
+| Nguồn | [README.md](https://github.com/streetsidesoftware/cspell/blob/2121f74a016be60493b6bd757d24162105734589/README.md) · [LICENSE](https://github.com/streetsidesoftware/cspell/blob/2121f74a016be60493b6bd757d24162105734589/LICENSE) · [package.json](https://github.com/streetsidesoftware/cspell/blob/2121f74a016be60493b6bd757d24162105734589/package.json) · [autofix.yml](https://github.com/streetsidesoftware/cspell/blob/2121f74a016be60493b6bd757d24162105734589/.github/workflows/autofix.yml) |
+
+<a id="ch-deepwiki-open"></a>
+
+### DeepWiki-Open
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/AsyncFuncAI/deepwiki-open |
+| License | MIT |
+| Phiên bản đã đọc | `f216676fa37042c04eba3ccef56098d011670913` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.es.md, LICENSE, package.json, .github/workflows/docker-build-push.yml (README bản dịch); chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-22 |
+| Nhận định | Wiki AI tự host: phân tích repo GitHub/GitLab/Bitbucket, sinh tài liệu và sơ đồ Mermaid, hỏi đáp RAG, nhiều nhà cung cấp mô hình kể cả Ollama. README có liên kết bản tiếng Việt. |
+| Nguồn | [README.es.md](https://github.com/AsyncFuncAI/deepwiki-open/blob/f216676fa37042c04eba3ccef56098d011670913/README.es.md) · [LICENSE](https://github.com/AsyncFuncAI/deepwiki-open/blob/f216676fa37042c04eba3ccef56098d011670913/LICENSE) · [package.json](https://github.com/AsyncFuncAI/deepwiki-open/blob/f216676fa37042c04eba3ccef56098d011670913/package.json) · [docker-build-push.yml](https://github.com/AsyncFuncAI/deepwiki-open/blob/f216676fa37042c04eba3ccef56098d011670913/.github/workflows/docker-build-push.yml) |
+
+<a id="ch-diataxis"></a>
+
+### Diátaxis
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/evildmp/diataxis-documentation-framework |
+| License | CC-BY-SA-4.0 |
+| Phiên bản đã đọc | `957c09ca40b4a1edc23874f713e01937d50d54d5` (commit 2026-08-06) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.rst, LICENSE.rst; chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-08-06 |
+| Nhận định | Khung tài liệu Diátaxis bốn loại (tutorial, how-to, reference, explanation), nguồn Sphinx/reStructuredText. Giấy phép là LICENSE.rst (CC BY-SA 4.0) nên GitHub báo NOASSERTION. |
+| Nguồn | [README.rst](https://github.com/evildmp/diataxis-documentation-framework/blob/957c09ca40b4a1edc23874f713e01937d50d54d5/README.rst) · [LICENSE.rst](https://github.com/evildmp/diataxis-documentation-framework/blob/957c09ca40b4a1edc23874f713e01937d50d54d5/LICENSE.rst) |
+
+<a id="ch-docsify"></a>
+
+### Docsify
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/docsifyjs/docsify |
+| License | MIT |
+| Phiên bản đã đọc | `0e0cd50b326042d37b1f613eb654434c5db0e2df` (commit 2026-11-14) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/crowdin.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-14; package v5.1.0 |
+| Nhận định | Trình tạo site tài liệu render Markdown phía client, không cần bước build. package.json hiện v5.1.0. |
+| Nguồn | [README.md](https://github.com/docsifyjs/docsify/blob/0e0cd50b326042d37b1f613eb654434c5db0e2df/README.md) · [LICENSE](https://github.com/docsifyjs/docsify/blob/0e0cd50b326042d37b1f613eb654434c5db0e2df/LICENSE) · [package.json](https://github.com/docsifyjs/docsify/blob/0e0cd50b326042d37b1f613eb654434c5db0e2df/package.json) · [crowdin.yml](https://github.com/docsifyjs/docsify/blob/0e0cd50b326042d37b1f613eb654434c5db0e2df/.github/workflows/crowdin.yml) |
+
+<a id="ch-docusaurus"></a>
+
+### Docusaurus
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/meta/docusaurus |
+| License | MIT (docs: CC-BY-4.0 trong LICENSE-docs) |
+| Phiên bản đã đọc | `809ffffd5c8436e7458b9a2c494ce3fe7f8ef0bc` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, LICENSE-docs, package.json, .github/workflows/argos.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-19 |
+| Nhận định | Framework dựng site tài liệu/dự án mã nguồn mở (monorepo pnpm). Remote clone là meta/docusaurus đúng như catalog; LICENSE-docs dùng CC BY 4.0 cho nội dung tài liệu. |
+| Nguồn | [README.md](https://github.com/meta/docusaurus/blob/809ffffd5c8436e7458b9a2c494ce3fe7f8ef0bc/README.md) · [LICENSE](https://github.com/meta/docusaurus/blob/809ffffd5c8436e7458b9a2c494ce3fe7f8ef0bc/LICENSE) · [LICENSE-docs](https://github.com/meta/docusaurus/blob/809ffffd5c8436e7458b9a2c494ce3fe7f8ef0bc/LICENSE-docs) · [package.json](https://github.com/meta/docusaurus/blob/809ffffd5c8436e7458b9a2c494ce3fe7f8ef0bc/package.json) · [argos.yml](https://github.com/meta/docusaurus/blob/809ffffd5c8436e7458b9a2c494ce3fe7f8ef0bc/.github/workflows/argos.yml) |
+
+<a id="ch-fumadocs"></a>
+
+### Fumadocs
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/fuma-nama/fumadocs |
+| License | MIT |
+| Phiên bản đã đọc | `4489892ad308096e267703f79aeb85006824f57b` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/lint.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-23 |
+| Nhận định | Framework site tài liệu cho Next.js, Astro và các framework React/Vite, monorepo turbo/pnpm; README nói chỉ ESM. |
+| Nguồn | [README.md](https://github.com/fuma-nama/fumadocs/blob/4489892ad308096e267703f79aeb85006824f57b/README.md) · [LICENSE](https://github.com/fuma-nama/fumadocs/blob/4489892ad308096e267703f79aeb85006824f57b/LICENSE) · [package.json](https://github.com/fuma-nama/fumadocs/blob/4489892ad308096e267703f79aeb85006824f57b/package.json) · [lint.yml](https://github.com/fuma-nama/fumadocs/blob/4489892ad308096e267703f79aeb85006824f57b/.github/workflows/lint.yml) |
+
+<a id="ch-gitbook-renderer-ma-mo"></a>
+
+### GitBook (renderer mã mở)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/GitbookIO/gitbook |
+| License | GPL-3.0 |
+| Phiên bản đã đọc | `21b96e17a7c85a1dcb6bde11c6428931f1be897d` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/ci.yaml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-23 |
+| Nhận định | Mã nguồn renderer site GitBook (Next.js, Bun, Node >=22.3); README có mục "Legacy GitBook (deprecated)". Giấy phép GPL-3.0 copyleft. Các route llms.txt/MCP chưa kiểm trong file đã đọc. |
+| Nguồn | [README.md](https://github.com/GitbookIO/gitbook/blob/21b96e17a7c85a1dcb6bde11c6428931f1be897d/README.md) · [LICENSE](https://github.com/GitbookIO/gitbook/blob/21b96e17a7c85a1dcb6bde11c6428931f1be897d/LICENSE) · [package.json](https://github.com/GitbookIO/gitbook/blob/21b96e17a7c85a1dcb6bde11c6428931f1be897d/package.json) · [ci.yaml](https://github.com/GitbookIO/gitbook/blob/21b96e17a7c85a1dcb6bde11c6428931f1be897d/.github/workflows/ci.yaml) |
+
+<a id="ch-gitingest"></a>
+
+### Gitingest
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/coderamp-labs/gitingest |
+| License | MIT |
+| Phiên bản đã đọc | `4e259a02fe72115bee538271622f1234a81c8e1a` (commit 2025-08-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Commit cuối 2025-08-16, hơn 1 năm không đổi |
+| Nhận định | CLI/web chuyển repo Git thành văn bản dạng prompt cho LLM (pyproject v0.3.1, Python >=3.8), có extension trình duyệt. Chủ kho nay là coderamp-labs. |
+| Nguồn | [README.md](https://github.com/coderamp-labs/gitingest/blob/4e259a02fe72115bee538271622f1234a81c8e1a/README.md) · [LICENSE](https://github.com/coderamp-labs/gitingest/blob/4e259a02fe72115bee538271622f1234a81c8e1a/LICENSE) · [pyproject.toml](https://github.com/coderamp-labs/gitingest/blob/4e259a02fe72115bee538271622f1234a81c8e1a/pyproject.toml) · [ci.yml](https://github.com/coderamp-labs/gitingest/blob/4e259a02fe72115bee538271622f1234a81c8e1a/.github/workflows/ci.yml) |
+
+<a id="ch-graphify"></a>
+
+### Graphify
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Graphify-Labs/graphify |
+| License | Apache-2.0 (kèm LICENSE-MIT riêng) |
+| Phiên bản đã đọc | `5ce8fceff41d1b636f872b6206b917ec2af7ac54` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, LICENSE-MIT, pyproject.toml, .github/workflows/ci.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-23; package v0.9.118 |
+| Nhận định | Skill/CLI biến codebase thành đồ thị tri thức truy vấn được; README nói mã được phân tích bằng tree-sitter, không dùng LLM **(chưa xác minh)**. pyproject khai Apache-2.0 với license-files gồm cả LICENSE-MIT. |
+| Nguồn | [README.md](https://github.com/Graphify-Labs/graphify/blob/5ce8fceff41d1b636f872b6206b917ec2af7ac54/README.md) · [LICENSE](https://github.com/Graphify-Labs/graphify/blob/5ce8fceff41d1b636f872b6206b917ec2af7ac54/LICENSE) · [LICENSE-MIT](https://github.com/Graphify-Labs/graphify/blob/5ce8fceff41d1b636f872b6206b917ec2af7ac54/LICENSE-MIT) · [pyproject.toml](https://github.com/Graphify-Labs/graphify/blob/5ce8fceff41d1b636f872b6206b917ec2af7ac54/pyproject.toml) · [ci.yml](https://github.com/Graphify-Labs/graphify/blob/5ce8fceff41d1b636f872b6206b917ec2af7ac54/.github/workflows/ci.yml) |
+
+<a id="ch-llms-txt"></a>
+
+### llms.txt
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/AnswerDotAI/llms-txt |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `3700a0a624a4a004c6a246789b37f389940b1b58` (commit 2026-09-25) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, .github/workflows/deploy.yaml; chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-09-25 |
+| Nhận định | Kho đề xuất chuẩn /llms.txt của Jeremy Howard; README nay là bản v2 (cập nhật 2026-08-10) khuyến nghị thêm bản Markdown cho từng trang. Có thư viện llms_txt và nbs. |
+| Nguồn | [README.md](https://github.com/AnswerDotAI/llms-txt/blob/3700a0a624a4a004c6a246789b37f389940b1b58/README.md) · [LICENSE](https://github.com/AnswerDotAI/llms-txt/blob/3700a0a624a4a004c6a246789b37f389940b1b58/LICENSE) · [pyproject.toml](https://github.com/AnswerDotAI/llms-txt/blob/3700a0a624a4a004c6a246789b37f389940b1b58/pyproject.toml) · [deploy.yaml](https://github.com/AnswerDotAI/llms-txt/blob/3700a0a624a4a004c6a246789b37f389940b1b58/.github/workflows/deploy.yaml) |
+
+<a id="ch-lychee"></a>
+
+### lychee
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/lycheeverse/lychee |
+| License | MIT OR Apache-2.0 |
+| Phiên bản đã đọc | `f10ac2774dac100dfdbf014647487520a8ffe08d` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE-APACHE, LICENSE-MIT, pyproject.toml, .github/workflows/auto-merge.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-12 |
+| Nhận định | Trình kiểm link Rust bất đồng bộ, dùng được như CLI, thư viện hoặc GitHub Action. Kho có đủ LICENSE-APACHE và LICENSE-MIT nên GitHub chỉ báo một giấy phép là chưa đủ. |
+| Nguồn | [README.md](https://github.com/lycheeverse/lychee/blob/f10ac2774dac100dfdbf014647487520a8ffe08d/README.md) · [LICENSE-APACHE](https://github.com/lycheeverse/lychee/blob/f10ac2774dac100dfdbf014647487520a8ffe08d/LICENSE-APACHE) · [LICENSE-MIT](https://github.com/lycheeverse/lychee/blob/f10ac2774dac100dfdbf014647487520a8ffe08d/LICENSE-MIT) · [pyproject.toml](https://github.com/lycheeverse/lychee/blob/f10ac2774dac100dfdbf014647487520a8ffe08d/pyproject.toml) · [auto-merge.yml](https://github.com/lycheeverse/lychee/blob/f10ac2774dac100dfdbf014647487520a8ffe08d/.github/workflows/auto-merge.yml) |
+
+<a id="ch-markdownlint"></a>
+
+### markdownlint
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/DavidAnson/markdownlint |
+| License | MIT |
+| Phiên bản đã đọc | `92992da11c2da77f8c4261378563098f3dc77f80` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/checkers.yml; chưa chạy upstream |
+| Bảo trì | Có commit ngày 2026-11-17 |
+| Nhận định | Thư viện lint Markdown cho Node.js (dựa micromark, theo CommonMark và GFM), là engine của markdownlint-cli2. Số luật chưa đếm lại. |
+| Nguồn | [README.md](https://github.com/DavidAnson/markdownlint/blob/92992da11c2da77f8c4261378563098f3dc77f80/README.md) · [LICENSE](https://github.com/DavidAnson/markdownlint/blob/92992da11c2da77f8c4261378563098f3dc77f80/LICENSE) · [package.json](https://github.com/DavidAnson/markdownlint/blob/92992da11c2da77f8c4261378563098f3dc77f80/package.json) · [checkers.yml](https://github.com/DavidAnson/markdownlint/blob/92992da11c2da77f8c4261378563098f3dc77f80/.github/workflows/checkers.yml) |
+
+<a id="ch-material-for-mkdocs"></a>
+
+### Material for MkDocs
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/squidfunk/mkdocs-material |
+| License | MIT |
+| Phiên bản đã đọc | `bcc3f28764178139b4cee96b9fb0c2ccd9bf2bd2` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, .github/workflows/build.yml; chưa chạy upstream |
+| Bảo trì | README thông báo Zensical là bản kế nhiệm; vẫn có commit ngày 2026-11-19 |
+| Nhận định | Theme/framework tài liệu trên MkDocs (package v9.8.2). README tự giới thiệu Zensical là bản kế nhiệm do cùng nhóm duy trì (MIT) và hướng dẫn migrate. |
+| Nguồn | [README.md](https://github.com/squidfunk/mkdocs-material/blob/bcc3f28764178139b4cee96b9fb0c2ccd9bf2bd2/README.md) · [LICENSE](https://github.com/squidfunk/mkdocs-material/blob/bcc3f28764178139b4cee96b9fb0c2ccd9bf2bd2/LICENSE) · [package.json](https://github.com/squidfunk/mkdocs-material/blob/bcc3f28764178139b4cee96b9fb0c2ccd9bf2bd2/package.json) · [build.yml](https://github.com/squidfunk/mkdocs-material/blob/bcc3f28764178139b4cee96b9fb0c2ccd9bf2bd2/.github/workflows/build.yml) |
+
+<a id="ch-mdbook"></a>
+
+### mdBook
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/rust-lang/mdBook |
+| License | MPL-2.0 |
+| Phiên bản đã đọc | `b47cab11d67480f7dc206239f23edc19d4d9eea6` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, Cargo.toml, package.json; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 22/11/2026. |
+| Nhận định | Công cụ Rust dựng sách online từ Markdown, tài liệu dùng chính nó làm ví dụ. Giấy phép MPL-2.0 (copyleft theo file), cần lưu ý khi sửa rồi phân phối lại. |
+| Nguồn | [LICENSE](https://github.com/rust-lang/mdBook/blob/b47cab11d67480f7dc206239f23edc19d4d9eea6/LICENSE) · [README.md](https://github.com/rust-lang/mdBook/blob/b47cab11d67480f7dc206239f23edc19d4d9eea6/README.md) · [Cargo.toml](https://github.com/rust-lang/mdBook/blob/b47cab11d67480f7dc206239f23edc19d4d9eea6/Cargo.toml) · [package.json](https://github.com/rust-lang/mdBook/blob/b47cab11d67480f7dc206239f23edc19d4d9eea6/package.json) |
+
+<a id="ch-mermaid"></a>
+
+### Mermaid
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/mermaid-js/mermaid |
+| License | MIT |
+| Phiên bản đã đọc | `6374e521f43fde5cfc60d65410c1aa033af29aaf` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, package.json; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 23/11/2026. |
+| Nhận định | Sinh sơ đồ từ văn bản kiểu Markdown, monorepo pnpm với nhiều workflow CI (e2e, codeql, link-checker). Các con số như 37 thư mục sơ đồ, 97/99 action ghim SHA là số cũ của catalog, chưa kiểm lại lần này **(chưa xác minh)**. |
+| Nguồn | [LICENSE](https://github.com/mermaid-js/mermaid/blob/6374e521f43fde5cfc60d65410c1aa033af29aaf/LICENSE) · [README.md](https://github.com/mermaid-js/mermaid/blob/6374e521f43fde5cfc60d65410c1aa033af29aaf/README.md) · [package.json](https://github.com/mermaid-js/mermaid/blob/6374e521f43fde5cfc60d65410c1aa033af29aaf/package.json) |
+
+<a id="ch-openwiki"></a>
+
+### OpenWiki
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/langchain-ai/openwiki |
+| License | MIT |
+| Phiên bản đã đọc | `dcb803e9634e3d5d7361404aa4f7ee92a3e8e5ad` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, package.json; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 17/11/2026; không kiểm được lịch sử vì clone depth 1. |
+| Nhận định | CLI/MCP biến codebase thành wiki Markdown liên kết, theo dõi bằng chứng nguồn để cập nhật phần thay đổi. Nhận định cũ về telemetry mặc định bật và chỉ còn bump dependency chưa kiểm lại **(chưa xác minh)**. |
+| Nguồn | [LICENSE](https://github.com/langchain-ai/openwiki/blob/dcb803e9634e3d5d7361404aa4f7ee92a3e8e5ad/LICENSE) · [README.md](https://github.com/langchain-ai/openwiki/blob/dcb803e9634e3d5d7361404aa4f7ee92a3e8e5ad/README.md) · [package.json](https://github.com/langchain-ai/openwiki/blob/dcb803e9634e3d5d7361404aa4f7ee92a3e8e5ad/package.json) |
+
+<a id="ch-repomix"></a>
+
+### Repomix
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/yamadashy/repomix |
+| License | MIT |
+| Phiên bản đã đọc | `7bde93e34dee399488f0fa0a1f5b2c56deb9e510` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, package.json, autofix.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 23/11/2026. |
+| Nhận định | Đóng gói cả repo thành một file thân thiện AI, kèm Secretlint và chế độ MCP. Tính năng `--sandbox` nêu trong catalog chưa kiểm trong mã **(chưa xác minh)**. |
+| Nguồn | [LICENSE](https://github.com/yamadashy/repomix/blob/7bde93e34dee399488f0fa0a1f5b2c56deb9e510/LICENSE) · [README.md](https://github.com/yamadashy/repomix/blob/7bde93e34dee399488f0fa0a1f5b2c56deb9e510/README.md) · [package.json](https://github.com/yamadashy/repomix/blob/7bde93e34dee399488f0fa0a1f5b2c56deb9e510/package.json) · [autofix.yml](https://github.com/yamadashy/repomix/blob/7bde93e34dee399488f0fa0a1f5b2c56deb9e510/.github/workflows/autofix.yml) |
+
+<a id="ch-repowise"></a>
+
+### Repowise
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/repowise-dev/repowise |
+| License | AGPL-3.0 |
+| Phiên bản đã đọc | `8d7ccc068e7020d55e9f007ba1099cc77b5e9c66` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, pyproject.toml, package.json, ci.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 23/11/2026; v0.62.0. |
+| Nhận định | Index mã + git + test cho agent qua MCP và dashboard; README tuyên bố graph/risk/health không gọi LLM **(chưa xác minh)**. AGPL-3.0 hạn chế dùng nhúng thương mại; cài đặt bằng cách dán URL cho agent là rủi ro prompt injection chuỗi cung ứng. |
+| Nguồn | [LICENSE](https://github.com/repowise-dev/repowise/blob/8d7ccc068e7020d55e9f007ba1099cc77b5e9c66/LICENSE) · [README.md](https://github.com/repowise-dev/repowise/blob/8d7ccc068e7020d55e9f007ba1099cc77b5e9c66/README.md) · [pyproject.toml](https://github.com/repowise-dev/repowise/blob/8d7ccc068e7020d55e9f007ba1099cc77b5e9c66/pyproject.toml) · [package.json](https://github.com/repowise-dev/repowise/blob/8d7ccc068e7020d55e9f007ba1099cc77b5e9c66/package.json) · [ci.yml](https://github.com/repowise-dev/repowise/blob/8d7ccc068e7020d55e9f007ba1099cc77b5e9c66/.github/workflows/ci.yml) |
+
+<a id="ch-scalar"></a>
+
+### Scalar
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/scalar/scalar |
+| License | MIT |
+| Phiên bản đã đọc | `bd8beab3377aff142f82d97f81ef692d4ccaf525` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, package.json, actions.lock; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 23/11/2026. |
+| Nhận định | API reference tương tác từ OpenAPI/Swagger kèm API client offline-first. Nhận định về PostHog plugin tuỳ chọn và agent chat/proxy dùng dịch vụ Scalar chưa kiểm trong mã **(chưa xác minh)**. |
+| Nguồn | [LICENSE](https://github.com/scalar/scalar/blob/bd8beab3377aff142f82d97f81ef692d4ccaf525/LICENSE) · [README.md](https://github.com/scalar/scalar/blob/bd8beab3377aff142f82d97f81ef692d4ccaf525/README.md) · [package.json](https://github.com/scalar/scalar/blob/bd8beab3377aff142f82d97f81ef692d4ccaf525/package.json) · [actions.lock](https://github.com/scalar/scalar/blob/bd8beab3377aff142f82d97f81ef692d4ccaf525/.github/workflows/actions.lock) |
+
+<a id="ch-sphinx"></a>
+
+### Sphinx
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/sphinx-doc/sphinx |
+| License | BSD-2-Clause |
+| Phiên bản đã đọc | `035a07c32c3241fd3356f4d827800c1f88525272` (commit 2026-10-29) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE.rst, README.rst, pyproject.toml, package.json, builddoc.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 29/10/2026. |
+| Nhận định | Trình sinh tài liệu Python/reStructuredText chuẩn, nhiều extension; phiên bản đang phát triển 9.3.0. Nhận định "chưa release 2026" không kiểm được từ clone **(chưa xác minh)**. |
+| Nguồn | [LICENSE.rst](https://github.com/sphinx-doc/sphinx/blob/035a07c32c3241fd3356f4d827800c1f88525272/LICENSE.rst) · [README.rst](https://github.com/sphinx-doc/sphinx/blob/035a07c32c3241fd3356f4d827800c1f88525272/README.rst) · [pyproject.toml](https://github.com/sphinx-doc/sphinx/blob/035a07c32c3241fd3356f4d827800c1f88525272/pyproject.toml) · [package.json](https://github.com/sphinx-doc/sphinx/blob/035a07c32c3241fd3356f4d827800c1f88525272/package.json) · [builddoc.yml](https://github.com/sphinx-doc/sphinx/blob/035a07c32c3241fd3356f4d827800c1f88525272/.github/workflows/builddoc.yml) |
+
+<a id="ch-starlight"></a>
+
+### Starlight
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/withastro/starlight |
+| License | MIT |
+| Phiên bản đã đọc | `06a97f8e0f3a3145a7cefe0c861d073cc2cd73af` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, package.json, benchmarks.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 23/11/2026. |
+| Nhận định | Framework website tài liệu trên Astro, README ngắn trỏ sang docs. Mục `notes` cũ để trống; hồ sơ nên bổ sung mô tả này. |
+| Nguồn | [LICENSE](https://github.com/withastro/starlight/blob/06a97f8e0f3a3145a7cefe0c861d073cc2cd73af/LICENSE) · [README.md](https://github.com/withastro/starlight/blob/06a97f8e0f3a3145a7cefe0c861d073cc2cd73af/README.md) · [package.json](https://github.com/withastro/starlight/blob/06a97f8e0f3a3145a7cefe0c861d073cc2cd73af/package.json) · [benchmarks.yml](https://github.com/withastro/starlight/blob/06a97f8e0f3a3145a7cefe0c861d073cc2cd73af/.github/workflows/benchmarks.yml) |
+
+<a id="ch-typos"></a>
+
+### typos
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/crate-ci/typos |
+| License | MIT OR Apache-2.0 |
+| Phiên bản đã đọc | `e7647d64ee8a549495fb66a978c44f5286858859` (commit 2026-11-16) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE-APACHE, LICENSE-MIT, README.md, Cargo.toml, audit.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 16/11/2026. |
+| Nhận định | Công cụ Rust kiểm lỗi chính tả trong mã nguồn, ít false positive, có GitHub Action và pre-commit. Có AI_POLICY.md riêng về đóng góp bằng AI. |
+| Nguồn | [LICENSE-APACHE](https://github.com/crate-ci/typos/blob/e7647d64ee8a549495fb66a978c44f5286858859/LICENSE-APACHE) · [LICENSE-MIT](https://github.com/crate-ci/typos/blob/e7647d64ee8a549495fb66a978c44f5286858859/LICENSE-MIT) · [README.md](https://github.com/crate-ci/typos/blob/e7647d64ee8a549495fb66a978c44f5286858859/README.md) · [Cargo.toml](https://github.com/crate-ci/typos/blob/e7647d64ee8a549495fb66a978c44f5286858859/Cargo.toml) · [audit.yml](https://github.com/crate-ci/typos/blob/e7647d64ee8a549495fb66a978c44f5286858859/.github/workflows/audit.yml) |
+
+<a id="ch-vitepress"></a>
+
+### VitePress
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vuejs/vitepress |
+| License | MIT |
+| Phiên bản đã đọc | `40b2e090772ac11eac358d25ec92ee435fc2adbd` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, package.json, cr-comment.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 12/11/2026. |
+| Nhận định | SSG dựa trên Vite + Vue, kế nhiệm VuePress; bản v2 vẫn alpha nên API có thể đổi. |
+| Nguồn | [LICENSE](https://github.com/vuejs/vitepress/blob/40b2e090772ac11eac358d25ec92ee435fc2adbd/LICENSE) · [README.md](https://github.com/vuejs/vitepress/blob/40b2e090772ac11eac358d25ec92ee435fc2adbd/README.md) · [package.json](https://github.com/vuejs/vitepress/blob/40b2e090772ac11eac358d25ec92ee435fc2adbd/package.json) · [cr-comment.yml](https://github.com/vuejs/vitepress/blob/40b2e090772ac11eac358d25ec92ee435fc2adbd/.github/workflows/cr-comment.yml) |
+
+<a id="ch-zensical"></a>
+
+### Zensical
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/zensical/zensical |
+| License | MIT |
+| Phiên bản đã đọc | `2a9ade108aaec94fac6dd57ce329f9f3bf96654d` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE.md, README.md, pyproject.toml, Cargo.toml, build.yml; chưa chạy upstream |
+| Bảo trì | Commit gần nhất 22/11/2026; Cargo version 0.29.0. |
+| Nhận định | SSG của nhóm Material for MkDocs, lõi Rust với wrapper Python. Đã qua mốc 0.0.x trong catalog (hiện 0.29.0 theo Cargo.toml) nhưng vẫn là phiên bản 0.x. |
+| Nguồn | [LICENSE.md](https://github.com/zensical/zensical/blob/2a9ade108aaec94fac6dd57ce329f9f3bf96654d/LICENSE.md) · [README.md](https://github.com/zensical/zensical/blob/2a9ade108aaec94fac6dd57ce329f9f3bf96654d/README.md) · [pyproject.toml](https://github.com/zensical/zensical/blob/2a9ade108aaec94fac6dd57ce329f9f3bf96654d/pyproject.toml) · [Cargo.toml](https://github.com/zensical/zensical/blob/2a9ade108aaec94fac6dd57ce329f9f3bf96654d/Cargo.toml) · [build.yml](https://github.com/zensical/zensical/blob/2a9ade108aaec94fac6dd57ce329f9f3bf96654d/.github/workflows/build.yml) |
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-docs-page"></a>
+
+### docs.page
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/invertase/docs.page |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `3ab96112cac0180678ec683bfc7f98e3dd1ba432` (commit 2026-11-13) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, package.json, app/src/app/api/[owner]/[repo]/llms.txt/route.ts, app/src/server/mcp/server.ts, packages/cli/src/commands/check.ts, skills/review-doc/SKILL.md, docs/ai-agents/ask-ai.mdx, docs/legal/privacy.mdx, .github/workflows/pull_request.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Tài liệu kỹ thuật cho người và agent, docs-as-code (phục vụ Markdown từ nhánh GitHub) |
+| Cơ chế đáng học | • Dịch vụ lấy Markdown/MDX từ repo GitHub công khai và phục vụ tại `docs.page/{owner}/{repo}`, không cần pipeline build; mỗi site có `llms.txt` sinh tự động (`app/src/app/api/[owner]/[repo]/llms.txt/route.ts` liệt kê tài liệu theo SHA đã giải).<br>• MCP server mỗi site với tool đọc trang, liệt kê file và tài nguyên schema cấu hình (`app/src/server/mcp/server.ts`).<br>• CLI `@docs.page/cli` có lệnh `check` kiểm metadata, asset, liên kết nội bộ, render, kèm ghi đè mức nghiêm trọng theo host và trả mã thoát khác 0 khi lỗi (`packages/cli/src/commands/check.ts`).<br>• Skill `skills/review-doc`: các check văn phong (16 file trong `checks/`) chạy bằng subagent, sửa tự động tối đa 3 vòng và ghi log JSON. |
+| Tiêu chí và cách kiểm | CI `pull_request.yaml` chạy Biome và `bun test`; test nằm ở `packages/mdx-bundler` và `packages/cli` (ví dụ `check.test.ts`). Phần ứng dụng Next.js trong `app/` chưa thấy test trong phần đã đọc. Skill review-doc là chỉ dẫn cho LLM, có thư mục evals nhưng tôi chưa đọc kết quả. |
+| Giới hạn và rủi ro | Apache-2.0. Là dịch vụ do Invertase vận hành: chỉ phục vụ repo GitHub công khai và phụ thuộc dịch vụ của họ, tự host cần kiểm riêng (app có Dockerfile, chưa đọc). Ask AI (beta) cần khóa LLM của chủ site, mã hóa bằng CLI; chính sách riêng tư của dịch vụ nằm ở `docs/legal/privacy.mdx`. 'Không có tracking script bên thứ ba' trong README là tuyên bố (chưa xác minh). Số sao 686 (chưa xác minh). |
+| So với | Docusaurus, Starlight, mdBook (trình dựng site tĩnh, phải tự build/host); llms.txt (đặc tả) và Context7 (đưa tài liệu thư viện vào agent). |
+| Nguồn | [LICENSE](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/LICENSE) · [README.md](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/README.md) · [package.json](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/package.json) · [route.ts](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/app/src/app/api/[owner]/[repo]/llms.txt/route.ts) · [server.ts](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/app/src/server/mcp/server.ts) · [check.ts](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/packages/cli/src/commands/check.ts) · [SKILL.md](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/skills/review-doc/SKILL.md) · [ask-ai.mdx](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/docs/ai-agents/ask-ai.mdx) · [privacy.mdx](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/docs/legal/privacy.mdx) · [pull_request.yaml](https://github.com/invertase/docs.page/blob/3ab96112cac0180678ec683bfc7f98e3dd1ba432/.github/workflows/pull_request.yaml) |
+
+<a id="nt-seiso"></a>
+
+### seiso
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/scarletkc/seiso |
+| License | MIT |
+| Phiên bản đã đọc | `5bae44facc43d81d4f422a1afef74963ef783d02` (commit 2026-10-13) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, seiso.toml, Cargo.toml, docs/evaluation/policy.md, docs/guides/checking.md, docs/rules/PTR001.md, src/rules/mod.rs, .github/workflows/ci.yml, .github/workflows/evaluation.yml; chưa chạy upstream |
+| Khoảng trống lấp | Tài liệu kỹ thuật cho người và agent: quy ước và cổng kiểm máy cho Markdown do AI viết |
+| Cơ chế đáng học | • Quy ước: mỗi tài liệu khai một `kind` (howto, reference, adr, changelog...), mỗi dữ kiện có một nơi sở hữu, không ghi giá trị đổi nhanh hơn trang, con trỏ phải chỉ tới tệp/ký hiệu cụ thể; `spec/convention.md` là đặc tả tách khỏi bản cài.<br>• Khoảng 27 luật trong `src/rules/mod.rs` (KND, OWN, DUP, PTR, LNK, STL, VOX, SUP...), mỗi luật có trang giải thích và ví dụ trong `docs/rules/`; luật mới ở dạng preview, chỉ chạy với `--preview`.<br>• Chính sách thăng hạng (`docs/evaluation/policy.md`): luật lên stable cần ít nhất 100 chẩn đoán holdout được người gán nhãn, độ chính xác ít nhất 95%, người thứ hai gán lại một phần năm mẫu.<br>• Suppression buộc phải có lý do; ngoại lệ không lý do bị coi là vi phạm (SUP001, SUP002). |
+| Tiêu chí và cách kiểm | `seiso check` trả exit 0 (sạch), 1 (có vi phạm), 2 (lỗi công cụ hoặc kiểm chưa đầy đủ); có `--exit-zero`. CI `ci.yml` chạy fmt, clippy, `cargo test --locked` trên ba hệ điều hành và tự kiểm tài liệu của chính repo; workflow `evaluation.yml` chỉ chạy thủ công để đo precision và hiệu năng. Kiểm bằng máy; điểm 95% là yêu cầu trong chính sách, tôi chưa đọc bản ghi kết quả (chưa xác minh). |
+| Giới hạn và rủi ro | MIT, Rust 2024, bản 0.4.0 và đặc tả được ghi là tạm thời trước 1.0.0, nên luật và mã có thể đổi. Chỉ kiểm cấu trúc và dấu hiệu, không đánh giá văn có 'giống máy viết' hay không (README nói rõ). Dự án mới, một tác giả chính; số sao 196 (chưa xác minh). |
+| So với | markdownlint và Vale (lint phong cách/cú pháp), lychee (liên kết), typos và CSpell (chính tả): seiso kiểm cấu trúc và sở hữu dữ kiện giữa các tệp thay vì cú pháp. |
+| Nguồn | [LICENSE](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/LICENSE) · [README.md](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/README.md) · [seiso.toml](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/seiso.toml) · [Cargo.toml](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/Cargo.toml) · [policy.md](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/docs/evaluation/policy.md) · [checking.md](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/docs/guides/checking.md) · [PTR001.md](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/docs/rules/PTR001.md) · [mod.rs](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/src/rules/mod.rs) · [ci.yml](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/.github/workflows/ci.yml) · [evaluation.yml](https://github.com/scarletkc/seiso/blob/5bae44facc43d81d4f422a1afef74963ef783d02/.github/workflows/evaluation.yml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-textlint"></a>
+
+### textlint
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/textlint/textlint |
+| License | MIT |
+| Phiên bản đã đọc | `356769ed579b998d73d05a4a55767dae15fdd288` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README.md, package.json, packages/textlint/package.json, packages/textlint/src/mcp/server.ts, packages/textlint/src/cli.ts; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm văn bản/tài liệu theo luật tự định nghĩa, bổ sung cho Vale và markdownlint |
+| Cơ chế đáng học | - @textlint/kernel: TextlintRuleContextImpl.ts đưa context.report(node, error) cho từng rule; severity lấy từ .textlintrc hoặc từ đối tượng báo lỗi; có gói textlint-tester để test rule (chưa mở nội dung).<br>- packages/textlint/src/mcp/server.ts: đăng ký 4 tool MCP (lintFile, lintText, fixFiles, fixText), trả JSON có cấu trúc và lỗi kiểu lintFile_error; cấu hình nạp từ .textlintrc.<br>- Chuỗi cung ứng của chính repo: action ghim SHA, check-provenance.yml kiểm provenance npm, automerge-gate. |
+| Tiêu chí và cách kiểm | CI ci.yml: ma trận Node 22/24 trên Ubuntu và Windows chạy pnpm build, pnpm test (oxlint, kiểm project references, test từng gói), test examples; còn sdev lint cho đặc tả, benchmark khi push. Chưa chạy; chỉ mở ba workflow ci, check-provenance, automerge-gate. |
+| Giới hạn và rủi ro | Không kèm rule nào: chất lượng phụ thuộc rule bên thứ ba (mã npm chạy trong tiến trình, cần xét như phụ thuộc); rule tiếng Việt không có sẵn (chưa xác minh); đã yêu cầu Node 22.12+; AGENTS.md và CLAUDE.md của repo chỉ đọc làm dữ liệu. |
+| So với | vale (rule YAML không cần Node), markdownlint (kiểm cấu trúc Markdown), lychee (kiểm link). |
+| Nguồn | [LICENSE](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/LICENSE) · [README.md](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/README.md) · [package.json](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/package.json) · [package.json](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/packages/textlint/package.json) · [server.ts](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/packages/textlint/src/mcp/server.ts) · [cli.ts](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/packages/textlint/src/cli.ts) · [TextlintRuleContextImpl.ts](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/packages/@textlint/kernel/src/context/TextlintRuleContextImpl.ts) · [CI ci.yml](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/.github/workflows/ci.yml) · [CI check-provenance.yml](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/.github/workflows/check-provenance.yml) · [CI automerge-gate.yml](https://github.com/textlint/textlint/blob/356769ed579b998d73d05a4a55767dae15fdd288/.github/workflows/automerge-gate.yml) |
+
+<a id="n2-readthedocs-platform"></a>
+
+### Read the Docs (nền tảng)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/readthedocs/readthedocs.org |
+| License | MIT |
+| Phiên bản đã đọc | `8434e08eff38b0f8b045b42b0d574c18c9a7f378` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README.rst, AGENTS.md, .gitmodules, .circleci/config.yml, .github/workflows/main.yml; chưa chạy upstream |
+| Khoảng trống lấp | Docs-as-code: nền tảng build/host tài liệu với preview theo PR và đo thay đổi giữa các bản |
+| Cơ chế đáng học | - readthedocs/config/models.py: mô hình kiểu (ConfigBaseModel) cho cấu hình build; sphinx/mkdocs có fail_on_warning mặc định False, backend doc_builder áp dụng (sphinx.py, mkdocs.py).<br>- `readthedocs/filetreediff/__init__.py`: get_diff so manifest hai version, đánh dấu outdated khi build mới nhất lệch manifest; với bản PR dùng snapshot manifest nền để tránh dương tính giả (còn TODO làm mới khi rebase).<br>- .circleci/config.yml: các job checks (pre-commit, migrations), tests, tests-proxito, tests-search, tests-embedapi, coverage-report; .github/workflows/main.yml chỉ kích CI của hai repo riêng tư. |
+| Tiêu chí và cách kiểm | CI ở CircleCI: pre-commit, kiểm migration, pytest bằng tox trên Python 3.14, tổng hợp coverage gửi Codecov (không thấy ngưỡng fail trong phần đã đọc). Workflow GitHub chỉ gọi API CircleCI của các repo riêng. Chưa chạy. |
+| Giới hạn và rủi ro | Là ứng dụng web nhiều thành phần (Postgres, Elasticsearch, Redis, Docker), không phải thư viện nhẹ; tự host đầy đủ nặng và một phần mã thương mại ở repo riêng (readthedocs-corporate, readthedocs-ext, chưa xác minh phạm vi); common/ là submodule nên một số cấu hình dùng chung (pre-commit) không có ở đây; AGENTS.md của repo chỉ đọc làm dữ liệu. |
+| So với | docusaurus, sphinx, material-for-mkdocs (trình tạo site; repo này là dịch vụ host/build). |
+| Nguồn | [LICENSE](https://github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/LICENSE) · [README.rst](https://github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/README.rst) · [AGENTS.md](https://github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/AGENTS.md) · [.gitmodules](https://github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/.gitmodules) · [config.yml](https://github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/.circleci/config.yml) · [CI main.yml](https://github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/.github/workflows/main.yml) · [`__init__.py`](https:`//github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/readthedocs/filetreediff/__init__.py`) · [models.py](https://github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/readthedocs/config/models.py) · [SECURITY.md](https://github.com/readthedocs/readthedocs.org/blob/8434e08eff38b0f8b045b42b0d574c18c9a7f378/SECURITY.md) |
+
+<a id="n2-dprint"></a>
+
+### dprint
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/dprint/dprint |
+| License | MIT |
+| Phiên bản đã đọc | `bdfe393899b2c8e00e9b654c54b4d7a54e31d368` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README.md, dprint.json, crates/dprint/src/commands/formatting.rs, crates/dprint/src/run_cli.rs, crates/dprint/src/resolution.rs; chưa chạy upstream |
+| Khoảng trống lấp | Cổng format tài liệu (Markdown/JSON/YAML) trong CI qua một cấu hình duy nhất |
+| Cơ chế đáng học | - formatting.rs: check chạy format cho từng file song song, so bytes, in diff hoặc --list-different/--json, có --fail-fast; số file lệch thành CheckError và run_cli.rs ánh xạ lỗi sang exit code (1, 10-14, 20).<br>- resolution.rs: plugin process chỉ dùng cấu hình tin cậy (có chú thích NEVER CHANGE THIS), plugin chưa duyệt bị bỏ qua; plugin npm/URL có thể ghim checksum sha256 (dprint.json của repo ghim exec bằng sha256).<br>- docs/wasm-plugin-development.md: plugin Wasm chạy sandbox, ưu tiên hơn plugin process; dprint.json của repo dùng npm:@dprint/markdown@0.29.0. |
+| Tiêu chí và cách kiểm | CI ci.ts sinh workflow cho nhiều nền tảng (mac, Windows, Linux, ARM), chạy cargo clippy, test, và dprint check bằng binary vừa build (chạy chính cấu hình dprint.json của repo). Chưa chạy. Chỉ đọc ci.ts, không đọc các workflow đã sinh. |
+| Giới hạn và rủi ro | Chỉ kiểm định dạng, không kiểm nội dung văn bản; plugin Markdown ở repo khác nên cần đọc riêng trước khi tin; plugin process (như exec) chạy lệnh nên cần quản trị cấu hình và checksum; phiên bản và hành vi của plugin Markdown trong dprint.json chưa kiểm ở đây. |
+| So với | markdownlint (kiểm luật Markdown), vale (kiểm văn phong); dprint thay thế phần format, không thay phần lint nội dung. |
+| Nguồn | [LICENSE](https://github.com/dprint/dprint/blob/bdfe393899b2c8e00e9b654c54b4d7a54e31d368/LICENSE) · [README.md](https://github.com/dprint/dprint/blob/bdfe393899b2c8e00e9b654c54b4d7a54e31d368/README.md) · [dprint.json](https://github.com/dprint/dprint/blob/bdfe393899b2c8e00e9b654c54b4d7a54e31d368/dprint.json) · [formatting.rs](https://github.com/dprint/dprint/blob/bdfe393899b2c8e00e9b654c54b4d7a54e31d368/crates/dprint/src/commands/formatting.rs) · [run_cli.rs](https://github.com/dprint/dprint/blob/bdfe393899b2c8e00e9b654c54b4d7a54e31d368/crates/dprint/src/run_cli.rs) · [resolution.rs](https://github.com/dprint/dprint/blob/bdfe393899b2c8e00e9b654c54b4d7a54e31d368/crates/dprint/src/resolution.rs) · [wasm-plugin-development.md](https://github.com/dprint/dprint/blob/bdfe393899b2c8e00e9b654c54b4d7a54e31d368/docs/wasm-plugin-development.md) · [CI ci.ts](https://github.com/dprint/dprint/blob/bdfe393899b2c8e00e9b654c54b4d7a54e31d368/.github/workflows/ci.ts) |
+
+<a id="n2-woke"></a>
+
+### woke
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/get-woke/woke |
+| License | MIT |
+| Phiên bản đã đọc | `5d52c1541ab7b5823531dd48144197dda342042e` (commit 2022-08-14) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README.md, example.yaml, pkg/rule/default.yaml, pkg/rule/rule.go, cmd/root.go; chưa chạy upstream |
+| Khoảng trống lấp | Kiểm ngôn ngữ không bao hàm trong tài liệu/mã, bổ sung cho kiểm chính tả và văn phong |
+| Cơ chế đáng học | - pkg/rule/default.yaml: luật mặc định (name, terms, alternatives, severity, note); rule.go ghép các term thành regex (?i) với tùy chọn ranh giới từ.<br>- cmd/root.go: cờ --exit-1-on-failure (mặc định false) quyết định mã thoát; printer có text, json, checkstyle, GitHub Actions, SonarQube.<br>- example.yaml cho thấy luật tùy biến (rules, ignore_files, success_exit_message); pkg/config có nạp cấu hình từ URL (đã đọc remote.go, chỉ phần kiểm URL hợp lệ). |
+| Tiêu chí và cách kiểm | CI go.yml chạy go test ./... trên Ubuntu và Windows với Go 1.18; workflow woke.yml tự kiểm testdata với định dạng github-actions. Không có ngưỡng độ phủ trong workflow đã đọc. Chưa chạy. |
+| Giới hạn và rủi ro | Commit cuối 2022-08-14 (hơn 4 năm), Go 1.18 đã hết hỗ trợ; luật mặc định mang quan điểm văn hóa và có thể gây dương tính giả (ví dụ từ sanity); nạp cấu hình từ xa là rủi ro nếu không ghim; tên và nhãn của công cụ gây tranh luận nên cần chọn bộ luật phù hợp tổ chức. |
+| So với | vale (rule YAML, đang hoạt động), lychee (kiểm link). |
+| Nguồn | [LICENSE](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/LICENSE) · [README.md](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/README.md) · [example.yaml](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/example.yaml) · [default.yaml](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/pkg/rule/default.yaml) · [rule.go](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/pkg/rule/rule.go) · [root.go](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/cmd/root.go) · [remote.go](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/pkg/config/remote.go) · [CI go.yml](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/.github/workflows/go.yml) · [CI woke.yml](https://github.com/get-woke/woke/blob/5d52c1541ab7b5823531dd48144197dda342042e/.github/workflows/woke.yml) |
+
+<a id="n2-pagefind"></a>
+
+### Pagefind
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Pagefind/pagefind |
+| License | MIT (© 2022 Pagefind; `pagefind_web/LICENSE` cũng MIT) |
+| Phiên bản đã đọc | `a70317bb5ac5a23eb5b49a31fc8b64492337fddd` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, CHANGELOG.md, test.yml, pagefind/src/index/mod.rs, một file toolproof (background), pagefind_web/LICENSE; chưa chạy upstream |
+| Khoảng trống lấp | Tìm kiếm tĩnh cho site tài liệu, không cần máy chủ |
+| Cơ chế đáng học | - `pagefind/src/index/mod.rs`: gom từ vào bản đồ, cắt thành mảnh theo `index_chunk_size`, mã hoá delta và CBOR song song; ghi siêu dữ liệu mảnh để trình duyệt chỉ tải mảnh liên quan<br>- `pagefind_web` (WASM) + `pagefind_web_js`: phần tìm kiếm chạy ở trình duyệt; UI mặc định, UI modular, web component<br>- `pagefind/integration_tests/*/*.toolproof.yml`: hàng chục nhóm hành vi (lọc, sắp xếp, đa ngôn ngữ, dấu, stem, đánh dấu, gợi ý, đa site…) mô tả bằng bước ngôn ngữ tự nhiên |
+| Tiêu chí và cách kiểm | Workflow `test.yml` (đã mở) chạy trên Linux, macOS, Windows, Windows ARM64 và biên dịch chéo FreeBSD: build WASM, build UI, `cargo test`, rồi `npx toolproof` chạy test CLI/trình duyệt, thêm test Python; không thấy ngưỡng độ phủ hay ngưỡng hiệu năng cụ thể. Kiểm bằng máy, tôi chưa chạy. Một bài test đọc được ghi rõ là bỏ qua có chủ ý (TODO). |
+| Giới hạn và rủi ro | MIT; không telemetry trong phần đọc (grep mã nguồn Rust không thấy), thư viện chạy hoàn toàn cục bộ. Cần bước chạy lại khi nội dung đổi, chỉ mục tăng theo kích cỡ site. Bản 1.6.0 (01/11/2026) vừa đổi bộ tách từ CJK (ICU4X), nên kiểm lại nếu site đa ngôn ngữ. Chuẩn đo băng thông 'ít' là tuyên bố của tác giả (chưa xác minh). Bảo trì tích cực (commit 18/11/2026). |
+| So với | starlight, vitepress, meilisearch và typesense (máy chủ tìm kiếm, ngược với tĩnh) |
+| Nguồn | [README.md](https://github.com/Pagefind/pagefind/blob/a70317bb5ac5a23eb5b49a31fc8b64492337fddd/README.md) · [LICENSE](https://github.com/Pagefind/pagefind/blob/a70317bb5ac5a23eb5b49a31fc8b64492337fddd/LICENSE) · [CHANGELOG.md](https://github.com/Pagefind/pagefind/blob/a70317bb5ac5a23eb5b49a31fc8b64492337fddd/CHANGELOG.md) · [test.yml](https://github.com/Pagefind/pagefind/blob/a70317bb5ac5a23eb5b49a31fc8b64492337fddd/.github/workflows/test.yml) · [mod.rs](https://github.com/Pagefind/pagefind/blob/a70317bb5ac5a23eb5b49a31fc8b64492337fddd/pagefind/src/index/mod.rs) · [background.toolproof.yml](https://github.com/Pagefind/pagefind/blob/a70317bb5ac5a23eb5b49a31fc8b64492337fddd/pagefind/integration_tests/exact_phrase/background.toolproof.yml) · [LICENSE](https://github.com/Pagefind/pagefind/blob/a70317bb5ac5a23eb5b49a31fc8b64492337fddd/pagefind_web/LICENSE) |
+
+<a id="n2-doxygen"></a>
+
+### Doxygen
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/doxygen/doxygen |
+| License | GPL-2.0 (bản LICENSE là GNU GPL v2; đầu file mã ghi rõ tài liệu sinh ra không chịu license này) |
+| Phiên bản đã đọc | `482a3b7aa4097bf81b213671367fa339312c25bb` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, VERSION (1.19.0), src/config.xml, src/doxygen.cpp, doc/Doxyfile, build_cmake.yml, testing/001_a.dox; chưa chạy upstream |
+| Khoảng trống lấp | Tài liệu sinh từ mã (API reference) và kiểm drift bằng cảnh báo thiếu doc |
+| Cơ chế đáng học | - `src/config.xml`: định nghĩa mọi tuỳ chọn Doxyfile; nhóm cảnh báo `WARN_IF_UNDOCUMENTED` (mặc định bật), `WARN_IF_DOC_ERROR`, `WARN_IF_INCOMPLETE_DOC`, `WARN_NO_PARAMDOC` (mặc định tắt), và `WARN_AS_ERROR` có `YES`, `FAIL_ON_WARNINGS`, `FAIL_ON_WARNINGS_PRINT`<br>- `doc/Doxyfile` dòng 71: `WARN_AS_ERROR = FAIL_ON_WARNINGS`, nghĩa là tài liệu của chính Doxygen build lỗi khi có cảnh báo<br>- `testing/`: bộ test hồi quy nhỏ, mỗi file `.dox` khai `// objective:` và `// check:` so với XML kỳ vọng, chạy bằng `testing/runtests.py` |
+| Tiêu chí và cách kiểm | Cổng drift: đặt `WARN_AS_ERROR=FAIL_ON_WARNINGS` (chạy hết rồi trả mã khác 0) cùng `WARN_IF_UNDOCUMENTED=YES`; không thuộc chỉ tiêu độ phủ theo phần trăm. `EXTRACT_ALL=YES` sẽ vô hiệu cảnh báo thiếu doc (theo `config.xml`). CI `build_cmake.yml` (đã mở): ma trận GCC/Clang, Intel/Arm, Windows, chạy target `tests` kèm kiểm đầu ra xml, xhtml, qhp, docbook, rtf, man rồi build `docs`. Tôi chưa chạy. |
+| Giới hạn và rủi ro | GPL-2.0 (phần mềm); đầu file mã nêu tài liệu sinh ra là tác phẩm phái sinh của đầu vào, không chịu license. Không thấy telemetry. Vận hành cần Graphviz (dot) và LaTeX nếu muốn đồ thị/PDF (chưa kiểm trong lần đọc này). Kiểm drift chỉ phát hiện thiếu hoặc sai cú pháp chú thích, không biết nội dung chú thích còn đúng với hành vi mã hay không. Bảo trì tích cực (commit 23/11/2026, VERSION 1.19.0). |
+| So với | sphinx (autodoc Python), docusaurus, zensical; chưa có hồ sơ typedoc/rustdoc để so |
+| Nguồn | [README.md](https://github.com/doxygen/doxygen/blob/482a3b7aa4097bf81b213671367fa339312c25bb/README.md) · [LICENSE](https://github.com/doxygen/doxygen/blob/482a3b7aa4097bf81b213671367fa339312c25bb/LICENSE) · [VERSION](https://github.com/doxygen/doxygen/blob/482a3b7aa4097bf81b213671367fa339312c25bb/VERSION) · [config.xml](https://github.com/doxygen/doxygen/blob/482a3b7aa4097bf81b213671367fa339312c25bb/src/config.xml) · [doxygen.cpp](https://github.com/doxygen/doxygen/blob/482a3b7aa4097bf81b213671367fa339312c25bb/src/doxygen.cpp) · [Doxyfile](https://github.com/doxygen/doxygen/blob/482a3b7aa4097bf81b213671367fa339312c25bb/doc/Doxyfile) · [build_cmake.yml](https://github.com/doxygen/doxygen/blob/482a3b7aa4097bf81b213671367fa339312c25bb/.github/workflows/build_cmake.yml) · [001_a.dox](https://github.com/doxygen/doxygen/blob/482a3b7aa4097bf81b213671367fa339312c25bb/testing/001_a.dox) |

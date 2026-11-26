@@ -139,6 +139,204 @@ Hướng dẫn gốc [GOV.UK: lập kế hoạch nghiên cứu](https://www.gov.
 
 **Đã đổi so với đợt trước:** bổ sung lớp provider/daemon và kiểm assignment, tách nó khỏi exposure/experiment engine; đưa outcome economics vào nghiệm thu phần mềm. **Nguồn §5:** [README.md](https://github.com/open-feature/flagd/blob/902555686f8bb1a89fe40c4b532e78c4e098110d/README.md) · [LICENSE](https://github.com/open-feature/flagd/blob/902555686f8bb1a89fe40c4b532e78c4e098110d/LICENSE) · [core/pkg/evaluator/fractional.go](https://github.com/open-feature/flagd/blob/902555686f8bb1a89fe40c4b532e78c4e098110d/core/pkg/evaluator/fractional.go) · [core/pkg/evaluator/json.go](https://github.com/open-feature/flagd/blob/902555686f8bb1a89fe40c4b532e78c4e098110d/core/pkg/evaluator/json.go) · [.github/workflows/build.yaml](https://github.com/open-feature/flagd/blob/902555686f8bb1a89fe40c4b532e78c4e098110d/.github/workflows/build.yaml); phương pháp nghiên cứu/SRM tiếp tục dùng nguồn gốc đã dẫn ở §3.
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **4 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-umami"></a>
+
+### Umami
+
+**Repo:** [umami-software/umami](https://github.com/umami-software/umami) · **License:** MIT · **★ 40,308 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Nền tảng web/product analytics có thể tự host.
+
+**Giá trị và cơ chế:** Tài liệu cài đặt dùng Node.js, PostgreSQL và APP_SECRET; build tạo schema và tài khoản ban đầu, phù hợp tham khảo kiến trúc analytics nằm trong hạ tầng sản phẩm.
+
+**Giới hạn:** Chưa kiểm payload tracker, recorder hoặc chính sách lưu dữ liệu. README yêu cầu đổi mật khẩu tài khoản ban đầu; CI đặt SKIP_DB_CHECK nên build pass không tự chứng minh kết nối dữ liệu thực tế.
+
+**Cách tham khảo/tích hợp:** Thiết lập secret riêng, giới hạn quyền DB và xác định rõ sự kiện nào được thu thập trước khi gắn tracker.
+
+**Thay thế:** plausible, [PostHog](../28-product-discovery-experimentation/README.md#posthog), matomo.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`aad2c4cedd5c`](https://github.com/umami-software/umami/commit/aad2c4cedd5c0b3bc4d361843830a0bb47cf79c4). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/umami-software/umami/blob/aad2c4cedd5c0b3bc4d361843830a0bb47cf79c4/README.md) · [LICENSE](https://github.com/umami-software/umami/blob/aad2c4cedd5c0b3bc4d361843830a0bb47cf79c4/LICENSE) · [metadata GitHub](https://api.github.com/repos/umami-software/umami).
+
+<a id="anhkysuai-2026-11-23-plausible-analytics"></a>
+
+### Plausible Analytics
+
+**Repo:** [plausible/analytics](https://github.com/plausible/analytics) · **License:** AGPL-3.0 · **★ 29,915 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Phân tích truy cập website với dashboard và bản Community tự lưu trữ.
+
+**Giá trị và cơ chế:** README nhấn mạnh tracker tối giản, sự kiện và báo cáo dễ vận hành; đáng tham khảo thiết kế analytics tập trung chỉ số thiết yếu.
+
+**Giới hạn:** Mô tả không cookie và tuân thủ riêng tư là tuyên bố upstream, chưa kiểm tra lưu lượng hay cơ sở pháp lý. Cloud và Community có phạm vi tính năng riêng; cần vận hành kho dữ liệu.
+
+**Cách tham khảo/tích hợp:** Xác định sự kiện cần đo, kiểm dữ liệu thực gửi đi và lưu lượng trước thay hệ analytics hiện có.
+
+**Thay thế:** [Umami](../28-product-discovery-experimentation/README.md#anhkysuai-2026-11-23-umami), [PostHog](../28-product-discovery-experimentation/README.md#posthog), matomo.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`418da46de5e0`](https://github.com/plausible/analytics/commit/418da46de5e09c6b1113772d1f15d375527130b3). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/plausible/analytics/blob/418da46de5e09c6b1113772d1f15d375527130b3/README.md) · [LICENSE.md](https://github.com/plausible/analytics/blob/418da46de5e09c6b1113772d1f15d375527130b3/LICENSE.md) · [metadata GitHub](https://api.github.com/repos/plausible/analytics).
+
+<a id="anhkysuai-makeplane-plane"></a>
+
+### Plane
+
+**Repo:** [makeplane/plane](https://github.com/makeplane/plane) · **License:** AGPL-3.0-only · **Kiểm:** 2026-11-23, `docs-read`, [`57a876da1d83`](https://github.com/makeplane/plane/tree/57a876da1d83ce3309543464325a44e90b2f5c96) (commit 2026-11-23). **Sao:** 63,008 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/makeplane/plane).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Công cụ quản lý công việc, chu kỳ phát triển, module, trang ghi chú và lộ trình sản phẩm. |
+| Giá trị và cơ chế theo tài liệu | README trình bày cách nối work item, cycles và views; monorepo có cổng lint/typecheck và workflow build Community Edition. |
+| Giới hạn | Tính năng phân tích và AI trong trang là tuyên bố tài liệu, chưa chạy kiểm. Tự host còn cần quản lý dữ liệu, tệp tải lên và nâng cấp; AGPL áp dụng cho mã trong phạm vi đã đọc. |
+| Điều kiện tích hợp | Dùng môi trường thử theo Docker hoặc Kubernetes được tài liệu chỉ dẫn; kiểm migration, phân quyền và xuất dữ liệu trước khi đưa công việc thật vào. |
+| Lựa chọn đối chiếu | OpenProject; Taiga; Huly. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/makeplane/plane/blob/57a876da1d83ce3309543464325a44e90b2f5c96/README.md) · [COPYRIGHT.txt](https://github.com/makeplane/plane/blob/57a876da1d83ce3309543464325a44e90b2f5c96/COPYRIGHT.txt) · [COPYRIGHT_CHECK.md](https://github.com/makeplane/plane/blob/57a876da1d83ce3309543464325a44e90b2f5c96/COPYRIGHT_CHECK.md) · [LICENSE.txt](https://github.com/makeplane/plane/blob/57a876da1d83ce3309543464325a44e90b2f5c96/LICENSE.txt) · [package.json](https://github.com/makeplane/plane/blob/57a876da1d83ce3309543464325a44e90b2f5c96/package.json) · [.github/workflows/build-branch.yml](https://github.com/makeplane/plane/blob/57a876da1d83ce3309543464325a44e90b2f5c96/.github/workflows/build-branch.yml).
+
+<a id="anhkysuai-dubinc-dub.link"></a>
+
+### Dub Links
+
+**Repo:** [dubinc/dub.link](https://github.com/dubinc/dub.link) · **License:** AGPL-3.0; thư mục ee theo giấy phép riêng · **Kiểm:** 2026-11-23, `docs-read`, [`6b463b4bdd9e`](https://github.com/dubinc/dub.link/tree/6b463b4bdd9ed2fd9aa416f67b5b77d317b1471e) (commit 2026-10-26). **Sao:** 25,217 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/dubinc/dub.link).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Nền tảng link ngắn, attribution và theo dõi chuyển đổi. |
+| Giá trị và cơ chế theo tài liệu | README liệt kê Next.js/Prisma, Redis/analytics/database và nhiều dịch vụ ngoài; CI có public API tests, hữu ích để xem cấu trúc tích hợp tăng trưởng sản phẩm. |
+| Giới hạn | LICENSE tách hai nhánh thư mục ee; không gắn AGPL cho toàn monorepo. Số click trong mô tả không được đo lại; self-host còn phụ thuộc cấu hình dịch vụ/credentials. |
+| Điều kiện tích hợp | Thử domain/link và event conversion trên dữ liệu giả, kiểm privacy/retention và chống lạm dụng redirect; đối chiếu CE/EE và chi phí backend trước triển khai. |
+| Lựa chọn đối chiếu | Shlink; YOURLS; Kutt. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/dubinc/dub.link/blob/6b463b4bdd9ed2fd9aa416f67b5b77d317b1471e/README.md) · [LICENSE.md](https://github.com/dubinc/dub.link/blob/6b463b4bdd9ed2fd9aa416f67b5b77d317b1471e/LICENSE.md) · [package.json](https://github.com/dubinc/dub.link/blob/6b463b4bdd9ed2fd9aa416f67b5b77d317b1471e/package.json) · [.github/workflows/e2e.yaml](https://github.com/dubinc/dub.link/blob/6b463b4bdd9ed2fd9aa416f67b5b77d317b1471e/.github/workflows/e2e.yaml).
+
 ## Nguồn
 
 Các permalink trong từng hồ sơ cố định đúng phiên bản đã đọc; số sao/trạng thái archive là snapshot GitHub API ngày 2026-11-02. Không chạy mã, huấn luyện model hoặc tái lập kết quả của upstream.
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-go-feature-flag"></a>
+
+### GO Feature Flag
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/thomaspoignant/go-feature-flag |
+| License | MIT |
+| Phiên bản đã đọc | `df297b611c6e816a8f4ae88d4c2eb100bd8f728a` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, modules/core/utils/hash.go, modules/core/flag/internal_flag.go, modules/core/flag/rule.go; chưa chạy upstream |
+| Khoảng trống lấp | Feature flag an toàn: chuẩn OpenFeature và cấu hình theo ngữ cảnh |
+| Cơ chế đáng học | - `modules/core/utils/hash.go`: `BuildHash` = FNV-1a(tên cờ + bucketing key) chia dư theo `maxPercentage`, nên cùng người dùng luôn rơi vào cùng nhóm và không cấp phát chuỗi.<br>- `modules/core/flag/internal_flag.go`: `selectVariation` duyệt các rule theo thứ tự, rule đầu khớp thắng, sau đó đến default rule; lỗi `errRuleNotApply` thì sang rule kế; kết quả có cờ `cacheable`.<br>- `rule.go`: progressive rollout và percentage dùng cùng hàm băm; `BucketingKey` tùy chỉnh được.<br>- Retriever, exporter và notifier là các gói thay thế được (`retriever/`, `exporter/`, `notifier/`). |
+| Tiêu chí và cách kiểm | CI `ci.yml` chạy build, lint, `make test`, coverage, benchmark, kiểm swagger sinh lại, `make vuln-check-relayproxy`, build WASM và `make provider-tests` (dựng 2 relay proxy rồi chạy test tích hợp provider các ngôn ngữ). Có fuzz test cho `InternalFlag`. Kiểm bằng máy; chưa chạy. |
+| Giới hạn và rủi ro | MIT (LICENSE; examples/demo cũng MIT). Dữ liệu rời máy chỉ khi cấu hình exporter/notifier (S3, Kafka, webhook, Slack); bật xuất dữ liệu đánh giá cần cân nhắc dữ liệu người dùng trong evaluation context. Relay proxy mặc định cần cấu hình API key để không mở. Một maintainer chính (chưa xác minh số liệu đóng góp). |
+| So với | Unleash (server có UI, mục 28), flagd (provider OpenFeature gọn), OpenFeature spec (chuẩn, hồ sơ đợt này) |
+| Nguồn | [LICENSE](https://github.com/thomaspoignant/go-feature-flag/blob/df297b611c6e816a8f4ae88d4c2eb100bd8f728a/LICENSE) · [README.md](https://github.com/thomaspoignant/go-feature-flag/blob/df297b611c6e816a8f4ae88d4c2eb100bd8f728a/README.md) · [hash.go](https://github.com/thomaspoignant/go-feature-flag/blob/df297b611c6e816a8f4ae88d4c2eb100bd8f728a/modules/core/utils/hash.go) · [internal_flag.go](https://github.com/thomaspoignant/go-feature-flag/blob/df297b611c6e816a8f4ae88d4c2eb100bd8f728a/modules/core/flag/internal_flag.go) · [rule.go](https://github.com/thomaspoignant/go-feature-flag/blob/df297b611c6e816a8f4ae88d4c2eb100bd8f728a/modules/core/flag/rule.go) · [integration_tests.sh](https://github.com/thomaspoignant/go-feature-flag/blob/df297b611c6e816a8f4ae88d4c2eb100bd8f728a/openfeature/provider_tests/integration_tests.sh) · [ci.yml](https://github.com/thomaspoignant/go-feature-flag/blob/df297b611c6e816a8f4ae88d4c2eb100bd8f728a/.github/workflows/ci.yml) |
+
+<a id="nt-openfeature-spec"></a>
+
+### OpenFeature Specification
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/open-feature/spec |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `b489ba9134ee081cecaf18a28b544ddabc1b25f7` (commit 2026-11-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, version.txt, specification/sections/02-providers.md, specification/assets/provider-tck/README.md; chưa chạy upstream |
+| Khoảng trống lấp | Feature flag an toàn: chuẩn OpenFeature và cấu hình theo ngữ cảnh |
+| Cơ chế đáng học | - Yêu cầu đánh số (ví dụ 2.1.1) trong `specification/sections/01..06-*.md`; `tools/specification_parser` sinh `specification.json` và CI kiểm JSON được sinh lại cùng lint từ khóa RFC 2119 (`pr-checks.yaml`).<br>- `specification/assets/provider-tck/`: 6 file gherkin (evaluation, errors, events, lifecycle, metadata, reason), `flags/canonical-flags.json`, `openapi/control-api.yaml` phải đi cùng nhau; flag mẫu thiết kế để bắt lỗi (giá trị falsy, `missing-flag` phải vắng, số nguyên 2^53-1).<br>- Cơ chế khả năng: thẻ như `@events`, `@stale`, `@targeting`; provider khai báo thẻ hỗ trợ, scenario chưa khai báo bị báo skipped kèm lý do, không bao giờ pass.<br>- Mô-đun Go `provider-tck` chỉ nhúng các artifact bằng `embed.FS`. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy ở hai tầng: spec (parser + lint + ToC trong CI) và provider (gherkin chạy bằng suite ở repo khác, ví dụ test provider của go-feature-flag). Repo này tự nó không có runner TCK, nên không tự kiểm provider nào. Chưa chạy. |
+| Giới hạn và rủi ro | Apache-2.0. Đây là đặc tả, không phải triển khai: SDK không tự đánh giá cờ (README). TCK ghi rõ là thử nghiệm, tập scenario là tập con đại diện, từ vựng có thể đổi, và việc không khai báo một thẻ không phải vi phạm đặc tả. Mô tả trinh sát đúng về 0.1.0 ngày 2026-10-16 nhưng làm TCK nghe như đã hoàn chỉnh. |
+| So với | flagd (triển khai tham chiếu, mục 28), Unleash, GO Feature Flag (provider OpenFeature, hồ sơ đợt này) |
+| Nguồn | [LICENSE](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/LICENSE) · [README.md](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/README.md) · [version.txt](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/version.txt) · [02-providers.md](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/specification/sections/02-providers.md) · [README.md](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/specification/assets/provider-tck/README.md) · [evaluation.feature](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/specification/assets/provider-tck/gherkin/evaluation.feature) · [CHANGELOG.md](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/specification/assets/provider-tck/CHANGELOG.md) · [pr-checks.yaml](https://github.com/open-feature/spec/blob/b489ba9134ee081cecaf18a28b544ddabc1b25f7/.github/workflows/pr-checks.yaml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-superposition"></a>
+
+### Superposition
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/juspay/superposition |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `cbde69e1fe49832387a3f98364b9f4cb85fee031` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, config.rs, experiment.rs, validation_functions.rs, ci_check_pr.yaml, makefile; chưa chạy upstream |
+| Khoảng trống lấp | Feature flag an toàn: chuẩn OpenFeature và cấu hình theo ngữ cảnh |
+| Cơ chế đáng học | - `superposition_core/src/config.rs`: `eval_config` lọc theo prefix, tính cohort cục bộ, áp overrides lên default với `MergeStrategy`; mô hình dimension, context, override.<br>- `experiment.rs`: chọn variant theo `traffic_percentage` và `calculate_bucket_index(identifier, group_id)` băm ra 0-99; nhóm thử nghiệm có điều kiện context.<br>- `context_aware_config/src/validation_functions.rs`: chạy hàm kiểm định do người dùng viết trong runtime JS (`rustyscript`) với `console` bị thay để gom log; crate `superposition_provider` cài `FeatureProvider` của OpenFeature (`local_provider.rs`, chỉ thấy qua grep). |
+| Tiêu chí và cách kiểm | CI (`ci_check_pr.yaml`) có job format và lint (`make check`: fmt, leptosfmt, clippy `-Dwarnings`), kiểm conventional commit, test (`make test` gồm `cargo test` và khởi chạy dịch vụ), build Java, test provider đa ngôn ngữ. Kiểm bằng máy nhưng test cần Postgres và nhiều toolchain (Bun, JDK, Haskell). Tuyên bố an toàn (staggered rollout, revert) của README: chưa xác minh từng cái. |
+| Giới hạn và rủi ro | Apache-2.0. Nhấn mạnh feature flag chỉ là phụ; thực chất là cấu hình có phiên bản. `std DefaultHasher` không bảo đảm ổn định giữa các bản Rust (theo tài liệu thư viện chuẩn), nên bucket có thể đổi khi nâng toolchain nếu mỗi client tự build khác nhau: nên kiểm chéo ngôn ngữ (chưa xác minh). Có crate quan sát (observability) nhưng chưa đọc telemetry rời máy. Dự án hoạt động, commit 2026-11-23. |
+| So với | OpenFeature spec, flagd, Unleash, GrowthBook (thí nghiệm). |
+| Nguồn | [README.md](https://github.com/juspay/superposition/blob/cbde69e1fe49832387a3f98364b9f4cb85fee031/README.md) · [LICENSE](https://github.com/juspay/superposition/blob/cbde69e1fe49832387a3f98364b9f4cb85fee031/LICENSE) · [config.rs](https://github.com/juspay/superposition/blob/cbde69e1fe49832387a3f98364b9f4cb85fee031/crates/superposition_core/src/config.rs) · [experiment.rs](https://github.com/juspay/superposition/blob/cbde69e1fe49832387a3f98364b9f4cb85fee031/crates/superposition_core/src/experiment.rs) · [validation_functions.rs](https://github.com/juspay/superposition/blob/cbde69e1fe49832387a3f98364b9f4cb85fee031/crates/context_aware_config/src/validation_functions.rs) · [ci_check_pr.yaml](https://github.com/juspay/superposition/blob/cbde69e1fe49832387a3f98364b9f4cb85fee031/.github/workflows/ci_check_pr.yaml) · [makefile](https://github.com/juspay/superposition/blob/cbde69e1fe49832387a3f98364b9f4cb85fee031/makefile) |
+
+<a id="n2-confseq"></a>
+
+### ConfSeq
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/gostevehoward/confseq |
+| License | MIT |
+| Phiên bản đã đọc | `c08c6a66f77fbb2797c4d54e8b226fe8c42a5b67` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, pyproject.toml, check-python-package.yml, betting.py, uniform_boundaries.h, test_boundaries.py; chưa chạy upstream |
+| Khoảng trống lấp | Thí nghiệm A/B: thống kê tuần tự (chỉ phần này; không có SRM, CUPED) |
+| Cơ chế đáng học | - `src/confseq/uniform_boundaries.h`: thư viện header-only C++ cài các biên mixture (normal, gamma-exponential, gamma-Poisson, beta-binomial) và polynomial stitching; `boundaries.cpp` là lớp pybind11.<br>- `src/confseq/betting.py`: martingale cược (`betting_mart`, `betting_cs`, `hedged_cs`, `dKelly_cs`) cho trung bình biến bị chặn, có nhánh lấy mẫu không hoàn lại (tham số N).<br>- `test_boundaries.py` ghim giá trị số tham chiếu và việc từ chối `s` âm. |
+| Tiêu chí và cách kiểm | CI chạy flake8, test C++ (googletest, `make -C test runtests`) và `pytest -m "not random"` trên Python 3.10-3.14, Ubuntu và macOS. Test ngẫu nhiên gắn nhãn `random` bị loại khỏi CI. Kiểm bằng máy, nhưng độ phủ thống kê thực tế (tỷ lệ phủ nominal) chưa được tự chạy. |
+| Giới hạn và rủi ro | MIT. README tự nói `early-stage development` và không ổn định; số bản 0.0.11. Cần Boost headers để build. Không có tích hợp nền tảng thí nghiệm, SRM, CUPED hay cảnh báo; chỉ là khối thống kê tuần tự nên cần tự ghép vào pipeline. Giao diện R chỉ phủ một phần. |
+| So với | GrowthBook, Statsig/Eppo (nếu có hồ sơ); xem PostHog trong chuyên mục 28. |
+| Nguồn | [README.md](https://github.com/gostevehoward/confseq/blob/c08c6a66f77fbb2797c4d54e8b226fe8c42a5b67/README.md) · [LICENSE](https://github.com/gostevehoward/confseq/blob/c08c6a66f77fbb2797c4d54e8b226fe8c42a5b67/LICENSE) · [pyproject.toml](https://github.com/gostevehoward/confseq/blob/c08c6a66f77fbb2797c4d54e8b226fe8c42a5b67/pyproject.toml) · [check-python-package.yml](https://github.com/gostevehoward/confseq/blob/c08c6a66f77fbb2797c4d54e8b226fe8c42a5b67/.github/workflows/check-python-package.yml) · [betting.py](https://github.com/gostevehoward/confseq/blob/c08c6a66f77fbb2797c4d54e8b226fe8c42a5b67/src/confseq/betting.py) · [uniform_boundaries.h](https://github.com/gostevehoward/confseq/blob/c08c6a66f77fbb2797c4d54e8b226fe8c42a5b67/src/confseq/uniform_boundaries.h) · [test_boundaries.py](https://github.com/gostevehoward/confseq/blob/c08c6a66f77fbb2797c4d54e8b226fe8c42a5b67/test/python_tests/test_boundaries.py) |
+
+<a id="n2-openpanel"></a>
+
+### OpenPanel
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/openpanel-dev/openpanel |
+| License | AGPL-3.0 |
+| Phiên bản đã đọc | `a5a6eb7d62c9579620ec5e3fbfd4ce760f3d8073` (commit 2026-11-06) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE.md, packages/core/src/modules/ai/src/self-tracking.ts, packages/core/src/buffers/event-buffer.ts, docs/SCALING.md, .github/workflows/docker-build.yml; chưa chạy upstream |
+| Khoảng trống lấp | Theo dõi sự kiện và product analytics tự host (event, funnel, cohort, session replay); không phải CDP hay tracking plan |
+| Cơ chế đáng học | - Đường ghi sự kiện qua bộ đệm: `packages/core/src/buffers/event-buffer.ts` (trích `project_id` không cần parse JSON đầy đủ, publish sự kiện qua Redis), cùng session-buffer, profile-buffer, replay-buffer; có test failover ClickHouse (`clickhouse-failover.test.ts`).<br>- Tự quan sát lời gọi LLM: `packages/core/src/modules/ai/src/self-tracking.ts` bọc model bằng middleware của chính SDK, chỉ bật khi cấu hình `OP_CLIENT_ID`, nếu không trả model nguyên bản.<br>- Tài liệu quy mô `docs/SCALING.md`: bảng sự kiện/giây trên một máy đo ngày 2026-09-12, nói rõ không ngoại suy.<br>- SDK web trong `packages/sdks/web` (tracker.ts và test), cookieless theo README (chưa xác minh). |
+| Tiêu chí và cách kiểm | Workflow `.github/workflows/docker-build.yml` dựng ảnh Docker và smoke test khi push (đã mở); nhiều file `*.test.ts` trong packages/core. Số đo hiệu năng trong SCALING.md là tự báo, chưa chạy lại. |
+| Giới hạn và rủi ro | AGPL-3.0: dịch vụ mạng sửa đổi phải công bố mã. TRADEMARK.md hạn chế dùng tên và logo. Tự host cần ClickHouse và Redis. Tuyên bố ``GDPR-compliant`` và ``cookieless`` là tự báo. Không đọc phần billing/payments. Thư mục `justfuckinguseopenpanel` và file `bklit-issues.md` là nội dung phụ trong repo. |
+| So với | posthog, plausible-analytics, umami, growthbook |
+| Nguồn | [README.md](https://github.com/openpanel-dev/openpanel/blob/a5a6eb7d62c9579620ec5e3fbfd4ce760f3d8073/README.md) · [LICENSE.md](https://github.com/openpanel-dev/openpanel/blob/a5a6eb7d62c9579620ec5e3fbfd4ce760f3d8073/LICENSE.md) · [self-tracking.ts](https://github.com/openpanel-dev/openpanel/blob/a5a6eb7d62c9579620ec5e3fbfd4ce760f3d8073/packages/core/src/modules/ai/src/self-tracking.ts) · [event-buffer.ts](https://github.com/openpanel-dev/openpanel/blob/a5a6eb7d62c9579620ec5e3fbfd4ce760f3d8073/packages/core/src/buffers/event-buffer.ts) · [SCALING.md](https://github.com/openpanel-dev/openpanel/blob/a5a6eb7d62c9579620ec5e3fbfd4ce760f3d8073/docs/SCALING.md) · [docker-build.yml](https://github.com/openpanel-dev/openpanel/blob/a5a6eb7d62c9579620ec5e3fbfd4ce760f3d8073/.github/workflows/docker-build.yml) |
+
+<a id="n2-flipt-v2"></a>
+
+### Flipt v2
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/flipt-io/flipt |
+| License | FCL-1.0-MIT (Fair Core License, chuyển sang MIT sau 2 năm; chưa phải OSI); `errors/`, `rpc/flipt`, `sdk/go` có LICENSE MIT riêng; `internal/coss/` mang header giấy phép trả phí |
+| Phiên bản đã đọc | `e98febd579aeeced549ae812fccd0064ac8811d7` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, errors/LICENSE, internal/coss/signing/gpg.go, internal/coss/license/license.go, internal/telemetry/telemetry.go, cmd/flipt/main.go, internal/storage/git/repository.go, test.yml, integration-test.yml; chưa chạy upstream |
+| Khoảng trống lấp | Feature flag GitOps và quản trị vòng đời flag |
+| Cơ chế đáng học | - Cờ và namespace nằm trong kho Git của chính chủ; `internal/storage/git/repository.go` bọc go-git với `UpdateAndPush` tạo commit từ thay đổi ghi vào filesystem ảo, có `UpdateIfHeadMatches` để từ chối ghi khi HEAD đã đổi (trả lỗi xung đột thay vì chạy lại).<br>- Mỗi môi trường ánh xạ tới nhánh, thư mục hoặc kho riêng (theo README); thay đổi cờ đi qua nhánh và diff như mã.<br>- Lõi nằm trong `internal/`; phần trả phí tách riêng ở `internal/coss/` (ký commit GPG, webhook, secrets Vault/AWS/GCP/Azure), kiểm khoá bằng Keygen trong `internal/coss/license/license.go`.<br>- Snapshot đọc cờ từ cây Git (`internal/storage/fs/snapshot.go` theo tên hàm; chưa đọc thân) và có schema cấu hình `config/flipt.schema.json`. |
+| Tiêu chí và cách kiểm | CI `test.yml` chạy unit test Go qua Dagger kèm Codecov (`fail_ci_if_error: true`) và job riêng cho macOS; `integration-test.yml` chạy kiểm tích hợp. Có `config/schema_test.go` kiểm schema cấu hình. Đã mở hai workflow; chưa chạy. Kiểm bằng máy, không có ngưỡng độ phủ ghi trong workflow đã đọc. |
+| Giới hạn và rủi ro | License lõi là Fair Core License (FCL-1.0-MIT): không phải OSI ngay, cấm Competing Use (bán sản phẩm/dịch vụ thay thế hoặc cùng chức năng), chuyển sang MIT sau 2 năm theo điều khoản FCL. Chỉ `errors/`, `rpc/flipt`, `sdk/go` có LICENSE MIT riêng. File trong `internal/coss/` mang header nói không được dùng nếu không có giấy phép trả phí (chặt hơn phần Limitations của FCL, chỉ cấm vượt khoá). Usage ping (UUID, phiên bản, OS, kiến trúc) qua Segment bật mặc định (`TelemetryEnabled: true`), tắt khi có `DO_NOT_TRACK`, `CI` hoặc bản không phải release. Nhánh mặc định là `v2`, bản v1 ở `main`. Tuyên bố 'zero dependencies' và SSE là của README (chưa xác minh). |
+| So với | Unleash (`unleash`) và flagd (`flagd`) cùng nhóm feature flag; GO Feature Flag (`go-feature-flag`) cũng đọc cờ từ file/Git; chuẩn client là OpenFeature (`openfeature-spec`). Flipt khác ở chỗ ghi ngược về Git có kiểm HEAD. |
+| Nguồn | [README](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/README.md) · [LICENSE](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/LICENSE) · [errors/LICENSE](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/errors/LICENSE) · [gpg.go](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/internal/coss/signing/gpg.go) · [license.go](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/internal/coss/license/license.go) · [telemetry.go](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/internal/telemetry/telemetry.go) · [main.go](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/cmd/flipt/main.go) · [repository.go](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/internal/storage/git/repository.go) · [test.yml](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/.github/workflows/test.yml) · [integration-test.yml](https://github.com/flipt-io/flipt/blob/e98febd579aeeced549ae812fccd0064ac8811d7/.github/workflows/integration-test.yml) |

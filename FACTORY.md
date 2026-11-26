@@ -16,7 +16,7 @@ Một xưởng cần tạo ra phần mềm đáp ứng nghiệp vụ, giao lại
 
 Các mục 08, 09, 16, 18, 20 và 23 giúp chuẩn hóa cách học, công cụ hỗ trợ và bài học triển khai; chúng phục vụ mọi tuyến nhưng không buộc mọi dự án phải cài thêm công cụ.
 
-## 2. Bản đồ đầy đủ 34 chuyên mục
+## 2. Bản đồ đầy đủ 38 chuyên mục
 
 | Mục | Năng lực xưởng cần lấy | Đầu ra hoặc cổng kiểm nên mang về repo sản phẩm |
 |---|---|---|
@@ -54,8 +54,12 @@ Các mục 08, 09, 16, 18, 20 và 23 giúp chuẩn hóa cách học, công cụ 
 | [32 Platform/delivery](32-platform-delivery-engineering/README.md) | Môi trường và đường phát hành chuẩn | IaC plan, build một lần, promote digest, rollout/rollback |
 | [33 Reliability/ops](33-reliability-observability-operations/README.md) | Phát hiện và phục hồi lỗi production | SLI/SLO, burn-rate, alert drill và restore drill |
 | [34 Backend/data/identity](34-backend-data-identity-integration/README.md) | Giao dịch, danh tính và tích hợp nghiệp vụ | Migration, tenant isolation, authorization, outbox/reconcile |
+| [35 Desktop & năng suất](35-desktop-productivity-apps/README.md) | Công cụ máy trạm cho người trong xưởng | Danh sách app được phép, quyền hệ thống app cần, nơi dữ liệu ghi chú/đồng bộ được lưu |
+| [36 Tự host & homelab](36-self-hosting-homelab/README.md) | Dịch vụ nội bộ tự vận hành (git, tài liệu, file, giám sát) | Chủ sở hữu dịch vụ, lịch sao lưu và thử khôi phục, chứng chỉ, cổng phơi ra ngoài |
+| [37 Ngôn ngữ & runtime](37-programming-languages-runtimes/README.md) | Chọn và ghim runtime | Phiên bản/LTS ghim trong toolchain, lịch nâng cấp và kiểm tương thích |
+| [38 Chất lượng và sản xuất công nghiệp](38-industrial-quality-manufacturing/README.md) | Hệ thống chất lượng, kiểm soát quá trình, truy xuất và hiệu chuẩn cho xưởng chế tạo | Mức hỗ trợ chuẩn ghi rõ (ISO 9001, IATF 16949...), chứng cứ đo lường, sổ hiệu chuẩn chặn thiết bị quá hạn |
 
-Sáu mục 29–34 tách lớp kỹ thuật sản phẩm thông thường khỏi các lớp AI đã có: software testing khác eval model; supply-chain security khác prompt injection; observability production khác trace LLM; dữ liệu giao dịch khác corpus huấn luyện. Chọn một hồ sơ gốc và dẫn chéo để không nhân bản công cụ.
+Bốn mục 35–38 (lập 23/11/2026 khi chia lại catalog theo `data/taxonomy.json`) gom công cụ người dùng cuối, dịch vụ tự host, runtime và chất lượng sản xuất công nghiệp vốn nằm rải ở mục 08/13; chúng không thêm cổng giao hàng mới mà cung cấp ứng viên cho cổng môi trường và vận hành. Sáu mục 29–34 tách lớp kỹ thuật sản phẩm thông thường khỏi các lớp AI đã có: software testing khác eval model; supply-chain security khác prompt injection; observability production khác trace LLM; dữ liệu giao dịch khác corpus huấn luyện. Chọn một hồ sơ gốc và dẫn chéo để không nhân bản công cụ.
 
 ## 3. Chín cổng giao hàng và trách nhiệm
 

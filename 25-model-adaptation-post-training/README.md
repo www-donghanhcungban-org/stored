@@ -236,3 +236,147 @@ Không có trần VRAM phổ quát cho “model 7B/8B”. Trọng số, activati
 Nguồn GitHub trong từng hồ sơ ghim full commit SHA đã clone; số sao và `archived` đọc bằng GitHub REST ngày 2/11/2026. Commit date là ngày của `HEAD` đã đọc, khác `pushed_at` (có thể là nhánh khác). README/CI là bằng chứng về thiết kế và định nghĩa kiểm, không phải kết quả thực thi tại kho này. Nguồn ngoài repo gồm các paper gốc ở §4; không dùng bài SEO để quyết định tính tương thích hay license.
 
 Khi cập nhật: đọc lại license từng component, release/changelog, trainer/schema/template và đường save/load; giữ bằng chứng cấu hình cụ thể nếu báo tốc độ/VRAM; đối chiếu model card và rerun eval ở dự án tích hợp. Chỉ bổ sung con số benchmark khi có hardware, dataset/split, config, revision và giới hạn của phép đo.
+
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **4 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-minimind"></a>
+
+### MiniMind
+
+**Repo:** [jingyaogong/minimind](https://github.com/jingyaogong/minimind) · **License:** Apache-2.0 · **★ 69,135 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tài liệu và mã huấn luyện mô hình ngôn ngữ nhỏ từ đầu bằng PyTorch.
+
+**Giá trị và cơ chế:** README trình bày chuỗi pretrain, SFT, LoRA, DPO và các biến thể học tăng cường; hữu ích để hiểu từng giai đoạn thay vì chỉ gọi framework mức cao.
+
+**Giới hạn:** Con số hai giờ và chi phí ba nhân dân tệ chỉ là phép chạy SFT một epoch trên RTX 3090 theo tác giả, không phải chi phí huấn luyện toàn bộ. Quyền dữ liệu và weights phải kiểm riêng.
+
+**Cách tham khảo/tích hợp:** Dùng làm bài học có cấu hình và seed cố định, tách dataset khỏi mã Apache-2.0.
+
+**Thay thế:** nanogpt, [LitGPT](../25-model-adaptation-post-training/README.md#anhkysuai-2026-11-23-litgpt), llama-factory.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`858008eb98da`](https://github.com/jingyaogong/minimind/commit/858008eb98da4428f78053a1cc4d3a3bd5973629). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/jingyaogong/minimind/blob/858008eb98da4428f78053a1cc4d3a3bd5973629/README.md) · [LICENSE](https://github.com/jingyaogong/minimind/blob/858008eb98da4428f78053a1cc4d3a3bd5973629/LICENSE) · [metadata GitHub](https://api.github.com/repos/jingyaogong/minimind).
+
+<a id="anhkysuai-2026-11-23-jax"></a>
+
+### JAX
+
+**Repo:** [jax-ml/jax](https://github.com/jax-ml/jax) · **License:** Apache-2.0 · **★ 36,675 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Tính toán mảng và biến đổi chương trình Python hướng tới accelerator.
+
+**Giá trị và cơ chế:** README giải thích tổ hợp grad và jit với XLA; hữu ích khi cần tự động vi phân và tối ưu hàm tính toán trong nghiên cứu mô hình.
+
+**Giới hạn:** Tài liệu nêu rõ có sharp edges và đây là dự án nghiên cứu. Chưa biên dịch workload, đo thời gian compile hoặc kiểm độ chính xác số trên GPU/TPU.
+
+**Cách tham khảo/tích hợp:** Giữ hàm tính toán thuần, xác định dtype và seed; so kết quả với baseline trước khi tối ưu thiết bị.
+
+**Thay thế:** [pytorch](../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện), [tensorflow](../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện), numpy.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`937af6e0b5a5`](https://github.com/jax-ml/jax/commit/937af6e0b5a507f28fd002ce693610627a7e2c2f). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/jax-ml/jax/blob/937af6e0b5a507f28fd002ce693610627a7e2c2f/README.md) · [LICENSE](https://github.com/jax-ml/jax/blob/937af6e0b5a507f28fd002ce693610627a7e2c2f/LICENSE) · [metadata GitHub](https://api.github.com/repos/jax-ml/jax).
+
+<a id="anhkysuai-2026-11-23-hanlp"></a>
+
+### HanLP
+
+**Repo:** [hankcs/HanLP](https://github.com/hankcs/HanLP) · **License:** Apache-2.0 cho mã; models theo CC-BY-NC-SA-4.0 hoặc nghiên cứu/giảng dạy · **★ 36,542 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Toolkit NLP đa ngôn ngữ với các tác vụ phân tích và mô hình tiền huấn luyện.
+
+**Giá trị và cơ chế:** README mô tả cả pipeline đơn tác vụ và đa tác vụ trên PyTorch/TensorFlow; thích hợp tham khảo xử lý ngôn ngữ với annotation có cấu trúc.
+
+**Giới hạn:** Mã Apache-2.0 không làm weights được dùng tự do: README nêu models đa ngôn ngữ mặc định phi thương mại, models tiếng Trung chỉ nghiên cứu/giảng dạy. Chưa đo tiếng Việt hoặc kiểm checkpoint cụ thể.
+
+**Cách tham khảo/tích hợp:** Chọn model theo ngôn ngữ/tác vụ và kiểm license checkpoint trước khi dùng thương mại.
+
+**Thay thế:** [spaCy](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính), stanza, [transformers](../08-awesome-lists-learning/README.md#6c513-mô-hình-ai--huấn-luyện).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`959a6966f6e7`](https://github.com/hankcs/HanLP/commit/959a6966f6e7e26d2e89c4112ca9bafbe32eb743). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/hankcs/HanLP/blob/959a6966f6e7e26d2e89c4112ca9bafbe32eb743/README.md) · [LICENSE](https://github.com/hankcs/HanLP/blob/959a6966f6e7e26d2e89c4112ca9bafbe32eb743/LICENSE) · [metadata GitHub](https://api.github.com/repos/hankcs/HanLP).
+
+<a id="anhkysuai-2026-11-23-litgpt"></a>
+
+### LitGPT
+
+**Repo:** [Lightning-AI/litgpt](https://github.com/Lightning-AI/litgpt) · **License:** Apache-2.0 cho mã; weights theo model · **★ 13,761 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Các triển khai LLM và recipe pretrain, fine-tune, chuyển đổi và phục vụ model.
+
+**Giá trị và cơ chế:** README trình bày LoRA/QLoRA, adapter, phân tán FSDP cùng cấu hình trực tiếp; phù hợp người muốn hiểu mã huấn luyện và kiểm soát recipe.
+
+**Giới hạn:** Không tải model hay chạy GPU trong đánh giá. Một số weights yêu cầu token/quyền riêng; số hiệu năng và quy mô hàng nghìn thiết bị chưa kiểm. CI CPU có thể bỏ test cần secret trên fork.
+
+**Cách tham khảo/tích hợp:** Bắt đầu model nhỏ và dataset có quyền, lưu cấu hình/seed/checkpoint, xác minh format export trước dùng serving.
+
+**Thay thế:** llama-factory, [Axolotl](../25-model-adaptation-post-training/README.md#axolotl), [MiniMind](../25-model-adaptation-post-training/README.md#anhkysuai-2026-11-23-minimind).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`5341568a65e9`](https://github.com/Lightning-AI/litgpt/commit/5341568a65e918a85cb284fac038de2157eebf3f). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/Lightning-AI/litgpt/blob/5341568a65e918a85cb284fac038de2157eebf3f/README.md) · [LICENSE.md](https://github.com/Lightning-AI/litgpt/blob/5341568a65e918a85cb284fac038de2157eebf3f/LICENSE.md) · [metadata GitHub](https://api.github.com/repos/Lightning-AI/litgpt).
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+1 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-datasets"></a>
+
+### datasets
+
+`huggingface/datasets` · License: Apache License 2.0 · ★ 22.154 · docs-read · 2026-11-18
+
+Thư viện tải, chia sẻ và tiền xử lý tập dữ liệu (từ Hugging Face Hub hoặc file cục bộ) dựa trên Apache Arrow. Tải dữ liệu một dòng với load_dataset() và hỗ trợ streaming; lưu trữ ánh xạ bộ nhớ zero-copy qua Apache Arrow kèm cache tự động; chuyển đổi qua lại NumPy, Pandas, Polars, PyTorch, TensorFlow, JAX, Spark. Điều kiện: Mỗi tập dữ liệu trên Hub có giấy phép riêng do chủ dữ liệu quy định; README khuyên ghim revision để tái lập. ★ 18/11/2026: 22.154 (GitHub search API), nhóm "Tài liệu, OCR & Thị giác máy tính" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-bitsandbytes"></a>
+
+### bitsandbytes
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/bitsandbytes-foundation/bitsandbytes |
+| License | MIT |
+| Phiên bản đã đọc | `a616886cacf86701514f0cb1d6be760f967481c0` (commit 2026-10-27) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, NOTICE.md, pyproject.toml và một số file khác; chưa chạy upstream |
+| Khoảng trống lấp | Lượng tử 4/8-bit và optimizer 8-bit là lớp nền của QLoRA mà kho chưa có |
+| Cơ chế đáng học | • `quantize_4bit` chia tensor thành khối độc lập (blocksize mặc định 64, hợp lệ từ 32 đến 4096) với kiểu `nf4` hoặc `fp4`, tùy chọn lượng tử tiếp các absmax (`compress_statistics`) (`functional.py`).<br>• `Linear4bit`, `Linear8bitLt` và `Params4bit` thay lớp Linear của PyTorch (`nn/modules.py`); `bitsandbytes.optim` có optimizer 8-bit theo khối.<br>• Dispatch backend qua `torch.ops.bitsandbytes` với thư mục `backends/` cho cuda, cpu, xpu, hpu, mps, triton; mã native ở `csrc/`. |
+| Tiêu chí và cách kiểm | `tests/test_functional.py` đặt ngưỡng sai số trung bình tuyệt đối và tương đối khi lượng tử rồi dequantize (ví dụ abserr dưới 0.011 và relerr dưới 0.018 ở một ca). CI PR chạy ma trận CPU (linux x64/aarch64, macOS, windows-arm64; torch 2.4.1 và 2.13.0) và có job CUDA qua `test-runner.yml` với GPU T4/A10/L40S trên runner riêng. |
+| Giới hạn và rủi ro | License MIT (LICENSE ghi Copyright Facebook), NOTICE.md nói một phần dưới BSD của PyTorch; mô tả trinh sát ghi license trống là sai. Cần binary native biên dịch theo CUDA/CPU nên là bề mặt chuỗi cung ứng đáng lưu ý. Mặc định `quant_type` là fp4, không phải nf4 (QLoRA thường dùng nf4), và `compress_statistics` mặc định False ở hàm functional nhưng True ở `Params4bit`. README nói bản ổn định là tag 0.50.0, nhánh chính có thể khác. Có CLAUDE.md giao việc cho agent của chính repo (chỉ đọc, không áp dụng). Không thấy telemetry trong `bitsandbytes/` (grep). |
+| So với | peft, trl, unsloth (dùng bitsandbytes cho QLoRA), llm-compressor |
+| Nguồn | [README.md](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/README.md) · [LICENSE](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/LICENSE) · [NOTICE.md](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/NOTICE.md) · [pyproject.toml](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/pyproject.toml) · [functional.py](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/bitsandbytes/functional.py) · [modules.py](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/bitsandbytes/nn/modules.py) · [test_functional.py](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/tests/test_functional.py) · [tests-pr.yml](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/.github/workflows/tests-pr.yml) · [test-runner.yml](https://github.com/bitsandbytes-foundation/bitsandbytes/blob/a616886cacf86701514f0cb1d6be760f967481c0/.github/workflows/test-runner.yml) |
+
+<a id="n2-openrlhf"></a>
+
+### OpenRLHF
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/OpenRLHF/OpenRLHF |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `26494490bc237f6c3af62dab6117e6bbb0a78dba` (commit 2026-11-03) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, version.txt, experience_maker.py, utils.py; chưa chạy upstream |
+| Khoảng trống lấp | Hậu huấn luyện RL quy mô lớn (PPO/GRPO/RLOO) và môi trường agent nhiều lượt; ghép LoRA vào mô hình gốc. Không có hợp nhất nhiều mô hình |
+| Cơ chế đáng học | • `experience_maker.py::compute_advantages_and_returns`: phạt độ dài, rồi theo `--algo.advantage.estimator` tính baseline: `rloo` (trung bình các mẫu còn lại), `reinforce_baseline`/`dr_grpo` (trừ trung bình nhóm), `group_norm` (chuẩn hóa theo độ lệch chuẩn nhóm), `flash_reinforce` (trừ trung bình cả batch); chuẩn hóa lợi thế toàn batch cho gae/reinforce/reinforce_baseline.<br>• `models/utils.py::compute_approx_kl` cài k1/k2/k3 của Schulman và tùy chọn `unbiased_gradient` (đảo gradient KL ngược có trọng số quan trọng); có test gradient riêng `tests/test_kl_estimator_gradient.py`.<br>• `utils/agent.py`: `AgentInstanceBase` (`reset`, `step`) và `MultiTurnAgentExecutor` dựng chuỗi quan sát/hành động, cắt prompt đầu để chừa chỗ sinh, từ chối cắt prompt VLM vì lệch token ảnh.<br>• `cli/serve_rm.py` dựng reward model thành HTTP (FastAPI/uvicorn) để `--reward.remote_url` gọi từ huấn luyện. |
+| Tiêu chí và cách kiểm | Có 15 file test_*.py trong `tests/` (loss, KL, reward shaping, dataset, agent, PPO trainer...), nhưng workflow duy nhất `python-package.yml` (đã đọc) chỉ build wheel và đẩy PyPI khi release, KHÔNG chạy test hay lint ở CI. Chưa chạy test (cần GPU/deps nặng). Tái lập: có `--train.seed` mặc định 42; không có bằng chứng đã đọc về tái lập bit-bit giữa lần chạy. Chất lượng mô hình/benchmark README: (chưa xác minh). |
+| Giới hạn và rủi ro | Apache-2.0. Không CI kiểm thử là điểm yếu về độ tin cậy khi nâng phiên bản (0.11.3). `serve_rm.py` mặc định `--host 0.0.0.0` nên phơi cổng 5000 nếu không bọc mạng; reward từ `remote_url` hoặc hàm Python của người dùng chạy mã tùy ý trong tiến trình huấn luyện. Phụ thuộc cứng Ray, vLLM, DeepSpeed, CUDA 12.x (workflow nhắc CUDA 12.8): rất nhạy phiên bản. Có tùy chọn W&B gửi log ra ngoài khi đặt khóa. README đề xuất khung kế nhiệm (Molt) nên cần cân nhắc vòng đời. |
+| So với | verl-hybridflow (cùng loại, kiến trúc HybridFlow); trl (nhẹ hơn, không Ray); torchtune và llamafactory (tinh chỉnh, ít RL phân tán) |
+| Nguồn | [README.md](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/README.md) · [LICENSE](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/LICENSE) · [version.txt](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/version.txt) · [experience_maker.py](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/openrlhf/trainer/ppo_utils/experience_maker.py) · [utils.py](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/openrlhf/models/utils.py) · [agent.py](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/openrlhf/utils/agent.py) · [lora_combiner.py](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/openrlhf/cli/lora_combiner.py) · [serve_rm.py](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/openrlhf/cli/serve_rm.py) · [test_kl_estimator_gradient.py](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/tests/test_kl_estimator_gradient.py) · [python-package.yml](https://github.com/OpenRLHF/OpenRLHF/blob/26494490bc237f6c3af62dab6117e6bbb0a78dba/.github/workflows/python-package.yml) |

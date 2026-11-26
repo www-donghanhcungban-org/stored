@@ -337,3 +337,547 @@ Mỗi hồ sơ dẫn README/LICENSE/CI/source ghim full SHA đã clone. Stars v�
 **Đối chiếu ngoài repo:** [báo cáo FineWeb của Hugging Face](https://huggingfacefw-blogpost-fineweb-v1.static.hf.space/index.html) nêu rõ việc đánh giá recipe downstream thay vì chỉ dùng điểm “data sạch”; [Secure Label Studio](https://labelstud.io/guide/security) mô tả tắt analytics và giới hạn truy cập. Tài liệu Label Studio đang nói SSRF tắt mặc định trong khi source tại SHA hồ sơ ghi true: cần kiểm phiên bản triển khai, đặt cấu hình rõ thay vì suy từ docs. [Thông báo license của lakeFS ngày 22/9/2026](https://lakefs.io/blog/lakefs-business-source-license/) xác nhận thay đổi từ v1.87.0 và DVC giữ Apache-2.0; điều khoản license ghim trong hồ sơ là nguồn quyết định.
 
 Khi cập nhật: kiểm lại namespace, license từng component, maintainer note và HEAD/release hỗ trợ; so schema export và default analytics; xem dependency/model tải từ đâu; giữ paper/spec ở phiên bản đã đọc. Nếu không có phép đo downstream, ghi rõ công cụ giúp làm bước nào và chưa chứng minh tác động gì.
+
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **13 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-scrapy"></a>
+
+### Scrapy
+
+**Repo:** [scrapy/scrapy](https://github.com/scrapy/scrapy) · **License:** BSD-3-Clause · **★ 65,548 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Framework Python thu thập dữ liệu có cấu trúc từ website.
+
+**Giá trị và cơ chế:** README và manifest xác nhận kiến trúc crawler sử dụng Twisted cùng các thành phần parser; CI có cổng tĩnh trước tác vụ kiểm lớn, hữu ích cho pipeline thu thập có thể bảo trì.
+
+**Giới hạn:** Đã đọc tài liệu, phụ thuộc và cấu hình CI, chưa chạy spider. Không nên mặc định website cần JavaScript sẽ hoạt động chỉ với HTTP crawler.
+
+**Cách tham khảo/tích hợp:** Đặt giới hạn tốc độ, lưu URL/ngày lấy và viết fixture cho selector trước khi thu thập diện rộng.
+
+**Thay thế:** [Crawlee](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-crawlee), [Crawl4AI](https://github.com/unclecode/crawl4ai), [Colly](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-colly).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`00acf3f31a32`](https://github.com/scrapy/scrapy/commit/00acf3f31a322871a47aead5fec610d900263103). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.rst](https://github.com/scrapy/scrapy/blob/00acf3f31a322871a47aead5fec610d900263103/README.rst) · [LICENSE](https://github.com/scrapy/scrapy/blob/00acf3f31a322871a47aead5fec610d900263103/LICENSE) · [metadata GitHub](https://api.github.com/repos/scrapy/scrapy).
+
+<a id="anhkysuai-2026-11-23-cheerio"></a>
+
+### Cheerio
+
+**Repo:** [cheeriojs/cheerio](https://github.com/cheeriojs/cheerio) · **License:** MIT · **★ 30,553 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Phân tích và thao tác HTML/XML trong Node.js bằng API gần jQuery.
+
+**Giá trị và cơ chế:** README trình bày kết hợp parse5 hoặc htmlparser2 với selector và sửa cây tài liệu; phù hợp trích xuất dữ liệu từ HTML đã tải.
+
+**Giới hạn:** Không chạy JavaScript trang hay tái tạo bố cục trình duyệt. Chưa thử tập HTML lỗi thực tế hoặc đo RAM; kết quả phụ thuộc parser và chế độ XML.
+
+**Cách tham khảo/tích hợp:** Tách bước tải URL khỏi parse, lưu fixture HTML và kiểm selector khi cấu trúc nguồn thay đổi.
+
+**Thay thế:** [jsoup](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-jsoup), beautifulsoup, [Crawlee](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-crawlee).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`ad5347d1b344`](https://github.com/cheeriojs/cheerio/commit/ad5347d1b344ba60db6b0edd7fc8e5fe2ed42d6b). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [Readme.md](https://github.com/cheeriojs/cheerio/blob/ad5347d1b344ba60db6b0edd7fc8e5fe2ed42d6b/Readme.md) · [LICENSE](https://github.com/cheeriojs/cheerio/blob/ad5347d1b344ba60db6b0edd7fc8e5fe2ed42d6b/LICENSE) · [metadata GitHub](https://api.github.com/repos/cheeriojs/cheerio).
+
+<a id="anhkysuai-2026-11-23-crawlee"></a>
+
+### Crawlee
+
+**Repo:** [apify/crawlee](https://github.com/apify/crawlee) · **License:** Apache-2.0 · **★ 26,523 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Framework Node.js cho crawling và scraping bằng HTTP hoặc trình duyệt.
+
+**Giá trị và cơ chế:** README tổ chức crawler, hàng đợi, lưu kết quả và adapter trình duyệt; hữu ích xây pipeline thu thập có điều phối thay vì script tải từng URL.
+
+**Giới hạn:** Node tối thiểu và Playwright là phụ thuộc cần xét theo bản ghim; chưa chạy trình duyệt hay kiểm khả năng qua từng website. Tuyên bố chống chặn không là bảo đảm truy cập.
+
+**Cách tham khảo/tích hợp:** Chọn HTTP khi HTML đủ dữ liệu, browser khi cần render; giới hạn concurrency và lưu fixture để kiểm extraction.
+
+**Thay thế:** [Scrapy](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-scrapy), [Colly](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-colly), [Crawl4AI](https://github.com/unclecode/crawl4ai).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`4d7f4e41d497`](https://github.com/apify/crawlee/commit/4d7f4e41d4976513e401f68da0e6d0e389204b9c). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/apify/crawlee/blob/4d7f4e41d4976513e401f68da0e6d0e389204b9c/README.md) · [LICENSE.md](https://github.com/apify/crawlee/blob/4d7f4e41d4976513e401f68da0e6d0e389204b9c/LICENSE.md) · [metadata GitHub](https://api.github.com/repos/apify/crawlee).
+
+<a id="anhkysuai-2026-11-23-colly"></a>
+
+### Colly
+
+**Repo:** [gocolly/colly](https://github.com/gocolly/colly) · **License:** Apache-2.0 · **★ 25,607 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện Go thu thập dữ liệu web theo callback và selector.
+
+**Giá trị và cơ chế:** README mô tả quản lý cookie/session, đồng bộ/bất đồng bộ, giới hạn delay và concurrency theo domain; dễ nhúng vào dịch vụ Go.
+
+**Giới hạn:** Không phải browser renderer. Chưa xác minh hành vi retry hoặc giới hạn trên website thực; cần thiết kế chống lặp URL, lưu tiến độ và xử lý thay đổi HTML.
+
+**Cách tham khảo/tích hợp:** Dùng callback rõ ràng cho fetch–parse–persist và kiểm extractor bằng HTML fixture; đặt ngân sách tốc độ theo nguồn.
+
+**Thay thế:** [Scrapy](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-scrapy), [Crawlee](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-crawlee), [Cheerio](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-cheerio).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`d42a1f44c086`](https://github.com/gocolly/colly/commit/d42a1f44c086ea74c375361a0199247cdfebe31b). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/gocolly/colly/blob/d42a1f44c086ea74c375361a0199247cdfebe31b/README.md) · [LICENSE.txt](https://github.com/gocolly/colly/blob/d42a1f44c086ea74c375361a0199247cdfebe31b/LICENSE.txt) · [metadata GitHub](https://api.github.com/repos/gocolly/colly).
+
+<a id="anhkysuai-2026-11-23-newspaper3k"></a>
+
+### Newspaper3k
+
+**Repo:** [codelucas/newspaper](https://github.com/codelucas/newspaper) · **License:** MIT; mã kế thừa có GOOSE-LICENSE riêng · **★ 15,191 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện Python trích bài báo, metadata và nội dung chính từ trang web.
+
+**Giá trị và cơ chế:** README trình bày luồng Article.download → parse và các trường tác giả/ngày/nội dung; hữu ích pipeline tổng hợp tin với API gọn.
+
+**Giới hạn:** Chưa thử độ chính xác ngày đăng hoặc loại boilerplate; ví dụ README không chứng minh phù hợp mọi website. Nhánh Python2 được đánh dấu bỏ; mã kế thừa cần giữ license tương ứng.
+
+**Cách tham khảo/tích hợp:** Lưu HTML và kết quả để kiểm lại, phân biệt thời gian nguồn với thời gian crawl, bổ sung extractor riêng khi trang thay đổi.
+
+**Thay thế:** trafilatura, readability, [Scrapy](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-scrapy).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`745dfe3abe9e`](https://github.com/codelucas/newspaper/commit/745dfe3abe9ef5608461d335163c93c9e6c172fa). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.rst](https://github.com/codelucas/newspaper/blob/745dfe3abe9ef5608461d335163c93c9e6c172fa/README.rst) · [LICENSE](https://github.com/codelucas/newspaper/blob/745dfe3abe9ef5608461d335163c93c9e6c172fa/LICENSE) · [metadata GitHub](https://api.github.com/repos/codelucas/newspaper).
+
+<a id="anhkysuai-2026-11-23-cocoindex"></a>
+
+### CocoIndex
+
+**Repo:** [cocoindex-io/cocoindex](https://github.com/cocoindex-io/cocoindex) · **License:** Apache-2.0 · **★ 11,929 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Framework khai báo biến đổi dữ liệu và cập nhật chỉ mục khi nguồn thay đổi.
+
+**Giá trị và cơ chế:** Đọc memo_fingerprint thấy canonicalize kiểu dữ liệu/custom hook rồi tạo fingerprint qua lõi Rust; fingerprint_call ghép hàm, đối số và version. Cơ chế hỗ trợ tái dùng tính toán khi đầu vào không đổi.
+
+**Giới hạn:** Chỉ kiểm phần khóa memo Python, chưa chứng minh engine incremental hoặc connector đầu-cuối. Khóa thiếu phụ thuộc ngữ nghĩa có thể gây cache cũ; chưa đo tính đúng đồng bộ.
+
+**Cách tham khảo/tích hợp:** Khai báo phụ thuộc và version model rõ, thử thay file/xóa dữ liệu rồi đối chiếu chỉ mục đích.
+
+**Thay thế:** [dlt (data load tool)](../15-ai-for-data/README.md#5-data-ingestion-and-asset-orchestration), [unstructured](../08-awesome-lists-learning/README.md#6c525-tài-liệu-ocr--thị-giác-máy-tính), [LlamaIndex](https://github.com/run-llama/llama_index).
+
+**Bằng chứng:** `code-read`, ngày 2026-11-23, commit [`90c98f4a637e`](https://github.com/cocoindex-io/cocoindex/commit/90c98f4a637ed4cde1c59f63b9a6add0b2bc8602). Canonicalization/fingerprint_call Python và tài liệu khóa memo, CI; chưa kiểm engine incremental Rust đầu-cuối. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/cocoindex-io/cocoindex/blob/90c98f4a637ed4cde1c59f63b9a6add0b2bc8602/README.md) · [LICENSE](https://github.com/cocoindex-io/cocoindex/blob/90c98f4a637ed4cde1c59f63b9a6add0b2bc8602/LICENSE) · [python/cocoindex/_internal/memo_fingerprint.py](https://github.com/cocoindex-io/cocoindex/blob/90c98f4a637ed4cde1c59f63b9a6add0b2bc8602/python/cocoindex/_internal/memo_fingerprint.py) · [docs/src/content/docs/advanced_topics/memoization_keys.mdx](https://github.com/cocoindex-io/cocoindex/blob/90c98f4a637ed4cde1c59f63b9a6add0b2bc8602/docs/src/content/docs/advanced_topics/memoization_keys.mdx) · [metadata GitHub](https://api.github.com/repos/cocoindex-io/cocoindex).
+
+<a id="anhkysuai-2026-11-23-jsoup"></a>
+
+### jsoup
+
+**Repo:** [jhy/jsoup](https://github.com/jhy/jsoup) · **License:** MIT · **★ 11,419 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Thư viện Java tải, parse, trích xuất và chỉnh sửa HTML/XML.
+
+**Giá trị và cơ chế:** README trình bày DOM, CSS/XPath selector và làm sạch HTML theo safelist; phù hợp pipeline Java xử lý HTML không chuẩn mà không cần trình duyệt.
+
+**Giới hạn:** Chưa chạy corpus parser hoặc kiểm cấu hình sanitizer; không thực thi JavaScript của trang. Safelist phải phù hợp mục đích, không suy mọi đầu ra luôn an toàn với mọi ngữ cảnh nhúng.
+
+**Cách tham khảo/tích hợp:** Tách fetch khỏi parse và lưu fixture trang, kiểm selector/safelist trước đưa nội dung vào giao diện.
+
+**Thay thế:** [Cheerio](../24-ai-data-engineering/README.md#anhkysuai-2026-11-23-cheerio), beautifulsoup, htmlunit.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`d90d57521d93`](https://github.com/jhy/jsoup/commit/d90d57521d931db7bf7ee464a4c0a1a9293db088). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/jhy/jsoup/blob/d90d57521d931db7bf7ee464a4c0a1a9293db088/README.md) · [LICENSE](https://github.com/jhy/jsoup/blob/d90d57521d931db7bf7ee464a4c0a1a9293db088/LICENSE) · [metadata GitHub](https://api.github.com/repos/jhy/jsoup).
+
+<a id="anhkysuai-pathwaycom-pathway"></a>
+
+### Pathway Live Data Framework
+
+**Repo:** [pathwaycom/pathway](https://github.com/pathwaycom/pathway) · **License:** BUSL-1.1; Additional Use Grant · **Kiểm:** 2026-11-23, `docs-read`, [`8206d9a0e492`](https://github.com/pathwaycom/pathway/tree/8206d9a0e49223c5771acefe5088cbe3814d5292) (commit 2026-11-23). **Sao:** 61,964 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/pathwaycom/pathway).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Khung Python ETL cho dữ liệu batch/streaming, phân tích trực tiếp và pipeline RAG. |
+| Giá trị và cơ chế theo tài liệu | README mô tả API Python chạy trên engine Rust với tính toán tăng dần; manifest và CI cho thấy wheel được build từ cùng commit trước pytest. |
+| Giới hạn | LICENSE là BSL với Additional Use Grant, không phải giấy phép OSI. Mức hiệu năng, tính đúng khi replay và giới hạn bộ nhớ chưa được tái lập. |
+| Điều kiện tích hợp | Đánh giá connector và sự kiện cập nhật/xóa bằng corpus nhỏ; kiểm đầy đủ điều khoản production của đúng phiên bản trước khi triển khai. |
+| Lựa chọn đối chiếu | Apache Flink; Spark Structured Streaming; Bytewax. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/pathwaycom/pathway/blob/8206d9a0e49223c5771acefe5088cbe3814d5292/README.md) · [LICENSE.txt](https://github.com/pathwaycom/pathway/blob/8206d9a0e49223c5771acefe5088cbe3814d5292/LICENSE.txt) · [pyproject.toml](https://github.com/pathwaycom/pathway/blob/8206d9a0e49223c5771acefe5088cbe3814d5292/pyproject.toml) · [Cargo.toml](https://github.com/pathwaycom/pathway/blob/8206d9a0e49223c5771acefe5088cbe3814d5292/Cargo.toml) · [.github/workflows/pytest.yml](https://github.com/pathwaycom/pathway/blob/8206d9a0e49223c5771acefe5088cbe3814d5292/.github/workflows/pytest.yml).
+
+<a id="anhkysuai-apache-spark"></a>
+
+### Apache Spark
+
+**Repo:** [apache/spark](https://github.com/apache/spark) · **License:** Apache-2.0; thông báo giấy phép bên thứ ba · **Kiểm:** 2026-11-23, `docs-read`, [`659273a41595`](https://github.com/apache/spark/tree/659273a41595e2ed86976c0be6d0a6e6b9923ef7) (commit 2026-11-23). **Sao:** 44,610 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/apache/spark).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Engine phân tích phân tán cho SQL, DataFrame, machine learning và xử lý luồng. |
+| Giá trị và cơ chế theo tài liệu | README chỉ rõ Scala/Java/Python cùng SQL, MLlib, GraphX và Structured Streaming; Maven và CI thể hiện nền tảng đa ngôn ngữ. |
+| Giới hạn | README đánh dấu R đã deprecated. Khả năng mở rộng và tính đúng của job streaming chưa được tái lập; LICENSE chứa cả thông báo thành phần và dữ liệu bên thứ ba. |
+| Điều kiện tích hợp | Dùng release tương thích Java/Python và connector, đo với tập dữ liệu đại diện; kiểm checkpoint, partition, skew và phục hồi job trước production. |
+| Lựa chọn đối chiếu | Apache Flink; Dask; DuckDB. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/apache/spark/blob/659273a41595e2ed86976c0be6d0a6e6b9923ef7/README.md) · [LICENSE](https://github.com/apache/spark/blob/659273a41595e2ed86976c0be6d0a6e6b9923ef7/LICENSE) · [LICENSE-binary](https://github.com/apache/spark/blob/659273a41595e2ed86976c0be6d0a6e6b9923ef7/LICENSE-binary) · [pyproject.toml](https://github.com/apache/spark/blob/659273a41595e2ed86976c0be6d0a6e6b9923ef7/pyproject.toml) · [pom.xml](https://github.com/apache/spark/blob/659273a41595e2ed86976c0be6d0a6e6b9923ef7/pom.xml) · [.github/workflows/build_uds.yml](https://github.com/apache/spark/blob/659273a41595e2ed86976c0be6d0a6e6b9923ef7/.github/workflows/build_uds.yml).
+
+<a id="anhkysuai-airbytehq-airbyte"></a>
+
+### Airbyte
+
+**Repo:** [airbytehq/airbyte](https://github.com/airbytehq/airbyte) · **License:** Elastic-2.0; kiểm giấy phép connector theo thư mục · **Kiểm:** 2026-11-23, `docs-read`, [`f5cbf0fd54a3`](https://github.com/airbytehq/airbyte/tree/f5cbf0fd54a3f79b179c8752fb3731ec713114cc) (commit 2026-11-17). **Sao:** 22,434 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/airbytehq/airbyte).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Nền tảng chuyển/đồng bộ dữ liệu từ API, database và tệp đến kho dữ liệu hoặc ứng dụng AI. |
+| Giá trị và cơ chế theo tài liệu | README phân biệt Core/Cloud, connector catalog và MCP quản lý pipeline; Gradle cùng CI docs cho thấy repo nhiều thành phần. |
+| Giới hạn | License gốc hiện là ELv2, không suy mọi connector nguồn mở theo nhãn marketing. Số connector không bảo đảm chất lượng từng nguồn; chưa kiểm incremental sync, CDC, schema drift hay agent tools. |
+| Điều kiện tích hợp | Thử một cặp nguồn/đích với dữ liệu mẫu, kiểm cursor/delete/retry và quyền tối thiểu; ghim connector, review license và chi phí trước lịch sync thật. |
+| Lựa chọn đối chiếu | Meltano; dlt; [Debezium](../15-ai-for-data/README.md#5-data-ingestion-and-asset-orchestration). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/airbytehq/airbyte/blob/f5cbf0fd54a3f79b179c8752fb3731ec713114cc/README.md) · [LICENSE](https://github.com/airbytehq/airbyte/blob/f5cbf0fd54a3f79b179c8752fb3731ec713114cc/LICENSE) · [LICENSE_SHORT](https://github.com/airbytehq/airbyte/blob/f5cbf0fd54a3f79b179c8752fb3731ec713114cc/LICENSE_SHORT) · [build.gradle](https://github.com/airbytehq/airbyte/blob/f5cbf0fd54a3f79b179c8752fb3731ec713114cc/build.gradle) · [.github/workflows/docs-build.yml](https://github.com/airbytehq/airbyte/blob/f5cbf0fd54a3f79b179c8752fb3731ec713114cc/.github/workflows/docs-build.yml).
+
+<a id="anhkysuai-antonmedv-fx"></a>
+
+### fx
+
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 13](../13-dev-stack-devops/README.md#anhkysuai-antonmedv-fx); catalog con xem [catalog/](../catalog/README.md).
+
+<a id="anhkysuai-meta-prophet"></a>
+
+### Prophet
+
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 15](../15-ai-for-data/README.md#anhkysuai-meta-prophet); catalog con xem [catalog/](../catalog/README.md).
+
+<a id="anhkysuai-2026-11-23-datatalksclub-data-engineering-zoomcamp"></a>
+
+### data-engineering-zoomcamp
+
+**Repo:** [DataTalksClub/data-engineering-zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp) · **License:** Chưa xác lập ở phạm vi đã đọc · **★ 47,025 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Khóa data engineering theo mô-đun, từ container và điều phối đến warehouse, batch, streaming và dự án cuối.
+
+**Giá trị:** Có bài thực hành và dự án đầu-cuối, thuận tiện xây lộ trình học hạ tầng dữ liệu theo sản phẩm cụ thể.
+
+**Giới hạn:** Không thấy giấy phép chung ở gốc; LICENSE MIT trong ví dụ PyFlink chỉ áp cho phạm vi đó. Chi phí dịch vụ cloud và khả năng hoàn tất khóa chưa được kiểm. Chưa xác lập giấy phép chung cho nội dung chính ở phạm vi đã đọc; không suy quyền tái sử dụng từ repo công khai.
+
+**Cách tham khảo/tích hợp:** Chọn bài theo mục tiêu, thực hành lại trên môi trường riêng và kiểm bằng bài chuyển giao; khi dùng lại nội dung phải đối chiếu giấy phép đúng phạm vi.
+
+**Lựa chọn để đối chiếu:** [DataExpert-io/data-engineer-handbook](https://github.com/DataExpert-io/data-engineer-handbook) · [GokuMohandas/Made-With-ML](https://github.com/GokuMohandas/Made-With-ML). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`813d2774083186d0c9705c920deaf3e6e1693335`](https://github.com/DataTalksClub/data-engineering-zoomcamp/commit/813d2774083186d0c9705c920deaf3e6e1693335), ngày commit 2026-11-16. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/813d2774083186d0c9705c920deaf3e6e1693335/README.md) · [07-streaming/extras/extras/pyflink/LICENSE](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/813d2774083186d0c9705c920deaf3e6e1693335/07-streaming/extras/extras/pyflink/LICENSE) · [metadata GitHub](https://api.github.com/repos/DataTalksClub/data-engineering-zoomcamp).
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+2 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-scrapling"></a>
+
+### Scrapling
+
+`D4Vinci/Scrapling` · License: BSD-3-Clause · ★ 103.979 · docs-read · 2026-11-18
+
+Framework thu thập web Python gộp HTTP nhanh, trình duyệt, parser và crawl đồng thời; dùng từ Python, terminal hoặc agent qua MCP server và Agent Skill. Spider kiểu Scrapy có pause/resume, AutoThrottle, tùy chọn tuân thủ robots.txt; theo dõi phần tử thích ứng khi trang đổi; xuất Markdown sạch cho RAG; kiểu đầy đủ, kiểm bằng PyRight và MyPy. Điều kiện: Python 3.10+; README nêu chỉ dùng cho giáo dục và nghiên cứu. phải tuân luật dữ liệu. điều khoản website và robots.txt. ★ 18/11/2026: 103.979 (GitHub search API), nhóm "Thu thập dữ liệu & Trình duyệt tự động" trong kho-repo của Phan Đông Giang, mục 08 §6c
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c-kho-repo-của-phan-đông-giang-phandonggiangcomkho-repo-694-repo-32-nhóm-và-24-repo-aiagent-đọc-mã-bảng-người-dùng-dán-kiểm-18112026) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-openmetadata"></a>
+
+### OpenMetadata
+
+`open-metadata/OpenMetadata` · License: Apache-2.0 · ★ 15.805 · docs-read · 2026-11-18
+
+Nền tảng danh mục dữ liệu và quản trị metadata mã nguồn mở, gom lineage, chất lượng dữ liệu, sở hữu, glossary, hợp đồng dữ liệu thành đồ thị tri thức làm ngữ cảnh cho người dùng và agent AI. Hơn 130 connector; có lineage mức cột, kiểm thử chất lượng dữ liệu và profiling; cung cấp máy chủ MCP, API, SDK Python. Điều kiện: Tính năng quản lý doanh nghiệp, AI Studio, hỗ trợ thương mại thuộc sản phẩm Collate trả phí. ★ 18/11/2026: 15.805 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-feast"></a>
+
+### Feast (feature store)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/feast-dev/feast |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `a291a0f12bf78bdc28409c97139e43fb347b5da4` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, sdk/python/feast/infra/offline_stores/dask.py, sdk/python/feast/infra/offline_stores/offline_utils.py, sdk/python/feast/permissions/enforcer.py; chưa chạy upstream |
+| Khoảng trống lấp | Feature store cho ML (kho chưa có mảng này) |
+| Cơ chế đáng học | - Point-in-time join: `dask.py` chuẩn hóa timestamp về UTC, sắp xếp rồi dùng `merge_asof`, `_filter_ttl` loại giá trị mới hơn mốc sự kiện hoặc cũ hơn `ttl` của feature view; `offline_utils.py` dựng truy vấn tương ứng cho store SQL.<br>- Tách offline store, online store (Redis, DynamoDB, SQLite, Postgres, vector store...) và registry thành interface thay được (`sdk/python/feast/infra/`).<br>- Quyền: `permissions/enforcer.py` áp `Permission` lên tài nguyên; nếu chưa định nghĩa quyền thì mọi người dùng đã xác thực đều có toàn quyền (có cảnh báo log).<br>- `audit/audit_logger.py` ghi JSONL cho lời gọi MCP/REST và quyết định authz, ghi chú rằng không đưa token, hàng entity hay giá trị feature vào log (tuyên bố trong docstring, chưa kiểm hết các lối ghi). |
+| Tiêu chí và cách kiểm | CI `unit_tests.yml` chạy test Python và test Go (`go test ./go/...`); còn nhiều workflow integration (duckdb, ray, rbac, registry) mà tôi chưa mở. Tính đúng của point-in-time join có test unit/universal trong `sdk/python/tests` (chưa mở). Chưa chạy. |
+| Giới hạn và rủi ro | Apache-2.0. Mặc định không có quyền thì cho phép mọi user đã xác thực: phải tự định nghĩa permissions và bật auth khi dùng feature server. Telemetry rời máy: không thấy trong file đã đọc; CHANGELOG nhắc gauge Prometheus về cài đặt (số đo cục bộ). Bề mặt rất rộng (hàng chục store contrib), mỗi cái có mức hỗ trợ khác nhau; repo có AGENTS.md/CLAUDE.md/skills chỉ là nội dung đọc. |
+| So với | MLflow (theo dõi thực nghiệm, mục 07), lakeFS (phiên bản hóa dữ liệu, mục 24), DataHub (metadata/lineage); kho chưa có feature store nào khác |
+| Nguồn | [LICENSE](https://github.com/feast-dev/feast/blob/a291a0f12bf78bdc28409c97139e43fb347b5da4/LICENSE) · [README.md](https://github.com/feast-dev/feast/blob/a291a0f12bf78bdc28409c97139e43fb347b5da4/README.md) · [dask.py](https://github.com/feast-dev/feast/blob/a291a0f12bf78bdc28409c97139e43fb347b5da4/sdk/python/feast/infra/offline_stores/dask.py) · [offline_utils.py](https://github.com/feast-dev/feast/blob/a291a0f12bf78bdc28409c97139e43fb347b5da4/sdk/python/feast/infra/offline_stores/offline_utils.py) · [enforcer.py](https://github.com/feast-dev/feast/blob/a291a0f12bf78bdc28409c97139e43fb347b5da4/sdk/python/feast/permissions/enforcer.py) · [audit_logger.py](https://github.com/feast-dev/feast/blob/a291a0f12bf78bdc28409c97139e43fb347b5da4/sdk/python/feast/audit/audit_logger.py) · [unit_tests.yml](https://github.com/feast-dev/feast/blob/a291a0f12bf78bdc28409c97139e43fb347b5da4/.github/workflows/unit_tests.yml) |
+
+<a id="nt-lakehq-sail"></a>
+
+### Sail (LakeSail)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/lakehq/sail |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `d7b5c1e01b804e551eec9e7cbacd49e81be8a663` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, scripts/common-gold-data/metrics.jq, scripts/spark-tests/run-tests.sh, .github/workflows/spark-tests.yml; chưa chạy upstream |
+| Khoảng trống lấp | Engine truy vấn nhúng/Rust và thay thế Spark |
+| Cơ chế đáng học | - Giao diện Spark Connect (`crates/sail-spark-connect`) nên không cần viết lại mã PySpark; parser Spark SQL tự viết (`sail-sql-parser`, `sail-sql-analyzer`).<br>- Gold data: `crates/sail-spark-connect/tests/gold_data/**.json` ghi đầu ra parser theo từng câu SQL; `scripts/common-gold-data/metrics.jq` đếm tp/tn/fp/fn và workflow `gold-data.yml` so báo cáo với commit nền của PR.<br>- Workflow `spark-tests.yml` dựng PySpark vá sẵn và chạy `scripts/spark-tests/run-tests.sh` với server Sail (cổng 50051); đặt `SPARK_TESTING_REMOTE_PORT` rỗng thì chạy trên Spark gốc để đối chiếu.<br>- Worker không trạng thái, shuffle trao đổi trực tiếp Arrow giữa worker (tuyên bố trong README, chưa kiểm). |
+| Tiêu chí và cách kiểm | Tương thích đo bằng gold data (mức parser/plan, không phải kết quả truy vấn) và test PySpark trong CI; README tự ghi script `compatibility_check` là thử nghiệm, chỉ kiểm hàm được cài và không bao Spark SQL dạng chuỗi. Benchmark TPC-H SF100 trên r8g.4xlarge: Spark 534,78 s so với Sail 52,81 s, do tác giả công bố, chưa tái lập. |
+| Giới hạn và rủi ro | Apache-2.0. Telemetry: exporter OTLP tắt trừ khi đặt `telemetry.exporter.otlp.endpoint` (theo `application.yaml` và `telemetry.rs`), tức không gửi ra ngoài mặc định. Phiên bản 0.7.3, phụ thuộc DataFusion 55.x nên API và hành vi còn đổi nhanh; không phải bản thay thế đủ cho mọi tính năng Spark (MLlib, một số UDF, streaming cần xem docs). Quy mô phụ thuộc cấu hình cluster/Kubernetes. |
+| So với | Apache Spark (engine được thay thế), DuckDB, Polars; Apache DataFusion (nền của Sail, hồ sơ trong đợt này) |
+| Nguồn | [LICENSE](https://github.com/lakehq/sail/blob/d7b5c1e01b804e551eec9e7cbacd49e81be8a663/LICENSE) · [README.md](https://github.com/lakehq/sail/blob/d7b5c1e01b804e551eec9e7cbacd49e81be8a663/README.md) · [metrics.jq](https://github.com/lakehq/sail/blob/d7b5c1e01b804e551eec9e7cbacd49e81be8a663/scripts/common-gold-data/metrics.jq) · [run-tests.sh](https://github.com/lakehq/sail/blob/d7b5c1e01b804e551eec9e7cbacd49e81be8a663/scripts/spark-tests/run-tests.sh) · [spark-tests.yml](https://github.com/lakehq/sail/blob/d7b5c1e01b804e551eec9e7cbacd49e81be8a663/.github/workflows/spark-tests.yml) · [gold-data.yml](https://github.com/lakehq/sail/blob/d7b5c1e01b804e551eec9e7cbacd49e81be8a663/.github/workflows/gold-data.yml) · [telemetry.rs](https://github.com/lakehq/sail/blob/d7b5c1e01b804e551eec9e7cbacd49e81be8a663/crates/sail-telemetry/src/telemetry.rs) |
+
+<a id="nt-apache-gravitino"></a>
+
+### Apache Gravitino
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/apache/gravitino |
+| License | Apache-2.0 (LICENSE gốc; kèm LICENSE.iceberg, LICENSE.lance, LICENSE.trino và LICENSE.bin cho phần phân phối/bundle) |
+| Phiên bản đã đọc | `9a3748eb6d67af1bc87b5e1d7f521c562e5f72d8` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, core/src/main/java/org/apache/gravitino/authorization/GravitinoAuthorizer.java, docs/security/authorization-pushdown.md, conf/gravitino.conf.template; chưa chạy upstream |
+| Khoảng trống lấp | Catalog/metadata đa engine và quản trị truy cập |
+| Cơ chế đáng học | - Giao diện `GravitinoAuthorizer` (`core/.../authorization/`): `authorize(principal, metalake, object, privilege, ctx)`; `canAccessDomain` mặc định đóng (fail closed).<br>- Đẩy quyền xuống nơi lưu dữ liệu: thuộc tính catalog `authorization-provider` là `ranger` hoặc `chain` (`docs/security/authorization-pushdown.md`); catalog không đặt thì chỉ quản quyền trong Gravitino.<br>- Mỗi nguồn là một module catalog (`catalogs/catalog-*`), gồm `catalog-model` cho model AI, cùng connector `trino-connector`, `spark-connector`, `flink-connector`.<br>- Có `mcp-server` (Python) cho agent truy cập metadata. |
+| Tiêu chí và cách kiểm | Rất nhiều workflow CI: `build.yml` (gradle assemble, test), integration test riêng cho backend, access-control, Trino, Spark, Flink, Python, MCP, multi-instance consistency. Chỉ đọc một phần `build.yml` (các dòng run); chưa mở các workflow integration. Chưa chạy. |
+| Giới hạn và rủi ro | Apache-2.0 cho mã nguồn; bản bin/bundle kèm các LICENSE riêng (iceberg, lance, trino) cần đọc khi phân phối lại. Mô tả của trinh sát "cả dữ liệu lẫn model/AI" đúng nhưng AI asset là WIP theo README. Quyền Gravitino chỉ cưỡng chế ở nơi khác nếu cấu hình pushdown. Dự án ASF top-level nhưng triển khai nặng (server, backend lưu entity, từng connector). |
+| So với | DataHub (catalog/lineage, mục 15), OpenMetadata (mục 24), Project Nessie (catalog giao dịch, hồ sơ đợt này), OpenFGA (phân quyền, mục 12) |
+| Nguồn | [LICENSE](https://github.com/apache/gravitino/blob/9a3748eb6d67af1bc87b5e1d7f521c562e5f72d8/LICENSE) · [README.md](https://github.com/apache/gravitino/blob/9a3748eb6d67af1bc87b5e1d7f521c562e5f72d8/README.md) · [GravitinoAuthorizer.java](https://github.com/apache/gravitino/blob/9a3748eb6d67af1bc87b5e1d7f521c562e5f72d8/core/src/main/java/org/apache/gravitino/authorization/GravitinoAuthorizer.java) · [authorization-pushdown.md](https://github.com/apache/gravitino/blob/9a3748eb6d67af1bc87b5e1d7f521c562e5f72d8/docs/security/authorization-pushdown.md) · [gravitino.conf.template](https://github.com/apache/gravitino/blob/9a3748eb6d67af1bc87b5e1d7f521c562e5f72d8/conf/gravitino.conf.template) · [build.yml](https://github.com/apache/gravitino/blob/9a3748eb6d67af1bc87b5e1d7f521c562e5f72d8/.github/workflows/build.yml) |
+
+<a id="nt-projectnessie-nessie"></a>
+
+### Project Nessie
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/projectnessie/nessie |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `6e94baa550519903f2006f40ccb1d901d8908342` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, SECURITY_THREAT_MODEL.md, versioned/spi/src/main/java/org/projectnessie/versioned/VersionStore.java, servers/quarkus-config/src/main/java/org/projectnessie/quarkus/config/QuarkusNessieAuthorizationConfig.java; chưa chạy upstream |
+| Khoảng trống lấp | Catalog/metadata đa engine và quản trị truy cập |
+| Cơ chế đáng học | - `VersionStore` (`versioned/spi/`): merge/transplant với `mergeKeyBehaviors`, tùy chọn dry-run (thử merge, kiểm xung đột nhưng không commit), ném `MergeConflictException`/`ReferenceConflictException`.<br>- Phân quyền bằng biểu thức CEL theo principal, reference, content key, thao tác (các lớp `CelAuthorizer`, `CompiledAuthorizationRules` trong `servers/quarkus-authz`, chưa mở nội dung; cấu hình mặc định đọc ở `QuarkusNessieAuthorizationConfig.java`); cấu hình `nessie.server.authorization.rules`.<br>- Tài liệu mô hình đe dọa `SECURITY_THREAT_MODEL.md` đánh dấu từng claim là documented, maintainer hoặc inferred.<br>- Công cụ GC riêng (`gc/`) dọn dữ liệu mồ côi cho Iceberg. |
+| Tiêu chí và cách kiểm | CI `ci.yml` (đọc các bước run) chạy `codeChecks`, `assemble`, test Quarkus, test events, kiểm tích hợp công cụ build; test version store tách theo backend (`versioned/storage/*-tests`). Kiểm bằng máy; chưa chạy. |
+| Giới hạn và rủi ro | Apache-2.0. README ghi rõ mặc định xác thực tắt (mọi yêu cầu là user anonymous) và `nessie.server.authorization.enabled` mặc định false: phải tự bật OIDC và rule CEL. CHANGELOG nêu nhiều version store cũ (JDBC, CASSANDRA, MONGODB, DynamoDB đời 1) đã deprecated, cần dùng bản `*2`. Image đã chuyển sang ghcr.io và quay.io. |
+| So với | lakeFS (phiên bản hóa dữ liệu kiểu Git trên object store, mục 24), Apache Gravitino (catalog liên hợp, hồ sơ đợt này), DataHub |
+| Nguồn | [LICENSE](https://github.com/projectnessie/nessie/blob/6e94baa550519903f2006f40ccb1d901d8908342/LICENSE) · [README.md](https://github.com/projectnessie/nessie/blob/6e94baa550519903f2006f40ccb1d901d8908342/README.md) · [SECURITY_THREAT_MODEL.md](https://github.com/projectnessie/nessie/blob/6e94baa550519903f2006f40ccb1d901d8908342/SECURITY_THREAT_MODEL.md) · [VersionStore.java](https://github.com/projectnessie/nessie/blob/6e94baa550519903f2006f40ccb1d901d8908342/versioned/spi/src/main/java/org/projectnessie/versioned/VersionStore.java) · [QuarkusNessieAuthorizationConfig.java](https://github.com/projectnessie/nessie/blob/6e94baa550519903f2006f40ccb1d901d8908342/servers/quarkus-config/src/main/java/org/projectnessie/quarkus/config/QuarkusNessieAuthorizationConfig.java) · [ci.yml](https://github.com/projectnessie/nessie/blob/6e94baa550519903f2006f40ccb1d901d8908342/.github/workflows/ci.yml) |
+
+<a id="nt-apache-xtable"></a>
+
+### Apache XTable (Incubating)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/apache/incubator-xtable |
+| License | Apache-2.0 (bundled jar của xtable-utilities kèm jol-core GPL-2.0 với Classpath Exception, và README nói bundled jar không mang LICENSE/NOTICE cho phần gói kèm) |
+| Phiên bản đã đọc | `603a057c7a623747be0abcf553431dc36269c5c5` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, DISCLAIMER, THREAT_MODEL.md, xtable-core/src/main/java/org/apache/xtable/conversion/ConversionController.java; chưa chạy upstream |
+| Khoảng trống lấp | Định dạng bảng mở và catalog lakehouse (Iceberg/Parquet/Delta) |
+| Cơ chế đáng học | - `ConversionController`: chế độ FULL hoặc INCREMENTAL; `getFormatsToSyncIncrementally` bỏ qua incremental nếu `isIncrementalSyncSafe()` sai hoặc không đủ lịch sử, rồi rơi về snapshot sync.<br>- Mô hình trung gian `InternalTable`/`InternalSnapshot`/`TableChange` (`xtable-api/.../model`), mỗi định dạng có `ConversionSource` và `ConversionTarget` (Delta, Hudi, Iceberg, Paimon).<br>- `TableSyncMetadata` lưu instant đã đồng bộ cuối để lần sau chạy tiếp.<br>- Cấu hình YAML (`sourceFormat`, `targetFormats`, `datasets`) và có thể thay converter bằng lớp tự viết. |
+| Tiêu chí và cách kiểm | CI `mvn-ci-build.yml` chạy `./mvnw clean install` (gồm unit test; IT như `ITConversionController`, `ITDeltaLogTruncationSafetyCheck` thuộc profile verify) và Spotless; có workflow kiểm license. Tính tương thích đo bằng test chuyển đổi cho từng cặp định dạng. Chưa chạy. |
+| Giới hạn và rủi ro | Apache-2.0 nhưng DISCLAIMER: Incubator, chưa được ASF xác nhận. Bundled jar chứa jol-core (GPL-2.0 with Classpath Exception) và README nói rõ không phải artifact phát hành. THREAT_MODEL.md ở trạng thái v1 draft chờ PPMC rà. Chuyển metadata không sửa dữ liệu nhưng đích thành bản sao metadata có thể lệch nếu ghi đồng thời từ hai phía; cần một nguồn ghi duy nhất. |
+| So với | Project Nessie (catalog giao dịch), Apache Gravitino (catalog liên hợp), lakeFS; kho chưa có hồ sơ Iceberg/Delta/Hudi riêng |
+| Nguồn | [LICENSE](https://github.com/apache/incubator-xtable/blob/603a057c7a623747be0abcf553431dc36269c5c5/LICENSE) · [README.md](https://github.com/apache/incubator-xtable/blob/603a057c7a623747be0abcf553431dc36269c5c5/README.md) · [DISCLAIMER](https://github.com/apache/incubator-xtable/blob/603a057c7a623747be0abcf553431dc36269c5c5/DISCLAIMER) · [THREAT_MODEL.md](https://github.com/apache/incubator-xtable/blob/603a057c7a623747be0abcf553431dc36269c5c5/THREAT_MODEL.md) · [ConversionController.java](https://github.com/apache/incubator-xtable/blob/603a057c7a623747be0abcf553431dc36269c5c5/xtable-core/src/main/java/org/apache/xtable/conversion/ConversionController.java) · [pom.xml](https://github.com/apache/incubator-xtable/blob/603a057c7a623747be0abcf553431dc36269c5c5/xtable-utilities/pom.xml) · [mvn-ci-build.yml](https://github.com/apache/incubator-xtable/blob/603a057c7a623747be0abcf553431dc36269c5c5/.github/workflows/mvn-ci-build.yml) |
+
+<a id="nt-bitol-odcs"></a>
+
+### Open Data Contract Standard (ODCS)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/bitol-io/open-data-contract-standard |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `7c7597ee04ec58f67ea4a9cbcddab2043ff7d01f` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc LICENSE, README.md, docs/data-quality.md, schema/README.md, schema/odcs-json-schema-latest.json; chưa chạy upstream |
+| Khoảng trống lấp | Data contract (ODCS) và kiểm chứng hợp đồng |
+| Cơ chế đáng học | - `schema/odcs-json-schema-v3.2.0.json` là bản chốt, `odcs-json-schema-latest.json` bám đầu nhánh; `validate-schema-parity.sh` kiểm latest trùng bản đã đánh phiên bản.<br>- Quality 4 mức trong `docs/data-quality.md`: `text`, `library` (metric `nullValues`, `missingValues`, `invalidValues`, `duplicateValues`, `rowCount` có operator so sánh), `sql`, `custom` (engine: soda, greatExpectations, dqx).<br>- `required` ở gốc: `version`, `apiVersion`, `kind`, `id`; `type` của server dùng `const` cho từng loại hệ thống.<br>- Đặt tên `.odcs.yaml` để công cụ tự nhận diện. |
+| Tiêu chí và cách kiểm | Workflow `validate-examples.yaml` cài ajv-cli, chạy `validate-schema-parity.sh`, `validate-examples.sh` (mọi ví dụ phải hợp lệ) và `validate-negative.sh` (44 file trong `src/script/negative-tests` phải bị schema từ chối). Kiểm bằng máy nhưng chỉ ở tầng cấu trúc. Chưa chạy. |
+| Giới hạn và rủi ro | Apache-2.0. Là chuẩn nên không có telemetry. Số phiên bản schema trong thư mục nhiều và gồm bản gắn ngày, người dùng cần ghim phiên bản; chuẩn mô tả hợp đồng chứ không bắt buộc ai thi hành. Mô tả trinh sát đúng (có JSON Schema, kiểm bằng máy được) nhưng kiểm ở đây là hợp lệ cấu trúc, không phải kiểm hợp đồng với dữ liệu thật. |
+| So với | Soda Core và Great Expectations (engine thi hành quality, mục 15), DataHub/OpenMetadata (catalog giữ metadata hợp đồng) |
+| Nguồn | [LICENSE](https://github.com/bitol-io/open-data-contract-standard/blob/7c7597ee04ec58f67ea4a9cbcddab2043ff7d01f/LICENSE) · [README.md](https://github.com/bitol-io/open-data-contract-standard/blob/7c7597ee04ec58f67ea4a9cbcddab2043ff7d01f/README.md) · [data-quality.md](https://github.com/bitol-io/open-data-contract-standard/blob/7c7597ee04ec58f67ea4a9cbcddab2043ff7d01f/docs/data-quality.md) · [README.md](https://github.com/bitol-io/open-data-contract-standard/blob/7c7597ee04ec58f67ea4a9cbcddab2043ff7d01f/schema/README.md) · [odcs-json-schema-latest.json](https://github.com/bitol-io/open-data-contract-standard/blob/7c7597ee04ec58f67ea4a9cbcddab2043ff7d01f/schema/odcs-json-schema-latest.json) · [validate-examples.yaml](https://github.com/bitol-io/open-data-contract-standard/blob/7c7597ee04ec58f67ea4a9cbcddab2043ff7d01f/.github/workflows/validate-examples.yaml) · [validate-negative.sh](https://github.com/bitol-io/open-data-contract-standard/blob/7c7597ee04ec58f67ea4a9cbcddab2043ff7d01f/src/script/validate-negative.sh) |
+
+<a id="nt-datasketch"></a>
+
+### datasketch
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ekzhu/datasketch |
+| License | MIT |
+| Phiên bản đã đọc | `c7eaaeea3f39909f906a9cf8ad4d21a878cb4e07` (commit 2026-10-09) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.rst, LICENSE, pyproject.toml, datasketch/lsh.py; chưa chạy upstream |
+| Khoảng trống lấp | Chống rò rỉ dữ liệu huấn luyện và khử trùng lặp |
+| Cơ chế đáng học | - `datasketch/lsh.py` `_optimal_param`: chọn cặp (b, r) cho `MinHashLSH` bằng cách quét mọi b và r sao cho `b*r <= num_perm`, tối thiểu hóa tổng có trọng số của xác suất dương tính giả và âm tính giả tính bằng tích phân; tham số `weights` mặc định (0.5, 0.5) chỉnh theo ưu tiên.<br>- `datasketch/minhash.py`: từ 2.0.0 mặc định sơ đồ `affine32` (sửa lệch ước lượng quá cao ở tập lớn), có `affine64` và `legacy`; `_check_scheme_consistency` làm lỗi to nếu trộn sơ đồ trong một chỉ mục thay vì trả kết quả sai âm thầm.<br>- `MinHashLSH.insertion_session` và `MinHash.bulk` để nạp theo lô; `datasketch/lsh_bloom.py` (LSHBloom) giảm bộ nhớ cho chỉ mục khử trùng lặp rất lớn (chỉ đọc README).<br>- `docs/lsh.rst`: benchmark trên hai kho tổng hợp (gần trùng và cụm chồng lấn) cho thấy độ chính xác phụ thuộc phân bố cặp quanh ngưỡng. |
+| Tiêu chí và cách kiểm | CI `test.yml` (đã mở) chạy `pytest --cov` trên Python 3.9 đến 3.13 và đẩy coverage lên Codecov; có workflow riêng cho Redis, Cassandra, Mongo. Test trong `test/` kiểm tính đúng của sketch và LSH bằng máy; độ chính xác khử trùng lặp trên văn bản thật phải tự đo: `docs/lsh.rst` chỉ báo kết quả trên dữ liệu tổng hợp. |
+| Giới hạn và rủi ro | MinHash ước lượng Jaccard theo tập shingle: bản dịch, diễn đạt lại hay thay đổi nhỏ đều lọt; với dữ liệu tiếng Việt phải tự quyết định tách từ và kích thước shingle. LSH có dương tính giả và âm tính giả theo ngưỡng. Nâng 2.0.0 làm hash khác bản cũ nên chỉ mục đã lưu phải dựng lại (hoặc dùng `scheme="legacy"`). Backend Redis và Cassandra là dịch vụ ngoài cần bảo mật riêng. Không telemetry thấy trong phần đã đọc, nhưng chưa quét toàn bộ mã. |
+| So với | `datatrove` và `data-juicer` (có hàm khử trùng lặp hoàn chỉnh cho corpus huấn luyện, hồ sơ có sẵn mục 24), `cleanlab`. |
+| Nguồn | [README.rst](https://github.com/ekzhu/datasketch/blob/c7eaaeea3f39909f906a9cf8ad4d21a878cb4e07/README.rst) · [LICENSE](https://github.com/ekzhu/datasketch/blob/c7eaaeea3f39909f906a9cf8ad4d21a878cb4e07/LICENSE) · [pyproject.toml](https://github.com/ekzhu/datasketch/blob/c7eaaeea3f39909f906a9cf8ad4d21a878cb4e07/pyproject.toml) · [lsh.py](https://github.com/ekzhu/datasketch/blob/c7eaaeea3f39909f906a9cf8ad4d21a878cb4e07/datasketch/lsh.py) · [minhash.py](https://github.com/ekzhu/datasketch/blob/c7eaaeea3f39909f906a9cf8ad4d21a878cb4e07/datasketch/minhash.py) · [lsh.rst](https://github.com/ekzhu/datasketch/blob/c7eaaeea3f39909f906a9cf8ad4d21a878cb4e07/docs/lsh.rst) · [test.yml](https://github.com/ekzhu/datasketch/blob/c7eaaeea3f39909f906a9cf8ad4d21a878cb4e07/.github/workflows/test.yml) |
+
+<a id="nt-nemo-curator"></a>
+
+### NVIDIA NeMo Curator
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/NVIDIA-NeMo/Curator |
+| License | Apache-2.0 (LICENSE gốc, header file Apache-2.0). Mô hình phân loại/embedding tải từ nơi khác có điều khoản riêng **(chưa xác minh)**, không mở |
+| Phiên bản đã đọc | `a27996bcef0576453749cf9d29ca55521b5d1370` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc `README.md`, `LICENSE`, `pyproject.toml`, `nemo_curator/stages/deduplication/fuzzy/workflow.py`, `nemo_curator/stages/deduplication/exact/identification.py`, `.github/workflows/cicd-main.yml`; chưa chạy upstream |
+| Khoảng trống lấp | Khử trùng lặp dữ liệu huấn luyện quy mô lớn (chưa có chống rò rỉ benchmark, xem giới hạn) |
+| Cơ chế đáng học | - `FuzzyDeduplicationWorkflow` (`fuzzy/workflow.py`): MinHash, LSH, đồ thị cạnh, thành phần liên thông, rồi danh sách id cần bỏ; mặc định `char_ngrams=24`, `num_bands=20`, `minhashes_per_band=13`, seed 42, cảnh báo nếu `char_ngrams<20` vì ~5% dương tính giả.<br>- `ExactDuplicateIdentification` (`exact/identification.py`) băm cột văn bản, có `normalize_text` (hạ chữ, gộp khoảng trắng).<br>- Cùng bộ stage cho văn bản, ảnh, video, âm thanh trên Ray; thư mục `semantic/` thêm khử trùng lặp theo embedding (K-means, ngưỡng `eps`).<br>- Bước loại bản sao chỉ ghi danh sách id (`perform_removal` mặc định False), tách nhận diện khỏi xóa. |
+| Tiêu chí và cách kiểm | Tham số được cảnh báo ngay trong mã; CI `cicd-main.yml` chạy unit test theo thư mục (có `stages-deduplication`) trên CPU (đã mở phần đầu file, chưa thấy phần GPU); thư mục `benchmarking/` đo hiệu năng hằng đêm (chỉ đọc README, chưa mở kết quả). |
+| Giới hạn và rủi ro | Đường dedup (exact, fuzzy) import `cudf` nên cần GPU CUDA 12 và RAPIDS 26.8 (`pyproject.toml`); gói `text_cpu` không phủ phần này. **Mô tả của trinh sát chưa đúng:** grep không thấy stage chống rò rỉ benchmark (decontamination) trong mã/tài liệu; repo chỉ khử trùng lặp trong tập huấn luyện. Phụ thuộc Ray, nhiều extra; tốc độ đổi phiên bản cao (26.02 đã đổi kiến trúc). |
+| So với | datatrove (hồ sơ có sẵn, chạy CPU/Slurm, MinHash cũng có), distilabel (sinh dữ liệu, không dedup), argilla. |
+| Nguồn | [README.md](https://github.com/NVIDIA-NeMo/Curator/blob/a27996bcef0576453749cf9d29ca55521b5d1370/README.md) · [LICENSE](https://github.com/NVIDIA-NeMo/Curator/blob/a27996bcef0576453749cf9d29ca55521b5d1370/LICENSE) · [pyproject.toml](https://github.com/NVIDIA-NeMo/Curator/blob/a27996bcef0576453749cf9d29ca55521b5d1370/pyproject.toml) · [workflow.py](https://github.com/NVIDIA-NeMo/Curator/blob/a27996bcef0576453749cf9d29ca55521b5d1370/nemo_curator/stages/deduplication/fuzzy/workflow.py) · [identification.py](https://github.com/NVIDIA-NeMo/Curator/blob/a27996bcef0576453749cf9d29ca55521b5d1370/nemo_curator/stages/deduplication/exact/identification.py) · [cicd-main.yml](https://github.com/NVIDIA-NeMo/Curator/blob/a27996bcef0576453749cf9d29ca55521b5d1370/.github/workflows/cicd-main.yml) |
+
+<a id="nt-bespoke-curator"></a>
+
+### Bespoke Curator
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/bespokelabsai/curator |
+| License | Apache-2.0 (LICENSE; `pyproject.toml` khai Apache-2.0). Không có trọng số |
+| Phiên bản đã đọc | `fab184b26578429568c39c6b1e6b1d67e1650ae1` (commit 2026-11-02) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc `README.md`, `LICENSE`, `pyproject.toml`, `src/bespokelabs/curator/llm/llm.py`, `src/bespokelabs/curator/telemetry/client.py`, `src/bespokelabs/curator/status_tracker/online_status_tracker.py`, `.github/workflows/lint-and-test.yaml`; chưa chạy upstream |
+| Khoảng trống lấp | Sinh dữ liệu tổng hợp bằng LLM có cache và chạy tiếp (post-training, fine-tuning) |
+| Cơ chế đáng học | - `llm/llm.py`: mỗi lần chạy có vân tay xxh64 từ hash dataset, hash hàm prompt và tham số sinh; thư mục chạy trùng vân tay thì dùng lại bản đã có (resume), `CURATOR_DISABLE_CACHE` tắt.<br>- Nhiều processor chung giao diện (`request_processor/`): online (OpenAI, Anthropic, LiteLLM), batch (OpenAI, Anthropic, Gemini, Azure, Mistral), vLLM offline.<br>- Kết quả ghi `responses_*.jsonl` và dataset Arrow; đọc lại chịu được dòng lỗi và báo khi toàn bộ phản hồi lỗi.<br>- Có thêm trainer Fireworks/Tinker và CodeExecutor, ngoài phạm vi dữ liệu. |
+| Tiêu chí và cách kiểm | CI chạy ruff và pytest với `--cov-fail-under=80` (đã mở workflow); nhưng tính đúng của dữ liệu sinh ra không được kiểm tự động, chỉ kiểm cơ chế gọi và cache. |
+| Giới hạn và rủi ro | Telemetry PostHog bật mặc định: khóa ghi công khai nằm trong `telemetry/client.py`, tắt bằng `TELEMETRY_ENABLED=false`; `online_status_tracker.py` gửi sự kiện `OnlineRequest` với toàn bộ trường của tracker (đếm yêu cầu/token/chi phí; có chứa nội dung prompt hay không **(chưa xác minh)**). Viewer lưu trữ chỉ bật khi `CURATOR_VIEWER=1`, khi đó dữ liệu chạy lên api.bespokelabs.ai. Phụ thuộc vLLM ghim `^0.6.3` đã cũ. Commit gần nhất 2026-11-02. |
+| So với | distilabel (hồ sơ có sẵn, pipeline sinh dữ liệu dạng đồ thị), datatrove và nemo-curator (lọc/dedup chứ không sinh), argilla. |
+| Nguồn | [README.md](https://github.com/bespokelabsai/curator/blob/fab184b26578429568c39c6b1e6b1d67e1650ae1/README.md) · [LICENSE](https://github.com/bespokelabsai/curator/blob/fab184b26578429568c39c6b1e6b1d67e1650ae1/LICENSE) · [pyproject.toml](https://github.com/bespokelabsai/curator/blob/fab184b26578429568c39c6b1e6b1d67e1650ae1/pyproject.toml) · [llm.py](https://github.com/bespokelabsai/curator/blob/fab184b26578429568c39c6b1e6b1d67e1650ae1/src/bespokelabs/curator/llm/llm.py) · [client.py](https://github.com/bespokelabsai/curator/blob/fab184b26578429568c39c6b1e6b1d67e1650ae1/src/bespokelabs/curator/telemetry/client.py) · [online_status_tracker.py](https://github.com/bespokelabsai/curator/blob/fab184b26578429568c39c6b1e6b1d67e1650ae1/src/bespokelabs/curator/status_tracker/online_status_tracker.py) · [lint-and-test.yaml](https://github.com/bespokelabsai/curator/blob/fab184b26578429568c39c6b1e6b1d67e1650ae1/.github/workflows/lint-and-test.yaml) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-lakekeeper-lakekeeper"></a>
+
+### Lakekeeper
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/lakekeeper/lakekeeper |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `4e05f79682b11ab04ec2ec5fc75814a98858d850` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc service/authz/mod.rs, server/s3_signer/policy.rs, docs/docs/authorization.md và authorization-cedar.md, workflow integration.yml và unittests.yml; chưa chạy upstream |
+| Khoảng trống lấp | Catalog/metadata đa engine và quản trị truy cập (Iceberg REST Catalog) |
+| Cơ chế đáng học | • Trait `Authorizer` (service/authz/mod.rs) tách quyết định truy cập khỏi catalog; có OpenFGA (mã nguồn mở), AllowAll và bản tự viết; kiểu hành động theo cấp server, project, warehouse, namespace, table, view.<br>• Cấp quyền đọc ghi kho dữ liệu bằng credential tạm thời (vended credentials) hoặc remote signing cho S3, Azure, GCS; bộ ký S3 (s3_signer/policy.rs) từ chối tham số truy vấn và header `x-` không nằm trong danh sách cho phép, từ chối tham số trùng.<br>• Sự kiện thay đổi dạng CloudEvents (NATS, Kafka) và giao diện `ContractVerification` để chặn thay đổi từ hệ thống ngoài; lưu trạng thái trong Postgres nên mở rộng ngang. |
+| Tiêu chí và cách kiểm | Unittests có cổng bắt buộc (sqlx-check, format, clippy, openapi sinh khớp, MSRV, cargo-audit, unused-deps). integration.yml dựng ảnh server rồi chạy ma trận pyiceberg, starrocks, trino, trino với OPA, spark với OpenFGA... Không thấy bộ conformance riêng cho đặc tả REST: mô tả của trinh sát (kiểm qua conformance REST spec) chỉ đúng theo nghĩa kiểm tích hợp với các engine, không phải bộ kiểm đặc tả độc lập. |
+| Giới hạn và rủi ro | Apache-2.0, nhưng Cedar (quyền dạng policy-as-code) chỉ có ở Lakekeeper Plus (bản thương mại, docs ghi rõ), bản mở dùng OpenFGA tức phải chạy thêm dịch vụ. Chỉ backend Postgres >=15. Không biểu diễn row filter hay column mask (docs authorization.md). Chưa tìm thấy telemetry gửi ra ngoài (tìm theo từ khóa, chưa quét toàn bộ). Sao 1516 do trinh sát ghi (chưa xác minh). |
+| So với | apache-iceberg, apache-gravitino, polaris (lưu ý id polaris trong kho là thư viện UI Shopify, khác Apache Polaris), unitycatalog-unitycatalog |
+| Nguồn | [LICENSE](https://github.com/lakekeeper/lakekeeper/blob/4e05f79682b11ab04ec2ec5fc75814a98858d850/LICENSE) · [README.md](https://github.com/lakekeeper/lakekeeper/blob/4e05f79682b11ab04ec2ec5fc75814a98858d850/README.md) · [NOTICE](https://github.com/lakekeeper/lakekeeper/blob/4e05f79682b11ab04ec2ec5fc75814a98858d850/NOTICE) · [authorization.md](https://github.com/lakekeeper/lakekeeper/blob/4e05f79682b11ab04ec2ec5fc75814a98858d850/docs/docs/authorization.md) · [authorization-cedar.md](https://github.com/lakekeeper/lakekeeper/blob/4e05f79682b11ab04ec2ec5fc75814a98858d850/docs/docs/authorization-cedar.md) · [mod.rs](https://github.com/lakekeeper/lakekeeper/blob/4e05f79682b11ab04ec2ec5fc75814a98858d850/crates/lakekeeper/src/service/authz/mod.rs) · [policy.rs](https://github.com/lakekeeper/lakekeeper/blob/4e05f79682b11ab04ec2ec5fc75814a98858d850/crates/lakekeeper/src/server/s3_signer/policy.rs) · [integration.yml](https://github.com/lakekeeper/lakekeeper/blob/4e05f79682b11ab04ec2ec5fc75814a98858d850/.github/workflows/integration.yml) · [unittests.yml](https://github.com/lakekeeper/lakekeeper/blob/4e05f79682b11ab04ec2ec5fc75814a98858d850/.github/workflows/unittests.yml) |
+
+<a id="n2-unitycatalog-unitycatalog"></a>
+
+### Unity Catalog (OSS)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/unitycatalog/unitycatalog |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `d5b5b0de3d84688332619d561e4daa4d031356b7` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc auth/UnityCatalogAuthorizer.java, auth/AuthorizeExpressions.java, auth/JCasbinAuthorizer.java, etc/conf/server.properties, roadmap.md, workflow unit-tests.yml; chưa chạy upstream |
+| Khoảng trống lấp | Catalog/metadata đa engine và quản trị truy cập (bảng, volume, hàm, mô hình AI) |
+| Cơ chế đáng học | • Giao diện `UnityCatalogAuthorizer` (grant, revoke, hierarchy parent-child, `authorize`, `authorizeAny`) với hai bản: JCasbin lưu luật trong bảng `casbin_rule` và đồng bộ định kỳ giữa các instance, hoặc OPA gọi qua `server.authorization.opa.decision-url`.<br>• Quy tắc quyền khai báo bằng biểu thức trên annotation `@AuthorizeExpression`, gom hằng số dùng chung (AuthorizeExpressions.java) để hai endpoint cấp credential cho cùng thao tác không lệch nhau; cờ `strict-privilege-checks` bật mặc định.<br>• Cấp credential tạm thời theo bảng, volume, đường dẫn, mô hình qua `StorageCredentialVendor` (AWS, Azure, GCP) và có ghi audit; lộ API riêng cùng tương thích Iceberg REST và Hive metastore (theo README, chưa kiểm). |
+| Tiêu chí và cách kiểm | CI unit-tests chạy ma trận Spark và Delta (kể cả bản nguồn), có Postgres/MySQL, thêm workflow Python client, helm chart, upgrade-tests; nhiều workflow đã bị tắt (tiền tố disabled_). Kiểm bằng máy, chưa chạy ở đây. |
+| Giới hạn và rủi ro | Apache-2.0; dự án sandbox của LF AI & Data, phiên bản 0.8.0-SNAPSHOT (chưa 1.0). Phân quyền mặc định tắt (`server.authorization=disable` trong server.properties), cần cấu hình issuer OIDC trước khi bật. Thông số trinh sát (sao, license) chưa xác minh nay đã xác nhận license Apache-2.0. Lộ trình ghi Iceberg REST đầy đủ và S3 tương thích là việc còn phải làm (roadmap.md), nên đừng giả định hỗ trợ đầy đủ. |
+| So với | apache-gravitino, apache-iceberg, openmetadata, lakekeeper-lakekeeper |
+| Nguồn | [LICENSE](https://github.com/unitycatalog/unitycatalog/blob/d5b5b0de3d84688332619d561e4daa4d031356b7/LICENSE) · [README.md](https://github.com/unitycatalog/unitycatalog/blob/d5b5b0de3d84688332619d561e4daa4d031356b7/README.md) · [roadmap.md](https://github.com/unitycatalog/unitycatalog/blob/d5b5b0de3d84688332619d561e4daa4d031356b7/roadmap.md) · [server.properties](https://github.com/unitycatalog/unitycatalog/blob/d5b5b0de3d84688332619d561e4daa4d031356b7/etc/conf/server.properties) · [UnityCatalogAuthorizer.java](https://github.com/unitycatalog/unitycatalog/blob/d5b5b0de3d84688332619d561e4daa4d031356b7/server/src/main/java/io/unitycatalog/server/auth/UnityCatalogAuthorizer.java) · [AuthorizeExpressions.java](https://github.com/unitycatalog/unitycatalog/blob/d5b5b0de3d84688332619d561e4daa4d031356b7/server/src/main/java/io/unitycatalog/server/auth/AuthorizeExpressions.java) · [JCasbinAuthorizer.java](https://github.com/unitycatalog/unitycatalog/blob/d5b5b0de3d84688332619d561e4daa4d031356b7/server/src/main/java/io/unitycatalog/server/auth/JCasbinAuthorizer.java) · [unit-tests.yml](https://github.com/unitycatalog/unitycatalog/blob/d5b5b0de3d84688332619d561e4daa4d031356b7/.github/workflows/unit-tests.yml) |
+
+<a id="n2-synthetic-data-kit"></a>
+
+### Synthetic Data Kit
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/meta-llama/synthetic-data-kit |
+| License | MIT |
+| Phiên bản đã đọc | `27a5541b2cc3537954c381eafc5398ab0838a397` (commit 2025-10-25) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, pyproject.toml, synthetic_data_kit/config.yaml và một số file khác; chưa chạy upstream |
+| Khoảng trống lấp | Sinh dữ liệu tổng hợp QA/CoT từ tài liệu để fine-tune, kèm bước lọc bằng LLM judge |
+| Cơ chế đáng học | • CLI bốn bước `ingest`, `create`, `curate`, `save-as`, thư mục đầu ra tách theo giai đoạn (config.yaml `paths`).<br>• Parser theo định dạng (`parsers/` có pdf, html, docx, ppt, txt, youtube) và generator QA, CoT, VQA (`generators/`).<br>• `curate` cho LLM chấm từng cặp từ 1 đến 10 theo batch nhỏ, nhiệt độ 0.1, giữ cặp có điểm từ ngưỡng 7.0 trở lên (`core/curate.py`, prompt `qa_rating` trong config).<br>• Prompt và tham số nằm cả trong YAML nên chỉnh được không sửa mã. |
+| Tiêu chí và cách kiểm | Judge chấm 1 đến 10 theo bốn tiêu chí (accuracy 0 đến 3, relevance 0 đến 2, clarity 0 đến 2, usefulness 0 đến 3) và lọc theo ngưỡng; không có kiểm độc lập ngoài LLM. CI chạy pre-commit/ruff và pytest trên Python 3.8 đến 3.12 với khóa API giả cùng `synthetic-data-kit system-check` (ci.yml); tôi chưa mở nội dung thư mục tests. |
+| Giới hạn và rủi ro | Khóa `enable_deduplication` và `similarity_threshold` có trong config nhưng grep toàn mã Python không thấy chỗ đọc, nên tuyên bố khử trùng lặp chưa có tác dụng ở commit này. Mặc định `provider` là `api-endpoint` tới api.llama.com nên nội dung tài liệu rời máy, chuyển sang vLLM cục bộ mới giữ dữ liệu tại chỗ. Phụ thuộc trực tiếp gồm PyMuPDF (theo hiểu biết của tôi là AGPL hoặc thương mại, chưa xác minh trong repo) và pytube. Phiên bản 0.0.5b1, commit cuối 2025-10-25. Chất lượng dữ liệu phụ thuộc model sinh và model chấm. |
+| So với | distilabel, bespoke-curator, argilla, datatrove |
+| Nguồn | [README.md](https://github.com/meta-llama/synthetic-data-kit/blob/27a5541b2cc3537954c381eafc5398ab0838a397/README.md) · [LICENSE](https://github.com/meta-llama/synthetic-data-kit/blob/27a5541b2cc3537954c381eafc5398ab0838a397/LICENSE) · [pyproject.toml](https://github.com/meta-llama/synthetic-data-kit/blob/27a5541b2cc3537954c381eafc5398ab0838a397/pyproject.toml) · [config.yaml](https://github.com/meta-llama/synthetic-data-kit/blob/27a5541b2cc3537954c381eafc5398ab0838a397/synthetic_data_kit/config.yaml) · [curate.py](https://github.com/meta-llama/synthetic-data-kit/blob/27a5541b2cc3537954c381eafc5398ab0838a397/synthetic_data_kit/core/curate.py) · [ci.yml](https://github.com/meta-llama/synthetic-data-kit/blob/27a5541b2cc3537954c381eafc5398ab0838a397/.github/workflows/ci.yml) |
+
+<a id="n2-deduplicate-text-datasets"></a>
+
+### Deduplicate Text Datasets (ExactSubstr)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/google-research/deduplicate-text-datasets |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `4e9888ac3f95dc4f6169867a04c4c19df02dafe3` (commit 2024-05-21) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, Cargo.toml, src/main.rs và một số file khác; chưa chạy upstream |
+| Khoảng trống lấp | Khử trùng lặp chính xác bằng suffix array và phát hiện trùng giữa train và test |
+| Cơ chế đáng học | • Dựng suffix array trên toàn bộ dataset ghép thành một file byte (`make`, `make_part`, `merge` trong `src/main.rs`; `table.rs` phỏng theo thư viện suffix của BurntSushi).<br>• `self-similar` tìm mọi chuỗi con lặp từ `length-threshold` byte trở lên trong một dataset; `across-similar` so hai dataset (dùng cho rò rỉ train/test); `collect` gộp thành khoảng byte cần xóa.<br>• `count-occurrences` đếm số lần một chuỗi xuất hiện trong O(log N). |
+| Tiêu chí và cách kiểm | Khớp chính xác theo byte nên kiểm được: README hướng dẫn chạy lại trên kết quả (3374227 trùng còn 374 sau một lượt, chưa xác minh) và đối chiếu `grep -c`. Không có test và không có CI trong repo. Ngưỡng `length-threshold` phụ thuộc dataset (bài báo dùng 50 token, tương đương 100 byte theo README). |
+| Giới hạn và rủi ro | Là mã nghiên cứu, README tự nói có thể không làm đúng điều bạn cần và không phải sản phẩm Google chính thức. Commit cuối 2024-05-21, phụ thuộc Cargo cũ (clap 3.1, zstd 0.5, crossbeam 0.3). `scripts/run_pipeline.sh` gọi `collect --data-name` trong khi CLI trong main.rs chỉ có `--data-file`, nên script mẫu lỗi thời. Chỉ khử trùng lặp chính xác, phần NearDup chỉ phát hành cụm kết quả, không kèm mã. Đòi nhiều RAM (C4 khoảng 300GB cần trên 600GB RAM theo README). Việc ghi lại dataset sau khi xóa phải tự viết, chỉ có script cho wiki40b. |
+| So với | datasketch (gần trùng MinHash), datatrove, nemo-curator |
+| Nguồn | [README.md](https://github.com/google-research/deduplicate-text-datasets/blob/4e9888ac3f95dc4f6169867a04c4c19df02dafe3/README.md) · [LICENSE](https://github.com/google-research/deduplicate-text-datasets/blob/4e9888ac3f95dc4f6169867a04c4c19df02dafe3/LICENSE) · [Cargo.toml](https://github.com/google-research/deduplicate-text-datasets/blob/4e9888ac3f95dc4f6169867a04c4c19df02dafe3/Cargo.toml) · [main.rs](https://github.com/google-research/deduplicate-text-datasets/blob/4e9888ac3f95dc4f6169867a04c4c19df02dafe3/src/main.rs) · [run_pipeline.sh](https://github.com/google-research/deduplicate-text-datasets/blob/4e9888ac3f95dc4f6169867a04c4c19df02dafe3/scripts/run_pipeline.sh) |
+
+<a id="n2-detect-pretrain-code"></a>
+
+### Min-K% Prob (detect-pretrain-code)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/swj0419/detect-pretrain-code |
+| License | Apache-2.0 (file LICENSE, văn bản Apache 2.0 nguyên bản) |
+| Phiên bản đã đọc | `a5048f93c4fa6491aab0638bb3e6fd5a662d7698` (commit 2023-11-03) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, src/run.py, src/eval.py, process_data.py; chưa chạy upstream |
+| Khoảng trống lấp | Chống rò rỉ dữ liệu huấn luyện: kiểm một đoạn văn bản có thể đã nằm trong dữ liệu huấn luyện của một LLM hay chưa (membership inference), dùng để dò nhiễm bẩn benchmark |
+| Cơ chế đáng học | - Min-K% Prob: `np.sort(all_prob)[:k]` lấy k% log-xác suất thấp nhất rồi lấy trung bình đảo dấu; quét k = 5, 10, 20, 30, 40, 50, 60% trong một lần chạy (`src/run.py`, hàm `inference`). <br>- Bốn baseline cùng lượt: `ppl`, hiệu log-likelihood giữa mô hình đích và mô hình tham chiếu, tỉ số `ppl/zlib`, tỉ số `ppl/lowercase_ppl` (`src/run.py`). <br>- Đánh giá: `sweep` dựng đường ROC rồi báo AUC, độ chính xác và TPR tại FPR thấp; `fig_fpr_tpr` ghi `auc.txt` và `auc.png` (`src/eval.py`). <br>- Hai tập đo đi kèm trên Hugging Face: WikiMIA (độ dài 32/64/128/256) và BookMIA (512), nhãn 0 là chưa thấy, 1 là đã thấy (README). |
+| Tiêu chí và cách kiểm | Có tiêu chí định lượng (AUC, TPR tại FPR nhỏ) tính bằng `sklearn.metrics.roc_curve` trên tập có nhãn; không có test tự động, không workflow CI, không file requirements trong repo. Hiệu lực trên dữ liệu thật của dự án khác là **(chưa xác minh)**; README tự dặn dùng đầu vào cùng độ dài. |
+| Giới hạn và rủi ro | Mã nghiên cứu, commit cuối 2023-11-03, không thấy bảo trì sau đó. Nhánh OpenAI dùng `openai.Completion.create(engine=..., echo=True, logprobs=5)` kiểu SDK cũ và khoá API gán cứng trong mã (cần tự sửa); mô hình `text-davinci-*` còn gọi được hay không là **(chưa xác minh)**. `eval.py` in "TPR@5%FPR" ra console nhưng ghi "TPR@0.1%FPR" vào `auc.txt` cho cùng một giá trị `fpr<.05`: nhãn sai, đừng trích số từ file. README ghi độ dài "54" (chắc là 64). `process_data.py` có đường dẫn cứng `/fsx-...` và import `ipdb`. Cần tải mô hình và dữ liệu Hugging Face (dữ liệu rời máy khi tải về). Dùng để dò nhiễm bẩn chỉ cho tín hiệu thống kê, không phải bằng chứng một văn bản có trong tập huấn luyện. |
+| So với | datatrove và datasketch (khử trùng lặp, cùng nhóm data-curation nhưng làm theo băm/MinHash chứ không dùng logit mô hình); data-juicer, nemo-curator (lọc/làm sạch corpus, không dò nhiễm bẩn benchmark). |
+| Nguồn | [README](https://github.com/swj0419/detect-pretrain-code/blob/a5048f93c4fa6491aab0638bb3e6fd5a662d7698/README.md) · [LICENSE](https://github.com/swj0419/detect-pretrain-code/blob/a5048f93c4fa6491aab0638bb3e6fd5a662d7698/LICENSE) · [run.py](https://github.com/swj0419/detect-pretrain-code/blob/a5048f93c4fa6491aab0638bb3e6fd5a662d7698/src/run.py) · [eval.py](https://github.com/swj0419/detect-pretrain-code/blob/a5048f93c4fa6491aab0638bb3e6fd5a662d7698/src/eval.py) · [process_data.py](https://github.com/swj0419/detect-pretrain-code/blob/a5048f93c4fa6491aab0638bb3e6fd5a662d7698/process_data.py) |
+
+<a id="n2-meltano"></a>
+
+### Meltano
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/meltano/meltano |
+| License | MIT |
+| Phiên bản đã đọc | `3913352432f32632e16807142111455d5f64cb89` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, bundle/settings.yml, plugin_test_service.py, validation_service.py, state_store/base.py, tracking/README.md, pyproject.toml, test.yml; chưa chạy upstream |
+| Khoảng trống lấp | ELT khai báo theo Singer và kiểm thử extractor/loader |
+| Cơ chế đáng học | - Cấu hình dự án khai báo trong `meltano.yml`; plugin (extractor, loader, transform, utility) cài vào venv riêng và gọi qua `plugin_invoker`.<br>- `plugin_test_service.py`: `meltano test` với extractor chạy plugin và đọc dòng Singer, chỉ đạt khi thấy ít nhất một thông điệp RECORD hoặc BATCH, rồi dừng tiến trình; với loader gửi thông điệp thử và cảnh báo sẽ ghi bảng `meltano_test_stream` vào đích thật.<br>- `validation_service.py`: kiểm dữ liệu qua plugin utility, kết quả SUCCESS hoặc FAILURE từ exit code.<br>- `state_store/` trừu tượng hóa nơi lưu bookmark (hệ thống DB, filesystem, S3, Azure, Google) với `StateIDLockedError` để khóa theo state id, cho phép chạy gia tăng lặp lại. |
+| Tiêu chí và cách kiểm | CI `test.yml` chạy khi PR, push, merge group (đã mở phần đầu workflow); có workflow benchmark, CodeQL, zizmor, dependency-review, integration. Test hợp lệ extractor chỉ là kiểm 'có ra bản ghi', không kiểm độ đúng dữ liệu. Chưa chạy; chưa đọc ngưỡng độ phủ. |
+| Giới hạn và rủi ro | MIT (bản quyền Arch Data, Inc.). Usage tracking qua Snowplow: `send_anonymous_usage_stats` có `value: true` (bật mặc định) trong `settings.yml`; tắt bằng cài đặt hoặc `disable_tracking`; có `project_id` để định danh dự án. `meltano test` loader ghi dữ liệu thử vào đích. Là bộ điều phối ELT chứ không phải bộ biến đổi hay lược đồ dữ liệu; chất lượng phụ thuộc từng plugin Singer (tap/target) do cộng đồng viết. Đo 600+ nguồn là tuyên bố của README (chưa xác minh). |
+| So với | Airbyte (`airbytehq-airbyte`) có connector đóng gói container; dlt (`dlt-data-load-tool`) viết pipeline bằng Python; Dagster (`dagster`) là orchestrator có asset; SQLMesh (`sqlmesh`) tập trung biến đổi. |
+| Nguồn | [README](https://github.com/meltano/meltano/blob/3913352432f32632e16807142111455d5f64cb89/README.md) · [LICENSE](https://github.com/meltano/meltano/blob/3913352432f32632e16807142111455d5f64cb89/LICENSE) · [settings.yml](https://github.com/meltano/meltano/blob/3913352432f32632e16807142111455d5f64cb89/src/meltano/core/bundle/settings.yml) · [plugin_test_service.py](https://github.com/meltano/meltano/blob/3913352432f32632e16807142111455d5f64cb89/src/meltano/core/plugin_test_service.py) · [validation_service.py](https://github.com/meltano/meltano/blob/3913352432f32632e16807142111455d5f64cb89/src/meltano/core/validation_service.py) · [state_store/base.py](https://github.com/meltano/meltano/blob/3913352432f32632e16807142111455d5f64cb89/src/meltano/core/state_store/base.py) · [tracking/README](https://github.com/meltano/meltano/blob/3913352432f32632e16807142111455d5f64cb89/src/meltano/core/tracking/README.md) · [pyproject.toml](https://github.com/meltano/meltano/blob/3913352432f32632e16807142111455d5f64cb89/pyproject.toml) · [test.yml](https://github.com/meltano/meltano/blob/3913352432f32632e16807142111455d5f64cb89/.github/workflows/test.yml) |
+
+<a id="n2-fiftyone"></a>
+
+### FiftyOne
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/voxel51/fiftyone |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ba7162b57857c24c23972197320e6328c6db6b70` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, setup.py, config.py, service.py; chưa chạy upstream |
+| Khoảng trống lấp | Quản trị chất lượng dữ liệu thị giác: duyệt, truy vấn, đánh giá mô hình trên từng mẫu và nối vòng lặp gắn nhãn |
+| Cơ chế đáng học | • `fiftyone/utils/eval/detection.py::evaluate_detections`: đánh giá detection/instance/polygon/keypoint/temporal, tham số `iou=0.50`, `classwise`, `custom_metrics`, ghi kết quả vào từng sample dưới `eval_key` để lọc TP/FP/FN trong App.<br>• `fiftyone/utils/*.py` có tích hợp annotation hai chiều (`cvat.py`, `labelstudio.py`, `labelbox.py`, `scale.py`, `annotations.py`) cho vòng lặp gửi nhãn rồi nhập lại.<br>• `fiftyone/core/config.py` quản lý cấu hình bằng biến môi trường `FIFTYONE_*` (backend đánh giá, `default_segmentation_backend`...), tách bằng lớp config thay được.<br>• `package/db` đóng gói binary MongoDB tải từ fastdl.mongodb.org để chạy CSDL cục bộ không cần cài sẵn. |
+| Tiêu chí và cách kiểm | CI `test.yml` (đã đọc) chạy pytest qua `tests/utils/pytest_wrapper.py` trên ma trận Python và OS (có job Windows riêng), có coverage, loại trừ `benchmarking`, `isolated`, `intensive`; `pr.yml` chạy lint và nhiều job (image CI prebaked trong registry riêng, không tái dựng ngoài tổ chức). Chưa chạy. Chất lượng lỗi nhãn do `fiftyone-brain` quyết định, chưa đọc ở hồ sơ này. |
+| Giới hạn và rủi ro | Apache-2.0 cho repo (LICENSE và package/db/LICENSE đều Apache-2.0). Telemetry: `do_not_track` mặc định False, docs ghi "UUID import và sự kiện dùng App" được theo dõi, App có `@segment/analytics-next`; tắt bằng `FIFTYONE_DO_NOT_TRACK=true`. Gói `fiftyone-db` tải MongoDB 7.0 từ fastdl.mongodb.org: license của binary MongoDB là điều khoản riêng của MongoDB (theo hiểu biết chung, chưa xác minh trong repo) nên cần xét khi phân phối lại. Có bản thương mại Voxel51 Teams/Enterprise (README), một số tính năng tập thể nằm ngoài bản mở. Repo có `enterprise-sync.yml` và nhánh community nên lịch sử qua đồng bộ. |
+| So với | cvat và label-studio (công cụ gắn nhãn; FiftyOne kết nối với chúng); cleanlab (phát hiện lỗi nhãn bằng thuật toán, tương ứng phần fiftyone-brain); nemo-curator (chuẩn bị dữ liệu quy mô lớn) |
+| Nguồn | [README.md](https://github.com/voxel51/fiftyone/blob/ba7162b57857c24c23972197320e6328c6db6b70/README.md) · [LICENSE](https://github.com/voxel51/fiftyone/blob/ba7162b57857c24c23972197320e6328c6db6b70/LICENSE) · [setup.py](https://github.com/voxel51/fiftyone/blob/ba7162b57857c24c23972197320e6328c6db6b70/setup.py) · [config.py](https://github.com/voxel51/fiftyone/blob/ba7162b57857c24c23972197320e6328c6db6b70/fiftyone/core/config.py) · [service.py](https://github.com/voxel51/fiftyone/blob/ba7162b57857c24c23972197320e6328c6db6b70/fiftyone/core/service.py) · [detection.py](https://github.com/voxel51/fiftyone/blob/ba7162b57857c24c23972197320e6328c6db6b70/fiftyone/utils/eval/detection.py) · [setup.py](https://github.com/voxel51/fiftyone/blob/ba7162b57857c24c23972197320e6328c6db6b70/package/db/setup.py) · [test.yml](https://github.com/voxel51/fiftyone/blob/ba7162b57857c24c23972197320e6328c6db6b70/.github/workflows/test.yml) · [config.rst](https://github.com/voxel51/fiftyone/blob/ba7162b57857c24c23972197320e6328c6db6b70/docs/source/user_guide/config.rst) |

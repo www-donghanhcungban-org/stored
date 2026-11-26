@@ -774,6 +774,34 @@ Memory "kiểu OpenClaw":
 
 **Nguồn §3o:** ảnh README người dùng gửi 4/11/2026 · clone https://github.com/JetBrains/thinkrail HEAD `c10f8808cee693e4abffeeb1844a132ed0a91cc5`: https://github.com/JetBrains/thinkrail/blob/c10f8808cee693e4abffeeb1844a132ed0a91cc5/README.md (Analytics & privacy, MCP servers) · https://github.com/JetBrains/thinkrail/blob/c10f8808cee693e4abffeeb1844a132ed0a91cc5/packages/server/src/analytics/SPEC.md · https://github.com/JetBrains/thinkrail/blob/c10f8808cee693e4abffeeb1844a132ed0a91cc5/packages/server/src/analytics/mute.ts · https://github.com/JetBrains/thinkrail/blob/c10f8808cee693e4abffeeb1844a132ed0a91cc5/packages/server/src/analytics/service.ts · https://github.com/JetBrains/thinkrail/blob/c10f8808cee693e4abffeeb1844a132ed0a91cc5/apps/web/src/panels/useAnalyticsConsent.ts · https://github.com/JetBrains/thinkrail/blob/c10f8808cee693e4abffeeb1844a132ed0a91cc5/apps/cli/SPEC.md · https://github.com/JetBrains/thinkrail/blob/c10f8808cee693e4abffeeb1844a132ed0a91cc5/install.sh · https://github.com/JetBrains/thinkrail/blob/c10f8808cee693e4abffeeb1844a132ed0a91cc5/LICENSE; `git shortlog`, `git tag` · GitHub search API `thinkrail` 4/11/2026.
 
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **1 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-2026-11-23-continue"></a>
+
+### Continue
+
+**Repo:** [continuedev/continue](https://github.com/continuedev/continue) · **License:** Apache-2.0 · **★ 36,540 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Trợ lý lập trình cho VS Code, CLI và JetBrains, kết nối nhiều nhà cung cấp mô hình.
+
+**Giá trị và cơ chế:** README bản cuối mô tả chuyển trọng tâm sang CLI cùng tiện ích IDE; hữu ích để tham khảo cấu trúc trợ lý lập trình và lớp cấu hình nhà cung cấp.
+
+**Giới hạn:** README thông báo kho đã ngừng phát triển chủ động và chuyển read-only; không nên suy từ số sao rằng còn được bảo trì. Tuyên bố bỏ telemetry chưa được đối chiếu mã.
+
+**Cách tham khảo/tích hợp:** Ghim bản phát hành, tự chịu trách nhiệm cập nhật phụ thuộc nếu fork; thử trên dự án nhỏ trước.
+
+**Thay thế:** [Aider](../01-ai-coding-agents/README.md#core-coding-contracts), [OpenCode](https://github.com/anomalyco/opencode), [Cline](https://github.com/cline/cline).
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`5522c6f44ca0`](https://github.com/continuedev/continue/commit/5522c6f44ca0ac3528b37244818fbfa39b5af470). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/continuedev/continue/blob/5522c6f44ca0ac3528b37244818fbfa39b5af470/README.md) · [LICENSE](https://github.com/continuedev/continue/blob/5522c6f44ca0ac3528b37244818fbfa39b5af470/LICENSE) · [metadata GitHub](https://api.github.com/repos/continuedev/continue).
+
 ## 4. Nguồn
 
 - https://pinggy.io/blog/best_open_source_cli_coding_agents/
@@ -793,3 +821,584 @@ Memory "kiểu OpenClaw":
 - §3d FilmCraft (12/10/2026): https://github.com/storytold/filmcraft (lịch sử git đầy đủ; ROADMAP.md, docs/target-app-parity.md, docs/gaps.md, CLAUDE.md, assets/app-icon/README.md; /releases; /issues) · https://getartcraft.com/apps/filmcraft · https://news.ycombinator.com/item?id=49959605 · https://www.it-connect.tech/photocraft-filmcraft-lightcraft-adobes-suite-rebuilt-in-rust-by-claude-opus-5-5-agents/ · PetaPixel, Gizmodo, Phoronix, TweakTown (10/2026) · repo nhái: https://github.com/filmcraft-app/filmcraft · so sánh: https://github.com/OpenCut-app/OpenCut, https://github.com/mifi/lossless-cut, https://github.com/mltframework/shotcut, https://github.com/olive-editor/olive, https://github.com/OpenShot/openshot-qt, https://github.com/KDE/kdenlive
 - §3e ArtCraft Launcher (12/10/2026): https://github.com/storytold/craft-launcher (clone đầy đủ, HEAD 1aaf7b2; AGENTS.md, crates/core/src/{catalog,feed,release}.rs, crates/native/src/{install,source,backend}.rs, .github/workflows/ci.yml, packaging/windows/sign.ps1) · issue #90, PR #51, #203, #208, #213 · https://github.com/storytold/craft-launcher-assets · https://github.com/storytold · https://github.com/echelon · https://getartcraft.com/apps · https://github.com/storytold/artcraft-services/pull/70 · https://news.ycombinator.com/item?id=49958850 · https://news.ycombinator.com/item?id=49981449 · https://news.ycombinator.com/item?id=50010170 · https://news.ycombinator.com/item?id=50039007 (craftsuite.net, không chính thức) · https://www.omgubuntu.co.uk/2026/10/artcraft-free-photoshop-ai-clone · https://www.techspot.com/news/114136-software-over-developer-uses-ai-build-free-adobe.html · so sánh: https://github.com/ImranR98/Obtainium, https://github.com/LykosAI/StabilityMatrix, https://github.com/pinokiocomputer/pinokio, https://github.com/mijorus/gearlever
 - §3f Omnigent (12/10/2026): https://github.com/omnigent-ai/omnigent (clone đầy đủ, HEAD 87f6f08; README, AGENTS.md, docs/POLICIES.md, omnigent/cli.py, omnigent/server/routes/accounts_auth.py, omnigent/tools/manager.py, omnigent/telemetry/client.py, omnigent/runtime/telemetry.py) · https://github.com/omnigent-ai/omnigent/security/advisories · https://app.opencve.io/cve/CVE-2026-62674 · https://pypi.org/project/omnigent/ · https://pypistats.org/api/packages/omnigent/recent · https://omnigent.ai · https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents · https://docs.databricks.com/aws/en/omnigent/ · https://itbrief.co.uk/story/databricks-launches-open-source-omnigent-for-ai-agents · https://atlan.com/know/ai-agent/databricks/what-is-databricks-omnigent-meta-harness/ · https://news.ycombinator.com/item?id=48518176 · so sánh: https://github.com/OpenHands/OpenHands, https://github.com/langchain-ai/langgraph, https://github.com/BloopAI/vibe-kanban, https://github.com/smtg-ai/claude-squad
+
+<a id="chuan-hoa-2026-11-23"></a>
+
+## Chuẩn hóa bằng chứng hồ sơ cũ — 23/11/2026
+
+Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 2026-11-23 mỗi repo được clone nông tại commit ghi trong bảng, đọc LICENSE, README, manifest và CI (nếu có); không cài, build hay chạy mã upstream. Nhận định cũ ở phần trên giữ nguyên; chỗ nào khác với lần đọc này được ghi trong cột Nhận định. Số sao lấy qua GitHub search API cùng ngày.
+
+<a id="ch-agent-board"></a>
+
+### Agent Board
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Manto-X/Agent_Board |
+| License | MIT |
+| Phiên bản đã đọc | `e8faab8eeeada95e58f27b5382477558e041a8a6` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-21) |
+| Nhận định | Bảng tin dạng file + BATON.json điều phối nhiều agent desktop không cần API, có cầu chì 2 lần từ chối chuyển escalation. Tiện học quy trình; README tự nhận "triệt tiêu race condition" **(chưa xác minh)**, hồ sơ cũ đọc mã thấy baton chỉ là quy ước. Không có CI trong `.github/workflows/`. |
+| Nguồn | [README](https://github.com/Manto-X/Agent_Board/blob/e8faab8eeeada95e58f27b5382477558e041a8a6/README.md) · [LICENSE](https://github.com/Manto-X/Agent_Board/blob/e8faab8eeeada95e58f27b5382477558e041a8a6/LICENSE) |
+
+<a id="ch-ai-coding-agents-orchestrator"></a>
+
+### ai-coding-agents-orchestrator
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Open-Makers/ai-coding-agents-orchestrator |
+| License | MIT |
+| Phiên bản đã đọc | `1c1185c6f323bf3475c3847e38245276852ebc5e` (commit 2026-10-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, go.mod, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit HEAD 2026-10-15) |
+| Nhận định | CLI Go điều phối pipeline PM→Coder→QA→review trên các CLI agent sẵn có, có cổng duyệt của người và TUI Bubble Tea. Đáng tham khảo cách chia vai và quality gate; tuyên bố "autonomous" **(chưa xác minh)**, hồ sơ cũ ghi lệnh test do LLM sinh chạy qua `sh -c` không allowlist. Nhịp commit chững lại từ giữa 10/2026. |
+| Nguồn | [README](https://github.com/Open-Makers/ai-coding-agents-orchestrator/blob/1c1185c6f323bf3475c3847e38245276852ebc5e/README.md) · [LICENSE](https://github.com/Open-Makers/ai-coding-agents-orchestrator/blob/1c1185c6f323bf3475c3847e38245276852ebc5e/LICENSE) · [go.mod](https://github.com/Open-Makers/ai-coding-agents-orchestrator/blob/1c1185c6f323bf3475c3847e38245276852ebc5e/go.mod) · [workflows](https://github.com/Open-Makers/ai-coding-agents-orchestrator/tree/1c1185c6f323bf3475c3847e38245276852ebc5e/.github/workflows) |
+
+<a id="ch-artcraft-launcher"></a>
+
+### ArtCraft Launcher
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/storytold/craft-launcher |
+| License | MIT OR Apache-2.0 |
+| Phiên bản đã đọc | `785f5c1fcc52ab879f231b9121e6f134343b3066` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE-APACHE, LICENSE-MIT, Cargo.toml, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-23) |
+| Nhận định | Trình cài/cập nhật native (Rust, egui) cho bộ Craft App Suite, kiểm SHA-256 theo release trước khi cài. Có nhiều workflow CI (ci, release, nix, freebsd…); phạm vi catalog vẫn đóng trong hệ storytold **(chưa xác minh phần ghim Team ID)**. |
+| Nguồn | [README](https://github.com/storytold/craft-launcher/blob/785f5c1fcc52ab879f231b9121e6f134343b3066/README.md) · [LICENSE-APACHE](https://github.com/storytold/craft-launcher/blob/785f5c1fcc52ab879f231b9121e6f134343b3066/LICENSE-APACHE) · [LICENSE-MIT](https://github.com/storytold/craft-launcher/blob/785f5c1fcc52ab879f231b9121e6f134343b3066/LICENSE-MIT) · [Cargo.toml](https://github.com/storytold/craft-launcher/blob/785f5c1fcc52ab879f231b9121e6f134343b3066/Cargo.toml) · [workflows](https://github.com/storytold/craft-launcher/tree/785f5c1fcc52ab879f231b9121e6f134343b3066/.github/workflows) |
+
+<a id="ch-claude-code"></a>
+
+### Claude Code
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anthropics/claude-code |
+| License | proprietary |
+| Phiên bản đã đọc | `50cdc7005318f630144c28217d1dada32e6ba762` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-23) |
+| Nhận định | Repo công khai của Claude Code chủ yếu chứa README, CHANGELOG, plugins, ví dụ hooks/settings và workflow triage issue; mã lõi không mở. Đáng tham khảo phần ví dụ cấu hình và plugin; không coi là mã nguồn mở. |
+| Nguồn | [README](https://github.com/anthropics/claude-code/blob/50cdc7005318f630144c28217d1dada32e6ba762/README.md) · [LICENSE.md](https://github.com/anthropics/claude-code/blob/50cdc7005318f630144c28217d1dada32e6ba762/LICENSE.md) · [workflows](https://github.com/anthropics/claude-code/tree/50cdc7005318f630144c28217d1dada32e6ba762/.github/workflows) |
+
+<a id="ch-claude-squad"></a>
+
+### Claude Squad
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/smtg-ai/claude-squad |
+| License | AGPL-3.0 |
+| Phiên bản đã đọc | `070eb9387cda2be2e64aa1a32ee81be160c457a1` (commit 2026-11-13) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, go.mod, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-13) |
+| Nhận định | TUI quản lý nhiều phiên Claude Code/Codex/Gemini… mỗi phiên một git worktree riêng, chạy nền được cả chế độ auto-accept. Nhẹ, chỉ cần terminal; AGPL và CLA cần cân nhắc khi nhúng vào sản phẩm. |
+| Nguồn | [README](https://github.com/smtg-ai/claude-squad/blob/070eb9387cda2be2e64aa1a32ee81be160c457a1/README.md) · [LICENSE.md](https://github.com/smtg-ai/claude-squad/blob/070eb9387cda2be2e64aa1a32ee81be160c457a1/LICENSE.md) · [go.mod](https://github.com/smtg-ai/claude-squad/blob/070eb9387cda2be2e64aa1a32ee81be160c457a1/go.mod) · [workflows](https://github.com/smtg-ai/claude-squad/tree/070eb9387cda2be2e64aa1a32ee81be160c457a1/.github/workflows) |
+
+<a id="ch-claw-code"></a>
+
+### Claw Code
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/ultraworkers/claw-code |
+| License | MIT |
+| Phiên bản đã đọc | `d53a0882787abacc053fce4361c00a6d655108f8` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-23) |
+| Nhận định | CLI `claw` viết lại bằng Rust, repo do agent tự bảo trì. README tự khuyên không dùng cho công việc thực, nên chỉ đáng đọc như hiện vật; nguồn gốc gắn với vụ lộ mã Claude Code theo hồ sơ cũ. |
+| Nguồn | [README](https://github.com/ultraworkers/claw-code/blob/d53a0882787abacc053fce4361c00a6d655108f8/README.md) · [LICENSE](https://github.com/ultraworkers/claw-code/blob/d53a0882787abacc053fce4361c00a6d655108f8/LICENSE) · [workflows](https://github.com/ultraworkers/claw-code/tree/d53a0882787abacc053fce4361c00a6d655108f8/.github/workflows) |
+
+<a id="ch-cline"></a>
+
+### Cline
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/cline/cline |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `34c104e6fc49781cda4adcd73ffdccd8f029fef9` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-23) |
+| Nhận định | Coding agent mã mở trải trên IDE, terminal, desktop và SDK `@cline/sdk`, có duyệt từng bước của người. Phạm vi đã rộng hơn mô tả "VS Code extension" trong catalog cũ; bản JetBrains là mã đóng. |
+| Nguồn | [README](https://github.com/cline/cline/blob/34c104e6fc49781cda4adcd73ffdccd8f029fef9/README.md) · [LICENSE](https://github.com/cline/cline/blob/34c104e6fc49781cda4adcd73ffdccd8f029fef9/LICENSE) · [package.json](https://github.com/cline/cline/blob/34c104e6fc49781cda4adcd73ffdccd8f029fef9/package.json) · [workflows](https://github.com/cline/cline/tree/34c104e6fc49781cda4adcd73ffdccd8f029fef9/.github/workflows) |
+
+<a id="ch-codewhale-ex-deepseek-tui"></a>
+
+### Codewhale (ex-DeepSeek-TUI)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/codewhale-hq/Codewhale |
+| License | MIT |
+| Phiên bản đã đọc | `4477e3a612ac9786071dfac3926e0b0da3d9ee0c` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, Cargo.toml, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-22) |
+| Nhận định | Coding agent terminal bằng Rust, chạy nhiều model và chia việc cho nhiều agent. Đáng tham khảo installer kiểm checksum; rủi ro: mặc định sửa file không hỏi và telemetry bật sẵn theo hồ sơ cũ. |
+| Nguồn | [README](https://github.com/codewhale-hq/Codewhale/blob/4477e3a612ac9786071dfac3926e0b0da3d9ee0c/README.md) · [LICENSE](https://github.com/codewhale-hq/Codewhale/blob/4477e3a612ac9786071dfac3926e0b0da3d9ee0c/LICENSE) · [package.json](https://github.com/codewhale-hq/Codewhale/blob/4477e3a612ac9786071dfac3926e0b0da3d9ee0c/package.json) · [Cargo.toml](https://github.com/codewhale-hq/Codewhale/blob/4477e3a612ac9786071dfac3926e0b0da3d9ee0c/Cargo.toml) · [workflows](https://github.com/codewhale-hq/Codewhale/tree/4477e3a612ac9786071dfac3926e0b0da3d9ee0c/.github/workflows) |
+
+<a id="ch-cursor"></a>
+
+### Cursor
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://cursor.com |
+| License | proprietary (dịch vụ thương mại) |
+| Phiên bản đã đọc | Trang web truy cập 2026-11-23 (không có commit) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc https://cursor.com, https://cursor.com/pricing; chưa chạy sản phẩm |
+| Bảo trì | Hoạt động (sản phẩm đang bán) |
+| Nhận định | IDE và CLI coding agent thương mại, có cloud agents, mobile, automation. Giá và gói thay đổi nhanh; quan hệ với Grok/xAI hiển thị trên trang **(chưa xác minh chi tiết)**. |
+| Nguồn | [cursor.com](https://cursor.com) · [cursor.com/pricing](https://cursor.com/pricing) |
+
+<a id="ch-deepseek-harness"></a>
+
+### DeepSeek Harness
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/deepseek-ai/deepseek-harness |
+| License | MIT |
+| Phiên bản đã đọc | `4b399c39a6d1479cd84ca591b4d7c88e24d38a96` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-22) |
+| Nhận định | Agent harness của DeepSeek, mọi thành phần là plugin, chạy Web UI cục bộ qua `npx @deepseek-ai/dsh web`. Kiến trúc đáng nghiên cứu nhưng đang alpha, README yêu cầu đọc SAFETY.md trước khi chạy. |
+| Nguồn | [README](https://github.com/deepseek-ai/deepseek-harness/blob/4b399c39a6d1479cd84ca591b4d7c88e24d38a96/README.md) · [LICENSE](https://github.com/deepseek-ai/deepseek-harness/blob/4b399c39a6d1479cd84ca591b4d7c88e24d38a96/LICENSE) · [package.json](https://github.com/deepseek-ai/deepseek-harness/blob/4b399c39a6d1479cd84ca591b4d7c88e24d38a96/package.json) · [workflows](https://github.com/deepseek-ai/deepseek-harness/tree/4b399c39a6d1479cd84ca591b4d7c88e24d38a96/.github/workflows) |
+
+<a id="ch-devin"></a>
+
+### Devin
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://devin.ai |
+| License | proprietary (dịch vụ thương mại) |
+| Phiên bản đã đọc | Trang web truy cập 2026-11-23 (không có commit) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc https://devin.ai; chưa chạy sản phẩm |
+| Bảo trì | Hoạt động (sản phẩm đang bán) |
+| Nhận định | Agent kỹ sư phần mềm thương mại, tự mở PR và test trong trình duyệt riêng. Khả năng "không dừng tới khi PR sẵn sàng merge" là tuyên bố marketing **(chưa xác minh)**. |
+| Nguồn | [devin.ai](https://devin.ai) |
+
+<a id="ch-filmcraft"></a>
+
+### FilmCraft
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/storytold/filmcraft |
+| License | MIT OR Apache-2.0 |
+| Phiên bản đã đọc | `25979b15a419d4457fb67ea5e10c1a15d2e56b62` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE-APACHE, LICENSE-MIT, Cargo.toml, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-23) |
+| Nhận định | Trình dựng video phi tuyến viết bằng Rust, chạy native và WebAssembly. Tốc độ phát triển do agent rất cao nên độ ổn định **(chưa xác minh)**; nhận định "CI không chạy test" của hồ sơ cũ cần đọc lại ci.yml. |
+| Nguồn | [README](https://github.com/storytold/filmcraft/blob/25979b15a419d4457fb67ea5e10c1a15d2e56b62/README.md) · [LICENSE-APACHE](https://github.com/storytold/filmcraft/blob/25979b15a419d4457fb67ea5e10c1a15d2e56b62/LICENSE-APACHE) · [LICENSE-MIT](https://github.com/storytold/filmcraft/blob/25979b15a419d4457fb67ea5e10c1a15d2e56b62/LICENSE-MIT) · [Cargo.toml](https://github.com/storytold/filmcraft/blob/25979b15a419d4457fb67ea5e10c1a15d2e56b62/Cargo.toml) · [workflows](https://github.com/storytold/filmcraft/tree/25979b15a419d4457fb67ea5e10c1a15d2e56b62/.github/workflows) |
+
+<a id="ch-gemini-cli"></a>
+
+### Gemini CLI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/google-gemini/gemini-cli |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `eecccfcd5aff25de5e78135ca20f7abe3f566955` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-20) |
+| Nhận định | Agent terminal của Google nay thu hẹp cho khách doanh nghiệp Code Assist; người dùng cá nhân được chuyển sang Antigravity CLI. Vẫn Apache-2.0, đáng tham khảo kiến trúc (core, a2a-server, sdk) nhưng không còn là lựa chọn miễn phí mặc định. |
+| Nguồn | [README](https://github.com/google-gemini/gemini-cli/blob/eecccfcd5aff25de5e78135ca20f7abe3f566955/README.md) · [LICENSE](https://github.com/google-gemini/gemini-cli/blob/eecccfcd5aff25de5e78135ca20f7abe3f566955/LICENSE) · [package.json](https://github.com/google-gemini/gemini-cli/blob/eecccfcd5aff25de5e78135ca20f7abe3f566955/package.json) · [workflows](https://github.com/google-gemini/gemini-cli/tree/eecccfcd5aff25de5e78135ca20f7abe3f566955/.github/workflows) |
+
+<a id="ch-google-jules"></a>
+
+### Google Jules
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://jules.google |
+| License | proprietary (dịch vụ thương mại) |
+| Phiên bản đã đọc | Trang web truy cập 2026-11-23 (không có commit) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc https://jules.google; chưa chạy sản phẩm |
+| Bảo trì | Hoạt động (sản phẩm đang bán) |
+| Nhận định | Agent coding bất đồng bộ của Google chạy trên Cloud VM, nhận task từ prompt hoặc issue GitHub. Giới hạn gói/giá chưa đọc lần này. |
+| Nguồn | [jules.google](https://jules.google) |
+
+<a id="ch-grok-build"></a>
+
+### Grok Build
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/xai-org/grok-build |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8` (commit 2026-09-29) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Cargo.toml; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit HEAD 2026-09-29) |
+| Nhận định | Mã Rust của CLI/TUI `grok` (SpaceXAI), hỗ trợ chạy headless và ACP. Chỉ là bản đồng bộ một chiều, không nhận PR; gần 2 tháng chưa đồng bộ lại. |
+| Nguồn | [README](https://github.com/xai-org/grok-build/blob/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/README.md) · [LICENSE](https://github.com/xai-org/grok-build/blob/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/LICENSE) · [Cargo.toml](https://github.com/xai-org/grok-build/blob/2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8/Cargo.toml) |
+
+<a id="ch-kilo-code"></a>
+
+### Kilo Code
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Kilo-Org/kilocode |
+| License | MIT |
+| Phiên bản đã đọc | `bfdec5496922452222223c01b4cc6c89305b0279` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-23) |
+| Nhận định | Coding agent cho VS Code, JetBrains và CLI, lõi fork từ OpenCode. Đang chuyển sang nhánh v2; các điểm rủi ro gateway/PostHog trong hồ sơ cũ chưa đọc lại lần này. |
+| Nguồn | [README](https://github.com/Kilo-Org/kilocode/blob/bfdec5496922452222223c01b4cc6c89305b0279/README.md) · [LICENSE](https://github.com/Kilo-Org/kilocode/blob/bfdec5496922452222223c01b4cc6c89305b0279/LICENSE) · [package.json](https://github.com/Kilo-Org/kilocode/blob/bfdec5496922452222223c01b4cc6c89305b0279/package.json) · [workflows](https://github.com/Kilo-Org/kilocode/tree/bfdec5496922452222223c01b4cc6c89305b0279/.github/workflows) |
+
+<a id="ch-mini-swe-agent"></a>
+
+### mini-SWE-agent
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/SWE-agent/mini-swe-agent |
+| License | MIT |
+| Phiên bản đã đọc | `04d809ceab9df28f9adaed044884180159172930` (commit 2026-09-03) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE.md, pyproject.toml, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit HEAD 2026-09-03) |
+| Nhận định | Agent SWE tối giản (~100 dòng lớp agent) của nhóm SWE-bench, dùng litellm và nhiều môi trường chạy. Mẫu tốt về harness đơn giản; số liệu benchmark và danh sách tổ chức dùng là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/SWE-agent/mini-swe-agent/blob/04d809ceab9df28f9adaed044884180159172930/README.md) · [LICENSE.md](https://github.com/SWE-agent/mini-swe-agent/blob/04d809ceab9df28f9adaed044884180159172930/LICENSE.md) · [pyproject.toml](https://github.com/SWE-agent/mini-swe-agent/blob/04d809ceab9df28f9adaed044884180159172930/pyproject.toml) · [workflows](https://github.com/SWE-agent/mini-swe-agent/tree/04d809ceab9df28f9adaed044884180159172930/.github/workflows) |
+
+<a id="ch-multi-swe-bench"></a>
+
+### Multi-SWE-bench
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/multi-swe-bench/multi-swe-bench |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `24f493f8a103e72312ded4f6b9c89f081d69cb09` (commit 2025-12-18) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit HEAD 2025-12-18) |
+| Nhận định | Benchmark sửa issue đa ngôn ngữ của ByteDance Seed, chạy bằng Docker. Hữu ích khi stack không phải Python; repo không có workflow CI và gần một năm không có commit. |
+| Nguồn | [README](https://github.com/multi-swe-bench/multi-swe-bench/blob/24f493f8a103e72312ded4f6b9c89f081d69cb09/README.md) · [LICENSE](https://github.com/multi-swe-bench/multi-swe-bench/blob/24f493f8a103e72312ded4f6b9c89f081d69cb09/LICENSE) |
+
+<a id="ch-oh-my-pi-omp"></a>
+
+### oh-my-pi (omp)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/can1357/oh-my-pi |
+| License | MIT |
+| Phiên bản đã đọc | `e4fe8782978e19c5de8b8830d050b95e63fc89ca` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, Cargo.toml, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-23) |
+| Nhận định | Coding agent fork từ Pi, tích hợp LSP/DAP, 60+ provider, lõi Rust. Đáng tham khảo phần tích hợp IDE; các con số trong README là tuyên bố của tác giả **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/can1357/oh-my-pi/blob/e4fe8782978e19c5de8b8830d050b95e63fc89ca/README.md) · [LICENSE](https://github.com/can1357/oh-my-pi/blob/e4fe8782978e19c5de8b8830d050b95e63fc89ca/LICENSE) · [package.json](https://github.com/can1357/oh-my-pi/blob/e4fe8782978e19c5de8b8830d050b95e63fc89ca/package.json) · [Cargo.toml](https://github.com/can1357/oh-my-pi/blob/e4fe8782978e19c5de8b8830d050b95e63fc89ca/Cargo.toml) · [workflows](https://github.com/can1357/oh-my-pi/tree/e4fe8782978e19c5de8b8830d050b95e63fc89ca/.github/workflows) |
+
+<a id="ch-omnigent"></a>
+
+### Omnigent
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/omnigent-ai/omnigent |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `7c103bb333905b562221e87df5fd20715f06b520` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, pyproject.toml, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-23) |
+| Nhận định | Meta-harness điều phối nhiều coding agent trong một phiên, đồng bộ phiên qua terminal/web/điện thoại. Kiến trúc policy đáng tham khảo; vẫn alpha, các rủi ro analytics/GHSA trong hồ sơ cũ chưa đọc lại. |
+| Nguồn | [README](https://github.com/omnigent-ai/omnigent/blob/7c103bb333905b562221e87df5fd20715f06b520/README.md) · [LICENSE](https://github.com/omnigent-ai/omnigent/blob/7c103bb333905b562221e87df5fd20715f06b520/LICENSE) · [package.json](https://github.com/omnigent-ai/omnigent/blob/7c103bb333905b562221e87df5fd20715f06b520/package.json) · [pyproject.toml](https://github.com/omnigent-ai/omnigent/blob/7c103bb333905b562221e87df5fd20715f06b520/pyproject.toml) · [workflows](https://github.com/omnigent-ai/omnigent/tree/7c103bb333905b562221e87df5fd20715f06b520/.github/workflows) |
+
+<a id="ch-open-interpreter-fork-codex"></a>
+
+### Open Interpreter (fork Codex)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/openinterpreter/openinterpreter |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `a786d8474b0d7289320c16f00e852679fae7866e` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-23) |
+| Nhận định | Fork Codex tập trung giả lập harness để model rẻ chạy tốt hơn. Khác hẳn Open Interpreter Python cũ; hồ sơ cũ ghi metrics Statsig bật sẵn, chưa đọc lại mã lần này. |
+| Nguồn | [README](https://github.com/openinterpreter/openinterpreter/blob/a786d8474b0d7289320c16f00e852679fae7866e/README.md) · [LICENSE](https://github.com/openinterpreter/openinterpreter/blob/a786d8474b0d7289320c16f00e852679fae7866e/LICENSE) · [package.json](https://github.com/openinterpreter/openinterpreter/blob/a786d8474b0d7289320c16f00e852679fae7866e/package.json) · [workflows](https://github.com/openinterpreter/openinterpreter/tree/a786d8474b0d7289320c16f00e852679fae7866e/.github/workflows) |
+
+<a id="ch-opencode"></a>
+
+### OpenCode
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anomalyco/opencode |
+| License | MIT |
+| Phiên bản đã đọc | `4cf9db957485dd51a5b195fb6e2c1e03d8da1107` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-23) |
+| Nhận định | CLI/TUI coding agent đa model, có desktop app beta. Đã sang dòng 2.x; nên dùng URL anomalyco/opencode như catalog đã cập nhật. |
+| Nguồn | [README](https://github.com/anomalyco/opencode/blob/4cf9db957485dd51a5b195fb6e2c1e03d8da1107/README.md) · [LICENSE](https://github.com/anomalyco/opencode/blob/4cf9db957485dd51a5b195fb6e2c1e03d8da1107/LICENSE) · [package.json](https://github.com/anomalyco/opencode/blob/4cf9db957485dd51a5b195fb6e2c1e03d8da1107/package.json) · [workflows](https://github.com/anomalyco/opencode/tree/4cf9db957485dd51a5b195fb6e2c1e03d8da1107/.github/workflows) |
+
+<a id="ch-opencut"></a>
+
+### OpenCut
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/OpenCut-app/OpenCut |
+| License | MIT (catalog cũ: None) |
+| Phiên bản đã đọc | `e668010778568641babef2cc40be4703ae6916d6` (commit 2026-09-24) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, Cargo.toml, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Ít hoạt động (commit HEAD 2026-09-24) |
+| Nhận định | Trình dựng video mở đang viết lại lõi bằng Rust (Editor API, plugin, MCP server, headless). Hiện chưa dùng được, README chỉ sang repo opencut-classic; nhịp commit nhánh mặc định đã chậm. |
+| Nguồn | [README](https://github.com/OpenCut-app/OpenCut/blob/e668010778568641babef2cc40be4703ae6916d6/README.md) · [LICENSE](https://github.com/OpenCut-app/OpenCut/blob/e668010778568641babef2cc40be4703ae6916d6/LICENSE) · [Cargo.toml](https://github.com/OpenCut-app/OpenCut/blob/e668010778568641babef2cc40be4703ae6916d6/Cargo.toml) · [workflows](https://github.com/OpenCut-app/OpenCut/tree/e668010778568641babef2cc40be4703ae6916d6/.github/workflows) |
+
+<a id="ch-openhands"></a>
+
+### OpenHands
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/OpenHands/OpenHands |
+| License | MIT |
+| Phiên bản đã đọc | `d1fc0fc001245eea0ed619044bc9c149c4870a69` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-23) |
+| Nhận định | Repo chính đã chuyển trọng tâm thành Agent Canvas: UI điều khiển nhiều coding agent và automation trên backend local/VM/cloud. Mô tả "nền tảng agent dev, sandbox Docker" của catalog cũ cần cập nhật; lõi agent có thể nằm ở repo khác **(chưa xác minh)**. |
+| Nguồn | [README](https://github.com/OpenHands/OpenHands/blob/d1fc0fc001245eea0ed619044bc9c149c4870a69/README.md) · [LICENSE](https://github.com/OpenHands/OpenHands/blob/d1fc0fc001245eea0ed619044bc9c149c4870a69/LICENSE) · [package.json](https://github.com/OpenHands/OpenHands/blob/d1fc0fc001245eea0ed619044bc9c149c4870a69/package.json) · [workflows](https://github.com/OpenHands/OpenHands/tree/d1fc0fc001245eea0ed619044bc9c149c4870a69/.github/workflows) |
+
+<a id="ch-openjarvis"></a>
+
+### OpenJarvis
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/open-jarvis/OpenJarvis |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `484de900c7238442d4e049e185de6af679519192` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-23) |
+| Nhận định | Framework agent cá nhân chạy cục bộ, đánh giá theo năng lượng/latency/chi phí. Đáng tham khảo phần eval; installer một lệnh tự cài uv, Ollama và model. |
+| Nguồn | [README](https://github.com/open-jarvis/OpenJarvis/blob/484de900c7238442d4e049e185de6af679519192/README.md) · [LICENSE](https://github.com/open-jarvis/OpenJarvis/blob/484de900c7238442d4e049e185de6af679519192/LICENSE) · [pyproject.toml](https://github.com/open-jarvis/OpenJarvis/blob/484de900c7238442d4e049e185de6af679519192/pyproject.toml) · [workflows](https://github.com/open-jarvis/OpenJarvis/tree/484de900c7238442d4e049e185de6af679519192/.github/workflows) |
+
+<a id="ch-personal-jarvis-nay-la-dodaios"></a>
+
+### Personal Jarvis (nay là Dodaios)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Dodaios/Dodaios |
+| License | MIT (file LICENSE; pyproject.toml lại khai Apache-2.0) (catalog cũ: Apache-2.0) |
+| Phiên bản đã đọc | `204907b2d1e15d0dbcafb687ee137161bb35325d` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-23) |
+| Nhận định | Ứng dụng desktop gom nhiều coding agent vào một chat, có giọng nói/wake word, computer use, agent nền. Metadata license mâu thuẫn (MIT ở LICENSE, Apache-2.0 ở pyproject); rủi ro approval_mode mặc định bypass của hồ sơ cũ chưa đọc lại. |
+| Nguồn | [README](https://github.com/Dodaios/Dodaios/blob/204907b2d1e15d0dbcafb687ee137161bb35325d/README.md) · [LICENSE](https://github.com/Dodaios/Dodaios/blob/204907b2d1e15d0dbcafb687ee137161bb35325d/LICENSE) · [pyproject.toml](https://github.com/Dodaios/Dodaios/blob/204907b2d1e15d0dbcafb687ee137161bb35325d/pyproject.toml) · [workflows](https://github.com/Dodaios/Dodaios/tree/204907b2d1e15d0dbcafb687ee137161bb35325d/.github/workflows) |
+
+<a id="ch-qwen-code"></a>
+
+### Qwen Code
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/QwenLM/qwen-code |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `09b8135e6929df2e7f6a5cee8e55c47980b5f92e` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, danh sách .github/workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động (commit HEAD 2026-11-23) |
+| Nhận định | Coding agent của Qwen trên terminal, IDE, desktop và kênh chat, hỗ trợ nhiều giao thức API. Đáng tham khảo; usage stats gửi Aliyun RUM theo hồ sơ cũ chưa đọc lại mã. |
+| Nguồn | [README](https://github.com/QwenLM/qwen-code/blob/09b8135e6929df2e7f6a5cee8e55c47980b5f92e/README.md) · [LICENSE](https://github.com/QwenLM/qwen-code/blob/09b8135e6929df2e7f6a5cee8e55c47980b5f92e/LICENSE) · [package.json](https://github.com/QwenLM/qwen-code/blob/09b8135e6929df2e7f6a5cee8e55c47980b5f92e/package.json) · [workflows](https://github.com/QwenLM/qwen-code/tree/09b8135e6929df2e7f6a5cee8e55c47980b5f92e/.github/workflows) |
+
+<a id="ch-roo-code"></a>
+
+### Roo Code
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/RooCodeInc/Roo-Code |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `b867ec9145750d0ae1ff7f02d35406e9bf2a0b16` (commit 2026-05-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, workflows; chưa chạy upstream |
+| Bảo trì | Đã archive theo catalog; commit cuối 2026-05-15 |
+| Nhận định | Extension VS Code (fork Cline) với nhiều mode agent; monorepo pnpm còn đủ CHANGELOG, workflow phát hành marketplace. Đã ngừng phát triển: không chọn cho dự án mới, nhánh còn sống xem Kilo Code (mục 01 §3j). |
+| Nguồn | [README.md](https://github.com/RooCodeInc/Roo-Code/blob/b867ec9145750d0ae1ff7f02d35406e9bf2a0b16/README.md) · [LICENSE](https://github.com/RooCodeInc/Roo-Code/blob/b867ec9145750d0ae1ff7f02d35406e9bf2a0b16/LICENSE) · [package.json](https://github.com/RooCodeInc/Roo-Code/blob/b867ec9145750d0ae1ff7f02d35406e9bf2a0b16/package.json) · [workflows](https://github.com/RooCodeInc/Roo-Code/tree/b867ec9145750d0ae1ff7f02d35406e9bf2a0b16/.github/workflows) |
+
+<a id="ch-swe-bench-harness"></a>
+
+### SWE-bench (harness)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/SWE-bench/SWE-bench |
+| License | MIT |
+| Phiên bản đã đọc | `02e7a74ffd0b707aab73d203fe87bdc7c76afc8e` (commit 2026-09-02) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml, workflows; chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-09-02, ít hoạt động |
+| Nhận định | Harness chấm SWE-bench gốc (Docker, CLI eval/report), là chuẩn tham chiếu cho các biến thể Live/Pro. Chi tiết CLI và tách lỗi hạ tầng theo hồ sơ cũ mục 01 §3k, đợt này chưa đọc lại mã. |
+| Nguồn | [README.md](https://github.com/SWE-bench/SWE-bench/blob/02e7a74ffd0b707aab73d203fe87bdc7c76afc8e/README.md) · [LICENSE](https://github.com/SWE-bench/SWE-bench/blob/02e7a74ffd0b707aab73d203fe87bdc7c76afc8e/LICENSE) · [pyproject.toml](https://github.com/SWE-bench/SWE-bench/blob/02e7a74ffd0b707aab73d203fe87bdc7c76afc8e/pyproject.toml) · [workflows](https://github.com/SWE-bench/SWE-bench/tree/02e7a74ffd0b707aab73d203fe87bdc7c76afc8e/.github/workflows) |
+
+<a id="ch-swe-bench-live"></a>
+
+### SWE-bench-Live
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/microsoft/SWE-bench-Live |
+| License | MIT |
+| Phiên bản đã đọc | `e61795fdc31b8994dfedddb301ee54cacc594dac` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, pyproject.toml; chưa chạy upstream |
+| Bảo trì | Hoạt động, commit 2026-11-22 |
+| Nhận định | Tập SWE-bench tự cập nhật bằng pipeline curation tự động (RepoLaunch trong `launch/`), có leaderboard và dataset HF. Số task/tháng và MultiLang/Windows là tuyên bố README/hồ sơ cũ **(chưa xác minh)**; tên gói `swebench` trùng gói gốc dễ xung đột khi cài chung. |
+| Nguồn | [README.md](https://github.com/microsoft/SWE-bench-Live/blob/e61795fdc31b8994dfedddb301ee54cacc594dac/README.md) · [LICENSE](https://github.com/microsoft/SWE-bench-Live/blob/e61795fdc31b8994dfedddb301ee54cacc594dac/LICENSE) · [pyproject.toml](https://github.com/microsoft/SWE-bench-Live/blob/e61795fdc31b8994dfedddb301ee54cacc594dac/pyproject.toml) |
+
+<a id="ch-swe-bench-pro"></a>
+
+### SWE-bench Pro
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/scaleapi/SWE-bench_Pro-os |
+| License | MIT |
+| Phiên bản đã đọc | `66f92766bba642462d4bbe5479e83f91f9211862` (commit 2026-09-22) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE; chưa chạy upstream |
+| Bảo trì | Commit cuối 2026-09-22, ít hoạt động |
+| Nhận định | Benchmark task dài kế nhiệm SWE-bench, kèm scaffold SWE-agent/mini-swe-agent để tái lập và leaderboard công khai/riêng. Kết quả oracle 642/642 theo GATE.md **(chưa xác minh)** đợt này; README thừa nhận từng có vấn đề leaderboard (05/18). |
+| Nguồn | [README.md](https://github.com/scaleapi/SWE-bench_Pro-os/blob/66f92766bba642462d4bbe5479e83f91f9211862/README.md) · [LICENSE](https://github.com/scaleapi/SWE-bench_Pro-os/blob/66f92766bba642462d4bbe5479e83f91f9211862/LICENSE) |
+
+<a id="ch-t3-code"></a>
+
+### T3 Code
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/pingdotgg/t3code |
+| License | MIT |
+| Phiên bản đã đọc | `0359b044e99e9cf5bddea19c889e1dcbb8a161cd` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động, commit 2026-11-23 |
+| Nhận định | Mặt điều khiển cho coding agent chạy trên máy mình (Claude, Codex…), có app di động duyệt lệnh từ xa và relay. Monorepo lớn, CI nhiều workflow mobile/desktop; độ an toàn relay **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/pingdotgg/t3code/blob/0359b044e99e9cf5bddea19c889e1dcbb8a161cd/README.md) · [LICENSE](https://github.com/pingdotgg/t3code/blob/0359b044e99e9cf5bddea19c889e1dcbb8a161cd/LICENSE) · [package.json](https://github.com/pingdotgg/t3code/blob/0359b044e99e9cf5bddea19c889e1dcbb8a161cd/package.json) · [workflows](https://github.com/pingdotgg/t3code/tree/0359b044e99e9cf5bddea19c889e1dcbb8a161cd/.github/workflows) |
+
+<a id="ch-understand-anything"></a>
+
+### Understand-Anything
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/Egonex-AI/Understand-Anything |
+| License | MIT |
+| Phiên bản đã đọc | `8ec75de1de8c9d2eef685d8d6cbc50782ad31fbb` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động, commit 2026-11-23 |
+| Nhận định | Plugin biến codebase/tài liệu thành knowledge graph tương tác cho Claude Code, Cursor, Copilot, Codex… cài qua plugin marketplace hoặc script. README có quảng cáo sản phẩm Ego của nhóm; chất lượng graph và "không telemetry" **(chưa xác minh)**. |
+| Nguồn | [README.md](https://github.com/Egonex-AI/Understand-Anything/blob/8ec75de1de8c9d2eef685d8d6cbc50782ad31fbb/README.md) · [LICENSE](https://github.com/Egonex-AI/Understand-Anything/blob/8ec75de1de8c9d2eef685d8d6cbc50782ad31fbb/LICENSE) · [package.json](https://github.com/Egonex-AI/Understand-Anything/blob/8ec75de1de8c9d2eef685d8d6cbc50782ad31fbb/package.json) · [workflows](https://github.com/Egonex-AI/Understand-Anything/tree/8ec75de1de8c9d2eef685d8d6cbc50782ad31fbb/.github/workflows) |
+
+<a id="ch-vibe-kanban"></a>
+
+### Vibe Kanban
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/BloopAI/vibe-kanban |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `3f095f0186f6e68d67143d38b02da2238f6524d8` (commit 2026-11-15) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE, package.json, Cargo.toml, workflows; chưa chạy upstream |
+| Bảo trì | README ghi đang sunset; commit cuối 2026-11-15 |
+| Nhận định | Bảng kanban Rust+TS, mỗi thẻ chạy một coding agent trong worktree riêng. Đang sunset nên chỉ nên tham khảo thiết kế; analytics PostHog phụ thuộc biến build **(chưa xác minh hành vi bản phát hành)**. |
+| Nguồn | [README.md](https://github.com/BloopAI/vibe-kanban/blob/3f095f0186f6e68d67143d38b02da2238f6524d8/README.md) · [LICENSE](https://github.com/BloopAI/vibe-kanban/blob/3f095f0186f6e68d67143d38b02da2238f6524d8/LICENSE) · [package.json](https://github.com/BloopAI/vibe-kanban/blob/3f095f0186f6e68d67143d38b02da2238f6524d8/package.json) · [Cargo.toml](https://github.com/BloopAI/vibe-kanban/blob/3f095f0186f6e68d67143d38b02da2238f6524d8/Cargo.toml) · [workflows](https://github.com/BloopAI/vibe-kanban/tree/3f095f0186f6e68d67143d38b02da2238f6524d8/.github/workflows) |
+
+<a id="ch-warp"></a>
+
+### Warp
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/warpdotdev/warp |
+| License | AGPL-3.0-only (crate warpui_core/warpui MIT) |
+| Phiên bản đã đọc | `f8223cef2d167a5858bf233df8a1fb6f74537fa5` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc README.md, LICENSE-AGPL, LICENSE-MIT, Cargo.toml, workflows; chưa chạy upstream |
+| Bảo trì | Hoạt động, commit 2026-11-20 |
+| Nhận định | Terminal/ADE Rust mở mã client, phần server/Drive/agent cloud vẫn đóng theo hồ sơ cũ. AGPL ảnh hưởng việc nhúng; telemetry RudderStack/Sentry bật sẵn **(chưa xác minh đợt này)**. |
+| Nguồn | [README.md](https://github.com/warpdotdev/warp/blob/f8223cef2d167a5858bf233df8a1fb6f74537fa5/README.md) · [LICENSE-AGPL](https://github.com/warpdotdev/warp/blob/f8223cef2d167a5858bf233df8a1fb6f74537fa5/LICENSE-AGPL) · [LICENSE-MIT](https://github.com/warpdotdev/warp/blob/f8223cef2d167a5858bf233df8a1fb6f74537fa5/LICENSE-MIT) · [Cargo.toml](https://github.com/warpdotdev/warp/blob/f8223cef2d167a5858bf233df8a1fb6f74537fa5/Cargo.toml) · [workflows](https://github.com/warpdotdev/warp/tree/f8223cef2d167a5858bf233df8a1fb6f74537fa5/.github/workflows) |
+
+<a id="ch-windsurf-devin-desktop"></a>
+
+### Windsurf / Devin Desktop
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://windsurf.com (chuyển hướng tới https://devin.ai/desktop) |
+| License | proprietary |
+| Phiên bản đã đọc | Trang web chính thức (không có repo/commit) |
+| Kiểm chứng | 2026-11-23; docs-read; đã đọc trang chủ; chưa chạy upstream |
+| Bảo trì | Không xác định từ mã; trang sản phẩm đang hoạt động dưới tên Devin Desktop |
+| Nhận định | IDE/agent thương mại của Cognition, nay mang tên Devin Desktop: quản lý nhiều agent local hoặc cloud từ một nơi. Xác nhận việc đổi tên qua chuyển hướng tên miền; tính năng và giá **(chưa xác minh)**. |
+| Nguồn | [windsurf.com](https://windsurf.com) · [devin.ai/desktop](https://devin.ai/desktop) |
+
+<a id="bo-sung-github-copilot-2026-11-23"></a>
+
+### GitHub Copilot — đối chiếu nguồn chính thức 23/11/2026
+
+GitHub mô tả tính năng gợi ý mã, hỏi đáp về codebase, review và giao tác vụ agent. Phạm vi phụ thuộc gói, client và chính sách tổ chức. Chưa thử sản phẩm hoặc xác minh giá; số giá cũ không còn được dùng làm giá hiện hành.
+
+Nguồn: [https://docs.github.com/en/copilot/get-started/about-github-copilot](https://docs.github.com/en/copilot/get-started/about-github-copilot).
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-openagentscontrol"></a>
+
+### OpenAgents Control
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/darrenhinde/OpenAgentsControl |
+| License | MIT |
+| Phiên bản đã đọc | `1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590` (commit 2026-10-19) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, .opencode/agent/core/openagent.md, evals/framework/src/evaluators/approval-gate-evaluator.ts, .github/workflows/pr-checks.yml, evals/PRODUCTION_READINESS_ASSESSMENT.md; chưa chạy upstream |
+| Khoảng trống lấp | Human-in-the-loop và phê duyệt nhiều cấp cho agent coding (plan-first) |
+| Cơ chế đáng học | - openagent.md: quy tắc tuyệt đối approval_gate (xin duyệt trước bash/write/edit/task), stop_on_failure (không tự sửa), report_first (báo, đề xuất, xin duyệt, mới sửa), nạp context bắt buộc theo loại tác vụ<br>- Frontmatter permission: bash mặc định ask, rm -rf /* và sudo bị deny, edit chặn .env, .key, .secret, node_modules, .git: lớp cưỡng chế do host OpenCode thực hiện (chưa xác minh bằng chạy)<br>- evals/framework/src/evaluators có approval-gate, context-loading, stop-on-failure, report-first, cleanup-confirmation, delegation: đo hành vi từ timeline sự kiện phiên |
+| Tiêu chí và cách kiểm | CI pr-checks.yml kiểm định dạng tiêu đề PR theo conventional commits, build framework eval, validate:suites:all và test:ci (deterministic, Node 20). Evaluator ApprovalGate duyệt theo ngôn ngữ xin phép xuất hiện trước lệnh thực thi, ngoại lệ khi người dùng nói không cần hỏi; không chứng minh agent thật bị chặn. PRODUCTION_READINESS_ASSESSMENT.md là tự đánh giá của tác giả (chưa xác minh). |
+| Giới hạn và rủi ro | MIT. Đang chuyển hướng lớn nên cấu trúc có thể đổi. Tuyên bố 'luôn xin duyệt' dựa vào tuân thủ prompt của mô hình. Đã đọc README nhưng không có chứng cứ eval chạy với mô hình thật; số liệu trong báo cáo eval là của tác giả. Cài qua install.sh nên cần đọc script trước khi chạy. |
+| So với | LoopForge (tencent-loopforge, cổng duyệt do engine cưỡng chế), Superpowers (superpowers), Agent OS (agent-os) |
+| Nguồn | [README.md](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/README.md) · [LICENSE](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/LICENSE) · [openagent.md](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/.opencode/agent/core/openagent.md) · [approval-gate-evaluator.ts](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/evals/framework/src/evaluators/approval-gate-evaluator.ts) · [pr-checks.yml](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/.github/workflows/pr-checks.yml) · [PRODUCTION_READINESS_ASSESSMENT.md](https://github.com/darrenhinde/OpenAgentsControl/blob/1ed1dd88d14ce0a4e32b458b6817cdda6f6b1590/evals/PRODUCTION_READINESS_ASSESSMENT.md) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-claude-remote-hub"></a>
+
+### Claude Remote Hub
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/orseni/claude-remote-hub |
+| License | MIT |
+| Phiên bản đã đọc | `14dfb46a3e7e42c9bfa46a90fdf01c8edda763fb` (commit 2026-05-04) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, SECURITY.md, claude-remote-hub.py (khởi tạo ttyd, CSRF, bind), tests/test_server_helpers.py (chỉ đếm hàm test) và ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Giám sát và điều khiển phiên Claude Code từ điện thoại qua trình duyệt, nhưng chỉ là terminal web chứ không có luồng duyệt hành động |
+| Cơ chế đáng học | (1) Máy chủ HTTP stdlib mở mỗi phiên bằng `tmux` chạy `claude`, rồi `ttyd` phát terminal ra web (`start_session`, `_start_ttyd`). (2) Chống CSRF cho API tạo phiên: token ngẫu nhiên mỗi lần chạy và kiểm Origin trùng Host (`_csrf_ok`). (3) Tùy chọn HTTPS qua chứng chỉ có sẵn, TLS tối thiểu 1.2; ghi chú "bắt" phiên đang chạy trong terminal để tiếp tục từ điện thoại. |
+| Tiêu chí và cách kiểm | CI (đã mở) chạy `py_compile`, `bash -n install.sh`, `ruff check` và `python -m unittest discover`; có 7 hàm test trong `tests/test_server_helpers.py` (chỉ hàm trợ giúp). Không kiểm bảo mật tự động. |
+| Giới hạn và rủi ro | Máy chủ gắn `0.0.0.0` và lệnh ttyd không có `-i` hay thông tin xác thực; SECURITY.md nói rõ không có xác thực riêng, dựa hoàn toàn vào Tailscale. Trên mạng LAN không dùng Tailscale, bất kỳ máy nào cũng có thể vào terminal. Tuỳ chọn tạo phiên với `--dangerously-skip-permissions` có trong API. Tuyên bố "zero dependencies" chỉ đúng cho Python, vẫn cần ttyd, tmux, Tailscale. Cập nhật cuối 2026-05-04 (một commit đã đọc, chưa kết luận về bảo trì). |
+| So với | S-Remote (truy cập từ xa), RustDesk (điều khiển máy từ xa tổng quát) |
+| Nguồn | [README.md](https://github.com/orseni/claude-remote-hub/blob/14dfb46a3e7e42c9bfa46a90fdf01c8edda763fb/README.md) · [LICENSE](https://github.com/orseni/claude-remote-hub/blob/14dfb46a3e7e42c9bfa46a90fdf01c8edda763fb/LICENSE) · [SECURITY.md](https://github.com/orseni/claude-remote-hub/blob/14dfb46a3e7e42c9bfa46a90fdf01c8edda763fb/SECURITY.md) · [claude-remote-hub.py](https://github.com/orseni/claude-remote-hub/blob/14dfb46a3e7e42c9bfa46a90fdf01c8edda763fb/claude-remote-hub.py) · [test_server_helpers.py](https://github.com/orseni/claude-remote-hub/blob/14dfb46a3e7e42c9bfa46a90fdf01c8edda763fb/tests/test_server_helpers.py) · [ci.yml](https://github.com/orseni/claude-remote-hub/blob/14dfb46a3e7e42c9bfa46a90fdf01c8edda763fb/.github/workflows/ci.yml) |
+
+<a id="n2-humanlayer"></a>
+
+### HumanLayer
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/humanlayer/humanlayer |
+| License | Apache-2.0 (một số thư mục vendored giữ MIT, liệt kê trong NOTICE) |
+| Phiên bản đã đọc | `fb899cd8cba767f0392708efc20d00938dec6a87` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, NOTICE, apps/riptide-daemon/src/agents/claudecode/approvals.ts, apps/riptide-claude-code-plugin/hooks/hooks.json, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Người-trong-vòng cho agent và điều phối coding agent chạy trên nhiều máy, có duyệt quyền tập trung |
+| Cơ chế đáng học | - Phê duyệt quyền công cụ lưu trong bảng `approvals` (`apps/riptide-daemon/src/agents/claudecode/approvals.ts`): `isApprovalResolvedEvent` nhận biết chuyển pending sang approved/denied, `isAllowedByAppliedSuggestions` cho phép tự động khi một lần duyệt trước đã thêm luật allow khớp tên công cụ và lệnh (so khớp wildcard).<br>- Workflow duyệt phía daemon `apps/riptide-daemon/src/effects/services/claude-sessions/workflows/approvals.ts` trả `behavior: 'deny'` ở nhiều nhánh lỗi (đọc theo grep, chưa đọc hết).<br>- Plugin phản chiếu phiên Claude Code vào HumanLayer qua hook (`apps/riptide-claude-code-plugin/hooks/hooks.json`, `mod.ts`).<br>- Có skill tự host bằng Pulumi tham chiếu trong `.claude/skills/self-host-humanlayer/` (chỉ thấy đường dẫn trong README). |
+| Tiêu chí và cách kiểm | CI `.github/workflows/ci.yml` chạy typecheck, kiểm phiên bản Zod và `bun run quality` (oxlint + format); đã mở file, không dùng secret, fork PR cũng chạy đủ. Test chạy bằng `bun run test`, chưa chạy. |
+| Giới hạn và rủi ro | README nói bản build từ nguồn không gửi gì về tác giả, Sentry/PostHog/WorkOS chỉ bật khi có env (chưa xác minh); tuy vậy mã daemon import `@sentry/bun` nên cần để biến rỗng. HumanLayer Cloud là dịch vụ thương mại chạy cùng mã. Docker compose dùng mật khẩu mặc định. Sao 12.9k phần lớn đến từ SDK cũ, không phản ánh sản phẩm hiện tại. |
+| So với | 12-factor-agents, vibe-kanban, claude-squad |
+| Nguồn | [README.md](https://github.com/humanlayer/humanlayer/blob/fb899cd8cba767f0392708efc20d00938dec6a87/README.md) · [LICENSE](https://github.com/humanlayer/humanlayer/blob/fb899cd8cba767f0392708efc20d00938dec6a87/LICENSE) · [NOTICE](https://github.com/humanlayer/humanlayer/blob/fb899cd8cba767f0392708efc20d00938dec6a87/NOTICE) · [approvals.ts](https://github.com/humanlayer/humanlayer/blob/fb899cd8cba767f0392708efc20d00938dec6a87/apps/riptide-daemon/src/agents/claudecode/approvals.ts) · [hooks.json](https://github.com/humanlayer/humanlayer/blob/fb899cd8cba767f0392708efc20d00938dec6a87/apps/riptide-claude-code-plugin/hooks/hooks.json) · [ci.yml](https://github.com/humanlayer/humanlayer/blob/fb899cd8cba767f0392708efc20d00938dec6a87/.github/workflows/ci.yml) |

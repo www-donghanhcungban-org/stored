@@ -168,3 +168,2962 @@ Cả nhóm có 0% lỗi và khoảng 25–31 µs CPU mỗi request, tức một 
 ## Nguồn và giới hạn kiểm chứng
 
 Nguồn ở §3 cố định full SHA cho đường mã, LICENSE và CI đã đọc. Không ghi sao vì GitHub search API bị trả Forbidden trong phiên, không dùng số cũ làm số hiện tại và không suy archive từ clone thành công. Các tiêu chí §1/§4/§5 là thiết kế tổng hợp của kho; công cụ phải được thử trên project, DB và threat model thực tế trước tích hợp.
+
+<a id="anhkysuai-2026-11-23"></a>
+
+## Đánh giá từ kho Anh Kỹ Sư AI — 23/11/2026
+
+Phần này có **100 hồ sơ hoặc phạm vi đối chiếu** từ [nguồn tuyển chọn](https://anhkysuai.com/kho/). [Bảng đủ 1.295 repo](../data/collections/anhkysuai-kho.json) ghi trạng thái đối chiếu từng link; [danh sách URL](../data/collections/anhkysuai-kho-links.txt) phục vụ tra cứu. Nguồn tuyển chọn giúp phát hiện repo; đánh giá bên dưới dựa trên clone và permalink upstream cùng metadata GitHub ngày 2026-11-23.
+
+Mức `docs-read`/`code-read` chỉ áp dụng phạm vi ghi tại mỗi hồ sơ. Chưa cài, build, chạy test hay benchmark mã upstream. Giấy phép có thể tách theo code, model, nội dung, asset hoặc bản enterprise; con số/tuyên bố của tác giả chưa được tái lập nếu không có ghi chú khác.
+
+<a id="anhkysuai-dani-garcia-vaultwarden"></a>
+
+### Vaultwarden
+
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-dani-garcia-vaultwarden); catalog con xem [catalog/](../catalog/README.md).
+
+<a id="anhkysuai-socketio-socket.io"></a>
+
+### Socket.IO
+
+**Repo:** [socketio/socket.io](https://github.com/socketio/socket.io) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`0e247793ee17`](https://github.com/socketio/socket.io/tree/0e247793ee17f8461a5c542c4f904a628150d30b) (commit 2026-11-20). **Sao:** 63,266 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/socketio/socket.io).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Hệ thư viện client/server cho giao tiếp sự kiện thời gian thực. |
+| Giá trị và cơ chế theo tài liệu | Monorepo tách Engine.IO, parser, client, adapter và emitter; CI riêng của Engine.IO biên dịch và kiểm các biến thể transport. |
+| Giới hạn | README gốc chủ yếu dẫn tài liệu. Việc có adapter không tự chứng minh giao hàng đúng một lần hoặc lưu bền sự kiện; ứng dụng vẫn cần thiết kế xác thực và đồng bộ lại. |
+| Điều kiện tích hợp | Chọn client/server cùng phiên bản, đọc adapter cho mô hình nhiều node và bổ sung hợp đồng sự kiện cùng kiểm mất kết nối. |
+| Lựa chọn đối chiếu | ws; NATS; LiveKit. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/socketio/socket.io/blob/0e247793ee17f8461a5c542c4f904a628150d30b/README.md) · [LICENSE](https://github.com/socketio/socket.io/blob/0e247793ee17f8461a5c542c4f904a628150d30b/LICENSE) · [package.json](https://github.com/socketio/socket.io/blob/0e247793ee17f8461a5c542c4f904a628150d30b/package.json) · [.github/workflows/ci-engine.io.yml](https://github.com/socketio/socket.io/blob/0e247793ee17f8461a5c542c4f904a628150d30b/.github/workflows/ci-engine.io.yml).
+
+<a id="anhkysuai-twentyhq-twenty"></a>
+
+### Twenty
+
+**Repo:** [twentyhq/twenty](https://github.com/twentyhq/twenty) · **License:** AGPL-3.0; phần Enterprise thương mại; một số gói MIT · **Kiểm:** 2026-11-23, `docs-read`, [`0bd6a66fd4c3`](https://github.com/twentyhq/twenty/tree/0bd6a66fd4c3156a2a349723785c2d4a9347c766) (commit 2026-11-23). **Sao:** 61,355 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/twentyhq/twenty).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | CRM cho đội kỹ thuật, cho phép khai báo đối tượng, trường và view qua SDK rồi phát hành thành app. |
+| Giá trị và cơ chế theo tài liệu | README có ví dụ defineObject và CLI app publish; monorepo tách UI/SDK cùng các cổng kiểm chuyên biệt. |
+| Giới hạn | LICENSE nêu ngoại lệ thương mại và gói mang giấy phép khác; không coi toàn repo là AGPL hoặc MIT thuần. Chưa kiểm quyền theo workspace hay đồng bộ dữ liệu thực tế. |
+| Điều kiện tích hợp | Dùng API/SDK và workspace thử; xác định giấy phép đúng thư mục định tái sử dụng, rồi kiểm schema migration và quyền dữ liệu CRM. |
+| Lựa chọn đối chiếu | Odoo; [ERPNext](../34-backend-data-identity-integration/README.md#anhkysuai-frappe-erpnext); SuiteCRM. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/twentyhq/twenty/blob/0bd6a66fd4c3156a2a349723785c2d4a9347c766/README.md) · [LICENSE](https://github.com/twentyhq/twenty/blob/0bd6a66fd4c3156a2a349723785c2d4a9347c766/LICENSE) · [package.json](https://github.com/twentyhq/twenty/blob/0bd6a66fd4c3156a2a349723785c2d4a9347c766/package.json) · [.github/workflows/ci-ui.yaml](https://github.com/twentyhq/twenty/blob/0bd6a66fd4c3156a2a349723785c2d4a9347c766/.github/workflows/ci-ui.yaml).
+
+<a id="anhkysuai-appwrite-appwrite"></a>
+
+### Appwrite
+
+**Repo:** [appwrite/appwrite](https://github.com/appwrite/appwrite) · **License:** BSD-3-Clause · **Kiểm:** 2026-11-23, `docs-read`, [`647058d7e5cb`](https://github.com/appwrite/appwrite/tree/647058d7e5cb3df5e57e01490b7f838bc87a168c) (commit 2026-11-23). **Sao:** 58,614 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/appwrite/appwrite).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Nền tảng backend gồm xác thực, dữ liệu, lưu trữ và công cụ cho ứng dụng lẫn agent. |
+| Giá trị và cơ chế theo tài liệu | README mô tả SDK và MCP vận hành dự án; repo có PHP cùng workspace Rust, CI phân luồng theo thay đổi và quét phụ thuộc. |
+| Giới hạn | Kết nối agent có thể thao tác tài nguyên thật; tuyên bố scale hoặc bảo mật trong README chưa được tái lập. Quyền API và khác biệt cloud/tự host cần xem theo phiên bản. |
+| Điều kiện tích hợp | Bắt đầu với project thử và khóa quyền hẹp; kiểm auth, quyền từng tài nguyên, backup và nâng cấp trước khi dùng dữ liệu thật. |
+| Lựa chọn đối chiếu | Supabase; PocketBase; [Parse Server](../34-backend-data-identity-integration/README.md#anhkysuai-parse-community-parse-server). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/appwrite/appwrite/blob/647058d7e5cb3df5e57e01490b7f838bc87a168c/README.md) · [LICENSE](https://github.com/appwrite/appwrite/blob/647058d7e5cb3df5e57e01490b7f838bc87a168c/LICENSE) · [package.json](https://github.com/appwrite/appwrite/blob/647058d7e5cb3df5e57e01490b7f838bc87a168c/package.json) · [Cargo.toml](https://github.com/appwrite/appwrite/blob/647058d7e5cb3df5e57e01490b7f838bc87a168c/Cargo.toml) · [.github/workflows/ci.yml](https://github.com/appwrite/appwrite/blob/647058d7e5cb3df5e57e01490b7f838bc87a168c/.github/workflows/ci.yml).
+
+<a id="anhkysuai-odoo-odoo"></a>
+
+### Odoo Community
+
+**Repo:** [odoo/odoo](https://github.com/odoo/odoo) · **License:** LGPL-3.0; thành phần bên thứ ba theo giấy phép riêng · **Kiểm:** 2026-11-23, `docs-read`, [`dfd7e0c411d4`](https://github.com/odoo/odoo/tree/dfd7e0c411d45f50395b8cff09379ad6322b8bc8) (commit 2026-11-23). **Sao:** 56,034 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/odoo/odoo).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Bộ ứng dụng doanh nghiệp kết hợp CRM, kho, bán hàng, kế toán và các module nghiệp vụ. |
+| Giá trị và cơ chế theo tài liệu | README cho thấy có thể dùng ứng dụng riêng hoặc ghép thành ERP; cấu trúc Python/addon là nguồn tham khảo cách mở rộng nghiệp vụ. |
+| Giới hạn | Kho cộng đồng không đại diện mọi tính năng Enterprise. Quy tắc thuế/kế toán và bản địa hóa chưa được xác minh; COPYRIGHT lưu ý giấy phép ở từng thành phần. |
+| Điều kiện tích hợp | Chọn nhánh phát hành phù hợp, thử module trên dữ liệu giả lập và kiểm migration, quyền truy cập, sao lưu trước khi kết nối vận hành doanh nghiệp. |
+| Lựa chọn đối chiếu | [ERPNext](../34-backend-data-identity-integration/README.md#anhkysuai-frappe-erpnext); Dolibarr; Tryton. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/odoo/odoo/blob/dfd7e0c411d45f50395b8cff09379ad6322b8bc8/README.md) · [COPYRIGHT](https://github.com/odoo/odoo/blob/dfd7e0c411d45f50395b8cff09379ad6322b8bc8/COPYRIGHT) · [LICENSE](https://github.com/odoo/odoo/blob/dfd7e0c411d45f50395b8cff09379ad6322b8bc8/LICENSE).
+
+<a id="anhkysuai-tryghost-ghost"></a>
+
+### Ghost
+
+**Repo:** [TryGhost/Ghost](https://github.com/TryGhost/Ghost) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`46529412e782`](https://github.com/TryGhost/Ghost/tree/46529412e7829c202f0b55b073ff497e41b278ae) (commit 2026-11-23). **Sao:** 55,885 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/TryGhost/Ghost).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Nền tảng xuất bản nội dung, có CLI tự host, theme và API nội dung. |
+| Giá trị và cơ chế theo tài liệu | README dẫn quy trình cài local hoặc máy chủ và tách managed hosting; manifest nêu runtime Node cùng monorepo Nx. |
+| Giới hạn | Tài liệu cài nhanh không thay kiểm gửi email, backup và nâng cấp; chưa chạy instance hay đo khả năng phục vụ. Dịch vụ Ghost(Pro) có điều kiện riêng với mã MIT. |
+| Điều kiện tích hợp | Dùng bản phát hành qua Ghost CLI, thử theme và Content API; kiểm cấu hình email, khôi phục dữ liệu và đường nâng cấp. |
+| Lựa chọn đối chiếu | WordPress; [Wagtail](../34-backend-data-identity-integration/README.md#anhkysuai-wagtail-wagtail); [Strapi](../08-awesome-lists-learning/README.md#6c59-framework-backend). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/TryGhost/Ghost/blob/46529412e7829c202f0b55b073ff497e41b278ae/README.md) · [LICENSE](https://github.com/TryGhost/Ghost/blob/46529412e7829c202f0b55b073ff497e41b278ae/LICENSE) · [package.json](https://github.com/TryGhost/Ghost/blob/46529412e7829c202f0b55b073ff497e41b278ae/package.json) · [.github/workflows/ci.yml](https://github.com/TryGhost/Ghost/blob/46529412e7829c202f0b55b073ff497e41b278ae/.github/workflows/ci.yml).
+
+<a id="anhkysuai-etcd-io-etcd"></a>
+
+### etcd
+
+**Repo:** [etcd-io/etcd](https://github.com/etcd-io/etcd) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`a99e920890e0`](https://github.com/etcd-io/etcd/tree/a99e920890e0b9df77825c30e6a7a9b3bc06c324) (commit 2026-11-22). **Sao:** 52,650 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/etcd-io/etcd).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Kho khóa-giá trị phân tán dùng Raft cho dữ liệu điều phối quan trọng. |
+| Giá trị và cơ chế theo tài liệu | README dẫn API gRPC và bộ robustness testing; monorepo tách client, server, API và công cụ vận hành. |
+| Giới hạn | README cảnh báo main có thể không ổn định. Con số hiệu năng trong tài liệu chưa được tái lập; quorum, TLS và phục hồi snapshot là trách nhiệm cấu hình/vận hành. |
+| Điều kiện tích hợp | Dùng bản phát hành ổn định, thử mất node và phục hồi trước khi làm nền cho khóa phân tán hoặc cấu hình hệ thống. |
+| Lựa chọn đối chiếu | [Consul](../34-backend-data-identity-integration/README.md#anhkysuai-hashicorp-consul); ZooKeeper; PostgreSQL advisory locks. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/etcd-io/etcd/blob/a99e920890e0b9df77825c30e6a7a9b3bc06c324/README.md) · [LICENSE](https://github.com/etcd-io/etcd/blob/a99e920890e0b9df77825c30e6a7a9b3bc06c324/LICENSE) · [go.mod](https://github.com/etcd-io/etcd/blob/a99e920890e0b9df77825c30e6a7a9b3bc06c324/go.mod) · [.github/workflows/antithesis-test.yml](https://github.com/etcd-io/etcd/blob/a99e920890e0b9df77825c30e6a7a9b3bc06c324/.github/workflows/antithesis-test.yml).
+
+<a id="anhkysuai-clickhouse-clickhouse"></a>
+
+### ClickHouse
+
+**Repo:** [ClickHouse/ClickHouse](https://github.com/ClickHouse/ClickHouse) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`2ced6e923a0a`](https://github.com/ClickHouse/ClickHouse/tree/2ced6e923a0a365ca9632d5a2891813bd4bbb928) (commit 2026-11-23). **Sao:** 51,073 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/ClickHouse/ClickHouse).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Hệ quản trị dữ liệu hướng phân tích, có bản tự host và dịch vụ cloud. |
+| Giá trị và cơ chế theo tài liệu | Cây repo và CMake thể hiện hệ C++ lớn với kiểm cấu hình build; tài liệu dẫn tutorial, vận hành cluster và các phiên bản phát hành. |
+| Giới hạn | README thiên về điểm bắt đầu và release; chưa benchmark query hoặc xác minh cấu hình replication. Dịch vụ cloud và tùy chọn build riêng không được suy từ bản mã công khai. |
+| Điều kiện tích hợp | Đánh giá schema, kiểu truy vấn và vòng đời dữ liệu với dữ liệu đại diện; ghim release và thử backup/restore khi tự host. |
+| Lựa chọn đối chiếu | Apache Druid; DuckDB; Apache Doris. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/ClickHouse/ClickHouse/blob/2ced6e923a0a365ca9632d5a2891813bd4bbb928/README.md) · [LICENSE](https://github.com/ClickHouse/ClickHouse/blob/2ced6e923a0a365ca9632d5a2891813bd4bbb928/LICENSE) · [pyproject.toml](https://github.com/ClickHouse/ClickHouse/blob/2ced6e923a0a365ca9632d5a2891813bd4bbb928/pyproject.toml) · [CMakeLists.txt](https://github.com/ClickHouse/ClickHouse/blob/2ced6e923a0a365ca9632d5a2891813bd4bbb928/CMakeLists.txt) · [.github/workflows/weekly_official_docker.yml](https://github.com/ClickHouse/ClickHouse/blob/2ced6e923a0a365ca9632d5a2891813bd4bbb928/.github/workflows/weekly_official_docker.yml).
+
+<a id="anhkysuai-prisma-orm"></a>
+
+### Prisma ORM 8
+
+**Repo:** [prisma/orm](https://github.com/prisma/orm) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`e023771490d3`](https://github.com/prisma/orm/tree/e023771490d318a8586017871db80d4cc9f618d5) (commit 2026-11-23). **Sao:** 47,694 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/prisma/orm).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | ORM viết lại bằng TypeScript, nhấn mạnh khả năng mở rộng và kết hợp cho ứng dụng dữ liệu. |
+| Giá trị và cơ chế theo tài liệu | README mô tả scaffold với nhiều framework và PostgreSQL/MongoDB; manifest tại SHA là 8.0.0-rc.25, yêu cầu Node 24 trở lên. |
+| Giới hạn | Đây là release candidate, tài liệu nêu có thể còn breaking change và bảng khoảng trống. Không coi nhánh main là Prisma 7 ổn định hoặc suy tính năng đầy đủ từ tên ORM. |
+| Điều kiện tích hợp | Dùng môi trường thử và đọc scorecard/upgrade recipe; ứng dụng hiện hữu cần đối chiếu nhánh v7 và kiểm migration trên bản sao dữ liệu. |
+| Lựa chọn đối chiếu | Drizzle ORM; TypeORM; Kysely. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/prisma/orm/blob/e023771490d318a8586017871db80d4cc9f618d5/README.md) · [LICENSE](https://github.com/prisma/orm/blob/e023771490d318a8586017871db80d4cc9f618d5/LICENSE) · [package.json](https://github.com/prisma/orm/blob/e023771490d318a8586017871db80d4cc9f618d5/package.json) · [.github/workflows/ci.yml](https://github.com/prisma/orm/blob/e023771490d318a8586017871db80d4cc9f618d5/.github/workflows/ci.yml).
+
+<a id="anhkysuai-fastapi-full-stack-fastapi-template"></a>
+
+### Full Stack FastAPI Template
+
+**Repo:** [fastapi/full-stack-fastapi-template](https://github.com/fastapi/full-stack-fastapi-template) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`77e550a73bb4`](https://github.com/fastapi/full-stack-fastapi-template/tree/77e550a73bb49dd2967622c5ed11bf7a49603c93) (commit 2026-11-16). **Sao:** 46,322 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/fastapi/full-stack-fastapi-template).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Mẫu full-stack FastAPI, SQLModel/PostgreSQL và frontend React phục vụ cùng miền. |
+| Giá trị và cơ chế theo tài liệu | README gắn client sinh tự động, JWT, phục hồi mật khẩu, Pytest/Playwright và Compose; workflow backend dựng dịch vụ rồi migration trước kiểm thử. |
+| Giới hạn | Mẫu không tự bảo đảm cấu hình an toàn của sản phẩm mới; dữ liệu bí mật, quyền nghiệp vụ và migration riêng vẫn cần thiết kế. Chưa chạy test upstream. |
+| Điều kiện tích hợp | Fork vào repo sản phẩm, thay cấu hình mẫu và thêm kiểm theo yêu cầu nghiệp vụ; giữ liên kết schema API với client và kiểm nâng cấp dependency. |
+| Lựa chọn đối chiếu | Cookiecutter Django; JHipster; NestJS starter. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/fastapi/full-stack-fastapi-template/blob/77e550a73bb49dd2967622c5ed11bf7a49603c93/README.md) · [LICENSE](https://github.com/fastapi/full-stack-fastapi-template/blob/77e550a73bb49dd2967622c5ed11bf7a49603c93/LICENSE) · [package.json](https://github.com/fastapi/full-stack-fastapi-template/blob/77e550a73bb49dd2967622c5ed11bf7a49603c93/package.json) · [pyproject.toml](https://github.com/fastapi/full-stack-fastapi-template/blob/77e550a73bb49dd2967622c5ed11bf7a49603c93/pyproject.toml) · [.github/workflows/test-backend.yml](https://github.com/fastapi/full-stack-fastapi-template/blob/77e550a73bb49dd2967622c5ed11bf7a49603c93/.github/workflows/test-backend.yml).
+
+<a id="anhkysuai-payloadcms-payload"></a>
+
+### Payload CMS
+
+**Repo:** [payloadcms/payload](https://github.com/payloadcms/payload) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`ce66418fcf86`](https://github.com/payloadcms/payload/tree/ce66418fcf8617a215139aaf67fe161bda13c272) (commit 2026-11-21). **Sao:** 45,965 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/payloadcms/payload).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | CMS headless tích hợp cùng ứng dụng Next.js, có template website và thương mại điện tử. |
+| Giá trị và cơ chế theo tài liệu | README chỉ đường starter với live preview, rich-text và deploy Cloudflare/Vercel; repo monorepo có gói core/plugin và cổng audit phụ thuộc. |
+| Giới hạn | Manifest nhánh đọc là 4.0.0-beta.11; tuyên bố production-ready của template chưa được kiểm. Chi phí và giới hạn nhà cung cấp cloud là phạm vi riêng. |
+| Điều kiện tích hợp | Thử cấu hình collection, quyền field/document và storage adapter trong staging; ghim phiên bản phù hợp thay vì tự động theo main. |
+| Lựa chọn đối chiếu | [Strapi](../08-awesome-lists-learning/README.md#6c59-framework-backend); [Directus](../08-awesome-lists-learning/README.md#6c59-framework-backend); [Wagtail](../34-backend-data-identity-integration/README.md#anhkysuai-wagtail-wagtail). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/payloadcms/payload/blob/ce66418fcf8617a215139aaf67fe161bda13c272/README.md) · [LICENSE.md](https://github.com/payloadcms/payload/blob/ce66418fcf8617a215139aaf67fe161bda13c272/LICENSE.md) · [package.json](https://github.com/payloadcms/payload/blob/ce66418fcf8617a215139aaf67fe161bda13c272/package.json) · [.github/workflows/audit-dependencies.yml](https://github.com/payloadcms/payload/blob/ce66418fcf8617a215139aaf67fe161bda13c272/.github/workflows/audit-dependencies.yml).
+
+<a id="anhkysuai-juspay-hyperswitch"></a>
+
+### Hyperswitch
+
+**Repo:** [juspay/hyperswitch](https://github.com/juspay/hyperswitch) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`05f44e282af4`](https://github.com/juspay/hyperswitch/tree/05f44e282af4c86657abc43390b86c493a56e28d) (commit 2026-11-23). **Sao:** 45,874 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/juspay/hyperswitch).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Hạ tầng thanh toán dạng module cho định tuyến, quan sát chi phí và khôi phục giao dịch. |
+| Giá trị và cơ chế theo tài liệu | README mô tả các khối vault, retry và kết nối nhà cung cấp; workspace Rust cho phép tìm từng lớp thay vì một tích hợp thanh toán nguyên khối. |
+| Giới hạn | Tuyên bố PCI và cải thiện doanh thu trong tài liệu chưa được xác minh. Routing/retry sai có thể tạo tác động tài chính; chưa thực hiện giao dịch hay kiểm bảo mật. |
+| Điều kiện tích hợp | Bắt đầu bằng sandbox của nhà cung cấp, chốt idempotency, token hóa và đối soát; kiểm phạm vi dữ liệu thẻ trước khi đưa vào luồng thật. |
+| Lựa chọn đối chiếu | Tích hợp trực tiếp Stripe; Adyen; Kill Bill. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/juspay/hyperswitch/blob/05f44e282af4c86657abc43390b86c493a56e28d/README.md) · [LICENSE](https://github.com/juspay/hyperswitch/blob/05f44e282af4c86657abc43390b86c493a56e28d/LICENSE) · [Cargo.toml](https://github.com/juspay/hyperswitch/blob/05f44e282af4c86657abc43390b86c493a56e28d/Cargo.toml) · [.github/workflows/CI-pr.yml](https://github.com/juspay/hyperswitch/blob/05f44e282af4c86657abc43390b86c493a56e28d/.github/workflows/CI-pr.yml).
+
+<a id="anhkysuai-apache-dubbo"></a>
+
+### Apache Dubbo
+
+**Repo:** [apache/dubbo](https://github.com/apache/dubbo) · **License:** Apache-2.0; thành phần giao diện có thông báo riêng · **Kiểm:** 2026-11-23, `docs-read`, [`d809bb12c851`](https://github.com/apache/dubbo/tree/d809bb12c851468420a742dfb2aa5c5532c9e024) (commit 2026-11-20). **Sao:** 41,570 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/apache/dubbo).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Khung Java cho dịch vụ RPC và web, có giao thức Triple tương thích gRPC. |
+| Giá trị và cơ chế theo tài liệu | README ghép discovery, cân bằng tải, cấu hình lưu lượng, metrics và tracing; Maven/CI cho thấy các bước build cùng kiểm giấy phép. |
+| Giới hạn | Hỗ trợ đa ngôn ngữ còn nằm ở các repo khác. Tuyên bố hiệu năng và khả năng tương thích giao thức chưa được kiểm; triển khai vẫn cần registry và chính sách timeout. |
+| Điều kiện tích hợp | Thử một hợp đồng RPC với discovery và tracing, kiểm timeout/retry/idempotency; chọn phiên bản Java, registry và protocol tương thích. |
+| Lựa chọn đối chiếu | gRPC; Spring Cloud; Apache Thrift. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/apache/dubbo/blob/d809bb12c851468420a742dfb2aa5c5532c9e024/README.md) · [LICENSE](https://github.com/apache/dubbo/blob/d809bb12c851468420a742dfb2aa5c5532c9e024/LICENSE) · [pom.xml](https://github.com/apache/dubbo/blob/d809bb12c851468420a742dfb2aa5c5532c9e024/pom.xml) · [.github/workflows/release-test.yml](https://github.com/apache/dubbo/blob/d809bb12c851468420a742dfb2aa5c5532c9e024/.github/workflows/release-test.yml).
+
+<a id="anhkysuai-frappe-erpnext"></a>
+
+### ERPNext
+
+**Repo:** [frappe/erpnext](https://github.com/frappe/erpnext) · **License:** GPL-3.0 · **Kiểm:** 2026-11-23, `docs-read`, [`22627f9ab9bf`](https://github.com/frappe/erpnext/tree/22627f9ab9bfd99a3d4e8f9f3b7cba3e7e39536d) (commit 2026-11-23). **Sao:** 41,564 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/frappe/erpnext).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Bộ ERP xây trên Frappe, bao phủ kế toán, đơn hàng, sản xuất, tài sản và dự án. |
+| Giá trị và cơ chế theo tài liệu | README nối module nghiệp vụ với REST API và cơ chế của Frappe; manifest Python/JavaScript cùng kiểm frontend giúp xác định nền tảng mở rộng. |
+| Giới hạn | Phiên bản framework và ứng dụng phải khớp; pyproject ở SHA này yêu cầu Python mới. Quy tắc thuế, kế toán và bản địa hóa chưa được xác minh cho doanh nghiệp cụ thể. |
+| Điều kiện tích hợp | Dùng dữ liệu giả lập để kiểm quy trình liên module, quyền và migration; thiết lập backup/restore trước khi nhập sổ sách thật. |
+| Lựa chọn đối chiếu | [Odoo Community](../34-backend-data-identity-integration/README.md#anhkysuai-odoo-odoo); Dolibarr; Tryton. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/frappe/erpnext/blob/22627f9ab9bfd99a3d4e8f9f3b7cba3e7e39536d/README.md) · [license.txt](https://github.com/frappe/erpnext/blob/22627f9ab9bfd99a3d4e8f9f3b7cba3e7e39536d/license.txt) · [package.json](https://github.com/frappe/erpnext/blob/22627f9ab9bfd99a3d4e8f9f3b7cba3e7e39536d/package.json) · [pyproject.toml](https://github.com/frappe/erpnext/blob/22627f9ab9bfd99a3d4e8f9f3b7cba3e7e39536d/pyproject.toml) · [.github/workflows/pr-checks.yml](https://github.com/frappe/erpnext/blob/22627f9ab9bfd99a3d4e8f9f3b7cba3e7e39536d/.github/workflows/pr-checks.yml).
+
+<a id="anhkysuai-pingcap-tidb"></a>
+
+### TiDB
+
+**Repo:** [pingcap/tidb](https://github.com/pingcap/tidb) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`8d5a3a1908f4`](https://github.com/pingcap/tidb/tree/8d5a3a1908f495a90552bdcbff1c4723239ff883) (commit 2026-11-23). **Sao:** 40,768 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/pingcap/tidb).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Cơ sở dữ liệu SQL phân tán tách lớp tính toán và lưu trữ. |
+| Giá trị và cơ chế theo tài liệu | README trình bày giao dịch phân tán, Raft và kiến trúc mở rộng; Go module cùng CI là điểm bắt đầu đọc các thành phần hệ thống. |
+| Giới hạn | Mô tả 2PC/Raft không thay chứng minh tính đúng khi có lỗi. Chưa đo độ trễ, mức tương thích SQL hay chi phí vận hành nhiều node. |
+| Điều kiện tích hợp | Thử bộ truy vấn thật, migration và phục hồi khi mất node; chốt topology, backup và quan sát trước khi thay cơ sở dữ liệu hiện tại. |
+| Lựa chọn đối chiếu | [CockroachDB](../34-backend-data-identity-integration/README.md#anhkysuai-cockroachdb-cockroach); YugabyteDB; [Vitess](../34-backend-data-identity-integration/README.md#anhkysuai-vitessio-vitess). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/pingcap/tidb/blob/8d5a3a1908f495a90552bdcbff1c4723239ff883/README.md) · [LICENSE](https://github.com/pingcap/tidb/blob/8d5a3a1908f495a90552bdcbff1c4723239ff883/LICENSE) · [go.mod](https://github.com/pingcap/tidb/blob/8d5a3a1908f495a90552bdcbff1c4723239ff883/go.mod) · [.github/workflows/check-bazel-prepare.yml](https://github.com/pingcap/tidb/blob/8d5a3a1908f495a90552bdcbff1c4723239ff883/.github/workflows/check-bazel-prepare.yml).
+
+<a id="anhkysuai-yunaiv-ruoyi-vue-pro"></a>
+
+### RuoYi Vue Pro
+
+**Repo:** [YunaiV/ruoyi-vue-pro](https://github.com/YunaiV/ruoyi-vue-pro) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`da4b1b4c57e6`](https://github.com/YunaiV/ruoyi-vue-pro/tree/da4b1b4c57e62483ee541683048f76b183b146f1) (commit 2026-11-22). **Sao:** 40,594 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/YunaiV/ruoyi-vue-pro).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Nền tảng quản trị Java/Vue với phân quyền, đa tenant, workflow và module nghiệp vụ. |
+| Giá trị và cơ chế theo tài liệu | README phân nhánh rõ theo JDK/Spring Boot; cấu trúc Spring Boot/MyBatis và frontend giúp tham khảo cách ghép admin, CRM và ERP. |
+| Giới hạn | Phần lớn tài liệu bằng tiếng Trung; không mặc nhiên coi module mẫu phù hợp nghiệp vụ thật. Workflow đã đọc build Maven với bỏ qua test, nên không phải bằng chứng test đã đạt. |
+| Điều kiện tích hợp | Chọn đúng nhánh runtime, kiểm quyền dữ liệu và tenant bằng tình huống phủ định; gỡ cấu hình mẫu và thử migration trước khi dùng. |
+| Lựa chọn đối chiếu | JHipster; ELADMIN; ABP Framework. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/YunaiV/ruoyi-vue-pro/blob/da4b1b4c57e62483ee541683048f76b183b146f1/README.md) · [LICENSE](https://github.com/YunaiV/ruoyi-vue-pro/blob/da4b1b4c57e62483ee541683048f76b183b146f1/LICENSE) · [pom.xml](https://github.com/YunaiV/ruoyi-vue-pro/blob/da4b1b4c57e62483ee541683048f76b183b146f1/pom.xml) · [.github/workflows/maven.yml](https://github.com/YunaiV/ruoyi-vue-pro/blob/da4b1b4c57e62483ee541683048f76b183b146f1/.github/workflows/maven.yml).
+
+<a id="anhkysuai-photoprism-photoprism"></a>
+
+### PhotoPrism
+
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-photoprism-photoprism); catalog con xem [catalog/](../catalog/README.md).
+
+<a id="anhkysuai-halo-dev-halo"></a>
+
+### Halo
+
+**Repo:** [halo-dev/halo](https://github.com/halo-dev/halo) · **License:** GPL-3.0 · **Kiểm:** 2026-11-23, `docs-read`, [`1ae87378ccf3`](https://github.com/halo-dev/halo/tree/1ae87378ccf323b0e2fcfd0e7016d4c356f76b06) (commit 2026-11-23). **Sao:** 40,378 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/halo-dev/halo).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | CMS Java cho blog, nội dung và website có thể mở rộng bằng theme/plugin. |
+| Giá trị và cơ chế theo tài liệu | README phân biệt Community với bản Pro/Store; workflow tạo lại tài liệu và client OpenAPI rồi kiểm đồng bộ, hữu ích cho tích hợp API. |
+| Giới hạn | Tính năng và plugin trả phí không tự thuộc phạm vi GPL của core. Ví dụ container phục vụ khởi động nhanh, chưa là cấu hình production; chưa thử nâng cấp plugin. |
+| Điều kiện tích hợp | Dùng bản phát hành, thử theme và quyền API trên staging; cấu hình lưu tệp, backup, HTTPS và kiểm giấy phép từng plugin. |
+| Lựa chọn đối chiếu | [Ghost](../34-backend-data-identity-integration/README.md#anhkysuai-tryghost-ghost); WordPress; [Wagtail](../34-backend-data-identity-integration/README.md#anhkysuai-wagtail-wagtail). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/halo-dev/halo/blob/1ae87378ccf323b0e2fcfd0e7016d4c356f76b06/README.md) · [LICENSE](https://github.com/halo-dev/halo/blob/1ae87378ccf323b0e2fcfd0e7016d4c356f76b06/LICENSE) · [build.gradle](https://github.com/halo-dev/halo/blob/1ae87378ccf323b0e2fcfd0e7016d4c356f76b06/build.gradle) · [.github/workflows/openapi-check.yaml](https://github.com/halo-dev/halo/blob/1ae87378ccf323b0e2fcfd0e7016d4c356f76b06/.github/workflows/openapi-check.yaml).
+
+<a id="anhkysuai-gofiber-fiber"></a>
+
+### Fiber
+
+**Repo:** [gofiber/fiber](https://github.com/gofiber/fiber) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`e0466d29e78d`](https://github.com/gofiber/fiber/tree/e0466d29e78d94999d86151a27c5efc1d3dc9248) (commit 2026-11-22). **Sao:** 40,316 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/gofiber/fiber).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Framework web Go theo phong cách Express, xây trên fasthttp. |
+| Giá trị và cơ chế theo tài liệu | README v3 và go.mod xác định runtime; CI dùng gotestsum và coverage. Công cụ migration được mô tả giúp chuyển cấu trúc từ v2. |
+| Giới hạn | Tương thích middleware và vòng đời dữ liệu request cần kiểm theo framework thực tế. Có công cụ chuyển đổi không chứng minh migration đúng; chưa chạy ứng dụng hay benchmark. |
+| Điều kiện tích hợp | Ghim phiên bản Go/Fiber, kiểm routing, middleware và lỗi cùng payload đại diện; đọc hướng dẫn migration và rà lại mã sau chuyển đổi. |
+| Lựa chọn đối chiếu | [Chi](../34-backend-data-identity-integration/README.md#anhkysuai-go-chi-chi); [Echo](../34-backend-data-identity-integration/README.md#anhkysuai-labstack-echo); [Gin](../08-awesome-lists-learning/README.md#6c59-framework-backend). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/gofiber/fiber/blob/e0466d29e78d94999d86151a27c5efc1d3dc9248/README.md) · [LICENSE](https://github.com/gofiber/fiber/blob/e0466d29e78d94999d86151a27c5efc1d3dc9248/LICENSE) · [go.mod](https://github.com/gofiber/fiber/blob/e0466d29e78d94999d86151a27c5efc1d3dc9248/go.mod) · [.github/workflows/test.yml](https://github.com/gofiber/fiber/blob/e0466d29e78d94999d86151a27c5efc1d3dc9248/.github/workflows/test.yml).
+
+<a id="anhkysuai-nextcloud-server"></a>
+
+### Nextcloud Server
+
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-nextcloud-server); catalog con xem [catalog/](../catalog/README.md).
+
+<a id="anhkysuai-fastify-fastify"></a>
+
+### Fastify
+
+**Repo:** [fastify/fastify](https://github.com/fastify/fastify) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`6de5abedb244`](https://github.com/fastify/fastify/tree/6de5abedb24424f0e8fa3612035d212d580f8d90) (commit 2026-11-21). **Sao:** 37,456 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/fastify/fastify).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Framework web Node.js với kiến trúc plugin và mục tiêu giảm overhead. |
+| Giá trị và cơ chế theo tài liệu | README tách nhánh v6/main khỏi v5; manifest tại SHA là 6.0.0-alpha.6 và CI gọi bộ quality/coverage trên Unix và Windows. |
+| Giới hạn | Đây là alpha, không đồng nhất với nhánh ổn định v5. Những tuyên bố nhanh hoặc tiết kiệm chi phí chưa được benchmark trong môi trường ứng dụng. |
+| Điều kiện tích hợp | Chọn release và plugin tương thích, định nghĩa schema request/response và kiểm xử lý lỗi; thử nâng cấp trên staging thay vì theo main tự động. |
+| Lựa chọn đối chiếu | [Express](../08-awesome-lists-learning/README.md#6c59-framework-backend); Hapi; NestJS. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/fastify/fastify/blob/6de5abedb24424f0e8fa3612035d212d580f8d90/README.md) · [LICENSE](https://github.com/fastify/fastify/blob/6de5abedb24424f0e8fa3612035d212d580f8d90/LICENSE) · [package.json](https://github.com/fastify/fastify/blob/6de5abedb24424f0e8fa3612035d212d580f8d90/package.json) · [.github/workflows/ci.yml](https://github.com/fastify/fastify/blob/6de5abedb24424f0e8fa3612035d212d580f8d90/.github/workflows/ci.yml).
+
+<a id="anhkysuai-rustfs-rustfs"></a>
+
+### RustFS
+
+**Repo:** [rustfs/rustfs](https://github.com/rustfs/rustfs) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`b85c7a7ba003`](https://github.com/rustfs/rustfs/tree/b85c7a7ba003144609c5965681b2edd843a1c4c4) (commit 2026-11-23). **Sao:** 36,392 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/rustfs/rustfs).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Hệ lưu trữ đối tượng phân tán bằng Rust với giao diện S3. |
+| Giá trị và cơ chế theo tài liệu | README dẫn ma trận tương thích S3 và mô tả Swift/Keystone; workspace Rust và CI lựa chọn phạm vi kiểm hỗ trợ đánh giá từng tính năng cụ thể. |
+| Giới hạn | Tương thích chỉ bao phủ các tính năng được hỗ trợ, không mặc nhiên thay thế mọi S3 backend. Tuyên bố nhanh, an toàn và chịu lỗi chưa được đo hay fault-test. |
+| Điều kiện tích hợp | Kiểm chính xác SDK/API đang dùng, multipart, policy và migration; thử mất node và phục hồi trên dữ liệu không quan trọng trước khi lưu bản duy nhất. |
+| Lựa chọn đối chiếu | MinIO; [SeaweedFS](../34-backend-data-identity-integration/README.md#anhkysuai-seaweedfs-seaweedfs); Ceph. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/rustfs/rustfs/blob/b85c7a7ba003144609c5965681b2edd843a1c4c4/README.md) · [LICENSE](https://github.com/rustfs/rustfs/blob/b85c7a7ba003144609c5965681b2edd843a1c4c4/LICENSE) · [Cargo.toml](https://github.com/rustfs/rustfs/blob/b85c7a7ba003144609c5965681b2edd843a1c4c4/Cargo.toml) · [.github/workflows/ci.yml](https://github.com/rustfs/rustfs/blob/b85c7a7ba003144609c5965681b2edd843a1c4c4/.github/workflows/ci.yml).
+
+<a id="anhkysuai-seaweedfs-seaweedfs"></a>
+
+### SeaweedFS
+
+**Repo:** [seaweedfs/seaweedfs](https://github.com/seaweedfs/seaweedfs) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`ae0f1a252526`](https://github.com/seaweedfs/seaweedfs/tree/ae0f1a2525261829a1d9b3efca2bac9153ce7143) (commit 2026-11-23). **Sao:** 36,209 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/seaweedfs/seaweedfs).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Hệ lưu trữ phân tán cung cấp S3, filesystem và các lớp dữ liệu dùng chung storage. |
+| Giá trị và cơ chế theo tài liệu | README mô tả master/filer/volume, REST API, Iceberg catalog và vector buckets; CI Helm kiểm tài nguyên chart cho triển khai Kubernetes. |
+| Giới hạn | Mục tiêu hàng tỷ tệp và độ phức tạp O(1) là mô tả upstream, chưa benchmark. S3, POSIX, lakehouse và vector search có phạm vi tương thích cần đánh giá riêng. |
+| Điều kiện tích hợp | Chọn giao diện thực sự cần, thử workload và lỗi volume/filer; kiểm replication, capacity, backup metadata và điều kiện nâng cấp cluster. |
+| Lựa chọn đối chiếu | Ceph; [RustFS](../34-backend-data-identity-integration/README.md#anhkysuai-rustfs-rustfs); Garage. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/seaweedfs/seaweedfs/blob/ae0f1a2525261829a1d9b3efca2bac9153ce7143/README.md) · [LICENSE](https://github.com/seaweedfs/seaweedfs/blob/ae0f1a2525261829a1d9b3efca2bac9153ce7143/LICENSE) · [go.mod](https://github.com/seaweedfs/seaweedfs/blob/ae0f1a2525261829a1d9b3efca2bac9153ce7143/go.mod) · [.github/workflows/helm_ci.yml](https://github.com/seaweedfs/seaweedfs/blob/ae0f1a2525261829a1d9b3efca2bac9153ce7143/.github/workflows/helm_ci.yml).
+
+<a id="anhkysuai-sahat-hackathon-starter"></a>
+
+### Hackathon Starter
+
+**Repo:** [sahat/hackathon-starter](https://github.com/sahat/hackathon-starter) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`376261ba451e`](https://github.com/sahat/hackathon-starter/tree/376261ba451e63169b3f5fae3b823a4f349e1a0d) (commit 2026-11-20). **Sao:** 35,260 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/sahat/hackathon-starter).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Boilerplate Node.js giúp bắt đầu ứng dụng web và học các tích hợp đăng nhập. |
+| Giá trị và cơ chế theo tài liệu | README giải thích mục tiêu đơn giản/tái dùng; manifest nêu Node 24 trở lên, CI lint, test và replay kiểm e2e. |
+| Giới hạn | Mẫu hackathon không tự đáp ứng yêu cầu sản phẩm thật. Các nhà cung cấp OAuth có cấu hình/quyền riêng; chưa chạy kiểm authentication hoặc checklist production. |
+| Điều kiện tích hợp | Fork rồi bỏ phần không dùng, thay cấu hình mẫu và quản lý secrets; kiểm session, redirect OAuth và quyền nghiệp vụ trước khi đưa dữ liệu thật vào. |
+| Lựa chọn đối chiếu | [Full Stack FastAPI Template](../34-backend-data-identity-integration/README.md#anhkysuai-fastapi-full-stack-fastapi-template); JHipster; Cookiecutter Django. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/sahat/hackathon-starter/blob/376261ba451e63169b3f5fae3b823a4f349e1a0d/README.md) · [LICENSE](https://github.com/sahat/hackathon-starter/blob/376261ba451e63169b3f5fae3b823a4f349e1a0d/LICENSE) · [package.json](https://github.com/sahat/hackathon-starter/blob/376261ba451e63169b3f5fae3b823a4f349e1a0d/package.json) · [.github/workflows/build.yml](https://github.com/sahat/hackathon-starter/blob/376261ba451e63169b3f5fae3b823a4f349e1a0d/.github/workflows/build.yml).
+
+<a id="anhkysuai-laravel-framework"></a>
+
+### Laravel Framework
+
+**Repo:** [laravel/framework](https://github.com/laravel/framework) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`3f9a7b15a1a8`](https://github.com/laravel/framework/tree/3f9a7b15a1a866aae9cd3f30d1065a114997bb27) (commit 2026-11-23). **Sao:** 35,058 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/laravel/framework).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Mã lõi framework PHP cho routing, dependency injection, migration, queue và sự kiện. |
+| Giá trị và cơ chế theo tài liệu | README phân biệt rõ repo core với laravel/laravel dùng khởi tạo app; Composer và CI PHPUnit theo nhiều phiên bản là điểm tham khảo cho thư viện nền. |
+| Giới hạn | Đọc core không đánh giá ứng dụng được tạo hay mọi package hệ sinh thái. Chưa chạy test upstream hoặc kiểm policy xác thực/phân quyền của sản phẩm cụ thể. |
+| Điều kiện tích hợp | Dùng skeleton và release tương thích PHP, chọn backend queue/cache theo nhu cầu; thêm kiểm nghiệp vụ, migration và quyền trong repo ứng dụng. |
+| Lựa chọn đối chiếu | [Symfony](../34-backend-data-identity-integration/README.md#anhkysuai-symfony-symfony); Django; Rails. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/laravel/framework/blob/3f9a7b15a1a866aae9cd3f30d1065a114997bb27/README.md) · [LICENSE.md](https://github.com/laravel/framework/blob/3f9a7b15a1a866aae9cd3f30d1065a114997bb27/LICENSE.md) · [composer.json](https://github.com/laravel/framework/blob/3f9a7b15a1a866aae9cd3f30d1065a114997bb27/composer.json) · [.github/workflows/tests.yml](https://github.com/laravel/framework/blob/3f9a7b15a1a866aae9cd3f30d1065a114997bb27/.github/workflows/tests.yml).
+
+<a id="anhkysuai-surrealdb-surrealdb"></a>
+
+### SurrealDB
+
+**Repo:** [surrealdb/surrealdb](https://github.com/surrealdb/surrealdb) · **License:** BUSL-1.1; Additional Use Grant, đổi Apache-2.0 theo Change Date · **Kiểm:** 2026-11-23, `docs-read`, [`1b73f91bc12f`](https://github.com/surrealdb/surrealdb/tree/1b73f91bc12f462ba6eb9cd792d3e8f3336fb619) (commit 2026-11-17). **Sao:** 33,352 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/surrealdb/surrealdb).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Cơ sở dữ liệu đa mô hình Rust với document, graph, tìm kiếm và sự kiện thời gian thực. |
+| Giá trị và cơ chế theo tài liệu | README mô tả triển khai embedded, WebAssembly, node hoặc cluster; Cargo tách engine, IAM, datastore và các lớp dữ liệu. |
+| Giới hạn | LICENSE không phải nguồn mở OSI, loại trừ Database Service như định nghĩa và ghi Change Date 2030-01-01 cho phạm vi này. Tuyên bố hợp nhất backend/hiệu năng chưa được thử. |
+| Điều kiện tích hợp | Kiểm quyền sử dụng theo mô hình cung cấp dịch vụ, thử query/permission và migration; đánh giá tính đúng và backup riêng cho từng kiểu triển khai. |
+| Lựa chọn đối chiếu | PostgreSQL; ArangoDB; EdgeDB/Gel. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/surrealdb/surrealdb/blob/1b73f91bc12f462ba6eb9cd792d3e8f3336fb619/README.md) · [LICENSE](https://github.com/surrealdb/surrealdb/blob/1b73f91bc12f462ba6eb9cd792d3e8f3336fb619/LICENSE) · [Cargo.toml](https://github.com/surrealdb/surrealdb/blob/1b73f91bc12f462ba6eb9cd792d3e8f3336fb619/Cargo.toml) · [.github/workflows/ci.yml](https://github.com/surrealdb/surrealdb/blob/1b73f91bc12f462ba6eb9cd792d3e8f3336fb619/.github/workflows/ci.yml).
+
+<a id="anhkysuai-labstack-echo"></a>
+
+### Echo
+
+**Repo:** [labstack/echo](https://github.com/labstack/echo) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`59aacddc4a13`](https://github.com/labstack/echo/tree/59aacddc4a13904b8a80a76f1ec838c495b5feca) (commit 2026-11-20). **Sao:** 32,831 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/labstack/echo).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Framework Go xây trên net/http, thêm routing, binding, middleware và xử lý lỗi tập trung. |
+| Giá trị và cơ chế theo tài liệu | README mô tả rõ thứ tự pre middleware/router/handler/error handler của v5; CI chạy go test với race detector và coverage. |
+| Giới hạn | Echo Pro là thư viện thương mại riêng, không thuộc MIT của core. Chưa chạy test hoặc đo tốc độ; binding request không thay validation và phân quyền nghiệp vụ. |
+| Điều kiện tích hợp | Chọn v5 cùng middleware tương thích, định nghĩa validation và error mapping; thử request lỗi, shutdown và giới hạn tài nguyên trước khi phục vụ công khai. |
+| Lựa chọn đối chiếu | [Chi](../34-backend-data-identity-integration/README.md#anhkysuai-go-chi-chi); [Fiber](../34-backend-data-identity-integration/README.md#anhkysuai-gofiber-fiber); [Gin](../08-awesome-lists-learning/README.md#6c59-framework-backend). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/labstack/echo/blob/59aacddc4a13904b8a80a76f1ec838c495b5feca/README.md) · [LICENSE](https://github.com/labstack/echo/blob/59aacddc4a13904b8a80a76f1ec838c495b5feca/LICENSE) · [go.mod](https://github.com/labstack/echo/blob/59aacddc4a13904b8a80a76f1ec838c495b5feca/go.mod) · [.github/workflows/ci.yml](https://github.com/labstack/echo/blob/59aacddc4a13904b8a80a76f1ec838c495b5feca/.github/workflows/ci.yml).
+
+<a id="anhkysuai-cockroachdb-cockroach"></a>
+
+### CockroachDB
+
+**Repo:** [cockroachdb/cockroach](https://github.com/cockroachdb/cockroach) · **License:** CockroachDB Software License · **Kiểm:** 2026-11-23, `docs-read`, [`d30c905fff79`](https://github.com/cockroachdb/cockroach/tree/d30c905fff79ef825adc96bcc647f1872a90f2ff) (commit 2026-09-23). **Sao:** 32,643 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/cockroachdb/cockroach).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Cơ sở dữ liệu SQL phân tán với giao dịch trên kho khóa-giá trị nhất quán. |
+| Giá trị và cơ chế theo tài liệu | README mô tả mở rộng và điều khiển vị trí dữ liệu; Go/Bazel cùng CI kiểm binary cung cấp điểm bắt đầu đánh giá triển khai. |
+| Giới hạn | LICENSE yêu cầu license key ngoài Limited Non-Production Use và có nghĩa vụ telemetry theo điều khoản. Tuyên bố chịu lỗi và độ trễ chưa được tái lập. |
+| Điều kiện tích hợp | Kiểm quyền/telemetry của mô hình sử dụng, thử bộ SQL và retry giao dịch; đo liên vùng, backup/restore và mất node trên cluster thử. |
+| Lựa chọn đối chiếu | [TiDB](../34-backend-data-identity-integration/README.md#anhkysuai-pingcap-tidb); YugabyteDB; PostgreSQL + Citus. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/cockroachdb/cockroach/blob/d30c905fff79ef825adc96bcc647f1872a90f2ff/README.md) · [LICENSE](https://github.com/cockroachdb/cockroach/blob/d30c905fff79ef825adc96bcc647f1872a90f2ff/LICENSE) · [go.mod](https://github.com/cockroachdb/cockroach/blob/d30c905fff79ef825adc96bcc647f1872a90f2ff/go.mod) · [.github/workflows/bincheck.yml](https://github.com/cockroachdb/cockroach/blob/d30c905fff79ef825adc96bcc647f1872a90f2ff/.github/workflows/bincheck.yml).
+
+<a id="anhkysuai-filamentphp-filament"></a>
+
+### Filament
+
+**Repo:** [filamentphp/filament](https://github.com/filamentphp/filament) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`d837848f98a6`](https://github.com/filamentphp/filament/tree/d837848f98a6f9c3906302d3b7ef46e23b4c5de2) (commit 2026-11-23). **Sao:** 32,543 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/filamentphp/filament).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Khung xây admin, portal và phần mềm nghiệp vụ trên Laravel. |
+| Giá trị và cơ chế theo tài liệu | README kết hợp tables, forms, infolists, notifications, widgets và actions; Composer và CI theo PHP/Laravel/database hỗ trợ đánh giá tương thích nền tảng. |
+| Giới hạn | Component CRUD không tự tạo chính sách truy cập dữ liệu hoặc quy trình nghiệp vụ đúng. Plugin và theme có thể có giấy phép khác; chưa thử tương tác accessibility hay dữ liệu lớn. |
+| Điều kiện tích hợp | Chọn phiên bản Laravel/PHP phù hợp, viết policy cho từng resource/action; thử lọc dữ liệu theo tenant và hành động hàng loạt trước khi cho vận hành. |
+| Lựa chọn đối chiếu | Laravel Nova; Django Admin; React Admin. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/filamentphp/filament/blob/d837848f98a6f9c3906302d3b7ef46e23b4c5de2/README.md) · [LICENSE.md](https://github.com/filamentphp/filament/blob/d837848f98a6f9c3906302d3b7ef46e23b4c5de2/LICENSE.md) · [package.json](https://github.com/filamentphp/filament/blob/d837848f98a6f9c3906302d3b7ef46e23b4c5de2/package.json) · [composer.json](https://github.com/filamentphp/filament/blob/d837848f98a6f9c3906302d3b7ef46e23b4c5de2/composer.json) · [.github/workflows/tests.yml](https://github.com/filamentphp/filament/blob/d837848f98a6f9c3906302d3b7ef46e23b4c5de2/.github/workflows/tests.yml).
+
+<a id="anhkysuai-meta-rocksdb"></a>
+
+### RocksDB
+
+**Repo:** [meta/rocksdb](https://github.com/meta/rocksdb) · **License:** GPL-2.0 OR Apache-2.0; phần LevelDB có điều khoản riêng · **Kiểm:** 2026-11-23, `docs-read`, [`883ce9ce9e89`](https://github.com/meta/rocksdb/tree/883ce9ce9e89230e8b770935e884dda103cea80f) (commit 2026-11-22). **Sao:** 32,309 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/meta/rocksdb).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Thư viện kho khóa-giá trị lưu bền nhúng với thiết kế LSM. |
+| Giá trị và cơ chế theo tài liệu | README nêu trade-off write/read/space amplification và compaction; public API nằm ở include/, CI tuần có valgrind test. |
+| Giới hạn | Metadata GitHub chỉ nhận GPL nhưng README cho phép chọn Apache-2.0; giữ thông báo LevelDB riêng. Không phải server phân tán hoàn chỉnh; chưa đo workload hay hành vi khi mất điện. |
+| Điều kiện tích hợp | Chỉ dùng public API, thiết kế backup và schema key; thử compaction, giới hạn RAM, write stall và recovery với dữ liệu đại diện. |
+| Lựa chọn đối chiếu | LevelDB; LMDB; SQLite. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/meta/rocksdb/blob/883ce9ce9e89230e8b770935e884dda103cea80f/README.md) · [COPYING](https://github.com/meta/rocksdb/blob/883ce9ce9e89230e8b770935e884dda103cea80f/COPYING) · [LICENSE.Apache](https://github.com/meta/rocksdb/blob/883ce9ce9e89230e8b770935e884dda103cea80f/LICENSE.Apache) · [LICENSE.leveldb](https://github.com/meta/rocksdb/blob/883ce9ce9e89230e8b770935e884dda103cea80f/LICENSE.leveldb) · [CMakeLists.txt](https://github.com/meta/rocksdb/blob/883ce9ce9e89230e8b770935e884dda103cea80f/CMakeLists.txt) · [.github/workflows/weekly.yml](https://github.com/meta/rocksdb/blob/883ce9ce9e89230e8b770935e884dda103cea80f/.github/workflows/weekly.yml).
+
+<a id="anhkysuai-hasura-graphql-engine"></a>
+
+### Hasura GraphQL Engine
+
+**Repo:** [hasura/graphql-engine](https://github.com/hasura/graphql-engine) · **License:** Apache-2.0; LICENSE-community theo MIT · **Kiểm:** 2026-11-23, `docs-read`, [`96f68d0a35a2`](https://github.com/hasura/graphql-engine/tree/96f68d0a35a2b3ee153ce67585d37efb3cfa6598) (commit 2026-11-11). **Sao:** 32,127 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/hasura/graphql-engine).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Engine cung cấp API GraphQL thống nhất trên các nguồn dữ liệu. |
+| Giá trị và cơ chế theo tài liệu | README phân biệt v3/DDN trong thư mục v3 và v2 ổn định, đồng thời giới thiệu connector SDK TypeScript/Python/Go; repo có giấy phép Apache và community MIT. |
+| Giới hạn | Không suy tính năng cloud/DDN và connector bên ngoài từ core. Workflow đọc chỉ là lint console; chưa kiểm phân quyền, query plan hoặc tính tương thích dữ liệu. |
+| Điều kiện tích hợp | Chọn v2/v3 theo nhu cầu, thử permission với người dùng không có quyền và query phức tạp; ghim connector cùng phiên bản và kiểm migration metadata. |
+| Lựa chọn đối chiếu | [PostgREST](../34-backend-data-identity-integration/README.md#anhkysuai-postgrest-postgrest); PostGraphile; GraphQL Yoga. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/hasura/graphql-engine/blob/96f68d0a35a2b3ee153ce67585d37efb3cfa6598/README.md) · [LICENSE](https://github.com/hasura/graphql-engine/blob/96f68d0a35a2b3ee153ce67585d37efb3cfa6598/LICENSE) · [LICENSE-community](https://github.com/hasura/graphql-engine/blob/96f68d0a35a2b3ee153ce67585d37efb3cfa6598/LICENSE-community) · [.github/workflows/lint.yml](https://github.com/hasura/graphql-engine/blob/96f68d0a35a2b3ee153ce67585d37efb3cfa6598/.github/workflows/lint.yml).
+
+<a id="anhkysuai-dragonflydb-dragonfly"></a>
+
+### Dragonfly
+
+**Repo:** [dragonflydb/dragonfly](https://github.com/dragonflydb/dragonfly) · **License:** Dragonfly Source-Available License (DSAL) · **Kiểm:** 2026-11-23, `docs-read`, [`034fb0572352`](https://github.com/dragonflydb/dragonfly/tree/034fb057235243595fab604efe16aa0325587a0b) (commit 2026-11-23). **Sao:** 31,916 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/dragonflydb/dragonfly).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Kho dữ liệu trong bộ nhớ hướng đến API Redis và Memcached. |
+| Giá trị và cơ chế theo tài liệu | README mô tả mục tiêu dùng với ứng dụng hiện có; CI có kiểm ACL category với Valkey và phạm vi lệnh fuzz, hữu ích cho kế hoạch tương thích. |
+| Giới hạn | LICENSE hiện tại là DSAL, có giới hạn production 100 vCPU tổng cùng các điều kiện khác. Không dùng nhãn BUSL cũ; các tuyên bố 25x và giảm tài nguyên chưa được đo. |
+| Điều kiện tích hợp | Rà lệnh/module/client thực tế, thử persistence, failover và TTL; kiểm đầy đủ DSAL của phiên bản trước khi thay cache hiện có. |
+| Lựa chọn đối chiếu | [Valkey](../34-backend-data-identity-integration/README.md#anhkysuai-valkey-io-valkey); [Redis](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích); KeyDB. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/dragonflydb/dragonfly/blob/034fb057235243595fab604efe16aa0325587a0b/README.md) · [LICENSE.md](https://github.com/dragonflydb/dragonfly/blob/034fb057235243595fab604efe16aa0325587a0b/LICENSE.md) · [pyproject.toml](https://github.com/dragonflydb/dragonfly/blob/034fb057235243595fab604efe16aa0325587a0b/pyproject.toml) · [CMakeLists.txt](https://github.com/dragonflydb/dragonfly/blob/034fb057235243595fab604efe16aa0325587a0b/CMakeLists.txt) · [.github/workflows/ci.yml](https://github.com/dragonflydb/dragonfly/blob/034fb057235243595fab604efe16aa0325587a0b/.github/workflows/ci.yml).
+
+<a id="anhkysuai-influxdata-influxdb"></a>
+
+### InfluxDB 3 Core
+
+**Repo:** [influxdata/influxdb](https://github.com/influxdata/influxdb) · **License:** MIT OR Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`185688a5a813`](https://github.com/influxdata/influxdb/tree/185688a5a813016c0d26ec10abbad2ca770670ed) (commit 2026-10-22). **Sao:** 31,833 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/influxdata/influxdb).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Cơ sở dữ liệu time series/sự kiện dùng Rust, Arrow, DataFusion và Parquet. |
+| Giá trị và cơ chế theo tài liệu | README phân biệt v3 Core với nhánh cũ và Enterprise; mô tả line protocol, SQL/InfluxQL, object storage cùng Python plugin/trigger. |
+| Giới hạn | Tương thích write API 1.x/2.x không có nghĩa toàn bộ query/tính năng cũ tương thích. Các độ trễ nêu trong README chưa benchmark; workflow đã đọc chỉ kiểm thông điệp commit. |
+| Điều kiện tích hợp | Thử ingest/query thật, retention và backup object store; đối chiếu API cũ, quyền plugin Python và bản Core/Enterprise trước khi chuyển dữ liệu. |
+| Lựa chọn đối chiếu | [TimescaleDB](../34-backend-data-identity-integration/README.md#anhkysuai-timescale-timescaledb); [VictoriaMetrics](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích); QuestDB. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/influxdata/influxdb/blob/185688a5a813016c0d26ec10abbad2ca770670ed/README.md) · [LICENSE-APACHE](https://github.com/influxdata/influxdb/blob/185688a5a813016c0d26ec10abbad2ca770670ed/LICENSE-APACHE) · [LICENSE-MIT](https://github.com/influxdata/influxdb/blob/185688a5a813016c0d26ec10abbad2ca770670ed/LICENSE-MIT) · [Cargo.toml](https://github.com/influxdata/influxdb/blob/185688a5a813016c0d26ec10abbad2ca770670ed/Cargo.toml) · [.github/workflows/semantic.yml](https://github.com/influxdata/influxdb/blob/185688a5a813016c0d26ec10abbad2ca770670ed/.github/workflows/semantic.yml).
+
+<a id="anhkysuai-symfony-symfony"></a>
+
+### Symfony
+
+**Repo:** [symfony/symfony](https://github.com/symfony/symfony) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`8d1546d0da29`](https://github.com/symfony/symfony/tree/8d1546d0da29d440f669250f91eb89996fda5753) (commit 2026-11-23). **Sao:** 31,458 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/symfony/symfony).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Framework PHP cho ứng dụng web/console và tập component có thể dùng riêng. |
+| Giá trị và cơ chế theo tài liệu | README nêu nhịp release, LTS và tài liệu component; Composer cùng CI unit tests hỗ trợ lựa chọn bộ phận nền thay vì lấy toàn framework. |
+| Giới hạn | Dòng phát triển tại SHA hướng tới Symfony 8.2; support và runtime phải kiểm theo release được chọn. Chưa chạy kiểm hoặc xác minh tính tương thích bundle ngoài. |
+| Điều kiện tích hợp | Chọn bản còn hỗ trợ và component cần dùng, kiểm deprecation/upgrade guide; thêm kiểm container configuration, request lifecycle và nghiệp vụ trong ứng dụng. |
+| Lựa chọn đối chiếu | Laravel; Laminas; Slim. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/symfony/symfony/blob/8d1546d0da29d440f669250f91eb89996fda5753/README.md) · [LICENSE](https://github.com/symfony/symfony/blob/8d1546d0da29d440f669250f91eb89996fda5753/LICENSE) · [composer.json](https://github.com/symfony/symfony/blob/8d1546d0da29d440f669250f91eb89996fda5753/composer.json) · [.github/workflows/unit-tests.yml](https://github.com/symfony/symfony/blob/8d1546d0da29d440f669250f91eb89996fda5753/.github/workflows/unit-tests.yml).
+
+<a id="anhkysuai-better-auth-better-auth"></a>
+
+### Better Auth
+
+**Repo:** [better-auth/better-auth](https://github.com/better-auth/better-auth) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`1aa7c03958f9`](https://github.com/better-auth/better-auth/tree/1aa7c03958f93d2d58af5fb06afd764a40813a60) (commit 2026-11-23). **Sao:** 30,839 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/better-auth/better-auth).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Framework xác thực/ủy quyền TypeScript độc lập framework ứng dụng. |
+| Giá trị và cơ chế theo tài liệu | README mô tả plugin cho 2FA, tenant và các luồng mở rộng; workspace/CI build cho thấy hệ gói có thể tích hợp từng phần. |
+| Giới hạn | Có tính năng xác thực không đồng nghĩa cấu hình của sản phẩm được bảo vệ đúng. Chưa đọc implementation hoặc kiểm session, reset, tenant isolation hay provider OAuth. |
+| Điều kiện tích hợp | Thử với database adapter và framework đích, định nghĩa rõ chính sách session/quyền; thêm kiểm phủ định cho recovery, đăng xuất và truy cập chéo tenant. |
+| Lựa chọn đối chiếu | [Auth.js](../34-backend-data-identity-integration/README.md#anhkysuai-nextauthjs-next-auth); Lucia; Ory Kratos. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/better-auth/better-auth/blob/1aa7c03958f93d2d58af5fb06afd764a40813a60/README.md) · [LICENSE.md](https://github.com/better-auth/better-auth/blob/1aa7c03958f93d2d58af5fb06afd764a40813a60/LICENSE.md) · [package.json](https://github.com/better-auth/better-auth/blob/1aa7c03958f93d2d58af5fb06afd764a40813a60/package.json) · [.github/workflows/ci.yml](https://github.com/better-auth/better-auth/blob/1aa7c03958f93d2d58af5fb06afd764a40813a60/.github/workflows/ci.yml).
+
+<a id="anhkysuai-encode-django-rest-framework"></a>
+
+### Django REST Framework
+
+**Repo:** [encode/django-rest-framework](https://github.com/encode/django-rest-framework) · **License:** BSD-3-Clause · **Kiểm:** 2026-11-23, `docs-read`, [`7db99000c115`](https://github.com/encode/django-rest-framework/tree/7db99000c115e5b3d0a72c6c9bfec249d39c4476) (commit 2026-11-19). **Sao:** 30,256 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/encode/django-rest-framework).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Bộ công cụ xây Web API trên Django với serializer, policy xác thực và browsable API. |
+| Giá trị và cơ chế theo tài liệu | README phân biệt serializer ORM/non-ORM cùng viewset/router; pyproject và CI tox xác định yêu cầu Python/Django ở SHA đã đọc. |
+| Giới hạn | Policy được cung cấp không có nghĩa mọi endpoint đã được bảo vệ. Chưa kiểm quyền object-level, pagination hay query count; OAuth còn có gói tùy chọn ngoài repo. |
+| Điều kiện tích hợp | Ghim Django/runtime hỗ trợ, khai báo authentication/permission rõ và thử truy cập chéo người dùng; đo N+1 query, validation và schema API trước khi mở công khai. |
+| Lựa chọn đối chiếu | Django Ninja; FastAPI; Litestar. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/encode/django-rest-framework/blob/7db99000c115e5b3d0a72c6c9bfec249d39c4476/README.md) · [LICENSE.md](https://github.com/encode/django-rest-framework/blob/7db99000c115e5b3d0a72c6c9bfec249d39c4476/LICENSE.md) · [pyproject.toml](https://github.com/encode/django-rest-framework/blob/7db99000c115e5b3d0a72c6c9bfec249d39c4476/pyproject.toml) · [.github/workflows/main.yml](https://github.com/encode/django-rest-framework/blob/7db99000c115e5b3d0a72c6c9bfec249d39c4476/.github/workflows/main.yml).
+
+<a id="anhkysuai-hashicorp-consul"></a>
+
+### Consul
+
+**Repo:** [hashicorp/consul](https://github.com/hashicorp/consul) · **License:** BUSL-1.1; Additional Use Grant · **Kiểm:** 2026-11-23, `docs-read`, [`6b6e7dc3325a`](https://github.com/hashicorp/consul/tree/6b6e7dc3325aad31b26d17d800276d5549546831) (commit 2026-11-23). **Sao:** 30,116 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/hashicorp/consul).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Hệ thống discovery, health check, cấu hình động và service mesh cho hạ tầng phân tán. |
+| Giá trị và cơ chế theo tài liệu | README mô tả DNS/HTTP discovery, gateway và TLS theo danh tính; Go module tách API/SDK giúp xác định điểm tích hợp. |
+| Giới hạn | LICENSE hiện tại có giới hạn đối với sản phẩm cạnh tranh theo định nghĩa, không phải nhãn nguồn mở thuần. Khả năng HA và bảo vệ mesh chưa được thử dưới lỗi. |
+| Điều kiện tích hợp | Kiểm mô hình sử dụng với license của release, thử discovery/ACL/TLS và quorum; chuẩn bị snapshot, rotation và hành vi khi control plane mất kết nối. |
+| Lựa chọn đối chiếu | [etcd](../34-backend-data-identity-integration/README.md#anhkysuai-etcd-io-etcd); ZooKeeper; Kubernetes discovery. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/hashicorp/consul/blob/6b6e7dc3325aad31b26d17d800276d5549546831/README.md) · [LICENSE](https://github.com/hashicorp/consul/blob/6b6e7dc3325aad31b26d17d800276d5549546831/LICENSE) · [go.mod](https://github.com/hashicorp/consul/blob/6b6e7dc3325aad31b26d17d800276d5549546831/go.mod) · [.github/workflows/build.yml](https://github.com/hashicorp/consul/blob/6b6e7dc3325aad31b26d17d800276d5549546831/.github/workflows/build.yml).
+
+<a id="anhkysuai-apolloconfig-apollo"></a>
+
+### Apollo Configuration Center
+
+**Repo:** [apolloconfig/apollo](https://github.com/apolloconfig/apollo) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`69a2b1fc0ef4`](https://github.com/apolloconfig/apollo/tree/69a2b1fc0ef43744f9357b07ad1912c54981b38c) (commit 2026-11-21). **Sao:** 29,814 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/apolloconfig/apollo).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Trung tâm cấu hình cho nhiều ứng dụng, môi trường và cluster. |
+| Giá trị và cơ chế theo tài liệu | README mô tả server Spring Boot/Cloud và SDK Java/.NET; Maven/CI theo JDK hỗ trợ đánh giá tương thích nền tảng và quản lý cấu hình tập trung. |
+| Giới hạn | Không liên quan Apollo GraphQL dù cùng tên. Tuyên bố tin cậy chưa được fault-test; thay đổi cấu hình có thể tác động đồng thời nhiều dịch vụ. |
+| Điều kiện tích hợp | Thử namespace/môi trường riêng, kiểm quyền phát hành và rollback; đo client nhận cập nhật, cache khi mất mạng và lịch sử audit trước khi dùng production. |
+| Lựa chọn đối chiếu | Spring Cloud Config; Consul KV; [Nacos](../08-awesome-lists-learning/README.md#6c55-container--devops). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/apolloconfig/apollo/blob/69a2b1fc0ef43744f9357b07ad1912c54981b38c/README.md) · [LICENSE](https://github.com/apolloconfig/apollo/blob/69a2b1fc0ef43744f9357b07ad1912c54981b38c/LICENSE) · [pom.xml](https://github.com/apolloconfig/apollo/blob/69a2b1fc0ef43744f9357b07ad1912c54981b38c/pom.xml) · [.github/workflows/build.yml](https://github.com/apolloconfig/apollo/blob/69a2b1fc0ef43744f9357b07ad1912c54981b38c/.github/workflows/build.yml).
+
+<a id="anhkysuai-authelia-authelia"></a>
+
+### Authelia
+
+**Repo:** [authelia/authelia](https://github.com/authelia/authelia) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`b935f93f891a`](https://github.com/authelia/authelia/tree/b935f93f891abf928d7cdee14bc1f8f32c7044cd) (commit 2026-11-23). **Sao:** 29,710 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/authelia/authelia).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Máy chủ SSO/MFA làm cổng xác thực và ủy quyền cho ứng dụng phía sau reverse proxy. |
+| Giá trị và cơ chế theo tài liệu | README mô tả OIDC/OAuth2, passkey, TOTP và cách allow/deny/redirect; Go manifest cùng workflow provenance làm điểm kiểm nguồn phát hành. |
+| Giới hạn | Bảo vệ phụ thuộc cấu hình proxy và đường bypass; chứng nhận hoặc post-quantum trong mô tả không thay kiểm hệ thống đích. Helm chart được README đánh dấu beta. |
+| Điều kiện tích hợp | Thử cả truy cập hợp lệ/lối tắt trực tiếp backend, cấu hình cookie/TLS và recovery; kiểm scope OIDC, secret rotation và log trước khi bảo vệ ứng dụng thật. |
+| Lựa chọn đối chiếu | [Authentik](../34-backend-data-identity-integration/README.md#anhkysuai-goauthentik-authentik); [Keycloak](../34-backend-data-identity-integration/README.md#keycloak); Ory. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/authelia/authelia/blob/b935f93f891abf928d7cdee14bc1f8f32c7044cd/README.md) · [LICENSE](https://github.com/authelia/authelia/blob/b935f93f891abf928d7cdee14bc1f8f32c7044cd/LICENSE) · [go.mod](https://github.com/authelia/authelia/blob/b935f93f891abf928d7cdee14bc1f8f32c7044cd/go.mod) · [.github/workflows/slsa.yml](https://github.com/authelia/authelia/blob/b935f93f891abf928d7cdee14bc1f8f32c7044cd/.github/workflows/slsa.yml).
+
+<a id="anhkysuai-alibaba-spring-cloud-alibaba"></a>
+
+### Spring Cloud Alibaba
+
+**Repo:** [alibaba/spring-cloud-alibaba](https://github.com/alibaba/spring-cloud-alibaba) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`1290d136d91b`](https://github.com/alibaba/spring-cloud-alibaba/tree/1290d136d91ba4f3a6764f0429a8aa65ccde9ec0) (commit 2026-11-14). **Sao:** 29,156 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/alibaba/spring-cloud-alibaba).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Bộ tích hợp middleware Alibaba cho ứng dụng Spring Cloud phân tán. |
+| Giá trị và cơ chế theo tài liệu | README gom discovery, cấu hình động, flow control, event và transaction qua starter/annotation; Maven parent cho biết quan hệ với Spring Cloud build. |
+| Giới hạn | Thêm annotation không chứng minh tính đúng giao dịch hoặc chịu lỗi. Cần khớp version matrix Spring Boot/Cloud/middleware; workflow đã đọc chỉ kiểm liên kết tài liệu. |
+| Điều kiện tích hợp | Chọn BOM phù hợp, chỉ bật component cần dùng; thử refresh cấu hình, circuit breaker và lỗi dịch vụ trên staging trước khi đưa vào toàn hệ. |
+| Lựa chọn đối chiếu | Spring Cloud gốc; Dubbo; Quarkus. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/alibaba/spring-cloud-alibaba/blob/1290d136d91ba4f3a6764f0429a8aa65ccde9ec0/README.md) · [LICENSE](https://github.com/alibaba/spring-cloud-alibaba/blob/1290d136d91ba4f3a6764f0429a8aa65ccde9ec0/LICENSE) · [pom.xml](https://github.com/alibaba/spring-cloud-alibaba/blob/1290d136d91ba4f3a6764f0429a8aa65ccde9ec0/pom.xml) · [.github/workflows/md-link-check.yml](https://github.com/alibaba/spring-cloud-alibaba/blob/1290d136d91ba4f3a6764f0429a8aa65ccde9ec0/.github/workflows/md-link-check.yml).
+
+<a id="anhkysuai-swagger-api-swagger-ui"></a>
+
+### Swagger UI
+
+**Repo:** [swagger-api/swagger-ui](https://github.com/swagger-api/swagger-ui) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`d157bfe09171`](https://github.com/swagger-api/swagger-ui/tree/d157bfe091710f3a21d4c3be55985293d84b6e57) (commit 2026-11-23). **Sao:** 29,087 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/swagger-api/swagger-ui).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Giao diện hiển thị và tương tác với API sinh từ OpenAPI specification. |
+| Giá trị và cơ chế theo tài liệu | README phân biệt swagger-ui, swagger-ui-dist và swagger-ui-react; workflow build/publish Docker cung cấp các cách nhúng vào cổng tài liệu. |
+| Giới hạn | Tài liệu đẹp không chứng minh spec khớp implementation. Try-it-out có thể gửi request thật; chưa kiểm auth, CORS hoặc nội dung spec không tin cậy. |
+| Điều kiện tích hợp | Chọn gói đúng framework, ghim spec và phiên bản UI; dùng môi trường thử cho thao tác ghi, giới hạn token và kiểm đồng bộ API trong CI ứng dụng. |
+| Lựa chọn đối chiếu | Scalar; Redoc; RapiDoc. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/swagger-api/swagger-ui/blob/d157bfe091710f3a21d4c3be55985293d84b6e57/README.md) · [LICENSE](https://github.com/swagger-api/swagger-ui/blob/d157bfe091710f3a21d4c3be55985293d84b6e57/LICENSE) · [package.json](https://github.com/swagger-api/swagger-ui/blob/d157bfe091710f3a21d4c3be55985293d84b6e57/package.json) · [composer.json](https://github.com/swagger-api/swagger-ui/blob/d157bfe091710f3a21d4c3be55985293d84b6e57/composer.json) · [.github/workflows/docker-build-push.yml](https://github.com/swagger-api/swagger-ui/blob/d157bfe091710f3a21d4c3be55985293d84b6e57/.github/workflows/docker-build-push.yml).
+
+<a id="anhkysuai-cloudreve-cloudreve"></a>
+
+### Cloudreve
+
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-cloudreve-cloudreve); catalog con xem [catalog/](../catalog/README.md).
+
+<a id="anhkysuai-mongodb-mongo"></a>
+
+### MongoDB Community Server
+
+**Repo:** [mongodb/mongo](https://github.com/mongodb/mongo) · **License:** SSPL-1.0 · **Kiểm:** 2026-11-23, `docs-read`, [`b5fcd1f2c092`](https://github.com/mongodb/mongo/tree/b5fcd1f2c0923b194122d0840475204f83b9647e) (commit 2026-11-23). **Sao:** 28,706 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/mongodb/mongo).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Mã máy chủ MongoDB và router sharding mongos. |
+| Giá trị và cơ chế theo tài liệu | README phân biệt server, shell, Compass và driver riêng; cây build/manifest hỗ trợ xác định đây là engine database, không phải gói Node mang version mẫu. |
+| Giới hạn | LICENSE hiện hành là SSPL, không suy Apache hay AGPL từ lịch sử phiên bản. Chưa kiểm replication, sharding hoặc truy vấn; shell/client ngoài repo chưa được review. |
+| Điều kiện tích hợp | Kiểm điều khoản cung cấp dịch vụ và release hỗ trợ, thử index/query/migration thật; cấu hình xác thực, backup và phục hồi trước khi nhập dữ liệu production. |
+| Lựa chọn đối chiếu | PostgreSQL JSONB; CouchDB; FerretDB. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/mongodb/mongo/blob/b5fcd1f2c0923b194122d0840475204f83b9647e/README.md) · [LICENSE-Community.txt](https://github.com/mongodb/mongo/blob/b5fcd1f2c0923b194122d0840475204f83b9647e/LICENSE-Community.txt) · [package.json](https://github.com/mongodb/mongo/blob/b5fcd1f2c0923b194122d0840475204f83b9647e/package.json) · [pyproject.toml](https://github.com/mongodb/mongo/blob/b5fcd1f2c0923b194122d0840475204f83b9647e/pyproject.toml).
+
+<a id="anhkysuai-bagisto-bagisto"></a>
+
+### Bagisto
+
+**Repo:** [bagisto/bagisto](https://github.com/bagisto/bagisto) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`ac4bd606e7a5`](https://github.com/bagisto/bagisto/tree/ac4bd606e7a57061c8abe3c204addfdad8a5f526) (commit 2026-11-18). **Sao:** 28,405 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/bagisto/bagisto).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Nền tảng thương mại điện tử Laravel/Vue để xây cửa hàng và mở rộng nghiệp vụ. |
+| Giá trị và cơ chế theo tài liệu | README mô tả cách cài Composer/Docker và hướng marketplace; Composer nêu PHP 8.4, CI Pest theo database giúp đánh giá nền của ứng dụng. |
+| Giới hạn | Không suy mọi extension multi-vendor/B2B trên website có trong core MIT. Các tuyên bố quy mô SKU chưa benchmark; ảnh Docker có seed/index sẵn cần rà trước production. |
+| Điều kiện tích hợp | Thử checkout, tồn kho, tax và hoàn tiền bằng dữ liệu giả; chọn payment sandbox, kiểm quyền admin, migration và giấy phép extension trước khi bán hàng thật. |
+| Lựa chọn đối chiếu | Saleor; [Medusa](../08-awesome-lists-learning/README.md#6c59-framework-backend); Sylius. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/bagisto/bagisto/blob/ac4bd606e7a57061c8abe3c204addfdad8a5f526/README.md) · [LICENSE](https://github.com/bagisto/bagisto/blob/ac4bd606e7a57061c8abe3c204addfdad8a5f526/LICENSE) · [package.json](https://github.com/bagisto/bagisto/blob/ac4bd606e7a57061c8abe3c204addfdad8a5f526/package.json) · [composer.json](https://github.com/bagisto/bagisto/blob/ac4bd606e7a57061c8abe3c204addfdad8a5f526/composer.json) · [.github/workflows/pest-tests.yml](https://github.com/bagisto/bagisto/blob/ac4bd606e7a57061c8abe3c204addfdad8a5f526/.github/workflows/pest-tests.yml).
+
+<a id="anhkysuai-nextauthjs-next-auth"></a>
+
+### Auth.js
+
+**Repo:** [nextauthjs/next-auth](https://github.com/nextauthjs/next-auth) · **License:** ISC · **Kiểm:** 2026-11-23, `docs-read`, [`a1a16a5a7780`](https://github.com/nextauthjs/next-auth/tree/a1a16a5a7780488c7449feece410033f445d0b31) (commit 2026-07-22). **Sao:** 28,390 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/nextauthjs/next-auth).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Bộ gói xác thực JavaScript dùng Web API chuẩn, hỗ trợ OAuth/OIDC và nhiều framework. |
+| Giá trị và cơ chế theo tài liệu | README mô tả database adapter hoặc stateless session; ghi rõ Auth.js đã thuộc Better Auth và khuyến nghị dự án mới xem Better Auth trừ khoảng trống tính năng cụ thể. |
+| Giới hạn | Khuyến nghị chuyển hướng không đồng nghĩa repo archived; metadata tại ngày kiểm vẫn không archived. Security-by-default là mô tả thiết kế, chưa kiểm callback/session của ứng dụng. |
+| Điều kiện tích hợp | Đánh giá nhu cầu stateless và đường migration, ghim adapter/provider; thử đăng xuất, liên kết tài khoản, redirect và hồi phục truy cập trên staging. |
+| Lựa chọn đối chiếu | [Better Auth](../34-backend-data-identity-integration/README.md#anhkysuai-better-auth-better-auth); Ory; [Keycloak](../34-backend-data-identity-integration/README.md#keycloak). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/nextauthjs/next-auth/blob/a1a16a5a7780488c7449feece410033f445d0b31/README.md) · [LICENSE](https://github.com/nextauthjs/next-auth/blob/a1a16a5a7780488c7449feece410033f445d0b31/LICENSE) · [package.json](https://github.com/nextauthjs/next-auth/blob/a1a16a5a7780488c7449feece410033f445d0b31/package.json) · [.github/workflows/broken-link-checker.yml](https://github.com/nextauthjs/next-auth/blob/a1a16a5a7780488c7449feece410033f445d0b31/.github/workflows/broken-link-checker.yml).
+
+<a id="anhkysuai-valkey-io-valkey"></a>
+
+### Valkey
+
+**Repo:** [valkey-io/valkey](https://github.com/valkey-io/valkey) · **License:** BSD-3-Clause · **Kiểm:** 2026-11-23, `docs-read`, [`28ef86b44342`](https://github.com/valkey-io/valkey/tree/28ef86b44342797ba1512b623b279287eaf979ba) (commit 2026-11-23). **Sao:** 27,839 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/valkey-io/valkey).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Máy chủ cấu trúc dữ liệu cho cache và workload khóa-giá trị thời gian thực. |
+| Giá trị và cơ chế theo tài liệu | README xác nhận fork Redis trước đổi license; mô tả hệ build, TLS, module và giới hạn sentinel với TLS module, CI kiểm định nghĩa lệnh. |
+| Giới hạn | Không suy tương thích mọi module hay lệnh Redis mới. Persistence, eviction và failover cần kiểm theo cấu hình; RDMA được ghi là thử nghiệm, chưa benchmark. |
+| Điều kiện tích hợp | Thử client/lệnh đang dùng và chính sách TTL, bộ nhớ, persistence; kiểm replication/failover và phục hồi trước khi đổi cache hoặc queue backend. |
+| Lựa chọn đối chiếu | [Redis](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích); [Dragonfly](../34-backend-data-identity-integration/README.md#anhkysuai-dragonflydb-dragonfly); KeyDB. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/valkey-io/valkey/blob/28ef86b44342797ba1512b623b279287eaf979ba/README.md) · [COPYING](https://github.com/valkey-io/valkey/blob/28ef86b44342797ba1512b623b279287eaf979ba/COPYING) · [CMakeLists.txt](https://github.com/valkey-io/valkey/blob/28ef86b44342797ba1512b623b279287eaf979ba/CMakeLists.txt) · [.github/workflows/ci.yml](https://github.com/valkey-io/valkey/blob/28ef86b44342797ba1512b623b279287eaf979ba/.github/workflows/ci.yml).
+
+<a id="anhkysuai-postgrest-postgrest"></a>
+
+### PostgREST
+
+**Repo:** [PostgREST/postgrest](https://github.com/PostgREST/postgrest) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`e1e95101e8d3`](https://github.com/PostgREST/postgrest/tree/e1e95101e8d37d24c07da7f3683a8c936e098f2c) (commit 2026-11-19). **Sao:** 27,763 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/PostgREST/postgrest).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Server tạo REST API từ PostgreSQL hiện có. |
+| Giá trị và cơ chế theo tài liệu | README mô tả Haskell/Warp và việc đưa serialization, validation, authorization xuống database; CI tách check, docs, test và build. |
+| Giới hạn | Phân quyền database trở thành ranh giới quan trọng của API. Các con số hiệu năng README chưa được tái lập; chưa kiểm JWT, role mapping, RLS hoặc query plan. |
+| Điều kiện tích hợp | Thiết kế schema/view/role dành cho API, thử truy cập trái quyền và giới hạn truy vấn; kiểm schema cache, migration và proxy trước khi công khai endpoint. |
+| Lựa chọn đối chiếu | Hasura; PostGraphile; [Django REST Framework](../34-backend-data-identity-integration/README.md#anhkysuai-encode-django-rest-framework). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/PostgREST/postgrest/blob/e1e95101e8d37d24c07da7f3683a8c936e098f2c/README.md) · [LICENSE](https://github.com/PostgREST/postgrest/blob/e1e95101e8d37d24c07da7f3683a8c936e098f2c/LICENSE) · [.github/workflows/ci.yaml](https://github.com/PostgREST/postgrest/blob/e1e95101e8d37d24c07da7f3683a8c936e098f2c/.github/workflows/ci.yaml).
+
+<a id="anhkysuai-goauthentik-authentik"></a>
+
+### Authentik
+
+**Repo:** [goauthentik/authentik](https://github.com/goauthentik/authentik) · **License:** MIT cho core/client; CC-BY-SA-4.0 website; enterprise riêng · **Kiểm:** 2026-11-23, `docs-read`, [`7e5db84abecb`](https://github.com/goauthentik/authentik/tree/7e5db84abecb04e48adca2166dec83236fc060f0) (commit 2026-11-20). **Sao:** 26,421 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/goauthentik/authentik).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Identity Provider tự host cho SSO qua SAML, OAuth2/OIDC, LDAP và RADIUS. |
+| Giá trị và cơ chế theo tài liệu | README chỉ dẫn Compose cho nhỏ/thử và Helm cho quy mô lớn; manifest tại SHA là 2026.11.0-rc1, CI web kiểm frontend. |
+| Giới hạn | LICENSE tách website, enterprise và core, nên không gắn MIT cho cả repo. Đây là RC; chưa kiểm flow xác thực, recovery, token hay cấu hình outpost. |
+| Điều kiện tích hợp | Chọn release phù hợp, thử từng protocol với ứng dụng đích và tài khoản ít quyền; kiểm backup, MFA recovery, logout và nâng cấp trước khi thay IdP. |
+| Lựa chọn đối chiếu | [Authelia](../34-backend-data-identity-integration/README.md#anhkysuai-authelia-authelia); [Keycloak](../34-backend-data-identity-integration/README.md#keycloak); Ory Kratos. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/goauthentik/authentik/blob/7e5db84abecb04e48adca2166dec83236fc060f0/README.md) · [LICENSE](https://github.com/goauthentik/authentik/blob/7e5db84abecb04e48adca2166dec83236fc060f0/LICENSE) · [package.json](https://github.com/goauthentik/authentik/blob/7e5db84abecb04e48adca2166dec83236fc060f0/package.json) · [pyproject.toml](https://github.com/goauthentik/authentik/blob/7e5db84abecb04e48adca2166dec83236fc060f0/pyproject.toml) · [.github/workflows/ci-web.yml](https://github.com/goauthentik/authentik/blob/7e5db84abecb04e48adca2166dec83236fc060f0/.github/workflows/ci-web.yml).
+
+<a id="anhkysuai-vapor-vapor"></a>
+
+### Vapor
+
+**Repo:** [vapor/vapor](https://github.com/vapor/vapor) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`e4a5b7050f5e`](https://github.com/vapor/vapor/tree/e4a5b7050f5e9e5793be3ebdeb687eac92fd9965) (commit 2026-11-13). **Sao:** 26,233 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/vapor/vapor).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Framework HTTP phía server cho Swift để xây website, API và dịch vụ. |
+| Giá trị và cơ chế theo tài liệu | README định vị nền tảng server Swift; cây repo có Swift Package và CI gọi workflow unit test dùng chung, phù hợp nhóm muốn chia sẻ ngôn ngữ Swift. |
+| Giới hạn | Package.swift tại SHA yêu cầu Swift 6.4, nêu platform Apple mới và trait UnstableHTTP3; cần đối chiếu release phù hợp. Chưa kiểm runtime Linux, middleware hoặc hiệu năng. |
+| Điều kiện tích hợp | Chọn release/toolchain theo tài liệu, thử endpoint và database adapter cần dùng; kiểm concurrency, shutdown, logging và deploy trên hệ điều hành đích. |
+| Lựa chọn đối chiếu | Hummingbird; Kitura; FastAPI. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/vapor/vapor/blob/e4a5b7050f5e9e5793be3ebdeb687eac92fd9965/README.md) · [LICENSE](https://github.com/vapor/vapor/blob/e4a5b7050f5e9e5793be3ebdeb687eac92fd9965/LICENSE) · [.github/workflows/test.yml](https://github.com/vapor/vapor/blob/e4a5b7050f5e9e5793be3ebdeb687eac92fd9965/.github/workflows/test.yml) · [Package.swift](https://github.com/vapor/vapor/blob/e4a5b7050f5e9e5793be3ebdeb687eac92fd9965/Package.swift).
+
+<a id="anhkysuai-rwf2-rocket"></a>
+
+### Rocket
+
+**Repo:** [rwf2/Rocket](https://github.com/rwf2/Rocket) · **License:** MIT OR Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`0ca096f705d6`](https://github.com/rwf2/Rocket/tree/0ca096f705d60082593a3e9b035d8c2a92595ca0) (commit 2026-11-21). **Sao:** 25,815 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/rwf2/Rocket).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Framework web async Rust với route macro và kiểu dữ liệu tham số. |
+| Giá trị và cơ chế theo tài liệu | Ví dụ README cho thấy parse tham số u8 ảnh hưởng chọn route; Cargo tách core/codegen/http và module database/template/WebSocket, CI nhiều hệ điều hành. |
+| Giới hạn | Route có kiểu không thay validation nghiệp vụ hoặc kiểm quyền. Tài liệu main khác từng release; chưa đọc implementation hay đo request parsing và concurrency. |
+| Điều kiện tích hợp | Ghim Rust/Rocket, chọn contrib feature cần dùng và dùng docs cùng phiên bản; thử request không hợp lệ, error mapping, auth và shutdown trong ứng dụng. |
+| Lựa chọn đối chiếu | Axum; Actix Web; Poem. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/rwf2/Rocket/blob/0ca096f705d60082593a3e9b035d8c2a92595ca0/README.md) · [LICENSE-APACHE](https://github.com/rwf2/Rocket/blob/0ca096f705d60082593a3e9b035d8c2a92595ca0/LICENSE-APACHE) · [LICENSE-MIT](https://github.com/rwf2/Rocket/blob/0ca096f705d60082593a3e9b035d8c2a92595ca0/LICENSE-MIT) · [Cargo.toml](https://github.com/rwf2/Rocket/blob/0ca096f705d60082593a3e9b035d8c2a92595ca0/Cargo.toml) · [.github/workflows/ci.yml](https://github.com/rwf2/Rocket/blob/0ca096f705d60082593a3e9b035d8c2a92595ca0/.github/workflows/ci.yml).
+
+<a id="anhkysuai-clockworklabs-spacetimedb"></a>
+
+### SpacetimeDB
+
+**Repo:** [clockworklabs/SpacetimeDB](https://github.com/clockworklabs/SpacetimeDB) · **License:** BUSL-1.1; grant và giấy phép thư mục riêng · **Kiểm:** 2026-11-23, `docs-read`, [`7bb7e80c08bb`](https://github.com/clockworklabs/SpacetimeDB/tree/7bb7e80c08bb80370e1e238d022b281d7beacc0c) (commit 2026-11-23). **Sao:** 25,569 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/clockworklabs/SpacetimeDB).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Database quan hệ đồng thời chạy logic module và đồng bộ state trực tiếp tới client. |
+| Giá trị và cơ chế theo tài liệu | README mô tả module Rust/C#/TypeScript/C++ cho ứng dụng phản ứng và game; Cargo tách commitlog, datastore, durability, auth và engine. |
+| Giới hạn | Grant hiện giới hạn một instance production và không dùng làm Database Service theo định nghĩa. Tuyên bố không cần DevOps/độ trễ thấp chưa được kiểm; quyền module vẫn phải thiết kế. |
+| Điều kiện tích hợp | Kiểm license/SDK đúng phiên bản, thử đồng bộ, phân quyền và migration module; đo hot data, recovery và hành vi client mất kết nối trước khi dùng lâu dài. |
+| Lựa chọn đối chiếu | Supabase Realtime; Convex; Nakama. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/clockworklabs/SpacetimeDB/blob/7bb7e80c08bb80370e1e238d022b281d7beacc0c/README.md) · [LICENSE.txt](https://github.com/clockworklabs/SpacetimeDB/blob/7bb7e80c08bb80370e1e238d022b281d7beacc0c/LICENSE.txt) · [package.json](https://github.com/clockworklabs/SpacetimeDB/blob/7bb7e80c08bb80370e1e238d022b281d7beacc0c/package.json) · [Cargo.toml](https://github.com/clockworklabs/SpacetimeDB/blob/7bb7e80c08bb80370e1e238d022b281d7beacc0c/Cargo.toml) · [.github/workflows/ci.yml](https://github.com/clockworklabs/SpacetimeDB/blob/7bb7e80c08bb80370e1e238d022b281d7beacc0c/.github/workflows/ci.yml).
+
+<a id="anhkysuai-kataras-iris"></a>
+
+### Iris
+
+**Repo:** [kataras/iris](https://github.com/kataras/iris) · **License:** BSD-3-Clause · **Kiểm:** 2026-11-23, `docs-read`, [`08666267f7f2`](https://github.com/kataras/iris/tree/08666267f7f2f0db48046b127e6fdb41a1002c6c) (commit 2026-11-13). **Sao:** 25,555 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/kataras/iris).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Framework web Go tích hợp routing tham số có kiểu, DI và xử lý lỗi. |
+| Giá trị và cơ chế theo tài liệu | README định vị v14; go.mod yêu cầu Go 1.27 và CI chạy go test -race, giúp xác định bộ runtime và cổng kiểm cơ bản. |
+| Giới hạn | Các khẳng định nhanh nhất, bảo mật mặc định và chi phí tốt chưa được benchmark/kiểm toán. Nhiều tiện ích tích hợp vẫn cần cấu hình và chọn đúng migration giữa major. |
+| Điều kiện tích hợp | Ghim v14/runtime, dùng ví dụ nhỏ rồi kiểm middleware, validation và quyền; đo workload của ứng dụng và rà migration trước khi thay framework. |
+| Lựa chọn đối chiếu | [Echo](../34-backend-data-identity-integration/README.md#anhkysuai-labstack-echo); [Fiber](../34-backend-data-identity-integration/README.md#anhkysuai-gofiber-fiber); [Chi](../34-backend-data-identity-integration/README.md#anhkysuai-go-chi-chi). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/kataras/iris/blob/08666267f7f2f0db48046b127e6fdb41a1002c6c/README.md) · [LICENSE](https://github.com/kataras/iris/blob/08666267f7f2f0db48046b127e6fdb41a1002c6c/LICENSE) · [go.mod](https://github.com/kataras/iris/blob/08666267f7f2f0db48046b127e6fdb41a1002c6c/go.mod) · [.github/workflows/ci.yml](https://github.com/kataras/iris/blob/08666267f7f2f0db48046b127e6fdb41a1002c6c/.github/workflows/ci.yml).
+
+<a id="anhkysuai-tursodatabase-turso"></a>
+
+### Turso Database
+
+**Repo:** [tursodatabase/turso](https://github.com/tursodatabase/turso) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`570cb22d1d91`](https://github.com/tursodatabase/turso/tree/570cb22d1d91d2524761f0fa761e0a0fd8f4765c) (commit 2026-11-23). **Sao:** 25,323 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/tursodatabase/turso).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Database SQL Rust chạy trong tiến trình, tương thích SQLite và thử nghiệm frontend PostgreSQL. |
+| Giá trị và cơ chế theo tài liệu | README giải thích VDBE chung cho các dialect, CDC/MVCC và binding; workflow SQL conformance kiểm cả SQLite lẫn PostgreSQL. |
+| Giới hạn | FAQ nói chưa đến 1.0 và chưa tương thích SQLite 100%; Postgres frontend còn thử nghiệm. Tuyên bố production của upstream không thay kiểm tính đúng dữ liệu riêng. |
+| Điều kiện tích hợp | Đối chiếu COMPAT theo SQL/file/C API đang dùng, thử migration và recovery; giữ backup độc lập, chọn binding và tính năng đã ổn định cho workload đích. |
+| Lựa chọn đối chiếu | SQLite; libSQL; DuckDB. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/tursodatabase/turso/blob/570cb22d1d91d2524761f0fa761e0a0fd8f4765c/README.md) · [LICENSE.md](https://github.com/tursodatabase/turso/blob/570cb22d1d91d2524761f0fa761e0a0fd8f4765c/LICENSE.md) · [pyproject.toml](https://github.com/tursodatabase/turso/blob/570cb22d1d91d2524761f0fa761e0a0fd8f4765c/pyproject.toml) · [Cargo.toml](https://github.com/tursodatabase/turso/blob/570cb22d1d91d2524761f0fa761e0a0fd8f4765c/Cargo.toml) · [.github/workflows/sqltest.yml](https://github.com/tursodatabase/turso/blob/570cb22d1d91d2524761f0fa761e0a0fd8f4765c/.github/workflows/sqltest.yml).
+
+<a id="anhkysuai-taosdata-tdengine"></a>
+
+### TDengine
+
+**Repo:** [taosdata/TDengine](https://github.com/taosdata/TDengine) · **License:** AGPL-3.0 · **Kiểm:** 2026-11-23, `docs-read`, [`e5bf3b82b611`](https://github.com/taosdata/TDengine/tree/e5bf3b82b611daab89e0cf22724c5f3f73ddc997) (commit 2026-11-03). **Sao:** 25,204 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/taosdata/TDengine).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Cơ sở dữ liệu time series hướng IoT và dữ liệu công nghiệp. |
+| Giá trị và cơ chế theo tài liệu | README mô tả ingestion, stream, subscription, phân vùng và tích hợp AI; cây build CMake và CI theo nền tảng cho thấy engine native. |
+| Giới hạn | Các tuyên bố duy nhất giải quyết cardinality, TB/PB mỗi ngày hay tốc độ vượt trội chưa benchmark. Phạm vi community/cloud/AI cần đối chiếu; chưa kiểm replication hoặc mất node. |
+| Điều kiện tích hợp | Đo ingest/query trên schema sensor thực tế, kiểm retention/downsampling và timestamp lệch; thử backup/restore và quyền connector trước khi đưa dữ liệu thiết bị thật vào. |
+| Lựa chọn đối chiếu | InfluxDB; [TimescaleDB](../34-backend-data-identity-integration/README.md#anhkysuai-timescale-timescaledb); QuestDB. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/taosdata/TDengine/blob/e5bf3b82b611daab89e0cf22724c5f3f73ddc997/README.md) · [LICENSE](https://github.com/taosdata/TDengine/blob/e5bf3b82b611daab89e0cf22724c5f3f73ddc997/LICENSE) · [CMakeLists.txt](https://github.com/taosdata/TDengine/blob/e5bf3b82b611daab89e0cf22724c5f3f73ddc997/CMakeLists.txt) · [.github/workflows/tdengine-test.yml](https://github.com/taosdata/TDengine/blob/e5bf3b82b611daab89e0cf22724c5f3f73ddc997/.github/workflows/tdengine-test.yml).
+
+<a id="anhkysuai-navidrome-navidrome"></a>
+
+### Navidrome
+
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-navidrome-navidrome); catalog con xem [catalog/](../catalog/README.md).
+
+<a id="anhkysuai-krayin-laravel-crm"></a>
+
+### Krayin CRM
+
+**Repo:** [krayin/laravel-crm](https://github.com/krayin/laravel-crm) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`64ef70505c5d`](https://github.com/krayin/laravel-crm/tree/64ef70505c5d4320231420bb21adf99dd1698e4e) (commit 2026-11-17). **Sao:** 24,197 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/krayin/laravel-crm).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | CRM Laravel/Vue cho quản lý khách hàng, lead và hoạt động bán hàng. |
+| Giá trị và cơ chế theo tài liệu | README nêu modular approach, custom attributes và parse email qua SendGrid; Composer yêu cầu PHP 8.3, CI dựng ứng dụng qua installer. |
+| Giới hạn | Module mẫu chưa chứng minh phù hợp mọi quy trình bán hàng. Dữ liệu liên hệ/email và plugin cloud có phạm vi quyền riêng; chưa kiểm tenant, phân quyền hoặc import dữ liệu. |
+| Điều kiện tích hợp | Thử pipeline lead với dữ liệu giả, chốt custom fields và policy theo vai trò; kiểm email integration, export/backup và migration trước nhập dữ liệu khách hàng thật. |
+| Lựa chọn đối chiếu | [Twenty](../34-backend-data-identity-integration/README.md#anhkysuai-twentyhq-twenty); EspoCRM; SuiteCRM. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/krayin/laravel-crm/blob/64ef70505c5d4320231420bb21adf99dd1698e4e/README.md) · [LICENSE](https://github.com/krayin/laravel-crm/blob/64ef70505c5d4320231420bb21adf99dd1698e4e/LICENSE) · [package.json](https://github.com/krayin/laravel-crm/blob/64ef70505c5d4320231420bb21adf99dd1698e4e/package.json) · [composer.json](https://github.com/krayin/laravel-crm/blob/64ef70505c5d4320231420bb21adf99dd1698e4e/composer.json) · [.github/workflows/ci.yml](https://github.com/krayin/laravel-crm/blob/64ef70505c5d4320231420bb21adf99dd1698e4e/.github/workflows/ci.yml).
+
+<a id="anhkysuai-timescale-timescaledb"></a>
+
+### TimescaleDB
+
+**Repo:** [timescale/timescaledb](https://github.com/timescale/timescaledb) · **License:** Apache-2.0 ngoài tsl; Timescale License trong tsl · **Kiểm:** 2026-11-23, `docs-read`, [`96ddfc3e9a5a`](https://github.com/timescale/timescaledb/tree/96ddfc3e9a5ab253dfd45e04bbfb1e638503ee2c) (commit 2026-11-22). **Sao:** 23,889 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/timescale/timescaledb).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Extension PostgreSQL cho time series và truy vấn phân tích. |
+| Giá trị và cơ chế theo tài liệu | README minh họa hypertable/columnstore; LICENSE phân tách mã và shared object tsl, CMake có APACHE_ONLY để chọn phạm vi build. |
+| Giới hạn | Script cài nhanh được đánh dấu chỉ dùng local/test. Tính năng trong tsl chịu Timescale License riêng, không thể suy Apache cho toàn bộ; chưa đo hiệu năng hoặc kiểm nâng cấp extension. |
+| Điều kiện tích hợp | Chọn đúng bản PostgreSQL/extension và phạm vi license, thử ingest/query/retention; kiểm backup, restore và upgrade trên bản sao dữ liệu trước production. |
+| Lựa chọn đối chiếu | InfluxDB; QuestDB; PostgreSQL partitioning. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/timescale/timescaledb/blob/96ddfc3e9a5ab253dfd45e04bbfb1e638503ee2c/README.md) · [LICENSE](https://github.com/timescale/timescaledb/blob/96ddfc3e9a5ab253dfd45e04bbfb1e638503ee2c/LICENSE) · [LICENSE-APACHE](https://github.com/timescale/timescaledb/blob/96ddfc3e9a5ab253dfd45e04bbfb1e638503ee2c/LICENSE-APACHE) · [CMakeLists.txt](https://github.com/timescale/timescaledb/blob/96ddfc3e9a5ab253dfd45e04bbfb1e638503ee2c/CMakeLists.txt) · [.github/workflows/coccinelle.yaml](https://github.com/timescale/timescaledb/blob/96ddfc3e9a5ab253dfd45e04bbfb1e638503ee2c/.github/workflows/coccinelle.yaml).
+
+<a id="anhkysuai-saleor-saleor"></a>
+
+### Saleor Core
+
+**Repo:** [saleor/saleor](https://github.com/saleor/saleor) · **License:** BSD-3-Clause · **Kiểm:** 2026-11-23, `docs-read`, [`e1ccf4d58002`](https://github.com/saleor/saleor/tree/e1ccf4d580025b06c2ff01441a1e798dc4635f24) (commit 2026-11-20). **Sao:** 23,595 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/saleor/saleor).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Backend thương mại điện tử headless chỉ giao tiếp qua GraphQL. |
+| Giá trị và cơ chế theo tài liệu | README mô tả channel cho giá/tiền tệ/tồn kho và mở rộng bằng webhook/apps; Python manifest cùng CI unit tests làm rõ core tách storefront/dashboard. |
+| Giới hạn | Nhánh đọc mang phiên bản alpha 3.24; API-only vẫn cần xây giao diện và quản lý integration. Chưa kiểm checkout, concurrency tồn kho hay webhook retry. |
+| Điều kiện tích hợp | Dùng payment sandbox, thử một channel với giá/stock/thuế; kiểm quyền app, event ordering và tính nhất quán đơn hàng trước khi đưa giao dịch thật vào. |
+| Lựa chọn đối chiếu | [Medusa](../08-awesome-lists-learning/README.md#6c59-framework-backend); [Bagisto](../34-backend-data-identity-integration/README.md#anhkysuai-bagisto-bagisto); Vendure. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/saleor/saleor/blob/e1ccf4d580025b06c2ff01441a1e798dc4635f24/README.md) · [LICENSE](https://github.com/saleor/saleor/blob/e1ccf4d580025b06c2ff01441a1e798dc4635f24/LICENSE) · [package.json](https://github.com/saleor/saleor/blob/e1ccf4d580025b06c2ff01441a1e798dc4635f24/package.json) · [pyproject.toml](https://github.com/saleor/saleor/blob/e1ccf4d580025b06c2ff01441a1e798dc4635f24/pyproject.toml) · [.github/workflows/tests.yaml](https://github.com/saleor/saleor/blob/e1ccf4d580025b06c2ff01441a1e798dc4635f24/.github/workflows/tests.yaml).
+
+<a id="anhkysuai-pubkey-rxdb"></a>
+
+### RxDB
+
+**Repo:** [pubkey/rxdb](https://github.com/pubkey/rxdb) · **License:** Apache-2.0 cho repo; premium plugins có phạm vi riêng · **Kiểm:** 2026-11-23, `docs-read`, [`f470b46f79d7`](https://github.com/pubkey/rxdb/tree/f470b46f79d74b9ac6c3f8e738aaedbea6093f9c) (commit 2026-11-23). **Sao:** 23,440 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/pubkey/rxdb).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Database NoSQL JavaScript ưu tiên dữ liệu local với truy vấn reactive và đồng bộ backend. |
+| Giá trị và cơ chế theo tài liệu | README mô tả subscribe thay đổi, protocol replication qua HTTP và adapter; package có test Node/browser, workflow build docs. |
+| Giới hạn | Sync engine không tự giải quyết xung đột nghiệp vụ hay quyền backend. Premium plugin được bán riêng; chưa kiểm offline recovery, quota browser hoặc hiệu năng storage adapter. |
+| Điều kiện tích hợp | Chọn storage/replication adapter, thử mất mạng, conflict và migration schema; backend vẫn phải xác thực/quyền mỗi thao tác, sao lưu dữ liệu cần giữ ngoài browser. |
+| Lựa chọn đối chiếu | PouchDB; Dexie; ElectricSQL. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/pubkey/rxdb/blob/f470b46f79d74b9ac6c3f8e738aaedbea6093f9c/README.md) · [LICENSE.txt](https://github.com/pubkey/rxdb/blob/f470b46f79d74b9ac6c3f8e738aaedbea6093f9c/LICENSE.txt) · [package.json](https://github.com/pubkey/rxdb/blob/f470b46f79d74b9ac6c3f8e738aaedbea6093f9c/package.json) · [.github/workflows/build.yml](https://github.com/pubkey/rxdb/blob/f470b46f79d74b9ac6c3f8e738aaedbea6093f9c/.github/workflows/build.yml).
+
+<a id="anhkysuai-neondatabase-neon"></a>
+
+### Neon Storage Engine
+
+**Repo:** [neondatabase/neon](https://github.com/neondatabase/neon) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`fa504217c61b`](https://github.com/neondatabase/neon/tree/fa504217c61bbcaf5c512d75830564541f917f8f) (commit 2026-08-31). **Sao:** 23,381 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/neondatabase/neon).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Nền tảng PostgreSQL tách compute và storage. |
+| Giá trị và cơ chế theo tài liệu | README phân biệt compute node, pageserver và safekeeper nhận WAL; Cargo tách các service/storage controller, hướng dẫn local dành cho thí nghiệm và đổi mã. |
+| Giới hạn | Repo engine không đồng nghĩa mọi khả năng managed Neon có thể tự host tương đương. Chưa kiểm durability, branching, scale-to-zero hay overhead lưu trữ. |
+| Điều kiện tích hợp | Dùng môi trường thử để đọc đường WAL/pageserver, kiểm phiên bản PostgreSQL và object store; đo phục hồi, retention và cost trước khi vận hành platform riêng. |
+| Lựa chọn đối chiếu | PostgreSQL chuẩn; CloudNativePG; Aurora PostgreSQL. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/neondatabase/neon/blob/fa504217c61bbcaf5c512d75830564541f917f8f/README.md) · [LICENSE](https://github.com/neondatabase/neon/blob/fa504217c61bbcaf5c512d75830564541f917f8f/LICENSE) · [pyproject.toml](https://github.com/neondatabase/neon/blob/fa504217c61bbcaf5c512d75830564541f917f8f/pyproject.toml) · [Cargo.toml](https://github.com/neondatabase/neon/blob/fa504217c61bbcaf5c512d75830564541f917f8f/Cargo.toml) · [.github/workflows/build-macos.yml](https://github.com/neondatabase/neon/blob/fa504217c61bbcaf5c512d75830564541f917f8f/.github/workflows/build-macos.yml).
+
+<a id="anhkysuai-phoenixframework-phoenix"></a>
+
+### Phoenix Web Framework
+
+**Repo:** [phoenixframework/phoenix](https://github.com/phoenixframework/phoenix) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`37d342122545`](https://github.com/phoenixframework/phoenix/tree/37d3421225455421bc47f94eee21460908538b15) (commit 2026-11-20). **Sao:** 23,226 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/phoenixframework/phoenix).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Framework web Elixir với installer và client JavaScript riêng. |
+| Giá trị và cơ chế theo tài liệu | README giải thích tạo app bằng phx.new và tách docs release/main; mix.exs/package ghi 1.9.0-dev, CI matrix Elixir/OTP. |
+| Giới hạn | Đây là Phoenix web, khác Arize Phoenix quan sát AI đã có trong kho. Nhánh đọc là development; chưa kiểm server, channel, LiveView hay dependency ngoài repo. |
+| Điều kiện tích hợp | Chọn release tương thích Elixir/OTP, dùng installer tương ứng và thử endpoint/client; kiểm deployment, session, database adapter và nâng cấp trong ứng dụng tạo ra. |
+| Lựa chọn đối chiếu | Rails; Django; Laravel. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/phoenixframework/phoenix/blob/37d3421225455421bc47f94eee21460908538b15/README.md) · [LICENSE.md](https://github.com/phoenixframework/phoenix/blob/37d3421225455421bc47f94eee21460908538b15/LICENSE.md) · [package.json](https://github.com/phoenixframework/phoenix/blob/37d3421225455421bc47f94eee21460908538b15/package.json) · [mix.exs](https://github.com/phoenixframework/phoenix/blob/37d3421225455421bc47f94eee21460908538b15/mix.exs) · [.github/workflows/ci.yml](https://github.com/phoenixframework/phoenix/blob/37d3421225455421bc47f94eee21460908538b15/.github/workflows/ci.yml).
+
+<a id="anhkysuai-go-chi-chi"></a>
+
+### Chi
+
+**Repo:** [go-chi/chi](https://github.com/go-chi/chi) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`c64ed7d6635f`](https://github.com/go-chi/chi/tree/c64ed7d6635f33a8b2feaff7dcfa55677023ac7d) (commit 2026-11-07). **Sao:** 23,145 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/go-chi/chi).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Router Go nhỏ, ghép middleware và route theo chuẩn net/http. |
+| Giá trị và cơ chế theo tài liệu | README nhấn mạnh handler chuẩn, context/cancellation và các subpackage tùy chọn; go.mod không khai báo dependency ngoài, CI gọi make test. |
+| Giới hạn | Router không cung cấp toàn bộ auth, validation hoặc ORM của ứng dụng. Các benchmark trong README chưa được chạy; tương thích middleware vẫn cần kiểm thứ tự và context thực tế. |
+| Điều kiện tích hợp | Dùng khi muốn giữ HTTP stack chuẩn, chốt timeout/limit/error middleware; thử route conflict, hủy request và quyền truy cập trước khi mở endpoint. |
+| Lựa chọn đối chiếu | [Echo](../34-backend-data-identity-integration/README.md#anhkysuai-labstack-echo); [Gin](../08-awesome-lists-learning/README.md#6c59-framework-backend); net/http ServeMux. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/go-chi/chi/blob/c64ed7d6635f33a8b2feaff7dcfa55677023ac7d/README.md) · [LICENSE](https://github.com/go-chi/chi/blob/c64ed7d6635f33a8b2feaff7dcfa55677023ac7d/LICENSE) · [go.mod](https://github.com/go-chi/chi/blob/c64ed7d6635f33a8b2feaff7dcfa55677023ac7d/go.mod) · [.github/workflows/ci.yml](https://github.com/go-chi/chi/blob/c64ed7d6635f33a8b2feaff7dcfa55677023ac7d/.github/workflows/ci.yml).
+
+<a id="anhkysuai-grpc-grpc-go"></a>
+
+### gRPC-Go
+
+**Repo:** [grpc/grpc-go](https://github.com/grpc/grpc-go) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`341c59808a9a`](https://github.com/grpc/grpc-go/tree/341c59808a9aaaf920baa4f1c1cd6c9087cae229) (commit 2026-11-22). **Sao:** 23,126 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/grpc/grpc-go).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Triển khai gRPC bằng Go cho RPC trên HTTP/2. |
+| Giá trị và cơ chế theo tài liệu | README dẫn API, tài liệu mức thấp và examples; Go manifest và CI có vet-proto, static checks, test/race giúp xác định công cụ hợp đồng RPC. |
+| Giới hạn | Hiệu năng và tương thích client/server chưa benchmark. RPC không tự bảo đảm retry an toàn, auth hay backward compatibility của schema; runtime hỗ trợ giới hạn theo dòng Go. |
+| Điều kiện tích hợp | Ghim protoc/plugin/runtime, thiết kế deadline/status và auth interceptor; thử stream cancellation, thay đổi schema và idempotency trước khi kết nối nhiều dịch vụ. |
+| Lựa chọn đối chiếu | Connect RPC; Apache Thrift; Dubbo. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/grpc/grpc-go/blob/341c59808a9aaaf920baa4f1c1cd6c9087cae229/README.md) · [LICENSE](https://github.com/grpc/grpc-go/blob/341c59808a9aaaf920baa4f1c1cd6c9087cae229/LICENSE) · [go.mod](https://github.com/grpc/grpc-go/blob/341c59808a9aaaf920baa4f1c1cd6c9087cae229/go.mod) · [.github/workflows/testing.yml](https://github.com/grpc/grpc-go/blob/341c59808a9aaaf920baa4f1c1cd6c9087cae229/.github/workflows/testing.yml).
+
+<a id="anhkysuai-micro-go-micro"></a>
+
+### Go Micro
+
+**Repo:** [micro/go-micro](https://github.com/micro/go-micro) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`b65720e0b9b1`](https://github.com/micro/go-micro/tree/b65720e0b9b14425883da9f9df56d94a9b9cd8ed) (commit 2026-11-23). **Sao:** 23,077 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/micro/go-micro).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Framework Go cho dịch vụ phân tán và agent dùng dịch vụ làm tool. |
+| Giá trị và cơ chế theo tài liệu | README mô tả RPC/discovery/message/config cùng gateway HTTP/MCP, mỗi component thay được qua interface; CI có unit race và etcd integration. |
+| Giới hạn | Khả năng agent/recovery mới được đọc từ docs; cung cấp RPC qua MCP cần ranh giới quyền riêng. Không suy mặc định an toàn hoặc giao hàng bền từ interface thay thế. |
+| Điều kiện tích hợp | Bắt đầu một service không model, ghim component và provider; thử auth, timeout/discovery rồi mới cấp agent quyền tool với phạm vi cần thiết. |
+| Lựa chọn đối chiếu | Go kit; [Kratos](../08-awesome-lists-learning/README.md#6c59-framework-backend); [Dapr](../08-awesome-lists-learning/README.md#6c55-container--devops). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/micro/go-micro/blob/b65720e0b9b14425883da9f9df56d94a9b9cd8ed/README.md) · [LICENSE](https://github.com/micro/go-micro/blob/b65720e0b9b14425883da9f9df56d94a9b9cd8ed/LICENSE) · [go.mod](https://github.com/micro/go-micro/blob/b65720e0b9b14425883da9f9df56d94a9b9cd8ed/go.mod) · [.github/workflows/tests.yaml](https://github.com/micro/go-micro/blob/b65720e0b9b14425883da9f9df56d94a9b9cd8ed/.github/workflows/tests.yaml).
+
+<a id="anhkysuai-jhipster-generator-jhipster"></a>
+
+### JHipster Generator
+
+**Repo:** [jhipster/generator-jhipster](https://github.com/jhipster/generator-jhipster) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`38680db1ed43`](https://github.com/jhipster/generator-jhipster/tree/38680db1ed43fa1616d09b42d367436c5a686cb7) (commit 2026-11-23). **Sao:** 22,462 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/jhipster/generator-jhipster).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Generator tạo ứng dụng Spring Boot với Angular/React/Vue và kiến trúc microservice. |
+| Giá trị và cơ chế theo tài liệu | README nêu tổ hợp Java/Node được CI kiểm; manifest 9.4.1-snapshot và tài liệu JDL/blueprint giúp chuẩn hóa khởi tạo dự án. |
+| Giới hạn | README cảnh báo .yo-rc.json có thể khai báo blueprint được thực thi. Generated code vẫn cần kiểm nghiệp vụ và dependency; nhánh snapshot chưa thay bản phát hành. |
+| Điều kiện tích hợp | Dùng config tự quản lý, đọc blueprint trước khi chạy; tạo app thử, kiểm quyền/migration và giữ phần tùy chỉnh có thể nâng cấp theo generator. |
+| Lựa chọn đối chiếu | [Full Stack FastAPI Template](../34-backend-data-identity-integration/README.md#anhkysuai-fastapi-full-stack-fastapi-template); Spring Initializr; Nx. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/jhipster/generator-jhipster/blob/38680db1ed43fa1616d09b42d367436c5a686cb7/README.md) · [LICENSE.txt](https://github.com/jhipster/generator-jhipster/blob/38680db1ed43fa1616d09b42d367436c5a686cb7/LICENSE.txt) · [package.json](https://github.com/jhipster/generator-jhipster/blob/38680db1ed43fa1616d09b42d367436c5a686cb7/package.json) · [.github/workflows/issue-check.yml](https://github.com/jhipster/generator-jhipster/blob/38680db1ed43fa1616d09b42d367436c5a686cb7/.github/workflows/issue-check.yml).
+
+<a id="anhkysuai-livekit-livekit"></a>
+
+### LiveKit Server
+
+**Repo:** [livekit/livekit](https://github.com/livekit/livekit) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`575f96ee4d0e`](https://github.com/livekit/livekit/tree/575f96ee4d0e14ea5bc31c2e2c192b83848670dc) (commit 2026-11-23). **Sao:** 22,348 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/livekit/livekit).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Máy chủ WebRTC SFU truyền audio, video và dữ liệu giữa người, thiết bị và model. |
+| Giá trị và cơ chế theo tài liệu | README tách rõ server Go/Pion khỏi SDK, agent framework và dịch vụ đi kèm; CI dựng Redis và build bằng Mage. |
+| Giới hạn | Không gộp độ chính xác STT/LLM/TTS của LiveKit Agents vào server này. Chưa thử call, bandwidth, TURN hay phân quyền room; độ trễ còn phụ thuộc mạng/codec. |
+| Điều kiện tích hợp | Thử room/token với thiết bị thật, cấu hình TLS/TURN và network policy; đo reconnect, packet loss, recording consent và chi phí egress trước triển khai. |
+| Lựa chọn đối chiếu | mediasoup; Jitsi; Janus. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/livekit/livekit/blob/575f96ee4d0e14ea5bc31c2e2c192b83848670dc/README.md) · [LICENSE](https://github.com/livekit/livekit/blob/575f96ee4d0e14ea5bc31c2e2c192b83848670dc/LICENSE) · [go.mod](https://github.com/livekit/livekit/blob/575f96ee4d0e14ea5bc31c2e2c192b83848670dc/go.mod) · [.github/workflows/buildtest.yaml](https://github.com/livekit/livekit/blob/575f96ee4d0e14ea5bc31c2e2c192b83848670dc/.github/workflows/buildtest.yaml).
+
+<a id="anhkysuai-tornadoweb-tornado"></a>
+
+### Tornado
+
+**Repo:** [tornadoweb/tornado](https://github.com/tornadoweb/tornado) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`a6d0b2e7fcfc`](https://github.com/tornadoweb/tornado/tree/a6d0b2e7fcfc70d29b06d3e7ae8ae799981774f3) (commit 2026-11-20). **Sao:** 22,175 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/tornadoweb/tornado).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Framework web và thư viện mạng async Python cho kết nối dài. |
+| Giá trị và cơ chế theo tài liệu | README minh họa RequestHandler chạy trên asyncio và đề cập WebSocket/long polling; pyproject/cibuildwheel cùng CI tox giúp đọc phạm vi runtime. |
+| Giới hạn | Ví dụ hello world không dùng đặc tính async và không chứng minh sức tải hàng chục nghìn kết nối. Code blocking trong luồng xử lý vẫn cần xem xét; chưa chạy tải. |
+| Điều kiện tích hợp | Chọn release Python phù hợp, kiểm cancellation/timeout và WebSocket auth; tách tác vụ blocking, thêm giới hạn kết nối và quan sát event loop trong ứng dụng. |
+| Lựa chọn đối chiếu | Aiohttp; FastAPI; Starlette. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.rst](https://github.com/tornadoweb/tornado/blob/a6d0b2e7fcfc70d29b06d3e7ae8ae799981774f3/README.rst) · [LICENSE](https://github.com/tornadoweb/tornado/blob/a6d0b2e7fcfc70d29b06d3e7ae8ae799981774f3/LICENSE) · [pyproject.toml](https://github.com/tornadoweb/tornado/blob/a6d0b2e7fcfc70d29b06d3e7ae8ae799981774f3/pyproject.toml) · [.github/workflows/test.yml](https://github.com/tornadoweb/tornado/blob/a6d0b2e7fcfc70d29b06d3e7ae8ae799981774f3/.github/workflows/test.yml).
+
+<a id="anhkysuai-elunez-eladmin"></a>
+
+### ELADMIN JPA
+
+**Repo:** [elunez/eladmin](https://github.com/elunez/eladmin) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`646c58c30f2e`](https://github.com/elunez/eladmin/tree/646c58c30f2e9aecf998b054f05f4d9ba0008995) (commit 2026-11-02). **Sao:** 21,895 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/elunez/eladmin).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Backend quản trị Spring Boot/JPA với RBAC, quyền dữ liệu và generator. |
+| Giá trị và cơ chế theo tài liệu | README tách frontend eladmin-web và biến thể MyBatis, nêu cấu hình JWT production riêng; Maven chia module common/logging và nghiệp vụ. |
+| Giới hạn | README còn ví dụ tài khoản/mật khẩu mẫu và stack Spring Boot 2.7.18; không coi ví dụ là cấu hình triển khai an toàn. Chưa kiểm code phân quyền, codegen hay module vận hành từ xa. |
+| Điều kiện tích hợp | Chọn đúng biến thể, thay mọi cấu hình mẫu và tạo JWT secret riêng; kiểm quyền theo vai trò/dữ liệu, rate limit, migration và dependency trước production. |
+| Lựa chọn đối chiếu | [RuoYi Vue Pro](../34-backend-data-identity-integration/README.md#anhkysuai-yunaiv-ruoyi-vue-pro); JHipster; ABP Framework. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/elunez/eladmin/blob/646c58c30f2e9aecf998b054f05f4d9ba0008995/README.md) · [LICENSE](https://github.com/elunez/eladmin/blob/646c58c30f2e9aecf998b054f05f4d9ba0008995/LICENSE) · [pom.xml](https://github.com/elunez/eladmin/blob/646c58c30f2e9aecf998b054f05f4d9ba0008995/pom.xml).
+
+<a id="anhkysuai-dgraph-io-dgraph"></a>
+
+### Dgraph
+
+**Repo:** [dgraph-io/dgraph](https://github.com/dgraph-io/dgraph) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`e95fc26526ad`](https://github.com/dgraph-io/dgraph/tree/e95fc26526adf3929315beba174d35f6a101003c) (commit 2026-11-20). **Sao:** 21,838 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/dgraph-io/dgraph).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Database graph phân tán hỗ trợ GraphQL và API HTTP/gRPC. |
+| Giá trị và cơ chế theo tài liệu | README mô tả graph backend, giao dịch và nền Go; CI fuzz DQL cung cấp cổng kiểm parser, platform chính thức là Linux amd64/arm64. |
+| Giới hạn | Các tuyên bố linearizable/ACID/scale lớn chưa được fault-test. Hỗ trợ macOS/Windows đã bị bỏ theo README; không suy môi trường local ngang Linux production. |
+| Điều kiện tích hợp | Thử model graph, query và ACL với dữ liệu đại diện; kiểm giao dịch cạnh tranh, replication, backup/restore và giới hạn bộ nhớ trước khi migrate. |
+| Lựa chọn đối chiếu | Neo4j; ArangoDB; Memgraph. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/dgraph-io/dgraph/blob/e95fc26526adf3929315beba174d35f6a101003c/README.md) · [LICENSE.txt](https://github.com/dgraph-io/dgraph/blob/e95fc26526adf3929315beba174d35f6a101003c/LICENSE.txt) · [go.mod](https://github.com/dgraph-io/dgraph/blob/e95fc26526adf3929315beba174d35f6a101003c/go.mod) · [.github/workflows/ci-dgraph-fuzz.yml](https://github.com/dgraph-io/dgraph/blob/e95fc26526adf3929315beba174d35f6a101003c/.github/workflows/ci-dgraph-fuzz.yml).
+
+<a id="anhkysuai-vitessio-vitess"></a>
+
+### Vitess
+
+**Repo:** [vitessio/vitess](https://github.com/vitessio/vitess) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`9de84fd39cc8`](https://github.com/vitessio/vitess/tree/9de84fd39cc80ce8c56d8b34a4a505a86204c128) (commit 2026-11-21). **Sao:** 21,428 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/vitessio/vitess).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Lớp clustering/sharding để mở rộng hệ MySQL theo chiều ngang. |
+| Giá trị và cơ chế theo tài liệu | README mô tả ứng dụng truy vấn qua hệ phân phối và split/merge shard; Go manifest gắn công cụ protobuf/gRPC, phục vụ đọc kiến trúc vận hành dữ liệu. |
+| Giới hạn | Tuyên bố scale không giới hạn và cutover vài giây chưa được tái lập. Sharding vẫn đặt yêu cầu lên key/query/giao dịch; workflow chọn được chỉ rerun CI, không chứng minh correctness. |
+| Điều kiện tích hợp | Phân tích query và sharding key trước, thử reshard/cutover trên bản sao dữ liệu; kiểm backup, failover, observability và quy trình rollback theo release. |
+| Lựa chọn đối chiếu | [TiDB](../34-backend-data-identity-integration/README.md#anhkysuai-pingcap-tidb); MySQL InnoDB Cluster; PostgreSQL + Citus. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/vitessio/vitess/blob/9de84fd39cc80ce8c56d8b34a4a505a86204c128/README.md) · [LICENSE](https://github.com/vitessio/vitess/blob/9de84fd39cc80ce8c56d8b34a4a505a86204c128/LICENSE) · [go.mod](https://github.com/vitessio/vitess/blob/9de84fd39cc80ce8c56d8b34a4a505a86204c128/go.mod) · [.github/workflows/ci-rerun.yml](https://github.com/vitessio/vitess/blob/9de84fd39cc80ce8c56d8b34a4a505a86204c128/.github/workflows/ci-rerun.yml).
+
+<a id="anhkysuai-parse-community-parse-server"></a>
+
+### Parse Server
+
+**Repo:** [parse-community/parse-server](https://github.com/parse-community/parse-server) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`a3f152f64dfa`](https://github.com/parse-community/parse-server/tree/a3f152f64dfaefedf9d9bb3e4c4579413193daab) (commit 2026-11-22). **Sao:** 21,399 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/parse-community/parse-server).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Backend tương thích Parse API chạy trên Node.js/Express, nhúng hoặc độc lập. |
+| Giá trị và cơ chế theo tài liệu | README tách server, dashboard và Cloud Code guide; package 9.12.0-alpha.5 có dải Node cụ thể, CI kiểm CodeQL và engine compatibility. |
+| Giới hạn | Nhánh đọc là alpha, không coi như release ổn định. Tương thích MongoDB/PostgreSQL và bảo vệ từng class/object chưa được kiểm; master key phải nằm ngoài client. |
+| Điều kiện tích hợp | Chọn release/runtime/database được hỗ trợ, thử ACL/class permissions và Cloud Code bằng dữ liệu giả; kiểm migration, upload adapter và backup trước khi phục vụ app. |
+| Lựa chọn đối chiếu | [Appwrite](../34-backend-data-identity-integration/README.md#anhkysuai-appwrite-appwrite); Supabase; PocketBase. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/parse-community/parse-server/blob/a3f152f64dfaefedf9d9bb3e4c4579413193daab/README.md) · [LICENSE](https://github.com/parse-community/parse-server/blob/a3f152f64dfaefedf9d9bb3e4c4579413193daab/LICENSE) · [package.json](https://github.com/parse-community/parse-server/blob/a3f152f64dfaefedf9d9bb3e4c4579413193daab/package.json) · [.github/workflows/ci.yml](https://github.com/parse-community/parse-server/blob/a3f152f64dfaefedf9d9bb3e4c4579413193daab/.github/workflows/ci.yml).
+
+<a id="anhkysuai-valeriansaliou-sonic"></a>
+
+### Sonic
+
+**Repo:** [valeriansaliou/sonic](https://github.com/valeriansaliou/sonic) · **License:** MPL-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`f16560b6ea67`](https://github.com/valeriansaliou/sonic/tree/f16560b6ea67fd223354c065f7157646931db1b2) (commit 2026-10-30). **Sao:** 21,389 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/valeriansaliou/sonic).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Search backend trả ID của tài liệu, hướng đến chỉ mục nhỏ và truy vấn nhanh. |
+| Giá trị và cơ chế theo tài liệu | README phân biệt identifier index với document index và báo đang làm lại v2; Cargo tách core/server/client, workflow lint/test/supply-chain. |
+| Giới hạn | README nói master chỉ nhận bug fix khi tập trung v2; không suy tính năng roadmap như BM25 đã ổn định tại mọi nhánh. Số RAM/độ trễ chưa được đo. |
+| Điều kiện tích hợp | Ghim nhánh/release, thử bộ truy vấn và ngôn ngữ thực tế; giữ tài liệu gốc ở database khác, kiểm cập nhật/xóa index và migration trước tích hợp. |
+| Lựa chọn đối chiếu | [Meilisearch](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích); [Typesense](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích); Tantivy. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/valeriansaliou/sonic/blob/f16560b6ea67fd223354c065f7157646931db1b2/README.md) · [LICENSE.md](https://github.com/valeriansaliou/sonic/blob/f16560b6ea67fd223354c065f7157646931db1b2/LICENSE.md) · [Cargo.toml](https://github.com/valeriansaliou/sonic/blob/f16560b6ea67fd223354c065f7157646931db1b2/Cargo.toml) · [.github/workflows/test.yml](https://github.com/valeriansaliou/sonic/blob/f16560b6ea67fd223354c065f7157646931db1b2/.github/workflows/test.yml).
+
+<a id="anhkysuai-gravitational-teleport"></a>
+
+### Teleport Source
+
+**Repo:** [gravitational/teleport](https://github.com/gravitational/teleport) · **License:** AGPL-3.0-only cho source; api Apache-2.0; binary CE khác · **Kiểm:** 2026-11-23, `docs-read`, [`1283425b60ec`](https://github.com/gravitational/teleport/tree/1283425b60ec5f60d509ba4c791183d452923ff7) (commit 2026-08-25). **Sao:** 21,127 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/gravitational/teleport).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Lớp kết nối, xác thực, quyền và audit cho máy chủ, Kubernetes, database và ứng dụng. |
+| Giá trị và cơ chế theo tài liệu | README mô tả certificate ngắn hạn, proxy/CA và phiên truy cập; tách rõ API Apache, source AGPL và binary CE theo modified Apache. |
+| Giới hạn | Giấy phép source không đại diện binary tải sẵn/Enterprise. Tuyên bố security audit và production chưa kiểm trong lượt này; sai role hoặc CA có thể ảnh hưởng toàn hạ tầng. |
+| Điều kiện tích hợp | Chọn hình thức phân phối và edition, thử IdP, role, session recording và recovery; giới hạn tài nguyên kết nối, quản lý CA/rotation trước triển khai rộng. |
+| Lựa chọn đối chiếu | Boundary; OpenSSH CA; Pomerium. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/gravitational/teleport/blob/1283425b60ec5f60d509ba4c791183d452923ff7/README.md) · [LICENSE](https://github.com/gravitational/teleport/blob/1283425b60ec5f60d509ba4c791183d452923ff7/LICENSE) · [package.json](https://github.com/gravitational/teleport/blob/1283425b60ec5f60d509ba4c791183d452923ff7/package.json) · [Cargo.toml](https://github.com/gravitational/teleport/blob/1283425b60ec5f60d509ba4c791183d452923ff7/Cargo.toml) · [.github/workflows/check.yaml](https://github.com/gravitational/teleport/blob/1283425b60ec5f60d509ba4c791183d452923ff7/.github/workflows/check.yaml).
+
+<a id="anhkysuai-nats-io-nats-server"></a>
+
+### NATS Server
+
+**Repo:** [nats-io/nats-server](https://github.com/nats-io/nats-server) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`a0385c9af342`](https://github.com/nats-io/nats-server/tree/a0385c9af342ffae6df28999b77a85de5423d3d6) (commit 2026-11-20). **Sao:** 21,113 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/nats-io/nats-server).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Máy chủ truyền thông cho dịch vụ, hệ thống và thiết bị từ cloud tới edge. |
+| Giá trị và cơ chế theo tài liệu | README liên kết client nhiều ngôn ngữ và tài liệu riêng; Go manifest có JWT/nkeys, CI build/lint/test giúp xác định nền messaging. |
+| Giới hạn | Không suy mọi chế độ có cùng đảm bảo lưu bền hoặc giao hàng. Chưa đọc implementation JetStream, kiểm cluster, slow consumer hay phân quyền subject. |
+| Điều kiện tích hợp | Xác định nhu cầu pub/sub và persistence, chọn client cùng release; thử mất kết nối, backpressure, auth/account và phục hồi trước khi dùng cho sự kiện quan trọng. |
+| Lựa chọn đối chiếu | RabbitMQ; Kafka; Redis Streams. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/nats-io/nats-server/blob/a0385c9af342ffae6df28999b77a85de5423d3d6/README.md) · [LICENSE](https://github.com/nats-io/nats-server/blob/a0385c9af342ffae6df28999b77a85de5423d3d6/LICENSE) · [go.mod](https://github.com/nats-io/nats-server/blob/a0385c9af342ffae6df28999b77a85de5423d3d6/go.mod) · [.github/workflows/tests.yaml](https://github.com/nats-io/nats-server/blob/a0385c9af342ffae6df28999b77a85de5423d3d6/.github/workflows/tests.yaml).
+
+<a id="anhkysuai-apache-shardingsphere"></a>
+
+### Apache ShardingSphere
+
+**Repo:** [apache/shardingsphere](https://github.com/apache/shardingsphere) · **License:** Apache-2.0; thông báo thành phần riêng · **Kiểm:** 2026-11-23, `docs-read`, [`0d551770daf8`](https://github.com/apache/shardingsphere/tree/0d551770daf83981d39d4ecdc0a2b9319a201553) (commit 2026-11-23). **Sao:** 20,836 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/apache/shardingsphere).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Lớp Database Plus đặt trên database hiện có để thống nhất truy cập và khả năng phân tán. |
+| Giá trị và cơ chế theo tài liệu | README nhấn mạnh kết nối, mở rộng và cơ chế pluggable thay vì tạo engine mới; Maven CI chạy build/test là điểm đọc hệ Java. |
+| Giới hạn | Lớp phân tán không làm mọi SQL/giao dịch của backend tự tương thích. Chưa kiểm routing, sharding, dữ liệu mã hóa hay failover dưới tải. |
+| Điều kiện tích hợp | Chọn adapter/proxy theo ứng dụng, kiểm tập SQL và khóa phân mảnh; thử migration, giao dịch chéo shard, observability và rollback trên dữ liệu bản sao. |
+| Lựa chọn đối chiếu | [Vitess](../34-backend-data-identity-integration/README.md#anhkysuai-vitessio-vitess); [TiDB](../34-backend-data-identity-integration/README.md#anhkysuai-pingcap-tidb); Apache Calcite. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/apache/shardingsphere/blob/0d551770daf83981d39d4ecdc0a2b9319a201553/README.md) · [LICENSE](https://github.com/apache/shardingsphere/blob/0d551770daf83981d39d4ecdc0a2b9319a201553/LICENSE) · [pom.xml](https://github.com/apache/shardingsphere/blob/0d551770daf83981d39d4ecdc0a2b9319a201553/pom.xml) · [.github/workflows/ci.yml](https://github.com/apache/shardingsphere/blob/0d551770daf83981d39d4ecdc0a2b9319a201553/.github/workflows/ci.yml).
+
+<a id="anhkysuai-wagtail-wagtail"></a>
+
+### Wagtail
+
+**Repo:** [wagtail/wagtail](https://github.com/wagtail/wagtail) · **License:** BSD-3-Clause · **Kiểm:** 2026-11-23, `docs-read`, [`9599540ea564`](https://github.com/wagtail/wagtail/tree/9599540ea5648de7d5ecf09eb4b9794fb084b4b6) (commit 2026-11-20). **Sao:** 20,826 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/wagtail/wagtail).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | CMS Django cho nội dung có cấu trúc và trải nghiệm biên tập tùy chỉnh. |
+| Giá trị và cơ chế theo tài liệu | README mô tả StreamField, Content API, đa site/ngôn ngữ và search; Python manifest/CI kiểm nhiều môi trường, frontend có toolchain riêng. |
+| Giới hạn | Các tuyên bố hàng triệu trang/nghìn editor chưa benchmark. Component CMS không thay model quyền, cấu hình media hoặc workflow xuất bản của dự án. |
+| Điều kiện tích hợp | Dùng starter và phiên bản Django/Python tương thích, thử content model, preview và permissions; kiểm migration StreamField, search index, ảnh và backup trước nhập nội dung. |
+| Lựa chọn đối chiếu | Drupal; Payload; [Strapi](../08-awesome-lists-learning/README.md#6c59-framework-backend). |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/wagtail/wagtail/blob/9599540ea5648de7d5ecf09eb4b9794fb084b4b6/README.md) · [LICENSE](https://github.com/wagtail/wagtail/blob/9599540ea5648de7d5ecf09eb4b9794fb084b4b6/LICENSE) · [package.json](https://github.com/wagtail/wagtail/blob/9599540ea5648de7d5ecf09eb4b9794fb084b4b6/package.json) · [pyproject.toml](https://github.com/wagtail/wagtail/blob/9599540ea5648de7d5ecf09eb4b9794fb084b4b6/pyproject.toml) · [.github/workflows/test.yml](https://github.com/wagtail/wagtail/blob/9599540ea5648de7d5ecf09eb4b9794fb084b4b6/.github/workflows/test.yml).
+
+<a id="anhkysuai-gofr-dev-gofr"></a>
+
+### GoFr
+
+**Repo:** [gofr-dev/gofr](https://github.com/gofr-dev/gofr) · **License:** Apache-2.0 · **Kiểm:** 2026-11-23, `docs-read`, [`5a8c9ee237d0`](https://github.com/gofr-dev/gofr/tree/5a8c9ee237d060ac8aac4596f1bfe75f0b5a4bc1) (commit 2026-11-23). **Sao:** 20,785 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/gofr-dev/gofr).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Framework Go hướng microservice/Kubernetes, gắn database và observability sẵn. |
+| Giá trị và cơ chế theo tài liệu | README gom logs/traces/metrics, health check, migration, pub/sub và MCP cho handler chỉ đọc; CI ví dụ dựng thêm các dịch vụ kiểm. |
+| Giới hạn | Danh sách tính năng không chứng minh mọi datasource/handler có policy an toàn. Chưa kiểm cơ chế MCP chỉ đọc, auth, LLM tracing hay circuit breaker. |
+| Điều kiện tích hợp | Bắt đầu service nhỏ, ghim connector và kiểm telemetry không lộ bí mật; thử timeout, quyền, migration và failure của dependency trước khi bật AI/tool gateway. |
+| Lựa chọn đối chiếu | [Go Micro](../34-backend-data-identity-integration/README.md#anhkysuai-micro-go-micro); [Kratos](../08-awesome-lists-learning/README.md#6c59-framework-backend); Go kit. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/gofr-dev/gofr/blob/5a8c9ee237d060ac8aac4596f1bfe75f0b5a4bc1/README.md) · [LICENSE](https://github.com/gofr-dev/gofr/blob/5a8c9ee237d060ac8aac4596f1bfe75f0b5a4bc1/LICENSE) · [go.mod](https://github.com/gofr-dev/gofr/blob/5a8c9ee237d060ac8aac4596f1bfe75f0b5a4bc1/go.mod) · [.github/workflows/go.yml](https://github.com/gofr-dev/gofr/blob/5a8c9ee237d060ac8aac4596f1bfe75f0b5a4bc1/.github/workflows/go.yml).
+
+<a id="anhkysuai-jasontaylordev-cleanarchitecture"></a>
+
+### Clean Architecture ASP.NET Template
+
+**Repo:** [jasontaylordev/CleanArchitecture](https://github.com/jasontaylordev/CleanArchitecture) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`21182736a929`](https://github.com/jasontaylordev/CleanArchitecture/tree/21182736a929e1ad37a363e47d39de6e650ca984) (commit 2026-11-23). **Sao:** 20,735 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/jasontaylordev/CleanArchitecture).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Template ASP.NET Core/Aspire cho Angular, React hoặc Web API riêng. |
+| Giá trị và cơ chế theo tài liệu | README nêu .NET 10/11, SQLite mặc định và container chỉ cần cho SQL Server/PostgreSQL; CI restore/build và chuẩn bị Playwright. |
+| Giới hạn | Cấu trúc Clean Architecture không tự bảo đảm domain design hay phân quyền đúng. Chưa tạo/chạy solution hoặc kiểm mọi tổ hợp frontend/database của template. |
+| Điều kiện tích hợp | Chọn framework/client/database theo đội, sinh app thử rồi bỏ phần dư; giữ kiểm nghiệp vụ, migration và cấu hình secret riêng, đối chiếu nâng cấp package trước production. |
+| Lựa chọn đối chiếu | Ardalis CleanArchitecture; ABP Framework; ASP.NET Core Web API template. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/jasontaylordev/CleanArchitecture/blob/21182736a929e1ad37a363e47d39de6e650ca984/README.md) · [LICENSE](https://github.com/jasontaylordev/CleanArchitecture/blob/21182736a929e1ad37a363e47d39de6e650ca984/LICENSE) · [.github/workflows/build.yml](https://github.com/jasontaylordev/CleanArchitecture/blob/21182736a929e1ad37a363e47d39de6e650ca984/.github/workflows/build.yml).
+
+<a id="anhkysuai-linlinjava-litemall"></a>
+
+### litemall
+
+**Repo:** [linlinjava/litemall](https://github.com/linlinjava/litemall) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`a1ef964a718b`](https://github.com/linlinjava/litemall/tree/a1ef964a718b7277925b19ea26afe78ea3a1d325) (commit 2025-10-05). **Sao:** 20,412 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/linlinjava/litemall).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Mẫu cửa hàng nhỏ với backend Spring Boot, admin Vue, WeChat mini-program và web mobile. |
+| Giá trị và cơ chế theo tài liệu | README liệt kê catalog, cart, order, coupon và quản trị; Maven/CI build cùng test frontend cho thấy cách ghép ứng dụng bán hàng mẫu. |
+| Giới hạn | Commit HEAD là 2025-10-05, khác ngày cập nhật aggregator; cần rà dependency trước dùng. Hướng dẫn dev tắt kiểm domain/TLS của WeChat không phù hợp production; chưa kiểm thanh toán/tồn kho. |
+| Điều kiện tích hợp | Dùng để học hoặc làm nguyên mẫu, cập nhật runtime và bỏ dữ liệu/cấu hình mẫu; thử payment sandbox, quyền admin và order concurrency trước bán thật. |
+| Lựa chọn đối chiếu | [Bagisto](../34-backend-data-identity-integration/README.md#anhkysuai-bagisto-bagisto); [Medusa](../08-awesome-lists-learning/README.md#6c59-framework-backend); Saleor. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/linlinjava/litemall/blob/a1ef964a718b7277925b19ea26afe78ea3a1d325/README.md) · [LICENSE](https://github.com/linlinjava/litemall/blob/a1ef964a718b7277925b19ea26afe78ea3a1d325/LICENSE) · [pom.xml](https://github.com/linlinjava/litemall/blob/a1ef964a718b7277925b19ea26afe78ea3a1d325/pom.xml) · [.github/workflows/main.yml](https://github.com/linlinjava/litemall/blob/a1ef964a718b7277925b19ea26afe78ea3a1d325/.github/workflows/main.yml).
+
+<a id="anhkysuai-graphql-graphql-js"></a>
+
+### GraphQL.js
+
+**Repo:** [graphql/graphql-js](https://github.com/graphql/graphql-js) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`52f67c02ffb6`](https://github.com/graphql/graphql-js/tree/52f67c02ffb6aeb72a0e67f4be150665aa229f43) (commit 2026-11-10). **Sao:** 20,346 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/graphql/graphql-js).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Triển khai tham chiếu GraphQL bằng JavaScript, xây schema và thực thi query. |
+| Giá trị và cơ chế theo tài liệu | README minh họa GraphQLSchema/resolver và dẫn tests theo specification; manifest 17.1.0, CI kiểm API examples, types và lint. |
+| Giới hạn | Đây là thư viện ngôn ngữ/runtime, chưa là HTTP server đầy đủ. Schema có kiểu không tự áp auth, query cost hay chống N+1; chưa chạy conformance/fuzz tests. |
+| Điều kiện tích hợp | Ghim phiên bản với server adapter, giữ schema và resolver có kiểm; áp quyền truy cập, giới hạn query và batching theo workload trước mở API. |
+| Lựa chọn đối chiếu | GraphQL Yoga; Apollo Server; Mercurius. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/graphql/graphql-js/blob/52f67c02ffb6aeb72a0e67f4be150665aa229f43/README.md) · [LICENSE](https://github.com/graphql/graphql-js/blob/52f67c02ffb6aeb72a0e67f4be150665aa229f43/LICENSE) · [package.json](https://github.com/graphql/graphql-js/blob/52f67c02ffb6aeb72a0e67f4be150665aa229f43/package.json) · [.github/workflows/ci.yml](https://github.com/graphql/graphql-js/blob/52f67c02ffb6aeb72a0e67f4be150665aa229f43/.github/workflows/ci.yml).
+
+<a id="anhkysuai-grpc-ecosystem-grpc-gateway"></a>
+
+### gRPC-Gateway
+
+**Repo:** [grpc-ecosystem/grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway) · **License:** BSD-3-Clause · **Kiểm:** 2026-11-23, `docs-read`, [`452c933896af`](https://github.com/grpc-ecosystem/grpc-gateway/tree/452c933896af82da883e932d4e7e82e4648db046) (commit 2026-11-21). **Sao:** 20,016 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/grpc-ecosystem/grpc-gateway).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Plugin protoc sinh reverse proxy dịch HTTP/JSON sang gRPC theo annotation. |
+| Giá trị và cơ chế theo tài liệu | README gắn google.api.http trong protobuf với route REST; Go manifest và CI build examples/make test hỗ trợ duy trì hai giao diện từ hợp đồng chung. |
+| Giới hạn | Sinh proxy không bảo đảm auth/header, HTTP status và streaming có cùng ngữ nghĩa mong muốn. Lời chứng thực throughput không thay benchmark; chưa sinh client/server hoặc chạy kiểm. |
+| Điều kiện tích hợp | Ghim protoc/plugin/runtime, thử annotation và error mapping với API mẫu; kiểm metadata/auth, validation và backward compatibility trước công khai endpoint REST. |
+| Lựa chọn đối chiếu | Connect RPC; Envoy gRPC JSON transcoder; Twirp. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/grpc-ecosystem/grpc-gateway/blob/452c933896af82da883e932d4e7e82e4648db046/README.md) · [LICENSE](https://github.com/grpc-ecosystem/grpc-gateway/blob/452c933896af82da883e932d4e7e82e4648db046/LICENSE) · [go.mod](https://github.com/grpc-ecosystem/grpc-gateway/blob/452c933896af82da883e932d4e7e82e4648db046/go.mod) · [.github/workflows/ci.yml](https://github.com/grpc-ecosystem/grpc-gateway/blob/452c933896af82da883e932d4e7e82e4648db046/.github/workflows/ci.yml).
+
+<a id="anhkysuai-psf-requests"></a>
+
+### Requests
+
+- **Repo:** [psf/requests](https://github.com/psf/requests).
+- **Mục đích:** HTTP client đồng bộ cho Python với API session, cookie và truyền dữ liệu thuận tiện.
+- **Điểm đáng dùng:** README liệt kê pooling, TLS verification, multipart, streaming và proxy; pyproject yêu cầu Python >=3.10, CI có test nhiều cấu hình phát hiện encoding.
+- **License:** Apache-2.0.
+- **Giới hạn:** Phải đặt timeout và chính sách retry theo tác vụ; HTTP client không tự làm trình duyệt JavaScript. Kiểm cấu hình proxy và .netrc trước khi chạy dưới danh tính người dùng.
+- **Tích hợp:** Dùng Session và timeout rõ ràng, giới hạn kích thước tải, giữ xác minh TLS và xử lý mã HTTP.
+- **Đối chiếu:** HTTPX cho sync/async và HTTP/2; aiohttp cho async; urllib khi muốn thư viện chuẩn.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `3c7baaa05ab4aa49cc819ce3a819d260de19c157` (2026-10-26T11:14:41-06:00); 54,749 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/psf/requests/blob/3c7baaa05ab4aa49cc819ce3a819d260de19c157/README.md) · [LICENSE](https://github.com/psf/requests/blob/3c7baaa05ab4aa49cc819ce3a819d260de19c157/LICENSE) · [pyproject.toml](https://github.com/psf/requests/blob/3c7baaa05ab4aa49cc819ce3a819d260de19c157/pyproject.toml) · [.github/workflows/run-tests.yml](https://github.com/psf/requests/blob/3c7baaa05ab4aa49cc819ce3a819d260de19c157/.github/workflows/run-tests.yml) · [GitHub API](https://api.github.com/repos/psf/requests).
+
+<a id="anhkysuai-dbeaver-dbeaver"></a>
+
+### DBeaver Community
+
+- **Repo:** [dbeaver/dbeaver](https://github.com/dbeaver/dbeaver).
+- **Mục đích:** Công cụ desktop quản trị, truy vấn và chuyển dữ liệu cho nhiều hệ cơ sở dữ liệu.
+- **Điểm đáng dùng:** README mô tả OSGi/Eclipse RCP, JDBC/ODBC và tách model plugin khỏi UI để dùng chung với CloudBeaver; có SQL editor, ER diagram và import/export.
+- **License:** Apache-2.0; driver và bản thương mại có điều khoản riêng.
+- **Giới hạn:** Driver CData và các bản thương mại có giấy phép riêng. Kết nối DB và tính năng AI có thể đưa dữ liệu ra ngoài; cần kiểm endpoint và quyền theo cấu hình thực tế.
+- **Tích hợp:** Cài bản phát hành, sử dụng tài khoản DB tối thiểu quyền và kiểm driver/SSH tunnel trước cấp dữ liệu thật.
+- **Đối chiếu:** DataGrip cho IDE thương mại; pgAdmin cho PostgreSQL; CloudBeaver cho giao diện web.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `14eb8c7cbcb675f63d01030dac6b82efc2550c91` (2026-11-23T10:31:51+01:00); 52,515 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/dbeaver/dbeaver/blob/14eb8c7cbcb675f63d01030dac6b82efc2550c91/README.md) · [LICENSE.md](https://github.com/dbeaver/dbeaver/blob/14eb8c7cbcb675f63d01030dac6b82efc2550c91/LICENSE.md) · [pom.xml](https://github.com/dbeaver/dbeaver/blob/14eb8c7cbcb675f63d01030dac6b82efc2550c91/pom.xml) · [.github/workflows/codeql.yml](https://github.com/dbeaver/dbeaver/blob/14eb8c7cbcb675f63d01030dac6b82efc2550c91/.github/workflows/codeql.yml) · [GitHub API](https://api.github.com/repos/dbeaver/dbeaver).
+
+<a id="anhkysuai-lysine-dev-okhttp"></a>
+
+### OkHttp
+
+- **Repo:** [lysine-dev/okhttp](https://github.com/lysine-dev/okhttp).
+- **Mục đích:** HTTP client cho JVM/Android với API đồng bộ và bất đồng bộ.
+- **Điểm đáng dùng:** README nêu pooling, HTTP/2, nén, cache và chiến lược thử địa chỉ thay thế; giới hạn GET có body và cache không thay được được mô tả rõ.
+- **License:** Apache-2.0.
+- **Giới hạn:** Không nên suy mọi server tùy biến được hỗ trợ; yêu cầu Android/Java và certificate pinning cần kiểm theo phiên bản. Chưa chạy tương thích mạng.
+- **Tích hợp:** Dùng artifact theo hướng dẫn tại SHA, cấu hình timeout/TLS và tái dùng client; kiểm danh tính upstream khi nguồn dẫn owner khác bản quen thuộc.
+- **Đối chiếu:** JDK HttpClient cho JVM hiện đại; Apache HttpComponents cho tùy chỉnh; Ktor Client cho Kotlin đa nền tảng.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `ee0a7ea1b14d2ea924055d291a22c2a3a7ac97cc` (2026-11-23T08:44:40Z); 47,116 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/lysine-dev/okhttp/blob/ee0a7ea1b14d2ea924055d291a22c2a3a7ac97cc/README.md) · [LICENSE.txt](https://github.com/lysine-dev/okhttp/blob/ee0a7ea1b14d2ea924055d291a22c2a3a7ac97cc/LICENSE.txt) · [.github/workflows/build.yml](https://github.com/lysine-dev/okhttp/blob/ee0a7ea1b14d2ea924055d291a22c2a3a7ac97cc/.github/workflows/build.yml) · [GitHub API](https://api.github.com/repos/lysine-dev/okhttp).
+
+<a id="anhkysuai-go-gorm-gorm"></a>
+
+### GORM
+
+- **Repo:** [go-gorm/gorm](https://github.com/go-gorm/gorm).
+- **Mục đích:** ORM Go cho quan hệ dữ liệu, truy vấn và giao dịch.
+- **Điểm đáng dùng:** Tài liệu liệt kê association, Preload/Joins, nested transaction, savepoint, DryRun và plugin resolver; CI chạy các kiểm thử theo dialect.
+- **License:** MIT.
+- **Giới hạn:** Auto migration và eager loading cần kiểm soát thay đổi schema, số truy vấn; chưa kiểm chứng claim mọi tính năng đều có test.
+- **Tích hợp:** Khóa driver, viết migration có duyệt và test transaction trên đúng cơ sở dữ liệu sản xuất.
+- **Đối chiếu:** Ent cho schema Go; [sqlc](../34-backend-data-identity-integration/README.md#sqlc) cho SQL sinh kiểu; Prisma cho hệ TypeScript.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `ead4e04ba7c6a49654649131e587133b1d9f3eca` (2026-10-24T01:06:51+08:00); 39,999 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/go-gorm/gorm/blob/ead4e04ba7c6a49654649131e587133b1d9f3eca/README.md) · [LICENSE](https://github.com/go-gorm/gorm/blob/ead4e04ba7c6a49654649131e587133b1d9f3eca/LICENSE) · [go.mod](https://github.com/go-gorm/gorm/blob/ead4e04ba7c6a49654649131e587133b1d9f3eca/go.mod) · [.github/workflows/tests.yml](https://github.com/go-gorm/gorm/blob/ead4e04ba7c6a49654649131e587133b1d9f3eca/.github/workflows/tests.yml) · [GitHub API](https://api.github.com/repos/go-gorm/gorm).
+
+<a id="anhkysuai-typeorm-typeorm"></a>
+
+### TypeORM
+
+- **Repo:** [typeorm/typeorm](https://github.com/typeorm/typeorm).
+- **Mục đích:** ORM TypeScript/JavaScript hỗ trợ entity, quan hệ, migration và nhiều driver dữ liệu.
+- **Điểm đáng dùng:** README cho phép chọn Data Mapper hoặc Active Record, có QueryBuilder và transaction; CI kiểm tra build, manifest, lint.
+- **License:** MIT.
+- **Giới hạn:** Danh sách driver không chứng minh mọi tính năng tương đương; lazy relation và cascade dễ tạo truy vấn ngoài dự kiến.
+- **Tích hợp:** Chọn một pattern nhất quán, duyệt SQL migration và test trên đúng engine thay vì chỉ SQLite giả lập.
+- **Đối chiếu:** Prisma cho schema sinh client; Drizzle cho SQL có kiểu; [Sequelize](../34-backend-data-identity-integration/README.md#anhkysuai-sequelize-sequelize) cho ORM JavaScript.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `d5b143dd7ed659e2a1cbac044a2c78d90c0f6f8f` (2026-11-16T23:36:37+01:00); 36,684 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/typeorm/typeorm/blob/d5b143dd7ed659e2a1cbac044a2c78d90c0f6f8f/README.md) · [LICENSE](https://github.com/typeorm/typeorm/blob/d5b143dd7ed659e2a1cbac044a2c78d90c0f6f8f/LICENSE) · [package.json](https://github.com/typeorm/typeorm/blob/d5b143dd7ed659e2a1cbac044a2c78d90c0f6f8f/package.json) · [.github/workflows/tests.yml](https://github.com/typeorm/typeorm/blob/d5b143dd7ed659e2a1cbac044a2c78d90c0f6f8f/.github/workflows/tests.yml) · [GitHub API](https://api.github.com/repos/typeorm/typeorm).
+
+<a id="anhkysuai-numpy-numpy"></a>
+
+### NumPy
+
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 15](../15-ai-for-data/README.md#anhkysuai-numpy-numpy); catalog con xem [catalog/](../catalog/README.md).
+
+<a id="anhkysuai-sequelize-sequelize"></a>
+
+### Sequelize
+
+- **Repo:** [sequelize/sequelize](https://github.com/sequelize/sequelize).
+- **Mục đích:** ORM Node.js dùng Promise với nhiều dialect cơ sở dữ liệu.
+- **Điểm đáng dùng:** Relation, eager/lazy loading, transaction và read replication là API tài liệu mô tả; CI build gói theo Node.
+- **License:** MIT.
+- **Giới hạn:** README phân biệt v6 stable với v7 alpha và đang tìm maintainer; cần kiểm tra dialect/version cụ thể thay vì suy ngang từ danh sách hỗ trợ.
+- **Tích hợp:** Khóa major/driver, duyệt migration và thêm test SQL/transaction trên database thật của template.
+- **Đối chiếu:** [TypeORM](../34-backend-data-identity-integration/README.md#anhkysuai-typeorm-typeorm) cho entity TypeScript; Prisma cho sinh client; Knex cho query builder.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `6f4cca6a74639b5d057f3823359489b52902191e` (2026-11-20T20:29:08-05:00); 30,352 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/sequelize/sequelize/blob/6f4cca6a74639b5d057f3823359489b52902191e/README.md) · [LICENSE](https://github.com/sequelize/sequelize/blob/6f4cca6a74639b5d057f3823359489b52902191e/LICENSE) · [package.json](https://github.com/sequelize/sequelize/blob/6f4cca6a74639b5d057f3823359489b52902191e/package.json) · [.github/workflows/ci.yml](https://github.com/sequelize/sequelize/blob/6f4cca6a74639b5d057f3823359489b52902191e/.github/workflows/ci.yml) · [GitHub API](https://api.github.com/repos/sequelize/sequelize).
+
+<a id="anhkysuai-automattic-mongoose"></a>
+
+### Mongoose
+
+- **Repo:** [Automattic/mongoose](https://github.com/Automattic/mongoose).
+- **Mục đích:** ODM MongoDB cho Node.js với mô hình dữ liệu ứng dụng.
+- **Điểm đáng dùng:** README phân biệt driver/model cùng hệ plugin, bản 9 và hỗ trợ Deno alpha; package tại SHA yêu cầu Node >=20.19.
+- **License:** MIT.
+- **Giới hạn:** Schema ứng dụng không thay constraint/authorization database; Deno alpha và Mongoose Studio là phạm vi riêng cần kiểm tra.
+- **Tích hợp:** Khóa major cùng driver MongoDB, kiểm thử validation/update/query và quản lý index qua migration có duyệt.
+- **Đối chiếu:** MongoDB Node driver cho truy cập trực tiếp; Prisma cho mô hình đa backend; Typegoose cho lớp TypeScript.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `217dfc3b6b1f9cdc96491ce7ca79a7767e6859f3` (2026-11-22T17:37:41-05:00); 27,452 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/Automattic/mongoose/blob/217dfc3b6b1f9cdc96491ce7ca79a7767e6859f3/README.md) · [LICENSE.md](https://github.com/Automattic/mongoose/blob/217dfc3b6b1f9cdc96491ce7ca79a7767e6859f3/LICENSE.md) · [package.json](https://github.com/Automattic/mongoose/blob/217dfc3b6b1f9cdc96491ce7ca79a7767e6859f3/package.json) · [.github/workflows/test.yml](https://github.com/Automattic/mongoose/blob/217dfc3b6b1f9cdc96491ce7ca79a7767e6859f3/.github/workflows/test.yml) · [GitHub API](https://api.github.com/repos/Automattic/mongoose).
+
+<a id="anhkysuai-google-flatbuffers"></a>
+
+### FlatBuffers
+
+- **Repo:** [google/flatbuffers](https://github.com/google/flatbuffers).
+- **Mục đích:** Serialization đa ngôn ngữ cho phép truy cập dữ liệu ngay trong buffer.
+- **Điểm đáng dùng:** Schema .fbs và flatc sinh accessor/builder cho từng ngôn ngữ, giảm bước parse/unpack theo mô hình tài liệu.
+- **License:** Apache-2.0.
+- **Giới hạn:** Khả năng tiến/lùi phụ thuộc quy tắc tiến hóa schema; cần xác minh buffer không tin cậy và không coi version theo ngày là SemVer.
+- **Tích hợp:** Khóa compiler/runtime, thêm fixture đọc chéo phiên bản/ngôn ngữ và kiểm thử verifier trước khi nhận dữ liệu ngoài.
+- **Đối chiếu:** Protocol Buffers cho message phổ biến; Cap’n Proto cho truy cập buffer; MessagePack cho encoding không schema.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `5eb190f00005b8dd1aa4f7ab2db9f01a39e3c76d` (2026-11-06T15:15:33-08:00); 26,658 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/google/flatbuffers/blob/5eb190f00005b8dd1aa4f7ab2db9f01a39e3c76d/README.md) · [LICENSE](https://github.com/google/flatbuffers/blob/5eb190f00005b8dd1aa4f7ab2db9f01a39e3c76d/LICENSE) · [package.json](https://github.com/google/flatbuffers/blob/5eb190f00005b8dd1aa4f7ab2db9f01a39e3c76d/package.json) · [CMakeLists.txt](https://github.com/google/flatbuffers/blob/5eb190f00005b8dd1aa4f7ab2db9f01a39e3c76d/CMakeLists.txt) · [.github/workflows/build.yml](https://github.com/google/flatbuffers/blob/5eb190f00005b8dd1aa4f7ab2db9f01a39e3c76d/.github/workflows/build.yml) · [GitHub API](https://api.github.com/repos/google/flatbuffers).
+
+<a id="anhkysuai-sqlitebrowser-sqlitebrowser"></a>
+
+### DB Browser for SQLite
+
+- **Repo:** [sqlitebrowser/sqlitebrowser](https://github.com/sqlitebrowser/sqlitebrowser).
+- **Mục đích:** GUI tạo, duyệt, sửa và truy vấn tệp SQLite.
+- **Điểm đáng dùng:** Giao diện dạng bảng, import/export CSV/SQL, log SQL và biểu đồ đơn giản hỗ trợ kiểm tra dữ liệu của template.
+- **License:** MPL-2.0 / GPL-3.0-or-later; sqlean MIT và plugin theo thông báo riêng.
+- **Giới hạn:** Không phải spreadsheet đầy đủ; thao tác UI có thể sửa schema/bản ghi, dữ liệu đang được ứng dụng ghi cần xử lý locking/backup cẩn thận.
+- **Tích hợp:** Mở bản sao hoặc read-only khi khảo sát, kiểm tra SQL trước commit thay đổi và không nhập extension không tin cậy.
+- **Đối chiếu:** [DBeaver](../34-backend-data-identity-integration/README.md#anhkysuai-dbeaver-dbeaver) cho nhiều database; sqlite3 CLI cho truy vấn có thể lặp; Datasette cho xuất bản dữ liệu đọc.
+- **Mức kiểm chứng:** `docs-read` — Đọc các phần mô tả và giới hạn trong README, thông báo license, metadata manifest và cấu hình CI khi có; chưa đọc toàn bộ mã triển khai, chưa cài hoặc chạy kiểm thử upstream.
+- **Snapshot:** kiểm ngày 2026-11-23; commit `2206215d21123c09a4a6c24d9332ce5d051379a8` (2026-11-23T01:46:15+09:00); 24,826 sao theo GitHub API ngày 2026-11-23. Sao không đại diện chất lượng.
+- **Bằng chứng:** [README.md](https://github.com/sqlitebrowser/sqlitebrowser/blob/2206215d21123c09a4a6c24d9332ce5d051379a8/README.md) · [LICENSE](https://github.com/sqlitebrowser/sqlitebrowser/blob/2206215d21123c09a4a6c24d9332ce5d051379a8/LICENSE) · [LICENSE-GPL-3.0](https://github.com/sqlitebrowser/sqlitebrowser/blob/2206215d21123c09a4a6c24d9332ce5d051379a8/LICENSE-GPL-3.0) · [LICENSE-MIT](https://github.com/sqlitebrowser/sqlitebrowser/blob/2206215d21123c09a4a6c24d9332ce5d051379a8/LICENSE-MIT) · [CMakeLists.txt](https://github.com/sqlitebrowser/sqlitebrowser/blob/2206215d21123c09a4a6c24d9332ce5d051379a8/CMakeLists.txt) · [.github/workflows/summarize-dependencies.yml](https://github.com/sqlitebrowser/sqlitebrowser/blob/2206215d21123c09a4a6c24d9332ce5d051379a8/.github/workflows/summarize-dependencies.yml) · [GitHub API](https://api.github.com/repos/sqlitebrowser/sqlitebrowser).
+
+<a id="anhkysuai-websockets-ws"></a>
+
+### ws
+
+**Repo:** [websockets/ws](https://github.com/websockets/ws) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`0cc9185755fa`](https://github.com/websockets/ws/tree/0cc9185755faa9b92b9efd566a8ee9f65fffd923) (commit 2026-11-16). **Sao:** 22,838 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/websockets/ws).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | WebSocket client và server cho Node.js, dùng cho kênh realtime hoặc dịch vụ kết nối nền. |
+| Giá trị và cơ chế theo tài liệu | README có HTTP upgrade, xác thực, broadcast và stream; manifest 8.23.0 có test cùng integration script, CI gọi lint và test. Tách phần giao thức để sản phẩm tự xây logic phiên. |
+| Giới hạn | Client trong repo dành cho Node, trình duyệt dùng WebSocket gốc. README cảnh báo permessage-deflate tốn bộ nhớ và có rủi ro phân mảnh khi tải đồng thời; ví dụ authenticate để ứng dụng tự triển khai. |
+| Điều kiện tích hợp | Thiết kế xác thực lúc upgrade, giới hạn payload, heartbeat và backpressure; chỉ bật nén sau thử tải đại diện. Chưa xác minh kết quả Autobahn hay benchmark upstream. |
+| Lựa chọn đối chiếu | Socket.IO; uWebSockets; Centrifugo. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/websockets/ws/blob/0cc9185755faa9b92b9efd566a8ee9f65fffd923/README.md) · [LICENSE](https://github.com/websockets/ws/blob/0cc9185755faa9b92b9efd566a8ee9f65fffd923/LICENSE) · [package.json](https://github.com/websockets/ws/blob/0cc9185755faa9b92b9efd566a8ee9f65fffd923/package.json) · [.github/workflows/ci.yml](https://github.com/websockets/ws/blob/0cc9185755faa9b92b9efd566a8ee9f65fffd923/.github/workflows/ci.yml).
+
+<a id="anhkysuai-redis-go-redis"></a>
+
+### go-redis
+
+**Repo:** [redis/go-redis](https://github.com/redis/go-redis) · **License:** BSD-2-Clause · **Kiểm:** 2026-11-23, `docs-read`, [`f170311248f9`](https://github.com/redis/go-redis/tree/f170311248f9c15d4dcd326ea6e39b752359c1fa) (commit 2026-11-23). **Sao:** 22,293 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/redis/go-redis).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Client Redis cho Go với connection pool, Pub/Sub, pipeline, transaction, Sentinel và Cluster. |
+| Giá trị và cơ chế theo tài liệu | README còn có client-side cache và streaming credentials; go.mod yêu cầu Go 1.26.0, ghi rõ một số phiên bản đã bị retract; workflow có go test và kiểm nhiều nền tảng. |
+| Giới hạn | Automatic pipelining và MultiDB được đánh dấu experimental. Danh sách hỗ trợ server trong README không bảo đảm mọi lệnh hoặc module trên phiên bản cũ; license client tách với server Redis. |
+| Điều kiện tích hợp | Khóa module v9 không nằm trong danh sách retract; đặt timeout/context, giới hạn pool và thử failover, retry cùng lệnh không idempotent trước triển khai. |
+| Lựa chọn đối chiếu | Rueidis; Redigo; Valkey Go. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/redis/go-redis/blob/f170311248f9c15d4dcd326ea6e39b752359c1fa/README.md) · [LICENSE](https://github.com/redis/go-redis/blob/f170311248f9c15d4dcd326ea6e39b752359c1fa/LICENSE) · [go.mod](https://github.com/redis/go-redis/blob/f170311248f9c15d4dcd326ea6e39b752359c1fa/go.mod) · [.github/workflows/build.yml](https://github.com/redis/go-redis/blob/f170311248f9c15d4dcd326ea6e39b752359c1fa/.github/workflows/build.yml).
+
+<a id="anhkysuai-hapijs-joi"></a>
+
+### Joi
+
+**Repo:** [hapijs/joi](https://github.com/hapijs/joi) · **License:** BSD-3-Clause · **Kiểm:** 2026-11-23, `docs-read`, [`7cfb3ce20017`](https://github.com/hapijs/joi/tree/7cfb3ce20017a4289f7efdcd8803625d4be889df) (commit 2026-11-04). **Sao:** 21,167 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/hapijs/joi).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Thư viện mô tả schema và kiểm tra dữ liệu JavaScript ở biên API hoặc cấu hình. |
+| Giá trị và cơ chế theo tài liệu | API.md minh họa object, kiểu dữ liệu, ràng buộc liên trường, validate và validateAsync; schema bất biến khi thêm quy tắc. Manifest 18.3.2 yêu cầu Node 20+, có lab và coverage script. |
+| Giới hạn | Các giá trị mặc định là optional trừ khi required; kết quả có thể được chuyển kiểu, nên chỉ kiểm error mà bỏ value dễ gây sai. Validation không thay xác thực quyền hoặc kiểm nghiệp vụ với dữ liệu ngoài. |
+| Điều kiện tích hợp | Tạo schema một lần, chốt conversion/unknown keys/presence, dùng value đã xác thực và chuẩn hóa lỗi trả về; kiểm payload biên cùng dữ liệu độc hại trước đưa vào API. |
+| Lựa chọn đối chiếu | Zod; Valibot; Ajv. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/hapijs/joi/blob/7cfb3ce20017a4289f7efdcd8803625d4be889df/README.md) · [LICENSE.md](https://github.com/hapijs/joi/blob/7cfb3ce20017a4289f7efdcd8803625d4be889df/LICENSE.md) · [package.json](https://github.com/hapijs/joi/blob/7cfb3ce20017a4289f7efdcd8803625d4be889df/package.json) · [.github/workflows/ci-module.yml](https://github.com/hapijs/joi/blob/7cfb3ce20017a4289f7efdcd8803625d4be889df/.github/workflows/ci-module.yml) · [API.md](https://github.com/hapijs/joi/blob/7cfb3ce20017a4289f7efdcd8803625d4be889df/API.md).
+
+<a id="anhkysuai-knex-knex"></a>
+
+### Knex
+
+**Repo:** [knex/knex](https://github.com/knex/knex) · **License:** MIT · **Kiểm:** 2026-11-23, `docs-read`, [`e25d54bcb707`](https://github.com/knex/knex/tree/e25d54bcb707714a17f5a5744eba5c4246bb4d1d) (commit 2026-06-26). **Sao:** 20,338 tại 2026-11-23 theo [GitHub API](https://api.github.com/repos/knex/knex).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Query và schema builder SQL cho Node.js với nhiều dialect, transaction, pool kết nối và stream. |
+| Giá trị và cơ chế theo tài liệu | README liệt kê PostgreSQL, MySQL/MariaDB, SQLite, SQL Server, Oracle và CockroachDB; manifest 3.3.0 có kiểm kiểu, workflow build rồi unit test. Hữu ích khi muốn kiểm soát câu truy vấn mà giảm mã ghép SQL. |
+| Giới hạn | API chung không bảo đảm semantics SQL đồng nhất giữa dialect. Chưa chạy database integration hoặc kiểm raw SQL; transaction và pool vẫn cần thiết kế theo tải và vòng đời request. |
+| Điều kiện tích hợp | Chọn driver phù hợp, dùng binding cho giá trị, kiểm SQL sinh ra và migration trên bản sao dữ liệu; đặt timeout/pool, thử rollback và giới hạn transaction trước triển khai. |
+| Lựa chọn đối chiếu | Kysely; Drizzle ORM; Prisma. |
+
+**Phạm vi bằng chứng:** đã clone, đọc trích đoạn tài liệu, giấy phép và các file cấu hình được dẫn dưới đây; chưa chạy mã, build, benchmark hoặc test upstream. `docs-read` không phải kiểm chứng implementation.
+
+**Nguồn tại cùng SHA:** [README.md](https://github.com/knex/knex/blob/e25d54bcb707714a17f5a5744eba5c4246bb4d1d/README.md) · [LICENSE](https://github.com/knex/knex/blob/e25d54bcb707714a17f5a5744eba5c4246bb4d1d/LICENSE) · [package.json](https://github.com/knex/knex/blob/e25d54bcb707714a17f5a5744eba5c4246bb4d1d/package.json) · [.github/workflows/unit-tests.yml](https://github.com/knex/knex/blob/e25d54bcb707714a17f5a5744eba5c4246bb4d1d/.github/workflows/unit-tests.yml).
+
+<a id="anhkysuai-2026-11-23-monicahq-monica"></a>
+
+### monica
+
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-2026-11-23-monicahq-monica); catalog con xem [catalog/](../catalog/README.md).
+
+<a id="anhkysuai-2026-11-23-firefly-iii-firefly-iii"></a>
+
+### firefly-iii
+
+**Đã chuyển (2026-11-23):** hồ sơ này nay nằm ở [mục 36](../36-self-hosting-homelab/README.md#anhkysuai-2026-11-23-firefly-iii-firefly-iii); catalog con xem [catalog/](../catalog/README.md).
+
+<a id="anhkysuai-2026-11-23-aureuserp-aureuserp"></a>
+
+### aureuserp
+
+**Repo:** [aureuserp/aureuserp](https://github.com/aureuserp/aureuserp) · **License:** MIT · **★ 12,278 (GitHub API, 2026-11-23)**
+
+**Mục đích:** ERP viết bằng Laravel và Filament, tổ chức chức năng nghiệp vụ qua hệ plugin.
+
+**Giá trị:** Có thể tham khảo cách ghép quản trị bán hàng, tồn kho và hoạt động doanh nghiệp trong một nền tảng PHP.
+
+**Giới hạn:** Tuyên bố production-ready trong README chưa được kiểm bằng vận hành thực tế; cần đối chiếu schema, phân quyền, kế toán địa phương và quyền plugin trước dùng dữ liệu thật.
+
+**Cách tham khảo/tích hợp:** Đọc cấu hình triển khai, giới hạn license và hợp đồng dữ liệu; thử auth, migration, backup/restore với dữ liệu mẫu trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [Dolibarr/dolibarr](https://github.com/Dolibarr/dolibarr) · [frappe/erpnext](https://github.com/frappe/erpnext). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`34bf04cb4c46b7963948cc89c57a26990ce5510f`](https://github.com/aureuserp/aureuserp/commit/34bf04cb4c46b7963948cc89c57a26990ce5510f), ngày commit 2026-11-19. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/aureuserp/aureuserp/blob/34bf04cb4c46b7963948cc89c57a26990ce5510f/README.md) · [LICENSE](https://github.com/aureuserp/aureuserp/blob/34bf04cb4c46b7963948cc89c57a26990ce5510f/LICENSE) · [package.json](https://github.com/aureuserp/aureuserp/blob/34bf04cb4c46b7963948cc89c57a26990ce5510f/package.json) · [composer.json](https://github.com/aureuserp/aureuserp/blob/34bf04cb4c46b7963948cc89c57a26990ce5510f/composer.json) · [.github/workflows/pest_tests.yml](https://github.com/aureuserp/aureuserp/blob/34bf04cb4c46b7963948cc89c57a26990ce5510f/.github/workflows/pest_tests.yml) · [metadata GitHub](https://api.github.com/repos/aureuserp/aureuserp).
+
+<a id="anhkysuai-2026-11-23-dolibarr-dolibarr"></a>
+
+### dolibarr
+
+**Repo:** [Dolibarr/dolibarr](https://github.com/Dolibarr/dolibarr) · **License:** GPL-3.0-or-later; phụ thuộc riêng · **★ 7,889 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ ERP/CRM PHP quản lý liên hệ, đơn hàng, hóa đơn, kho và các hoạt động tổ chức.
+
+**Giá trị:** Có nhiều mô-đun và lựa chọn tự triển khai hoặc dịch vụ hosted, phù hợp nghiên cứu quy trình doanh nghiệp tích hợp.
+
+**Giới hạn:** Cần kiểm bản địa hóa kế toán/thuế, phân quyền và nâng cấp dữ liệu; GPL-3.0-or-later của toàn thể tách khỏi license phụ thuộc liệt kê trong COPYRIGHT.
+
+**Cách tham khảo/tích hợp:** Đọc cấu hình triển khai, giới hạn license và hợp đồng dữ liệu; thử auth, migration, backup/restore với dữ liệu mẫu trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [aureuserp/aureuserp](https://github.com/aureuserp/aureuserp) · [frappe/erpnext](https://github.com/frappe/erpnext). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`fec9a84ef8ca1667f14bd6663434a11f225e1d19`](https://github.com/Dolibarr/dolibarr/commit/fec9a84ef8ca1667f14bd6663434a11f225e1d19), ngày commit 2026-11-23. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/Dolibarr/dolibarr/blob/fec9a84ef8ca1667f14bd6663434a11f225e1d19/README.md) · [COPYING](https://github.com/Dolibarr/dolibarr/blob/fec9a84ef8ca1667f14bd6663434a11f225e1d19/COPYING) · [COPYRIGHT](https://github.com/Dolibarr/dolibarr/blob/fec9a84ef8ca1667f14bd6663434a11f225e1d19/COPYRIGHT) · [pyproject.toml](https://github.com/Dolibarr/dolibarr/blob/fec9a84ef8ca1667f14bd6663434a11f225e1d19/pyproject.toml) · [.github/workflows/ci-on-pull.yml](https://github.com/Dolibarr/dolibarr/blob/fec9a84ef8ca1667f14bd6663434a11f225e1d19/.github/workflows/ci-on-pull.yml) · [metadata GitHub](https://api.github.com/repos/Dolibarr/dolibarr).
+
+<a id="anhkysuai-2026-11-23-laravel-laravel"></a>
+
+### Laravel application skeleton
+
+**Repo:** [laravel/laravel](https://github.com/laravel/laravel) · **License:** MIT (composer.json và README) · **★ 85,489 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Bộ khung ứng dụng khởi tạo Laravel với cấu hình và phụ thuộc cho dự án PHP.
+
+**Giá trị:** Phù hợp bắt đầu dự án và tham khảo cấu trúc ứng dụng quanh routing, ORM, queue và dependency injection.
+
+**Giới hạn:** Đây là application skeleton, không phải toàn bộ mã framework laravel/framework; cần chọn phiên bản PHP/phụ thuộc, cấu hình secret và môi trường triển khai. MIT được khai báo trong composer.json/README.
+
+**Cách tham khảo/tích hợp:** Đọc cấu hình triển khai, giới hạn license và hợp đồng dữ liệu; thử auth, migration, backup/restore với dữ liệu mẫu trước tích hợp.
+
+**Lựa chọn để đối chiếu:** [laravel/framework](https://github.com/laravel/framework) · [symfony/symfony](https://github.com/symfony/symfony). Đây là ứng viên so sánh theo tác vụ; mức phù hợp cần kiểm theo hồ sơ và phiên bản riêng.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`a255d7688770af9713daff1439c47ff9bc6abd47`](https://github.com/laravel/laravel/commit/a255d7688770af9713daff1439c47ff9bc6abd47), ngày commit 2026-11-13. Đã clone và đọc chọn lọc phần giới thiệu, cách dùng, giới hạn, license, metadata manifest và CI hiện diện. Chưa kiểm đầy đủ implementation hoặc chạy upstream; các số đo của tác giả chưa được tái lập.
+
+**Nguồn:** [README.md](https://github.com/laravel/laravel/blob/a255d7688770af9713daff1439c47ff9bc6abd47/README.md) · [package.json](https://github.com/laravel/laravel/blob/a255d7688770af9713daff1439c47ff9bc6abd47/package.json) · [composer.json](https://github.com/laravel/laravel/blob/a255d7688770af9713daff1439c47ff9bc6abd47/composer.json) · [.github/workflows/tests.yml](https://github.com/laravel/laravel/blob/a255d7688770af9713daff1439c47ff9bc6abd47/.github/workflows/tests.yml) · [metadata GitHub](https://api.github.com/repos/laravel/laravel).
+
+<a id="chuyen-muc-2026-11-23"></a>
+
+## Hồ sơ chuyển về từ mục khác — 23/11/2026
+
+32 hồ sơ được chuyển khi chia lại catalog theo `data/taxonomy.json`. Nội dung, ngày kiểm và mức bằng chứng giữ nguyên như ở mục gốc.
+
+<a id="chuyen-axios"></a>
+
+### axios
+
+`axios/axios` · License: MIT · ★ 109.516 · docs-read · 2026-11-18
+
+Thư viện HTTP client dựa trên Promise cho trình duyệt và Node.js. Hỗ trợ interceptor request/response, huỷ request và tự chuyển đổi JSON, multipart/form-data; Chạy cả trình duyệt (XMLHttpRequest) lẫn Node.js (module http), có mục hỗ trợ HTTP/2 trong README; Có file định nghĩa kiểu TypeScript (index.d.ts, index.d.cts), bản package.json hiện tại 1.21.1. ★ 18/11/2026: 109.516 (GitHub search API), nhóm "API & Dịch vụ dữ liệu" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c52-api--dịch-vụ-dữ-liệu) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-hoppscotch"></a>
+
+### hoppscotch
+
+`hoppscotch/hoppscotch` · License: MIT · ★ 80.841 · docs-read · 2026-11-18
+
+Hệ sinh thái phát triển API mã nguồn mở: ứng dụng web/desktop để gửi và kiểm thử request REST, GraphQL, WebSocket, SSE, Socket.IO, MQTT. Hỗ trợ nhiều giao thức (REST, GraphQL, WebSocket, Server-Sent Events, Socket.IO, MQTT) và nhiều kiểu xác thực (Basic, Bearer, OAuth 2.0, OIDC/PKCE); Có collection, workspace, team cộng tác và pre-request script JavaScript; Monorepo có backend, CLI, ứng dụng desktop, bản self-host web và trang admin (thư mục packages/). Điều kiện: Một số tính năng (ví dụ SSO) chỉ có ở bản Enterprise; tự host theo tài liệu self-host trên docs.hoppscotch.io. ★ 18/11/2026: 80.841 (GitHub search API), nhóm "API & Dịch vụ dữ liệu" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c52-api--dịch-vụ-dữ-liệu) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-openai-python"></a>
+
+### openai-python
+
+`openai/openai-python` · License: Apache License 2.0 · ★ 32.184 · docs-read · 2026-11-18
+
+Thư viện Python chính thức truy cập REST API của OpenAI, có client đồng bộ và bất đồng bộ. Có định nghĩa kiểu cho mọi tham số request và trường response, sinh từ đặc tả OpenAPI; Hỗ trợ streaming, Realtime API, phân trang tự động, xác minh webhook, retry và timeout cấu hình được; Hỗ trợ xác thực workload identity (Kubernetes, Azure, GCP, X.509) thay cho khoá API dài hạn. Điều kiện: Cần khoá API OpenAI (OPENAI_API_KEY) và tài khoản trả phí theo điều khoản OpenAI; Python 3.10+. ★ 18/11/2026: 32.184 (GitHub search API), nhóm "API & Dịch vụ dữ liệu" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c52-api--dịch-vụ-dữ-liệu) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-jumpserver"></a>
+
+### jumpserver
+
+`jumpserver/jumpserver` · License: GPL-3.0 · ★ 31.982 · docs-read · 2026-11-18
+
+Nền tảng quản lý truy cập đặc quyền (PAM/bastion host) mã nguồn mở, có tính năng AI, cho phép truy cập an toàn tới SSH, RDP, Kubernetes, cơ sở dữ liệu, website, RemoteApp. README nêu rõ lịch bảo trì phiên bản (5.x đang bảo trì, 4.10.x là LTS, 3.10.x chỉ sửa lỗi nghiêm trọng); cài nhanh bằng một script quick_start.sh; README có bản dịch nhiều ngôn ngữ kể cả tiếng Việt. Điều kiện: Máy chủ Linux 64-bit tối thiểu 4 nhân CPU, 8 GB RAM; giấy phép GPLv3 (copyleft); một số thành phần thuộc bản Enterprise; V3 CE hết hỗ trợ 31/12/2026; phải đổi mật khẩu mặc định admin/ChangeMe. ★ 18/11/2026: 31.982 (GitHub search API), nhóm "Bảo mật & Hack" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c53-bảo-mật--hack) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-nacos"></a>
+
+### nacos
+
+`alibaba/nacos` · License: Apache License 2.0 · ★ 33.525 · docs-read · 2026-11-18
+
+Nền tảng khám phá dịch vụ, quản lý cấu hình động và quản lý dịch vụ cho ứng dụng cloud-native và microservice. Đăng ký/khám phá dịch vụ qua DNS hoặc HTTP kèm health check thời gian thực; quản lý cấu hình tập trung, cập nhật không cần redeploy; hỗ trợ Dubbo/gRPC, Spring Cloud và Kubernetes. ★ 18/11/2026: 33.525 (GitHub search API), nhóm "Container & DevOps" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c55-container--devops) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-gin"></a>
+
+### gin
+
+`gin-gonic/gin` · License: MIT · ★ 89.531 · docs-read · 2026-11-18
+
+Framework web HTTP hiệu năng cao cho Go, API kiểu Martini dựa trên httprouter. Router không cấp phát heap; middleware recovery chống panic làm sập server, binding và kiểm tra JSON tự động; bản 1.12.0 đã phát hành, CI có quét bảo mật Trivy và codecov. Điều kiện: Cần Go 1.26+. ★ 18/11/2026: 89.531 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-mall"></a>
+
+### mall
+
+`macrozheng/mall` · License: Apache-2.0 · ★ 85.057 · docs-read · 2026-11-18
+
+Hệ thống thương mại điện tử đầy đủ (cửa hàng và trang quản trị) xây trên Spring Boot và MyBatis, triển khai bằng Docker. Nhánh master dùng Spring Boot 3.5 và JDK 17 (pom: spring-boot-starter-parent 3.5.14); chia module rõ: admin, portal, search (Elasticsearch), security, mbg; có tài liệu và hướng dẫn triển khai Windows, Docker, Docker Compose, Jenkins tại macrozheng.com. Điều kiện: Tài liệu chủ yếu tiếng Trung; cần MySQL, Redis (chỉ mall-admin) và thêm Elasticsearch, RabbitMQ, MongoDB cho đầy đủ; frontend ở repo riêng mall-admin-web, mall-app-web. ★ 18/11/2026: 85.057 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-flask"></a>
+
+### flask
+
+`pallets/flask` · License: BSD-3-Clause · ★ 75.381 · docs-read · 2026-11-18
+
+Framework ứng dụng web WSGI gọn nhẹ cho Python, xây quanh Werkzeug và Jinja. Không ép phụ thuộc hay cấu trúc dự án; hệ sinh thái extension cộng đồng lớn; do tổ chức Pallets duy trì, nhánh chính đang ở 3.2.0.dev. Điều kiện: Cần Python 3.11+ (theo pyproject.toml). ★ 18/11/2026: 75.381 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-strapi"></a>
+
+### strapi
+
+`strapi/strapi` · License: MIT · ★ 73.510 · docs-read · 2026-11-18
+
+Headless CMS mã nguồn mở tự host bằng JavaScript/TypeScript, sinh API REST và GraphQL từ mô hình nội dung. Content-Type Builder thiết kế mô hình trực quan không cần code; tự sinh API REST và GraphQL, có Roles và Permissions, Media Library, i18n, Draft và Publish; hỗ trợ SQLite, PostgreSQL, MySQL, MariaDB. Điều kiện: Tính năng trong ee/ cần giấy phép Enterprise; không có ảnh Docker chính thức; Strapi Cloud là dịch vụ trả phí. ★ 18/11/2026: 73.510 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-protobuf"></a>
+
+### protobuf
+
+`protocolbuffers/protobuf` · License: BSD 3-Clause · ★ 72.179 · docs-read · 2026-11-18
+
+Protocol Buffers: cơ chế tuần tự hoá dữ liệu có cấu trúc trung lập ngôn ngữ và nền tảng của Google, gồm trình biên dịch protoc và runtime cho nhiều ngôn ngữ. Runtime trong repo cho C++, Java, Python, Objective-C, C#, Ruby, PHP, Rust (Go, Dart, JavaScript ở repo riêng); hỗ trợ Bazel Bzlmod (Bazel 8+) và CMake; có bảng điểm OpenSSF Scorecard và file version.json theo dõi phiên bản từng ngôn ngữ. Điều kiện: README khuyên dùng bản phát hành, nhánh main có thể hỏng; C++ cần build từ mã nguồn. ★ 18/11/2026: 72.179 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-express"></a>
+
+### express
+
+`expressjs/express` · License: MIT · ★ 69.801 · docs-read · 2026-11-18
+
+Framework web tối giản, không áp đặt cấu trúc cho Node.js, cung cấp định tuyến và tiện ích HTTP. Phiên bản 5.3.0 trong package.json; định tuyến mạnh, hỗ trợ hơn 14 template engine và content negotiation; có thư mục examples và bộ test, huy hiệu OpenSSF Scorecard. Điều kiện: Cần Node.js 18 trở lên. ★ 18/11/2026: 69.801 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-directus"></a>
+
+### directus
+
+`directus/directus` · License: Monospace Sustainable Core License 1.0 · ★ 38.747 · docs-read · 2026-11-18
+
+Lớp backend bọc bất kỳ cơ sở dữ liệu SQL nào, tự sinh REST và GraphQL API, kèm Studio quản trị trực quan và MCP server cho tác tử AI. Hỗ trợ Postgres, MySQL, MariaDB, MS SQL, SQLite, OracleDB, CockroachDB; phân quyền theo chính sách tới mức trường; có SDK, Dockerfile và nhiều storage driver (S3, GCS, Azure, Cloudinary, Supabase). Điều kiện: Giấy phép không phải OSI: miễn phí cho tổ chức dưới 5 triệu USD doanh thu năm và 50 nhân viên qua Open Innovation Grant; vượt ngưỡng dùng tính năng nâng cao cần giấy phép thương mại; không được dùng để cạnh tranh với dịch vụ thương mại của Monospace. ★ 18/11/2026: 38.747 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-medusa"></a>
+
+### medusa
+
+`medusajs/medusa` · License: MIT cho phần lớn repo · ★ 37.296 · docs-read · 2026-11-18
+
+Nền tảng thương mại điện tử mã nguồn mở có framework tuỳ biến, dùng để xây cửa hàng B2B/DTC, marketplace, POS. Monorepo Yarn với các Commerce Module (product, cart, order, pricing, payment...); provider có sẵn cho Stripe, S3, SendGrid, Redis, OIDC; có Admin dashboard, design system Medusa UI và bộ integration test trên PostgreSQL. Điều kiện: Cần Node.js v22.22.0 trở lên và PostgreSQL; bật cờ tính năng Enterprise đồng nghĩa khẳng định có hợp đồng thương mại; không được dùng RBAC/SSO khi chưa có giấy phép. ★ 18/11/2026: 37.296 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-go-zero"></a>
+
+### go-zero
+
+`zeromicro/go-zero` · License: MIT · ★ 33.431 · docs-read · 2026-11-18
+
+Framework web và RPC cho Go với nhiều thực hành kỹ thuật tích hợp sẵn, kèm công cụ sinh mã goctl. Tích hợp sẵn kiểm soát timeout chuỗi, rate limit, circuit breaker và load shedding thích ứng; goctl sinh mã Go, iOS, Android, Kotlin, Dart, TypeScript, JavaScript từ file .api; có gói mcp và có trong CNCF Landscape. ★ 18/11/2026: 33.431 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-python-telegram-bot"></a>
+
+### python-telegram-bot
+
+`python-telegram-bot/python-telegram-bot` · License: LGPL-3.0 · ★ 29.602 · docs-read · 2026-11-18
+
+Thư viện Python thuần, bất đồng bộ cho Telegram Bot API, kèm các lớp cấp cao trong telegram.ext để viết bot. Hỗ trợ đầy đủ Telegram Bot API 10.0; tương thích Python 3.11+ và đã thử với free threading 3.14; có các gói phụ tuỳ chọn như job-queue, webhooks, rate-limiter. Điều kiện: Cần token bot Telegram; bản sửa đổi hoặc liên kết tĩnh phải phát hành dưới LGPL-3, ứng dụng chỉ dùng thư viện thì không bắt buộc. ★ 18/11/2026: 29.602 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-kratos"></a>
+
+### kratos
+
+`go-kratos/kratos` · License: MIT · ★ 26.032 · docs-read · 2026-11-18
+
+Framework Go nhẹ để xây vi dịch vụ cloud-native, cung cấp API cho transport, middleware, registry, cấu hình, log và sinh mã. Phát triển API-first với Protobuf, sinh mã HTTP/gRPC; log dựa trên log/slog chuẩn kèm mở rộng OpenTelemetry; hệ contrib cho registry, config store, middleware, quan sát. Điều kiện: Cần Go 1.25 trở lên, protoc và protoc-gen-go. ★ 18/11/2026: 26.032 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-gin-vue-admin"></a>
+
+### gin-vue-admin
+
+`flipped-aurora/gin-vue-admin` · License: Apache-2.0 · ★ 25.139 · docs-read · 2026-11-18
+
+Khung hệ thống quản trị full-stack tách frontend/backend dựa trên Gin (Go) và Vue 3, có JWT, menu động, Casbin, trình sinh form và sinh mã. Tích hợp xác thực JWT, phân quyền Casbin, định tuyến và menu động; có trình sinh mã và form generator; có tài liệu trực tuyến, video hướng dẫn và trang demo. Điều kiện: Cần Go >= 1.26.10 và Node; có bản trả phí (Licensed Edition) cho tính năng mở rộng và hỗ trợ thương mại; phải thay khoá Qiniu mẫu trong cấu hình. ★ 18/11/2026: 25.139 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-wechaty"></a>
+
+### wechaty
+
+`wechaty/wechaty` · License: Apache License 2.0 · ★ 23.589 · docs-read · 2026-11-18
+
+SDK RPA hội thoại để viết chatbot một lần chạy trên nhiều nền tảng nhắn tin (WeChat, WhatsApp, Telegram, Line…) thông qua các puppet provider. Chatbot tối thiểu chỉ 6 dòng JavaScript; chọn giao thức qua biến môi trường WECHATY_PUPPET; có ảnh Docker chạy trực tiếp bot.js hoặc bot.ts. Điều kiện: Một số giao thức (puppet) ngoài Web cần token, README hướng dẫn xin token qua wiki; tự động hoá tài khoản nhắn tin có thể vướng điều khoản dịch vụ của nền tảng (chưa xác minh trong README). ★ 18/11/2026: 23.589 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-validator"></a>
+
+### validator
+
+`go-playground/validator` · License: MIT · ★ 20.239 · docs-read · 2026-11-18
+
+Thư viện Go kiểm tra hợp lệ giá trị cho struct và từng trường dựa trên tag. Hỗ trợ kiểm tra chéo trường và chéo struct, đi sâu vào slice, array, map (cả khoá và giá trị); thông báo lỗi tuỳ biến có i18n với thư mục translations; là validator mặc định của framework gin. ★ 18/11/2026: 20.239 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-apijson"></a>
+
+### APIJSON
+
+`APIJSON/APIJSON` · License: Apache License 2.0 · ★ 18.395 · docs-read · 2026-11-18
+
+Giao thức truyền thông dựa trên JSON kèm thư viện ORM cho Java, cho phép client tự mô tả dữ liệu cần lấy để giảm việc viết API backend. Một request lấy được nhiều loại dữ liệu, hỗ trợ CRUD, tìm kiếm mờ, gọi hàm từ xa; README liệt kê demo cho nhiều CSDL như MySQL, PostgreSQL, SQL Server, Oracle, ClickHouse, DuckDB; phát hành qua JitPack, phiên bản 8.4.0 trong pom.xml. ★ 18/11/2026: 18.395 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-hydra"></a>
+
+### hydra
+
+`ory/hydra` · License: Apache License 2.0 · ★ 17.671 · docs-read · 2026-11-18
+
+Máy chủ OAuth 2.0 và nhà cung cấp OpenID Connect, kết nối với hệ thống định danh sẵn có qua ứng dụng login và consent riêng. Được chứng nhận OpenID Certified; không tự quản lý người dùng nên ghép được với Ory Kratos hoặc hệ thống riêng; hỗ trợ PostgreSQL, MySQL, CockroachDB và có nhiều file quickstart docker-compose. Điều kiện: README khuyến nghị hệ thống quan trọng dùng Ory Enterprise License để có bản vá CVE có SLA và bản build doanh nghiệp; telemetry ẩn danh bật mặc định, tắt được. ★ 18/11/2026: 17.671 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-casdoor"></a>
+
+### casdoor
+
+`casdoor/casdoor` · License: Apache License 2.0 · ★ 14.881 · docs-read · 2026-11-18
+
+Máy chủ đăng nhập một lần (SSO) và xác thực có bảng điều khiển web, là nhà cung cấp định danh đầy đủ lưu người dùng và cấp token. Hỗ trợ OAuth 2.0, OIDC, SAML 2.0, CAS, LDAP, SCIM 2.0, WebAuthn trên cùng một thư mục người dùng; phân quyền theo chính sách bằng Casbin (ACL, RBAC, ABAC); tự host bằng một binary Go cộng CSDL, có SDK cho Go, Java, Python, Node.js, .NET, PHP, Rust. Điều kiện: Ảnh all-in-one chỉ để thử, không dùng production (dữ liệu mất cùng container); tài khoản mặc định admin/123 cần đổi. ★ 18/11/2026: 14.881 (GitHub search API), nhóm "Framework Backend" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c59-framework-backend) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-elasticsearch"></a>
+
+### elasticsearch
+
+`elastic/elasticsearch` · License: Mặc định ba giấy phép tuỳ chọn AGPL-3.0-only · ★ 78.816 · docs-read · 2026-11-18
+
+Máy tìm kiếm và phân tích phân tán, kho dữ liệu và cơ sở dữ liệu vector, dùng cho full-text search, log, metric, APM, RAG. Hỗ trợ tìm kiếm vector và tìm kiếm gần thời gian thực trên dữ liệu lớn; có script start-local dựng Elasticsearch và Kibana bằng Docker kèm API key; mã nguồn Java build bằng Gradle với bộ test và benchmarks trong repo. Điều kiện: Script start-local chỉ cho phát triển/thử nghiệm (tắt HTTPS), cần Docker (Windows cần WSL); bản cục bộ kèm trial 1 tháng rồi về bậc Basic; tính năng x-pack chịu Elastic License 2.0. ★ 18/11/2026: 78.816 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-redis"></a>
+
+### redis
+
+`redis/redis` · License: Từ Redis 8 · ★ 77.671 · docs-read · 2026-11-18
+
+Kho dữ liệu trong bộ nhớ dùng làm cache, máy chủ cấu trúc dữ liệu, message broker, cơ sở dữ liệu tài liệu và truy vấn vector. Hỗ trợ JSON, time series, Bloom filter, Query Engine với tìm kiếm vector và full-text; có streams, pub/sub, giao dịch và scripting; có API module để mở rộng lệnh. Điều kiện: Giấy phép RSALv2/SSPLv1/AGPLv3 có hạn chế khi cung cấp dạng dịch vụ; dùng tên/logo Redis phải theo chính sách thương hiệu; build đầy đủ module cần CMake 3.25–3.31.6, LLVM 21, Rust. ★ 18/11/2026: 77.671 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-meilisearch"></a>
+
+### meilisearch
+
+`meilisearch/meilisearch` · License: MIT AND OpenLDAP AND BUSL-1.1 · ★ 59.889 · docs-read · 2026-11-18
+
+Công cụ tìm kiếm viết bằng Rust cho tìm kiếm toàn văn, ngữ nghĩa và lai, nhúng vào ứng dụng và website qua REST API. Chịu lỗi chính tả, lọc, faceting, sắp xếp và đồng nghĩa có sẵn; tìm kiếm khi gõ trả kết quả dưới 50 ms theo README; tự host bằng một lệnh Docker hoặc binary. Điều kiện: Bản Enterprise Edition (sharding và tính năng nâng cao) cần thỏa thuận thương mại khi dùng production (BUSL-1.1); bản Community MIT dùng tự do. ★ 18/11/2026: 59.889 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-typesense"></a>
+
+### typesense
+
+`typesense/typesense` · License: GNU General Public License v3.0 · ★ 27.153 · docs-read · 2026-11-18
+
+Công cụ tìm kiếm nhanh, chịu lỗi chính tả viết bằng C++, tự giới thiệu là phương án mở thay Algolia và dễ dùng hơn Elasticsearch. Viết bằng C++ cho tìm kiếm tức thời dưới 50 ms; có chịu lỗi chính tả, faceting, lọc, sắp xếp và tìm kiếm ngữ nghĩa/lai; nhiều demo trực tiếp trên tập dữ liệu lớn (32 triệu bài hát). Điều kiện: GPL-3.0 (copyleft) khi phân phối bản sửa đổi. ★ 18/11/2026: 27.153 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-dolt"></a>
+
+### dolt
+
+`dolthub/dolt` · License: Apache License 2.0 · ★ 24.933 · docs-read · 2026-11-18
+
+Cơ sở dữ liệu SQL tương thích MySQL có quản lý phiên bản kiểu Git: fork, clone, branch, merge, push, pull trên bảng dữ liệu. CLI có cùng lệnh như git (commit, branch, merge, diff, blame theo hàng); chức năng phiên bản dùng được qua bảng hệ thống, hàm và thủ tục SQL; chạy làm MySQL server bằng dolt sql-server. ★ 18/11/2026: 24.933 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-doris"></a>
+
+### doris
+
+`apache/doris` · License: Apache-2.0 · ★ 16.238 · docs-read · 2026-11-18
+
+Cơ sở dữ liệu phân tích và tìm kiếm thời gian thực kiến trúc MPP thuộc Apache: phân tích SQL nhanh, tăng tốc truy vấn lakehouse và tìm kiếm hybrid trên dữ liệu có cấu trúc, văn bản, vector. Nạp dữ liệu dạng luồng và truy vấn dưới một giây ở độ đồng thời cao; truy vấn trực tiếp Iceberg, Delta Lake, Hudi; có Kubernetes Operator để triển khai. Điều kiện: Một số phụ thuộc bên thứ ba không tương thích Apache 2.0, cần tắt tính năng tương ứng nếu muốn tuân thủ hoàn toàn. ★ 18/11/2026: 16.238 (GitHub search API), nhóm "Giám sát, CSDL & Phân tích" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c511-giám-sát-csdl--phân-tích) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-excelize"></a>
+
+### excelize
+
+`qax-os/excelize` · License: BSD 3-Clause · ★ 21.137 · docs-read · 2026-11-18
+
+Thư viện Go thuần để đọc và ghi tệp bảng tính XLAM/XLSM/XLSX/XLTM/XLTX của Microsoft Excel 2007 trở lên. Viết bằng Go thuần, không phụ thuộc Excel; có API streaming để ghi/đọc trang tính dữ liệu rất lớn; mỗi thành phần (calc, chart, crypt, datavalidation...) có tệp test riêng. Điều kiện: Cần Go 1.26.0 trở lên. ★ 18/11/2026: 21.137 (GitHub search API), nhóm "Ngôn ngữ & Runtime" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c514-ngôn-ngữ--runtime) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-bitcoin"></a>
+
+### bitcoin
+
+`bitcoin/bitcoin` · License: MIT · ★ 90.693 · docs-read · 2026-11-18
+
+Bitcoin Core: phần mềm nút kết nối mạng ngang hàng Bitcoin, tải và xác thực đầy đủ khối và giao dịch, kèm ví và giao diện đồ họa tùy chọn. Build bằng CMake, có unit test chạy qua ctest và test chức năng/hồi quy viết bằng Python; tag phát hành ổn định được cắt từ nhánh release; có SECURITY.md và quy trình đóng góp trong CONTRIBUTING.md. Điều kiện: README nhấn mạnh nhánh master không đảm bảo ổn định và đây là dự án nhạy cảm bảo mật, lỗi có thể gây mất tiền. ★ 18/11/2026: 90.693 (GitHub search API), nhóm "Tài chính & Crypto" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c524-tài-chính--crypto) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="chuyen-union"></a>
+
+### union
+
+`unionlabs/union` · License: Hai file giấy phép ở gốc · ★ 73.711 · docs-read · 2026-11-18
+
+Union: lớp hạ tầng zero-knowledge cho truyền thông điệp tổng quát, chuyển tài sản, NFT và DeFi giữa các chuỗi, dựa trên xác minh đồng thuận và triển khai IBC. Gồm nút uniond (Go, CometBLS), prover galoisd (Go, Gnark), relayer voyager (Rust), hợp đồng CosmWasm và EVM, TypeScript SDK; build tái lập được bằng Nix (nix build .#uniond); kết nối chuỗi Cosmos và EVM như Ethereum, Arbitrum, Berachain. Điều kiện: Một số thành phần chỉ build được trên Linux (macOS cần VM NixOS); liên quan tài sản tiền mã hóa. ★ 18/11/2026: 73.711 (GitHub search API), nhóm "Tài chính & Crypto" trong kho-repo của Phan Đông Giang, mục 08 §6c.5
+
+**Hồ sơ gốc:** [mục 08](../08-awesome-lists-learning/README.md#6c524-tài-chính--crypto) (bảng/đoạn chung, giữ nguyên tại chỗ).
+
+<a id="anhkysuai-2026-11-23-thingsboard"></a>
+
+### ThingsBoard
+
+**Repo:** [thingsboard/thingsboard](https://github.com/thingsboard/thingsboard) · **License:** BUSL-1.1 cho 4.4+; một số phần Apache-2.0 · **★ 22,714 (GitHub API, 2026-11-23)**
+
+**Mục đích:** Nền tảng IoT quản lý thiết bị, thu telemetry, rule chain, cảnh báo và dashboard.
+
+**Giá trị và cơ chế:** README và manifest thể hiện hệ backend/frontend đầy đủ cho luồng thiết bị–dữ liệu–hiển thị; hữu ích tham khảo kiến trúc sản phẩm IoT tự lưu trữ.
+
+**Giới hạn:** HEAD 4.4.1-SNAPSHOT chịu BUSL: miễn phí thương mại tối đa 100 thiết bị/một server, phi thương mại 1.000, kèm key và thương hiệu; đổi Apache sau bốn năm. Không dùng nhãn Apache của bản cũ cho HEAD. Chưa triển khai.
+
+**Cách tham khảo/tích hợp:** Đối chiếu số thiết bị và bản license, thử dữ liệu giả lập trước nối hệ thống vận hành.
+
+**Thay thế:** [Node-RED](../05-low-code-llm-platforms/README.md#factory-lowcode-runtime-boundaries-2026-11-04), mainflux, home-assistant.
+
+**Bằng chứng:** `docs-read`, ngày 2026-11-23, commit [`2f2a2bd63a82`](https://github.com/thingsboard/thingsboard/commit/2f2a2bd63a82f4fa4dedd414015576df6156146e). README và các tài liệu/manifest/CI hiện diện, đọc chọn lọc; chưa kiểm implementation. Chưa cài/chạy upstream.
+
+**Nguồn:** [README.md](https://github.com/thingsboard/thingsboard/blob/2f2a2bd63a82f4fa4dedd414015576df6156146e/README.md) · [LICENSE](https://github.com/thingsboard/thingsboard/blob/2f2a2bd63a82f4fa4dedd414015576df6156146e/LICENSE) · [metadata GitHub](https://api.github.com/repos/thingsboard/thingsboard).
+
+<a id="nt-2026-11-23"></a>
+
+## Nâng trần theo khoảng trống — 23/11/2026
+
+Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sát tìm trên internet và GitHub những mảng mà chuyên mục còn thiếu hoặc chỉ có hồ sơ cũ, rồi mỗi repo được clone nông tại một commit cố định, đọc LICENSE, README, ít nhất một file triển khai thật và CI nếu có; không cài hay chạy mã upstream. Mô tả của trinh sát nhiều chỗ sai so với mã thật, và các chỗ đó được sửa ngay trong từng hồ sơ. Số sao lấy sau bằng GitHub search API nên có thể để trống.
+
+<a id="nt-stalwart"></a>
+
+### Stalwart Mail and Collaboration Server
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/stalwartlabs/stalwart |
+| License | AGPL-3.0-only OR LicenseRef-SEL (song song với Stalwart Enterprise License 2.0 trong LICENSES/); 227 file chỉ mang LicenseRef-SEL |
+| Phiên bản đã đọc | `b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSES/LicenseRef-SEL.txt, Cargo.toml, crates/main/src/main.rs, crates/dav/src/lib.rs, crates/main/Cargo.toml, .github/workflows/ci.yml, AGENTS.md; chưa chạy upstream |
+| Khoảng trống lấp | Tích hợp email/lịch/tài liệu (JMAP, CalDAV, CardDAV): máy chủ thật để thử client tích hợp |
+| Cơ chế đáng học | - crates/dav/src/lib.rs định nghĩa các method WebDAV/CalDAV (REPORT, MKCALENDAR, ACL...) ánh xạ sang sự kiện trace, mã tách thành module calendar, card, file, principal<br>- crates/calcard tách riêng parser/writer iCalendar, vCard, JSCalendar, JSContact khỏi tầng giao thức (icalendar/parser.rs, writer.rs)<br>- crates/dav/src/calendar có scheduling.rs, freebusy.rs, availability.rs: CalDAV scheduling (RFC 6638) nằm cùng máy chủ<br>- README nêu webhook cho tự động hóa theo sự kiện và OpenTelemetry/Prometheus cho quan sát (chưa xác minh bằng chạy) |
+| Tiêu chí và cách kiểm | CI (.github/workflows/ci.yml) chỉ chạy khi tag v*.*.* hoặc workflow_dispatch và tập trung dựng nhị phân/Docker đa kiến trúc ký cosign; workflow này không có bước test nên không chứng minh độ phủ kiểm thử. Kiểm bằng máy cho giao thức: chưa xác minh. |
+| Giới hạn và rủi ro | License kép AGPL hoặc SEL: dùng bản AGPL thì nghĩa vụ mạng của AGPL áp dụng; tính năng Enterprise cần khóa license gắn tên miền (SEL 1.5) và cấm bán lại (SEL 2.3). 227 file chỉ có SEL nên không dùng được theo AGPL. AGENTS.md cấm tác nhân mở issue/PR/báo cáo bảo mật tự sinh, cần tôn trọng nếu dùng agent trên repo. Đây là hệ thống sản xuất, không phải thư viện nhúng; rủi ro vận hành mail (DNS, deliverability) cao. |
+| So với | Radicale (CalDAV/CardDAV nhỏ, GPL), Cal.com (calcom-cal.diy, lịch đặt hẹn), Mail-0 Zero (mail-0-zero) |
+| Nguồn | [README.md](https://github.com/stalwartlabs/stalwart/blob/b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa/README.md) · [LicenseRef-SEL.txt](https://github.com/stalwartlabs/stalwart/blob/b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa/LICENSES/LicenseRef-SEL.txt) · [Cargo.toml](https://github.com/stalwartlabs/stalwart/blob/b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa/Cargo.toml) · [main.rs](https://github.com/stalwartlabs/stalwart/blob/b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa/crates/main/src/main.rs) · [lib.rs](https://github.com/stalwartlabs/stalwart/blob/b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa/crates/dav/src/lib.rs) · [Cargo.toml](https://github.com/stalwartlabs/stalwart/blob/b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa/crates/main/Cargo.toml) · [ci.yml](https://github.com/stalwartlabs/stalwart/blob/b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa/.github/workflows/ci.yml) · [AGENTS.md](https://github.com/stalwartlabs/stalwart/blob/b2d3df9a9b1c3e0cd1d5ccccc16acd6f44381afa/AGENTS.md) |
+
+<a id="nt-glpi"></a>
+
+### GLPI
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/glpi-project/glpi |
+| License | GPL-3.0 |
+| Phiên bản đã đọc | `74a89ac1764fa9347e777d63add81e07c635c6b0` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, THREAT_MODEL.md, apirest.md, src/CommonITILValidation.php, src/Telemetry.php, src/Glpi/Application/SystemConfigurator.php, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Quản lý ticket/helpdesk có API và quy trình phê duyệt |
+| Cơ chế đáng học | - src/CommonITILValidation.php: hằng trạng thái NONE/WAITING/ACCEPTED/REFUSED, quyền VALIDATE và canValidate/getTargetCriteriaForUser xác định ai được duyệt; lớp con ChangeValidation, TicketValidation, ITIL_ValidationStep cho phê duyệt nhiều bước<br>- API REST apirest.md: initSession bằng user token, session token, app token lọc theo IP; session mặc định chỉ đọc để gọi song song, ghi cần session_write=true<br>- THREAT_MODEL.md nêu rõ ranh giới tin cậy và bằng chứng cần cho báo cáo bảo mật (quyền theo profile và entity) |
+| Tiêu chí và cách kiểm | CI ci.yml chạy lint trên PHP 8.3 và 8.6, và Playwright theo shard (chỉ đọc phần đầu và job playwright); chạy định kỳ hằng đêm. Có phpstan, php-cs-fixer, rector, phpunit trong thư mục gốc (chỉ thấy file cấu hình). Kiểm bằng máy có. |
+| Giới hạn và rủi ro | GPL-3.0: nhúng hay sửa rồi phân phối phải mở mã. src/Telemetry.php thu phiên bản, CSDL, web server, PHP, OS và số liệu sử dụng; cronTelemetry POST JSON tới GLPI_TELEMETRY_URI (mặc định https://telemetry.glpi-project.org, đặt trong SystemConfigurator.php); chưa xác minh tác vụ cron mặc định bật hay tắt. Cần PHP và CSDL, giao diện nặng, plugin ngoài chất lượng khác nhau. AGENTS.md có trong repo. |
+| So với | Zammad (zammad, helpdesk Ruby, AGPL), OpenProject (opf-openproject), Plane (makeplane-plane) |
+| Nguồn | [README.md](https://github.com/glpi-project/glpi/blob/74a89ac1764fa9347e777d63add81e07c635c6b0/README.md) · [LICENSE](https://github.com/glpi-project/glpi/blob/74a89ac1764fa9347e777d63add81e07c635c6b0/LICENSE) · [THREAT_MODEL.md](https://github.com/glpi-project/glpi/blob/74a89ac1764fa9347e777d63add81e07c635c6b0/THREAT_MODEL.md) · [apirest.md](https://github.com/glpi-project/glpi/blob/74a89ac1764fa9347e777d63add81e07c635c6b0/apirest.md) · [CommonITILValidation.php](https://github.com/glpi-project/glpi/blob/74a89ac1764fa9347e777d63add81e07c635c6b0/src/CommonITILValidation.php) · [Telemetry.php](https://github.com/glpi-project/glpi/blob/74a89ac1764fa9347e777d63add81e07c635c6b0/src/Telemetry.php) · [SystemConfigurator.php](https://github.com/glpi-project/glpi/blob/74a89ac1764fa9347e777d63add81e07c635c6b0/src/Glpi/Application/SystemConfigurator.php) · [ci.yml](https://github.com/glpi-project/glpi/blob/74a89ac1764fa9347e777d63add81e07c635c6b0/.github/workflows/ci.yml) |
+
+<a id="nt-zammad"></a>
+
+### Zammad
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/zammad/zammad |
+| License | AGPL-3.0 |
+| Phiên bản đã đọc | `0d1ac50043412d104fe6c3a715e5730e7e0dd4b4` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, AGENTS.md, app/models/trigger.rb, app/models/ticket/escalation.rb, app/models/ai/mcp_confirmation.rb, .github/workflows/ci.yaml, .github/workflows/ci/test.sh; chưa chạy upstream |
+| Khoảng trống lấp | Quản lý ticket/helpdesk có REST/GraphQL API (kho thiếu ticketing) |
+| Cơ chế đáng học | - app/models/trigger.rb: trigger có activator action hoặc time, execution_condition_mode selective hoặc always; trigger theo thời gian dùng Ticket::DailyEventLock để không chạy lặp trong ngày<br>- app/models/ticket/escalation.rb: after_commit gọi escalation_calculation trên bản sao ticket, có callback_loop chặn đệ quy và bỏ qua khi import_mode<br>- app/models/ai/mcp_confirmation.rb: bản ghi xác nhận MCP có request_id, action_digest, expires_at; chỉ dọn bản đã hết hạn nên một phê duyệt không dùng lại được tới khi hết hạn (đọc theo chú thích mã) |
+| Tiêu chí và cách kiểm | CI ci.yaml chạy trên PR và cron thứ Sáu: container zammad-ci với PostgreSQL 18 và Redis, chạy lint.sh (nội dung chưa mở), markdownlint, kiểm assets, pnpm test và rspec bỏ qua nhóm system/searchindex/integration (test.sh). Kiểm bằng máy có. |
+| Giới hạn và rủi ro | AGPL-3.0: dịch vụ mạng sửa đổi phải công bố mã. Nhắc: Zammad Foundation sở hữu mã nhưng công ty Zammad GmbH bán dịch vụ đám mây. Hai frontend song song nên bề mặt bảo trì lớn. Cần Ruby, Node, PostgreSQL, Redis và thường Elasticsearch để tìm kiếm. Tính năng AI gửi nội dung ticket cho nhà cung cấp mô hình đã cấu hình (chưa xác minh bằng chạy). AGENTS.md hướng dẫn tác nhân nhưng không đổi license. |
+| So với | GLPI (glpi, ITSM PHP, GPL), OpenProject (opf-openproject), Planka (plankanban-planka) |
+| Nguồn | [README.md](https://github.com/zammad/zammad/blob/0d1ac50043412d104fe6c3a715e5730e7e0dd4b4/README.md) · [LICENSE](https://github.com/zammad/zammad/blob/0d1ac50043412d104fe6c3a715e5730e7e0dd4b4/LICENSE) · [AGENTS.md](https://github.com/zammad/zammad/blob/0d1ac50043412d104fe6c3a715e5730e7e0dd4b4/AGENTS.md) · [trigger.rb](https://github.com/zammad/zammad/blob/0d1ac50043412d104fe6c3a715e5730e7e0dd4b4/app/models/trigger.rb) · [escalation.rb](https://github.com/zammad/zammad/blob/0d1ac50043412d104fe6c3a715e5730e7e0dd4b4/app/models/ticket/escalation.rb) · [mcp_confirmation.rb](https://github.com/zammad/zammad/blob/0d1ac50043412d104fe6c3a715e5730e7e0dd4b4/app/models/ai/mcp_confirmation.rb) · [ci.yaml](https://github.com/zammad/zammad/blob/0d1ac50043412d104fe6c3a715e5730e7e0dd4b4/.github/workflows/ci.yaml) · [test.sh](https://github.com/zammad/zammad/blob/0d1ac50043412d104fe6c3a715e5730e7e0dd4b4/.github/workflows/ci/test.sh) |
+
+<a id="nt-radicale"></a>
+
+### Radicale
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Kozea/Radicale |
+| License | GPL-3.0 |
+| Phiên bản đã đọc | `c23d6759c70bfa5554b2baeaa01df83ea51bafc7` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, COPYING.md, pyproject.toml, radicale/rights/owner_write.py, radicale/item/`__init__`.py, caldav_compat_tests/README.md, caldav_compat_tests/test_compatibility.py, .github/workflows/test.yml; chưa chạy upstream |
+| Khoảng trống lấp | Máy chủ CalDAV/CardDAV đơn giản làm môi trường thử tích hợp lịch, và bộ kiểm tương thích client/server |
+| Cơ chế đáng học | - caldav_compat_tests/test_compatibility.py: chạy caldav-server-tester với server Radicale khởi động như tiến trình con, so kết quả với EXPECTED_DEVIATIONS (ví dụ scheduling: unsupported, principal-search: unsupported); phiên bản thư viện client ghim chính xác trong extra caldav_test<br>- radicale/rights/owner_write.py: người dùng đã xác thực đọc được tất cả nhưng chỉ ghi vào thư mục có tên trùng tên mình<br>- radicale/item/`__init__`.py: bọc vobject.readComponents (có allowQP) và phân loại VCALENDAR, VCARD, VLIST; item/filter.py giới hạn số lần liệt kê RRULE vô hạn |
+| Tiêu chí và cách kiểm | CI test.yml có job lint rồi chạy tox (ví dụ Python 3.15 trên Ubuntu 26, có biến thể loglevel; chỉ đọc phần đầu file); thư mục radicale/tests, integ_tests và caldav_compat_tests tồn tại, chưa xác minh job nào chạy từng thư mục. Kiểm bằng máy có. |
+| Giới hạn và rủi ro | GPL-3.0: sửa và phân phối phải mở mã. Lưu file trong hệ thống tệp đơn giản nên không hợp quy mô lớn hay đa nút; không có scheduling iTIP. Với RFC 5545 đầy đủ (VTIMEZONE, RRULE phức tạp) cần kiểm riêng. Mặc định mở cổng cục bộ, cấu hình xác thực và TLS là việc của người vận hành. |
+| So với | Stalwart (stalwart, đủ bộ mail và scheduling), Cal.com (calcom-cal.diy) |
+| Nguồn | [README.md](https://github.com/Kozea/Radicale/blob/c23d6759c70bfa5554b2baeaa01df83ea51bafc7/README.md) · [COPYING.md](https://github.com/Kozea/Radicale/blob/c23d6759c70bfa5554b2baeaa01df83ea51bafc7/COPYING.md) · [pyproject.toml](https://github.com/Kozea/Radicale/blob/c23d6759c70bfa5554b2baeaa01df83ea51bafc7/pyproject.toml) · [owner_write.py](https://github.com/Kozea/Radicale/blob/c23d6759c70bfa5554b2baeaa01df83ea51bafc7/radicale/rights/owner_write.py) · [\_\_init\_\_.py](https://github.com/Kozea/Radicale/blob/c23d6759c70bfa5554b2baeaa01df83ea51bafc7/radicale/item/`__init__`.py) · [README.md](https://github.com/Kozea/Radicale/blob/c23d6759c70bfa5554b2baeaa01df83ea51bafc7/caldav_compat_tests/README.md) · [test_compatibility.py](https://github.com/Kozea/Radicale/blob/c23d6759c70bfa5554b2baeaa01df83ea51bafc7/caldav_compat_tests/test_compatibility.py) · [test.yml](https://github.com/Kozea/Radicale/blob/c23d6759c70bfa5554b2baeaa01df83ea51bafc7/.github/workflows/test.yml) |
+
+<a id="nt-oca-dms"></a>
+
+### OCA dms (Odoo 19)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/OCA/dms |
+| License | LGPL-3.0 (module dms; LICENSE gốc repo là AGPL-3.0) |
+| Phiên bản đã đọc | `b41bc8a454b5e6bed53f9b94286dba0cf3d28d7c` (commit 2026-11-11) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, test.yml, dms/`__manifest__`.py, storage.py, access_groups.py và dms_file.py; chưa chạy upstream |
+| Khoảng trống lấp | Quản lý tài liệu trong Odoo làm nền cho kiểm soát tài liệu; không có phiên bản hay phê duyệt |
+| Cơ chế đáng học | • dms.storage chọn nơi lưu database, file hoặc attachment, có thao tác di chuyển thủ công khi đổi kiểu (storage.py).<br>• dms.access.group: nhóm cha con, quyền create, write, unlink và biến thể inclusive thừa hưởng, gán cho nhóm Odoo hoặc người dùng cụ thể, gắn vào thư mục (access_groups.py).<br>• Khóa tệp: lock và unlock ghi locked_by, tính is_lock_editor để chỉ người khóa được sửa (dms_file.py).<br>• Chia sẻ qua cổng bằng access_token, so sánh bằng consteq (dms_file.py). |
+| Tiêu chí và cách kiểm | CI test.yml chạy trên container Odoo 19 và OCB 19, kiểm license bằng manifestoo; thư mục tests có test truy cập, thư mục, tệp, storage, portal và benchmark. Chưa mở các file test, chưa chạy. |
+| Giới hạn và rủi ro | Không có version chain, trạng thái dự thảo hay đã duyệt, hạn rà soát, hay nhật ký phân phối bản kiểm soát: muốn ISO 9001 7.5 (chưa xác minh điều khoản) phải tự xây. License: LICENSE gốc của repo là AGPL-3.0 nhưng manifest module ghi LGPL-3.0 (nhiều mã gốc MuK IT). Phụ thuộc Odoo 19 và các module mail, portal, onboarding. Chia sẻ công khai bằng token cần kiểm cấu hình trước khi mở ra mạng. |
+| So với | odoo-odoo trong kho (nền); paperless-ngx trong kho (lưu trữ tài liệu độc lập, không phải Odoo); nextcloud-server trong kho (chia sẻ tệp). |
+| Nguồn | [README.md](https://github.com/OCA/dms/blob/b41bc8a454b5e6bed53f9b94286dba0cf3d28d7c/README.md) · [LICENSE](https://github.com/OCA/dms/blob/b41bc8a454b5e6bed53f9b94286dba0cf3d28d7c/LICENSE) · [test.yml](https://github.com/OCA/dms/blob/b41bc8a454b5e6bed53f9b94286dba0cf3d28d7c/.github/workflows/test.yml) · [\_\_manifest\_\_.py](https://github.com/OCA/dms/blob/b41bc8a454b5e6bed53f9b94286dba0cf3d28d7c/dms/`__manifest__`.py) · [storage.py](https://github.com/OCA/dms/blob/b41bc8a454b5e6bed53f9b94286dba0cf3d28d7c/dms/models/storage.py) · [access_groups.py](https://github.com/OCA/dms/blob/b41bc8a454b5e6bed53f9b94286dba0cf3d28d7c/dms/models/access_groups.py) · [dms_file.py](https://github.com/OCA/dms/blob/b41bc8a454b5e6bed53f9b94286dba0cf3d28d7c/dms/models/dms_file.py) |
+
+<a id="nt-loro"></a>
+
+### Loro
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/loro-dev/loro |
+| License | MIT (lõi); skills/moonbit dưới Apache-2.0 |
+| Phiên bản đã đọc | `16fe805f935600cd6e4f106f212e9315b878ba95` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README, Cargo.toml, crates/loro/src/lib.rs, rust.yml, docs/shallow-snapshot-concurrency.md, skills/loro/SKILL.md và fit-and-architecture.md; chưa chạy upstream |
+| Khoảng trống lấp | Local-first / CRDT (CRDT lõi có lịch sử phiên bản) |
+| Cơ chế đáng học | - `LoroDoc` (crates/loro/src/lib.rs) gộp CRDT JSON với lịch sử đầy đủ: `checkout(frontiers)`, `fork_at`, `revert_to` cho time travel; `export(ExportMode)` cho cập nhật theo version vector, snapshot hoặc shallow snapshot.<br>- Shallow snapshot giống git shallow clone; `docs/shallow-snapshot-concurrency.md` nêu bảo đảm cụ thể: cập nhật sau gốc shallow áp dụng bình thường, cập nhật trước gốc là no-op, cập nhật dựa trên phiên bản trước gốc bị từ chối chứ không treo, có test dẫn chiếu.<br>- Có `export_pending_updates` để lưu các cập nhật chờ phụ thuộc nhân quả, kèm chỉ dẫn lưu snapshot và sidecar như một checkpoint (doc comment trong lib.rs).<br>- Repo kèm skill `skills/loro` cho agent (SKILL.md và các chương tham chiếu) nêu rõ khi nào Loro không phù hợp: bất biến tài chính, khoá độc quyền, phân quyền tại thời điểm ghi. |
+| Tiêu chí và cách kiểm | Có crate `fuzz` (crdt_fuzzer, one_doc_fuzzer, mem_kv_fuzzer) và nhiều test hồi quy trong `crates/fuzz/tests`; workflow rust.yml (đã mở) chạy `check` 32-bit, kiểm loro-js và `deno task test-all` với test Rust trên macOS. Chưa xác minh kết quả thực tế vì chưa chạy. Có `deny.toml` và thư mục `supply-chain` cho kiểm chuỗi cung ứng (chỉ thấy tồn tại, chưa đọc nội dung). |
+| Giới hạn và rủi ro | Mô tả trinh sát đúng về MIT nhưng thiếu: repo có thư mục con skills/moonbit dưới Apache-2.0 (LICENSE riêng) và nhiều crate có LICENSE riêng. CRDT không bảo đảm bất biến toàn cục. Phiên bản crate 1.19.0, thay đổi nhanh. Tuyên bố hiệu năng của tác giả (chưa xác minh). Chuỗi thấy `telemetry` chỉ trong doc comment về origin của import, không phải thu thập dữ liệu. |
+| So với | pubkey-rxdb (RxDB, không phải CRDT lõi), tinybase (cùng lô) |
+| Nguồn | [LICENSE](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/LICENSE) · [README.md](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/README.md) · [Cargo.toml](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/Cargo.toml) · [crates/loro/Cargo.toml](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/crates/loro/Cargo.toml) · [crates/loro/src/lib.rs](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/crates/loro/src/lib.rs) · [.github/workflows/rust.yml](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/.github/workflows/rust.yml) · [docs/shallow-snapshot-concurrency.md](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/docs/shallow-snapshot-concurrency.md) · [skills/loro/SKILL.md](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/skills/loro/SKILL.md) · [skills/loro/references/fit-and-architecture.md](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/skills/loro/references/fit-and-architecture.md) · [skills/moonbit/LICENSE](https://github.com/loro-dev/loro/blob/16fe805f935600cd6e4f106f212e9315b878ba95/skills/moonbit/LICENSE) |
+
+<a id="nt-authlib"></a>
+
+### Authlib
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/authlib/authlib |
+| License | BSD-3-Clause hoặc giấy phép thương mại (COMMERCIAL-LICENSE) |
+| Phiên bản đã đọc | `c451e6d1238678231ee21e31964cc8ce34474a37` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, COMMERCIAL-LICENSE, README, pyproject.toml, AGENTS.md, python.yml, rfc7636/challenge.py (và liệt kê rfc6749/grants); chưa chạy upstream |
+| Khoảng trống lấp | Xác thực hiện đại (OAuth 2.x/OIDC phía Python); không có passkey |
+| Cơ chế đáng học | - Mỗi RFC một module (`authlib/oauth2/rfcNNNN/`): 6749, 6750, 7009, 7523, 7591/7592, 7636, 7662, 8414, 8628, 8693, 9068, 9101, 9207, 9470, 9728, cộng `authlib/oidc/core`; module RFC cắm vào lõi bằng hook hoặc kế thừa, không sửa `rfc6749/` (AGENTS.md).<br>- Dùng được cho cả client và authorization server/resource server, kèm tích hợp Flask, Django, requests, httpx, Starlette (thư mục `authlib/integrations`).<br>- `CodeChallenge` (rfc7636/challenge.py) so khớp S256 bằng `hmac.compare_digest`, nhưng mặc định method là `plain` và hỗ trợ cả plain; PKCE bắt buộc hay không phụ thuộc `is_code_challenge_required`, mặc định không bắt buộc (`required` là tham số đã bị đánh dấu deprecate).<br>- JOSE chuyển sang `joserfc`; `authlib.jose` đã deprecated (AGENTS.md, pyproject). |
+| Tiêu chí và cách kiểm | Test bằng pytest trong `tests/` (oauth2, oauth1, flask, django, jose, clients); python.yml (đã mở) chạy ma trận Python 3.11 đến 3.15 và pypy3.11, kèm lint ruff, codespell, zizmor theo AGENTS.md. Không có bộ test conformance OpenID chính thức trong repo (chưa thấy chứng nhận OpenID). |
+| Giới hạn và rủi ro | Hai giấy phép: BSD-3-Clause cho mọi dự án, còn COMMERCIAL-LICENSE là điều khoản mua riêng để hỗ trợ thương mại, không phải điều kiện bắt buộc dùng BSD. Mô tả trinh sát về "passkey/WebAuthn, OAuth 2.1" không đúng với mã đã đọc: không có module WebAuthn, và tìm trong authlib/ và docs/ không thấy OAuth 2.1; thư viện là OAuth 2.0/OIDC cộng nhiều RFC mở rộng. Bản 1.10.0b1 (beta). AGENTS.md cấm agent tự động mở issue/PR khi chưa có người duyệt: tôn trọng khi đóng góp. Dùng cho server cần tự bật PKCE bắt buộc và tắt plain. |
+| So với | node-oidc-provider (cùng lô), keycloak, authelia-authelia, goauthentik-authentik |
+| Nguồn | [LICENSE](https://github.com/authlib/authlib/blob/c451e6d1238678231ee21e31964cc8ce34474a37/LICENSE) · [COMMERCIAL-LICENSE](https://github.com/authlib/authlib/blob/c451e6d1238678231ee21e31964cc8ce34474a37/COMMERCIAL-LICENSE) · [README.md](https://github.com/authlib/authlib/blob/c451e6d1238678231ee21e31964cc8ce34474a37/README.md) · [pyproject.toml](https://github.com/authlib/authlib/blob/c451e6d1238678231ee21e31964cc8ce34474a37/pyproject.toml) · [AGENTS.md](https://github.com/authlib/authlib/blob/c451e6d1238678231ee21e31964cc8ce34474a37/AGENTS.md) · [.github/workflows/python.yml](https://github.com/authlib/authlib/blob/c451e6d1238678231ee21e31964cc8ce34474a37/.github/workflows/python.yml) · [authlib/oauth2/rfc7636/challenge.py](https://github.com/authlib/authlib/blob/c451e6d1238678231ee21e31964cc8ce34474a37/authlib/oauth2/rfc7636/challenge.py) · [authlib/oauth2/rfc6749/grants/authorization_code.py](https://github.com/authlib/authlib/blob/c451e6d1238678231ee21e31964cc8ce34474a37/authlib/oauth2/rfc6749/grants/authorization_code.py) |
+
+<a id="nt-faststream"></a>
+
+### FastStream
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ag2ai/faststream |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `d78fc4298629666fa4171bb37feeb5397445afd4` (commit 2026-11-22) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README, pyproject.toml, pr_tests.yaml, asyncapi/factory.py, v3_0_0/generate.py, kafka/testing.py (đầu file); chưa chạy upstream |
+| Khoảng trống lấp | Kiến trúc event-driven (Kafka, RabbitMQ, NATS, Redis) có tài liệu AsyncAPI sinh từ mã |
+| Cơ chế đáng học | - Khai báo subscriber/publisher bằng decorator trên Pydantic; framework sinh tài liệu AsyncAPI 2.6.0 hoặc 3.0.0 từ chính các khai báo đó (`specification/asyncapi/factory.py`, `v3_0_0/generate.py`), nên hợp đồng sự kiện không lệch khỏi mã.<br>- Một API thống nhất cho nhiều broker (thư mục kafka, confluent, rabbit, nats, redis, mqtt), kèm CLI chạy ứng dụng và phục vụ ASGI.<br>- `TestKafkaBroker` và các bản tương tự cho phép test mà không cần broker thật; test `tests/asyncapi/` đối chiếu schema sinh ra theo từng broker.<br>- Middleware OpenTelemetry và Prometheus tích hợp sẵn (`faststream/opentelemetry`, `faststream/prometheus`). |
+| Tiêu chí và cách kiểm | pr_tests.yaml (đã mở) chạy pytest trên Python 3.10 đến 3.15 với `-m "(slow and not connected) or not connected"`, có job riêng kafka smoke và kafka thật với dịch vụ trong CI, bật `covdefaults`; có workflow benchmark CodSpeed. Tất cả kiểm bằng máy, chưa chạy lại. |
+| Giới hạn và rủi ro | Repo nay là ag2ai/faststream (chuyển từ tổ chức cũ), license Apache-2.0 đúng như trinh sát. Phiên bản 0.7.9: chưa 1.0, API còn có thể đổi. Tài liệu AsyncAPI chỉ mô tả phía ứng dụng FastStream, không thay một đặc tả viết tay. Kiểm AsyncAPI sinh ra bằng test snapshot của chính dự án, không bằng validator ngoài trong phần đã đọc. Không thấy telemetry trong phần đã mở. |
+| So với | nats-io-nats-server (là broker, không phải framework), asyncapi-spec (cùng lô) |
+| Nguồn | [LICENSE](https://github.com/ag2ai/faststream/blob/d78fc4298629666fa4171bb37feeb5397445afd4/LICENSE) · [README.md](https://github.com/ag2ai/faststream/blob/d78fc4298629666fa4171bb37feeb5397445afd4/README.md) · [pyproject.toml](https://github.com/ag2ai/faststream/blob/d78fc4298629666fa4171bb37feeb5397445afd4/pyproject.toml) · [.github/workflows/pr_tests.yaml](https://github.com/ag2ai/faststream/blob/d78fc4298629666fa4171bb37feeb5397445afd4/.github/workflows/pr_tests.yaml) · [faststream/specification/asyncapi/factory.py](https://github.com/ag2ai/faststream/blob/d78fc4298629666fa4171bb37feeb5397445afd4/faststream/specification/asyncapi/factory.py) · [faststream/specification/asyncapi/v3_0_0/generate.py](https://github.com/ag2ai/faststream/blob/d78fc4298629666fa4171bb37feeb5397445afd4/faststream/specification/asyncapi/v3_0_0/generate.py) · [faststream/kafka/testing.py](https://github.com/ag2ai/faststream/blob/d78fc4298629666fa4171bb37feeb5397445afd4/faststream/kafka/testing.py) |
+
+<a id="nt-tinybase"></a>
+
+### TinyBase
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/tinyplex/tinybase |
+| License | MIT |
+| Phiên bản đã đọc | `540cd40789a2745a6244ef42d29d83b144d5e6ae` (commit 2026-11-12) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, readme.md, package.json, ci.yml, src/common/hlc.ts, src/mergeable-store/index.ts (đầu file), convergence.fuzz.test.ts (đầu file), synchronizer-ws-server/index.ts (đoạn authorize); chưa chạy upstream |
+| Khoảng trống lấp | Local-first / CRDT (store reactive có đồng bộ) |
+| Cơ chế đáng học | - `MergeableStore` (src/mergeable-store/index.ts) gắn mỗi cell và value một dấu thời gian HLC (`src/common/hlc.ts`) cùng hash theo bảng, hàng, cell; hai peer so hash để chỉ trao đổi phần khác nhau. Gộp theo kiểu last-writer-wins từng cell.<br>- HLC có `MAX_CLOCK_SKEW_SECONDS = 300` và `isHlc` từ chối dấu thời gian vượt ngưỡng, chống đồng hồ lệch.<br>- Nhiều synchronizer cắm được: BroadcastChannel, WebSocket client và server (kèm Durable Object, bản simple), local; WsServer có `authorize`, `canWriteCell`, `canWriteValue` để chặn ghi (dòng 156 đến 177 của synchronizer-ws-server/index.ts), có test riêng cho authorization.<br>- Cùng một store có truy vấn, index, metric, relationship và checkpoint (undo), cộng persister cho IndexedDB, SQLite, PostgreSQL, Yjs, Automerge. |
+| Tiêu chí và cách kiểm | `convergence.fuzz.test.ts` (đã mở phần đầu) dùng nhiều seed: các peer sửa ngẫu nhiên qua mạng giả lập có đảo thứ tự và rớt gói, khi mạng yên mọi peer phải có cùng nội dung, stamp và hash. ci.yml chạy compile, lint, spell, tsc và `testUnitFast` trên Node 24. README tuyên bố 100% test coverage (chưa xác minh). |
+| Giới hạn và rủi ro | Mô hình dữ liệu là bảng và key-value với LWW từng cell, không phải CRDT văn bản hay danh sách có thứ tự như Loro; không dùng cho chỉnh sửa văn bản đồng thời. Server tự host cần tự lo xác thực và authorize. Phiên bản 10.1.0. MIT đúng như trinh sát. Không thấy telemetry trong phần đã mở. readme.md chủ yếu là HTML sinh ra, ít thông tin kỹ thuật. |
+| So với | loro (cùng lô), pubkey-rxdb |
+| Nguồn | [LICENSE](https://github.com/tinyplex/tinybase/blob/540cd40789a2745a6244ef42d29d83b144d5e6ae/LICENSE) · [readme.md](https://github.com/tinyplex/tinybase/blob/540cd40789a2745a6244ef42d29d83b144d5e6ae/readme.md) · [package.json](https://github.com/tinyplex/tinybase/blob/540cd40789a2745a6244ef42d29d83b144d5e6ae/package.json) · [.github/workflows/ci.yml](https://github.com/tinyplex/tinybase/blob/540cd40789a2745a6244ef42d29d83b144d5e6ae/.github/workflows/ci.yml) · [src/common/hlc.ts](https://github.com/tinyplex/tinybase/blob/540cd40789a2745a6244ef42d29d83b144d5e6ae/src/common/hlc.ts) · [src/mergeable-store/index.ts](https://github.com/tinyplex/tinybase/blob/540cd40789a2745a6244ef42d29d83b144d5e6ae/src/mergeable-store/index.ts) · [test/unit/synchronizers/convergence.fuzz.test.ts](https://github.com/tinyplex/tinybase/blob/540cd40789a2745a6244ef42d29d83b144d5e6ae/test/unit/synchronizers/convergence.fuzz.test.ts) · [src/synchronizers/synchronizer-ws-server/index.ts](https://github.com/tinyplex/tinybase/blob/540cd40789a2745a6244ef42d29d83b144d5e6ae/src/synchronizers/synchronizer-ws-server/index.ts) |
+
+<a id="nt-node-oidc-provider"></a>
+
+### node-oidc-provider
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/panva/node-oidc-provider |
+| License | MIT |
+| Phiên bản đã đọc | `d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE.md, README, package.json, conformance.yml, test.yml, lib/helpers/pkce.js, certification/oidc/index.js (đầu file), certification/README.md; chưa chạy upstream |
+| Khoảng trống lấp | Xác thực hiện đại (OIDC/OAuth 2.x, FAPI) |
+| Cơ chế đáng học | - Authorization server Node triển khai OIDC Core cùng PAR (RFC 9126), DPoP (RFC 9449), JAR, JARM, RAR, mTLS, CIBA, Device Flow, FAPI 1.0 và 2.0; các tính năng thử nghiệm (CIMD, OpenID4VCI, attestation) tách riêng và đổi phiên bản theo bản MINOR (README).<br>- `lib/helpers/pkce.js` chỉ chấp nhận method S256 (method khác bị ném lỗi), kiểm định dạng `code_verifier` và so sánh bằng `constantEquals`.<br>- Cấu hình theo từng tính năng bật hoặc tắt trong `lib/helpers/defaults.js`; không phải tính năng nào cũng bật mặc định (README).<br>- Thư mục `certification/` chứa cấu hình chạy chính server này làm đối tượng của bộ kiểm OpenID Conformance Suite (oidc, fapi, vci). |
+| Tiêu chí và cách kiểm | conformance.yml (đã mở) chạy các plan của OpenID Conformance Suite (basic, hybrid, implicit, dynamic với nhiều response_type, FAPI...) khi đổi `lib/` hoặc `certification/`, và theo lịch hàng tuần. test.yml chạy audit npm, lint, kiểm tài liệu cấu hình sinh ra và test bằng `node ./test/run`. Tác giả tuyên bố đạt chứng nhận OpenID cho các profile Basic, Implicit, Hybrid, Config, Form Post, 3rd Party-Init, logout, FAPI 1.0, FAPI CIBA, FAPI 2.0 (tuyên bố trong README, chưa xác minh với trang chứng nhận). |
+| Giới hạn và rủi ro | Chỉ là thư viện để dựng authorization server: phần đăng nhập, lưu trữ (adapter), tài khoản và giao diện người dùng đều phải tự viết; thư mục `example/` chỉ để tham khảo. Cần Node 22 trở lên (test.yml đặt min 22). Một tác giả chính. Không thấy telemetry trong lib. License MIT đúng như trinh sát; nhiều file thông báo bên thứ ba (THIRD-PARTY-NOTICES.md, chưa đọc). |
+| So với | authlib (cùng lô), keycloak, hydra, authelia-authelia |
+| Nguồn | [LICENSE.md](https://github.com/panva/node-oidc-provider/blob/d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49/LICENSE.md) · [README.md](https://github.com/panva/node-oidc-provider/blob/d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49/README.md) · [package.json](https://github.com/panva/node-oidc-provider/blob/d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49/package.json) · [.github/workflows/conformance.yml](https://github.com/panva/node-oidc-provider/blob/d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49/.github/workflows/conformance.yml) · [.github/workflows/test.yml](https://github.com/panva/node-oidc-provider/blob/d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49/.github/workflows/test.yml) · [lib/helpers/pkce.js](https://github.com/panva/node-oidc-provider/blob/d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49/lib/helpers/pkce.js) · [certification/oidc/index.js](https://github.com/panva/node-oidc-provider/blob/d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49/certification/oidc/index.js) · [certification/README.md](https://github.com/panva/node-oidc-provider/blob/d0c0cf6e0d48c89d3a084e3aaf6a0078642efd49/certification/README.md) |
+
+<a id="nt-openbao-openbao"></a>
+
+### OpenBao
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/openbao/openbao |
+| License | MPL-2.0 |
+| Phiên bản đã đọc | `a238d70d33f18716daecf08ce6b52f789e7d20f4` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc README.md, LICENSE, AGENTS.md, internal/builtin/logical/database/path_creds_create.go, .github/workflows/test-go.yml, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Bí mật và quyền cho agent/workload: cấp thông tin xác thực ngắn hạn có thu hồi, thay vì để khóa dài hạn trong repo hay prompt |
+| Cơ chế đáng học | - Secrets engine trong `internal/builtin/logical`: database, kubernetes, kv, pki, ssh, totp, transit, rabbitmq; auth trong `internal/builtin/credential`: approle, cert, jwt, kubernetes, token, userpass.<br>- `logical/database/path_creds_create.go`: tạo user DB động, tính TTL bằng `CalculateTTL` từ `DefaultTTL`/`MaxTTL` của role, ghi `revocation_statements` vào secret để thu hồi khi hết lease.<br>- Audit device ghi nhật ký có băm giá trị nhạy cảm (`internal/audit`).<br>- Có agent/proxy trong `internal/command/agent` để workload lấy token tự động. |
+| Tiêu chí và cách kiểm | Kiểm bằng máy: test-go.yml (đã đọc) chạy test Go chia nhiều runner, có binary test; ci.yml đã mở. Changelog theo từng PR (hơn 500 mục) và CodeQL, Scorecard có workflow (chỉ thấy tên). |
+| Giới hạn và rủi ro | MPL-2.0 (copyleft theo file, LICENSE ghi Copyright 2015 HashiCorp). Chỉ thấy lựa chọn telemetry là cấu hình metrics của listener (`UnauthenticatedMetricsAccess`), chưa thấy dữ liệu gửi ra ngoài. Vận hành phức tạp, thay thế Vault cần kiểm tương thích. Chính sách AGENTS.md cấm đóng góp AI và yêu cầu dấu hiệu riêng trong PR, cần lưu ý nếu muốn đóng góp ngược. |
+| So với | Infisical (infisical, secret manager nhẹ hơn), SOPS (getsops-sops, mã hóa file thay vì dịch vụ), Vaultwarden (quản lý mật khẩu, khác phạm vi) |
+| Nguồn | [README.md](https://github.com/openbao/openbao/blob/a238d70d33f18716daecf08ce6b52f789e7d20f4/README.md) · [LICENSE](https://github.com/openbao/openbao/blob/a238d70d33f18716daecf08ce6b52f789e7d20f4/LICENSE) · [AGENTS.md](https://github.com/openbao/openbao/blob/a238d70d33f18716daecf08ce6b52f789e7d20f4/AGENTS.md) · [path_creds_create.go](https://github.com/openbao/openbao/blob/a238d70d33f18716daecf08ce6b52f789e7d20f4/internal/builtin/logical/database/path_creds_create.go) · [test-go.yml](https://github.com/openbao/openbao/blob/a238d70d33f18716daecf08ce6b52f789e7d20f4/.github/workflows/test-go.yml) · [ci.yml](https://github.com/openbao/openbao/blob/a238d70d33f18716daecf08ce6b52f789e7d20f4/.github/workflows/ci.yml) |
+
+<a id="nt-thunderid"></a>
+
+### ThunderID
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/thunder-id/thunderid |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-23; code-read; đã đọc LICENSE, README.md, backend/internal/agent/delegation.go, backend/internal/agent/constants.go, backend/internal/system/mcp/auth/token_verifier.go; chưa chạy upstream |
+| Khoảng trống lấp | Agent định danh/ủy quyền: danh tính và grant OAuth riêng cho agent, MCP được bảo vệ bằng token |
+| Cơ chế đáng học | - `backend/internal/agent/delegation.go`: `resolveGrantTypes` luôn cấp client_credentials cho agent (trừ public client); agent `delegated` phải có ít nhất một grant trong danh sách ủy quyền (authorization_code, CIBA, device_code, token_exchange, jwt_bearer), nếu không thì báo lỗi `ErrorMissingDelegationGrantType`; nếu chỉ có client_credentials thì tự thêm authorization_code + refresh_token, bật PKCE.<br>- Agent loại personal assistant bị giới hạn chỉ grant cá nhân và không bao giờ có client_credentials, nên không tự hành động bằng quyền riêng (`resolvePersonalAssistantGrantTypes`).<br>- `backend/internal/system/mcp/auth/token_verifier.go`: máy chủ MCP của ThunderID xác thực bearer bằng cùng `BearerAuthenticator` và logic thu hồi token của REST API, đưa SecurityContext vào `TokenInfo.Extra`.<br>- Tài liệu use-case hướng dẫn gắn scope theo công cụ MCP (ví dụ `booking:*`), người dùng thiếu role thì chỉ gọi được công cụ duyệt. |
+| Tiêu chí và cách kiểm | CI có workflow `oidc-conformance-test.yml` (đã mở) chạy hằng ngày bộ conformance của OpenID Foundation, profile basic gồm 35 module có trình duyệt theo `plan-config.json`; kiểm bằng máy nhưng là kết quả của upstream, chưa chạy lại. Có test Go cho agent và MCP (`*_test.go`); không đo độ phủ ở đây. |
+| Giới hạn và rủi ro | Apache-2.0 (LICENSE đã đọc). Telemetry: có bộ OpenTelemetry nhưng chỉ bật khi cấu hình `enabled` (provider.go, chỉ grep, chưa đọc kỹ). Cần vận hành CSDL, khóa và control plane riêng. Tuyên bố hậu lượng tử, VC/DID, OpenID4VCI/VP chỉ là tuyên bố trong README **(chưa xác minh)**. Repo lớn (khoảng 290 MB clone), nhiều gói, nên mang cơ chế sang dự án khác cần chọn đúng module. |
+| So với | keycloak, casdoor, hydra, goauthentik-authentik (IAM tổng quát, chưa coi agent là danh tính hạng nhất); spire (danh tính workload) |
+| Nguồn | [LICENSE](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/LICENSE) · [README.md](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/README.md) · [backend/internal/agent/delegation.go](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/backend/internal/agent/delegation.go) · [backend/internal/agent/constants.go](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/backend/internal/agent/constants.go) · [backend/internal/system/mcp/auth/token_verifier.go](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/backend/internal/system/mcp/auth/token_verifier.go) · [backend/internal/system/mcp/tool/model.go](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/backend/internal/system/mcp/tool/model.go) · [.github/workflows/oidc-conformance-test.yml](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/.github/workflows/oidc-conformance-test.yml) · [tests/oidc-conformance/plan-config.json](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/tests/oidc-conformance/plan-config.json) · [docs/content/use-cases/ai-agents/mcp-authorization/try-it-out/connect-via-inspector.mdx](https://github.com/thunder-id/thunderid/blob/e6c45f03135b4fcb6985b076dd7dbf5ef7d0ec2d/docs/content/use-cases/ai-agents/mcp-authorization/try-it-out/connect-via-inspector.mdx) |
+
+<a id="n2-2026-11-24"></a>
+
+## Nâng trần đợt hai — 23/11/2026
+
+Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệu tại commit cố định, chưa chạy upstream; mô tả của trinh sát sai ở nhiều repo nên điều ghi ở đây là điều đã đọc.
+
+<a id="n2-ms-365-mcp-server"></a>
+
+### Microsoft 365 MCP Server (Softeria)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Softeria/ms-365-mcp-server |
+| License | MIT |
+| Phiên bản đã đọc | `7af5a157e3dee57d21850b56bfbb334b08c0f950` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, package.json, endpoints.json, audit-log.ts, cloud-config.ts, cache-encryption.ts, build.yml; chưa chạy upstream |
+| Khoảng trống lấp | Tích hợp email, lịch, tài liệu Microsoft 365 qua Graph với phạm vi OAuth tối thiểu |
+| Cơ chế đáng học | - src/endpoints.json: 363 mục, mỗi mục có pathPattern, method, toolName, scopes, appScopes, llmTip; tool sinh từ dữ liệu khai báo thay vì viết tay<br>- README mục Allowed Scopes: tính bề mặt tool bình thường rồi ẩn tool có scope ngoài allowlist; scope phân cấp (Mail.ReadWrite phủ Mail.Read); hỗ trợ Sites.Selected thay cho Sites.*.All; giá trị rỗng làm server lỗi khi khởi động thay vì mở rộng quyền<br>- src/audit-log.ts: log JSON riêng, chỉ ghi UPN, tài nguyên đích, mã lỗi, số và tên miền người nhận; không ghi nội dung thư<br>- src/lib/cache-encryption.ts: AES-256-GCM, chỉ khóa 32 byte nằm trong keychain (keytar), file cache mã hóa |
+| Tiêu chí và cách kiểm | build.yml (chỉ chạy trên pull_request và dispatch) chạy matrix Node 20, 22, 24: npm ci, generate rồi git diff --exit-code (chống artefact sinh lệch), lint, format, typecheck, build, npm test (vitest). Kiểm bằng máy khá đầy đủ. Test nằm trong `src/__tests__` và test/. |
+| Giới hạn và rủi ro | MIT sạch. Client ID đăng ký sẵn cho cloud global và china (cloud-config.ts): quyền truy cập đi qua ứng dụng của bên thứ ba, doanh nghiệp nên tự đăng ký app và đặt MS365_MCP_CLIENT_ID (GCC High bắt buộc). Chế độ org-mode xin scope SharePoint rộng theo mặc định. Bao phủ tool lớn làm tăng token nếu không dùng preset. Ghi log ở mức shape nhưng MS365_MCP_REDACT_PII=false sẽ ghi nội dung. Không có CalDAV, JMAP hay Google (khác mô tả khoảng trống của trinh sát). |
+| So với | googleworkspace/cli (Google Workspace, hồ sơ cli), mail-0-zero (client mail mã mở), n8n-mcp (MCP cho n8n) |
+| Nguồn | [README.md](https://github.com/Softeria/ms-365-mcp-server/blob/7af5a157e3dee57d21850b56bfbb334b08c0f950/README.md) · [LICENSE](https://github.com/Softeria/ms-365-mcp-server/blob/7af5a157e3dee57d21850b56bfbb334b08c0f950/LICENSE) · [package.json](https://github.com/Softeria/ms-365-mcp-server/blob/7af5a157e3dee57d21850b56bfbb334b08c0f950/package.json) · [endpoints.json](https://github.com/Softeria/ms-365-mcp-server/blob/7af5a157e3dee57d21850b56bfbb334b08c0f950/src/endpoints.json) · [audit-log.ts](https://github.com/Softeria/ms-365-mcp-server/blob/7af5a157e3dee57d21850b56bfbb334b08c0f950/src/audit-log.ts) · [cloud-config.ts](https://github.com/Softeria/ms-365-mcp-server/blob/7af5a157e3dee57d21850b56bfbb334b08c0f950/src/cloud-config.ts) · [cache-encryption.ts](https://github.com/Softeria/ms-365-mcp-server/blob/7af5a157e3dee57d21850b56bfbb334b08c0f950/src/lib/cache-encryption.ts) · [build.yml](https://github.com/Softeria/ms-365-mcp-server/blob/7af5a157e3dee57d21850b56bfbb334b08c0f950/.github/workflows/build.yml) |
+
+<a id="n2-mail-mcp"></a>
+
+### mail-mcp
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/tecnologicachile/mail-mcp |
+| License | MIT |
+| Phiên bản đã đọc | `7fb72674adcc418122727bc01478b18a83e6f7e7` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, Cargo.toml, AGENTS.md, drafts.rs, ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Tích hợp email đa giao thức cho agent (IMAP/SMTP/EWS/Graph); không phủ lịch hay tài liệu |
+| Cơ chế đáng học | - src/server/drafts.rs: test every_send_path_requires_smtp_write_enabled dựng cấu hình có token Graph, OAuth2, EWS rồi khẳng định mọi đường gửi đều từ chối khi MAIL_SMTP_WRITE_ENABLED tắt (hồi quy từ issue #45)<br>- Tool gửi, di chuyển, xóa gắn chú thích MCP (readOnlyHint, destructiveHint, idempotentHint, openWorldHint); 14 tool chỉ đọc theo README<br>- Quy tắc xem trước rồi xác nhận gửi được nhắc cả trong mô tả tool để gateway MCP không chuyển chỉ dẫn server vẫn giữ được<br>- README v0.6.1: hạ log rmcp xuống warn khi RUST_LOG=info để thân thư không rơi vào log |
+| Tiêu chí và cách kiểm | ci.yml chạy cargo fmt --check, clippy -D warnings và cargo test cho mỗi PR và push main; bộ test tích hợp IMAP với GreenMail chạy tay trong imap-integration-tests.yml (chưa mở). Không có ngưỡng coverage. Kiểm bằng máy cho phần cổng ghi, nhưng không chạy ở mức này. |
+| Giới hạn và rủi ro | MIT sạch (file LICENSE chỉ ghi Copyright 2025, không nêu tên chủ). Lịch sử cho thấy lỗi bỏ qua cổng gửi từng tồn tại ở bản 0.7.0 và lộ thư qua log ở bản 0.6.x qua HTTP: dùng bản mới và tự kiểm. Cổng ghi là biến môi trường chứ không phải quyền theo từng tool. Có file BUG_GRAPH_ATTACHMENTS.md trong repo cho thấy lỗi đang mở với tệp đính kèm Graph (chưa đọc). Dự án nhỏ, tác giả đơn lẻ, phiên bản 0.x. |
+| So với | ms-365-mcp-server (Graph theo scope), googleworkspace/cli (Google), mail-0-zero (client mail) |
+| Nguồn | [README.md](https://github.com/tecnologicachile/mail-mcp/blob/7fb72674adcc418122727bc01478b18a83e6f7e7/README.md) · [LICENSE](https://github.com/tecnologicachile/mail-mcp/blob/7fb72674adcc418122727bc01478b18a83e6f7e7/LICENSE) · [Cargo.toml](https://github.com/tecnologicachile/mail-mcp/blob/7fb72674adcc418122727bc01478b18a83e6f7e7/Cargo.toml) · [AGENTS.md](https://github.com/tecnologicachile/mail-mcp/blob/7fb72674adcc418122727bc01478b18a83e6f7e7/AGENTS.md) · [drafts.rs](https://github.com/tecnologicachile/mail-mcp/blob/7fb72674adcc418122727bc01478b18a83e6f7e7/src/server/drafts.rs) · [ci.yml](https://github.com/tecnologicachile/mail-mcp/blob/7fb72674adcc418122727bc01478b18a83e6f7e7/.github/workflows/ci.yml) |
+
+<a id="n2-open-agent-email"></a>
+
+### Open Agent Email
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Anil-matcha/open-agent-email |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `0f307a6bf0341c8ff5b950a6dfa4aa23b919d079` (commit 2026-10-22) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, reference.md, threat_scanner.py, hitl_service.py, models.py, ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Hạ tầng email cho agent: hộp thư riêng, nhận gửi, duyệt người (không phải tích hợp lịch/tài liệu) |
+| Cơ chế đáng học | - server/app/services/threat_scanner.py: danh sách regex chia nhóm (ghi đè chỉ dẫn, ChatML, rò rỉ qua ảnh markdown, CSS ẩn, ký tự zero-width, blob base64), mỗi mẫu có trọng số; điểm cuối quy ra allow, review hoặc block theo sensitivity (medium: review từ 0.50, block từ 0.85)<br>- server/app/services/hitl_service.py và models.py: Agent có cột hitl_enabled mặc định True; thư đi đang chờ duyệt, phê duyệt xong mới vào hàng đợi gửi; tài liệu nói đổi mức bảo vệ chỉ admin được, khóa agent không tự nới được<br>- docs/reference.md: sổ vòng đời append-only với mã cố định (created, review_requested, accepted_by_relay, provider_bounced, ...), webhook chỉ mang metadata chứ không mang nội dung<br>- ClamAV quét tệp đính kèm tùy chọn, mặc định tắt, lỗi quét thì từ chối tạm thời (fail closed) |
+| Tiêu chí và cách kiểm | ci.yml chạy pytest trên SQLite và PostgreSQL 16 (kèm drill sao lưu và xoay khóa), cộng job client Next.js. Có khoảng 410 hàm `test_` trong server/tests (đếm, chưa chạy), gồm test_reviews và test_review_links. Không có ngưỡng coverage đọc thấy. Bộ quét là heuristic và tài liệu nói không quét byte tệp đính kèm trừ khi bật ClamAV. |
+| Giới hạn và rủi ro | Apache-2.0 sạch. Regex chống prompt injection dễ bị né (đổi cách diễn đạt, ngôn ngữ khác) nên chỉ là một lớp, không thay cho cách ly quyền của agent. Tự host nghĩa là phải vận hành MX, SPF/DKIM/DMARC, relay gửi và khóa bí mật; mở cổng 25 ra Internet là rủi ro vận hành. Thư đến vẫn là đầu vào không tin cậy cho model. Dự án mới, nhánh mặc định cuối cùng commit 2026-10-22. |
+| So với | mail-mcp (kết nối hộp thư có sẵn qua IMAP/Graph), mail-0-zero (client mail mã mở), wirken (cổng quyền cho agent) |
+| Nguồn | [README.md](https://github.com/Anil-matcha/open-agent-email/blob/0f307a6bf0341c8ff5b950a6dfa4aa23b919d079/README.md) · [LICENSE](https://github.com/Anil-matcha/open-agent-email/blob/0f307a6bf0341c8ff5b950a6dfa4aa23b919d079/LICENSE) · [reference.md](https://github.com/Anil-matcha/open-agent-email/blob/0f307a6bf0341c8ff5b950a6dfa4aa23b919d079/docs/reference.md) · [threat_scanner.py](https://github.com/Anil-matcha/open-agent-email/blob/0f307a6bf0341c8ff5b950a6dfa4aa23b919d079/server/app/services/threat_scanner.py) · [hitl_service.py](https://github.com/Anil-matcha/open-agent-email/blob/0f307a6bf0341c8ff5b950a6dfa4aa23b919d079/server/app/services/hitl_service.py) · [models.py](https://github.com/Anil-matcha/open-agent-email/blob/0f307a6bf0341c8ff5b950a6dfa4aa23b919d079/server/app/models.py) · [ci.yml](https://github.com/Anil-matcha/open-agent-email/blob/0f307a6bf0341c8ff5b950a6dfa4aa23b919d079/.github/workflows/ci.yml) |
+
+<a id="n2-frappe-helpdesk"></a>
+
+### Frappe Helpdesk
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/frappe/helpdesk |
+| License | AGPL-3.0 |
+| Phiên bản đã đọc | `bc810df3184a49593a313ca7f58f973ad43137b7` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc hd_service_level_agreement.py, hd_ticket.py (phần SLA), hooks.py, skills/frappe-helpdesk/SKILL.md và reference/sla.md, workflow server-tests.yml; chưa chạy upstream |
+| Khoảng trống lấp | Quản lý ticket/helpdesk có API (kèm SLA tính theo giờ làm việc) |
+| Cơ chế đáng học | • SLA là DocType riêng (`HD Service Level Agreement`): mục tiêu phản hồi và xử lý theo từng mức ưu tiên, tính chỉ trong giờ làm việc có nghỉ trưa và danh sách ngày lễ (`calc_time`, `iter_working_spans`), điều kiện chọn SLA là biểu thức Python trên ticket.<br>• Trạng thái SLA tính theo thứ tự cố định Failed, Paused, First Response Due, Resolution Due, Fulfilled; tạm dừng cộng `total_hold_time` đẩy hạn xử lý; job `hourly_long` (`update_sla_status_in_ticket`) cập nhật lại ticket mở.<br>• Thư mục skills/frappe-helpdesk là skill cho agent điều khiển site qua `frappectl`, kèm tài liệu SLA, ticket, báo cáo; AGENTS.md hướng dẫn agent phát triển. |
+| Tiêu chí và cách kiểm | Test Python (server-tests.yml chạy trên MariaDB 10.6, Python 3.14, kiểm biên dịch và xung đột merge) và Playwright e2e/UI tests; riêng SLA có test_hd_service_level_agreement.py (14 hàm test theo đếm). Kiểm bằng máy, chưa chạy ở đây. |
+| Giới hạn và rủi ro | AGPL-3.0: dùng làm dịch vụ qua mạng phải công khai mã đã sửa. Phụ thuộc Frappe Framework và MariaDB, nặng hơn công cụ độc lập. Telemetry: mã gọi `frappe.utils.telemetry.capture` của framework và có cờ `enable_telemetry` (hành vi mặc định phụ thuộc Frappe, chưa xác minh). Tuyên bố có API: có nhiều endpoint `@frappe.whitelist` trong helpdesk/api (đã thấy danh sách tệp, chỉ đọc sâu phần SLA). |
+| So với | zammad, glpi, chatwoot-chatwoot, hcengineering-platform |
+| Nguồn | [LICENSE](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/LICENSE) · [README.md](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/README.md) · [AGENTS.md](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/AGENTS.md) · [hooks.py](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/helpdesk/hooks.py) · [hd_service_level_agreement.py](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/helpdesk/helpdesk/doctype/hd_service_level_agreement/hd_service_level_agreement.py) · [hd_ticket.py](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/helpdesk/helpdesk/doctype/hd_ticket/hd_ticket.py) · [SKILL.md](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/skills/frappe-helpdesk/SKILL.md) · [sla.md](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/skills/frappe-helpdesk/reference/sla.md) · [server-tests.yml](https://github.com/frappe/helpdesk/blob/bc810df3184a49593a313ca7f58f973ad43137b7/.github/workflows/server-tests.yml) |
+
+<a id="n2-rauthy"></a>
+
+### Rauthy
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/sebadob/rauthy |
+| License | Apache-2.0 (file LICENSE; Cargo.toml workspace khai Apache-2.0); module PAM/NSS ở repo riêng vì phụ thuộc GPLv3 |
+| Phiên bản đã đọc | `5e62dfafb772d2bdcb4601114dbef366c7865192` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, Cargo.toml, .github/workflows/code_style.yaml, src/data/src/entity/clients.rs, src/data/src/entity/app_version.rs, justfile, SECURITY.md, config.toml (grep); chưa chạy upstream |
+| Khoảng trống lấp | Máy chủ danh tính OIDC/OAuth 2 gọn cho tự host, ưu tiên passkey (kho mới có Authelia, Authentik, Better Auth, Keycloak) |
+| Cơ chế đáng học | - `validate_code_challenge` buộc client có cấu hình `challenge` gửi `code_challenge` cộng phương thức thuộc danh sách cho phép; client động chỉ được gửi S256 như tùy chọn (`src/data/src/entity/clients.rs`). <br>- Passkey qua `webauthn-rs 0.5` (`Cargo.toml`, `src/data`); README mô tả hai đường: mật khẩu cộng khoá bảo mật, hoặc tài khoản chỉ passkey bắt buộc User Verification. <br>- Phòng thủ đăng nhập: bộ đếm lần sai, phát hiện credential stuffing (`cred_stuff_detect.rs`, `ip_blacklist.rs`, `ip_rate_limit.rs`, mới thấy tên file), geo-block tùy chọn bằng Maxmind. <br>- Kiểm tra bản phát hành: gọi API GitHub `releases/latest` định kỳ để báo có bản mới (`app_version.rs`). |
+| Tiêu chí và cách kiểm | CI `code_style.yaml` chạy trong PR không phải draft: `cargo fmt --check`, `cargo clippy --all-targets`, kiểm định dạng/kiểu giao diện, hai test hợp đồng frontend (`test:webauthn`, `test:webauthn-reg`) và test tích hợp với Hiqlite (`just test-hiqlite`). Bản Postgres chỉ chạy tay (`just test-postgres` có trong `publish`, không trong workflow). Test Chromium cho đổi mật khẩu và MFA không nằm trong CI (chú thích trong workflow). Thư mục `src/bin/tests/integration` có test theo luồng (auth_flow, token_exchange, backchannel_logout...). Báo cáo kiểm toán độc lập (Radically Open Security) do README dẫn: **(chưa xác minh)** nội dung, chưa mở PDF. |
+| Giới hạn và rủi ro | Mô tả của trinh sát sai ở một điểm: README không nói OAuth 2.1; chỉ nói OIDC, OAuth 2 và PAM. Phiên bản 0.38.0 theo mẫu có hậu tố ngày, SECURITY.md nói dưới v1, không backport vá lỗi: phải theo dõi bản mới. Mặc định bật kiểm bản mới qua api.github.com (`disable_app_version_check = false`) và có nhắc tài trợ hằng năm (mục `[sponsor]` trong config; tên biến `SPONSOR_EMAIL_REMINDER_DISABLE` cho thấy là email). IP geo qua Maxmind chỉ khi cấu hình. Repo chứa `AGENTS.md`, `CLAUDE.md` và mục "If you are an AI Agent" trong SECURITY.md: chỉ dẫn cho người đóng góp bằng AI, không áp dụng cho người dùng thư viện. Cargo.toml chỉ ghi một tác giả, nên rủi ro phụ thuộc người duy trì (suy luận). |
+| So với | Authelia (portal xác thực cho reverse proxy), Authentik (IdP đầy đủ, Python), Keycloak (Java, rộng nhất, nặng), node-oidc-provider (thư viện OIDC Node chứ không phải sản phẩm), Better Auth (thư viện TypeScript). |
+| Nguồn | [README](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/README.md) · [LICENSE](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/LICENSE) · [Cargo.toml](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/Cargo.toml) · [code_style.yaml](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/.github/workflows/code_style.yaml) · [clients.rs](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/src/data/src/entity/clients.rs) · [app_version.rs](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/src/data/src/entity/app_version.rs) · [justfile](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/justfile) · [config.toml](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/config.toml) · [SECURITY.md](https://github.com/sebadob/rauthy/blob/5e62dfafb772d2bdcb4601114dbef366c7865192/SECURITY.md) |
+
+<a id="n2-zitadel-oidc"></a>
+
+### zitadel/oidc
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/zitadel/oidc |
+| License | Apache-2.0 (file LICENSE, có NOTICE) |
+| Phiên bản đã đọc | `842e2a4f9b11c5ac8ef984ae6595ca08004585bb` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, go.mod, .github/workflows/release.yml, .github/workflows/otel-k6-compat.yml, pkg/op/auth_request.go, pkg/op/authorize_parity_test.go, SECURITY.md; chưa chạy upstream |
+| Khoảng trống lấp | Thư viện OIDC client (RP) và server (OP) bằng Go, bám chuẩn, để học cách kiểm tra tuân chuẩn bằng máy |
+| Cơ chế đáng học | - `ValidateAuthReqRedirectURI` và `validateAuthReqRedirectURINative`: https hợp lệ nếu khớp đăng ký; http chỉ cho DevMode, client bí mật với response_type code, hoặc loopback của app native bỏ qua cổng theo RFC 8252 §7.3 (`pkg/op/auth_request.go`). <br>- `ValidateAuthReqCodeChallengeMethod` từ chối phương thức PKCE không hỗ trợ khi có `code_challenge`; phương thức rỗng được coi là `plain` theo RFC 7636 (`auth_request.go`). <br>- `authorize_parity_test.go` chạy cùng một bộ kịch bản qua `Provider` và `op.Server` (hai cài đặt `/authorize` trong thư viện) để chúng không lệch nhau. <br>- Ví dụ chạy được ở `example/server` (OP thử với người dùng mẫu) và `example/client/app` (RP); đây là mã mẫu, không dùng làm sản phẩm. |
+| Tiêu chí và cách kiểm | CI `release.yml`: `go test -race -v -coverprofile ... ./pkg/...` trên Go 1.26 và 1.27, đẩy độ phủ Codecov, rồi semantic-release khi push nhánh main hoặc next; `otel-k6-compat.yml` chạy script kiểm không để OpenTelemetry vượt phiên bản k6. Repo có 122 hàm `Test*` trong `pkg/op` (đếm bằng grep). Bộ kiểm tuân chuẩn OpenID **không nằm trong repo**: chứng nhận RP (profile basic và config) là tuyên bố trong README, dẫn tới trang plan của OpenID, **chưa xác minh**. |
+| Giới hạn và rủi ro | Mô tả của trinh sát chưa chính xác: README chỉ nói RP được chứng nhận (basic, config); không nói OP được chứng nhận. README tự ghi giới hạn: Hybrid Flow chưa có ở OP, Implicit không có ở RP, mTLS chưa có, OAuth Metadata (RFC 8414) chưa có ở RP. Không nói OAuth 2.1; chú thích mã nói phương thức PKCE rỗng được coi là `plain`. Người duy trì báo "hạn chế thời gian review tính năng" (README). Tên module v3, nhánh `next` là v4 đang phát triển. Phụ thuộc `github.com/golang/mock v1.6.0` (kho gốc đã lưu trữ, chưa xác minh) trong go.mod. Mã ví dụ dùng mật khẩu mặc định `verysecure`: không triển khai thật. Có OpenTelemetry bật mặc định (tắt bằng build tag `no_otel`); log ra `slog` toàn cục. Chính sách bảo mật trỏ về repo zitadel/zitadel. |
+| So với | node-oidc-provider (OP bằng Node), Authlib (Python), Keycloak, Rauthy trong cùng nhóm (sản phẩm IdP đầy đủ, không phải thư viện). |
+| Nguồn | [README](https://github.com/zitadel/oidc/blob/842e2a4f9b11c5ac8ef984ae6595ca08004585bb/README.md) · [LICENSE](https://github.com/zitadel/oidc/blob/842e2a4f9b11c5ac8ef984ae6595ca08004585bb/LICENSE) · [go.mod](https://github.com/zitadel/oidc/blob/842e2a4f9b11c5ac8ef984ae6595ca08004585bb/go.mod) · [release.yml](https://github.com/zitadel/oidc/blob/842e2a4f9b11c5ac8ef984ae6595ca08004585bb/.github/workflows/release.yml) · [otel-k6-compat.yml](https://github.com/zitadel/oidc/blob/842e2a4f9b11c5ac8ef984ae6595ca08004585bb/.github/workflows/otel-k6-compat.yml) · [auth_request.go](https://github.com/zitadel/oidc/blob/842e2a4f9b11c5ac8ef984ae6595ca08004585bb/pkg/op/auth_request.go) · [authorize_parity_test.go](https://github.com/zitadel/oidc/blob/842e2a4f9b11c5ac8ef984ae6595ca08004585bb/pkg/op/authorize_parity_test.go) · [SECURITY.md](https://github.com/zitadel/oidc/blob/842e2a4f9b11c5ac8ef984ae6595ca08004585bb/SECURITY.md) |
+
+<a id="n2-webauthn4j"></a>
+
+### WebAuthn4J
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/webauthn4j/webauthn4j |
+| License | Apache-2.0 (file LICENSE.txt) |
+| Phiên bản đã đọc | `b33c6fb6bc542968193779f3fbe4e23828b07bf3` (commit 2026-11-02) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE.txt, gradle.properties, .github/workflows/ci.yml, docs/.../introduction.adoc, CoreAuthenticationDataVerifier.java, DefaultCoreMaliciousCounterValueHandler.java; chưa chạy upstream |
+| Khoảng trống lấp | Thư viện xác minh WebAuthn/passkey phía server bằng Java, bám từng bước đặc tả |
+| Cơ chế đáng học | - `CoreAuthenticationDataVerifier.verify` làm tuần tự: kiểm credentialId thuộc `allowCredentials`, `RpIdHashVerifier`, cờ UP và UV theo cấu hình, ràng buộc BE/BS, chữ ký qua `assertionSignatureVerifier` (dẫn WebAuthn Level 3 §7.2, `verifier/CoreAuthenticationDataVerifier.java`). <br>- Bộ đếm chữ ký: nếu số trình bày hoặc số đã lưu khác 0 mà số trình bày không lớn hơn thì gọi `maliciousCounterValueDetected`; mặc định ném `MaliciousCounterValueException` (cloned authenticator), có thể thay bằng handler riêng. <br>- Challenge không do thư viện tự giữ: mã ghi rõ người gọi phải tự đưa challenge và so với giá trị lưu ở server (chú thích trong `verify`). <br>- Có module `webauthn4j-metadata` (FIDO MDS), `webauthn4j-appattest`, `webauthn4j-core-async`. |
+| Tiêu chí và cách kiểm | CI `ci.yml`: `./gradlew build javadoc asciidoc` trên JDK 25 và `./gradlew check` trên ma trận JDK 17/21/25 (Ubuntu) cộng JDK 25 trên Windows và macOS, chạy hằng ngày theo cron; có job `fido-mds-integration-test` riêng (chỉ thấy tên, chưa đọc nội dung), nên bước build chính loại nó. README tuyên bố qua mọi ca bắt buộc của FIDO2 Test Tools: **(chưa xác minh)**, không thấy kết quả trong repo. Thư mục `integration-tests` có bản mẫu cho Spring Security, Quarkus (đã thấy cây thư mục). |
+| Giới hạn và rủi ro | Mô tả của trinh sát là "bám Level 2/3": tài liệu nói passkeys là tên gọi thương mại của WebAuthn Level 3 và mã dẫn Level 3 §7.2; cụ thể mức hỗ trợ từng tính năng L3 chưa kiểm. `gradle.properties` ghi `isSnapshot=true` ở nhánh chính (bản phát hành 0.32.x, dưới 1.0: API còn có thể đổi). SafetyNet là định dạng Google đã ngừng khuyến nghị (chưa xác minh trạng thái hiện nay). Thư viện không lưu trạng thái: lộ rủi ro nếu tích hợp sai (tái dùng challenge, quên cập nhật counter). Tải MDS (nếu dùng module metadata) là dữ liệu rời máy tới dịch vụ FIDO. Không telemetry thấy trong file đã đọc. |
+| So với | Yubico java-webauthn-server (cùng nhiệm vụ Java, cung cấp đối tượng RelyingParty bậc cao), webauthn-ruby (Ruby), Rauthy dùng webauthn-rs thay vì thư viện này. |
+| Nguồn | [README](https://github.com/webauthn4j/webauthn4j/blob/b33c6fb6bc542968193779f3fbe4e23828b07bf3/README.md) · [LICENSE.txt](https://github.com/webauthn4j/webauthn4j/blob/b33c6fb6bc542968193779f3fbe4e23828b07bf3/LICENSE.txt) · [gradle.properties](https://github.com/webauthn4j/webauthn4j/blob/b33c6fb6bc542968193779f3fbe4e23828b07bf3/gradle.properties) · [ci.yml](https://github.com/webauthn4j/webauthn4j/blob/b33c6fb6bc542968193779f3fbe4e23828b07bf3/.github/workflows/ci.yml) · [introduction.adoc](https://github.com/webauthn4j/webauthn4j/blob/b33c6fb6bc542968193779f3fbe4e23828b07bf3/docs/src/reference/asciidoc/en/introduction.adoc) · [CoreAuthenticationDataVerifier.java](https://github.com/webauthn4j/webauthn4j/blob/b33c6fb6bc542968193779f3fbe4e23828b07bf3/webauthn4j-core/src/main/java/com/webauthn4j/verifier/CoreAuthenticationDataVerifier.java) · [DefaultCoreMaliciousCounterValueHandler.java](https://github.com/webauthn4j/webauthn4j/blob/b33c6fb6bc542968193779f3fbe4e23828b07bf3/webauthn4j-core/src/main/java/com/webauthn4j/verifier/DefaultCoreMaliciousCounterValueHandler.java) |
+
+<a id="n2-yubico-java-webauthn-server"></a>
+
+### java-webauthn-server (Yubico)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/Yubico/java-webauthn-server |
+| License | BSD-2-Clause (phần Yubico) cộng BSD-3-Clause (phần mã gốc của Google), cùng nằm trong file COPYING; không có file LICENSE nên SPDX báo NOASSERTION |
+| Phiên bản đã đọc | `3a7edfb2609696808e8daad2508115bd43d88d3f` (commit 2026-11-09) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.adoc, COPYING, NEWS, .github/workflows/build.yml, FinishAssertionSteps.java, RelyingParty.java, FidoMetadataDownloader.java (grep), SECURITY.md; chưa chạy upstream |
+| Khoảng trống lấp | Thư viện WebAuthn server do Yubico duy trì, đáng đọc license vì SPDX báo NOASSERTION |
+| Cơ chế đáng học | - `FinishAssertionSteps` mô hình hóa quy trình xác minh đăng nhập thành chuỗi `Step5` đến `Step21`, mỗi bước `validate()` rồi `nextStep()`; bước 21 kiểm bộ đếm chữ ký nếu `validateSignatureCounter` bật. <br>- `RelyingParty` có mặc định: `allowOriginPort = false`, `allowOriginSubdomain = false`, `validateSignatureCounter = true`, `allowUntrustedAttestation = true` (mặc định chấp nhận attestation không tin cậy). <br>- `CredentialRepositoryV2` và `RelyingPartyV2` thêm giao diện hiện đại; NEWS 2.10.0 thêm ML-DSA-44/65/87 (cần JRE 24 trở lên hoặc provider ngoài). <br>- `FidoMetadataDownloader` tải và xác minh BLOB metadata FIDO theo chuỗi tin cậy GlobalSign R46, thử lại khi chuỗi chéo chuyển giao. |
+| Tiêu chí và cách kiểm | CI `build.yml`: `./gradlew clean test` trên JDK 17, 21, 25 (Temurin) cộng Zulu và Microsoft cho 25, cron hằng tuần; có workflow riêng về độ phủ, định dạng mã, CodeQL, kiểm chữ ký bản phát hành (mới thấy tên file). Kiểm bằng máy ở mức đơn vị; mức tuân chuẩn FIDO không khai trong các file đã đọc. |
+| Giới hạn và rủi ro | License: SPDX NOASSERTION là vì `COPYING` gộp hai điều khoản BSD (Yubico 2-clause 2014-2018 và Google 3-clause 2014, có điều khoản không dùng tên), không phải thiếu license; `project-convention-publish.gradle` ghi "Revised 2-clause BSD" cho gói công bố (đã grep) nên nhãn publish không nêu phần Google: cần ghi cả hai khi phân phối lại. README cảnh báo CVE-2022-21449 (JVM chấp nhận chữ ký ECDSA sai): phải dùng bản JDK đã vá. `allowUntrustedAttestation` mặc định `true`: nếu cần xác thực thiết bị thì phải đặt chủ động cùng nguồn tin cậy. Dùng MDS thì gọi mds.fidoalliance.org (dữ liệu rời máy, điều khoản pháp lý nằm trong chú thích mã). Phiên bản 2.10.1 theo semver (README cảnh báo một số phần không tính vào semver). |
+| So với | WebAuthn4J (cùng Java, lõi tách khỏi flow), webauthn-ruby, Rauthy (webauthn-rs). |
+| Nguồn | [README.adoc](https://github.com/Yubico/java-webauthn-server/blob/3a7edfb2609696808e8daad2508115bd43d88d3f/README.adoc) · [COPYING](https://github.com/Yubico/java-webauthn-server/blob/3a7edfb2609696808e8daad2508115bd43d88d3f/COPYING) · [NEWS](https://github.com/Yubico/java-webauthn-server/blob/3a7edfb2609696808e8daad2508115bd43d88d3f/NEWS) · [build.yml](https://github.com/Yubico/java-webauthn-server/blob/3a7edfb2609696808e8daad2508115bd43d88d3f/.github/workflows/build.yml) · [FinishAssertionSteps.java](https://github.com/Yubico/java-webauthn-server/blob/3a7edfb2609696808e8daad2508115bd43d88d3f/webauthn-server-core/src/main/java/com/yubico/webauthn/FinishAssertionSteps.java) · [RelyingParty.java](https://github.com/Yubico/java-webauthn-server/blob/3a7edfb2609696808e8daad2508115bd43d88d3f/webauthn-server-core/src/main/java/com/yubico/webauthn/RelyingParty.java) · [FidoMetadataDownloader.java](https://github.com/Yubico/java-webauthn-server/blob/3a7edfb2609696808e8daad2508115bd43d88d3f/webauthn-server-attestation/src/main/java/com/yubico/fido/metadata/FidoMetadataDownloader.java) · [SECURITY.md](https://github.com/Yubico/java-webauthn-server/blob/3a7edfb2609696808e8daad2508115bd43d88d3f/SECURITY.md) |
+
+<a id="n2-webauthn-ruby"></a>
+
+### webauthn-ruby
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/cedarcode/webauthn-ruby |
+| License | MIT (file LICENSE.txt, © 2018 Gonzalo; gemspec khai MIT) |
+| Phiên bản đã đọc | `87c67953e13fcb611fd0e0259d798b7668772350` (commit 2026-11-19) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE.txt, webauthn.gemspec, .github/workflows/build.yml, lib/webauthn/authenticator_assertion_response.rb, lib/webauthn/configuration.rb, lib/webauthn/version.rb, CHANGELOG.md, spec/conformance/README.md; chưa chạy upstream |
+| Khoảng trống lấp | Thư viện WebAuthn/passkey cho Ruby và Rails, có test theo đặc tả và máy chủ phục vụ bộ kiểm tuân chuẩn FIDO |
+| Cơ chế đáng học | - `AuthenticatorAssertionResponse#verify` gọi lớp cha (challenge, origin, UP, UV, rp_id) rồi `verify_item(:signature, ...)` và `verify_item(:sign_count, ...)` (`authenticator_assertion_response.rb`). <br>- `valid_sign_count?`: nếu một trong hai số khác 0 thì bắt buộc số trình bày lớn hơn số đã lưu, nếu cả hai bằng 0 thì chấp nhận; nên `SignCountVerificationError` có thể ném khi số đếm không tăng, kể cả do đồng bộ passkey hoặc chạy song song (suy từ mã). <br>- `RelyingParty` mặc định thuật toán `ES256`, `PS256`, `RS256`, `verify_attestation_statement: true`, `silent_authentication: false`. <br>- v3.5.0 thêm kiểm crossOrigin/topOrigin, từ chối BS đặt mà BE không đặt, từ chối credential ID dài quá 1023 byte, bỏ kiểm TokenBinding (`CHANGELOG.md`). <br>- `spec/conformance/server.rb` là máy chủ REST cho FIDO2 Conformance Test Tool; README của thư mục nói rõ không phải mã production. |
+| Tiêu chí và cách kiểm | CI `build.yml` chạy rspec trên Ruby 3.1 đến 4.0 cộng truffleruby và Ruby 2.5 đến 3.0 với OpenSSL 1.1.1w; ma trận OpenSSL từ 1.1.1w đến 4.1.0, một số tổ hợp loại trừ có ghi lý do. Có rubocop trong gemspec dev. Chưa chạy bộ FIDO Conformance (phải đăng ký lấy công cụ): kết quả chứng nhận **chưa xác minh**. |
+| Giới hạn và rủi ro | Gem chỉ MIT nhưng kéo `android_key_attestation`, `safety_net_attestation`, `tpm-key_attestation`, `cbor`, `cose` (license từng gem chưa xác minh); `safety_net_attestation` gắn định dạng SafetyNet mà Google đã ngừng khuyến nghị (chưa xác minh). Phiên bản 3.5.1 (2026-11-10), người duy trì là công ty Cedarcode (hai tác giả ghi trong gemspec). Cấu hình toàn cục `WebAuthn.configure` dễ gây lẫn nếu nhiều RP trong một tiến trình (dùng `RelyingParty` riêng, chưa kiểm). Không telemetry thấy trong file đã đọc. |
+| So với | WebAuthn4J và Yubico java-webauthn-server (Java), Rauthy (webauthn-rs), Better Auth (plugin passkey phía TypeScript). |
+| Nguồn | [README](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/README.md) · [LICENSE.txt](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/LICENSE.txt) · [webauthn.gemspec](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/webauthn.gemspec) · [build.yml](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/.github/workflows/build.yml) · [authenticator_assertion_response.rb](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/lib/webauthn/authenticator_assertion_response.rb) · [configuration.rb](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/lib/webauthn/configuration.rb) · [version.rb](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/lib/webauthn/version.rb) · [CHANGELOG.md](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/CHANGELOG.md) · [conformance README](https://github.com/cedarcode/webauthn-ruby/blob/87c67953e13fcb611fd0e0259d798b7668772350/spec/conformance/README.md) |
+
+<a id="n2-passwordless-id-webauthn"></a>
+
+### @passwordless-id/webauthn
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/passwordless-id/webauthn |
+| License | MIT (LICENSE, © Arnaud Dagnelies) |
+| Phiên bản đã đọc | `41842c401f8dd8cb40b53be6eef4bb9ee30913ee` (commit 2026-11-04) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README, src/server.ts, src/client.ts, package.json và workflow node.js.yml; chưa chạy upstream |
+| Khoảng trống lấp | Xác thực hiện đại: passkey/WebAuthn (chỉ phần passkey; không có OAuth 2.1/OIDC như trinh sát gợi ý) |
+| Cơ chế đáng học | - Hai module nhỏ trong một gói: `client.register/authenticate` bọc `navigator.credentials` (`src/client.ts`, 255 dòng) và `server.verifyRegistration/verifyAuthentication` (`src/server.ts`, 260 dòng).<br>- Xác minh phía server bằng WebCrypto thuần, không phụ thuộc runtime: kiểm type, origin, challenge, hash rpId, cờ userPresent/userVerified, signCount tăng dần, rồi `crypto.subtle.verify` (RS256, ES256) trong `src/server.ts`.<br>- Chuyển chữ ký ES256 từ DER sang dạng raw và từ chối mọi DER không chuẩn tắc (số 0 đầu thừa, số âm, dài quá) để mỗi cặp (r, s) chỉ có đúng một chữ ký chấp nhận được.<br>- `challenge` và `origin` nhận giá trị hoặc hàm kiểm (có thể async), để ứng dụng tự tra challenge một lần dùng trong kho của mình. |
+| Tiêu chí và cách kiểm | Có bộ test jest (`src/__test__`: client 18, server 28, parsers 6, utils 6 ca theo đếm test/it) và workflow Node.js CI chạy `npm run build` rồi `npm test` trên Node 24; không có ngưỡng coverage trong workflow. Kiểm bằng máy là test đơn vị, không phải kiểm tuân thủ FIDO (chưa xác minh). |
+| Giới hạn và rủi ro | MIT, nhưng chỉ 1 người duy trì (chưa xác minh số người đóng góp). `verifyRegistration` chỉ rút thông tin credential từ `authenticatorData`, không thấy kiểm chuỗi attestation trong `server.ts` (grep chỉ thấy mã dùng `attestationObject` để chuyển dữ liệu). Chỉ hỗ trợ RS256 và ES256 (EdDSA ghi chú là trình duyệt chưa hỗ trợ). `src/authenticators.ts` có `fetch` tới mds.fidoalliance.org, chỉ khi người dùng gọi. `verbose: true` ghi log khóa và chữ ký ra console. Không cung cấp phiên, lưu credential, khôi phục tài khoản: đó là việc của ứng dụng. Cần Node 19+ (README). |
+| So với | Better Auth, Authlib, node-oidc-provider (những cái này là cả hệ danh tính; đây chỉ là helper passkey nhỏ). Chọn khi chỉ cần passkey và tự quản người dùng. |
+| Nguồn | [LICENSE](https://github.com/passwordless-id/webauthn/blob/41842c401f8dd8cb40b53be6eef4bb9ee30913ee/LICENSE) · [README.md](https://github.com/passwordless-id/webauthn/blob/41842c401f8dd8cb40b53be6eef4bb9ee30913ee/README.md) · [src/server.ts](https://github.com/passwordless-id/webauthn/blob/41842c401f8dd8cb40b53be6eef4bb9ee30913ee/src/server.ts) · [src/client.ts](https://github.com/passwordless-id/webauthn/blob/41842c401f8dd8cb40b53be6eef4bb9ee30913ee/src/client.ts) · [package.json](https://github.com/passwordless-id/webauthn/blob/41842c401f8dd8cb40b53be6eef4bb9ee30913ee/package.json) · [.github/workflows/node.js.yml](https://github.com/passwordless-id/webauthn/blob/41842c401f8dd8cb40b53be6eef4bb9ee30913ee/.github/workflows/node.js.yml) |
+
+<a id="n2-authgear-server"></a>
+
+### Authgear Server
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/authgear/authgear-server |
+| License | Apache-2.0 (LICENSE.txt) |
+| Phiên bản đã đọc | `26f7897178e00e83814b6e2bed6a8f0789746bce` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE.txt, README, AGENTS.md, gcra.go, lockout.go, hook_web.go, account-lockout.md, run-checks.yaml và Makefile; chưa chạy upstream |
+| Khoảng trống lấp | Xác thực hiện đại: máy chủ danh tính tự host thay Auth0/Clerk với passkey, MFA, SSO (OIDC/OAuth 2.0/SAML) |
+| Cơ chế đáng học | - Rate limit kiểu GCRA chạy trong Redis bằng script Lua (`pkg/lib/ratelimit/gcra.go`, có `gcra_test.go`): tính theo thời gian của Redis nên các node không lệch đồng hồ.<br>- Khóa tài khoản có lùi mũ (`docs/specs/account-lockout.md`: `max_attempts`, `minimum_duration`, `maximum_duration`, `backoff_factor`, kiểu `per_user` hoặc `per_user_per_ip`), cài ở `pkg/lib/authn/mfa/lockout.go` cho cả mã khôi phục.<br>- Webhook ký HMAC-SHA256 trên thân JSON, gửi ở header `x-authgear-body-signature` (`pkg/lib/hook/hook_web.go`, `http.go`), chỉ ký thân, không ký timestamp hay id.<br>- Repo có `AGENTS.md` mô tả bố cục và thư mục skill `.claude/skills` (add-go-test, api-design, review-pr...): mẫu hướng dẫn agent cho một monorepo Go lớn. |
+| Tiêu chí và cách kiểm | CI (`run-checks.yaml`) đã mở: chạy make check-tidy, vendor, govulncheck, lint, test, fmt; `make test` là `go test ./devtools/goanalysis/... ./cmd/... ./pkg/... -timeout 1m30s`. Có thư mục e2e và k6 (chưa mở). Kiểm bằng máy rộng, nhưng chưa chạy. |
+| Giới hạn và rủi ro | Apache-2.0 nhưng đây là hệ nhiều thành phần (Go server, portal, authui React; thư mục gốc có cấu hình Postgres, Redis, pgbouncer, nginx) nên vận hành nặng; bản SaaS Authgear Cloud đi kèm và README quảng bá. Có mã PostHog trong `cmd/portal/analytic` (lệnh đồng bộ nhóm, cấu hình tùy chọn; mặc định bật hay không: chưa xác minh) và OpenTelemetry. Danh sách khách hàng trong README là tuyên bố tác giả (chưa xác minh). Bảo trì tích cực (commit 2026-11-23). |
+| So với | Keycloak, authentik, Authelia, Ory Hydra, Better Auth. Gần Keycloak/authentik nhất về phạm vi; khác ở chỗ viết bằng Go và có portal quản trị riêng. |
+| Nguồn | [LICENSE.txt](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/LICENSE.txt) · [README.md](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/README.md) · [AGENTS.md](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/AGENTS.md) · [pkg/lib/ratelimit/gcra.go](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/pkg/lib/ratelimit/gcra.go) · [pkg/lib/authn/mfa/lockout.go](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/pkg/lib/authn/mfa/lockout.go) · [pkg/lib/hook/hook_web.go](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/pkg/lib/hook/hook_web.go) · [docs/specs/account-lockout.md](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/docs/specs/account-lockout.md) · [.github/workflows/run-checks.yaml](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/.github/workflows/run-checks.yaml) · [Makefile](https://github.com/authgear/authgear-server/blob/26f7897178e00e83814b6e2bed6a8f0789746bce/Makefile) |
+
+<a id="n2-standard-webhooks"></a>
+
+### Standard Webhooks
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/standard-webhooks/standard-webhooks |
+| License | Apache-2.0 cho đặc tả (LICENSE); thư mục libraries/ có LICENSE MIT riêng (© Svix) |
+| Phiên bản đã đọc | `4a8ee40c5bcb6157f856905cc8871040d41a78ce` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, libraries/LICENSE, spec/standard-webhooks.md, extension endpoint-verification, libraries/javascript/src/index.ts, skill receiving-webhooks và javascript-lint.yml; chưa chạy upstream |
+| Khoảng trống lấp | Kiến trúc event-driven và webhook: đặc tả ký, kiểm timestamp, retry cho webhook |
+| Cơ chế đáng học | - Chữ ký phủ cả metadata: ký `msg_id.timestamp.payload` bằng HMAC-SHA256 (tiền tố `v1`, secret `whsec_`, 24-64 byte) hoặc ed25519 (`v2a`, thêm endpoint id) (`spec/standard-webhooks.md`).<br>- Header `webhook-id`, `webhook-timestamp`, `webhook-signature` (danh sách cách nhau bằng dấu cách để xoay khóa không gián đoạn); `webhook-id` làm khóa idempotency.<br>- Thư viện JS hằng số dung sai 5 phút, từ chối timestamp quá cũ hoặc quá mới, so sánh chữ ký thời gian hằng, ký trên byte thô của thân (`libraries/javascript/src/index.ts`).<br>- Phụ lục retry: lịch lùi mũ nhiều ngày có jitter, 2xx là thành công, 3xx là lỗi, 410 thì tắt endpoint, 429/502/504 thì giảm tải, tôn trọng `retry-after`; extension xác minh endpoint bằng thử thách HMAC khóa dẫn xuất (`spec/extensions/endpoint-verification.md`).<br>- `skills/receiving-webhooks/SKILL.md` là skill hướng dẫn agent viết bộ nhận webhook (xác minh thân thô, trả 2xx nhanh, xử lý bất đồng bộ). |
+| Tiêu chí và cách kiểm | CI theo từng ngôn ngữ (lint/release cho C#, Elixir, Go, Java, JS, PHP, Python, Ruby, Rust; mở `javascript-lint.yml`: `npm ci`, `npm run check`, `npm test` trên Node 24). Có test ở các thư viện (đã thấy `webhook.test.ts`, `tests/test_webhooks.py`, chưa chạy). Không có bộ test-vector dùng chung giữa các ngôn ngữ mà tôi thấy (chưa xác minh). |
+| Giới hạn và rủi ro | Đặc tả phiên bản 1.0.0, nhiều chỗ chỉ là khuyến nghị (should) nên khả năng tương thích phụ thuộc từng nhà cung cấp; thư viện do Svix duy trì (README thư viện và LICENSE nêu Svix). Chữ ký đối xứng cần giữ secret ở cả hai phía, spec tự khuyến nghị ed25519 khi không kiểm soát cả hai. Spec không quy định dạng payload. Không có telemetry thấy trong thư viện JS đã đọc. |
+| So với | Svix (dịch vụ webhook, không có hồ sơ riêng), AsyncAPI Spec, FastStream; trong chính lô này Authgear ký webhook HMAC theo header riêng, không theo chuẩn này. |
+| Nguồn | [LICENSE](https://github.com/standard-webhooks/standard-webhooks/blob/4a8ee40c5bcb6157f856905cc8871040d41a78ce/LICENSE) · [libraries/LICENSE](https://github.com/standard-webhooks/standard-webhooks/blob/4a8ee40c5bcb6157f856905cc8871040d41a78ce/libraries/LICENSE) · [spec/standard-webhooks.md](https://github.com/standard-webhooks/standard-webhooks/blob/4a8ee40c5bcb6157f856905cc8871040d41a78ce/spec/standard-webhooks.md) · [spec/extensions/endpoint-verification.md](https://github.com/standard-webhooks/standard-webhooks/blob/4a8ee40c5bcb6157f856905cc8871040d41a78ce/spec/extensions/endpoint-verification.md) · [libraries/javascript/src/index.ts](https://github.com/standard-webhooks/standard-webhooks/blob/4a8ee40c5bcb6157f856905cc8871040d41a78ce/libraries/javascript/src/index.ts) · [skills/receiving-webhooks/SKILL.md](https://github.com/standard-webhooks/standard-webhooks/blob/4a8ee40c5bcb6157f856905cc8871040d41a78ce/skills/receiving-webhooks/SKILL.md) · [.github/workflows/javascript-lint.yml](https://github.com/standard-webhooks/standard-webhooks/blob/4a8ee40c5bcb6157f856905cc8871040d41a78ce/.github/workflows/javascript-lint.yml) |
+
+<a id="n2-evolu"></a>
+
+### Evolu
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/evoluhq/evolu |
+| License | MIT (LICENSE gốc; packages/*/package.json đều MIT, riêng apps/web/LICENSE.md là Tailwind UI License, không mở) |
+| Phiên bản đã đọc | `4eedb2272841bdeb2d7c3387784ba157d2f33f1c` (commit 2026-11-21) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc LICENSE, README, AGENTS.md, Protocol.ts, Timestamp.ts, Owner.ts, Crypto.ts, ADR WebSocket, ci.yaml và apps/web/LICENSE.md; chưa chạy upstream |
+| Khoảng trống lấp | Local-first / CRDT: SQLite cục bộ, đồng bộ mã hóa đầu cuối qua relay |
+| Cơ chế đáng học | - Giao thức đồng bộ nhị phân dùng Range-Based Set Reconciliation (như Negentropy), có header owner, request/response/broadcast và mã lỗi (`packages/common/src/local-first/Protocol.ts`).<br>- Sắp xếp xung đột bằng đồng hồ logic lai (HLC) và last-writer-wins theo cột; kiểm lệch đồng hồ `maxDrift` 5 phút, cách ly thông điệp quá xa tương lai (`Timestamp.ts`).<br>- Khóa dẫn xuất từ một `OwnerSecret` bằng SLIP-21 thành `OwnerId`, `OwnerEncryptionKey`, `OwnerWriteKey`; dữ liệu mã hóa XChaCha20-Poly1305 và đệm PADMÉ, relay chỉ thấy byte mã hóa (`Owner.ts`, `Crypto.ts`).<br>- Quyết định kiến trúc ghi thành ADR (`docs/adr/`), ví dụ chọn WebSocket thay WebTransport vì lỗi WebKit; `AGENTS.md` dài chỉ dẫn quy ước cho agent. |
+| Tiêu chí và cách kiểm | CI `ci.yaml` đã mở: gọi `checks.yaml`, workflow ghim SHA, `permissions: {}` mặc định; `pnpm verify` gồm format, typecheck, lint, build, test, bench giao thức. Gần mọi module có file `.test.ts` cạnh (Protocol, Timestamp, Owner, Crypto). Kiểm bằng máy mạnh nhưng chưa chạy. |
+| Giới hạn và rủi ro | MIT cho mã thư viện, nhưng `apps/web` (website tài liệu) mang Tailwind UI License, không phải mã mở: đừng sao chép phần đó. Relay mặc định của client là `wss://free.evoluhq.com/` (`Evolu.ts`): dữ liệu mã hóa vẫn rời máy tới máy chủ của tác giả nếu không đổi, cần tự host relay (`apps/relay`) nếu muốn kiểm soát. Quyền xóa dữ liệu thật chưa có (ghi rõ trong `Owner.ts`: chưa cài đặt xóa owner). Dùng TypeScript 6/7 và Node LTS mới nhất, chỉ hỗ trợ bản chính hiện tại của công cụ (AGENTS.md). Tuyên bố bảo mật là của tác giả, chưa được kiểm toán độc lập (chưa xác minh). |
+| So với | TinyBase, TanStack Query. TinyBase cũng có đồng bộ; TanStack Query là bộ nhớ đệm phía server chứ không phải local-first. |
+| Nguồn | [LICENSE](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/LICENSE) · [README.md](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/README.md) · [AGENTS.md](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/AGENTS.md) · [packages/common/src/local-first/Protocol.ts](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/packages/common/src/local-first/Protocol.ts) · [packages/common/src/local-first/Timestamp.ts](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/packages/common/src/local-first/Timestamp.ts) · [packages/common/src/local-first/Owner.ts](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/packages/common/src/local-first/Owner.ts) · [packages/common/src/Crypto.ts](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/packages/common/src/Crypto.ts) · [docs/adr/sync-uses-websocket-not-webtransport.md](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/docs/adr/sync-uses-websocket-not-webtransport.md) · [.github/workflows/ci.yaml](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/.github/workflows/ci.yaml) · [apps/web/LICENSE.md](https://github.com/evoluhq/evolu/blob/4eedb2272841bdeb2d7c3387784ba157d2f33f1c/apps/web/LICENSE.md) |
+
+<a id="n2-classic-jazz"></a>
+
+### Classic Jazz (CoJSON)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/garden-co/classic-jazz |
+| License | MIT |
+| Phiên bản đã đọc | `e51832fd1f495a771d89f9c26aa9f6a62c3e0690` (commit 2026-11-02) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE.txt, permissions.ts, coMap.ts, package.json, 2 workflow; chưa chạy upstream |
+| Khoảng trống lấp | Local-first / CRDT |
+| Cơ chế đáng học | - Mỗi giao dịch của `ownedByGroup` được kiểm vai trò tác giả (reader/writer/manager/admin/writeOnly) tại thời điểm tạo (`groupContent.atTime(tx.currentMadeAt)`), giao dịch sai quyền bị `markInvalid` — `packages/cojson/src/permissions.ts`.<br>- CoMap lưu chuỗi thao tác set/del có `madeAt` và sắp xếp bằng `compareTransactions`, đọc được trạng thái tại một thời điểm (`atTime`) nên có lịch sử và hoàn nguyên — `coValues/coMap.ts`.<br>- Lõi giao thức tách khỏi lưu trữ: các gói `cojson-storage-indexeddb/sqlite/do-sqlite`, `cojson-transport-ws`, cùng lõi Rust (`crates/cojson-core*`, napi/wasm/rn). |
+| Tiêu chí và cách kiểm | CI chạy unit test (`pnpm test:ci`, build napi, Playwright), Biome `biome ci`, workflow e2e React Native; chưa xác minh độ phủ hay chạy được cục bộ. Kiểm bằng máy có (test + lint), không có ngưỡng điểm. |
+| Giới hạn và rủi ro | MIT (LICENSE.txt, Garden Computing 2025). Bản classic được duy trì thấp hơn v2 (README khuyên v2; chưa xác minh chính sách bảo trì). Tuyên bố 'built-in auth, orgs, multiplayer, encryption' chưa kiểm từng mục; mã hoá/khoá nằm ở `crypto/` dùng blake3, chưa đọc kỹ. Jazz Cloud là dịch vụ tuỳ chọn, tự host được theo README (chưa xác minh). |
+| So với | loro (CRDT thư viện), tinybase (store local-first) |
+| Nguồn | [README.md](https://github.com/garden-co/classic-jazz/blob/e51832fd1f495a771d89f9c26aa9f6a62c3e0690/README.md) · [LICENSE.txt](https://github.com/garden-co/classic-jazz/blob/e51832fd1f495a771d89f9c26aa9f6a62c3e0690/LICENSE.txt) · [permissions.ts](https://github.com/garden-co/classic-jazz/blob/e51832fd1f495a771d89f9c26aa9f6a62c3e0690/packages/cojson/src/permissions.ts) · [coMap.ts](https://github.com/garden-co/classic-jazz/blob/e51832fd1f495a771d89f9c26aa9f6a62c3e0690/packages/cojson/src/coValues/coMap.ts) · [package.json](https://github.com/garden-co/classic-jazz/blob/e51832fd1f495a771d89f9c26aa9f6a62c3e0690/packages/cojson/package.json) · [unit-test.yml](https://github.com/garden-co/classic-jazz/blob/e51832fd1f495a771d89f9c26aa9f6a62c3e0690/.github/workflows/unit-test.yml) · [code-quality.yml](https://github.com/garden-co/classic-jazz/blob/e51832fd1f495a771d89f9c26aa9f6a62c3e0690/.github/workflows/code-quality.yml) |
+
+<a id="n2-svix-webhooks"></a>
+
+### Svix Webhooks
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/svix/svix-webhooks |
+| License | MIT |
+| Phiên bản đã đọc | `fadf10aabf831d564cd943483b68cd2f4923db29` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, worker.rs, retry.rs, idempotency.rs, config.default.toml, recovery.rs, rust/src/webhooks.rs, server-ci.yml, LICENSE; chưa chạy upstream |
+| Khoảng trống lấp | Gửi và nhận webhook an toàn: ký, retry, replay, idempotency |
+| Cơ chế đáng học | - `worker.rs::sign_msg` ký `{msg_id}.{timestamp}.{body}` bằng từng khoá của endpoint, nối nhiều chữ ký bằng dấu cách để xoay khoá không gián đoạn.<br>- `config.default.toml`: `retry_schedule = [5,300,1800,7200,18000,36000,36000]`; `cfg.rs` có `endpoint_failure_disable_after` và giới hạn timeout 1–30 giây.<br>- `recovery.rs`: tải lại tin lỗi của một endpoint theo khoảng thời gian, bỏ qua tin đã thành công, giới hạn 10.000.<br>- `rust/src/webhooks.rs::verify_inner`: kiểm timestamp trong 5 phút và so khớp chữ ký không rò thời gian. |
+| Tiêu chí và cách kiểm | Server CI chạy fmt, cargo-machete, cargo-sort, clippy `-D warnings`, kiểm OpenAPI không đổi và `./run-tests.sh` với Docker Compose (Postgres, Redis); có workflow riêng cho SDK và bảo mật. Chưa mở các test cụ thể. |
+| Giới hạn và rủi ro | - MIT cho server và SDK; thư mục `bridge/` có LICENSE riêng (đã thấy tệp, chưa đọc nội dung).<br>- Cờ `dangerous_disable_tls_verification` tồn tại trong cấu hình (`cfg.rs`), mặc định tắt; `sentry_dsn` tuỳ chọn.<br>- Dispatch ra URL do khách hàng cấu hình nên cần chặn SSRF ở tầng mạng (chưa kiểm cơ chế chặn trong mã).<br>- Dịch vụ cloud Svix là sản phẩm riêng; bản tự host thiếu một số tính năng của cloud (chưa xác minh). |
+| So với | hookdeck và convoy chưa có hồ sơ trong kho; n8n và activepieces (nhận webhook trong luồng, không phải máy chủ gửi); temporal (retry ở mức workflow) |
+| Nguồn | [README.md](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/README.md) · [LICENSE](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/LICENSE) · [worker.rs](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/server/svix-server/src/worker.rs) · [retry.rs](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/server/svix-server/src/core/retry.rs) · [idempotency.rs](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/server/svix-server/src/core/idempotency.rs) · [config.default.toml](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/server/svix-server/config.default.toml) · [recovery.rs](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/server/svix-server/src/v1/endpoints/endpoint/recovery.rs) · [webhooks.rs](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/rust/src/webhooks.rs) · [server-ci.yml](https://github.com/svix/svix-webhooks/blob/fadf10aabf831d564cd943483b68cd2f4923db29/.github/workflows/server-ci.yml) |
+
+<a id="n2-nango"></a>
+
+### Nango
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/NangoHQ/nango |
+| License | Elastic License 2.0 (ELv2); không phải giấy phép mã nguồn mở theo OSI |
+| Phiên bản đã đọc | `510abbf332e83e7c28f44f16b07880aec3540944` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, LICENSE_SHORT, self-hosting.mdx, self-managed.mdx, refresh.ts, connections/utils.ts, license.ts (hai file), productTracking.ts, tests.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Kết nối OAuth/tích hợp bên thứ ba cho agent, quản lý và làm mới token (gói tự host có giới hạn) |
+| Cơ chế đáng học | - `refresh.ts`: `inFlightRefreshes` gộp các yêu cầu làm mới đồng thời trong một tiến trình, `getLocking()` khoá phân tán giữa các tiến trình (Redis), hook `onRefreshFailed` ghi lỗi.<br>- `connections/utils.ts`: `REFRESH_MARGIN_MS` 15 phút, `REFRESH_FAILURE_COOLDOWN_MS` 30 giây.<br>- `packages/license`: license Enterprise là JWS ES256 chứa `installation_id`, hạn dùng, `grace_until`, cờ `telemetry`; `packages/server/lib/license.ts` mới chỉ cảnh báo khi hết hạn theo `packages/self-hosting/README.md`.<br>- Mã hoá khoá: chỉ grep `encryption.manager.ts` (chưa đọc đủ), thấy báo lỗi không hỗ trợ xoay `NANGO_ENCRYPTION_KEY`. |
+| Tiêu chí và cách kiểm | CI `tests.yaml` chạy unit và integration test (phần đọc: kiểm bỏ qua, checkout, `npm ci`, build); có nhiều workflow khác (lint, validation, CLI). Chưa chạy gì. Số 1.300+ API và 10.000+ tool là tuyên bố trong README (chưa xác minh). |
+| Giới hạn và rủi ro | - Elastic License 2.0 áp cho toàn repo; "Copyright Nango Inc, all rights reserved" trong `LICENSE_SHORT`. Mang cơ chế vào dự án khác cần đọc kỹ hạn chế dịch vụ host.<br>- Tự host Enterprise (BYOC hoặc Self-Managed) có hosted telemetry mặc định bật (số liệu sử dụng ẩn danh ghi vào schema `hosted_telemetry`); BYOC gửi telemetry Datadog; mã có PostHog khi đặt `PUBLIC_POSTHOG_KEY`.<br>- Free self-hosting: một tổ chức, đăng ký mở theo mặc định, không phải ranh giới bảo mật giữa người dùng.<br>- Stack nặng: năm dịch vụ Node, Postgres, Redis, Elasticsearch, object storage (tài liệu). |
+| So với | composio (kết nối công cụ cho agent), authentik và keycloak (nhà cung cấp danh tính, khác chiều: Nango là client OAuth), activepieces (có license MIT trừ ee) |
+| Nguồn | [README.md](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/README.md) · [LICENSE](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/LICENSE) · [LICENSE_SHORT](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/LICENSE_SHORT) · [self-hosting.mdx](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/docs/guides/platform/self-hosting/self-hosting.mdx) · [self-managed.mdx](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/docs/guides/platform/self-hosting/self-managed.mdx) · [refresh.ts](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/packages/shared/lib/services/connections/credentials/refresh.ts) · [utils.ts](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/packages/shared/lib/services/connections/utils.ts) · [license.ts](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/packages/license/lib/license.ts) · [license.ts](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/packages/server/lib/license.ts) · [productTracking.ts](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/packages/shared/lib/utils/productTracking.ts) · [tests.yaml](https://github.com/NangoHQ/nango/blob/510abbf332e83e7c28f44f16b07880aec3540944/.github/workflows/tests.yaml) |
+
+<a id="n2-immudb"></a>
+
+### immudb
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/codenotary/immudb |
+| License | BUSL-1.1 (Business Source License 1.1; Change License Apache-2.0; ngoại lệ chỉ cho dùng nội bộ hoặc sản phẩm không cạnh tranh gói trả phí của Codenotary) |
+| Phiên bản đã đọc | `971e7d34b50bcbfe8fd3a2fcf0f1efcf87b3376b` (commit 2026-11-20) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, embedded/htree/htree.go, pkg/client/client.go, .github/workflows/push.yml, CHANGELOG.md; chưa chạy upstream |
+| Khoảng trống lấp | Nhật ký chống sửa (tamper-evident) cho workflow: audit log có bằng chứng mật mã phía client |
+| Cơ chế đáng học | - Cây Merkle trong `embedded/htree/htree.go` (tiền tố lá 0, tiền tố nút 1, SHA-256, `InclusionProof` gồm Leaf/Width/Terms) và cây nối thêm `embedded/ahtree` cho chứng minh nhất quán giữa hai trạng thái.<br>- Client kiểm bằng chứng khi đọc/ghi có xác minh: `store.VerifyInclusion(...)` được gọi ở nhiều chỗ trong `pkg/client/client.go` (và `sql.go` cho `VerifyRow`).<br>- Auditor và cờ `--audit-verify-values` (CHANGELOG v1.11.1) đọc lại từng giá trị đã commit và kiểm SHA-256 để phát hiện sửa trên đĩa.<br>- Chữ ký trạng thái phía server qua `pkg/signer` (ECDSA); dùng được nhúng như thư viện Go hoặc dịch vụ. |
+| Tiêu chí và cách kiểm | CI `.github/workflows/push.yml` chạy kiểm biên dịch với Go tối thiểu, gosec (`-no-fail`, chỉ báo cáo) và dựng binary có công chứng nguồn; đã mở file. Có test cho htree/ahtree/verification (thấy file `_test.go`), chưa chạy. |
+| Giới hạn và rủi ro | LICENSE là BUSL-1.1: dùng sản xuất nội bộ được, bán dạng dịch vụ cạnh tranh gói trả phí của Codenotary thì không; tự chuyển sang Apache-2.0 sau bốn năm cho từng phiên bản. Phiên bản trước 1.9DOM.2 dưới Apache-2.0 theo tuyên bố trong LICENSE (chưa xác minh từng tag). Không thấy telemetry khi grep `Telemetry` trong mã Go. Tuyên bố ``157M pulls`` của README là số tự báo (chưa xác minh). Chống sửa phụ thuộc client giữ trạng thái kiểm tin cậy. |
+| So với | dolt, cosign, presidio |
+| Nguồn | [README.md](https://github.com/codenotary/immudb/blob/971e7d34b50bcbfe8fd3a2fcf0f1efcf87b3376b/README.md) · [LICENSE](https://github.com/codenotary/immudb/blob/971e7d34b50bcbfe8fd3a2fcf0f1efcf87b3376b/LICENSE) · [htree.go](https://github.com/codenotary/immudb/blob/971e7d34b50bcbfe8fd3a2fcf0f1efcf87b3376b/embedded/htree/htree.go) · [client.go](https://github.com/codenotary/immudb/blob/971e7d34b50bcbfe8fd3a2fcf0f1efcf87b3376b/pkg/client/client.go) · [push.yml](https://github.com/codenotary/immudb/blob/971e7d34b50bcbfe8fd3a2fcf0f1efcf87b3376b/.github/workflows/push.yml) · [CHANGELOG.md](https://github.com/codenotary/immudb/blob/971e7d34b50bcbfe8fd3a2fcf0f1efcf87b3376b/CHANGELOG.md) |
+
+<a id="n2-databunker"></a>
+
+### Databunker
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/securitybunker/databunker |
+| License | MIT |
+| Phiên bản đã đọc | `9dbf1667d520458c1dc0c50019433ba0eb43f5ba` (commit 2026-11-23) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, src/requests_api.go, src/utils/cryptor.go, .github/workflows/cy.yml, .github/workflows/semgrep.yml, version.txt; chưa chạy upstream |
+| Khoảng trống lấp | Két PII dạng token hóa và quyền chủ thể dữ liệu (DSAR): yêu cầu xóa/sửa/rút đồng ý có quy trình duyệt |
+| Cơ chế đáng học | - Hàng đợi yêu cầu chủ thể dữ liệu `src/requests_api.go`: liệt kê, xem, duyệt, hủy; `userReqApprove` rẽ nhánh theo `action` (forget-me xóa bản ghi, change-profile, change-app-data, agreement-withdraw) rồi đặt trạng thái approved kèm lý do; mọi thao tác ghi `CreateAuditEvent`.<br>- Mã hóa `src/utils/cryptor.go`: AES-256-GCM (nonce ngẫu nhiên), có tham chiếu cách chia khóa Shamir của Vault cho khóa chủ (đọc đầu file).<br>- Token hóa: người dùng và bản ghi được tham chiếu bằng UUID, lưu trữ qua `src/storage/` hỗ trợ SQLite, MySQL, PostgreSQL.<br>- Mô-đun đồng ý, cơ sở pháp lý, hoạt động xử lý, bản ghi chia sẻ: các file `agreements_*`, `lbasis_*`, `pactivities_*`, `sharedrecords_*` trong `src/` (đọc tên file). |
+| Tiêu chí và cách kiểm | CI `.github/workflows/cy.yml` chạy golint, go vet, go test (Go 1.22) mỗi lần push; `semgrep.yml` quét SAST hằng tuần và trên PR (cả hai đã mở). Có 10 file test trong `src/`, chưa chạy. |
+| Giới hạn và rủi ro | MIT. Gửi SMS qua Twilio khi bật, GeoIP và captcha là tùy chọn cấu hình (đọc `src/sms.go`, `geoip.go` ở mức tên/URL). Không đọc kỹ phần quản lý khóa chủ và chế độ demo (token `DEMO` trong README chỉ dùng thử). Cổng cập nhật chậm và phạm vi nhỏ nên cần kiểm thử bảo mật riêng trước khi chứa PII thật. Tính năng doanh nghiệp bị chuyển sang bản Pro. |
+| So với | presidio, infisical, openfga |
+| Nguồn | [README.md](https://github.com/securitybunker/databunker/blob/9dbf1667d520458c1dc0c50019433ba0eb43f5ba/README.md) · [LICENSE](https://github.com/securitybunker/databunker/blob/9dbf1667d520458c1dc0c50019433ba0eb43f5ba/LICENSE) · [requests_api.go](https://github.com/securitybunker/databunker/blob/9dbf1667d520458c1dc0c50019433ba0eb43f5ba/src/requests_api.go) · [cryptor.go](https://github.com/securitybunker/databunker/blob/9dbf1667d520458c1dc0c50019433ba0eb43f5ba/src/utils/cryptor.go) · [cy.yml](https://github.com/securitybunker/databunker/blob/9dbf1667d520458c1dc0c50019433ba0eb43f5ba/.github/workflows/cy.yml) · [semgrep.yml](https://github.com/securitybunker/databunker/blob/9dbf1667d520458c1dc0c50019433ba0eb43f5ba/.github/workflows/semgrep.yml) · [version.txt](https://github.com/securitybunker/databunker/blob/9dbf1667d520458c1dc0c50019433ba0eb43f5ba/version.txt) |
+
+<a id="n2-bytebase"></a>
+
+### Bytebase
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/bytebase/bytebase |
+| License | Mixed: MIT cho phần ngoài thư mục `enterprise` và ngoài mã điều khiển tính năng/gói; LICENSE.enterprise (dùng sản xuất cần thỏa thuận và gói trả phí) cho thư mục có `enterprise` trong tên và mã bật tính năng, quyền, gói |
+| Phiên bản đã đọc | `abfa69f897ae26fba91046dbef7d9c799fdb97d2` (commit 2026-11-24) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, LICENSE.enterprise, backend/enterprise/plan.yaml, backend/plugin/advisor/pg/rules.go, backend/server/server.go, backend/server/sql_review_telemetry.go, .github/workflows/ci.yml; chưa chạy upstream |
+| Khoảng trống lấp | Quản trị thay đổi schema CSDL: review SQL bằng luật, duyệt, rollout theo môi trường, sao lưu trước khi đổi dữ liệu |
+| Cơ chế đáng học | - Advisor SQL theo engine: `backend/plugin/advisor/pg/rules.go` đăng ký luật qua `advisor.RegisterRules(storepb.Engine_POSTGRES, ...)`, mỗi engine có thư mục riêng (mysql, mssql, oracle, snowflake, tidb, ...); `BUILTIN_PRIOR_BACKUP_CHECK` yêu cầu dữ liệu thay đổi chỉ DML và có schema backup.<br>- Bậc tính năng khai báo trong `backend/enterprise/plan.yaml` (FREE, TEAM, ENTERPRISE) và giới hạn số instance/seat (FREE: 10 instance, 20 seat); kiểm bằng `licenseService.IsFeatureEnabled`.<br>- Rollout theo môi trường và tác vụ có lịch (cờ tính năng PROGRESSIVE_ENVIRONMENT_DEPLOYMENT, SCHEDULED_ROLLOUT_TIME, ONLINE_SCHEMA_CHANGE trong plan FREE).<br>- Có MCP server để agent truy cập Bytebase (README), chưa đọc mã. |
+| Tiêu chí và cách kiểm | CI `.github/workflows/ci.yml` chạy `go test ./...` (cả `backend/tests`), kiểm go.mod gọn, golangci-lint, pnpm test frontend và kiểm liên kết tài liệu; đã mở file. Advisor PG có test `_test.go` (thấy tên), chưa chạy. |
+| Giới hạn và rủi ro | License nhiều lớp: thư mục `enterprise` và mã điều khiển gói dưới LICENSE.enterprise, dùng sản xuất cần thỏa thuận; mang cơ chế ra dự án khác cần chọn đúng file MIT. Telemetry: `server.go` khởi tạo `EnableMetricCollection: true` mặc định và `sql_review_telemetry.go` báo snapshot cấu hình SQL review kèm email và tên miền người dùng; tắt qua workspace setting (chưa xác minh đường tắt). Số sao 14.7k lấy từ web, chưa kiểm bằng API. |
+| So với | goose-database-migrations, dbhub, prisma-orm |
+| Nguồn | [README.md](https://github.com/bytebase/bytebase/blob/abfa69f897ae26fba91046dbef7d9c799fdb97d2/README.md) · [LICENSE](https://github.com/bytebase/bytebase/blob/abfa69f897ae26fba91046dbef7d9c799fdb97d2/LICENSE) · [LICENSE.enterprise](https://github.com/bytebase/bytebase/blob/abfa69f897ae26fba91046dbef7d9c799fdb97d2/LICENSE.enterprise) · [plan.yaml](https://github.com/bytebase/bytebase/blob/abfa69f897ae26fba91046dbef7d9c799fdb97d2/backend/enterprise/plan.yaml) · [rules.go](https://github.com/bytebase/bytebase/blob/abfa69f897ae26fba91046dbef7d9c799fdb97d2/backend/plugin/advisor/pg/rules.go) · [server.go](https://github.com/bytebase/bytebase/blob/abfa69f897ae26fba91046dbef7d9c799fdb97d2/backend/server/server.go) · [sql_review_telemetry.go](https://github.com/bytebase/bytebase/blob/abfa69f897ae26fba91046dbef7d9c799fdb97d2/backend/server/sql_review_telemetry.go) · [ci.yml](https://github.com/bytebase/bytebase/blob/abfa69f897ae26fba91046dbef7d9c799fdb97d2/.github/workflows/ci.yml) |
+
+<a id="n2-ariga-atlas"></a>
+
+### Atlas (ariga)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/ariga/atlas |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `e933d0b70620e67e8e0972e47f2c03a1dc38d333` (commit 2026-11-17) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README, LICENSE, sql/sqlcheck/destructive/destructive.go, sql/sqlcheck/sqlcheck.go, sql/migrate/dir.go, cmd/atlas/internal/cmdapi/cmdapi.go, skills/atlas/SKILL.md, ci-go_oss.yaml; chưa chạy upstream |
+| Khoảng trống lấp | Quản trị thay đổi schema CSDL: migration có lint và checksum, so khác biệt theo trạng thái mong muốn |
+| Cơ chế đáng học | - `sql/sqlcheck/`: giao diện `Analyzer` chạy trên từng file migration; analyzer `destructive` phát mã DS101 (drop schema), DS102 (drop table), DS103 (drop column) và mặc định coi là lỗi (`az.Error = true`); bỏ qua bảng tạm hoặc bảng được kiểm rỗng trước.<br>- Các analyzer khác trong repo: `datadepend` (MF101-MF104, sửa phụ thuộc dữ liệu), `incompatible` (BC101, BC102 đổi tên), `condrop` (CD101), cộng LT101 và MY101/MY102 (đếm mã trong mã nguồn; chưa mở từng file).<br>- `sql/migrate/dir.go`: thư mục migration có file `atlas.sum` (HashFile) làm checksum toàn vẹn; đổi file đã áp làm checksum sai, chặn drift.<br>- Hai quy trình: declarative (`schema apply` so với đích HCL/SQL, cần `--dev-url`) và versioned (`migrate diff/lint/apply`). |
+| Tiêu chí và cách kiểm | Lint chạy được như cổng CI: analyzer lỗi trả exit khác 0 (theo cấu hình `error`, chưa chạy). `ci-go_oss.yaml` (đã mở) chạy golangci-lint, kiểm `go generate` không lệch, rồi unit test và test theo dialect; matrix Go 1.22. Kiểm bằng máy cho phần lint; chưa chạy. |
+| Giới hạn và rủi ro | Repo này là bản Community (Apache-2.0): chỉ có driver `mysql`, `postgres`, `sqlite` trong `sql/`, 13 mã analyzer; `cmdapi.go` in thông báo định kỳ (mỗi tuần, tắt bằng `ATLAS_NO_UPGRADE_SUGGESTIONS`) rằng bản này thiếu checkpoint, testing, down migration, view, trigger, stored procedure. README nêu 15 CSDL, '50+ safety analyzers', testing framework và drift detection: phần lớn không có trong mã ở repo (chưa xác minh phần ở bản không-community, cài bằng `atlasgo.sh`, giấy phép bản đó chưa đọc). Repo không nhận pull request từ bên ngoài. Có tích hợp Atlas Cloud (`cloudapi`) báo cáo migration khi cấu hình. Thư mục `skills/` là bản sao định kỳ từ website. |
+| So với | goose (`goose-database-migrations`) là migration theo file SQL tuần tự, không có lint; Prisma ORM (`prisma-orm`) có migrate gắn ORM. |
+| Nguồn | [README](https://github.com/ariga/atlas/blob/e933d0b70620e67e8e0972e47f2c03a1dc38d333/README.md) · [LICENSE](https://github.com/ariga/atlas/blob/e933d0b70620e67e8e0972e47f2c03a1dc38d333/LICENSE) · [destructive.go](https://github.com/ariga/atlas/blob/e933d0b70620e67e8e0972e47f2c03a1dc38d333/sql/sqlcheck/destructive/destructive.go) · [sqlcheck.go](https://github.com/ariga/atlas/blob/e933d0b70620e67e8e0972e47f2c03a1dc38d333/sql/sqlcheck/sqlcheck.go) · [dir.go](https://github.com/ariga/atlas/blob/e933d0b70620e67e8e0972e47f2c03a1dc38d333/sql/migrate/dir.go) · [cmdapi.go](https://github.com/ariga/atlas/blob/e933d0b70620e67e8e0972e47f2c03a1dc38d333/cmd/atlas/internal/cmdapi/cmdapi.go) · [SKILL.md](https://github.com/ariga/atlas/blob/e933d0b70620e67e8e0972e47f2c03a1dc38d333/skills/atlas/SKILL.md) · [ci-go_oss.yaml](https://github.com/ariga/atlas/blob/e933d0b70620e67e8e0972e47f2c03a1dc38d333/.github/workflows/ci-go_oss.yaml) |
+
+<a id="n2-opal"></a>
+
+### OPAL (Open Policy Administration Layer)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo | https://github.com/permitio/opal |
+| License | Apache-2.0 |
+| Phiên bản đã đọc | `ddfbf26eaf6e2fca403f85f910e45c651f93de05` (commit 2026-11-10) |
+| Kiểm chứng | 2026-11-24; code-read; đã đọc README.md, LICENSE, packages/opal-client/opal_client/policy/updater.py, packages/opal-server/opal_server/policy/watcher/task.py, packages/opal-common/opal_common/config.py, packages/opal-common/opal_common/authentication/deps.py, .github/workflows/tests.yml; chưa chạy upstream |
+| Khoảng trống lấp | Quản trị phân quyền thời gian thực (policy engine xuống ứng dụng) |
+| Cơ chế đáng học | - `opal_server/policy/watcher/task.py` lắng nghe webhook và kích hoạt nguồn chính sách khi có thay đổi.<br>- `opal_client/policy/updater.py` (`update_policy`) lấy bundle đầy đủ hoặc delta theo `base_hash`, rồi ghi vào policy store trong `transaction_context` và đánh dấu giao dịch lỗi nếu ghi thất bại.<br>- Subscriber theo chủ đề thư mục chính sách, nên mỗi client chỉ nhận phần mình cần.<br>- Xác thực JWT giữa server và client (`opal_common/authentication/deps.py`). |
+| Tiêu chí và cách kiểm | `tests.yml` chạy flake8 (chặn lỗi cú pháp, phần còn lại exit-zero), pytest trên ma trận, job e2e dựng docker compose rồi truy vấn OPA, và job quét bí mật bằng gitleaks với phạm vi commit mới; có kiểm tương thích dây truyền (wire_compat) theo comment trong workflow. Kiểm bằng máy, nhưng ngưỡng chất lượng chủ yếu là test đạt. |
+| Giới hạn và rủi ro | Xác thực JWT chỉ bật khi cấu hình khóa công khai: mặc định `AUTH_PUBLIC_KEY` là None và `verify_logged_in` trả `{}` khi verifier tắt, tức mặc định không xác thực; cấu hình CORS mặc định cho phép mọi nguồn (`ALLOWED_ORIGINS` là `*`). `STATISTICS_ENABLED` mặc định tắt. Cần Redis khi chạy nhiều bản sao server (chưa xác minh chi tiết). Thư mục `cedar-agent` trong repo rỗng (chỉ là tham chiếu bên ngoài). Bảo trì tích cực. |
+| So với | `opa-conftest` và `cedar` (là engine/kiểm tra chính sách, OPAL là lớp phân phối); `toolhive` (cùng nhóm bài toán phân quyền nhưng cho MCP). |
+| Nguồn | [README.md](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/README.md) · [LICENSE](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/LICENSE) · [updater.py](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/packages/opal-client/opal_client/policy/updater.py) · [task.py](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/packages/opal-server/opal_server/policy/watcher/task.py) · [config.py](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/packages/opal-common/opal_common/config.py) · [deps.py](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/packages/opal-common/opal_common/authentication/deps.py) · [tests.yml](https://github.com/permitio/opal/blob/ddfbf26eaf6e2fca403f85f910e45c651f93de05/.github/workflows/tests.yml) |
+
+<a id="bs-2026-11-25"></a>
+
+## Bổ sung 25/11/2026 (link gitranks của hoangtien2k3)
+
+Người dùng gửi trang xếp hạng repo của tác giả `hoangtien2k3` trên gitranks.com. Trang này bị proxy của phiên chặn nên **không đọc được (chưa xác minh)**; danh sách repo lấy bằng GitHub search API. Repo nổi nhất là ecommerce-microservices; các repo còn lại có ≤ 71 sao (shopapp-backend, reactify-core, ezbuy…) nên chưa lập hồ sơ.
+
+<a id="ch-hoangtien2k3-ecommerce-microservices"></a>
+
+### ecommerce-microservices (hoangtien2k3)
+
+**Repo:** [hoangtien2k3/ecommerce-microservices](https://github.com/hoangtien2k3/ecommerce-microservices) · **License:** MIT (LICENSE ghi tác giả Hoàng Anh Tiến, 2026) · **Kiểm:** 2026-11-25, `code-read`, [`2d68782`](https://github.com/hoangtien2k3/ecommerce-microservices/tree/2d687821f8246f426e536641cd0503cb15465275) (commit 2026-10-18). **Sao:** 393 ★, 194 fork, không archive, push cuối 2026-11-22 (GitHub search API, 2026-11-25).
+
+| Mục | Đánh giá |
+|---|---|
+| Mục đích | Mẫu thương mại điện tử microservice: 13 service Spring Boot 3.3.5/Java 21 trong một Maven reactor, gateway Apache APISIX, frontend Next.js, triển khai Docker Compose hoặc k3d/ArgoCD. |
+| Đã đọc | [pom.xml](https://github.com/hoangtien2k3/ecommerce-microservices/blob/2d687821f8246f426e536641cd0503cb15465275/pom.xml) (13 module), [auth-service application.yml](https://github.com/hoangtien2k3/ecommerce-microservices/blob/2d687821f8246f426e536641cd0503cb15465275/auth-service/src/main/resources/application.yml) (Keycloak, issuer JWT cấu hình qua biến môi trường, virtual threads), [ci.yml](https://github.com/hoangtien2k3/ecommerce-microservices/blob/2d687821f8246f426e536641cd0503cb15465275/.github/workflows/ci.yml) (lọc theo đường dẫn để chỉ build service đổi), [EventProducer của payment-service](https://github.com/hoangtien2k3/ecommerce-microservices/blob/2d687821f8246f426e536641cd0503cb15465275/payment-service/src/main/java/com/ecommerce/paymentservice/event/EventProducer.java), [LICENSE](https://github.com/hoangtien2k3/ecommerce-microservices/blob/2d687821f8246f426e536641cd0503cb15465275/LICENSE). |
+| Giá trị | Một mẫu đủ rộng (auth, đơn hàng, thanh toán, tồn kho, giao hàng, tìm kiếm) để học cách chia ranh giới service; CI chỉ build phần thay đổi; có workflow phân tích kiến trúc tự động (arcade-agent) chạy ở chế độ tư vấn. |
+| Mâu thuẫn và giới hạn | Mô tả repo nhắc WebFlux và Saga, nhưng tại commit này pom và mã không dùng WebFlux (có virtual threads) và tìm `saga`/`outbox` trong mã Java không ra kết quả; Saga nằm ở repo riêng `saga-pattern-microservice` (chưa đọc). `EventProducer` gửi Kafka theo kiểu bắn rồi ghi log, không có outbox/retry nên mất sự kiện khi broker lỗi. Chỉ 8 file test trên 373 file Java. Mã đọc không chứng minh chạy được; chưa build, chưa chạy compose/k3d. |
+| Điều kiện tích hợp | Dùng làm tài liệu tham khảo cấu trúc, không phải nền tảng sản xuất: tự bổ sung outbox hoặc giao dịch bù, test hợp đồng giữa service, và xem lại cấu hình Keycloak mặc định (`localhost`, host `.local`) trước khi triển khai. MIT cho phép nhúng kèm thông báo bản quyền. |
+| Lựa chọn đối chiếu | [GoogleCloudPlatform/microservices-demo](../29-software-architecture-api-contracts/README.md#anhkysuai-2026-11-23-googlecloudplatform-microservices-demo) (đa ngôn ngữ, gRPC); [macrozheng/mall](../34-backend-data-identity-integration/README.md#chuyen-mall) (nguyên khối Spring, quy mô lớn hơn nhiều); [Medusa](../34-backend-data-identity-integration/README.md#chuyen-medusa) (headless commerce thay vì tự dựng). |
+
+**Phạm vi bằng chứng:** đã clone, đọc LICENSE, pom, cấu hình auth, CI và một lớp Kafka producer; chưa chạy hay build. Số liệu từ trang gitranks chưa xác minh.
+
+<a id="hoangtien2k3-toan-bo"></a>
+
+## Toàn bộ repo của hoangtien2k3 — 25/11/2026
+
+Người dùng yêu cầu lập hết các repo của tác giả `hoangtien2k3` (Hoàng Anh Tiến) và ghi chú cái nào hay. GitHub search API trả 52 repo không phải fork (thêm 5 fork chưa lập hồ sơ); ecommerce-microservices đã có hồ sơ riêng ở trên, còn 51 repo ghi dưới đây. Mỗi repo được clone nông không checkout, đọc cây thư mục, LICENSE, README và manifest; mức kiểm là `docs-read`, chưa build hay chạy. Trang gitranks bị proxy chặn nên chỉ tham chiếu qua API (chưa xác minh).
+
+### Nhận định chung
+
+- **Hay nhất:** nhóm backend Java reactive liên kết với nhau: `reactify-core` (thư viện dùng chung) → `ezbuy` (12 service WebFlux/R2DBC, CI riêng từng service) → `ecommerce-microservices` (13 service Spring Boot 3, APISIX, Keycloak, Kafka, k3d/ArgoCD). Cộng `keycloak-auth-service` (xác thực Keycloak) và `saga-pattern-microservice` (Saga + Outbox/Debezium, nhưng mã gốc của tác giả khác).
+- **Học tập tốt:** `learn-spring-boot` (~80 file test theo chủ đề), `rabbitmq-demo` (5 kiểu exchange), `keycloak-sso-saml` (SAML hiếm gặp), `grpc-demo`, `base-auth-jwt-springboot`, `alarm-ht21` (Android nhiều module, 43 file test).
+- **Điểm yếu chung:** test rất ít (ecommerce-microservices 8 file/373 file Java; ezbuy 0 thư mục test), nhiều repo không có LICENSE, hai repo trùng (`shopapp-backend`, `web-app-backend-springboot`), phần lớn nhóm bài tập C/C++/Java là mã nộp bài.
+- **Rủi ro bản quyền (không dùng lại khi chưa gỡ):** `money-detection-android-app` (mã decompile + APK của app khác), `movie`, `crush`, `profilePro` (GPL-3.0), `saga-pattern-microservice`, `programming-books`: mã hoặc tài liệu có nguồn gốc ngoài tác giả; LICENSE MIT của repo không cấp quyền thay cho tác giả gốc.
+- **Chưa xác minh:** quan hệ upstream cụ thể của các repo trên, bản phát hành Maven Central của reactify-core, và nội dung trang gitranks.
+
+#### Đáng chú ý
+
+Repo có cơ chế hoặc giá trị tái sử dụng rõ.
+
+<a id="ch-hoangtien2k3-reactify-core"></a>
+
+**[reactify-core](https://github.com/hoangtien2k3/reactify-core/tree/564e2da98e8b299ba66b85876f1c480b15369dc2)** · backend · 30 ★ · Apache-2.0 · commit cuối 2026-10-18
+
+Thư viện Java cho Spring WebFlux/Reactor, 9 module (core, client, cache, keycloak, r2dbc, minio, logging, exception, utils), groupId io.github.hoangtien2k3, bản 1.2.0, Java 21. Giá trị: gom phần lặp của microservice reactive (client HTTP, cache, Keycloak, MinIO) vào một thư viện dùng lại được, kèm trang docs riêng. Giới hạn: chỉ thấy 1 file test (reactify-test), README mượn badge build của repo khác (ponfee/commons-core); chưa kiểm bản phát hành trên Maven Central.
+
+<a id="ch-hoangtien2k3-learn-spring-boot"></a>
+
+**[learn-spring-boot](https://github.com/hoangtien2k3/learn-spring-boot/tree/74d616fbde7b17f5b68ebc41b974bad765d552ca)** · learning · 24 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2026-01-03
+
+Bộ bài học Spring Boot: ~270 file Java và ~80 file test theo từng chủ đề (JPA/JPQL, Exception handling/Validation, JPA testing, các HTTP method). Số test cao so với các repo khác của tác giả nên hợp làm tài liệu thực hành. Không có LICENSE nên không được sao chép ra ngoài việc đọc.
+
+<a id="ch-hoangtien2k3-ezbuy"></a>
+
+**[ezbuy](https://github.com/hoangtien2k3/ezbuy/tree/aa1795e0fa64a39002ffa45589cdb45c57a5901f)** · backend · 15 ★ · Apache-2.0 · commit cuối 2026-10-18
+
+Backend thương mại điện tử Java 21/Gradle: 12 service (auth, core, cart, order, payment, product, rating, noti, search, trigger, setting, gateway), Spring WebFlux + R2DBC, Liquibase, Kafka; mỗi service có workflow GitHub Actions riêng. Giá trị: mẫu reactive đầy đủ nhất của tác giả, dùng thư viện reactify. Giới hạn: không thấy thư mục src/test trong cây; README ghi cả Zookeeper lẫn WebFlux nên có phần mô tả chưa khớp mã; chưa chạy.
+
+<a id="ch-hoangtien2k3-keycloak-auth-service"></a>
+
+**[keycloak-auth-service](https://github.com/hoangtien2k3/keycloak-auth-service/tree/c21d29e8c4bf01a07c5836ae6399f9deae25f990)** · backend · 7 ★ · Apache-2.0 · commit cuối 2025-01-10
+
+Dịch vụ xác thực dùng Keycloak (auth-model, auth-service, noti-model, noti-send) bằng WebFlux/functional style, Liquibase, gửi email/tin nhắn qua noti-service; 91 file Java. Là nền cho auth-service trong ecommerce-microservices. Không có test.
+
+<a id="ch-hoangtien2k3-saga-pattern-microservice"></a>
+
+**[saga-pattern-microservice](https://github.com/hoangtien2k3/saga-pattern-microservice/tree/ada110a4aa6987ed463f637d08927490fa34f041)** · backend · 7 ★ · MIT (file LICENSE ghi Tuan Nguyen, 2021) · commit cuối 2024-04-28
+
+Demo Saga orchestration và Outbox pattern với Kafka, Kafka Connect, Debezium Outbox Event Router, Spring Cloud Stream, PostgreSQL mỗi service. Chủ đề rất hay vì ecommerce-microservices thiếu đúng phần này. Lưu ý: LICENSE ghi tác giả Tuan Nguyen (2021), tức mã có nguồn gốc từ repo khác; upstream chưa xác minh. Dùng bản gốc nếu cần trích.
+
+#### Tham khảo
+
+Dùng để đọc hoặc học; không phải nền tảng.
+
+<a id="ch-hoangtien2k3-shopapp-backend"></a>
+
+**[shopapp-backend](https://github.com/hoangtien2k3/shopapp-backend/tree/a427288fd722d8379f8d7fd20cf65252cc6886ff)** · backend · 71 ★ · MIT · commit cuối 2026-10-18
+
+Backend thương mại điện tử Spring Boot (112 file Java, 1 file test), Docker, CircleCI và GitHub Actions. Gần như trùng README với web-app-backend-springboot; ecommerce-microservices là bản phát triển tiếp, nên đọc bản đó thay vì hai repo này.
+
+<a id="ch-hoangtien2k3-java"></a>
+
+**[Java (hoangtien2k3)](https://github.com/hoangtien2k3/Java/tree/f7bd433eddfff26163a64eab61acd5927a003a8c)** · learning · 12 ★ · MIT · commit cuối 2024-01-28
+
+Tập bài tập và ví dụ Java (660 file Java, 31 file test) theo DIRECTORY.md, dùng cho học tập; README tự ghi có thể kém hiệu quả hơn thư viện chuẩn. Không cập nhật từ 28/1/2024. Cấu trúc giống TheAlgorithms/Java nhưng chưa xác minh quan hệ upstream.
+
+<a id="ch-hoangtien2k3-design-pattern"></a>
+
+**[design-pattern](https://github.com/hoangtien2k3/design-pattern/tree/24f5f439aac0c502f0004d83cb04045ec0b0b8b5)** · learning · 10 ★ · MIT (file LICENSE ghi hoangtien2k3qx1; GitHub báo NOASSERTION) · commit cuối 2024-01-28
+
+Ví dụ Java cho ba nhóm Creational/Structural/Behavioral (76 file Java), dẫn sourcemaking và blog tvd12. Hữu ích để ôn nhanh; không có test đáng kể.
+
+<a id="ch-hoangtien2k3-golang-tutorials"></a>
+
+**[golang-tutorials](https://github.com/hoangtien2k3/golang-tutorials/tree/8bb8751e6f2f2c80ba3569ce3a916e418a852383)** · learning · 9 ★ · MIT · commit cuối 2026-10-18
+
+Bài học Go từ cơ bản đến concurrency (9 chương, 56 file), có cheatsheet; nhỏ, dễ đọc, nhưng không có test hay CI.
+
+<a id="ch-hoangtien2k3-microservice-webflux"></a>
+
+**[microservice-webflux](https://github.com/hoangtien2k3/microservice-webflux/tree/df8f9295f51076f25d77b594bef3e912ca1f4f4e)** · backend · 7 ★ · MIT · commit cuối 2024-03-16
+
+Demo microservice WebFlux (account, payment, profile, api-gateway, eureka) trên Spring Boot 3.0.1, Liquibase, Kafka; 43 file Java. Là bản đầu của hướng reactive rồi được thay bằng ezbuy; Eureka/Boot 3.0 đã cũ.
+
+<a id="ch-hoangtien2k3-data-structure-and-algorithm"></a>
+
+**[Data-Structure-And-Algorithm](https://github.com/hoangtien2k3/Data-Structure-And-Algorithm/tree/0291a4aa31160373cd0bf411d6730638767a0a35)** · learning · 4 ★ · MIT · commit cuối 2024-02-21
+
+Cấu trúc dữ liệu và thuật toán bằng C/C++/Java (127 file Java, 26 file test); đủ chủ đề để ôn nhưng chưa chuẩn hóa.
+
+<a id="ch-hoangtien2k3-news-backend"></a>
+
+**[news-backend](https://github.com/hoangtien2k3/news-backend/tree/2c4cbf3b8fd9a4c12dc1bc64d73308448909ef9d)** · backend · 3 ★ · MIT · commit cuối 2024-06-09
+
+Backend tin tức dạng microservice (api-gateway, config-server, discovery-server) 78 file Java, docker-compose dev/prod, 7 file test; kiến trúc Spring Cloud kiểu cũ (Eureka/Config Server).
+
+<a id="ch-hoangtien2k3-web-app-backend-springboot"></a>
+
+**[web-app-backend-springboot](https://github.com/hoangtien2k3/web-app-backend-springboot/tree/ef47c7e6dc51971a0d4a7f716abb590570046a84)** · backend · 3 ★ · MIT · commit cuối 2024-10-14
+
+Bản lớn hơn của shopapp-backend (149 file Java, 1 test), cùng README; cập nhật 14/10/2024. Gần như trùng lặp với shopapp-backend.
+
+<a id="ch-hoangtien2k3-news-app"></a>
+
+**[news-app](https://github.com/hoangtien2k3/news-app/tree/0bbb60595090331eabb6c91bda8b5b1cbedb3e20)** · mobile · 2 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-06-09
+
+App Android tin tức Kotlin (Gradle KTS, 359 file) ghép với news-backend; có ảnh chụp màn hình.
+
+<a id="ch-hoangtien2k3-base-auth-jwt-springboot"></a>
+
+**[base-auth-jwt-springboot](https://github.com/hoangtien2k3/base-auth-jwt-springboot/tree/e7a4eddf329f923905af5a0479015478d27393ca)** · backend · 1 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2026-01-25
+
+Khung xác thực Spring Boot 3.2/Spring Security 6 với JWT access/refresh token, RBAC, khóa tài khoản, xác minh email, PostgreSQL + Flyway; 40 file Java, 1 test. Gọn, hợp làm điểm bắt đầu cho auth nội bộ; cần review bảo mật trước khi dùng.
+
+<a id="ch-hoangtien2k3-vnpay-demo"></a>
+
+**[VNPAY-DEMO](https://github.com/hoangtien2k3/VNPAY-DEMO/tree/c5c8dd68492506474c889cf34df3bbf1ea9359fc)** · backend · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-10-15
+
+Demo tích hợp cổng thanh toán VNPAY bằng Spring Boot (25 file Java, 1 test); hữu ích cho thị trường Việt Nam, kiểm lại chữ ký/secret khi dùng thật.
+
+<a id="ch-hoangtien2k3-alarm-ht21"></a>
+
+**[alarm-ht21](https://github.com/hoangtien2k3/alarm-ht21/tree/4dbe570aa023d2695fbe58fa99a7882147ca1459)** · mobile · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2025-05-20
+
+App báo thức Android, kiến trúc nhiều module (app, core, feature, build-logic), có 43 file test và CI; sạch nhất trong nhóm mobile của tác giả.
+
+<a id="ch-hoangtien2k3-annotation-spring-boot"></a>
+
+**[annotation-spring-boot](https://github.com/hoangtien2k3/annotation-spring-boot/tree/a9cba3239bfdd028fac8d38ecbfa30e0f075ba50)** · learning · 0 ★ · MIT · commit cuối 2024-06-07
+
+Danh mục annotation hay dùng trong Spring Boot (Core, Boot, Test, Transactions, JPA/Hibernate) kèm ví dụ nhỏ (37 file Java); tra cứu nhanh.
+
+<a id="ch-hoangtien2k3-ezbuy-android"></a>
+
+**[ezbuy-android](https://github.com/hoangtien2k3/ezbuy-android/tree/13ec9b3ad3770fa77deacd5ed98e74d5c9a4cced)** · mobile · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2025-11-29
+
+App Android cho ezbuy: Kotlin, MVVM, Room, Retrofit, Coroutines/Flow, tách module common/data/domain; cập nhật 29/11/2025 (ngày commit trên HEAD).
+
+<a id="ch-hoangtien2k3-grpc-demo"></a>
+
+**[grpc-demo](https://github.com/hoangtien2k3/grpc-demo/tree/40d19162273e8dca3b31d73945c2c95948c979af)** · backend · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2026-01-02
+
+Demo gRPC CRUD với Spring Boot 4.0.1, Protocol Buffers 3, JPA và PostgreSQL 16 (6 file Java); nhỏ nhưng dùng Boot 4 mới.
+
+<a id="ch-hoangtien2k3-keycloak-sso-saml"></a>
+
+**[keycloak-sso-saml](https://github.com/hoangtien2k3/keycloak-sso-saml/tree/5f0c649a9c3bf0ea49611218ee0a0cc530967a61)** · backend · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2025-11-28
+
+Demo SSO SAML 2.0 với Keycloak làm IdP (Spring Boot, docker-compose, sơ đồ tuần tự, tài liệu setup .docx); mẫu hiếm so với các demo OIDC; chưa có test.
+
+<a id="ch-hoangtien2k3-rabbitmq-demo"></a>
+
+**[rabbitmq-demo](https://github.com/hoangtien2k3/rabbitmq-demo/tree/e2823e57a455b08f5f483161f77feb4fba30d048)** · backend · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2026-01-04
+
+Demo RabbitMQ với Spring Boot 4.0.1/Java 17, đủ 5 kiểu exchange (simple queue, direct, fanout, topic, headers); 15 file Java. Ngắn và đủ ý để học routing.
+
+<a id="ch-hoangtien2k3-reactify-docs"></a>
+
+**[reactify-docs](https://github.com/hoangtien2k3/reactify-docs/tree/7e3228400038a4928fe9a8bbd45d5d6b28cad049)** · docs · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2025-01-21
+
+Trang tài liệu tĩnh của reactify-core (blog, codegen, async-io, boot); phục vụ thư viện, không phải sản phẩm độc lập.
+
+#### Cẩn trọng
+
+Có vấn đề nguồn gốc, bản quyền hoặc quyền sử dụng tài liệu.
+
+<a id="ch-hoangtien2k3-crush"></a>
+
+**[crush (hoangtien2k3)](https://github.com/hoangtien2k3/crush/tree/2bd211f349994223138778ce298031fd1a232fb4)** · frontend · 3 ★ · MIT (file LICENSE ghi hoangtien2k3qx1) · commit cuối 2024-03-16
+
+Trang web tỏ tình tĩnh (HTML/JS/âm thanh). README trỏ issue của zukahai/Confess-Crush nên là bản chép/chuyển thể từ repo đó; upstream và quyền tài sản (hình, âm thanh) chưa xác minh.
+
+<a id="ch-hoangtien2k3-money-detection-android-app"></a>
+
+**[money-detection-android-app](https://github.com/hoangtien2k3/money-detection-android-app/tree/3a9b04aac6f1317055640771bddc30c94458c009)** · mobile · 1 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2026-05-31
+
+Mã decompile của VoidMoney-Final.apk (9.316 file Java), kèm file APK và SDK nhận dạng tiền của bên thứ ba (cashreader), cùng mã kiểm tra bản quyền Google Play (pairip). Đây là mã dịch ngược của ứng dụng người khác, không có quyền tái sử dụng; không dùng và không tích hợp.
+
+<a id="ch-hoangtien2k3-programming-books"></a>
+
+**[programming-books](https://github.com/hoangtien2k3/programming-books/tree/101b8676ecb4c2a32cb4f2301c6dfeb76472dce3)** · learning · 1 ★ · MIT (chỉ áp cho phần tác giả; các PDF sách/đề chưa rõ quyền) · commit cuối 2025-03-14
+
+Kho PDF giáo trình thuật toán và đề contest. LICENSE MIT của repo không cấp quyền với tài liệu của bên khác trong PDF.
+
+<a id="ch-hoangtien2k3-movie"></a>
+
+**[movie](https://github.com/hoangtien2k3/movie/tree/ffda2a81d8acca64c41e57ed53153882a45981e2)** · mobile · 0 ★ · MIT (file License.md ghi Murat ÖZTÜRK, 2023) · commit cuối 2024-09-22
+
+App Mova - Movie & Trailers Kotlin dựa trên TMDb; License.md ghi tác giả khác, nên đây là bản sao/chuyển thể từ repo của họ; hình và UI kit Figma có thể có điều khoản riêng.
+
+<a id="ch-hoangtien2k3-profilepro"></a>
+
+**[profilePro](https://github.com/hoangtien2k3/profilePro/tree/ecff0a00ae24017227a893458767c7efe3c0fe8b)** · frontend · 0 ★ · GPL-3.0 · commit cuối 2024-09-28
+
+Template portfolio React lấy từ saadpasta/developer-portfolio (README còn badge của repo gốc). GPL-3.0 là copyleft: dùng lại phải giữ GPL và ghi gốc.
+
+#### Bỏ qua
+
+Bài tập cá nhân, bản cũ hoặc trùng lặp; giá trị tích hợp thấp.
+
+<a id="ch-hoangtien2k3-hoangtien2k3"></a>
+
+**[hoangtien2k3](https://github.com/hoangtien2k3/hoangtien2k3/tree/d3307438466ae7e36fc99340aecaed81f81ebd26)** · docs · 9 ★ · MIT (file LICENSE; GitHub báo NOASSERTION) · commit cuối 2026-11-25
+
+Repo README hồ sơ cá nhân (có profile-3d-contrib, ảnh, workflow cập nhật, 1.693 file chủ yếu là tài sản sinh tự động). Dùng để biết kênh của tác giả (TikTok ctdl.gt), không có giá trị tích hợp.
+
+<a id="ch-hoangtien2k3-codeutt"></a>
+
+**[CodeUTT](https://github.com/hoangtien2k3/CodeUTT/tree/396b42e3ac220fa553dd7eb4468ec51ae2584b33)** · learning · 5 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-11-14
+
+Bài tập trường UTT (OOP, Java, bài tập hỗn tạp), mã nộp bài cá nhân, 717 file gồm cả file IDE.
+
+<a id="ch-hoangtien2k3-leetcode-solutions"></a>
+
+**[leetcode-solutions](https://github.com/hoangtien2k3/leetcode-solutions/tree/f97e9f8073477ed4cd9d1600cc681f3d2ffa7baf)** · learning · 5 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-03-30
+
+Lời giải LeetCode (Java/C++/SQL, 117 file Java). Không có test và không có LICENSE; nên dùng nguồn LeetCode/NeetCode chuẩn.
+
+<a id="ch-hoangtien2k3-algorithms"></a>
+
+**[Algorithms](https://github.com/hoangtien2k3/Algorithms/tree/b74c3d16c978c027ce7fde30a1902d12d6a4097d)** · learning · 4 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-02-23
+
+Thuật toán C/C++ theo chủ đề (backtracking, DP, binary search…); không license.
+
+<a id="ch-hoangtien2k3-code-c-plus-plus"></a>
+
+**[Code-C-plus-plus](https://github.com/hoangtien2k3/Code-C-plus-plus/tree/74c7a9816feb4e81704d98d466151ba8ea9059c1)** · learning · 4 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-04-24
+
+Bài tập C++ (OOP, STL, 300 bài code thiếu nhi) kèm PDF; không license.
+
+<a id="ch-hoangtien2k3-ticket-booking-api"></a>
+
+**[ticket-booking-api](https://github.com/hoangtien2k3/ticket-booking-api/tree/42570d754f06ae85743bbe7204c0fff41ca55088)** · backend · 4 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-12-15
+
+REST API đặt vé xem phim bằng Spring Boot 3/JDK 17, MySQL, Docker; 46 file Java, 1 test; đồ án nhỏ.
+
+<a id="ch-hoangtien2k3-100-days"></a>
+
+**[100-days](https://github.com/hoangtien2k3/100-days/tree/045a964695e0a0aaa692e720f083bf8f3dd2c72d)** · learning · 3 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2020-09-09
+
+Thử thách code C 100 ngày (nhật ký bài tập).
+
+<a id="ch-hoangtien2k3-code"></a>
+
+**[Code](https://github.com/hoangtien2k3/Code/tree/f90bc4f68adc066ebc8b3758f6c73df578f7dec5)** · learning · 3 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-01-16
+
+Bài tập C/C++ (1000 bài code thiếu nhi), không license.
+
+<a id="ch-hoangtien2k3-codesignal"></a>
+
+**[Codesignal](https://github.com/hoangtien2k3/Codesignal/tree/d15f1c32f356390df5c2a3161e98720e8edf5e92)** · learning · 3 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-01-16
+
+Lời giải CodeSignal Arcade bằng C/C++.
+
+<a id="ch-hoangtien2k3-hackerrank-solution"></a>
+
+**[HackerRank-Solution](https://github.com/hoangtien2k3/HackerRank-Solution/tree/1c8386691b6df94dfbcd7d662de49af5cb573c94)** · learning · 3 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-01-16
+
+Lời giải HackerRank C++.
+
+<a id="ch-hoangtien2k3-programming"></a>
+
+**[Programming](https://github.com/hoangtien2k3/Programming/tree/e4763ab5913e44b662a2ee3d4c54f9b99fa9b26c)** · learning · 3 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-01-16
+
+Mã nguồn C/C++ theo chủ đề (OOP, vùng nhớ).
+
+<a id="ch-hoangtien2k3-sql-server"></a>
+
+**[SQL-Server](https://github.com/hoangtien2k3/SQL-Server/tree/3c9cdf0a0401d3fb25f51978bd68551d92b5a88c)** · learning · 3 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-04-14
+
+Ghi chú SQL Server (join, union, select into…) từ hoc.tv.
+
+<a id="ch-hoangtien2k3-c-sharp-gui-programming"></a>
+
+**[C-Sharp-GUI-Programming](https://github.com/hoangtien2k3/C-Sharp-GUI-Programming/tree/a0e81ea74066e90699e60d74cf3997fad158e4bb)** · learning · 1 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2023-12-09
+
+Bài tập lớn C# WinForms (quản lý bệnh nhân, nhân viên…), 1.008 file gồm tệp IDE/thư viện.
+
+<a id="ch-hoangtien2k3-movie-api"></a>
+
+**[movie-api](https://github.com/hoangtien2k3/movie-api/tree/9ea964794d7a0f9ba264b886f3432821ae47de2f)** · backend · 1 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-06-01
+
+REST API phim bằng Spring Boot với Swagger/SLF4J, MySQL.
+
+<a id="ch-hoangtien2k3-websocket-chat-message"></a>
+
+**[websocket-chat-message](https://github.com/hoangtien2k3/websocket-chat-message/tree/e07b9470c7bdd9cd7cf672f86eabd4048d358937)** · backend · 1 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-03-16
+
+Demo chat WebSocket Spring Boot (6 file Java).
+
+<a id="ch-hoangtien2k3-quanlykhodienthoai"></a>
+
+**[QuanLyKhoDienThoai](https://github.com/hoangtien2k3/QuanLyKhoDienThoai/tree/2ef3c26c786cacf97b8b318f6de03b2fca4996cd)** · learning · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-10-07
+
+Đồ án phân tích thiết kế HTTT: quản lý kho điện thoại theo IMEI (Java Swing/NetBeans, 181 file Java, kèm báo cáo).
+
+<a id="ch-hoangtien2k3-bai-toan-qua-song"></a>
+
+**[bai-toan-qua-song](https://github.com/hoangtien2k3/bai-toan-qua-song/tree/9fa8a230880273f6a37880bacc5af231b0f2329b)** · learning · 0 ★ · MIT · commit cuối 2023-12-31
+
+Bài toán qua sông bằng BFS/DFS (môn Trí tuệ nhân tạo), 5 file Java.
+
+<a id="ch-hoangtien2k3-hoangtien2k3-github-io"></a>
+
+**[hoangtien2k3.github.io](https://github.com/hoangtien2k3/hoangtien2k3.github.io/tree/25f2a849338b47fda8336e5ba47fe0678cc7697c)** · frontend · 0 ★ · MIT (file LICENSE ghi gatsbyjs, 2015) · commit cuối 2026-04-04
+
+Portfolio/blog Gatsby của tác giả, dựng từ starter Gatsby (LICENSE vẫn ghi gatsbyjs).
+
+<a id="ch-hoangtien2k3-identity-service"></a>
+
+**[identity-service](https://github.com/hoangtien2k3/identity-service/tree/fffb5228dc496cad4c1d4da5f7080fc406710f99)** · backend · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-05-10
+
+Dịch vụ identity Spring Boot (47 file Java, 1 test), bản cũ trước keycloak-auth-service.
+
+<a id="ch-hoangtien2k3-micronaut-micrometer-rxjava3"></a>
+
+**[micronaut-micrometer-rxjava3](https://github.com/hoangtien2k3/micronaut-micrometer-rxjava3/tree/032a5b6a2551c29d6ebb8a462c91317c3bf7b092)** · backend · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2025-04-24
+
+Mẫu Micronaut + Micrometer + RxJava3 bằng Kotlin, README rỗng.
+
+<a id="ch-hoangtien2k3-movie-app"></a>
+
+**[movie-app](https://github.com/hoangtien2k3/movie-app/tree/999ade31c488753ef381028b639fc764aecf65ce)** · mobile · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-03-30
+
+App phim Android Kotlin (MVP, Room, Retrofit) dùng API TMDb; 129 file.
+
+<a id="ch-hoangtien2k3-oauth2-login-google"></a>
+
+**[oauth2-login-google](https://github.com/hoangtien2k3/oauth2-login-google/tree/0fcdd9cdf22cadfbae209b31e2e4070a6a5c39bd)** · backend · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-10-15
+
+Demo đăng nhập Google OAuth2 bằng Spring Boot/Gradle (5 file Java), không có README.
+
+<a id="ch-hoangtien2k3-webflux-jwt-security"></a>
+
+**[webflux-jwt-security](https://github.com/hoangtien2k3/webflux-jwt-security/tree/8bb6397a2a1f8033db30f14bd4702152d198f531)** · backend · 0 ★ · Không có LICENSE (mặc định giữ mọi quyền) · commit cuối 2024-07-25
+
+Demo Spring Boot 3.2.5 WebFlux Security với JWT (21 file Java).
