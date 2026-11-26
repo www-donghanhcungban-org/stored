@@ -5930,12 +5930,23 @@
       "repo": "cathrynlavery/diagram-design",
       "category": "design-skill",
       "license": "MIT",
-      "stars": 63474,
+      "stars": 73446,
       "open_source": true,
-      "notes": "Skill sơ đồ HTML+SVG theo brand, 44 loại, cổng onboarding brand, 30 verifier, không telemetry (chỉ Google Fonts); 6+ host; ★ đọc 12/10/2026; ★ 31/10/2026: 63.470 (GitHub API)",
+      "notes": "Skill sơ đồ HTML+SVG theo brand, 44 loại, cổng onboarding brand, 30 verifier, không telemetry (chỉ Google Fonts); 6+ host; ★ đọc 12/10/2026; ★ 31/10/2026: 63.470 (GitHub API) Đọc lại 26/11/2026 (06 §7b.4, docs-read): 52 loại sơ đồ (trước 44), plugin 2.6.179 (bot auto-bump), 495 commit (bot 167), PRIVACY.md không telemetry (chỉ Google Fonts, nay có chế độ offline font hệ thống); thêm host Qoder, bộ đóng gói skill Claude Desktop. ★ 26/11/2026: 73.446 (GitHub search API).",
       "section": "06",
       "id": "diagram-design",
-      "profile_path": "06-ui-ux-design/README.md"
+      "profile_path": "06-ui-ux-design/README.md",
+      "last_verified_at": "2026-11-26",
+      "verified_ref": "b228c5d77794a84150fca41b22940bb316b1398d",
+      "verification_level": "docs-read",
+      "sources": [
+        "https://github.com/cathrynlavery/diagram-design/blob/b228c5d77794a84150fca41b22940bb316b1398d/README.md",
+        "https://github.com/cathrynlavery/diagram-design/blob/b228c5d77794a84150fca41b22940bb316b1398d/PRIVACY.md",
+        "https://github.com/cathrynlavery/diagram-design/blob/b228c5d77794a84150fca41b22940bb316b1398d/CHANGELOG.md",
+        "https://github.com/cathrynlavery/diagram-design/blob/b228c5d77794a84150fca41b22940bb316b1398d/LICENSE",
+        "https://github.com/cathrynlavery/diagram-design/blob/b228c5d77794a84150fca41b22940bb316b1398d/.claude-plugin/plugin.json"
+      ],
+      "profile_anchor": "06-ui-ux-design/README.md#diagram-design-reread-2026-11-26"
     },
     {
       "name": "automate-for-growth",

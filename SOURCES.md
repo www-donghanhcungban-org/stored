@@ -2076,3 +2076,7 @@ Kiểm đối kháng: mỗi nhóm chọn bốn nhóm claim làm đổi quyết �
 ## Bổ sung 2026-11-26 (OpenDesign v0.27.3, ảnh README)
 
 - `nexu-io/open-design`: clone 26/11/2026 (blob:none, 3.878 commit, HEAD 5fdcc3d); 109.533★/12.372 fork (GitHub search API), Apache-2.0, `package.json` 0.27.3, tag v0.27.2. Đọc PRIVACY.md (banner Share/Don't share), grep `applyTelemetryDefaults`, `agent-logs.ts`, `claude.ts:116`. Mục 06 §7q.0b; catalog vẫn 1578. Chưa cài/chạy.
+
+## Bổ sung 2026-11-26b (diagram-design, ảnh trang repo)
+
+- `cathrynlavery/diagram-design`: clone 26/11/2026 (blob:none, 495 commit, HEAD b228c5d); 73.446★/4.887 fork (GitHub search API), MIT, plugin 2.6.179; 52 file `type-*.md`; đọc PRIVACY.md, CHANGELOG [Unreleased], workflow. Mục 06 §7b.4; catalog vẫn 1578. Chưa cài/chạy.

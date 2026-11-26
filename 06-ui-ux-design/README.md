@@ -147,6 +147,32 @@ Danh sách: `narrowin/awesome-generative-ui` (LLM sinh/compose UI động; 144�
 
 **Nguồn §7b:** https://github.com/cathrynlavery/diagram-design (clone đầy đủ, HEAD 80c8f28; README, SKILL.md, references/type-*.md, references/export.md, scripts/, .maintainer-policy.json, .github/workflows/ci.yml, PRIVACY.md, THIRD_PARTY_LICENSES.md) · https://diagramdesign.dev · https://skillselion.com/guides/diagram-design-skill-claude-code-guide
 
+<a id="diagram-design-reread-2026-11-26"></a>
+### 7b.4 Đọc lại `cathrynlavery/diagram-design` (26/11/2026, từ ảnh trang repo do người dùng gửi)
+
+> Ảnh chụp trang repo: "71k★, fork 4,8k, watch 162", commit `0eeda75` của `github-actions[bot]` ("bump plugin manifests"), mô tả "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types", huy hiệu version 2.6.174, MIT, "#1 Repository Of The Day" (GitHub Trending), skills.sh 32.2K. Đối chiếu với clone `blob:none` tại `b228c5d77794a84150fca41b22940bb316b1398d` (commit 25/11/2026). Mức `docs-read` kèm grep; không cài, không chạy lint hay test.
+
+| Mục | 12/10/2026 (§7b.1) | 26/11/2026 |
+|---|---|---|
+| Sao / fork | ~51,8k / 3,3k | **73.446 / 4.887** (GitHub search API; ảnh 71k/4,8k là vài ngày trước) |
+| Số loại sơ đồ | 44 | **52** (52 file `references/type-*.md` trong `skills/diagram-design/`) |
+| Phiên bản | 2.6.75 | `.claude-plugin/plugin.json` **2.6.179** (ảnh 2.6.174: bot bump ~5 lần từ lúc chụp) |
+| Commit · tác giả | 287 | **495**; bot release 167, Cathryn Lavery 145, Rudy Mizrahi Celekli 27; 81 trailer Claude |
+| Host (thư mục manifest) | Claude, Codex, Copilot, Factory, Cowork, OpenCode, Pi | `.claude-plugin`, `.codex-plugin`, `.factory-plugin`, **`.qoder-plugin`** (mới), `.agents/plugins`; ảnh ghi thêm Cursor |
+| Issue + PR mở | 87 | 39 |
+
+**Đối chiếu ảnh:** "52 diagram types" ✅; MIT ✅; "No shadows, no Mermaid slop" là lời tự mô tả (định vị thẩm mỹ, không kiểm được); "skills.sh 32.2K" là huy hiệu động ngoài repo, **chưa kiểm**; "#1 Repository Of The Day" là xếp hạng xu hướng một ngày, không phải bằng chứng chất lượng. Phần hero (hình sơ đồ 3 lớp) là minh họa của chính dự án.
+
+**Điểm mới trong CHANGELOG mục `[Unreleased]`:** bộ đóng gói **skill ZIP cho Claude Desktop** (#525); import Mermaid `quadrantChart`; **cổng độ tương phản WCAG trong CI**; **chế độ offline dùng font hệ thống** (không tải Google Fonts); `CONTRIBUTING.md` nhận phần nội bộ trước ở README; lệnh `import-drawio`, `import-excalidraw`, `import-plantuml`, `export-diagram`, `profile`, `doctor`.
+
+**Quyền riêng tư và mạng:** `PRIVACY.md` (hiệu lực 1/10/2026) ghi "no server, no accounts, no analytics, no telemetry"; dữ liệu duy nhất ra ngoài là **Google Fonts** khi mở diagram trong trình duyệt (và trang web bạn chọn để lấy brand, do agent tự tải). Grep khớp: ~242 tham chiếu `fonts.googleapis.com` trong asset HTML, không thấy điểm gửi dữ liệu về tác giả (từ "telemetry/analytics" chỉ trúng tài liệu *về* các loại sơ đồ). Với chế độ offline mới, có thể loại bỏ cả kết nối Google Fonts. Hồ sơ brand lưu cục bộ ở `~/.diagram-design/profiles/`.
+
+**CI:** 4 workflow (`ci`, `ci-configuration`, `pages`, `auto-bump`) có ghim SHA một phần (auto-bump 5, ci 8, pages 4, ci-configuration 2 chỗ). `auto-bump.yml` tự tăng phiên bản manifest sau mỗi merge, nên **số phiên bản không nói gì về mức ổn định** (167/495 commit là bot).
+
+**Đánh giá cập nhật:** kết luận §7b.3 giữ nguyên; sản phẩm lớn lên và vẫn đúng với mô tả. Cần nhớ: một người chi phối (Cathryn ~29% commit, bot ~34%), nhiều mã do agent viết (81 trailer Claude), và số sao tăng ~21k trong 6 tuần phản ánh sự chú ý.
+
+**Nguồn §7b.4:** clone github.com/cathrynlavery/diagram-design 26/11/2026 (blob:none, 495 commit, HEAD b228c5d; README.md, PRIVACY.md, CHANGELOG.md, `.claude-plugin/plugin.json`, `skills/diagram-design/references/`, `.github/workflows/`, `git shortlog`) · GitHub search API 26/11/2026 · ảnh trang repo do người dùng cung cấp
+
 ## 7c. Kiểm ảnh: VoltAgent/official-design-md, danh mục DESIGN.md "chính chủ" (ảnh người dùng gửi, 2026-10-13)
 
 > Ảnh là phần đầu README (banner "Official DESIGN.md Collection", huy hiệu "DESIGN.md 7", Discord "138 online"). Đã clone toàn bộ repo (6 commit), tải đủ 11 file được liệt kê, và chạy linter chính thức của Google (`npx @google/design.md@0.4.0 lint`) trên từng file.
