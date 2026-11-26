@@ -2190,3 +2190,8 @@ Nguồn gốc: file xlsx người dùng gửi (tab "Kho Skill Thực Chiến"); 
 - Danh bạ: claudeskills.info/skills/category/{legal,healthcare,accounting,finance,education,customer-support,human-resources,sales,real-estate,marketing,travel}/ (đọc 25/11/2026).
 - Repo đọc SKILL.md/README/LICENSE: anthropics/knowledge-work-plugins@5e504ae, affaan-m/ecc@4adeee6, NomaDamas/k-skill@c41a117, tradermonty/claude-trading-skills@4080042, Yuan1z0825/nature-skills@c300047, microsoft/azure-skills@7847020, ScrapeCreators/social-media-research-skills@64ba7b4.
 - Trang tiêu chuẩn mở được (HTTP 200/202, 25/11/2026): hl7.org/fhir, fda.gov (21 CFR Part 11), ifrs.org, eur-lex.europa.eu (GDPR), coso.org, eeoc.gov, studentprivacy.ed.gov (FERPA), reso.org, 1edtech.org, pcisecuritystandards.org, nf-co.re, wipo.int/standards, aicpa-cima.com (SOC 2), w3.org (WCAG 2.2). Trả 403 cho bot (chưa xác minh nội dung): hhs.gov (HIPAA), fasb.org, pcaobus.org, iso.org, allotrope.org.
+
+## Bổ sung 2026-11-26 (AG-UI đọc lại → mục 04 §4g.1)
+
+- Ảnh phần đầu README `ag-ui-protocol/ag-ui` do người dùng gửi (26/11/2026); clone `blob:none` tại `ed94ca4a3240527d3ef20fd0f0cc63501f44e469`, đọc README, SECURITY.md, CHANGELOG của `integrations/adk-middleware/python`, `integrations/openai-agents/python`, `integrations/langgraph/{python,typescript}` và các merge `fb5ed0c7`, `513da52e`, `aa456586`, `3e457e6c`, `d1738511`, `25d286c1`.
+- Số liệu 26/11/2026: GitHub search API (★, fork, license); api.npmjs.org (lượt tải tuần `@ag-ui/core`, `@ag-ui/client`); registry.npmjs.org và pypi.org (phiên bản); api.osv.dev (chưa có mục nào cho các gói AG-UI); docs.ag-ui.com/talk-to-us (Production support, dịch vụ trả phí tuỳ chọn).
