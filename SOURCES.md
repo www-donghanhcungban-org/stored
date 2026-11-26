@@ -2044,6 +2044,43 @@ Kiểm đối kháng: mỗi nhóm chọn bốn nhóm claim làm đổi quyết �
 
 - Clone `--filter=blob:none` 20/11/2026, đọc ở SHA marketplace ghim: `anthropics/claude-plugins-official` HEAD `d7d32797e7e02708d0bb00ffe8b8f2397dc1aea6`; `intuit/quickbooks-claude-plugin` `c8daa17a64d4d0fdeabdf0516524f72549b6ad19`; `stripe/ai` `deae744bc0cbf6034b4b6f22f51c690b71a4e779` (HEAD `119bc4a8de4eb4370db1f5838275bc9e7a0d8e4a`); `Shopify/Shopify-AI-Toolkit` `3c32168c6e4cb73f0b46243c82586176ca58bb48` (HEAD `0388268a61051d1e8400996a58b0e3590c1e1500`); `canva-sdks/canva-skills` `bfcbc681560f6031e9949ea52f81e20beb87e39e` (HEAD `508753389ae753417d776dc4e74bb5a7e1302aa1`); `HubSpot/hubspot-mcp-plugins` `a0c59600fc1ddcf03ceca71aebf0c28aa55f49e3` (HEAD `032d294bc91577cb1b9c4a61372567266ca8524e`); `legalzoom/claude-plugins` `f9fd8a0ca6e1421bc1aacb113a109663a7a6f6d8`; `zapier/zapier-mcp` `54a12277a12c60df51ec16cf4e4ef0b27b166649` (HEAD `4e347e2f7a360882a9b431749fad9412990b4e7d`). GitHub search API 20/11/2026 cho số sao (zapier/zapier-mcp không trả kết quả, giữ số 8/11).
 
+## Bổ sung 2026-11-20 (đọc lại Obscura)
+
+- `h4ckf0r0day/obscura`: clone 20/11/2026 (blob:none, 1.821 commit, HEAD 58a04dd); shields ~37k★/2,9k fork, Apache-2.0, v0.2.7, 147 issue/122 PR mở; ảnh README do người dùng gửi đối chiếu với README tại HEAD (render native trong release, bảng so Chrome). Mức docs-read, không build/chạy. Mục 11 §1i.2b; catalog không thêm hồ sơ (vẫn 1577).
+
+## Bổ sung 2026-11-20b (kỹ năng Figma từ ảnh bài đăng tìm việc)
+
+- Mục 06 §7zi: đối chiếu 4 bài help.figma.com (auto layout, components, variants, prototyping), docs-read 20/11/2026; bài đăng cá nhân trong ảnh không được lưu vào kho. Catalog không đổi.
+
+## Bổ sung 2026-11-20c (Modern Web Guidance: kho phân phối và kho nguồn)
+
+- `GoogleChrome/modern-web-guidance`: clone 20/11/2026 (217 commit, HEAD 64a6d70, 195 commit do github-actions[bot]); 23.932★ (GitHub search API), v1.0.1, Apache-2.0, 0 issue/PR mở.
+- `GoogleChrome/modern-web-guidance-src` (hồ sơ mới): clone 20/11/2026 (1.663 commit, HEAD 634d0f8); 9.521★, 309 issue/75 PR mở; đọc mã telemetry (Clearcut, mặc định bật, opt-out `DISABLE_TELEMETRY`), `legacy-scan`, GOVERNANCE. Mục 08 §6c.6; catalog +1 = 1578. Chưa cài/chạy CLI.
+
+## Bổ sung 2026-11-21 (làm mới số sao 10 plugin từ ảnh bảng xếp hạng)
+
+- Ảnh bảng "plugin" (10 dòng: superpowers, mattpocock/skills, ponytail, graphify, caveman, claude-mem, Understand-Anything, impeccable, chrome-devtools-mcp, vercel-labs/agent-skills) do người dùng gửi. Cả 10 repo **đã có** trong catalog; số sao trong ảnh thấp hơn catalog (ảnh cũ, và thứ hạng khác: `mattpocock/skills` hiện vượt `obra/superpowers`). Đã làm mới `stars` bằng GitHub search API 21/11/2026; không đọc lại mã nên không đổi `last_verified_at`. Mô tả tiếng Việt trong ảnh là của trang nguồn ảnh, chưa kiểm.
+
+## Bổ sung 2026-11-21b (rà telemetry 7 plugin trong ảnh)
+
+- Mục 20 §3ze: clone 21/11/2026 (blob:none) `obra/superpowers` 22f0b46, `JuliusBrussee/caveman` a192894, `thedotmack/claude-mem` f1bb834, `Graphify-Labs/graphify` b582ad4, `DietrichGebert/ponytail` 96608e0, `Egonex-AI/Understand-Anything` bb70fdb, `vercel-labs/agent-skills` 5a37a63. Mức docs-read kèm đọc mã ở các file telemetry/hook nêu trong mục; không cài, không chạy. Catalog không đổi số hồ sơ (1578).
+
+## Bổ sung 2026-11-21c (awesome-mcp-servers, ảnh trang repo)
+
+- `punkpeye/awesome-mcp-servers`: clone 21/11/2026 (blob:none, 15.249 commit, HEAD 5fb385c); 98.334★/20.539 fork (GitHub search API), MIT. Ảnh người dùng gửi khớp commit/HEAD; đếm ~4.982 mục, ~521 chính chủ, ~3.699 huy hiệu Glama. Mục 04 §4h; catalog không đổi số hồ sơ (1578).
+
+## Bổ sung 2026-11-21d (agent-browser v0.43.0, ảnh README)
+
+- `vercel-labs/agent-browser`: clone 21/11/2026 (blob:none, 870 commit, HEAD 1fde6b9); 53.133★/3.717 fork (GitHub search API), v0.43.0, Apache-2.0; đọc CHANGELOG 0.42–0.43, grep cờ an toàn và telemetry. Mục 11 §1i.2c; sửa `open_source` false→true; catalog vẫn 1578. Chưa cài/chạy.
+
+## Bổ sung 2026-11-26 (OpenDesign v0.27.3, ảnh README)
+
+- `nexu-io/open-design`: clone 26/11/2026 (blob:none, 3.878 commit, HEAD 5fdcc3d); 109.533★/12.372 fork (GitHub search API), Apache-2.0, `package.json` 0.27.3, tag v0.27.2. Đọc PRIVACY.md (banner Share/Don't share), grep `applyTelemetryDefaults`, `agent-logs.ts`, `claude.ts:116`. Mục 06 §7q.0b; catalog vẫn 1578. Chưa cài/chạy.
+
+## Bổ sung 2026-11-26b (diagram-design, ảnh trang repo)
+
+- `cathrynlavery/diagram-design`: clone 26/11/2026 (blob:none, 495 commit, HEAD b228c5d); 73.446★/4.887 fork (GitHub search API), MIT, plugin 2.6.179; 52 file `type-*.md`; đọc PRIVACY.md, CHANGELOG [Unreleased], workflow. Mục 06 §7b.4; catalog vẫn 1578. Chưa cài/chạy.
+
 ## Bổ sung 2026-11-23 — đủ 1.295 link từ kho Anh Kỹ Sư AI
 
 - Nguồn phát hiện: <https://anhkysuai.com/kho/> và 42 trang chuyên mục. Đã đối chiếu đủ 1.295 owner/repo duy nhất; giữ [snapshot và disposition từng link](data/collections/anhkysuai-kho.json) cùng [1.295 URL GitHub](data/collections/anhkysuai-kho-links.txt).

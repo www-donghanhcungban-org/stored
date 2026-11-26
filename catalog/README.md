@@ -2,7 +2,7 @@
 
 # Catalog theo nhóm, danh mục và danh mục con
 
-Sinh từ `data/projects.json` (2776 hồ sơ) theo `data/taxonomy.json`. Mỗi dòng dẫn về hồ sơ gốc trong README chuyên mục; số sao và mức bằng chứng chỉ đúng tại ngày ghi trong hồ sơ. Sắp xếp theo ★ giảm dần; ★ để trống là chưa có số tin cậy.
+Sinh từ `data/projects.json` (2777 hồ sơ) theo `data/taxonomy.json`. Mỗi dòng dẫn về hồ sơ gốc trong README chuyên mục; số sao và mức bằng chứng chỉ đúng tại ngày ghi trong hồ sơ. Sắp xếp theo ★ giảm dần; ★ để trống là chưa có số tin cậy.
 
 Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính năng đã chắt lọc kèm cách áp dụng) và [GUIDES.md](../GUIDES.md).
 
@@ -82,11 +82,11 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [video-engine](design-media/video-engine.md) | 39 | — |
 | [agentic-video](design-media/agentic-video.md) | 55 | — |
 
-## Kỹ thuật phần mềm & vận hành (501)
+## Kỹ thuật phần mềm & vận hành (502)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
-| [frontend](software/frontend.md) | 89 | Framework UI (23), Build, bundler & monorepo (9), State & data fetching (9), CSS & styling (6), Ngôn ngữ & runtime JS/TS (4), App desktop/đa nền tảng (6), Game engine & đồ họa (4), Thư viện tiện ích (23), Template & starter (5) |
+| [frontend](software/frontend.md) | 90 | Framework UI (23), Build, bundler & monorepo (9), State & data fetching (9), CSS & styling (6), Ngôn ngữ & runtime JS/TS (4), App desktop/đa nền tảng (6), Game engine & đồ họa (4), Thư viện tiện ích (24), Template & starter (5) |
 | [backend](software/backend.md) | 159 | Web framework (30), BaaS & nền tảng backend (6), Xác thực & danh tính (20), API, RPC & client (22), ORM, migration & công cụ CSDL (7), CMS & thương mại điện tử (16), Ứng dụng doanh nghiệp (ERP/CRM) (12), Ngôn ngữ & runtime (14), Microservice, cấu hình & service mesh (13), Ứng dụng tự host (8), Realtime, bot & nhắn tin (11) |
 | [mobile](software/mobile.md) | 39 | — |
 | [devops](software/devops.md) | 169 | Container & Kubernetes (17), IaC & quản lý cấu hình (5), CI/CD & phát hành (8), PaaS tự host & bảng điều khiển server (7), Mạng, proxy, DNS & chứng chỉ (8), Sao lưu, chi phí & vận hành hạ tầng (7), Terminal, shell & công cụ dòng lệnh (43), Editor & IDE (16), Môi trường dev & quản lý toolchain (26), Hệ điều hành & công cụ hệ thống (17), Ứng dụng tự host (ảnh, git, file...) (9), Bảo mật CI & chuỗi cung ứng (6) |

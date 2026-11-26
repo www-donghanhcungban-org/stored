@@ -2,7 +2,7 @@
 
 # frontend — Kỹ thuật phần mềm & vận hành
 
-[← Mục lục catalog](../README.md) · 89 hồ sơ.
+[← Mục lục catalog](../README.md) · 90 hồ sơ.
 
 ## Framework UI (`framework`, 23)
 
@@ -100,7 +100,7 @@
 | [raylib](../../06-ui-ux-design/README.md#anhkysuai-raysan5-raylib) | `raysan5/raylib` | Zlib; dependency nhúng có license riêng | 35.770 | đọc tài liệu 2026-11-23 | 06 | Thư viện C99 cho game, đồ họa và công cụ tương tác. |
 | [libGDX](../../06-ui-ux-design/README.md#anhkysuai-libgdx-libgdx) | `libgdx/libgdx` | Apache-2.0; dependency/asset giữ license riêng | 25.551 | đọc tài liệu 2026-11-23 | 06 | Framework game Java 2D/3D dựa trên OpenGL/ES cho nhiều nền. |
 
-## Thư viện tiện ích (`utility-library`, 23)
+## Thư viện tiện ích (`utility-library`, 24)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -112,12 +112,12 @@
 | [Modernizr](../../13-dev-stack-devops/README.md#anhkysuai-modernizr-modernizr) | `Modernizr/Modernizr` | MIT | 25.679 | đọc tài liệu 2026-11-23 | 13 | Phát hiện khả năng HTML/CSS của browser để progressive enhancement. |
 | [core-js](../../13-dev-stack-devops/README.md#anhkysuai-zloirock-core-js) | `zloirock/core-js` | MIT | 25.515 | đọc tài liệu 2026-11-23 | 13 | Polyfill JavaScript tiêu chuẩn và một số đề xuất/API web. |
 | [Ramda](../../13-dev-stack-devops/README.md#anhkysuai-ramda-ramda) | `ramda/ramda` | MIT cho code; logo CC-BY-NC-SA-3.0 | 24.054 | đọc tài liệu 2026-11-23 | 13 | Thư viện lập trình hàm JavaScript với currying và pipeline. |
+| [modern-web-guidance](../../08-awesome-lists-learning/README.md#mwg-reread-2026-11-20) | `GoogleChrome/modern-web-guidance` | Apache-2.0 | 23.932 | đọc tài liệu 2026-11-20 | 08 | Bộ skill đưa kiến thức nền tảng web hiện đại, thực hành tốt và dữ liệu Baseline vào coding agent; |
 | [validator.js](../../13-dev-stack-devops/README.md#anhkysuai-validatorjs-validator.js) | `validatorjs/validator.js` | MIT | 23.741 | đọc tài liệu 2026-11-23 | 13 | Thư viện validator và sanitizer dành riêng cho chuỗi JavaScript. |
 | [Intro.js](../../06-ui-ux-design/README.md#ch-intro-js) | `usablica/intro.js` | AGPL-3.0 + license thương mại | 23.460 | đọc tài liệu 2026-11-23 | 06 | Tour/onboarding; |
 | [Chalk](../../13-dev-stack-devops/README.md#anhkysuai-chalk-chalk) | `chalk/chalk` | MIT | 23.349 | đọc tài liệu 2026-11-23 | 13 | Thư viện tạo màu và kiểu chữ ANSI cho output terminal JavaScript. |
 | [JavaScript Cookie](../../13-dev-stack-devops/README.md#anhkysuai-js-cookie-js-cookie) | `js-cookie/js-cookie` | MIT | 22.559 | đọc tài liệu 2026-11-23 | 13 | API JavaScript nhỏ để đọc, ghi và xóa cookie phía trình duyệt, với thuộc tính và bộ chuyển đổi encoding. |
 | [VueUse](../../13-dev-stack-devops/README.md#anhkysuai-vueuse-vueuse) | `vueuse/vueuse` | MIT | 22.402 | đọc tài liệu 2026-11-23 | 13 | Tập tiện ích Composition API cho Vue, gồm trạng thái trình duyệt, lưu trữ và tương tác sự kiện. |
-| [modern-web-guidance](../../08-awesome-lists-learning/README.md#6c-kho-repo-của-phan-đông-giang-phandonggiangcomkho-repo-694-repo-32-nhóm-và-24-repo-aiagent-đọc-mã-bảng-người-dùng-dán-kiểm-18112026) | `GoogleChrome/modern-web-guidance` | Apache-2.0 | 22.163 | đọc tài liệu 2026-11-18 | 08 | Bộ skill đưa kiến thức nền tảng web hiện đại, thực hành tốt và dữ liệu Baseline vào coding agent; |
 | [handsontable](../../06-ui-ux-design/README.md#chuyen-handsontable) | `handsontable/handsontable` | Giấy phép riêng của Handsoncode | 22.084 | đọc tài liệu 2026-11-18 | 06 | Thành phần lưới dữ liệu JavaScript giao diện giống bảng tính, dùng với JavaScript/TypeScript, React, Angular, Vue để nhập, sửa, kiểm hợp lệ và xử lý dữ liệu. |
 | [Fuse.js](../../13-dev-stack-devops/README.md#anhkysuai-krisk-fuse) | `krisk/Fuse` | Apache-2.0 | 20.538 | đọc tài liệu 2026-11-23 | 13 | Thư viện fuzzy search JavaScript/TypeScript cho dữ liệu nhỏ hoặc vừa ở trình duyệt và Node. |
 | [effect](../../13-dev-stack-devops/README.md#chuyen-effect) | `Effect-TS/effect` | MIT | 17.596 | đọc tài liệu 2026-11-18 | 13 | Thư viện TypeScript để xây ứng dụng an toàn kiểu, xử lý lỗi có kiểu, tiêm phụ thuộc, đồng thời có cấu trúc, lập lịch, tracing và schema. |
@@ -125,6 +125,7 @@
 | [react-pdf](../../06-ui-ux-design/README.md#chuyen-react-pdf) | `diegomura/react-pdf` | MIT | 16.858 | đọc tài liệu 2026-11-18 | 06 | Trình render React để tạo file PDF trên trình duyệt và máy chủ bằng các thành phần Document, Page, View, Text. |
 | [plate](../../06-ui-ux-design/README.md#chuyen-plate) | `udecode/plate` | MIT | 16.712 | đọc tài liệu 2026-11-18 | 06 | Framework trình soạn thảo văn bản giàu định dạng (rich-text) cho React, kèm các mẫu khởi đầu và tài liệu tại platejs.org. |
 | [ts-pattern](../../13-dev-stack-devops/README.md#chuyen-ts-pattern) | `gvergnaud/ts-pattern` | MIT | 15.222 | đọc tài liệu 2026-11-18 | 13 | Thư viện pattern matching cho TypeScript với suy luận kiểu và kiểm tra đủ trường hợp. |
+| [modern-web-guidance-src](../../08-awesome-lists-learning/README.md#mwg-reread-2026-11-20) | `GoogleChrome/modern-web-guidance-src` | Apache-2.0 | 9.521 | đọc mã 2026-11-20 | 08 | Repo nguồn của modern-web-guidance: guides/, features/, skills-src/, CLI (search, retrieve, legacy-scan, install), RAG BM25 cục bộ, harness eval, dashboard; |
 | [Golden Layout](../../06-ui-ux-design/README.md#ch-golden-layout) | `golden-layout/golden-layout` | MIT | 6.722 | đọc tài liệu 2026-11-23 | 06 | Docking layout; |
 | [Loro](../../34-backend-data-identity-integration/README.md#nt-loro) | `loro-dev/loro` | MIT (lõi); skills/moonbit dưới Apache-2.0 | 6.317 | đọc mã 2026-11-23 | 34 | Thư viện CRDT (Rust, WASM, Swift) cho dữ liệu JSON, giữ đầy đủ lịch sử để checkout, fork và hoàn tác. |
 

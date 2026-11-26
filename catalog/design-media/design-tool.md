@@ -28,7 +28,7 @@
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
-| [OpenDesign](../../06-ui-ux-design/README.md#ch-opendesign) | `nexu-io/open-design` | Apache-2.0 | 109.119 | đọc tài liệu 2026-11-23 | 06 | "Workspace agent thiết kế" local-first (Apache-2.0): brief → prototype/slides/ảnh/HyperFrames motion; |
+| [OpenDesign](../../06-ui-ux-design/README.md#opendesign-reread-2026-11-26) | `nexu-io/open-design` | Apache-2.0 | 109.533 | đọc tài liệu 2026-11-26 | 06 | "Workspace agent thiết kế" local-first (Apache-2.0): brief → prototype/slides/ảnh/HyperFrames motion; |
 | [Onlook](../../06-ui-ux-design/README.md#ch-onlook) | `onlook-dev/onlook` | Apache-2.0 (NOTICE liệt kê phụ thuộc bên thứ ba, có gói độc | 27.825 | đọc tài liệu 2026-11-23 | 06 | Visual editor React; |
 | [Framelink MCP for Figma (Figma-Context-MCP)](../../06-ui-ux-design/README.md#ch-framelink-mcp-for-figma-figma-context-mcp) | `GLips/Figma-Context-MCP` | MIT | 16.288 | đọc tài liệu 2026-11-23 | 06 | MCP rút gọn dữ liệu Figma REST cho agent, 2 tool; |
 | [m3e-canvas](../../06-ui-ux-design/README.md#ch-m3e-canvas) | `lnkiai/m3e-canvas` | MIT (+ NOTICE: mã port Apache-2.0 từ material-components-and | 10.805 | đọc tài liệu 2026-11-23 | 06 | Vẽ màn Material 3 Expressive trên trình duyệt, xuất prompt cho agent; |

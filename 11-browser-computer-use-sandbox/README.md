@@ -377,6 +377,70 @@
 
 **Đánh giá:** kỹ thuật ấn tượng (engine tự viết, render native, CDP tương thích Puppeteer/Playwright, được Cloudflare ghi nhận) và tiết kiệm tài nguyên khi chạy nhiều phiên song song. Nhưng còn v0.2.x, tác giả ẩn danh gần như một người, và định vị chính là scraping + anti-detect → **không đưa vào stack mặc định**. Có thể thử làm engine phụ cho tác vụ đọc trang hàng loạt trên site nội bộ, sau khi so kết quả với Chrome.
 
+<a id="obscura-reread-2026-11-20"></a>
+
+### 1i.2b Đọc lại `h4ckf0r0day/obscura` (2026-11-20, từ ảnh README do người dùng gửi)
+
+> Ảnh chụp README (huy hiệu Trendshift, dòng "Native rendering is here. No Chromium required", bảng so với headless Chrome) được đối chiếu với clone `blob:none` tại `58a04dd3cf1e09e0d572f18db07c0024c93f41dc` (commit 2026-11-20). Mức `docs-read`: đọc README, SECURITY.md, cây thư mục, workflow; **không build, không chạy, không đo lại**.
+
+| Mục | 31/10/2026 (§1i.2) | 20/11/2026 |
+|---|---|---|
+| Phiên bản | v0.2.5 | **v0.2.7** (tag v0.2.6, v0.2.7 mới) |
+| Sao / fork | 30k / 2,3k | **~37k / ~2,9k** (shields, làm tròn; không có số chính xác từ API) |
+| Issue / PR mở | 110 / 97 | **147 / 122** |
+| Commit / tác giả | 1.626 / 104 | **1.821 / 117**; `SGavrl` 1.317 (**~72%**, không đổi), Andrey Mnatsakanov 95, `h4ckf0r0day` 34; 9 trailer Claude |
+| Workflow | 3 | **4** (thêm `windows-package.yml`); `ci.yml` vẫn ghim SHA 15 chỗ; `deny.toml` còn |
+| Tải trang (tự công bố) | 51–84 ms vs 500–800 ms | README hiện ghi **85 ms** vs ~500 ms; dải 51–84 ms không còn trong README *(chưa xác minh, thay đổi do tác giả tự đo)* |
+| Bộ nhớ / binary | ~30 MB / ~70 MiB | không đổi (30 MB vs 200+ MB; ~70 MiB vs 300+ MB) |
+
+**Điểm mới đáng ghi:**
+
+- **Render native nay nằm trong bản phát hành chính thức:** README mục *Rendering* ghi archive release và Docker image đã gồm engine render (layout/paint CSS, screenshot viewport và full-page, screencast CDP, xuất PDF raster, không khởi động Chromium). Đường dùng qua Puppeteer/Playwright (`page.screenshot`, `page.pdf`).
+- **Giới hạn do chính README nêu:** engine "evolving independent engine"; CSS đuôi dài, một số Web API, phát media, hiệu ứng compositor và rasterize font có thể khác Chromium. Không thể dùng làm baseline cho kiểm thử hiển thị/visual regression thay Chrome.
+- **Thư mục mới:** `docs/` có hướng dẫn riêng (CLI, MCP, Playwright, cấu hình stealth và proxy, chạy production), `skills/`, `render-repros/`, `AGENTS.md`.
+- **SSRF:** README ghi chặn IP riêng/nội bộ **mặc định**, kể cả kiểm tra lúc phân giải DNS; cờ `--allow-private-network` / `OBSCURA_ALLOW_PRIVATE_NETWORK=1` mở lại — chỉ bật khi cần cho dev cục bộ. Chưa đọc đường gọi trong `obscura-ssrf` nên không khẳng định mặc định có hiệu lực ở mọi subcommand.
+- **Huy hiệu Trendshift "#1 Repository Of The Day"** là xếp hạng xu hướng trong ngày, không phải bằng chứng chất lượng hay an toàn.
+- **Telemetry:** grep `telemetry` chỉ khớp bình luận chặn analytics của trang và struct đo layout nội bộ (`ContainerLayoutTelemetry`); không thấy gửi dữ liệu về (grep, không phải bằng chứng toàn diện).
+- Obscura Cloud (residential proxies, waitlist) vẫn còn; bảng README vẫn dùng cột "Anti-detect: Built-in".
+
+**Đánh giá cập nhật:** kết luận §1i.2 giữ nguyên — **không đưa vào stack mặc định**: vẫn v0.2.x, ~72% commit từ một tài khoản, định vị scraping + anti-detect (rủi ro ToS/pháp lý). Thay đổi thực chất là render native đã có trong release, mở ra khả năng chụp ảnh/PDF nhẹ cho trang nội bộ; cần so từng trang với Chrome trước khi dùng. Số sao tăng ~7k trong 20 ngày phản ánh sự chú ý, không đổi đánh giá.
+
+**Nguồn §1i.2b:** clone github.com/h4ckf0r0day/obscura 20/11/2026 (blob:none, HEAD 58a04dd, 1.821 commit; README.md (Why Obscura, Obscura Cloud, Rendering, SSRF), SECURITY.md, .github/workflows/*, `git shortlog`, `git tag`) · img.shields.io/github/{stars,forks,license,last-commit,v/release,issues,issues-pr}/h4ckf0r0day/obscura (20/11/2026) · ảnh chụp README do người dùng cung cấp
+
+<a id="agent-browser-reread-2026-11-21"></a>
+
+### 1i.2c Đọc lại `vercel-labs/agent-browser` v0.43.0 (21/11/2026, từ ảnh README do người dùng gửi)
+
+> Ảnh README (mô tả "browser automation for AI agents… accessibility tree", huy hiệu v0.43.0, Apache-2.0, 11M tải/tháng, skills.sh 1.6M, lệnh cài) được đối chiếu với clone `blob:none` tại `1fde6b90e8f17474b2f122d4b4ce43a7fa0a6aa0` (commit 21/11/2026). Mức `docs-read` kèm grep mã: không cài, không chạy, không chạy test.
+
+| Mục | 31/10/2026 (§1h.2) | 21/11/2026 |
+|---|---|---|
+| Phiên bản | v0.41.0 | **v0.43.0** (qua v0.42.0, v0.41.2) |
+| Sao / fork | 45k / 3,1k | **53.133 / 3.717** (GitHub search API) |
+| Commit · tác giả | 780 | **870 · 122 tác giả**; Chris Tate 426, Railly Hugo 102, Lahfir 77; 109 trailer Claude |
+| Issue+PR mở | 582 | 571 (`open_issues_count` của API, gộp issue và PR) |
+| License | Apache-2.0 | Apache-2.0 (`package.json` và LICENSE) |
+
+**Đối chiếu ảnh:**
+
+- Mô tả, lệnh cài (`npm install -g agent-browser` rồi `agent-browser install` tải Chrome for Testing), Homebrew, `--with-deps` trên Linux, `npx agent-browser open example.com`: ✅ khớp README.
+- "v0.43.0", "Apache-2.0": ✅. "**11M/tháng**" và "**skills 1.6M**" là huy hiệu động (npm, skills.sh), **không kiểm được trong repo**; số tải npm không chứng minh số người dùng thật (CI và mirror cũng tải).
+
+**Thay đổi đáng ghi (CHANGELOG 0.42–0.43):**
+
+- **Saved flows (thử nghiệm, 0.42):** ghi một tác vụ trình duyệt rồi **phát lại các request**; mỗi lần chạy thử HTTP trực tiếp, rồi request từ trong trang, rồi phát lại lệnh đã ghi. CHANGELOG ghi runs "chỉ gửi request tới địa chỉ công cộng". Cần cân nhắc: luồng đã ghi có thể chứa **cookie/token của phiên đăng nhập** (chưa đọc `cli/src/native/flow` để biết cách lưu); chỉ ghi trên site được phép và đừng commit file flow.
+- **Skill Modern Web Guidance (0.43):** thêm skill truy xuất guide của Chrome và kiểm trang đã build bằng agent-browser (`skill-data/modern-web-guidance`). Nối với hồ sơ §6c.6 mục 08: skill đó kéo theo telemetry Clearcut mặc định bật của `modern-web-guidance` (tắt `DISABLE_TELEMETRY=1`).
+- **Snapshot hints** cho control không có tên truy cập, binary theo từng nền tảng (cài nhẹ hơn), yêu cầu **Node 22 trở lên** (0.42).
+- Engine thay thế vẫn gồm **Lightpanda** và **Obscura** (`--engine`, xem §1i.2b), iOS Simulator và nhà cung cấp trình duyệt cloud (Browserbase…). Cloud là dịch vụ thương mại bên thứ ba.
+
+**Hàng rào an toàn:** các cờ `--allowed-domains`, `--action-policy`, `--confirm-actions`, `--content-boundaries`, `--max-output` **vẫn có trong mã** (`cli/src/flags.rs`, `output.rs`, `commands.rs`, `mcp.rs`). README hiện **không còn mục "Security" riêng** như lúc đọc 31/10 (nay có mục "For AI agents"); đọc cờ ở docs/mã. Mặc định vẫn là cho agent điều khiển Chrome thật, nên bật các cờ này khi cho agent chạm site không tin cậy.
+
+**Telemetry:** grep không thấy gửi dữ liệu về (chỉ trúng danh sách *lọc* telemetry của trang trong `flow/mod.rs` và skill `derive-client`). CI: 2 workflow (`ci`, `release`); `ci.yml` dùng `actions/checkout@v4` kiểu thẻ, **không ghim SHA** (khác Obscura).
+
+**Đánh giá cập nhật:** kết luận §1h.2 giữ nguyên (CLI Rust, nhiều hàng rào opt-in nhất trong nhóm; vẫn thử nghiệm ở phần flows). Ngoài ra, catalog trước đó ghi sai `open_source: false` cho repo Apache-2.0; đã sửa thành `true`.
+
+**Nguồn §1i.2c:** clone github.com/vercel-labs/agent-browser 21/11/2026 (blob:none, 870 commit, HEAD 1fde6b9; README.md, CHANGELOG.md (0.42.0, 0.43.0), package.json, `cli/src/{flags,output,commands,mcp}.rs`, `cli/src/native/flow/mod.rs`, `skill-data/`, `.github/workflows/ci.yml`, `git shortlog`/`tag`) · GitHub search API (sao/fork/issue) 21/11/2026 · ảnh README do người dùng cung cấp
+
 ### 1i.3 Bổ sung bảng chọn §1g.3
 
 | Nhu cầu | Gợi ý |

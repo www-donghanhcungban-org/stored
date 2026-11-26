@@ -147,6 +147,33 @@ Danh sách: `narrowin/awesome-generative-ui` (LLM sinh/compose UI động; 144�
 
 **Nguồn §7b:** https://github.com/cathrynlavery/diagram-design (clone đầy đủ, HEAD 80c8f28; README, SKILL.md, references/type-*.md, references/export.md, scripts/, .maintainer-policy.json, .github/workflows/ci.yml, PRIVACY.md, THIRD_PARTY_LICENSES.md) · https://diagramdesign.dev · https://skillselion.com/guides/diagram-design-skill-claude-code-guide
 
+<a id="diagram-design-reread-2026-11-26"></a>
+
+### 7b.4 Đọc lại `cathrynlavery/diagram-design` (26/11/2026, từ ảnh trang repo do người dùng gửi)
+
+> Ảnh chụp trang repo: "71k★, fork 4,8k, watch 162", commit `0eeda75` của `github-actions[bot]` ("bump plugin manifests"), mô tả "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types", huy hiệu version 2.6.174, MIT, "#1 Repository Of The Day" (GitHub Trending), skills.sh 32.2K. Đối chiếu với clone `blob:none` tại `b228c5d77794a84150fca41b22940bb316b1398d` (commit 25/11/2026). Mức `docs-read` kèm grep; không cài, không chạy lint hay test.
+
+| Mục | 12/10/2026 (§7b.1) | 26/11/2026 |
+|---|---|---|
+| Sao / fork | ~51,8k / 3,3k | **73.446 / 4.887** (GitHub search API; ảnh 71k/4,8k là vài ngày trước) |
+| Số loại sơ đồ | 44 | **52** (52 file `references/type-*.md` trong `skills/diagram-design/`) |
+| Phiên bản | 2.6.75 | `.claude-plugin/plugin.json` **2.6.179** (ảnh 2.6.174: bot bump ~5 lần từ lúc chụp) |
+| Commit · tác giả | 287 | **495**; bot release 167, Cathryn Lavery 145, Rudy Mizrahi Celekli 27; 81 trailer Claude |
+| Host (thư mục manifest) | Claude, Codex, Copilot, Factory, Cowork, OpenCode, Pi | `.claude-plugin`, `.codex-plugin`, `.factory-plugin`, **`.qoder-plugin`** (mới), `.agents/plugins`; ảnh ghi thêm Cursor |
+| Issue + PR mở | 87 | 39 |
+
+**Đối chiếu ảnh:** "52 diagram types" ✅; MIT ✅; "No shadows, no Mermaid slop" là lời tự mô tả (định vị thẩm mỹ, không kiểm được); "skills.sh 32.2K" là huy hiệu động ngoài repo, **chưa kiểm**; "#1 Repository Of The Day" là xếp hạng xu hướng một ngày, không phải bằng chứng chất lượng. Phần hero (hình sơ đồ 3 lớp) là minh họa của chính dự án.
+
+**Điểm mới trong CHANGELOG mục `[Unreleased]`:** bộ đóng gói **skill ZIP cho Claude Desktop** (#525); import Mermaid `quadrantChart`; **cổng độ tương phản WCAG trong CI**; **chế độ offline dùng font hệ thống** (không tải Google Fonts); `CONTRIBUTING.md` nhận phần nội bộ trước ở README; lệnh `import-drawio`, `import-excalidraw`, `import-plantuml`, `export-diagram`, `profile`, `doctor`.
+
+**Quyền riêng tư và mạng:** `PRIVACY.md` (hiệu lực 1/10/2026) ghi "no server, no accounts, no analytics, no telemetry"; dữ liệu duy nhất ra ngoài là **Google Fonts** khi mở diagram trong trình duyệt (và trang web bạn chọn để lấy brand, do agent tự tải). Grep khớp: ~242 tham chiếu `fonts.googleapis.com` trong asset HTML, không thấy điểm gửi dữ liệu về tác giả (từ "telemetry/analytics" chỉ trúng tài liệu *về* các loại sơ đồ). Với chế độ offline mới, có thể loại bỏ cả kết nối Google Fonts. Hồ sơ brand lưu cục bộ ở `~/.diagram-design/profiles/`.
+
+**CI:** 4 workflow (`ci`, `ci-configuration`, `pages`, `auto-bump`) có ghim SHA một phần (auto-bump 5, ci 8, pages 4, ci-configuration 2 chỗ). `auto-bump.yml` tự tăng phiên bản manifest sau mỗi merge, nên **số phiên bản không nói gì về mức ổn định** (167/495 commit là bot).
+
+**Đánh giá cập nhật:** kết luận §7b.3 giữ nguyên; sản phẩm lớn lên và vẫn đúng với mô tả. Cần nhớ: một người chi phối (Cathryn ~29% commit, bot ~34%), nhiều mã do agent viết (81 trailer Claude), và số sao tăng ~21k trong 6 tuần phản ánh sự chú ý.
+
+**Nguồn §7b.4:** clone github.com/cathrynlavery/diagram-design 26/11/2026 (blob:none, 495 commit, HEAD b228c5d; README.md, PRIVACY.md, CHANGELOG.md, `.claude-plugin/plugin.json`, `skills/diagram-design/references/`, `.github/workflows/`, `git shortlog`) · GitHub search API 26/11/2026 · ảnh trang repo do người dùng cung cấp
+
 ## 7c. Kiểm ảnh: VoltAgent/official-design-md, danh mục DESIGN.md "chính chủ" (ảnh người dùng gửi, 2026-10-13)
 
 > Ảnh là phần đầu README (banner "Official DESIGN.md Collection", huy hiệu "DESIGN.md 7", Discord "138 online"). Đã clone toàn bộ repo (6 commit), tải đủ 11 file được liệt kê, và chạy linter chính thức của Google (`npx @google/design.md@0.4.0 lint`) trên từng file.
@@ -1058,6 +1085,35 @@ Nhận định: "chuẩn mở" của OpenUI do một công ty kiểm soát; bả
 
 **Kết luận:** đánh giá §7k ("local-first thật, PRIVACY rõ") cần sửa: lõi chạy cục bộ nhưng **mặc định gửi cả nội dung prompt và log agent ra ngoài**, và mọi agent chạy không kiểm quyền. Nếu dùng: tắt cả hai lớp telemetry trong Settings ngay lần đầu (lớp safety vẫn gửi), chạy trong máy ảo/container riêng không có thư mục `~/.claude`, `~/.codex` thật, không mở brief/skill từ nguồn lạ, ưu tiên đường BYOK; không dùng bản Docker trên mạng chung khi chưa đặt token.
 
+<a id="opendesign-reread-2026-11-26"></a>
+
+### 7q.0b Đọc lại `nexu-io/open-design` (26/11/2026, từ ảnh README do người dùng gửi)
+
+> Ảnh chụp trang repo: dòng `mise.toml`, `package.json` ("bump main to 0.27.3"), `pnpm-lock.yaml`, `vercel.json`; README "OpenDesign: The 1st Collaborative AI Design Agent Workspace", banner "Celebrating 100K GitHub stars with OpenDesign Go" (credit gấp đôi, $8 tháng đầu, tối đa $120/tháng cho model gói Design, 10+ model gồm GPT-6 Luna, DeepSeek V4.1 Flash, GLM-5.3 Flash-X, MiMo V2.6 Flash), huy hiệu Apache-2.0. Đối chiếu với clone `blob:none` tại `5fdcc3db1e31bd4fa70f673041b78e87977507c3` (commit 23/11/2026). Mức `docs-read` kèm grep mã; không cài, không chạy.
+
+| Mục | 30–31/10/2026 (§7q.0) | 26/11/2026 |
+|---|---|---|
+| Sao / fork | 105.186 / 11.992 | **109.533 / 12.372** (GitHub search API) |
+| Issue + PR mở | 572 + 759 | 1.467 (`open_issues_count`, gộp issue và PR) |
+| Phiên bản | tag mới nhất v0.26.1 | `package.json` **0.27.3**; tag mới nhất `open-design-v0.27.2` (khớp ảnh "bump main to 0.27.3") |
+| Commit | 3.831 | **3.878** (47 commit từ 30/10); lefarcen 557, `open-design-crew[bot]` 247, PerishFire 206; 413 trailer Claude |
+| CI | 55 workflow | **55 workflow, 0 action ghim SHA** |
+
+**Đối chiếu ảnh:** banner "100K stars" và "OpenDesign Go" ✅ có trong README ở HEAD; Apache-2.0 ✅. Banner là **khuyến mãi dịch vụ trả phí** của chính dự án (Go/Cloud), không phải tính năng của bản mã nguồn mở; mức giá và danh sách model là tuyên bố tiếp thị, **chưa kiểm**. "100K sao" là mốc cũ (nay ~109,5k).
+
+**Điều thay đổi, điều không (đọc `PRIVACY.md` và grep mã):**
+
+- ✅ **`PRIVACY.md` đã viết lại rõ hơn:** lần chạy đầu hiện banner **Share / Don't share**; Settings → Privacy có hai công tắc ("Anonymous metrics", "Conversation and tool content"); nêu IP nguồn vẫn lộ qua HTTPS và "anonymous" không có nghĩa là không thấy IP; có "Delete my data" (xoay ID, không xóa dữ liệu đã nhận). Kênh **safety/reliability vẫn luôn bật**, không có công tắc (khi bản build có đích telemetry).
+- ❌ **Mặc định mã vẫn là bật cả hai:** `applyTelemetryDefaults` (`apps/daemon/src/app-config.ts:732-738`) vẫn đặt `{metrics: true, content: true}` khi chưa có cấu hình; PRIVACY.md cũng ghi "Usage telemetry is on by default". Nội dung gồm prompt, phản hồi, input/output tool (đã cắt và che), đi qua relay tới Langfuse; sự kiện và replay đã che chữ qua PostHog. Banner chỉ cho phép chọn lại, không đổi mặc định. Chưa xác minh banner chặn việc gửi trước khi người dùng chọn.
+- ❌ **Chẩn đoán vẫn đọc `*.log` trong `~/.claude` và `~/.codex`** (`packages/diagnostics/src/agent-logs.ts:147-148`; chú thích nói không lấy `auth.json`/`config.json`); PRIVACY.md tôi đọc không nhắc việc tải log CLI bên thứ ba (chưa kiểm hết file).
+- ❌ **Agent vẫn chạy với kiểm quyền tắt, gắn cứng:** `--permission-mode bypassPermissions` ở `runtimes/defs/claude.ts:116` (và `codebuddy.ts:115`). Chưa đọc lại các agent khác.
+- **Mới:** tính năng **chia sẻ file thành link công khai** có dừng/tiếp tục và đồng bộ comment (commit `2b41bc5c3`, 19/10/2026; PRIVACY.md nêu metrics cho share/comment chỉ dùng ID mờ, không gồm nội dung comment, tên tác giả hay URL đầy đủ). Chưa đọc mã máy chủ chia sẻ nên chưa đánh giá quyền truy cập link.
+- **Mới:** `CHANGELOG.md` vẫn dừng ở mục `[Unreleased]` / 0.9.0 (5/2026) và gỡ Nix flake; phiên bản thật nằm ở tag và `package.json`.
+
+**Đánh giá cập nhật:** kết luận §7q.0 giữ nguyên. Tài liệu minh bạch hơn trước, nhưng **mặc định vẫn gửi cả nội dung prompt** và agent chạy không kiểm quyền. Nếu dùng: chọn **Don't share** ngay lần đầu và tắt cả hai công tắc, chỉ cho chạy trong thư mục dự án thử, không dùng với mã bí mật; kênh safety vẫn gửi chẩn đoán đã che. Hạ mức tin cậy với các con số tiếp thị (sao 100K, credit Go).
+
+**Nguồn §7q.0b:** clone github.com/nexu-io/open-design 26/11/2026 (blob:none, 3.878 commit, HEAD 5fdcc3d; README.md, PRIVACY.md, CHANGELOG.md, package.json, `apps/daemon/src/app-config.ts`, `apps/daemon/src/runtimes/defs/claude.ts`, `packages/diagnostics/src/agent-logs.ts`, `.github/workflows/`, `git shortlog`/`tag`) · GitHub search API 26/11/2026 · ảnh trang repo do người dùng cung cấp
+
 ### 7q.1 `open-pencil/open-pencil` (OpenPencil, TypeScript): khác hẳn `ZSeven-W/openpencil` ở §7p.4
 
 | Mục | Thông tin |
@@ -1810,6 +1866,26 @@ npx @animate-ui/cli@latest animate all
 **Điều kiện:** MPL-2.0, giấy phép copyleft theo từng file: sửa file của Penpot thì phải công khai file đó, mã của mình ghép bên cạnh không bị ràng buộc. Penpot Enterprise là gói trả phí cho quản trị nhiều đội. MCP cho LLM viết và chạy đoạn mã tuỳ ý trong môi trường plugin của file đang mở: nên dùng trên file có bản sao lưu và với LLM được tin cậy.
 
 **Dùng khi:** cần công cụ thiết kế tự host, giữ dữ liệu thiết kế trong hạ tầng của mình, hoặc muốn agent đọc và sửa thiết kế qua MCP. Liên quan: §1 (bảng công cụ thiết kế), §7ze (skill Figma cho Claude, so khớp token thiết kế và code).
+
+## 7zi. Bốn kỹ năng Figma hay được nêu trong hồ sơ xin việc UI/UX, đối chiếu tài liệu chính thức (ảnh bài đăng tìm việc người dùng gửi, đọc docs 20/11/2026)
+
+> Ảnh là bài đăng của một cá nhân tìm vị trí UI/UX remote (3 năm kinh nghiệm, Figma). Bài **không** được đưa vào kho: không phải công cụ, không có danh tính hay liên hệ. Mục này chỉ lấy phần công cụ: bốn kỹ năng "Components & Auto Layout", "Wireframing & Prototyping", "User Flows" và variants, đối chiếu help.figma.com. Mức `docs-read`; không mở Figma, không chạy gì.
+
+| Kỹ năng trong bài | Tính năng Figma | Khái niệm chính (đọc 20/11/2026) | Điều kiện |
+|---|---|---|---|
+| Auto Layout | [Auto layout](https://help.figma.com/hc/en-us/articles/360040451373-Explore-auto-layout-properties) | Hướng xếp (dọc, ngang, lưới), wrap, padding, gap (kể cả Auto: Between/Around/Evenly), resizing (Hug contents, Fill container, Fixed, min/max), Ignore auto layout, lồng auto layout | Mọi gói; cần quyền sửa file |
+| Components | [Components](https://help.figma.com/hc/en-us/articles/360038662654-Guide-to-components-in-Figma) | Main component và instance (bản liên kết nhận cập nhật), team library, overrides, detach | Mọi gói; cần quyền sửa file. Xuất bản thư viện nằm ở bài khác |
+| Components (biến thể) | [Variants](https://help.figma.com/hc/en-us/articles/360056440594) | Component set, variant property/value, đặt tên có dấu `/`, "Combine as variants" | Tạo/dùng: mọi gói; **xuất bản component set lên thư viện cần gói trả phí** |
+| Prototyping, User Flows | [Prototyping](https://help.figma.com/hc/en-us/articles/360040314193-Guide-to-prototyping-in-Figma) | Flow, điểm bắt đầu, hotspot, connection, trigger, action, destination (phải là frame cấp cao nhất), transition (thời lượng, easing), overlay, Smart Animate | Mọi gói; cần quyền sửa file |
+| Wireframing | Không có bài riêng được đọc | Wireframe là kỹ thuật, không phải một tính năng Figma | – |
+
+**Lưu ý:**
+
+- Bốn tính năng là sản phẩm **đóng, của Figma**; kho chỉ ghi điều docs nói, không đánh giá chất lượng. Phương án mã nguồn mở xem Penpot (§2, §7zg).
+- "Figma Expert" và "3 năm kinh nghiệm" là lời tự khai trong bài; kho không xác minh.
+- Liên quan: bộ skill Figma cho Claude (§7ze), FigCraft (§7e), Penpot (§7zg).
+
+**Nguồn §7zi:** các URL help.figma.com trong bảng (HTTP 200, đọc 20/11/2026 bằng agent web-fetch) · ảnh bài đăng do người dùng cung cấp (không lưu nội dung cá nhân)
 
 ## 7zh. Đọc mã meta/astryx: design system của Meta "sẵn cho agent", 32,7k★ sau 5 tháng (ảnh thẻ người dùng gửi, đọc mã 24/11/2026)
 
