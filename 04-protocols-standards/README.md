@@ -273,6 +273,30 @@ README có ví dụ 30 dòng: server FastAPI phát `RUN_STARTED`, `TEXT_MESSAGE_
 
 **Dùng khi:** cần đưa agent vào giao diện người dùng (web, mobile, Slack/Teams, terminal) mà không viết giao thức stream riêng cho từng framework; cần shared state hai chiều, tool chạy phía app hoặc duyệt của người giữa lượt chạy. Liên quan: §1 (bản đồ giao thức), §4b.3 (A2UI), §4c (bộ conformance của MCP/A2A), mục 06 §7p (OpenUI, Tambo dùng sự kiện AG-UI).
 
+<a id="ag-ui-reread-2026-11-26"></a>
+
+### 4g.1. Đọc lại 26/11/2026: kiểm ảnh README và các bản vá bảo mật tích hợp
+
+> Ảnh người dùng gửi là phần đầu README (huy hiệu npm v1.0.5, 8,1M lượt tải/tuần, PyPI v1.0.0, nút "Talk to the team", huy hiệu "#1 Repository Of The Day"). Đối chiếu với clone `blob:none` tại [`ed94ca4`](https://github.com/ag-ui-protocol/ag-ui/tree/ed94ca4a3240527d3ef20fd0f0cc63501f44e469) (commit 23/11/2026), 43 commit kể từ `3416b86`. Số liệu đọc 26/11/2026: GitHub search API ★ 21.802, fork 2.190, MIT, không archive; npm API `@ag-ui/core` 1.0.5 và 8.048.263 lượt tải tuần 19–25/11 (`@ag-ui/client` 2.530.482); PyPI `ag-ui-protocol` 1.0.0. Mức `code-read` cho các changelog và commit nêu dưới, không chạy mã.
+
+**Ảnh khớp với repo**, và phần đầu README không đổi so với bản 19/11. Ba điểm cần đọc đúng:
+
+- **8,1M lượt tải/tuần** là của `@ag-ui/core`, gói kiểu dữ liệu mà các SDK và framework khác kéo theo. Con số này gồm cả tải gián tiếp qua dependency và CI, nên không phải số dự án dùng AG-UI. Gói client chỉ có 2,5M.
+- **"#1 Repository Of The Day"** là huy hiệu động của Trendshift (bên thứ ba), không phải xếp hạng của GitHub. Huy hiệu này đã có từ bản README 19/11.
+- **"Talk to the team"** dẫn tới trang [Production support](https://docs.ag-ui.com/talk-to-us): dịch vụ tư vấn kiến trúc và triển khai có trả phí, không bắt buộc. Giao thức và SDK vẫn là MIT. SECURITY.md cho thấy CopilotKit giữ kênh báo lỗi bảo mật.
+
+**Phát hiện mới: năm bản vá bảo mật ở lớp tích hợp, gộp ngày 21/11/2026.** Năm commit "Merge commit from fork" của maintainer Jordan Ritter là kiểu gộp từ fork riêng của GitHub Security Advisory. Changelog ghi rõ lỗi:
+
+| Gói (bản vá) | Lỗi trước bản vá | Cách sửa |
+|---|---|---|
+| `ag_ui_adk` (Python, 0.14.0; ghi [GHSA-jhvp-j8pf-5vh5](https://github.com/ag-ui-protocol/ag-ui/blob/ed94ca4a3240527d3ef20fd0f0cc63501f44e469/integrations/adk-middleware/python/CHANGELOG.md)) | `dependencies` dùng để xác thực chỉ áp cho route agent. `/agents/state` vẫn mở, nên người chưa đăng nhập đọc được state và lịch sử tin nhắn của thread. State dạng mảng cặp `[key, value]` lọt qua kiểm scope `app:`/`user:`, cho phép client ghi state toàn app. | Áp `dependencies` cho cả `/capabilities` và `/agents/state`. Trả 422 khi state không phải object. Header của request thắng `state.headers` do client gửi. Tài liệu đổi sang lấy user ID từ request thay vì context của client. |
+| `ag-ui-openai-agents` ([0.2.0](https://github.com/ag-ui-protocol/ag-ui/blob/ed94ca4a3240527d3ef20fd0f0cc63501f44e469/integrations/openai-agents/python/CHANGELOG.md)) | Client tự thêm một tool call vào lịch sử của mình (tool bất kỳ, đối số bất kỳ) rồi duyệt nó trong `resume`, và server chạy tool đó trước cả lượt gọi model. Client cũng sửa được đối số của lệnh đang chờ duyệt hoặc gửi lại để chạy hai lần. | Mỗi lệnh tạm dừng có token HMAC gắn thread, call id, tên tool và đối số; token dùng một lần và có hạn. Cần biến `AG_UI_OPENAI_AGENTS_APPROVAL_SECRET` ≥ 32 byte. **Chạy nhiều worker thì phải dùng store `ConsumedTokens` chung (vd Redis)**, nếu không thì gửi lại vào worker khác vẫn chạy tool. |
+| `ag-ui-langgraph` (Python 0.0.48) và `@ag-ui/langgraph` ([TS 0.0.47](https://github.com/ag-ui-protocol/ag-ui/blob/ed94ca4a3240527d3ef20fd0f0cc63501f44e469/integrations/langgraph/typescript/CHANGELOG.md)) | `forwardedProps` của client lái được run: `node_name` để bỏ qua node duyệt quyền, `config` ghi đè `assistantConfig`, `command.goto/update`, `checkpoint`, `durability`. Chế độ continue chạy tiếp với input đã đổi mà không qua lại node kiểm. | Allowlist `forwardedProps` (chỉ còn `streamSubgraphs`, `durability`), `command` chỉ nhận `resume`. Continue chỉ đi từ node mà lịch sử thread cho thấy đã chạy cuối. Input đổi thì mở run mới để cổng kiểm chạy lại. Đây là **breaking change**, cần kiểm lại luồng continue. |
+
+OSV.dev chưa có mục nào cho các gói này khi tra ngày 26/11/2026, và API advisory của repo không mở cho phiên này. Vì vậy chỉ GHSA-jhvp-j8pf-5vh5 có mã trong changelog; ba advisory còn lại **(chưa xác minh)** đã công bố hay chưa.
+
+**Bài học khi tích hợp:** spec 1.0 không đổi, nhưng cả ba lỗi đều cùng một kiểu: adapter tin những gì client gửi trong `RunAgentInput` (`state`, `forwardedProps`, lịch sử tin nhắn có tool call). Với AG-UI, client là bên không tin được. Danh tính lấy từ request đã xác thực; mọi trường client gửi qua allowlist; quyết định duyệt (human-in-the-loop) phải gắn với lệnh do chính server tạm dừng. Ai dùng các adapter ADK, OpenAI Agents, LangGraph cần nâng lên bản trên. Cùng đợt có PR #3303 siết quy trình phát hành: nhánh release do bot giữ, `required-checks.yml` gate theo vùng thay đổi, bỏ workflow tự duyệt PR cộng đồng.
+
 <a id="awesome-mcp-servers-reread-2026-11-21"></a>
 
 ## 4h. Kiểm ảnh trang repo `punkpeye/awesome-mcp-servers` (ảnh người dùng gửi, đọc 21/11/2026)
