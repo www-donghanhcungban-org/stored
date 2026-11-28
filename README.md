@@ -589,6 +589,10 @@ Cùng cách làm của đợt trước, lần này cho cả mười nhóm: mư�
 
 Mục 06 §7zh đọc mã `meta/astryx` (MIT, Beta 0.7.x) theo ảnh thẻ người dùng gửi (27,2k★ ngày 13/11, nay 32,7k★). Gói đúng tên là `@astryxdesign/core` (hồ sơ cũ ghi sai `@astryx/core`); CLI có máy chủ MCP cục bộ chứ không chỉ dịch vụ host; không thấy telemetry; `check:repo` và `check:agent-plugin-skill` kiểm chính khối hướng dẫn cho agent. Lời "13.000+ app nội bộ" và "150+ component" chưa kiểm được.
 
+### 98. Bài đăng "7 repo đáng lưu nhất" và các repo liên quan (28/11/2026): đúng chức năng, lệch ở license và nội dung thật
+
+Cả 7 URL trong bài đều là repo thật; ba repo chưa có trong catalog được thêm (`claude-code-playground`, `launch-your-agent`, `claude-quickstarts`, mục 20, 21, 02), cùng sáu repo từ các ảnh và README liên quan (`gemini-api-cli`, `claude-agent-sdk-demos`, `gemini-skills`, `anthropics/courses`, `cma-chat-sdk`, `Antigravity-UX-Engine-Skills`). Ba điều đáng nhớ: (1) bài đăng bỏ sót điều kiện thật: `launch-your-agent` cần API key riêng và không còn bảo trì, `claude-code-playground` tự nhận không chính thức và ba thư mục `demos/`, `launch-demos/`, `skills/` chỉ có README, còn `anthropics/courses` đã archived với **license phi thương mại CC BY-NC 4.0**; (2) license trong README và trong file có thể lệch nhau: `claude-agent-sdk-demos` ghi MIT nhưng không có LICENSE ở gốc, `claude-quickstarts` là MIT nhưng `autonomous-coding` ghi "Internal Anthropic use", `cma-chat-sdk` không có LICENSE; (3) README có thể mô tả nhiều hơn cây thư mục: `Antigravity-UX-Engine-Skills` liệt kê 5 skill nhưng cây thật chỉ có ba file, và plugin gốc `ux-engine` trong ảnh không tìm thấy ở ba marketplace đã thử. Chi tiết ở mục 02, 06, 08, 20, 21.
+
 ## 🧭 Cách dùng kho này
 
 1. Đọc README của chuyên mục để nắm bối cảnh, bảng so sánh và điều kiện tích hợp (license, rủi ro, phương án thay thế).

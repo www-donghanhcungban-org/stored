@@ -2,7 +2,7 @@
 
 # design-skill — Thiết kế, giao diện & media
 
-[← Mục lục catalog](../README.md) · 55 hồ sơ.
+[← Mục lục catalog](../README.md) · 56 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -60,4 +60,5 @@
 | [anatomy-figures](../../06-ui-ux-design/README.md#ch-anatomy-figures) | `wheresryan22/anatomy-figures` | MIT | 30 | đọc tài liệu 2026-11-23 | 06 | 51–52 máy isometric dạng React/custom elements; |
 | [sync-figma-token](../../06-ui-ux-design/README.md#7ze-kiểm-ảnh-bộ-skill-figma-cho-claude-telos-academy-11-skill-từ-figma-use-tới-cc-figma-tokens-ảnh-người-dùng-gửi-đọc-mã-16112026) | `firebenders/sync-figma-token-skill` | — | 27 | đọc mã 2026-11-16 | 06 | Skill đồng bộ token giữa code và Figma variables: báo cáo lệch nghiêm ngặt, bắt buộc duyệt trước khi áp, chỉ áp phần chênh, lưu báo cáo; |
 | [rad-spacing](../../06-ui-ux-design/README.md#7ze-kiểm-ảnh-bộ-skill-figma-cho-claude-telos-academy-11-skill-từ-figma-use-tới-cc-figma-tokens-ảnh-người-dùng-gửi-đọc-mã-16112026) | `nolanperk/rad-spacing` | — | 17 | đọc mã 2026-11-16 | 06 | Skill Figma áp spacing theo cấp bậc lồng bằng biến sẵn có, tự tạo spacing/xs…3xl khi thiếu, cấp cha ≈1,4× cấp con làm tròn 8px/4px (Gestalt proximity); |
+| [Antigravity-UX-Engine-Skills](../../06-ui-ux-design/README.md#ch-antigravity-ux-engine-skills) | `agent-nau/Antigravity-UX-Engine-Skills` | MIT | 1 | đọc tài liệu 2026-11-28 | 06 | Repo Antigravity "lấy cảm hứng từ UX Engine plugin của Design Motion"; |
 | [HTML Demo (Fil)](../../06-ui-ux-design/README.md#7zd-sáu-công-cụ-cho-designer-dùng-ai-dream-loop-hairline-skill-emil-kowalski-skill-meng-to-rea-html-demo-danh-sách-người-dùng-gửi-đọc-mã-16112026) |  | — | — | đọc tài liệu 2026-11-16 | 06 | Skill dựng demo app chạy được bằng HTML (React hoặc JS thuần) thay video: sân khấu 1200×750, khung là hàm của đồng hồ t, con trỏ như người thật, shoot.mjs chụp khung Pla… |

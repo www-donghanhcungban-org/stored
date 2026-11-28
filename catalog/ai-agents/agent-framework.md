@@ -2,7 +2,7 @@
 
 # agent-framework — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 46 hồ sơ.
+[← Mục lục catalog](../README.md) · 51 hồ sơ.
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -33,6 +33,7 @@
 | [Haystack](../../02-agent-frameworks/README.md#ch-haystack) | `deepset-ai/haystack` | Apache-2.0 | 27.083 | đọc tài liệu 2026-11-23 | 02 | ; |
 | [Google ADK](../../02-agent-frameworks/README.md#ch-google-adk) | `google/adk-python` | Apache-2.0 | 22.324 | đọc tài liệu 2026-11-23 | 02 | A2A native. |
 | [Rasa Open Source](../../02-agent-frameworks/README.md#anhkysuai-2026-11-23-rasa-open-source) | `RasaHQ/rasa` | Apache-2.0 | 21.401 | đọc tài liệu 2026-11-23 | 02 | Xây dựng trợ lý hội thoại với NLU, quản lý hội thoại và các kết nối kênh giao tiếp. |
+| [claude-quickstarts](../../02-agent-frameworks/README.md#ch-claude-quickstarts) | `anthropics/claude-quickstarts` | MIT | 21.393 | đọc tài liệu 2026-11-28 | 02 | Bộ 18+ dự án mẫu Claude API (hỗ trợ khách hàng, phân tích tài chính, computer/browser use, coding tự trị, 12 thư mục Managed Agents); |
 | [PydanticAI](../../02-agent-frameworks/README.md#core-framework-semantics) | `pydantic/pydantic-ai` | MIT | 20.996 | đọc mã 2026-11-02 | 02 | typed; |
 | [CompanyOS](../../08-awesome-lists-learning/README.md#6c516-nền-tảng-ai-rag--workflow) | `kortix-ai/CompanyOS` | Elastic License 2.0 | 20.759 | đọc tài liệu 2026-11-18 | 08 | Bộ khung agent cloud-native cho doanh nghiệp: agent chạy liên tục theo sự kiện, song song, mỗi phiên có máy tính đám mây riêng và chung bộ nhớ công ty. |
 | [owl](../../08-awesome-lists-learning/README.md#6c4-nhóm-ai-agent--mcp-so-sánh-chọn-16-repo-đọc-mã-18112026) | `camel-ai/owl` | Apache-2.0 (khai trong pyproject) | 20.198 | đọc tài liệu 2026-11-18 | 08 | Khung nhiều agent OWL (Optimized Workforce Learning) trên CAMEL-AI tự động hóa tác vụ thực tế bằng agent cộng tác có công cụ tìm, trình duyệt, đa phương tiện. |
@@ -50,5 +51,9 @@
 | [eve](../../02-agent-frameworks/README.md#ch-eve) | `vercel/eve` | Apache-2.0 | 6.060 | đọc tài liệu 2026-11-23 | 02 | Framework agent 'filesystem-first' của Vercel (instructions.md, tools/, skills/, channels/, schedules/); |
 | [AG2](../../02-agent-frameworks/README.md#ch-ag2) | `ag2ai/ag2` | Apache-2.0 | 5.083 | đọc tài liệu 2026-11-23 | 02 | Fork cộng đồng AutoGen 0.2 (11/2024). |
 | [agency-swarm](../../02-agent-frameworks/README.md#ch-agency-swarm) | `VRSEN/agency-swarm` | MIT | 4.641 | đọc tài liệu 2026-11-23 | 02 | Agency = agent có vai trò + luồng giao tiếp định sẵn. |
+| [gemini-api-cli](../../02-agent-frameworks/README.md#ch-gemini-api-cli) | `google-gemini/gemini-api-cli` | Apache-2.0 | 4.289 | đọc tài liệu 2026-11-28 | 02 | CLI Go không trạng thái cho agent gọi Gemini (văn bản, ảnh, tts, nhạc, video, phân tích, phiên âm, managed agents nền), có --dry-run, --usage/--schema, install-skill, se… |
+| [claude-agent-sdk-demos](../../02-agent-frameworks/README.md#ch-claude-agent-sdk-demos) | `anthropics/claude-agent-sdk-demos` | — | 2.828 | đọc tài liệu 2026-11-28 | 02 | Tám demo cho Claude Agent SDK; |
 | [OpenOPC](../../02-agent-frameworks/README.md#ch-openopc) | `HKUDS/OpenOPC` | MIT | 2.100 | đọc tài liệu 2026-11-23 | 02 | One-person company: tự dựng org chart, uỷ việc cho Claude Code/Codex/Cursor; |
+| [launch-your-agent](../../21-autonomous-workflows/README.md#ch-launch-your-agent) | `anthropics/launch-your-agent` | Apache-2.0 | 1.421 | đọc tài liệu 2026-11-28 | 21 | Skill Claude Code phỏng vấn, dựng, chạy, chấm và đặt lịch agent trên Claude Managed Agents trong tài khoản người dùng; |
 | [OpenCompany (ex-MachinaOS)](../../02-agent-frameworks/README.md#ch-opencompany-ex-machinaos) | `zeenie-ai/OpenCompany` | MIT | 1.108 | đọc tài liệu 2026-11-23 | 02 | App desktop/self-host 'nhân viên AI' = lead + specialist trên canvas React Flow; |
+| [cma-chat-sdk](../../02-agent-frameworks/README.md#ch-cma-chat-sdk) | `vercel-labs/cma-chat-sdk` | — | 5 | đọc tài liệu 2026-11-28 | 02 | Mẫu bot Slack nghiên cứu trên Claude Managed Agents với Vercel Chat SDK, Vercel Connect, Upstash Redis; |

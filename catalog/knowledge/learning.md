@@ -2,9 +2,9 @@
 
 # learning — Học tập, tài liệu & tri thức
 
-[← Mục lục catalog](../README.md) · 166 hồ sơ.
+[← Mục lục catalog](../README.md) · 167 hồ sơ.
 
-## Khóa học LLM/GenAI & deep learning (`llm-genai-course`, 35)
+## Khóa học LLM/GenAI & deep learning (`llm-genai-course`, 36)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -34,6 +34,7 @@
 | [fastbook](../../08-awesome-lists-learning/README.md#6c519-sách-khóa-học--lộ-trình) | `fastai/fastbook` | GPL v3 cho mã | 25.495 | đọc tài liệu 2026-11-18 | 08 | Bộ notebook Jupyter nhập môn học sâu với fastai và PyTorch, là nền của khoá học course.fast.ai và sách Deep Learning for Coders. |
 | [llm-action](../../08-awesome-lists-learning/README.md#6c512-học-ai--machine-learning) | `liguodongiot/llm-action` | Apache License 2.0 | 25.290 | đọc tài liệu 2026-11-18 | 08 | Tập hợp bài viết và mã thực hành tiếng Trung về huấn luyện, tinh chỉnh, suy luận, nén, đánh giá, hạ tầng AI và LLMOps cho LLM. |
 | [CV](../../08-awesome-lists-learning/README.md#anhkysuai-2026-11-23-accumulatemore-cv) | `AccumulateMore/CV` | — | 24.337 | đọc tài liệu 2026-11-23 | 08 | Bộ ghi chú tiếng Trung từ các khóa deep learning, PyTorch, NLP và agent. |
+| [anthropics/courses](../../08-awesome-lists-learning/README.md#ch-anthropics-courses) | `anthropics/courses` | CC-BY-NC-4.0 | 23.222 | đọc tài liệu 2026-11-28 | 08 | Năm khóa Jupyter của Anthropic (API cơ bản, viết prompt, prompt thực tế, đánh giá prompt, tool use); |
 | [Machine Learning Engineering Open Book](../../08-awesome-lists-learning/README.md#ch-machine-learning-engineering-open-book) | `stas00/ml-engineering` | CC-BY-SA-4.0 | 19.742 | đọc tài liệu 2026-11-23 | 08 | Sách mở vận hành training/inference LLM (Stas Bekman, BLOOM-176B); |
 | [pytorch-deep-learning](../../08-awesome-lists-learning/README.md#6c512-học-ai--machine-learning) | `mrdbourke/pytorch-deep-learning` | MIT | 19.432 | đọc tài liệu 2026-11-18 | 08 | Tài liệu khoá học Learn PyTorch for Deep Learning: notebook từ nền tảng PyTorch tới thị giác máy, transfer learning, tái hiện paper và triển khai mô hình. |
 | [aie-book](../../08-awesome-lists-learning/README.md#ch-aie-book) | `chiphuyen/aie-book` | — | 18.389 | đọc tài liệu 2026-11-23 | 08 | Tài liệu kèm sách AI Engineering; |
