@@ -93,11 +93,13 @@
   4. Đặt lịch (nếu việc lặp lại): triển khai theo cron và múi giờ, có chạy thử thủ công.
   - Mặc định: một agent dùng model Opus mới nhất, kết nối giả (mock) ở v0, đầu ra chỉ là bản nháp. Kết thúc bằng `/wrap-up` tạo trang tổng quan và `NEXT-DIRECTIONS.md`.
 - **Cài và chạy:**
+
   ```bash
   git clone https://github.com/anthropics/launch-your-agent.git
   cd launch-your-agent
   claude
   ```
+
   Sau đó gõ `/launch-your-agent`.
 - Yêu cầu: Claude Code đã đăng nhập; **API key Anthropic của riêng bạn** (tạo ở platform.claude.com); tùy chọn CLI `ant`.
 - Chi phí: README ghi "chạy tốn vài cent" và giới hạn bằng `max_iterations: 3`. Giá CMA **[chưa xác minh]**.
@@ -120,10 +122,12 @@
 - **Cài và dùng:**
   - Cowork: cài từ claude.com/plugins.
   - Claude Code:
+
     ```bash
     claude plugin marketplace add anthropics/knowledge-work-plugins
     claude plugin install sales@knowledge-work-plugins
     ```
+
   - Sau khi cài, skill tự kích hoạt khi liên quan; lệnh dạng `/sales:call-prep`, `/data:write-query`, `/finance:reconciliation`.
   - Tùy biến: sửa `.mcp.json` để đổi connector, thêm ngữ cảnh công ty vào file skill.
 - Yêu cầu: Cowork hoặc Claude Code, cộng tài khoản các công cụ bạn muốn nối. Yêu cầu gói và chi phí **[chưa xác minh]**.

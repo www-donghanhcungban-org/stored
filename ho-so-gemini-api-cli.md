@@ -22,6 +22,7 @@
 Giúp agent làm các việc sau bằng lệnh shell: tạo văn bản, ảnh, giọng nói, nhạc, video; phân tích tệp; phiên âm; chạy managed agents ở chế độ nền.
 
 ### Lệnh (theo bảng trong README)
+
 - **Tạo nội dung:**
   - `generate`: văn bản (model mặc định `gemini-4-hydrogen`), cờ `-m`, `-i/--input`, `--stdin`, `--system`, `--stream=false`, `--body`.
   - `image`: ảnh (`gemini-nano-banana-2.1`), cờ `--out`.
@@ -42,6 +43,7 @@ Giúp agent làm các việc sau bằng lệnh shell: tạo văn bản, ảnh, g
 - **Mã thoát:** 0 thành công, 1 lỗi chạy/API, 2 sai cú pháp/xác thực đầu vào, 3 lỗi xác thực.
 
 ### Ví dụ (từ README)
+
 ```bash
 gemini-api generate "Hello from my agent" --dry-run
 gemini-api image "A friendly robot mascot for a developer tool" --out ./assets/
@@ -59,29 +61,36 @@ gemini-api models list --all
 # macOS/Linux
 curl -fsSL https://raw.githubusercontent.com/google-gemini/gemini-api-cli/main/scripts/install.sh | bash
 ```
+
 ```powershell
 # Windows PowerShell
 iwr -useb https://raw.githubusercontent.com/google-gemini/gemini-api-cli/main/scripts/install.ps1 | iex
 ```
+
 ```bash
 # Go (dùng @main cho bản phát triển; cần Go 1.26.10+)
 go install github.com/google-gemini/gemini-api-cli/cmd/gemini-api@latest
 ```
+
 Hoặc tải gói dựng sẵn từ GitHub Releases rồi đặt `gemini-api` vào PATH. Lưu ý: các lệnh `curl | bash` và `iwr | iex` chạy script từ xa, nên đọc script trước khi chạy.
 
 ## Xác thực
+
 - Tạo khóa ở Google AI Studio, đặt `export GEMINI_API_KEY="YOUR_API_KEY"`.
 - Lưu lâu dài (tùy chọn): `gemini-api configure --api-key "..."` hoặc `gemini-api configure --interactive`; lưu vào kho khóa HĐH (macOS Keychain, Linux Secret Service, Windows Credential Manager) hoặc `~/.config/gemini-api/config.yaml`. Kiểm tra bằng `gemini-api whoami`. Có thêm `auth login`, `auth whoami`, `auth logout`.
 - Biến môi trường được nêu: `GEMINI_API_KEY`, `GEMINI_CLI_AGENT_MODE=1` (như `--agent-mode`), `GEMINI_ENVIRONMENT_KEY` (worker tự lưu trữ), `GOOGLE_GEMINI_BASE_URL`, `EVAL_GEMINI_API_KEY`, `GEMINI_CONFIG_DIR`, `XDG_CONFIG_HOME`. Danh sách đầy đủ **[chưa xác minh]** (xem bằng `--usage`).
 
 ## Tính năng `install-skill`
+
 Cài skill `gemini-api-cli` (nhúng sẵn trong file nhị phân; nguồn ở `github.com/google-gemini/gemini-skills`, `skills/gemini-api-cli`) để agent biết dùng CLI.
+
 - Chế độ tương tác hỏi cài cho agent nào (README nêu Antigravity, Gemini CLI, Claude Code, Codex, Cursor "và nhiều hơn") và cài trong dự án hay thư mục home.
 - Không tương tác: `--agent <danh sách>` (hoặc `all`), `--global`, `--dry-run` để xem trước.
 - Agent không nạp được skill thì README cho một đoạn văn bản để dán vào `AGENTS.md` / `CLAUDE.md` / `.cursorrules`.
 - Danh sách agent hỗ trợ đầy đủ **[chưa xác minh]**.
 
 ## Cấu trúc repo
+
 - `.github/workflows/`: CI (gồm workflow `harness-eval`).
 - `cmd/`: `gemini-api` (CLI) và `gendocs` (mục đích không nêu ngoài tên).
 - `internal/`: **[chưa xác minh]**.
@@ -92,22 +101,28 @@ Cài skill `gemini-api-cli` (nhúng sẵn trong file nhị phân; nguồn ở `g
 - Gốc: `README.md`, `USAGE.md` (chưa đọc), `CONTRIBUTING.md`, `LICENSE`, `.goreleaser.yaml`, `go.mod`, `go.sum`. **Không có `SECURITY.md`** trên `main` dù thanh bên GitHub có nhãn "Security policy" (đó là liên kết chung của GitHub).
 
 ## Môi trường tự lưu trữ (`docs/self-hosted`)
+
 Cho phép agent phía máy chủ Gemini API chạy công cụ tích hợp (`execute_bash`, đọc/ghi/sửa tệp, `list_dir`, `grep_search`, `find_by_name`) trong hạ tầng của bạn, chỉ dùng HTTPS đi ra.
+
 - Hai chế độ: `environments connect` (một worker) và `environments poll` + `environments serve` (mặt phẳng điều khiển giữ khóa, worker sandbox chỉ nhận token thuê).
 - Thư mục con: `local/` (không an toàn để mở ra máy chủ), `containers/` (Docker, Podman), `agent-substrate/` (Kubernetes), `providers/` (Vercel, Daytona, E2B, Modal, Fly.io, Cloud Run, Cloudflare).
 - **Cảnh báo:** luôn cô lập `execute_bash` trong container, microVM hoặc VM. Tài liệu ghi các mẫu là "bản triển khai tham chiếu, không phải sản phẩm Google được hỗ trợ chính thức".
 
 ## Evals (`evals/harness-comparison`)
+
 Đo harness CLI nào giúp agent lập trình gọi đúng API với ít lượt nhất, so CLI sinh tự động (Speakeasy, chính là CLI này) với CLI viết tay tham chiếu. Dùng máy chủ giả lập Gemini Interactions API, trình điều khiển Antigravity SDK (Python), công cụ duy nhất `run_command`. Bảy kịch bản: create/list/get/delete-agent, run-agent-background, interaction-status, cancel-interaction.
+
 - Chạy: `npm install`, `npm run setup`, `npm run eval`; cần `EVAL_GEMINI_API_KEY`. Mỗi lượt chạy đủ là 22 phiên agent thật, **tốn token**.
 - Chạy trên mọi PR qua `.github/workflows/harness-eval.yaml` (bỏ qua với PR từ fork).
 
 ## Yêu cầu, chi phí, bảo mật
+
 - **Yêu cầu:** khóa Gemini API từ AI Studio; agent có quyền shell; Go 1.26.10+ chỉ khi build từ mã nguồn; PowerShell cho trình cài Windows.
 - **Chi phí/gói miễn phí:** **[chưa xác minh]** (README không nêu). Evals tốn token thật. Tệp tải lên giữ 48 giờ. Interaction được lưu phía máy chủ trừ khi đặt `"store": false`.
 - **Bảo mật:** `--dry-run` in yêu cầu với thông tin xác thực đã che, không gọi mạng và không đọc kho khóa. CLI không giữ trạng thái hội thoại cục bộ. Khi gửi báo lỗi, không đưa `GEMINI_API_KEY`.
 
 ## Đánh giá
+
 - **Phù hợp:** người chạy agent lập trình (Claude Code, Codex...) muốn gọi mô hình Gemini, tạo media, phân tích tệp hoặc chạy managed agents nền từ shell.
 - **Không phù hợp:** pipeline sản xuất cần API ổn định (đang beta), hoặc người muốn đóng góp mã (không nhận PR).
 - **Lưu ý tên model:** các tên như `gemini-4-hydrogen`, `gemini-omni-1.2-flash`, `lyria-3.5` lấy nguyên từ README; chưa kiểm chứng chúng có khả dụng hay không.

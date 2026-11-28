@@ -16,7 +16,9 @@
 | Đóng góp | Chào đón (ý tưởng, sửa lỗi chính tả, hướng dẫn mới hoặc cải tiến); xem issue và PR hiện có trước. `CONTRIBUTING.md` chưa đọc |
 
 ## Cấu trúc thư mục cấp cao
+
 Danh sách thư mục không có mô tả; mục đích chỉ suy ra từ tên, trừ khi README nêu.
+
 - `capabilities/`: README liệt kê phân loại, RAG, tóm tắt.
 - `tool_use/`: dùng công cụ (agent chăm sóc khách hàng, máy tính).
 - `third_party/`: Pinecone RAG, Voyage AI embeddings.
@@ -27,6 +29,7 @@ Danh sách thư mục không có mô tả; mục đích chỉ suy ra từ tên, 
 - File gốc: `README.md`, `CONTRIBUTING.md`, `LICENSE`, `CLAUDE.md`, `Makefile`, `tox.ini`, `pyproject.toml`, `uv.lock`, `uv.toml`, `requirements-dev.txt`, `registry.yaml`, `authors.yaml`, `lychee.toml`, `.env.example`, `.pre-commit-config.yaml`.
 
 ## Notebook nổi bật (bảng công thức trong README)
+
 - `capabilities/`: phân loại, RAG, tóm tắt.
 - `tool_use/customer_service_agent.ipynb`: agent chăm sóc khách hàng dùng công cụ.
 - `tool_use/calculator_tool.ipynb`: tích hợp công cụ máy tính.
@@ -46,16 +49,19 @@ Danh sách thư mục không có mô tả; mục đích chỉ suy ra từ tên, 
 - `latency_optimization/latency_optimization.ipynb`: các đòn bẩy độ trễ.
 
 ## Cách chạy
+
 - README **không** có lệnh clone, cài đặt, đặt khóa API hay chạy Jupyter. Điều kiện duy nhất README nêu: cần khóa Claude API ("đăng ký miễn phí").
 - Repo có `pyproject.toml`, `uv.lock`, `uv.toml`, `requirements-dev.txt`, `Makefile`, `.env.example`, gợi ý dùng Python/uv, nhưng cách dùng **[chưa xác minh]** (chưa đọc `CONTRIBUTING.md` và README từng thư mục).
 - README khuyên người mới học khóa "Claude API Fundamentals" ở `anthropics/courses` (`anthropic_api_fundamentals`).
 
 ## Yêu cầu, chi phí, độ cũ
+
 - **Yêu cầu:** khóa Claude API, Python.
 - **Chi phí:** README không nêu; dùng notebook gọi API nên tính phí theo mức dùng.
 - **Độ cũ:** README chỉ dùng tên chung "Haiku", "Opus", không có số phiên bản hay ngày. Link issue trỏ tới `anthropics/anthropic-cookbook` và vài link notebook dùng tên repo cũ (có thể chuyển hướng, chưa kiểm). Các thư mục `fable_5_fallback_billing` và `claude_agent_sdk` gợi ý có nội dung mới nhưng chưa đọc.
 
 ## Đánh giá
+
 - **Phù hợp:** lập trình viên đã dùng Claude API muốn đoạn code Python copy được cho phân loại, RAG, tool use, thị giác, evals, caching, tối ưu chi phí và độ trễ cho agent.
 - **Chưa rõ:** có hướng tới người mới hay không (README chỉ người mới sang khóa học riêng).
 - **Chưa xác minh:** lệnh chạy cụ thể, ngày commit cuối, ngôn ngữ, nội dung từng thư mục chưa mô tả, độ cũ của tên model trong notebook.
