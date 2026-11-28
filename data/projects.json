@@ -1,6 +1,6 @@
 {
   "meta": {
-    "snapshot_date": "2026-11-24",
+    "snapshot_date": "2026-11-28",
     "note": "Ngày snapshot là ngày tập hợp catalog, không phải ngày kiểm mọi hồ sơ. last_verified_at/verified_ref/verification_level/sources chỉ cập nhật cho phạm vi thực sự đã đọc. stars là snapshot có ngày/nguồn trong từng hồ sơ và không đại diện chất lượng. Đợt Anh Kỹ Sư AI 2026-11-23 bao phủ 1.295 link, thêm 691 hồ sơ, đối chiếu 4 repo đổi tên; 600 repo đã có giữ phạm vi cũ. Xem METHOD.md, SOURCES.md và data/collections/anhkysuai-kho.json. Ngày 2026-11-24 loại bốn hồ sơ chưa đọc lại được khỏi catalog; xem ghi chú đầu các chuyên mục 02, 12, 23.",
     "categories": [
       "coding-agent",
@@ -76,7 +76,7 @@
       "quality-mgmt",
       "manufacturing"
     ],
-    "count": 2777,
+    "count": 2786,
     "schema_version": 2
   },
   "projects": [
@@ -62951,6 +62951,192 @@
         "https://github.com/GoogleChrome/modern-web-guidance-src/blob/634d0f83bb41092832797411d148350196b8258d/src/legacy-scan/README.md"
       ],
       "subcategory": "utility-library"
+    },
+    {
+      "name": "claude-code-playground",
+      "repo": "anthropics/claude-code-playground",
+      "category": "harness-pack",
+      "subcategory": "coding-workflow",
+      "license": "Apache-2.0",
+      "stars": 980,
+      "open_source": true,
+      "notes": "Kho cấu hình Claude Code của nhóm DevRel Anthropic (hooks, claude-md, settings, workflows, mods); README tự nhận không chính thức, nguyên trạng, không nhận đóng góp ngoài; demos/, launch-demos/, skills/ chỉ có README ở commit đọc; Apache-2.0; docs-read, chưa mở từng mục con; ★ 28/11/2026: 980 (GitHub search API); mục 20",
+      "section": "20",
+      "id": "claude-code-playground",
+      "profile_path": "20-claude-plugins-ecosystem/README.md",
+      "profile_anchor": "20-claude-plugins-ecosystem/README.md#ch-claude-code-playground",
+      "last_verified_at": "2026-11-28",
+      "verified_ref": "569c5283d9a0a7ee7938df85bb32e4f48cbb8c86",
+      "verification_level": "docs-read",
+      "sources": [
+        "https://github.com/anthropics/claude-code-playground/blob/569c5283d9a0a7ee7938df85bb32e4f48cbb8c86/README.md",
+        "https://github.com/anthropics/claude-code-playground/blob/569c5283d9a0a7ee7938df85bb32e4f48cbb8c86/LICENSE"
+      ]
+    },
+    {
+      "name": "gemini-skills",
+      "repo": "google-gemini/gemini-skills",
+      "category": "harness-pack",
+      "subcategory": "domain-specialist",
+      "license": "Apache-2.0",
+      "stars": 4800,
+      "open_source": true,
+      "notes": "Bốn skill cho Gemini API/SDK (gemini-api-dev, gemini-api-cli, gemini-live-api-dev, gemini-omni-flash-api) xuất thành plugin cho Claude Code, Codex, Cursor, Antigravity bằng manifest song song; README tự nhận không phải sản phẩm Google được hỗ trợ; con số 87%/96% là tự báo cáo; Apache-2.0; docs-read, chưa chạy skill; ★ 28/11/2026: 4.800 (GitHub search API); mục 20",
+      "section": "20",
+      "id": "gemini-skills",
+      "profile_path": "20-claude-plugins-ecosystem/README.md",
+      "profile_anchor": "20-claude-plugins-ecosystem/README.md#ch-gemini-skills",
+      "last_verified_at": "2026-11-28",
+      "verified_ref": "c4d0c62c1240e08a90546186bf320600ab6a039a",
+      "verification_level": "docs-read",
+      "sources": [
+        "https://github.com/google-gemini/gemini-skills/blob/c4d0c62c1240e08a90546186bf320600ab6a039a/README.md",
+        "https://github.com/google-gemini/gemini-skills/blob/c4d0c62c1240e08a90546186bf320600ab6a039a/LICENSE"
+      ]
+    },
+    {
+      "name": "launch-your-agent",
+      "repo": "anthropics/launch-your-agent",
+      "category": "agent-framework",
+      "license": "Apache-2.0",
+      "stars": 1421,
+      "open_source": true,
+      "notes": "Skill Claude Code phỏng vấn, dựng, chạy, chấm và đặt lịch agent trên Claude Managed Agents trong tài khoản người dùng; bản tham chiếu, README ghi không bảo trì, không nhận đóng góp, tốn token; cần API key riêng (.env chmod 600, không qua chat), max_iterations 3; Apache-2.0; docs-read, chưa chạy; ★ 28/11/2026: 1.421 (GitHub search API); mục 21",
+      "section": "21",
+      "id": "launch-your-agent",
+      "profile_path": "21-autonomous-workflows/README.md",
+      "profile_anchor": "21-autonomous-workflows/README.md#ch-launch-your-agent",
+      "last_verified_at": "2026-11-28",
+      "verified_ref": "d5d0ffbca3abe857478165a7c48f4cfc39a50920",
+      "verification_level": "docs-read",
+      "sources": [
+        "https://github.com/anthropics/launch-your-agent/blob/d5d0ffbca3abe857478165a7c48f4cfc39a50920/README.md",
+        "https://github.com/anthropics/launch-your-agent/blob/d5d0ffbca3abe857478165a7c48f4cfc39a50920/LICENSE",
+        "https://github.com/anthropics/launch-your-agent/blob/d5d0ffbca3abe857478165a7c48f4cfc39a50920/.claude/skills/launch-your-agent/SKILL.md"
+      ]
+    },
+    {
+      "name": "claude-quickstarts",
+      "repo": "anthropics/claude-quickstarts",
+      "category": "agent-framework",
+      "license": "MIT",
+      "stars": 21393,
+      "open_source": true,
+      "notes": "Bộ 18+ dự án mẫu Claude API (hỗ trợ khách hàng, phân tích tài chính, computer/browser use, coding tự trị, 12 thư mục Managed Agents); MIT ở gốc nhưng autonomous-coding ghi \"Internal Anthropic use\"; financial-data-analyst bảo clone sai tên repo; nhiều dự án không xác thực người dùng; README con của 18 dự án đã đọc, chưa chạy; ★ 28/11/2026: 21.393 (GitHub search API); mục 02",
+      "section": "02",
+      "id": "claude-quickstarts",
+      "profile_path": "02-agent-frameworks/README.md",
+      "profile_anchor": "02-agent-frameworks/README.md#ch-claude-quickstarts",
+      "last_verified_at": "2026-11-28",
+      "verified_ref": "4a4224bdf0e9cfb3332167b69c90457403813625",
+      "verification_level": "docs-read",
+      "sources": [
+        "https://github.com/anthropics/claude-quickstarts/blob/4a4224bdf0e9cfb3332167b69c90457403813625/README.md",
+        "https://github.com/anthropics/claude-quickstarts/blob/4a4224bdf0e9cfb3332167b69c90457403813625/LICENSE",
+        "https://github.com/anthropics/claude-quickstarts/blob/4a4224bdf0e9cfb3332167b69c90457403813625/autonomous-coding/README.md"
+      ]
+    },
+    {
+      "name": "claude-agent-sdk-demos",
+      "repo": "anthropics/claude-agent-sdk-demos",
+      "category": "agent-framework",
+      "license": null,
+      "stars": 2828,
+      "open_source": true,
+      "notes": "Tám demo cho Claude Agent SDK; README ghi MIT nhưng không có LICENSE ở gốc (chỉ excel-demo/LICENSE và LICENSE.txt của skill), nên license gốc chưa xác định; chỉ chạy cục bộ; email-agent lưu mật khẩu email dạng văn bản; link cũ sdk-demos; docs-read, chưa chạy; ★ 28/11/2026: 2.828 (GitHub search API); mục 02",
+      "section": "02",
+      "id": "claude-agent-sdk-demos",
+      "profile_path": "02-agent-frameworks/README.md",
+      "profile_anchor": "02-agent-frameworks/README.md#ch-claude-agent-sdk-demos",
+      "last_verified_at": "2026-11-28",
+      "verified_ref": "826b268506a5f3707623c9e6140b200befcbebae",
+      "verification_level": "docs-read",
+      "sources": [
+        "https://github.com/anthropics/claude-agent-sdk-demos/blob/826b268506a5f3707623c9e6140b200befcbebae/README.md",
+        "https://github.com/anthropics/claude-agent-sdk-demos/blob/826b268506a5f3707623c9e6140b200befcbebae/excel-demo/LICENSE"
+      ]
+    },
+    {
+      "name": "gemini-api-cli",
+      "repo": "google-gemini/gemini-api-cli",
+      "category": "agent-framework",
+      "license": "Apache-2.0",
+      "stars": 4289,
+      "open_source": true,
+      "notes": "CLI Go không trạng thái cho agent gọi Gemini (văn bản, ảnh, tts, nhạc, video, phân tích, phiên âm, managed agents nền), có --dry-run, --usage/--schema, install-skill, self-hosted environments; beta, không nhận PR ngoài, không SECURITY.md; CI non-live-validation chạy scripts/validate.sh; tìm từ khóa không thấy telemetry nhưng chưa đọc hết mã; Apache-2.0; docs-read, chưa chạy; ★ 28/11/2026: 4.289 (GitHub search API); mục 02",
+      "section": "02",
+      "id": "gemini-api-cli",
+      "profile_path": "02-agent-frameworks/README.md",
+      "profile_anchor": "02-agent-frameworks/README.md#ch-gemini-api-cli",
+      "last_verified_at": "2026-11-28",
+      "verified_ref": "3dcbb6e542c222dad1e6f5b6e43cb390561d0cca",
+      "verification_level": "docs-read",
+      "sources": [
+        "https://github.com/google-gemini/gemini-api-cli/blob/3dcbb6e542c222dad1e6f5b6e43cb390561d0cca/README.md",
+        "https://github.com/google-gemini/gemini-api-cli/blob/3dcbb6e542c222dad1e6f5b6e43cb390561d0cca/LICENSE",
+        "https://github.com/google-gemini/gemini-api-cli/blob/3dcbb6e542c222dad1e6f5b6e43cb390561d0cca/.github/workflows/ci.yaml",
+        "https://github.com/google-gemini/gemini-api-cli/blob/3dcbb6e542c222dad1e6f5b6e43cb390561d0cca/go.mod"
+      ]
+    },
+    {
+      "name": "cma-chat-sdk",
+      "repo": "vercel-labs/cma-chat-sdk",
+      "category": "agent-framework",
+      "license": null,
+      "stars": 5,
+      "open_source": true,
+      "notes": "Mẫu bot Slack nghiên cứu trên Claude Managed Agents với Vercel Chat SDK, Vercel Connect, Upstash Redis; mỗi thread một phiên; Bash tắt vì đọc web không tin cậy; không có LICENSE nên quyền tái sử dụng chưa rõ; lệnh clone trong README trỏ repo tên khác; repo mới, 1 commit; docs-read, chưa chạy; ★ 28/11/2026: 5 (GitHub search API); mục 02",
+      "section": "02",
+      "id": "cma-chat-sdk",
+      "profile_path": "02-agent-frameworks/README.md",
+      "profile_anchor": "02-agent-frameworks/README.md#ch-cma-chat-sdk",
+      "last_verified_at": "2026-11-28",
+      "verified_ref": "3e82f1b6b4a30b03e23404359d5b64f66abe1201",
+      "verification_level": "docs-read",
+      "sources": [
+        "https://github.com/vercel-labs/cma-chat-sdk/blob/3e82f1b6b4a30b03e23404359d5b64f66abe1201/README.md"
+      ]
+    },
+    {
+      "name": "Antigravity-UX-Engine-Skills",
+      "repo": "agent-nau/Antigravity-UX-Engine-Skills",
+      "category": "design-skill",
+      "license": "MIT",
+      "stars": 1,
+      "open_source": true,
+      "notes": "Repo Antigravity \"lấy cảm hứng từ UX Engine plugin của Design Motion\"; README liệt kê 5 skill nhưng cây thật chỉ có .gitignore, LICENSE, README.md (5 URL SKILL.md trả 404); không link tới bản gốc, plugin ux-engine không tìm thấy trong 3 marketplace đã thử; MIT; docs-read; ★ 28/11/2026: 1 (GitHub search API); mục 06",
+      "section": "06",
+      "id": "antigravity-ux-engine-skills",
+      "profile_path": "06-ui-ux-design/README.md",
+      "profile_anchor": "06-ui-ux-design/README.md#ch-antigravity-ux-engine-skills",
+      "last_verified_at": "2026-11-28",
+      "verified_ref": "3e4e5d8bd74b0b1ff5325a6014635a2f0951f527",
+      "verification_level": "docs-read",
+      "sources": [
+        "https://github.com/agent-nau/Antigravity-UX-Engine-Skills/blob/3e4e5d8bd74b0b1ff5325a6014635a2f0951f527/README.md",
+        "https://github.com/agent-nau/Antigravity-UX-Engine-Skills/blob/3e4e5d8bd74b0b1ff5325a6014635a2f0951f527/LICENSE"
+      ]
+    },
+    {
+      "name": "anthropics/courses",
+      "repo": "anthropics/courses",
+      "category": "learning",
+      "subcategory": "llm-genai-course",
+      "license": "CC-BY-NC-4.0",
+      "stars": 23222,
+      "open_source": false,
+      "notes": "Năm khóa Jupyter của Anthropic (API cơ bản, viết prompt, prompt thực tế, đánh giá prompt, tool use); đã archived (chỉ đọc); license CC BY-NC 4.0, phi thương mại; tên model Claude 3 nên cũ; khóa 2 trùng prompt-engineering-interactive-tutorial; docs-read, chưa mở notebook; ★ 28/11/2026: 23.222, archived (GitHub search API); mục 08",
+      "section": "08",
+      "id": "anthropics-courses",
+      "profile_path": "08-awesome-lists-learning/README.md",
+      "profile_anchor": "08-awesome-lists-learning/README.md#ch-anthropics-courses",
+      "last_verified_at": "2026-11-28",
+      "verified_ref": "f4dbb137d7b02dddaf3cc73e32e20a702d3b5e77",
+      "verification_level": "docs-read",
+      "sources": [
+        "https://github.com/anthropics/courses/blob/f4dbb137d7b02dddaf3cc73e32e20a702d3b5e77/README.md",
+        "https://github.com/anthropics/courses/blob/f4dbb137d7b02dddaf3cc73e32e20a702d3b5e77/LICENSE"
+      ]
     }
   ]
 }

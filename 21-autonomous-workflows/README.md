@@ -1749,3 +1749,26 @@ Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệ
 | Giới hạn và rủi ro | GPL-3.0-or-later: nhúng API Go `github.com/dagucloud/dagu/v2` vào nhị phân phân phối phải theo GPL; `LICENSING.md` nói muốn nhúng độc quyền thì cần thỏa thuận thương mại riêng với chủ bản quyền. Có hệ giấy phép trả phí (`internal/license/`, gói free và gói có entitlement) nên một số tính năng nhóm có thể bị khóa theo license (chưa liệt kê tính năng nào). Cơ chế báo cáo lên Dagu Console tắt mặc định theo mã nhưng là đường dữ liệu rời máy nếu bật. Đặc tả còn ghi 'một phần được hiện thực'. Không có đảm bảo durable execution kiểu replay như Temporal; bền ở mức trạng thái run ghi file (chưa kiểm khôi phục sau crash). |
 | So với | Kestra (`kestra`) cũng khai báo bằng YAML nhưng nặng hơn; Temporal (`temporal`) là durable execution trong mã; Airflow (`airflow`) và Prefect (`prefect`) viết workflow bằng Python. |
 | Nguồn | [README](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/README.md) · [LICENSE](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/LICENSE) · [LICENSING](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/LICENSING.md) · [entitlement.go](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/internal/license/entitlement.go) · [monitoring.go](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/internal/cloudreport/monitoring.go) · [collector.go](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/internal/telemetry/collector.go) · [runner.go](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/conformance/harness/runner.go) · [spec 013](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/specs/013-step-run.md) · [ci.yaml](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/.github/workflows/ci.yaml) · [conformance.yml](https://github.com/dagu-org/dagu/blob/2fbd206eed169911fe0a964439ecd754f35c74bc/.github/workflows/conformance.yml) |
+
+## Bổ sung 28/11/2026 (launch-your-agent, từ ảnh bài đăng 7 repo Anthropic)
+
+<a id="ch-launch-your-agent"></a>
+
+### launch-your-agent (anthropics)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anthropics/launch-your-agent |
+| Mô tả 1 dòng | Skill Claude Code (kèm `/wrap-up`) phỏng vấn bạn, dựng, chạy và chấm một agent trên Claude Managed Agents trong tài khoản Anthropic của bạn, rồi tùy chọn đặt lịch |
+| Loại | agent-framework (khung dựng agent bằng skill hội thoại), bản tham chiếu giáo dục |
+| License | Apache-2.0 (LICENSE ở gốc) |
+| Phiên bản đã đọc | `d5d0ffbca3abe857478165a7c48f4cfc39a50920` (commit 2026-09-23) |
+| Kiểm chứng | 2026-11-28; docs-read; clone `blob:none` tại SHA trên, đọc cây thư mục, LICENSE; README và `SKILL.md` đọc qua trang GitHub; chưa chạy skill, chưa mở `references/*` và `cma-primitives.md` |
+| ★ (ngày) | 1.421 ★, 288 fork, không archive; tạo 2026-06-16, push cuối 2026-09-23 (GitHub search API, 2026-11-28) |
+| Cấu trúc thật | `.claude/skills/launch-your-agent/` (SKILL.md và `references/`: interview, cma-api, examples-bank, mock-connectors, overview-template, build-sheet mẫu), `.claude/skills/wrap-up/SKILL.md`, `ui/` (trang tổng quan mẫu), `cma-primitives.md`, CLAUDE.md, CONTRIBUTING.md |
+| Quy trình (SKILL.md v0.3.0) | (1) phỏng vấn thành kế hoạch, chưa cần API key; (2) kiểm payload, hỏi API key một lần và lưu ở `my-agent/.env` (chmod 600, không qua chat), chạy với tiêu chí kết quả và `max_iterations: 3`; (3) chấm và lặp, mỗi vòng đổi một thứ, chạy ca eval giữ lại; (4) đặt lịch cron nếu việc lặp lại; mặc định một agent Opus, kết nối giả ở v0, đầu ra là bản nháp |
+| Vì sao đáng tham khảo | Chuyển "phạm vi, tiêu chí xong, eval giữ lại" thành quy trình hội thoại có hợp đồng đầu ra; kết nối giả trước, kết nối thật là nâng cấp đầu tiên; cấm khóa API đi qua chat |
+| Hạn chế / rủi ro | README nói: tham chiếu, không bảo trì, không nhận đóng góp, tốn token hơn agent làm riêng; cần API key Anthropic có quyền Managed Agents và chi phí do tài khoản bạn chịu ("vài cent" mỗi lần là tự báo cáo, giá chưa kiểm); phụ thuộc primitive CMA có thể đổi; tên model trong ví dụ là slug mẫu |
+| So với | Nhóm `managed-agents/` trong `claude-quickstarts` (ví dụ chạy được cho Slack, Sentry, Linear, mục 02), `claude-agent-sdk-python` (SDK tự chạy vòng lặp), `agent-skills-addyosmani` và `superpowers` (quy trình coding trước khi dựng agent) |
+| Tích hợp | Clone repo rồi chạy `claude` trong thư mục đó và gõ `/launch-your-agent`; đặt khóa API trong `.env` riêng của dự án, không đưa vào chat hay commit; đặt trần `max_iterations` và ngân sách trước khi bật lịch |
+| Nguồn | [LICENSE](https://github.com/anthropics/launch-your-agent/blob/d5d0ffbca3abe857478165a7c48f4cfc39a50920/LICENSE) · [README.md](https://github.com/anthropics/launch-your-agent/blob/d5d0ffbca3abe857478165a7c48f4cfc39a50920/README.md) · [SKILL.md](https://github.com/anthropics/launch-your-agent/blob/d5d0ffbca3abe857478165a7c48f4cfc39a50920/.claude/skills/launch-your-agent/SKILL.md) · GitHub search API (28/11/2026) |

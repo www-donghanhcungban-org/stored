@@ -983,3 +983,88 @@ Các hồ sơ dưới đây có từ trước khi kho ghi mức kiểm. Ngày 20
 ### Microsoft Agent Framework — tài liệu chính thức 23/11/2026
 
 Theo [Microsoft Learn](https://learn.microsoft.com/en-us/agent-framework/overview/), Agent Framework kế thừa AutoGen và Semantic Kernel, bổ sung workflow điều phối. Chỉ đọc tài liệu sản phẩm; chưa truy cập được repo tại commit xác định, chưa kiểm license hoặc mã, chưa nâng mức xác minh của repo.
+
+## Bổ sung 28/11/2026 (Quickstarts, Agent SDK demos, Gemini API CLI, CMA Chat SDK)
+
+Người dùng gửi ảnh bài đăng "7 repo đáng lưu nhất" và ảnh repo `google-gemini/gemini-api-cli`; các repo bên dưới được đọc từ mã thật tại commit ghi trong từng bảng. Đối chiếu bài đăng với repo nằm ở mục 20.
+
+<a id="ch-claude-quickstarts"></a>
+
+### claude-quickstarts (anthropics)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anthropics/claude-quickstarts |
+| Mô tả 1 dòng | Bộ dự án mẫu để bắt đầu xây ứng dụng với Claude API: hỗ trợ khách hàng, phân tích dữ liệu, computer/browser use, coding tự trị, và nhóm Managed Agents |
+| Loại | agent-framework (bộ ví dụ chạy được) |
+| License | MIT, "Copyright (c) 2023 Anthropic" (LICENSE ở gốc); **`autonomous-coding/README.md` ghi "Internal Anthropic use"**, lệch với MIT của gốc |
+| Phiên bản đã đọc | `4a4224bdf0e9cfb3332167b69c90457403813625` (commit 2026-11-06) |
+| Kiểm chứng | 2026-11-28; docs-read; clone `blob:none` tại SHA trên, đọc cây thư mục, LICENSE, tên workflow và mục License của hai README; README của 18 dự án con đọc qua raw GitHub; chưa cài hay chạy dự án nào, chưa mở `agents/`, `managed-agents/assistant-ui` và `managed-agents/self-hosted-sandboxes` |
+| ★ (ngày) | 21.393 ★, 3.564 fork, không archive; tạo 2024-08-29, push cuối 2026-11-06 (GitHub search API, 2026-11-28) |
+| Cấu trúc thật | `agents/` (Python), `autonomous-coding`, `browser-toolset`, `browser-use-demo`, `computer-toolset`, `computer-use-best-practices`, `computer-use-demo`, `customer-support-agent`, `financial-data-analyst`, `managed-agents/` (12 thư mục: assistant-ui, chat-sdk, copilot-kit-ag-ui, daily-brief, knowledge-wiki, linear, mcp-server-typescript, roadtrip-planner, self-hosted-sandboxes, sentry, sentry-autofix, slack); CI: `build`, `tests`, `reusable_build_step`, `openshell-policy` |
+| Điểm khác nhau giữa các dự án | Computer/browser use: chạy trong Docker hoặc VM, prompt injection là rủi ro chính; Managed Agents: cần `ant` CLI 2.0+ và quyền beta, chia hai kiểu (cầu nối không trạng thái Slack/Linear, và tác vụ theo lịch Daily Brief/Sentry); `knowledge-wiki` ghi chi phí ~$16/lượt `core`; `sentry-autofix` có trần $10/phiên; `daily-brief` ước $1 đến $1,5/ngày bận |
+| Vì sao đáng tham khảo | Nhiều mẫu chạy được cho cùng một nền: tách quyền (token chỉ đọc, allowlist công cụ MCP, vault tiêm khóa theo host), trần chi phí theo phiên, cầu nối không trạng thái dùng metadata phiên làm bảng định tuyến |
+| Hạn chế / rủi ro | README gốc không nêu giá và không có lệnh chạy chung; lệnh nằm ở README từng dự án; `financial-data-analyst` bảo clone `anthropics/anthropic-quickstarts` (tên repo khác); `customer-support-agent` đề xuất `AmazonBedrockFullAccess` và tự nhận prototype, không cho sản xuất; `chat-sdk`, `copilot-kit-ag-ui`, `roadtrip-planner` không có xác thực người dùng; `mcp-server-typescript` cấp quyền chạy mọi agent trong workspace cho người giữ token HTTP; `linear`: workspace cài đầu tiên sở hữu cầu nối |
+| So với | `claude-agent-sdk-demos` (demo cho Agent SDK, chỉ chạy cục bộ), `claude-cookbooks` (notebook Python, mục 17), `launch-your-agent` (mục 21, dựng agent bằng skill hội thoại), `vercel-ai-sdk` và `eve` (khung agent của Vercel) |
+| Tích hợp | Chọn đúng một dự án, đọc README riêng rồi mới chạy; đặt khóa trong biến môi trường hoặc vault, không commit; computer/browser use chỉ chạy trong VM dùng một lần; kiểm license của dự án bạn lấy (nhất là `autonomous-coding`) |
+| Nguồn | [LICENSE](https://github.com/anthropics/claude-quickstarts/blob/4a4224bdf0e9cfb3332167b69c90457403813625/LICENSE) · [README.md](https://github.com/anthropics/claude-quickstarts/blob/4a4224bdf0e9cfb3332167b69c90457403813625/README.md) · [autonomous-coding/README.md](https://github.com/anthropics/claude-quickstarts/blob/4a4224bdf0e9cfb3332167b69c90457403813625/autonomous-coding/README.md) · [tests.yaml](https://github.com/anthropics/claude-quickstarts/blob/4a4224bdf0e9cfb3332167b69c90457403813625/.github/workflows/tests.yaml) · GitHub search API (28/11/2026) |
+
+<a id="ch-claude-agent-sdk-demos"></a>
+
+### claude-agent-sdk-demos (anthropics)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anthropics/claude-agent-sdk-demos |
+| Mô tả 1 dòng | Tám ứng dụng demo cho Claude Agent SDK: email-agent, excel-demo, hello-world (v1, v2), research-agent, resume-generator, simple-chatapp, ask-user-question-previews |
+| Loại | agent-framework (bộ demo) |
+| License | **README ghi MIT, nhưng không có file LICENSE ở gốc** (GitHub API: không xác định); chỉ `excel-demo/LICENSE` và hai `LICENSE.txt` của skill xlsx/pdf nằm trong thư mục con |
+| Phiên bản đã đọc | `826b268506a5f3707623c9e6140b200befcbebae` (commit 2026-03-13) |
+| Kiểm chứng | 2026-11-28; docs-read; clone `blob:none` tại SHA trên, đọc cây thư mục và liệt kê file license; README gốc và 8 README demo đọc qua raw GitHub; chưa cài hay chạy |
+| ★ (ngày) | 2.828 ★, 451 fork, không archive; tạo 2025-09-17 (GitHub search API, 2026-11-28) |
+| Vì sao đáng tham khảo | Mẫu nhỏ, cô lập cho từng khả năng SDK: hook `PreToolUse` giới hạn ghi tệp (`hello-world`), subagent song song với hook theo dõi (`research-agent`), `canUseTool` qua WebSocket (`ask-user-question-previews`), phát trực tiếp (`simple-chatapp`) |
+| Hạn chế / rủi ro | README gốc: chỉ cho phát triển cục bộ, không đưa lên sản xuất; `email-agent` lưu mật khẩu email dạng văn bản trong biến môi trường, không xác thực; `simple-chatapp` ai cũng đọc được mọi chat; `hello-world-v2` dùng API `unstable_v2_*`; `resume-generator` tra cứu người thật bằng web search; link hỗ trợ và đường dẫn clone trỏ tới tên repo cũ `sdk-demos`; thiếu LICENSE gốc nên quyền tái sử dụng không rõ ràng |
+| So với | `claude-quickstarts` (ví dụ nhiều hơn, có Managed Agents), `claude-agent-sdk-python` (chính SDK), `launch-your-agent` (mục 21) |
+| Tích hợp | Chỉ làm mẫu tham khảo; không chép nguyên vào sản phẩm khi chưa làm rõ license (hỏi chủ repo hoặc xem license từng thư mục con); chạy trong môi trường cô lập |
+| Nguồn | [README.md](https://github.com/anthropics/claude-agent-sdk-demos/blob/826b268506a5f3707623c9e6140b200befcbebae/README.md) · [excel-demo/LICENSE](https://github.com/anthropics/claude-agent-sdk-demos/blob/826b268506a5f3707623c9e6140b200befcbebae/excel-demo/LICENSE) · GitHub search API (28/11/2026) |
+
+<a id="ch-gemini-api-cli"></a>
+
+### gemini-api-cli (google-gemini)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/google-gemini/gemini-api-cli |
+| Mô tả 1 dòng | CLI Go không trạng thái `gemini-api` để agent lập trình có quyền shell gọi Gemini: văn bản, ảnh, giọng nói, nhạc, video, phân tích tệp, phiên âm, managed agents nền (About: "An (experimental) CLI for the Gemini API") |
+| Loại | agent-framework (lớp công cụ shell cho agent) |
+| License | Apache-2.0 (LICENSE ở gốc; "Copyright 2026 Google LLC") |
+| Phiên bản đã đọc | `3dcbb6e542c222dad1e6f5b6e43cb390561d0cca` (commit 2026-11-26) |
+| Kiểm chứng | 2026-11-28; docs-read; clone `blob:none` tại SHA trên, đọc cây thư mục, LICENSE, `go.mod`, `.github/workflows/ci.yaml` và tìm theo từ khóa telemetry/analytics trong `internal/` và `cmd/`; README đọc qua raw GitHub; chưa cài, chưa gọi API, chưa chạy kiểm |
+| ★ (ngày) | 4.289 ★, 312 fork, không archive; tạo 2026-04-29, push cuối 2026-11-27 (GitHub search API, 2026-11-28) |
+| Cấu trúc thật | `cmd/` (`gemini-api`, `gendocs`), `internal/`, `scripts/` (trình cài), `docs/self-hosted/`, `evals/harness-comparison/`, `tests/contract/` (26 file kiểm hợp đồng), `.goreleaser.yaml`, USAGE.md; **không có SECURITY.md** ở gốc dù thanh bên GitHub có nhãn "Security policy" |
+| Cổng CI đã đọc | `ci.yaml` có job `non-live-validation` chạy `./scripts/validate.sh` với Go theo `go.mod` (1.26.10); `release.yaml` cho phát hành; evals chạy trên mỗi PR (README evals), không dùng cho fork |
+| Vì sao đáng tham khảo | Thiết kế CLI cho agent: `--dry-run` che khóa và không gọi mạng, `--usage`/`--schema` cho agent tự khám phá lệnh, `--agent-mode`, `--output-format json`/`--jq`, mã thoát phân loại lỗi (0, 1, 2, 3); lệnh `install-skill` cài skill vào Antigravity, Claude Code, Codex, Cursor; tài liệu `self-hosted` cho phép công cụ `execute_bash` chạy trong hạ tầng của bạn chỉ qua HTTPS đi ra |
+| Hạn chế / rủi ro | README ghi beta, có thay đổi phá vỡ, nên ghim phiên bản; không nhận PR ngoài; cài bằng `curl \| bash` hoặc `iwr \| iex` chạy script từ xa (nên đọc script trước); tìm theo từ khóa không thấy telemetry trong `internal/` và `cmd/` (chỉ có cấu hình `User-Agent`), nhưng chưa đọc toàn bộ mã nên chưa kết luận; tên model như `gemini-4-hydrogen`, `gemini-omni-1.2-flash` lấy nguyên từ README, chưa đối chiếu tài liệu Google; giá và hạn mức miễn phí không có trong README; `self-hosted/local/` bị tài liệu gắn nhãn không an toàn để mở ra ngoài |
+| So với | `gemini-cli` (mục 01, agent tương tác của Google), `gemini-skills` (skill cho Gemini, mục 20, có `gemini-api-cli` là skill đi kèm), `agent-browser` và `agent-desktop` của Vercel (CLI cho agent ở mục 11), `skills-cli-npx-skills` (mục 20) |
+| Tích hợp | Cài bản ghim (`go install ...@<tag>` hoặc archive release), đặt `GEMINI_API_KEY` trong biến môi trường hoặc kho khóa của HĐH; luôn thử `--dry-run` trước khi cho agent gọi thật; cô lập `execute_bash` trong container hoặc VM |
+| Nguồn | [LICENSE](https://github.com/google-gemini/gemini-api-cli/blob/3dcbb6e542c222dad1e6f5b6e43cb390561d0cca/LICENSE) · [README.md](https://github.com/google-gemini/gemini-api-cli/blob/3dcbb6e542c222dad1e6f5b6e43cb390561d0cca/README.md) · [ci.yaml](https://github.com/google-gemini/gemini-api-cli/blob/3dcbb6e542c222dad1e6f5b6e43cb390561d0cca/.github/workflows/ci.yaml) · [go.mod](https://github.com/google-gemini/gemini-api-cli/blob/3dcbb6e542c222dad1e6f5b6e43cb390561d0cca/go.mod) · GitHub search API (28/11/2026) · ảnh người dùng gửi 28/11/2026 |
+
+<a id="ch-cma-chat-sdk"></a>
+
+### cma-chat-sdk (vercel-labs)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/vercel-labs/cma-chat-sdk |
+| Mô tả 1 dòng | Mẫu công khai: bot Slack "nhà phân tích nghiên cứu" chạy trên Claude Managed Agents, dùng Vercel Chat SDK, Vercel Connect và Upstash Redis |
+| Loại | agent-framework (mẫu triển khai) |
+| License | **Không có file LICENSE ở gốc** và README không nêu (GitHub API: không xác định) |
+| Phiên bản đã đọc | `3e82f1b6b4a30b03e23404359d5b64f66abe1201` (commit 2026-08-24) |
+| Kiểm chứng | 2026-11-28; docs-read; clone `blob:none` tại SHA trên, đọc cây thư mục; README đọc qua raw GitHub; chưa mở `.env.example`, AGENTS.md, mã nguồn; chưa chạy |
+| ★ (ngày) | 5 ★, 1 fork, 1 commit; tạo 2026-08-24 (GitHub search API, 2026-11-28) |
+| Cấu trúc thật | `src/` (bot, research-handler, managed-agents, config, route webhook), `scripts/cma/` (setup, update, archive), `.env.example`, AGENTS.md, CLAUDE.md, `pnpm-workspace.yaml`, Next.js 16 trên Vercel |
+| Vì sao đáng tham khảo | Mỗi thread Slack ứng với một phiên Managed Agents bền vững (trạng thái ở Redis); Bash tắt cho agent vì nó đọc trang web không tin cậy, README nêu rõ kịch bản rò dữ liệu nếu Bash tự duyệt và mạng mở; phiên ghim vào phiên bản agent đã tạo ra nó nên thử prompt mới ở thread mới |
+| Hạn chế / rủi ro | Không có license nên chưa có quyền tái sử dụng rõ ràng; lệnh clone trong README trỏ `vercel-labs/claude-research-bot`, không phải tên repo này (chưa kiểm repo đó có tồn tại); gắn chặt với Vercel Connect và Upstash; chi phí Anthropic, Vercel và Upstash không có trong README; repo mới, 1 commit |
+| So với | `managed-agents/chat-sdk` và `managed-agents/slack` trong `claude-quickstarts` (cùng ý tưởng, MIT, không phụ thuộc Vercel Connect), `vercel-ai-sdk` và `chatbot` của Vercel (mục 06, 08) |
+| Tích hợp | Dùng làm tham khảo kiến trúc; nếu muốn tái sử dụng, hỏi chủ repo về license; đặt `ANTHROPIC_API_KEY` bằng `vercel env add`, giữ Bash tắt |
+| Nguồn | [README.md](https://github.com/vercel-labs/cma-chat-sdk/blob/3e82f1b6b4a30b03e23404359d5b64f66abe1201/README.md) · GitHub search API (28/11/2026) |

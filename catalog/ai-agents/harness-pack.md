@@ -2,9 +2,9 @@
 
 # harness-pack — AI agent, skill & điều phối
 
-[← Mục lục catalog](../README.md) · 69 hồ sơ.
+[← Mục lục catalog](../README.md) · 71 hồ sơ.
 
-## Quy trình coding/TDD/review (`coding-workflow`, 15)
+## Quy trình coding/TDD/review (`coding-workflow`, 16)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -23,6 +23,7 @@
 | [ub-mode](../../20-claude-plugins-ecosystem/README.md#ch-ub-mode) | `unclebob/ub-mode` | MIT | 8.413 | đọc tài liệu 2026-11-23 | 20 | Skill của Robert C. |
 | [Waza](../../20-claude-plugins-ecosystem/README.md#ch-waza) | `tw93/Waza` | MIT | 7.636 | đọc tài liệu 2026-11-23 | 20 | 8 skill kỹ thuật khoá cứng bằng SCOPE.md + .out-of-scope; |
 | [WordPress agent-skills](../../20-claude-plugins-ecosystem/README.md#xlsx-2026-11-23-wordpress-agent-skills) | `WordPress/agent-skills` | GPL-2.0-or-later (GitHub: NOASSERTION) | 2.396 | đọc tài liệu 2026-11-23 | 20 | 20 skill WordPress (block, theme, plugin, REST, Interactivity, Abilities, WP-CLI, perf, PHPStan, Playground); |
+| [claude-code-playground](../../20-claude-plugins-ecosystem/README.md#ch-claude-code-playground) | `anthropics/claude-code-playground` | Apache-2.0 | 980 | đọc tài liệu 2026-11-28 | 20 | Kho cấu hình Claude Code của nhóm DevRel Anthropic (hooks, claude-md, settings, workflows, mods); |
 
 ## Điều phối nhiều agent (`multi-agent-orchestration`, 9)
 
@@ -76,7 +77,7 @@
 | [Craft Skills (ZSeven-W)](../../20-claude-plugins-ecosystem/README.md#nt-craft-skills) | `ZSeven-W/craft-skills` | Apache-2.0 | 242 | đọc mã 2026-11-23 | 20 | Năm skill sinh ảnh (Qwen-Image, logo, truyện tranh nhân vật, PNG trong suốt gốc, diorama quy trình), mỗi skill kèm thư mục `evals/` gồm `cases.yaml` với route trigger ho… |
 | [Agent Video Editing Skills](../../20-claude-plugins-ecosystem/README.md#n2-agents-video-editing-skills) | `iamaanahmad/agents-video-editing-skills` | MIT | 4 | đọc mã 2026-11-23 | 20 | Bộ 14 skill `SKILL.md` (router, planning, FFmpeg, export nền tảng, Remotion, moviepy, caption, TTS, trộn âm, quay demo, vertical shorts, motion, thumbnail, QA) cộng một… |
 
-## Chuyên ngành (`domain-specialist`, 19)
+## Chuyên ngành (`domain-specialist`, 20)
 
 | Dự án | Repo | License | ★ | Bằng chứng | Mục | Tóm tắt |
 |---|---|---|---|---|---|---|
@@ -89,6 +90,7 @@
 | [Claude for Legal](../../20-claude-plugins-ecosystem/README.md#3zb-kiểm-ảnh-8-plugin-8-kỹ-năng-8-mcp-bộ-cài-sẵn-cho-claude-ảnh-phandonggiang-người-dùng-gửi-đọc-mã-8112026) | `anthropics/claude-for-legal` | Apache-2.0 | 9.930 | đọc tài liệu 2026-11-08 | 20 | Plugin pháp lý của Anthropic theo mảng hành nghề (thương mại, privacy, sản phẩm, doanh nghiệp, lao động, tranh tụng, AI governance, IP, sinh viên luật); |
 | [k-skill](../../20-claude-plugins-ecosystem/README.md#skill-nganh-nghe-tieu-chuan) | `NomaDamas/k-skill` | MIT (thư mục packages/k-skill-proxy là AGPL-3.0-only) | 8.517 | đọc tài liệu 2026-11-25 | 20 | Hơn 130 SKILL.md cho dịch vụ và dữ liệu công Hàn Quốc: luật (korean-law-search), sáng chế KIPRIS, bất động sản MOLIT, thuốc MFDS, thuế NTS, giao thông, đặt vé; |
 | [claude-trading-skills](../../20-claude-plugins-ecosystem/README.md#skill-nganh-nghe-tieu-chuan) | `tradermonty/claude-trading-skills` | MIT | 8.416 | đọc tài liệu 2026-11-25 | 20 | 94 SKILL.md cho nghiên cứu giao dịch/đầu tư; |
+| [gemini-skills](../../20-claude-plugins-ecosystem/README.md#ch-gemini-skills) | `google-gemini/gemini-skills` | Apache-2.0 | 4.800 | đọc tài liệu 2026-11-28 | 20 | Bốn skill cho Gemini API/SDK (gemini-api-dev, gemini-api-cli, gemini-live-api-dev, gemini-omni-flash-api) xuất thành plugin cho Claude Code, Codex, Cursor, Antigravity b… |
 | [azure-skills](../../20-claude-plugins-ecosystem/README.md#skill-nganh-nghe-tieu-chuan) | `microsoft/azure-skills` | MIT | 1.674 | đọc tài liệu 2026-11-25 | 20 | 93 SKILL.md cho Azure, kèm Azure MCP Server (200+ công cụ, 40+ dịch vụ); |
 | [Legal Skills (Open)](../../20-claude-plugins-ecosystem/README.md#nt-legal-skills-open) | `ThomasMoreAI/legal-skills-open` | Apache-2.0 | 143 | đọc mã 2026-11-23 | 20 | Thư viện thật sự có 20.294 file SKILL.md (con số "18.000+" đúng) xếp theo `{quốc gia}/{lĩnh vực}/skills/{slug}`. |
 | [Dash0 OpenTelemetry skills](../../33-reliability-observability-operations/README.md#n2-dash0-agent-skills) | `dash0hq/agent-skills` | Apache-2.0 | 102 | đọc mã 2026-11-23 | 33 | Bộ skill Apache-2.0 dạy agent dùng OpenTelemetry, kèm harness eval đáng học: chạy agent thật trên ứng dụng mẫu rồi chấm bằng telemetry nhận được, không dùng LLM-judge, c… |

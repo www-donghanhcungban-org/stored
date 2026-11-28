@@ -3944,3 +3944,25 @@ Phần này có các hồ sơ mới của đợt nâng trần: mười trinh sá
 | Giới hạn và rủi ro | License GPL-2.0-or-later (đọc từ header `LICENSE.txt` và SPDX trong mã; chưa đối chiếu từng thư mục con, tài sản nhúng và phụ thuộc). Ứng dụng cố ý dễ bị tấn công; README cảnh báo máy chạy sẽ cực kỳ dễ bị tấn công, mặc định gắn localhost. Có keystore mẫu `goatkeystore.pkcs12` trong repo (khóa cho bài học, không dùng thật). Yêu cầu Java 25 và Spring Boot 4.1 theo AGENTS.md. Mô tả "Java" của trinh sát đúng. Mã lỗi cố ý, không dùng làm mẫu. |
 | So với | OWASP Juice Shop (cùng lô, thử thách kiểu CTF, Node/Angular); OWASP WSTG (`owasp-web-security-testing-guide`, phương pháp kiểm thử); cybersecurity-threats-guide (`cybersecurity-threats-guide`, tài liệu tổng quan) |
 | Nguồn | [LICENSE.txt](https://github.com/WebGoat/WebGoat/blob/4e98f1cbbf896fdd06edcc9930515ebe0ade7c69/LICENSE.txt) · [README.md](https://github.com/WebGoat/WebGoat/blob/4e98f1cbbf896fdd06edcc9930515ebe0ade7c69/README.md) · [AGENTS.md](https://github.com/WebGoat/WebGoat/blob/4e98f1cbbf896fdd06edcc9930515ebe0ade7c69/AGENTS.md) · [WEBGOAT_IN_THE_AGE_OF_AI.md](https://github.com/WebGoat/WebGoat/blob/4e98f1cbbf896fdd06edcc9930515ebe0ade7c69/WEBGOAT_IN_THE_AGE_OF_AI.md) · [SqlInjectionLesson5a.java](https://github.com/WebGoat/WebGoat/blob/4e98f1cbbf896fdd06edcc9930515ebe0ade7c69/src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLesson5a.java) · [build.yml](https://github.com/WebGoat/WebGoat/blob/4e98f1cbbf896fdd06edcc9930515ebe0ade7c69/.github/workflows/build.yml) · [lesson-vulnerability-triage.yml](https://github.com/WebGoat/WebGoat/blob/4e98f1cbbf896fdd06edcc9930515ebe0ade7c69/.github/workflows/lesson-vulnerability-triage.yml) |
+
+## Bổ sung 28/11/2026 (anthropics/courses, từ ảnh bài đăng 7 repo Anthropic)
+
+<a id="ch-anthropics-courses"></a>
+
+### anthropics/courses
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anthropics/courses |
+| Mô tả 1 dòng | Năm khóa học Jupyter của Anthropic: API cơ bản, viết prompt, prompt thực tế, đánh giá prompt, tool use; **đã lưu trữ (archived), chỉ đọc** |
+| Loại | learning (llm-genai-course) |
+| License | **CC BY-NC 4.0 (Attribution-NonCommercial)**, đọc từ file LICENSE; GitHub API báo `NOASSERTION`. Không dùng cho mục đích thương mại khi chưa xin phép |
+| Phiên bản đã đọc | `f4dbb137d7b02dddaf3cc73e32e20a702d3b5e77` (commit 2025-11-13) |
+| Kiểm chứng | 2026-11-28; docs-read; clone `blob:none` tại SHA trên, đọc cây thư mục và LICENSE; README gốc và README của 5 khóa đọc qua raw GitHub; chưa mở notebook, chưa chạy gì |
+| ★ (ngày) | 23.222 ★, 2.636 fork; **archived = true** (GitHub search API, 2026-11-28); trang repo hiện thông báo lưu trữ ngày 15/09/2026; commit cuối ở nhánh mặc định là 2025-11-13 |
+| Cấu trúc thật | `anthropic_api_fundamentals` (6 bài: bắt đầu, messages, models, parameters, streaming, vision), `prompt_engineering_interactive_tutorial` (9 chương + phụ lục, kèm bản Google Sheets), `real_world_prompting` (5 notebook, có nhánh `vertex`), `prompt_evaluations` (9 bài, Workbench và promptfoo), `tool_use` (6 bài) |
+| Vì sao đáng tham khảo | Giáo trình có thứ tự rõ (README gợi ý 1 đến 5); phần đánh giá prompt bằng promptfoo và bài tool use hiếm có trong khóa miễn phí; chương 9 có bài tập theo ngành (pháp lý, tài chính, lập trình) |
+| Hạn chế / rủi ro | Đã archived, tên model là Claude 3 (Haiku, Sonnet, Opus) nên tên model, ID model và link tài liệu nhiều khả năng đã cũ; **giấy phép phi thương mại** ảnh hưởng nếu dùng làm tài liệu đào tạo có thu phí; README không có lệnh cài, hướng dẫn nằm trong notebook (chưa mở); yêu cầu API key của khóa 3 đến 5 chưa xác minh |
+| So với | `prompt-engineering-interactive-tutorial` (chính khóa 2 tách thành repo riêng, mục 17, 39,7k ★), `claude-cookbooks` (code copy được, MIT, mục 17), `learn-claude-code`, `cookbook` của google-gemini |
+| Tích hợp | Dùng làm lộ trình đọc, không nhúng tài liệu vào sản phẩm thương mại; thay tên model bằng model hiện hành trước khi chạy; xem `claude-cookbooks` cho phiên bản còn cập nhật |
+| Nguồn | [LICENSE](https://github.com/anthropics/courses/blob/f4dbb137d7b02dddaf3cc73e32e20a702d3b5e77/LICENSE) · [README.md](https://github.com/anthropics/courses/blob/f4dbb137d7b02dddaf3cc73e32e20a702d3b5e77/README.md) · GitHub search API (28/11/2026) |

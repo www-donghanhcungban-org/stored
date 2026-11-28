@@ -6114,3 +6114,28 @@ Hồ sơ lập trong đợt nâng trần thứ hai: đọc mã hoặc tài liệ
 | Giới hạn và rủi ro | Apache-2.0 cho mã. Telemetry: `observability.ts` gửi sự kiện tới PostHog (eu.i.posthog.com) kèm email khi đã đăng nhập, ID tổ chức git hoặc ID máy; tắt bằng DO_NOT_TRACK=1. Dịch cần LINGO_API_KEY tới api.lingo.dev nên nội dung nguồn rời máy. Repo đang chuyển trọng tâm sang nền tảng nên bề mặt CLI có thể đổi (cờ deprecated trong settings.ts). |
 | So với | Weblate (tự host, quản lý dịch có người), i18next (thư viện runtime, không dịch tự động), kiss-translator: Lingo.dev là lớp dịch tự động chạy trong CI |
 | Nguồn | [LICENSE.md](https://github.com/lingodotdev/lingo.dev/blob/b3fba7d0272d139176064a9162a834bdace0712a/LICENSE.md) · [readme.md](https://github.com/lingodotdev/lingo.dev/blob/b3fba7d0272d139176064a9162a834bdace0712a/readme.md) · [package.json](https://github.com/lingodotdev/lingo.dev/blob/b3fba7d0272d139176064a9162a834bdace0712a/packages/cli/package.json) · [lockfile.ts](https://github.com/lingodotdev/lingo.dev/blob/b3fba7d0272d139176064a9162a834bdace0712a/packages/cli/src/cli/utils/lockfile.ts) · [observability.ts](https://github.com/lingodotdev/lingo.dev/blob/b3fba7d0272d139176064a9162a834bdace0712a/packages/cli/src/cli/utils/observability.ts) · [settings.ts](https://github.com/lingodotdev/lingo.dev/blob/b3fba7d0272d139176064a9162a834bdace0712a/packages/cli/src/cli/utils/settings.ts) · [pr-check.yml](https://github.com/lingodotdev/lingo.dev/blob/b3fba7d0272d139176064a9162a834bdace0712a/.github/workflows/pr-check.yml) |
+
+## Bổ sung 28/11/2026 (Antigravity UX Engine Skills, tìm từ ảnh lệnh /plugin install ux-engine)
+
+Người dùng gửi ảnh chụp có dòng `/plugin install ux-engine` và "installed: 8 skills, 4 commands", không kèm URL. Plugin gốc chưa được xác định: `claude plugin install ux-engine` (Claude Code 2.1.332, thư mục cấu hình tạm) báo không tìm thấy trong `anthropic-plugin-directory`, `claude-plugins-official` và `knowledge-work-plugins` (28/11/2026); tìm GitHub chỉ ra một repo lấy cảm hứng từ nó, ghi ở dưới. Cần tên marketplace hoặc trang nguồn của ảnh để tiếp tục.
+
+<a id="ch-antigravity-ux-engine-skills"></a>
+
+### Antigravity-UX-Engine-Skills (agent-nau)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/agent-nau/Antigravity-UX-Engine-Skills |
+| Mô tả 1 dòng | Skill UI/UX cho Google Antigravity "lấy cảm hứng từ UX Engine plugin của Design Motion cho Claude Code" (nguyên văn dòng About) |
+| Loại | design-skill (nhưng nội dung skill không có trong repo, xem dưới) |
+| License | MIT (LICENSE: "Copyright (c) 2026 agent-nau") |
+| Phiên bản đã đọc | `3e4e5d8bd74b0b1ff5325a6014635a2f0951f527` (commit 2026-11-07) |
+| Kiểm chứng | 2026-11-28; docs-read; clone `blob:none` tại SHA trên, đọc cây thư mục thật, LICENSE; README đọc qua raw GitHub; chưa cài hay chạy |
+| ★ (ngày) | 1 ★, 0 fork, 2 commit; tạo 2026-11-07 (GitHub search API, 2026-11-28) |
+| Điểm lệch tài liệu và thực tế | README liệt kê 5 skill (`/audit`, `/design-system`, `/motion`, `/restyle`, `/unslop`) và cấu trúc thư mục `audit/`, `design-system/`... mỗi nơi một `SKILL.md`; **cây thật chỉ có `.gitignore`, `LICENSE`, `README.md`**, cả năm URL `SKILL.md` trả 404. Repo hiện chỉ là mô tả |
+| Quan hệ với bản gốc | Chỉ dòng About nhắc Design Motion và Claude Code; README và LICENSE không nhắc, không link, không ghi ghi công; không rõ mã có sao chép hay không. Bản gốc theo ảnh có 8 skill và 4 lệnh, khác 5 skill của README này |
+| Vì sao đáng ghi | Ví dụ điển hình của "README hứa hơn cây thư mục": lệnh clone chạy được nhưng không có skill nào để nạp; các tuyên bố "mượt 60fps" và "đạt WCAG 2.1 AA" trong README không có mã để kiểm |
+| Hạn chế / rủi ro | Repo mới, một sao, cài bằng `git clone` không ghim phiên bản; dành cho Antigravity (`.gemini/`), không dùng trực tiếp với Claude Code; không đủ cơ sở xem là bản sao của plugin gốc |
+| So với | `ui-ux-pro-max`, `impeccable`, `ux-ui-agent-skills-xias`, `ui-skills` (skill UI/UX có nội dung thật, có sao nhiều hơn) |
+| Tích hợp | Không nên tích hợp; nếu cần UX skill, chọn repo có SKILL.md thật ở các mục tương tự và đọc script trước khi cài |
+| Nguồn | [LICENSE](https://github.com/agent-nau/Antigravity-UX-Engine-Skills/blob/3e4e5d8bd74b0b1ff5325a6014635a2f0951f527/LICENSE) · [README.md](https://github.com/agent-nau/Antigravity-UX-Engine-Skills/blob/3e4e5d8bd74b0b1ff5325a6014635a2f0951f527/README.md) · GitHub search API (28/11/2026) · ảnh người dùng gửi 28/11/2026 |

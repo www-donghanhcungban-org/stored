@@ -2736,3 +2736,63 @@ Hồ sơ gốc ở [mục 19](../19-agentic-video-media/README.md#ch-social-medi
 | So với | `coreyhaines31/marketingskills` (marketing thuần prompt, không cần API trả phí), `firecrawl/firecrawl-workflows` (lead gen/nghiên cứu bằng Firecrawl), các actor Apify cho mạng xã hội |
 | Tích hợp | Dùng khi cần nghiên cứu thị trường từ dữ liệu công khai và chấp nhận phí API: đặt khóa trong biến môi trường (không commit), giới hạn endpoint và số lượt gọi, lọc dữ liệu cá nhân trước khi lưu, lint SKILL.md bằng skillmd trước khi nhúng |
 | Nguồn | [README.md](https://github.com/ScrapeCreators/social-media-research-skills/blob/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/README.md) · [LICENSE](https://github.com/ScrapeCreators/social-media-research-skills/blob/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/LICENSE) · [AGENTS.md](https://github.com/ScrapeCreators/social-media-research-skills/blob/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/AGENTS.md) · [scrapecreators-api/SKILL.md](https://github.com/ScrapeCreators/social-media-research-skills/blob/64ba7b4dea71e130d2712ffb6c1c1024b3b7c4b2/skills/scrapecreators-api/SKILL.md) |
+
+## Bổ sung 28/11/2026 (7 repo Anthropic và repo Gemini liên quan, từ ảnh bài đăng)
+
+Người dùng gửi ảnh bài đăng "7 repo đáng lưu nhất" (Claude/Anthropic) và ảnh repo `google-gemini/gemini-api-cli`. Cả 7 URL trong bài đều là repo thật và công khai. Ba repo của bài chưa có trong catalog được thêm ở đây (`claude-code-playground`, mục này; `launch-your-agent`, mục 21; `claude-quickstarts`, mục 02). Bốn repo còn lại đã có hồ sơ từ trước (`anthropics-skills`, `claude-plugins-official`, `knowledge-work-plugins` ở mục này; `prompt-engineering-interactive-tutorial` ở mục 17), không nhân bản.
+
+<a id="ch-claude-code-playground"></a>
+
+### claude-code-playground (anthropics)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/anthropics/claude-code-playground |
+| Mô tả 1 dòng | Bộ sưu tập cấu hình Claude Code, skill và demo do nhóm DevRel của Anthropic tự dùng; README tự nhận không phải sản phẩm chính thức |
+| Loại | harness-pack (coding-workflow): kho tham chiếu cấu hình, không phải bộ cài |
+| License | Apache-2.0 (LICENSE ở gốc); README nói từng mục con có thể kèm thành phần bên thứ ba theo license riêng |
+| Phiên bản đã đọc | `569c5283d9a0a7ee7938df85bb32e4f48cbb8c86` (commit 2026-10-01) |
+| Kiểm chứng | 2026-11-28; docs-read; clone `blob:none` tại SHA trên, đọc cây thư mục, LICENSE, README (qua trang GitHub) và tên workflow; chưa mở từng mục con, chưa chạy gì |
+| ★ (ngày) | 980 ★, 156 fork, không archive; tạo 2026-09-25, push cuối 2026-11-06 (GitHub search API, 2026-11-28) |
+| Cấu trúc thật | `claude-code/` gồm `claude-md/`, `hooks/`, `mods/`, `settings/`, `workflows/`; `demos/`, `launch-demos/`, `skills/` mỗi thư mục chỉ có một `README.md` ở commit này (chỉ mục, chưa có nội dung con); `_template/`; `.github/workflows/cla.yaml`; CLA.md, CODEOWNERS, SECURITY.md, CLAUDE.md |
+| Vì sao đáng tham khảo | Cho thấy cách chính đội DevRel cấu hình hook, CLAUDE.md, settings và quy trình cá nhân; mỗi mục theo `_template` có phần "what it shows / how it was built / run it / limitations" |
+| Hạn chế / rủi ro | README nói rõ: không phải sản phẩm chính thức, nguyên trạng, không bảo đảm còn chạy, không nhận đóng góp ngoài (issue/PR có thể bị đóng); các thư mục `demos/`, `launch-demos/`, `skills/` hầu như rỗng ở commit đọc, nên bài đăng gốc ("có sẵn cấu hình, Skill và demo") mô tả hơn mức nội dung thật; ví dụ có thể cũ khi Claude Code đổi |
+| So với | `claude-plugins-official` (plugin Anthropic cài được, có marketplace), `anthropics-skills` (skill mẫu và chuẩn SKILL.md), `superpowers` và `agent-skills-addyosmani` (harness-pack cộng đồng nhiều sao hơn), `claude-code-ultimate-guide` (hướng dẫn dài, mục 03) |
+| Tích hợp | Chỉ đọc làm tham chiếu: không cài ở gốc; mở từng mục, đọc license riêng và `hooks/` trước khi chép về dự án |
+| Nguồn | [README.md](https://github.com/anthropics/claude-code-playground/blob/569c5283d9a0a7ee7938df85bb32e4f48cbb8c86/README.md) · [LICENSE](https://github.com/anthropics/claude-code-playground/blob/569c5283d9a0a7ee7938df85bb32e4f48cbb8c86/LICENSE) · [cla.yaml](https://github.com/anthropics/claude-code-playground/blob/569c5283d9a0a7ee7938df85bb32e4f48cbb8c86/.github/workflows/cla.yaml) · GitHub search API (28/11/2026) |
+
+<a id="ch-gemini-skills"></a>
+
+### gemini-skills (google-gemini)
+
+| Thuộc tính | Giá trị |
+|---|---|
+| Repo / URL | https://github.com/google-gemini/gemini-skills |
+| Mô tả 1 dòng | Thư viện skill cho Gemini API/SDK, đóng gói thành plugin cho Claude Code, Codex, Cursor và Antigravity |
+| Loại | harness-pack (domain-specialist) |
+| License | Apache-2.0 (LICENSE ở gốc) |
+| Phiên bản đã đọc | `c4d0c62c1240e08a90546186bf320600ab6a039a` (commit 2026-11-18) |
+| Kiểm chứng | 2026-11-28; docs-read; clone `blob:none` tại SHA trên, đọc cây thư mục và LICENSE; README, `skills/gemini-api-cli/SKILL.md` và `skills/gemini-api-dev/SKILL.md` đọc qua trang GitHub; chưa chạy skill nào, chưa mở hai skill còn lại |
+| ★ (ngày) | 4.800 ★, 523 fork, không archive; tạo 2026-02-06, push cuối 2026-11-19 (GitHub search API, 2026-11-28) |
+| Cấu trúc thật | Bốn skill dưới `skills/`: `gemini-api-dev`, `gemini-api-cli`, `gemini-live-api-dev`, `gemini-omni-flash-api`; thư mục manifest `.claude-plugin/`, `.codex-plugin/`, `.cursor-plugin/`, `.agents/`; `plugin.json` ở gốc |
+| Vì sao đáng tham khảo | Cùng một bộ skill được xuất cho bốn agent bằng bốn thư mục manifest song song, không viết lại từng nơi; skill đưa ngữ cảnh API cập nhật cho agent (bảo tránh model và SDK đã lỗi thời); cài bằng `npx skills add google-gemini/gemini-skills` hoặc marketplace của từng agent |
+| Hạn chế / rủi ro | README tự nhận không phải sản phẩm Google được hỗ trợ chính thức và không thuộc chương trình thưởng lỗ hổng (đọc qua trang GitHub); con số 87% và 96% mã đúng khi dùng skill là tự báo cáo của bên phát hành, chưa kiểm; nhiều model/agent gắn nhãn preview; tên model như `gemini-4-hydrogen` lấy nguyên từ repo, chưa đối chiếu với tài liệu Google; Gemini CLI không được README nhắc |
+| So với | `google/skills` (skill Google Cloud rộng, ~150 thư mục, đã có hồ sơ; `vertex-ai-api-dev` đã chuyển sang đó), `anthropics-skills`, `vercel-agent-skills`, `stitch-skills-google-labs` (skill thiết kế của Google Labs) |
+| Tích hợp | Cài theo phạm vi dự án thay vì toàn cục, đọc từng `SKILL.md` trước; `gemini-api-cli` cần cài thêm CLI bằng trình cài `curl \| bash` (xem hồ sơ `gemini-api-cli` ở mục 02) |
+| Nguồn | [LICENSE](https://github.com/google-gemini/gemini-skills/blob/c4d0c62c1240e08a90546186bf320600ab6a039a/LICENSE) · [README.md](https://github.com/google-gemini/gemini-skills/blob/c4d0c62c1240e08a90546186bf320600ab6a039a/README.md) · [gemini-api-cli/SKILL.md](https://github.com/google-gemini/gemini-skills/blob/c4d0c62c1240e08a90546186bf320600ab6a039a/skills/gemini-api-cli/SKILL.md) · GitHub search API (28/11/2026) |
+
+<a id="ch-doi-chieu-bai-7-repo"></a>
+
+### Đối chiếu bài đăng "7 repo đáng lưu nhất" với repo thật (28/11/2026)
+
+| Mục trong bài | Kết quả đối chiếu |
+|---|---|
+| Playground "có sẵn cấu hình, Skill và demo" | Đúng về hướng, nhưng README tự nhận không chính thức/không đảm bảo, và ba thư mục `demos/`, `launch-demos/`, `skills/` chỉ có README ở commit đọc |
+| Skills "cho Word, PDF, PowerPoint, Excel" | Đúng; repo còn nhiều skill khác (đã có hồ sơ `anthropics-skills`) |
+| Plugins Official "gồm plugin Telegram" | Đúng: plugin Telegram nằm ở `external_plugins/telegram` (đã có hồ sơ `claude-plugins-official`) |
+| Launch Your Agent "chạy thử và đặt lịch" | Đúng, nhưng bài bỏ sót: cần API key Anthropic riêng, dựng trên Managed Agents, repo ghi rõ không bảo trì (mục 21) |
+| Knowledge Work Plugins | Đúng (đã có hồ sơ) |
+| Quickstarts "chatbot, trợ lý dữ liệu, agent" | Đúng; thực tế 18+ dự án, nhiều dự án Managed Agents, và có điểm lệch license (mục 02) |
+| Prompt Engineering Tutorial "khóa thực hành" | Đúng, nhưng dùng Claude 3 Haiku nên có thể cũ; cùng nội dung nằm trong `anthropics/courses` đã archive (mục 08) |
+
+Bài kết luận "mã nguồn công khai, nhưng chạy API vẫn có thể phát sinh chi phí": đúng với `claude-quickstarts` và `launch-your-agent`; các README đã đọc không nêu giá.

@@ -2,17 +2,17 @@
 
 # Catalog theo nhóm, danh mục và danh mục con
 
-Sinh từ `data/projects.json` (2777 hồ sơ) theo `data/taxonomy.json`. Mỗi dòng dẫn về hồ sơ gốc trong README chuyên mục; số sao và mức bằng chứng chỉ đúng tại ngày ghi trong hồ sơ. Sắp xếp theo ★ giảm dần; ★ để trống là chưa có số tin cậy.
+Sinh từ `data/projects.json` (2786 hồ sơ) theo `data/taxonomy.json`. Mỗi dòng dẫn về hồ sơ gốc trong README chuyên mục; số sao và mức bằng chứng chỉ đúng tại ngày ghi trong hồ sơ. Sắp xếp theo ★ giảm dần; ★ để trống là chưa có số tin cậy.
 
 Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính năng đã chắt lọc kèm cách áp dụng) và [GUIDES.md](../GUIDES.md).
 
-## AI agent, skill & điều phối (520)
+## AI agent, skill & điều phối (527)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
 | [coding-agent](ai-agents/coding-agent.md) | 26 | — |
 | [coding-tool-commercial](ai-agents/coding-tool-commercial.md) | 6 | — |
-| [agent-framework](ai-agents/agent-framework.md) | 46 | — |
+| [agent-framework](ai-agents/agent-framework.md) | 51 | — |
 | [agent-workspace](ai-agents/agent-workspace.md) | 34 | — |
 | [personal-agent](ai-agents/personal-agent.md) | 23 | — |
 | [autonomous-agent-history](ai-agents/autonomous-agent-history.md) | 3 | — |
@@ -20,7 +20,7 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [reasoning-skill](ai-agents/reasoning-skill.md) | 2 | — |
 | [context-optimization](ai-agents/context-optimization.md) | 7 | — |
 | [agent-memory](ai-agents/agent-memory.md) | 20 | — |
-| [harness-pack](ai-agents/harness-pack.md) | 69 | Quy trình coding/TDD/review (15), Điều phối nhiều agent (9), Văn phòng & tài liệu (2), Marketing, bán hàng & kinh doanh (16), Media & sáng tạo (5), Chuyên ngành (19), Tạo/quản lý skill (3) |
+| [harness-pack](ai-agents/harness-pack.md) | 71 | Quy trình coding/TDD/review (16), Điều phối nhiều agent (9), Văn phòng & tài liệu (2), Marketing, bán hàng & kinh doanh (16), Media & sáng tạo (5), Chuyên ngành (20), Tạo/quản lý skill (3) |
 | [plugin-marketplace](ai-agents/plugin-marketplace.md) | 17 | — |
 | [protocol](ai-agents/protocol.md) | 56 | — |
 | [llm-gateway](ai-agents/llm-gateway.md) | 20 | — |
@@ -68,13 +68,13 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [image-gen](models-data/image-gen.md) | 12 | — |
 | [speech](models-data/speech.md) | 54 | — |
 
-## Thiết kế, giao diện & media (403)
+## Thiết kế, giao diện & media (404)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
 | [ui-library](design-media/ui-library.md) | 106 | Component React (15), Component Vue/Svelte/Angular/khác (13), Design system chính thức của tổ chức (22), Primitive headless & accessibility (7), Component có animation (9), CSS framework (6), Biểu đồ & bản đồ (6), Editor & nhập liệu phong phú (8), Icon, font & tài sản (7), TUI & GUI native (10), Media player & upload (3) |
 | [design-tool](design-media/design-tool.md) | 58 | Canvas & editor thiết kế (15), Design-to-code & MCP thiết kế (10), Gallery cảm hứng (13), Token, màu & chữ (8), Minh họa & sơ đồ (12) |
-| [design-skill](design-media/design-skill.md) | 55 | — |
+| [design-skill](design-media/design-skill.md) | 56 | — |
 | [layout-template](design-media/layout-template.md) | 20 | — |
 | [ai-ui-generator](design-media/ai-ui-generator.md) | 8 | — |
 | [animation-library](design-media/animation-library.md) | 28 | — |
@@ -97,11 +97,11 @@ Chọn công cụ theo tác vụ: xem [PLAYBOOK.md](../PLAYBOOK.md) (skill/tính
 | [product-analytics](software/product-analytics.md) | 10 | — |
 | [product-research](software/product-research.md) | 7 | — |
 
-## Học tập, tài liệu & tri thức (397)
+## Học tập, tài liệu & tri thức (398)
 
 | Danh mục | Số hồ sơ | Danh mục con |
 |---|---|---|
-| [learning](knowledge/learning.md) | 166 | Khóa học LLM/GenAI & deep learning (35), Khóa học/hướng dẫn agent & Claude Code (15), Nền tảng khoa học máy tính (17), Học ngôn ngữ lập trình (29), Phỏng vấn & thuật toán (25), Thiết kế hệ thống & kiến trúc (6), Dự án mẫu & cookbook (15), Tham chiếu thiết kế UI/UX (3), Học bảo mật (7), Lộ trình, sách & tài liệu tổng hợp (14) |
+| [learning](knowledge/learning.md) | 167 | Khóa học LLM/GenAI & deep learning (36), Khóa học/hướng dẫn agent & Claude Code (15), Nền tảng khoa học máy tính (17), Học ngôn ngữ lập trình (29), Phỏng vấn & thuật toán (25), Thiết kế hệ thống & kiến trúc (6), Dự án mẫu & cookbook (15), Tham chiếu thiết kế UI/UX (3), Học bảo mật (7), Lộ trình, sách & tài liệu tổng hợp (14) |
 | [awesome-list](knowledge/awesome-list.md) | 85 | Skill, plugin & agent (15), MCP server (3), Thiết kế & UI (12), Hệ sinh thái ngôn ngữ/framework (13), Dữ liệu & ML (10), DevOps & sysadmin (5), Bảo mật (4), Marketing & tăng trưởng (4), Tài nguyên chung & xếp hạng (19) |
 | [docs](knowledge/docs.md) | 104 | Site tài liệu (21), Kiểm tài liệu (lint, link, chính tả) (10), Tài liệu cho agent (llms.txt, context) (6), Sơ đồ & hình vẽ (5), Slide & trình chiếu (7), Ghi chú & knowledge base (21), Office, bảng tính & PDF (11), Soạn thảo & xuất bản (Markdown, Typst) (11), Ứng dụng năng suất (12) |
 | [vietnam](knowledge/vietnam.md) | 27 | — |
